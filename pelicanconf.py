@@ -12,6 +12,11 @@ TIMEZONE = 'Asia/Kolkata'
 
 DEFAULT_LANG = 'en'
 
+PLUGIN_PATHS = ['plugins']
+PLUGINS = [
+    'pandoc_reader'
+]
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
