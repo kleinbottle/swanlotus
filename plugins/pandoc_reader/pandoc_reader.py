@@ -74,3 +74,4 @@ def add_reader(readers):
 
 def register():
     """Register the PandocReader."""
+    signals.readers_init.connect(add_reader)
