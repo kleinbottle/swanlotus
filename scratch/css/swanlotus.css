@@ -1,0 +1,66 @@
+/* Setting these two values so that navigation bar does not cover content area */
+/* This is stated here: https://getbootstrap.com/docs/4.4/components/navbar/#placement */
+body {
+    padding-top: 100px;
+}
+
+/* Navigation bar background color */
+.navbar {
+    background-color: #428BCA;
+}
+
+/* Navigation inactive link color */
+.navbar li a {
+    color: #ddddeb;
+}
+
+/* Navigation link hover color */
+.navbar li a:hover {
+    color: white;
+}
+
+.nav-link {
+    position: relative;
+}
+
+/* Active state gets a caret at the bottom */
+.nav-link.active {
+    color:white;
+    font-weight: bold;
+}
+
+/* .nav-link.active:after {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    width: 0;
+    height: 0;
+    margin-right: -.3rem;
+    vertical-align: middle;
+    content: "";
+    border-right: .3rem solid transparent;
+    border-bottom: .3rem solid;
+    border-left: .3rem solid transparent;
+} */
+
+/* Main content area background color */
+#swanlotus-main {
+    background-color: white;
+}
+
+/* Right sidebar background color */
+#swanlotus-sidebar {
+    background-color: #f5f5f5;
+}
+
+/* Footer area background color */
+.swanlotus-footer {
+    margin-top: 1rem;
+    text-align: center;
+    background-color: #428BCA;
+    color: white;
+}
+
+.swanlotus-footer p {
+    margin-bottom: 0rem;
+}

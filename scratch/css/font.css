@@ -1,0 +1,15 @@
+body {
+    font-family: "Noto Sans", sans-serif;
+}
+
+#swanlotus-main {
+    font-family: "Noto Serif", serif;
+}
+
+#swanlotus-sidebar {
+    font-family: "Noto Sans", sans-serif;
+}
+
+pre, code {
+    font-family: "Fira Mono", monospace;
+}
