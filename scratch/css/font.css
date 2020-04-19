@@ -10,6 +10,10 @@ body {
     font-family: "Noto Sans", sans-serif;
 }
 
+p.swanlotus-bio {
+    font-style: italic;
+}
+
 pre, code {
     font-family: "Fira Mono", monospace;
 }
