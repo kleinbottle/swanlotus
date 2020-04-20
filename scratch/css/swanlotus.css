@@ -31,6 +31,16 @@ body {
     font-weight: bold;
 }
 
+.container-fluid {
+    padding-left: 11rem;
+    padding-right: 5rem;
+}
+
+.left-sidebar {
+    padding-left: 5rem;
+    padding-right: 3rem;
+}
+
 /* Main content area background color */
 #swanlotus-main {
     background-color: pink;
