@@ -2,17 +2,13 @@ body {
     font-family: "Noto Sans", sans-serif;
 }
 
-#swanlotus-main {
+.swanlotus-main {
     font-family: "Noto Serif", serif;
 }
 
-#swanlotus-sidebar {
+.swanlotus-sidebar-left, .swanlotus-sidebar-right {
     font-family: "Noto Sans", sans-serif;
     font-size: 0.9rem;
-}
-
-p.swanlotus-bio {
-    font-style: italic;
 }
 
 pre, code {
