@@ -1,7 +1,7 @@
 /* Paddings */
 /* Colors */
 /* Fonts */
-/* Display oridering */
+/* Display ordering */
 body {
   background-color: grey;
 }
@@ -39,4 +39,4 @@ pre {
   font-family: "Fira Mono", monospace;
 }
 
-/*# sourceMappingURL=swanlotus-bulma.css.map */
+/*# sourceMappingURL=swanlotus-overrides.css.map */
