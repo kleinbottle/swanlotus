@@ -2,13 +2,12 @@ body {
     font-family: "Noto Sans", sans-serif;
 }
 
-.swanlotus-main {
+#main {
     font-family: "Noto Serif", serif;
 }
 
-.swanlotus-sidebar-left, .swanlotus-sidebar-right {
+#sidebar {
     font-family: "Noto Sans", sans-serif;
-    font-size: 0.9rem;
 }
 
 pre, code {

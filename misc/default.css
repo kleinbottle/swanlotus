@@ -1,0 +1,71 @@
+/* chandra-one.css 
+ * Default CSS file to use to render HTML from Pandoc Markdown.
+ * 
+*/
+
+/* Global */
+
+body {
+    background-color: #c0c0c0; /* Silver */
+    width: 70%;
+    margin-right: 15%;
+    margin-left: 15%;
+    line-height: 1.6;
+    font-size: 120%;
+    font-family: "Noto Serif", "Merriweather", serif;
+}
+
+li, p, h1, h2, h3, h4, h5, h6 {
+  font-family: "Noto Serif", "Merriweather", serif;
+}
+
+pre, code {
+  font-family: "Fira Mono", "Hack", monospace, monospace;
+}
+
+pre {
+  background-color: #d3d3d3; /* Light Gray */
+}
+
+code, kbd {
+    color: #69220d;
+}
+
+/* Link Colors */
+
+a:link    { color: #800000 }  /* Maroon: unvisited links */
+a:visited { color: #006080 }  /* visited links   */
+a:hover   { color: #00c }  /* user hovers     */
+a:active  { color: #ccc }  /* active links    */
+
+/* Tables */
+
+table {
+    margin-left: auto; /* Centre table */
+    margin-right: auto; /* Centre table */
+}
+
+table tr th, table tr td {
+    padding-right: 30px; /* inter-column spacing */
+}
+
+/*tr:nth-child(even) {
+    background-color: #ffeecc;
+}*/
+
+/*Images and Figures*/
+
+img {
+  padding-top: 1.0em;
+  padding-bottom: 1.5em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 10%;
+  max-width: 90%;
+}
+
+figure {
+  text-align: center; /* For caption */
+  font-family: "Source Sans Pro", "Noto Sans", sans-serif;
+}

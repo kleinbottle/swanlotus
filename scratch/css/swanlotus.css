@@ -1,5 +1,24 @@
+body {
+    background-color: grey;
+}
+
+/* Grid */
+.container {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "navbar navbar navbar navbar"
+        "main main main sidebar"
+        "footer footer footer footer";
+    /* justify-content: center; */
+    /* margin-top: 3.8rem;*/  /* Set so that navigation bar does not cover content */
+}
+
 /* Navigation bar background color */
 .navbar {
+    grid-area: navbar;
     background-color: #428BCA;
     padding-top: 0rem;
     padding-bottom: 0em;
@@ -25,38 +44,18 @@
     font-weight: bold;
 }
 
-/* Grid */
-.swanlotus-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-        "sidebar-left main sidebar-right"
-        "footer footer footer";
-    justify-content: center;
-    margin-top: 3.8rem;  /* Set so that navigation bar does not cover content */
-}
-
 /* Right sidebar area */
-.swanlotus-sidebar-left {
-    grid-area: sidebar-left;
-    background-color: lightblue;
-    margin-left: 4rem;
-}
-
-/* Left sidebar area */
-.swanlotus-sidebar-right {
-    grid-area: sidebar-right;
-    background-color: lightblue;
-    margin-right: 4rem;
+.swanlotus-sidebar {
+    grid-area: sidebar;
+    background-color: rgb(250, 248, 248);
 }
 
 /* Main content area */
 .swanlotus-main {
     grid-area: main;
-    max-width: 700px;
+    /* max-width: 700px; */
     padding: 0rem 1rem;
-    background-color: pink;
+    /* background-color: pink; */
 }
 
 /* Footer area background color */

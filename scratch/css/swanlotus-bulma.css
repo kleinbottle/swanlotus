@@ -1,0 +1,42 @@
+/* Paddings */
+/* Colors */
+/* Fonts */
+/* Display oridering */
+body {
+  background-color: grey;
+}
+
+.container {
+  background-color: white;
+}
+
+#two-column {
+  padding: 0rem;
+}
+
+#main {
+  padding: 1.65rem;
+  font-family: "Noto Serif", serif;
+  color: black;
+  order: 2;
+}
+
+#sidebar {
+  background-color: #00587A;
+  color: white;
+  padding: 1.65rem;
+  font-family: "Noto Serif", serif;
+  order: white;
+}
+
+#footer {
+  padding: 0rem;
+  font-family: "Noto Sans", sans-serif;
+}
+
+pre {
+  background-color: lightyellow;
+  font-family: "Fira Mono", monospace;
+}
+
+/*# sourceMappingURL=swanlotus-bulma.css.map */

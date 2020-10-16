@@ -1,0 +1,50 @@
+/* Paddings */
+$footer-padding: 0rem
+$tile-padding: 0rem
+$content-padding: 1.65rem
+
+/* Colors */
+$body-background: grey
+$container-background: white
+$code-background: lightyellow
+$main-text-color: black
+$sidebar-text-color: white
+
+/* Fonts */
+$family-sans-serif: "Noto Sans", sans-serif
+$family-monospace: "Fira Mono", monospace
+$family-primary: "Noto Serif", serif
+
+/* Display oridering */
+$main-display-order: 2
+$sidebar-display-order: 1
+
+body
+    background-color: $body-background
+
+.container
+    background-color: $container-background
+
+#two-column
+    padding: $tile-padding
+
+#main
+    padding: $content-padding
+    font-family: $family-primary
+    color: $main-text-color
+    order: $main-display-order
+
+#sidebar
+    background-color: #00587A
+    color: $sidebar-text-color
+    padding: $content-padding
+    font-family: $family-primary
+    order: $sidebar-text-color
+
+#footer
+    padding: $footer-padding
+    font-family: $family-sans-serif
+
+pre
+    background-color: $code-background
+    font-family: $family-monospace
