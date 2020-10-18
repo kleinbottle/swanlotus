@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-  background-color: white;
+  background-color: #DCDCDC;
 }
 
 #two-column {
@@ -30,8 +30,18 @@ body {
 }
 
 #footer {
+  background-color: maroon;
+  color: white;
   padding: 0rem;
   font-family: "Noto Sans", sans-serif;
+}
+
+#footer a {
+  color: white;
+}
+
+#footer a:hover {
+  text-decoration: underline;
 }
 
 pre {

@@ -4,11 +4,14 @@ $tile-padding: 0rem
 $content-padding: 1.65rem
 
 /* Colors */
-$body-background: grey
-$container-background: white
-$code-background: lightyellow
+$body-background-color: grey
+$container-background-color: #DCDCDC
+$sidebar-background-color: #00587A
+$code-background-color: lightyellow
+$footer-background-color: maroon
 $main-text-color: black
 $sidebar-text-color: white
+$footer-text-color: white
 
 /* Fonts */
 $family-sans-serif: "Noto Sans", sans-serif
@@ -20,10 +23,10 @@ $main-display-order: 2
 $sidebar-display-order: 1
 
 body
-    background-color: $body-background
+    background-color: $body-background-color
 
 .container
-    background-color: $container-background
+    background-color: $container-background-color
 
 #two-column
     padding: $tile-padding
@@ -35,16 +38,24 @@ body
     order: $main-display-order
 
 #sidebar
-    background-color: #00587A
+    background-color: $sidebar-background-color
     color: $sidebar-text-color
     padding: $content-padding
     font-family: $family-primary
     order: $sidebar-text-color
 
 #footer
+    background-color: $footer-background-color
+    color: $footer-text-color
     padding: $footer-padding
     font-family: $family-sans-serif
 
+#footer a
+    color: white
+
+#footer a:hover
+    text-decoration: underline
+
 pre
-    background-color: $code-background
+    background-color: $code-background-color
     font-family: $family-monospace
