@@ -8,7 +8,6 @@ body {
 
 .container {
   background-color: #DCDCDC;
-  padding-bottom: 0em;
 }
 
 .navbar {
@@ -27,6 +26,7 @@ body {
 
 #main {
   padding: 1.65rem;
+  padding-bottom: 0em;
   font-family: "Noto Serif", serif;
   color: black;
   order: 2;
