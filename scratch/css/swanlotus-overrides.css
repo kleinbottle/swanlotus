@@ -40,10 +40,12 @@ body {
 }
 
 #footer {
-  background-color: grey;
+  background-color: maroon;
   color: white;
   padding: 0rem;
   font-family: "Noto Sans", sans-serif;
+  margin-right: -1.1em;
+  margin-left: -1.1em;
 }
 
 #footer p {
