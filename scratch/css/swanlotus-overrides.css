@@ -11,8 +11,7 @@ body {
 }
 
 .navbar {
-  background: linear-gradient(#006D97, #00587A);
-  /* background-color: $navbar-background-color */
+  background-color: grey;
 }
 
 .navbar .navbar-brand img {
@@ -33,7 +32,7 @@ body {
 }
 
 #sidebar {
-  background-color: #00587A;
+  background-color: grey;
   color: white;
   padding: 1.65rem;
   font-family: "Noto Serif", serif;
