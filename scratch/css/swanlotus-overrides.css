@@ -12,7 +12,13 @@ body {
 
 .navbar {
   background: linear-gradient(#006D97, #00587A);
-  # background-color: #006D97;
+  /* background-color: $navbar-background-color */
+}
+
+.navbar .navbar-brand img {
+  margin-left: 1.65rem;
+  width: 100%;
+  height: auto;
 }
 
 #two-column {
