@@ -8,6 +8,7 @@ body {
 
 .container {
   background-color: #DCDCDC;
+  padding-bottom: 0em;
 }
 
 .navbar {
@@ -44,8 +45,6 @@ body {
   color: white;
   padding: 0rem;
   font-family: "Noto Sans", sans-serif;
-  margin-right: -1.1em;
-  margin-left: -1.1em;
 }
 
 #footer p {
