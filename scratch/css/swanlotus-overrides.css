@@ -11,7 +11,8 @@ body {
 }
 
 .navbar {
-  background-color: #bbb;
+  background: linear-gradient(#006D97, #00587A);
+  # background-color: #006D97;
 }
 
 #two-column {
