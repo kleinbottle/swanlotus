@@ -10,6 +10,10 @@ body {
   background-color: #DCDCDC;
 }
 
+.navbar {
+  background-color: #bbb;
+}
+
 #two-column {
   padding: 0rem;
 }
@@ -36,6 +40,10 @@ body {
   font-family: "Noto Sans", sans-serif;
 }
 
+#footer p {
+  font-size: small;
+}
+
 #footer a {
   color: white;
 }
@@ -53,7 +61,7 @@ code {
   background-color: transparent;
 }
 
-img {
+#main img {
   padding-top: 1em;
   padding-bottom: 1.5em;
   display: block;
@@ -64,7 +72,7 @@ img {
 }
 
 /* For captions */
-figure {
+#main figure {
   text-align: center;
   font-size: smaller;
   font-family: "Source Sans Pro", "Noto Sans", sans-serif;

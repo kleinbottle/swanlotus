@@ -11,6 +11,7 @@ $container-background-color: #DCDCDC
 $sidebar-background-color: #00587A
 $code-background-color: lightyellow
 $footer-background-color: maroon
+$navbar-background-color: #bbb
 $main-text-color: black
 $sidebar-text-color: white
 $footer-text-color: white
@@ -30,6 +31,9 @@ body
 
 .container
     background-color: $container-background-color
+
+.navbar
+    background-color: $navbar-background-color
 
 #two-column
     padding: $tile-padding
@@ -53,6 +57,9 @@ body
     padding: $footer-padding
     font-family: $family-sans-serif
 
+#footer p
+    font-size: small
+
 #footer a
     color: white
 
@@ -66,7 +73,7 @@ pre
 code
     background-color: transparent
 
-img
+#main img
     padding-top: $img-padding-top
     padding-bottom: $img-padding-bottom
     display: block
@@ -76,7 +83,7 @@ img
     max-width: 90%
 
 /* For captions */
-figure
+#main figure
     text-align: center
     font-size: smaller
     font-family: $family-figcaption
