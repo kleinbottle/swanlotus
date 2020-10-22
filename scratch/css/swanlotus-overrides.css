@@ -1,6 +1,8 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono&family=Noto+Sans&family=Noto+Serif&family=Source+Sans+Pro&display=swap");
 /*! bulma.io v0.9.1 | MIT License | github.com/jgthms/bulma */
 /* Bulma Utilities */
+@import "../css/pandoc.css";
 @keyframes spinAround {
   from {
     transform: rotate(0deg);
@@ -10130,6 +10132,10 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 
 /* Paddings */
+/* Background Colors */
+/* Fonts */
+/* Paddings */
+/* Colors */
 body {
   background-color: #7a7a7a;
 }
@@ -10151,13 +10157,22 @@ body {
 }
 
 pre {
-  background-color: #303030;
+  background-color: #363636;
   color: #dbdbdb;
 }
 
 code {
   background-color: transparent;
   color: #947600;
+  padding: 0rem;
+}
+
+a {
+  color: #1d72aa;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .footer {
@@ -10166,6 +10181,12 @@ code {
   font-family: "Noto Sans", sans-serif;
   font-size: 0.75rem;
   padding: 0rem;
+}
+
+#main figure figcaption {
+  font-family: "Noto Sans", sans-serif;
+  font-style: normal;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=swanlotus-overrides.css.map */

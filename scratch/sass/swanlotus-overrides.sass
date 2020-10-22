@@ -1,5 +1,7 @@
 @charset "utf-8"
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&family=Noto+Sans&family=Noto+Serif&family=Source+Sans+Pro&display=swap')
 @import "bulma/bulma.sass"
+@import "../css/pandoc.css"
 
 /* Paddings */
 // $footer-padding: 0rem
@@ -31,13 +33,21 @@
 // $main-display-order: 2
 // $sidebar-display-order: 1
 
+/* Background Colors */
+$pre-background: $grey-darker
 $body-background-color: $grey
-$pre-background: hsl(0, 0, 19)
-$code-block-text: $grey-lighter
 
+/* Fonts */
 $body-family: "Noto Serif", serif
 $family-secondary: "Noto Sans", sans-serif
 $family-code: "Fira Mono", monospace
+
+/* Paddings */
+$code-padding: 0rem
+
+/* Colors */
+$code-block-text: $grey-lighter
+
 
 body
     background-color: $body-background-color
@@ -63,6 +73,13 @@ pre
 code
     background-color: transparent
     color: $warning-dark
+    padding: $code-padding
+
+a
+    color: $info-dark
+
+a:hover
+    text-decoration: underline
 
 .footer
     background-color: $danger-light
@@ -70,6 +87,11 @@ code
     font-family: $family-secondary
     font-size: $size-7
     padding: 0rem
+
+#main figure figcaption
+    font-family: $family-secondary
+    font-style: normal
+    font-size: $size-normal
 
 // .container
 //     background-color: $container-background-color
