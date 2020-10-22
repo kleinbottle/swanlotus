@@ -10131,7 +10131,6 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding: 3rem 1.5rem 6rem;
 }
 
-/* Paddings */
 /* Background Colors */
 /* Fonts */
 /* Paddings */
@@ -10175,7 +10174,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.footer {
+footer {
   background-color: #feecf0;
   color: #0a0a0a;
   font-family: "Noto Sans", sans-serif;
@@ -10188,5 +10187,3 @@ a:hover {
   font-style: normal;
   font-size: smaller;
 }
-
-/*# sourceMappingURL=swanlotus-overrides.css.map */
