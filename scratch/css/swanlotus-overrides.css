@@ -10184,9 +10184,9 @@ a:hover {
 }
 
 #main figure figcaption {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Source Sans Pro", "Noto Sans", sans-serif;
   font-style: normal;
-  font-size: 1rem;
+  font-size: smaller;
 }
 
 /*# sourceMappingURL=swanlotus-overrides.css.map */
