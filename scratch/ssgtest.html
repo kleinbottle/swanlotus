@@ -40,7 +40,7 @@
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co"># Defaults for generating HTML5 from Markdown using pandoc</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="co"># using the Pelican Pandoc Reader plugin</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co"># </span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="fu">reader</span><span class="kw">:</span><span class="at"> markdown+smart+citations+implicit_figures</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="fu">reader</span><span class="kw">:</span><span class="at"> markdown+smart+citations+implicit_figures+subscript+superscript</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="fu">writer</span><span class="kw">:</span><span class="at"> html5</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="fu">standalone</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="fu">self-contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
@@ -119,6 +119,32 @@ BA = \left[\begin{matrix}3 &amp; 4\\1 &amp; 2\end{matrix}\right]\left[\begin{mat
 <div class="line-block">எண்ணென்ப ஏனை எழுத்தென்ப இவ்விரண்டும்<br />
 கண்ணென்ப வாழும் உயிர்க்கு</div>
 <p>திருவள்ளுவர், திருக்குறள், 40:391—392</p>
+<h1 id="tables">Tables</h1>
+<p>Pandoc supports many types of tables.</p>
+<p>This table is more a tabulation than a table because it has no rules.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Compound</th>
+<th>Chemical Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Calcium Carbonate</td>
+<td>CaCO<sub>3</sub></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sodium Chloride</td>
+<td>NaCl</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Potassium Permanganate</td>
+<td>KMnO<sub>4</sub></td>
+</tr>
+</tbody>
+</table>
+<p>This table has horizontal rules:</p>
                 <footer class="footer">
                     <div class="content has-text-centered">
                         <p>Copyright &copy; 2010 &mdash;
