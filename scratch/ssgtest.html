@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SwanLotus Bulma Test</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
-
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"> -->
     <!--Speeds up loading of Google Fonts-->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -23,6 +21,7 @@
 
     <!--Custom stylesheets-->
     <link rel="stylesheet" href="css/swanlotus-overrides.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
 
     <!--MathJax-->
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
@@ -33,14 +32,7 @@
 
 <body>
     <div class="container">
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="/">
-                    <img src="images/swanlotus-logo.svg" alt="SwanLotus">
-                </a>
-            </div>
-        </nav>
-        <div id="two-column" class="tile is-parent has-background-grey-lighter">
+        <div id="two-column" class="tile is-parent">
             <!--Main Column-->
             <div id="main" class="tile is-child is-9 is-size-7-mobile is-size-5-tablet is-size-4-desktop content">
 <h1 id="preamble">Preamble</h1>
@@ -145,7 +137,7 @@ BA = \left[\begin{matrix}3 &amp; 4\\1 &amp; 2\end{matrix}\right]\left[\begin{mat
                 </footer>
             </div>
             <!--Side Column-->
-            <div id="sidebar" class="tile is-child is-3 has-background-info-dark">
+            <div id="sidebar" class="tile is-child is-3">
                 <h3 class="has-text-weight-bold">Recent Posts</h3>
                 <ul>
                     <li>Post 1</li>

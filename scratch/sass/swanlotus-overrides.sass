@@ -1,0 +1,140 @@
+@charset "utf-8"
+@import "bulma/bulma.sass"
+
+/* Paddings */
+// $footer-padding: 0rem
+// $tile-padding: 0rem
+// $content-padding: 1.65rem
+// $img-padding-top: 1.0em
+// $img-padding-bottom: 1.5em
+
+// /* Background Colors */
+// $body-background-color: grey
+// $container-background-color: #DCDCDC
+// $code-background-color: #303030
+// $footer-background-color: hsl(347, 90%, 96%)
+// $navbar-background-color: grey
+
+// /* Text Foreground Colors */
+// $main-text-color: black
+// $sidebar-text-color: white
+// $footer-text-color: black
+// $codeblock-text-color: #CCCCCC
+
+// /* Fonts */
+// $family-sans-serif: "Noto Sans", sans-serif
+// $family-monospace: "Fira Mono", monospace
+// $family-primary: "Noto Serif", serif
+// $family-figcaption: "Source Sans Pro", "Noto Sans", sans-serif
+
+// /* Display ordering */
+// $main-display-order: 2
+// $sidebar-display-order: 1
+
+$body-background-color: $grey
+$pre-background: hsl(0, 0, 19)
+$code-block-text: $grey-lighter
+
+$body-family: "Noto Serif", serif
+$family-secondary: "Noto Sans", sans-serif
+$family-code: "Fira Mono", monospace
+
+body
+    background-color: $body-background-color
+
+#main
+    background-color: $grey-lighter
+    color: $black
+    font-family: $body-family
+    padding: 1.65rem
+    order: 2
+
+#sidebar
+    background-color: $info-dark
+    color: $white
+    font-family: $body-family
+    padding: 1.65rem
+    order: 1
+
+pre
+    background-color: $pre-background
+    color: $code-block-text
+
+code
+    background-color: transparent
+    color: $warning-dark
+
+.footer
+    background-color: $danger-light
+    color: $black
+    font-family: $family-secondary
+    font-size: $size-7
+    padding: 0rem
+
+// .container
+//     background-color: $container-background-color
+
+// .navbar
+//     background-color: $navbar-background-color
+
+// .navbar .navbar-brand img
+//     margin-left: 1.65rem
+//     width: 100%
+//     height: auto
+
+// #two-column
+//     padding: $tile-padding
+
+// #main
+//     padding: $content-padding
+//     padding-bottom: 0em
+//     font-family: $family-primary
+//     background-color: map.get($shades, "grey-lighter")
+//     color: $main-text-color
+//     order: $main-display-order
+
+// #sidebar
+//     // background-color: $sidebar-background-color
+//     color: $sidebar-text-color
+//     padding: $content-padding
+//     font-family: $family-primary
+//     order: $sidebar-text-color
+
+// #footer
+//     background-color: $footer-background-color
+//     color: $footer-text-color
+//     padding: $footer-padding
+//     font-family: $family-sans-serif
+
+// #footer p
+//     font-size: small
+
+// #footer a
+//     color: black
+
+// #footer a:hover
+//     text-decoration: underline
+
+// pre
+//     background-color: $code-background-color
+//     color: $codeblock-text-color
+//     font-family: $family-monospace
+
+// code
+//     background-color: transparent
+//     color: hsl(48, 100%, 29%)
+
+// #main img
+//     padding-top: $img-padding-top
+//     padding-bottom: $img-padding-bottom
+//     display: block
+//     margin-left: auto
+//     margin-right: auto
+//     min-width: 50%
+//     max-width: 90%
+
+// /* For captions */
+// #main figure
+//     text-align: center
+//     font-size: smaller
+//     font-family: $family-figcaption
