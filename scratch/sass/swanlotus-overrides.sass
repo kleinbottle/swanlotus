@@ -13,7 +13,8 @@ $family-secondary: "Noto Sans", sans-serif
 $family-code: "Fira Mono", monospace
 
 /* Paddings */
-$code-padding: 0rem
+$code-padding: 0em
+$table-cell-padding: 0 1em 0 0
 
 /* Colors */
 $code-block-text: $grey-lighter
@@ -25,14 +26,14 @@ body
     background-color: $grey-lighter
     color: $black
     font-family: $body-family
-    padding: 1.65rem
+    padding: 1.65em
     order: 2
 
 #sidebar
     background-color: $info-dark
     color: $white
     font-family: $body-family
-    padding: 1.65rem
+    padding: 1.65em
     order: 1
 
 pre
@@ -55,9 +56,19 @@ a:hover
     color: $black
     font-family: $family-secondary
     font-size: $size-7
-    padding: 0rem
+    padding: 0em
 
 #main figure figcaption
     font-family: "Source Sans Pro", "Noto Sans", sans-serif
     font-style: normal
     font-size: smaller
+
+.content table
+    margin: 0 auto
+    width: 75%
+
+.content table th, .content table td
+    padding: $table-cell-padding
+
+th
+    font-weight: bold

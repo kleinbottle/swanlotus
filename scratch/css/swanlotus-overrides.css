@@ -10143,7 +10143,7 @@ body {
   background-color: #dbdbdb;
   color: #0a0a0a;
   font-family: "Noto Serif", serif;
-  padding: 1.65rem;
+  padding: 1.65em;
   order: 2;
 }
 
@@ -10151,7 +10151,7 @@ body {
   background-color: #1d72aa;
   color: white;
   font-family: "Noto Serif", serif;
-  padding: 1.65rem;
+  padding: 1.65em;
   order: 1;
 }
 
@@ -10163,7 +10163,7 @@ pre {
 code {
   background-color: transparent;
   color: #947600;
-  padding: 0rem;
+  padding: 0em;
 }
 
 a {
@@ -10179,11 +10179,24 @@ a:hover {
   color: #0a0a0a;
   font-family: "Noto Sans", sans-serif;
   font-size: 0.75rem;
-  padding: 0rem;
+  padding: 0em;
 }
 
 #main figure figcaption {
   font-family: "Source Sans Pro", "Noto Sans", sans-serif;
   font-style: normal;
   font-size: smaller;
+}
+
+.content table {
+  margin: 0 auto;
+  width: 75%;
+}
+
+.content table th, .content table td {
+  padding: 0 1em 0 0;
+}
+
+th {
+  font-weight: bold;
 }
