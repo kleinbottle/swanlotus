@@ -20,7 +20,7 @@ AUTHOR_FEED_RSS = None
 
 PLUGIN_PATHS = ['plugins']
 PLUGINS = [
-    'pandoc_reader'
+    'pelican.plugins.pandoc_reader'
 ]
 
 # Blogroll

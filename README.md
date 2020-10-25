@@ -33,7 +33,7 @@ Follow the steps below to set up your development environment:
 
     ```bash
     git config --global credential.helper store
-    git pull
+    git pull --rebase
     ```
 
     You will be asked for your username and password again but they will be saved in the file `~/.git-credentials` for future use.
