@@ -1,7 +1,7 @@
 ---
 title: Static Site Generator Test Page
 author: R (Chandra) Chandrasekhar
-date: 2020-10-16 | 2020-10-21
+date: 2020-10-16
 ---
 
 # Preamble

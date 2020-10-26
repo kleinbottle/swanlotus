@@ -20,7 +20,11 @@ AUTHOR_FEED_RSS = None
 
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = [
-    "pelican/plugins/pandoc_reader"
+    "pandoc_reader"
+]
+
+PANDOC_DEFAULT_FILES = [
+    "swanlotus_html5.yaml"
 ]
 
 THEME = "theme/swanlotus"

@@ -1,0 +1,11 @@
+# swanlotus_html5.yaml
+#
+# Defaults for generating HTML5 from Markdown using pandoc
+# using the Pelican Pandoc Reader plugin
+#
+reader: markdown+smart+citations+implicit_figures+subscript+superscript
+writer: html5
+
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
