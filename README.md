@@ -8,7 +8,7 @@ The website uses the [Pelican](https://blog.getpelican.com/) static site generat
 
 Follow the steps below to set up your development environment:
 
-1. Install `pandoc` and `git`.
+1. Install [Pandoc](https://pandoc.org/MANUAL.html) and [Git](https://git-scm.com/).
 
     ```bash
     sudo pacman -Syyu
@@ -18,15 +18,15 @@ Follow the steps below to set up your development environment:
 1. Clone the `swanlotus` repository.
 
     ```bash
-    git clone https://github.com/kleinbottle/swanlotus
+    git clone https://github.com/kleinbottle/swanlotus <directory-name>
     ```
 
     You will be asked to enter your username and password to clone the repository.
 
-1. Change into the `swanlotus` directory.
+1. Change into the directory you have cloned swanlotus into.
 
     ```bash
-    cd swanlotus
+    cd <directory-name>
     ```
 
 1. Save your username and password in the git credential store and do a `git pull`.
@@ -67,8 +67,16 @@ Follow the steps below to set up your development environment:
 
 ## Viewing the Site
 
-To view the site execute the following command:
+To generate all content to HTML and start a development server execute:
 
 ```bash
-make devserver # Start a development server at http://localhost:8000
+make devserver
+```
+
+You can then navigate to http://localhost:8000 to view the site.
+
+To cleanup all generated HTML files you may execute:
+
+```bash
+make clean
 ```
