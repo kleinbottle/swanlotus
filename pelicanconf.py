@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
-AUTHOR = 'R (Chandra) Chandrasekhar'
-SITENAME = 'SwanLotus'
-SITEURL = ''
+AUTHOR = "R (Chandra) Chandrasekhar"
+SITENAME = "SwanLotus"
+SITEURL = ""
 
-PATH = 'content'
+PATH = "content"
 
-TIMEZONE = 'Asia/Kolkata'
+TIMEZONE = "Asia/Kolkata"
 
-DEFAULT_LANG = 'en'
+DEFAULT_LANG = "en"
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -18,20 +18,25 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-PLUGIN_PATHS = ['plugins']
+PLUGIN_PATHS = ["plugins"]
 PLUGINS = [
-    'pelican.plugins.pandoc_reader'
+    "pelican/plugins/pandoc_reader"
 ]
 
+THEME = "theme/swanlotus"
+THEME_STATIC_PATHS = ["static"]
+THEME_STATIC_DIR = "theme"
+CSS_FILE = "swanlotus.css"
+
 # Blogroll
-LINKS = (('Pelican', 'https://getpelican.com/'),
-         ('Python.org', 'https://www.python.org/'),
-         ('Jinja2', 'https://palletsprojects.com/p/jinja/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = (("Pelican", "https://getpelican.com/"),
+         ("Python.org", "https://www.python.org/"),
+         ("Jinja2", "https://palletsprojects.com/p/jinja/"),
+         ("You can modify those links in your config file", "#"),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (("You can add links in your config file", "#"),
+          ("Another social link", "#"),)
 
 DEFAULT_PAGINATION = 10
 
