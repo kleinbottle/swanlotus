@@ -15,7 +15,7 @@ Follow the steps below to set up your development environment:
     sudo pacman -S git pandoc
     ```
 
-1. Clone the `swanlotus` repository.
+1. Clone the swanlotus repository.
 
     ```bash
     git clone https://github.com/kleinbottle/swanlotus <directory-name>
@@ -73,7 +73,7 @@ To generate all content to HTML and start a development server execute:
 make devserver
 ```
 
-You can then navigate to http://localhost:8000 to view the site.
+You can then navigate to [localhost](http://localhost:8000) to view the site.
 
 To cleanup all generated HTML files you may execute:
 
