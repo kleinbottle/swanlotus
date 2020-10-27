@@ -4,7 +4,7 @@ author: R (Chandra) Chandrasekhar
 date: 2020-10-16
 ---
 
-# Preamble
+## Preamble
 
 This file embodies elements that need to work with [Pandoc][pandoc] and the Python-based static site generator (SSG) [Pelican][pelican] to provide fully functional [HTML5][html5], including [MathJax][mathjax] capabilities.
 
@@ -13,7 +13,7 @@ This file embodies elements that need to work with [Pandoc][pandoc] and the Pyth
 [html5]: https://html.spec.whatwg.org/
 [mathjax]: https://www.mathjax.org/
 
-# Pandoc enhanced Markdown
+## Pandoc enhanced Markdown
 
 Pandoc-enhanced Markdown is an augmented form of [Markdown][markdown] that is used to generate HTML5 or other available output formats. Eventually, it is expected that Pandoc-enhanced Markdown and [CommonMark][commonmark] will converge into a unitary format.
 
@@ -49,9 +49,9 @@ html-math-method:
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 ~~~
 
-# Mathematics
+## Mathematics
 
-## Equations
+### Equations
 
 Euler's equation, $e^{\pi i} + 1 = 0$ is often considered to be the most poetic equation in all of Mathematics.
 
@@ -67,7 +67,7 @@ $\alpha^{2} + \beta^{2} = \gamma^{2}$. Whole numbers satisfying this equation ar
 
 [pythtriples]: https://mathworld.wolfram.com/PythagoreanTriple.html
 
-## Matrices
+### Matrices
 
 Not all conformable matrices are commutative under multiplication. For example, if $A = \left[\begin{smallmatrix}1 & 2\\3 & 4\end{smallmatrix}\right]$ and $B = \left[\begin{smallmatrix}3 & 4\\1 & 2\end{smallmatrix}\right]$ direct multiplication shows that
 $$
@@ -79,11 +79,11 @@ BA = \left[\begin{matrix}3 & 4\\1 & 2\end{matrix}\right]\left[\begin{matrix}1 & 
 $$
 Clearly, $AB\neq BA$.
 
-# Graphics
+## Graphics
 
 Graphics can come in two flavours: images and scalable vector graphics. The former have a natural height and width in pixels. The latter does not have a natural height and width, but has an aspect ratio instead. Both types are investigated below.
 
-## Images
+### Images
 
 Text-rich images are better saved as PNG images, an example of which is shown below. *CSS is used to center the images and size them so:*
 
@@ -112,7 +112,7 @@ Examples of PNG images:
 
 ![Small Motivation]({static}/images/ssg-test/motivation.png){ width=50% }
 
-## Scalable Vector Graphics
+### Scalable Vector Graphics
 
 SVG is the format developed for scalable vector graphics on the Web. One example is the SwanLotus Logo itself:
 
@@ -120,9 +120,9 @@ SVG is the format developed for scalable vector graphics on the Web. One example
 
 ![Small Logo]({static}/images/ssg-test/swanlotus.svg){ width=50% }
 
-# Non-Latin Scripts
+## Non-Latin Scripts
 
-## Homeric Greek with accents
+### Homeric Greek with accents
 
 | Μῆνιν ἄειδε, θεά, Πηληϊάδεω Ἀχιλῆος
 | οὐλομένην, ἣ μυρί’ Ἀχαιοῖς ἄλγε’ ἔθηκε,
@@ -134,7 +134,7 @@ SVG is the format developed for scalable vector graphics on the Web. One example
 
 from <https://en.wikipedia.org/wiki/Homeric_Greek>
 
-## Tamil
+### Tamil
 
 | கற்க கசடறக் கற்பவை கற்றபின்\newline
 | நிற்க அதற்கு தக
@@ -144,7 +144,7 @@ from <https://en.wikipedia.org/wiki/Homeric_Greek>
 
 திருவள்ளுவர், திருக்குறள், 40:391---392
 
-# Tables
+## Tables
 
 Pandoc supports many types of tables.
 

@@ -33,9 +33,10 @@
         <div id="two-column" class="tile is-parent">
             <!--Main Column-->
             <div id="main" class="tile is-child is-9 is-size-7-mobile is-size-5-tablet is-size-4-desktop content">
-  <h1 id="preamble">Preamble</h1>
+  <h1 id="static-site-generator-test-page">Static Site Generator Test Page</h1>
+<h2 id="preamble">Preamble</h2>
 <p>This file embodies elements that need to work with <a href="https://pandoc.org/">Pandoc</a> and the Python-based static site generator (SSG) <a href="https://blog.getpelican.com/">Pelican</a> to provide fully functional <a href="https://html.spec.whatwg.org/">HTML5</a>, including <a href="https://www.mathjax.org/">MathJax</a> capabilities.</p>
-<h1 id="pandoc-enhanced-markdown">Pandoc enhanced Markdown</h1>
+<h2 id="pandoc-enhanced-markdown">Pandoc enhanced Markdown</h2>
 <p>Pandoc-enhanced Markdown is an augmented form of <a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a> that is used to generate HTML5 or other available output formats. Eventually, it is expected that Pandoc-enhanced Markdown and <a href="https://commonmark.org/">CommonMark</a> will converge into a unitary format.</p>
 <p>Pandoc is an actively developed, increasingly popular, and rapidly changing format translator. At present, command line options for format conversion may also be passed as a <a href="https://yaml.org/">YAML</a> header at the top of a Pandoc-enhanced Markdown file or may be stashed away in a default file residing in the <code>$HOME/.pandoc/defaults</code> directory of the user.</p>
 <p>My specific defaults file is as follows:</p>
@@ -59,22 +60,22 @@
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a><span class="fu">html-math-method</span><span class="kw">:</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a><span class="at">  </span><span class="fu">method</span><span class="kw">:</span><span class="at"> mathjax</span></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a><span class="at">  </span><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&quot;</span></span></code></pre></div>
-<h1 id="mathematics">Mathematics</h1>
-<h2 id="equations">Equations</h2>
+<h2 id="mathematics">Mathematics</h2>
+<h3 id="equations">Equations</h3>
 <p>Euler’s equation, <span class="math inline">\(e^{\pi i} + 1 = 0\)</span> is often considered to be the most poetic equation in all of Mathematics.</p>
 <p>Infinite series are also fascinating because, in a manner of speaking, they suggest that “infinity is where the rationals and the irrationals meet”. For example, the <a href="https://en.wikipedia.org/wiki/Madhava_series">Madhava series</a> for <span class="math inline">\(\frac{\pi}{4}\)</span> is: <span class="math display">\[
 \frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots
 \]</span></p>
 <p>Pythagoras’s theorem may be expressed using Greek letters so: <span class="math inline">\(\alpha^{2} + \beta^{2} = \gamma^{2}\)</span>. Whole numbers satisfying this equation are called <a href="https://mathworld.wolfram.com/PythagoreanTriple.html">Pythagorean triples</a></p>
-<h2 id="matrices">Matrices</h2>
+<h3 id="matrices">Matrices</h3>
 <p>Not all conformable matrices are commutative under multiplication. For example, if <span class="math inline">\(A = \left[\begin{smallmatrix}1 &amp; 2\\3 &amp; 4\end{smallmatrix}\right]\)</span> and <span class="math inline">\(B = \left[\begin{smallmatrix}3 &amp; 4\\1 &amp; 2\end{smallmatrix}\right]\)</span> direct multiplication shows that <span class="math display">\[
 AB = \left[\begin{matrix}1 &amp; 2\\3 &amp; 4\end{matrix}\right]\left[\begin{matrix}3 &amp; 4\\1 &amp; 2\end{matrix}\right] = \left[\begin{matrix}5 &amp; 8\\13 &amp; 20\end{matrix}\right]
 \]</span> whereas <span class="math display">\[
 BA = \left[\begin{matrix}3 &amp; 4\\1 &amp; 2\end{matrix}\right]\left[\begin{matrix}1 &amp; 2\\3 &amp; 4\end{matrix}\right] = \left[\begin{matrix}15 &amp; 22\\7 &amp; 10\end{matrix}\right]
 \]</span> Clearly, <span class="math inline">\(AB\neq BA\)</span>.</p>
-<h1 id="graphics">Graphics</h1>
+<h2 id="graphics">Graphics</h2>
 <p>Graphics can come in two flavours: images and scalable vector graphics. The former have a natural height and width in pixels. The latter does not have a natural height and width, but has an aspect ratio instead. Both types are investigated below.</p>
-<h2 id="images">Images</h2>
+<h3 id="images">Images</h3>
 <p>Text-rich images are better saved as PNG images, an example of which is shown below. <em>CSS is used to center the images and size them so:</em></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>img {</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="kw">padding-top</span>: <span class="dv">1.0</span><span class="dt">em</span><span class="op">;</span></span>
@@ -99,7 +100,7 @@ BA = \left[\begin{matrix}3 &amp; 4\\1 &amp; 2\end{matrix}\right]\left[\begin{mat
 <figure>
 <img src="/images/ssg-test/motivation.png" style="width:50.0%" alt="Small Motivation" /><figcaption aria-hidden="true">Small Motivation</figcaption>
 </figure>
-<h2 id="scalable-vector-graphics">Scalable Vector Graphics</h2>
+<h3 id="scalable-vector-graphics">Scalable Vector Graphics</h3>
 <p>SVG is the format developed for scalable vector graphics on the Web. One example is the SwanLotus Logo itself:</p>
 <figure>
 <img src="/images/ssg-test/swanlotus.svg" style="width:90.0%" alt="Large Logo" /><figcaption aria-hidden="true">Large Logo</figcaption>
@@ -107,8 +108,8 @@ BA = \left[\begin{matrix}3 &amp; 4\\1 &amp; 2\end{matrix}\right]\left[\begin{mat
 <figure>
 <img src="/images/ssg-test/swanlotus.svg" style="width:50.0%" alt="Small Logo" /><figcaption aria-hidden="true">Small Logo</figcaption>
 </figure>
-<h1 id="non-latin-scripts">Non-Latin Scripts</h1>
-<h2 id="homeric-greek-with-accents">Homeric Greek with accents</h2>
+<h2 id="non-latin-scripts">Non-Latin Scripts</h2>
+<h3 id="homeric-greek-with-accents">Homeric Greek with accents</h3>
 <div class="line-block">Μῆνιν ἄειδε, θεά, Πηληϊάδεω Ἀχιλῆος<br />
 οὐλομένην, ἣ μυρί’ Ἀχαιοῖς ἄλγε’ ἔθηκε,<br />
 πολλὰς δ’ ἰφθίμους ψυχὰς Ἄϊδι προΐαψεν<br />
@@ -117,13 +118,13 @@ BA = \left[\begin{matrix}3 &amp; 4\\1 &amp; 2\end{matrix}\right]\left[\begin{mat
 ἐξ οὗ δὴ τὰ πρῶτα διαστήτην ἐρίσαντε<br />
 Ἀτρεΐδης τε ἄναξ ἀνδρῶν καὶ δῖος Ἀχιλλεύς.</div>
 <p>from <a href="https://en.wikipedia.org/wiki/Homeric_Greek" class="uri">https://en.wikipedia.org/wiki/Homeric_Greek</a></p>
-<h2 id="tamil">Tamil</h2>
+<h3 id="tamil">Tamil</h3>
 <div class="line-block">கற்க கசடறக் கற்பவை கற்றபின்<br />
 நிற்க அதற்கு தக</div>
 <div class="line-block">எண்ணென்ப ஏனை எழுத்தென்ப இவ்விரண்டும்<br />
 கண்ணென்ப வாழும் உயிர்க்கு</div>
 <p>திருவள்ளுவர், திருக்குறள், 40:391—392</p>
-<h1 id="tables">Tables</h1>
+<h2 id="tables">Tables</h2>
 <p>Pandoc supports many types of tables.</p>
 <p>This table is more a tabulation than a table because it has no rules.</p>
 <table>
