@@ -1240,6 +1240,15 @@ body {
   order: 1;
 }
 
+.content h1:not(:first-child) {
+  margin-top: 0em;
+}
+
+#date {
+  font-size: 0.75rem;
+  font-family: "Noto Sans", sans-serif;
+}
+
 pre {
   background-color: #363636;
   color: #dbdbdb;
