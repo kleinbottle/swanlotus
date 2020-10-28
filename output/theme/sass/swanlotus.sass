@@ -1,5 +1,9 @@
 @charset "utf-8"
-@import "pandoc.scss"
+
+/* Zenburn Code Styles */
+@import "zenburn.scss"
+
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&family=Noto+Sans&family=Noto+Serif&family=Source+Sans+Pro&display=swap')
 
 /* Fonts */
@@ -11,6 +15,7 @@ $family-code: "Fira Mono", monospace
 $code-padding: 0em
 $table-cell-padding: 0 1em 0 0
 
+/* Bulma Styles */
 @import "../bulma-0.9.1/sass/utilities/_all.sass"
 @import "../bulma-0.9.1/sass/base/_all.sass"
 @import "../bulma-0.9.1/sass/elements/container.sass"
@@ -23,12 +28,14 @@ $table-cell-padding: 0 1em 0 0
 $pre-background: $grey-darker
 $body-background-color: $grey
 
-/* Colors */
+/* Foreground Colors */
 $code-block-text: $grey-lighter
 
+/* Set Background for body tag */
 body
     background-color: $body-background-color
 
+/* Styles for main column */
 #main
     background-color: $grey-lighter
     color: $black
@@ -36,6 +43,7 @@ body
     padding: 1.65em
     order: 2
 
+/* Styles for sidebar */
 #sidebar
     background-color: $info-dark
     color: $white
@@ -43,6 +51,7 @@ body
     padding: 1.65em
     order: 1
 
+/* Styles for code blocks */
 pre
     background-color: $pre-background
     color: $code-block-text
@@ -52,49 +61,48 @@ code
     color: $warning-dark
     padding: $code-padding
 
+/* Styles for links */
 a
     color: $info-dark
 
 a:hover
     text-decoration: underline
 
+/* Styles for article footer */
 .content .article-footer
     font-family: $family-secondary
-    font-style: italic
-    font-size: smaller
+    font-size: $size-7
     margin-top: 2em
     margin-bottom: 0.5em
-
-.author-info
-    float: left
-
-.author-info img
-    float: left
-    margin-left: 0.2em
-
-.author-info p
-    font-style: italic
-    font-size: $size-7
-    font-family: $family-secondary
 
 .content .article-footer p
     margin-bottom: 0em
 
-.footer
-    background-color: $warning-light
-    color: $black
-    font-family: $family-secondary
-    font-size: $size-7
-    padding: 0em
+.content .article-footer p:first-child
+    float: left
 
-#main figure figcaption
+.content .article-footer p:last-child
+    float: right
+
+/* Styles for figures */
+.content figure figcaption
     font-family: "Source Sans Pro", "Noto Sans", sans-serif
     font-style: normal
     font-size: smaller
 
+/* Styles for tables */
 .content table
     margin: 0 auto
     width: 75%
 
 .content table th, .content table td
     padding: $table-cell-padding
+
+/* Styles for footer */
+.footer
+    background-color: $warning-light
+    clear: both
+    color: $black
+    font-family: $family-secondary
+    font-size: $size-7
+    padding: 0em
