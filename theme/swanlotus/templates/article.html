@@ -18,4 +18,7 @@
 {% block content %}
   <span id=date>Published on: {{ article.locale_date }}</span>
   {{ article.content }}
+  <div id="author-box">
+    <img id="avatar" src="{{ SITE_URL }}/images/avatar.jpg" width=48 height=48 />
+  </div>
 {% endblock %}

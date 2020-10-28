@@ -1249,6 +1249,13 @@ body {
   font-family: "Noto Sans", sans-serif;
 }
 
+#author-box {
+  background-color: #fffbeb;
+  width: 50%;
+  font-size: 0.75rem;
+  margin-bottom: 1em;
+}
+
 pre {
   background-color: #363636;
   color: #dbdbdb;
