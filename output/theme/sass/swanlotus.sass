@@ -43,20 +43,6 @@ body
     padding: 1.65em
     order: 1
 
-
-.content h1:not(:first-child)
-    margin-top: 0em
-
-#date
-    font-size: $size-7
-    font-family: $family-secondary
-
-#author-box
-    background-color: $warning-light
-    width: 50%
-    font-size: $size-7
-    margin-bottom: 1em
-
 pre
     background-color: $pre-background
     color: $code-block-text
@@ -72,8 +58,30 @@ a
 a:hover
     text-decoration: underline
 
+.content .article-footer
+    font-family: $family-secondary
+    font-style: italic
+    font-size: smaller
+    margin-top: 2em
+    margin-bottom: 0.5em
+
+.author-info
+    float: left
+
+.author-info img
+    float: left
+    margin-left: 0.2em
+
+.author-info p
+    font-style: italic
+    font-size: $size-7
+    font-family: $family-secondary
+
+.content .article-footer p
+    margin-bottom: 0em
+
 .footer
-    background-color: $danger-light
+    background-color: $warning-light
     color: $black
     font-family: $family-secondary
     font-size: $size-7

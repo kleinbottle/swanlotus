@@ -1240,22 +1240,6 @@ body {
   order: 1;
 }
 
-.content h1:not(:first-child) {
-  margin-top: 0em;
-}
-
-#date {
-  font-size: 0.75rem;
-  font-family: "Noto Sans", sans-serif;
-}
-
-#author-box {
-  background-color: #fffbeb;
-  width: 50%;
-  font-size: 0.75rem;
-  margin-bottom: 1em;
-}
-
 pre {
   background-color: #363636;
   color: #dbdbdb;
@@ -1275,8 +1259,35 @@ a:hover {
   text-decoration: underline;
 }
 
+.content .article-footer {
+  font-family: "Noto Sans", sans-serif;
+  font-style: italic;
+  font-size: smaller;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+.author-info {
+  float: left;
+}
+
+.author-info img {
+  float: left;
+  margin-left: 0.2em;
+}
+
+.author-info p {
+  font-style: italic;
+  font-size: 0.75rem;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.content .article-footer p {
+  margin-bottom: 0em;
+}
+
 .footer {
-  background-color: #feecf0;
+  background-color: #fffbeb;
   color: #0a0a0a;
   font-family: "Noto Sans", sans-serif;
   font-size: 0.75rem;

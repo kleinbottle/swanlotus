@@ -3,6 +3,7 @@ title: Bushido is Good For You
 author: R (Chandra) Chandrasekhar
 category: test
 date: 2017-11-17
+modified: 2020-08-18
 ---
 Pythagoras sat under a tree when an apple fell to the ground, striking
 his head on the way. Old Pythagoras saw stars and exclaimed

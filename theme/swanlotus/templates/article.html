@@ -16,9 +16,9 @@
 {% endblock %}
 
 {% block content %}
-  <span id=date>Published on: {{ article.locale_date }}</span>
   {{ article.content }}
-  <div id="author-box">
-    <img id="avatar" src="{{ SITE_URL }}/images/avatar.jpg" width=48 height=48 />
+  <div class="article-footer">
+    <p>First Written: {{ article.locale_date }}</p>
+    <p>Last Modified: {{article.locale_modified }}</p>
   </div>
 {% endblock %}
