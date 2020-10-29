@@ -1283,15 +1283,15 @@ a:hover {
   margin-bottom: 0.5em;
 }
 
-.content .article-footer p {
+.content .article-footer time {
   margin-bottom: 0em;
 }
 
-.content .article-footer p:first-child {
+.content .article-footer time:first-child {
   float: left;
 }
 
-.content .article-footer p:last-child {
+.content .article-footer time:last-child {
   float: right;
 }
 
