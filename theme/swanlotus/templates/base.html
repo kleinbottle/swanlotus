@@ -29,6 +29,38 @@
 </head>
 <body>
     <div class="container">
+        <!--Navigation Bar-->
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="{{ SITEURL }}">
+                    <img src="{{ SITEURL }}/images/swanlotus-brand.svg" alt="SwanLotus">
+                </a>
+
+                <!--Collapsed menu for small screens-->
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                  <a class="navbar-item">
+                    Home
+                  </a>
+                  <a class="navbar-item">
+                    Secrets of Academic Success
+                  </a>
+                  <a class="navbar-item">
+                    Blogs
+                  </a>
+                  <a class="navbar-item">
+                    Slogs
+                  </a>
+                </div>
+                <div class="navbar-end"></div>
+            </div>
+        </nav>
         <div id="two-column" class="tile is-parent">
             <!--Main Column-->
             <div id="main" class="tile is-child is-9 is-size-7-mobile is-size-5-tablet is-size-4-desktop content">

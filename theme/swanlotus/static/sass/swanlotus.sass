@@ -19,6 +19,7 @@ $table-cell-padding: 0 1em 0 0
 @import "../bulma-0.9.1/sass/utilities/_all.sass"
 @import "../bulma-0.9.1/sass/base/_all.sass"
 @import "../bulma-0.9.1/sass/elements/container.sass"
+@import "../bulma-0.9.1/sass/components/navbar.sass"
 @import "../bulma-0.9.1/sass/elements/content.sass"
 @import "../bulma-0.9.1/sass/helpers/typography.sass"
 @import "../bulma-0.9.1/sass/grid/tiles.sass"
@@ -34,6 +35,25 @@ $code-block-text: $grey-lighter
 /* Set Background for body tag */
 body
     background-color: $body-background-color
+
+nav.navbar
+    background-color: $grey-dark
+    margin: 0 0.75em
+    padding: 0em
+
+.navbar-item img
+    max-height: 4em
+
+nav.navbar a
+    color: $white
+    font-family: $family-secondary
+
+nav.navbar a:hover
+    background-color: transparent
+    color: $white
+
+#two-column
+    padding: 0 0.75em
 
 /* Styles for main column */
 #main
