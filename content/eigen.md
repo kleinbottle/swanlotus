@@ -695,7 +695,7 @@ problem.
 
 One general hypothesis that we could examine is whether it is generally
 true that the normalized eigenvector associated with an eigenvalue of
-$$1$$ does indeed represent the steady state of the system represented by
+$1$ does indeed represent the steady state of the system represented by
 any transition matrix. If so, we would have a theorem on our hands.
 
 A PDF version of this article is [available for download
