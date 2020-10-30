@@ -19,10 +19,10 @@
   {{ article.content }}
   <div class="article-footer">
     {% if article.date %}
-      <time datetime="{{ article.date.isoformat() }}">First Written: {{ article.locale_date }}</time>
+      <time  class="first-written" datetime="{{ article.date.isoformat() }}">First Written: {{ article.locale_date }}</time>
     {% endif %}
     {% if article.modified %}
-      <time datetime="{{ article.modified.isoformat() }}">Last Modified: {{article.locale_modified }}</time>
+      <time class="last-modified" datetime="{{ article.modified.isoformat() }}">Last Modified: {{article.locale_modified }}</time>
     {% endif %}
   </div>
 {% endblock %}
