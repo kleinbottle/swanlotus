@@ -246,7 +246,9 @@ code span.wa {
 }
 
 /* Warning */
-/* Google Fonts */
+/* Noto Serif */
+/* Source Sans Pro */
+/* Fira Mono */
 /* Fonts */
 /* Paddings */
 /* Bulma Styles */
@@ -2319,6 +2321,7 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Styles for blog index */
 .content ol#post-list {
   list-style-type: none;
 }
