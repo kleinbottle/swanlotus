@@ -2271,6 +2271,7 @@ nav.navbar {
 nav.navbar a {
   color: white;
   font-family: "Source Sans Pro", sans-serif;
+  font-size: larger;
 }
 
 nav.navbar a:hover {
