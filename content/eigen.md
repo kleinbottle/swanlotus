@@ -23,7 +23,7 @@ their
 [importance](http://math.stackexchange.com/questions/23312/what-is-the-importance-of-eigenvalues-eigenvectors).
 
 I then asked, “Can I explain eigenvalues, eigenvectors, and their
-importance to *myself?*”. It also occurred to me that the harried and
+importance to _myself?*”_. It also occurred to me that the harried and
 hurried students of today might derive some benefit from my efforts;
 hence this blog. It is a brief, largely qualitative, and mathematically
 non-rigorous article on eigenvalues and eigenvectors that aims to
