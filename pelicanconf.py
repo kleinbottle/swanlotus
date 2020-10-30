@@ -37,6 +37,12 @@ CSS_FILE = "swanlotus.css"
 
 INDEX_SAVE_AS = 'blog.html'
 
+MENUITEMS = (
+    ("Home", "index.html"),
+    ("Secrets of Academic Success", "sas.html"),
+    ("Blogs", "blog.html")
+)
+
 # Blogroll
 LINKS = (("Pelican", "https://getpelican.com/"),
          ("Python.org", "https://www.python.org/"),
@@ -47,7 +53,7 @@ LINKS = (("Pelican", "https://getpelican.com/"),
 SOCIAL = (("You can add links in your config file", "#"),
           ("Another social link", "#"),)
 
-DEFAULT_PAGINATION = 1
+DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
