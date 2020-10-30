@@ -1,5 +1,5 @@
 ---
-title: Peacock in Mid Flight
+title: A Peacock in Mid Flight
 author: "R (Chandra) Chandrasekhar"
 date: 2019-11-17
 ---
