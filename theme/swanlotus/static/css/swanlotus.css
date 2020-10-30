@@ -2250,7 +2250,7 @@ body.has-spaced-navbar-fixed-bottom {
 /* Background Colors */
 /* Foreground Colors */
 /* Set Background for body tag */
-body {
+html {
   background-color: #7a7a7a;
 }
 

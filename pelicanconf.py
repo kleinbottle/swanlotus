@@ -28,10 +28,14 @@ PANDOC_DEFAULT_FILES = [
     "swanlotus_html5.yaml"
 ]
 
+LOAD_CONTENT_CACHE = False
+
 THEME = "theme/swanlotus"
 THEME_STATIC_PATHS = ["static"]
 THEME_STATIC_DIR = "theme"
 CSS_FILE = "swanlotus.css"
+
+INDEX_SAVE_AS = 'blog.html'
 
 # Blogroll
 LINKS = (("Pelican", "https://getpelican.com/"),
