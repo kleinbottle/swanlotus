@@ -1,7 +1,7 @@
 ---
-title: Secrets of Academic Success
-author: R (Chandra) Chandrasekhar
-date: 2020-11-29
+title: "Secrets of Academic Success"
+author: "R (Chandra) Chandrasekhar"
+date: "2020-11-29"
 URL:
 save_as: sas.html
 ---

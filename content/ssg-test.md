@@ -1,9 +1,9 @@
 ---
-title: Static Site Generator Test Page
-author: R (Chandra) Chandrasekhar
-date: 2020-10-16
-modified: 2020-10-21
-description: Comprehensive test of Pelican and pandoc-reader Plugin
+title: "Static Site Generator Test Page"
+author: "R (Chandra) Chandrasekhar"
+date: "2020-10-16"
+modified: "2020-10-21"
+description: "Comprehensive test of Pelican and pandoc-reader Plugin"
 categories: test, pandoc
 tags: languages, mathematics
 ---

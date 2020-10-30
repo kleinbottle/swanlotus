@@ -1,7 +1,7 @@
 ---
-title: Welcome to SwanLotus
-author: R (Chandra) Chandrasekhar
-date: 2020-11-29
+title: "Welcome to SwanLotus"
+author: "R (Chandra) Chandrasekhar"
+date: "2020-11-29"
 URL:
 save_as: index.html
 ---
