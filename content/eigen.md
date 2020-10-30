@@ -1,5 +1,5 @@
 ---
-title: "Eigenvalues and Eigenvectors---Why Are They Important?"
+title: Eigenvalues and Eigenvectors---Why Are They Important?
 author:  "R (Chandra) Chandrasekhar"
 date: 2015-12-13
 eqnPrefix: ["eqn", "eqns"]
