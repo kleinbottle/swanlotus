@@ -34,30 +34,43 @@ $table-cell-padding: 0 1em 0 0
 /* Background Colors */
 $pre-background: $grey-darker
 $body-background-color: $grey
+$navbar-background-color: $grey-dark
 
 /* Foreground Colors */
 $code-block-text: $grey-lighter
+$navbar-item-color: $white
 
 /* Set Background for body tag */
 html
     background-color: $body-background-color
 
 nav.navbar
-    background-color: $grey-dark
+    background-color: $navbar-background-color
     margin: 0 0.75em
     padding: 0em
 
 .navbar-item img
     max-height: 4em
 
+.container > .navbar .navbar-menu
+    background-color: $navbar-background-color
+    margin-right: 0rem
+
 nav.navbar a
-    color: $white
+    color: $navbar-item-color
     font-family: $family-secondary
     font-size: larger
 
 nav.navbar a:hover
     background-color: transparent
-    color: $white
+    color: $navbar-item-color
+    text-decoration: underline
+
+nav.navbar a.navbar-item.current
+    background-color: $grey
+    color: $navbar-item-color
+    border-bottom: $white 3px solid
+    font-weight: bold
 
 #two-column
     padding: 0 0.75em

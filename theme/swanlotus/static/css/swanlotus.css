@@ -2268,6 +2268,11 @@ nav.navbar {
   max-height: 4em;
 }
 
+.container > .navbar .navbar-menu {
+  background-color: #4a4a4a;
+  margin-right: 0rem;
+}
+
 nav.navbar a {
   color: white;
   font-family: "Source Sans Pro", sans-serif;
@@ -2277,6 +2282,14 @@ nav.navbar a {
 nav.navbar a:hover {
   background-color: transparent;
   color: white;
+  text-decoration: underline;
+}
+
+nav.navbar a.navbar-item.current {
+  background-color: #7a7a7a;
+  color: white;
+  border-bottom: white 3px solid;
+  font-weight: bold;
 }
 
 #two-column {
