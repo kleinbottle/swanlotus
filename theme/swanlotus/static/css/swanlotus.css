@@ -2258,6 +2258,7 @@ html {
   background-color: #7a7a7a;
 }
 
+/* Styles for navigation bar */
 nav.navbar {
   background-color: #4a4a4a;
   margin: 0 0.75em;
@@ -2362,6 +2363,16 @@ a:hover {
 
 .content .article-footer time.last-modified {
   float: right;
+}
+
+.content .post-info time.published {
+  font-size: smaller;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+/* Spacing between last line of lineblock and first line of next paragraph */
+.content p:not(:last-child) {
+  margin-top: 1em;
 }
 
 /* Styles for figures */

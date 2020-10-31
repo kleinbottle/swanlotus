@@ -33,15 +33,13 @@ This not a unique achievement: witness the Norse sagas and the ancient mythology
 
 The upshot of this "mind over matter" preservation of the Vedas was that *memorization and scholarship became fused in Indian culture.* This is a fundamental drawback that trips the contemporary Indian student. Rather than developing the ability to think logically and independently, she or he is encouraged by parents, teachers, and the system in general, to memorize knowledge and parrot it out in an examination: something which is charmingly described as the *commit and vomit* method.
 
-One is reminded here of these lines from Tennyson's *Morte D'Arthur :*
+One is reminded here of these lines from Tennyson's _Morte D'Arthur_:
 
->The old order changeth, yielding place to new,
+| The old order changeth, yielding place to new,
+| And God fulfils Himself in many ways,
+| Lest one good custom should corrupt the world.
 
->And God fulfils Himself in many ways,
-
->Lest one good custom should corrupt the world.
-
-Mark that I am not against developing a good memory or exercising it to keep fit mentally. Indeed, in my chapters entitled "Poetry" and "Arithmetic Revisited" from my forthcoming book [_Secrets of Academic Success,_][sas] I have suggested poetry recitation and mental arithmetic as ways to develop memory while at the same time becoming more literate and numerate.
+Mark that I am not against developing a good memory or exercising it to keep fit mentally. Indeed, in my chapters entitled ["Poetry"][poetry] and ["Arithmetic Revisited"][ar] from my forthcoming book [Secrets of Academic Success,][sas] I have suggested poetry recitation and mental arithmetic as ways to develop memory while at the same time becoming more literate and numerate.
 
 [sas]: /downloads/SAS-partial.pdf
 
