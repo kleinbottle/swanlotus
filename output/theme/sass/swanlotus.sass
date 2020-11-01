@@ -116,7 +116,16 @@ a:hover
 .content ol#post-list li
     margin-bottom: 1em
 
-/* Styles for article footer */
+/* Styles for articles */
+.content p.author, .content p.date
+    margin-top: 0em
+    margin-bottom: 0em
+    font-family: $family-secondary
+    font-size: smaller
+
+.content header
+    margin-bottom: 1em
+
 .content .article-footer
     font-family: $family-secondary
     font-size: $size-7
@@ -137,8 +146,8 @@ a:hover
     font-family: $family-secondary
 
 /* Spacing between last line of lineblock and first line of next paragraph */
-.content p:not(:last-child)
-    margin-top: 1em
+.content div.line-block
+    margin-bottom: 1em
 
 /* Styles for figures */
 .content figure figcaption

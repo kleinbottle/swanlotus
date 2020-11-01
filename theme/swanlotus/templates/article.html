@@ -16,13 +16,14 @@
 {% endblock %}
 
 {% block content %}
+  <header>
+    <h1 id="{{ article.title }}">{{ article.title }}</h1>
+    <p class="author">{{ article.author }}</p>
+    {% if article.locale_date and article.locale_modified %}
+    <p class="date">{{ article.locale_date }} | {{ article.locale_modified }}</p>
+    {% elif article.locale_date %}
+      <p class="date">{{ article.locale_date }}</p>
+    {% endif %}
+  </header>
   {{ article.content }}
-  <div class="article-footer">
-    {% if article.date %}
-      <time  class="first-written" datetime="{{ article.date.isoformat() }}">First Written: {{ article.locale_date }}</time>
-    {% endif %}
-    {% if article.modified %}
-      <time class="last-modified" datetime="{{ article.modified.isoformat() }}">Last Modified: {{article.locale_modified }}</time>
-    {% endif %}
-  </div>
 {% endblock %}
