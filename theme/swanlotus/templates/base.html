@@ -64,16 +64,16 @@
                 <div class="navbar-start">
                         {% for title, link in MENUITEMS %}
                             {% if output_file == link %}
-                                <a class="navbar-item current" href="{{ link }}">
+                                <a class="navbar-item current" href="{{ SITEURL }}/{{ link }}">
                                     {{ title }}
                                 </a>
                             {% else %}
                                 {% if article and link == "blog.html" %}
-                                    <a class="navbar-item current" href="{{ link }}">
+                                    <a class="navbar-item current" href="{{ SITEURL }}/{{ link }}">
                                         {{ title }}
                                     </a>
                                 {% else %}
-                                    <a class="navbar-item" href="{{ link }}">
+                                    <a class="navbar-item" href="{{ SITEURL }}/{{ link }}">
                                         {{ title }}
                                     </a>
                                 {% endif %}
@@ -99,7 +99,12 @@
                 </footer>
             </div>
             <!--Side Column-->
-            <div id="sidebar" class="tile is-child is-3">
+            <div id="sidebar" class="tile is-child is-3 is-size-5-tablet is-size-4-desktop">
+                <ul>
+                    <li><a href="{{ SITEURL }}/categories.html"><i class="fas fa-folder-open"></i> Categories</a</li>
+                    <li><a href="{{ SITEURL }}/tags.html"><i class="fas fa-tags"></i> Tags</a></li>
+                    <li><a href="{{ SITEURL }}/archives.html"><i class="fas fa-archive"></i> Archives</a></li>
+                </ul>
             </div>
         </div>
     </div>

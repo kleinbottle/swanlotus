@@ -2269,7 +2269,7 @@ nav.navbar {
   max-height: 4em;
 }
 
-.container > .navbar .navbar-menu {
+.container .navbar .navbar-menu {
   background-color: #4a4a4a;
   margin-right: 0rem;
 }
@@ -2287,7 +2287,6 @@ nav.navbar a:hover {
 }
 
 nav.navbar a.navbar-item.current {
-  background-color: #7a7a7a;
   color: white;
   border-bottom: white 3px solid;
   font-weight: bold;
@@ -2310,9 +2309,13 @@ nav.navbar a.navbar-item.current {
 #sidebar {
   background-color: #1d72aa;
   color: white;
-  font-family: "Noto Serif", serif;
+  font-family: "Source Sans Pro", sans-serif;
   padding: 1.65em;
   order: 1;
+}
+
+#sidebar a {
+  color: white;
 }
 
 /* Styles for code blocks */
@@ -2401,6 +2404,14 @@ a:hover {
 
 .content table th, .content table td {
   padding: 0 1em 0 0;
+}
+
+.paginator span.prev-links {
+  float: left;
+}
+
+.paginator span.next-links {
+  float: right;
 }
 
 /* Styles for footer */

@@ -53,7 +53,7 @@ nav.navbar
 .navbar-item img
     max-height: 4em
 
-.container > .navbar .navbar-menu
+.container .navbar .navbar-menu
     background-color: $navbar-background-color
     margin-right: 0rem
 
@@ -68,7 +68,6 @@ nav.navbar a:hover
     text-decoration: underline
 
 nav.navbar a.navbar-item.current
-    background-color: $grey
     color: $navbar-item-color
     border-bottom: $white 3px solid
     font-weight: bold
@@ -88,9 +87,12 @@ nav.navbar a.navbar-item.current
 #sidebar
     background-color: $info-dark
     color: $white
-    font-family: $body-family
+    font-family: $family-secondary
     padding: 1.65em
     order: 1
+
+#sidebar a
+    color: white
 
 /* Styles for code blocks */
 pre
@@ -162,6 +164,12 @@ a:hover
 
 .content table th, .content table td
     padding: $table-cell-padding
+
+.paginator span.prev-links
+    float: left
+
+.paginator span.next-links
+    float: right
 
 /* Styles for footer */
 .footer

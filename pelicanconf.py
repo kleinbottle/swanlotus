@@ -3,7 +3,7 @@
 
 AUTHOR = "R (Chandra) Chandrasekhar"
 SITENAME = "SwanLotus"
-SITEURL = ""
+SITEURL = "http://localhost:8000"
 
 PATH = "content"
 
@@ -43,6 +43,8 @@ MENUITEMS = (
     ("Blogs", "blog.html")
 )
 
+DIRECT_TEMPLATES = ['index', 'categories', 'tags', 'archives']
+
 # Blogroll
 LINKS = (("Pelican", "https://getpelican.com/"),
          ("Python.org", "https://www.python.org/"),
@@ -53,7 +55,7 @@ LINKS = (("Pelican", "https://getpelican.com/"),
 SOCIAL = (("You can add links in your config file", "#"),
           ("Another social link", "#"),)
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 3
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True

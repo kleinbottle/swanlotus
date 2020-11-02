@@ -14,8 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 
     <!--Stylesheet-->
-    <link rel="stylesheet" href="/theme/css/swanlotus.css">
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="http://localhost:8000/theme/css/swanlotus.css">
+    <link rel="shortcut icon" href="http://localhost:8000/images/favicon.ico" type="image/x-icon"/>
 
     <!--Font Awesome-->
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
@@ -53,8 +53,8 @@
         <!--Navigation Bar-->
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <a class="navbar-item" href="">
-                    <img src="/images/swanlotus-brand.svg" alt="SwanLotus">
+                <a class="navbar-item" href="http://localhost:8000">
+                    <img src="http://localhost:8000/images/swanlotus-brand.svg" alt="SwanLotus">
                 </a>
 
                 <!--Collapsed menu for small screens-->
@@ -66,13 +66,13 @@
             </div>
             <div id="navMenu" class="navbar-menu">
                 <div class="navbar-start">
-                                    <a class="navbar-item" href="index.html">
+                                    <a class="navbar-item" href="http://localhost:8000/index.html">
                                         Home
                                     </a>
-                                    <a class="navbar-item" href="sas.html">
+                                    <a class="navbar-item" href="http://localhost:8000/sas.html">
                                         Secrets of Academic Success
                                     </a>
-                                    <a class="navbar-item current" href="blog.html">
+                                    <a class="navbar-item current" href="http://localhost:8000/blog.html">
                                         Blogs
                                     </a>
                 <div class="navbar-end"></div>
@@ -147,18 +147,18 @@ BA = \left[\begin{matrix}3 &amp; 4\\1 &amp; 2\end{matrix}\right]\left[\begin{mat
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true"></a>}</span></code></pre></div>
 <p>Examples of PNG images:</p>
 <figure>
-<img src="/images/ssg-test/motivation.png" style="width:90.0%" alt="Large Motivation" /><figcaption aria-hidden="true">Large Motivation</figcaption>
+<img src="http://localhost:8000/images/ssg-test/motivation.png" style="width:90.0%" alt="Large Motivation" /><figcaption aria-hidden="true">Large Motivation</figcaption>
 </figure>
 <figure>
-<img src="/images/ssg-test/motivation.png" style="width:50.0%" alt="Small Motivation" /><figcaption aria-hidden="true">Small Motivation</figcaption>
+<img src="http://localhost:8000/images/ssg-test/motivation.png" style="width:50.0%" alt="Small Motivation" /><figcaption aria-hidden="true">Small Motivation</figcaption>
 </figure>
 <h3 id="scalable-vector-graphics">Scalable Vector Graphics</h3>
 <p>SVG is the format developed for scalable vector graphics on the Web. One example is the SwanLotus Logo itself:</p>
 <figure>
-<img src="/images/ssg-test/swanlotus.svg" style="width:90.0%" alt="Large Logo" /><figcaption aria-hidden="true">Large Logo</figcaption>
+<img src="http://localhost:8000/images/ssg-test/swanlotus.svg" style="width:90.0%" alt="Large Logo" /><figcaption aria-hidden="true">Large Logo</figcaption>
 </figure>
 <figure>
-<img src="/images/ssg-test/swanlotus.svg" style="width:50.0%" alt="Small Logo" /><figcaption aria-hidden="true">Small Logo</figcaption>
+<img src="http://localhost:8000/images/ssg-test/swanlotus.svg" style="width:50.0%" alt="Small Logo" /><figcaption aria-hidden="true">Small Logo</figcaption>
 </figure>
 <h2 id="non-latin-scripts">Non-Latin Scripts</h2>
 <h3 id="homeric-greek-with-accents">Homeric Greek with accents</h3>
@@ -215,7 +215,12 @@ BA = \left[\begin{matrix}3 &amp; 4\\1 &amp; 2\end{matrix}\right]\left[\begin{mat
                 </footer>
             </div>
             <!--Side Column-->
-            <div id="sidebar" class="tile is-child is-3">
+            <div id="sidebar" class="tile is-child is-3 is-size-5-tablet is-size-4-desktop">
+                <ul>
+                    <li><a href="http://localhost:8000/categories.html"><i class="fas fa-folder-open"></i> Categories</a</li>
+                    <li><a href="http://localhost:8000/tags.html"><i class="fas fa-tags"></i> Tags</a></li>
+                    <li><a href="http://localhost:8000/archives.html"><i class="fas fa-archive"></i> Archives</a></li>
+                </ul>
             </div>
         </div>
     </div>
