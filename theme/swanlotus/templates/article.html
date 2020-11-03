@@ -26,4 +26,21 @@
     {% endif %}
   </header>
   {{ article.content }}
+  <ul class="categories">
+    <i title="category" class="fas fa-folder-open"></i>
+    {% for category, articles in categories|sort %}
+        {% if category == article.category %}
+          <li><a class="button is-dark"href="{{ SITEURL }}/{{ category.url }}">{{ category }} ({{ articles|count }})</a></li>
+        {% endif %}
+    {% endfor %}
+   </ul>
+  <ul class="tags">
+    <i title="tags" class="fas fa-tags"></i>
+    {% for tag, articles in tags|sort %}
+        {% if tag in article.tags %}
+          <li><a class="button is-dark" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }} ({{ articles|count }})</a></li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+  </ul>
 {% endblock %}

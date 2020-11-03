@@ -27,6 +27,7 @@ $table-cell-padding: 0 1em 0 0
 @import "../bulma-0.9.1/sass/elements/container.sass"
 @import "../bulma-0.9.1/sass/components/navbar.sass"
 @import "../bulma-0.9.1/sass/elements/content.sass"
+@import "../bulma-0.9.1/sass/elements/button.sass"
 @import "../bulma-0.9.1/sass/helpers/typography.sass"
 @import "../bulma-0.9.1/sass/grid/tiles.sass"
 @import "../bulma-0.9.1/sass/layout/footer.sass"
@@ -119,11 +120,25 @@ a:hover
     margin-bottom: 1em
 
 /* Styles for articles */
-.content p.author, .content p.date
+.content p.author, .content p.date, .content ul.categories, .content ul.tags
     margin-top: 0em
     margin-bottom: 0em
     font-family: $family-secondary
     font-size: smaller
+
+.content ul.tags, .content ul.categories
+    margin-left: 0em
+
+.content ul.tags
+    margin-bottom: 1em
+
+.content ul.categories
+    margin-bottom: 0.5em
+    margin-top: 2em
+
+.content ul.tags li, .content ul.categories li
+    display: inline
+    list-style-type: none
 
 .content header
     margin-bottom: 1em
