@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap')
 
 /* Source Sans Pro */
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap')
 
 /* Fira Mono */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap')
@@ -20,6 +20,14 @@ $family-code: "Fira Mono", monospace
 /* Paddings */
 $code-padding: 0em
 $table-cell-padding: 0 1em 0 0
+$navbar-padding: 0em
+
+/* Margins */
+$navbar-margin: 0 0.75em
+
+/* Text */
+$link-decoration: underline
+
 
 /* Bulma Styles */
 @import "../bulma-0.9.1/sass/utilities/_all.sass"
@@ -33,6 +41,7 @@ $table-cell-padding: 0 1em 0 0
 @import "../bulma-0.9.1/sass/layout/footer.sass"
 
 /* Background Colors */
+$code-background: transparent
 $pre-background: $grey-darker
 $body-background-color: $grey
 $navbar-background-color: $grey-dark
@@ -46,32 +55,30 @@ html
     background-color: $body-background-color
 
 /* Styles for navigation bar */
-nav.navbar
+.navbar,
+.container .navbar .navbar-menu,
+.container .navbar .navbar-brand
     background-color: $navbar-background-color
-    margin: 0 0.75em
-    padding: 0em
+    margin: $navbar-margin
+    padding: $navbar-padding
 
 .navbar-item img
     max-height: 4em
 
-.container .navbar .navbar-menu
-    background-color: $navbar-background-color
-    margin-right: 0rem
-
-nav.navbar a
+.navbar a
     color: $navbar-item-color
     font-family: $family-secondary
     font-size: larger
 
-nav.navbar a:hover
-    background-color: transparent
+.navbar a:hover
+    background-color: $navbar-background-color
     color: $navbar-item-color
-    text-decoration: underline
+    text-decoration: $link-decoration
 
-nav.navbar a.navbar-item.current
+.navbar a.navbar-item.current
     color: $navbar-item-color
     border-bottom: $white 3px solid
-    font-weight: bold
+    font-weight: $weight-bold
 
 #two-column
     padding: 0 0.75em
@@ -93,7 +100,7 @@ nav.navbar a.navbar-item.current
     order: 1
 
 #sidebar a
-    color: white
+    color: $white
 
 /* Styles for code blocks */
 pre
@@ -101,7 +108,7 @@ pre
     color: $code-block-text
 
 code
-    background-color: transparent
+    background-color: $code-background
     color: $warning-dark
     padding: $code-padding
 
@@ -110,7 +117,7 @@ a
     color: $info-dark
 
 a:hover
-    text-decoration: underline
+    text-decoration: $link-decoration
 
 /* Styles for blog index */
 .content ol#post-list
@@ -189,7 +196,6 @@ a:hover
 /* Styles for footer */
 .footer
     background-color: $warning-light
-    clear: both
     color: $black
     font-family: $family-secondary
     padding: 0em
