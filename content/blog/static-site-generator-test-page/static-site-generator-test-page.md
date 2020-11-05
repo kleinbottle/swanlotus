@@ -112,17 +112,17 @@ figure {
 
 Examples of PNG images:
 
-![Large Motivation]({static}/images/ssg-test/motivation.png){ width=90% }
+![Large Motivation]({attach}images/motivation.png){ width=90% }
 
-![Small Motivation]({static}/images/ssg-test/motivation.png){ width=50% }
+![Small Motivation]({attach}images/motivation.png){ width=50% }
 
 ### Scalable Vector Graphics
 
 SVG is the format developed for scalable vector graphics on the Web. One example is the SwanLotus Logo itself:
 
-![Large Logo]({static}/images/ssg-test/swanlotus.svg){ width=90% }
+![Large Logo]({attach}images/swanlotus.svg){ width=90% }
 
-![Small Logo]({static}/images/ssg-test/swanlotus.svg){ width=50% }
+![Small Logo]({attach}images/swanlotus.svg){ width=50% }
 
 ## Non-Latin Scripts
 

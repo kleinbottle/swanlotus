@@ -27,7 +27,7 @@ tongue!”
 
 Commutativity in multiplication is easily seen from a picture said Brahmagupta. Just look below.
 
-![Four times three is commutative.]({static}/images/bushido/four-times-three.svg){ width=25% }
+![Four times three is commutative.]({attach}images/four-times-three.svg){ width=25% }
 
 This is my vegetable list:
 

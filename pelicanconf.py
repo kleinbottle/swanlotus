@@ -45,6 +45,11 @@ MENUITEMS = (
 
 DIRECT_TEMPLATES = ['index', 'categories', 'tags', 'archives']
 
+PATH = 'content'
+ARTICLE_PATHS = ['blog']
+ARTICLE_SAVE_AS = 'blog/{slug}.html'
+ARTICLE_URL = 'blog/{slug}.html'
+
 # Blogroll
 LINKS = (("Pelican", "https://getpelican.com/"),
          ("Python.org", "https://www.python.org/"),
