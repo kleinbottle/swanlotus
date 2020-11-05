@@ -50,6 +50,8 @@ ARTICLE_PATHS = ['blog']
 ARTICLE_SAVE_AS = 'blog/{slug}.html'
 ARTICLE_URL = 'blog/{slug}.html'
 
+USE_FOLDER_AS_CATEGORY = False
+
 # Blogroll
 LINKS = (("Pelican", "https://getpelican.com/"),
          ("Python.org", "https://www.python.org/"),
