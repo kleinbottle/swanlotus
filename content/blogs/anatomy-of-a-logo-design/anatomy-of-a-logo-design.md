@@ -127,7 +127,7 @@ When edits are made by hand and the result tweaked by eye,what is obtained is op
 
 ### The Illustrations
 
-The statues of Socrates and Diotima shown in the images are exhibited outside the [Undercroft](https://www.uwa.edu.au/theatres/venues/undercroft) of [The University of Western Australia](https://www.uwa.edu.au/).
+The statues of Socrates and Diotima shown in this blog are exhibited outside the [Undercroft](https://www.uwa.edu.au/theatres/venues/undercroft) of [The University of Western Australia](https://www.uwa.edu.au/).
 
 <!--LaTeX
 
