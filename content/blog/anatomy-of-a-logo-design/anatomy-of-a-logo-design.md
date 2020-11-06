@@ -1,14 +1,15 @@
 ---
-title: "Anatomy of a Logo Design"
-author: "R (Chandra) Chandrasekhar"
-date: "2020-01-11"
-categories: The Simkin Tales, A Bit Here, a Byte There, Rambles through Philosophical Brambles
+title: Anatomy of a Logo Design
+author: R (Chandra) Chandrasekhar
+date: 2020-01-11
+modified: 2020-11-05
+category: Design
 tags: XeLaTeX, logos, graphics
 ---
 
 My friend Solus "Sol" Simkin has a well-earned reputation as a [Renaissance man](https://www.thefreedictionary.com/renaissance+man). Among other things, he is a master of design. He endows his creations with an ethereal air of perfection---where mathematics meets aesthetics---to transmogrify the mundane or banal into unforgettable works of art.
 
-Some weeks ago, he was approached by---of all establishments---a firm of consulting philosophers, who wanted to brand their practice with a logo. They wanted something impressive, memorable, and easily recognized as pertaining to philosophy. They left the details to him, saying that they did not want their personal biases to colour their logo.
+Some weeks ago, he was approached by---of all establishments---a firm of consulting philosophers, who wanted to brand their practice with a logo. They wanted something impressive, memorable, and easily recognized as pertaining to philosophy. They left the details to him, saying that they did not want their personal biases to colour their logo, pun intended.
 
 ## The quest for a suitable design
 
@@ -21,9 +22,7 @@ This request sent the cogwheels in Sol's brain whirring furiously as he imagined
 
 He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socrates) and [Diotima](https://en.wikipedia.org/wiki/Diotima_of_Mantinea) that had earned his undying admiration when he had visited Athens just before the 2004 summer Olympics were held there. But would a layperson recognize those statues and make the link? He thought not, in these days of frenetic and fading fashions and fads, which came and went faster than the [Drosophila melanogaster](https://en.wikipedia.org/wiki/Drosophila_melanogaster#Lifecycle_and_reproduction).
 
-![Socrates]({attach}images/Socrates.jpg){ width=50% }
-
-<!--https://commons.wikimedia.org/wiki/File:Louvre,_Socrates-Sculpture.jpg-->
+![Socrates <]({attach}images/socrates-close-up.jpg){ width=50% } ![Diotima >]({attach}images/diotima-2.jpg){ width=50% }\
 
 ### A syllogism in symbols?
 

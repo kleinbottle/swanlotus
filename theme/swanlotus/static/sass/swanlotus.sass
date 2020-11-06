@@ -187,6 +187,21 @@ a:hover
 .content table th, .content table td
     padding: $table-cell-padding
 
+.content img[alt$=">"]
+    float: right
+    margin-bottom: 1em
+
+.content img[alt$="<"]
+    float: left
+    margin-bottom: 1em
+
+.content img[alt$="><"]
+  display: block
+  max-width: 100%
+  height: auto
+  margin: auto
+  float: none!important
+
 .paginator span.prev-links
     float: left
 

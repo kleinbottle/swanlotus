@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+<html lang="en">
 
 <head>
-    {% block head %}
-    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    <title>SwanLotus - Design category</title>
     <meta charset="utf-8">
     <meta name="generator" content="Pelican">
 
@@ -15,8 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 
     <!--Stylesheet-->
-    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}">
-    <link rel="shortcut icon" href="{{ SITEURL }}/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="http://localhost:8000/theme/css/swanlotus.css">
+    <link rel="shortcut icon" href="http://localhost:8000/images/favicon.ico" type="image/x-icon"/>
 
     <!--Font Awesome-->
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
@@ -42,15 +41,14 @@
             });
         });
     </script>
-    {% endblock head %}
 </head>
 <body>
     <div class="container">
         <!--Navigation Bar-->
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <a class="navbar-item" href="{{ SITEURL }}">
-                    <img src="{{ SITEURL }}/images/swanlotus-brand.svg" alt="SwanLotus">
+                <a class="navbar-item" href="http://localhost:8000">
+                    <img src="http://localhost:8000/images/swanlotus-brand.svg" alt="SwanLotus">
                 </a>
 
                 <!--Collapsed menu for small screens-->
@@ -62,31 +60,33 @@
             </div>
             <div id="navMenu" class="navbar-menu">
                 <div class="navbar-start">
-                        {% for title, link in MENUITEMS %}
-                            {% if output_file == link %}
-                                <a class="navbar-item current" href="{{ SITEURL }}/{{ link }}">
-                                    {{ title }}
-                                </a>
-                            {% else %}
-                                {% if article and link == "blog.html" %}
-                                    <a class="navbar-item current" href="{{ SITEURL }}/{{ link }}">
-                                        {{ title }}
+                                    <a class="navbar-item" href="http://localhost:8000/index.html">
+                                        Home
                                     </a>
-                                {% else %}
-                                    <a class="navbar-item" href="{{ SITEURL }}/{{ link }}">
-                                        {{ title }}
+                                    <a class="navbar-item" href="http://localhost:8000/blog.html">
+                                        Blogs
                                     </a>
-                                {% endif %}
-                            {% endif %}
-                        {% endfor %}
+                                    <a class="navbar-item" href="http://localhost:8000/sas.html">
+                                        Secrets of Academic Success
+                                    </a>
                 <div class="navbar-end"></div>
             </div>
         </nav>
         <div id="two-column" class="tile is-parent">
             <!--Main Column-->
             <div id="main" class="tile is-child is-9 is-size-7-mobile is-size-5-tablet is-size-4-desktop content">
-                {% block content %}
-                {% endblock %}
+
+<h2>Articles in the Design category</h2>
+
+    <ol id="post-list">
+            <li><article class="hentry">
+                    <header> <h5 class="entry-title"><a href="http://localhost:8000/blog/anatomy-of-a-logo-design.html" rel="bookmark" title="Permalink to Anatomy of a Logo Design">Anatomy of a Logo Design</a></h5> </header>
+                    <footer class="post-info">
+                        <time class="published" datetime="2020-01-11T00:00:00+05:30"> 2020-01-11 </time>
+                    </footer><!-- /.post-info -->
+                    <div class="entry-content"> My friend Solus “Sol” Simkin has a well-earned reputation as a Renaissance man. Among other things, he is a master of design. He endows his creations with an ethereal air of perfection—where mathematics meets aesthetics—to transmogrify the mundane or banal into unforgettable works of art. Some weeks ago … </div><!-- /.entry-content -->
+            </article></li>
+    </ol><!-- /#posts-list -->
                 <footer class="footer is-size-7-mobile is-size-6-tablet">
                     <div class="content has-text-centered ">
                         <p>Copyright &copy; 2010&ndash;
@@ -101,9 +101,9 @@
             <!--Side Column-->
             <div id="sidebar" class="tile is-child is-3 is-size-5-tablet is-size-4-desktop">
                 <ul>
-                    <li><a href="{{ SITEURL }}/categories.html"><i class="fas fa-folder-open"></i> Categories</a</li>
-                    <li><a href="{{ SITEURL }}/tags.html"><i class="fas fa-tags"></i> Tags</a></li>
-                    <li><a href="{{ SITEURL }}/archives.html"><i class="fas fa-archive"></i> Archives</a></li>
+                    <li><a href="http://localhost:8000/categories.html"><i class="fas fa-folder-open"></i> Categories</a</li>
+                    <li><a href="http://localhost:8000/tags.html"><i class="fas fa-tags"></i> Tags</a></li>
+                    <li><a href="http://localhost:8000/archives.html"><i class="fas fa-archive"></i> Archives</a></li>
                 </ul>
             </div>
         </div>
