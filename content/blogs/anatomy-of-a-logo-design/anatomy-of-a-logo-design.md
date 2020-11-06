@@ -17,9 +17,6 @@ This request sent the cogwheels in Sol's brain whirring furiously as he imagined
 
 ### Statues of Socrates and Diotima
 
-<!--The setup below works and fetches the file off the Web.
-<a title="CherryX per Wikimedia Commons [CC BY-SA (https://creativecommons.org/licenses/by-sa/3.0)]" href="https://commons.wikimedia.org/wiki/File:Louvre,_Socrates-Sculpture.jpg"><img width="256" alt="Louvre, Socrates-Sculpture" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Louvre%2C_Socrates-Sculpture.jpg/256px-Louvre%2C_Socrates-Sculpture.jpg"></a>-->
-
 He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socrates) and [Diotima](https://en.wikipedia.org/wiki/Diotima_of_Mantinea) that had earned his undying admiration when he had visited Athens just before the 2004 summer Olympics were held there. But would a layperson recognize those statues and make the link? He thought not, in these days of frenetic and fading fashions and fads, which came and went faster than the [Drosophila melanogaster](https://en.wikipedia.org/wiki/Drosophila_melanogaster#Lifecycle_and_reproduction).
 
 ::::: { .alignleft style="width: 50%;" }
@@ -127,6 +124,10 @@ I will list my reasons for taking this route. Working with a graphics program us
 Change of colour, moving one object a smidgen, improving the kerning or any number of other changes---major or minor---may be programmatically made and repeatably too because what is involved is change of the "markup source code".
 
 When edits are made by hand and the result tweaked by eye,what is obtained is optimal but not repeatable. If one were to change something, the result might not be as aesthetically pleasing. More about this later.
+
+### The Illustrations
+
+The statues of Socrates and Diotima shown in the images are exhibited outside the [Undercroft](https://www.uwa.edu.au/theatres/venues/undercroft) of [The University of Western Australia](https://www.uwa.edu.au/).
 
 <!--LaTeX
 
