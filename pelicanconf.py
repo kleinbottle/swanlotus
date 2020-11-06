@@ -35,20 +35,20 @@ THEME_STATIC_PATHS = ["static"]
 THEME_STATIC_DIR = "theme"
 CSS_FILE = "swanlotus.css"
 
-INDEX_SAVE_AS = 'blog.html'
+INDEX_SAVE_AS = 'blogs.html'
 
 MENUITEMS = (
     ("Home", "index.html"),
-    ("Blogs", "blog.html"),
+    ("Blogs", "blogs.html"),
     ("Secrets of Academic Success", "sas.html")
 )
 
 DIRECT_TEMPLATES = ['index', 'categories', 'tags', 'archives']
 
 PATH = 'content'
-ARTICLE_PATHS = ['blog']
-ARTICLE_SAVE_AS = 'blog/{slug}.html'
-ARTICLE_URL = 'blog/{slug}.html'
+ARTICLE_PATHS = ['blogs']
+ARTICLE_SAVE_AS = 'blogs/{slug}.html'
+ARTICLE_URL = 'blogs/{slug}.html'
 
 USE_FOLDER_AS_CATEGORY = False
 
