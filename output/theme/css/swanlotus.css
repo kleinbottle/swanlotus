@@ -3560,6 +3560,7 @@ a:hover {
   padding: 0 1em 0 0;
 }
 
+/* Styles for figures */
 .content .alignright {
   float: right;
   margin-bottom: 1em;
@@ -3570,6 +3571,7 @@ a:hover {
   margin-bottom: 1em;
 }
 
+/* Styles for paginator previous and next links */
 .paginator span.prev-links {
   float: left;
 }
