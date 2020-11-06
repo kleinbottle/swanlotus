@@ -22,7 +22,7 @@ This request sent the cogwheels in Sol's brain whirring furiously as he imagined
 
 He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socrates) and [Diotima](https://en.wikipedia.org/wiki/Diotima_of_Mantinea) that had earned his undying admiration when he had visited Athens just before the 2004 summer Olympics were held there. But would a layperson recognize those statues and make the link? He thought not, in these days of frenetic and fading fashions and fads, which came and went faster than the [Drosophila melanogaster](https://en.wikipedia.org/wiki/Drosophila_melanogaster#Lifecycle_and_reproduction).
 
-![Socrates <]({attach}images/socrates-close-up.jpg){ width=50% } ![Diotima >]({attach}images/diotima-2.jpg){ width=50% }
+![Socrates]({attach}images/socrates-close-up.jpg){ .alignleft style="width: 50%;" } ![Diotima]({attach}images/diotima-2.jpg){ .alignright style="width: 50%;" }
 
 ### A syllogism in symbols?
 

@@ -3560,22 +3560,14 @@ a:hover {
   padding: 0 1em 0 0;
 }
 
-.content img[alt$=">"] {
+.content .alignright {
   float: right;
   margin-bottom: 1em;
 }
 
-.content img[alt$="<"] {
+.content .alignleft {
   float: left;
   margin-bottom: 1em;
-}
-
-.content img[alt$="><"] {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: auto;
-  float: none !important;
 }
 
 .paginator span.prev-links {
