@@ -7,17 +7,19 @@ category: Design
 tags: XeLaTeX, logos, graphics
 ---
 
-My friend Solus "Sol" Simkin has a well-earned reputation as a [Renaissance man](https://www.thefreedictionary.com/renaissance+man). Among other things, he is a master of design. He endows his creations with an ethereal air of perfection---where mathematics meets aesthetics---to transmogrify the mundane or banal into unforgettable works of art.
+## Logo wanted
 
-Some weeks ago, he was approached by---of all establishments---a firm of consulting philosophers, who wanted to brand their practice with a logo. They wanted something impressive, memorable, and easily recognized as pertaining to philosophy. They left the details to him, saying that they did not want their personal biases to colour their logo, pun intended.
+My friend Solus "Sol" Simkin has a well-earned reputation as a [Renaissance man](https://www.thefreedictionary.com/renaissance+man). Among other things, he is a virtuoso of design. He endows his creations with an ethereal air of perfection---where mathematics meets aesthetics---to transmogrify the mundane or banal into unforgettable works of art.
 
-## The quest for a suitable design
+Some weeks ago, he was approached by---of all establishments---a firm of consulting philosophers, who wanted to brand their practice with a logo. They wanted something impressive, memorable, and easily recognized as pertaining to philosophy. They left the details to him, emphatically observing that they did not want their personal biases to colour their logo (pun intended).
 
-This request sent the cogwheels in Sol's brain whirring furiously as he imagined the logo from different design standpoints. He swept through, in fast motion in his mind, a myriad of options, only some of which I have chronicled here.
+## The quest
+
+This unusual request sent the cogwheels in Sol's brain whirring furiously as he imagined the logo from different design standpoints. He swept through, in fast motion in his mind, a myriad of options, only some of which I have chronicled here.
 
 ### Statues of Socrates and Diotima
 
-He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socrates) and [Diotima](https://en.wikipedia.org/wiki/Diotima_of_Mantinea) that had earned his undying admiration when he had visited Athens just before the 2004 summer Olympics were held there. But would a layperson recognize those statues and make the link? He thought not, in these days of frenetic and fading fashions and fads, which came and went faster than the [Drosophila melanogaster](https://en.wikipedia.org/wiki/Drosophila_melanogaster#Lifecycle_and_reproduction).
+He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socrates) and [Diotima](https://en.wikipedia.org/wiki/Diotima_of_Mantinea) that had earned his undying admiration when he had visited Athens just before the 2004 summer Olympics were held there. What noble thoughts from what ancient philosophers?
 
 ::::: { .alignleft style="width: 50%;" }
 ![Socrates]({attach}images/socrates-close-up.jpg)
@@ -26,6 +28,8 @@ He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socr
 ::::: { .alignright style="width: 50%;"}
 ![Diotima]({attach}images/diotima-2.jpg)
 :::::
+
+But would a layperson recognize those statues and make the link? He thought not, in these days of frenetic and fading fashions and fads, which came and went faster than the famed fruitfly, [Drosophila melanogaster](https://en.wikipedia.org/wiki/Drosophila_melanogaster#Lifecycle_and_reproduction).
 
 ### A syllogism in symbols?
 
@@ -37,13 +41,21 @@ b &\implies c\\
 \therefore a &\implies c
 \end{align}
 $$
-He then pondered the legions of people who had made the compulsory bittersweet acquaintance with mathematics, forced upon them in elementary school, and forever forsworn thereafter. No, an expression of mathematical logic was not a good idea either.
+He then pondered the legions of people who had made the compulsory bittersweet acquaintance with mathematics, forced upon them in elementary school, and forever forsworn thereafter. No, an expression of mathematical logic was not a good idea either: it would either evoke painful memories, or be passed over in utter incomprehension.
 
-### Mystic Celtic symbols
+### Celtic symbols
 
-He thought about Celtic [triquetra](https://en.wikipedia.org/wiki/Triquetra), and its relatives, and their logic-defying symmetry. Here was something beautiful, intriguing, mathematical, and philosophical, all at the same time. Surely, that would nail the design. But after he slept on the idea, it struck him as too vague: how would one know which aspect of the braid was being alluded to? What if someone thought of it as, say, the logo of a Society of Druids? Too many ifs and buts obfuscated what had initially seemed a pellucid choice.
+He thought about the Celtic [triquetra](https://en.wikipedia.org/wiki/Triquetra), and its relatives, and their logic-defying symmetry. Here was something beautiful, engaging, intriguing, mathematical, and philosophical, all at the same time. Surely, that would nail the design.
 
-<http://symboldictionary.net/?p=159>
+::::: { .alignleft style="width: 50%;" }
+![Triquetra]({attach}images/triquetra.svg)
+:::::
+
+::::: { .alignright style="width: 50%;" }
+![Braid]({attach}images/braid.svg)
+:::::
+
+But after he slept on the idea, it struck him as too vague: how would one know which [aspect of the braid](http://symboldictionary.net/?p=159) was being alluded to? What if someone thought of it as, say, the logo of a Society of [Druids](https://www.britannica.com/topic/Druid)? Too many ifs and buts obfuscated what had initially seemed an inspired  choice.
 
 ### Popper and falsifiability
 
