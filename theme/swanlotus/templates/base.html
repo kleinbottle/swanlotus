@@ -100,6 +100,8 @@
             </div>
             <!--Side Column-->
             <div id="sidebar" class="tile is-child is-3 is-size-5-tablet is-size-4-desktop">
+                {% block sidebar_content %}
+                {% endblock %}
                 <ul>
                     <li><a href="{{ SITEURL }}/categories.html"><i class="fas fa-folder-open fa-fw"></i>&nbsp;Categories</a</li>
                     <li><a href="{{ SITEURL }}/tags.html"><i class="fas fa-tags fa-fw"></i>&nbsp;Tags</a></li>

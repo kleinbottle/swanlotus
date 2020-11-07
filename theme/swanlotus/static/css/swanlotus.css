@@ -3450,6 +3450,19 @@ html {
   order: 1;
 }
 
+#sidebar nav {
+  margin-bottom: 1em;
+  font-size: smaller;
+}
+
+#sidebar nav ul li ul {
+  margin-left: 1em;
+}
+
+#sidebar nav ul li ul li {
+  margin-left: 1em;
+}
+
 #sidebar a {
   color: white;
 }

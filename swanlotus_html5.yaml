@@ -6,6 +6,8 @@
 reader: markdown+smart+citations+implicit_figures+link_attributes+subscript+superscript+line_blocks
 writer: html5
 
+table-of-contents: true
+
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
