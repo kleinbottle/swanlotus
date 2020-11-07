@@ -37,6 +37,7 @@ $link-decoration: underline
 @import "../bulma-0.9.1/sass/elements/content.sass"
 @import "../bulma-0.9.1/sass/elements/button.sass"
 @import "../bulma-0.9.1/sass/helpers/typography.sass"
+@import "../bulma-0.9.1/sass/helpers/visibility.sass"
 @import "../bulma-0.9.1/sass/grid/tiles.sass"
 @import "../bulma-0.9.1/sass/layout/footer.sass"
 
@@ -91,6 +92,12 @@ html
     padding: 1.65em
     order: 2
 
+#main nav
+    margin-bottom: 2em
+
+#main nav.toc ul li
+    list-style-type: none
+
 /* Styles for sidebar */
 #sidebar
     background-color: $info-dark
@@ -100,7 +107,7 @@ html
     order: 1
 
 #sidebar nav
-    margin-bottom: 1em
+    margin-bottom: 2em
     font-size: smaller
 
 #sidebar nav ul li ul
@@ -108,6 +115,9 @@ html
 
 #sidebar nav ul li ul li
     margin-left: 1em
+
+#sidebar nav code
+    color: $white
 
 #sidebar a
     color: $white
