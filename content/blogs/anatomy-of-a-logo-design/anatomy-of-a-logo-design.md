@@ -21,11 +21,11 @@ This unusual request sent the cogwheels in Sol's brain whirring furiously as he 
 
 He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socrates) and [Diotima](https://en.wikipedia.org/wiki/Diotima_of_Mantinea) that had earned his undying admiration when he had visited Athens just before the 2004 summer Olympics were held there. What noble thoughts from what ancient philosophers?
 
-::::: { .alignleft style="width: 50%;" }
+::::: { .is-pulled-left .mb-4 style="width: 50%;" }
 ![Socrates]({attach}images/socrates-close-up.jpg)
 :::::
 
-::::: { .alignright style="width: 50%;"}
+::::: { .is-pulled-right .mb-4 style="width: 50%;" }
 ![Diotima]({attach}images/diotima-2.jpg)
 :::::
 
@@ -47,12 +47,15 @@ He then pondered the legions of people who had made the compulsory bittersweet a
 
 He thought about the Celtic [triquetra](https://en.wikipedia.org/wiki/Triquetra), and its relatives, and their logic-defying symmetry. Here was something beautiful, engaging, intriguing, mathematical, and philosophical, all at the same time. Surely, that would nail the design.
 
-::::: { .alignleft style="width: 50%;" }
+::::: { .is-pulled-left .mb-4 style="width: 50%;" }
 ![Triquetra]({attach}images/triquetra.svg)
 :::::
 
-::::: { .alignright style="width: 50%;" }
+::::: { .is-pulled-right .mb-4 style="width: 50%;" }
 ![Braid]({attach}images/braid.svg)
+:::::
+
+:::::{ .is-clearfix }
 :::::
 
 But after he slept on the idea, it struck him as too vague: how would one know which [aspect of the braid](http://symboldictionary.net/?p=159) was being alluded to? What if someone thought of it as, say, the logo of a Society of [Druids](https://www.britannica.com/topic/Druid)? Too many ifs and buts obfuscated what had initially seemed an inspired  choice.
