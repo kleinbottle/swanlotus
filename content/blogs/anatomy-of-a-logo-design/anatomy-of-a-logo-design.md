@@ -47,11 +47,11 @@ He then pondered the legions of people who had made the compulsory bittersweet a
 
 He thought about the Celtic [triquetra](https://en.wikipedia.org/wiki/Triquetra), and its relatives, and their logic-defying symmetry. Here was something beautiful, engaging, intriguing, mathematical, and philosophical, all at the same time. Surely, that would nail the design.
 
-::::: { .is-pulled-left .mb-4 style="width: 50%;" }
+:::::{ .is-pulled-left style="width: 50%;" }
 ![Triquetra]({attach}images/triquetra.svg)
 :::::
 
-::::: { .is-pulled-right .mb-4 style="width: 50%;" }
+:::::{ .is-pulled-right style="width: 50%;" }
 ![Braid]({attach}images/braid.svg)
 :::::
 
