@@ -10,7 +10,7 @@
 
 {% block content %}
   <header>
-    <h1 id="{{ page.title }}">{{ page.title }}</h1>
+    <h1 id="{{ page.title|lower|replace(' ', '-') }}">{{ page.title }}</h1>
   </header>
   {{ page.content }}
 {% endblock %}

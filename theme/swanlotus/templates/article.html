@@ -17,7 +17,7 @@
 
 {% block content %}
   <header>
-    <h1 id="{{ article.title }}">{{ article.title }}</h1>
+    <h1 id="{{ article.title|lower|replace(' ', '-') }}">{{ article.title }}</h1>
     <p class="author">{{ article.author }}</p>
     {% if article.locale_date and article.locale_modified %}
     <p class="date">{{ article.locale_date }} | {{ article.locale_modified }}</p>
@@ -25,9 +25,11 @@
       <p class="date">{{ article.locale_date }}</p>
     {% endif %}
   </header>
-  <div class="is-hidden-tablet">
-    {{ article.toc }}
-  </div>
+  {% if article.toc %}
+    <div class="is-hidden-tablet">
+      {{ article.toc }}
+    </div>
+  {% endif %}
   {{ article.content }}
   <ul class="categories">
     {% for category, articles in categories|sort %}
@@ -47,7 +49,9 @@
 {% endblock %}
 
 {% block sidebar_content %}
+{% if article.toc %}
 <div class="is-hidden-mobile">
   {{ article.toc }}
 </div>
+{% endif %}
 {% endblock %}
