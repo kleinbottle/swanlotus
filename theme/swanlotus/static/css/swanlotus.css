@@ -4331,10 +4331,6 @@ a:hover {
   list-style-type: none;
 }
 
-.content header {
-  margin-bottom: 1em;
-}
-
 .content .article-footer {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.75rem;
@@ -4379,15 +4375,6 @@ a:hover {
 
 .content table th, .content table td {
   padding: 0 1em 0 0;
-}
-
-/* Styles for paginator previous and next links */
-.paginator span.prev-links {
-  float: left;
-}
-
-.paginator span.next-links {
-  float: right;
 }
 
 /* Styles for footer */

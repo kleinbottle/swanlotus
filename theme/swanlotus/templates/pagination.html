@@ -3,14 +3,14 @@
 {% set last_page = articles_paginator.page(articles_paginator.num_pages) %}
 <p class="paginator">
     {% if articles_page.has_previous() %}
-        <span class="prev-links">
+        <span class="is-pulled-left">
             <a href="{{ SITEURL }}/{{ articles_previous_page.url }}"><i title="Previous Page" class="fas fa-angle-left"></i></a>
             <a href="{{ SITEURL }}/{{ first_page.url }}"><i title="First Page" class="fas fa-angle-double-left"></i></a>
         </span>
     {% endif %}
     <!-- Page {{ articles_page.number }} / {{ articles_paginator.num_pages }} -->
     {% if articles_page.has_next() %}
-        <span class="next-links">
+        <span class="is-pulled-right">
             <a href="{{ SITEURL }}/{{ last_page.url }}"><i title="Last Page" class="fas fa-angle-double-right"></i></a>
             <a href="{{ SITEURL }}/{{ articles_next_page.url }}"><i title="Next Page" class="fas fa-angle-right"></i></a>
         </span>

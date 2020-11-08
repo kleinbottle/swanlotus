@@ -55,9 +55,6 @@ He thought about the Celtic [triquetra](https://en.wikipedia.org/wiki/Triquetra)
 ![Braid]({attach}images/braid.svg)
 :::::
 
-:::::{ .is-clearfix }
-:::::
-
 But after he slept on the idea, it struck him as too vague: how would one know which [aspect of the braid](http://symboldictionary.net/?p=159) was being alluded to? What if someone thought of it as, say, the logo of a Society of [Druids](https://www.britannica.com/topic/Druid)? Too many ifs and buts obfuscated what had initially seemed an inspired  choice.
 
 ### Popper and falsifiability

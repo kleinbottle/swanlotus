@@ -16,7 +16,7 @@
 {% endblock %}
 
 {% block content %}
-  <header>
+  <header class="mb-4">
     <h1 id="{{ article.title|lower|replace(' ', '-') }}">{{ article.title }}</h1>
     <p class="author">{{ article.author }}</p>
     {% if article.locale_date and article.locale_modified %}
