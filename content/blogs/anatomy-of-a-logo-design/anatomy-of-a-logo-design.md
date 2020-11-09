@@ -19,7 +19,7 @@ This unusual request sent the cogwheels in Sol's brain whirring furiously as he 
 
 ### Statues of Socrates and Diotima
 
-He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socrates) and [Diotima](https://en.wikipedia.org/wiki/Diotima_of_Mantinea) that had earned his undying admiration when he had visited Athens just before the 2004 summer Olympics were held there. What noble thoughts from what ancient philosophers?
+He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socrates) and [Diotima](https://en.wikipedia.org/wiki/Diotima_of_Mantinea) whose words had earned his undying admiration when he had visited Athens just before the 2004 summer Olympics were held there. What noble thoughts from what ancient minds!
 
 ::::: { .is-pulled-left .mb-4 style="width: 50%;" }
 ![Socrates]({attach}images/socrates-close-up.jpg)
@@ -29,7 +29,7 @@ He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socr
 ![Diotima]({attach}images/diotima-2.jpg)
 :::::
 
-But would a layperson recognize those statues and make the link? He thought not, in these days of frenetic and fading fashions and fads, which came and went faster than the famed fruitfly, [Drosophila melanogaster](https://en.wikipedia.org/wiki/Drosophila_melanogaster#Lifecycle_and_reproduction).
+But would a layperson recognize those statues and make the link? He thought not, in these days of frenetic and fading fashions and fads, which came and went faster than the famed fruitfly, [Drosophila melanogaster](https://en.wikipedia.org/wiki/Drosophila_melanogaster#Lifecycle_and_reproduction). Why, most people would not even recognize their national flags these days, let alone icons from the past.
 
 ### A syllogism in symbols?
 
@@ -45,7 +45,7 @@ He then pondered the legions of people who had made the compulsory bittersweet a
 
 ### Celtic symbols
 
-He thought about the Celtic [triquetra](https://en.wikipedia.org/wiki/Triquetra), and its relatives, and their logic-defying symmetry. Here was something beautiful, engaging, intriguing, mathematical, and philosophical, all at the same time. Surely, that would nail the design.
+Mathematics and philosophy share another quality. In one of its branches, mathematics is devoted to the study of [knots](https://en.wikipedia.org/wiki/Knot_theory) while [philosophy](https://www.britannica.com/topic/philosophy) generally grapples with the knotty problems of life. He thought about the [trefoil knot](https://mathworld.wolfram.com/TrefoilKnot.html), stylized as the Celtic [triquetra](https://en.wikipedia.org/wiki/Triquetra) and its relatives, and their logic-defying symmetry. Here was something symmetrical, beautiful, engaging, intriguing, mathematical, and philosophical, all at the same time. Surely, that would nail the design.
 
 :::::{ .is-pulled-left .mb-4 style="width: 50%;" }
 ![Triquetra trefoil]({attach}images/triquetra.svg)
