@@ -35,11 +35,11 @@ But would a layperson recognize those statues and make the link? He thought not,
 
 Mathematics and philosophy are the two excursions of the human mind that naturally run closest to each other. Why not then a [syllogism](https://www.lexico.com/en/definition/syllogism) expressed in the austere symbols of mathematics?
 $$
-\begin{align}
+\begin{aligned}
 a &\implies b\\
 b &\implies c\\
 \therefore a &\implies c
-\end{align}
+\end{aligned}
 $$
 He then pondered the legions of people who had made the compulsory bittersweet acquaintance with mathematics, forced upon them in elementary school, and forever forsworn thereafter. No, an expression of mathematical logic was not a good idea either: it would either evoke painful memories, or be passed over in utter incomprehension.
 
@@ -112,7 +112,7 @@ Let us suppose that you have been hired by a firm of consulting philosophers to 
 
 You mull over the possibilities and weigh them against your own skill-set. You decide against, for example a statue of Socrates, <!--See if a picture can be provided for this.--> because not everyone will recognize the person depicted and what he stood for.
 
-You next consider something from mathematical logic along the lines of $p \implies q$ \iff \not q \implies \not p$. But you give up on that because it is too specialized and only partially representative of philosophy.
+You next consider something from mathematical logic along the lines of $p \implies q \iff \not q \implies \not p$. But you give up on that because it is too specialized and only partially representative of philosophy.
 
 Then you remember Thomas Kuhn and his hypothesis of falsifiability as the basis of science. Some scientists, you recall, rejected _string theory_ simply because it made no predictions that could be subject to the test of falsifiability. But how in heaven would you squeeze that into a logo? And wouldn't that narrow it to the philosophy of science rather than to all of philosophy.
 
