@@ -4360,6 +4360,17 @@ a:hover {
   margin-bottom: 1em;
 }
 
+/* Overridng bulma default style */
+.content figure:not(:first-child) {
+  margin-top: 0em;
+}
+
+.content .side-by-side {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: -1em;
+}
+
 /* Styles for figures */
 .content figure figcaption {
   font-family: "Source Sans Pro", sans-serif;
