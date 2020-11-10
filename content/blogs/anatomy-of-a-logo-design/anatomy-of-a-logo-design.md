@@ -30,11 +30,11 @@ Socrates \hfill Diotima\\
 
 <div class="side-by-side">
 <figure>
-<img src="{attach}images/socrates-close-up.jpg" alt="Socrates" style="flex: 50%">
+<img src="{attach}images/socrates-close-up.jpg" alt="Socrates" title="Socrates" style="flex: 50%">
 <figcaption>Socrates</figcaption>
 </figure>
 <figure>
-<img src="{attach}images/diotima-2.jpg" alt="Diotima" style="flex: 50%">
+<img src="{attach}images/diotima-2.jpg" alt="Diotima" title="Diotima" style="flex: 50%">
 <figcaption>Diotima</figcaption>
 </figure>
 </div>
@@ -59,11 +59,11 @@ Mathematics and philosophy share another quality. In one of its branches, mathem
 
 <div class="side-by-side">
 <figure>
-<img src="{attach}images/triquetra.svg" alt="Triquetra trefoil" style="flex: 50%">
+<img src="{attach}images/triquetra.svg" alt="Triquetra trefoil" title="Triquetra trefoil" style="flex: 50%">
 <figcaption>Triquetra trefoil</figcaption>
 </figure>
 <figure>
-<img src="{attach}images/braid.svg" alt="Braid" style="flex: 50%">
+<img src="{attach}images/braid.svg" alt="Braid" title="Braid" style="flex: 50%">
 <figcaption>Braid</figcaption>
 </figure>
 </div>
