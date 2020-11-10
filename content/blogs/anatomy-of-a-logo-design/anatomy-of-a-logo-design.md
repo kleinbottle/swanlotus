@@ -48,7 +48,7 @@ $$
 \begin{aligned}
 a &\implies b\\
 b &\implies c\\
-\therefore\quad a &\implies c
+\therefore\hspace{0.5em}a &\implies c
 \end{aligned}
 $$
 He then pondered the legions of people who had made the compulsory bittersweet acquaintance with mathematics, forced upon them in elementary school, and forever forsworn thereafter. No, an expression of mathematical logic was not a good idea either: it would either evoke painful memories, or be passed over in utter incomprehension.
