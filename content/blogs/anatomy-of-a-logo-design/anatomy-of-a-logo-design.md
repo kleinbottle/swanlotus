@@ -29,12 +29,12 @@ Socrates \hfill Diotima\\
 \end{center}
 
 <div class="side-by-side">
-<figure style="flex: 50%;">
-<img src="{attach}images/socrates-close-up.jpg" alt="Socrates">
+<figure>
+<img src="{attach}images/socrates-close-up.jpg" alt="Socrates" style="flex: 50%">
 <figcaption>Socrates</figcaption>
 </figure>
-<figure style="flex: 50%;">
-<img src="{attach}images/diotima-2.jpg" alt="Diotima">
+<figure>
+<img src="{attach}images/diotima-2.jpg" alt="Diotima" style="flex: 50%">
 <figcaption>Diotima</figcaption>
 </figure>
 </div>
@@ -58,12 +58,12 @@ He then pondered the legions of people who had made the compulsory bittersweet a
 Mathematics and philosophy share another quality. In one of its branches, mathematics is devoted to the study of [knots](https://en.wikipedia.org/wiki/Knot_theory) while [philosophy](https://www.britannica.com/topic/philosophy) generally grapples with the knotty problems of life. He thought about the [trefoil knot](https://mathworld.wolfram.com/TrefoilKnot.html), stylized as the Celtic [triquetra](https://en.wikipedia.org/wiki/Triquetra) and its relatives, and their logic-defying symmetry. Here was something symmetrical, beautiful, engaging, intriguing, mathematical, and philosophical, all at the same time. Surely, that would nail the design.
 
 <div class="side-by-side">
-<figure style="flex: 50%;">
-<img src="{attach}images/triquetra.svg" alt="Triquetra trefoil">
+<figure>
+<img src="{attach}images/triquetra.svg" alt="Triquetra trefoil" style="flex: 50%">
 <figcaption>Triquetra trefoil</figcaption>
 </figure>
-<figure style="flex: 50%">
-<img src="{attach}images/braid.svg" alt="Braid">
+<figure>
+<img src="{attach}images/braid.svg" alt="Braid" style="flex: 50%">
 <figcaption>Braid</figcaption>
 </figure>
 </div>
