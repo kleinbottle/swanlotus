@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block html_lang %}{{ article.lang }}{% endblock %}
 
-{% block title %}{{ SITENAME }} - {{ article.title|striptags  }}{% endblock %}
+{% block title %}{{ SITENAME }} - {{ article.title|striptags }}{% endblock %}
 
 {% block head %}
   {{ super() }}
@@ -20,7 +20,7 @@
     <h1 id="{{ article.title|lower|replace(' ', '-') }}">{{ article.title }}</h1>
     <p class="author">{{ article.author }}</p>
     {% if article.locale_date and article.locale_modified %}
-    <p class="date">{{ article.locale_date }} | {{ article.locale_modified }}</p>
+      <p class="date">{{ article.locale_date }} | {{ article.locale_modified }}</p>
     {% elif article.locale_date %}
       <p class="date">{{ article.locale_date }}</p>
     {% endif %}

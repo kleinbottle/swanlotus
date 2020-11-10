@@ -246,7 +246,6 @@ code span.wa {
 /* Fira Mono */
 /* Fonts */
 /* Paddings */
-/* Margins */
 /* Text */
 /* Bulma Styles */
 /* Bulma Utilities */
@@ -4183,11 +4182,12 @@ body.has-spaced-navbar-fixed-bottom {
 
 .footer {
   background-color: #fafafa;
-  padding: 3rem 1.5rem 6rem;
+  padding: 0em;
 }
 
 /* Background Colors */
 /* Foreground Colors */
+/* Content Ordering */
 /* Set Background for body tag */
 html {
   background-color: #7a7a7a;
@@ -4224,6 +4224,7 @@ html {
   font-weight: 700;
 }
 
+/* Style for two column container */
 #two-column {
   padding: 0 0.75em;
 }
@@ -4237,14 +4238,6 @@ html {
   order: 2;
 }
 
-#main nav {
-  margin-bottom: 2em;
-}
-
-#main nav.toc ul li {
-  list-style-type: none;
-}
-
 /* Styles for sidebar */
 #sidebar {
   background-color: #1d72aa;
@@ -4254,23 +4247,25 @@ html {
   order: 1;
 }
 
+/* Styles for table of contents */
+#main nav,
 #sidebar nav {
   margin-bottom: 2em;
+}
+
+#main nav.toc ul li {
+  list-style-type: none;
+}
+
+#sidebar nav {
   font-size: smaller;
 }
 
 #sidebar nav ul li ul {
-  margin-left: 1em;
+  margin-left: 1.6em;
 }
 
-#sidebar nav ul li ul li {
-  margin-left: 1em;
-}
-
-#sidebar nav code {
-  color: white;
-}
-
+#sidebar nav code,
 #sidebar a {
   color: white;
 }
@@ -4305,8 +4300,15 @@ a:hover {
   margin-bottom: 1em;
 }
 
+.content .post-info time.published {
+  font-size: smaller;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
 /* Styles for articles */
-.content p.author, .content p.date, .content ul.categories, .content ul.tags {
+.content p.author, .content p.date,
+.content ul.categories,
+.content ul.tags {
   margin-top: 0em;
   margin-bottom: 0em;
   font-family: "Source Sans Pro", sans-serif;
@@ -4338,41 +4340,19 @@ a:hover {
   margin-bottom: 0.5em;
 }
 
-.content .article-footer time {
-  margin-bottom: 0em;
-}
-
-.content .article-footer time.first-written {
-  float: left;
-}
-
-.content .article-footer time.last-modified {
-  float: right;
-}
-
-.content .post-info time.published {
-  font-size: smaller;
-  font-family: "Source Sans Pro", sans-serif;
-}
-
 /* Spacing between last line of lineblock and first line of next paragraph */
 .content div.line-block {
   margin-bottom: 1em;
 }
 
-/* Overridng bulma default style */
-.content figure:not(:first-child) {
-  margin-top: 0em;
-}
-
+/* Styles for figures */
 .content .side-by-side {
   display: flex;
   justify-content: center;
   align-items: baseline;
-  margin-bottom: -1em;
+  margin: -1.5em 0 -1.5em 0;
 }
 
-/* Styles for figures */
 .content figure figcaption {
   font-family: "Source Sans Pro", sans-serif;
   font-style: normal;
@@ -4395,4 +4375,5 @@ a:hover {
   color: #0a0a0a;
   font-family: "Source Sans Pro", sans-serif;
   padding: 0em;
+  clear: both;
 }

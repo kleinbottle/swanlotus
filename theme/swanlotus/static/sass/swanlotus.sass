@@ -21,9 +21,10 @@ $family-code: "Fira Mono", monospace
 $code-padding: 0em
 $table-cell-padding: 0 1em 0 0
 $navbar-padding: 0em
-
-/* Margins */
-$navbar-margin: 0 0.75em
+$two-column-padding: 0 0.75em
+$content-padding: 1.65em
+$toc-padding: 2em
+$footer-padding: 0em
 
 /* Text */
 $link-decoration: underline
@@ -53,6 +54,10 @@ $navbar-background-color: $grey-dark
 $code-block-text: $grey-lighter
 $navbar-item-color: $white
 
+/* Content Ordering */
+$main-content-order: 2
+$sidebar-content-order: 1
+
 /* Set Background for body tag */
 html
     background-color: $body-background-color
@@ -62,7 +67,7 @@ html
 .container .navbar .navbar-menu,
 .container .navbar .navbar-brand
     background-color: $navbar-background-color
-    margin: $navbar-margin
+    margin: 0 0.75em
     padding: $navbar-padding
 
 .navbar-item img
@@ -83,44 +88,41 @@ html
     border-bottom: $white 3px solid
     font-weight: $weight-bold
 
+/* Style for two column container */
 #two-column
-    padding: 0 0.75em
+    padding: $two-column-padding
 
 /* Styles for main column */
 #main
     background-color: $grey-lighter
     color: $black
     font-family: $body-family
-    padding: 1.65em
-    order: 2
-
-#main nav
-    margin-bottom: 2em
-
-#main nav.toc ul li
-    list-style-type: none
+    padding: $content-padding
+    order: $main-content-order
 
 /* Styles for sidebar */
 #sidebar
     background-color: $info-dark
     color: $white
     font-family: $family-secondary
-    padding: 1.65em
-    order: 1
+    padding: $content-padding
+    order: $sidebar-content-order
+
+/* Styles for table of contents
+#main nav,
+#sidebar nav
+    margin-bottom: $toc-padding
+
+#main nav.toc ul li
+    list-style-type: none
 
 #sidebar nav
-    margin-bottom: 2em
     font-size: smaller
 
 #sidebar nav ul li ul
-    margin-left: 1em
+    margin-left: 1.6em
 
-#sidebar nav ul li ul li
-    margin-left: 1em
-
-#sidebar nav code
-    color: $white
-
+#sidebar nav code,
 #sidebar a
     color: $white
 
@@ -148,8 +150,14 @@ a:hover
 .content ol#post-list li
     margin-bottom: 1em
 
+.content .post-info time.published
+    font-size: smaller
+    font-family: $family-secondary
+
 /* Styles for articles */
-.content p.author, .content p.date, .content ul.categories, .content ul.tags
+.content p.author, .content p.date,
+.content ul.categories,
+.content ul.tags
     margin-top: 0em
     margin-bottom: 0em
     font-family: $family-secondary
@@ -175,34 +183,17 @@ a:hover
     margin-top: 2em
     margin-bottom: 0.5em
 
-.content .article-footer time
-    margin-bottom: 0em
-
-.content .article-footer time.first-written
-    float: left
-
-.content .article-footer time.last-modified
-    float: right
-
-.content .post-info time.published
-    font-size: smaller
-    font-family: $family-secondary
-
 /* Spacing between last line of lineblock and first line of next paragraph */
 .content div.line-block
     margin-bottom: 1em
 
-/* Overridng bulma default style */
-.content figure:not(:first-child)
-    margin-top: 0em
-
+/* Styles for figures */
 .content .side-by-side
      display: flex
      justify-content: center
      align-items: baseline
-     margin-bottom: -1em
+     margin: -1.5em 0 -1.5em 0 // Removing top and bottom space from flex container
 
-/* Styles for figures */
 .content figure figcaption
     font-family: $family-secondary
     font-style: normal
@@ -221,4 +212,5 @@ a:hover
     background-color: $warning-light
     color: $black
     font-family: $family-secondary
-    padding: 0em
+    padding: $footer-padding
+    clear: both
