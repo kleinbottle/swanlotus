@@ -21,13 +21,20 @@ This unusual request sent the cogwheels in Sol's brain whirring furiously as he 
 
 He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socrates) and [Diotima](https://en.wikipedia.org/wiki/Diotima_of_Mantinea) whose words had earned his undying admiration when he had visited Athens just before the 2004 summer Olympics were held there. What noble thoughts from what ancient minds!
 
-\begin{center}
-\includegraphics*[width=0.45\textwidth]{./images/socrates-close-up.jpg}
-\hfill
-\includegraphics*[width=0.45\textwidth]{./images/diotima-2.jpg}\\
-Socrates \hfill Diotima\\
-\end{center}
+\begin{figure*}[h]
+  \begin{minipage}[b]{0.5\linewidth}
+    \centering
+    \includesvg[height=40mm]{images/socrates-close-up.jpg}
+    \subcaption*{Socrates}
+  \end{minipage}
+  \begin{minipage}[b]{0.5\linewidth}
+    \centering
+    \includesvg[height=40mm]{images/diotima-2.jpg}
+    \subcaption*{Diotima}
+  \end{minipage}
+\end{figure*}
 
+```{=html}
 <div class="side-by-side">
 <figure>
 <img src="{attach}images/socrates-close-up.jpg" alt="Socrates" title="Socrates" style="flex: 50%">
@@ -38,6 +45,7 @@ Socrates \hfill Diotima\\
 <figcaption>Diotima</figcaption>
 </figure>
 </div>
+```
 
 But would a layperson recognize those statues and make the link? He thought not, in these days of frenetic and fading fashions and fads, which came and went faster than the famed fruitfly, [Drosophila melanogaster](https://en.wikipedia.org/wiki/Drosophila_melanogaster#Lifecycle_and_reproduction). Why, most people would not even recognize their national flags these days, let alone icons from the past.
 
@@ -57,16 +65,31 @@ He then pondered the legions of people who had made the compulsory bittersweet a
 
 Mathematics and philosophy share another quality. In one of its branches, mathematics is devoted to the study of [knots](https://en.wikipedia.org/wiki/Knot_theory) while [philosophy](https://www.britannica.com/topic/philosophy) generally grapples with the knotty problems of life. He thought about the [trefoil knot](https://mathworld.wolfram.com/TrefoilKnot.html), stylized as the Celtic [triquetra](https://en.wikipedia.org/wiki/Triquetra) and its relatives, and their logic-defying symmetry. Here was something symmetrical, beautiful, engaging, intriguing, mathematical, and philosophical, all at the same time. Surely, that would nail the design.
 
+\begin{figure*}[h]
+  \begin{minipage}[b]{0.5\linewidth}
+    \centering
+    \includesvg[height=40mm]{images/trefoil.svg}
+    \subcaption*{Trefoil}
+  \end{minipage}
+  \begin{minipage}[b]{0.5\linewidth}
+    \centering
+    \includesvg[height=40mm]{images/braid.svg}
+    \subcaption*{Braid}
+  \end{minipage}
+\end{figure*}
+
+```{=html}
 <div class="side-by-side">
 <figure>
-<img src="{attach}images/triquetra.svg" alt="Triquetra trefoil" title="Triquetra trefoil" style="flex: 50%">
-<figcaption>Triquetra trefoil</figcaption>
+<img src="{attach}images/triquetra.svg" alt="Trefoil" title="Trefoil" style="flex: 50%">
+<figcaption>Trefoil</figcaption>
 </figure>
 <figure>
 <img src="{attach}images/braid.svg" alt="Braid" title="Braid" style="flex: 50%">
 <figcaption>Braid</figcaption>
 </figure>
 </div>
+```
 
 But after he slept on the idea, it struck him as too vague: how would one know which [aspect of the braid](http://symboldictionary.net/?p=159) was being alluded to? What if someone thought of it as, say, the logo of a Society of [Druids](https://www.britannica.com/topic/Druid)? Too many ifs and buts obfuscated what had initially seemed an inspired  choice.
 
