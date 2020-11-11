@@ -21,7 +21,8 @@ AUTHOR_FEED_RSS = None
 
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = [
-    "pandoc_reader"
+    "pandoc_reader",
+    "tipue_search"
 ]
 
 PANDOC_DEFAULT_FILES = [
@@ -43,7 +44,7 @@ MENUITEMS = (
     ("Secrets of Academic Success", "sas.html")
 )
 
-DIRECT_TEMPLATES = ['index', 'categories', 'tags', 'archives']
+DIRECT_TEMPLATES = ['index', 'categories', 'tags', 'archives', 'search']
 
 PATH = 'content'
 ARTICLE_PATHS = ['blogs']

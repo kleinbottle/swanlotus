@@ -4224,6 +4224,18 @@ html {
   font-weight: 700;
 }
 
+#search-box {
+  background-color: white;
+  border: 1px solid #F5F4EF;
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  height: 2em;
+  padding: 0.5em;
+  margin: 1.5em 1em;
+  vertical-align: top;
+}
+
 /* Style for two column container */
 #two-column {
   padding: 0 0.75em;
