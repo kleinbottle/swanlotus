@@ -2,12 +2,12 @@
 title: Anatomy of a Logo Design
 author: R (Chandra) Chandrasekhar
 date: 2020-01-11
-modified: 2020-11-05
+modified: 2020-11-11
 category: Design
 tags: XeLaTeX, logos, graphics
 ---
 
-## Logo wanted
+## The request
 
 My friend Solus "Sol" Simkin has a well-earned reputation as a [Renaissance man](https://www.thefreedictionary.com/renaissance+man). Among other things, he is a virtuoso of design. He endows his creations with an ethereal air of perfection---where mathematics meets aesthetics---to transmogrify the mundane or banal into unforgettable works of art.
 
@@ -47,7 +47,7 @@ He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socr
 </div>
 ```
 
-But would a layperson recognize those statues and make the link? He thought not, in these days of frenetic and fading fashions and fads, which came and went faster than the famed fruitfly, [Drosophila melanogaster](https://en.wikipedia.org/wiki/Drosophila_melanogaster#Lifecycle_and_reproduction). Why, most people would not even recognize their national flags these days, let alone icons from the past.
+But would a layperson recognize those statues and make the link? He thought not, in these days of frenetic and fading fashions and fads, which came and went faster than the famed fruitfly, [Drosophila melanogaster](https://en.wikipedia.org/wiki/Drosophila_melanogaster#Lifecycle_and_reproduction). Why, most people would not even recognize their national flags these days, let alone intellectual icons from the past.
 
 ### A syllogism in symbols?
 
@@ -63,7 +63,7 @@ He then pondered the legions of people who had made the compulsory bittersweet a
 
 ### Celtic symbols
 
-Mathematics and philosophy share another quality. In one of its branches, mathematics is devoted to the study of [knots](https://en.wikipedia.org/wiki/Knot_theory) while [philosophy](https://www.britannica.com/topic/philosophy) generally grapples with the knotty problems of life. He thought about the [trefoil knot](https://mathworld.wolfram.com/TrefoilKnot.html), stylized as the Celtic [triquetra](https://en.wikipedia.org/wiki/Triquetra) and its relatives, and their logic-defying symmetry. Here was something symmetrical, beautiful, engaging, intriguing, mathematical, and philosophical, all at the same time. Surely, that would nail the design.
+Mathematics and philosophy share another quality. In one of its branches, mathematics is devoted to the study of [knots](https://en.wikipedia.org/wiki/Knot_theory) while [philosophy](https://www.britannica.com/topic/philosophy) generally grapples with the knotty problems of life. He thought about the [trefoil knot](https://mathworld.wolfram.com/TrefoilKnot.html), stylized as the Celtic [triquetra](https://en.wikipedia.org/wiki/Triquetra) and its relatives, with their logic-defying symmetry. Here was something symmetrical, beautiful, engaging, intriguing, mathematical, and philosophical, all at the same time. Surely, that would nail the design.
 
 \begin{figure*}[h]
   \begin{minipage}[b]{0.5\linewidth}
@@ -95,11 +95,11 @@ But after he slept on the idea, it struck him as too vague: how would one know w
 
 ### Popper and falsifiability
 
-Sol then turned his attention to science. Karl Popper who was one of the twentieth century's more celebrated philosophers of science came to mind. He had promulgated a principle that has its roots in mathematics.
+Sol then turned his attention to science. [Karl Popper](https://en.wikipedia.org/wiki/Karl_Popper), who was one of the twentieth century's celebrated philosophers of science, came to mind. He had promulgated a principle that has its roots in mathematics.
 
-It is not possible to prove Pythagoras's Theorem by showing that it has held water in a million cases. But a _single_ counterexample that disproved it would be sufficient to knock it off its perch on the pedestal of mathematical truth. This asymmetry on the onus of proof is at the heart of the principle of falsifiability put forward by Popper.
+It is not possible to prove Pythagoras's Theorem by showing that it has held water in a million cases. But a _single counterexample_ disproving it would be sufficient to knock it off its perch on the pedestal of mathematical truth. This asymmetry on the onus of proof is at the heart of the [Criterion of Falsifiability](https://www.britannica.com/topic/criterion-of-falsifiability) put forward by Popper.
 
-Popper held that a scientific theory could never be pronounced correct even if it explained Nature a zillion times, but a single instance of its failure would suffice for proving its inadequacy. Popper's premise was that a theory that claimed the least pretence to be scientific must provide a [falsifiable prediction](https://en.wikipedia.org/wiki/Falsifiability) that could be settled conclusively by an experiment.
+Popper held that a scientific theory could never be pronounced correct even if it explained Nature a zillion times, but a single instance of its failure would suffice for proving its inadequacy. Popper's premise was that a theory that claimed the least pretence to be scientific must provide an experimentally [falsifiable prediction](https://en.wikipedia.org/wiki/Falsifiability) that could be settled conclusively by an experiment. The emergence of [String Theory]() has called called this into question and the matter is still being debated [@string2015].
 
 <!--Sol also recalled that some scientists rejected String Theory simply because it made no predictions that could be subjected to the test of falsifiability.-->
 
