@@ -81,7 +81,7 @@ Mathematics and philosophy share another quality. In one of its branches, mathem
 ```{=html}
 <div class="side-by-side">
 <figure>
-<img src="{attach}images/triquetra.svg" alt="Trefoil" title="Trefoil" style="flex: 50%">
+<img src="{attach}images/trefoil.svg" alt="Trefoil" title="Trefoil" style="flex: 50%">
 <figcaption>Trefoil</figcaption>
 </figure>
 <figure>
