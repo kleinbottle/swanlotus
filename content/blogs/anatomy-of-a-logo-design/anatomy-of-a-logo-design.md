@@ -194,3 +194,7 @@ Some arithmetic [Hugo Configuration](https://gohugo.io/getting-started/configura
 Examples
 
 Generating PDFs, SVGs, images, banners, favicons-->
+
+---
+link-citation: true
+...
