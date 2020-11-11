@@ -24,12 +24,12 @@ He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socr
 \begin{figure*}[h]
   \begin{minipage}[b]{0.5\linewidth}
     \centering
-    \includesvg[height=40mm]{images/socrates-close-up.jpg}
+    \includegraphics[height=40mm]{images/socrates-close-up.jpg}
     \subcaption*{Socrates}
   \end{minipage}
   \begin{minipage}[b]{0.5\linewidth}
     \centering
-    \includesvg[height=40mm]{images/diotima-2.jpg}
+    \includegraphics[height=40mm]{images/diotima-2.jpg}
     \subcaption*{Diotima}
   \end{minipage}
 \end{figure*}
