@@ -9,12 +9,12 @@
     $(document).ready(function() {
          $('#tipue_search_input').tipuesearch({
              'show': 10,
-             'mode': 'json',
-             'contentLocation': '{{ SITEURL }}/tipuesearch_content.json'
+             'mode': 'js',
+             'contentLocation': '{{ SITEURL }}/tipuesearch_content.js'
          });
     });
     </script>
-<section id="content" class="body">
+<section>
 <div align="center"><input type="text" size="60" id="tipue_search_input">
 <input type="button" id="tipue_search_button" value="Search"></div>
 <div id="tipue_search_content"></div>
