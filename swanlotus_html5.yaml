@@ -18,5 +18,5 @@ citeproc: true
 csl: "https://www.zotero.org/styles/ieee-with-url"
 #
 metadata:
-  link-citations: true
+  link-citations: false
   reference-section-title: References
