@@ -2,7 +2,7 @@
 title: Anatomy of a Logo Design
 author: R (Chandra) Chandrasekhar
 date: 2020-01-11
-modified: 2020-11-11
+modified: 2020-11-12
 category: Design
 tags: XeLaTeX, logos, graphics
 ---
@@ -111,23 +111,31 @@ But, coming back to the task at hand, how would such an abstract idea as falsifi
 
 ### Kuhn and paradigm shifts
 
-Sol racked his brain for more ideas when he suddenly stumbled upon the half-remembered phrase [paradigm shift](https://www.lexico.com/definition/paradigm_shift) coined by Thomas Kuhn and popularized in his enduring tome, [_The Structure of Scientific Revolutions_](https://www.amazon.com/Structure-Scientific-Revolutions-50th-Anniversary/dp/0226458121/). Science did not evolve peacefully, but every so often experienced seismic corrections or radical changes of perspective that led to new theories that predicted the world much better than before. But how in heaven was he to squeeze all that into a logo? And wouldn't that narrow it to the philosophy of science rather than to all of philosophy? He had encountered another [cul-de-sac](https://www.merriam-webster.com/dictionary/cul-de-sac) in his reconnaisance for a viable design.
+Sol racked his brain for more ideas when he suddenly stumbled upon the half-remembered phrase [paradigm shift](https://www.lexico.com/definition/paradigm_shift) coined by Thomas Kuhn and popularized in his enduring tome, [_The Structure of Scientific Revolutions_](https://www.amazon.com/Structure-Scientific-Revolutions-50th-Anniversary/dp/0226458121/) [@kuhn2012]. Kuhn held that Science did not evolve peacefully, but every so often experienced seismic corrections or radical changes of perspective that led to new theories that predicted the world much better than before. But how in heaven was he to squeeze all that into a logo? And wouldn't that narrow it to the philosophy of science rather than to all of philosophy? Solrued that he had entered another [cul-de-sac](https://www.merriam-webster.com/dictionary/cul-de-sac) in his reconnaissance for a viable design.
 
 ### The incubation
 
 It was now two weeks since he had been commissioned to work on the logo, and Sol did not have even one draft design that passed muster. He feared that he was losing his golden touch that landed a winner with each design. Exhausted, dispirited, and a little apprehensive, he fell into a deep but refreshing sleep.
 
-When he awoke, he had a clear recollection of a dream---or was it a reverie---in which he had seen the piercing eyes of a sharp-nosed man, whose shock of dark hair fell to his shoulders, and whose mouth was framed by a sparse moustache and a [Van Dyke beard](https://en.wikipedia.org/wiki/Van_Dyke_beard). It was a face vaguely familiar, yet tantalizingly out of recollection's reach.
+When he awoke, he had a clear recollection of a dream---or was it a reverie---in which he had seen the piercing but dreamy eyes of a sharp-nosed man, whose shock of dark hair fell to his shoulders, and whose mouth was framed by a sparse moustache and a [Van Dyke beard](https://en.wikipedia.org/wiki/Van_Dyke_beard). It was a face vaguely familiar, yet tantalizingly out of recollection's reach.
 
-Rather than fret and fume, and wildly surf the Web, he decided to let the matter rest, but not for so long that the image faded from his mind's eye. No, he was in an earnest quest, but at his own pace and without panic.
+Rather than fret and fume, and wildly surf the Web, he decided to let the matter rest, but not for so long that the image faded from his mind's eye. No, he was in an earnest quest, but at his own pace, relaxed and without panic.
 
-While he was working on some unrelated task, the thought suddenly flashed in his mind that he should harness the Web to see if there was any gallery of portraits of well-known philosophers against which he could attempt a match with the face he had dreamed of.
+### The search for a face
 
-A cursory search of the Web gave no comfort whether in images or words. He then thought about the hair style of the man in his dream and definitely ruled out the Wittgensteins and Kierkegaards. He decided to search among the likes of Liebnitz and Newton, both of whom were celebrated philosophers of their time. No luck there either.
+While he was working on some unrelated task, the thought suddenly flashed in his mind that he should harness the Web to see if there was any gallery of portraits of well-known philosophers against whom he could attempt a match with the face he had dreamed of.
 
-He thought of the calculus, whose invention was a bone of contention between Liebnitz and Newton, and wondered if it was the greatest philosophical invention (or discovery?). And then it hit him: calculus could not have been invented without coordinate geometry: that marriage of geometry and algebra. And that father of that wunderkind was Rene Descartes. With bated breath Sol searched the Web for images of Rene Descartes. And bingo! he had a [gallery full of faces](https://www.google.com/search?tbm=isch&q=Rene+Descartes) that were remarkably similar to the image of his dream.
+A cursory search of the Web gave no comfort whether in images or words. He then thought about the hair-style of the man in his dream and definitely ruled out the [Wittgensteins](https://tinyurl.com/y2sn8uzb) and [Kierkegaards](https://tinyurl.com/y3xdx3gl).
 
-Relieved that he was at last on the scent to the target of his quest, he relaxed for a day or two, which he spent reading about the life of Descartes. He chuckled when he read that Descartes had the unusual habit of not normally rising before noon. He learned that he met with a tragic death in Sweden from pneumonia caused by the the harsh Scandinavian winter and the duress of having to rise early in the morning to keep his appointment with his royal patron, the Queen of XXX.
+He decided to search among the likes of [Liebnitz](https://tinyurl.com/yxomtbt5) and [Newton](https://tinyurl.com/y5lc2fyx), both of whom were not only celebrated philosophers of their time, but also sported long locks, whether natural or wigged. But no luck there either. Their eyes appeared different from those in his dream.
+
+He got side-tracked and began contemplating the calculus, whose invention (or discovery?) was a bone of great contention between Liebnitz and Newton [@bardi2007], and wondered if indeed it was the greatest idea of all time.
+
+And then it hit him like a ton of bricks. _Calculus could not have been invented without coordinate geometry---the offspring of that fortuitous marriage of geometry and algebra_. And the father of _that_ wunderkind was [René Descartes](https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes). With bated breath, Sol searched the Web for images of René Descartes. And bingo! he had a [gallery full of faces](https://tinyurl.com/y57nykjd) that were remarkably similar to the image of his reverie, with eyes that were piercing and dreamy at the same time.
+
+### René Descartes
+
+Relieved that he was at last on scent to the target of his quest, Sol relaxed for a day or two, which he spent reading about the [life of Descartes](https://www.britannica.com/biography/Rene-Descartes) [@watson2020]. He chuckled when he read that "the 22-year-old [Queen] Christina [of Sweden] perversely made the 53-year-old Descartes rise before 5:00 am to give her philosophy lessons, even though she knew of his habit of lying in bed until 11 o’clock in the morning." [@watson2020]. He discovered that Descartes tragically died in Sweden from pneumonia, presumably caused by the Scandinavian winter and the duress of having to rise early in the morning to keep his appointment with his royal patron.
 
 Sol foraged for anything that could throw light---like Newton's falling apple---on how Descartes got his primary insight of superimposing an orthogonal grid on the plane, to tame geometry with algebra. He went thus far but no further, and decided to pursue that query when he had time to lavish on it. For now, he need ideas for a logo, and time was racing fast and past.
 
