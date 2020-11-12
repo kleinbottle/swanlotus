@@ -99,21 +99,15 @@ Sol then turned his attention to science. [Karl Popper](https://en.wikipedia.org
 
 It is not possible to _prove_ Pythagoras's Theorem simply by showing that it has held water in a million cases. But a _single counterexample_ disproving it would be sufficient to knock it off its perch on the pedestal of mathematical truth. Thankfully, that is not the case. The famed theorem has been proved by methods that are mathematically rigorous, and it will therefore stand the test of time. Period. No questions.
 
-Unlike mathematics, science is built up on the interplay between theory and experiments. There is no neat, logical way in which the "truth" of a theory may be proved. And again, a zillion experiments upholding the predictions of the theory do not necessarily prove its correctness. But the results of a _single_ experiment that contradicts the theory is enough to undermine it wholesale.
+Unlike mathematics though, science is built up on the interplay between theory and experiments. There is no neat, logical way in which the "truth" of a theory may be proved. And again, a zillion experiments upholding the predictions of a theory do not necessarily prove its correctness. But the results of a _single_ experiment that contradicts the theory is enough to undermine it wholesale.
 
 This asymmetry on the onus of proof in science is at the heart of the [Criterion of Falsifiability](https://www.britannica.com/topic/criterion-of-falsifiability) put forward by Popper.
 
-Popper held that a scientific theory could never be pronounced correct even if it explained Nature countless times; but a single instance of its failure would suffice to prove its inadequacy. Popper's premise was that any theory that claimed the least pretence to be scientific must provide an experimentally [falsifiable prediction](https://en.wikipedia.org/wiki/Falsifiability) that could be settled conclusively by an experiment. The emergence of [String Theory]() has called called this foundational principle into question and the matter is still being debated [@siegel2015; @castelvecchi2016; @alves2017; @francis2019].
+Popper held that a scientific theory could never be pronounced correct even if it explained Nature countless times; but a single instance of its failure would suffice to prove its inadequacy. Popper's premise was that any theory that claimed the least pretence to be scientific must provide an experimentally [falsifiable prediction](https://en.wikipedia.org/wiki/Falsifiability) that could be settled conclusively by an experiment. 
 
-<!--Sol also recalled that some scientists rejected String Theory simply because it made no predictions that could be subjected to the test of falsifiability.-->
+But this foundational principle of science has now been called into question by [String Theory](https://www.britannica.com/science/string-theory), which is a relative newcomer to theoretical physics, but one that has captured the common imagination, judging by the popular explanations that abound on the Web [@mann2019; @wood2019; @jones2020]. And whether string theory is or is not science, Popper notwithstanding, is an issue that is still up for debate [@siegel2015; @castelvecchi2016; @alves2017; @francis2019].
 
-But how would such an abstract idea find expression in a logo? Perhaps the correct medium would be a comic strip with some explanation. But comics do not a logo make.
-
-
-
-<https://www.forbes.com/sites/startswithabang/2015/12/23/why-string-theory-is-not-science/#5442b8006524>
-
-
+But, coming back to the task at hand, how would such an abstract idea as falsifiability find expression in a logo? Perhaps the correct medium for it would be a [comic strip](https://www.explainxkcd.com/wiki/index.php/2078:_Popper), but alas, comics do not a logo make.
 
 ### Kuhn and paradigm shifts
 
