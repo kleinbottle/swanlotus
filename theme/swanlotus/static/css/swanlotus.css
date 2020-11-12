@@ -296,6 +296,15 @@ div.csl-indent {
   margin-left: 2em;
 }
 
+h1#bibliography {
+  margin-top: 1.3333em;
+  font-size: 1.5em;
+  margin-bottom: 0.6666em;
+  color: #363636;
+  font-weight: 600;
+  line-height: 1.125;
+}
+
 /* Noto Serif */
 /* Source Sans Pro */
 /* Fira Mono */
