@@ -195,3 +195,6 @@ Examples
 
 Generating PDFs, SVGs, images, banners, favicons-->
 
+---
+link-citation: true
+...
