@@ -19,3 +19,4 @@ csl: "https://www.zotero.org/styles/ieee-with-url"
 #
 metadata:
   link-citations: true
+  reference-section-title: References
