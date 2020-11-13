@@ -11,7 +11,9 @@ tags: XeLaTeX, logos, graphics
 
 My friend Solus "Sol" Simkin has a well-earned reputation as a [Renaissance man](https://www.thefreedictionary.com/renaissance+man). Among other things, he is a virtuoso of design. He endows his creations with an ethereal air of perfection---where mathematics meets aesthetics---to transmogrify the mundane or banal into unforgettable works of art.
 
-Some weeks ago, he was approached by---of all establishments---a firm of consulting philosophers, who wanted to brand their practice with a logo. They wanted something impressive, memorable, and easily recognized as pertaining to philosophy. They left the details to him, emphatically observing that they did not want their personal biases to colour their logo (pun intended).
+Some weeks ago, he was approached by---of all establishments---a firm of consulting philosophers, who wanted to brand their practice with a logo. They wanted something impressive, memorable, and easily recognized as pertaining to philosophy. They left the details to him, emphatically observing that they did not want their personal biases to colour their logo (pun intended) Image, icon, shield, or plain text: the choice of logo was his.
+
+They want something impressive, memorable, and easily recognized as pertaining to philosophy. They have left it to you to decide whether it would be 
 
 ## The quest
 
@@ -111,51 +113,39 @@ But, coming back to the task at hand, how would such an abstract idea as falsifi
 
 ### Kuhn and paradigm shifts
 
-Sol racked his brain for more ideas when he suddenly stumbled upon the half-remembered phrase [paradigm shift](https://www.lexico.com/definition/paradigm_shift) coined by Thomas Kuhn and popularized in his enduring tome, [_The Structure of Scientific Revolutions_](https://www.amazon.com/Structure-Scientific-Revolutions-50th-Anniversary/dp/0226458121/) [@kuhn2012]. Kuhn held that Science did not evolve peacefully, but every so often experienced seismic corrections or radical changes of perspective that led to new theories that predicted the world much better than before. But how in heaven was he to squeeze all that into a logo? And wouldn't that narrow it to the philosophy of science rather than to all of philosophy? Solrued that he had entered another [cul-de-sac](https://www.merriam-webster.com/dictionary/cul-de-sac) in his reconnaissance for a viable design.
+Sol racked his brain for more ideas when he suddenly stumbled upon the half-remembered phrase [paradigm shift](https://www.lexico.com/definition/paradigm_shift) coined by Thomas Kuhn and popularized in his enduring tome, [_The Structure of Scientific Revolutions_](https://www.amazon.com/Structure-Scientific-Revolutions-50th-Anniversary/dp/0226458121/) [@kuhn2012]. Kuhn held that Science did not evolve peacefully, but every so often experienced seismic corrections or radical changes of perspective that led to new theories that predicted the world much better than before. But how in heaven was he to squeeze all that into a logo? And wouldn't that narrow it to the philosophy of science rather than to all of philosophy? Sol rued that he had entered another [cul-de-sac](https://www.merriam-webster.com/dictionary/cul-de-sac) in his reconnaissance for a viable design.
 
-### The incubation
+### The dream
 
-It was now two weeks since he had been commissioned to work on the logo, and Sol did not have even one draft design that passed muster. He feared that he was losing his golden touch that landed a winner with each design. Exhausted, dispirited, and a little apprehensive, he fell into a deep but refreshing sleep.
+It was now two weeks since he had been commissioned to work on the logo, and Sol did not have even one draft design that passed muster. He feared that he was losing his famed golden touch that landed a winner with each design. Weary and teary after much squinting at screens and books, exhausted in body and mind, and a little apprehensive, Sol fell into a deep but refreshing sleep.
 
-When he awoke, he had a clear recollection of a dream---or was it a reverie---in which he had seen the piercing but dreamy eyes of a sharp-nosed man, whose shock of dark hair fell to his shoulders, and whose mouth was framed by a sparse moustache and a [Van Dyke beard](https://en.wikipedia.org/wiki/Van_Dyke_beard). It was a face vaguely familiar, yet tantalizingly out of recollection's reach.
+When he awoke, Sol had a clear recollection of a dream---or was it a reverie---in which he had met a man who mouthed something that sounded foreign, but he was hard pressed to identify what pearls of wisdom had been uttered.
 
-Rather than fret and fume, and wildly surf the Web, he decided to let the matter rest, but not for so long that the image faded from his mind's eye. No, he was in an earnest quest, but at his own pace, relaxed and without panic.
+But the man's face was etched in Sol's mind. And what a face! A head with a shock of dark hair that fell to his shoulders, a sharp nose, and a pair of piercing, knowing eyes that paradoxically also appeared dreamy. His mouth was framed by a sparse moustache and a [Van Dyke beard](https://en.wikipedia.org/wiki/Van_Dyke_beard). It was a face vaguely familiar, yet tantalizingly out of recollection's reach.
+
+Rather than fret and fume at not remembering the words in his dream, he decided to let the matter rest, but not for so long that the image faded from his mind's eye. No, he was on an earnest quest, but conducted at his own pace, relaxed and without panic.
 
 ### The search for a face
 
 While he was working on some unrelated task, the thought suddenly flashed in his mind that he should harness the Web to see if there was any gallery of portraits of well-known philosophers against whom he could attempt a match with the face he had dreamed of.
 
-A cursory search of the Web gave no comfort whether in images or words. He then thought about the hair-style of the man in his dream and definitely ruled out the [Wittgensteins](https://tinyurl.com/y2sn8uzb) and [Kierkegaards](https://tinyurl.com/y3xdx3gl).
+A cursory search of the Web gave no comfort; neither in images nor words. He then thought about the hair-style of the man in his dream and definitely ruled out the [Wittgensteins](https://tinyurl.com/y2sn8uzb) and [Kierkegaards](https://tinyurl.com/y3xdx3gl).
 
 He decided to search among the likes of [Liebnitz](https://tinyurl.com/yxomtbt5) and [Newton](https://tinyurl.com/y5lc2fyx), both of whom were not only celebrated philosophers of their time, but also sported long locks, whether natural or wigged. But no luck there either. Their eyes appeared different from those in his dream.
 
 He got side-tracked and began contemplating the calculus, whose invention (or discovery?) was a bone of great contention between Liebnitz and Newton [@bardi2007], and wondered if indeed it was the greatest idea of all time.
 
-And then it hit him like a ton of bricks. _Calculus could not have been invented without coordinate geometry---the offspring of that fortuitous marriage of geometry and algebra_. And the father of _that_ wunderkind was [René Descartes](https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes). With bated breath, Sol searched the Web for images of René Descartes. And bingo! he had a [gallery full of faces](https://tinyurl.com/y57nykjd) that were remarkably similar to the image of his reverie, with eyes that were piercing and dreamy at the same time.
+And then it hit him like a ton of bricks. _Calculus could not have been invented without coordinate geometry---the extraordinary offspring of that fortuitous marriage of geometry and algebra_. And the father of _that_ wunderkind was [René Descartes](https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes). With bated breath, Sol searched the Web for images of René Descartes. And bingo! he had a [gallery full of faces](https://tinyurl.com/y57nykjd) that were remarkably similar to the image of his reverie, with eyes that were piercing and dreamy at the same time.
 
 ### René Descartes
 
-Relieved that he was at last on scent to the target of his quest, Sol relaxed for a day or two, which he spent reading about the [life of Descartes](https://www.britannica.com/biography/Rene-Descartes) [@watson2020]. He chuckled when he read that "the 22-year-old [Queen] Christina [of Sweden] perversely made the 53-year-old Descartes rise before 5:00 am to give her philosophy lessons, even though she knew of his habit of lying in bed until 11 o’clock in the morning." [@watson2020]. He discovered that Descartes tragically died in Sweden from pneumonia, presumably caused by the Scandinavian winter and the duress of having to rise early in the morning to keep his appointment with his royal patron.
+Relieved that he was at last on scent to the target of his quest, Sol relaxed for a day or two, which he spent reading about the [life of Descartes](https://www.britannica.com/biography/Rene-Descartes) [@watson2020]. He chuckled when he read that "the 22-year-old [Queen] Christina [of Sweden] perversely made the 53-year-old Descartes rise before 5:00 am to give her philosophy lessons, even though she knew of his habit of lying in bed until 11 o’clock in the morning." [@watson2020]. He discovered that Descartes tragically died in Sweden from pneumonia, presumably caused by the Scandinavian winter and the duress of having to rise early in the morning to keep his appointment with his royal pupil.
 
-Sol foraged for anything that could throw light---like Newton's falling apple---on how Descartes got his primary insight of superimposing an orthogonal grid on the plane, to tame geometry with algebra. He went thus far but no further, and decided to pursue that query when he had time to lavish on it. For now, he need ideas for a logo, and time was racing fast and past.
+Sol foraged for anything that could throw light---like Newton's falling apple---on how Descartes got his primary insight of superimposing an orthogonal grid on the plane, to tame geometry with algebra. He went thus far but no further, and decided to pursue that query when he had time to lavish on it. For now, he needed ideas for a logo, and time was racing past fast.
 
-Sol pondered the tragic death of Descartes, and whether it held the clue to the deep philosophical truth that he was after, but to no avail. Finally, he decided to act the part of Descartes. And then the elephant in the room popped into view. Why was he, a Frenchman, in Sweden? Because he had gone to teach _philosophy_ to Queen XXX; not mathematics but philosophy.
+Sol pondered the tragic death of Descartes, and whether _it_ held the clue to the deep philosophical truth that he was after. And then the elephant in the room popped into view. Why did Descartes, a Frenchman who lived for long in the Netherlands, die Sweden? Because he had gone to teach _philosophy_ to Queen Christina; not mathematics but philosophy.
 
-And what was Descartes' most profound philosophical utterance? Oh! Of course! [Cogito Ergo Sum](https://en.wikipedia.org/wiki/Cogito,_ergo_sum): "I think, therefore I am". And there he had it: the nucleus of the logo he had been asked to design.
-
-OLD STUFF
-
-Let us suppose that you have been hired by a firm of consulting philosophers to design a logo for their establishment. They want something impressive, memorable, and easily recognized as pertaining to philosophy. They have left it to you to decide whether it would be an image of some sort, or an icon, or a shield, or plain text.
-
-You mull over the possibilities and weigh them against your own skill-set. You decide against, for example a statue of Socrates, <!--See if a picture can be provided for this.--> because not everyone will recognize the person depicted and what he stood for.
-
-You next consider something from mathematical logic along the lines of $p \implies q \iff \not q \implies \not p$. But you give up on that because it is too specialized and only partially representative of philosophy.
-
-Then you remember Thomas Kuhn and his hypothesis of falsifiability as the basis of science. Some scientists, you recall, rejected _string theory_ simply because it made no predictions that could be subject to the test of falsifiability. But how in heaven would you squeeze that into a logo? And wouldn't that narrow it to the philosophy of science rather than to all of philosophy.
-
-Weary and teary after much squinting at screens and books, you fall into a refreshing sleep or reverie---you know not which. In your mind's eye you met a man who mouthed something that sounded foreign, but you were hard pressed to identify what pearls of wisdom he had mouthed. But his face was etched in your mind to persist long after the dream. And what a face. A head with a shock of dark hair that fell to his shoulders, a pair of piercing, knowing eyes, and a sparse moustache and goatee.
-
-Somewhat inspired but also benumbed, you scantily searched
+And what was Descartes' most profound philosophical utterance? Oh! Of course! [Cogito, ergo sum](https://en.wikipedia.org/wiki/Cogito,_ergo_sum): "I think, therefore I am". And there he had it: the nucleus of the logo he had been asked to design.
 
 ## Epilogue
 
@@ -180,21 +170,3 @@ When edits are made by hand and the result tweaked by eye,what is obtained is op
 ### The Illustrations
 
 The statues of Socrates and Diotima shown in this blog are exhibited outside the [Undercroft](https://www.uwa.edu.au/theatres/venues/undercroft) of [The University of Western Australia](https://www.uwa.edu.au/).
-
-<!--LaTeX
-
-boxes in LaTeX
-
-boxsep
-boxrule
-
-Vpadding
-Hpadding
-
-Total:
-
-Some arithmetic [Hugo Configuration](https://gohugo.io/getting-started/configuration/)
-
-Examples
-
-Generating PDFs, SVGs, images, banners, favicons-->
