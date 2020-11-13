@@ -1,0 +1,67 @@
+% boxtest.tex
+% Explication of values from boxes used in making logos.
+
+% R (Chandra) Chandrasekhar
+% independent Scholar, Thinker, Author, Researcher (iSTAR)
+% lnesqrt1cos0@gmail.com | chyavana@gmail.com
+% First written: 2020-01-06
+% Last revised : 2020-01-06
+
+\documentclass{standalone}
+\usepackage{fontspec}
+\usepackage[rgb,dvipsnames,svgnames]{xcolor}
+\usepackage{calc}
+%
+\setmainfont[BoldFont={* Medium}]{Noto Serif}
+\setsansfont[BoldFont={* Medium}]{Noto Sans}
+\setmonofont{Fira Mono}
+%
+\newfontfamily{\tamil}{Noto Sans Tamil}
+\defaultfontfeatures{MatchLowerCase}
+%
+\begin{document}
+\setlength{\fboxrule}{0.5em}%
+\setlength{\fboxsep}{2em}%
+%
+\fontsize{120}{144}\selectfont%
+%
+\newlength{\Clength}\settowidth{\Clength}{\mbox{Cogito}}%
+\newlength{\Elength}\settowidth{\Elength}{\mbox{Ergo}}%
+\newlength{\Slength}\settowidth{\Slength}{\mbox{Sum}}%
+\newlength{\overlap}\setlength{\overlap}{0.4em}% negative kern value
+\newlength{\moveup}\setlength{\moveup}{0.2em}%
+%
+\newlength{\middlespace}%
+\setlength{\middlespace}{\dimexpr\Elength-2\overlap}%
+\newlength{\reverseoffset}%
+\setlength{\reverseoffset}{\dimexpr-\Slength-\middlespace-\overlap}%
+\typeout{\the\reverseoffset}%
+%
+\newlength{\CESboxwidth}%
+\settowidth{\CESboxwidth}{Cogito\hspace{\middlespace}Sum}%
+\typeout{\the\CESboxwidth}%
+%
+\newsavebox{\Motto}%
+\savebox{\Motto}[\CESboxwidth][l]%
+{Cogito\hspace{\middlespace}Sum\hspace{\reverseoffset}\raisebox{-\moveup}%
+{\textcolor{white}{Ergo}}}%
+\fcolorbox{RosyBrown}{CornflowerBlue}{\usebox{\Motto}}%
+\end{document}
+\fcolorbox{Teal}{CornflowerBlue}{\usebox{\Motto}}%
+%
+\newlength{\boxwidth}\settowidth{\boxwidth}{\usebox{\Motto}}%
+\newlength{\boxheight}\settototalheight{\boxheight}{\usebox{\Motto}}%
+%
+\newlength{\totalboxwidth}\setlength{\totalboxwidth}%
+{\dimexpr\boxwidth+2\fboxsep+2\fboxrule}%
+\typeout{Raw box width = \the\boxwidth}%
+\typeout{Total box width = \the\totalboxwidth}%
+%
+\newlength{\totalboxheight}\setlength{\totalboxheight}%
+{\dimexpr\boxheight+2\fboxsep+2\fboxrule}%
+\typeout{Raw box height = \the\boxheight}%
+\typeout{Total box height = \the\totalboxheight}%
+%
+\end{document}
+\kern-0.4em\raisebox{-0.2em}%
+{\textcolor{white}{Ergo}\kern-0.4em\raisebox{0.2em}

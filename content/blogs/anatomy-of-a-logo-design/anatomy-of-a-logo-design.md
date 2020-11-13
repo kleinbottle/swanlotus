@@ -117,35 +117,69 @@ Sol racked his brain for more ideas when he suddenly stumbled upon the half-reme
 
 ### The dream
 
-It was now two weeks since he had been commissioned to work on the logo, and Sol did not have even one draft design that passed muster. He feared that he was losing his famed golden touch that landed a winner with each design. Weary and teary after much squinting at screens and books, exhausted in body and mind, and a little apprehensive, Sol fell into a deep but refreshing sleep.
+It was now two weeks since he had been commissioned to work on the logo, and Sol did not have even one draft design that passed muster. He feared that he was losing his famed golden touch that landed a winner with each design. Weary and teary after much squinting at screens and books, exhausted in body and mind, and a little apprehensive, he fell into a deep but refreshing sleep.
 
-When he awoke, Sol had a clear recollection of a dream---or was it a reverie---in which he had met a man who mouthed something that sounded foreign, but he was hard pressed to identify what pearls of wisdom had been uttered.
+When he awoke, Sol had a clear recollection of a dream---or was it a reverie---in which he had met a man who had mouthed something that sounded foreign, but he was hard pressed to identify what pearls of wisdom had been uttered.
 
-But the man's face was etched in Sol's mind. And what a face! A head with a shock of dark hair that fell to his shoulders, a sharp nose, and a pair of piercing, knowing eyes that paradoxically also appeared dreamy. His mouth was framed by a sparse moustache and a [Van Dyke beard](https://en.wikipedia.org/wiki/Van_Dyke_beard). It was a face vaguely familiar, yet tantalizingly out of recollection's reach.
+But the man's face was etched in Sol's mind. And what a face! A head with a shock of dark hair that fell to his shoulders, a sharp nose, and a pair of piercing, knowing eyes that paradoxically had a dreamy look as well. His mouth was framed by a sparse moustache and a [Van Dyke beard](https://en.wikipedia.org/wiki/Van_Dyke_beard). It was a face vaguely familiar, yet tantalizingly out of recollection's reach.
 
-Rather than fret and fume at not remembering the words in his dream, he decided to let the matter rest, but not for so long that the image faded from his mind's eye. No, he was on an earnest quest, but conducted at his own pace, relaxed and without panic.
+Rather than fret and fume at not remembering the words in his dream, Sol decided to let the matter rest. He was on an earnest quest, conducted at his own pace, relaxed and without panic, but not so relaxed that the image faded from his mind's eye. 😊
 
 ### The search for a face
 
-While he was working on some unrelated task, the thought suddenly flashed in his mind that he should harness the Web to see if there was any gallery of portraits of well-known philosophers against whom he could attempt a match with the face he had dreamed of.
+While he was working on an unrelated task, the thought suddenly flashed in his mind that he should harness the Web to see if there was any gallery of portraits of well-known philosophers against whom he could attempt a match with the face seen in his dream.
 
-A cursory search of the Web gave no comfort; neither in images nor words. He then thought about the hair-style of the man in his dream and definitely ruled out the [Wittgensteins](https://tinyurl.com/y2sn8uzb) and [Kierkegaards](https://tinyurl.com/y3xdx3gl).
+A cursory search of the Web gave no comfort. The hair-style of the man in his dream definitely ruled out the [Wittgensteins](https://tinyurl.com/y2sn8uzb) and [Kierkegaards](https://tinyurl.com/y3xdx3gl).
 
-He decided to search among the likes of [Liebnitz](https://tinyurl.com/yxomtbt5) and [Newton](https://tinyurl.com/y5lc2fyx), both of whom were not only celebrated philosophers of their time, but also sported long locks, whether natural or wigged. But no luck there either. Their eyes appeared different from those in his dream.
+He decided to search among the likes of [Liebnitz](https://tinyurl.com/yxomtbt5) and [Newton](https://tinyurl.com/y5lc2fyx), both of whom were not only celebrated philosophers of their time, but also sported long locks, whether natural or wigged. But no luck there either. Their eyes appeared too different from those in his dream.
 
-He got side-tracked and began contemplating the calculus, whose invention (or discovery?) was a bone of great contention between Liebnitz and Newton [@bardi2007], and wondered if indeed it was the greatest idea of all time.
+Sol got side-tracked thinking about whether calculus was discovered or invented. It was probably the greatest scientific advance of its time. And priority for its discovery was a bone of great and ugly contention between Liebnitz and Newton [@bardi2007].
 
-And then it hit him like a ton of bricks. _Calculus could not have been invented without coordinate geometry---the extraordinary offspring of that fortuitous marriage of geometry and algebra_. And the father of _that_ wunderkind was [René Descartes](https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes). With bated breath, Sol searched the Web for images of René Descartes. And bingo! he had a [gallery full of faces](https://tinyurl.com/y57nykjd) that were remarkably similar to the image of his reverie, with eyes that were piercing and dreamy at the same time.
+And then it hit him like a ton of bricks. _Calculus could not have been invented without coordinate geometry---that extraordinary offspring of the fortuitous marriage of geometry and algebra_. And the father of _that_ wunderkind was [René Descartes](https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes). With bated breath, Sol searched the Web for images of René Descartes. And bingo! he had a [gallery full of faces](https://tinyurl.com/y57nykjd) that were remarkably similar to the image of his reverie, with eyes that were piercing and dreamy at the same time.
 
-### René Descartes
+## René Descartes
 
-Relieved that he was at last on scent to the target of his quest, Sol relaxed for a day or two, which he spent reading about the [life of Descartes](https://www.britannica.com/biography/Rene-Descartes) [@watson2020]. He chuckled when he read that "the 22-year-old [Queen] Christina [of Sweden] perversely made the 53-year-old Descartes rise before 5:00 am to give her philosophy lessons, even though she knew of his habit of lying in bed until 11 o’clock in the morning." [@watson2020]. He discovered that Descartes tragically died in Sweden from pneumonia, presumably caused by the Scandinavian winter and the duress of having to rise early in the morning to keep his appointment with his royal pupil.
+Relieved that he was at last on scent to the target, Sol relaxed for a couple of days, which he spent reading about the [life of Descartes](https://www.britannica.com/biography/Rene-Descartes) [@watson2020]. He chuckled when he read that "the 22-year-old [Queen] Christina [of Sweden] perversely made the 53-year-old Descartes rise before 5:00 am to give her philosophy lessons, even though she knew of his habit of lying in bed until 11 o’clock in the morning." [@watson2020]. He discovered that Descartes tragically died in Sweden from pneumonia, presumably caused by the Scandinavian winter and the duress of having to rise early in the morning to keep his appointment with his royal pupil.
 
-Sol foraged for anything that could throw light---like Newton's falling apple---on how Descartes got his primary insight of superimposing an orthogonal grid on the plane, to tame geometry with algebra. He went thus far but no further, and decided to pursue that query when he had time to lavish on it. For now, he needed ideas for a logo, and time was racing past fast.
+Sol foraged for anything that could throw light---like Newton's falling apple---on how Descartes got his primary insight of superimposing an orthogonal grid on the plane, to tame geometry with algebra. He could not unearth much and decided to pursue that query for when he did not have a deadline to meet. For now, he needed ideas for a logo, and time was fast racing past.
 
-Sol pondered the tragic death of Descartes, and whether _it_ held the clue to the deep philosophical truth that he was after. And then the elephant in the room popped into view. Why did Descartes, a Frenchman who lived for long in the Netherlands, die Sweden? Because he had gone to teach _philosophy_ to Queen Christina; not mathematics but philosophy.
+## The epiphany
 
-And what was Descartes' most profound philosophical utterance? Oh! Of course! [Cogito, ergo sum](https://en.wikipedia.org/wiki/Cogito,_ergo_sum): "I think, therefore I am". And there he had it: the nucleus of the logo he had been asked to design.
+Sol pondered the tragic death of Descartes, and whether _it_ held the clue to the deep philosophical truth that he was after. And then the elephant in the room popped into view. Why did Descartes, a Frenchman who lived for long in the Netherlands, die in Sweden? Because he had gone to teach _philosophy_ to Queen Christina; not mathematics but philosophy.
+
+And what was Descartes' most profound philosophical utterance? Oh! Of course! [Cogito, ergo sum](https://en.wikipedia.org/wiki/Cogito,_ergo_sum): "I think, therefore I am". And there he had it: the muted words of his dream, and the nucleus of the logo he had been asked to design.
+
+## From abstraction to form
+
+The thrill of the quest was now over. It was time to sit down and flesh out an image from a dream. Sol was no stranger to ardour. He hunkered down and sifted through his options.
+
+He could hand paint the logo giving it unique individuality. But what would happen if his clients wanted to "refresh" their logo after a few years. The [3M Logo](https://1000logos.net/3m-logo/) was a case in point. A hand-painted logo would bedifficult to "morph: over time to retain its identity while sporting changes. Logo-maintenance precluded a had-drawn logo.
+
+Having settled for a formal font-based logo, Sol still had a choice of rendering it using graphics software in which one worked on a canvas, just like a painter: only one was called a digital graphic artist. Or he could sit and patiently program the logo in any number of languages that output graphics.
+
+This dichotomy of choice was easily resolved when he thought of the maintenance of the logo once more. Suppose, some minor change were required. The digital graphics software that allowed objects to be placed, moved, morphed, etc., would require manual intervention and a steady had each time a change was called for. The programmatic route was more tedious but offered greater repeatability and was relatively easy to mainatain.
+
+Thus settled, he thought of the large variety of programs he could use to generate the logo. He finally settled on a solid, if not too arty set of programs for his toolchain: XeLaTeX source code to generate PDF output which will be translated into SVG for scalable display on Web and in print.
+
+Different choices for Colour, Font, etx. Versatility in choice with minimala ffort: a form of delayed gratification.
+
+<!--LaTeX
+
+boxes in LaTeX
+
+boxsep
+boxrule
+
+Vpadding
+Hpadding
+
+Total:
+
+Some arithmetic [Hugo Configuration](https://gohugo.io/getting-started/configuration/)
+
+Examples
+
+Generating PDFs, SVGs, images, banners, favicons-->
 
 ## Epilogue
 
