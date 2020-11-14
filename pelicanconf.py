@@ -29,7 +29,7 @@ PANDOC_DEFAULT_FILES = [
     "swanlotus_html5.yaml"
 ]
 
-LOAD_CONTENT_CACHE = False
+LOAD_CONTENT_CACHE = True
 
 THEME = "theme/swanlotus"
 THEME_STATIC_PATHS = ["static"]
