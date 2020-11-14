@@ -155,7 +155,9 @@ The thrill of the quest was now over. It was time to sit down and flesh out an i
 
 ### Hand-crafting the logo
 
-He could hand paint the logo giving it unique individuality. But what would happen if his clients wanted to "refresh" their logo after a few years. The transmogrification of the [3M Logo](https://1000logos.net/3m-logo/) in almost a century was a case in point. Its changes struck a fine balance between the old and the new---same enough to be recognizable from the past but new enough to attract and engage afresh. A hand-painted logo would be difficult to morph over time to retain its essence while renewing its expression. Logo-maintenance precluded a hand-drawn logo.
+He could hand paint the logo electronically, giving it unique individuality. But Sol was not   naturally deft and looked askance at "mousing his way" to artistic perfection. 
+
+Moreover, what would happen if his clients wanted to "refresh" their logo after a few years. The transmogrification of the [3M Logo](https://1000logos.net/3m-logo/) in almost a century was a case in point. Its changes struck a fine balance between the old and the new---same enough to be recognizable from the past but new enough to attract and engage afresh. A hand-painted logo would be difficult to morph over time to retain its essence while renewing its expression. Logo-maintenance precluded a hand-drawn logo.
 
 ### Interactive graphics
 
@@ -218,7 +220,7 @@ That program was not an easy one to master and it has spawned augmenteations cal
 
 Why would one take the route of professional typesetting when there are so many free and not-so-free graphical programs that may be used to typeset a logo in a matter of minutes/ Why bother taking a tortuous route that involves writing in a markup language and debugging it until the desired result is achieved?
 
-I will list my reasons for taking this route. Working with a graphics program usually involves placing and editing graphical objects interactively using a mouse. The final desired result may be frozen, but it cannot be changed easily. Depending on how significant the change is, considerable effort might be demanded. This is something I look upon askance because I am not naturally deft "mousing my way" to artistic perfection, like some people are.
+I will list my reasons for taking this route. Working with a graphics program usually involves placing and editing graphical objects interactively using a mouse. The final desired result may be frozen, but it cannot be changed easily. Depending on how significant the change is, considerable effort might be demanded. This is something I look upon askance because 
 
 Change of colour, moving one object a smidgen, improving the kerning or any number of other changes---major or minor---may be programmatically made and repeatably too because what is involved is change of the "markup source code".
 
@@ -227,3 +229,111 @@ When edits are made by hand and the result tweaked by eye,what is obtained is op
 ### The Illustrations
 
 The statues of Socrates and Diotima shown in this blog are exhibited outside the [Undercroft](https://www.uwa.edu.au/theatres/venues/undercroft) of [The University of Western Australia](https://www.uwa.edu.au/).
+---
+nocite: "[@*]"
+references:
+- accessed: 2020-11-12
+  author:
+  - family: Castelvecchi
+    given: Davide
+  id: castelvecchi2016
+  issued: 2016-01-05
+  title: "[Feuding physicists turn to philosophy for help]{.nocase}:
+    String theory is at the heart of a debate over the integrity of the
+    scientific method itself"
+  title-short: "[Feuding physicists turn to philosophy for
+    help]{.nocase}"
+  type: webpage
+  url: "https://www.nature.com/news/feuding-physicists-turn-to-philosophy-for-help-1.19076"
+- accessed: 2020-11-12
+  author:
+  - family: Francis
+    given: Matthew R
+  id: francis2019
+  issued: 2019-04-23
+  title: "[Falsifiability and physics]{.nocase}: Can a theory that isn't
+    completely testable still be useful to physics?"
+  title-short: "[Falsifiability and physics]{.nocase}"
+  type: webpage
+  url: "https://www.scientificamerican.com/article/is-string-theory-science/"
+- accessed: 2020-11-12
+  author:
+  - family: Batista
+    given: Rafael Alves
+  - family: Primack
+    given: Joel
+  id: alves2017
+  title: "[Is String theory falsifiable?]{.nocase}: Can a theory that
+    isn't completely testable still be useful to physics?"
+  title-short: "[Is String theory falsifiable?]{.nocase}"
+  type: webpage
+  url: "https://metafact.io/factchecks/30-is-string-theory-falsifiable"
+- accessed: 2020-11-12
+  author:
+  - family: Siegel
+    given: Ethan
+  id: siegel2015
+  issued: 2015-12-23
+  title: Why String Theory Is Not A Scientific Theory
+  type: webpage
+  url: "https://www.forbes.com/sites/startswithabang/2015/12/23/why-string-theory-is-not-science/"
+- accessed: 2020-11-12
+  author:
+  - family: Mann
+    given: Adam
+  id: mann2019
+  issued: 2019-03-20
+  title: What Is String Theory?
+  type: webpage
+  url: "https://www.livescience.com/65033-what-is-string-theory.html"
+- accessed: 2020-11-12
+  author:
+  - family: Wood
+    given: Charlie
+  id: wood2019
+  issued: 2019-07-11
+  title: "What Is String Theory?: Reference article: A simplified
+    explanation and brief history of string theory"
+  title-short: What Is String Theory?
+  type: webpage
+  url: "https://www.space.com/17594-string-theory.html"
+- accessed: 2020-11-12
+  author:
+  - family: Jones
+    given: Andrew Zimmerman
+  id: jones2020
+  issued: 2019-03-02
+  title: "[The Basics of String Theory]{.nocase}"
+  type: webpage
+  url: "https://www.thoughtco.com/what-is-string-theory-2699363"
+- author:
+  - family: Kuhn
+    given: Thomas S
+  edition: 50th Anniversary Edition
+  id: kuhn2012
+  note: First published in 1962
+  publisher: University of Chicago Press
+  title: "[The Structure of Scientific Revolutions]{.nocase}"
+  type: book
+- author:
+  - family: Bardi
+    given: Jason Socrates
+  edition: Illustrated Edition
+  id: bardi2007
+  issued: 2007-04-26
+  publisher: Basic Books
+  title: "[The Calculus Wars: Newton, Leibniz, and the Greatest
+    Mathematical Clash of All]{.nocase}"
+  type: book
+- accessed: 2020-11-12
+  author:
+  - family: Watson
+    given: Richard A
+  id: watson2020
+  issued: 2020-04-10
+  publisher: Encyclopædia Britannica
+  title: René descartes
+  type: webpage
+  url: "https://www.britannica.com/biography/Rene-Descartes"
+---
+
