@@ -153,15 +153,38 @@ And what was Descartes' most profound philosophical utterance? Oh! Of course! [C
 
 The thrill of the quest was now over. It was time to sit down and flesh out an image from a dream. Sol was no stranger to ardour. He hunkered down and sifted through his options.
 
-He could hand paint the logo giving it unique individuality. But what would happen if his clients wanted to "refresh" their logo after a few years. The [3M Logo](https://1000logos.net/3m-logo/) was a case in point. A hand-painted logo would bedifficult to "morph: over time to retain its identity while sporting changes. Logo-maintenance precluded a had-drawn logo.
+### Hand-crafting the logo
 
-Having settled for a formal font-based logo, Sol still had a choice of rendering it using graphics software in which one worked on a canvas, just like a painter: only one was called a digital graphic artist. Or he could sit and patiently program the logo in any number of languages that output graphics.
+He could hand paint the logo giving it unique individuality. But what would happen if his clients wanted to "refresh" their logo after a few years. The transmogrification of the [3M Logo](https://1000logos.net/3m-logo/) in almost a century was a case in point. Its changes struck a fine balance between the old and the new---same enough to be recognizable from the past but new enough to attract and engage afresh. A hand-painted logo would be difficult to morph over time to retain its essence while renewing its expression. Logo-maintenance precluded a hand-drawn logo.
 
-This dichotomy of choice was easily resolved when he thought of the maintenance of the logo once more. Suppose, some minor change were required. The digital graphics software that allowed objects to be placed, moved, morphed, etc., would require manual intervention and a steady had each time a change was called for. The programmatic route was more tedious but offered greater repeatability and was relatively easy to mainatain.
+### Interactive graphics
 
-Thus settled, he thought of the large variety of programs he could use to generate the logo. He finally settled on a solid, if not too arty set of programs for his toolchain: XeLaTeX source code to generate PDF output which will be translated into SVG for scalable display on Web and in print.
+Having settled for a formal font-based logo, Sol still had a choice of rendering it using software that allowed one to work on a canvas, just like a painter. Examples like [Gimp](https://www.gimp.org/) and [Inkscape](https://inkscape.org/) came to mind.
 
-Different choices for Colour, Font, etx. Versatility in choice with minimala ffort: a form of delayed gratification.
+Their primary advantage was their interactivity which gave almost instantaneous visual feedback of what was being drawn. The basic features were easy to master and held the allure of quick and easy results.
+
+The downside was that the results were not repeatable with precision because objects were edited and located by hand, even if their features were mathematically defined. One could manually tweak the control points on a [Bezier curve](https://pomax.github.io/bezierinfo/) until one's aesthetic sense was fully satisfied. But, being hand-drawn, they could not be repeated except through a `copy` function in the software.
+
+### Programmatic generation
+
+Generating digital graphics by programming was a slower, more tedious process that called for ample patience. Only those conversant with delayed gratification would opt for it. The feedback would neither be instantaneous nor visual. One needed to edit-compile-view, and re-edit, repeating this cycle until satisfied.
+
+But the upside was the precision of a coded program. Numbers reigned. Small changes simply meant tweaking a digit here or there. Changing colours was a cinch.
+
+### Making a choice
+
+The dichotomy of choice between interactive and programmatic generation of graphics was easily resolved though. Sol only needed to think of giving his clients variants of a single thematic logo to choose from, or of the maintenance of the logo over time. It was clear that present pain bought future gain if he chose to program the logo.
+
+Given that his logo would consist principally of words, Sol veered toward the [TeX-based](https://www.tug.org/levels.html) suite of typesetting tools. He finally settled upon the [LaTeX](https://www.latex-project.org/) format and the [XeTeX](http://xetex.sourceforge.net/) typesetting which gave him XeLaTeX. and decided that his output would be in [PDF](https://acrobat.adobe.com/in/en/acrobat/about-adobe-pdf.html) for paper and [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) for the Web, both of which afforded scalable graphics that would not degrade with resizing of the final output medium, whether paper or screen.
+
+## The execution
+
+With all the preliminaries in place, Sol settled down to work.
+
+Meaning being conveyed.Colours do the talking.
+Placement of the words. Stylizing. Colours. Emphasis. A few choices for his clients.
+
+
 
 <!--LaTeX
 
