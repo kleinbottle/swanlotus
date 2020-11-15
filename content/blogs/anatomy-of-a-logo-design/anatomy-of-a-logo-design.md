@@ -117,7 +117,7 @@ Sol racked his brain for more ideas when he suddenly stumbled upon the half-reme
 
 ### The dream
 
-It was now two weeks since he had been commissioned to work on the logo, and Sol did not have even a single draft design that passed muster. He feared that he was losing his famed golden touch that landed a winner with each project. Weary and teary after much squinting at screens and books, exhausted in body and mind, and a little apprehensive, he fell into a deep but refreshing sleep.
+It was now two weeks since he had been commissioned to work on the logo, and Sol did not have even a single draft design to show for that time. He feared that he was losing his famed golden touch that had landed a winner with each project. Weary and teary after much squinting at screens and books, exhausted in body and mind, and a little apprehensive, he fell into a deep but refreshing sleep.
 
 When he awoke, Sol had a clear recollection of a dream---or was it a reverie---in which he had met a man who had mouthed something that sounded foreign, but he was hard pressed to identify what pearls of wisdom had been uttered.
 
@@ -183,7 +183,28 @@ Given that his logo would consist principally of words, Sol veered toward the [T
 
 ## The execution
 
-With all the preliminaries in place, Sol settled down to work.
+With all the preliminaries in place, Sol settled down to work. He used his prodigious powers of visualization to create the logo out of thin air using the magic cells in his brain.
+
+### Shape
+
+He first thought of shape and decided on a rectangle to house the words. It would be a rectangle with a small, definitive border that emphasized the inside and framed the work.
+
+### Font
+
+Sol had a preference for [sans serif]() fonts as they could float ethereally and occupy space anywhere. They were largely context-free and suited to headlines, hoardings, captions, logos, etc.But each time he visualized the three words of the logo, something felt out of place.
+
+In resignation, he fielded a [serif]() font and suddenly things seemed to lock into place. Never one to accept a matter as settled without due cogitation, he pondered why. Then he remembered that serif fonts arose from a time when Latin writing was sculpted on stone. The chisel and hammer made it difficult to crave out characters without serifs as some little sliver of stone stubbornly decided to break, not at the prescribed right angle but at some other odd angle. Serifs were introduced to smooth over such imperfections, and in time came to hold their own as style for a font face.
+
+And since Decartes' words were in Latin, what better way to celebrate their Latin-ness than with serifs? So, he chose a font with serifs. Which font in particular would be decided by his clients.
+
+
+### Flourishes
+
+
+### Colour
+
+
+
 
 Meaning being conveyed.Colours do the talking.
 Placement of the words. Stylizing. Colours. Emphasis. A few choices for his clients.
@@ -212,21 +233,11 @@ Generating PDFs, SVGs, images, banners, favicons-->
 
 The _SwanLotus_ banner you see on top of this page was generated using [open source](https://en.wikipedia.org/wiki/Open-source_software) tools that transformed text to PDF and thence to SVG. No specialized graphical applications or proprietary programs were involved in its making. If you are intrigued enough by this information and wish to try your hand at doing something similar, read on.
 
-### Typesetting text professionally
 
-Word processors have been around since the late seventies, but professional electronic typesetting took its birth in XXXX when a professor at Stanford University named Donald E Knuth developed and released top the world free-of-charge a program called TeX (pronounced XXX) that we intended to "typeset beautiful mathematics".
 
-That program was not an easy one to master and it has spawned augmenteations called _formats_, the most well-known of which is the [LaTeX](https://www.latex-project.org/) document preparation system. LaTeX has traditionally been hemmed in by the types of fonts it could use, among other limitations. Its more recent relative---another format called XeLaTeX---overcomes this limitation. One result is the possibility of typesetting languages having a non-Latin script. Another advantage is that XeLaTeX allows for typesetting RL languages. Yet another benefit of XeLaTeX is the possibility of using its output to design logos, which is what we will discuss here.
 
-### Why not a graphics program?
 
-Why would one take the route of professional typesetting when there are so many free and not-so-free graphical programs that may be used to typeset a logo in a matter of minutes/ Why bother taking a tortuous route that involves writing in a markup language and debugging it until the desired result is achieved?
-
-I will list my reasons for taking this route. Working with a graphics program usually involves placing and editing graphical objects interactively using a mouse. The final desired result may be frozen, but it cannot be changed easily. Depending on how significant the change is, considerable effort might be demanded. This is something I look upon askance because 
-
-Change of colour, moving one object a smidgen, improving the kerning or any number of other changes---major or minor---may be programmatically made and repeatably too because what is involved is change of the "markup source code".
-
-When edits are made by hand and the result tweaked by eye,what is obtained is optimal but not repeatable. If one were to change something, the result might not be as aesthetically pleasing. More about this later.
+hing, the result might not be as aesthetically pleasing. More about this later.
 
 ### The Illustrations
 

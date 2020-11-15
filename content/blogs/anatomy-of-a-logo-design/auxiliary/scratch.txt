@@ -31,3 +31,20 @@ Some arithmetic [Hugo Configuration](https://gohugo.io/getting-started/configura
 Examples
 
 Generating PDFs, SVGs, images, banners, favicons-->
+
+
+### Typesetting text professionally
+
+Word processors have been around since the late seventies, but professional electronic typesetting took its birth in XXXX when a professor at Stanford University named Donald E Knuth developed and released top the world free-of-charge a program called TeX (pronounced XXX) that we intended to "typeset beautiful mathematics".
+
+That program was not an easy one to master and it has spawned augmentations called _formats_, the most well-known of which is the [LaTeX](https://www.latex-project.org/) document preparation system. LaTeX has traditionally been hemmed in by the types of fonts it could use, among other limitations. Its more recent relative---another format called XeLaTeX---overcomes this limitation. One result is the possibility of typesetting languages having a non-Latin script. Another advantage is that XeLaTeX allows for typesetting RL languages. Yet another benefit of XeLaTeX is the possibility of using its output to design logos, which is what we will discuss here.
+
+### Why not a graphics program?
+
+Why would one take the route of professional typesetting when there are so many free and not-so-free graphical programs that may be used to typeset a logo in a matter of minutes/ Why bother taking a tortuous route that involves writing in a markup language and debugging it until the desired result is achieved?
+
+I will list my reasons for taking this route. Working with a graphics program usually involves placing and editing graphical objects interactively using a mouse. The final desired result may be frozen, but it cannot be changed easily. Depending on how significant the change is, considerable effort might be demanded. This is something I look upon askance because 
+
+Change of colour, moving one object a smidgen, improving the kerning or any number of other changes---major or minor---may be programmatically made and repeatably too because what is involved is change of the "markup source code".
+
+When edits are made by hand and the result tweaked by eye,what is obtained is optimal but not repeatable. If one were to change somet
