@@ -181,7 +181,7 @@ The dichotomy of choice between interactive and programmatic generation of graph
 
 Given that his logo would consist principally of words, Sol veered toward the [TeX-based](https://www.tug.org/levels.html) suite of typesetting tools. He finally settled upon the [LaTeX](https://www.latex-project.org/) format and the [XeTeX](http://xetex.sourceforge.net/) typesetting engine which gave him XeLaTeX. He decided that his output would be in [PDF](https://acrobat.adobe.com/in/en/acrobat/about-adobe-pdf.html) for paper and [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) for the Web, both of which afforded scalable graphics that would not degrade with resizing of the output medium, whether paper or screen. With these choices made, he rolled up his sleeves for a spot of work.
 
-## The execution
+## The ideation
 
 With all the preliminaries in place, Sol settled down to work. He used his prodigious powers of visualization to create the logo out of thin air using the magic cells in his brain.
 
@@ -195,19 +195,19 @@ Sol had a preference for [sans serif]() fonts as they could float ethereally and
 
 In resignation, he fielded a [serif]() font and suddenly things seemed to lock into place. Never one to accept a matter as settled without due cogitation, he pondered why. Then he remembered that serif fonts arose from a time when Latin writing was sculpted on stone. The chisel and hammer made it difficult to crave out characters without serifs as some little sliver of stone stubbornly decided to break, not at the prescribed right angle but at some other odd angle. Serifs were introduced to smooth over such imperfections, and in time came to hold their own as style for a font face.
 
-And since Decartes' words were in Latin, what better way to celebrate their Latin-ness than with serifs? So, he chose a font with serifs. Which font in particular would be decided by his clients.
+And since Descartes' words were in Latin, what better way to celebrate their Latin-ness than with serifs? So, he chose a font with serifs. Which font in particular would be decided by his clients.
 
+### Symmetry
 
-### Flourishes
-
+The sense of fine balance that so perfectly characterized Sol's designs urged him to split the words into a "main floor" and a "mezzanine". In other words, all three words in one line would not make for a memorable. There should be some vertical symmetry-breaking to increase impact and make the logo memorable.The symmetry would be furnished by capitalizing each word. It only remained to see where the symmetry would be broken and by which word. He decided he would cross that bridge when he reached it.
 
 ### Colour
 
+Colour we linked to emotion. Indeed one is red with rage and green with envy because of this correlation between colour and emotion. Sol did not have any colour theme to persuade his clients to accept. he decided to show them a decent set of harmonized palettes and let them decide. The colours would talk. The colours would emphasize. The colours would sell.
+
+### The execution
 
 
-
-Meaning being conveyed.Colours do the talking.
-Placement of the words. Stylizing. Colours. Emphasis. A few choices for his clients.
 
 
 
