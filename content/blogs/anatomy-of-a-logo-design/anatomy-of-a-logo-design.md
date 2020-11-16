@@ -227,13 +227,31 @@ Sol's first cut had its operative code in this fragment which I reproduce with n
 
 The above incantation gave birth to this image:
 
-![Logo: the first cut](./images/firstcut.svg){ height=40mm }
+![Logo: the first cut]({attach}images/firstcut.svg){ width=60% }
 
 ### The iterations
 
-The word _Ergo_ appeared on top of _Cogito_ and that was well and good. But _Sum_ overwrote _Ergo_ and that seemed a bit jarring, even if accorded with descending steps.
+The word _Ergo_ appeared on top of _Cogito_ and that was well and good. But _Sum_ overwrote _Ergo_ and that seemed a bit jarring, even if it accorded with ascending or descending steps. But something more pressing tugged at his attention. The logo lacked a central axis of symmetry and therefore appeared "unstable".
 
+So, he set about giving it that stability by having one step descend and the succeeding step ascend. Yes, he thought, "I will fix that imbalance first. The superimpositions can wait."
 
+With just a simple change in code, shown below, he was able to see his mental picture onscreen.
+
+```latex
+% 
+\newlength{\overlap}\setlength{\overlap}{-0.4em}% negative kern value
+\newlength{\moveup}\setlength{\moveup}{0.2em}% vertical box raising/lowering
+%
+\newsavebox{\CESBox}%
+\sbox{\CESBox}{% 
+{\textcolor{word}{Cogito}}% First word
+\hspace*{\overlap}\raisebox{-\moveup}{\textcolor{emphatic}{Ergo}}% Second word
+\hspace*{\overlap}{\textcolor{word}{Sum}}% Third word
+}%
+%
+```
+
+![Logo: the second cut]({attach}images/secondcut.svg){ width=60% }
 
 
 <!--LaTeX
