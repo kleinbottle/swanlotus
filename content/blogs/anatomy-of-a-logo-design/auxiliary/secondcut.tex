@@ -1,5 +1,6 @@
-% boxtest-1.tex
-% To accompany "Anatomy of a Logo: from Text to SVG Image"
+% firstcut.tex
+% To accompany "Anatomy of a Logo Design"
+% # The first cut.
 
 % R (Chandra) Chandrasekhar
 % independent Scholar, Thinker, Author, Researcher (iSTAR)
@@ -7,6 +8,7 @@
 % First written: 2020-01-06
 % Last revised : 2020-01-06
 % Last revised : 2020-01-07 % Used default font size for PDF output
+% Last revised : 2020-11-15 % Synced to blog
 
 \documentclass{standalone}
 \usepackage{fontspec}
@@ -17,6 +19,11 @@
 \setsansfont[BoldFont={* Medium}]{Noto Sans}
 \setmonofont{Fira Mono}
 \defaultfontfeatures{MatchLowerCase}
+%
+\colorlet{border}{RosyBrown}%
+\colorlet{background}{CornflowerBlue}%
+\colorlet{word}{black}%
+\colorlet{emphatic}{white}%
 %
 \begin{document}
 %
@@ -36,12 +43,13 @@
 \newlength{\moveup}\setlength{\moveup}{0.2em}% vertical box raising/lowering
 %
 \newsavebox{\CESBox}%
-\sbox{\CESBox}{%
-Cogito\hspace*{\overlap}\raisebox{-\moveup}% negative kern; lowered box
-{\textcolor{white}{Ergo}}%
-\hspace*{\overlap}{Sum}}%
+\sbox{\CESBox}{% 
+{\textcolor{word}{Cogito}}% First word
+\hspace*{\overlap}\raisebox{-\moveup}{\textcolor{emphatic}{Ergo}}% Second word
+\hspace*{\overlap}{\textcolor{word}{Sum}}% Third word
+}%
 %
-\fcolorbox{RosyBrown}{CornflowerBlue}{\usebox{\CESBox}}%
+\fcolorbox{border}{background}{\usebox{\CESBox}}%
 %
 % The problem with this output is that the letter "S" of "Sum" is written 
 % over the "o" of "Ergo".

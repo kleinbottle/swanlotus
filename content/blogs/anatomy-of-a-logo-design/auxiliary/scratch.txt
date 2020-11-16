@@ -47,4 +47,8 @@ I will list my reasons for taking this route. Working with a graphics program us
 
 Change of colour, moving one object a smidgen, improving the kerning or any number of other changes---major or minor---may be programmatically made and repeatably too because what is involved is change of the "markup source code".
 
-When edits are made by hand and the result tweaked by eye,what is obtained is optimal but not repeatable. If one were to change somet
+When edits are made by hand and the result tweaked by eye,what is obtained is optimal but not repeatable. If one were to change something, the result might not be as aesthetically pleasing. More about this later.
+
+## Epilogue
+
+The _SwanLotus_ banner you see on top of this page was generated using [open source](https://en.wikipedia.org/wiki/Open-source_software) tools that transformed text to PDF and thence to SVG. No specialized graphical applications or proprietary programs were involved in its making. If you are intrigued enough by this information and wish to try your hand at doing something similar, read on.

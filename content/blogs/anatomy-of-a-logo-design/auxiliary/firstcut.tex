@@ -1,0 +1,58 @@
+% firstcut.tex
+% To accompany "Anatomy of a Logo Design"
+% # The first cut.
+
+% R (Chandra) Chandrasekhar
+% independent Scholar, Thinker, Author, Researcher (iSTAR)
+% lnesqrt1cos0@gmail.com | chyavana@gmail.com
+% First written: 2020-01-06
+% Last revised : 2020-01-06
+% Last revised : 2020-01-07 % Used default font size for PDF output
+% Last revised : 2020-11-15 % Synced to blog
+
+\documentclass{standalone}
+\usepackage{fontspec}
+\usepackage[rgb,dvipsnames,svgnames]{xcolor}
+\usepackage{calc}
+%
+\setmainfont[BoldFont={* Medium}]{Noto Serif}
+\setsansfont[BoldFont={* Medium}]{Noto Sans}
+\setmonofont{Fira Mono}
+\defaultfontfeatures{MatchLowerCase}
+%
+\colorlet{border}{RosyBrown}%
+\colorlet{background}{CornflowerBlue}%
+\colorlet{word}{black}%
+\colorlet{emphatic}{white}%
+%
+\begin{document}
+%
+% These units of length are absolute and 
+% these definitions can appear anywhere.
+% 
+\setlength{\fboxrule}{0.5pt}% border thickness
+\setlength{\fboxsep}{2.0pt}% all round distance between box and text
+%
+% These units of length are relative to font size
+% and must appear in the same scope as the text, and 
+% only after the font size has been selected.
+% Here, the default font size for the class is selected 
+% automatically.
+% 
+\newlength{\overlap}\setlength{\overlap}{-0.4em}% negative kern value
+\newlength{\moveup}\setlength{\moveup}{0.2em}% vertical box raising/lowering
+%
+\newsavebox{\CESBox}%
+\sbox{\CESBox}{% 
+{\textcolor{word}{Cogito}}% First word
+\hspace*{\overlap}\raisebox{-\moveup}{\textcolor{emphatic}{Ergo}}% Second word
+\hspace*{\overlap}\raisebox{-2\moveup}{\textcolor{word}{Sum}}% Third word
+}%
+%
+\fcolorbox{border}{background}{\usebox{\CESBox}}%
+%
+% The problem with this output is that the letter "S" of "Sum" is written 
+% over the "o" of "Ergo".
+% We try to overcome this in our second attempt at typesetting this logo.
+% 
+\end{document}

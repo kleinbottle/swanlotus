@@ -151,13 +151,13 @@ Sol pondered the tragic death of Descartes, and whether _it_ held the clue to th
 
 And what was Descartes' most profound philosophical utterance? Oh! Of course! [Cogito, ergo sum](https://en.wikipedia.org/wiki/Cogito,_ergo_sum): "I think, therefore I am". And there he had it: the muted words of his dream, and the nucleus of the logo he had been asked to design.
 
-## From abstraction to form
+## The means
 
 The thrill of the quest was now over. It was time to sit down and flesh out an image from a dream. Sol was no stranger to ardour. He hunkered down and sifted through his options.
 
 ### Hand-crafting the logo
 
-He could hand paint the logo electronically, giving it unique individuality. But Sol was no natural artist and looked askance at scrivening away on a tablet to artistic perfection.
+He could hand paint the logo electronically, giving it unique individuality. But Sol was no natural artist and looked askance at scribing away on a tablet to artistic perfection.
 
 Moreover, what would happen if his clients wanted to rejuvenate their logo after a few years. The transmogrification of the [3M Logo](https://1000logos.net/3m-logo/) in almost a century was a case in point. Its changes struck a fine balance between the old and the new---same enough to be recognizable from the past but new enough to attract and engage afresh. A hand-painted logo would be difficult to morph over time to retain its essence while renewing its expression. Logo-maintenance precluded a hand-drawn logo.
 
@@ -205,7 +205,11 @@ The sense of fine balance that so perfectly characterized Sol's designs urged hi
 
 Colour we linked to emotion. Indeed one is red with rage and green with envy because of this correlation between colour and emotion. Sol did not have any colour theme to persuade his clients to accept. he decided to show them a decent set of harmonized palettes and let them decide. The colours would talk. The colours would emphasize. The colours would sell.
 
-### The execution
+## The execution
+
+At last, Sol had reached the tedious portion of his work. Gone was the thrill of the chase. Gone the freedom to meander into byways of knowledge pretending it was all in a day's work. Gone the brain-wracking questions about what characterized philosophy. Everything had been reduced to three words in Latin: "Cogito, ergo sum", literally, "I think, therefore, I am". All that remained was to typeset them memorably and with precision.
+
+### The first cut
 
 
 
@@ -229,15 +233,13 @@ Examples
 
 Generating PDFs, SVGs, images, banners, favicons-->
 
-## Epilogue
-
-The _SwanLotus_ banner you see on top of this page was generated using [open source](https://en.wikipedia.org/wiki/Open-source_software) tools that transformed text to PDF and thence to SVG. No specialized graphical applications or proprietary programs were involved in its making. If you are intrigued enough by this information and wish to try your hand at doing something similar, read on.
 
 
 
 
 
-hing, the result might not be as aesthetically pleasing. More about this later.
+
+
 
 ### The Illustrations
 
