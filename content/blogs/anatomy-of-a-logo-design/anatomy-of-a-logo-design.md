@@ -13,7 +13,7 @@ My friend Solus "Sol" Simkin has a well-earned reputation as a [Renaissance man]
 
 Some weeks ago, he was approached by---of all establishments---a firm of consulting philosophers, who wanted to brand their practice with a logo. They wanted something impressive, memorable, and easily recognized as pertaining to philosophy. They left the details to him, emphatically observing that they did not want their personal biases to colour their logo (pun intended) Image, icon, shield, or plain text: the choice of logo was his.
 
-They want something impressive, memorable, and easily recognized as pertaining to philosophy. They have left it to you to decide whether it would be 
+They want something impressive, memorable, and easily recognized as pertaining to philosophy. They have left it to you to decide whether it would be
 
 ## The quest
 
@@ -39,11 +39,11 @@ He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socr
 ```{=html}
 <div class="side-by-side">
 <figure>
-<img src="./images/socrates-close-up.jpg" alt="Socrates" title="Socrates" style="flex: 50%">
+<img src="{attach}images/socrates-close-up.jpg" alt="Socrates" title="Socrates" style="flex: 50%">
 <figcaption>Socrates</figcaption>
 </figure>
 <figure>
-<img src="./images/diotima-2.jpg" alt="Diotima" title="Diotima" style="flex: 50%">
+<img src="{attach}images/diotima-2.jpg" alt="Diotima" title="Diotima" style="flex: 50%">
 <figcaption>Diotima</figcaption>
 </figure>
 </div>
@@ -83,11 +83,11 @@ Mathematics and philosophy share another quality. In one of its branches, mathem
 ```{=html}
 <div class="side-by-side">
 <figure>
-<img src="./images/trefoil.svg" alt="Trefoil" title="Trefoil" style="flex: 50%">
+<img src="{attach}images/trefoil.svg" alt="Trefoil" title="Trefoil" style="flex: 50%">
 <figcaption>Trefoil</figcaption>
 </figure>
 <figure>
-<img src="./images/braid.svg" alt="Braid" title="Braid" style="flex: 50%">
+<img src="{attach}images/braid.svg" alt="Braid" title="Braid" style="flex: 50%">
 <figcaption>Braid</figcaption>
 </figure>
 </div>
@@ -105,7 +105,7 @@ Unlike mathematics though, science is built up on the interplay between theory a
 
 This asymmetry on the onus of proof in science is at the heart of the [Criterion of Falsifiability](https://www.britannica.com/topic/criterion-of-falsifiability) put forward by Popper.
 
-Popper held that a scientific theory could never be pronounced correct even if it explained Nature countless times; but a single instance of its failure would suffice to prove its inadequacy. Popper's premise was that any theory that claimed the least pretence to be scientific must provide an experimentally [falsifiable prediction](https://en.wikipedia.org/wiki/Falsifiability) that could be settled conclusively by an experiment. 
+Popper held that a scientific theory could never be pronounced correct even if it explained Nature countless times; but a single instance of its failure would suffice to prove its inadequacy. Popper's premise was that any theory that claimed the least pretence to be scientific must provide an experimentally [falsifiable prediction](https://en.wikipedia.org/wiki/Falsifiability) that could be settled conclusively by an experiment.
 
 But this foundational principle of science has now been called into question by [String Theory](https://www.britannica.com/science/string-theory), which is a relative newcomer to theoretical physics, but one that has captured the common imagination, judging by the popular explanations that abound on the Web [@mann2019; @wood2019; @jones2020]. And whether string theory is or is not science, Popper notwithstanding, is an issue that is still up for debate [@siegel2015; @castelvecchi2016; @alves2017; @francis2019].
 
@@ -242,4 +242,3 @@ hing, the result might not be as aesthetically pleasing. More about this later.
 ### The Illustrations
 
 The statues of Socrates and Diotima shown in this blog are exhibited outside the [Undercroft](https://www.uwa.edu.au/theatres/venues/undercroft) of [The University of Western Australia](https://www.uwa.edu.au/).
-

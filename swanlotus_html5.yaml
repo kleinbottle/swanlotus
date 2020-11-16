@@ -15,7 +15,8 @@ html-math-method:
 # Added by Chandra
 #
 citeproc: true
-csl: "https://www.zotero.org/styles/ieee-with-url"
+# csl: "https://www.zotero.org/styles/ieee-with-url"
+csl: "./ieee-with-url.csl"
 #
 metadata:
   link-citations: false

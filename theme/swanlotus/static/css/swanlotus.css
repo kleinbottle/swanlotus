@@ -4445,6 +4445,10 @@ a:hover {
   padding: 0 1em 0 0;
 }
 
+.content .footnotes {
+  font-size: smaller;
+}
+
 /* Styles for footer */
 .footer {
   background-color: #fffbeb;
