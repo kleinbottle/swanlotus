@@ -2,7 +2,7 @@
 title: Anatomy of a Logo Design
 author: R (Chandra) Chandrasekhar
 date: 2020-01-11
-modified: 2020-11-12
+modified: 2020-11-16
 category: Design
 tags: XeLaTeX, logos, graphics
 ---
@@ -49,7 +49,7 @@ He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socr
 
 But would a layperson recognize those statues and make the link? He thought not, in these days of frenetic and fading fashions and fads, which came and went faster than the famed fruitfly, [Drosophila melanogaster](https://en.wikipedia.org/wiki/Drosophila_melanogaster#Lifecycle_and_reproduction). Why, most people would not even recognize their national flags these days, let alone intellectual icons from the past.
 
-### A syllogism in symbols?
+### A syllogism in symbols
 
 Mathematics and philosophy are the two excursions of the human mind that naturally run closest to each other. Why not then a [syllogism](https://www.lexico.com/en/definition/syllogism) expressed in the austere symbols of mathematics?
 $$
@@ -61,7 +61,7 @@ b &\implies c\\
 $$
 He then pondered the legions of people who had made the compulsory bittersweet acquaintance with mathematics, forced upon them in elementary school, and forever forsworn thereafter. No, an expression of mathematical logic was not a good idea either: it would either evoke painful memories, or be passed over in utter incomprehension.
 
-### Celtic symbols
+### Knots and Celtic symbols
 
 Mathematics and philosophy share another quality. In one of its branches, mathematics is devoted to the study of [knots](https://en.wikipedia.org/wiki/Knot_theory) while [philosophy](https://www.britannica.com/topic/philosophy) generally grapples with the knotty problems of life. He thought about the [trefoil knot](https://mathworld.wolfram.com/TrefoilKnot.html), stylized as the Celtic [triquetra](https://en.wikipedia.org/wiki/Triquetra) and its relatives, with their logic-defying symmetry. Here was something symmetrical, beautiful, engaging, intriguing, mathematical, and philosophical, all at the same time. Surely, that would nail the design.
 
@@ -197,7 +197,7 @@ And since Descartes' words were in Latin, what better way to celebrate their Lat
 
 ### Symmetry
 
-The sense of fine balance that so perfectly characterized Sol's designs urged him to split the words into a "main floor" and a "mezzanine". In other words, all three words in one line would not make for a memorable. There should be some vertical symmetry-breaking to increase impact and make the logo memorable.The symmetry would be furnished by capitalizing each word. It only remained to see where the symmetry would be broken and by which word. He decided he would cross that bridge when he reached it.
+The sense of fine balance that so perfectly characterized Sol's designs urged him to split the words into three levels, representing the ground, mezzanine, and first floors. In other words, all three words in one line would not make for a memorable. There should be some vertical symmetry-breaking to increase impact and make the logo memorable. Symmetry itself would be embodied by capitalizing each word. It only remained to see where the symmetry would be broken and by which word. He decided he would cross that bridge when he reached it.
 
 ### Colour
 
@@ -209,6 +209,29 @@ At last, Sol had reached the tedious portion of his work. Gone was the thrill of
 
 ### The first cut
 
+Sol's first cut had its operative code in this fragment which I reproduce with no explanation as it is only _changes_ in this fragment that we need to appreciate rather than understand:
+
+```latex
+% 
+\newlength{\overlap}\setlength{\overlap}{-0.4em}% negative kern value
+\newlength{\moveup}\setlength{\moveup}{0.2em}% vertical box raising/lowering
+%
+\newsavebox{\CESBox}%
+\sbox{\CESBox}{% 
+{\textcolor{word}{Cogito}}% First word
+\hspace*{\overlap}\raisebox{-\moveup}{\textcolor{emphatic}{Ergo}}% Second word
+\hspace*{\overlap}\raisebox{-2\moveup}{\textcolor{word}{Sum}}% Third word
+}%
+%
+```
+
+The above incantation gave birth to this image:
+
+![Logo: the first cut](./images/firstcut.svg){ height=40mm }
+
+### The iterations
+
+The word _Ergo_ appeared on top of _Cogito_ and that was well and good. But _Sum_ overwrote _Ergo_ and that seemed a bit jarring, even if accorded with descending steps.
 
 
 
