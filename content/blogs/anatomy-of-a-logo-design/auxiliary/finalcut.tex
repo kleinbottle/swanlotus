@@ -1,0 +1,32 @@
+\PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+\documentclass[tikz]{standalone}
+\usetikzlibrary{decorations.text}
+\usepackage{fontspec}
+%
+\setmainfont[BoldFont={* Medium}]{Noto Serif}
+\setsansfont[BoldFont={* Medium}]{Noto Sans}
+\setmonofont{Fira Mono}
+\defaultfontfeatures{MatchLowerCase}
+%
+\colorlet{border}{RosyBrown!50!Black}%
+\colorlet{background}{CornflowerBlue}%
+\colorlet{cogito}{Black!80!}%
+\colorlet{ergo}{Black!65!}%
+\colorlet{sum}{Black!20!}%
+%
+\newcommand{\Cogito}{\fontsize{40}{48}\sffamily\scshape\textcolor{cogito}}
+\newcommand{\Ergo}{\fontsize{40}{48}\sffamily\scshape\textcolor{ergo}}
+\newcommand{\Sum}{\fontsize{40}{48}\sffamily\scshape\textcolor{sum}}
+%
+\begin{document}
+\begin{tikzpicture}
+\begin{scope}
+\draw[color=border,fill=CornflowerBlue] (0,0) circle (4cm);
+\draw[color=border,fill=white] (0,0) circle (2cm);
+\end{scope}
+%
+\draw[color=gray] (0,0) circle (2cm) node {\Ergo{Ergo}};
+\draw (0, 2.7) node {\Cogito{Cogito}};
+\draw (0, -2.9) node {\Sum{Sum}};
+\end{tikzpicture}
+\end{document}

@@ -229,57 +229,80 @@ The above incantation gave birth to this image:
 
 ![Logo: the first cut]({attach}images/firstcut.svg){ width=60% }
 
-### The iterations
+### The second and third cuts
 
-The word _Ergo_ appeared on top of _Cogito_ and that was well and good. But _Sum_ overwrote _Ergo_ and that seemed a bit jarring, even if it accorded with ascending or descending steps. But something more pressing tugged at his attention. The logo lacked a central axis of symmetry and therefore appeared "unstable".
+The word _Ergo_ appeared on top of _Cogito_ and that was well and good. But _Sum_ overwrote _Ergo_ and that seemed a bit jarring, even if it accorded with ascending or descending steps.
 
-So, he set about giving it that stability by having one step descend and the succeeding step ascend. Yes, he thought, "I will fix that imbalance first. The superimpositions can wait."
+But something else struck Sol even more. The progression of ideas was not reflected in the words. In logic, one starts with a proposition and ends with a conclusion or inference. The _ascent_ of successive words seemed a better expression of this logical progression from thinking to being.
 
-With just a simple change in code, shown below, he was able to see his mental picture onscreen.
-
-```latex
-% 
-\newlength{\overlap}\setlength{\overlap}{-0.4em}% negative kern value
-\newlength{\moveup}\setlength{\moveup}{0.2em}% vertical box raising/lowering
-%
-\newsavebox{\CESBox}%
-\sbox{\CESBox}{% 
-{\textcolor{word}{Cogito}}% First word
-\hspace*{\overlap}\raisebox{-\moveup}{\textcolor{emphatic}{Ergo}}% Second word
-\hspace*{\overlap}{\textcolor{word}{Sum}}% Third word
-}%
-%
-```
+He also wanted to emphasize the theme with a gradual whitening or blackening of the colours of the words. That would emphasize the idea of a progression. But as always, colours were  finicky, context-sensitive bunch. Background, foreground, and contrast would hold the final say. After experimenting for half a day, Sol settled on the logo shown below:
 
 ![Logo: the second cut]({attach}images/secondcut.svg){ width=60% }
 
+He stared at this version long and hard and felt satisfied, but not fully. There was a nagging sense of incompleteness hanging over the logo like a pall of smoke. He wanted to go back and start all over again, but his deadline was fast looming. He could make small changes, but could never hope to start over.
 
-<!--LaTeX
+He sat down with a sigh and relaxed into a particularly worn out but comfy bean-bag. It had been his muse when he sought inspiration. His refuge when he sought solace. His fortress when wanted to concentrate. His alter-ego when he wished to bounce thoughts or simply slide into hypnagogia.
 
-boxes in LaTeX
+After a half hour of rest, he saw what was needed. Some form of balance on either side of the centre line that dissected he logo into two, left and right. He fiddled with the keyboard on the computer and finally settled on his third, and possible, final cut, shown below:
 
-boxsep
-boxrule
+![Logo: the third cut]({attach}images/thirdcut.svg){ width=60% }
 
-Vpadding
-Hpadding
+It was not perfect but it had _some_ symmetry, _some_ gradation in colour to invoke a theme, _some_ changes in level to connote a logical progression. _Some_ of everything: some but not enough. And he went to his thinking beanbag and closed his eyes in rumination. By Jove, perfect symmetry in the plane comes with the circle. A logo on a circle with the colours leading one to the other. That would be a logo worthy of philosophers.
 
-Total:
+### The penultimage and final cuts
 
-Some arithmetic [Hugo Configuration](https://gohugo.io/getting-started/configuration/)
+Sol first tried to place the three words _on_ the circumference of a circle to follow its even curvature. But the number of letters in each word, namely, six, four, and three, did not make for a symmetrical break, try how he might. His eyes sought a symmetry that simply was not there. But his heart was set on the circle and its symmetry; a linear arrangement did not seem visually pleasing anymore.
 
-Examples
+With renewed gusto, Sol placed the three words on top of each other on a coloured annulus formed by two concentric circles. At last, he was vaguely satisfied. But again, something was amiss. The circular background did not match the mixture of uppercase and lowercase letters. Somehow, gravity, dignity, or seriousness was lacking. So, he turned to [small capitals](https://en.wikipedia.org/wiki/Small_caps) in the [serif](https://en.wikipedia.org/wiki/Serif) family and got a result that was more than half pleasing. The complete code he used was:
 
-Generating PDFs, SVGs, images, banners, favicons-->
+```latex
+\PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+\documentclass[tikz]{standalone}
+\usetikzlibrary{decorations.text}
+\usepackage{fontspec}
+%
+\setmainfont[BoldFont={* Medium}]{Noto Serif}
+\setsansfont[BoldFont={* Medium}]{Noto Sans}
+\setmonofont{Fira Mono}
+\defaultfontfeatures{MatchLowerCase}
+%
+\colorlet{border}{RosyBrown!50!Black}%
+\colorlet{background}{border}%
+\colorlet{cogito}{Black!80!}%
+\colorlet{ergo}{Black!65!}%
+\colorlet{sum}{Black!20!}%
+%
+\newcommand{\Cogito}{\fontsize{40}{48}\scshape\textcolor{cogito}}
+\newcommand{\Ergo}{\fontsize{40}{48}\scshape\textcolor{ergo}}
+\newcommand{\Sum}{\fontsize{40}{48}\scshape\textcolor{sum}}
+%
+\begin{document}
+\begin{tikzpicture}
+\begin{scope}
+\draw[color=border,fill=CornflowerBlue] (0,0) circle (4cm);
+\draw[color=border,fill=white] (0,0) circle (2cm);
+\end{scope}
+%
+\draw[color=gray] (0,0) circle (2cm) node {\Ergo{Ergo}};
+\draw (0, 2.7) node {\Cogito{Cogito}};
+\draw (0, -2.9) node {\Sum{Sum}};
+\end{tikzpicture}
+\end{document}
+```
 
+The image it yielded was:
 
+![Logo: the penultimage cut]({attach}images/penultimatecut.svg){ width=65% }
 
+For the sheer heck of it, simply by inserting three extra words in his code, he tried [sans serif](https://en.wikipedia.org/wiki/Sans-serif) small capitals and finally thought he had what he had sought all along.
 
+These last two logos would be those he presented to his distinguished philosophers: it was time to fix an appointment with them. But one thing was certain: he was not going to change any colours. He would let their biases colour their logo!
 
-
-
-
+![Logo: the final cut]({attach}images/finalcut.svg){ width=65% }
 
 ### The Illustrations
 
 The statues of Socrates and Diotima shown in this blog are exhibited outside the [Undercroft](https://www.uwa.edu.au/theatres/venues/undercroft) of [The University of Western Australia](https://www.uwa.edu.au/).
+
+All other illustrations were generated using [XeLaTeX](https://www.overleaf.com/learn/latex/XeLaTeX) and applicable TeX packages, including the [TikZ-PGF suite](https://github.com/pgf-tikz/pgf). Much code that is freely available on the Web was accessed for guidance on typesetting these illustrations.
+

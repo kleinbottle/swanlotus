@@ -1,0 +1,86 @@
+% boxtest.tex
+% Explication of values from boxes used in making logos.
+
+% R (Chandra) Chandrasekhar
+% independent Scholar, Thinker, Author, Researcher (iSTAR)
+% lnesqrt1cos0@gmail.com | chyavana@gmail.com
+% First written: 2020-01-06
+% Last revised : 2020-01-06
+
+\documentclass{standalone}
+\usepackage{fontspec}
+\usepackage[rgb,dvipsnames,svgnames]{xcolor}
+\usepackage{calc}
+%
+\setmainfont[BoldFont={* Medium}]{Noto Serif}
+\setsansfont[BoldFont={* Medium}]{Noto Sans}
+\setmonofont{Fira Mono}
+\defaultfontfeatures{MatchLowerCase}
+%
+\colorlet{border}{RosyBrown!50!Black}%
+\colorlet{background}{CornflowerBlue}%
+\colorlet{cogito}{Black!80!}%
+\colorlet{ergo}{Black!70!}%
+\colorlet{sum}{Black!20!}%
+%
+\begin{document}
+%
+% These units of length are absolute and 
+% these definitions can appear anywhere.
+% 
+\setlength{\fboxrule}{0.5pt}% border thickness
+\setlength{\fboxsep}{2.0pt}% all round distance between box and text
+%
+% Compute box sizes to ensure that the last word overwrites the other two
+% %
+% These units of length are relative to font size
+% and must appear in the same scope as the text, and 
+% only after the font size has been selected.
+% Here, the default font size for the class is selected 
+% automatically.
+% 
+\newlength{\Clength}\settowidth{\Clength}{\mbox{Cogito}}%
+\newlength{\Elength}\settowidth{\Elength}{\mbox{Ergo}}%
+\newlength{\Slength}\settowidth{\Slength}{\mbox{Sum}}%
+\newlength{\overlap}\setlength{\overlap}{0.4em}% negative kern value
+\newlength{\moveup}\setlength{\moveup}{0.50em}%
+%
+\newlength{\middlespace}%
+\setlength{\middlespace}{\dimexpr\Elength-2\overlap}%
+\newlength{\reverseoffset}%
+\setlength{\reverseoffset}{\dimexpr-\Slength-\middlespace-\overlap}%
+\typeout{\the\reverseoffset}%
+%
+\newlength{\CESboxwidth}%
+\settowidth{\CESboxwidth}{Cogito\hspace{\middlespace}Sum}%
+\typeout{\the\CESboxwidth}%
+%
+\newsavebox{\Motto}%
+\savebox{\Motto}[\CESboxwidth][l]%
+{\textcolor{cogito}{Cogito}\hspace{\middlespace}\textcolor{ergo}{Ergo}\hspace{\reverseoffset}\raisebox{-\moveup}%
+{\textcolor{sum}{Sum}}}%
+\fcolorbox{border}{background}{\usebox{\Motto}}%
+\
+\end{document}
+
+
+%%% Outside manin document %%%%
+%%% Used for troubleshooting %%%%
+\fcolorbox{Teal}{CornflowerBlue}{\usebox{\Motto}}%
+%
+\newlength{\boxwidth}\settowidth{\boxwidth}{\usebox{\Motto}}%
+\newlength{\boxheight}\settototalheight{\boxheight}{\usebox{\Motto}}%
+%
+\newlength{\totalboxwidth}\setlength{\totalboxwidth}%
+{\dimexpr\boxwidth+2\fboxsep+2\fboxrule}%
+\typeout{Raw box width = \the\boxwidth}%
+\typeout{Total box width = \the\totalboxwidth}%
+%
+\newlength{\totalboxheight}\setlength{\totalboxheight}%
+{\dimexpr\boxheight+2\fboxsep+2\fboxrule}%
+\typeout{Raw box height = \the\boxheight}%
+\typeout{Total box height = \the\totalboxheight}%
+%
+\end{document}
+\kern-0.4em\raisebox{-0.2em}%
+{\textcolor{white}{Ergo}\kern-0.4em\raisebox{0.2em}
