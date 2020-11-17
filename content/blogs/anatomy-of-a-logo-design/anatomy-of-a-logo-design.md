@@ -19,7 +19,7 @@ This unusual request sent the cogwheels in Sol's brain whirring furiously as he 
 
 ### Statues of Socrates and Diotima
 
-He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socrates) and [Diotima](https://en.wikipedia.org/wiki/Diotima_of_Mantinea) whose words had earned his undying admiration when he had visited Athens just before the 2004 summer Olympics were held there. What noble thoughts from what ancient minds!
+He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socrates) and [Diotima](https://en.wikipedia.org/wiki/Diotima_of_Mantinea) whose words had earned his undying admiration. He recalled his visit to Athens just before the 2004 summer Olympics, and had marvelled that such noble thoughts could arise from such ancient minds!
 
 \begin{figure*}[h]
   \begin{minipage}[b]{0.5\linewidth}
@@ -61,9 +61,9 @@ b &\implies c\\
 $$
 He then pondered the legions of people who had made the compulsory bittersweet acquaintance with mathematics, forced upon them in elementary school, and forever forsworn thereafter. No, an expression of mathematical logic was not a good idea either: it would either evoke painful memories, or be passed over in utter incomprehension.
 
-### Knots and Celtic symbols
+### Knots and Braids
 
-Mathematics and philosophy share another quality. In one of its branches, mathematics is devoted to the study of [knots](https://en.wikipedia.org/wiki/Knot_theory) while [philosophy](https://www.britannica.com/topic/philosophy) generally grapples with the knotty problems of life. He thought about the [trefoil knot](https://mathworld.wolfram.com/TrefoilKnot.html), stylized as the Celtic [triquetra](https://en.wikipedia.org/wiki/Triquetra) and its relatives, with their logic-defying symmetry. Here was something symmetrical, beautiful, engaging, intriguing, mathematical, and philosophical, all at the same time. Surely, that would nail the design.
+Mathematics and philosophy share another quality. Two related branches of mathematics, [Knot Theory](https://en.wikipedia.org/wiki/Knot_theory) and [Braid Theory](https://en.wikipedia.org/wiki/Braid_group), are devoted to knots and braids. [Philosophy](https://www.britannica.com/topic/philosophy) too, generally grapples with the knotty problems of life. He thought about the simple [trefoil knot](https://mathworld.wolfram.com/TrefoilKnot.html), stylized as the Celtic [triquetra](https://en.wikipedia.org/wiki/Triquetra), and of more complex braids, and their logic-defying symmetry. Here was something symmetrical, beautiful, engaging, intriguing, mathematical, and philosophical, all at the same time. Surely, that would nail the design.
 
 \begin{figure*}[h]
   \begin{minipage}[b]{0.5\linewidth}
@@ -99,7 +99,7 @@ Sol then turned his attention to science. [Karl Popper](https://en.wikipedia.org
 
 It is not possible to _prove_ Pythagoras's Theorem simply by showing that it has held water in a million cases. But a _single counterexample_ disproving it would be sufficient to knock it off its perch on the pedestal of mathematical truth. Thankfully, that is not the case. The famed theorem has been proved by methods that are mathematically rigorous, and it will therefore stand the test of time. Period. No questions.
 
-Unlike mathematics though, science is built up on the interplay between theory and experiments. There is no neat, logical way in which the "truth" of a theory may be proved. And again, a zillion experiments upholding the predictions of a theory do not necessarily prove its correctness. But the results of a _single_ experiment that contradicts the theory is enough to undermine it wholesale.
+Unlike mathematics though, science is built up on the interplay between theory and experiment. There is no neat, logical way in which the "truth" of a theory may be proved. And again, a zillion experiments upholding the predictions of a theory do not necessarily prove its correctness. But the results of a _single_ experiment that contradicts the theory is enough to undermine it wholesale.
 
 This asymmetry on the onus of proof in science is at the heart of the [Criterion of Falsifiability](https://www.britannica.com/topic/criterion-of-falsifiability) put forward by Popper.
 
@@ -111,11 +111,11 @@ But, coming back to the task at hand, how would such an abstract idea as falsifi
 
 ### Kuhn and paradigm shifts
 
-Sol racked his brain for more ideas when he suddenly stumbled upon the half-remembered phrase [paradigm shift](https://www.lexico.com/definition/paradigm_shift) coined by Thomas Kuhn and popularized in his enduring tome, [_The Structure of Scientific Revolutions_](https://www.amazon.com/Structure-Scientific-Revolutions-50th-Anniversary/dp/0226458121/) [@kuhn2012]. Kuhn held that Science did not evolve smoothly, but every so often experienced seismic corrections or radical changes of perspective that led to new theories that predicted the world much better than before. But how in heaven was he to squeeze all that into a logo? And wouldn't that narrow it to the philosophy of science rather than to all of philosophy? Sol rued that he had entered another [cul-de-sac](https://www.merriam-webster.com/dictionary/cul-de-sac) in his reconnaissance for a viable design.
+Sol racked his brain for more ideas when he suddenly stumbled upon the half-remembered phrase [paradigm shift](https://www.lexico.com/definition/paradigm_shift) coined by Thomas Kuhn and popularized in his enduring tome, [_The Structure of Scientific Revolutions_](https://www.amazon.com/Structure-Scientific-Revolutions-50th-Anniversary/dp/0226458121/) [@kuhn2012]. Kuhn held that Science did not evolve smoothly, but every so often experienced seismic corrections or radical changes of perspective that led to new theories that predicted the world much better than before. But how in heaven was he to squeeze all that into a logo? And wouldn't that narrow it to the philosophy of science rather than to all of philosophy? Sol rued that he had entered another [cul-de-sac](https://www.merriam-webster.com/dictionary/cul-de-sac) on the road to a viable design.
 
 ### The dream
 
-It was now two weeks since he had been commissioned to work on the logo, and Sol did not have even a single draft design to show for that time. He feared that he was losing his famed golden touch that had landed a winner with each project. Weary and teary after much squinting at screens and books, exhausted in body and mind, and a little apprehensive, he fell into a deep but refreshing sleep.
+It was now two weeks since he had been commissioned to work on the logo, and Sol did not have even a single draft design to show for that time. He feared that he was losing his famed mojo that had landed a winner with each project. Weary and teary after much squinting at screens and books, exhausted in body and mind, and a little apprehensive, he fell into a deep but refreshing sleep.
 
 When he awoke, Sol had a clear recollection of a dream---or was it a reverie---in which he had met a man who had mouthed something that sounded foreign, but he was hard pressed to identify what pearls of wisdom had been uttered.
 
@@ -139,7 +139,7 @@ And then it hit him like a ton of bricks. _Calculus could not have been invented
 
 ## René Descartes
 
-Relieved that he was at last on scent to the target, Sol relaxed for a couple of days, which he spent reading about the [life of Descartes](https://www.britannica.com/biography/Rene-Descartes) [@watson2020]. He chuckled when he read that "the 22-year-old [Queen] Christina [of Sweden] perversely made the 53-year-old Descartes rise before 5:00 am to give her philosophy lessons, even though she knew of his habit of lying in bed until 11 o’clock in the morning." [@watson2020]. He read with chagrin that Descartes tragically died in Sweden from pneumonia, presumably caused by the Scandinavian winter and the duress of having to rise early in the morning to keep his appointment with his royal pupil.
+Relieved that he was at last on scent to the target, Sol relaxed for a couple of days, which he spent reading about the [life of Descartes](https://www.britannica.com/biography/Rene-Descartes) [@watson2020]. He chuckled when he read that "the 22-year-old [Queen] Christina [of Sweden] perversely made the 53-year-old Descartes rise before 5:00 am to give her philosophy lessons, even though she knew of his habit of lying in bed until 11 o’clock in the morning." [@watson2020]. He read with chagrin that Descartes tragically died in Sweden from pneumonia, presumably caused by the Scandinavian winter and the duress of having to rise early in the morning to keep his appointment with his royal student.
 
 Sol foraged for anything that could throw light---like Newton's falling apple---on how Descartes got his primary insight of superimposing an orthogonal grid on the plane, to tame geometry with algebra. He could not unearth much and decided to pursue that query for when he did not have a deadline to meet. For now, he needed ideas for a logo, and time was fast racing past.
 
@@ -189,19 +189,19 @@ He first thought of shape and decided on a rectangle to house the words. It woul
 
 ### Font
 
-Sol had a preference for [sans serif]() fonts as they could float ethereally and occupy space anywhere. They were largely context-free and suited to headlines, hoardings, captions, logos, etc.But each time he visualized the three words of the logo, something felt out of place.
+Sol had a preference for [sans serif](https://en.wikipedia.org/wiki/Sans-serif) fonts as they could float ethereally and occupy space anywhere. They were largely context-free and suited to headlines, hoardings, captions, logos, etc. But each time he visualized the three words of the logo, something felt out of place.
 
-In resignation, he fielded a [serif]() font and suddenly things seemed to lock into place. Never one to accept a matter as settled without due cogitation, he pondered why. Then he remembered that serif fonts arose from a time when Latin writing was sculpted on stone. The chisel and hammer made it difficult to crave out characters without serifs as some little sliver of stone stubbornly decided to break, not at the prescribed right angle but at some other odd angle. Serifs were introduced to smooth over such imperfections, and in time came to hold their own as style for a font face.
+In resignation, he fielded a [serif](https://en.wikipedia.org/wiki/Serif) font and suddenly things seemed to lock into place. Never one to accept a matter as settled without due cogitation, he pondered why. Then he remembered that serif fonts arose from a time when Latin writing was sculpted on stone. The chisel and hammer made it difficult to carve out characters without serifs as some little sliver of stone stubbornly decided to break, not at the prescribed right angle but at some other odd angle. Serifs were introduced to smooth over such imperfections, and in time came to hold their own as style for a font face.
 
 And since Descartes' words were in Latin, what better way to celebrate their Latin-ness than with serifs? So, he chose a font with serifs. Which font in particular would be decided by his clients.
 
 ### Symmetry
 
-The sense of fine balance that so perfectly characterized Sol's designs urged him to split the words into three levels, representing the ground, mezzanine, and first floors. In other words, all three words in one line would not make for a memorable. There should be some vertical symmetry-breaking to increase impact and make the logo memorable. Symmetry itself would be embodied by capitalizing each word. It only remained to see where the symmetry would be broken and by which word. He decided he would cross that bridge when he reached it.
+The sense of fine balance that so perfectly characterized Sol's designs urged him to split the words into three levels, representing the ground, mezzanine, and first floors. In other words, all three words in one line would not make for a memorable logo. There should be some vertical separation for greater impact. Symmetry itself would be embodied by capitalizing each word. It only remained to see where the symmetry would be broken and by which word. He decided he would cross that bridge when he reached it.
 
 ### Colour
 
-Colour we linked to emotion. Indeed one is red with rage and green with envy because of this correlation between colour and emotion. Sol did not have any colour theme to persuade his clients to accept. he decided to show them a decent set of harmonized palettes and let them decide. The colours would talk. The colours would emphasize. The colours would sell.
+Colour we link to emotion. Indeed one is red with rage and green with envy because of this connection. Sol did not have any colour scheme to persuade his clients to accept;  he decided instead to show them a decent set of harmonized palettes and let them decide. The colours would talk, emphasize, and sell. But the colours would be chosen by his clients.
 
 ## The execution
 
@@ -249,11 +249,11 @@ After a half hour of rest, he saw what was needed. Some form of balance on eithe
 
 It was not perfect but it had _some_ symmetry, _some_ gradation in colour to invoke a theme, _some_ changes in level to connote a logical progression. _Some_ of everything: some but not enough. And he went to his thinking beanbag and closed his eyes in rumination. By Jove, perfect symmetry in the plane comes with the circle. A logo on a circle with the colours leading one to the other. That would be a logo worthy of philosophers.
 
-### The penultimage and final cuts
+### The penultimate and final cuts
 
 Sol first tried to place the three words _on_ the circumference of a circle to follow its even curvature. But the number of letters in each word, namely, six, four, and three, did not make for a symmetrical break, try how he might. His eyes sought a symmetry that simply was not there. But his heart was set on the circle and its symmetry; a linear arrangement did not seem visually pleasing anymore.
 
-With renewed gusto, Sol placed the three words on top of each other on a coloured annulus formed by two concentric circles. At last, he was vaguely satisfied. But again, something was amiss. The circular background did not match the mixture of uppercase and lowercase letters. Somehow, gravity, dignity, or seriousness was lacking. So, he turned to [small capitals](https://en.wikipedia.org/wiki/Small_caps) in the [serif](https://en.wikipedia.org/wiki/Serif) family and got a result that was more than half pleasing. The complete code he used was:
+With renewed gusto, Sol placed the three words on top of each other on a coloured annulus formed by two concentric circles. At last, he was vaguely satisfied. But again, something was amiss. The circular background did not match the mixture of uppercase and lowercase letters. Somehow, gravity, dignity, or seriousness was lacking. So, he turned to [small capitals](https://en.wikipedia.org/wiki/Small_caps) in the serif family and got a result that was more than half pleasing. The complete code he used was:
 
 ```latex
 \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
@@ -294,7 +294,7 @@ The image it yielded was:
 
 ![Logo: the penultimage cut]({attach}images/penultimatecut.svg){ width=65% }
 
-For the sheer heck of it, simply by inserting three extra words in his code, he tried [sans serif](https://en.wikipedia.org/wiki/Sans-serif) small capitals and finally thought he had what he had sought all along.
+For the sheer heck of it, simply by inserting three extra words in his code, he tried sans serif small capitals and finally thought he had what he had sought all along.
 
 These last two logos would be those he presented to his distinguished philosophers: it was time to fix an appointment with them. But one thing was certain: he was not going to change any colours. He would let their biases colour their logo!
 
@@ -304,5 +304,5 @@ These last two logos would be those he presented to his distinguished philosophe
 
 The statues of Socrates and Diotima shown in this blog are exhibited outside the [Undercroft](https://www.uwa.edu.au/theatres/venues/undercroft) of [The University of Western Australia](https://www.uwa.edu.au/).
 
-All other illustrations were generated using [XeLaTeX](https://www.overleaf.com/learn/latex/XeLaTeX) and applicable TeX packages, including the [TikZ-PGF suite](https://github.com/pgf-tikz/pgf). Much code that is freely available on the Web was accessed for guidance on typesetting these illustrations.
+Apart from highlighted code, all other illustrations were generated using [XeLaTeX](https://www.overleaf.com/learn/latex/XeLaTeX) and applicable TeX packages, including the [TikZ-PGF suite](https://github.com/pgf-tikz/pgf). Much code that is freely available on the Web was accessed for guidance on typesetting these illustrations.
 
