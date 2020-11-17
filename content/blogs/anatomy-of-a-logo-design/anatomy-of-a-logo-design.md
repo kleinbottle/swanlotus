@@ -4,7 +4,7 @@ author: R (Chandra) Chandrasekhar
 date: 2020-01-11
 modified: 2020-11-17
 category: Design
-tags: XeLaTeX, logos, graphics
+tags: philosophy, science, mathematics, design, Descartes, XeLaTeX, logos, graphics
 ---
 
 ## The request
