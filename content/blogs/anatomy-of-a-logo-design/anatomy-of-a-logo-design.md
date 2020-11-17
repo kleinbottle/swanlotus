@@ -135,7 +135,11 @@ Since both Leibniz and Newton were renowned mathematicians as well, Sol got side
 
 [^1]: Such meandering, away from the straight and narrow of his specified task, endowed his designs with a resplendent intellectual sheen, but took its toll on timeliness.
 
-And then it hit him like a ton of bricks. _Calculus could not have been invented without coordinate geometry---that extraordinary offspring of the fortuitous marriage of geometry and algebra_. And the progenitor of _that_ wunderkind was [René Descartes](https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes). With bated breath, Sol searched the Web for images of René Descartes. And bingo! he had a [gallery full of faces](https://tinyurl.com/y57nykjd) that were remarkably similar to the image of his reverie, with eyes that were piercing and dreamy at the same time.
+And then it hit him like a ton of bricks. _Calculus could not have been invented without coordinate geometry---that extraordinary offspring of the fortuitous marriage of geometry and algebra_. And the progenitor of _that_ wunderkind was [René Descartes](https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes). With bated breath, Sol searched the Web for images of René Descartes. 
+
+![René Descartes (after Frans Hals, Public domain, via Wikimedia Commons)]({attach}images/rene-descartes.jpg){ width=60% }
+
+And bingo! he had a [gallery full of faces](https://tinyurl.com/y57nykjd) that were remarkably similar to the image of his reverie, with eyes that were piercing and dreamy at the same time.
 
 ## René Descartes
 
