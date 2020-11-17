@@ -2,7 +2,7 @@
 title: Anatomy of a Logo Design
 author: R (Chandra) Chandrasekhar
 date: 2020-01-11
-modified: 2020-11-16
+modified: 2020-11-17
 category: Design
 tags: XeLaTeX, logos, graphics
 ---
@@ -137,7 +137,7 @@ Since both Leibniz and Newton were renowned mathematicians as well, Sol got side
 
 And then it hit him like a ton of bricks. _Calculus could not have been invented without coordinate geometry---that extraordinary offspring of the fortuitous marriage of geometry and algebra_. And the progenitor of _that_ wunderkind was [René Descartes](https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes). With bated breath, Sol searched the Web for images of René Descartes. 
 
-![René Descartes (after Frans Hals, Public domain, via Wikimedia Commons)]({attach}images/rene-descartes.jpg){ width=60% }
+![René Descartes (after Frans Hals, Public domain, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg))]({attach}images/rene-descartes.jpg){ width=60% }
 
 And bingo! he had a [gallery full of faces](https://tinyurl.com/y57nykjd) that were remarkably similar to the image of his reverie, with eyes that were piercing and dreamy at the same time.
 
