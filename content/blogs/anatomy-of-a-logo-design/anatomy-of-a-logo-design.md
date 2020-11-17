@@ -4,7 +4,7 @@ author: R (Chandra) Chandrasekhar
 date: 2020-01-11
 modified: 2020-11-17
 category: Design
-tags: philosophy, science, mathematics, design, Descartes, XeLaTeX, logos, graphics
+tags: philosophy, science, mathematics, design, Descartes, XeLaTeX, logos, graphics, The Simkin Chronicles, coding
 ---
 
 ## The request
@@ -19,7 +19,7 @@ This unusual request sent the cogwheels in Sol's brain whirring furiously as he 
 
 ### Statues of Socrates and Diotima
 
-He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socrates) and [Diotima](https://en.wikipedia.org/wiki/Diotima_of_Mantinea) whose words had earned his undying admiration. He recalled his visit to Athens just before the 2004 summer Olympics, and had marvelled that such noble thoughts could arise from such ancient minds!
+He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socrates) and [Diotima](https://en.wikipedia.org/wiki/Diotima_of_Mantinea) whose words had earned his undying admiration. He recalled his visit to Athens just before the 2004 summer Olympics, when he had marvelled that such noble thoughts could arise from such ancient minds!
 
 \begin{figure*}[h]
   \begin{minipage}[b]{0.5\linewidth}
@@ -47,7 +47,7 @@ He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socr
 </div>
 ```
 
-But would a layperson recognize those statues and make the link? He thought not, in these days of frenetic and fading fashions and fads, which came and went faster than the famed fruitfly, [Drosophila melanogaster](https://en.wikipedia.org/wiki/Drosophila_melanogaster#Lifecycle_and_reproduction). Why, most people would not even recognize their national flags these days, let alone intellectual icons from the past.
+But would a layperson recognize those statues and make the link? He thought not, in these days of frenetic and fading fashions and fads, which came and went faster than the famed fruitfly, [Drosophila melanogaster](https://en.wikipedia.org/wiki/Drosophila_melanogaster#Lifecycle_and_reproduction). Why, most people would not even recognize their national flags nowadays, let alone intellectual icons from the past.
 
 ### A syllogism in symbols
 
@@ -63,7 +63,7 @@ He then pondered the legions of people who had made the compulsory bittersweet a
 
 ### Knots and Braids
 
-Mathematics and philosophy share another quality. Two related branches of mathematics, [Knot Theory](https://en.wikipedia.org/wiki/Knot_theory) and [Braid Theory](https://en.wikipedia.org/wiki/Braid_group), are devoted to knots and braids. [Philosophy](https://www.britannica.com/topic/philosophy) too, generally grapples with the knotty problems of life. He thought about the simple [trefoil knot](https://mathworld.wolfram.com/TrefoilKnot.html), stylized as the Celtic [triquetra](https://en.wikipedia.org/wiki/Triquetra), and of more complex braids, and their logic-defying symmetry. Here was something symmetrical, beautiful, engaging, intriguing, mathematical, and philosophical, all at the same time. Surely, that would nail the design.
+Mathematics and philosophy share another quality. Two related branches of mathematics, [Knot Theory](https://en.wikipedia.org/wiki/Knot_theory) and [Braid Theory](https://encyclopediaofmath.org/wiki/Braid_theory), are devoted to knots and braids. [Philosophy](https://www.britannica.com/topic/philosophy) too, generally grapples with the knotty problems of life. He thought about the simple [trefoil knot](https://mathworld.wolfram.com/TrefoilKnot.html), stylized as the Celtic [triquetra](https://en.wikipedia.org/wiki/Triquetra), and of the more complex braids, and their logic-defying symmetry. Here was something symmetrical, beautiful, engaging, intriguing, mathematical, and philosophical, all at the same time. Surely, that would nail the design.
 
 \begin{figure*}[h]
   \begin{minipage}[b]{0.5\linewidth}
@@ -111,11 +111,11 @@ But, coming back to the task at hand, how would such an abstract idea as falsifi
 
 ### Kuhn and paradigm shifts
 
-Sol racked his brain for more ideas when he suddenly stumbled upon the half-remembered phrase [paradigm shift](https://www.lexico.com/definition/paradigm_shift) coined by [Thomas Kuhn](https://en.wikipedia.org/wiki/Thomas_Kuhn)---another celebrated philosopher of science---and popularized in his enduring tome, [_The Structure of Scientific Revolutions_](https://www.amazon.com/Structure-Scientific-Revolutions-50th-Anniversary/dp/0226458121/) [@kuhn2012]. Kuhn held that Science did not evolve smoothly, but every so often experienced seismic corrections or radical changes of perspective that led to new theories that predicted the world much better than before. But how in heaven was he to squeeze all that into a logo? And wouldn't that narrow it to the philosophy of science rather than to all of philosophy? Sol rued that he had entered another [cul-de-sac](https://www.merriam-webster.com/dictionary/cul-de-sac) on the road to a viable design.
+Sol racked his brain for more ideas when he suddenly stumbled upon the half-remembered phrase [paradigm shift](https://www.lexico.com/definition/paradigm_shift) coined by [Thomas Kuhn](https://en.wikipedia.org/wiki/Thomas_Kuhn)---another celebrated philosopher of science---and popularized in his enduring tome, [_The Structure of Scientific Revolutions_](https://www.amazon.com/Structure-Scientific-Revolutions-50th-Anniversary/dp/0226458121/) [@kuhn2012]. Kuhn held that science did not evolve smoothly, but every so often experienced seismic corrections or radical changes of perspective that led to new theories that predicted the world much better than before. But how in heaven was he to squeeze all that into a logo? And wouldn't that narrow it to the philosophy of science rather than to all of philosophy? Sol rued that he had entered another [cul-de-sac](https://www.merriam-webster.com/dictionary/cul-de-sac) on the road to a viable design.
 
 ### The dream
 
-It was now two weeks since he had been commissioned to work on the logo, and Sol did not have even a single draft design to show for that time. He feared that he was losing his famed mojo that had landed a winner with each project. Weary and teary after much squinting at screens and books, exhausted in body and mind, and a little apprehensive, he fell into a deep but refreshing sleep.
+It was now two weeks since he had been commissioned to work on the logo, and Sol did not have even a single draft design to show for that time. He feared that he was losing his famed mojo that had landed a winner with each project. Weary and teary after much squinting at screens and books, exhausted in body and mind, and a little apprehensive, he fell into a deep and refreshing sleep.
 
 When he awoke, Sol had a clear recollection of a dream---or was it a reverie---in which he had met a man who had mouthed something that sounded foreign, but he was hard pressed to identify what pearls of wisdom had been uttered.
 
