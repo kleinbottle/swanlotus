@@ -47,7 +47,7 @@ He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socr
 </div>
 ```
 
-But would a layperson recognize those statues and make the link? He thought not, in these days of frenetic and fading fashions and fads, which came and went faster than the famed fruitfly, [Drosophila melanogaster](https://en.wikipedia.org/wiki/Drosophila_melanogaster#Lifecycle_and_reproduction). Why, most people would not even recognize their national flags nowadays, let alone intellectual icons from the past.
+But would a layperson recognize those statues and make the link? He thought not, in these days of frenetic and fading fashions and fads, which came and went faster than the famed fruitfly, [Drosophila melanogaster](https://en.wikipedia.org/wiki/Drosophila_melanogaster#Lifecycle_and_reproduction). Why, most people would not even recognize their own national flags nowadays, let alone intellectual icons from the past.
 
 ### A syllogism in symbols
 
@@ -59,7 +59,7 @@ b &\implies c\\
 \therefore\hspace{0.5em}a &\implies c
 \end{aligned}
 $$
-He then pondered the legions of people who had made the compulsory bittersweet acquaintance with mathematics, forced upon them in elementary school, and forever forsworn thereafter. No, an expression of mathematical logic was not a good idea either: it would either evoke painful memories, or be passed over in utter incomprehension.
+He then pondered the legions of people who had made the compulsory bittersweet acquaintance with mathematics, forced upon them in elementary school, and forever forsworn thereafter. No, an expression of mathematical logic was not a good idea: it would either evoke painful memories, or be passed over in utter incomprehension.
 
 ### Knots and Braids
 
@@ -125,13 +125,13 @@ Rather than fret and fume at not remembering the words in his dream, Sol decided
 
 ### The search for a face
 
-While he was working on an unrelated task, the thought suddenly flashed in his mind that he should harness the Web to see if there was any gallery of portraits of well-known philosophers against whom he could attempt a match with the face seen in his dream. It seemed like a hopeless task, but it was the sole lead he had.
+While he was working on an unrelated task, the thought suddenly flashed in Sol's mind that he should harness the Web to see if there was any gallery of portraits of well-known philosophers against whom he could attempt a match with the face seen in his dream. It seemed like a hopeless task, but it was the sole lead he had.
 
 A cursory search of the Web gave no comfort. The hair-style of the man in his dream definitely ruled out the [Wittgensteins](https://tinyurl.com/y2sn8uzb) and [Kierkegaards](https://tinyurl.com/y3xdx3gl).
 
 He decided to search among the likes of [Leibniz](https://tinyurl.com/yxomtbt5) and [Newton](https://tinyurl.com/y5lc2fyx), both of whom were not only celebrated philosophers of their time, but also sported long locks, whether natural or wigged. But no luck there either. Their eyes appeared too different from those in his dream.
 
-Since both Leibniz and Newton were renowned mathematicians as well, Sol got side-tracked thinking about whether calculus was discovered or invented [^1]. It was probably the greatest scientific advance of its time. And priority for its discovery was an ugly bone of contention between Leibniz and Newton [@bardi2007].
+Since both Leibniz and Newton were renowned mathematicians as well, Sol got side-tracked thinking about whether the calculus was discovered or invented [^1]. It was probably the greatest scientific advance of its time. And priority for its discovery was an ugly bone of contention between Leibniz and Newton [@bardi2007].
 
 [^1]: Such meandering, away from the straight and narrow of his specified task, endowed his designs with a resplendent intellectual sheen, but took its toll on timeliness.
 
@@ -159,9 +159,9 @@ The thrill of the quest was now over. It was time to sit down and flesh out a lo
 
 ### Hand-crafting the logo
 
-He could hand paint the logo electronically, giving it unique individuality. But Sol was no natural artist and looked askance at scribing away on a tablet to artistic perfection.
+He could hand-paint the logo electronically, giving it unique individuality. But Sol was no natural artist and looked askance at scribing away on a tablet to artistic perfection.
 
-Moreover, what would happen if his clients wanted to rejuvenate their logo after a few years. The transmogrification of the [3M Logo](https://1000logos.net/3m-logo/) in almost a century was a case in point. Its changes struck a fine balance between the old and the new---same enough to be recognizable from the past but new enough to attract and engage afresh. A hand-painted logo would be difficult to morph over time to retain its essence while renewing its expression. Logo-maintenance precluded a hand-drawn logo.
+Moreover, what would happen if his clients wanted to rejuvenate their logo after a few years. The metamorphosis of the [3M Logo](https://1000logos.net/3m-logo/) across almost a century was a case in point. Its changes struck a fine balance between the old and the new---same enough to be recognizable from the past but new enough to attract and engage afresh. A hand-painted logo would be difficult to morph over time to retain its essence while renewing its expression. Logo-maintenance precluded a hand-drawn logo.
 
 ### Interactive graphics
 
@@ -175,13 +175,13 @@ The downside was that the results were not precisely repeatable because objects 
 
 Generating digital graphics by programming was a slower, more tedious process that called for ample patience. Only those conversant with [delayed gratification](https://www.psychologytoday.com/us/blog/your-emotional-meter/201712/the-benefits-delaying-gratification) would opt for it. The feedback would neither be instantaneous nor visual. One needed to edit-compile-view, and re-edit, repeating this cycle until satisfied. Sol pondered the tedium that awaited him if he chose to go this way.
 
-But the upside was the precision of a coded program. Numbers reigned. Small changes simply meant tweaking a digit here or there. Changing colours was a cinch. In keeping with the accomplishments of Descartes, it was the perfect marriage of art and science, of philosophy and mathematics.
+But the upside was the precision of a coded program. Numbers reigned supreme. Small changes simply meant tweaking a digit here or there. Changing colours was a cinch. In keeping with the accomplishments of Descartes, it was the perfect marriage of art and science, of philosophy and mathematics.
 
 ### Making a choice
 
-The dichotomy of choice between interactive and programmatic generation of graphics was easily resolved though. Sol only needed to think of giving his clients variants of a single thematic logo to choose from, or of the maintenance of the logo over time, through change of font, etc. It was clear that present pain bought future gain if he chose to program the logo.
+The dichotomy of choice between interactive and programmatic generation of graphics was easily resolved though. Sol only had to think of giving his clients variants of a single thematic logo to choose from, or of the maintenance of the logo over time, through change of font, etc. It was clear that present pain bought future gain if he chose to _program_ the logo.
 
-Given that his logo would consist principally of words, Sol veered toward the [TeX-based](https://www.tug.org/levels.html) suite of typesetting tools. He finally settled upon the [LaTeX](https://www.latex-project.org/) format and the [XeTeX](https://tug.org/xetex/) typesetting engine which gave him [XeLaTeX](https://www.overleaf.com/learn/latex/XeLaTeX). He decided that his output would be in [PDF](https://acrobat.adobe.com/in/en/acrobat/about-adobe-pdf.html) for paper and [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) for the Web, both of which afforded scalable graphics that would not degrade with resizing of the output medium, whether paper or screen. With these choices made, he rolled up his sleeves for a spot of work.
+Given that his logo would consist principally of words, Sol veered toward the [TeX-based](https://www.tug.org/levels.html) suite of typesetting tools. He finally settled upon the [LaTeX](https://www.latex-project.org/) format and the [XeTeX](https://tug.org/xetex/) typesetting engine which gave him [XeLaTeX](https://www.overleaf.com/learn/latex/XeLaTeX). He decided that his output would be in [PDF](https://acrobat.adobe.com/in/en/acrobat/about-adobe-pdf.html) for paper and [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) for the Web, both of which afforded resolution-independent scalable graphics that would not degrade with resizing of the output medium, whether paper or screen. With these choices made, he rolled up his sleeves for a spot of work.
 
 ## The ideation
 
@@ -195,9 +195,9 @@ He first thought of shape and decided on a rectangle to house the words. It woul
 
 Sol had a preference for [sans serif](https://en.wikipedia.org/wiki/Sans-serif) fonts as they could float ethereally and occupy space anywhere. They were largely context-free and suited to headlines, hoardings, captions, logos, etc. But each time he visualized the three words of the logo, something felt out of place.
 
-In resignation, he fielded a [serif](https://en.wikipedia.org/wiki/Serif) font and suddenly things seemed to lock into place. Never one to accept a matter as settled without due cogitation, he pondered why. Then he remembered that serif fonts arose from a time when Latin writing was sculpted on stone. The chisel and hammer made it difficult to carve out characters without serifs as some little sliver of stone stubbornly decided to break, not at the prescribed right angle but at some other odd angle. Serifs were introduced to smooth over such imperfections, and in time came to hold their own as style for a font face.
+In resignation, he fielded a [serif](https://en.wikipedia.org/wiki/Serif) font and suddenly things seemed [hunky dory](https://www.vocabulary.com/dictionary/hunky-dory). Never one to accept a matter as settled without due cogitation, he pondered why. Then he remembered that serif fonts arose from a time when Latin writing was sculpted on stone. The chisel and hammer made it difficult to carve out characters without serifs as some little sliver of stone stubbornly decided to break, not at the prescribed right angle but at some other odd angle. Serifs were introduced to smooth over such imperfections, and in time came to hold their own as a style for a font face.
 
-And since Descartes' words were in Latin, what better way to celebrate their Latin-ness than with serifs? So, he chose a font with serifs. Which font in particular would be decided by his clients.[^2]
+And since Descartes' words were in Latin, what better way to celebrate their Latin-ness than with serifs? So, he chose a font with serifs. Which font in particular would be decided later.[^2]
 
 [^2]: His choice was usurped again, this time by a sans serif font, as we shall see later.
 
@@ -215,7 +215,7 @@ At last, Sol had reached the tedious portion of his work. Gone was the thrill of
 
 ### The first cut
 
-Sol's first cut had its operative code in this fragment which I reproduce with no explanation as it is only _changes_ in this fragment that we need to appreciate rather than understand:
+Sol's first cut had its operative code in this fragment which I reproduce below without explanation, simply to convey the flavour of the process.
 
 ```latex
 % 
@@ -231,7 +231,7 @@ Sol's first cut had its operative code in this fragment which I reproduce with n
 %
 ```
 
-The above incantation gave birth to this image:
+The above incantation, used used with the [Noto Serif](https://fonts.google.com/specimen/Noto+Serif) font, gave birth to this image:
 
 ![Logo: the first cut]({attach}images/firstcut.svg){ width=60% }
 
@@ -239,27 +239,33 @@ The above incantation gave birth to this image:
 
 The word _Ergo_ appeared on top of _Cogito_ and that was well and good. But _Sum_ overwrote _Ergo_ and that seemed a bit jarring, even if it accorded with ascending or descending steps.
 
-But something else struck Sol even more. The progression of ideas was not reflected in the words. In logic, one starts with a proposition and ends with a conclusion or inference. The _ascent_ of successive words seemed a better expression of this logical progression from thinking to being.
+But something else struck Sol even more. The progression of ideas was not reflected in the positions of the words. In logic, one starts with a proposition and ends with a conclusion or inference. The _ascent_ of successive words seemed a better expression of this logical progression from thinking to being.
 
-He also wanted to emphasize the theme with a gradual whitening or blackening of the colours of the words. That would emphasize the idea of a progression. But as always, colours were a finicky, context-sensitive bunch. Background, foreground, and contrast would hold the final say. After experimenting for half a day, Sol settled on the logo shown below:
+He also wanted to emphasize the theme with a gradual whitening or blackening of the colours of the words. That would emphasize the idea of monotonic change. But as always, colours were a finicky, context-sensitive bunch. Background, foreground, and contrast would hold the final say. After experimenting for half a day, Sol settled on the logo shown below:
 
 ![Logo: the second cut]({attach}images/secondcut.svg){ width=60% }
 
 He stared at this version long and hard and felt satisfied, but not fully. There was a nagging sense of incompleteness hanging over the logo like a pall of smoke. He wanted to go back and start all over again, but his deadline was fast looming. He could make small changes, but could never hope to start over.
 
+### The Interlude
+
 He sat down with a sigh and relaxed into a particularly worn out but comfy beanbag. It had been his muse when he sought inspiration. His refuge when he sought solace. His fortress when he needed protection. His alter-ego when he wished to bounce thoughts or simply slide into hypnagogia.
 
-After a half hour of rest, he saw what was needed. Some form of balance on either side of the centre line that dissected he logo into two, left and right. He fiddled with the keyboard on the computer and finally settled on his third, and possibly final cut, shown below:
+After a half hour of rest, he saw what was needed. Some form of balance on either side of the centre line that dissected the logo into two: left and right. He fiddled with the keyboard on the computer and finally settled on his third, and possibly final cut, shown below:
 
 ![Logo: the third cut]({attach}images/thirdcut.svg){ width=60% }
 
-It was not perfect but it had _some_ symmetry, _some_ gradation in colour to invoke a theme, _some_ changes in level to connote a logical progression. _Some_ of everything: some but not enough. And he went to his thinking beanbag and closed his eyes in rumination. By Jove, perfect symmetry in the plane comes with the circle. A logo on a circle with the colours leading one to the other. That would be a logo worthy of philosophers.
+It was not perfect but it had _some_ symmetry, _some_ gradation in colour to invoke a theme, _some_ changes in level to connote a logical progression. _Some_ of everything: some but not enough. And he went to his thinking-beanbag and closed his eyes in rumination. By Jove, perfect symmetry in the plane comes with the circle. A logo on a circle with the colours leading one to the other. That would be a logo worthy of philosophers.
 
 ### The penultimate and final cuts
 
-Sol first tried to place the three words _on_ the circumference of a circle to follow its even curvature. But the number of letters in each word, namely, six, four, and three, did not make for a symmetrical break, try how he might. His eyes sought a symmetry that simply was not there. But his heart was set on the circle and its symmetry; a linear arrangement did not seem visually pleasing anymore.
+Sol first tried to place the three words _on_ the circumference of a circle to follow its even curvature. But the number of letters in each word, namely, six, four, and three, did not make for a symmetrical break, try how he might. His eyes sought a symmetry that simply was not there. But his heart was set on the circle and its symmetry; the linear arrangement had lost its charm.
 
-With renewed gusto, Sol placed the three words on top of each other on a coloured annulus formed by two concentric circles. At last, he was vaguely satisfied. But again, something was amiss. The circular background did not match the mixture of uppercase and lowercase letters. Somehow, gravity, dignity, or seriousness was lacking. So, he turned to [small capitals](https://en.wikipedia.org/wiki/Small_caps) in the serif family and got a result that was more than half pleasing. The complete code he used was:
+With renewed gusto, Sol placed the three words on top of each other on a coloured annulus formed by two concentric circles. At last, he was vaguely satisfied. But again, something was amiss. The circular background did not match the mixture of uppercase and lowercase letters. Somehow, gravity, dignity, or seriousness was lacking. So, he turned to [small capitals](https://en.wikipedia.org/wiki/Small_caps) in the serif family and got a result that was more than half pleasing:
+
+![Logo: the penultimate cut]({attach}images/penultimatecut.svg){ width=60% }
+
+For the sheer heck of it, he simply by inserted three extra words in his code, shown in full below:
 
 ```latex
 \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
@@ -273,14 +279,14 @@ With renewed gusto, Sol placed the three words on top of each other on a coloure
 \defaultfontfeatures{MatchLowerCase}
 %
 \colorlet{border}{RosyBrown!50!Black}%
-\colorlet{background}{border}%
+\colorlet{background}{CornflowerBlue}%
 \colorlet{cogito}{Black!80!}%
 \colorlet{ergo}{Black!65!}%
 \colorlet{sum}{Black!20!}%
 %
-\newcommand{\Cogito}{\fontsize{40}{48}\scshape\textcolor{cogito}}
-\newcommand{\Ergo}{\fontsize{40}{48}\scshape\textcolor{ergo}}
-\newcommand{\Sum}{\fontsize{40}{48}\scshape\textcolor{sum}}
+\newcommand{\Cogito}{\fontsize{40}{48}\sffamily\scshape\textcolor{cogito}}
+\newcommand{\Ergo}{\fontsize{40}{48}\sffamily\scshape\textcolor{ergo}}
+\newcommand{\Sum}{\fontsize{40}{48}\sffamily\scshape\textcolor{sum}}
 %
 \begin{document}
 \begin{tikzpicture}
@@ -296,15 +302,13 @@ With renewed gusto, Sol placed the three words on top of each other on a coloure
 \end{document}
 ```
 
-The image it yielded was:
-
-![Logo: the penultimate cut]({attach}images/penultimatecut.svg){ width=60% }
-
-For the sheer heck of it, simply by inserting three extra words in his code, he tried sans serif small capitals and finally thought he had what he had sought all along.
+And the result, with sans serif, small capitals is shown below:
 
 ![Logo: the final cut]({attach}images/finalcut.svg){ width=60% }
 
-These last two logos were chosen for presentation to his distinguished philosophers: it was time to fix an appointment with them. But one thing was certain: he was not going to change any colours. He would let their biases colour their logo! And what a sigh of relief he breathed!
+### Finale
+
+As he gazed upon his latest effort, Sol experienced the finality and exultation felt at the end of a long and tiring quest. Yes, he had indeed fulfilled his commission. The last two logos were chosen for presentation to his distinguished philosophers: it was time to fix an appointment with them. But one thing was certain: he was not going to change any colours. He would let _their_ biases colour their logo! And what a sigh of relief he breathed!
 
 ### The Illustrations
 
