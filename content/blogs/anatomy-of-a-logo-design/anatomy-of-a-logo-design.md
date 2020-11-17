@@ -155,7 +155,7 @@ And what was Descartes' most profound philosophical utterance? Oh! Of course! [C
 
 ## The means
 
-The thrill of the quest was now over. It was time to sit down and flesh out an image from a dream. Sol was no stranger to ardour. He hunkered down and sifted through his options.
+The thrill of the quest was now over. It was time to sit down and flesh out a logo from a dream. Sol was no stranger to ardour. He hunkered down and sifted through his options.
 
 ### Hand-crafting the logo
 
@@ -173,7 +173,7 @@ The downside was that the results were not precisely repeatable because objects 
 
 ### Programmatic generation
 
-Generating digital graphics by programming was a slower, more tedious process that called for ample patience. Only those conversant with delayed gratification would opt for it. The feedback would neither be instantaneous nor visual. One needed to edit-compile-view, and re-edit, repeating this cycle until satisfied. Sol pondered the tedium that awaited him if he chose to go this way.
+Generating digital graphics by programming was a slower, more tedious process that called for ample patience. Only those conversant with [delayed gratification](https://www.psychologytoday.com/us/blog/your-emotional-meter/201712/the-benefits-delaying-gratification) would opt for it. The feedback would neither be instantaneous nor visual. One needed to edit-compile-view, and re-edit, repeating this cycle until satisfied. Sol pondered the tedium that awaited him if he chose to go this way.
 
 But the upside was the precision of a coded program. Numbers reigned. Small changes simply meant tweaking a digit here or there. Changing colours was a cinch. In keeping with the accomplishments of Descartes, it was the perfect marriage of art and science, of philosophy and mathematics.
 
@@ -181,7 +181,7 @@ But the upside was the precision of a coded program. Numbers reigned. Small chan
 
 The dichotomy of choice between interactive and programmatic generation of graphics was easily resolved though. Sol only needed to think of giving his clients variants of a single thematic logo to choose from, or of the maintenance of the logo over time, through change of font, etc. It was clear that present pain bought future gain if he chose to program the logo.
 
-Given that his logo would consist principally of words, Sol veered toward the [TeX-based](https://www.tug.org/levels.html) suite of typesetting tools. He finally settled upon the [LaTeX](https://www.latex-project.org/) format and the [XeTeX](http://xetex.sourceforge.net/) typesetting engine which gave him XeLaTeX. He decided that his output would be in [PDF](https://acrobat.adobe.com/in/en/acrobat/about-adobe-pdf.html) for paper and [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) for the Web, both of which afforded scalable graphics that would not degrade with resizing of the output medium, whether paper or screen. With these choices made, he rolled up his sleeves for a spot of work.
+Given that his logo would consist principally of words, Sol veered toward the [TeX-based](https://www.tug.org/levels.html) suite of typesetting tools. He finally settled upon the [LaTeX](https://www.latex-project.org/) format and the [XeTeX](https://tug.org/xetex/) typesetting engine which gave him [XeLaTeX](https://www.overleaf.com/learn/latex/XeLaTeX). He decided that his output would be in [PDF](https://acrobat.adobe.com/in/en/acrobat/about-adobe-pdf.html) for paper and [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) for the Web, both of which afforded scalable graphics that would not degrade with resizing of the output medium, whether paper or screen. With these choices made, he rolled up his sleeves for a spot of work.
 
 ## The ideation
 
@@ -189,7 +189,7 @@ With all the preliminaries in place, Sol settled down to work. He used his prodi
 
 ### Shape
 
-He first thought of shape and decided on a rectangle to house the words. It would be a rectangle with a small, definitive border that emphasized the inside and framed the work.
+He first thought of shape and decided on a rectangle to house the words. It would be a rectangle with a small, definitive border that emphasized the inside and framed the work. Although it takes us ahead of ourselves in this account, he later fell for the symmetry of a circle as his prime choice.
 
 ### Font
 
@@ -197,15 +197,17 @@ Sol had a preference for [sans serif](https://en.wikipedia.org/wiki/Sans-serif) 
 
 In resignation, he fielded a [serif](https://en.wikipedia.org/wiki/Serif) font and suddenly things seemed to lock into place. Never one to accept a matter as settled without due cogitation, he pondered why. Then he remembered that serif fonts arose from a time when Latin writing was sculpted on stone. The chisel and hammer made it difficult to carve out characters without serifs as some little sliver of stone stubbornly decided to break, not at the prescribed right angle but at some other odd angle. Serifs were introduced to smooth over such imperfections, and in time came to hold their own as style for a font face.
 
-And since Descartes' words were in Latin, what better way to celebrate their Latin-ness than with serifs? So, he chose a font with serifs. Which font in particular would be decided by his clients.
+And since Descartes' words were in Latin, what better way to celebrate their Latin-ness than with serifs? So, he chose a font with serifs. Which font in particular would be decided by his clients.[^2]
+
+[^2]: His choice was usurped again, this time by a sans serif font, as we shall see later.
 
 ### Symmetry
 
-The sense of fine balance that so perfectly characterized Sol's designs urged him to split the words into three levels, representing the ground, mezzanine, and first floors. In other words, all three words in one line would not make for a memorable logo. There should be some vertical separation for greater impact. Symmetry itself would be embodied by capitalizing each word. It only remained to see where the symmetry would be broken and by which word. He decided he would cross that bridge when he reached it.
+The sense of fine balance that so perfectly characterized Sol's designs urged him to split the words into three levels, representing the ground, mezzanine, and first floors. In other words, all three words in one line would not make for a memorable logo. There should be some vertical separation for greater impact. Symmetry itself would be embodied by capitalizing each word. It only remained to see where the symmetry would be broken and by which word. He decided he would cross that bridge when he came to it.
 
 ### Colour
 
-Colour we link to emotion. Indeed one is red with rage and green with envy because of this connection. Sol did not have any colour scheme to persuade his clients to accept;  he decided instead to show them a decent set of harmonized palettes and let them decide. The colours would talk, emphasize, and sell. But the colours would be chosen by his clients.
+Colour is linked to emotion. Indeed one is red with rage and green with envy because of this connection. Sol did not have any colour scheme to persuade his clients to accept;  he decided instead to show them a decent set of harmonized palettes and let them decide. The colours would talk, emphasize, and sell. But the colours would be chosen by his clients.
 
 ## The execution
 
@@ -239,15 +241,15 @@ The word _Ergo_ appeared on top of _Cogito_ and that was well and good. But _Sum
 
 But something else struck Sol even more. The progression of ideas was not reflected in the words. In logic, one starts with a proposition and ends with a conclusion or inference. The _ascent_ of successive words seemed a better expression of this logical progression from thinking to being.
 
-He also wanted to emphasize the theme with a gradual whitening or blackening of the colours of the words. That would emphasize the idea of a progression. But as always, colours were  finicky, context-sensitive bunch. Background, foreground, and contrast would hold the final say. After experimenting for half a day, Sol settled on the logo shown below:
+He also wanted to emphasize the theme with a gradual whitening or blackening of the colours of the words. That would emphasize the idea of a progression. But as always, colours were a finicky, context-sensitive bunch. Background, foreground, and contrast would hold the final say. After experimenting for half a day, Sol settled on the logo shown below:
 
 ![Logo: the second cut]({attach}images/secondcut.svg){ width=60% }
 
 He stared at this version long and hard and felt satisfied, but not fully. There was a nagging sense of incompleteness hanging over the logo like a pall of smoke. He wanted to go back and start all over again, but his deadline was fast looming. He could make small changes, but could never hope to start over.
 
-He sat down with a sigh and relaxed into a particularly worn out but comfy bean-bag. It had been his muse when he sought inspiration. His refuge when he sought solace. His fortress when wanted to concentrate. His alter-ego when he wished to bounce thoughts or simply slide into hypnagogia.
+He sat down with a sigh and relaxed into a particularly worn out but comfy beanbag. It had been his muse when he sought inspiration. His refuge when he sought solace. His fortress when he needed protection. His alter-ego when he wished to bounce thoughts or simply slide into hypnagogia.
 
-After a half hour of rest, he saw what was needed. Some form of balance on either side of the centre line that dissected he logo into two, left and right. He fiddled with the keyboard on the computer and finally settled on his third, and possible, final cut, shown below:
+After a half hour of rest, he saw what was needed. Some form of balance on either side of the centre line that dissected he logo into two, left and right. He fiddled with the keyboard on the computer and finally settled on his third, and possibly final cut, shown below:
 
 ![Logo: the third cut]({attach}images/thirdcut.svg){ width=60% }
 
@@ -296,17 +298,16 @@ With renewed gusto, Sol placed the three words on top of each other on a coloure
 
 The image it yielded was:
 
-![Logo: the penultimage cut]({attach}images/penultimatecut.svg){ width=65% }
+![Logo: the penultimage cut]({attach}images/penultimatecut.svg){ width=60% }
 
 For the sheer heck of it, simply by inserting three extra words in his code, he tried sans serif small capitals and finally thought he had what he had sought all along.
 
-These last two logos would be those he presented to his distinguished philosophers: it was time to fix an appointment with them. But one thing was certain: he was not going to change any colours. He would let their biases colour their logo!
+![Logo: the final cut]({attach}images/finalcut.svg){ width=60% }
 
-![Logo: the final cut]({attach}images/finalcut.svg){ width=65% }
+These last two logos were chosen for presentation to his distinguished philosophers: it was time to fix an appointment with them. But one thing was certain: he was not going to change any colours. He would let their biases colour their logo!
 
 ### The Illustrations
 
 The statues of Socrates and Diotima shown in this blog are exhibited outside the [Undercroft](https://www.uwa.edu.au/theatres/venues/undercroft) of [The University of Western Australia](https://www.uwa.edu.au/).
 
-Apart from highlighted code, all other illustrations were generated using [XeLaTeX](https://www.overleaf.com/learn/latex/XeLaTeX) and applicable TeX packages, including the [TikZ-PGF suite](https://github.com/pgf-tikz/pgf). Much code that is freely available on the Web was accessed for guidance on typesetting these illustrations.
-
+Apart from highlighted code, all other illustrations were generated using XeLaTeX and applicable TeX packages, including the [TikZ-PGF suite](https://github.com/pgf-tikz/pgf). Much code that is freely available on the Web was accessed for guidance on typesetting these illustrations.
