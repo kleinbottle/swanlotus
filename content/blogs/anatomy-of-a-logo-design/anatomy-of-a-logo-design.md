@@ -308,7 +308,7 @@ And the result, with sans serif, small capitals is shown below:
 
 ### Finale
 
-As he gazed upon his latest effort, Sol experienced the finality and exultation felt at the end of a long and tiring quest. Yes, he had indeed fulfilled his commission. The last two logos were chosen for presentation to his distinguished philosophers: it was time to fix an appointment with them. But one thing was certain: he was not going to change any colours. He would let _their_ biases colour their logo! And what a sigh of relief he breathed!
+As he gazed upon his latest effort, Sol experienced the exultation and finality felt at the end of a long and tiring quest. Yes, he had indeed fulfilled his commission. The last two logos were chosen for presentation to his distinguished philosophers: it was time to fix an appointment with them. But one thing was certain: he was not going to change any colours. He would let _their_ biases colour their logo! And what a sigh of relief he breathed!
 
 ### The Illustrations
 
