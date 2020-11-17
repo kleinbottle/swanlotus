@@ -1,6 +1,5 @@
 \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
 \documentclass[tikz]{standalone}
-\usetikzlibrary{decorations.text}
 \usepackage{fontspec}
 %
 \setmainfont[BoldFont={* Medium}]{Noto Serif}
@@ -25,8 +24,8 @@
 \draw[color=border,fill=white] (0,0) circle (2cm);
 \end{scope}
 %
-\draw[color=gray] (0,0) circle (2cm) node {\Ergo{Ergo}};
-\draw (0, 2.7) node {\Cogito{Cogito}};
-\draw (0, -2.9) node {\Sum{Sum}};
+\draw [color=border] (0,0) circle (2cm) node {\Ergo{ergo}};
+\draw (0, 2.7) node {\Cogito{cogito}};
+\draw (0, -2.7) node {\Sum{sum}};
 \end{tikzpicture}
 \end{document}

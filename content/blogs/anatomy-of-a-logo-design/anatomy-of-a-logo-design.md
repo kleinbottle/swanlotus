@@ -4,7 +4,7 @@ author: R (Chandra) Chandrasekhar
 date: 2020-01-11
 modified: 2020-11-17
 category: Design
-tags: philosophy, science, mathematics, design, Descartes, XeLaTeX, logos, graphics, The Simkin Chronicles, coding
+tags: philosophy, mathematics, science, Descartes, XeLaTeX, logos, graphics, coding, the simkin chronicles
 ---
 
 ## The request
@@ -261,16 +261,15 @@ It was not perfect but it had _some_ symmetry, _some_ gradation in colour to inv
 
 Sol first tried to place the three words _on_ the circumference of a circle to follow its even curvature. But the number of letters in each word, namely, six, four, and three, did not make for a symmetrical break, try how he might. His eyes sought a symmetry that simply was not there. But his heart was set on the circle and its symmetry; the linear arrangement had lost its charm.
 
-With renewed gusto, Sol placed the three words on top of each other on a coloured annulus formed by two concentric circles. At last, he was vaguely satisfied. But again, something was amiss. The circular background did not match the mixture of uppercase and lowercase letters. Somehow, gravity, dignity, or seriousness was lacking. So, he turned to [small capitals](https://en.wikipedia.org/wiki/Small_caps) in the serif family and got a result that was more than half pleasing:
+With renewed gusto, Sol placed the three words on top of each other on a coloured annulus formed by two concentric circles. At last, he was vaguely satisfied. But again, something was amiss. The circular background did not match the mixture of uppercase and lowercase letters. Somehow, gravity, dignity, or seriousness was lacking. First-letter capitalization upset the symmetry. And all-uppercase or all-lowercase versions were ghastly to his gaze. So, he turned to [small capitals](https://en.wikipedia.org/wiki/Small_caps) in the serif family, and got a result that was more than half pleasing:
 
 ![Logo: the penultimate cut]({attach}images/penultimatecut.svg){ width=60% }
 
-For the sheer heck of it, he simply by inserted three extra words in his code, shown in full below:
+For the sheer heck of it, he simply inserted three extra words in his code, to see how the sans serif fonts would look like in small capitals. For the record, his code is shown in full below:
 
 ```latex
 \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
 \documentclass[tikz]{standalone}
-\usetikzlibrary{decorations.text}
 \usepackage{fontspec}
 %
 \setmainfont[BoldFont={* Medium}]{Noto Serif}
@@ -284,9 +283,9 @@ For the sheer heck of it, he simply by inserted three extra words in his code, s
 \colorlet{ergo}{Black!65!}%
 \colorlet{sum}{Black!20!}%
 %
-\newcommand{\Cogito}{\fontsize{40}{48}\sffamily\scshape\textcolor{cogito}}
-\newcommand{\Ergo}{\fontsize{40}{48}\sffamily\scshape\textcolor{ergo}}
-\newcommand{\Sum}{\fontsize{40}{48}\sffamily\scshape\textcolor{sum}}
+\newcommand{\Cogito}{\fontsize{40}{48}\selectfont\sffamily\scshape\textcolor{cogito}}
+\newcommand{\Ergo}{\fontsize{40}{48}\selectfont\sffamily\scshape\textcolor{ergo}}
+\newcommand{\Sum}{\fontsize{40}{48}\selectfont\sffamily\scshape\textcolor{sum}}
 %
 \begin{document}
 \begin{tikzpicture}
@@ -295,20 +294,20 @@ For the sheer heck of it, he simply by inserted three extra words in his code, s
 \draw[color=border,fill=white] (0,0) circle (2cm);
 \end{scope}
 %
-\draw[color=gray] (0,0) circle (2cm) node {\Ergo{Ergo}};
-\draw (0, 2.7) node {\Cogito{Cogito}};
-\draw (0, -2.9) node {\Sum{Sum}};
+\draw[color=border] (0,0) circle (2cm) node {\Ergo{ergo}};
+\draw (0, 2.7) node {\Cogito{cogito}};
+\draw (0, -2.7) node {\Sum{sum}};
 \end{tikzpicture}
 \end{document}
 ```
 
-And the result, with sans serif, small capitals is shown below:
+And the result, with sans serif, small capitals, without first-letter capitalization,  is shown below:
 
 ![Logo: the final cut]({attach}images/finalcut.svg){ width=60% }
 
 ### Finale
 
-As he gazed upon his latest effort, Sol experienced the exultation and finality felt at the end of a long and tiring quest. Yes, he had indeed fulfilled his commission. The last two logos were chosen for presentation to his distinguished philosophers: it was time to fix an appointment with them. But one thing was certain: he was not going to change any colours. He would let _their_ biases colour their logo! And what a sigh of relief he breathed!
+As he gazed upon his latest effort, Sol experienced the exultation and closure felt at the end of a long and challenging quest. Yes, he had indeed fulfilled his commission. The last two logos were chosen for presentation to his distinguished philosophers: it was time to fix an appointment with them. But one thing was certain: he was not going to change any colours. He would let _their_ biases colour their logo! And with that, he heaved a huge sigh of relief.
 
 ### The Illustrations
 
