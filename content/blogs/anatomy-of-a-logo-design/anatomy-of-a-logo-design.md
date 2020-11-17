@@ -298,13 +298,13 @@ With renewed gusto, Sol placed the three words on top of each other on a coloure
 
 The image it yielded was:
 
-![Logo: the penultimage cut]({attach}images/penultimatecut.svg){ width=60% }
+![Logo: the penultimate cut]({attach}images/penultimatecut.svg){ width=60% }
 
 For the sheer heck of it, simply by inserting three extra words in his code, he tried sans serif small capitals and finally thought he had what he had sought all along.
 
 ![Logo: the final cut]({attach}images/finalcut.svg){ width=60% }
 
-These last two logos were chosen for presentation to his distinguished philosophers: it was time to fix an appointment with them. But one thing was certain: he was not going to change any colours. He would let their biases colour their logo!
+These last two logos were chosen for presentation to his distinguished philosophers: it was time to fix an appointment with them. But one thing was certain: he was not going to change any colours. He would let their biases colour their logo! And what a sigh of relief he breathed!
 
 ### The Illustrations
 
