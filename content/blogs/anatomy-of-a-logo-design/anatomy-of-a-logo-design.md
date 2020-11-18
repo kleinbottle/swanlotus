@@ -1,8 +1,8 @@
 ---
-title: Anatomy of a Logo Design
+title: The Making of a Logo
 author: R (Chandra) Chandrasekhar
 date: 2020-01-11
-modified: 2020-11-17
+modified: 2020-11-18
 category: Design
 tags: philosophy, mathematics, science, Descartes, XeLaTeX, logos, graphics, coding, the simkin chronicles
 ---
@@ -17,9 +17,9 @@ Some weeks ago, he was approached by---of all establishments---a firm of consult
 
 This unusual request sent the cogwheels in Sol's brain whirring furiously as he imagined the logo from different design standpoints. He swept through, in fast motion in his mind, a myriad of options, only some of which I have chronicled here.
 
-### Statues of Socrates and Diotima
+### Socrates and Diotima
 
-He first thought of the statues of [Socrates](https://en.wikipedia.org/wiki/Socrates) and [Diotima](https://en.wikipedia.org/wiki/Diotima_of_Mantinea) whose words had earned his undying admiration. He recalled his visit to Athens just before the 2004 summer Olympics, when he had marvelled that such noble thoughts could arise from such ancient minds!
+He first thought of the philosophers[Socrates](https://en.wikipedia.org/wiki/Socrates) and [Diotima](https://en.wikipedia.org/wiki/Diotima_of_Mantinea) whose words had earned his undying admiration. He recalled his visit to Athens just before the 2004 summer Olympics, when he had marvelled that such noble thoughts could arise from such ancient minds!
 
 \begin{figure*}[h]
   \begin{minipage}[b]{0.5\linewidth}
@@ -115,9 +115,9 @@ Sol racked his brain for more ideas when he suddenly stumbled upon the half-reme
 
 ### The dream
 
-It was now two weeks since he had been commissioned to work on the logo, and Sol did not have even a single draft design to show for that time. He feared that he was losing his famed mojo that had landed a winner with each project. Weary and teary after much squinting at screens and books, exhausted in body and mind, and a little apprehensive, he fell into a deep and refreshing sleep.
+It was now two weeks since he had been commissioned to work on the logo, and Sol did not have even a single draft design to show for that time. He feared that he was losing his famed mojo that had landed a winner with each project. Weary and teary after much squinting at screens and books, exhausted in body and mind, and a little apprehensive, he fell into a deep slumber.
 
-When he awoke, Sol had a clear recollection of a dream---or was it a reverie---in which he had met a man who had mouthed something that sounded foreign, but he was hard pressed to identify what pearls of wisdom had been uttered.
+When he awoke refreshed, Sol had a clear recollection of a dream---or was it a reverie---in which he had met a man who had mouthed something that sounded foreign, but he was hard pressed to identify what pearls of wisdom had been uttered.
 
 Thankfully, the man's face was etched in Sol's mind. And what a face! A head with a shock of dark hair that fell to his shoulders, a sharp nose, and a pair of piercing, knowing eyes that paradoxically had a dreamy look as well. His mouth was framed by a sparse moustache and a [Van Dyke beard](https://en.wikipedia.org/wiki/Van_Dyke_beard). It was a face vaguely familiar, yet tantalizingly out of recollection's reach.
 
@@ -143,7 +143,7 @@ And bingo! he had a [gallery full of faces](https://tinyurl.com/y57nykjd) that w
 
 ## René Descartes
 
-Relieved that he was at last on scent to the target, Sol relaxed for a couple of days, which he spent reading about the [life of Descartes](https://www.britannica.com/biography/Rene-Descartes) [@watson2020]. He chuckled when he read that "the 22-year-old [Queen] Christina [of Sweden] perversely made the 53-year-old Descartes rise before 5:00 am to give her philosophy lessons, even though she knew of his habit of lying in bed until 11 o’clock in the morning." [@watson2020]. He read with chagrin that Descartes tragically died in Sweden from pneumonia, presumably caused by the Scandinavian winter and the duress of having to rise early in the morning to keep his appointment with his royal student.
+Relieved that at last he was on the scent, Sol relaxed for a couple of days, which he spent reading about the [life of Descartes](https://www.britannica.com/biography/Rene-Descartes) [@watson2020]. He chuckled when he read that "the 22-year-old [Queen] Christina [of Sweden] perversely made the 53-year-old Descartes rise before 5:00 am to give her philosophy lessons, even though she knew of his habit of lying in bed until 11 o’clock in the morning." [@watson2020]. He read with chagrin that Descartes tragically died in Sweden from pneumonia, presumably caused by the Scandinavian winter and the duress of having to rise early in the morning to keep his appointment with his royal student.
 
 Sol foraged for anything that could throw light---like Newton's falling apple---on how Descartes got his primary insight of superimposing an orthogonal grid on the plane, to tame geometry with algebra. He could not unearth much and decided to pursue that query for when he did not have a deadline to meet. For now, he needed ideas for a logo, and time was fast racing past.
 
@@ -231,7 +231,7 @@ Sol's first cut had its operative code in this fragment which I reproduce below 
 %
 ```
 
-The above incantation, used used with the [Noto Serif](https://fonts.google.com/specimen/Noto+Serif) font, gave birth to this image:
+The above incantation, used with the [Noto Serif](https://fonts.google.com/specimen/Noto+Serif) font, gave birth to this image:
 
 ![Logo: the first cut]({attach}images/firstcut.svg){ width=60% }
 
@@ -249,7 +249,7 @@ He stared at this version long and hard and felt satisfied, but not fully. There
 
 ### The Interlude
 
-He sat down with a sigh and relaxed into a particularly worn out but comfy beanbag. It had been his muse when he sought inspiration. His refuge when he sought solace. His fortress when he needed protection. His alter-ego when he wished to bounce thoughts or simply slide into hypnagogia.
+He sat down with a sigh and relaxed into a particularly worn out but comfy beanbag. It had been his muse when he sought inspiration. His refuge when he sought solace. His fortress when he needed protection. His alter-ego when he wished to bounce thoughts or simply slide into [hypnagogia](https://en.wikipedia.org/wiki/Hypnagogia).
 
 After a half hour of rest, he saw what was needed. Some form of balance on either side of the centre line that dissected the logo into two: left and right. He fiddled with the keyboard on the computer and finally settled on his third, and possibly final cut, shown below:
 
@@ -309,7 +309,7 @@ And the result, with sans serif, small capitals, without first-letter capitaliza
 
 As he gazed upon his latest effort, Sol experienced the exultation and closure felt at the end of a long and challenging quest. Yes, he had indeed fulfilled his commission. The last two logos were chosen for presentation to his distinguished philosophers: it was time to fix an appointment with them. But one thing was certain: he was not going to change any colours. He would let _their_ biases colour their logo! And with that, he heaved a huge sigh of relief.
 
-### The Illustrations
+### Illustrations
 
 The statues of Socrates and Diotima shown in this blog are exhibited outside the [Undercroft](https://www.uwa.edu.au/theatres/venues/undercroft) of [The University of Western Australia](https://www.uwa.edu.au/).
 
