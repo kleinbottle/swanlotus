@@ -3,7 +3,7 @@ title: The Making of a Logo
 author: R (Chandra) Chandrasekhar
 date: 2020-01-11
 modified: 2020-11-18
-category: Design
+category: Creativity
 tags: philosophy, mathematics, science, Descartes, XeLaTeX, logos, graphics, coding, the simkin chronicles
 ---
 
