@@ -19,7 +19,7 @@ This unusual request sent the cogwheels in Sol's brain whirring furiously as he 
 
 ### Socrates and Diotima
 
-He first thought of the philosophers[Socrates](https://en.wikipedia.org/wiki/Socrates) and [Diotima](https://en.wikipedia.org/wiki/Diotima_of_Mantinea) whose words had earned his undying admiration. He recalled his visit to Athens just before the 2004 summer Olympics, when he had marvelled that such noble thoughts could arise from such ancient minds!
+He first thought of the philosophers [Socrates](https://en.wikipedia.org/wiki/Socrates) and [Diotima](https://en.wikipedia.org/wiki/Diotima_of_Mantinea) whose words had earned his undying admiration. He recalled his visit to Athens just before the 2004 summer Olympics, when he had marvelled that such noble thoughts could arise from such ancient minds!
 
 \begin{figure*}[h]
   \begin{minipage}[b]{0.5\linewidth}
@@ -135,7 +135,7 @@ Since both Leibniz and Newton were renowned mathematicians as well, Sol got side
 
 [^1]: Such meandering, away from the straight and narrow of his specified task, endowed his designs with a resplendent intellectual sheen, but took its toll on timeliness.
 
-And then it hit him like a ton of bricks. _Calculus could not have been invented without coordinate geometry---that extraordinary offspring of the fortuitous marriage of geometry and algebra_. And the progenitor of _that_ wunderkind was [René Descartes](https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes). With bated breath, Sol searched the Web for images of René Descartes. 
+And then it hit him like a ton of bricks. _Calculus could not have been invented without coordinate geometry---that extraordinary offspring of the fortuitous marriage of geometry and algebra_. And the progenitor of _that_ wunderkind was [René Descartes](https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes). With bated breath, Sol searched the Web for images of René Descartes.
 
 ![René Descartes (after Frans Hals, Public domain, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg))]({attach}images/rene-descartes.jpg){ width=60% }
 
@@ -218,12 +218,12 @@ At last, Sol had reached the tedious portion of his work. Gone was the thrill of
 Sol's first cut had its operative code in this fragment which I reproduce below without explanation, simply to convey the flavour of the process.
 
 ```latex
-% 
+%
 \newlength{\overlap}\setlength{\overlap}{-0.4em}% negative kern value
 \newlength{\moveup}\setlength{\moveup}{0.2em}% vertical box raising/lowering
 %
 \newsavebox{\CESBox}%
-\sbox{\CESBox}{% 
+\sbox{\CESBox}{%
 {\textcolor{word}{Cogito}}% First word
 \hspace*{\overlap}\raisebox{-\moveup}{\textcolor{emphatic}{Ergo}}% Second word
 \hspace*{\overlap}\raisebox{-2\moveup}{\textcolor{word}{Sum}}% Third word
