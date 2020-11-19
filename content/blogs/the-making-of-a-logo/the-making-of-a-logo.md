@@ -219,14 +219,20 @@ Sol's first cut had its operative code in this fragment which I reproduce below 
 
 ```latex
 %
-\newlength{\overlap}\setlength{\overlap}{-0.4em}% negative kern value
-\newlength{\moveup}\setlength{\moveup}{0.2em}% vertical box raising/lowering
+% negative kern value
+\newlength{\overlap}\setlength{\overlap}{-0.4em}%
+% vertical box raising/lowering
+\newlength{\moveup}\setlength{\moveup}{0.2em}%
 %
 \newsavebox{\CESBox}%
 \sbox{\CESBox}{%
 {\textcolor{word}{Cogito}}% First word
-\hspace*{\overlap}\raisebox{-\moveup}{\textcolor{emphatic}{Ergo}}% Second word
-\hspace*{\overlap}\raisebox{-2\moveup}{\textcolor{word}{Sum}}% Third word
+%
+\hspace*{\overlap}\raisebox{-\moveup}%
+{\textcolor{emphatic}{Ergo}}% Second word
+%
+\hspace*{\overlap}\raisebox{-2\moveup}%
+{\textcolor{word}{Sum}}% Third word
 }%
 %
 ```
@@ -283,9 +289,12 @@ For the sheer heck of it, he simply inserted three extra words in his code, to s
 \colorlet{ergo}{Black!65!}%
 \colorlet{sum}{Black!20!}%
 %
-\newcommand{\Cogito}{\fontsize{40}{48}\selectfont\sffamily\scshape\textcolor{cogito}}
-\newcommand{\Ergo}{\fontsize{40}{48}\selectfont\sffamily\scshape\textcolor{ergo}}
-\newcommand{\Sum}{\fontsize{40}{48}\selectfont\sffamily\scshape\textcolor{sum}}
+\newcommand{\Cogito}%
+{\fontsize{40}{48}\selectfont\sffamily\scshape\textcolor{cogito}}%
+\newcommand{\Ergo}%
+{\fontsize{40}{48}\selectfont\sffamily\scshape\textcolor{ergo}}%
+\newcommand{\Sum}%
+{\fontsize{40}{48}\selectfont\sffamily\scshape\textcolor{sum}}%
 %
 \begin{document}
 \begin{tikzpicture}

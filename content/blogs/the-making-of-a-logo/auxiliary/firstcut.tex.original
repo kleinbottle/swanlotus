@@ -40,21 +40,15 @@
 % only after the font size has been selected.
 % Here, the default font size for the class is selected 
 % automatically.
-%
-% negative kern value
-\newlength{\overlap}\setlength{\overlap}{-0.4em}%
-% vertical box raising/lowering
-\newlength{\moveup}\setlength{\moveup}{0.2em}%
+% 
+\newlength{\overlap}\setlength{\overlap}{-0.4em}% negative kern value
+\newlength{\moveup}\setlength{\moveup}{0.2em}% vertical box raising/lowering
 %
 \newsavebox{\CESBox}%
 \sbox{\CESBox}{%
 {\textcolor{word}{Cogito}}% First word
-%
-\hspace*{\overlap}\raisebox{-\moveup}%
-{\textcolor{emphatic}{Ergo}}% Second word
-%
-\hspace*{\overlap}\raisebox{-2\moveup}%
-{\textcolor{word}{Sum}}% Third word
+\hspace*{\overlap}\raisebox{-\moveup}{\textcolor{emphatic}{Ergo}}% Second word
+\hspace*{\overlap}\raisebox{-2\moveup}{\textcolor{word}{Sum}}% Third word
 }%
 %
 \fcolorbox{border}{background}{\usebox{\CESBox}}%
