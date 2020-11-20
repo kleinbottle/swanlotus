@@ -20,19 +20,19 @@
     <h1 id="{{ article.title|lower|replace(' ', '-') }}">{{ article.title }}</h1>
     <p class="author">{{ article.author }}</p>
     {% if article.locale_date and article.locale_modified %}
-      <p class="date is-pulled-left">{{ article.locale_date }} | {{ article.locale_modified }}</p>
+      <p class="date">{{ article.locale_date }} | {{ article.locale_modified }}</p>
     {% elif article.locale_date %}
-      <p class="date is-pulled-left">{{ article.locale_date }}</p>
+      <p class="date">{{ article.locale_date }}</p>
     {% endif %}
     {% if article.reading_time %}
-      <p class="reading-time is-pulled-right">
+      <p class="reading-time">
         Reading Time: {{ article.reading_time }}
         {% if article.reading_time == "1" %}minute{% else %}minutes{% endif %}
       </p>
     {% endif %}
   </header>
   {% if article.toc %}
-    <div class="is-hidden-tablet main-content-toc">
+    <div class="is-hidden-tablet">
       {{ article.toc }}
     </div>
   {% endif %}

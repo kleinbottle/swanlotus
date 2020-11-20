@@ -4393,11 +4393,6 @@ a:hover {
   font-size: smaller;
 }
 
-.content .article-content {
-  margin-top: 4rem;
-  clear: both;
-}
-
 .content ul.tags, .content ul.categories {
   margin-left: 0em;
 }
@@ -4421,12 +4416,6 @@ a:hover {
   font-size: 0.75rem;
   margin-top: 2em;
   margin-bottom: 0.5em;
-}
-
-.content header .main-content-toc {
-  margin-top: 4rem;
-  margin-bottom: 1rem;
-  clear: both;
 }
 
 /* Spacing between last line of lineblock and first line of next paragraph */
