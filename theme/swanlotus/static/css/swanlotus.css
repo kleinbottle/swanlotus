@@ -533,7 +533,7 @@ code {
   color: #da1039;
   font-size: 0.875em;
   font-weight: normal;
-  padding: 0em;
+  padding: 0.25em 0.5em 0.25em;
 }
 
 hr {
@@ -4353,9 +4353,7 @@ pre {
 }
 
 code {
-  background-color: transparent;
   color: #947600;
-  padding: 0em;
 }
 
 /* Styles for links */
