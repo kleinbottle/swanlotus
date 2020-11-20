@@ -190,7 +190,7 @@ With all the preliminaries in place, Sol settled down to work. He used his prodi
 
 ### Shape
 
-He first thought of shape and decided on a rectangle to house the words. It would be a rectangle with a small, definitive border that emphasized the inside and framed the work. Although it takes us ahead of ourselves in this account, he later fell for the symmetry of a circle as his prime choice.
+He first thought of shape and decided on a rectangle to house the words. It would feature a small definitive border that emphasized the inside and framed the work. Although it takes us ahead of ourselves in this account, he later fell for the symmetry of a circle as his prime choice.
 
 ### Font
 
@@ -248,11 +248,11 @@ The word _Ergo_ appeared on top of _Cogito_ and that was well and good. But _Sum
 
 But something else struck Sol even more. The progression of ideas was not reflected in the positions of the words. In logic, one starts with a proposition and ends with a conclusion or inference. The _ascent_ of successive words seemed a better expression of this logical progression from thinking to being.
 
-He also wanted to emphasize the theme with a gradual whitening or blackening of the colours of the words. That would emphasize the idea of monotonic change. But as always, colours were a finicky, context-sensitive bunch. Background, foreground, and contrast would hold the final say. After experimenting for half a day, Sol settled on the logo shown below:
+He also wanted to emphasize the theme with a gradual whitening or blackening of the colours of the words. That would emphasize the idea of monotonic change. But as always, colours were a finicky, context-sensitive bunch. Background, foreground, and contrast would hold final sway. After experimenting for half a day, Sol settled on the logo shown below:
 
 ![Logo: the second cut]({attach}images/secondcut.svg){ width=60% }
 
-He stared at this version long and hard and felt satisfied, but not fully. There was a nagging sense of incompleteness hanging over the logo like a pall of smoke. He wanted to go back and start all over again, but his deadline was fast looming. He could make small changes, but could never hope to start over.
+He stared at this version long and hard and felt satisfied, but not fully. There was a nagging sense of incompleteness hanging over the logo like a pall of smoke. He wanted to go back and start from scratch again, but his deadline was fast looming. He could make small changes, but could never hope to start over.
 
 ### The Interlude
 
@@ -311,7 +311,7 @@ For the sheer heck of it, he simply inserted three extra words in his code, to s
 \end{document}
 ```
 
-And the result, with sans serif, small capitals, without first-letter capitalization,  is shown below:
+And the result, with sans serif, small capitals, without first-letter capitalization,  appeared thus:
 
 ![Logo: the final cut]({attach}images/finalcut.svg){ width=60% }
 
@@ -323,4 +323,4 @@ As he gazed upon his latest effort, Sol experienced the exultation and closure f
 
 The statues of Socrates and Diotima shown in this blog are exhibited outside the [Undercroft](https://www.uwa.edu.au/theatres/venues/undercroft) of [The University of Western Australia](https://www.uwa.edu.au/).
 
-Apart from highlighted code, all other illustrations were generated using XeLaTeX and applicable TeX packages, including the [TikZ-PGF suite](https://github.com/pgf-tikz/pgf). Much code that is freely available on the Web was accessed for guidance on typesetting these illustrations.
+Apart from highlighted code, all other illustrations were generated using XeLaTeX and applicable [packages](https://ctan.org/pkg?lang=en), including the [TikZ-PGF suite](https://github.com/pgf-tikz/pgf). Much code that is freely available on the Web was accessed for guidance on typesetting these illustrations.
