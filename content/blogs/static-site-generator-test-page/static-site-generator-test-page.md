@@ -6,6 +6,7 @@ modified: "2020-10-21"
 description: "Comprehensive test of Pelican and pandoc-reader Plugin"
 category: test
 tags: languages, mathematics, pandoc
+summary: "This file embodies elements that need to work with [Pandoc](https://pandoc.org/) and the Python-based static site generator (SSG) [Pelican](https://blog.getpelican.com/) to provide fully functional [HTML5](https://html.spec.whatwg.org/), including [MathJax](https://www.mathjax.org/) capabilities."
 ---
 
 ## Preamble

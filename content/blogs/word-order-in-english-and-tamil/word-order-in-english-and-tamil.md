@@ -2,6 +2,7 @@
 title: "Word Order in English and Tamil"
 author: "R (Chandra) Chandrasekhar"
 date: "2012-09-15"
+summary: "My mother tongue is [Tamil,](http://en.wikipedia.org/wiki/Tamil_language) written தமிழ், in its decidedly curly script. Tamil is an alphabetic, syllabic, inflected Indic language with ancient roots. Asking questions in Tamil and English require two very different ways of thinking and speaking. Knowing about these can be instructive to many non-native speakers of English. Let me elaborate."
 ---
 
 <!--Today I want to discuss the art of asking questions in English. This seemingly undemanding task often trips up the aspiring learner of English, especially as a second or third language.-->

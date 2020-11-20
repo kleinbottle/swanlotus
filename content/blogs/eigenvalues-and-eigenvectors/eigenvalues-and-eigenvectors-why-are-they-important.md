@@ -3,6 +3,7 @@ title: "Eigenvalues and Eigenvectors---Why Are They Important?"
 author:  "R (Chandra) Chandrasekhar"
 date: "2015-12-13"
 eqnPrefix: ["eqn", "eqns"]
+summary: "A university academic friend of mine recently remarked that it was not easy to motivate students to study [eigenvalues and eigenvectors,](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) let alone appreciate their importance: the subject itself was abstract, and the applications tended to be domain-specific and somewhat arcane."
 ---
 
 A university academic friend of mine recently remarked that it was not

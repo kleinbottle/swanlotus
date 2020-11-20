@@ -29,6 +29,8 @@ PANDOC_DEFAULT_FILES = [
     "swanlotus_html5.yaml"
 ]
 
+PANDOC_CALC_READING_TIME = True
+
 LOAD_CONTENT_CACHE = True
 
 THEME = "theme/swanlotus"
@@ -52,6 +54,8 @@ ARTICLE_SAVE_AS = 'blogs/{slug}.html'
 ARTICLE_URL = 'blogs/{slug}.html'
 
 USE_FOLDER_AS_CATEGORY = False
+
+FORMATTED_FIELDS = ['summary']
 
 # Blogroll
 LINKS = (("Pelican", "https://getpelican.com/"),

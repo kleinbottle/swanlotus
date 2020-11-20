@@ -169,13 +169,19 @@ a:hover
     font-family: $family-secondary
 
 /* Styles for articles */
-.content p.author, .content p.date,
+.content p.author,
+.content p.date,
+.content p.reading-time,
 .content ul.categories,
 .content ul.tags
     margin-top: 0em
     margin-bottom: 0em
     font-family: $family-secondary
     font-size: smaller
+
+.content .article-content
+    margin-top: 4rem
+    clear: both
 
 .content ul.tags, .content ul.categories
     margin-left: 0em
@@ -196,6 +202,11 @@ a:hover
     font-size: $size-7
     margin-top: 2em
     margin-bottom: 0.5em
+
+.content header .main-content-toc
+    margin-top: 4rem
+    margin-bottom: 1rem
+    clear: both
 
 /* Spacing between last line of lineblock and first line of next paragraph */
 .content div.line-block
@@ -220,7 +231,6 @@ a:hover
 
 .content table th, .content table td
     padding: $table-cell-padding
-
 
 .content .footnotes
     font-size: smaller

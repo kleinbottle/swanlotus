@@ -12,7 +12,7 @@
                     <footer class="post-info">
                         <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
                     </footer><!-- /.post-info -->
-                    <div class="entry-content"> {{ article.summary|striptags }} </div><!-- /.entry-content -->
+                    <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
             </article></li>
         {% endfor %}
     </ol><!-- /#posts-list -->
