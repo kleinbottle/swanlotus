@@ -4354,6 +4354,7 @@ pre {
 
 code {
   color: #947600;
+  border-radius: 3px;
 }
 
 /* Styles for links */
