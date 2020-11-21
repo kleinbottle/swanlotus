@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Zenburn Code Styles */
 /* Styles for Zenburn code highlighting */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
@@ -533,7 +534,7 @@ code {
   color: #da1039;
   font-size: 0.875em;
   font-weight: normal;
-  padding: 0.25em 0.5em 0.25em;
+  padding: 0.1emç869 4824 6753;
 }
 
 hr {
@@ -4353,8 +4354,9 @@ pre {
 }
 
 code {
+  padding: 0.1emç869 4824 6753;
   color: #947600;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 /* Styles for links */
