@@ -4302,7 +4302,7 @@ html {
 
 /* Style for two column container */
 #two-column {
-  padding: 0 0.75em;
+  padding: 0em 0.75em;
 }
 
 /* Styles for main column */
@@ -4444,7 +4444,7 @@ a:hover {
 }
 
 .content table th, .content table td {
-  padding: 0 1em 0 0;
+  padding: 0em 1em 0em 0em;
 }
 
 .content .footnotes {
