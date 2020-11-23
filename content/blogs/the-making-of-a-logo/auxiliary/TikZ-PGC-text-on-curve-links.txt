@@ -1,0 +1,36 @@
+Internet Speed Test | Fast.com
+https://fast.com/
+
+SwanLotus - The Making of a Logo
+http://localhost:8000/blogs/the-making-of-a-logo.html
+
+WhatsApp
+https://web.whatsapp.com/
+
+Chandra's Startpage
+https://www.protopage.com/chandra_s_startpage
+
+TikZ text on a circular path - Google Search
+https://www.google.com/search?client=firefox-b-d&q=TikZ+text+on+a+circular+path
+
+tikz pgf - space within text in a circular path in logo - TeX - LaTeX Stack Exchange
+https://tex.stackexchange.com/questions/271621/space-within-text-in-a-circular-path-in-logo
+
+tikz pgf - How to write a text along a circle? - TeX - LaTeX Stack Exchange
+https://tex.stackexchange.com/questions/268612/how-to-write-a-text-along-a-circle
+
+nodes - TikZ: Bend text so that it follows a line - TeX - LaTeX Stack Exchange
+https://tex.stackexchange.com/questions/22314/tikz-bend-text-so-that-it-follows-a-line
+
+tikz - alter circular path with nodes - TeX - LaTeX Stack Exchange
+https://tex.stackexchange.com/questions/100691/tikz-alter-circular-path-with-nodes
+
+tikz pgf - How can we write text along the circular path in latex? - TeX - LaTeX Stack Exchange
+https://tex.stackexchange.com/questions/368262/how-can-we-write-text-along-the-circular-path-in-latex?noredirect=1&lq=1
+
+tikz pgf - Recreating a logo (text around a circle) - TeX - LaTeX Stack Exchange
+https://tex.stackexchange.com/questions/75638/recreating-a-logo-text-around-a-circle
+
+How do I increase the fontsize of the text along circular path? - LaTeX4technics
+https://www.latex4technics.com/?note=6trztz
+

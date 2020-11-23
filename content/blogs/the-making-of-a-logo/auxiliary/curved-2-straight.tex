@@ -1,0 +1,52 @@
+\PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+\documentclass[tikz]{standalone}
+\usetikzlibrary{decorations.text}
+\usepackage{fontspec}
+%
+\setmainfont[BoldFont={* Medium}]{Noto Serif}
+\setsansfont[BoldFont={* Medium}]{Noto Sans}
+\setmonofont{Fira Mono}
+\defaultfontfeatures{MatchLowerCase}
+%
+\colorlet{border}{RosyBrown!50!Black}%
+\colorlet{background}{CornflowerBlue}%
+\colorlet{cogito}{Black!80!}%
+\colorlet{ergo}{Black!65!}%
+\colorlet{sum}{Black!20!}%
+%
+\newcommand{\Cogito}%
+{\fontsize{40}{48}\selectfont\sffamily\scshape\color{cogito}}%
+\newcommand{\Ergo}%
+{\fontsize{40}{48}\selectfont\sffamily\scshape\color{ergo}}%
+\newcommand{\Sum}%
+{\fontsize{40}{48}\selectfont\sffamily\scshape\color{sum}}%
+%
+\begin{document}
+\begin{tikzpicture}
+\begin{scope}
+\draw[color=border,fill=CornflowerBlue] (0,0) circle (4.0cm);
+\draw[color=border,fill=white] (0,0) circle (2.0cm);
+% \draw[color=red] (0, 0) circle (0.005cm);
+\end{scope}
+%
+\draw[color=border] (0,0) circle (2.0cm) node {\Ergo{ergo}};
+%
+\path[postaction={decoration={text along path,
+text format delimiters={|}{|},
+text={| \Cogito | cogito},
+text align/fit to path stretching spaces=true,
+text align=center,
+reverse path},
+decorate}] (45:2.5cm) arc (45:148:2.5cm);
+%
+\path [postaction={decoration={%
+raise=20pt,
+text along path,
+text align/fit to path stretching spaces=true,
+text align=center,
+text={| \Sum | s u m},
+reverse path=false},
+decorate}] (240:4cm) arc (240:300:4cm);
+%
+\end{tikzpicture}
+\end{document}
