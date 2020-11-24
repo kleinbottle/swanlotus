@@ -1,5 +1,6 @@
 ---
-title: "Welcome to SwanLotus"
+title: "Home"
+content_title: "Welcome to SwanLotus"
 author: "R (Chandra) Chandrasekhar"
 date: "2020-11-29"
 URL:

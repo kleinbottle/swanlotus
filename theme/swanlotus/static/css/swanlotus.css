@@ -4368,6 +4368,14 @@ a:hover {
 }
 
 /* Styles for blog index */
+.content h5.entry-title {
+  margin-bottom: 0em;
+}
+
+.content .entry-content {
+  margin-top: 0.8em;
+}
+
 .content ol#post-list {
   list-style-type: none;
 }
