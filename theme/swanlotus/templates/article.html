@@ -25,14 +25,7 @@
       <p class="date">{{ article.locale_date }}</p>
     {% endif %}
     {% if article.reading_time %}
-      <p class="reading-time">
-        Reading Time: {{ article.reading_time }}
-        {% if article.reading_time == "1" %}
-          minute
-        {% else %}
-          minutes
-        {% endif %}
-      </p>
+      <p class="reading-time">Reading Time: {{ article.reading_time }}</p>
     {% endif %}
   </header>
   {% if article.toc %}
