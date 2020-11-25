@@ -9,8 +9,10 @@ from pelican.tests.support import get_settings
 from pandoc_reader import PandocReader
 
 DIR_PATH = os.path.dirname(__file__)
-CONTENT_PATH = os.path.abspath(os.path.join(DIR_PATH, "content"))
-DEFAULTS_PATH = os.path.abspath(os.path.join(DIR_PATH, "defaults"))
+TEST_CONTENT_PATH = os.path.abspath(os.path.join(DIR_PATH, "test_content"))
+TEST_DEFAULT_FILES_PATH = os.path.abspath(
+    os.path.join(DIR_PATH, "test_default_files")
+)
 
 # Test settings that will be set in pelicanconf.py by plugin users
 PANDOC_ARGS = ["--mathjax"]
@@ -30,7 +32,7 @@ class TestGeneralTestCases(unittest.TestCase):
         )
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "empty.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "empty.md")
 
         if not shutil.which("pandoc"):
             # Case where pandoc is not installed
@@ -45,7 +47,7 @@ class TestGeneralTestCases(unittest.TestCase):
             self.assertEqual("Pandoc is installed.", message)
 
     def test_default_wpm_reading_time(self):
-        """Check if 200 words per minute give us reading time of 2 minutes."""
+        """Check if 200 words per minute give us reading time of 1 minute."""
         settings = get_settings(
             PANDOC_EXTENSIONS=PANDOC_EXTENSIONS,
             PANDOC_ARGS=PANDOC_ARGS,
@@ -53,14 +55,16 @@ class TestGeneralTestCases(unittest.TestCase):
         )
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "reading_time_content.md")
+        source_path = os.path.join(
+            TEST_CONTENT_PATH, "reading_time_content.md"
+        )
 
         _, metadata = pandoc_reader.read(source_path)
 
-        self.assertEqual("2 minutes", str(metadata["reading_time"]))
+        self.assertEqual("1 minute", str(metadata["reading_time"]))
 
     def test_user_defined_wpm_reading_time(self):
-        """Check if 100 words per minute user defined gives us 4 minutes."""
+        """Check if 100 words per minute user defined gives us 2 minutes."""
         settings = get_settings(
             PANDOC_EXTENSIONS=PANDOC_EXTENSIONS,
             PANDOC_ARGS=PANDOC_ARGS,
@@ -69,11 +73,13 @@ class TestGeneralTestCases(unittest.TestCase):
         )
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "reading_time_content.md")
+        source_path = os.path.join(
+            TEST_CONTENT_PATH, "reading_time_content.md"
+        )
 
         _, metadata = pandoc_reader.read(source_path)
 
-        self.assertEqual("4 minutes", str(metadata["reading_time"]))
+        self.assertEqual("2 minutes", str(metadata["reading_time"]))
 
     def test_invalid_user_defined_wpm(self):
         """Check if exception is raised if words per minute is not a number."""
@@ -85,7 +91,9 @@ class TestGeneralTestCases(unittest.TestCase):
         )
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "reading_time_content.md")
+        source_path = os.path.join(
+            TEST_CONTENT_PATH, "reading_time_content.md"
+        )
 
         with self.assertRaises(ValueError) as context_manager:
             pandoc_reader.read(source_path)
@@ -98,7 +106,8 @@ class TestGeneralTestCases(unittest.TestCase):
 
         pandoc_default_files = [
             os.path.join(
-                DEFAULTS_PATH, "valid_defaults_with_toc_and_citations.yaml"
+                TEST_DEFAULT_FILES_PATH,
+                "valid_defaults_with_toc_and_citations.yaml",
             )
         ]
 
@@ -109,7 +118,7 @@ class TestGeneralTestCases(unittest.TestCase):
         pandoc_reader = PandocReader(settings)
 
         source_path = os.path.join(
-            CONTENT_PATH, "valid_content_with_citation.md"
+            TEST_CONTENT_PATH, "valid_content_with_citation.md"
         )
 
         _, metadata = pandoc_reader.read(source_path)
@@ -135,7 +144,7 @@ class TestInvalidCasesWithArguments(unittest.TestCase):
         )
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "empty.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "empty.md")
 
         # If the file is empty retrieval of metadata should fail
         with self.assertRaises(Exception) as context_manager:
@@ -151,7 +160,7 @@ class TestInvalidCasesWithArguments(unittest.TestCase):
         )
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "no_metadata.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "no_metadata.md")
 
         # If the file is not empty but has no metadata it should fail
         with self.assertRaises(Exception) as context_manager:
@@ -169,7 +178,7 @@ class TestInvalidCasesWithArguments(unittest.TestCase):
         )
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "no_metadata_end.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "no_metadata_end.md")
 
         # Metadata blocks should end with '___' or '...' if not it should fail
         with self.assertRaises(Exception) as context_manager:
@@ -185,7 +194,7 @@ class TestInvalidCasesWithArguments(unittest.TestCase):
         )
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "no_metadata_end.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "no_metadata_end.md")
 
         # Metadata blocks should end with '___' or '...' if not it should fail
         with self.assertRaises(Exception) as context_manager:
@@ -202,7 +211,7 @@ class TestInvalidCasesWithArguments(unittest.TestCase):
         )
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "valid_content.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "valid_content.md")
 
         with self.assertRaises(ValueError) as context_manager:
             pandoc_reader.read(source_path)
@@ -218,7 +227,7 @@ class TestInvalidCasesWithArguments(unittest.TestCase):
         )
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "valid_content.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "valid_content.md")
 
         with self.assertRaises(ValueError) as context_manager:
             pandoc_reader.read(source_path)
@@ -239,7 +248,7 @@ class TestValidCasesWithArguments(unittest.TestCase):
         )
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "valid_content.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "valid_content.md")
         output, metadata = pandoc_reader.read(source_path)
 
         self.assertEqual(
@@ -262,7 +271,7 @@ class TestValidCasesWithArguments(unittest.TestCase):
         )
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "mathjax_content.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "mathjax_content.md")
         output, metadata = pandoc_reader.read(source_path)
 
         self.assertEqual(
@@ -285,7 +294,7 @@ class TestValidCasesWithArguments(unittest.TestCase):
 
         pandoc_reader = PandocReader(settings)
         source_path = os.path.join(
-            CONTENT_PATH, "valid_content_with_raw_paths.md"
+            TEST_CONTENT_PATH, "valid_content_with_raw_paths.md"
         )
         output, metadata = pandoc_reader.read(source_path)
 
@@ -320,7 +329,9 @@ class TestValidCasesWithArguments(unittest.TestCase):
         )
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "valid_content_with_toc.md")
+        source_path = os.path.join(
+            TEST_CONTENT_PATH, "valid_content_with_toc.md"
+        )
         output, metadata = pandoc_reader.read(source_path)
 
         # Setting this so that assert is able to execute the difference
@@ -372,7 +383,9 @@ class TestValidCasesWithArguments(unittest.TestCase):
         )
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "valid_content_with_toc.md")
+        source_path = os.path.join(
+            TEST_CONTENT_PATH, "valid_content_with_toc.md"
+        )
         output, metadata = pandoc_reader.read(source_path)
 
         # Setting this so that assert is able to execute the difference
@@ -433,7 +446,7 @@ class TestValidCasesWithArguments(unittest.TestCase):
 
         pandoc_reader = PandocReader(settings)
         source_path = os.path.join(
-            CONTENT_PATH, "valid_content_with_citation.md"
+            TEST_CONTENT_PATH, "valid_content_with_citation.md"
         )
         output, metadata = pandoc_reader.read(source_path)
         self.maxDiff = None
@@ -595,7 +608,7 @@ class TestValidCasesWithArguments(unittest.TestCase):
 
         pandoc_reader = PandocReader(settings)
         source_path = os.path.join(
-            CONTENT_PATH, "valid_content_with_citation.md"
+            TEST_CONTENT_PATH, "valid_content_with_citation.md"
         )
         output, metadata = pandoc_reader.read(source_path)
         self.maxDiff = None
@@ -738,13 +751,13 @@ class TestInvalidCasesWithDefaultFiles(unittest.TestCase):
     def test_invalid_standalone(self):
         """Check if exception is raised if standalone is true."""
         pandoc_default_files = [
-            os.path.join(DEFAULTS_PATH, "standalone_true.yaml")
+            os.path.join(TEST_DEFAULT_FILES_PATH, "standalone_true.yaml")
         ]
 
         settings = get_settings(PANDOC_DEFAULT_FILES=pandoc_default_files)
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "valid_content.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "valid_content.md")
 
         with self.assertRaises(ValueError) as context_manager:
             pandoc_reader.read(source_path)
@@ -757,13 +770,13 @@ class TestInvalidCasesWithDefaultFiles(unittest.TestCase):
     def test_invalid_self_contained(self):
         """Check if exception is raised if self-contained is true."""
         pandoc_default_files = [
-            os.path.join(DEFAULTS_PATH, "selfcontained_true.yaml")
+            os.path.join(TEST_DEFAULT_FILES_PATH, "selfcontained_true.yaml")
         ]
 
         settings = get_settings(PANDOC_DEFAULT_FILES=pandoc_default_files)
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "valid_content.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "valid_content.md")
 
         with self.assertRaises(ValueError) as context_manager:
             pandoc_reader.read(source_path)
@@ -776,13 +789,13 @@ class TestInvalidCasesWithDefaultFiles(unittest.TestCase):
     def test_no_input_format(self):
         """Check if exception is raised if no input format is specified."""
         pandoc_default_files = [
-            os.path.join(DEFAULTS_PATH, "no_input_format.yaml")
+            os.path.join(TEST_DEFAULT_FILES_PATH, "no_input_format.yaml")
         ]
 
         settings = get_settings(PANDOC_DEFAULT_FILES=pandoc_default_files)
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "valid_content.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "valid_content.md")
 
         with self.assertRaises(ValueError) as context_manager:
             pandoc_reader.read(source_path)
@@ -793,13 +806,15 @@ class TestInvalidCasesWithDefaultFiles(unittest.TestCase):
     def test_invalid_reader_input_format(self):
         """Check if exception is raised if reader input format is invalid."""
         pandoc_default_files = [
-            os.path.join(DEFAULTS_PATH, "invalid_reader_input_format.yaml")
+            os.path.join(
+                TEST_DEFAULT_FILES_PATH, "invalid_reader_input_format.yaml"
+            )
         ]
 
         settings = get_settings(PANDOC_DEFAULT_FILES=pandoc_default_files)
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "valid_content.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "valid_content.md")
 
         with self.assertRaises(ValueError) as context_manager:
             pandoc_reader.read(source_path)
@@ -810,13 +825,15 @@ class TestInvalidCasesWithDefaultFiles(unittest.TestCase):
     def test_invalid_from_input_format(self):
         """Check if exception is raised if from input format is invalid."""
         pandoc_default_files = [
-            os.path.join(DEFAULTS_PATH, "invalid_from_input_format.yaml")
+            os.path.join(
+                TEST_DEFAULT_FILES_PATH, "invalid_from_input_format.yaml"
+            )
         ]
 
         settings = get_settings(PANDOC_DEFAULT_FILES=pandoc_default_files)
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "valid_content.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "valid_content.md")
 
         with self.assertRaises(ValueError) as context_manager:
             pandoc_reader.read(source_path)
@@ -827,13 +844,15 @@ class TestInvalidCasesWithDefaultFiles(unittest.TestCase):
     def test_from_reader_both_given(self):
         """Check if exception is raised if from and reader are both given."""
         pandoc_default_files = [
-            os.path.join(DEFAULTS_PATH, "from_reader_both_given.yaml")
+            os.path.join(
+                TEST_DEFAULT_FILES_PATH, "from_reader_both_given.yaml"
+            )
         ]
 
         settings = get_settings(PANDOC_DEFAULT_FILES=pandoc_default_files)
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "valid_content.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "valid_content.md")
 
         with self.assertRaises(ValueError) as context_manager:
             pandoc_reader.read(source_path)
@@ -850,13 +869,13 @@ class TestInvalidCasesWithDefaultFiles(unittest.TestCase):
     def test_to_writer_both_given(self):
         """Check if exception is raised if to and writer are both given."""
         pandoc_default_files = [
-            os.path.join(DEFAULTS_PATH, "to_writer_both_given.yaml")
+            os.path.join(TEST_DEFAULT_FILES_PATH, "to_writer_both_given.yaml")
         ]
 
         settings = get_settings(PANDOC_DEFAULT_FILES=pandoc_default_files)
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "valid_content.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "valid_content.md")
 
         with self.assertRaises(ValueError) as context_manager:
             pandoc_reader.read(source_path)
@@ -873,13 +892,13 @@ class TestInvalidCasesWithDefaultFiles(unittest.TestCase):
     def test_no_output_format(self):
         """Check if exception is raised if no output format is specified."""
         pandoc_default_files = [
-            os.path.join(DEFAULTS_PATH, "no_output_format.yaml")
+            os.path.join(TEST_DEFAULT_FILES_PATH, "no_output_format.yaml")
         ]
 
         settings = get_settings(PANDOC_DEFAULT_FILES=pandoc_default_files)
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "valid_content.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "valid_content.md")
 
         with self.assertRaises(ValueError) as context_manager:
             pandoc_reader.read(source_path)
@@ -892,13 +911,15 @@ class TestInvalidCasesWithDefaultFiles(unittest.TestCase):
     def test_invalid_writer_output_format(self):
         """Check if exception is raised if writer output format is invalid."""
         pandoc_default_files = [
-            os.path.join(DEFAULTS_PATH, "invalid_writer_output_format.yaml")
+            os.path.join(
+                TEST_DEFAULT_FILES_PATH, "invalid_writer_output_format.yaml"
+            )
         ]
 
         settings = get_settings(PANDOC_DEFAULT_FILES=pandoc_default_files)
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "valid_content.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "valid_content.md")
 
         with self.assertRaises(ValueError) as context_manager:
             pandoc_reader.read(source_path)
@@ -911,13 +932,15 @@ class TestInvalidCasesWithDefaultFiles(unittest.TestCase):
     def test_invalid_to_output_format(self):
         """Check if exception is raised if to output format is invalid."""
         pandoc_default_files = [
-            os.path.join(DEFAULTS_PATH, "invalid_to_output_format.yaml")
+            os.path.join(
+                TEST_DEFAULT_FILES_PATH, "invalid_to_output_format.yaml"
+            )
         ]
 
         settings = get_settings(PANDOC_DEFAULT_FILES=pandoc_default_files)
 
         pandoc_reader = PandocReader(settings)
-        source_path = os.path.join(CONTENT_PATH, "valid_content.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "valid_content.md")
 
         with self.assertRaises(ValueError) as context_manager:
             pandoc_reader.read(source_path)
@@ -934,14 +957,14 @@ class TestValidCasesWithDefaultFiles(unittest.TestCase):
     def test_valid_file_with_valid_defaults(self):
         """Check if we get the appropriate output specifying defaults."""
         pandoc_default_files = [
-            os.path.join(DEFAULTS_PATH, "valid_defaults.yaml")
+            os.path.join(TEST_DEFAULT_FILES_PATH, "valid_defaults.yaml")
         ]
 
         settings = get_settings(PANDOC_DEFAULT_FILES=pandoc_default_files)
 
         pandoc_reader = PandocReader(settings)
 
-        source_path = os.path.join(CONTENT_PATH, "valid_content.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "valid_content.md")
         output, metadata = pandoc_reader.read(source_path)
 
         self.assertEqual(
@@ -959,14 +982,14 @@ class TestValidCasesWithDefaultFiles(unittest.TestCase):
     def test_mathjax_with_valid_defaults(self):
         """Check if mathematics is rendered correctly with defaults."""
         pandoc_default_files = [
-            os.path.join(DEFAULTS_PATH, "valid_defaults.yaml")
+            os.path.join(TEST_DEFAULT_FILES_PATH, "valid_defaults.yaml")
         ]
 
         settings = get_settings(PANDOC_DEFAULT_FILES=pandoc_default_files)
 
         pandoc_reader = PandocReader(settings)
 
-        source_path = os.path.join(CONTENT_PATH, "mathjax_content.md")
+        source_path = os.path.join(TEST_CONTENT_PATH, "mathjax_content.md")
         output, metadata = pandoc_reader.read(source_path)
 
         self.assertEqual(
@@ -984,13 +1007,17 @@ class TestValidCasesWithDefaultFiles(unittest.TestCase):
     def test_toc_with_valid_defaults(self):
         """Check if output and table of contents are valid with defaults."""
         pandoc_default_files = [
-            os.path.join(DEFAULTS_PATH, "valid_defaults_with_toc.yaml")
+            os.path.join(
+                TEST_DEFAULT_FILES_PATH, "valid_defaults_with_toc.yaml"
+            )
         ]
 
         settings = get_settings(PANDOC_DEFAULT_FILES=pandoc_default_files)
         pandoc_reader = PandocReader(settings)
 
-        source_path = os.path.join(CONTENT_PATH, "valid_content_with_toc.md")
+        source_path = os.path.join(
+            TEST_CONTENT_PATH, "valid_content_with_toc.md"
+        )
         output, metadata = pandoc_reader.read(source_path)
 
         self.assertEqual(
@@ -1036,7 +1063,8 @@ class TestValidCasesWithDefaultFiles(unittest.TestCase):
 
         pandoc_default_files = [
             os.path.join(
-                DEFAULTS_PATH, "valid_defaults_with_toc_and_citations.yaml"
+                TEST_DEFAULT_FILES_PATH,
+                "valid_defaults_with_toc_and_citations.yaml",
             )
         ]
 
@@ -1047,7 +1075,7 @@ class TestValidCasesWithDefaultFiles(unittest.TestCase):
         pandoc_reader = PandocReader(settings)
 
         source_path = os.path.join(
-            CONTENT_PATH, "valid_content_with_citation.md"
+            TEST_CONTENT_PATH, "valid_content_with_citation.md"
         )
         output, metadata = pandoc_reader.read(source_path)
         self.maxDiff = None  # pylint: disable=invalid-name

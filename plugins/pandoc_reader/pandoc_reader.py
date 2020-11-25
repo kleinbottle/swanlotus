@@ -5,17 +5,15 @@ import shutil
 import subprocess
 
 from yaml import safe_load
-from mwc.counter import count_words_in_markdown
 
+from mwc.counter import count_words_in_markdown
 from pelican import signals
 from pelican.readers import BaseReader
 from pelican.utils import pelican_open
 
 DIR_PATH = os.path.dirname(__file__)
-LUA_FILTERS_PATH = os.path.abspath(os.path.join(DIR_PATH, "filters"))
 TEMPLATES_PATH = os.path.abspath(os.path.join(DIR_PATH, "templates"))
 TOC_TEMPLATE = "toc-template.html"
-LUA_WORDCOUNT_FILTER = "wordcount.lua"
 DEFAULT_READING_SPEED = 200  # Words per minute
 
 ENCODED_LINKS_TO_RAW_LINKS_MAP = {
@@ -165,15 +163,14 @@ class PandocReader(BaseReader):
 
     def _calculate_reading_time(self, content):
         """Calculate time taken to read content."""
-        #
-        word_count = count_words_in_markdown(content)
         reading_speed = self.settings.get(
             "READING_SPEED", DEFAULT_READING_SPEED
         )
-        time_unit = "minutes"
+        wordcount = count_words_in_markdown(content)
 
+        time_unit = "minutes"
         try:
-            reading_time = math.ceil(float(word_count) / float(reading_speed))
+            reading_time = math.ceil(float(wordcount) / float(reading_speed))
             if reading_time == 1:
                 time_unit = "minute"
             reading_time = "{} {}".format(str(reading_time), time_unit)
