@@ -5,6 +5,7 @@ import shutil
 import subprocess
 
 from yaml import safe_load
+from mwc.counter import count_words_in_markdown
 
 from pelican import signals
 from pelican.readers import BaseReader
@@ -164,20 +165,15 @@ class PandocReader(BaseReader):
 
     def _calculate_reading_time(self, content):
         """Calculate time taken to read content."""
-        pandoc_cmd = [
-            "pandoc",
-            "--lua-filter",
-            os.path.join(LUA_FILTERS_PATH, LUA_WORDCOUNT_FILTER),
-        ]
-        output = self._run_pandoc(pandoc_cmd, content)
-        wordcount = output.split()[0]
+        #
+        word_count = count_words_in_markdown(content)
         reading_speed = self.settings.get(
             "READING_SPEED", DEFAULT_READING_SPEED
         )
         time_unit = "minutes"
 
         try:
-            reading_time = math.ceil(float(wordcount) / float(reading_speed))
+            reading_time = math.ceil(float(word_count) / float(reading_speed))
             if reading_time == 1:
                 time_unit = "minute"
             reading_time = "{} {}".format(str(reading_time), time_unit)
