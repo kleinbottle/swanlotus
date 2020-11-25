@@ -28,7 +28,7 @@ PANDOC_DEFAULT_FILES = [
     "swanlotus_html5.yaml"
 ]
 
-CALCULATE_READING_TIME = True
+CALCULATE_READING_TIME = False
 
 LOAD_CONTENT_CACHE = True
 
