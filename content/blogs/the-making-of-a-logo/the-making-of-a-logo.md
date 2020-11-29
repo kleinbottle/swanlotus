@@ -122,7 +122,7 @@ When he awoke refreshed, Sol had a clear recollection of a dream---or was it a r
 
 Thankfully, the man's face was etched in Sol's mind. And what a face! A head with a shock of dark hair that fell to his shoulders, a sharp nose, and a pair of piercing, knowing eyes that paradoxically had a dreamy look as well. His mouth was framed by a sparse moustache and a [Van Dyke beard](https://en.wikipedia.org/wiki/Van_Dyke_beard). It was a face vaguely familiar, yet tantalizingly out of recollection's reach.
 
-Rather than fret and fume at not remembering the words in his dream, Sol decided to let the matter rest. He was on an earnest quest, conducted at his own pace, relaxed and without panic, but not so relaxed that the image faded from his mind's eye. 😊
+Rather than fret and fume at not remembering the words in his dream, Sol decided to let the matter rest. He was on an earnest quest, conducted at his own pace, relaxed and without panic, but not so relaxed that the image faded from his mind's eye. \emojifont🙂\normalfont
 
 ### The search for a face
 
@@ -132,9 +132,7 @@ A cursory search of the Web gave no comfort. The hair-style of the man in his dr
 
 He decided to search among the likes of [Leibniz](https://tinyurl.com/yxomtbt5) and [Newton](https://tinyurl.com/y5lc2fyx), both of whom were not only celebrated philosophers of their time, but also sported long locks, whether natural or wigged. But no luck there either. Their eyes appeared too different from those in his dream.
 
-Since both Leibniz and Newton were renowned mathematicians as well, Sol got side-tracked thinking about whether the calculus was discovered or invented [^1]. It was probably the greatest scientific advance of its time. And priority for its discovery was an ugly bone of contention between Leibniz and Newton [@bardi2007].
-
-[^1]: Such meandering, away from the straight and narrow of his specified task, endowed his designs with a resplendent intellectual sheen, but took its toll on timeliness.
+Since both Leibniz and Newton were renowned mathematicians as well, Sol got side-tracked thinking about whether the calculus was discovered or invented ^[Such meandering, away from the straight and narrow of his specified task, endowed his designs with a resplendent intellectual sheen, but took its toll on timeliness.]. It was probably the greatest scientific advance of its time. And priority for its discovery was an ugly bone of contention between Leibniz and Newton [@bardi2007].
 
 And then it hit him like a ton of bricks. _Calculus could not have been invented without coordinate geometry---that extraordinary offspring of the fortuitous marriage of geometry and algebra_. And the progenitor of _that_ wunderkind was [René Descartes](https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes). With bated breath, Sol searched the Web for images of René Descartes.
 
@@ -198,9 +196,7 @@ Sol had a preference for [sans serif](https://en.wikipedia.org/wiki/Sans-serif) 
 
 In resignation, he fielded a [serif](https://en.wikipedia.org/wiki/Serif) font and suddenly things seemed [hunky dory](https://www.vocabulary.com/dictionary/hunky-dory). Never one to accept a matter as settled without due cogitation, he pondered why. Then he remembered that serif fonts arose from a time when Latin writing was sculpted on stone. The chisel and hammer made it difficult to carve out characters without serifs as some little sliver of stone stubbornly decided to break, not at the prescribed right angle but at some other odd angle. Serifs were introduced to smooth over such imperfections, and in time came to hold their own as a style for a font face.
 
-And since Descartes' words were in Latin, what better way to celebrate their Latin-ness than with serifs? So, he chose a font with serifs. Which font in particular would be decided later.[^2]
-
-[^2]: His choice was usurped again, this time by a sans serif font, as we shall see later.
+And since Descartes' words were in Latin, what better way to celebrate their Latin-ness than with serifs? So, he chose a font with serifs. Which font in particular would be decided later.^[His choice was usurped again, this time by a sans serif font, as we shall see later.]
 
 ### Symmetry
 
