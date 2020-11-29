@@ -4334,6 +4334,10 @@ html {
   color: white;
 }
 
+#sidebar nav code {
+  background-color: transparent;
+}
+
 /* Styles for code blocks */
 pre {
   background-color: #363636;
