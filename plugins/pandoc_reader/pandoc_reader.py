@@ -132,15 +132,20 @@ class PandocReader(BaseReader):
             defaults = {}
 
             # Convert YAML data to a Python dictionary
-            with open(default_file) as file_handle:
-                defaults = safe_load(file_handle)
+            with open(default_file, "r") as file_handle:
+                defaults = safe_load(file_handle.read())
 
             self._check_if_unsupported_settings(defaults)
             reader = self._check_input_format(defaults)
             self._check_output_format(defaults)
 
             if not citations:
-                if defaults.get("citeproc", "") and "+citations" in reader:
+                citeproc = False
+                if defaults.get("citeproc", ""):
+                    citeproc = True
+                elif "citeproc" in defaults.get("filters", ""):
+                    citeproc = True
+                if citeproc and "+citations" in reader:
                     citations = True
 
             if not table_of_contents:
