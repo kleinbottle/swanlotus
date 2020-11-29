@@ -4,8 +4,13 @@ feedgenerator==1.9.1
 Jinja2==2.11.2
 markdown-word-count==0.0.1
 MarkupSafe==1.1.1
+pandoc-eqnos==2.4.0
+pandoc-xnos==2.5.0
+pandocfilters==1.4.3
 pelican==4.5.2
+psutil==5.7.3
 Pygments==2.6.1
+pypandoc==1.5
 python-dateutil==2.8.1
 pytz==2020.1
 PyYAML==5.3.1
