@@ -4254,7 +4254,7 @@ body.has-spaced-navbar-fixed-bottom {
 /* Content Ordering */
 /* Set Background for body tag */
 html {
-  background-color: #7a7a7a;
+  background-color: #dbdbdb;
 }
 
 /* Styles for navigation bar */
@@ -4286,18 +4286,6 @@ html {
   color: white;
   border-bottom: white 3px solid;
   font-weight: 700;
-}
-
-#search-box {
-  background-color: white;
-  border: 1px solid #F5F4EF;
-  border-radius: 4px 4px 4px 4px;
-  -moz-border-radius: 4px 4px 4px 4px;
-  -webkit-border-radius: 4px 4px 4px 4px;
-  height: 2em;
-  padding: 0.5em;
-  margin: 1.5em 1em;
-  vertical-align: top;
 }
 
 /* Style for two column container */
