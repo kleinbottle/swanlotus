@@ -1,11 +1,3 @@
----
-title: "Eigenvalues and Eigenvectors---Why Are They Important?"
-author:  "R (Chandra) Chandrasekhar"
-date: "2015-12-13"
-eqnPrefix: ["eqn", "eqns"]
-summary: "A university academic friend of mine recently remarked that it was not easy to motivate students to study [eigenvalues and eigenvectors,](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) let alone appreciate their importance: the subject itself was abstract, and the applications tended to be domain-specific and somewhat arcane."
----
-
 A university academic friend of mine recently remarked that it was not
 easy to motivate students to study [eigenvalues and
 eigenvectors,](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors)
@@ -23,15 +15,16 @@ eigenvectors, and especially to convey
 their
 [importance](http://math.stackexchange.com/questions/23312/what-is-the-importance-of-eigenvalues-eigenvectors).
 
-I then asked, “Can I explain eigenvalues, eigenvectors, and their
-importance to _myself?”_. It also occurred to me that the harried and
+I then asked, "Can I explain eigenvalues, eigenvectors, and their
+importance to *myself?*". It also occurred to me that the harried and
 hurried students of today might derive some benefit from my efforts;
 hence this blog. It is a brief, largely qualitative, and mathematically
 non-rigorous article on eigenvalues and eigenvectors that aims to
 provide meaning and motivation for their study. Corrections and
 suggestions for improvement are most welcome. :-)
 
-## Eigenvalues and eigenvectors
+Eigenvalues and eigenvectors
+----------------------------
 
 As a general rule, the more powerful an idea, the more prevalent it
 becomes. Think about words and numbers, and you will see what I mean.
@@ -43,12 +36,13 @@ games, in the spectra of atoms, and in Google searches, to name just a
 few.
 
 The word [*eigen*](https://en.wikipedia.org/wiki/Talk:Eigenvector) is
-German in origin and means “inherent, characteristic, natural, own, or
-peculiar (to)”. So the prefix “eigen” captures the natural essence of
-the noun it qualifies. Perhaps the word “idiosyncratic” comes closest to
+German in origin and means "inherent, characteristic, natural, own, or
+peculiar (to)". So the prefix "eigen" captures the natural essence of
+the noun it qualifies. Perhaps the word "idiosyncratic" comes closest to
 conveying its import.
 
-## Matrices
+Matrices
+--------
 
 Eigenvalues and eigenvectors are associated traditionally with
 [*matrices*](https://en.wikipedia.org/wiki/Matrix_%28mathematics%29). If
@@ -61,78 +55,74 @@ systems of linear equations, or systems of linear differential equations
 with constant coefficients, or linear transformations in vector spaces.
 Note the recurrence of the word *linear* here.
 
-## Invariance and identity elements
+Invariance and identity elements
+--------------------------------
 
 [Invariance](http://mathworld.wolfram.com/Invariant.html) is a central
 concept in mathematics and physics. Adding zero to a number leaves it
 unchanged. Multiplying a number by one again leaves it unchanged. And
 zero and one are important numbers, usually called the *additive* and
 *multiplicative identity elements* respectively. Consider now the matrix
-equivalent of multiplying by $1$, an example of which is:
-$$
+equivalent of multiplying by $1$, an example of which is: $$
 \begin{bmatrix}1 & 0\\0 & 1\end{bmatrix}\begin{bmatrix}v_{1}\\v_{2}\end{bmatrix}
 = 1\begin{bmatrix}v_{1}\\v_{2}\end{bmatrix} = \begin{bmatrix}v_{1}\\v_{2}\end{bmatrix}
-\qquad (1)
-$$
+\qquad (1)$$
+
 The $2 \times 2$ matrix on the extreme left of equation
 ([1](#eq:identity)) is the *identity matrix* of dimension $2$, analogous
 to the multiplicative identity. We could write this equation more
 succinctly as:
+
 $$ I\mathbf{v} = 1\mathbf{v} \qquad (2)$$
+
 $I$, on the left, is the *identity matrix*, the number $1$ on the right
 is called an *eigenvalue* and the vector $\mathbf{v}$ is called an
 *eigenvector*. Note that there are no strictures on $\mathbf{v}$. So, in
-this particular case, *all* vectors $$\mathbf{v}$$ are eigenvectors but
-there is only *one* eigenvalue, namely $$1.$$ This example, however, is
+this particular case, *all* vectors $\mathbf{v}$ are eigenvectors but
+there is only *one* eigenvalue, namely $1$. This example, however, is
 both unusual and contrived, because the identity matrix is a *special*
 type of *square matrix* with ones on its principal diagonal and zeros
 elsewhere.
 
 Equation ([2](#eq:succinct)) is a particular case of the general
-equation for eigenvalues and eigenvectors, which is written:
-
-$$
+equation for eigenvalues and eigenvectors, which is written: $$
 M\mathbf{v} = \lambda \mathbf{v}
-\qquad (3)$$
-
-where $$M$$ is a *general square matrix*, $${\lambda}$$ is a *real or
-complex scalar* called an *eigenvalue*, and $$\mathbf{v}$$ is a *non-zero
-vector* called an *eigenvector*. The matrix $$M$$ is assigned meaning
-according to context. Geometrically, the *orientation* of the vector
-$$\mathbf{v}$$ is unchanged by the transformation $$M$$, although if
-$$\lambda$$ is negative, the direction is reversed. Specifically, the
-eigenvector corresponding to an eigenvalue of $$1$$ remains unchanged by
+\qquad (3)$$ where $M$ is a *general square matrix*, ${\lambda}$ is a
+*real or complex scalar* called an *eigenvalue*, and $\mathbf{v}$ is a
+*non-zero vector* called an *eigenvector*. The matrix $M$ is assigned
+meaning according to context. Geometrically, the *orientation* of the
+vector $\mathbf{v}$ is unchanged by the transformation $M$, although if
+$\lambda$ is negative, the direction is reversed. Specifically, the
+eigenvector corresponding to an eigenvalue of $1$ remains unchanged by
 the transformation: an example of invariance.
 
-## Calculus
+Calculus
+--------
 
 The operation of taking a derivative may be denoted by the *differential
-operator,* $$D.$$ We know that
-
-$$
+operator,* $D$. We know that $$
 \frac{d}{dt}e^{t} = D(e^{t}) = e^{t}
 $$ and further that $$
 \frac{d}{dt}e^{st} = D(e^{st}) = se^{st}
-$$
-
-where $$s$$ is a scalar and $$t$$ is the independent variable, usually time.
-Although $$D$$ is not a matrix here, it is nevertheless a linear
+$$ where $s$ is a scalar and $t$ is the independent variable, usually
+time. Although $D$ is not a matrix here, it is nevertheless a linear
 transformation that operates on *functions.* And in place of a vector,
-we have a function, $$e^{st}$$, which is therefore called an
-*eigenfunction* of the differential operator, with eigenvalue $$s.$$ The
+we have a function, $e^{st}$, which is therefore called an
+*eigenfunction* of the differential operator, with eigenvalue $s$. The
 importance of the complex exponentials in signal and system analysis
 cannot be over-emphasized: just recall the
 [Laplace](https://en.wikipedia.org/wiki/Laplace_transform) and
 [Fourier](https://en.wikipedia.org/wiki/Fourier_transform) transforms.
 
-## Differential Equations
+Differential Equations
+----------------------
 
 Linear homogeneous *differential equations* with constant coefficients
-may be written using the $$D$$ notation already introduced. A second order
-homogeneous equation with independent variable $$t$$ and dependent
-variable $$y$$ may be written as $$a_2D^2(y) + a_1D(y) + a_0(y) = 0.$$
-Plugging in a solution of the form $$y = e^{st}$$, we get
-$$(a_2s^2 + a_1s + a_0)e^{st} = 0.$$ Since $$e^{st}$$ can never be zero, we
+may be written using the $D$ notation already introduced. A second order
+homogeneous equation with independent variable $t$ and dependent
+variable $y$ may be written as $a_2D^2(y) + a_1D(y) + a_0(y) = 0$.
+Plugging in a solution of the form $y = e^{st}$, we get
+$(a_2s^2 + a_1s + a_0)e^{st} = 0.$ Since $e^{st}$ can never be zero, we
 may divide by it to get the *characteristic polynomial*
 
 $$
@@ -140,8 +130,8 @@ a_2s^2 + a_1s + a_0 = 0.
 \qquad (4)$$
 
 The *roots* of this characteristic polynomial give us the eigenvalues of
-the system. Perhaps, the prefix “eigen” came to be used because of the
-adjective “characteristic”.
+the system. Perhaps, the prefix "eigen" came to be used because of the
+adjective "characteristic".
 
 These ideas masquerade under different terminology in linear system and
 control theory where [transfer
@@ -151,13 +141,14 @@ frequency and resonance](https://www.youtube.com/watch?v=hcXbyS2Cf2o),
 and [stability](https://en.wikibooks.org/wiki/Control_Systems/Stability)
 are encountered.
 
-## Characteristic polynomial of a square matrix
+Characteristic polynomial of a square matrix
+--------------------------------------------
 
 The characteristic polynomial of a square matrix is obtained likewise.
-The equation $$M\mathbf{v} = \lambda \mathbf{v}$$ may be re-written as
-$$(M -\lambda I)\mathbf{v}=\mathbf{0}$$, where the right hand side is the
-*zero vector*. Since the eigenvector $$\mathbf{v}$$ is non-zero, this
-implies that the matrix $$(M -\lambda I)$$ is
+The equation $M\mathbf{v} = \lambda \mathbf{v}$ may be re-written as
+$(M -\lambda I)\mathbf{v}=\mathbf{0}$, where the right hand side is the
+*zero vector*. Since the eigenvector $\mathbf{v}$ is non-zero, this
+implies that the matrix $(M -\lambda I)$ is
 [singular](https://en.wikipedia.org/wiki/Invertible_matrix) or
 non-invertible, which in turn implies that its
 [determinant](https://en.wikipedia.org/wiki/Determinant) is zero. So,
@@ -166,11 +157,12 @@ the characteristic polynomial is the equation
 $$\det(M - \lambda I) = 0
 \qquad (5)$$
 
-and its roots are the eigenvalues of $$M.$$ The determinant of a square
+and its roots are the eigenvalues of $M$. The determinant of a square
 matrix is a *number* associated with it, obtained by adding and
 subtracting products of its elements in a specific order.
 
-## Linear transformations and vector spaces
+Linear transformations and vector spaces
+----------------------------------------
 
 [Vector spaces](https://en.wikipedia.org/wiki/Vector_space) are a
 powerful mathematical abstraction that allows us to unify many disparate
@@ -186,10 +178,10 @@ T(\alpha\mathbf{u}) &= \alpha T(\mathbf{u})\\
 \end{aligned}
 \qquad (6)$$
 
-where $$T$$ is the transformation, $$\mathbf{u}$$ and $$\mathbf{v}$$ are two
-vectors, and $$\alpha$$ is a scalar.
+where $T$ is the transformation, $\mathbf{u}$ and $\mathbf{v}$ are two
+vectors, and $\alpha$ is a scalar.
 
-$$T$$ may be represented by a matrix, and under certain conditions, its
+$T$ may be represented by a matrix, and under certain conditions, its
 eigenvalues and eigenvectors can characterize the transformation
 *completely.* This happens when (a) the eigenvectors are *linearly
 independent,* i.e., no two eigenvectors are parallel, and (b) when they
@@ -199,29 +191,25 @@ eigenvectors are then said to form a
 [*basis*](https://en.wikipedia.org/wiki/Basis_%28linear_algebra%29) for
 the space.
 
-As a case in point, let us say $$T$$ is a $$3 \times 3$$ matrix whose
-eigenvectors $$\mathbf{e_{1}}$$, $$\mathbf{e_{2}}$$, and $$\mathbf{e_{3}}$$
+As a case in point, let us say $T$ is a $3 \times 3$ matrix whose
+eigenvectors $\mathbf{e_{1}}$, $\mathbf{e_{2}}$, and $\mathbf{e_{3}}$
 are linearly independent and form a basis. Then, if
-$$\mathbf{v} = \alpha_{1}\mathbf{e_{1}} + \alpha_{2}\mathbf{e_{2}} + \alpha_{3}\mathbf{e_{3}}$$,
-where the $$\alpha_{i}$$s are scalars, by virtue of the fact that $$T$$ is a
-linear transformation, we have
-
-$$
+$\mathbf{v} = \alpha_{1}\mathbf{e_{1}} + \alpha_{2}\mathbf{e_{2}} + \alpha_{3}\mathbf{e_{3}}$,
+where the $\alpha_{i}$s are scalars, by virtue of the fact that $T$ is a
+linear transformation, we have $$
 \begin{aligned}
 T(\mathbf{v}) & = T(\alpha_{1}\mathbf{e_{1}} + \alpha_{2}\mathbf{e_{2}} + \alpha_{3}\mathbf{e_{3}})\\
 & = T(\alpha_{1}\mathbf{e_{1}}) + T(\alpha_{2}\mathbf{e_{2}}) + T(\alpha_{3}\mathbf{e_{3}})\\
 & = \alpha_{1}T(\mathbf{e_{1}}) + \alpha_{2}T(\mathbf{e_{2}}) + \alpha_{3}T(\mathbf{e_{3}})\\
 & = \alpha_{1}\lambda{_1}\mathbf{e_{1}} + \alpha_{2}\lambda_{2}\mathbf{e_{2}} + \alpha_{3}\lambda_{3}\mathbf{e_{3}}
 \end{aligned}
-$$
-
-Notice how the right hand side is now expressed *purely as a sum of
+$$ Notice how the right hand side is now expressed *purely as a sum of
 scaled eigenvectors.* This is the essence of why eigenvalues and
 eigenvectors are so important: they are *sufficient* to describe what is
 taking place. *Eigenvalues and eigenvectors encode the transformation
 succinctly, just as DNA encodes biological information.*
 
-If, in addition, $$T$$ is
+If, in addition, $T$ is
 [*symmetric*](https://en.wikipedia.org/wiki/Symmetry_in_mathematics) its
 eigenvectors form an [*orthonormal
 basis*](https://en.wikipedia.org/wiki/Orthonormality). Such basis
@@ -238,38 +226,42 @@ fortuitously called [*spectral
 theory,*](https://en.wikipedia.org/wiki/Spectral_theory) even explains
 the observed spectra of atoms in quantum theory!
 
+```{=html}
 <!--In this section I have given some links to reference material that is freely available online. As with everything on the Web, please check for quality and accuracy before accepting something as correct.-->
+```
 ### A property of eigenvectors
 
 I will here belabour a point that might seem blindingly obvious to some
-but frustratingly obscure to others. Let $$\mathbf{v}$$ be an eigenvector
-associated with a distinct eigenvalue $$\lambda$$ as in equation
-([3](#eq:eigen)), and let $$k$$ be a non-zero scalar. Then, using the
+but frustratingly obscure to others. Let $\mathbf{v}$ be an eigenvector
+associated with a distinct eigenvalue $\lambda$ as in equation
+([3](#eq:eigen)), and let $k$ be a non-zero scalar. Then, using the
 second of the equation-pair ([6](#eq:linear)), we have
 
 $$
 M(k\mathbf{v}) = k(M\mathbf{v}) = k(\lambda\mathbf{v}) = \lambda(k\mathbf{v}),
 \qquad (7)$$
 
-which means that if $$\mathbf{v}$$ is an eigenvector, any non-zero scalar
-multiple of $$\mathbf{v}$$ is also an eigenvector for that same
+which means that if $\mathbf{v}$ is an eigenvector, any non-zero scalar
+multiple of $\mathbf{v}$ is also an eigenvector for that same
 eigenvalue. So, strictly speaking, we really should be referring to *an*
-eigenvector—rather than *the* eigenevctor—corresponding to any given
+eigenvector---rather than *the* eigenevctor---corresponding to any given
 eigenvalue.
 
-## Worked example
+Worked example
+--------------
 
 A worked example would normally have made its way here at this point in
 the article. But because the example is long and might not interest
 everyone, I have relegated it to the end of the article. Stay tuned if
 you are enthused.
 
-## Resources
+Resources
+---------
 
 I hope that this article has not been so brief as to be cryptic and
 off-putting. To those in search of greater rigour or a more formal
 exposition, I would recommend a good linear algebra textbook. The
-venerable tome that I used at university went by the acronym “KKOP”
+venerable tome that I used at university went by the acronym "KKOP"
 after the initials of the surnames of the four authors. Fortunately, it
 is freely available online in a variety of formats, and its actual title
 is [*An Introduction to Linear
@@ -299,12 +291,15 @@ again, their depth and quality varies. The [Mathematics
 StackExchange](http://math.stackexchange.com/) and
 [Quora](https://www.quora.com/) are two sites that you might explore.
 
+```{=html}
 <!--[aops]: http://artofproblemsolving.com/-->
+```
 Examples of all the above types of resources have been tucked away
 within the various links in this article: try them out to get a flavour
 of what is available.
 
-## Importance and applications
+Importance and applications
+---------------------------
 
 If, after all this, you are still unconvinced about the utility of
 eigenvalues and eigenvectors, think of this analogy. Crystals have
@@ -319,39 +314,40 @@ neither radios nor lasers.
 
 To get an idea of the broad sweep of eigenvalues and their
 applicability, I strongly recommend that you should read a charming
-article entitled [“Favourite Eigenvalue
-Problems”.](http://people.maths.ox.ac.uk/trefethen/dec11.pdf) Another
+article entitled ["Favourite Eigenvalue
+Problems".](http://people.maths.ox.ac.uk/trefethen/dec11.pdf) Another
 article that takes a breezy look at the subject of this writeup is
-[“What the Heck are Eigenvalues and
-Eigenvectors?”.](http://hubpages.com/education/What-the-Heck-are-Eigenvalues-and-Eigenvectors)
+["What the Heck are Eigenvalues and
+Eigenvectors?".](http://hubpages.com/education/What-the-Heck-are-Eigenvalues-and-Eigenvectors)
 It has a disputed explanation (see comments on the article) of how a
 bridge collapsed: so take that *cum granis salis.* It also contains a
-link to a PDF paper interestingly entitled [“The 25,000,000,000.00
+link to a PDF paper interestingly entitled ["The 25,000,000,000.00
 Dollar Eigenvector: The Linear Algebra Behind
-Google”,](http://www.rose-hulman.edu/~bryan/googleFinalVersionFixed.pdf)
+Google",](http://www.rose-hulman.edu/~bryan/googleFinalVersionFixed.pdf)
 which, in good faith, I think is not a spoof! Indeed, the [citation to
 the original Stanford InfoLab technical
 report](http://ilpubs.stanford.edu:8090/422/) and the [actual
 report](http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf) are both
 available online.
 
-## Worked example: modelling weather with a transition matrix
+Worked example: modelling weather with a transition matrix
+----------------------------------------------------------
 
-Now for the promised example of eigenvalues at work—in a simplified
+Now for the promised example of eigenvalues at work---in a simplified
 real-life situation, modelling the weather. Let us assume that
-yesterday’s weather influences the *probability* of today’s weather, and
-today’s weather influences the *probability* of tomorrow’s weather. Each
-day’s weather depends only on the previous day’s weather, i.e., the
-weather has a “memory” of one day.
+yesterday's weather influences the *probability* of today's weather, and
+today's weather influences the *probability* of tomorrow's weather. Each
+day's weather depends only on the previous day's weather, i.e., the
+weather has a "memory" of one day.
 
 To keep it simple, let us have only three weather states: sunny, cloudy,
 and rainy, with the stipulation that each day can only be *one* of these
 three. Further, in our matrix, let the ordering be sunny, cloudy, and
 rainy, both left to right, and top to bottom. Then, the column headings
-represent *today’s weather* and the row headings represent *tomorrow’s
+represent *today's weather* and the row headings represent *tomorrow's
 weather.* We then have the [*state-transition
 matrix*](https://en.wikipedia.org/wiki/Stochastic_matrix) or *Markov
-matrix* $$M$$ given in equation ([8](#eq:state)):
+matrix* $M$ given in equation ([8](#eq:state)):
 
 $$
 M = \begin{bmatrix}%
@@ -361,16 +357,16 @@ M = \begin{bmatrix}%
 \end{bmatrix}
 \qquad (8)$$
 
-Note that each *column* of $$M$$ represents the probabilities of
+Note that each *column* of $M$ represents the probabilities of
 [*mutually exclusive*](https://en.wikipedia.org/wiki/Mutual_exclusivity)
-events, which must therefore sum to one. The matrix element $$m_{ij}$$ is
-the probability that today’s weather is in column $$j$$ and that
-tomorrow’s weather is in row $$i.$$ For example, The probability of today
-being rainy and tomorrow cloudy is given by $$m_{23} = 0.40.$$
+events, which must therefore sum to one. The matrix element $m_{ij}$ is
+the probability that today's weather is in column $j$ and that
+tomorrow's weather is in row $i$. For example, The probability of today
+being rainy and tomorrow cloudy is given by $m_{23} = 0.40$.
 
-Let the column-vector $$\mathbf{w}_{k}$$ represent the probabilities for a
-particular day’s weather and the column-vector $$\mathbf{ w}_{k+1}$$, the
-next day’s weather. The two are then related by:
+Let the column-vector $\mathbf{w}_{k}$ represent the probabilities for a
+particular day's weather and the column-vector $\mathbf{ w}_{k+1}$, the
+next day's weather. The two are then related by:
 
 $$
 \mathbf{w}_{k+1} = M\mathbf{w}_{k}
@@ -407,7 +403,7 @@ $$
 \end{aligned}
 $$
 
-By induction, the weather vector $$n$$ days downstream is given by
+By induction, the weather vector $n$ days downstream is given by
 
 $$
 \mathbf{w}_{n} = M^{n}\mathbf{w}_{0}.
@@ -415,13 +411,13 @@ $$
 
 In this manner, we can trace the time evolution of the weather and, if
 desired, draw a three-dimensional parametric plot of the successive
-weather vectors in $$\mathbb{R}^{3}$$ with time as parameter. This could
+weather vectors in $\mathbb{R}^{3}$ with time as parameter. This could
 be insightful, but it is a laborious and time-consuming way to find out
 the steady-state weather vector if there is one. Could we do better?
 
 A rough and ready method would be to evaluate equation ([11](#eq:Mn))
-with $$n$$ set to large numbers, say $$50$$ and $$100$$, and check if the
-resulting weather vectors, $$\mathbf{w}_{50}$$ and $$\mathbf{w}_{100}$$ were
+with $n$ set to large numbers, say $50$ and $100$, and check if the
+resulting weather vectors, $\mathbf{w}_{50}$ and $\mathbf{w}_{100}$ were
 equal. If they were, we may safely identify that value as the
 steady-state weather vector.
 
@@ -434,7 +430,7 @@ diagonal matrices and the diagonalization of square matrices.
 
 ### Diagonal matrix raised to a power
 
-Suppose that $$D$$ is a $$3 \times 3$$ diagonal matrix with non-zero entries
+Suppose that $D$ is a $3 \times 3$ diagonal matrix with non-zero entries
 on its principal diagonal and zeros elsewhere:
 
 $$
@@ -455,7 +451,7 @@ D^{n} = \begin{bmatrix}
 \end{bmatrix}.
 \qquad (12)$$
 
-If we could somehow decompose $$M$$ into a matrix product where a diagonal
+If we could somehow decompose $M$ into a matrix product where a diagonal
 matrix was featured, we might be able to circumvent the
 matrix-raised-to-a large-power problem.
 
@@ -463,11 +459,11 @@ matrix-raised-to-a large-power problem.
 
 We need to
 [*diagonalize*](http://mathworld.wolfram.com/MatrixDiagonalization.html)
-the transition matrix—a procedure called [*eigen
+the transition matrix---a procedure called [*eigen
 decomposition.*](http://mathworld.wolfram.com/EigenDecomposition.html) A
 square matrix with non-repeating eigenvalues and therefore, linearly
 independent eigenvectors, can be diagonalized. We demonstrate how this
-is done for the $$3 \times 3$$ case below.
+is done for the $3 \times 3$ case below.
 
 Let the three eigenvectors be so denoted:
 
@@ -479,7 +475,7 @@ e_{k3}
 \end{bmatrix} ; k = 1, 2, 3.
 $$
 
-The matrix $$P$$ whose *columns* are the eigenvectors is therefore $$
+The matrix $P$ whose *columns* are the eigenvectors is therefore $$
 P = \begin{bmatrix}
 e_{11} & e_{21} & e_{31}\\
 e_{12} & e_{22} & e_{32}\\
@@ -518,14 +514,14 @@ e_{13} & e_{23} & e_{33}
 \end{aligned}
 \qquad (13)$$
 
-To get only $$M$$ on the left-hand side of equation ([13](#eq:diag1)), we
-post-multiply both sides by $$P^{-1}$$, the inverse of $$P$$:
+To get only $M$ on the left-hand side of equation ([13](#eq:diag1)), we
+post-multiply both sides by $P^{-1}$, the inverse of $P$:
 
 $$
 MPP^{-1} = MI = M = PDP^{-1}
 \qquad (14)$$
 
-If we now square $$M$$, we get
+If we now square $M$, we get
 
 $$
 \begin{aligned}
@@ -544,11 +540,12 @@ M^{n} = PD^{n}P^{-1}
 
 The role of eigenvalues and eigenvectors in the plot of raising a square
 matrix to a power is now fully revealed: recall that in equation
-([16](#eq:M-to-the-n)), $$P$$ is the matrix whose columns are the
-eigenvectors, and $$D$$ is the diagonal matrix whose non-zero elements are
-the corresponding eigenvalues, and $$P^{-1}$$ is the inverse of $$P.$$
+([16](#eq:M-to-the-n)), $P$ is the matrix whose columns are the
+eigenvectors, and $D$ is the diagonal matrix whose non-zero elements are
+the corresponding eigenvalues, and $P^{-1}$ is the inverse of $P$.
 
-### Software Implementation
+Software Implementation
+-----------------------
 
 To get numerical results, I initially tried implementing the above steps
 with the free open-source mathematics software system
@@ -568,16 +565,17 @@ window. The discussion below will make better sense after you have thus
 executed the file `weather.m`. Because Octave is platform-neutral and
 downloadable free of charge, this is not a restrictive constraint.
 
-### Discussion of results from `weather.m`
+Discussion of results from `weather.m`
+--------------------------------------
 
-The roots of the characteristic polynomial of $$M$$ are first evaluated,
+The roots of the characteristic polynomial of $M$ are first evaluated,
 and compared to the values of the eigenvalues and eigenvectors obtained
 from an Octave function designed for that explicit purpose.
 
-There are *three* distinct eigenvalues for the transition matrix, $$M.$$
+There are *three* distinct eigenvalues for the transition matrix, $M$.
 Moreover, [it may be
 proved](http://www.math.cornell.edu/~mec/Winter2009/RalucaRemus/Lecture1/lecture1.html)
-that $$1$$ is an eigenvalue of any transition matrix. The eigenvalues we
+that $1$ is an eigenvalue of any transition matrix. The eigenvalues we
 get are:
 
 $$
@@ -589,9 +587,9 @@ $$
 $$
 
 From equation([16](#eq:M-to-the-n)) we may surmise that the
-contributions from $$\lambda_{2}$$ and $$\lambda_{3}$$, being both less than
-one, will diminish progressively as $$n$$ increases, and in the limit,
-only the eigenvalue $$1$$ will dominate the steady-state behaviour.
+contributions from $\lambda_{2}$ and $\lambda_{3}$, being both less than
+one, will diminish progressively as $n$ increases, and in the limit,
+only the eigenvalue $1$ will dominate the steady-state behaviour.
 
 The eigenvectors associated respectively with these eigenvalues, as
 spewed out by Octave, are: $$
@@ -618,21 +616,21 @@ spewed out by Octave, are: $$
 $$
 
 None of the column sums of these eigenvectors sums to one. Indeed, the
-column sums of $$\mathbf{e}_{2}$$ and $$\mathbf{e}_{3}$$ are close to zero,
-whereas the column sum of $$\mathbf{e}_{1}$$ is negative. We will return
-to the eigenvector $$\mathbf{e}_{1}$$, to wrest meaning out of it, a
+column sums of $\mathbf{e}_{2}$ and $\mathbf{e}_{3}$ are close to zero,
+whereas the column sum of $\mathbf{e}_{1}$ is negative. We will return
+to the eigenvector $\mathbf{e}_{1}$, to wrest meaning out of it, a
 little later. In any case, we confirm that
-$$M\mathbf{e}_{1} = \mathbf{e}_{1}.$$
+$M\mathbf{e}_{1} = \mathbf{e}_{1}$.
 
-Assembling the matrices $$P$$ and $$P^{-1}$$ from the eigenvectors is
-trivial, as is putting together $$D$$ as the diagonal matrix of the
+Assembling the matrices $P$ and $P^{-1}$ from the eigenvectors is
+trivial, as is putting together $D$ as the diagonal matrix of the
 corresponding eigenvalues. With these numerical values, the truth of
 equation ([14](#eq:eigendecomp)) is also easily demonstrated.
 
 The time evolution of the initial weather vector is then tracked with 1,
 10, 20, 50, and 100 iterations of equation ([9](#eq:recurrence)). In
 this case, the weather vector stabilizes after about twenty iterations
-to a steady-state vector, $$\mathbf{w}_{\infty}$$, given by
+to a steady-state vector, $\mathbf{w}_{\infty}$, given by
 
 $$
 \mathbf{w}_{\infty} = %
@@ -644,16 +642,16 @@ $$
 \qquad (17)$$
 
 When we track the same temporal evolution for eigenvector
-$$\mathbf{e}_{1}$$, the result after each iteration is $$\mathbf{e}_{1}$$
+$\mathbf{e}_{1}$, the result after each iteration is $\mathbf{e}_{1}$
 itself. This is the expected behaviour for an eigenvector associated
-with an eigenvalue of $$1.$$
+with an eigenvalue of $1$.
 
 What may be disconcerting, though, is that we now seem to have *two*
-steady-state vectors, $$\mathbf{w}_{\infty}$$ and $$\mathbf{e}_{1}.$$
+steady-state vectors, $\mathbf{w}_{\infty}$ and $\mathbf{e}_{1}$.
 
-Observe, however, that $$\mathbf{e}_{1}$$ is not a probability vector
+Observe, however, that $\mathbf{e}_{1}$ is not a probability vector
 whose columns sum to one. To convert it to a probability vector, we
-*normalize* $$\mathbf{e}_{1}$$ by dividing it by its column sum, to get
+*normalize* $\mathbf{e}_{1}$ by dividing it by its column sum, to get
 the *normalized eigenvector:*
 
 $$
@@ -665,19 +663,19 @@ $$
 \end{bmatrix}
 \qquad (18)$$
 
-Lo and behold! $$\mathbf{n}_{1}$$ and $$\mathbf{w}_{\infty}$$ are one and
+Lo and behold! $\mathbf{n}_{1}$ and $\mathbf{w}_{\infty}$ are one and
 the same, and all is well. Recalling from equation
 ([7](#eq:scaled-eigenvector)) that non-zero scalar multiples of
 eigenvectors are also eigenvectors themselves, this result, even if a
 little magical, really should not surprise us.
 
 We do not bother normalizing the eigenvectors associated with
-$$\lambda_{2}$$ and $$\lambda_{3}$$ because their column sums almost vanish,
+$\lambda_{2}$ and $\lambda_{3}$ because their column sums almost vanish,
 and moreover, their contribution to the steady state decreases with
 increasing number of iterations.
 
 To round things off, we substitute a random initial weather vector in
-place of $$\mathbf{w}_{0}$$, and view its evolution over time for twenty
+place of $\mathbf{w}_{0}$, and view its evolution over time for twenty
 iterations, and find that it too converges to the steady-state weather
 vector after about 15 iterations.
 
