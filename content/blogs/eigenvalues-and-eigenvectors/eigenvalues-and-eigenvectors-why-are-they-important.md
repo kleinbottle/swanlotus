@@ -68,24 +68,20 @@ concept in mathematics and physics. Adding zero to a number leaves it
 unchanged. Multiplying a number by one again leaves it unchanged. And
 zero and one are important numbers, usually called the *additive* and
 *multiplicative identity elements* respectively. Consider now the matrix
-equivalent of multiplying by $$1$$, an example of which is:
-
+equivalent of multiplying by $1$, an example of which is:
 $$
 \begin{bmatrix}1 & 0\\0 & 1\end{bmatrix}\begin{bmatrix}v_{1}\\v_{2}\end{bmatrix}
 = 1\begin{bmatrix}v_{1}\\v_{2}\end{bmatrix} = \begin{bmatrix}v_{1}\\v_{2}\end{bmatrix}
 \qquad (1)
 $$
-
-The $$2 \times 2$$ matrix on the extreme left of equation
-([1](#eq:identity)) is the *identity matrix* of dimension $$2$$, analogous
+The $2 \times 2$ matrix on the extreme left of equation
+([1](#eq:identity)) is the *identity matrix* of dimension $2$, analogous
 to the multiplicative identity. We could write this equation more
 succinctly as:
-
 $$ I\mathbf{v} = 1\mathbf{v} \qquad (2)$$
-
-$$I$$, on the left, is the *identity matrix*, the number $$1$$ on the right
-is called an *eigenvalue* and the vector $$\mathbf{v}$$ is called an
-*eigenvector*. Note that there are no strictures on $$\mathbf{v}.$$ So, in
+$I$, on the left, is the *identity matrix*, the number $1$ on the right
+is called an *eigenvalue* and the vector $\mathbf{v}$ is called an
+*eigenvector*. Note that there are no strictures on $\mathbf{v}$. So, in
 this particular case, *all* vectors $$\mathbf{v}$$ are eigenvectors but
 there is only *one* eigenvalue, namely $$1.$$ This example, however, is
 both unusual and contrived, because the identity matrix is a *special*
