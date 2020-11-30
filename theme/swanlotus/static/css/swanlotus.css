@@ -305,6 +305,24 @@ h1#bibliography {
   line-height: 1.125;
 }
 
+/* Pandoc Equation numbers Styles */
+.eqnos {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.eqnos br {
+  display: none;
+}
+
+.eqnos-number {
+  position: absolute;
+  right: 0em;
+  top: 50%;
+  line-height: 0;
+}
+
 /* Noto Serif */
 /* Source Sans Pro */
 /* Fira Mono */
