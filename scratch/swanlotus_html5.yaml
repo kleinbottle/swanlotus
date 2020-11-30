@@ -1,0 +1,25 @@
+# swanlotus_html5.yaml
+#
+# Defaults for generating HTML5 from Markdown using pandoc
+# using the Pelican Pandoc Reader plugin
+#
+reader: markdown+smart+citations+implicit_figures+link_attributes+subscript+superscript+line_blocks
+writer: html5
+
+table-of-contents: true
+
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+
+filters:
+# - pandoc-eqnos
+- citeproc
+
+# csl: "https://www.zotero.org/styles/ieee-with-url"
+csl: "./ieee-with-url.csl"
+
+metadata:
+  link-citations: false
+  reference-section-title: References

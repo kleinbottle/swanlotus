@@ -225,8 +225,6 @@ class PandocReader(BaseReader):
             if value and isinstance(value, str):
                 value = value.strip().strip('"')
 
-            if key in self.settings["FORMATTED_FIELDS"]:
-                value = self._run_pandoc(pandoc_cmd, value)
             metadata[key] = self.process_metadata(key, value)
         return metadata
 

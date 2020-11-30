@@ -54,8 +54,6 @@ ARTICLE_URL = 'blogs/{slug}.html'
 
 USE_FOLDER_AS_CATEGORY = False
 
-FORMATTED_FIELDS = ['summary']
-
 # Blogroll
 LINKS = (("Pelican", "https://getpelican.com/"),
          ("Python.org", "https://www.python.org/"),
