@@ -201,10 +201,10 @@ Now for the promised example of eigenvalues at work---in a simplified real-life 
 
 To keep it simple, let us have only three weather states: sunny, cloudy, and rainy, with the stipulation that each day can only be _one_ of these three. Further, in our matrix, let the ordering be sunny, cloudy, and rainy, both left to right, and top to bottom. Then, the column headings represent _today's weather_ and the row headings represent _tomorrow's  weather._  We then have the [_state-transition matrix_][transition] or _Markov matrix_ $M$ given in equation (@eq:state):
 $$
-M = \begin{bmatrix}%
+M = \begin{bmatrix}
 0.65 & 0.30 & 0.10\\
 0.25 & 0.45 & 0.40\\
-0.10 & 0.25 & 0.50\\
+0.10 & 0.25 & 0.50%
 \end{bmatrix}
 $$ {#eq:state}
 
@@ -303,8 +303,7 @@ $$
 Now,
 $$
 \begin{aligned}
-MP %
-&= M\begin{bmatrix}
+MP &= M\begin{bmatrix}
 \mathbf{e}_{1} & \mathbf{e}_{2} & \mathbf{e}_{3}
 \end{bmatrix}\\
 &= \begin{bmatrix}
@@ -339,6 +338,7 @@ M^{2} &= (PDP^{-1})(PDP^{-1})\\
 &= PD^{2}P^{-1}
 \end{aligned}
 $$ {#eq:D-squared}
+
 By induction,
 $$
 M^{n} = PD^{n}P^{-1}
