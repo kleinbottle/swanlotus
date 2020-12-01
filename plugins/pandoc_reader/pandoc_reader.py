@@ -5,9 +5,10 @@ import os
 import shutil
 import subprocess
 
+import bs4
+from mwc.counter import count_words_in_markdown
 from yaml import safe_load
 
-from mwc.counter import count_words_in_markdown
 from pelican import signals
 from pelican.readers import BaseReader
 from pelican.utils import pelican_open
@@ -81,6 +82,8 @@ class PandocReader(BaseReader):
         # Create HTML content
         output = self._run_pandoc(pandoc_cmd, content)
 
+        output, toc = self._extract_contents(output, table_of_contents)
+
         # Replace all occurrences of %7Bstatic%7D to {static},
         # %7Battach%7D to {attach} and %7Bfilename%7D to {filename}
         # so that static links are resolvable by pelican
@@ -90,9 +93,7 @@ class PandocReader(BaseReader):
         metadata = {}
         if table_of_contents:
             # Create table of contents and add to metadata
-            metadata["toc"] = self.process_metadata(
-                "toc", self._create_toc(pandoc_cmd, content)
-            )
+            metadata["toc"] = self.process_metadata("toc", toc)
 
         if self.settings.get("CALCULATE_READING_TIME", []):
             # Calculate reading time and add to metadata
@@ -104,6 +105,40 @@ class PandocReader(BaseReader):
         metadata = self._process_header_metadata(content, metadata, pandoc_cmd)
 
         return output, metadata
+
+    @staticmethod
+    def _extract_contents(content, table_of_contents):
+        soup = bs4.BeautifulSoup(content, "html.parser")
+
+        # Remove <DOCTYPE html>
+        for c in soup.contents:
+            if isinstance(c, bs4.Doctype):
+                c.extract()
+
+        # Remove the head part of the document
+        soup.find('head').decompose()
+
+        # Remove title block header
+        soup.body.find('header', id="title-block-header").decompose()
+
+        # Get table of contents if one was requested
+        toc = ""
+        if table_of_contents:
+            # Extract the table of contents
+            toc = str(soup.body.find("nav", id="TOC"))
+
+            if toc != "None":
+                # Replace id+TOC with class="toc"
+                toc = toc.replace('id="TOC"', 'class="toc"')
+                soup.body.find('nav', id="TOC").decompose()
+            else:
+                toc = ""
+
+        # Remove outer tags of body and html
+        soup.body.unwrap()
+        soup.html.unwrap()
+
+        return str(soup).strip(), toc
 
     def _validate_fields(self, default_files, arguments, extensions):
         """Validate fields and return citations and ToC request values."""
@@ -154,17 +189,17 @@ class PandocReader(BaseReader):
 
         return citations, table_of_contents
 
-    def _create_toc(self, pandoc_cmd, content):
-        """Generate table of contents."""
-        toc_args = [
-            "--standalone",
-            "--template",
-            os.path.join(TEMPLATES_PATH, TOC_TEMPLATE),
-        ]
+    # def _create_toc(self, pandoc_cmd, content):
+    #     """Generate table of contents."""
+    #     toc_args = [
+    #         "--standalone",
+    #         "--template",
+    #         os.path.join(TEMPLATES_PATH, TOC_TEMPLATE),
+    #     ]
 
-        pandoc_cmd = pandoc_cmd + toc_args
-        table_of_contents = self._run_pandoc(pandoc_cmd, content)
-        return table_of_contents
+    #     pandoc_cmd = pandoc_cmd + toc_args
+    #     table_of_contents = self._run_pandoc(pandoc_cmd, content)
+    #     return table_of_contents
 
     def _calculate_reading_time(self, content):
         """Calculate time taken to read content."""
@@ -239,10 +274,11 @@ class PandocReader(BaseReader):
                 "markdown" + extensions,
                 "--to",
                 "html5",
+                "--standalone"
             ]
             pandoc_cmd.extend(arguments)
         else:
-            pandoc_cmd = ["pandoc"]
+            pandoc_cmd = ["pandoc", "--standalone"]
             for default_file in default_files:
                 pandoc_cmd.append("--defaults={0}".format(default_file))
         return pandoc_cmd
