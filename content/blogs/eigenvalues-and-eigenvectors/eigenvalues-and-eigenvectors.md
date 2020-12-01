@@ -49,9 +49,9 @@ $${#eq:identity}
 [invariant]: http://mathworld.wolfram.com/Invariant.html
 
 The $2 \times 2$ matrix on the extreme left of equation (@eq:identity) is the _identity matrix_ of dimension $2$, analogous to the multiplicative identity. We could write this equation more succinctly as:
-
-$$ I\mathbf{v} = 1\mathbf{v} $$ {#eq:succinct}
-
+$$
+I\mathbf{v} = 1\mathbf{v}
+$$ {#eq:succinct}
 $I$, on the left, is the _identity matrix_, the number $1$ on the right is called an _eigenvalue_ and the vector $\mathbf{v}$ is called an _eigenvector_. Note that there are no strictures on $\mathbf{v}$. So, in this particular case, _all_ vectors $\mathbf{v}$ are eigenvectors but there is only _one_ eigenvalue, namely $1$. This example, however, is both unusual and contrived, because the identity matrix is a _special_ type of _square matrix_ with ones on its principal diagonal and zeros elsewhere.
 
 Equation (@eq:succinct) is a particular case of the general equation for eigenvalues and eigenvectors, which is written:
@@ -78,7 +78,6 @@ where $s$ is a scalar and $t$ is the independent variable, usually time. Althoug
 ## Differential Equations
 
 Linear homogeneous _differential equations_ with constant coefficients may be written using the $D$ notation already introduced. A second order homogeneous equation with independent variable $t$ and dependent variable $y$ may be written as $a_2D^2(y) + a_1D(y) + a_0(y) = 0$. Plugging in a solution of the form $y = e^{st}$, we get $(a_2s^2 + a_1s + a_0)e^{st} = 0.$ Since $e^{st}$ can never be zero, we may divide by it to get the _characteristic polynomial_
-
 $$
 a_2s^2 + a_1s + a_0 = 0.
 $$ {#eq:cp}
@@ -96,10 +95,8 @@ These ideas masquerade under different terminology in linear system and control 
 ## Characteristic polynomial of a square matrix
 
 The characteristic polynomial of a square matrix is obtained likewise. The equation $M\mathbf{v} = \lambda \mathbf{v}$ may be re-written as $(M -\lambda I)\mathbf{v}=\mathbf{0}$, where the right hand side is the _zero vector_. Since the eigenvector $\mathbf{v}$ is non-zero, this implies that the matrix $(M -\lambda I)$ is [singular][singular] or non-invertible, which in turn implies that its [determinant][determinant] is zero. So, the characteristic polynomial is the equation
-
 $$\det(M - \lambda I) = 0
 $$ {#eq:cp-matrix}
-
 and its roots are the eigenvalues of $M$. The determinant of a square matrix is a _number_ associated with it, obtained by adding and subtracting products of its elements in a specific order.
 
 [singular]: https://en.wikipedia.org/wiki/Invertible_matrix
@@ -108,14 +105,12 @@ and its roots are the eigenvalues of $M$. The determinant of a square matrix is 
 ## Linear transformations and vector spaces
 
 [Vector spaces][vector-space] are a powerful mathematical abstraction that allows us to unify many disparate branches of mathematics under a uniform taxonomy. [Linear transformations][linear-trans] are a particular type of mapping between two vector spaces over a scalar field, satisfying:
-
 $$
 \begin{aligned}
 T(\mathbf{u} + \mathbf{v}) &= T(\mathbf{u}) + T(\mathbf{v})\\
 T(\alpha\mathbf{u}) &= \alpha T(\mathbf{u})\\
 \end{aligned}
 $$ {#eq:linear}
-
 where $T$ is the transformation, $\mathbf{u}$ and $\mathbf{v}$ are two vectors, and $\alpha$ is a scalar.
 
 [vector-space]: https://en.wikipedia.org/wiki/Vector_space
@@ -151,11 +146,9 @@ The applications of eigenvalues and eigenvectors in linear algebra run far and d
 ### A property of eigenvectors
 
 I will here belabour a point that might seem blindingly obvious to some but frustratingly obscure to others. Let $\mathbf{v}$ be an eigenvector associated with a distinct eigenvalue $\lambda$ as in equation (@eq:eigen), and let $k$ be a non-zero scalar. Then, using the second of the equation-pair (@eq:linear), we have
-
 $$
 M(k\mathbf{v}) = k(M\mathbf{v}) = k(\lambda\mathbf{v}) = \lambda(k\mathbf{v}),
 $$ {#eq:scaled-eigenvector}
-
  which means that if $\mathbf{v}$ is an eigenvector, any non-zero scalar multiple of $\mathbf{v}$ is also an eigenvector for that same eigenvalue. So, strictly speaking, we really should be referring to _an_ eigenvector---rather than _the_ eigenevctor---corresponding to any given eigenvalue.
 
 ## Worked example
@@ -207,7 +200,6 @@ To get an idea of the broad sweep of eigenvalues and their applicability, I stro
 Now for the promised example of eigenvalues at work---in a simplified real-life situation, modelling the weather. Let us assume that yesterday's weather influences the _probability_ of today's weather, and today's weather influences the _probability_ of tomorrow's weather. Each day's weather depends only on the previous day's weather, i.e., the weather has a "memory" of one day.
 
 To keep it simple, let us have only three weather states: sunny, cloudy, and rainy, with the stipulation that each day can only be _one_ of these three. Further, in our matrix, let the ordering be sunny, cloudy, and rainy, both left to right, and top to bottom. Then, the column headings represent _today's weather_ and the row headings represent _tomorrow's  weather._  We then have the [_state-transition matrix_][transition] or _Markov matrix_ $M$ given in equation (@eq:state):
-
 $$
 M = \begin{bmatrix}%
 0.65 & 0.30 & 0.10\\
@@ -223,23 +215,19 @@ Note that each _column_ of $M$ represents the probabilities of [_mutually exclus
 [mutually-exclusive]: https://en.wikipedia.org/wiki/Mutual_exclusivity
 
 Let the column-vector $\mathbf{w}_{k}$ represent the probabilities for a particular day's weather and the column-vector $\mathbf{ w}_{k+1}$, the next day's weather. The two are then related by:
-
 $$
 \mathbf{w}_{k+1} = M\mathbf{w}_{k}
 $$ {#eq:recurrence}
-
 Equation (@eq:recurrence) is called a [_recurrence relation_][recurrence] or _difference equation_, and in our case, it represents the evolution of a dynamical system in time, namely the weather. Just for completeness, let the initial condition be given by:
-
-[recurrence]: https://en.wikipedia.org/wiki/Recurrence_relation
-
 $$
 \mathbf{w}_{0} = \begin{bmatrix}0.55\\0.34\\0.11\end{bmatrix}
 $$ {#eq:initial}
 
+[recurrence]: https://en.wikipedia.org/wiki/Recurrence_relation
+
 We want to know whether, for this model, there will be an equilibrium or steady-state in the weather, represented by a probability vector with values that remain steady with temporal evolution. The question is how do we find that out?
 
 One obvious way is to compute the downstream weather one day at a time: think of forging a chain one link at a time because the weather has a memory of only one day. From equation(@eq:recurrence) we can compute the following:
-
 $$
 \begin{aligned}
 \mathbf{w}_{1} &= M\mathbf {w}_{0}\\
@@ -252,7 +240,6 @@ $$
 $$
 
 By induction, the weather vector $n$ days downstream is given by
-
 $$
 \mathbf{w}_{n} = M^{n}\mathbf{w}_{0}.
 $$ {#eq:Mn}
@@ -268,7 +255,6 @@ To devise a better solution, we need to digress briefly to examine diagonal matr
 ### Diagonal matrix raised to a power
 
 Suppose that $D$ is a $3 \times 3$ diagonal matrix with non-zero entries on its principal diagonal and zeros elsewhere:
-
 $$
 D = \begin{bmatrix}
 \lambda_{1} & 0 & 0\\
@@ -278,7 +264,6 @@ D = \begin{bmatrix}
 $$
 
 Observe that:
-
 $$
 D^{n} = \begin{bmatrix}
 \lambda_{1}^{n}& 0 & 0\\
@@ -297,7 +282,6 @@ We need to [_diagonalize_][diagonalize] the transition matrix---a procedure call
 [eigen-decomp]: http://mathworld.wolfram.com/EigenDecomposition.html
 
 Let the three eigenvectors be so denoted:
-
 $$
 \mathbf{e}_{k} = \begin{bmatrix}
 e_{k1}\\
@@ -305,7 +289,6 @@ e_{k2}\\
 e_{k3}
 \end{bmatrix} ; k = 1, 2, 3.
 $$
-
 The matrix $P$ whose _columns_ are the eigenvectors is therefore
 $$
 P = \begin{bmatrix}
@@ -317,9 +300,7 @@ e_{13} & e_{23} & e_{33}
 \mathbf{e}_{1} & \mathbf{e}_{2} & \mathbf{e}_{3}\\
 \end{bmatrix}
 $$
-
 Now,
-
 $$
 \begin{aligned}
 MP %
@@ -345,15 +326,11 @@ e_{13} & e_{23} & e_{33}
 &= PD
 \end{aligned}
 $$ {#eq:diag1}
-
 To get only $M$ on the left-hand side of equation (@eq:diag1), we post-multiply both sides by $P^{-1}$, the inverse of $P$:
-
 $$
 MPP^{-1} = MI = M = PDP^{-1}
 $$ {#eq:eigendecomp}
-
 If we now square $M$, we get
-
 $$
 \begin{aligned}
 M^{2} &= (PDP^{-1})(PDP^{-1})\\
@@ -362,13 +339,10 @@ M^{2} &= (PDP^{-1})(PDP^{-1})\\
 &= PD^{2}P^{-1}
 \end{aligned}
 $$ {#eq:D-squared}
-
 By induction,
-
 $$
 M^{n} = PD^{n}P^{-1}
 $$ {#eq:M-to-the-n}
-
 The role of eigenvalues and eigenvectors in the plot of raising a square matrix to a power is now fully revealed: recall that in equation (@eq:M-to-the-n), $P$ is the matrix whose columns are the  eigenvectors, and $D$ is the diagonal matrix whose non-zero elements are the corresponding eigenvalues, and $P^{-1}$ is the inverse of $P$.
 
 ## Software Implementation
@@ -389,7 +363,6 @@ The self-explanatory file, [`weather.m`][weather] may be downloaded and executed
 The roots of the characteristic polynomial of $M$ are first evaluated, and compared to the values of the eigenvalues and eigenvectors obtained from an Octave function designed for that explicit purpose.
 
 There are _three_ distinct eigenvalues for the transition matrix, $M$. Moreover, [it may be proved][proof] that $1$ is an eigenvalue of any transition matrix. The eigenvalues we get are:
-
 $$
 \begin{aligned}
 \lambda_{1} &= 1.00000\\
@@ -397,7 +370,6 @@ $$
 \lambda_{3} &= 0.11972
 \end{aligned}
 $$
-
 [proof]: http://www.math.cornell.edu/~mec/Winter2009/RalucaRemus/Lecture1/lecture1.html
 
 From equation(@eq:M-to-the-n) we may surmise that the contributions from $\lambda_{2}$ and $\lambda_{3}$, being both less than one, will diminish progressively as $n$ increases, and in the limit, only the eigenvalue $1$ will dominate the steady-state behaviour.
@@ -432,7 +404,6 @@ Assembling the matrices $P$ and $P^{-1}$ from the eigenvectors is trivial, as is
 
 The time evolution of the initial weather vector is then tracked with 1, 10, 20, 50, and 100 iterations of equation (@eq:recurrence). In this case, the weather vector stabilizes after about twenty iterations to a steady-state vector, $\mathbf{w}_{\infty}$,
 given by
-
 $$
 \mathbf{w}_{\infty} = %
 \begin{bmatrix}
@@ -447,7 +418,6 @@ When we track the same temporal evolution for eigenvector $\mathbf{e}_{1}$, the 
 What may be disconcerting, though, is that we now seem to have _two_ steady-state vectors, $\mathbf{w}_{\infty}$ and $\mathbf{e}_{1}$.
 
 Observe, however, that $\mathbf{e}_{1}$ is not a probability vector whose columns sum to one. To convert it to a probability vector, we _normalize_ $\mathbf{e}_{1}$ by dividing it by its column sum, to get the _normalized eigenvector:_
-
 $$
 \mathbf{n}_{1} = %
 \begin{bmatrix}
