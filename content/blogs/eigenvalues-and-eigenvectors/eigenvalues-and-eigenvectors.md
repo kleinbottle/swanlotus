@@ -1,14 +1,15 @@
 ---
-title: Eigenvalues and eigenvectors---why are they important?
+title: Eigenvalues and Eigenvectors---Why are they important?
 author: R (Chandra) Chandrasekhar
 date: 2015-12-13
-header-includes:
-  - <meta name="keywords" content="eigenvalues, eigenvectors, applications, importance">
-  - <meta name="description" content="Eigenvalues and eigenvectors and why they are important">
-eqnPrefix:
-    - ""
-    - ""
+modified: 2020-12-01
+category: Mathematics
+tags: eigenvalues, eigenvectors, linear algebra, invariants, diagonalization, applied mathematics
+summary: "A university academic friend of mine recently remarked that it was not easy to motivate students to study [eigenvalues and eigenvectors,][lambda] let alone appreciate their importance: the subject itself was abstract, and the applications tended to be domain-specific and somewhat arcane."
 ---
+
+## Motivation for an arcane topic
+
 A university academic friend of mine recently remarked that it was not easy to motivate students to study [eigenvalues and eigenvectors,][lambda] let alone appreciate their importance: the subject itself was abstract, and the applications tended to be domain-specific and somewhat arcane.
 
 [lambda]: https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors
@@ -157,11 +158,11 @@ A worked example would normally have made its way here at this point in the arti
 
 ## Resources
 
-I hope that this article has not been so brief as to be cryptic and off-putting. To those in search of greater rigour or a more formal exposition, I would recommend a good linear algebra textbook. The venerable tome that I used at university went by the acronym "KKOP" after the initials of the surnames of the four authors. Fortunately, it is freely available online in a variety of formats, and its actual title is [_An Introduction to Linear Analysis._][kkop]
+I hope that this article has not been so brief as to be cryptic and off-putting. To those in search of greater rigour or a more formal exposition, I would recommend a good linear algebra textbook. The venerable tome that I used at university went by the acronym "KKOP" after the initials of the surnames of the four authors. Fortunately, it is freely available online in a variety of formats, and its actual title is [_An Introduction to Linear Analysis_.][kkop][@kkop1966]
 
 [kkop]: https://archive.org/details/AnIntroductionToLinearAnalysis
 
-For something more contemporary, I would recommend the textbooks and lectures of Professor Gilbert Strang of MIT. They are attuned to those who _apply_ mathematics, like engineers and scientists. There is an [archived video of his lecture on eigenvalues and eigenvectors.][strang-eigen-video] There are also links to [his MIT Open Course Ware (OCW) page for Course 18.06 of Spring 2010][strang-ocw-mit], [his linear algebra textbook home page][strang-latext], and [his academic home page.][strang-academic]
+For something more contemporary, I would recommend the textbooks and lectures of Professor Gilbert Strang of MIT. They are attuned to those who _apply_ mathematics, like engineers and scientists. There is an [archived video of his lecture on eigenvalues and eigenvectors.][strang-eigen-video] There are also links to [his MIT Open Course Ware (OCW) page for Course 18.06 of Spring 2010][strang-ocw-mit], [his linear algebra textbook home page][strang-latext][@strang2016], and [his academic home page.][strang-academic]
 
 [strang-eigen-video]: https://archive.org/details/MIT18.06S05_MP4
 [strang-ocw-mit]: http://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/
@@ -246,7 +247,7 @@ $$ {#eq:Mn}
 
 In this manner, we can trace the time evolution of the weather and, if desired, draw a three-dimensional parametric plot of the successive weather vectors in $\mathbb{R}^{3}$ with time as parameter. This could be insightful, but it is a laborious and time-consuming way to find out the steady-state weather vector if there is one. Could we do better?
 
-A rough and ready method would be to evaluate equation (@eq:Mn)  with $n$ set to large numbers, say $50$ and $100$, and check if the resulting weather vectors, $\boldsymbol{w}_{50}$ and $\boldsymbol{w}_{100}$ were equal. If they were, we may safely identify that value as the steady-state weather vector.
+A rough and ready method would be to evaluate equation (@eq:Mn) with $n$ set to large numbers, say $50$ and $100$, and check if the resulting weather vectors, $\boldsymbol{w}_{50}$ and $\boldsymbol{w}_{100}$ were equal. If they were, we might hazard a guess that this unchanging value is the steady-state weather vector.
 
 But computing the fiftieth or one-hunderdth power of a matrix is tedious and error-prone if done by hand, and computationally expensive if done by machine, especially if the matrix in question is large.
 
@@ -416,8 +417,7 @@ What may be disconcerting, though, is that we now seem to have _two_ steady-stat
 
 Observe, however, that $\boldsymbol{e}_{1}$ is not a probability vector whose columns sum to one. To convert it to a probability vector, we _normalize_ $\boldsymbol{e}_{1}$ by dividing it by its column sum, to get the _normalized eigenvector:_
 $$
-\boldsymbol{n}_{1} = %
-\begin{bmatrix}
+\boldsymbol{n}_{1} = \begin{bmatrix}
 0.38251\\
 0.36066\\
 0.25683\\
@@ -436,6 +436,4 @@ Observations like these suggest that our inferences are only as good as our assu
 
 One general hypothesis that we could examine is whether it is generally true that the normalized eigenvector associated with an eigenvalue of $1$ does indeed represent the steady state of the system represented by any transition matrix. If so, we would have a theorem on our hands.
 
-A PDF version of this article is [available for download here.][eigenpdf]
-
-[eigenpdf]: http://swanlotus.org/wp-content/uploads/eigen.pdf
+A PDF version of this article is [available for download here.]({attach}./eigenvalues-and-eigenvectors.pdf)
