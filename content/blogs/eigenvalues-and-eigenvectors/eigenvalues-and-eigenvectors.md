@@ -50,15 +50,15 @@ $${#eq:identity}
 
 The $2 \times 2$ matrix on the extreme left of equation (@eq:identity) is the _identity matrix_ of dimension $2$, analogous to the multiplicative identity. We could write this equation more succinctly as:
 $$
-I\mathbf{v} = 1\mathbf{v}
+I\boldsymbol{v} = 1\boldsymbol{v}
 $$ {#eq:succinct}
-$I$, on the left, is the _identity matrix_, the number $1$ on the right is called an _eigenvalue_ and the vector $\mathbf{v}$ is called an _eigenvector_. Note that there are no strictures on $\mathbf{v}$. So, in this particular case, _all_ vectors $\mathbf{v}$ are eigenvectors but there is only _one_ eigenvalue, namely $1$. This example, however, is both unusual and contrived, because the identity matrix is a _special_ type of _square matrix_ with ones on its principal diagonal and zeros elsewhere.
+$I$, on the left, is the _identity matrix_, the number $1$ on the right is called an _eigenvalue_ and the vector $\boldsymbol{v}$ is called an _eigenvector_. Note that there are no strictures on $\boldsymbol{v}$. So, in this particular case, _all_ vectors $\boldsymbol{v}$ are eigenvectors but there is only _one_ eigenvalue, namely $1$. This example, however, is both unusual and contrived, because the identity matrix is a _special_ type of _square matrix_ with ones on its principal diagonal and zeros elsewhere.
 
 Equation (@eq:succinct) is a particular case of the general equation for eigenvalues and eigenvectors, which is written:
 $$
-M\mathbf{v} = \lambda \mathbf{v}
+M\boldsymbol{v} = \lambda \boldsymbol{v}
 $$ {#eq:eigen}
-where $M$ is a _general square matrix_, ${\lambda}$ is a _real or complex scalar_ called an _eigenvalue_, and $\mathbf{v}$ is a _non-zero vector_ called an _eigenvector_. The matrix $M$ is assigned meaning according to context. Geometrically, the _orientation_ of the vector $\mathbf{v}$ is unchanged by the transformation $M$, although if $\lambda$ is negative, the direction is reversed. Specifically, the eigenvector corresponding to an eigenvalue of $1$ remains unchanged by the transformation: an example of invariance.
+where $M$ is a _general square matrix_, ${\lambda}$ is a _real or complex scalar_ called an _eigenvalue_, and $\boldsymbol{v}$ is a _non-zero vector_ called an _eigenvector_. The matrix $M$ is assigned meaning according to context. Geometrically, the _orientation_ of the vector $\boldsymbol{v}$ is unchanged by the transformation $M$, although if $\lambda$ is negative, the direction is reversed. Specifically, the eigenvector corresponding to an eigenvalue of $1$ remains unchanged by the transformation: an example of invariance.
 
 ## Calculus
 
@@ -94,7 +94,7 @@ These ideas masquerade under different terminology in linear system and control 
 
 ## Characteristic polynomial of a square matrix
 
-The characteristic polynomial of a square matrix is obtained likewise. The equation $M\mathbf{v} = \lambda \mathbf{v}$ may be re-written as $(M -\lambda I)\mathbf{v}=\mathbf{0}$, where the right hand side is the _zero vector_. Since the eigenvector $\mathbf{v}$ is non-zero, this implies that the matrix $(M -\lambda I)$ is [singular][singular] or non-invertible, which in turn implies that its [determinant][determinant] is zero. So, the characteristic polynomial is the equation
+The characteristic polynomial of a square matrix is obtained likewise. The equation $M\boldsymbol{v} = \lambda \boldsymbol{v}$ may be re-written as $(M -\lambda I)\boldsymbol{v}=\boldsymbol{0}$, where the right hand side is the _zero vector_. Since the eigenvector $\boldsymbol{v}$ is non-zero, this implies that the matrix $(M -\lambda I)$ is [singular][singular] or non-invertible, which in turn implies that its [determinant][determinant] is zero. So, the characteristic polynomial is the equation
 $$\det(M - \lambda I) = 0
 $$ {#eq:cp-matrix}
 and its roots are the eigenvalues of $M$. The determinant of a square matrix is a _number_ associated with it, obtained by adding and subtracting products of its elements in a specific order.
@@ -107,11 +107,11 @@ and its roots are the eigenvalues of $M$. The determinant of a square matrix is 
 [Vector spaces][vector-space] are a powerful mathematical abstraction that allows us to unify many disparate branches of mathematics under a uniform taxonomy. [Linear transformations][linear-trans] are a particular type of mapping between two vector spaces over a scalar field, satisfying:
 $$
 \begin{aligned}
-T(\mathbf{u} + \mathbf{v}) &= T(\mathbf{u}) + T(\mathbf{v})\\
-T(\alpha\mathbf{u}) &= \alpha T(\mathbf{u})\\
+T(\boldsymbol{u} + \boldsymbol{v}) &= T(\boldsymbol{u}) + T(\boldsymbol{v})\\
+T(\alpha\boldsymbol{u}) &= \alpha T(\boldsymbol{u})\\
 \end{aligned}
 $$ {#eq:linear}
-where $T$ is the transformation, $\mathbf{u}$ and $\mathbf{v}$ are two vectors, and $\alpha$ is a scalar.
+where $T$ is the transformation, $\boldsymbol{u}$ and $\boldsymbol{v}$ are two vectors, and $\alpha$ is a scalar.
 
 [vector-space]: https://en.wikipedia.org/wiki/Vector_space
 [linear-trans]: http://mathworld.wolfram.com/LinearTransformation.html
@@ -120,13 +120,13 @@ $T$ may be represented by a matrix, and under certain conditions, its eigenvalue
 
 [basis]: https://en.wikipedia.org/wiki/Basis_%28linear_algebra%29
 
-As a case in point, let us say $T$ is a $3 \times 3$ matrix whose eigenvectors $\mathbf{e_{1}}$, $\mathbf{e_{2}}$, and $\mathbf{e_{3}}$ are linearly independent and form a basis. Then, if $\mathbf{v} = \alpha_{1}\mathbf{e_{1}} + \alpha_{2}\mathbf{e_{2}} + \alpha_{3}\mathbf{e_{3}}$, where the $\alpha_{i}$s are scalars, by virtue of the fact that $T$ is a linear transformation, we have
+As a case in point, let us say $T$ is a $3 \times 3$ matrix whose eigenvectors $\boldsymbol{e_{1}}$, $\boldsymbol{e_{2}}$, and $\boldsymbol{e_{3}}$ are linearly independent and form a basis. Then, if $\boldsymbol{v} = \alpha_{1}\boldsymbol{e_{1}} + \alpha_{2}\boldsymbol{e_{2}} + \alpha_{3}\boldsymbol{e_{3}}$, where the $\alpha_{i}$s are scalars, by virtue of the fact that $T$ is a linear transformation, we have
 $$
 \begin{aligned}
-T(\mathbf{v}) & = T(\alpha_{1}\mathbf{e_{1}} + \alpha_{2}\mathbf{e_{2}} + \alpha_{3}\mathbf{e_{3}})\\
-& = T(\alpha_{1}\mathbf{e_{1}}) + T(\alpha_{2}\mathbf{e_{2}}) + T(\alpha_{3}\mathbf{e_{3}})\\
-& = \alpha_{1}T(\mathbf{e_{1}}) + \alpha_{2}T(\mathbf{e_{2}}) + \alpha_{3}T(\mathbf{e_{3}})\\
-& = \alpha_{1}\lambda{_1}\mathbf{e_{1}} + \alpha_{2}\lambda_{2}\mathbf{e_{2}} + \alpha_{3}\lambda_{3}\mathbf{e_{3}}
+T(\boldsymbol{v}) & = T(\alpha_{1}\boldsymbol{e_{1}} + \alpha_{2}\boldsymbol{e_{2}} + \alpha_{3}\boldsymbol{e_{3}})\\
+& = T(\alpha_{1}\boldsymbol{e_{1}}) + T(\alpha_{2}\boldsymbol{e_{2}}) + T(\alpha_{3}\boldsymbol{e_{3}})\\
+& = \alpha_{1}T(\boldsymbol{e_{1}}) + \alpha_{2}T(\boldsymbol{e_{2}}) + \alpha_{3}T(\boldsymbol{e_{3}})\\
+& = \alpha_{1}\lambda{_1}\boldsymbol{e_{1}} + \alpha_{2}\lambda_{2}\boldsymbol{e_{2}} + \alpha_{3}\lambda_{3}\boldsymbol{e_{3}}
 \end{aligned}
 $$
 Notice how the right hand side is now expressed _purely as a sum of scaled eigenvectors._ This is the essence of why eigenvalues and eigenvectors are so important: they are _sufficient_ to describe what is taking place. _Eigenvalues and eigenvectors encode the transformation succinctly, just as DNA encodes biological information._
@@ -145,11 +145,11 @@ The applications of eigenvalues and eigenvectors in linear algebra run far and d
 
 ### A property of eigenvectors
 
-I will here belabour a point that might seem blindingly obvious to some but frustratingly obscure to others. Let $\mathbf{v}$ be an eigenvector associated with a distinct eigenvalue $\lambda$ as in equation (@eq:eigen), and let $k$ be a non-zero scalar. Then, using the second of the equation-pair (@eq:linear), we have
+I will here belabour a point that might seem blindingly obvious to some but frustratingly obscure to others. Let $\boldsymbol{v}$ be an eigenvector associated with a distinct eigenvalue $\lambda$ as in equation (@eq:eigen), and let $k$ be a non-zero scalar. Then, using the second of the equation-pair (@eq:linear), we have
 $$
-M(k\mathbf{v}) = k(M\mathbf{v}) = k(\lambda\mathbf{v}) = \lambda(k\mathbf{v}),
+M(k\boldsymbol{v}) = k(M\boldsymbol{v}) = k(\lambda\boldsymbol{v}) = \lambda(k\boldsymbol{v}),
 $$ {#eq:scaled-eigenvector}
- which means that if $\mathbf{v}$ is an eigenvector, any non-zero scalar multiple of $\mathbf{v}$ is also an eigenvector for that same eigenvalue. So, strictly speaking, we really should be referring to _an_ eigenvector---rather than _the_ eigenevctor---corresponding to any given eigenvalue.
+ which means that if $\boldsymbol{v}$ is an eigenvector, any non-zero scalar multiple of $\boldsymbol{v}$ is also an eigenvector for that same eigenvalue. So, strictly speaking, we really should be referring to _an_ eigenvector---rather than _the_ eigenevctor---corresponding to any given eigenvalue.
 
 ## Worked example
 
@@ -214,13 +214,13 @@ Note that each _column_ of $M$ represents the probabilities of [_mutually exclus
 
 [mutually-exclusive]: https://en.wikipedia.org/wiki/Mutual_exclusivity
 
-Let the column-vector $\mathbf{w}_{k}$ represent the probabilities for a particular day's weather and the column-vector $\mathbf{ w}_{k+1}$, the next day's weather. The two are then related by:
+Let the column-vector $\boldsymbol{w}_{k}$ represent the probabilities for a particular day's weather and the column-vector $\boldsymbol{ w}_{k+1}$, the next day's weather. The two are then related by:
 $$
-\mathbf{w}_{k+1} = M\mathbf{w}_{k}
+\boldsymbol{w}_{k+1} = M\boldsymbol{w}_{k}
 $$ {#eq:recurrence}
 Equation (@eq:recurrence) is called a [_recurrence relation_][recurrence] or _difference equation_, and in our case, it represents the evolution of a dynamical system in time, namely the weather. Just for completeness, let the initial condition be given by:
 $$
-\mathbf{w}_{0} = \begin{bmatrix}0.55\\0.34\\0.11\end{bmatrix}
+\boldsymbol{w}_{0} = \begin{bmatrix}0.55\\0.34\\0.11\end{bmatrix}
 $$ {#eq:initial}
 
 [recurrence]: https://en.wikipedia.org/wiki/Recurrence_relation
@@ -230,23 +230,23 @@ We want to know whether, for this model, there will be an equilibrium or steady-
 One obvious way is to compute the downstream weather one day at a time: think of forging a chain one link at a time because the weather has a memory of only one day. From equation(@eq:recurrence) we can compute the following:
 $$
 \begin{aligned}
-\mathbf{w}_{1} &= M\mathbf {w}_{0}\\
+\boldsymbol{w}_{1} &= M\boldsymbol {w}_{0}\\
 &= \begin{bmatrix}0.47050\\ 0.33450\\0.19500\end{bmatrix}\\
-\mathbf{w}_{2} &= M\mathbf{w}_{1}\\
-&= M(M\mathbf{w}_{0})\\
-&= M^{2}\mathbf{w}_{0}\\
+\boldsymbol{w}_{2} &= M\boldsymbol{w}_{1}\\
+&= M(M\boldsymbol{w}_{0})\\
+&= M^{2}\boldsymbol{w}_{0}\\
 &= \begin{bmatrix}0.42568\\0.34615\\0.228180\\\end{bmatrix}
 \end{aligned}
 $$
 
 By induction, the weather vector $n$ days downstream is given by
 $$
-\mathbf{w}_{n} = M^{n}\mathbf{w}_{0}.
+\boldsymbol{w}_{n} = M^{n}\boldsymbol{w}_{0}.
 $$ {#eq:Mn}
 
 In this manner, we can trace the time evolution of the weather and, if desired, draw a three-dimensional parametric plot of the successive weather vectors in $\mathbb{R}^{3}$ with time as parameter. This could be insightful, but it is a laborious and time-consuming way to find out the steady-state weather vector if there is one. Could we do better?
 
-A rough and ready method would be to evaluate equation (@eq:Mn)  with $n$ set to large numbers, say $50$ and $100$, and check if the resulting weather vectors, $\mathbf{w}_{50}$ and $\mathbf{w}_{100}$ were equal. If they were, we may safely identify that value as the steady-state weather vector.
+A rough and ready method would be to evaluate equation (@eq:Mn)  with $n$ set to large numbers, say $50$ and $100$, and check if the resulting weather vectors, $\boldsymbol{w}_{50}$ and $\boldsymbol{w}_{100}$ were equal. If they were, we may safely identify that value as the steady-state weather vector.
 
 But computing the fiftieth or one-hunderdth power of a matrix is tedious and error-prone if done by hand, and computationally expensive if done by machine, especially if the matrix in question is large.
 
@@ -283,7 +283,7 @@ We need to [_diagonalize_][diagonalize] the transition matrix---a procedure call
 
 Let the three eigenvectors be so denoted:
 $$
-\mathbf{e}_{k} = \begin{bmatrix}
+\boldsymbol{e}_{k} = \begin{bmatrix}
 e_{k1}\\
 e_{k2}\\
 e_{k3}
@@ -297,20 +297,20 @@ e_{12} & e_{22} & e_{32}\\
 e_{13} & e_{23} & e_{33}
 \end{bmatrix}
 = \begin{bmatrix}
-\mathbf{e}_{1} & \mathbf{e}_{2} & \mathbf{e}_{3}\\
+\boldsymbol{e}_{1} & \boldsymbol{e}_{2} & \boldsymbol{e}_{3}\\
 \end{bmatrix}
 $$
 Now,
 $$
 \begin{aligned}
 MP &= M\begin{bmatrix}
-\mathbf{e}_{1} & \mathbf{e}_{2} & \mathbf{e}_{3}
+\boldsymbol{e}_{1} & \boldsymbol{e}_{2} & \boldsymbol{e}_{3}
 \end{bmatrix}\\
 &= \begin{bmatrix}
-M\mathbf{e}_{1} & M\mathbf{e}_{2} & M\mathbf{e}_{3}
+M\boldsymbol{e}_{1} & M\boldsymbol{e}_{2} & M\boldsymbol{e}_{3}
 \end{bmatrix}\\
 &= \begin{bmatrix}
-\lambda_{1}\mathbf{e}_{1} & \lambda_{2}\mathbf{e}_{2} & \lambda_{3}\mathbf{e}_{3}
+\lambda_{1}\boldsymbol{e}_{1} & \lambda_{2}\boldsymbol{e}_{2} & \lambda_{3}\boldsymbol{e}_{3}
 \end{bmatrix}\\
 &= \begin{bmatrix}
 e_{11} & e_{21} & e_{31}\\
@@ -377,50 +377,46 @@ From equation(@eq:M-to-the-n) we may surmise that the contributions from $\lambd
 
 The eigenvectors associated respectively with these eigenvalues, as spewed out by Octave, are:
 $$
-\mathbf{e}_{1} = %
-\begin{bmatrix}
+\boldsymbol{e}_{1} = \begin{bmatrix}
 -0.65375\\
 -0.61639\\
 -0.43895\\
 \end{bmatrix}
 \quad
-\mathbf{e}_{2} = %
-\begin{bmatrix}
+\boldsymbol{e}_{2} = \begin{bmatrix}
 -0.80430\\
 0.28039\\
 0.52391\\
 \end{bmatrix}
 \quad
-\mathbf{e}_{3} = %
-\begin{bmatrix}
+\boldsymbol{e}_{3} = \begin{bmatrix}
 0.37921\\
 -0.81582\\
 0.43662\\
 \end{bmatrix}
 $$
 
-None of the column sums of these eigenvectors sums to one. Indeed, the column sums of $\mathbf{e}_{2}$ and $\mathbf{e}_{3}$ are close to zero, whereas the column sum of $\mathbf{e}_{1}$ is negative. We will return to the eigenvector $\mathbf{e}_{1}$, to wrest meaning out of it, a little later. In any case, we confirm that $M\mathbf{e}_{1} = \mathbf{e}_{1}$.
+None of the column sums of these eigenvectors sums to one. Indeed, the column sums of $\boldsymbol{e}_{2}$ and $\boldsymbol{e}_{3}$ are close to zero, whereas the column sum of $\boldsymbol{e}_{1}$ is negative. We will return to the eigenvector $\boldsymbol{e}_{1}$, to wrest meaning out of it, a little later. In any case, we confirm that $M\boldsymbol{e}_{1} = \boldsymbol{e}_{1}$.
 
 Assembling the matrices $P$ and $P^{-1}$ from the eigenvectors is trivial, as is putting together $D$ as the diagonal matrix of the corresponding eigenvalues. With these numerical values, the truth of equation (@eq:eigendecomp) is also easily demonstrated.
 
-The time evolution of the initial weather vector is then tracked with 1, 10, 20, 50, and 100 iterations of equation (@eq:recurrence). In this case, the weather vector stabilizes after about twenty iterations to a steady-state vector, $\mathbf{w}_{\infty}$,
+The time evolution of the initial weather vector is then tracked with 1, 10, 20, 50, and 100 iterations of equation (@eq:recurrence). In this case, the weather vector stabilizes after about twenty iterations to a steady-state vector, $\boldsymbol{w}_{\infty}$,
 given by
 $$
-\mathbf{w}_{\infty} = %
-\begin{bmatrix}
+\boldsymbol{w}_{\infty} = \begin{bmatrix}
 0.38251\\
 0.36066\\
 0.25683\\
 \end{bmatrix}
 $$ {#eq:steady-state}
 
-When we track the same temporal evolution for eigenvector $\mathbf{e}_{1}$, the result after each iteration is $\mathbf{e}_{1}$ itself. This is the expected behaviour for an eigenvector associated with an eigenvalue of $1$.
+When we track the same temporal evolution for eigenvector $\boldsymbol{e}_{1}$, the result after each iteration is $\boldsymbol{e}_{1}$ itself. This is the expected behaviour for an eigenvector associated with an eigenvalue of $1$.
 
-What may be disconcerting, though, is that we now seem to have _two_ steady-state vectors, $\mathbf{w}_{\infty}$ and $\mathbf{e}_{1}$.
+What may be disconcerting, though, is that we now seem to have _two_ steady-state vectors, $\boldsymbol{w}_{\infty}$ and $\boldsymbol{e}_{1}$.
 
-Observe, however, that $\mathbf{e}_{1}$ is not a probability vector whose columns sum to one. To convert it to a probability vector, we _normalize_ $\mathbf{e}_{1}$ by dividing it by its column sum, to get the _normalized eigenvector:_
+Observe, however, that $\boldsymbol{e}_{1}$ is not a probability vector whose columns sum to one. To convert it to a probability vector, we _normalize_ $\boldsymbol{e}_{1}$ by dividing it by its column sum, to get the _normalized eigenvector:_
 $$
-\mathbf{n}_{1} = %
+\boldsymbol{n}_{1} = %
 \begin{bmatrix}
 0.38251\\
 0.36066\\
@@ -428,11 +424,11 @@ $$
 \end{bmatrix}
 $$ {#eq:normalized-eigenvector-1}
 
-Lo and behold! $\mathbf{n}_{1}$ and $\mathbf{w}_{\infty}$ are one and the same, and all is well. Recalling from equation (@eq:scaled-eigenvector) that non-zero scalar multiples of eigenvectors are also eigenvectors themselves, this result, even if a little magical, really should not surprise us.
+Lo and behold! $\boldsymbol{n}_{1}$ and $\boldsymbol{w}_{\infty}$ are one and the same, and all is well. Recalling from equation (@eq:scaled-eigenvector) that non-zero scalar multiples of eigenvectors are also eigenvectors themselves, this result, even if a little magical, really should not surprise us.
 
 We do not bother normalizing the eigenvectors associated with $\lambda_{2}$ and $\lambda_{3}$ because their column sums almost vanish, and moreover, their contribution to the steady state decreases with increasing number of iterations.
 
-To round things off, we substitute a random initial weather vector in place of $\mathbf{w}_{0}$, and view its evolution over time for twenty iterations, and find that it too converges to the steady-state weather vector after about 15 iterations.
+To round things off, we substitute a random initial weather vector in place of $\boldsymbol{w}_{0}$, and view its evolution over time for twenty iterations, and find that it too converges to the steady-state weather vector after about 15 iterations.
 
 This means that regardless of what initial weather vector we start with, in about two weeks we will end up with a vector that represents the steady-state.
 
