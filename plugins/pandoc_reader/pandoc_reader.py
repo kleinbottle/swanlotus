@@ -4,6 +4,7 @@ import math
 import os
 import shutil
 import subprocess
+import time
 
 import bs4
 from mwc.counter import count_words_in_markdown
@@ -80,9 +81,12 @@ class PandocReader(BaseReader):
                 pandoc_cmd.append("--bibliography={0}".format(bib_file))
 
         # Create HTML content
+        starttime = time.time()
         output = self._run_pandoc(pandoc_cmd, content)
+        endtime = time.time()
+        print("{}: {} seconds".format(os.path.basename(source_path), endtime - starttime))
 
-        output, toc = self._extract_contents(output, table_of_contents)
+        output, toc, pandoc_metadata = self._extract_contents(output, table_of_contents)
 
         # Replace all occurrences of %7Bstatic%7D to {static},
         # %7Battach%7D to {attach} and %7Bfilename%7D to {filename}
@@ -90,7 +94,9 @@ class PandocReader(BaseReader):
         for encoded_str, raw_str in ENCODED_LINKS_TO_RAW_LINKS_MAP.items():
             output = output.replace(encoded_str, raw_str)
 
-        metadata = {}
+        # Parse YAML metadata placed in the document's header
+        metadata = self._process_header_metadata(content, pandoc_metadata)
+
         if table_of_contents:
             # Create table of contents and add to metadata
             metadata["toc"] = self.process_metadata("toc", toc)
@@ -101,25 +107,10 @@ class PandocReader(BaseReader):
                 "reading_time", self._calculate_reading_time(content)
             )
 
-        # Parse YAML metadata placed in the document's header
-        metadata = self._process_header_metadata(content, metadata, pandoc_cmd)
-
         return output, metadata
 
-    @staticmethod
-    def _extract_contents(content, table_of_contents):
+    def _extract_contents(self, content, table_of_contents):
         soup = bs4.BeautifulSoup(content, "html.parser")
-
-        # Remove <DOCTYPE html>
-        for c in soup.contents:
-            if isinstance(c, bs4.Doctype):
-                c.extract()
-
-        # Remove the head part of the document
-        soup.find('head').decompose()
-
-        # Remove title block header
-        soup.body.find('header', id="title-block-header").decompose()
 
         # Get table of contents if one was requested
         toc = ""
@@ -136,9 +127,13 @@ class PandocReader(BaseReader):
 
         # Remove outer tags of body and html
         soup.body.unwrap()
-        soup.html.unwrap()
 
-        return str(soup).strip(), toc
+        # Remove the metadata JSON string from the HTML output
+        output = "".join(str(soup).strip().splitlines()[:-1])
+
+        metadata = json.loads(content.splitlines()[-1])
+
+        return output, toc, metadata
 
     def _validate_fields(self, default_files, arguments, extensions):
         """Validate fields and return citations and ToC request values."""
@@ -221,41 +216,42 @@ class PandocReader(BaseReader):
 
         return reading_time
 
-    def _process_header_metadata(self, content, metadata, pandoc_cmd):
+    def _process_header_metadata(self, content, pandoc_metadata):
         """Process YAML metadata and export."""
-        # Check that the given text is not empty
-        content_lines = list(content.splitlines())
-        if not content_lines:
-            raise Exception("Could not find metadata. File is empty.")
+        # # Check that the given text is not empty
+        # content_lines = list(content.splitlines())
+        # if not content_lines:
+        #     raise Exception("Could not find metadata. File is empty.")
 
-        # Check that the first line of the file starts with a YAML header
-        if content_lines[0].strip() not in ["---", "..."]:
-            raise Exception("Could not find metadata header '...' or '---'.")
+        # # Check that the first line of the file starts with a YAML header
+        # if content_lines[0].strip() not in ["---", "..."]:
+        #     raise Exception("Could not find metadata header '...' or '---'.")
 
-        # Find the end of the YAML block
-        lines = content_lines[1:]
-        yaml_end = ""
-        for line_num, line in enumerate(lines):
-            if line.strip() in ["---", "..."]:
-                yaml_end = line_num
-                break
+        # # Find the end of the YAML block
+        # lines = content_lines[1:]
+        # yaml_end = ""
+        # for line_num, line in enumerate(lines):
+        #     if line.strip() in ["---", "..."]:
+        #         yaml_end = line_num
+        #         break
 
-        # Check if the end of the YAML block was found
-        if not yaml_end:
-            raise Exception("Could not find end of metadata block.")
+        # # Check if the end of the YAML block was found
+        # if not yaml_end:
+        #     raise Exception("Could not find end of metadata block.")
 
-        metadata_template_args = [
-            "--template",
-            os.path.join(TEMPLATES_PATH, METADATA_TEMPLATE)
-        ]
+        # metadata_template_args = [
+        #     "--template",
+        #     os.path.join(TEMPLATES_PATH, METADATA_TEMPLATE)
+        # ]
 
-        header_metadata = self._run_pandoc(
-            pandoc_cmd + metadata_template_args, content
-        )
-        header_metadata = json.loads(header_metadata)
+        # header_metadata = self._run_pandoc(
+        #     pandoc_cmd + metadata_template_args, content
+        # )
+        # header_metadata = json.loads(header_metadata)
 
         # Process the YAML block
-        for key, value in header_metadata.items():
+        metadata = {}
+        for key, value in pandoc_metadata.items():
             key = key.lower()
             if value and isinstance(value, str):
                 value = value.strip().strip('"')
@@ -275,10 +271,12 @@ class PandocReader(BaseReader):
                 "--to",
                 "html5",
                 "--standalone"
+                "--template",
+                os.path.join(TEMPLATES_PATH, "defaults.html")
             ]
             pandoc_cmd.extend(arguments)
         else:
-            pandoc_cmd = ["pandoc", "--standalone"]
+            pandoc_cmd = ["pandoc", "--standalone", "--template", os.path.join(TEMPLATES_PATH, "defaults.html")]
             for default_file in default_files:
                 pandoc_cmd.append("--defaults={0}".format(default_file))
         return pandoc_cmd

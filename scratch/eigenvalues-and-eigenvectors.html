@@ -1,41 +1,33 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="R (Chandra) Chandrasekhar" />
-  <meta name="dcterms.date" content="2015-12-13" />
-  <title>Eigenvalues and eigenvectors—why are they important?</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-  </style>
-  <link rel="stylesheet" href="/home/chandra/.pandoc/chandra.css" />
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
-  <meta name="keywords" content="eigenvalues, eigenvectors, applications, importance">
-  <meta name="description" content="Eigenvalues and eigenvectors and why they are important">
-  
-  <!-- pandoc-eqnos: equation style -->
-  <style>
-    .eqnos { display: inline-block; position: relative; width: 100%; }
-    .eqnos br { display: none; }
-    .eqnos-number { position: absolute; right: 0em; top: 50%; line-height: 0; }
-  </style>
-</head>
 <body>
 <header id="title-block-header">
 <h1 class="title">Eigenvalues and eigenvectors—why are they important?</h1>
 <p class="author">R (Chandra) Chandrasekhar</p>
 <p class="date">2015-12-13</p>
 </header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#eigenvalues-and-eigenvectors">Eigenvalues and eigenvectors</a></li>
+<li><a href="#matrices">Matrices</a></li>
+<li><a href="#invariance-and-identity-elements">Invariance and identity elements</a></li>
+<li><a href="#calculus">Calculus</a></li>
+<li><a href="#differential-equations">Differential Equations</a></li>
+<li><a href="#characteristic-polynomial-of-a-square-matrix">Characteristic polynomial of a square matrix</a></li>
+<li><a href="#linear-transformations-and-vector-spaces">Linear transformations and vector spaces</a>
+<ul>
+<li><a href="#a-property-of-eigenvectors">A property of eigenvectors</a></li>
+</ul></li>
+<li><a href="#worked-example">Worked example</a></li>
+<li><a href="#resources">Resources</a></li>
+<li><a href="#importance-and-applications">Importance and applications</a></li>
+<li><a href="#worked-example-modelling-weather-with-a-transition-matrix">Worked example: modelling weather with a transition matrix</a>
+<ul>
+<li><a href="#diagonal-matrix-raised-to-a-power">Diagonal matrix raised to a power</a></li>
+<li><a href="#matrix-diagonalization-or-eigen-decomposition">Matrix diagonalization or eigen decomposition</a></li>
+</ul></li>
+<li><a href="#software-implementation">Software Implementation</a></li>
+<li><a href="#discussion-of-results-from-weather.m">Discussion of results from <code>weather.m</code></a></li>
+</ul>
+</nav>
 <p>A university academic friend of mine recently remarked that it was not easy to motivate students to study <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues and eigenvectors,</a> let alone appreciate their importance: the subject itself was abstract, and the applications tended to be domain-specific and somewhat arcane.</p>
 <p>A cursory Web search turned up results that confirmed his assertions and concerns. There have been <a href="http://matheducators.stackexchange.com/questions/520/what-is-a-good-motivation-showcase-for-a-student-for-the-study-of-eigenvalues">pro</a> and <a href="http://matheducators.stackexchange.com/questions/8586/too-much-motivation">con</a> views about motivating students to learn about eigenvalues and eigenvectors, and especially to convey <a href="http://matheducators.stackexchange.com/questions/3983/what-is-the-best-way-to-intuitively-explain-what-eigenvectors-and-eigenvalues-ar">intuitively</a> their <a href="http://math.stackexchange.com/questions/23312/what-is-the-importance-of-eigenvalues-eigenvectors">importance</a>.</p>
 <p>I then asked, “Can I explain eigenvalues, eigenvectors, and their importance to <em>myself?</em>” It also occurred to me that the harried and hurried students of today might derive some benefit from my efforts; hence this blog. It is a brief, largely qualitative, and mathematically non-rigorous article on eigenvalues and eigenvectors that aims to provide meaning and motivation for their study. Corrections and suggestions for improvement are most welcome. :-)</p>
@@ -301,4 +293,4 @@ M^{n} = PD^{n}P^{-1}
 <p>One general hypothesis that we could examine is whether it is generally true that the normalized eigenvector associated with an eigenvalue of <span class="math inline">\(1\)</span> does indeed represent the steady state of the system represented by any transition matrix. If so, we would have a theorem on our hands.</p>
 <p>A PDF version of this article is <a href="http://swanlotus.org/wp-content/uploads/eigen.pdf">available for download here.</a></p>
 </body>
-</html>
+{"reference-section-title":"References","link-citations":null,"date":"2015-12-13","csl":"./ieee-with-url.csl","eqnPrefix":["",""],"author":"R (Chandra) Chandrasekhar","header-includes":["<meta name=\"keywords\" content=\"eigenvalues, eigenvectors, applications, importance\">","<meta name=\"description\" content=\"Eigenvalues and eigenvectors and why they are important\">","\n<!-- pandoc-eqnos: equation style -->\n<style>\n  .eqnos { display: inline-block; position: relative; width: 100%; }\n  .eqnos br { display: none; }\n  .eqnos-number { position: absolute; right: 0em; top: 50%; line-height: 0; }\n</style>\n"],"title":"Eigenvalues and eigenvectors—why are they important?"}
