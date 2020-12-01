@@ -1,10 +1,9 @@
-"""Reader that processes Pandoc Markdown and returns HTML 5."""
+"""Reader that processes Pandoc Markdown and returns HTML5."""
 import json
 import math
 import os
 import shutil
 import subprocess
-import time
 
 import bs4
 from mwc.counter import count_words_in_markdown
@@ -16,8 +15,7 @@ from pelican.utils import pelican_open
 
 DIR_PATH = os.path.dirname(__file__)
 TEMPLATES_PATH = os.path.abspath(os.path.join(DIR_PATH, "templates"))
-TOC_TEMPLATE = "toc.template"
-METADATA_TEMPLATE = "metadata.template"
+PANDOC_READER_HTML_TEMPLATE = "pandoc-reader-default.html"
 DEFAULT_READING_SPEED = 200  # Words per minute
 
 ENCODED_LINKS_TO_RAW_LINKS_MAP = {
@@ -26,7 +24,17 @@ ENCODED_LINKS_TO_RAW_LINKS_MAP = {
     "%7Bfilename%7D": "{filename}",
 }
 
-VALID_INPUT_FORMATS = ("markdown", "commonmark", "gfm")
+# Markdown variants supported in default files
+# Update as Pandoc adds or removes support for formats
+VALID_INPUT_FORMATS = (
+    "commonmark",
+    "commonmark_x",
+    "gfm",
+    "markdown",
+    "markdown_mmd",
+    "markdown_phpextra",
+    "markdown_strict",
+)
 VALID_OUTPUT_FORMATS = ("html", "html5")
 UNSUPPORTED_ARGUMENTS = ("--standalone", "--self-contained")
 VALID_BIB_EXTENSIONS = ["json", "yaml", "bibtex", "bib"]
@@ -45,7 +53,7 @@ class PandocReader(BaseReader):
         if not shutil.which("pandoc"):
             raise Exception("Could not find Pandoc. Please install.")
 
-        # Open markdown file and read content
+        # Open Markdown file and read content
         content = ""
         with pelican_open(source_path) as file_content:
             content = file_content
@@ -65,6 +73,9 @@ class PandocReader(BaseReader):
         if isinstance(extensions, list):
             extensions = "".join(extensions)
 
+        # Check if source content has a YAML metadata block
+        self.check_if_yaml_metadata_block(content)
+
         # Check validity of arguments or default files
         table_of_contents, citations = self._validate_fields(
             default_files, arguments, extensions
@@ -80,12 +91,10 @@ class PandocReader(BaseReader):
             for bib_file in self._find_bibs(source_path):
                 pandoc_cmd.append("--bibliography={0}".format(bib_file))
 
-        # Create HTML content
-        starttime = time.time()
+        # Create HTML content using pandoc-reader-default.html template
         output = self._run_pandoc(pandoc_cmd, content)
-        endtime = time.time()
-        print("{}: {} seconds".format(os.path.basename(source_path), endtime - starttime))
 
+        # Extract table of contents, text and metadata from HTML output
         output, toc, pandoc_metadata = self._extract_contents(output, table_of_contents)
 
         # Replace all occurrences of %7Bstatic%7D to {static},
@@ -94,8 +103,8 @@ class PandocReader(BaseReader):
         for encoded_str, raw_str in ENCODED_LINKS_TO_RAW_LINKS_MAP.items():
             output = output.replace(encoded_str, raw_str)
 
-        # Parse YAML metadata placed in the document's header
-        metadata = self._process_header_metadata(content, pandoc_metadata)
+        # Parse Pandoc metadata and add it to Pelican
+        metadata = self._process_metadata(pandoc_metadata)
 
         if table_of_contents:
             # Create table of contents and add to metadata
@@ -108,32 +117,6 @@ class PandocReader(BaseReader):
             )
 
         return output, metadata
-
-    def _extract_contents(self, content, table_of_contents):
-        soup = bs4.BeautifulSoup(content, "html.parser")
-
-        # Get table of contents if one was requested
-        toc = ""
-        if table_of_contents:
-            # Extract the table of contents
-            toc = str(soup.body.find("nav", id="TOC"))
-
-            if toc != "None":
-                # Replace id+TOC with class="toc"
-                toc = toc.replace('id="TOC"', 'class="toc"')
-                soup.body.find('nav', id="TOC").decompose()
-            else:
-                toc = ""
-
-        # Remove outer tags of body and html
-        soup.body.unwrap()
-
-        # Remove the metadata JSON string from the HTML output
-        output = "".join(str(soup).strip().splitlines()[:-1])
-
-        metadata = json.loads(content.splitlines()[-1])
-
-        return output, toc, metadata
 
     def _validate_fields(self, default_files, arguments, extensions):
         """Validate fields and return citations and ToC request values."""
@@ -170,12 +153,17 @@ class PandocReader(BaseReader):
             self._check_output_format(defaults)
 
             if not citations:
-                citeproc = False
+                citeproc_specified = False
+
+                # Cases where citeproc is specified as citeproc: true
                 if defaults.get("citeproc", ""):
-                    citeproc = True
+                    citeproc_specified = True
+
+                # Cases where citeproc is specified in filters
                 elif "citeproc" in defaults.get("filters", ""):
-                    citeproc = True
-                if citeproc and "+citations" in reader:
+                    citeproc_specified = True
+
+                if citeproc_specified and "+citations" in reader:
                     citations = True
 
             if not table_of_contents:
@@ -184,23 +172,9 @@ class PandocReader(BaseReader):
 
         return citations, table_of_contents
 
-    # def _create_toc(self, pandoc_cmd, content):
-    #     """Generate table of contents."""
-    #     toc_args = [
-    #         "--standalone",
-    #         "--template",
-    #         os.path.join(TEMPLATES_PATH, TOC_TEMPLATE),
-    #     ]
-
-    #     pandoc_cmd = pandoc_cmd + toc_args
-    #     table_of_contents = self._run_pandoc(pandoc_cmd, content)
-    #     return table_of_contents
-
     def _calculate_reading_time(self, content):
         """Calculate time taken to read content."""
-        reading_speed = self.settings.get(
-            "READING_SPEED", DEFAULT_READING_SPEED
-        )
+        reading_speed = self.settings.get("READING_SPEED", DEFAULT_READING_SPEED)
         wordcount = count_words_in_markdown(content)
 
         time_unit = "minutes"
@@ -216,67 +190,60 @@ class PandocReader(BaseReader):
 
         return reading_time
 
-    def _process_header_metadata(self, content, pandoc_metadata):
-        """Process YAML metadata and export."""
-        # # Check that the given text is not empty
-        # content_lines = list(content.splitlines())
-        # if not content_lines:
-        #     raise Exception("Could not find metadata. File is empty.")
+    def _process_metadata(self, pandoc_metadata):
+        """Process Pandoc metadata and add it to Pelican."""
 
-        # # Check that the first line of the file starts with a YAML header
-        # if content_lines[0].strip() not in ["---", "..."]:
-        #     raise Exception("Could not find metadata header '...' or '---'.")
-
-        # # Find the end of the YAML block
-        # lines = content_lines[1:]
-        # yaml_end = ""
-        # for line_num, line in enumerate(lines):
-        #     if line.strip() in ["---", "..."]:
-        #         yaml_end = line_num
-        #         break
-
-        # # Check if the end of the YAML block was found
-        # if not yaml_end:
-        #     raise Exception("Could not find end of metadata block.")
-
-        # metadata_template_args = [
-        #     "--template",
-        #     os.path.join(TEMPLATES_PATH, METADATA_TEMPLATE)
-        # ]
-
-        # header_metadata = self._run_pandoc(
-        #     pandoc_cmd + metadata_template_args, content
-        # )
-        # header_metadata = json.loads(header_metadata)
-
-        # Process the YAML block
+        # Cycle through the metadata and process them
         metadata = {}
         for key, value in pandoc_metadata.items():
             key = key.lower()
             if value and isinstance(value, str):
                 value = value.strip().strip('"')
 
+            # Process the metadata
             metadata[key] = self.process_metadata(key, value)
         return metadata
 
     @staticmethod
+    def check_if_yaml_metadata_block(content):
+        """Check if the source content has a YAML metadata block."""
+        # Split content into a list of lines
+        content_lines = list(content.splitlines())
+
+        # Check that the given content is not empty
+        if not content_lines:
+            raise Exception("Could not find metadata. File is empty.")
+
+        # Check that the first line of the file starts with a YAML block
+        if content_lines[0].strip() not in ["---"]:
+            raise Exception("Could not find metadata header '---'.")
+
+        # Find the end of the YAML block
+        lines = content_lines[1:]
+        yaml_end = ""
+        for line_num, line in enumerate(lines):
+            if line.strip() in ["---", "..."]:
+                yaml_end = line_num
+                break
+
+        # Check if the end of the YAML block was found
+        if not yaml_end:
+            raise Exception("Could not find end of metadata block.")
+
+    @staticmethod
     def _construct_pandoc_command(default_files, arguments, extensions):
         """Construct Pandoc command for content."""
-        pandoc_cmd = []
+        pandoc_cmd = [
+            "pandoc",
+            "--standalone",
+            "--template={}".format(
+                os.path.join(TEMPLATES_PATH, PANDOC_READER_HTML_TEMPLATE)
+            ),
+        ]
         if not default_files:
-            pandoc_cmd = [
-                "pandoc",
-                "--from",
-                "markdown" + extensions,
-                "--to",
-                "html5",
-                "--standalone"
-                "--template",
-                os.path.join(TEMPLATES_PATH, "defaults.html")
-            ]
+            pandoc_cmd.extend(["--from", "markdown" + extensions, "--to", "html5"])
             pandoc_cmd.extend(arguments)
         else:
-            pandoc_cmd = ["pandoc", "--standalone", "--template", os.path.join(TEMPLATES_PATH, "defaults.html")]
             for default_file in default_files:
                 pandoc_cmd.append("--defaults={0}".format(default_file))
         return pandoc_cmd
@@ -292,6 +259,38 @@ class PandocReader(BaseReader):
             check=True,
         )
         return output.stdout
+
+    @staticmethod
+    def _extract_contents(html_output, table_of_contents):
+        """Extract body html, table of contents and metadata from output."""
+        soup = bs4.BeautifulSoup(html_output, "html.parser")
+
+        # Get table of contents if one was requested
+        toc = ""
+        if table_of_contents:
+            # Extract the table of contents
+            toc = soup.body.find("nav", id="TOC")
+
+            if toc:
+                # Convert it to a string
+                toc = str(toc)
+
+                # Replace id=TOC with class="toc"
+                toc = toc.replace('id="TOC"', 'class="toc"')
+
+                # Remove the table of contents from the HTML output
+                soup.body.find("nav", id="TOC").decompose()
+
+        # Remove body tag around html output
+        soup.body.unwrap()
+
+        # Remove the metadata JSON string at the end of the HTML body
+        body = "".join(str(soup).strip().splitlines()[:-1])
+
+        # Retrieve metadata string and convert to dict
+        pandoc_metadata = json.loads(html_output.splitlines()[-1])
+
+        return body, toc, pandoc_metadata
 
     @staticmethod
     def _check_if_citations(arguments, extensions):
@@ -339,9 +338,7 @@ class PandocReader(BaseReader):
         for arg in UNSUPPORTED_ARGUMENTS:
             arg = arg[2:]
             if defaults.get(arg, ""):
-                raise ValueError(
-                    "The default {} should be set to false.".format(arg)
-                )
+                raise ValueError("The default {} should be set to false.".format(arg))
 
     @staticmethod
     def _check_input_format(defaults):
@@ -371,9 +368,9 @@ class PandocReader(BaseReader):
 
             reader_prefix = reader.replace("+", "-").split("-")[0]
 
-            # Check to see if the reader_prefix matches a valid input
-            if not reader_prefix.startswith(VALID_INPUT_FORMATS):
-                raise ValueError("Input type has to be a markdown variant.")
+            # Check to see if the reader_prefix matches a valid input format
+            if reader_prefix not in VALID_INPUT_FORMATS:
+                raise ValueError("Input type has to be a Markdown variant.")
         return reader
 
     @staticmethod
