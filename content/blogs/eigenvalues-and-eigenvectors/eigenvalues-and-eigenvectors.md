@@ -204,7 +204,7 @@ $$
 M = \begin{bmatrix}
 0.65 & 0.30 & 0.10\\
 0.25 & 0.45 & 0.40\\
-0.10 & 0.25 & 0.50%
+0.10 & 0.25 & 0.50
 \end{bmatrix}
 $$ {#eq:state}
 
@@ -370,6 +370,7 @@ $$
 \lambda_{3} &= 0.11972
 \end{aligned}
 $$
+
 [proof]: http://www.math.cornell.edu/~mec/Winter2009/RalucaRemus/Lecture1/lecture1.html
 
 From equation(@eq:M-to-the-n) we may surmise that the contributions from $\lambda_{2}$ and $\lambda_{3}$, being both less than one, will diminish progressively as $n$ increases, and in the limit, only the eigenvalue $1$ will dominate the steady-state behaviour.
