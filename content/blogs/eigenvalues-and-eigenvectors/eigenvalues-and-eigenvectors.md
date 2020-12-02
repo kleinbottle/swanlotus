@@ -21,7 +21,7 @@ A cursory Web search turned up results that confirmed his assertions and concern
 [intuitively]: http://matheducators.stackexchange.com/questions/3983/what-is-the-best-way-to-intuitively-explain-what-eigenvectors-and-eigenvalues-ar
 [importance]: http://math.stackexchange.com/questions/23312/what-is-the-importance-of-eigenvalues-eigenvectors
 
-I then asked, "Can I explain eigenvalues, eigenvectors, and their importance to _myself?_". It also occurred to me that the harried and hurried students of today might derive some benefit from my efforts; hence this blog. It is a brief, largely qualitative, and mathematically non-rigorous article on eigenvalues and eigenvectors that aims to provide meaning and motivation for their study. Corrections and suggestions for improvement are most welcome. :-)
+I then asked, "Can I explain to _myself_ what eigenvalues and eigenvectors are, and why they are important?". It also occurred to me that the harried and hurried students of today might derive some benefit from my efforts; hence this blog. It is a brief, largely qualitative, and mathematically non-rigorous article on eigenvalues and eigenvectors that aims to provide meaning and motivation for their study. Corrections and suggestions for improvement are most welcome. \emojifont🙂\normalfont
 
 ## Eigenvalues and eigenvectors
 
@@ -117,7 +117,7 @@ where $T$ is the transformation, $\boldsymbol{u}$ and $\boldsymbol{v}$ are two v
 [vector-space]: https://en.wikipedia.org/wiki/Vector_space
 [linear-trans]: http://mathworld.wolfram.com/LinearTransformation.html
 
-$T$ may be represented by a matrix, and under certain conditions, its eigenvalues and eigenvectors can characterize the transformation _completely._ This happens when (a) the eigenvectors are _linearly independent,_ i.e., no two eigenvectors are parallel, and (b) when they _span_ the vector space, i.e., any vector within the space can be constructed from a linear combination of the eigenvectors. The eigenvectors are then said to form a [_basis_][basis] for the space.
+$T$ may be represented by a matrix, and under certain conditions, its eigenvalues and eigenvectors can characterize the transformation _completely._ This happens when (a) all the eigenvectors are _linearly independent,_ i.e., no two eigenvectors are parallel, and (b) when they _span_ the vector space, i.e., any vector within the space can be constructed from a linear combination of the eigenvectors. The eigenvectors are then said to form a [_basis_][basis] for the space.
 
 [basis]: https://en.wikipedia.org/wiki/Basis_%28linear_algebra%29
 
