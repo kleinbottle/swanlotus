@@ -4,7 +4,7 @@ author: R (Chandra) Chandrasekhar
 date: 2020-01-11
 modified: 2020-11-18
 category: Creativity
-tags: philosophy, mathematics, science, Descartes, XeLaTeX, logos, graphics, coding, the simkin chronicles
+tags: philosophy, mathematics, science, Descartes, XeLaTeX, logos, graphics, coding, The Simkin Chronicles
 summary: "My friend Solus \"Sol\" Simkin has a well-earned reputation as a [Renaissance man](https://www.thefreedictionary.com/renaissance+man). Among other things, he is a virtuoso of design. He endows his creations with an ethereal air of perfection---where mathematics meets aesthetics---to transmogrify the mundane or banal into unforgettable works of art."
 ---
 
