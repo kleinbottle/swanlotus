@@ -6,6 +6,9 @@
 
 {% block head %}
   {{ super() }}
+  {% for keyword in page.keywords %}
+    <meta name="keywords" content="{{ keyword }}" />
+  {% endfor %}
 {% endblock %}
 
 {% block content %}
