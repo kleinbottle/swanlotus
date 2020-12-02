@@ -17,9 +17,9 @@
   {% if article.category %}
     <meta name="category" content="{{ article.category }}" />
   {% endif %}
-  {% for tag in article.tags %}
-    <meta name="tags" content="{{ tag }}" />
-  {% endfor %}
+  {% if article.tags %}
+    <meta name="keywords" content="{{ article.tags|join(", ") }}" />
+  {% endif %}
   {% if article.summary %}
     <meta name="summary" content="{{ article.summary|striptags }}" />
   {% endif %}
