@@ -228,7 +228,7 @@ $$ {#eq:initial}
 
 We want to know whether, for this model, there will be an equilibrium or steady-state in the weather, represented by a probability vector with values that remain steady with temporal evolution. The question is how do we find that out?
 
-One obvious way is to compute the downstream weather one day at a time: think of forging a chain one link at a time because the weather has a memory of only one day. From equation(@eq:recurrence) we can compute the following:
+One obvious way is to compute the downstream weather one day at a time: think of forging a chain one link at a time because the weather has a memory of only one day. From equation (@eq:recurrence) we can compute the following:
 $$
 \begin{aligned}
 \boldsymbol{w}_{1} &= M\boldsymbol {w}_{0}\\
