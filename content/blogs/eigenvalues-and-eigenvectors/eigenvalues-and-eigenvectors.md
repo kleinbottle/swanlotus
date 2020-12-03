@@ -8,7 +8,7 @@ tags: eigenvalues, eigenvectors, linear algebra, invariants, diagonalization, ap
 summary: "A university academic friend of mine recently remarked that it was not easy to motivate students to study [eigenvalues and eigenvectors,][lambda] let alone appreciate their importance: the subject itself was abstract, and the applications tended to be domain-specific and somewhat arcane."
 ---
 
-## Motivation for an arcane topic
+## Stimulating interest in an arcane topic
 
 A university academic friend of mine recently remarked that it was not easy to motivate students to study [eigenvalues and eigenvectors,][lambda] let alone appreciate their importance: the subject itself was abstract, and the applications tended to be domain-specific and somewhat arcane.
 
