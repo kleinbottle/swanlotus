@@ -4377,6 +4377,10 @@ a:hover {
   text-decoration: underline;
 }
 
+a:hover code {
+  color: #363636;
+}
+
 /* Styles for blog index */
 .content h5.entry-title {
   margin-bottom: 0em;
