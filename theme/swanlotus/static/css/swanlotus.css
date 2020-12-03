@@ -4415,7 +4415,7 @@ a:hover code {
   font-size: smaller;
 }
 
-.content h2:first-of-type {
+.content header.mb-4 + div.is-hidden-tablet + h2 {
   margin-top: 0em;
 }
 
