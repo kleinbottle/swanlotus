@@ -4369,7 +4369,7 @@ code {
 }
 
 /* Styles for links */
-a {
+a, a code {
   color: #1d72aa;
 }
 
