@@ -59,7 +59,7 @@ Equation (@eq:succinct) is a particular case of the general equation for eigenva
 $$
 M\boldsymbol{v} = \lambda \boldsymbol{v}
 $$ {#eq:eigen}
-where $M$ is a _general square matrix_, ${\lambda}$ is a _real or complex scalar_ called an _eigenvalue_, and $\boldsymbol{v}$ is a _non-zero vector_ called an _eigenvector_. The matrix $M$ is assigned meaning according to context. Geometrically, the _orientation_ of the vector $\boldsymbol{v}$ is unchanged by the transformation $M$, although if $\lambda$ is negative, the direction is reversed. Specifically, the eigenvector corresponding to an eigenvalue of $1$ remains unchanged by the transformation: an example of invariance.
+where $M$ is a _general square matrix_, ${\lambda}$ is a _real or complex scalar_ called an _eigenvalue_, and $\boldsymbol{v}$ is a _non-zero vector_ called an _eigenvector_. The matrix $M$ is assigned meaning according to context. Geometrically, the _orientation_ of the vector $\boldsymbol{v}$ is unchanged by the transformation $M$, although if $\lambda$ is negative, the direction is reversed. Specifically, the eigenvector corresponding to an eigenvalue of $1$ remains unchanged by the transformation---an example of invariance.
 
 ## Calculus
 
@@ -105,7 +105,7 @@ and its roots are the eigenvalues of $M$. The determinant of a square matrix is 
 
 ## Linear transformations and vector spaces
 
-[Vector spaces][vector-space] are a powerful mathematical abstraction that allows us to unify many disparate branches of mathematics under a uniform taxonomy. [Linear transformations][linear-trans] are a particular type of mapping between two vector spaces over a scalar field, satisfying:
+A [vector space][vector-space] is a powerful mathematical abstraction that allows us to unify many disparate branches of mathematics under a uniform taxonomy. [Linear transformations][linear-trans] are a particular type of mapping between two vector spaces over a scalar field, satisfying:
 $$
 \begin{aligned}
 T(\boldsymbol{u} + \boldsymbol{v}) &= T(\boldsymbol{u}) + T(\boldsymbol{v})\\
@@ -132,7 +132,7 @@ T(\boldsymbol{v}) & = T(\alpha_{1}\boldsymbol{e_{1}} + \alpha_{2}\boldsymbol{e_{
 $$
 Notice how the right hand side is now expressed _purely as a sum of scaled eigenvectors._ This is the essence of why eigenvalues and eigenvectors are so important: they are _sufficient_ to describe what is taking place. _Eigenvalues and eigenvectors encode the transformation succinctly, just as DNA encodes biological information._
 
-If, in addition, $T$ is [_symmetric_][symmetric] its eigenvectors form an [_orthonormal basis_][orthonormal]. Such basis vectors confer *parsimony* (think low bandwidth) when images or audio signals need to be deconstructed for transmission and reconstructed on reception. Eigenvectors are also useful in techniques like [_principal component analysis_][pca] which is used in statistical pattern recognition.
+If, in addition, $T$ is [_symmetric_][symmetric], its eigenvectors form an [_orthonormal basis_][orthonormal]. Such basis vectors confer *parsimony* (think low bandwidth) when images or audio signals need to be deconstructed for transmission and reconstructed on reception. Eigenvectors are also useful in techniques like [_principal component analysis_][pca] which is used in statistical pattern recognition.
 
 [symmetric]: https://en.wikipedia.org/wiki/Symmetry_in_mathematics
 [pca]: https://en.wikipedia.org/wiki/Principal_component_analysis
@@ -158,7 +158,7 @@ A worked example would normally have made its way here at this point in the arti
 
 ## Resources
 
-I hope that this article has not been so brief as to be cryptic and off-putting. To those in search of greater rigour or a more formal exposition, I would recommend a good linear algebra textbook. The venerable tome that I used at university went by the acronym "KKOP" after the initials of the surnames of the four authors. Fortunately, it is freely available online in a variety of formats, and its actual title is [_An Introduction to Linear Analysis_][kkop] [@kkop1966].
+I hope that this article has not been so brief as to be cryptic and off-putting. To those in search of greater rigour or a more formal exposition, I would recommend a good linear algebra textbook. The venerable tome that I used at university went by the acronym "KKOP" after the initials of the surnames of the four authors^[Kreider, Kuller, Ostberg, and Perkins.]. Fortunately, it is freely available online in a variety of formats, and its actual title is [_An Introduction to Linear Analysis_][kkop] [@kkop1966].
 
 [kkop]: https://archive.org/details/AnIntroductionToLinearAnalysis
 
@@ -188,7 +188,7 @@ If, after all this, you are still unconvinced about the utility of eigenvalues a
 
 [cleavage]: https://en.wikipedia.org/wiki/Cleavage_%28crystal%29
 
-To get an idea of the broad sweep of eigenvalues and their applicability, I strongly recommend that you should read a charming article entitled ["Favourite Eigenvalue Problems".][favourite] Another article that takes a breezy look at the subject of this writeup is ["What the Heck are Eigenvalues and Eigenvectors?".][heck] It has a disputed explanation (see comments on the article) of how a bridge collapsed: so take that _cum granis salis._ It also contains a link to a PDF paper interestingly entitled ["The 25,000,000,000.00 Dollar Eigenvector: The Linear Algebra Behind Google",][google-eigen] which, in good faith, I think is not a spoof! Indeed, the [citation to the original Stanford InfoLab technical report][citation] and the [actual report][report] are both available online.
+To get an idea of the broad sweep of eigenvalues and their applicability, I strongly recommend that you should read a charming article entitled ["Favourite Eigenvalue Problems".][favourite] Another article that takes a breezy look at the subject of this writeup is ["What the Heck are Eigenvalues and Eigenvectors?".][heck] It has a disputed explanation (see comments on the article) of how a bridge collapsed---so take that [_cum grano salis_](https://www.thefreedictionary.com/cum+grano+salis). It also contains a link to a PDF paper interestingly entitled ["The 25,000,000,000.00 Dollar Eigenvector: The Linear Algebra Behind Google",][google-eigen] which, in good faith, I think is not a spoof! Indeed, the [citation to the original Stanford InfoLab technical report][citation] and the [actual report][report] are both available online.
 
 [favourite]: http://people.maths.ox.ac.uk/trefethen/dec11.pdf
 [heck]: http://hubpages.com/education/What-the-Heck-are-Eigenvalues-and-Eigenvectors
@@ -350,18 +350,16 @@ The role of eigenvalues and eigenvectors in the plot of raising a square matrix 
 
 To get numerical results, I initially tried implementing the above steps with the free open-source mathematics software system [SageMath,][sagemath] but found it less than convenient for my purpose.
 
-I then experimented with [GNU Octave,][octave] which is a free, open source, high-level interpreted language, primarily intended for numerical computations. It was better suited to the task at hand, and I easily obtained the results discussed below.
+I then experimented with [GNU Octave,][octave] which is a free, platform-neutral, open source, high-level interpreted language, primarily intended for numerical computations. It was better suited to the task at hand, and I easily obtained the results discussed below.
 
 [sagemath]: http://www.sagemath.org/
 [octave]: https://www.gnu.org/software/octave/
 
-The self-explanatory file, [`weather.m`][weather] may be downloaded and executed on the command line in the Octave command window. The discussion below will make better sense after you have thus executed the file `weather.m`. Because Octave is platform-neutral and downloadable free of charge, this is not a restrictive constraint.
-
-[weather]: http://swanlotus.org/wp-content/uploads/weather.m
+The self-explanatory file, [`weather.m`]({attach}auxiliary/weather.m), may be downloaded and executed on the command line in the Octave command window. The discussion below will make better sense after you have thus executed the file `weather.m`. Instructions on how to download and set up Octave are given [here](https://www.gnu.org/software/octave/download).
 
 ## Discussion of results from `weather.m`
 
-The roots of the characteristic polynomial of $M$ are first evaluated, and compared to the values of the eigenvalues and eigenvectors obtained from an Octave function designed for that explicit purpose.
+The roots of the characteristic polynomial of $M$ are first evaluated, and compared to the eigenvalues and eigenvectors obtained from an Octave function designed for that explicit purpose.
 
 There are _three_ distinct eigenvalues for the transition matrix, $M$. Moreover, [it may be proved][proof] that $1$ is an eigenvalue of any transition matrix. The eigenvalues we get are:
 $$
