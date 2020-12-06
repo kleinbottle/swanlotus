@@ -3,6 +3,8 @@ title: "What Ails Indian Education?"
 author: "R (Chandra) Chandrasekhar"
 date: "2013-09-18"
 modified: "2020-12-06"
+category: Education
+tags: India, Veda, Sanskrit, imagination, understanding, enquiry, memorization, rank
 summary: "The [QS World University rankings for 2013](http://www.topuniversities.com/university-rankings/world-university-rankings/2013#sorting=rank+region=+country=+faculty=+stars=false+search=) have just been released. This is one of several league tables ranking universities according to various criteria of academic performance. Such rankings are symptomatic of the relentless trend to quantify more and more aspects of our lives. May this madness be checked before intangible attributes best left qualitative---like love and loyalty---are also subjected to mindless, simplistic metrology!"
 ---
 
@@ -20,7 +22,7 @@ This topical fact set me thinking about what ails the Indian education system in
 
 ## Money as the highest good
 
-One factor contributing to the decline is the obvious present day malaise afflicting Indian society at large, where money has become the greatest good, period. That unthinking, unregenerate, single-minded fixation on money has kicked out the *l* in *learning* to yield *earning* as the primary goal of the Indian student---whether in school or at college.
+One factor contributing to the decline is the obvious present day malaise afflicting Indian society at large, where money has become the highest good, period. That unthinking, unregenerate, single-minded fixation on money has kicked out the *l* in *learning* to yield *earning* as the primary goal of the Indian student---whether in school or at college.
 
 Notwithstanding this tragic, amoral mindset, and quite distinct from the economic, political, and social morass waiting to gobble up the young high school or university graduate, there is, I think a deeper ailment plaguing education in India today. Predictably, it is rooted in India's past. And paradoxically, it springs from the Vedic tradition, where the Sanskrit word *Veda* literally means *knowledge.*
 
