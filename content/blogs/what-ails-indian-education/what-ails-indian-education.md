@@ -45,7 +45,7 @@ One is reminded here of these lines from Tennyson's _Morte D'Arthur_:
 | And God fulfils Himself in many ways,
 | Lest one good custom should corrupt the world.
 
-Mark that I am not against developing a good memory or exercising it to keep fit mentally. Indeed, in my chapters entitled "Poetry" and "Arithmetic Revisited" from the manuscript of my forthcoming book [_Secrets of Academic Success_]({filename}sas-manuscript/SAS-partial.pdf) I have suggested poetry recitation and mental arithmetic as ways to develop memory while at the same time becoming more literate and numerate.
+Mark that I am not against developing a good memory or exercising it to keep fit mentally. Indeed, in my chapters entitled "Poetry" and "Arithmetic Revisited" from the manuscript of my forthcoming book [_Secrets of Academic Success_]({static}/sas-manuscript/SAS-partial.pdf) I have suggested poetry recitation and mental arithmetic as ways to develop memory while at the same time becoming more literate and numerate.
 
 In any case, developing a good memory is quite distinct from memorizing facts without understanding them. The legendary Albert Einstein is reputed to have advised, ["Never memorize what you can look up in books."][einstein] His words ring even more true today, when so much information is available from the Web, literally at the click of a mouse button.
 
