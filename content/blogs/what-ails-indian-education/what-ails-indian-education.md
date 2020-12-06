@@ -46,13 +46,13 @@ One is reminded here of these lines from Tennyson's _Morte D'Arthur_:
 | And God fulfils Himself in many ways,
 | Lest one good custom should corrupt the world.
 
-Mark that I am not against developing a good memory or exercising it to keep fit mentally. Indeed, in my chapters entitled "Poetry" and "Arithmetic Revisited" from the manuscript of my forthcoming book [_Secrets of Academic Success_]({static}/sas-manuscript/SAS-partial.pdf) I have suggested poetry recitation and mental arithmetic as ways to develop memory while at the same time becoming more literate and numerate.
+Mark that I am not against developing a good memory or exercising it to keep fit mentally. Indeed, in my chapters entitled "Poetry" and "Arithmetic Revisited"---from the manuscript of my forthcoming book [_Secrets of Academic Success_]({static}/sas-manuscript/SAS-partial.pdf)---I have suggested poetry recitation and mental arithmetic as ways to develop memory while at the same time becoming more literate and numerate.
 
 In any case, developing a good memory is quite distinct from memorizing facts without understanding them. The legendary Albert Einstein is reputed to have advised, ["Never memorize what you can look up in books."][einstein] His words ring even more true today, when so much information is available from the Web, literally at the click of a mouse button.
 
 [einstein]: http://en.wikiquote.org/wiki/Albert_Einstein
 
-Memorization can scarce supplant the ability to think independently, or critically, or afresh. Alas, in India, recall has supplanted understanding. A dozen years of education produce trained parrots rather than thinking human beings capable of dealing with the unforeseen and unforeseeable challenges of the future.
+Memorization can scarce supplant the ability to think independently, or critically, or afresh. Alas, in India, recall has replaced understanding. A dozen years of education produce trained parrots rather than thinking human beings capable of dealing with the unforeseen and unforeseeable challenges of the future.
 
 Despite the [rot][hack] that is periodically revealed about examinations in India, they enjoy sacred status in the minds of parents and, by transitivity, students. Rank---that fateful word again for position in a sequence---means everything. To top an examination by memorization rather than thinking thus becomes the Holy Grail of an earnest student nurtured on the soil of academe in India. This, I consider the first great bane in the Indian education system.
 
@@ -66,9 +66,11 @@ In this context, I remember an anecdote recounted by a friend of mine. When the 
 
 [gkb]: http://en.wikipedia.org/wiki/John_Kenneth_Galbraith
 
+## Debate and knowledge
+
 The tradition of democracy developed in the West embraces adversarial debate as its basis in parliament. In similar fashion, the scientific paradigm in place today requires the practitioner to challenge the status quo. The reason is simple: there is no finality in science or medicine. These are disciplines where there is no conclusive, indisputable truth as in mathematics. There are only ever closer approximations to reality.
 
-Thus it was that Einstein unseated Newton as the reigning monarch of time, space, and gravity after three hundred years. And surely, there will be another who will supplant the theories of Einstein in time to come.
+Thus it was that Einstein unseated Newton as the reigning monarch of time, space, and gravity after three hundred years. And surely, there will be another who will dethrone Einstein in time to come.
 
 Let me digress now to give you another anecdote. While on my evening constitutional one day, I fell in step with an Indian student completing a postgraduate degree in the life sciences. He was intelligent and articulate, and preparing some papers for publication that would be his passport to a PhD programme at an overseas university.
 
@@ -78,7 +80,7 @@ This environment which inhibits a student from questioning or challenging the st
 
 [upa]: http://en.wikipedia.org/wiki/Upanishads
 
-## Prescription for a malady
+## Fun, imagination, and learning
 
 To free the Indian education system from its constraining shackles, learning must become fun once more. Pedagogy must be reformed to allow this. Each and every child is imbued with a natural and insatiable curiosity. If only early childhood education could be ameliorated to fuel rather than extinguish this spark, Mother Nature will do the rest.
 
