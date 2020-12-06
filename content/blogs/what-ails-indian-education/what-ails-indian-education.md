@@ -33,7 +33,7 @@ The [Vedas][vedas] originated in a period before a written script was available 
 
 Lacking a script that could store the Vedic lore, the ancients decided to use the human brain and its temporally intransigent abstraction---the human mind---as distributed storage media. The Vedas were literally preserved as memories in human minds and bequeathed from one generation of scholar-priests to the next.
 
-This is not a unique achievement: witness the Norse sagas and the ancient mythology of most cultures which have also been orally transmitted down the ages. But the Vedas enjoy an additional, singular distinction: they have been preserved almost error-free from the hoary times when they were first recited, by virtue of the almost mathematical rigour that Sanskrit embodies for its grammar and phonetics, not to mention mnemonics [@bhatekak1993].
+This is not a unique achievement---witness the Norse sagas and the ancient mythology of most cultures which have also been orally transmitted down the ages. But the Vedas enjoy an additional, singular distinction: they have been preserved almost error-free from the hoary times when they were first recited, by virtue of the almost mathematical rigour that Sanskrit embodies for its grammar and phonetics, not to mention mnemonics [@bhatekak1993].
 
 ## Memorization as the great bane
 
@@ -41,6 +41,7 @@ The upshot of this "mind over matter" preservation of the Vedas was that *memori
 
 One is reminded here of these lines from Tennyson's _Morte D'Arthur_:
 
+>
 | The old order changeth, yielding place to new,
 | And God fulfils Himself in many ways,
 | Lest one good custom should corrupt the world.
