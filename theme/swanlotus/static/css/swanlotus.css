@@ -4444,11 +4444,6 @@ a:hover code {
   margin-bottom: 0.5em;
 }
 
-/* Spacing between last line of lineblock and first line of next paragraph */
-.content div.line-block {
-  margin-bottom: 1em;
-}
-
 /* Styles for figures */
 .content .side-by-side {
   display: flex;
@@ -4460,6 +4455,12 @@ a:hover code {
 .content figure figcaption {
   font-family: "Source Sans Pro", sans-serif;
   font-style: normal;
+  font-size: smaller;
+}
+
+.content blockquote {
+  background-color: transparent;
+  border-left: 4px solid #b5b5b5;
   font-size: smaller;
 }
 

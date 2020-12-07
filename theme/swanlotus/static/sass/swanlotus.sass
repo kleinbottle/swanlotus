@@ -205,10 +205,6 @@ a:hover code
     margin-top: 2em
     margin-bottom: 0.5em
 
-/* Spacing between last line of lineblock and first line of next paragraph */
-.content div.line-block
-    margin-bottom: 1em
-
 /* Styles for figures */
 .content .side-by-side
      display: flex
@@ -219,6 +215,11 @@ a:hover code
 .content figure figcaption
     font-family: $family-secondary
     font-style: normal
+    font-size: smaller
+
+.content blockquote
+    background-color: transparent
+    border-left: 4px solid $grey-light
     font-size: smaller
 
 /* Styles for tables */
