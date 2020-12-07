@@ -88,7 +88,7 @@ To free the Indian education system from its constraining shackles, learning mus
 
 Rote memorization cannot and should not be equated with learning and knowledge. Examinations and other methods of assessment should be designed with this goal in mind. They should test understanding in preference to recall.
 
-Imagination must be fostered because it is the fount of all new knowledge. Who could have _imagined_ that Nature would exhibit [quantum entanglement][qe] or that the brain is [neuroplastic][np] or that carbon, already known to us as diamond and graphite, would disguise itself yet again to appear as [bucky-balls][bucky] and [graphene][graphene]? Knowledge confines us to discovered facts. Imagination liberates us to find new ones.
+Imagination must be fostered because it is the fount of all new knowledge. Who could have _imagined_ that Nature would exhibit [quantum entanglement][qe] or that the brain is [neuroplastic][np] or that carbon, already known to us as diamond and graphite, would disguise itself yet again to appear as [Buckyballs][bucky] and [graphene][graphene]? Knowledge confines us to discovered facts. Imagination liberates us to find new ones.
 
 [qe]: http://www.youtube.com/watch?v=0Eeuqh9QfNI&list=TLlNpED2t9U9sv5MXb2p3Bdqhg2XFcWnBG
 [np]: http://faculty.washington.edu/chudler/plast.html
