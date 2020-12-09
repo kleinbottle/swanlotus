@@ -134,6 +134,7 @@ With four unique words, we have a total of $4 \times 3 \times 2 \times 1 = 24$ d
 
 Rather than crunch our mind-numbing way through them all, let us look at some more promising entries for the "mangled question competition". We will use one guiding principle. The adjective "your" will always come *before* "name" if it appears at all in the mangled question.
 
+<<<<<<< Updated upstream
 ```{=html}
 <pre>
 <code><span class="pronoun">What</span> name?</code>
