@@ -169,7 +169,7 @@ The second question, "Where are you going?" offers more scope for creative mispl
 	Going where?
 	Going where you?
 
-Choosing the correct version, though, is not as open and shut as before. The strict but mindless application of the question paradigm `<Interrogative> <Verb> <Noun/Pronoun>` to the present continuous verb word-pair "are going" will lead to the mangled sentence "Where are going you?".
+Choosing the correct version, though, is not as open and shut as before. The strict but mindless application of the question paradigm `[Interrogative] [Verb] [Noun/Pronoun]` to the present continuous verb word-pair "are going" will lead to the mangled sentence "Where are going you?".
 
 In the correct version, "Where are you going?", we have the noun juxtaposed between the two parts of the verb word-pair as "are you going". It appears that the abstract structure for a question needs to be modified somewhat.
 
@@ -227,7 +227,7 @@ The facts we have here divined so far are:
 The abstract structure, to be taken with a pinch of salt, is:
 
 ```
-<Optional Interrogative> <First part of Verb> <Noun/Pronoun> <Rest of Verb if applicable>
+[Optional Interrogative] [First part of Verb] [Noun/Pronoun] [Rest of Verb if applicable]
 ```
 
 Splitting a verb to insert a noun or pronoun is not simply a matter of rules but also of usage. By exposure to correct spoken and written English you should develop your own inner sense of what is right and wrong. Rules, although helpful, are not a reliable rescue when faced with patterns of usage.
