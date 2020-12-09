@@ -85,7 +85,11 @@ where the first noun/pronoun is the *subject* and the second noun/pronoun, if it
 
 A *question* on the other hand has a different structure:
 
-	<Interrogative> <Verb> <Noun/Pronoun>
+```{=html}
+<pre>
+<code>[<span class="pronoun">Interrogative</span>] [<span class="verb">Verb</span>] [<span class="noun">Noun</span>/<span class="pronoun">Pronoun</span>]</code>
+</pre>
+```
 
 The *interrogative* is a word like "what" or "why" or "where" or "how" which is used to indicate that a question is being asked. Having it at the beginning is handy because it alerts the listener to the fact that a question is being asked, for which an answer would most likely be required in response.
 
@@ -95,12 +99,16 @@ Note carefully that the verb comes *before* the subject which is the noun/pronou
 
 A statement and a question are therefore different in structure. Many speakers learning English invert a statement into a question by simply raising the pitch at the end. So, they say "You are well?" raising the pitch of the last word instead of asking "Are you well?". This is wrong, although it happens a great deal in casual conversation. It will never do for written English. To avoid falling into this trap, think:
 
-	Statement → Noun/Pronoun before Verb
-	Question → Verb before Noun/Pronoun
+```{=html}
+<pre>
+<code>Statement → [<span class="noun">Noun</span>/<span class="pronoun">Pronoun</span>] before [<span class="verb">Verb</span>]</code>
+<code>Question  → [<span class="verb">Verb</span>] before [<span class="noun">Noun</span>/<span class="pronoun">Pronoun</span>]</code>
+</pre>
+```
 
 ## A very simple first question
 
-The simplest question in English is something like "How are you?" or "What is this?". Each consists of three words and the word order is `<Interrogative> <Verb> <Noun/Pronoun>` exactly as in our paradigm above.
+The simplest question in English is something like "How are you?" or "What is this?". Each consists of three words and the word order is `[Interrogative] [Verb] [Noun/Pronoun]` exactly as in our paradigm above.
 
 ## A second less simple question
 
@@ -126,15 +134,19 @@ With four unique words, we have a total of $4 \times 3 \times 2 \times 1 = 24$ d
 
 Rather than crunch our mind-numbing way through them all, let us look at some more promising entries for the "mangled question competition". We will use one guiding principle. The adjective "your" will always come *before* "name" if it appears at all in the mangled question.
 
-	What name?
-	What your name?
-	What your name is?
-	Name what?
-	Name is what?
-	Name what is?
-	Your name what?
-	Your name is what?
-	Your name what is?
+```{=html}
+<pre>
+<code><span class="pronoun">What</span> name?</code>
+<code><span class="pronoun">What</span> your name?</code>
+<code><span class="pronoun">What</span> your name is?</code>
+<code>Name what?</code>
+<code>Name is what?</code>
+<code>Name what is?</code>
+<code>Your name what?</code>
+<code>Your name is what?</code>
+<code>Your name what is?</code>
+</pre>
+```
 
 By now you should have got the drift. Once the interrogative and verb have been shunted to their correct places, we have left as possibilities only the correct "What is your name?" and the patently absurd "What is name your?" which we have already excluded above. Voila!
 
