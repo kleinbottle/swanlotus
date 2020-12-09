@@ -77,7 +77,7 @@ A *statement* in English has the abstract structure:
 
 ```{=html}
 <pre>
-<code><span class="noun">Noun</span>/<span class="pronoun">Pronoun</span> <span class="verb">Verb</span> <span class="noun">Noun</span>/<span class="pronoun">Pronoun</span></code>
+<code>[<span class="noun">Noun</span>/<span class="pronoun">Pronoun</span>] [<span class="verb">Verb</span>] [<span class="noun">Noun</span>/<span class="pronoun">Pronoun</span>]</code>
 </pre>
 ```
 
