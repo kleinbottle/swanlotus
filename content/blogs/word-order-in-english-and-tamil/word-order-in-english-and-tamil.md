@@ -75,7 +75,11 @@ It is important, however, to distinguish between a statement and a question. The
 
 A *statement* in English has the abstract structure:
 
-	<Noun/Pronoun> <Verb> <Noun/Pronoun>
+```{=html}
+<pre>
+<code><span class="noun">Noun/Pronoun</span> <span class="verb">Verb</span> <span class="noun">Noun/Pronoun</span></code>
+</pre>
+```
 
 where the first noun/pronoun is the *subject* and the second noun/pronoun, if it exists, is the *object.* An example is "He kicked the ball". This is in *active voice.* In *passive voice* though, we say, "The ball was kicked by him", and the order of the nouns/pronouns is changed.
 
