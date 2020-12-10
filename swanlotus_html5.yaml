@@ -3,7 +3,8 @@
 # Defaults for generating HTML5 from Markdown using pandoc
 # using the Pelican Pandoc Reader plugin
 #
-reader: markdown+smart+citations+implicit_figures+link_attributes+subscript+superscript+line_blocks
+reader: markdown+smart+implicit_figures+link_attributes+subscript+superscript+line_blocks+emoji
+
 writer: html5
 
 table-of-contents: true
