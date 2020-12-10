@@ -1,49 +1,78 @@
 ---
-title: "Word Order in English and Tamil"
+title: "Wording Questions in English and Tamil"
 author: "R (Chandra) Chandrasekhar"
 date: "2012-09-15"
-summary: "My mother tongue is [Tamil,](http://en.wikipedia.org/wiki/Tamil_language) written தமிழ், in its decidedly curly script. Tamil is an alphabetic, syllabic, inflected Indic language with ancient roots. Asking questions in Tamil and English require two very different ways of thinking and speaking. Knowing about these can be instructive to many non-native speakers of English. Let me elaborate."
+modified: "2020-12-09"
+summary: "This blog is devoted to the art of asking questions in English. This seemingly undemanding task often trips up the aspiring learner of English, especially one who is studying it as a second or third language."
 ---
 
-<!--Today I want to discuss the art of asking questions in English. This seemingly undemanding task often trips up the aspiring learner of English, especially as a second or third language.-->
+## A tale of two tongues
 
-## A tale of two languages
+This blog is devoted to the art of asking questions in English. This seemingly undemanding task often trips up the aspiring learner of English, especially one who is studying it as a second or third language.
 
-My mother tongue is [Tamil,][tamil] written தமிழ், in its decidedly curly script.^[If you see rectangular boxes where you would expect to see letters, please see the [Colophon page.][colophon]] Tamil is an alphabetic, syllabic, inflected Indic language with ancient roots. Asking questions in Tamil and English require two very different ways of thinking and speaking. Knowing about these can be instructive to many non-native speakers of English. Let me elaborate.
+My mother tongue is [Tamil,][tamil] written தமிழ் (tamiḻ), in its markedly curly script.^[If you see rectangular boxes where you would expect to see letters, please ensure that you have a font on your device capable of displaying Tamil script.] Tamil is an alphabetic, syllabic, inflected Indic language with ancient roots. Asking questions in Tamil and English require two very different ways of thinking and speaking. Knowing about these can be instructive to many non-native speakers of English. Let me elaborate.
 
 [tamil]: http://en.wikipedia.org/wiki/Tamil_language
 [inflected]: http://en.wikipedia.org/wiki/Inflection
-[colophon]: /index.php/about/colophon
 
 ## Word order in English and Tamil
 
-A friend, fairly proficient in English, but not so much in Tamil, translated the question "Can I come to your house now?" into the Tamil "முடியுமா நான் வருவதற்கு உங்கள் வீட்டுக்கு இப்பொழுது?" (muḍiyumā nān varuvadaṟku uṅgaḷ vīṭṭukku ippoḻudu?). This sentence replicates the English word sequence faithfully, and while certainly not the best of Tamil in elegance or usage, it is at least intelligible *and* grammatical. That is because Tamil is more of an [inflected][inflected] language than English.
+A friend, fairly proficient in English, but not so much in Tamil, translated the question "Can I come to your house now?" into the Tamil "முடியுமா நான் வருவதற்கு உங்கள் வீட்டுக்கு இப்பொழுது?" (muḍiyumā nān varuvadaṟku uṅgaḷ vīṭṭukku ippoḻudu?). This sentence replicates the English word sequence faithfully, and while certainly not the best of Tamil in elegance or usage, it is at least intelligible *and* grammatical. That is because Tamil is more of an [inflected][inflected] language than English, and is therefore less sensitive to change in meaning due to change in word order.
 
 But the reverse translation from Tamil into English, especially when applied to asking questions, is infelicitous. Following Tamil word order to phrase English questions often leads to ungrammatical and discordant results. Let me give you two examples.
 
-Suppose you see someone and want to ask in Tamil where that person was going. You would ask, in the less respectful mode of address used between equals, "நீ எங்கே போகிறாய்?" (nī engē pōgiṟāi?). Translated into English, these words literally become "You where going?" and that is often how a newcomer to English with a Tamil language background will speak at first.
+### "Where are you going?"
+
+Suppose you see someone and want to ask in Tamil where that person was going. You would ask, in the less respectful mode of address used between equals, "நீ எங்கே போகிறாய்?" (nī engē pōgiṟāi?). Translated into English, these words literally become "You where going?" and that is often how a newcomer to English, with a Tamil language background, will at first speak.
+
+### "What is your name?"
 
 Now, for another example. When asking someone for his or her name, a Tamil speaker says "உன் பெயர் என்ன?" (un peyar enna?). In English, this word order would be rendered as "Your name what?" Horror of horrors! Where has the verb gone?
+
+## Implicit verbs and nouns
 
 We have all been taught that a complete sentence must have a verb. The simplest sentence is an imperative "Come!". So, how did the Tamil sentence dispense with the verb?
 
 The Tamil speaker can likewise ask, "Where is the subject in the sentence 'Come!'?".
 
-The answer to both questions is that usage has tacitly approved the omission of the verb on the one hand, and the noun on the other. In Tamil, it is customary to omit the verb "to be" in its various forms. Likewise, in English, the second person nominative singular pronoun "You"^[Originally, this was "Thou" but the plural form "You" has supplanted it now.] has been omitted from the start of the sentence "Come!" and its inclusion, rather than omission, is what will raise eyebrows.
+The answer to both questions is that usage has tacitly approved the omission of the verb on the one hand, and the noun on the other. They have become [_implicit_](https://www.thefreedictionary.com/implicit).
 
-Because it is a less inflected language, word order matters more in English than in Tamil. And word order is different for questions in the two languages. You should try to think in English before asking a question in English. And likewise for Tamil.
+In Tamil, it is customary to omit the verb "to be" in its various forms. Likewise, in English, the second person nominative singular pronoun "You"^[Originally, this was "Thou" but the plural form "You" has supplanted it now.] has been omitted from the start of the sentence "Come!" and its inclusion, rather than omission, will raise eyebrows.
 
 ## Word order in English
 
-Ancient languages tend to be inflected. Latin, once the bastion of scholarly knowledge in Europe, is inflected. So too is Sanskrit which served a similar historical role for the sacred and secular literature of India. Ditto for Tamil, which of the three, is the only language that is still widely spoken---by almost 70 million people.
+Because it is a less inflected language, word order matters more in English than in Tamil. And word order is different for questions in the two languages. You should try to think in English before asking a question in English. And likewise for Tamil.
 
-Unlike the more ancient tongues, English is largely not inflected. _Word order matters._ Meaning can  and does change if word order is changed. And many common mistakes in word order convey unintended humour or absurdity.
+Ancient languages tend to be inflected. Latin---once the bastion of scholarly knowledge in Europe---is inflected. So too is Sanskrit which served a similar historical role for the sacred and secular literature of India. Ditto for Tamil, which of the three, is the only language that is still widely spoken---by about 70 million people.
+
+Unlike the more ancient tongues, English is less inflected. _Word order matters._ Meaning can  and does change if word order is changed. And many common mistakes in word order convey unintended humour or absurdity.
 
 The Latin sentence "Amor vincit omnia" meaning "Love conquers all" does not become "All conquers love" (whatever that may mean) if rewritten as "Omnia vincit amor"; it still carries the same meaning as before.
 
-English is unfortunately not immune to change of meaning with change of word order. "The cat ate the rat" is believable, whereas, "The rat ate the cat" is both unusual and incredible. Although I can see an enormous rat polishing off a cat in my mind's eye, logic and experience tell me that it is unlikely and runs against the grain of Nature.
+English, however, is not immune to change of meaning with change of word order. "The cat ate the rat" is believable, whereas, "The rat ate the cat" is both unusual and incredible. Although I can see an enormous rat polishing off a cat in my mind's eye, logic and experience tell me that it is unlikely and runs against the grain of Nature.
 
 Wrong word order in English, especially in questions, grates on the ears. But before we progress to questions, we must peek at sentence types and delve, however lightly, into some grammar.
+
+## A grammar disclaimer
+
+I profess to be neither a grammarian nor a linguist. And both fields are alive and growing. Take what I say below with this disclaimer in mind.
+
+When I was taught English grammar, we were told that there were [eight parts of speech](http://www.butte.edu/departments/cas/tipsheets/grammar/parts_of_speech.html):
+
+#.  Noun
+#.  Pronoun
+#.  Verb
+#.  Adjective
+#.  Adverb
+#.  Preposition
+#.  Conjunction
+#.  Interjection
+
+The infusion of modern linguistics into English grammar has led to new superclasses in parts of speech. An [adposition](https://glossary.sil.org/term/adposition) is a word that can be either a _preposition_ or a _postposition_.
+
+Likewise, while we were taught about the definite articles _a_ and _an_ and the definite article _the_, these are nowadays classified along with a host of the miscellaneous language fragments as the superset called [determiners](https://en.wikipedia.org/wiki/Determiner).
+
+Because our primary focus is on questions and word order in correctly phrased questions, I will use the term [_interrogative_](https://en.wikipedia.org/wiki/Interrogative_word) to apply to any word which signals a question in English, like _what_. Such interrogatives could actually be functioning as pronouns, adverbs, adjectives, etc., depending on their place and meaning in a sentence.
 
 ## Sentence types
 
