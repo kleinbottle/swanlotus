@@ -257,6 +257,18 @@ The two lessons from this example are that:
 
 #.  The verb comes first followed by the noun/pronoun succeeded by the rest of the verb if applicable.
 
+## Usage changes
+
+Usage changes in verb tenses, and their quirks, pose yet another burden to the student of English, especially when framing questions. Consider the statement "He ran fast." To invert it to a question, we may ask, "How did he run?".
+
+Now, where was the "did" in the original statement? We could have correctly said "He _did_ run fast," but that would sound either archaic or convey a specific emphatic sense, as if to refute a statement that he did not run fast, or to emphasize that he ran very fast. But these are different from the bland but neutral statement, "He ran fast," that we started out with.
+
+If "He ran fast," is all we have, simple application of the structure we have derived would give us the question "How ran he?" which, although correct, sounds decidedly poetic or archaic. Such expressions are not in contemporary use.
+
+Heaven forbid, if we said, "How did he _ran_?" We would then be committing a grammatical offense common to learners of English. Perhaps the only way to avoid such errors is to listen, read, write, and speak, until we become inwardly attuned to the language.
+
+So, splitting a verb to insert a noun or pronoun to generate a question is not simply a matter of rules but also of usage. By exposure to correct spoken and written English, you should develop your own inner sense of what is right and wrong. Rules, although helpful, are not a reliable rescue when faced with changing patterns of usage.
+
 ## Closing comments
 
 English usage is variable and not wholly rule-bound. The large variety of ways in which questions may be phrased precludes a simple abstract formulation for the structure of a question along the lines of the [Backus-Naur form][bnf] for the syntax of computer languages.
@@ -280,20 +292,6 @@ The abstract structure of a question, taken more as a flexible guide than a rule
 ```
 [Optional Interrogative] [First part of Verb] [Noun/Pronoun] [Rest of Verb if applicable]
 ```
-
-## Usage changes
-
-Usage changes in verb tenses, and their quirks, pose yet another burden to the student of English, especially when framing questions. Consider the statement "He ran fast." To invert it to a question, we may ask, "How did he run?".
-
-Now, where was the "did" in the original statement? We could have correctly said "He _did_ run fast," but that would sound either archaic or convey a specific emphatic sense, as if to refute a statement that he did not run fast, or to emphasize that he ran very fast. But these are different from the bland but neutral statement, "He ran fast," that we started out with.
-
-If "He ran fast," is all we have, simple application of the structure we have derived would give us the question "How ran he?" which, although correct, sounds decidedly poetic or archaic. Such expressions are not in contemporary use.
-
-Heaven forbid, if we said, "How did he _ran_?" We would then be committing a grammatical offense common to learners of English. Perhaps the only way to avoid such errors is to listen, read, write, and speak, until we become inwardly attuned to the language.
-
-So, splitting a verb to insert a noun or pronoun to generate a question is not simply a matter of rules but also of usage. By exposure to correct spoken and written English, you should develop your own inner sense of what is right and wrong. Rules, although helpful, are not a reliable rescue when faced with changing patterns of usage.
-
-## In closing
 
 Hopefully, this blog will help ensure that when you ask questions in English you neither embarrass yourself by wrong or inelegant usage nor confuse your interlocutor with a mangled question.
 
