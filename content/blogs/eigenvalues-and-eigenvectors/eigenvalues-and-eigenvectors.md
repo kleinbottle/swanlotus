@@ -21,7 +21,7 @@ A cursory Web search turned up results that confirmed his assertions and concern
 [intuitively]: http://matheducators.stackexchange.com/questions/3983/what-is-the-best-way-to-intuitively-explain-what-eigenvectors-and-eigenvalues-ar
 [importance]: http://math.stackexchange.com/questions/23312/what-is-the-importance-of-eigenvalues-eigenvectors
 
-I then asked, "Can I explain to _myself_ what eigenvalues and eigenvectors are, and why they are important?". It also occurred to me that the harried and hurried students of today might derive some benefit from my efforts; hence this blog. It is a brief, largely qualitative, and mathematically non-rigorous article on eigenvalues and eigenvectors that aims to provide meaning and motivation for their study. Corrections and suggestions for improvement are most welcome. \emojifont🙂\normalfont
+I then asked, "Can I explain to _myself_ what eigenvalues and eigenvectors are, and why they are important?". It also occurred to me that the harried and hurried students of today might derive some benefit from my efforts; hence this blog. It is a brief, largely qualitative, and mathematically non-rigorous article on eigenvalues and eigenvectors that aims to provide meaning and motivation for their study. Corrections and suggestions for improvement are most welcome. \emojifont :smile: \normalfont
 
 ## Eigenvalues and eigenvectors
 
