@@ -84,7 +84,7 @@ Classic textbooks on English grammar identify *four* kinds of sentences:
 
 #.  Interrogative: "What is your name? Sentences of this type are questions.
 
-#.  Imperative: "Come here." This is a command ^[	As we have already seen, the *implicit subject* of this sentence is the pronoun "You" which should rightly have come first, so that the sentence reads "You come here." Leaving out the understood second person pronoun has become established usage; so we omit it.]. 
+#.  Imperative: "Come here." This is a command ^[	As we have already seen, the *implicit subject* of this sentence is the pronoun "You" which should rightly have come first, so that the sentence reads "You come here." Leaving out the understood second person pronoun has become established usage; so we omit it.].
 
 #.  Exclamatory: "How nice!" This type of sentence carries strong emotional overtones which distinguish it from a plain assertion.
 
@@ -165,22 +165,22 @@ Rather than crunch our mind-numbing way through them all, let us look at some mo
 
 ```{=html}
 <pre>
-<code><span class="other">What</span> <span class="noun">name?</span></code>
-<code><span class="other">What</span> <span class="pronoun">your</span> <span class="noun">name?</code>
-<code><span class="other">What</span> <span class="pronoun">your</span> <span class="noun">name</span> <span class="verb">is</span>?</code>
-<code><span class="other">What</span> <span class="verb">is</span> <span class="pronoun">your</span> <span class="noun">name</span>?</code>
-<code><span class="noun">Name</span> <span class="other">what</span>?</code>
+<code>What <span class="noun">name?</span></code>
+<code>What <span class="pronoun">your</span> <span class="noun">name?</code>
+<code>What <span class="pronoun">your</span> <span class="noun">name</span> <span class="verb">is</span>?</code>
+<code>What <span class="verb">is</span> <span class="pronoun">your</span> <span class="noun">name</span>?</code>
+<code><span class="noun">Name</span> what?</code>
 <code><span class="noun">Name</span> <span class="verb">is</span> what?</code>
-<code><span class="noun">Name</span> <span class="other">what</span> <span class="verb">is</span>?</code>
-<code><span class="pronoun">Your</span> <span class="noun">name</span> <span class="other">what</span>?</code>
-<code><span class="pronoun">Your</span> <span class="noun">name</span> <span class="verb">is</span> <span class="other">what</span>?</code>
-<code><span class="pronoun">Your</span> <span class="noun">name</span> <span class="other">what</span> <span class="verb">is</span>?</code>
+<code><span class="noun">Name</span> what <span class="verb">is</span>?</code>
+<code><span class="pronoun">Your</span> <span class="noun">name</span> what?</code>
+<code><span class="pronoun">Your</span> <span class="noun">name</span> <span class="verb">is</span> what?</code>
+<code><span class="pronoun">Your</span> <span class="noun">name</span> what <span class="verb">is</span>?</code>
 </pre>
 ```
 
 By now you should have got the drift. Once the interrogative has been migrated to the beginning of the sentence and the verb placed to immediately follow it, we have left as possibilities only:
 
-a.  the correct "What is your name?"; and 
+a.  the correct "What is your name?"; and
 a.  the patently absurd "What is name your?" which we have already excluded from consideration.
 
 Voila!
@@ -193,21 +193,21 @@ Again, I will not agonize over all 24 possibilities but will once more restrict 
 
 ```{=html}
 <pre>
-<code><span class="pronoun">You</span> <span class="other">where</span> <span class="verb">going</span>?</code>
+<code><span class="pronoun">You</span> where <span class="verb">going</span>?</code>
 <code><span class="pronoun">You</span> where</span> <span class="verb">are going</span>?</code>
-<code><span class="pronoun">You <span class="verb">going</span> <span class="other">where?</code>
-<code>You</span> <span class="verb">are</span> <span class="other">where</span> <span class="verb">going</span>?</code>
+<code><span class="pronoun">You <span class="verb">going</span> where?</code>
+<code>You</span> <span class="verb">are</span> where <span class="verb">going</span>?</code>
 <code><span class="pronoun">You</span> <span class="verb">are going</span> where</span>?</code>
-<code><span class="verb">Are going</span> <span class="other">where</span>?</code>
-<code><span class="verb">Are</span> <span class="pronoun">you</span> <span class="verb">going</span> <span class="other">where</span>?</code>
-<code><span class="verb">Are going</span> <span class="other">where</span> <span class="pronoun">you?</code>
-<code><span class="other">Where</span> <span class="verb">going</span>?</code>
-<code><span class="other">Where</span> <span class="verb">are going</span>?</code>
-<code><span class="other">Where</span></span> <span class="verb">are going</span> <span class="pronoun">you?</code>
-<code><span class="other">Where</span> <span class="pronoun">you</span> <span class="verb">are going</span>?</code>
-<code><span class="other">Where <span class="verb">are</span> <span class="pronoun">you</span> <span class="verb">going</span>?</code>
-<code><span class="verb">Going</span> <span class="other">where</span>?</code>
-<code><span class="verb">Going</span> <span class="other">where</span> <span class="pronoun">you</span>?</code>
+<code><span class="verb">Are going</span> where?</code>
+<code><span class="verb">Are</span> <span class="pronoun">you</span> <span class="verb">going</span> where?</code>
+<code><span class="verb">Are going</span> where <span class="pronoun">you?</code>
+<code>Where <span class="verb">going</span>?</code>
+<code>Where <span class="verb">are going</span>?</code>
+<code>Where <span class="verb">are going</span> <span class="pronoun">you?</code>
+<code>Where <span class="pronoun">you</span> <span class="verb">are going</span>?</code>
+<code>Where <span class="verb">are</span> <span class="pronoun">you</span> <span class="verb">going</span>?</code>
+<code><span class="verb">Going</span> where?</code>
+<code><span class="verb">Going</span> where <span class="pronoun">you</span>?</code>
 </pre>
 ```
 Choosing the correct version, though, is not as open and shut as before. The strict but mindless application of the question paradigm `[Interrogative] [Verb] [Noun/Pronoun]` to the present continuous verb word-pair "are going" will lead to the mangled sentence "Where are going you?".
@@ -225,9 +225,9 @@ Suppose the statement is "He has been recognized with a medal." One could frame 
 ```{=html}
 <pre>
 <code><span class="verb">Has</span> <span class="pronoun">he</span> <span class="verb">been recognized</span>?</code>
-<code><span class="other">How</span> <span class="verb">has</span> <span class="pronoun">he</span> <span class="verb">been recognized</span>?</code>
-<code><span class="other">Why</span> <span class="verb">has</span> <span class="pronoun">he</span> <span class="verb">been recognized</span>?</code>
-<code><span class="other">With what</span> <span class="verb">has</span> <span class="pronoun">he</span> <span class="verb">been recognized</span>?</code>
+<code>How <span class="verb">has</span> <span class="pronoun">he</span> <span class="verb">been recognized</span>?</code>
+<code>Why <span class="verb">has</span> <span class="pronoun">he</span> <span class="verb">been recognized</span>?</code>
+<code>With what <span class="verb">has</span> <span class="pronoun">he</span> <span class="verb">been recognized</span>?</code>
 </pre>
 ```
 
@@ -243,9 +243,9 @@ Suppose for a moment that we did not know where to place the pronoun within the 
 
 ```{=html}
 <pre>
-<code><span class="other">How</span> <span class="verb">has</span> <span class="pronoun">he <span class="verb">been recognized?</code>
-<code><span class="other">How</span> <span class="verb">has been</span> <span class="pronoun">he</span> <span class="verb">recognized</span>?</code>
-<code><span class="other">How</span> <span class="verb">has been recognized</span> <span class="pronoun">he</span>?</code>
+<code>How <span class="verb">has</span> <span class="pronoun">he <span class="verb">been recognized?</code>
+<code>How <span class="verb">has been</span> <span class="pronoun">he</span> <span class="verb">recognized</span>?</code>
+<code>How <span class="verb">has been recognized</span> <span class="pronoun">he</span>?</code>
 </pre>
 ```
 
@@ -289,8 +289,10 @@ The facts we have here divined so far are:
 
 The abstract structure of a question, taken more as a flexible guide than a rule cast in stone, is:
 
-```
-[Optional Interrogative] [First part of Verb] [Noun/Pronoun] [Rest of Verb if applicable]
+```{=html}
+<pre>
+<code>[<span class="pronoun">Optional Interrogative</span>] [<span class="verb">First part of Verb</span>] [<span class="noun">Noun</span>/<span class="pronoun">Pronoun</span>] [<span class="verb">Rest of Verb if applicable</span>]</code>
+</pre>
 ```
 
 Hopefully, this blog will help ensure that when you ask questions in English you neither embarrass yourself by wrong or inelegant usage nor confuse your interlocutor with a mangled question.
