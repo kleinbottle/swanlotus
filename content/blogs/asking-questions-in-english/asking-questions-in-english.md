@@ -297,4 +297,4 @@ The abstract structure of a question, taken more as a flexible guide than a rule
 
 Hopefully, this blog will help ensure that when you ask questions in English you neither embarrass yourself by wrong or inelegant usage nor confuse your interlocutor with a mangled question.
 
-Happy questioning! :smile:
+Happy questioning! \emojifont :smile: \normalfont
