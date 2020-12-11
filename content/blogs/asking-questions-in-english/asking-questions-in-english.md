@@ -6,9 +6,6 @@ modified: "2020-12-09"
 summary: "This blog is devoted to the art of asking questions in English. This seemingly undemanding task often trips up the aspiring learner of English, especially one who is studying it as a second or third language."
 category: English
 tags: grammar, usage, questions, word order, verbs, nouns
-header-includes:
-  - \definecolor{noun}{51847F}
-  - \definecolor{pronoun}{F0DFAB}
 ---
 
 ## A tale of two tongues
@@ -107,7 +104,14 @@ It is important, however, to distinguish between a statement and a question. The
 
 A *statement* in English usually has the abstract structure:
 
-
+```{=latex}
+\begin{tcolorbox}
+\begin{alltt}
+\color{normal}
+[\noun{Noun}/\pronoun{Pronoun}] [\action{Verb}] [\noun{Noun}/\pronoun{Pronoun}]
+\end{alltt}
+\end{tcolorbox}
+```
 
 ```{=html}
 <pre>
@@ -118,6 +122,15 @@ A *statement* in English usually has the abstract structure:
 where the first noun/pronoun is the *subject* and the second noun/pronoun, if it exists, is the *object.* An example is "He kicked the ball". This is in *active voice.* In *passive voice* though, we say, "The ball was kicked by him", and the order of the nouns/pronouns is changed.
 
 A *question* on the other hand has a different structure:
+
+```{=latex}
+\begin{tcolorbox}
+\begin{alltt}
+\color{normal}
+[Interrogative] [\action{Verb}] [\noun{Noun}/\pronoun{Pronoun}]
+\end{alltt}
+\end{tcolorbox}
+```
 
 ```{=html}
 <pre>
@@ -132,6 +145,16 @@ Note carefully that the verb comes *before* the subject which is the noun/pronou
 ## Inversion of a statement into a question
 
 A statement and a question are therefore different in structure. Many speakers learning English invert a statement into a question by simply raising the pitch at the end. So, they say "You are well?" raising the pitch of the last word instead of asking "Are you well?". This is wrong, although it happens a great deal in casual conversation. It will never do for written English. To avoid falling into this trap, think:
+
+```{=latex}
+\begin{tcolorbox}
+\begin{alltt}
+\color{normal}
+Statement → [\noun{Noun}/\pronoun{Pronoun}] before [\action{Verb}]
+Question  → [\action{Verb}] before [\noun{Noun}/\pronoun{Pronoun}]
+\end{alltt}
+\end{tcolorbox}
+```
 
 ```{=html}
 <pre>
@@ -168,6 +191,24 @@ With four unique words, we have a total of $4 \times 3 \times 2 \times 1 = 24$ d
 
 Rather than crunch our mind-numbing way through them all, let us look at some more promising entries for the "mangled question competition". We will use one guiding principle. The adjective "your" will always come *before* "name" _if it appears at all_ in the mangled question.
 
+```{=latex}
+\begin{tcolorbox}
+\begin{alltt}
+\color{normal}
+What \noun{name}?
+What \pronoun{your} \noun{name}?
+What \pronoun{your} \noun{name} \action{is}?
+What \action{is} \pronoun{your} \noun{name}?
+\noun{Name} what?
+\noun{Name} \action{is} what?
+\noun{Name} what \action{is}?
+\pronoun{Your} \noun{name} what?
+\pronoun{Your} \noun{name} \action{is} what?
+\pronoun{Your} \noun{name} what \action{is}?
+\end{alltt}
+\end{tcolorbox}
+```
+
 ```{=html}
 <pre>
 <code>What <span class="noun">name?</span></code>
@@ -195,6 +236,29 @@ Voila!
 The second question, "Where are you going?" offers more scope for creative misplacement of the verb because the verb itself consists of two words rather than one, indicating the present continuous tense.
 
 Again, I will not agonize over all 24 possibilities but will once more restrict myself to "promising mangled questions". Almost instinctively we will shirk from ever using that word-pair "going are" whereas the alternative "are going", whole or split, is featured in full glory in our entries to the mangled question contest.
+
+```{=latex}
+\begin{tcolorbox}
+\begin{alltt}
+\color{normal}
+\pronoun{You} where \action{going}?
+\pronoun{You} where \action{are going}?
+\pronoun{You} \action{going} where?
+\pronoun{You} \action{are} where \action{going}?
+\pronoun{You} \action{are going} where?
+\action{Are going} where?
+\action{Are} \pronoun{you} \action{going} where?
+\action{Are going} where \pronoun{you}?
+Where \action{going}?
+Where \action{are going}?
+Where \action{are going} \pronoun{you}?
+Where \pronoun{you} \action{are going}?
+Where \action{are} \pronoun{you} \action{going}?
+\action{Going} where?
+\action{Going} where \pronoun{you}?
+\end{alltt}
+\end{tcolorbox}
+```
 
 ```{=html}
 <pre>
@@ -227,6 +291,18 @@ One easy way to work toward a solution is to _start with a statement and then co
 
 Suppose the statement is "He has been recognized with a medal." One could frame many questions from this one statement. Here are a few grammatically correct examples:
 
+```{=latex}
+\begin{tcolorbox}
+\begin{alltt}
+\color{normal}
+\action{Has} \pronoun{he} \action{been recognized}?
+How \action{has} \pronoun{he} \action{been recognized}?
+Why \action{has} \pronoun{he} \action{been recognized}?
+With what \action{has} \pronoun{he} \action{been recognized}?
+\end{alltt}
+\end{tcolorbox}
+```
+
 ```{=html}
 <pre>
 <code><span class="verb">Has</span> <span class="pronoun">he</span> <span class="verb">been recognized</span>?</code>
@@ -245,6 +321,17 @@ Note the following points:
 - The third and fourth questions are allied to the statement but are not really inversions of the original statement into a question. Their foci are different.
 
 Suppose for a moment that we did not know where to place the pronoun within the verb-triple. We know that the pronoun must be preceded by one or more members of a verb-triple. We have only three choices:
+
+```{=latex}
+\begin{tcolorbox}
+\begin{alltt}
+\color{normal}
+How \action{has} \pronoun{he} \action{been recognized}?
+How \action{has been} \pronoun{he} \action{recognized}?
+How \action{has been recognized} \pronoun{he}?
+\end{alltt}
+\end{tcolorbox}
+```
 
 ```{=html}
 <pre>
@@ -294,12 +381,21 @@ The facts we have here divined so far are:
 
 The abstract structure of a question, taken more as a flexible guide than a rule cast in stone, is:
 
+```{=latex}
+\begin{tcolorbox}
+\begin{alltt}
+\color{normal}
+[Optional Interrogative] [\action{First part of Verb}] [\noun{Noun}/\pronoun{Pronoun}] [\action{Rest of \newline Verb if applicable}]
+\end{alltt}
+\end{tcolorbox}
+```
+
 ```{=html}
 <pre>
-<code>[<span class="pronoun">Optional Interrogative</span>] [<span class="verb">First part of Verb</span>] [<span class="noun">Noun</span>/<span class="pronoun">Pronoun</span>] [<span class="verb">Rest of Verb if applicable</span>]</code>
+<code>[Optional Interrogative] [<span class="verb">First part of Verb</span>] [<span class="noun">Noun</span>/<span class="pronoun">Pronoun</span>] [<span class="verb">Rest of Verb if applicable</span>]</code>
 </pre>
 ```
 
 Hopefully, this blog will help ensure that when you ask questions in English you neither embarrass yourself by wrong or inelegant usage nor confuse your interlocutor with a mangled question.
 
-Happy questioning! \emojifont :smile: \normalfont
+Happy questioning! \emojifont :slightly_smiling_face: \normalfont

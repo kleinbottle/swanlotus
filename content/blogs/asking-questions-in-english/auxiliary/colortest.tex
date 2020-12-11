@@ -3,20 +3,20 @@
 \definecolor{noun}{HTML}{51847F}
 \definecolor{pronoun}{HTML}{F0DFAB}
 \definecolor{action}{HTML}{DCA3A3}
-\definecolor{other}{HTML}{DBDBDB}
+\definecolor{normal}{HTML}{DBDBDB}
 \definecolor{background}{HTML}{363636}
 \newcommand\noun[1]{\textcolor{noun}{#1}}
 \newcommand\pronoun[1]{\textcolor{pronoun}{#1}}
 \newcommand\action[1]{\textcolor{action}{#1}}
-\newcommand\other[1]{\textcolor{other}{#1}}
-\usepackage{listings}
-\usepackage[most]{tcolorbox}
+\newcommand\other[1]{\textcolor{normal}{#1}}
+\usepackage{tcolorbox}
+  \tcbset{boxrule=0mm, arc=0mm, colback=background}
 \usepackage{alltt}
 %
 \begin{document}
-\begin{tcolorbox}[colback=background]
+\begin{tcolorbox}
 \begin{alltt}
-\color{other}
+\color{normal}
 [\noun{Noun}/\pronoun{Pronoun}] [\action{Verb}] [\noun{Noun}/\pronoun{Pronoun}]
 \end{alltt}
 \end{tcolorbox}

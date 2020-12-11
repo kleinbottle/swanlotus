@@ -78,6 +78,18 @@
   \newfontfamily\tamilfont[Script=Tamil]{Noto Sans Tamil}
   \setTransitionsFor{Tamil}{\tamilfont}{\normalfont}
   \newfontfamily{\emojifont}{Symbola}
+\usepackage{tcolorbox}
+\usepackage{alltt}
+\definecolor{noun}{HTML}{51847F}
+\definecolor{pronoun}{HTML}{F0DFAB}
+\definecolor{action}{HTML}{DCA3A3}
+\definecolor{normal}{HTML}{DBDBDB}
+\definecolor{background}{HTML}{363636}
+\newcommand\noun[1]{\textcolor{noun}{#1}}
+\newcommand\pronoun[1]{\textcolor{pronoun}{#1}}
+\newcommand\action[1]{\textcolor{action}{#1}}
+\newcommand\normal[1]{\textcolor{other}{#1}}
+\tcbset{boxrule=0mm, arc=0mm, colback=background}
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -317,9 +329,12 @@ not English.
 
 A \emph{statement} in English usually has the abstract structure:
 
-\begin{ttfamily}
-\textcolor{noun}{Noun}/\textcolor{pronoun}{Pronoun}
-\end{ttfamily}
+\begin{tcolorbox}
+\begin{alltt}
+\color{normal}
+[\noun{Noun}/\pronoun{Pronoun}] [\action{Verb}] [\noun{Noun}/\pronoun{Pronoun}]
+\end{alltt}
+\end{tcolorbox}
 
 where the first noun/pronoun is the \emph{subject} and the second
 noun/pronoun, if it exists, is the \emph{object.} An example is ``He
@@ -328,6 +343,13 @@ voice} though, we say, ``The ball was kicked by him,'' and the order of
 the nouns/pronouns is changed.
 
 A \emph{question} on the other hand has a different structure:
+
+\begin{tcolorbox}
+\begin{alltt}
+\color{normal}
+[Interrogative] [\action{Verb}] [\noun{Noun}/\pronoun{Pronoun}]
+\end{alltt}
+\end{tcolorbox}
 
 The \emph{interrogative} is a word like ``what'' or ``why'' or ``where''
 or ``how'' which is used to indicate that a question is being asked.
@@ -350,6 +372,14 @@ raising the pitch at the end. So, they say ``You are well?'' raising the
 pitch of the last word instead of asking ``Are you well?'' This is
 wrong, although it happens a great deal in casual conversation. It will
 never do for written English. To avoid falling into this trap, think:
+
+\begin{tcolorbox}
+\begin{alltt}
+\color{normal}
+Statement → [\noun{Noun}/\pronoun{Pronoun}] before [\action{Verb}]
+Question  → [\action{Verb}] before [\noun{Noun}/\pronoun{Pronoun}]
+\end{alltt}
+\end{tcolorbox}
 
 \hypertarget{a-very-simple-first-question}{%
 \subsection{A very simple first
@@ -409,6 +439,22 @@ will use one guiding principle. The adjective ``your'' will always come
 \emph{before} ``name'' \emph{if it appears at all} in the mangled
 question.
 
+\begin{tcolorbox}
+\begin{alltt}
+\color{normal}
+What \noun{name}?
+What \pronoun{your} \noun{name}?
+What \pronoun{your} \noun{name} \action{is}?
+What \action{is} \pronoun{your} \noun{name}?
+\noun{Name} what?
+\noun{Name} \action{is} what?
+\noun{Name} what \action{is}?
+\pronoun{Your} \noun{name} what?
+\pronoun{Your} \noun{name} \action{is} what?
+\pronoun{Your} \noun{name} what \action{is}?
+\end{alltt}
+\end{tcolorbox}
+
 By now you should have got the drift. Once the interrogative has been
 migrated to the beginning of the sentence and the verb placed to
 immediately follow it, we have left as possibilities only:
@@ -438,6 +484,27 @@ we will shirk from ever using that word-pair ``going are'' whereas the
 alternative ``are going,'' whole or split, is featured in full glory in
 our entries to the mangled question contest.
 
+\begin{tcolorbox}
+\begin{alltt}
+\color{normal}
+\pronoun{You} where \action{going}?
+\pronoun{You} where \action{are going}?
+\pronoun{You} \action{going} where?
+\pronoun{You} \action{are} where \action{going}?
+\pronoun{You} \action{are going} where?
+\action{Are going} where?
+\action{Are} \pronoun{you} \action{going} where?
+\action{Are going} where \pronoun{you}?
+Where \action{going}?
+Where \action{are going}?
+Where \action{are going} \pronoun{you}?
+Where \pronoun{you} \action{are going}?
+Where \action{are} \pronoun{you} \action{going}?
+\action{Going} where?
+\action{Going} where \pronoun{you}?
+\end{alltt}
+\end{tcolorbox}
+
 Choosing the correct version, though, is not as open and shut as before.
 The strict but mindless application of the question paradigm
 \texttt{{[}Interrogative{]}\ {[}Verb{]}\ {[}Noun/Pronoun{]}} to the
@@ -466,6 +533,16 @@ Suppose the statement is ``He has been recognized with a medal.'' One
 could frame many questions from this one statement. Here are a few
 grammatically correct examples:
 
+\begin{tcolorbox}
+\begin{alltt}
+\color{normal}
+\action{Has} \pronoun{he} \action{been recognized}?
+How \action{has} \pronoun{he} \action{been recognized}?
+Why \action{has} \pronoun{he} \action{been recognized}?
+With what \action{has} \pronoun{he} \action{been recognized}?
+\end{alltt}
+\end{tcolorbox}
+
 Note the following points:
 
 \begin{itemize}
@@ -488,6 +565,15 @@ Note the following points:
 Suppose for a moment that we did not know where to place the pronoun
 within the verb-triple. We know that the pronoun must be preceded by one
 or more members of a verb-triple. We have only three choices:
+
+\begin{tcolorbox}
+\begin{alltt}
+\color{normal}
+How \action{has} \pronoun{he} \action{been recognized}?
+How \action{has been} \pronoun{he} \action{recognized}?
+How \action{has been recognized} \pronoun{he}?
+\end{alltt}
+\end{tcolorbox}
 
 Of these, only the first is correct as deemed by usage. Again, if you
 are attuned to usage, you would pick the first and reject the other two,
@@ -565,11 +651,18 @@ The facts we have here divined so far are:
 The abstract structure of a question, taken more as a flexible guide
 than a rule cast in stone, is:
 
+\begin{tcolorbox}
+\begin{alltt}
+\color{normal}
+[Optional Interrogative] [\action{First part of Verb}] [\noun{Noun}/\pronoun{Pronoun}] [\action{Rest of \newline Verb if applicable}]
+\end{alltt}
+\end{tcolorbox}
+
 Hopefully, this blog will help ensure that when you ask questions in
 English you neither embarrass yourself by wrong or inelegant usage nor
 confuse your interlocutor with a mangled question.
 
-Happy questioning! \emojifont {😄} \normalfont
+Happy questioning! \emojifont {🙂} \normalfont
 
 
 
