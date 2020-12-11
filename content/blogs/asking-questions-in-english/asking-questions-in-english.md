@@ -6,6 +6,9 @@ modified: "2020-12-09"
 summary: "This blog is devoted to the art of asking questions in English. This seemingly undemanding task often trips up the aspiring learner of English, especially one who is studying it as a second or third language."
 category: English
 tags: grammar, usage, questions, word order, verbs, nouns
+header-includes:
+  - \definecolor{noun}{51847F}
+  - \definecolor{pronoun}{F0DFAB}
 ---
 
 ## A tale of two tongues
@@ -103,6 +106,8 @@ In one sense, all such classifications are artificial analytical superimposition
 It is important, however, to distinguish between a statement and a question. They are two very different types of sentence, almost antithetical in nature. Their word order is accordingly  different: something that is not often grasped by speakers whose first language is not English.
 
 A *statement* in English usually has the abstract structure:
+
+
 
 ```{=html}
 <pre>
