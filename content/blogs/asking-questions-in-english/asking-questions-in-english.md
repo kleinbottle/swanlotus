@@ -6,6 +6,19 @@ modified: "2020-12-09"
 summary: "This blog is devoted to the art of asking questions in English. This seemingly undemanding task often trips up the aspiring learner of English, especially one who is studying it as a second or third language."
 category: English
 tags: grammar, usage, questions, word order, verbs, nouns
+header-includes:
+  - \usepackage{tcolorbox}
+  - \usepackage{alltt}
+  - \definecolor{noun}{HTML}{51847F}
+  - \definecolor{pronoun}{HTML}{F0DFAB}
+  - \definecolor{action}{HTML}{DCA3A3}
+  - \definecolor{normal}{HTML}{DBDBDB}
+  - \definecolor{background}{HTML}{363636}
+  - \newcommand\noun[1]{\textcolor{noun}{#1}}
+  - \newcommand\pronoun[1]{\textcolor{pronoun}{#1}}
+  - \newcommand\action[1]{\textcolor{action}{#1}}
+  - \newcommand\normal[1]{\textcolor{other}{#1}}
+  - \tcbset{boxrule=0mm, arc=0mm, colback=background}
 ---
 
 ## A tale of two tongues
