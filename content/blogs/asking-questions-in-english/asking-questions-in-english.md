@@ -4,8 +4,8 @@ author: "R (Chandra) Chandrasekhar"
 date: "2012-09-15"
 modified: "2020-12-09"
 summary: "This blog is devoted to the art of asking questions in English. This seemingly undemanding task often trips up the aspiring learner of English, especially one who is studying it as a second or third language."
-category: English
-tags: grammar, usage, questions, word order, verbs, nouns
+category: Language
+tags: grammar, usage, questions, word order, verbs, nouns, Tamil, English
 header-includes:
   - \usepackage{tcolorbox}
   - \usepackage{alltt}
@@ -85,7 +85,7 @@ When I was taught English grammar, we were told that there were [eight parts of 
 
 The infusion of modern linguistics into English grammar has led to new superclasses in parts of speech. An [adposition](https://glossary.sil.org/term/adposition) is a word that can be either a _preposition_ or a _postposition_.
 
-Likewise, while we were taught about the definite articles _a_ and _an_ and the definite article _the_, these are nowadays classified, along with a host of other miscellaneous language fragments, as part of the superset called [determiners](https://en.wikipedia.org/wiki/Determiner)^[Visit the website of [St Thomas C of E Primary School](https://www.stthomaswernethprimary.co.uk/determiners-and-prepositions-1/) to watch and listen to two delightful videos on determiners and prepositions, if you feel so inclined.].
+Likewise, while we were taught about the indefinite articles _a_ and _an_ and the definite article _the_, these are nowadays classified, along with a host of other miscellaneous language fragments, as part of the superset called [determiners](https://en.wikipedia.org/wiki/Determiner)^[Visit the website of [St Thomas C of E Primary School](https://www.stthomaswernethprimary.co.uk/determiners-and-prepositions-1/) to watch and listen to two delightful videos on determiners and prepositions, if you feel so inclined.].
 
 Because our primary focus is on questions and word order in correctly phrased questions, I will use the term [_interrogative_](https://en.wikipedia.org/wiki/Interrogative_word) to apply to any word, like _what_, which signals a question in English. Such interrogatives could actually be functioning as pronouns, adverbs, adjectives, etc., depending on their place and meaning in a sentence.
 
