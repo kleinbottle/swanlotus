@@ -3,7 +3,7 @@
 # Defaults for generating HTML5 from Markdown using pandoc
 # using the Pelican Pandoc Reader plugin
 #
-reader: markdown+citations+emoji
+reader: markdown+emoji
 
 writer: html5
 

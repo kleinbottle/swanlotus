@@ -9,7 +9,7 @@ pandoc-eqnos==2.4.0
 pandoc-xnos==2.5.0
 pandocfilters==1.4.3
 pelican==4.5.4
-pelican-pandoc-reader==1.0.0
+pelican-pandoc-reader==1.0.1
 psutil==5.7.3
 Pygments==2.6.1
 pypandoc==1.5
