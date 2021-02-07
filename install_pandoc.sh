@@ -28,3 +28,4 @@ if [ ! -e "$PANDOC_SUCCESS" ]; then
 fi
 
 echo $PANDOC_DIR/usr/bin
+$PANDOC_DIR/usr/bin --version
