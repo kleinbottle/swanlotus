@@ -23,11 +23,9 @@ if [ ! -e "$PANDOC_SUCCESS" ]; then
   touch "$PANDOC_SUCCESS"
 fi
 
-echo $PANDOC_DIR/usr/bin
-$PANDOC_DIR/usr/bin/pandoc --version
+$PANDOC_BIN/pandoc --version
 
-# alias /usr/bin/pandoc="${PANDOC_DIR}/usr/bin/pandoc"
-ln -sf /usr/bin/pandoc ${PANDOC_DIR}/usr/bin/pandoc
-ls -al /usr/bin/pandoc
-which pandoc
+export PATH=$PANDOC_BIN/pandoc:$PATH
+pandoc --version
+
 pelican content -s publishconf.py
