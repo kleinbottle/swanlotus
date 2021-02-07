@@ -26,7 +26,7 @@ fi
 echo $PANDOC_BIN
 $PANDOC_BIN/pandoc --version
 
-export PATH=$PATH:$PANDOC_BIN/pandoc
+export PATH=$PANDOC_BIN:$PATH
 pandoc --version
 
 pelican content -s publishconf.py
