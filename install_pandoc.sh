@@ -11,10 +11,6 @@ else
   : ${NETLIFY_BUILD_BASE="$PWD/buildhome"}
 fi
 
-echo "before"
-which pandoc
-pandoc --version
-
 NETLIFY_CACHE_DIR="$NETLIFY_BUILD_BASE/cache"
 PANDOC_DIR="$NETLIFY_CACHE_DIR/pandoc"
 PANDOC_DEB=$(basename "$PANDOC_URL")
@@ -29,3 +25,7 @@ fi
 
 echo $PANDOC_DIR/usr/bin
 $PANDOC_DIR/usr/bin/pandoc --version
+
+alias pandoc="PANDOC_DIR/usr/bin/pandoc"
+which pandoc
+pelican content -s publishconf.py
