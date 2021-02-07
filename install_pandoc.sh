@@ -26,7 +26,7 @@ fi
 echo $PANDOC_DIR/usr/bin
 $PANDOC_DIR/usr/bin/pandoc --version
 
-alias /usr/bin/pandoc="${PANDOC_DIR}/usr/bin/pandoc"
+# alias /usr/bin/pandoc="${PANDOC_DIR}/usr/bin/pandoc"
 ln -sf /usr/bin/pandoc ${PANDOC_DIR}/usr/bin/pandoc
 ls -al /usr/bin/pandoc
 which pandoc
