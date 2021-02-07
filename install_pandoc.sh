@@ -26,6 +26,6 @@ fi
 echo $PANDOC_DIR/usr/bin
 $PANDOC_DIR/usr/bin/pandoc --version
 
-alias pandoc="PANDOC_DIR/usr/bin/pandoc"
+alias pandoc="${PANDOC_DIR}/usr/bin/pandoc"
 which pandoc
 pelican content -s publishconf.py
