@@ -23,9 +23,10 @@ if [ ! -e "$PANDOC_SUCCESS" ]; then
   touch "$PANDOC_SUCCESS"
 fi
 
+echo $PANDOC_BIN
 $PANDOC_BIN/pandoc --version
 
-export PATH=$PANDOC_BIN/pandoc:$PATH
+export PATH=$PATH:$PANDOC_BIN/pandoc
 pandoc --version
 
 pelican content -s publishconf.py
