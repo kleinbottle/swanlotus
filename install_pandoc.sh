@@ -24,3 +24,4 @@ if [ ! -e "$PANDOC_SUCCESS" ]; then
 fi
 
 which pandoc
+pandoc --version
