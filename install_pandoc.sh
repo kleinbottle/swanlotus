@@ -27,5 +27,4 @@ if [ ! -e "$PANDOC_SUCCESS" ]; then
   touch "$PANDOC_SUCCESS"
 fi
 
-which pandoc
-pandoc --version
+echo $PANDOC_DIR/usr/bin
