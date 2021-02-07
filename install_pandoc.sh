@@ -23,4 +23,5 @@ if [ ! -e "$PANDOC_SUCCESS" ]; then
   touch "$PANDOC_SUCCESS"
 fi
 
-exec "$PANDOC_BIN/pandoc" "$@"
+exec "$PANDOC_BIN/pandoc --version"
+which pandoc
