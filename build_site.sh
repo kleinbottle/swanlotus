@@ -8,7 +8,7 @@ set -o errexit
 
 # We use $DEPLOY_URL to detect the Netlify environment.
 if [ -v DEPLOY_URL ]; then
-  : ${NETLIFY_BUILD_BASE="/opt/buildhome"}
+  : "${NETLIFY_BUILD_BASE='/opt/buildhome'}"
 else
   : ${NETLIFY_BUILD_BASE="$PWD/buildhome"}
 fi
