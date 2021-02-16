@@ -3,6 +3,7 @@ title: "A Peacock in Mid Flight"
 author: "R (Chandra) Chandrasekhar"
 date: "2019-11-17"
 summary: "This morning, I saw a peacock in mid-flight. It was a wondrous and unforgettable sight, the more so because unexpected. I was walking as usual in the neighbourhood, which is known to be home to a large number of peacocks. As I turned to my right, I saw what I thought was an unusually long bird in flight. Only as it approached me did I realize that it was a peacock in mid-flight."
+status: "draft"
 ---
 This morning, I saw a peacock in mid-flight. It was a wondrous and unforgettable sight, the more so because unexpected. I was walking as usual in the neighbourhood, which is known to be home to a large number of peacocks. As I turned to my right, I saw what I thought was an unusually long bird in flight. Only as it approached me did I realize that it was a peacock in mid-flight.
 
