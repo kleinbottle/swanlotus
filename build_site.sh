@@ -25,7 +25,6 @@ if [ ! -e "$PANDOC_SUCCESS" ]; then
   touch "$PANDOC_SUCCESS"
 fi
 
-echo "$PANDOC_BIN/pandoc"
 "$PANDOC_BIN/pandoc" --version
 
 pelican content -s publishconf.py
