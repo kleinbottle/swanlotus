@@ -4392,6 +4392,7 @@ a:hover code {
 
 .content ol#post-list {
   list-style-type: none;
+  margin-left: 0em;
 }
 
 .content ol#post-list li {
@@ -4529,3 +4530,5 @@ a:hover code {
   padding: 0em;
   clear: both;
 }
+
+/*# sourceMappingURL=swanlotus.css.map */
