@@ -9,18 +9,18 @@ save_as: "index.html"
 
 [SwanLotus][swanlotus] exists to help you learn better. Regardless of where you live, what you study, and how old you are, may you be empowered to learn better, remember longer, and keep learning all your life. Enjoy learning! Keep on learning! :slight_smile:
 
-[swanlotus]: https://swanlotus.netlify.app
+[swanlotus]: /
 
 ## _Secrets of Academic Success_
 
-[_Secrets of Academic Success_][sas] is a book under preparation to help students study effectively and learn better. Chapters from this book are available as [free downloads.][fd] Do take a look at these.
+[_Secrets of Academic Success_](sas.html) is a book under preparation to help students study effectively and learn better. Chapters from this book are available as [free downloads.][fd] Do take a look at these.
 
 [sas]:
 [fd]: /index.php/downloads/
 
 ### Three new chapters
 
-Three new chapters from [_Secrets of Academic Success_][sas] are now available for download:
+Three new chapters from [_Secrets of Academic Success_](sas.html) are now available for download:
 
 -   [Motivation, Learning, and Success][motivation-learning-and-successPDF]
 -   [Moving from Bs to As][moving-from-bs-to-asPDF]
