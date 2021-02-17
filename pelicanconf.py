@@ -37,7 +37,7 @@ INDEX_SAVE_AS = 'blogs.html'
 MENUITEMS = (
     ("Home", "index.html"),
     ("Blogs", "blogs.html"),
-    ("Secrets of Academic Success", "sas.html")
+    ("Secrets of Academic Success", "sas.html"),
 )
 
 DIRECT_TEMPLATES = ['index', 'categories', 'tags', 'archives']
