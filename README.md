@@ -141,6 +141,8 @@ To create a static page like the Home page follow the steps below:
     )
     ```
 
+    **Note: The pages on menu will follow the order of the menu items shown above.**
+
 1. Convert the page to HTML locally by executing the following commands:
 
     ```bash
