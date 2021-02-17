@@ -6,11 +6,10 @@ date: "2020-02-17"
 URL:
 save_as: "index.html"
 ---
-# Welcome to SwanLotus
 
-[SwanLotus][swanlotus] exists to help you learn better. Regardless of where you live, what you study, and how old you are, may you be empowered to learn better, remember longer, and keep learning all your life. Enjoy learning! Keep on learning! :smile:
+[SwanLotus][swanlotus] exists to help you learn better. Regardless of where you live, what you study, and how old you are, may you be empowered to learn better, remember longer, and keep learning all your life. Enjoy learning! Keep on learning! :slight_smile:
 
-[swanlotus]: http://swanlotus.netlify.app
+[swanlotus]: https://swanlotus.netlify.app
 
 ## _Secrets of Academic Success_
 
