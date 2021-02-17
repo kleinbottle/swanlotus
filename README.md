@@ -137,7 +137,7 @@ To create a static page like the Home page follow the steps below:
         ("Home", "index.html"),
         ("Blogs", "blogs.html"),
         ("Secrets of Academic Success", "sas.html"),
-        ("<page-title>", "<page-title.html>"),  # New entry added to the end of the tuple
+        ("<page-title>", "<page-title>.html"),  # New entry added to the end of the tuple
     )
     ```
 
