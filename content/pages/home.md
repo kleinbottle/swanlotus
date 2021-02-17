@@ -7,7 +7,7 @@ URL:
 save_as: "index.html"
 ---
 
-[SwanLotus][swanlotus] exists to help you learn better. Regardless of where you live, what you study, and how old you are, may you be empowered to learn better, remember longer, and keep learning all your life. Enjoy learning! Keep on learning! :slight_smile:
+[SwanLotus][swanlotus] exists to help you learn better. Regardless of where you live, what you study, and how old you are, may you be empowered to learn better, remember longer, and keep learning all your life. Enjoy learning! Keep on learning! :slightly_smiling_face:
 
 [swanlotus]: /
 
