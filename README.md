@@ -128,7 +128,7 @@ To create a static page like the Home page follow the steps below:
 
 1. Create a new page `<page-title>.md` in the `content/pages` directory.
 
-1. Add your content to `<page-title>.md`
+1. Add your content to `<page-title>.md`.
 
 1. If you wish to add your new page to the menu bar on the site you would need to add a new entry under `MENUITEMS` setting in the `pelicanconf.py` file as shown below:
 
