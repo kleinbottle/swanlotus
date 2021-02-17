@@ -13,21 +13,21 @@ save_as: "index.html"
 
 ## _Secrets of Academic Success_
 
-[_Secrets of Academic Success_](sas.html) is a book under preparation to help students study effectively and learn better. Chapters from this book are available as [free downloads.][fd] Do take a look at these.
+[_Secrets of Academic Success_][sas] is a book under preparation to help students study effectively and learn better. Chapters from this book are available as [free downloads.][fd] Do take a look at these.
 
-[sas]:
+[sas]: sas.html
 [fd]: /index.php/downloads/
 
 ### Three new chapters
 
-Three new chapters from [_Secrets of Academic Success_](sas.html) are now available for download:
+Three new chapters from [_Secrets of Academic Success_][sas] are now available for download:
 
 -   [Motivation, Learning, and Success][motivation-learning-and-successPDF]
 -   [Moving from Bs to As][moving-from-bs-to-asPDF]
 -   [Publishing Papers in Peer-Reviewed Journals][publishing-papersPDF]
 
 
-[sas]: /index.php/sas
+[sas]: sas.html
 [motivation-learning-and-successPDF]: http://swanlotus.org/wp-content/uploads/motivation-learning-and-success.pdf "Motivation, Learning, and Success: chapter from _Secrets of Academic Success_"
 [moving-from-bs-to-asPDF]: http://swanlotus.org/wp-content/uploads/moving-from-bs-to-as.pdf "Moving From Bs to As: chapter from _Secrets of Academic Success_"
 [publishing-papersPDF]: http://swanlotus.org/wp-content/uploads/publishing-papers.pdf "Publishing Papers in Peer-Reviewed Journals: chapter from _Secrets of Academic Success_"
@@ -36,7 +36,7 @@ Three new chapters from [_Secrets of Academic Success_](sas.html) are now availa
 
 There are [educational blogs][blogs] on selected subjects to help you understand better. Read these blogs actively and mine the Web for additional knowledge.
 
-[blogs]: /index.php/blog
+[blogs]: blogs.html
 
 ## Articles
 
