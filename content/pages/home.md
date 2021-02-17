@@ -3,8 +3,8 @@ title: "Home"
 content_title: "Welcome to SwanLotus"
 author: "R (Chandra) Chandrasekhar"
 date: "2020-02-17"
+URL:
 save_as: "index.html"
-URL: "
 ---
 # Welcome to SwanLotus
 
@@ -16,7 +16,7 @@ URL: "
 
 [_Secrets of Academic Success_][sas] is a book under preparation to help students study effectively and learn better. Chapters from this book are available as [free downloads.][fd] Do take a look at these.
 
-[sas]: 
+[sas]:
 [fd]: /index.php/downloads/
 
 ### Three new chapters
