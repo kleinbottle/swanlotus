@@ -42,17 +42,11 @@ The book is divided into ten parts, each of which addresses one aspect of learni
 
 I am making this book available as a [free-of-charge, freely available soft copy download in the PDF electronic format]({static}../sas-manuscript/SAS-partial.pdf), so that it may benefit the largest number of sincere students.
 
-Please do not abuse this feature. Conditions apply.
+This book is released under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International licence](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode) easily recognized by the following logo:
 
-First, this book is subject to copyright: respect it always.
+![CC-BY-NC-ND-logo]({static}images/by-nc-nd.svg){ width=50% }
 
-Second, do not circulate the soft copy of the book but rather direct your fellow students and friends to [download it from this site]({static}../sas-manuscript/SAS-partial.pdf). The reason is simple: I revise this book all the time. This means a copy downloaded some time ago is likely to be outdated. Please download the latest version from this site always.
-
-Third, you may not make this book available elsewhere on the Web.
-
-Fourth, you may not appropriate or modify the book and pass it off as your own. Not that I think any sincere student would ever dream of doing that. :wink:
-
-Fifth, you may not sell or otherwise commercially exploit this book.
+For more details, [see here](https://certificates.creativecommons.org/cccertedu/chapter/3-3-license-types/)
 
 ## Download
 
