@@ -11,7 +11,7 @@ save_as: "index.html"
 
 ## Secrets of Academic Success
 
-[_Secrets of Academic Success_]({static}../sas.html) is a book written to help students study effectively and learn better. [The hitherto completed chapters of the draft manuscript  may be downloaded here in PDF format]({static}../sas-manuscript/SAS-partial.pdf).
+SwanLotus is the home of [_Secrets of Academic Success_]({static}../sas.html) on the Web. It is a book written to help students study effectively and learn better. [The completed chapters of the draft manuscript  may be downloaded here in PDF format]({static}../sas-manuscript/SAS-partial.pdf).
 
 ## Blogs
 
