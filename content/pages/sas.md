@@ -42,7 +42,7 @@ The book is divided into ten parts, each of which addresses one aspect of learni
 
 I am making this book available as a [free-of-charge, freely available soft copy download in the PDF electronic format]({static}../sas-manuscript/SAS-partial.pdf), so that it may benefit the largest number of sincere students.
 
-This book is released under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International licence](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode) easily recognized by the following logo:
+This book is released under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International licence](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode), easily recognized by the following logo:
 
 ![CC-BY-NC-ND-logo]({static}images/by-nc-nd.svg){ width=50% }
 
