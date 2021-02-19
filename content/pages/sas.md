@@ -14,6 +14,8 @@ I very much wanted to share the fruits of my learning experience in a _single vo
 
 Accordingly, the book is _very_ long. It is not meant to be read in one go from cover to cover, but rather consulted as and when need arises, or absorbed one topic at a time, so that gradual mastery is accomplished.
 
+
+
 ## Ten parts
 
 The book is divided into ten parts, each of which addresses one aspect of learning. These are briefly described below:
@@ -49,6 +51,8 @@ This book is released under the [Creative Commons Attribution-NonCommercial-NoDe
 For more details, [see here](https://certificates.creativecommons.org/cccertedu/chapter/3-3-license-types/)
 
 ## Download
+
+The book is a work-in-progress that is constantly updated. Not all parts and chapters are ready yet. The material that _is ready_ is included in the download.
 
 [_Secrets of Academic Success_ may be downloaded from here]({static}../sas-manuscript/SAS-partial.pdf).
 
