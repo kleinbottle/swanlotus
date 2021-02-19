@@ -11,11 +11,11 @@ save_as: "index.html"
 
 ## Secrets of Academic Success
 
-SwanLotus is the home of [_Secrets of Academic Success_](sas.html) on the Web. It is a book written to help students study effectively and learn better. [The completed chapters of the draft manuscript  may be downloaded here in PDF format]({static}../sas-manuscript/SAS-partial.pdf).
+SwanLotus is the home on the Web for my book [_Secrets of Academic Success_](sas.html). It has been written specifically to help students study effectively and learn better. The completed chapters of the draft manuscript in [PDF format](https://acrobat.adobe.com/in/en/acrobat/about-adobe-pdf.html) may be [downloaded here]({static}../sas-manuscript/SAS-partial.pdf).
 
 ## Blogs
 
-I also [blog](blogs.html) here on eclectic subjects. Some blogs are short and light. Others are long and heavy, and are better described as _slogs_. :wink:
+I also [blog](blogs.html) here on [eclectic](https://www.etymonline.com/search?q=eclectic) subjects. Some blogs are short and light. Others are long and heavy, and are better described as _slogs_. :wink:
 
 ## Feedback
 

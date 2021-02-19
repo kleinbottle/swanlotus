@@ -10,7 +10,7 @@ _Secrets of Academic Success_ is the title of a book that I have been writing si
 
 ## Background
 
-I very much wanted to share the fruits of my learning experience in a _single volume_--- as a go-to resource for matters academic---so that students everywhere might be helped. _Secrets of Academic Success_ is that book.
+I very much wanted to share the fruits of my learning experience in a _single volume_---as a go-to resource for matters academic---so that students everywhere might be helped. _Secrets of Academic Success_ is that book.
 
 Accordingly, the book is _very_ long. It is not meant to be read in one go from cover to cover, but rather consulted as and when need arises, or absorbed one topic at a time, so that gradual mastery is accomplished.
 
@@ -34,7 +34,7 @@ The book is divided into ten parts, each of which addresses one aspect of learni
 
 #.  **Examinations**: Even if not ideal, the ultimate test of your learning is your performance in examinations. Helpful hints on how to prepare for them, how to answer examination questions, etc., are the subject of this part. Example questions are discussed and answered, with commentaries highlighting techniques to follow and pitfalls to avoid.
 
-#.  **University Studies**: Learning at university requires a higher level of self-discipline than at school. Reading papers, doing research, what to look out for if you decide on a PhD, and how to write papers and theses are all covered in this part.
+#.  **University Studies**: Learning at university requires a higher level of self-discipline than at school. Reading papers, doing research, what to look out for if you decide on a PhD, and how to write academic papers and theses are all covered in this part.
 
 #.  **Working Life**: Some day, you must leave the halls of learning to earn a living. This part helps you make this transition, while exhorting you to make lifelong learning a personal habit.
 
