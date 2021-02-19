@@ -12,7 +12,7 @@ _Secrets of Academic Success_ is the title of a book that I have been writing si
 
 I very much wanted to share the fruits of my learning experience in a _single volume_---as a go-to resource for matters academic---so that students everywhere might be helped. _Secrets of Academic Success_ is that book.
 
-Accordingly, the book is _very_ long. It is not meant to be read in one go from cover to cover, but rather consulted as and when need arises, or absorbed one topic at a time, so that gradual mastery is accomplished.
+Accordingly, the book is _very_ long. It is not meant to be read in one go from cover to cover, but rather consulted as and when the need arises, or absorbed one topic at a time, so that gradual mastery is accomplished.
 
 ## Ten parts
 
@@ -24,13 +24,13 @@ The book is divided into ten parts, each of which addresses one aspect of learni
 
 #.  **Resources**: People, libraries, technology, the Web, and such are the subject of this part.
 
-#.  **Study Techniques**: The core material begins here with the presentation of different study techniques, beginning with time management.
+#.  **Study Techniques**: The core material begins here with the presentation of different study techniques, starting with time management.
 
 #.  **Reading**: The first of the three Rs's---Reading---is dealt with in detail, including how to read efficiently and with comprehension.
 
-#.  **Writing**: This is perhaps the most important part of the book. Techniques for writing well, including building an extensive vocabulary, and expressing yourself efficiently and fluently are addressed here.
+#.  **Writing**: This is perhaps the most important part of the book. Techniques for writing well, including building an extensive vocabulary, and expressing yourself efficiently and fluently, are addressed here.
 
-#.  **Mathematics**: Possibly the most dreaded of the three R's is Arithmetic or its mature cousin, Mathematics. Pertinent issues---from overcoming a dread of the subject, through enjoying popular mathematics texts, to avoiding common mistakes when solving problems---are covered here.
+#.  **Mathematics**: Possibly the most dreaded of the three R's is Arithmetic or its mature cousin, Mathematics. Pertinent issues---from overcoming a dread of the subject, through enjoying popular mathematics books, to avoiding common mistakes when solving problems---are covered here.
 
 #.  **Examinations**: Even if not ideal, the ultimate test of your learning is your performance in examinations. Helpful hints on how to prepare for them, how to answer examination questions, etc., are the subject of this part. Example questions are discussed and answered, with commentaries highlighting techniques to follow and pitfalls to avoid.
 
@@ -40,7 +40,7 @@ The book is divided into ten parts, each of which addresses one aspect of learni
 
 ## Free download with conditions
 
-I am making this book available as a [free-of-charge, freely available soft copy download in the PDF electronic format]({static}../sas-manuscript/SAS-partial.pdf), so that it may benefit the largest number of sincere students.
+I am making this book available as a free-of-charge, freely available [soft copy download]({static}../sas-manuscript/SAS-partial.pdf), in the PDF electronic format, so that it may benefit the largest number of sincere students worldwide.
 
 This book is released under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International licence](https://creativecommons.org/licenses/by-nc-nd/4.0/), easily recognized by the following logo:
 
@@ -52,6 +52,6 @@ For licence details, [see here](https://creativecommons.org/licenses/by-nc-nd/4.
 
 The book is a work-in-progress. Not all parts and chapters are ready yet. The material that _is ready_ is included in the download. But even that material is updated as and when necessary. So, always make sure that you have the most recent version of the draft manuscript available from the link below.
 
-[_Secrets of Academic Success_ may be downloaded from here]({static}../sas-manuscript/SAS-partial.pdf).
+_Secrets of Academic Success_ may be [downloaded from here]({static}../sas-manuscript/SAS-partial.pdf).
 
 Read! Benefit! Succeed!
