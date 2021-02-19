@@ -14,15 +14,13 @@ I very much wanted to share the fruits of my learning experience in a _single vo
 
 Accordingly, the book is _very_ long. It is not meant to be read in one go from cover to cover, but rather consulted as and when need arises, or absorbed one topic at a time, so that gradual mastery is accomplished.
 
-
-
 ## Ten parts
 
 The book is divided into ten parts, each of which addresses one aspect of learning. These are briefly described below:
 
 #.  **You**: Your motivation, habits, etc., are a vital ingredient for your success. So, we begin at the beginning.
 
-#.  **Mind**: Listening, seeing, thinking, moods, memory, and related subjects are considered here.
+#.  **Mind**: Listening, seeing, thinking, moods, memory, concentration, relaxation, and related subjects are considered here.
 
 #.  **Resources**: People, libraries, technology, the Web, and such are the subject of this part.
 
@@ -32,11 +30,11 @@ The book is divided into ten parts, each of which addresses one aspect of learni
 
 #.  **Writing**: This is perhaps the most important part of the book. Techniques for writing well, including building an extensive vocabulary, and expressing yourself efficiently and fluently are addressed here.
 
-#.  **Mathematics**: Possibly the most dreaded of the three R's is Arithmetic or its mature cousin, Mathematics. Everything---from overcoming a dread of the subject, through popular mathematics texts, avoiding common mistakes, to problem solving, and graduation to university mathematics---is covered here.
+#.  **Mathematics**: Possibly the most dreaded of the three R's is Arithmetic or its mature cousin, Mathematics. Pertinent issues---from overcoming a dread of the subject, through enjoying popular mathematics texts, to avoiding common mistakes when solving problems---are covered here.
 
-#.  **Examinations**: Even if not entirely fair, the ultimate test of your learning is your performance in examinations. Helpful hints on how to prepare for them, how to answer examination questions, etc., are the subject of this part.
+#.  **Examinations**: Even if not ideal, the ultimate test of your learning is your performance in examinations. Helpful hints on how to prepare for them, how to answer examination questions, etc., are the subject of this part. Example questions are discussed and answered, with commentaries highlighting techniques to follow and pitfalls to avoid.
 
-#.  **University Studies**: University learning requires a higher level of self-discipline, and helpful hints are given to help maintain this. What to look out for if you decide on a PhD, how to write papers and theses, etc., are also discussed in this part.
+#.  **University Studies**: Learning at university requires a higher level of self-discipline than at school. Reading papers, doing research, what to look out for if you decide on a PhD, and how to write papers and theses are all covered in this part.
 
 #.  **Working Life**: Some day, you must leave the halls of learning to earn a living. This part helps you make this transition, while exhorting you to make lifelong learning a personal habit.
 
@@ -44,15 +42,15 @@ The book is divided into ten parts, each of which addresses one aspect of learni
 
 I am making this book available as a [free-of-charge, freely available soft copy download in the PDF electronic format]({static}../sas-manuscript/SAS-partial.pdf), so that it may benefit the largest number of sincere students.
 
-This book is released under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International licence](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode), easily recognized by the following logo:
+This book is released under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International licence](https://creativecommons.org/licenses/by-nc-nd/4.0/), easily recognized by the following logo:
 
 ![CC-BY-NC-ND-logo]({static}images/by-nc-nd.svg){ width=50% }
 
-For more details, [see here](https://certificates.creativecommons.org/cccertedu/chapter/3-3-license-types/)
+For licence details, [see here](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode)
 
 ## Download
 
-The book is a work-in-progress that is constantly updated. Not all parts and chapters are ready yet. The material that _is ready_ is included in the download.
+The book is a work-in-progress. Not all parts and chapters are ready yet. The material that _is ready_ is included in the download. But even that material is updated as and when necessary. So, always make sure that you have the most recent version of the draft manuscript available from the link below.
 
 [_Secrets of Academic Success_ may be downloaded from here]({static}../sas-manuscript/SAS-partial.pdf).
 
