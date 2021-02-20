@@ -20,9 +20,9 @@ The book is divided into ten parts, each of which addresses one aspect of learni
 
 #.  **You**: Your motivation, habits, etc., are vital ingredients for your success. So, we begin at the beginning with _you_.
 
-#.  **Mind**: Listening, seeing, thinking, memory, concentration, relaxation, moods, and related subjects are considered here.
+#.  **Mind**: You use your mind to learn. Listening, seeing, thinking, memory, concentration, relaxation, moods, and related subjects are considered here.
 
-#.  **Resources**: Learning never happens in isolation. How you can benefit from people, libraries, technology, the Web, and such are covered in this part.
+#.  **Resources**: Learning never happens in isolation. How you can learn and benefit from people, libraries, technology, the Web, and such are covered in this part.
 
 #.  **Study Techniques**: Time management, how to benefit from classes and lectures, group study, individual learning, methods of revision, and many other topics are discussed here.
 
