@@ -18,9 +18,9 @@ Accordingly, the book is _very_ long. It is not meant to be read in one go from 
 
 The book is divided into ten parts, each of which addresses one aspect of learning. These are briefly described below:
 
-#.  **You**: Your motivation, habits, etc., are a vital ingredient for your success. So, we begin at the beginning.
+#.  **You**: Your motivation, habits, etc., are vital ingredients for your success. So, we begin at the beginning with _you_.
 
-#.  **Mind**: Listening, seeing, thinking, moods, memory, concentration, relaxation, and related subjects are considered here.
+#.  **Mind**: Listening, seeing, thinking, memory, concentration, relaxation, moods, and related subjects are considered here.
 
 #.  **Resources**: Learning never happens in isolation. How you can benefit from people, libraries, technology, the Web, and such are covered in this part.
 
