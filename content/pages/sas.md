@@ -22,9 +22,9 @@ The book is divided into ten parts, each of which addresses one aspect of learni
 
 #.  **Mind**: Listening, seeing, thinking, moods, memory, concentration, relaxation, and related subjects are considered here.
 
-#.  **Resources**: People, libraries, technology, the Web, and such are the subject of this part.
+#.  **Resources**: Learning never happens in isolation. How you can benefit from people, libraries, technology, the Web, and such are covered in this part.
 
-#.  **Study Techniques**: The core material begins here with the presentation of different study techniques, starting with time management.
+#.  **Study Techniques**: Time management, how to benefit from classes and lectures, group study, individual learning, methods of revision, and many other topics are discussed here.
 
 #.  **Reading**: The first of the three Rs's---Reading---is dealt with in detail, including how to read efficiently and with comprehension.
 
