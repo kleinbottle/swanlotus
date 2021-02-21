@@ -111,7 +111,7 @@ sensory awareness?
 hallucinations, or were they some other as yet unlabelled phenomenon?
 #.  Did his "nervous breakdown" influence his inventive abilities?
 #.  Were his eccentric habits and behaviour in later life the sequelae of his
-"nervous breakdown" ?
+"nervous breakdown"?
 
 It is believed that these and other questions posed here are worthy of further
 investigation by specialist researchers; the answers to them are likely to shed
