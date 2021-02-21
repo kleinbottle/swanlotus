@@ -7,8 +7,6 @@ reader: markdown+emoji
 
 writer: html5
 
-lang: en-GB
-
 table-of-contents: true
 
 html-math-method:
