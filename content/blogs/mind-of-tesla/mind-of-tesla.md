@@ -9,11 +9,11 @@ summary: 'Nikola Tesla was a complex genius whose prolific mind produced many el
 status: 
 ---
 
->This "blog" was originally an academic paper that was submitted for publication in the prestigious journal [_Proceedings of the IEEE_](https://proceedingsoftheieee.ieee.org/) in 2006, the year of Tesla's 150th birth anniversary. Although well-received by some, it was, alas, rejected. That same manuscript has been reformatted and reproduced here, to be shared with the wider world. Hyperlinks have been added for the convenience of the reader. I apologize if this blog reads like a _slog_ :wink:
+>This "blog" was originally an academic paper that was submitted for publication in the prestigious journal [_Proceedings of the IEEE_](https://proceedingsoftheieee.ieee.org/) in 2006, the year of Tesla's 150th birth anniversary. Although well-received by some, it was, alas, rejected. That same manuscript has been updated and reformatted here, to be shared with the wider world. Hyperlinks have been added for the convenience of the reader. I apologize if this blog reads like a _slog_ :wink:
 
 ## Introduction
 
-Nikola Tesla was a prodigious genius who benefited mankind immensely. He embodied a strange combination of fiery imagination, more suited to the poet or artist, tempered by the discipline of the engineer, grounded in mathematics and experimental science. The fact that he worked mostly alone and produced baffling inventions has led to his being labelled as both sorcerer and genius. He was superhuman in his will power and in his appetite for work. Yet he was also a frail human being who suffered a nervous breakdown, who had a fixation on the number three, and who, in later life, made bizarre claims which alienated him from mainstream science. Although he was well recognized by his scientific peers and the media in the late nineteenth and early twentieth century, Tesla today remains a largely unknown and unsung hero, who has not been accorded his rightful place in history. It is also ironic that, although others profited immensely from his inventions, Tesla himself did not enjoy a prosperity commensurate with his abilities or contributions, and died alone and in penury.
+Nikola Tesla was a prodigious genius who benefited mankind immensely. He embodied a strange combination of fiery imagination, more suited to the poet or artist, tempered by the discipline of the engineer, grounded in mathematics and experimental science. The fact that he worked mostly alone and produced baffling inventions has led to his being labelled as both sorcerer and genius. He was superhuman in his will power and in his appetite for work. Yet he was also a frail human being who suffered a nervous breakdown, who had a fixation on the number three, and who, in later life, made bizarre claims which alienated him from mainstream science. Although he was well recognized by his scientific peers and the media in the late nineteenth and early twentieth century, Tesla today remains a largely unknown and unsung hero, who has not been accorded his rightful place in history.^[This was written _before_ the [electric vehicle brand Tesla](https://en.wikipedia.org/wiki/Tesla,_Inc.) gained global prominence.] It is also ironic that, although others profited immensely from his inventions, Tesla himself did not enjoy a prosperity commensurate with his abilities or contributions, and died alone and in penury.
 
 It is impossible to review the visionary contributions of Tesla within the
 compass of one paper, let alone do justice to analyzing his unique mind. Only
@@ -166,7 +166,7 @@ might call instinct, for lack of a better name. But instinct is something which
 transcends knowledge. We undoubtedly have in our brains some finer fibres which
 enable us to perceive truths which we could not attain through logical
 deduction, and which it would be futile to attempt to achieve through any wilful
-effort of thinking. [@oneill80 p 49].
+effort of thinking. [@oneill80 (p 49)].
 
 After six years of intensive thought, Tesla did finally get the revelation that
 revolutionized our world: the AC induction motor and, concomitantly, the AC
@@ -194,6 +194,7 @@ was just setting and reminded me of the glorious passage:
 | Upon its track to follow, follow soaring!
 | ...
 | A glorious dream! though now the glories fade.
+| Alas! the wings that lift the mind no aid
 | Of wings to lift the body can bequeath me.
 | 
 | 
@@ -202,7 +203,7 @@ in an instant the truth was revealed. I drew with a stick on the sand the
 diagrams shown six years later in my address before the American Institute of
 Electrical Engineers, and my companion understood them perfectly. The images I
 saw were wonderfully sharp and clear and had the solidity of metal and stone, so
-much so that I told him: ``See my motor here; watch me reverse it.'' I cannot
+much so that I told him: "See my motor here; watch me reverse it." I cannot
 begin to describe my emotions. Pygmalion seeing his statue come to life could
 not have been more deeply moved. A thousand secrets of nature which I might have
 stumbled upon accidentally I would have given for that one which I had wrested
@@ -218,20 +219,13 @@ development are phases normal and natural. It was different with my invention.
 In the very moment I became conscious of it, I saw it fully developed and
 perfected. [@tesla-personal]
 
-<!--TO DO FROM HERE NEXT-->
-
-\begin{figure}
-\centering
-\resizebox{70mm}{!}{\includegraphics{acmot_main02}}
-\caption[The {AC} induction motor]{\small This is one of the two two-phase
+![The AC induction motor. This is one of the two two-phase
 induction motors demonstrated by Tesla in his historic lecture of 16 May 1888,
 before the American Institute of Electrical Engineers at Columbia University.
 The motor developed $\frac{1}{2}$ horsepower and showed that brushes and
 commutators could be eliminated. This image and the information in its caption
 are taken from the PBS (Public Broadcasting System) web site on
-Tesla~\cite{tesla-pbs}.}
-\label{fig:ac-motor}
-\end{figure}
+Tesla [@tesla-pbs].]({attach}images/acmot_main02.jpg){ width=50% }
 
 In his own mind, the idea of the rotating magnetic fields, one chasing the
 other, that formed the basis of the induction motor and the AC generator, was
@@ -241,67 +235,44 @@ that did away with those features. After six years of protracted thought and
 indefatigable effort, he had at last succeeded, but he paid a price by suffering
 from a "nervous breakdown" soon thereafter.
 
-\subsection{Archimedes, the eureka moment, and incubation}
+### Archimedes, the eureka moment, and incubation
 
-There are two well-known instances of scientific discoveries that occurred as
-flashes of insight after protracted mental effort at problem solving, not unlike
-Tesla's vision of the rotating magnetic fields. The first is that of Archimedes
-as he was in his bath. When he saw the water overflow as he sank into the bath,
-he spontaneously saw the solution to his problem. Oblivious to his nakedness,
-he ran unclad along the streets of Syracuse, proclaiming ``Eureka!'' (I have
-found it!). Such nodal points of scientific discovery may be called
-\emph{eureka moments}.
+There are two well-known instances of scientific discoveries that occurred as flashes of insight after protracted mental effort at problem solving, not unlike Tesla's vision of the rotating magnetic fields. The first is that of [Archimedes of Syracuse](https://en.wikipedia.org/wiki/Archimedes) as he was in his bath. When he saw the water overflow as he sank into the bath, he spontaneously saw [the solution to his problem](https://en.wikipedia.org/wiki/Archimedes#Archimedes'_principle). Oblivious to his nakedness, he ran unclad along the streets of Syracuse, proclaiming "Eureka!" (I have found it!). Such nodal points of scientific discovery may be called _eureka moments_.
 
 Tesla's eureka moment regarding the induction motor, and conversely AC power
 generation, occurred during an evening walk with his friend, as we have already
 seen. Such insights are often the result of sustained thinking on a topic, with
 a subsequent relaxation, as in Archimedes's bath or Tesla's walk, when
-unheralded, ``the penny drops'' and the solution is revealed, apparently without
+unheralded, "the penny drops" and the solution is revealed, apparently without
 any immediate conscious effort on the part of the scientist. The mathematician
-Jules Henri Poincar\'{e} believed that after prolonged thinking on a problem,
-there is a period of \emph{incubation} or unconscious thought, after which the
-solution would pop up spontaneously, and seemingly without conscious
-effort~\cite[p~15]{weisberg86}.
+[Jules Henri Poincaré](https://en.wikipedia.org/wiki/Henri_Poincar%C3%A9) believed that after prolonged thinking on a problem, there is a period of _incubation_ or unconscious thought, after which the solution would pop up spontaneously, and seemingly without conscious effort [@weisberg86 (p 15)].
 
-\subsection{\Kekule\ and the benzene ring}
+### Kekulé and the benzene ring
 
 Another historically documented eureka moment that occurred after incubation was
 the elucidation of the structural formula of benzene, by the organic chemist,
-Frederich August \Kekule. It occurred in a now-famous series of dreams.
+[Frederich August Kekulé](https://en.wikipedia.org/wiki/August_Kekul%C3%A9). It occurred in a now-famous series of dreams.
 
-The difficulty was that the hitherto known compounds of carbon were composed of
-chains of carbon atoms ``connected'' or bonded to each other and to hydrogen
-atoms. These bonds all obeyed the rule that each carbon atom must have four
-bonds. The molecule of benzene, C\textsubscript{6}H\textsubscript{6}, was
-composed of six carbon atoms and six hydrogen atoms. Try as he might, \Kekule\
-could not reconcile this formula with any structural arrangement of the atoms
-that satisfied the requirement for four bonds per carbon atom. He mulled over
-the problem for some time before he got the solution which changed organic
-chemistry forever. There are actually two episodes. The first was in London,
-when he saw the atoms dancing while he was travelling in a bus. Later, in 1865
-while writing his textbook at Ghent in Belgium, \Kekule\ had the following
-experience:
+In Kekulé's time, all the known compounds of carbon and hydrogen were composed of chains of carbon atoms "connected" or bonded to each other and to hydrogen atoms, obeying the rule that each carbon atom must have four bonds. The molecule of benzene, C~6~H~6~, was however, composed of six carbon atoms and six hydrogen atoms. Try as he might, Kekulé could not reconcile this formula with any structural arrangement of the atoms that satisfied the requirement for four bonds per carbon atom. He mulled over the problem for some time before he got the solution which changed organic chemistry forever.
 
-\begin{myquote}
-I turned my chair to the fire and dozed. Again the atoms were gambolling before
+There are actually two episodes. The first was in London, when he saw the atoms dancing while he was travelling in a bus. Later, in 1865 while writing his textbook at Ghent in Belgium, Kekulé had the following experience:
+
+>I turned my chair to the fire and dozed. Again the atoms were gambolling before
 my eyes. This time the smaller groups kept modestly in the background. My
 mental eye, rendered more acute by repeated visions of the kind, could now
 distinguish larger structures of manifold conformation; long rows, sometimes
 more closely fitted together; all twining and twisting in a snake-like motion. 
 But look! What was that?  One of the snakes had seized hold of its own tail, and
 the form whirled mockingly before my eyes. As if by a flash of lightning I
-woke.~\cite[p~43 ]{findlay37}
-\end{myquote}
+woke. [@findlay37 (p 43)].
 
-An impressive video dramatization of \Kekule's dream is available on the
-Web~\cite{kekules-dream}. It is interesting that, instead of ``dozed'', the
-original German word used by \Kekule\ in his description of the second dream was
-``Halbschlaf'' which literally means ``half-asleep''~\cite[p~32]{weisberg86}. 
-So, it is clear that the revelation came to him during a period in the twilight
-state between wakefulness and sleep\footnote{Another famous discovery
+A low resolution video dramatization of Kekulé's dream is [available on YouTube](https://www.youtube.com/watch?v=2NRwd-JJFm4) [@kekules-dream]. It is interesting that, instead of "dozed", the
+original German word used by Kekulé in his description of the second dream was
+"Halbschlaf" which literally means "half-asleep" [@weisberg86 (p 32)]. 
+So, it is clear that the revelation came to him during a period in the twilight, hypnagogic state between wakefulness and sleep.^[Another famous discovery
 inspired by dreams was that of the Nobel Prize-winning physiologist Otto
 Loewi, who showed conclusively that nerve impulses were
-chemically transmitted~\cite{justin06}.}.
+chemically transmitted [@justin06].]
 
 %\subsection{Loewi's dream}
 
