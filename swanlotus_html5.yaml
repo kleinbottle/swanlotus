@@ -26,3 +26,4 @@ csl: "./ieee-with-url.csl"
 metadata:
   link-citations: false
   reference-section-title: References
+  lang: en-GB
