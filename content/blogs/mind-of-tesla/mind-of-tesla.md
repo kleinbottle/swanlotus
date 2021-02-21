@@ -134,7 +134,7 @@ visualization, and compare it with similar instances from other well known
 scientists. This section is concluded with a discussion of the process of
 scientific discovery and creativity.
 
-## The AC induction motor
+### The AC induction motor
 
 In 1875, at the age of 19, Tesla enrolled at the Polytechnic Institute at Graz
 in Austria to study electrical engineering. In his second year there, his
@@ -184,7 +184,7 @@ was just setting and reminded me of the glorious passage:
 | O, daß kein Flügel mich vom Boden hebt,
 | Ihr nach und immer nach zu streben!
 | ...
-| Ein sch öner Traum, indessen sie entweicht,
+| Ein schöner Traum, indessen sie entweicht,
 | Ach, zu des Geistes Flügeln wird so leicht
 | Kein körperlicher Flügel sich gesellen!
 | 
