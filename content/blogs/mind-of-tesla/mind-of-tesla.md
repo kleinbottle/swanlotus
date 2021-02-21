@@ -219,15 +219,13 @@ development are phases normal and natural. It was different with my invention.
 In the very moment I became conscious of it, I saw it fully developed and
 perfected. [@tesla-personal]
 
-![]({attach}images/acmot_main02.jpg){ width=50% }
-
-[The AC induction motor. This is one of the two two-phase
+![The AC induction motor. This is one of the two two-phase
 induction motors demonstrated by Tesla in his historic lecture of 16 May 1888,
 before the American Institute of Electrical Engineers at Columbia University.
 The motor developed one-half horsepower and showed that brushes and
 commutators could be eliminated. This image and the information in its caption
 are taken from the PBS (Public Broadcasting System) web site on
-Tesla [@tesla-pbs].]{justification="left aligned"}
+Tesla [@tesla-pbs].]({attach}images/acmot_main02.jpg){ width=50% }
 
 In his own mind, the idea of the rotating magnetic fields, one chasing the
 other, that formed the basis of the induction motor and the AC generator, was
