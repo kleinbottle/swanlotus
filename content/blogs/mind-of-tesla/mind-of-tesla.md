@@ -270,7 +270,9 @@ A low resolution video dramatization of Kekulé's dream is [available on YouTube
 
 ### Otto Loewi's dream
 
-Another famous discovery inspired by dreams was that of the Nobel Prize-winning physiologist [Otto Loewi](https://en.wikipedia.org/wiki/Otto_Loewi), who showed conclusively that nerve impulses were chemically transmitted [@justin06].]
+Another famous discovery inspired by dreams was that of the Nobel Prize-winning physiologist [Otto Loewi](https://en.wikipedia.org/wiki/Otto_Loewi), who showed conclusively that nerve impulses were chemically transmitted [@justin06]. The quaint story behind this discovery is given by Otto Loewi himself so:
+
+>The night before Easter Sunday of [1920] I awoke, turned on the light and jotted down a few notes on a tiny slip of thin paper. Then I fell asleep again. It occurred to me at 6.00 o’clock in the morning that during the night I had written down something important, but I was unable to decipher the scrawl. The next night, at 3.00 o’clock, the idea returned. It was the design of an experiment to determine whether or not the hypothesis of chemical transmission that I had uttered 17 years ago was correct. I got up immediately, went to the laboratory, and performed a simple experiment on a frog heart according to the nocturnal design. [@loewi2014]
 
 ### Vivid visualization and mental experiments
 
@@ -281,8 +283,7 @@ as actual objects seen with the eyes. At the age of seventeen, he started
 seriously applying this unusual faculty toward his inventions. As he recounted
 it:
 
-\begin{myquote}
-\ldots Then I observed to my delight that I could visualize with the greatest
+>... Then I observed to my delight that I could visualize with the greatest
 facility. I needed no models, drawings or experiments. I could picture them all
 as real in my mind. Thus I have been led unconsciously to evolve what I consider
 a new method of materializing inventive concepts and ideas, which is radically
@@ -292,7 +293,7 @@ practice a crude idea he finds himself unavoidably engrossed with the details
 and defects of the apparatus. As he goes on improving and reconstructing, his
 force of concentration diminishes and he loses sight of the great underlying
 principle. Results may be obtained but always at the sacrifice of quality.
-
+>
 My method is different. I do not rush into actual work. When I get an idea I
 start at once building it up in my imagination. I change the construction, make
 improvements and operate the device in my mind. It is absolutely immaterial to
@@ -308,14 +309,13 @@ electrical and mechanical, is positive in results. There is scarcely a subject
 that cannot be mathematically treated and the effects calculated or the results
 determined beforehand from the available theoretical and practical data. The
 carrying out into practice of a crude idea as is being generally done is, I
-hold, nothing but a waste of energy, money and time.~\cite{tesla19}
-\end{myquote}
+hold, nothing but a waste of energy, money and time. [@tesla19]
 
 Thus, Tesla produced his inventions without drawings or blueprints. He did not
 have computers like we do, to conduct inexpensive and complex simulations before
 building prototypes. Indeed he generally did not build physical prototypes for
 his inventions. Instead, he conducted all the preliminary work for the machines
-he built \emph{entirely in his mind.}  It is only after he had satisfactorily
+he built _entirely in his mind_. It is only after he had satisfactorily
 concluded those mental experiments that he proceeded with physical fabrication
 of the devices.
 
@@ -323,7 +323,7 @@ It is a curious fact that once Tesla started an experiment, say switching on a
 motor and keeping it running for several days, he could devote his mind to other
 tasks while the running motor experiment carried along on its own, without
 conscious intervention from him, until he decided to switch the motor off and
-examine the wear and tear. This is a form of \emph{multitasking} which those
+examine the wear and tear. This is a form of _multitasking_ which those
 who are familiar with computing will understand, as the ability of an operating
 system to process several computing tasks by attending to each of them
 sequentially in specific slices of time, giving rise to the illusion of
@@ -332,65 +332,37 @@ task is performed at any one time, whereas the experiment in Tesla's mind ran
 automatically without conscious intervention from him, while he attended to
 other tasks.
 
-Moreover, Tesla asserts that his mental experiments never failed him once in a
-long and fecund inventing career. Even more surprisingly, ``his memory ever
-afterward retained all of the details, even to the finest
-dimensions,''~\cite{oneill80} of each of his mental experiments. Such a mind is
-a researcher's El Dorado, and it has the capability to revolutionize the way
-scientific research is conducted, and is itself worthy of further research.
+Moreover, Tesla asserts that his mental experiments never failed him even once in a long and fecund inventing career. Even more surprisingly, "his memory ever afterward retained all of the details, even to the finest dimensions," [@oneill80] of each of his mental experiments. Such a mind is a researcher's [El Dorado](https://www.thefreedictionary.com/El+dorado), and it has the capability to revolutionize the way scientific research is conducted, and is itself worthy of further research.
 
-\subsection{Conjectures: vivid visualization and mental experiments}
+### Conjectures: vivid visualization and mental experiments
 
-The fact that we have a brain that is split into two hemispheres with
-accompanying hemispherical asymmetry has been known since the nineteenth
-century~\cite{springer89}. Interestingly, though, it is researchers in
-education, working in the field of children with learning difficulties, who have
-come up with the classification that some people are predominantly visual
-thinkers and learners~\cite{silver02,west91}. The term \emph{visual thinker} or
-\emph{visual-spatial learner} is used to describe individuals who think in
-visual rather than verbal mode. They use the right side of their brain, and may
-excel in art and music, but are not generally as adept as the general population
-in left-brain verbal-logical tasks.
+The fact that we have a brain that is split into two hemispheres with accompanying hemispherical asymmetry has been known since the nineteenth century [@springer89]. Interestingly, though, it is researchers in education, working in the field of children with learning difficulties, who have come up with the classification that some people are predominantly visual thinkers and learners [@silver02; @west91]. The terms _visual thinker_ or _visual-spatial learner_ are used to describe individuals who think in visual rather than verbal mode. They predominantly use the right side of their brain, and may excel in art and music, but are not generally as adept as the general population in left-brain verbal-logical tasks.
 
-\subsection{Tesla and other visually gifted people}
+### Tesla and other visually gifted people
 
-Tesla was a visual thinker par excellence. He possessed an ability to visualize
-that is  unparallelled in the annals of science. There have been many eminent
-scientists, mathematicians, artists, and poets who have had unusual abilities to
-visualize~\cite{west91}. Among them may be quoted the scientists Michael
-Faraday and Albert Einstein, the mathematicians Henri Poincar\'{e} and Srinivasa
-Ramanujan, and the mystic poet and painter William Blake. The visual mode of
-thinking was dominant in each of these people. Einstein, for example, imagined
-a man riding on a wave of light, and developed his theory of special relativity
-based on the consequences of this visualization. Faraday was also a visual
-thinker who liberally illustrated his scientific diaries with diagrams but
-rarely, if ever, used algebraic equations~\cite[p~29]{west91,koestler64}.
-Poincare, one of the founding fathers of topology---the mathematical field that
-explores what happens to objects as they are deformed, twisted, or stretched,
-but not torn---was by his own admission a visual thinker. Ramanujan claimed
-that many of his results appeared in his dreams as ready-made
-theorems~\cite[p~66]{kanigel91}. William Blake saw visions of realms finer and
-subtler than this world, while he was, it has been conjectured, in a
-hallucinatory state of consciousness~\cite{mckim72}.
+Tesla was a visual thinker par excellence. He possessed an ability to visualize that is unparalleled in the annals of science. There have been many eminent scientists, mathematicians, artists, and poets who have had unusual abilities to visualize [@west91]. Among them may be quoted the scientists [Michael Faraday](https://en.wikipedia.org/wiki/Michael_Faraday) and [Albert Einstein](https://en.wikipedia.org/wiki/Albert_Einstein), the mathematicians [Henri Poincaré](https://en.wikipedia.org/wiki/Henri_Poincar%C3%A9) and [Srinivasa Ramanujan](https://en.wikipedia.org/wiki/Srinivasa_Ramanujan), and the mystic poet and painter [William Blake](https://en.wikipedia.org/wiki/William_Blake). The visual mode of thinking was dominant in each of these people.
+
+Einstein, for example, imagined a man riding on a wave of light, and developed his theory of special relativity based on the consequences of this visualization. Faraday was also a visual thinker who liberally illustrated his scientific diaries with diagrams but rarely, if ever, used algebraic equations [@west91 (p 29); @koestler64]. Poincaré, one of the founding fathers of [topology](https://mathworld.wolfram.com/Topology.html)---the mathematical field that explores what happens to objects as they are deformed, twisted, or stretched, but not torn---was by his own admission a visual thinker. Ramanujan claimed that many of his results appeared in his dreams as ready-made theorems [@kanigel91 (p 66)]. William Blake saw visions of realms finer and subtler than this world, while he was, it has been conjectured, in a hallucinatory state of consciousness [@mckim72].
 
 What sets Tesla apart from even this distinguished company of gifted people, is
 that his visualization was conscious and volitional and had
-\emph{verisimilitude}. This means that what he visualized was indistinguishable
-from the real thing being perceived through his eyes, except that, in his case,
-there was nothing in front of his eyes resembling what he saw. Tesla accepted
+_verisimilitude_. This means that _what he visualized was indistinguishable
+from a real thing being perceived through his eyes, except that, in his case,
+there was nothing in front of his eyes resembling what he saw_. Tesla accepted
 this gift of his in a matter of fact fashion and even suggested an explanation
 for what he saw: it was simply the reverse phenomenon of normal vision, in that
 a mental image in his brain projected a corresponding image on his
-retina~\cite{tesla19}. The current state of knowledge about human visual
-perception~\cite{hubel88,zeki93,pvi97} is such that there is, at present, no
+retina [@tesla19]. The current state of knowledge about human visual
+perception [@hubel88; @zeki93; @pvi97] is such that there is, at present, no
 definitive explanation for Tesla's experience.
 
+<!--TODO
 % Give references
 % \footnote{Perhaps, even this ``explanation'' is not
 % necessary. The experiments of Wilder Penfield have illustrated that there is
 % no
 % need for the corresponding sensory organ to be excited if the brain may be
-% directly stimulated to evoke a perception or a memory of a perception.}
+% directly stimulated to evoke a perception or a memory of a perception.}-->
 
 \subsection{Virtual laboratory}
 
