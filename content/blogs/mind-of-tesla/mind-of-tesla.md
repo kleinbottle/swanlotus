@@ -219,13 +219,15 @@ development are phases normal and natural. It was different with my invention.
 In the very moment I became conscious of it, I saw it fully developed and
 perfected. [@tesla-personal]
 
-![The AC induction motor. This is one of the two two-phase
+![]({attach}images/acmot_main02.jpg){ width=50% }
+
+[The AC induction motor. This is one of the two two-phase
 induction motors demonstrated by Tesla in his historic lecture of 16 May 1888,
 before the American Institute of Electrical Engineers at Columbia University.
-The motor developed $\frac{1}{2}$ horsepower and showed that brushes and
+The motor developed one-half horsepower and showed that brushes and
 commutators could be eliminated. This image and the information in its caption
 are taken from the PBS (Public Broadcasting System) web site on
-Tesla [@tesla-pbs].]({attach}images/acmot_main02.jpg){ width=50% }
+Tesla [@tesla-pbs].]{justification="left aligned"}
 
 In his own mind, the idea of the rotating magnetic fields, one chasing the
 other, that formed the basis of the induction motor and the AC generator, was
@@ -266,17 +268,13 @@ But look! What was that?  One of the snakes had seized hold of its own tail, and
 the form whirled mockingly before my eyes. As if by a flash of lightning I
 woke. [@findlay37 (p 43)].
 
-A low resolution video dramatization of Kekulé's dream is [available on YouTube](https://www.youtube.com/watch?v=2NRwd-JJFm4) [@kekules-dream]. It is interesting that, instead of "dozed", the
-original German word used by Kekulé in his description of the second dream was
-"Halbschlaf" which literally means "half-asleep" [@weisberg86 (p 32)]. 
-So, it is clear that the revelation came to him during a period in the twilight, hypnagogic state between wakefulness and sleep.^[Another famous discovery
-inspired by dreams was that of the Nobel Prize-winning physiologist Otto
-Loewi, who showed conclusively that nerve impulses were
-chemically transmitted [@justin06].]
+A low resolution video dramatization of Kekulé's dream is [available on YouTube](https://www.youtube.com/watch?v=2NRwd-JJFm4) [@kekules-dream]. It is interesting that, instead of "dozed", the original German word used by Kekulé in his description of the second dream was "Halbschlaf" which literally means "half-asleep" [@weisberg86 (p 32)]. So, it is clear that the revelation came to him during a period in the hypnagogic, twilight state between wakefulness and sleep.
 
-%\subsection{Loewi's dream}
+### Otto Loewi's dream
 
-\subsection{Vivid visualization and mental experiments}
+Another famous discovery inspired by dreams was that of the Nobel Prize-winning physiologist [Otto Loewi](https://en.wikipedia.org/wiki/Otto_Loewi), who showed conclusively that nerve impulses were chemically transmitted [@justin06].]
+
+### Vivid visualization and mental experiments
 
 Tesla possessed unique powers of visualization. He could volitionally form in
 his mind pictures of objects that did not exist in the outside world, and that
