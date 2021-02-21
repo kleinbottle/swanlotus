@@ -38,6 +38,7 @@ MENUITEMS = (
     ("Home", "index.html"),
     ("Blogs", "blogs.html"),
     ("Secrets of Academic Success", "sas.html"),
+    ("About", "about.html"),
 )
 
 DIRECT_TEMPLATES = ['index', 'categories', 'tags', 'archives']

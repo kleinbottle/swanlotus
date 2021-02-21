@@ -3,7 +3,6 @@ title: "Home"
 content_title: "Welcome to SwanLotus"
 author: "R (Chandra) Chandrasekhar"
 date: "2020-02-17"
-URL:
 save_as: "index.html"
 ---
 
