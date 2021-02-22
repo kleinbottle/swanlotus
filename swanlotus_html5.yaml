@@ -13,15 +13,6 @@ html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 
-variables:
-  xnos-capitalise: true
-  eqnos-cleveref: true
-  eqnos-plus-name: equation
-  eqnos-star-name: Equation
-  fignos-cleveref: true
-  fignos-plus-name: Figure
-  fignos-star-name: Figure
-
 filters:
   - pandoc-eqnos
   - pandoc-fignos
@@ -33,3 +24,9 @@ metadata:
   link-citations: false
   reference-section-title: References
   lang: en-GB
+  xnos-capitalise: true
+  xnos-cleveref: true
+  eqnos-star-name: Equation
+  eqnos-plus-name: equation
+  fignos-star-name: Figure
+  fignos-plus-name: Figure

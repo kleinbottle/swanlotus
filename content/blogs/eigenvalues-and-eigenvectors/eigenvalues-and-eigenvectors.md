@@ -49,13 +49,13 @@ $${#eq:identity}
 
 [invariant]: http://mathworld.wolfram.com/Invariant.html
 
-The $2 \times 2$ matrix on the extreme left of equation (@eq:identity) is the _identity matrix_ of dimension $2$, analogous to the multiplicative identity. We could write this equation more succinctly as:
+The $2 \times 2$ matrix on the extreme left of +@eq:identity is the _identity matrix_ of dimension $2$, analogous to the multiplicative identity. We could write this equation more succinctly as:
 $$
 I\boldsymbol{v} = 1\boldsymbol{v}
 $$ {#eq:succinct}
 $I$, on the left, is the _identity matrix_, the number $1$ on the right is called an _eigenvalue_ and the vector $\boldsymbol{v}$ is called an _eigenvector_. Note that there are no strictures on $\boldsymbol{v}$. So, in this particular case, _all_ vectors $\boldsymbol{v}$ are eigenvectors but there is only _one_ eigenvalue, namely $1$. This example, however, is both unusual and contrived, because the identity matrix is a _special_ type of _square matrix_ with ones on its principal diagonal and zeros elsewhere.
 
-Equation (@eq:succinct) is a particular case of the general equation for eigenvalues and eigenvectors, which is written:
+*@eq:succinct is a particular case of the general equation for eigenvalues and eigenvectors, which is written:
 $$
 M\boldsymbol{v} = \lambda \boldsymbol{v}
 $$ {#eq:eigen}
@@ -146,7 +146,7 @@ The applications of eigenvalues and eigenvectors in linear algebra run far and d
 
 ### A property of eigenvectors
 
-I will here belabour a point that might seem blindingly obvious to some but frustratingly obscure to others. Let $\boldsymbol{v}$ be an eigenvector associated with a distinct eigenvalue $\lambda$ as in equation (@eq:eigen), and let $k$ be a non-zero scalar. Then, using the second of the equation-pair (@eq:linear), we have
+I will here belabour a point that might seem blindingly obvious to some but frustratingly obscure to others. Let $\boldsymbol{v}$ be an eigenvector associated with a distinct eigenvalue $\lambda$ as in +@eq:eigen, and let $k$ be a non-zero scalar. Then, using the second of the equation-pair +@eq:linear, we have
 $$
 M(k\boldsymbol{v}) = k(M\boldsymbol{v}) = k(\lambda\boldsymbol{v}) = \lambda(k\boldsymbol{v}),
 $$ {#eq:scaled-eigenvector}
@@ -200,7 +200,7 @@ To get an idea of the broad sweep of eigenvalues and their applicability, I stro
 
 Now for the promised example of eigenvalues at work---in a simplified real-life situation, modelling the weather. Let us assume that yesterday's weather influences the _probability_ of today's weather, and today's weather influences the _probability_ of tomorrow's weather. Each day's weather depends only on the previous day's weather, i.e., the weather has a "memory" of one day.
 
-To keep it simple, let us have only three weather states: sunny, cloudy, and rainy, with the stipulation that each day can only be _one_ of these three. Further, in our matrix, let the ordering be sunny, cloudy, and rainy, both left to right, and top to bottom. Then, the column headings represent _today's weather_ and the row headings represent _tomorrow's  weather._  We then have the [_state-transition matrix_][transition] or _Markov matrix_ $M$ given in equation (@eq:state):
+To keep it simple, let us have only three weather states: sunny, cloudy, and rainy, with the stipulation that each day can only be _one_ of these three. Further, in our matrix, let the ordering be sunny, cloudy, and rainy, both left to right, and top to bottom. Then, the column headings represent _today's weather_ and the row headings represent _tomorrow's  weather._  We then have the [_state-transition matrix_][transition] or _Markov matrix_ $M$ given in +@eq:state:
 $$
 M = \begin{bmatrix}
 0.65 & 0.30 & 0.10\\
@@ -219,7 +219,7 @@ Let the column-vector $\boldsymbol{w}_{k}$ represent the probabilities for a par
 $$
 \boldsymbol{w}_{k+1} = M\boldsymbol{w}_{k}
 $$ {#eq:recurrence}
-Equation (@eq:recurrence) is called a [_recurrence relation_][recurrence] or _difference equation_, and in our case, it represents the evolution of a dynamical system in time, namely the weather. Just for completeness, let the initial condition be given by:
+*@eq:recurrence) is called a [_recurrence relation_][recurrence] or _difference equation_, and in our case, it represents the evolution of a dynamical system in time, namely the weather. Just for completeness, let the initial condition be given by:
 $$
 \boldsymbol{w}_{0} = \begin{bmatrix}0.55\\0.34\\0.11\end{bmatrix}
 $$ {#eq:initial}
@@ -228,7 +228,7 @@ $$ {#eq:initial}
 
 We want to know whether, for this model, there will be an equilibrium or steady-state in the weather, represented by a probability vector with values that remain steady with temporal evolution. The question is how do we find that out?
 
-One obvious way is to compute the downstream weather one day at a time: think of forging a chain one link at a time because the weather has a memory of only one day. From equation (@eq:recurrence) we can compute the following:
+One obvious way is to compute the downstream weather one day at a time: think of forging a chain one link at a time because the weather has a memory of only one day. From +@eq:recurrence we can compute the following:
 $$
 \begin{aligned}
 \boldsymbol{w}_{1} &= M\boldsymbol {w}_{0}\\
@@ -247,7 +247,7 @@ $$ {#eq:Mn}
 
 In this manner, we can trace the time evolution of the weather and, if desired, draw a three-dimensional parametric plot of the successive weather vectors in $\mathbb{R}^{3}$ with time as parameter. This could be insightful, but it is a laborious and time-consuming way to find out the steady-state weather vector if there is one. Could we do better?
 
-A rough and ready method would be to evaluate equation (@eq:Mn) with $n$ set to large numbers, say $50$ and $100$, and check if the resulting weather vectors, $\boldsymbol{w}_{50}$ and $\boldsymbol{w}_{100}$ were equal. If they were, we might hazard a guess that this unchanging value is the steady-state weather vector.
+A rough and ready method would be to evaluate +@eq:Mn with $n$ set to large numbers, say $50$ and $100$, and check if the resulting weather vectors, $\boldsymbol{w}_{50}$ and $\boldsymbol{w}_{100}$ were equal. If they were, we might hazard a guess that this unchanging value is the steady-state weather vector.
 
 But computing the fiftieth or one-hunderdth power of a matrix is tedious and error-prone if done by hand, and computationally expensive if done by machine, especially if the matrix in question is large.
 
@@ -326,7 +326,7 @@ e_{13} & e_{23} & e_{33}
 &= PD
 \end{aligned}
 $$ {#eq:diag1}
-To get only $M$ on the left-hand side of equation (@eq:diag1), we post-multiply both sides by $P^{-1}$, the inverse of $P$:
+To get only $M$ on the left-hand side of +@eq:diag1, we post-multiply both sides by $P^{-1}$, the inverse of $P$:
 $$
 MPP^{-1} = MI = M = PDP^{-1}
 $$ {#eq:eigendecomp}
@@ -344,7 +344,7 @@ By induction,
 $$
 M^{n} = PD^{n}P^{-1}
 $$ {#eq:M-to-the-n}
-The role of eigenvalues and eigenvectors in the plot of raising a square matrix to a power is now fully revealed: recall that in equation (@eq:M-to-the-n), $P$ is the matrix whose columns are the  eigenvectors, and $D$ is the diagonal matrix whose non-zero elements are the corresponding eigenvalues, and $P^{-1}$ is the inverse of $P$.
+The role of eigenvalues and eigenvectors in the plot of raising a square matrix to a power is now fully revealed: recall that in +@eq:M-to-the-n, $P$ is the matrix whose columns are the  eigenvectors, and $D$ is the diagonal matrix whose non-zero elements are the corresponding eigenvalues, and $P^{-1}$ is the inverse of $P$.
 
 ## Software Implementation
 
@@ -372,7 +372,7 @@ $$
 
 [proof]: http://www.math.cornell.edu/~mec/Winter2009/RalucaRemus/Lecture1/lecture1.html
 
-From equation(@eq:M-to-the-n) we may surmise that the contributions from $\lambda_{2}$ and $\lambda_{3}$, being both less than one, will diminish progressively as $n$ increases, and in the limit, only the eigenvalue $1$ will dominate the steady-state behaviour.
+From +@eq:M-to-the-n we may surmise that the contributions from $\lambda_{2}$ and $\lambda_{3}$, being both less than one, will diminish progressively as $n$ increases, and in the limit, only the eigenvalue $1$ will dominate the steady-state behaviour.
 
 The eigenvectors associated respectively with these eigenvalues, as spewed out by Octave, are:
 $$
@@ -397,9 +397,9 @@ $$
 
 None of the column sums of these eigenvectors sums to one. Indeed, the column sums of $\boldsymbol{e}_{2}$ and $\boldsymbol{e}_{3}$ are close to zero, whereas the column sum of $\boldsymbol{e}_{1}$ is negative. We will return to the eigenvector $\boldsymbol{e}_{1}$, to wrest meaning out of it, a little later. In any case, we confirm that $M\boldsymbol{e}_{1} = \boldsymbol{e}_{1}$.
 
-Assembling the matrices $P$ and $P^{-1}$ from the eigenvectors is trivial, as is putting together $D$ as the diagonal matrix of the corresponding eigenvalues. With these numerical values, the truth of equation (@eq:eigendecomp) is also easily demonstrated.
+Assembling the matrices $P$ and $P^{-1}$ from the eigenvectors is trivial, as is putting together $D$ as the diagonal matrix of the corresponding eigenvalues. With these numerical values, the truth of +@eq:eigendecomp is also easily demonstrated.
 
-The time evolution of the initial weather vector is then tracked with 1, 10, 20, 50, and 100 iterations of equation (@eq:recurrence). In this case, the weather vector stabilizes after about twenty iterations to a steady-state vector, $\boldsymbol{w}_{\infty}$,
+The time evolution of the initial weather vector is then tracked with 1, 10, 20, 50, and 100 iterations of +@eq:recurrence. In this case, the weather vector stabilizes after about twenty iterations to a steady-state vector, $\boldsymbol{w}_{\infty}$,
 given by
 $$
 \boldsymbol{w}_{\infty} = \begin{bmatrix}
@@ -422,7 +422,7 @@ $$
 \end{bmatrix}
 $$ {#eq:normalized-eigenvector-1}
 
-Lo and behold! $\boldsymbol{n}_{1}$ and $\boldsymbol{w}_{\infty}$ are one and the same, and all is well. Recalling from equation (@eq:scaled-eigenvector) that non-zero scalar multiples of eigenvectors are also eigenvectors themselves, this result, even if a little magical, really should not surprise us.
+Lo and behold! $\boldsymbol{n}_{1}$ and $\boldsymbol{w}_{\infty}$ are one and the same, and all is well. Recalling from +@eq:scaled-eigenvector that non-zero scalar multiples of eigenvectors are also eigenvectors themselves, this result, even if a little magical, really should not surprise us.
 
 We do not bother normalizing the eigenvectors associated with $\lambda_{2}$ and $\lambda_{3}$ because their column sums almost vanish, and moreover, their contribution to the steady state decreases with increasing number of iterations.
 
