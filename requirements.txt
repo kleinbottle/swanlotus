@@ -6,6 +6,7 @@ Jinja2==2.11.2
 markdown-word-count==0.0.1
 MarkupSafe==1.1.1
 pandoc-eqnos==2.4.0
+pandoc-fignos==2.4.0
 pandoc-xnos==2.5.0
 pandocfilters==1.4.3
 pelican==4.5.4
