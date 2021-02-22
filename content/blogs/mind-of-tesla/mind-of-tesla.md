@@ -224,7 +224,7 @@ induction motors demonstrated by Tesla in his historic lecture of 16 May 1888,
 before the American Institute of Electrical Engineers at Columbia University.
 The motor developed one-half horsepower and showed that brushes and
 commutators could be eliminated. This image and the information in this footnote are taken from [the PBS (Public Broadcasting System) web site on
-Tesla](https://www.pbs.org/tesla/) [@tesla-pbs].]]({attach}images/acmot_main02.jpg){ width=50% }
+Tesla](https://www.pbs.org/tesla/) [@tesla-pbs].]]({attach}images/acmot_main02.jpg){#fig:ac-motor width=80% }
 
 In his own mind, the idea of the rotating magnetic fields, one chasing the
 other, that formed the basis of the induction motor and the AC generator, was
@@ -409,17 +409,9 @@ states of both body and mind. Apart from episodes of absent-mindedness that
 pass for day-dreaming and for abnormal mental states such as hallucinations, it
 was also the general consensus that dreaming occurred only during the state of
 sleep. A simplified pictorial relationship between these states is shown in
-the Venn diagram of {@fig:three-states}.
+the Venn diagram of +@fig:three-states.
 
-\begin{figure}
-\centering
-\resizebox{0.75\columnwidth}{!}{\includegraphics{three-states}}
-\caption[Relationship between wakefulness, dreaming and sleep]{\small A
-simplified picture of the relationship between the states of wakefulness,
-sleep, and dreaming. Wakefulness and sleep are mutually exclusive. Dreaming
-only occurs in the sleep state.}
-\label{fig:three-states}
-\end{figure}
+![Relationship between wakefulness, dreaming and sleep.^[A simplified picture of the relationship between the states of wakefulness, sleep, and dreaming. Wakefulness and sleep are mutually exclusive. Dreaming only occurs in the sleep state.]]({attach}images/three-states.svg){#fig:three-states width=100%}
 
 Lucid dreaming as a phenomenon was established only in the 1980s.
 Psychophysiological research has since established that it occurs in [Rapid Eye
@@ -435,7 +427,7 @@ the recognition and acceptance of lucid dreaming as a legitimate mental state,
 we may represent the relationship between wakefulness, sleep, and dreaming by
 the modified Venn diagram shown in +@fig:lucid.
 
-![Modified relationship between wakefulness, dreaming and sleep^[Modified, simplified relationship between wakefulness, dreaming, and sleep after the recognition and acceptance of lucid dreaming as a legitimate mental state. Lucid dreamers are mentally aware that they are dreaming and have conscious control over their dreams, while paradoxically, their bodies are asleep.]]({attach}images/lucid.svg){#fig:lucid}
+![Modified relationship between wakefulness, dreaming and sleep.^[Modified, simplified relationship between wakefulness, dreaming, and sleep after the recognition and acceptance of lucid dreaming as a legitimate mental state. Lucid dreamers are mentally aware that they are dreaming and have conscious control over their dreams, while paradoxically, their bodies are asleep.]]({attach}images/lucid.svg){#fig:lucid width=100%}
 
 It is tempting to conjecture that Tesla, working in his virtual laboratory,
 functioned one level above the lucid dream, in being both physically and
