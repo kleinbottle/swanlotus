@@ -18,7 +18,7 @@ variables:
   xnos-capitalise: true
 
 filters:
-  - pandoc-eqnos
+  - pandoc-xnos
   - citeproc
 
 csl: "./ieee-with-url.csl"

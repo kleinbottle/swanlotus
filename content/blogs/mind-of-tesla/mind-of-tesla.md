@@ -219,13 +219,12 @@ development are phases normal and natural. It was different with my invention.
 In the very moment I became conscious of it, I saw it fully developed and
 perfected. [@tesla-personal]
 
-![The AC induction motor. This is one of the two two-phase
+![The AC induction motor.^[This is one of the two two-phase
 induction motors demonstrated by Tesla in his historic lecture of 16 May 1888,
 before the American Institute of Electrical Engineers at Columbia University.
 The motor developed one-half horsepower and showed that brushes and
-commutators could be eliminated. This image and the information in its caption
-are taken from the PBS (Public Broadcasting System) web site on
-Tesla [@tesla-pbs].]({attach}images/acmot_main02.jpg){ width=50% }
+commutators could be eliminated. This image and the information in this footnote are taken from [the PBS (Public Broadcasting System) web site on
+Tesla](https://www.pbs.org/tesla/) [@tesla-pbs].]]({attach}images/acmot_main02.jpg){ width=50% }
 
 In his own mind, the idea of the rotating magnetic fields, one chasing the
 other, that formed the basis of the induction motor and the AC generator, was
@@ -364,65 +363,53 @@ definitive explanation for Tesla's experience.
 % need for the corresponding sensory organ to be excited if the brain may be
 % directly stimulated to evoke a perception or a memory of a perception.}-->
 
-\subsection{Virtual laboratory}
+### Virtual laboratory
 
-The term \emph{gedankenexperiment} or ``thought experiment'' gained currency,
-especially after Einstein's traveller riding on a light wave. However, Tesla's
-unique ability to use his mind as a fully equipped, albeit inexpensive
-laboratory, to conduct the entire design-prototype-test cycle iteratively, gives
-new meaning to what we \emph{could} mean by thought experiment or mental
-experiment. Indeed, it is perhaps more accurate to coin the term \emph{virtual
-laboratory} for describing what Tesla accomplished with his mind and vivid
-visualization. That is the term we will use hereafter in this paper. The
-experiments in his virtual laboratory all obeyed the known properties of matter
-and energy as enshrined in the known laws of physics, and he did not need to
-tend them until he wished to examine the results.
+The term [_gedankenexperiment_](https://www.britannica.com/science/Gedankenexperiment) or "thought experiment" gained currency, especially after Einstein's traveller riding on a light wave. However, Tesla's unique ability to use his mind as a fully equipped, albeit inexpensive laboratory, to conduct the entire design-prototype-test-repeat cycle iteratively, gives new meaning to what we _could_ mean by thought experiment or mental experiment. Indeed, it is perhaps more accurate to coin the term _virtual laboratory_ for describing what Tesla accomplished with his mind and vivid visualization. That is the term we will use hereafter in this paper. The experiments in his virtual laboratory all obeyed the known properties of matter and energy as enshrined in the known laws of physics, and he did not need to tend them until he wished to examine the results.
 
-\subsection{The importance of imagination}
+### The importance of imagination
 
 From the foregoing, we know that Tesla had a vivid imagination---the making of
 images---harnessed by discipline. It is interesting that in his later years, he
 extolled the importance of a vivid imagination above that of reason in the
 following words:
 
-\begin{myquote}
-Our first endeavors are purely instinctive, promptings of an imagination vivid
+>Our first endeavors are purely instinctive, promptings of an imagination vivid
 and undisciplined. As we grow older reason asserts itself and we become more and
 more systematic and designing. But those early impulses, though not immediately
 productive, are of the greatest moment and may shape our very destinies. Indeed,
 I feel now that had I understood and cultivated instead of suppressing them, I
 would have added substantial value to my bequest to the world. But not until I
-had attained manhood did I realize that I was an inventor.~\cite{tesla19}
-\end{myquote}
+had attained manhood did I realize that I was an inventor. [@tesla19]
 
-This resonates with Einstein's statement, ``I am enough of an artist to draw
+This resonates with Einstein's statement, "I am enough of an artist to draw
 freely upon my imagination. Imagination is more important than knowledge.
-Knowledge is limited. Imagination encircles the world,''~\cite{einstein-yr}.
+Knowledge is limited. Imagination encircles the world." [@einstein-yr].
 
-\subsection{Conjectures on the virtual laboratory}
+### Conjectures on the virtual laboratory
 
 Tesla's intensity of visualization is denied most of us except when we dream.
 While we dream, we are cut off from sensory input from the outside world. The
 resulting concentration of mind allows us to visualize vividly in our dreams,
 but normally we do not have control over what we dream, or indeed even how. 
-Tesla was exceptional in being able to consciously and volitionally conduct what
-can only be called physically meaningful ``dream experiments'' in his virtual
-laboratory, while being fully awake!
+_Tesla was exceptional in being able to consciously and volitionally conduct what
+can only be called physically meaningful "dream experiments" in his virtual
+laboratory, while being fully awake!_
 
 It is reasonable to speculate that the capacity of the right brain to imagine,
 or literally, make images, and the capacity of the left brain to sequence
-thoughts according to logic are \emph{both} essential ingredients in the
+thoughts according to logic are _both_ essential ingredients in the
 functioning of Tesla's virtual laboratory. One possible conjecture about
 Tesla's mental mode during his virtual laboratory experiments is given below.
 
-\subsubsection{Dreams, lucid dreams, and the virtual laboratory}
+### Dreams, lucid dreams, and the virtual laboratory
 
 It has generally been believed that wakefulness and sleep are mutually exclusive
 states of both body and mind. Apart from episodes of absent-mindedness that
 pass for day-dreaming and for abnormal mental states such as hallucinations, it
 was also the general consensus that dreaming occurred only during the state of
 sleep. A simplified pictorial relationship between these states is shown in
-the Venn diagram of Figure~\ref{fig:three-states}.
+the Venn diagram of {@fig:three-states}.
 
 \begin{figure}
 \centering
@@ -435,29 +422,20 @@ only occurs in the sleep state.}
 \end{figure}
 
 Lucid dreaming as a phenomenon was established only in the 1980s.
-Psychophysiological research has since established that it occurs in Rapid Eye
-Movement (REM) sleep and is as vivid, if not more vivid than, a normal dream.
+Psychophysiological research has since established that it occurs in [Rapid Eye
+Movement (REM)]() sleep and is as vivid, if not more vivid than, a normal dream.
 Nevertheless, the subject who is dreaming is aware that he or she is dreaming
 and, moreover, can volitionally alter the dream, unlike the regular
-dreamer~\cite{laberge85,laberge00}. This means that the lucid dreamer occupies
+dreamer [@laberge85; @laberge2000]. This means that the lucid dreamer occupies
 a paradoxical state at the borderline between sleep and wakefulness in which the
 body is essentially in REM sleep, but the mind is aware that it is dreaming and
 is capable of controlling the dream. Both the dream experience, and the fact
 that it was a conscious dream, can be recalled during the wakeful state. After
 the recognition and acceptance of lucid dreaming as a legitimate mental state,
 we may represent the relationship between wakefulness, sleep, and dreaming by
-the modified Venn diagram shown in Figure~\ref{fig:lucid}.
+the modified Venn diagram shown in +@fig:lucid.
 
-\begin{figure}
-\centering
-\resizebox{0.75\columnwidth}{!}{\includegraphics{lucid}}
-\caption[Modified relationship between wakefulness, dreaming and sleep]{\small
-Modified, simplified relationship between wakefulness, dreaming, and sleep after
-the recognition and acceptance of lucid dreaming as a legitimate mental state.
-Lucid dreamers are mentally aware that they are dreaming and have conscious
-control over their dreams, while paradoxically, their bodies are asleep.}
-\label{fig:lucid}
-\end{figure}
+![Modified relationship between wakefulness, dreaming and sleep^[Modified, simplified relationship between wakefulness, dreaming, and sleep after the recognition and acceptance of lucid dreaming as a legitimate mental state. Lucid dreamers are mentally aware that they are dreaming and have conscious control over their dreams, while paradoxically, their bodies are asleep.]]({attach}images/lucid.svg){#fig:lucid}
 
 It is tempting to conjecture that Tesla, working in his virtual laboratory,
 functioned one level above the lucid dream, in being both physically and
@@ -465,7 +443,7 @@ mentally awake while inwardly running his mental simulations with all the
 concentrated power, vividness, automaticity, and verisimilitude of the dreaming
 mind.
 
-\subsection{Questions: vivid visualization and virtual laboratory}
+### Questions: vivid visualization and virtual laboratory
 
 Tesla's virtual laboratory is so unusual as to beggar belief. However, Tesla
 was a scientist and engineer, schooled in accurate observation and respect for
@@ -473,41 +451,32 @@ objective truth. Moreover, his mode of working in his virtual laboratory,
 without blueprints and prototypes, confounded and frustrated his co-workers. So
 we may safely assume that Tesla indeed ran his motor, examined its wear and
 tear, and then machined it to compensate for that, all in his
-mind~\cite[p~58]{oneill80}. This leads to many tantalizing questions, including
+mind [@oneill80 (p 58]. This leads to many tantalizing questions, including
 these:
 
-\begin{enumerate}
-\item Very simply, how did he do it?
-
-\item What are the prerequisites for an imagination as vivid as Tesla's?
-
-\item How does one achieve his intensity of visualization while wide awake?
-
-\item What is the peculiar state in which Tesla's mind operated while he ran his
+#.  Very simply, how did he do it?
+#.  What are the prerequisites for an imagination as vivid as Tesla's?
+#.  How does one achieve his intensity of visualization while wide awake?
+#.  What is the peculiar state in which Tesla's mind operated while he ran his
 virtual laboratory?  Specifically, was Tesla's mind in a state of daydreaming,
 hallucination, lucid dreaming, visual thinking, or some as yet unknown mode,
 during his experiments?
-
-\item Did Tesla simply visualize only the motion or did he visualize the
+#.  Did Tesla simply visualize only the motion or did he visualize the
 electricity too?
-
-\item How does one visualize electricity?
-
-\item Is precise scientific knowledge a pre-requisite for visualization as in
+#.  How does one visualize electricity?
+#.  Is precise scientific knowledge a pre-requisite for visualization as in
 the case of the virtual laboratory?  In other words, does a person with such
 faculties need to know, in addition, the laws of physics and material properties
 in order to conduct experiments like Tesla?
-
-\item Can the ordinary person acquire the skills needed for a virtual laboratory
+#.  Can the ordinary person acquire the skills needed for a virtual laboratory
 by suitable training and practice as is done in sport or dance?
-\end{enumerate}
 
 These fascinating questions are worthy of exploration, especially since we are
-so familiar with \emph{virtual reality} in computer games and simulations
+so familiar with _virtual reality_ in computer games and simulations
 nowadays. Using this language, it is clear that Tesla had replicated reality in
 his mind and was running a virtual laboratory there.
 
-\section{Eccentricities of habit and behaviour}
+## Eccentricities of habit and behaviour
 
 Apart from his senses and vivid visualization, Tesla's body, habits, will power,
 and social interactions all exhibited anomalies that merit mention and
