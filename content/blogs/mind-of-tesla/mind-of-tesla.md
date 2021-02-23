@@ -223,7 +223,7 @@ induction motors demonstrated by Tesla in his historic lecture of 16 May 1888,
 before the American Institute of Electrical Engineers at Columbia University.
 The motor developed one-half horsepower and showed that brushes and
 commutators could be eliminated. This image and the information in this footnote are taken from [the PBS (Public Broadcasting System) web site on
-Tesla](https://www.pbs.org/tesla/) [@tesla-pbs].]]({attach}images/acmot_main02.jpg){#fig:ac-motor width=80% }
+Tesla](https://www.pbs.org/tesla/) [@tesla-pbs-bio].]]({attach}images/acmot_main02.jpg){#fig:ac-motor width=80% }
 
 In his own mind, the idea of the rotating magnetic fields, one chasing the
 other, that formed the basis of the induction motor and the AC generator, was
@@ -383,7 +383,7 @@ had attained manhood did I realize that I was an inventor. [@tesla19]
 
 This resonates with Einstein's statement, "I am enough of an artist to draw
 freely upon my imagination. Imagination is more important than knowledge.
-Knowledge is limited. Imagination encircles the world." [@einstein-yr].
+Knowledge is limited. Imagination encircles the world." [@einstein-quote].
 
 ### Conjectures on the virtual laboratory
 
@@ -581,76 +581,53 @@ dislikes and habits" [@tesla19]. His own account of them is as follows:
 The above quirks of mind and habit suggest that Tesla experienced the following
 anomalies of mind:
 
-#.  obsessive-compulsive disorder;
-#.  synaesthesia; and 
-#.  high-functioning autism.
+#.  [obsessive-compulsive disorder](https://en.wikipedia.org/wiki/Obsessive%E2%80%93compulsive_disorder);
+#.  [synaesthesia](https://en.wikipedia.org/wiki/Synesthesia); and 
+#.  [high-functioning autism](https://en.wikipedia.org/wiki/High-functioning_autism).
 
 His fixation on the number three and having to wash his hands three times, have
 eighteen napkins on the table during meals, walking around a building thrice
 before entering it, etc., are all symptomatic of obsessive-compulsive
-disorder~\cite{tesla-wiki}. So, too, his counting the number of steps in his
+disorder [@tesla-wiki]. So, too, his counting the number of steps in his
 walks, and the cubic capacity of his soup plates and items of food and drink.
 Tesla's compulsion with germs and cleanliness may be traced back to periods in
 his life when he made a trans-Atlantic voyage without his luggage, and when he
 spent a year digging ditches in the United States to make ends meet. He vowed
 after these experiences that he would never use a towel
-twice~\cite[p~167--168]{lomas99}. One is reminded in this context of how a
+twice [@lomas99 (pp 167--168)]. One is reminded in this context of how a
 deeply-felt regret can lead to an obsession, as in the case of Lady Macbeth who
-famously said, ``Here's the smell of the blood still: all the perfumes of
-Arabia will not sweeten this little hand,''[Shakespeare, \emph{Macbeth}, act 5,
+famously said, "Here's the smell of the blood still: all the perfumes of
+Arabia will not sweeten this little hand," [Shakespeare, _Macbeth_, act 5,
 scene, 1, lines 50--1].
 
 Synaesthesia is a condition in which stimulation of one sensory modality gives
-rise to a response in another modality~\cite{marks00,cytowic96}. A synaesthete
-may ``taste'' a shape for example. It is tempting to speculate that Tesla's
+rise to a response in another modality [@marks00; cytowic96]. A synaesthete
+may "taste" a shape for example. It is tempting to speculate that Tesla's
 awful taste when dropping paper squares onto a liquid may be symptomatic of
 synaesthesia. It would also be interesting to explore whether his hyper-acute
 senses and cross-modal sensory responses influenced each other.
 
-Tesla's abnormal sensitivity to sounds, his single-minded absorption in what
-fascinated him, his solitary work habits, his inability to see through the
-dishonesty of some of his work associates, etc., all suggest that he might have
-been autistic. However, he had no difficulties with language and, in fact knew
-G\"{o}the's \emph{Faust} by heart, along with several Serbian poems. This
-juxtaposition of some of the strengths found in the autistic with few of their
-deficiencies, has prompted some to suggest that Tesla probably suffered from
-high-functioning autism~\cite{blume04} or from Asperger's
-syndrome~\cite{tesla-faq,peterson05}, which is a rare condition in which the
-autistic child is intelligent, highly verbal, and near normal~\cite{frith90}.
-This would explain both his extraordinary mental faculties and also a number of
-his mental quirks. The existence of ``autistic idiot
-savants''~\cite[pp~84--85]{frith90} who function with super-human excellence in
-some areas of human endeavour but who are lacking severely in others, suggests
-that some compensatory mechanism---a sort of zero sum for the total mental
-capacity---might explain the co-existence of both their ``islets of abilities''
-and concomitant deficits.
+Tesla's abnormal sensitivity to sounds, his single-minded absorption in what fascinated him, his solitary work habits, his inability to see through the dishonesty of some of his work associates, etc., all suggest that he might have been autistic. However, he had no difficulties with language and, in fact knew Göthe's _Faust_ by heart, along with several Serbian poems. This juxtaposition of some of the strengths found in the autistic with few of their deficiencies, has prompted some to suggest that Tesla probably suffered from high-functioning autism [@blume04] or from [Asperger's syndrome](https://en.wikipedia.org/wiki/Asperger_syndrome) [@tesla-faq; @peterson05], which is a rare condition in which the autistic child is intelligent, highly verbal, and near normal [@frith90]. This would explain both his extraordinary mental faculties and also a number of his mental quirks. The existence of ["autistic idiot savants"](https://en.wikipedia.org/wiki/Savant_syndrome) [@frith90 (pp 84--85); @savant2009] who function with super-human excellence in some areas of human endeavour but who are lacking severely in others, suggests that some compensatory mechanism---a sort of zero sum for the total mental capacity---might explain the co-existence of both their "islets of abilities" and concomitant deficits.
 
-\subsection{Questions: idiosyncrasies}
+### Questions: idiosyncrasies
 
 Given that Tesla was unusual in many ways, and could have had what are labelled
-today as ``certain varieties of anomalous experience'', the following questions
+today as ["certain varieties of anomalous experience"](https://en.wikipedia.org/wiki/Varieties_of_Anomalous_Experience), the following questions
 suggest themselves:
 
-\begin{enumerate}
 #.  Were his abnormalities like synaesthesia and obsessive-compulsive
 disorder the result of his mental precocity and extraordinary visual sense?
-
-#.  Are such conditions a ``compensatory'' accompaniment of genius?
-
+#.  Are such conditions a "compensatory" accompaniment of genius?
 #.  Was Tesla indeed autistic?
-
 #.  Could it be that Tesla had both the left and right hemispheres of his
 brain functioning well above the capacity of normal human beings?  (Recall that
-when the word for an object was spoken he ``saw'' the object referred to as if
+when the word for an object was spoken he "saw" the object referred to as if
 it were right in front of his eyes.)
-
-#.  Could this have led to some ``cross-wiring'' of his senses?
-
-#.  Could it also have led to the m\'{e}lange of genius and eccentricity seen
+#.  Could this have led to some "cross-wiring" of his senses?
+#.  Could it also have led to the mélange of genius and eccentricity seen
 in him?
-\end{enumerate}
 
-\section{Tesla's grandiose claims}
+# Tesla's grandiose claims
 
 Tesla's plans were always grand. Typical of the visionary, he saw the fruition
 of his discoveries in his mind and spoke of them even before they had been
@@ -659,12 +636,10 @@ realization, he was often sidelined or ridiculed by the scientific
 establishment. Yet, the very things he envisaged then are realities in our
 present age of semiconductors, computers, and the Internet. To appreciate just
 how prophetic his vision was, let us look at just one example: his
-``World-System''. In the vocabulary of Tesla's day, this system would be capable
+"World-System". In the vocabulary of Tesla's day, this system would be capable
 of:
 
-\begin{myquote}
-\begin{enumerate}
-#.  The inter-connection of the existing telegraph exchanges or
+>#.  The inter-connection of the existing telegraph exchanges or
 offices all over the world;
 #.  The establishment of a secret and non-interferable government telegraph
 service;
@@ -685,9 +660,7 @@ all ships to steer perfectly without compass, to determine the exact location,
 hour and speed, to prevent collisions and disasters, etc.;
 #.  The inauguration of a system of world-printing on land and sea; and
 #.  The world reproduction of photographic pictures and all kinds of drawings
-or records.~\cite{tesla19}
-\end{enumerate}
-\end{myquote}
+or records. [@tesla19]
 
 Grandiose claims they may have been in his time. Today, the world-mind has
 enlarged beyond measure compared to the pre-transistor days in which Tesla
@@ -695,9 +668,9 @@ lived. It is to his great credit that in a world of condensers and coils, he
 could visualize what electricity was capable of, in the service of mankind.
 
 In his later years, he formulated grand plans to use lightning to generate
-artificial rain to turn deserts into gardens~\cite{tesla19}. Another of Tesla's
+artificial rain to turn deserts into gardens [@tesla19]. Another of Tesla's
 pet projects was the wireless transmission of free electrical energy from which
-all mankind could benefit~\cite{tesla-energy}. This was in keeping with his
+all mankind could benefit [@tesla-energy]. This was in keeping with his
 mission statement. It was also consistent with the fact the earth receives its
 sum total of energy from the sun in precisely the same fashion. Yet, such
 grandiose projects and claims led to the marginalization of Tesla as a force in
@@ -705,88 +678,52 @@ science. Are his claims of tapping an infinite energy source all around us
 worth re-investigation in these times when global warming and the finitude of
 fossil fuels is forcing a re-examination of all energy options?
 
-\subsection{Tesla and {S}wami {V}ivekananda}
+### Tesla and Swami Vivekananda
 
-Ideas about unlimited, free energy might have found resonance with Tesla after
-his meeting with the famous Hindu monk, Swami Vivekananda, who visited the
-United States in the 1890s~\cite{tesla-home,grotz,dobson}. It is held that
-Tesla met the Swami in 1895--6 and that he was receptive to the ideas expressed
-in the Sanskrit language of Hindu cosmology about a universal energy, called
-\prana\ and the vehicle for it, called \akasha, literally the medium for
-radiance. The exposure to the idea that everything is floating in a sea of
-universal \prana\ must have taken hold in his fertile imagination and given rise
-to claims about the possibility of free energy from the capture of solar
-``cosmic rays'' that could be used to drive machines. His biographer O'Neill
-states that in an unpublished article entitled ``Man's Greatest Achievement'',
-Tesla speaks of mankind in general, saying~\cite[p~270]{oneill80}:
+Ideas about unlimited, free energy might have found resonance with Tesla after his meeting with the famous Hindu monk, [Swami Vivekananda](https://en.wikipedia.org/wiki/Swami_Vivekananda), who visited the United States in the 1890s [@tesla-home; @grotz; @dobson]. It is held that Tesla met the Swami in 1895--6 and that he was receptive to the ideas expressed in the Sanskrit language of Hindu cosmology about a universal energy, called _prāṇa_, and the vehicle for it, called _ākāśa_, literally the medium for radiance. The exposure to the idea that everything is floating in a sea of universal _prāṇa_ must have taken hold in his fertile imagination and given rise to claims about the possibility of free energy from the capture of solar "cosmic rays" that could be used to drive machines. His biographer O'Neill states that---in an unpublished article entitled "Man's Greatest Achievement"---Tesla speaks of mankind in general, saying [@oneill80 (p 270)]:
 
-%These ideas are not dissimilar to the theory of the luminiferous ether.
-
-\begin{myquote}
-Long ago, he recognized that all perceptible matter comes from a primary
-substance, or tenuity beyond conception, filling all space, the Akasa or
-luminiferous ether, which is acted upon by the life-giving Prana or creative
-force, calling into existence, in never ending cycles, all things and
-phenomena. The primary substance, thrown into infinitesimal whirls of
-prodigious velocity, becomes gross matter; the force subsiding, the motion
-ceases, and matter disappears, reverting to the primary substance.
-
+>There manifests itself in the fully developed being, Man, a desire mysterious, inscrutable and irresistible: to imitate nature, to create, to work himself the wonders he perceives ... Long ago, he recognized that all perceptible matter comes from a primary substance, or tenuity beyond conception, filling all space, the Akasa or luminiferous ether, which is acted upon by the life-giving Prana or creative force, calling into existence, in never ending cycles, all things and phenomena. The primary substance, thrown into infinitesimal whirls of prodigious velocity, becomes gross matter; the force subsiding, the motion ceases, and matter disappears, reverting to the primary substance.
+>
 Can Man control this grandest, most awe-inspiring of all processes in nature?
 Can he harness her inexhaustible energies to perform all their functions to his
 bidding, more still to cause them to operate simply by the force of his will?
-\end{myquote}
 
-The fact that Tesla, who did not know Sanskrit, used the words \prana\ and
-\akasha\ lends support to the claim that he did indeed meet Swami Vivekananda.
-Tesla's expression ``tenuity beyond conception'' corresponds perfectly with the
-statement ``ta \={a}k\={a}\'{s}e na vidyante'' meaning \akasha\ is
-imperceptible~\cite[p~92]{agra01}, showing Tesla's ability to grasp abstruse
+The fact that Tesla, who did not know Sanskrit, used the words prāṇa and
+ākāśa, lends support to the claim that he did indeed meet Swami Vivekananda.
+Tesla's expression "tenuity beyond conception" corresponds perfectly with the
+statement _"ta ākāśe na vidyante"_ meaning "(this) ākāśa is imperceptible" [@agra01 (p 92)], showing Tesla's ability to grasp abstruse
 philosophical points. Indeed, he did expound on philosophy, and was in that
-sense a well-rounded scholar~\cite{tesla-cosmic}.
+sense a well-rounded scholar [@tesla-cosmic].
 
-Post-Einsteinian physics has not found a need for \akasha\ or the luminiferous
-ether, but there is a need for something, regardless of label. Indeed, in a
-recent article on the ether, it has been observed that ``Physicists appear to
+Post-Einsteinian physics has not found a need for _ākāśa_ or the luminiferous
+ether, but there is a need for _something_, regardless of label. Indeed, in a
+recent article on the ether, it has been observed that "Physicists appear to
 need an ether on which to load all the properties of the physical world they
 cannot otherwise explain. Ether, alias the vacuum, exists. Void is anything but
-nothing''~\cite{heil03}.
+nothing" [@heil03].
 
-\subsection{Tesla's pigeon}
+### Tesla's pigeon
 
 Although possessed of mental abilities that could almost be termed psychic,
 Tesla did not give vent to the expression of his spiritual
-side~\cite{oneill80}. Indeed, when once approached by a team of engineers to
+side [@oneill80]. Indeed, when once approached by a team of engineers to
 join a psychological society for investigating psychic phenomena, Tesla almost
-threw them out~\cite{tesla19}.
+threw them out [@tesla19].
 
-With regard to his neglected spiritual side, Tesla's pigeon fixation affords an
-interesting story~\cite{cheney81}. Tesla loved one particular female pigeon,
-almost as he would love a human being. He recalled that one night, as he was
-lying on his bed in the dark, this pigeon flew in through the open window, as if
-to deliver a message. He looked at her and realized that she had come to tell
-him she was dying. As he looked at her, Tesla said, ``there came a light from
-her eyes---two powerful beams of light''. He reaffirmed, ``Yes, it was a real
-light, a powerful, dazzling, blinding light, a light more intense than I had
-ever produced by the most powerful lamps in my
-laboratory''~\cite[p~229]{cheney81}. When that pigeon died, Tesla ``knew'' that
-his life's work was finished.
+With regard to his neglected spiritual side, Tesla's pigeon fixation affords an interesting story [@cheney81]. Tesla loved one particular female pigeon, almost as he would love a human being. He recalled that one night, as he was lying on his bed in the dark, this pigeon flew in through the open window, as if to deliver a message. He looked at her and realized that she had come to tell him she was dying. As he looked at her, Tesla said, "there came a light from her eyes---two powerful beams of light". He reaffirmed, "Yes, it was a real light, a powerful, dazzling, blinding light, a light more intense than I had ever produced by the most powerful lamps in my laboratory" [@cheney81 (p 229)]. When that pigeon died, Tesla "knew" that his life's work was finished.
 
-Although Tesla never publicly gave expression to his religious or spiritual
-beliefs, this pigeon episode inevitably calls for comparison with the biblical
-account of the baptism of Jesus by John the Baptist: ``\ldots and he saw the
-Spirit of God descending like a dove, and lighting upon
-him\ldots''~[Matthew~3:17].
+Although Tesla never publicly gave expression to his religious or spiritual beliefs, this pigeon episode inevitably calls for comparison with the Biblical account of the baptism of Jesus by John the Baptist: "... and he saw the Spirit of God descending like a dove, and lighting upon him ..." [Matthew~3:17].
 
-\section{Bucke's hypothesis on human mental evolution}
+## Bucke's hypothesis on human mental evolution
 
-The medical doctor, Richard Maurice Bucke\footnote{Formerly Medical
-Superintendent of the Asylum for the Insane at London, Ontario, Canada}, writing
+The medical doctor, Richard Maurice Bucke^[Formerly Medical
+Superintendent of the Asylum for the Insane at London, Ontario, Canada], writing
 at the beginning of the twentieth century, advanced the radical hypothesis that
-evolution also applied to the human mind~\cite{bucke48}. Although he used the
-word ``evolution'', Bucke did not imply any particular engine, like Darwinian
+evolution also applied to the human mind [@bucke48]. Although he used the
+word "evolution", Bucke did not imply any particular engine, like Darwinian
 natural selection, for driving mental evolution, but rather asserted blandly
-``that growth, evolution, development, \ldots has \ldots always gone on, is
-going on now, and \ldots will always go on''~\cite[p~61]{bucke48}.
+"that growth, evolution, development, ... has ... always gone on, is
+going on now, and ... will always go on" [@bucke48 (p 61)].
 
 As a lead-in to his idea of mental evolution, Bucke proposed, among other
 things, that man's sense of colour, sense of fragrance, and musical sense had
@@ -796,35 +733,28 @@ sensory perception evolved, the vocabulary of languages kept pace to deal with
 this increasing sophistication. Tracking the gradual development of the words
 for different colours in ancient languages and literature, he suggested that the
 perception and recognition of colours kept pace with each other according to the
-tree illustrated in Figure~\ref{fig:colour-tree}. Bucke claimed that:
-\begin{myquote}
-When a new faculty appears in a race it will be found, in the very beginning, in
+tree illustrated in +@fig:colour-tree. Bucke claimed that:
+
+>When a new faculty appears in a race it will be found, in the very beginning, in
 one individual of that race; later it will be found in a few individuals; after
 a further time in a larger percentage of the members of that race; still later
 in half the members; and so on, until, after thousands of generations, an
 individual who misses having the faculty is regarded as a
-monstrosity.~\cite[p~52]{bucke48}
-\end{myquote}
+monstrosity. [@bucke48 (p 52)]
 
-\begin{figure}
-\centering
-\resizebox{0.75\columnwidth}{!}{\includegraphics{colour-perception-tree}}
-\caption[Evolution of colour perception in human beings]{\small Evolution of
-colour perception in human beings as conjectured by R~M~Bucke. This diagram is
-adapted from Bucke~\cite[p~36]{bucke48}. Time increases as one moves right. The
+![Evolution of colour perception in human beings.^[Evolution of
+colour perception in human beings as conjectured by R M Bucke. This diagram is
+adapted from Bucke [@bucke48 (p 36)]. Time increases as one moves right. The
 circled colours were the ones newly recognized at any particular period. So,
 the progression of newly recognized colours was red/black, followed by
 yellow/green and later by white/blue. Bucke cites literary and scientific
 evidence in support of his conjecture. While his scientific arguments have now
-been supplanted, the literary arguments are still persuasive.}
-\label{fig:colour-tree}
-\end{figure}
+been supplanted, the literary arguments are still persuasive.]]({attach}images/colour-perception-tree.svg){#fig:colour-tree width=100%}
 
 Extrapolating from his suggested hypothetical development of colour vision,
 etc., over time, Bucke postulated that the human mind also evolved with time.
 He distinguished three progressive states of consciousness so:
 
-\begin{enumerate}
 #.  Simple consciousness that is possessed by the higher animals and man by
 which they are aware of their surroundings and also of their own bodies as
 integrated entities;
@@ -835,32 +765,26 @@ of the universe, and which allows him to treat his own mental states as objects
 of consciousness, and also allows communication by language; and
 
 #.  Cosmic consciousness which includes simple and self consciousness, but
-which in addition allows ``a consciousness of the cosmos, that is, of the life
-and order of the universe''~\cite[p~3]{bucke48} and ``an intellectual
+which in addition allows "a consciousness of the cosmos, that is, of the life
+and order of the universe" [@bucke48 (p 3)] and "an intellectual
 enlightenment or illumination which alone would place the individual on a new
 plane of existence---would make him almost a member of a new
-species''~\cite[p~3]{bucke48}. Bucke stated that the burden of his book was to
+species" [@bucke48 (p 3)]. Bucke stated that the burden of his book was to
 expound the nature of this exalted state and identify some of its exemplars.
-\end{enumerate}
 
 While there have been many extraordinary spiritual leaders of humankind with
 superior mental attributes, Tesla's phenomenal mental abilities present one of
 the most prominent examples of such abilities in a man or woman of science.
-Whether or not Tesla possessed ``cosmic consciousness'' in accordance with
+Whether or not Tesla possessed "cosmic consciousness" in accordance with
 Bucke's definition, we may justifiably ask whether Tesla possessed a more
-evolved mind than the ordinary human being. Or more precisely, was Tesla a
+evolved mind than the ordinary human being. _Or more precisely, was Tesla a
 representative from our future, in which those possessing his faculties would be
-more numerous than today?  It is a tantalizing question that may have no clear
-cut answers.
+more numerous than today?_ It is a tantalizing question that may have no clear
+cut answers for now.
 
-\section{Conclusions}
+## Conclusions
 
-Like Icarus, Tesla sought the freedom of flight. Like Prometheus, Tesla wrested
-the subtle fire of electricity from the realm of the invisible and brought it
-down into the world of mortals. Like Zeus, he wielded the thunderbolt by
-creating lightning artificially. Like Archimedes of Syracuse, his thoughts were
-always on a grand scale and he was not only the theoretical mathematical
-physicist but also the practical engineer-inventor.
+Like [Icarus](https://en.wikipedia.org/wiki/Icarus), Tesla sought the freedom of flight. Like [Prometheus](https://en.wikipedia.org/wiki/Prometheus), Tesla wrested the subtle fire of electricity from the realm of the invisible and brought it down into the world of mortals. Like [Zeus](https://en.wikipedia.org/wiki/Zeus), he wielded the thunderbolt by creating lightning artificially. Like [Archimedes](https://en.wikipedia.org/wiki/Archimedes), his thoughts were always on a grand scale and he was not only the theoretical mathematical physicist but also the practical engineer-inventor.
 
 Tesla was larger than life and greater than most of his fellow human beings. He
 excelled in his intellect, power of will and visualization, and his moral sense.
@@ -868,39 +792,30 @@ He was unambiguous in his personal mission statement about the social
 responsibility of the inventor-scientist as one who ameliorates the life of his
 fellow human beings. He held that the pleasure of discovery and invention was
 its own reward. He embraced the insights that came to him through non-rational
-processes of thought. Perhaps, he exercised more symmetrically and to a greater
+processes of thought. Perhaps, he exercised, more symmetrically and to a greater
 degree than most people, both the right and left hemispheres of his brain.
 
 One rather sad, recurring theme in the biographies of Tesla is that he was
 somehow a misfit either in the society in which he lived and worked, or the
-times in which his life was enacted. Margaret Cheney's biography, \emph{Tesla:
-Man Out of Time}, clearly shows this in its very title. As does also the
-subtitle of Lomas's book~\cite{lomas99}, \emph{Nikola Tesla, Forgotten Genius of
-Electricity}. Do these titles hold the key to Tesla's mystery?  Was Tesla from
-our future?
+times in which his life was enacted. Margaret Cheney's biography, _Tesla:
+Man Out of Time_, clearly shows this in its very title. As does also the
+subtitle of Lomas's book [@{lomas99], _Nikola Tesla, Forgotten Genius of
+Electricity_. Do these titles hold the key to Tesla's mystery? _Was Tesla from
+our future?_
 
 The most important contribution of Tesla may not be the alternating current
 grid, or the induction motor, or any of his other electrical inventions. It may
 simply be the fact that he was a very unusual human being with remarkable mental
 powers that most of us can only call incredible or legendary. How did he come
-by them?   Were his abilities the result of some form of compensation as in the
-autistic idiot savant, or was it simply that Tesla was a man from our future who
+by them? Were his abilities the result of some form of compensation, as in the
+autistic idiot savant, _or was it simply that Tesla was a man from our future who
 had torn the veil of time to visit us and give us a glimpse of the future
-capabilities of humankind?
-%
-\section{Acknowledgements}
+capabilities of humankind?_
 
-For helpful comments and discussions, RC thanks R Gopalkrishnan, M Jegasothy, P
+#### Acknowledgements
+
+For helpful comments and discussions, I thank R Gopalkrishnan, M Jegasothy, P
 Jones, M R Jupp, B Raguram, B Readhead, and R Sivasankar.
-%
-\bibliographystyle{ieeetr}
-\bibliography{tesla}
 
-\vspace{5mm}
-
-Please \href{mailto:chandra@ee.uwa.edu.au}{email me} your comments and
+Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
-
-\copyright\ {R (Chandra) Chandrasekhar, 2006--2008}
-%
-\end{document}
