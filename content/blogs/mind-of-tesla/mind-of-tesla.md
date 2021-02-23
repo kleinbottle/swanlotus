@@ -565,37 +565,18 @@ objects flit before my view. When I see them I know that I am about to lose
 consciousness. If they are absent and refuse to come it means a sleepless
 night. [@tesla19]
 
-<!--CONTINUE HERE-->
-
 ### Idiosyncrasies
 
 Undoubted genius that he was, Tesla also exhibited traits that most of us would
 consider anomalous, if not downright abnormal. He had an abnormal fear of
-germs~\cite[p~263--264]{cheney81} causing him to wash his hands several (but
+germs [@cheney81 (p 263--264)] causing him to wash his hands several (but
 always a multiple of three) times. While dining, he needed eighteen clean linen
-napkins at the dining table~\cite[p~1]{cheney81}.  He was also extremely fond
-of pigeons and used to nurse and feed any sick pigeons he found~\cite{cheney81}.
-In his early life, Tesla developed a number of what he called ``strange likes,
-dislikes and habits''~\cite{tesla19}. His own account of them is as follows:
+napkins at the dining table [@cheney81 (p 1)].  He was also extremely fond
+of pigeons and used to nurse and feed any sick pigeons he found [@cheney81].
+In his early life, Tesla developed a number of what he called "strange likes,
+dislikes and habits" [@tesla19]. His own account of them is as follows:
 
-\begin{myquote}
-During that period I contracted many strange likes, dislikes and habits, some of
-which I can trace to external impressions while others are unaccountable. I had
-a violent aversion against the earrings of women but other ornaments, as
-bracelets, pleased me more or less according to design. The sight of a pearl
-would almost give me a fit but I was fascinated with the glitter of crystals or
-objects with sharp edges and plane surfaces. I would not touch the hair of other
-people except, perhaps, at the point of a revolver. I would get a fever by
-looking at a peach and if a piece of camphor was anywhere in the house it caused
-me the keenest discomfort. Even now I am not insensible to some of these
-upsetting impulses. When I drop little squares of paper in a dish filled with
-liquid, I always sense a peculiar and awful taste in my mouth. I counted the
-steps in my walks and calculated the cubical contents of soup plates, coffee
-cups and pieces of food---otherwise my meal was unenjoyable. All repeated acts
-or
-operations I performed had to be divisible by three and if I missed I felt
-impelled to do it all over again, even if it took hours.~\cite{tesla19}
-\end{myquote}
+>During that period I contracted many strange likes, dislikes and habits, some of which I can trace to external impressions while others are unaccountable. I had a violent aversion against the earrings of women but other ornaments, as bracelets, pleased me more or less according to design. The sight of a pearl would almost give me a fit but I was fascinated with the glitter of crystals or objects with sharp edges and plane surfaces. I would not touch the hair of other people except, perhaps, at the point of a revolver. I would get a fever by looking at a peach and if a piece of camphor was anywhere in the house it caused me the keenest discomfort. Even now I am not insensible to some of these upsetting impulses. When I drop little squares of paper in a dish filled with liquid, I always sense a peculiar and awful taste in my mouth. I counted the steps in my walks and calculated the cubical contents of soup plates, coffee cups and pieces of food---otherwise my meal was unenjoyable. All repeated acts or operations I performed had to be divisible by three and if I missed I felt impelled to do it all over again, even if it took hours. [@tesla19]
 
 The above quirks of mind and habit suggest that Tesla experienced the following
 anomalies of mind:
