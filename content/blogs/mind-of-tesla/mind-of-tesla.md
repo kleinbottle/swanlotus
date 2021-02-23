@@ -14,6 +14,8 @@ summary: 'Nikola Tesla was a complex genius whose prolific mind produced many el
 
 Nikola Tesla was a prodigious genius who benefited mankind immensely. He embodied a strange combination of fiery imagination, more suited to the poet or artist, tempered by the discipline of the engineer, grounded in mathematics and experimental science. The fact that he worked mostly alone and produced baffling inventions has led to his being labelled as both sorcerer and genius. He was superhuman in his will power and in his appetite for work. Yet he was also a frail human being who suffered a nervous breakdown, who had a fixation on the number three, and who, in later life, made bizarre claims which alienated him from mainstream science. Although he was well recognized by his scientific peers and the media in the late nineteenth and early twentieth century, Tesla today remains a largely unknown and unsung hero, who has not been accorded his rightful place in history.^[This was written _before_ the [electric vehicle brand Tesla](https://en.wikipedia.org/wiki/Tesla,_Inc.) gained global prominence.] It is also ironic that, although others profited immensely from his inventions, Tesla himself did not enjoy a prosperity commensurate with his abilities or contributions, and died alone and in penury.
 
+![Nikola Tesla at age 34.]({attach}images/tesla_in_color.jpg){#fig:tesla width = 80%}
+
 It is impossible to review the visionary contributions of Tesla within the
 compass of one paper, let alone do justice to analyzing his unique mind. Only
 certain aspects of Tesla's mind will concern us here; the interested reader is
