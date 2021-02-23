@@ -403,28 +403,11 @@ Tesla's mental mode during his virtual laboratory experiments is given below.
 
 ### Dreams, lucid dreams, and the virtual laboratory
 
-It has generally been believed that wakefulness and sleep are mutually exclusive
-states of both body and mind. Apart from episodes of absent-mindedness that
-pass for day-dreaming and for abnormal mental states such as hallucinations, it
-was also the general consensus that dreaming occurred only during the state of
-sleep. A simplified pictorial relationship between these states is shown in
-the Venn diagram of +@fig:three-states.
+It has generally been believed that wakefulness and sleep are mutually exclusive states of both body and mind. Apart from episodes of absent-mindedness that pass for day-dreaming and for abnormal mental states such as hallucinations, it was also the general consensus that dreaming occurred only during the state of sleep. A simplified pictorial relationship between these states is shown in the Venn diagram of +@fig:three-states.
 
 ![Relationship between wakefulness, dreaming and sleep.^[A simplified picture of the relationship between the states of wakefulness, sleep, and dreaming. Wakefulness and sleep are mutually exclusive. Dreaming only occurs in the sleep state.]]({attach}images/three-states.svg){#fig:three-states width=100%}
 
-Lucid dreaming as a phenomenon was established only in the 1980s.
-Psychophysiological research has since established that it occurs in [Rapid Eye
-Movement (REM)]() sleep and is as vivid, if not more vivid than, a normal dream.
-Nevertheless, the subject who is dreaming is aware that he or she is dreaming
-and, moreover, can volitionally alter the dream, unlike the regular
-dreamer [@laberge85; @laberge2000]. This means that the lucid dreamer occupies
-a paradoxical state at the borderline between sleep and wakefulness in which the
-body is essentially in REM sleep, but the mind is aware that it is dreaming and
-is capable of controlling the dream. Both the dream experience, and the fact
-that it was a conscious dream, can be recalled during the wakeful state. After
-the recognition and acceptance of lucid dreaming as a legitimate mental state,
-we may represent the relationship between wakefulness, sleep, and dreaming by
-the modified Venn diagram shown in +@fig:lucid.
+The phenomenon of [lucid dreaming](https://en.wikipedia.org/wiki/Lucid_dream) was scientifically established only in the 1980s. Psychophysiological research has since discovered that it occurs in [Rapid Eye Movement (REM) sleep](https://en.wikipedia.org/wiki/Rapid_eye_movement_sleep) and is as vivid---if not more vivid than---a normal dream. Nevertheless, the subject who is dreaming is aware that he or she is dreaming and, moreover, can volitionally alter the dream, unlike the regular dreamer [@laberge85; @laberge2000]. This means that the lucid dreamer occupies a paradoxical state at the borderline between sleep and wakefulness in which the body is essentially in REM sleep, but the mind is aware that it is dreaming, and is capable of controlling the dream. Both the dream experience, and the fact that it was a conscious dream, can be recalled during the wakeful state. After the recognition and acceptance of lucid dreaming as a legitimate mental state, we may represent the relationship between wakefulness, sleep, and dreaming by the modified Venn diagram shown in +@fig:lucid.
 
 ![Modified relationship between wakefulness, dreaming and sleep.^[Modified, simplified relationship between wakefulness, dreaming, and sleep after the recognition and acceptance of lucid dreaming as a legitimate mental state. Lucid dreamers are mentally aware that they are dreaming and have conscious control over their dreams, while paradoxically, their bodies are asleep.]]({attach}images/lucid.svg){#fig:lucid width=100%}
 
@@ -442,7 +425,7 @@ objective truth. Moreover, his mode of working in his virtual laboratory,
 without blueprints and prototypes, confounded and frustrated his co-workers. So
 we may safely assume that Tesla indeed ran his motor, examined its wear and
 tear, and then machined it to compensate for that, all in his
-mind [@oneill80 (p 58]. This leads to many tantalizing questions, including
+mind [@oneill80 (p 58)]. This leads to many tantalizing questions, including
 these:
 
 #.  Very simply, how did he do it?
@@ -452,7 +435,7 @@ these:
 virtual laboratory?  Specifically, was Tesla's mind in a state of daydreaming,
 hallucination, lucid dreaming, visual thinking, or some as yet unknown mode,
 during his experiments?
-#.  Did Tesla simply visualize only the motion or did he visualize the
+#.  Did Tesla simply visualize only the motion, or did he visualize the
 electricity too?
 #.  How does one visualize electricity?
 #.  Is precise scientific knowledge a pre-requisite for visualization as in
@@ -462,10 +445,7 @@ in order to conduct experiments like Tesla?
 #.  Can the ordinary person acquire the skills needed for a virtual laboratory
 by suitable training and practice as is done in sport or dance?
 
-These fascinating questions are worthy of exploration, especially since we are
-so familiar with _virtual reality_ in computer games and simulations
-nowadays. Using this language, it is clear that Tesla had replicated reality in
-his mind and was running a virtual laboratory there.
+These fascinating questions are worthy of exploration, especially since we are so familiar with [_virtual reality_](https://en.wikipedia.org/wiki/Virtual_reality) in computer games and simulations nowadays. Using this language, it is clear that Tesla had replicated reality in his mind and was running a virtual laboratory there.
 
 ## Eccentricities of habit and behaviour
 
@@ -473,125 +453,93 @@ Apart from his senses and vivid visualization, Tesla's body, habits, will power,
 and social interactions all exhibited anomalies that merit mention and
 reflection. Although he suffered a mental breakdown at 25, and was prone to
 nervous exhaustion after long periods without rest, his body exhibited
-remarkable features. Tesla had a superhuman appetite for work. He was ``able
+remarkable features. Tesla had a superhuman appetite for work. He was "able
 to work thirty-eight years almost without a day's interruption, and [could] find
-himself still strong and fresh in body and mind''~\cite{tesla19}. He also had
+himself still strong and fresh in body and mind" [@tesla19]. He also had
 enormous will power that could not only sustain a punishing schedule but could
 also permanently banish undesirable habits that he had formed, once he was so
 convinced. Some of his more notable traits are enumerated below:
 
-\begin{enumerate}
-\item During his first year at the Polytechnic at Graz, he ``regularly
+#.  During his first year at the Polytechnic at Graz, he "regularly
 started [his] work at three o'clock in the morning and continued until eleven at
-night, no Sundays or holidays excepted''~\cite{tesla19}.
-
-\item Tesla excelled at languages and knew English, French, German, Italian and
-the Slavic dialects~\cite[p~14]{cheney81}.
-
-\item He had a prodigious memory and could store entire logarithmic tables in
-his mind~\cite[p~14]{cheney81}.
-
-\item He was left-handed but later became ambidextrous~\cite{oneill80}.
-
-\item He was not good at drawing~\cite{tesla19}.
-
-\item At the age of fifty-nine, when he slipped on icy ground, he righted
-himself like a cat while in the air and landed on his feet~\cite{tesla19}.
-
-\item At sixty-three his body shape and weight had remained unchanged for
-thirty-five years~\cite{tesla19}.
-
-\item He was attracted to gambling but gave it up when admonished by his
-parents. He not only ``conquered [his] passion then and there
-\ldots [but also] \dots tore it from [his] heart so as not to leave even a trace
-of desire''~\cite{tesla19}.
-
-\item He took up smoking, but on realizing that it would ruin his health, he
-gave it up permanently~\cite{tesla19}.
-
-\item When Tesla discovered that the innocent cup of coffee he consumed every
+night, no Sundays or holidays excepted" [@tesla19].
+#.  Tesla excelled at languages and knew English, French, German, Italian and
+the Slavic dialects[@cheney81 (p 14)].
+#.  He had a prodigious memory and could store entire logarithmic tables in
+his mind [@cheney81 (p 14)].
+#.  He was left-handed but later became ambidextrous [@oneill80].
+#.  He was not good at drawing [@tesla19].
+#.  At the age of fifty-nine, when he slipped on icy ground, he righted
+himself like a cat while in the air and landed on his feet [@tesla19].
+#.  At sixty-three his body shape and weight had remained unchanged for
+thirty-five years [@tesla19].
+#.  He was attracted to gambling but gave it up when admonished by his
+parents. He not only "conquered [his] passion then and there ... [but also] ... tore it from [his] heart so as not to leave even a trace
+of desire [@tesla19].
+#.  He took up smoking, but on realizing that it would ruin his health, he
+gave it up permanently [@tesla19].
+#.  When Tesla discovered that the innocent cup of coffee he consumed every
 morning could precipitate heart trouble, he discontinued it by strenuous
-will~\cite{tesla19}.
-\end{enumerate}
+will [@tesla19].
 
 He saw his conquest of bad habits in a different light from most people. He
 said:
-\begin{myquote}
-In this way I checked and bridled other habits and passions and have not only
+
+>In this way I checked and bridled other habits and passions and have not only
 preserved my life but derived an immense amount of satisfaction from what most
-men would consider privation and sacrifice.~\cite{tesla19}
-\end{myquote}
+men would consider privation and sacrifice. [@tesla19]
 
 One interesting question that arises is whether Tesla's extraordinary
 visualization was in any way related to his tremendous will power.
 
-\subsection{Integrity and moral sense}
+### Integrity and moral sense
 
 Tesla was a humanist who desired to use his mind for the freedom of all mankind
 from the thralldom of matter. He wanted to liberate mankind from drudgery using
 his magical inventions. While this idealistic vision never left until the last,
 Tesla was singularly inept in his business dealings. Indeed, one academic who
 teaches engineering management, and is a lifelong Tesla enthusiast and
-biographer, has written that he uses Tesla to teach his students how \emph{not}
-to run their business affairs~\cite{lomas99}. Two incidents that well
-illustrate not only Tesla's integrity and moral sense but also his business
-na\"{i}vet\'{e} are noted below.
+biographer, has written that he uses Tesla to teach his students how _not_
+to run their business affairs [@lomas99]. Two incidents that well
+illustrate not only Tesla's integrity and moral sense but also his business [naïveté](https://www.thefreedictionary.com/naivete) are noted below.
 
 Thomas Edison once offered Tesla the then staggering sum of USD 50,000 for
 improving motor and generator designs. Tesla assiduously applied himself to the
 changes and gave the Edison company several very profitable patents in the
 process. When Tesla asked for the USD 50,000, Edison is reported to have
-replied, ``Tesla, you don't understand our American humor,'' and reneged on his
-promise~\cite{tesla-wiki}. Tesla promptly resigned.
+replied, "Tesla, you don't understand our American humor," and reneged on his
+promise [@tesla-wiki]. Tesla promptly resigned.
 
-The ``War of the Currents''~\cite[chapter 5]{cheney81} between DC and AC, waged
-between Thomas Edison and George Westinghouse, left both almost bankrupt. Tesla,
-feeling loyalty and generosity toward his new backer, Westinghouse, did not
-re-negotiate his patent royalties but rather released Westinghouse altogether.
-In the process, he lost what would have amounted to almost USD 12,000,000 in
-royalties~\cite[p~48--49]{cheney81}. Tragically, toward the end of his life, he
-was plagued by a chronic shortage of funds.
+The ["War of the Currents"](https://en.wikipedia.org/wiki/War_of_the_currents) [@cheney81 (chapter 5)] between DC and AC, waged between Thomas Edison and George Westinghouse, left both almost bankrupt. Tesla, feeling loyalty and generosity toward his new backer, Westinghouse, did not re-negotiate his patent royalties but rather released Westinghouse altogether. In the process, he lost what would have amounted to almost USD 12,000,000 in royalties [@cheney81 (p 48--49)]. Tragically, toward the end of his life, he was plagued by a chronic shortage of funds.
 
-\subsection{Tesla as a humanist}
+### Tesla as a humanist
 
 Tesla was unambiguous about the place of the inventor in society and of his own
 role in life. The opening paragraph of his autobiography, which may be called
-his \emph{mission statement,} begins thus:
+his [_mission statement_](https://en.wikipedia.org/wiki/Mission_statement), begins thus:
 
-\begin{myquote}
-The progressive development of man is vitally dependent on invention. It is the
+>The progressive development of man is vitally dependent on invention. It is the
 most important product of his creative brain. Its ultimate purpose is the
 complete mastery of mind over the material world, the harnessing of the forces
 of nature to human needs. This is the difficult task of the inventor who is
 often misunderstood and unrewarded. But he finds ample compensation in the
 pleasing exercises of his powers and in the knowledge of being one of that
 exceptionally privileged class without whom the race would have long ago
-perished in the bitter struggle against pitiless elements.~\cite{tesla19}
-\end{myquote}
+perished in the bitter struggle against pitiless elements. [@tesla19]
 
 Besides his innumerable inventions, he had also discovered the following, each
-of which was later ``re-discovered'' by others who won Nobel
-Prizes~\cite[p~166]{oneill80}:
+of which was later "re-discovered" by others who won Nobel
+Prizes [@oneill80 (p 166)]:
 
-\begin{enumerate}
-\item Cosmic rays;
+#.  [Cosmic rays](https://en.wikipedia.org/wiki/Cosmic_ray);
+#.  Artificial [radioactivity](https://www.britannica.com/science/radioactivity);
+#.  Disintegrating beam of electrified particles or [atom smasher](https://en.wikipedia.org/wiki/Particle_accelerator);
+#.  [Electron microscope](https://en.wikipedia.org/wiki/Electron_microscope); and
+#.  Very special radiation or [X-rays](https://en.wikipedia.org/wiki/X-ray).
 
-\item Artificial radioactivity;
+Tesla was also the rightful inventor of radio, as established by the US Patent and Trademark Office after his death, although [Guglielmo Marconi](https://en.wikipedia.org/wiki/Guglielmo_Marconi) won the Nobel Prize for it [@tesla-home]. It is regrettable that Tesla was not only a man ahead of his time, but also one whom society failed to recognize and reward, and whom time has literally forgotten.
 
-\item Disintegrating beam of electrified particles or atom smasher;
-
-\item Electron microscope; and
-
-\item Very special radiation or X-rays.
-\end{enumerate}
-
-Tesla was also the rightful inventor of radio, as established by the US Patent
-and Trademark Office after his death, although Guglielmo Marconi won the Nobel
-Prize for it~\cite{tesla-home}. It is regrettable that Tesla was not only a
-man ahead of his time, but also one whom society failed to recognize and reward,
-and whom time has literally forgotten.
-
-\subsection{Falling asleep}
+### Falling asleep
 
 Tesla, being an experimental scientist, was an extremely keen observer. The
 merit in studying his mind is that he brought his powers of scientific
@@ -600,8 +548,7 @@ therefore have a window into the subjective mind of an extraordinary person,
 impartially and accurately documented by himself. Tesla fell asleep in a
 different way than most of us do, and he described it thus:
 
-\begin{myquote}
-When I close my eyes I invariably observe first, a background of very dark and
+>When I close my eyes I invariably observe first, a background of very dark and
 uniform blue, not unlike the sky on a clear but starless night. In a few seconds
 this field becomes animated with innumerable scintillating flakes of green,
 arranged in several layers and advancing towards me. Then there appears, to the
@@ -616,10 +563,11 @@ shapes. It is curious that I cannot project a form into this grey until the
 second phase is reached. Every time, before falling asleep, images of persons or
 objects flit before my view. When I see them I know that I am about to lose
 consciousness. If they are absent and refuse to come it means a sleepless
-night.~\cite{tesla19}
-\end{myquote}
+night. [@tesla19]
 
-\subsection{Idiosyncrasies}
+<!--CONTINUE HERE-->
+
+### Idiosyncrasies
 
 Undoubted genius that he was, Tesla also exhibited traits that most of us would
 consider anomalous, if not downright abnormal. He had an abnormal fear of
@@ -652,11 +600,9 @@ impelled to do it all over again, even if it took hours.~\cite{tesla19}
 The above quirks of mind and habit suggest that Tesla experienced the following
 anomalies of mind:
 
-\begin{enumerate}
-\item obsessive-compulsive disorder;
-\item synaesthesia; and
-\item high-functioning autism.
-\end{enumerate}
+#.  obsessive-compulsive disorder;
+#.  synaesthesia; and 
+#.  high-functioning autism.
 
 His fixation on the number three and having to wash his hands three times, have
 eighteen napkins on the table during meals, walking around a building thrice
@@ -705,21 +651,21 @@ today as ``certain varieties of anomalous experience'', the following questions
 suggest themselves:
 
 \begin{enumerate}
-\item Were his abnormalities like synaesthesia and obsessive-compulsive
+#.  Were his abnormalities like synaesthesia and obsessive-compulsive
 disorder the result of his mental precocity and extraordinary visual sense?
 
-\item Are such conditions a ``compensatory'' accompaniment of genius?
+#.  Are such conditions a ``compensatory'' accompaniment of genius?
 
-\item Was Tesla indeed autistic?
+#.  Was Tesla indeed autistic?
 
-\item Could it be that Tesla had both the left and right hemispheres of his
+#.  Could it be that Tesla had both the left and right hemispheres of his
 brain functioning well above the capacity of normal human beings?  (Recall that
 when the word for an object was spoken he ``saw'' the object referred to as if
 it were right in front of his eyes.)
 
-\item Could this have led to some ``cross-wiring'' of his senses?
+#.  Could this have led to some ``cross-wiring'' of his senses?
 
-\item Could it also have led to the m\'{e}lange of genius and eccentricity seen
+#.  Could it also have led to the m\'{e}lange of genius and eccentricity seen
 in him?
 \end{enumerate}
 
@@ -737,27 +683,27 @@ of:
 
 \begin{myquote}
 \begin{enumerate}
-\item The inter-connection of the existing telegraph exchanges or
+#.  The inter-connection of the existing telegraph exchanges or
 offices all over the world;
-\item The establishment of a secret and non-interferable government telegraph
+#.  The establishment of a secret and non-interferable government telegraph
 service;
-\item The inter-connection of all the present telephone exchanges or offices on
+#.  The inter-connection of all the present telephone exchanges or offices on
 the Globe;
-\item The universal distribution of general news, by telegraph or telephone, in
+#.  The universal distribution of general news, by telegraph or telephone, in
 connection with the Press;
-\item The establishment of such a 'World-System' of intelligence transmission
+#.  The establishment of such a 'World-System' of intelligence transmission
 for exclusive private use;
-\item The inter-connection and operation of all stock tickers of the world;
-\item The establishment of a 'World-System' of musical distribution, etc.;
-\item The universal registration of time by cheap clocks indicating the hour
+#.  The inter-connection and operation of all stock tickers of the world;
+#.  The establishment of a 'World-System' of musical distribution, etc.;
+#.  The universal registration of time by cheap clocks indicating the hour
 with astronomical precision and requiring no attention whatever;
-\item The world transmission of typed or handwritten characters, letters,
+#.  The world transmission of typed or handwritten characters, letters,
 checks, etc.;
-\item The establishment of a universal marine service enabling the navigators of
+#.  The establishment of a universal marine service enabling the navigators of
 all ships to steer perfectly without compass, to determine the exact location,
 hour and speed, to prevent collisions and disasters, etc.;
-\item The inauguration of a system of world-printing on land and sea; and
-\item The world reproduction of photographic pictures and all kinds of drawings
+#.  The inauguration of a system of world-printing on land and sea; and
+#.  The world reproduction of photographic pictures and all kinds of drawings
 or records.~\cite{tesla19}
 \end{enumerate}
 \end{myquote}
@@ -898,16 +844,16 @@ etc., over time, Bucke postulated that the human mind also evolved with time.
 He distinguished three progressive states of consciousness so:
 
 \begin{enumerate}
-\item Simple consciousness that is possessed by the higher animals and man by
+#.  Simple consciousness that is possessed by the higher animals and man by
 which they are aware of their surroundings and also of their own bodies as
 integrated entities;
 
-\item Self consciousness which is not present in animals, but only in man,
+#.  Self consciousness which is not present in animals, but only in man,
 whereby man becomes aware of himself as a distinct entity apart from the rest
 of the universe, and which allows him to treat his own mental states as objects
 of consciousness, and also allows communication by language; and
 
-\item Cosmic consciousness which includes simple and self consciousness, but
+#.  Cosmic consciousness which includes simple and self consciousness, but
 which in addition allows ``a consciousness of the cosmos, that is, of the life
 and order of the universe''~\cite[p~3]{bucke48} and ``an intellectual
 enlightenment or illumination which alone would place the individual on a new
