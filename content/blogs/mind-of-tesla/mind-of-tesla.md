@@ -6,7 +6,6 @@ modified: "2021-02-18"
 category: Biography
 tags: Tesla, science, creativity, visualization, virtual laboratory, eureka moment
 summary: 'Nikola Tesla was a complex genius whose prolific mind produced many electrical marvels. In this paper, we focus on only four of his documented mental characteristics: (1) an extremely acute sense of hearing and sight; (2) a visualization so vivid as to mimic reality; (3) eccentricities of habit and behaviour; and (4) making grandiose claims, some of which remain open until today. Each of these is examined in some detail, especially with respect to his creativity, and questions worthy of further investigation are posed. Finally, the hypothesis of mental evolution, as proposed by R M Bucke, is put forward as a possible explanation for Tesla''s prodigious and rare mind.'
-status: 
 ---
 
 >This "blog" was originally an academic paper that was submitted for publication in the prestigious journal [_Proceedings of the IEEE_](https://proceedingsoftheieee.ieee.org/) in 2006, the year of Tesla's 150th birth anniversary. Although well-received by some, it was, alas, rejected. That same manuscript has been updated and reformatted here, to be shared with the wider world. Hyperlinks have been added for the convenience of the reader. I apologize if this blog reads like a _slog_ :wink:
@@ -19,7 +18,7 @@ It is impossible to review the visionary contributions of Tesla within the
 compass of one paper, let alone do justice to analyzing his unique mind. Only
 certain aspects of Tesla's mind will concern us here; the interested reader is
 referred to brief synopses and fuller accounts of his life and writings
-elsewhere [@tesla19; @oneill80; @cheney81; @john83; @seifer98; @lomas99; @tesla-wiki; 
+elsewhere [@tesla19; @oneill80; @cheney81; @john83; @seifer98; @lomas99; @tesla-wiki;
 @tesla-home; @tesla-pbs-bio]. In this paper, we focus on only four of his
 documented mental characteristics:
 
@@ -187,7 +186,7 @@ was just setting and reminded me of the glorious passage:
 | Ein schöner Traum, indessen sie entweicht,
 | Ach, zu des Geistes Flügeln wird so leicht
 | Kein körperlicher Flügel sich gesellen!
-| 
+|
 | The glow retreats, done is the day of toil;
 | It yonder hastes, new fields of life exploring;
 | Ah, that no wing can lift me from the soil
@@ -196,8 +195,8 @@ was just setting and reminded me of the glorious passage:
 | A glorious dream! though now the glories fade.
 | Alas! the wings that lift the mind no aid
 | Of wings to lift the body can bequeath me.
-| 
-| 
+|
+|
 >As I uttered these inspiring words the idea came like a flash of lightning and
 in an instant the truth was revealed. I drew with a stick on the sand the
 diagrams shown six years later in my address before the American Institute of
@@ -260,7 +259,7 @@ There are actually two episodes. The first was in London, when he saw the atoms 
 my eyes. This time the smaller groups kept modestly in the background. My
 mental eye, rendered more acute by repeated visions of the kind, could now
 distinguish larger structures of manifold conformation; long rows, sometimes
-more closely fitted together; all twining and twisting in a snake-like motion. 
+more closely fitted together; all twining and twisting in a snake-like motion.
 But look! What was that?  One of the snakes had seized hold of its own tail, and
 the form whirled mockingly before my eyes. As if by a flash of lightning I
 woke. [@findlay37 (p 43)].
@@ -391,7 +390,7 @@ Knowledge is limited. Imagination encircles the world." [@einstein-yr].
 Tesla's intensity of visualization is denied most of us except when we dream.
 While we dream, we are cut off from sensory input from the outside world. The
 resulting concentration of mind allows us to visualize vividly in our dreams,
-but normally we do not have control over what we dream, or indeed even how. 
+but normally we do not have control over what we dream, or indeed even how.
 _Tesla was exceptional in being able to consciously and volitionally conduct what
 can only be called physically meaningful "dream experiments" in his virtual
 laboratory, while being fully awake!_
@@ -655,7 +654,7 @@ anomalies of mind:
 
 \begin{enumerate}
 \item obsessive-compulsive disorder;
-\item synaesthesia; and 
+\item synaesthesia; and
 \item high-functioning autism.
 \end{enumerate}
 
@@ -805,13 +804,13 @@ phenomena. The primary substance, thrown into infinitesimal whirls of
 prodigious velocity, becomes gross matter; the force subsiding, the motion
 ceases, and matter disappears, reverting to the primary substance.
 
-Can Man control this grandest, most awe-inspiring of all processes in nature? 
+Can Man control this grandest, most awe-inspiring of all processes in nature?
 Can he harness her inexhaustible energies to perform all their functions to his
 bidding, more still to cause them to operate simply by the force of his will?
 \end{myquote}
 
 The fact that Tesla, who did not know Sanskrit, used the words \prana\ and
-\akasha\ lends support to the claim that he did indeed meet Swami Vivekananda. 
+\akasha\ lends support to the claim that he did indeed meet Swami Vivekananda.
 Tesla's expression ``tenuity beyond conception'' corresponds perfectly with the
 statement ``ta \={a}k\={a}\'{s}e na vidyante'' meaning \akasha\ is
 imperceptible~\cite[p~92]{agra01}, showing Tesla's ability to grasp abstruse
@@ -895,7 +894,7 @@ been supplanted, the literary arguments are still persuasive.}
 \end{figure}
 
 Extrapolating from his suggested hypothetical development of colour vision,
-etc., over time, Bucke postulated that the human mind also evolved with time. 
+etc., over time, Bucke postulated that the human mind also evolved with time.
 He distinguished three progressive states of consciousness so:
 
 \begin{enumerate}
@@ -919,7 +918,7 @@ expound the nature of this exalted state and identify some of its exemplars.
 
 While there have been many extraordinary spiritual leaders of humankind with
 superior mental attributes, Tesla's phenomenal mental abilities present one of
-the most prominent examples of such abilities in a man or woman of science. 
+the most prominent examples of such abilities in a man or woman of science.
 Whether or not Tesla possessed ``cosmic consciousness'' in accordance with
 Bucke's definition, we may justifiably ask whether Tesla possessed a more
 evolved mind than the ordinary human being. Or more precisely, was Tesla a
@@ -978,4 +977,3 @@ corrections.
 \copyright\ {R (Chandra) Chandrasekhar, 2006--2008}
 %
 \end{document}
-
