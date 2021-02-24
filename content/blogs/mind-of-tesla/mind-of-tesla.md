@@ -14,13 +14,13 @@ summary: 'Nikola Tesla was a complex genius whose prolific mind produced many el
 
 Nikola Tesla was a prodigious genius who benefited mankind immensely. He embodied a strange combination of fiery imagination, more suited to the poet or artist, tempered by the discipline of the engineer, grounded in mathematics and experimental science. The fact that he worked mostly alone and produced baffling inventions has led to his being labelled as both sorcerer and genius. He was superhuman in his will power and in his appetite for work. Yet he was also a frail human being who suffered a nervous breakdown, who had a fixation on the number three, and who, in later life, made bizarre claims which alienated him from mainstream science. Although he was well recognized by his scientific peers and the media in the late nineteenth and early twentieth century, Tesla today remains a largely unknown and unsung hero, who has not been accorded his rightful place in history.^[This was written _before_ the [electric vehicle brand Tesla](https://en.wikipedia.org/wiki/Tesla,_Inc.) gained global prominence.] It is also ironic that, although others profited immensely from his inventions, Tesla himself did not enjoy a prosperity commensurate with his abilities or contributions, and died alone and in penury.
 
-![Nikola Tesla at age 34.]({attach}images/tesla_in_color.jpg){#fig:tesla width = 80%}
+![Nikola Tesla at age 34; photograph by Napoleon Sarony; colorized by [Dana Keller](http://www.danarkeller.com/).]({attach}images/tesla_in_color.jpg){#fig:tesla width = 80%}
 
 It is impossible to review the visionary contributions of Tesla within the
 compass of one paper, let alone do justice to analyzing his unique mind. Only
 certain aspects of Tesla's mind will concern us here; the interested reader is
 referred to brief synopses and fuller accounts of his life and writings
-elsewhere [@tesla19; @oneill80; @cheney81; @john83; @seifer98; @lomas99; @tesla-wiki;
+elsewhere [@john83; @oneill80; @cheney81; @john83; @seifer98; @lomas99; @tesla-wiki;
 @tesla-home; @tesla-pbs-bio]. In this paper, we focus on only four of his
 documented mental characteristics:
 
@@ -46,8 +46,8 @@ when he heard the crackling of flames consuming their homes at night. At the
 age of 25, he suffered what was termed by his doctors a "nervous breakdown"
 for want of a better term. While he was ill, Tesla's pulse varied from a few
 beats to two hundred and sixty beats per minute and all the tissues of his body
-quivered and twitched [@tesla19]. During the period he was ill, Tesla had
-the following extraordinary aural experiences[@cheney81; @tesla19]:
+quivered and twitched [@john83]. During the period he was ill, Tesla had
+the following extraordinary aural experiences[@cheney81; @john83]:
 
 #.  He could hear the sound of a watch ticking three rooms away;
 #.  A fly landing on a table in his room caused a dull thud in his ear;
@@ -65,7 +65,7 @@ about four metres by a peculiar creepy sensation on the forehead.
 Even when Tesla was past forty, and conducting research into lightning in the
 Colorado mountains, in the USA, he could hear thunderclaps 880 kilometres away,
 whereas his assistants, at half his age, could only hear them up to 240
-kilometres away [@cheney81; @tesla19].
+kilometres away [@cheney81; @john83].
 
 Not only was his hearing acute, Tesla's sense of sight was incredible. It
 enabled him to perform what may be termed _peregrinations of the mind_. Let
@@ -92,7 +92,7 @@ day), when alone, I would start on my journeys---see new places, cities and
 countries---live there, meet people and make friendships and acquaintances and,
 however unbelievable, it is a fact that they were just as clear to me as those
 in actual life and not a bit less intense in their
-manifestations. [@tesla19] (_emphasis_ is mine)
+manifestations. [@john83] (_emphasis_ is mine)
 
 Here we see that it was not a hypersensitivity to an actual stimulus, but the
 sensation of vision that had verisimilitude, without the need for any external
@@ -153,7 +153,7 @@ end. I had so much energy to spare. When I undertook the task it was not with a
 resolve such as men often make. With me it was a sacred vow, a question of life
 and death. I knew that I would perish if I failed. Now I felt that the battle
 was won. Back in the deep recesses of the brain was the solution, but I could
-not yet give it outward expression. [@tesla19]
+not yet give it outward expression. [@john83]
 
 Paradoxically, the demonstration of the DC motor had convinced him that by using
 alternating current (AC) with its changing direction of current flow, the
@@ -208,7 +208,7 @@ much so that I told him: "See my motor here; watch me reverse it." I cannot
 begin to describe my emotions. Pygmalion seeing his statue come to life could
 not have been more deeply moved. A thousand secrets of nature which I might have
 stumbled upon accidentally I would have given for that one which I had wrested
-from her against all odds and at the peril of my existence. [@tesla19]
+from her against all odds and at the peril of my existence. [@john83]
 
 Writing in the _Scientific American_, Tesla explains this revelation
 further:
@@ -309,7 +309,7 @@ electrical and mechanical, is positive in results. There is scarcely a subject
 that cannot be mathematically treated and the effects calculated or the results
 determined beforehand from the available theoretical and practical data. The
 carrying out into practice of a crude idea as is being generally done is, I
-hold, nothing but a waste of energy, money and time. [@tesla19]
+hold, nothing but a waste of energy, money and time. [@john83]
 
 Thus, Tesla produced his inventions without drawings or blueprints. He did not
 have computers like we do, to conduct inexpensive and complex simulations before
@@ -352,7 +352,7 @@ there was nothing in front of his eyes resembling what he saw_. Tesla accepted
 this gift of his in a matter of fact fashion and even suggested an explanation
 for what he saw: it was simply the reverse phenomenon of normal vision, in that
 a mental image in his brain projected a corresponding image on his
-retina [@tesla19]. The current state of knowledge about human visual
+retina [@john83]. The current state of knowledge about human visual
 perception [@hubel88; @zeki93; @pvi97] is such that there is, at present, no
 definitive explanation for Tesla's experience.
 
@@ -381,7 +381,7 @@ more systematic and designing. But those early impulses, though not immediately
 productive, are of the greatest moment and may shape our very destinies. Indeed,
 I feel now that had I understood and cultivated instead of suppressing them, I
 would have added substantial value to my bequest to the world. But not until I
-had attained manhood did I realize that I was an inventor. [@tesla19]
+had attained manhood did I realize that I was an inventor. [@john83]
 
 This resonates with Einstein's statement, "I am enough of an artist to draw
 freely upon my imagination. Imagination is more important than knowledge.
@@ -457,39 +457,39 @@ reflection. Although he suffered a mental breakdown at 25, and was prone to
 nervous exhaustion after long periods without rest, his body exhibited
 remarkable features. Tesla had a superhuman appetite for work. He was "able
 to work thirty-eight years almost without a day's interruption, and [could] find
-himself still strong and fresh in body and mind" [@tesla19]. He also had
+himself still strong and fresh in body and mind" [@john83]. He also had
 enormous will power that could not only sustain a punishing schedule but could
 also permanently banish undesirable habits that he had formed, once he was so
 convinced. Some of his more notable traits are enumerated below:
 
 #.  During his first year at the Polytechnic at Graz, he "regularly
 started [his] work at three o'clock in the morning and continued until eleven at
-night, no Sundays or holidays excepted" [@tesla19].
+night, no Sundays or holidays excepted" [@john83].
 #.  Tesla excelled at languages and knew English, French, German, Italian and
 the Slavic dialects[@cheney81 (p 14)].
 #.  He had a prodigious memory and could store entire logarithmic tables in
 his mind [@cheney81 (p 14)].
 #.  He was left-handed but later became ambidextrous [@oneill80].
-#.  He was not good at drawing [@tesla19].
+#.  He was not good at drawing [@john83].
 #.  At the age of fifty-nine, when he slipped on icy ground, he righted
-himself like a cat while in the air and landed on his feet [@tesla19].
+himself like a cat while in the air and landed on his feet [@john83].
 #.  At sixty-three his body shape and weight had remained unchanged for
-thirty-five years [@tesla19].
+thirty-five years [@john83].
 #.  He was attracted to gambling but gave it up when admonished by his
 parents. He not only "conquered [his] passion then and there ... [but also] ... tore it from [his] heart so as not to leave even a trace
-of desire [@tesla19].
+of desire [@john83].
 #.  He took up smoking, but on realizing that it would ruin his health, he
-gave it up permanently [@tesla19].
+gave it up permanently [@john83].
 #.  When Tesla discovered that the innocent cup of coffee he consumed every
 morning could precipitate heart trouble, he discontinued it by strenuous
-will [@tesla19].
+will [@john83].
 
 He saw his conquest of bad habits in a different light from most people. He
 said:
 
 >In this way I checked and bridled other habits and passions and have not only
 preserved my life but derived an immense amount of satisfaction from what most
-men would consider privation and sacrifice. [@tesla19]
+men would consider privation and sacrifice. [@john83]
 
 One interesting question that arises is whether Tesla's extraordinary
 visualization was in any way related to his tremendous will power.
@@ -527,7 +527,7 @@ of nature to human needs. This is the difficult task of the inventor who is
 often misunderstood and unrewarded. But he finds ample compensation in the
 pleasing exercises of his powers and in the knowledge of being one of that
 exceptionally privileged class without whom the race would have long ago
-perished in the bitter struggle against pitiless elements. [@tesla19]
+perished in the bitter struggle against pitiless elements. [@john83]
 
 Besides his innumerable inventions, he had also discovered the following, each
 of which was later "re-discovered" by others who won Nobel
@@ -565,7 +565,7 @@ shapes. It is curious that I cannot project a form into this grey until the
 second phase is reached. Every time, before falling asleep, images of persons or
 objects flit before my view. When I see them I know that I am about to lose
 consciousness. If they are absent and refuse to come it means a sleepless
-night. [@tesla19]
+night. [@john83]
 
 ### Idiosyncrasies
 
@@ -576,9 +576,9 @@ always a multiple of three) times. While dining, he needed eighteen clean linen
 napkins at the dining table [@cheney81 (p 1)].  He was also extremely fond
 of pigeons and used to nurse and feed any sick pigeons he found [@cheney81].
 In his early life, Tesla developed a number of what he called "strange likes,
-dislikes and habits" [@tesla19]. His own account of them is as follows:
+dislikes and habits" [@john83]. His own account of them is as follows:
 
->During that period I contracted many strange likes, dislikes and habits, some of which I can trace to external impressions while others are unaccountable. I had a violent aversion against the earrings of women but other ornaments, as bracelets, pleased me more or less according to design. The sight of a pearl would almost give me a fit but I was fascinated with the glitter of crystals or objects with sharp edges and plane surfaces. I would not touch the hair of other people except, perhaps, at the point of a revolver. I would get a fever by looking at a peach and if a piece of camphor was anywhere in the house it caused me the keenest discomfort. Even now I am not insensible to some of these upsetting impulses. When I drop little squares of paper in a dish filled with liquid, I always sense a peculiar and awful taste in my mouth. I counted the steps in my walks and calculated the cubical contents of soup plates, coffee cups and pieces of food---otherwise my meal was unenjoyable. All repeated acts or operations I performed had to be divisible by three and if I missed I felt impelled to do it all over again, even if it took hours. [@tesla19]
+>During that period I contracted many strange likes, dislikes and habits, some of which I can trace to external impressions while others are unaccountable. I had a violent aversion against the earrings of women but other ornaments, as bracelets, pleased me more or less according to design. The sight of a pearl would almost give me a fit but I was fascinated with the glitter of crystals or objects with sharp edges and plane surfaces. I would not touch the hair of other people except, perhaps, at the point of a revolver. I would get a fever by looking at a peach and if a piece of camphor was anywhere in the house it caused me the keenest discomfort. Even now I am not insensible to some of these upsetting impulses. When I drop little squares of paper in a dish filled with liquid, I always sense a peculiar and awful taste in my mouth. I counted the steps in my walks and calculated the cubical contents of soup plates, coffee cups and pieces of food---otherwise my meal was unenjoyable. All repeated acts or operations I performed had to be divisible by three and if I missed I felt impelled to do it all over again, even if it took hours. [@john83]
 
 The above quirks of mind and habit suggest that Tesla experienced the following
 anomalies of mind:
@@ -662,7 +662,7 @@ all ships to steer perfectly without compass, to determine the exact location,
 hour and speed, to prevent collisions and disasters, etc.;
 #.  The inauguration of a system of world-printing on land and sea; and
 #.  The world reproduction of photographic pictures and all kinds of drawings
-or records. [@tesla19]
+or records. [@john83]
 
 Grandiose claims they may have been in his time. Today, the world-mind has
 enlarged beyond measure compared to the pre-transistor days in which Tesla
@@ -670,7 +670,7 @@ lived. It is to his great credit that in a world of condensers and coils, he
 could visualize what electricity was capable of, in the service of mankind.
 
 In his later years, he formulated grand plans to use lightning to generate
-artificial rain to turn deserts into gardens [@tesla19]. Another of Tesla's
+artificial rain to turn deserts into gardens [@john83]. Another of Tesla's
 pet projects was the wireless transmission of free electrical energy from which
 all mankind could benefit [@tesla-energy]. This was in keeping with his
 mission statement. It was also consistent with the fact the earth receives its
@@ -710,7 +710,7 @@ Although possessed of mental abilities that could almost be termed psychic,
 Tesla did not give vent to the expression of his spiritual
 side [@oneill80]. Indeed, when once approached by a team of engineers to
 join a psychological society for investigating psychic phenomena, Tesla almost
-threw them out [@tesla19].
+threw them out [@john83].
 
 With regard to his neglected spiritual side, Tesla's pigeon fixation affords an interesting story [@cheney81]. Tesla loved one particular female pigeon, almost as he would love a human being. He recalled that one night, as he was lying on his bed in the dark, this pigeon flew in through the open window, as if to deliver a message. He looked at her and realized that she had come to tell him she was dying. As he looked at her, Tesla said, "there came a light from her eyes---two powerful beams of light". He reaffirmed, "Yes, it was a real light, a powerful, dazzling, blinding light, a light more intense than I had ever produced by the most powerful lamps in my laboratory" [@cheney81 (p 229)]. When that pigeon died, Tesla "knew" that his life's work was finished.
 
