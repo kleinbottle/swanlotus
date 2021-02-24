@@ -629,7 +629,7 @@ it were right in front of his eyes.)
 #.  Could it also have led to the mélange of genius and eccentricity seen
 in him?
 
-# Tesla's grandiose claims
+## Tesla's grandiose claims
 
 Tesla's plans were always grand. Typical of the visionary, he saw the fruition
 of his discoveries in his mind and spoke of them even before they had been
