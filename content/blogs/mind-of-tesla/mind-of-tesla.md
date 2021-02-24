@@ -816,8 +816,7 @@ capabilities of humankind?_
 
 #### Acknowledgements
 
-For helpful comments and discussions, I thank R Gopalkrishnan, M Jegasothy, P
-Jones, M R Jupp, B Raguram, B Readhead, and R Sivasankar.
+For helpful comments and discussions, I thank N Chandrasekhar, R Gopalkrishnan, M Jegasothy, P Jones, M R Jupp, B Raguram, B Readhead, and R Sivasankar.
 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
