@@ -4,7 +4,7 @@ author: "R (Chandra) Chandrasekhar"
 date: "2006-06-05"
 modified: "2021-02-18"
 category: Biography
-tags: Tesla, science, creativity, visualization, virtual laboratory, eureka moment
+tags: Nikola Tesla, science, creativity, visualization, virtual laboratory, eureka moment, Asperger syndrome
 summary: 'Nikola Tesla was a complex genius whose prolific mind produced many electrical marvels. In this paper, we focus on only four of his documented mental characteristics: (1) an extremely acute sense of hearing and sight; (2) a visualization so vivid as to mimic reality; (3) eccentricities of habit and behaviour; and (4) making grandiose claims, some of which remain open until today. Each of these is examined in some detail, especially with respect to his creativity, and questions worthy of further investigation are posed. Finally, the hypothesis of mental evolution, as proposed by R M Bucke, is put forward as a possible explanation for Tesla''s prodigious and rare mind.'
 ---
 
