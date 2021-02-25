@@ -4438,6 +4438,11 @@ a:hover code {
   list-style-type: none;
 }
 
+.content ul ul,
+.content ol ol {
+  margin-top: 0em;
+}
+
 .content .article-footer {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.75rem;
