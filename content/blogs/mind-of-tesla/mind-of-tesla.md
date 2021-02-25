@@ -8,7 +8,7 @@ tags: Tesla, science, creativity, visualization, virtual laboratory, eureka mome
 summary: 'Nikola Tesla was a complex genius whose prolific mind produced many electrical marvels. In this paper, we focus on only four of his documented mental characteristics: (1) an extremely acute sense of hearing and sight; (2) a visualization so vivid as to mimic reality; (3) eccentricities of habit and behaviour; and (4) making grandiose claims, some of which remain open until today. Each of these is examined in some detail, especially with respect to his creativity, and questions worthy of further investigation are posed. Finally, the hypothesis of mental evolution, as proposed by R M Bucke, is put forward as a possible explanation for Tesla''s prodigious and rare mind.'
 ---
 
->This "blog" was originally an academic paper that was submitted for publication in the prestigious journal [_Proceedings of the IEEE_](https://proceedingsoftheieee.ieee.org/) in 2006, the year of Tesla's 150th birth anniversary. Although well-received by some, it was, alas, rejected. That same manuscript has been updated and reformatted here, to be shared with the wider world. Hyperlinks have been added for the convenience of the reader. I apologize if this blog reads like a _slog_ :wink:
+>This "blog" was originally an academic paper that was submitted for publication in the prestigious journal [_Proceedings of the IEEE_](https://proceedingsoftheieee.ieee.org/) in 2006, the year of Tesla's 150th birth anniversary. Although well-received by some, it was, alas, rejected. That same manuscript has been updated and reformatted here, to be shared with the wider world. Hyperlinks have been added for the convenience of the reader. I apologize if this blog reads like a _slog_. :wink:
 
 ## Introduction
 
@@ -96,7 +96,7 @@ manifestations. [@john83] (_emphasis_ is mine)
 
 Here we see that it was not a hypersensitivity to an actual stimulus, but the
 sensation of vision that had verisimilitude, without the need for any external
-stimulus, that is singular.
+stimulus, which is singular.
 
 ### Questions and conjectures: hearing and sight
 
@@ -126,13 +126,13 @@ annals of the history of science. Tesla not only discovered hidden forces and
 sources of energy, but he also designed machines that made practical use of his
 discoveries for the benefit of humanity. Thus, not only was he an applied
 mathematician and experimental scientist, he was also a highly accomplished
-engineer, but one whose methods were atypical. We will here first examine in
+engineer, but one whose methods were atypical. We will first examine in
 some detail the genesis of the invention of the induction motor that came about
 from his grasping the idea of rotating magnetic fields. This is followed by a
 brief recountal and analysis of the discovery of the benzene ring by the chemist
 Friedrich August Kekulé. Then we will explore and discuss Telsa's vivid faculty of
 visualization, and compare it with similar instances from other well known
-scientists. This section is concluded with a discussion of the process of
+scientists. We conclude this section with a discussion of the process of
 scientific discovery and creativity.
 
 ### The AC induction motor
@@ -265,6 +265,8 @@ more closely fitted together; all twining and twisting in a snake-like motion.
 But look! What was that?  One of the snakes had seized hold of its own tail, and
 the form whirled mockingly before my eyes. As if by a flash of lightning I
 woke. [@findlay37 (p 43)].
+
+![The [benzene ring](https://en.wikipedia.org/wiki/Benzene#Structure) encircled by the snake eating its own tail, [the ouroboros](https://en.wikipedia.org/wiki/Ouroboros).^[This image is created by [Haltopub](https://commons.wikimedia.org/wiki/User:Haltopub) and is copied [from Wikipedia](https://en.wikipedia.org/wiki/File:Ouroboros-benzene.svg). It is subject to the [Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) licence](https://creativecommons.org/licenses/by-sa/4.0/legalcode)].]({attach}images/ouroboros-benzene.svg){#fig:benzene width=60%}
 
 A low resolution video dramatization of Kekulé's dream is [available on YouTube](https://www.youtube.com/watch?v=2NRwd-JJFm4) [@kekules-dream]. It is interesting that, instead of "dozed", the original German word used by Kekulé in his description of the second dream was "Halbschlaf" which literally means "half-asleep" [@weisberg86 (p 32)]. So, it is clear that the revelation came to him during a period in the hypnagogic, twilight state between wakefulness and sleep.
 
