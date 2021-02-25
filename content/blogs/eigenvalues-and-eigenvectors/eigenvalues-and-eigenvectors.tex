@@ -4,7 +4,7 @@
 \PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
 %
 \documentclass[
-  12pt,
+  11pt,
   a4paper,
 ]{article}
 \usepackage{lmodern}
@@ -57,17 +57,39 @@
 \AtBeginEnvironment{quote}{\small}
 \usepackage{etoolbox}
 \usepackage{graphicx}
+\usepackage{cleveref}
 \usepackage{subcaption}
 \usepackage{svg}
-\usepackage[Latin,Tamil]{ucharclasses}
+\usepackage[Latin,Tamil,Devanagari]{ucharclasses}
   \setmainfont[SmallCapsFont={Charis SIL Small Caps}]{Charis SIL}
   \setsansfont[Numbers=OldStyle,BoldFont={* Semibold}]{Source Sans Pro}
   \setmonofont[Scale=0.90]{Fira Mono}
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-  \setmathfont[bold-style=ISO]{STIX2Math.otf}
+  \setmathfont[bold-style=ISO]{STIX Two Math}
   \newfontfamily\tamilfont[Script=Tamil]{Noto Sans Tamil}
-  \setTransitionsFor{Tamil}{\tamilfont}{\normalfont}
+  \setTransitionTo{Tamil}{\tamilfont}{}
+  \newfontfamily\devfont[Script=Devanagari]{Noto Sans Devanagari}
+  \setTransitionTo{Devanagari}{\devfont}{}
   \newfontfamily{\emojifont}{Symbola}
+\usepackage[all]{nowidow}
+\usepackage[margins=raggedright]{floatrow}
+%
+% Tables without rules
+%
+\let\addlinespace\relax
+\let\toprule\relax
+\let\bottomrule\relax
+\let\midrule\relax
+\let\addlinespace\relax
+%
+% Adjust punctuation for footnotes
+%
+\usepackage{fnpct} % footnote _before_ punctuation reversed and adjusted.
+  \setfnpct{after-dot-space=-0.15em,after-comma-space=-0.150em,add-punct-marks=;[0.06em]![0.06em]?[0.06em]:[0.06em]}
+%
+% Flexible fontsizes
+%
+\usepackage{fontsize}
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -182,10 +204,10 @@ respectively. Consider now the matrix equivalent of multiplying by
 = 1\begin{bmatrix}v_{1}\\v_{2}\end{bmatrix} = \begin{bmatrix}v_{1}\\v_{2}\end{bmatrix}
 \label{eq:identity}\end{equation}
 
-The \(2 \times 2\) matrix on the extreme left of equation
-(\ref{eq:identity}) is the \emph{identity matrix} of dimension \(2\),
-analogous to the multiplicative identity. We could write this equation
-more succinctly as: \begin{equation}
+The \(2 \times 2\) matrix on the extreme left of \cref{eq:identity} is
+the \emph{identity matrix} of dimension \(2\), analogous to the
+multiplicative identity. We could write this equation more succinctly
+as: \begin{equation}
 I\symbf{v} = 1\symbf{v}
 \label{eq:succinct}\end{equation} \(I\), on the left, is the
 \emph{identity matrix}, the number \(1\) on the right is called an
@@ -197,9 +219,8 @@ example, however, is both unusual and contrived, because the identity
 matrix is a \emph{special} type of \emph{square matrix} with ones on its
 principal diagonal and zeros elsewhere.
 
-Equation (\ref{eq:succinct}) is a particular case of the general
-equation for eigenvalues and eigenvectors, which is written:
-\begin{equation}
+\Cref{eq:succinct} is a particular case of the general equation for
+eigenvalues and eigenvectors, which is written: \begin{equation}
 M\symbf{v} = \lambda \symbf{v}
 \label{eq:eigen}\end{equation} where \(M\) is a \emph{general square
 matrix}, \({\lambda}\) is a \emph{real or complex scalar} called an
@@ -346,9 +367,9 @@ eigenvectors}\label{a-property-of-eigenvectors}}
 
 I will here belabour a point that might seem blindingly obvious to some
 but frustratingly obscure to others. Let \(\symbf{v}\) be an eigenvector
-associated with a distinct eigenvalue \(\lambda\) as in equation
-(\ref{eq:eigen}), and let \(k\) be a non-zero scalar. Then, using the
-second of the equation-pair (\ref{eq:linear}), we have \begin{equation}
+associated with a distinct eigenvalue \(\lambda\) as in \cref{eq:eigen},
+and let \(k\) be a non-zero scalar. Then, using the second of the
+equation-pair \cref{eq:linear}, we have \begin{equation}
 M(k\symbf{v}) = k(M\symbf{v}) = k(\lambda\symbf{v}) = \lambda(k\symbf{v}),
 \label{eq:scaled-eigenvector}\end{equation} which means that if
 \(\symbf{v}\) is an eigenvector, any non-zero scalar multiple of
@@ -459,8 +480,8 @@ and rainy, both left to right, and top to bottom. Then, the column
 headings represent \emph{today's weather} and the row headings represent
 \emph{tomorrow's weather.} We then have the
 \href{https://en.wikipedia.org/wiki/Stochastic_matrix}{\emph{state-transition
-matrix}} or \emph{Markov matrix} \(M\) given in equation
-(\ref{eq:state}): \begin{equation}
+matrix}} or \emph{Markov matrix} \(M\) given in \cref{eq:state}:
+\begin{equation}
 M = \begin{bmatrix}
 0.65 & 0.30 & 0.10\\
 0.25 & 0.45 & 0.40\\
@@ -480,8 +501,7 @@ Let the column-vector \(\symbf{w}_{k}\) represent the probabilities for
 a particular day's weather and the column-vector \(\symbf{ w}_{k+1}\),
 the next day's weather. The two are then related by: \begin{equation}
 \symbf{w}_{k+1} = M\symbf{w}_{k}
-\label{eq:recurrence}\end{equation} Equation (\ref{eq:recurrence}) is
-called a
+\label{eq:recurrence}\end{equation} \Cref{eq:recurrence}) is called a
 \href{https://en.wikipedia.org/wiki/Recurrence_relation}{\emph{recurrence
 relation}} or \emph{difference equation}, and in our case, it represents
 the evolution of a dynamical system in time, namely the weather. Just
@@ -497,8 +517,8 @@ do we find that out?
 
 One obvious way is to compute the downstream weather one day at a time:
 think of forging a chain one link at a time because the weather has a
-memory of only one day. From equation (\ref{eq:recurrence}) we can
-compute the following: \[
+memory of only one day. From \cref{eq:recurrence} we can compute the
+following: \[
 \begin{aligned}
 \symbf{w}_{1} &= M\symbf {w}_{0}\\
 &= \begin{bmatrix}0.47050\\ 0.33450\\0.19500\end{bmatrix}\\
@@ -520,11 +540,11 @@ weather vectors in \(\mathbb{R}^{3}\) with time as parameter. This could
 be insightful, but it is a laborious and time-consuming way to find out
 the steady-state weather vector if there is one. Could we do better?
 
-A rough and ready method would be to evaluate equation (\ref{eq:Mn})
-with \(n\) set to large numbers, say \(50\) and \(100\), and check if
-the resulting weather vectors, \(\symbf{w}_{50}\) and
-\(\symbf{w}_{100}\) were equal. If they were, we might hazard a guess
-that this unchanging value is the steady-state weather vector.
+A rough and ready method would be to evaluate \cref{eq:Mn} with \(n\)
+set to large numbers, say \(50\) and \(100\), and check if the resulting
+weather vectors, \(\symbf{w}_{50}\) and \(\symbf{w}_{100}\) were equal.
+If they were, we might hazard a guess that this unchanging value is the
+steady-state weather vector.
 
 But computing the fiftieth or one-hunderdth power of a matrix is tedious
 and error-prone if done by hand, and computationally expensive if done
@@ -610,8 +630,8 @@ e_{13} & e_{23} & e_{33}
 &= PD
 \end{aligned}
 \label{eq:diag1}\end{equation} To get only \(M\) on the left-hand side
-of equation (\ref{eq:diag1}), we post-multiply both sides by \(P^{-1}\),
-the inverse of \(P\): \begin{equation}
+of \cref{eq:diag1}, we post-multiply both sides by \(P^{-1}\), the
+inverse of \(P\): \begin{equation}
 MPP^{-1} = MI = M = PDP^{-1}
 \label{eq:eigendecomp}\end{equation} If we now square \(M\), we get
 \begin{equation}
@@ -627,9 +647,9 @@ By induction, \begin{equation}
 M^{n} = PD^{n}P^{-1}
 \label{eq:M-to-the-n}\end{equation} The role of eigenvalues and
 eigenvectors in the plot of raising a square matrix to a power is now
-fully revealed: recall that in equation (\ref{eq:M-to-the-n}), \(P\) is
-the matrix whose columns are the eigenvectors, and \(D\) is the diagonal
-matrix whose non-zero elements are the corresponding eigenvalues, and
+fully revealed: recall that in \cref{eq:M-to-the-n}, \(P\) is the matrix
+whose columns are the eigenvectors, and \(D\) is the diagonal matrix
+whose non-zero elements are the corresponding eigenvalues, and
 \(P^{-1}\) is the inverse of \(P\).
 
 \hypertarget{software-implementation}{%
@@ -674,8 +694,8 @@ eigenvalues we get are: \[
 \end{aligned}
 \]
 
-From equation(\ref{eq:M-to-the-n}) we may surmise that the contributions
-from \(\lambda_{2}\) and \(\lambda_{3}\), being both less than one, will
+From \cref{eq:M-to-the-n} we may surmise that the contributions from
+\(\lambda_{2}\) and \(\lambda_{3}\), being both less than one, will
 diminish progressively as \(n\) increases, and in the limit, only the
 eigenvalue \(1\) will dominate the steady-state behaviour.
 
@@ -710,13 +730,12 @@ a little later. In any case, we confirm that
 Assembling the matrices \(P\) and \(P^{-1}\) from the eigenvectors is
 trivial, as is putting together \(D\) as the diagonal matrix of the
 corresponding eigenvalues. With these numerical values, the truth of
-equation (\ref{eq:eigendecomp}) is also easily demonstrated.
+\cref{eq:eigendecomp} is also easily demonstrated.
 
 The time evolution of the initial weather vector is then tracked with 1,
-10, 20, 50, and 100 iterations of equation (\ref{eq:recurrence}). In
-this case, the weather vector stabilizes after about twenty iterations
-to a steady-state vector, \(\symbf{w}_{\infty}\), given by
-\begin{equation}
+10, 20, 50, and 100 iterations of \cref{eq:recurrence}. In this case,
+the weather vector stabilizes after about twenty iterations to a
+steady-state vector, \(\symbf{w}_{\infty}\), given by \begin{equation}
 \symbf{w}_{\infty} = \begin{bmatrix}
 0.38251\\
 0.36066\\
@@ -745,10 +764,10 @@ get the \emph{normalized eigenvector:} \begin{equation}
 \label{eq:normalized-eigenvector-1}\end{equation}
 
 Lo and behold! \(\symbf{n}_{1}\) and \(\symbf{w}_{\infty}\) are one and
-the same, and all is well. Recalling from equation
-(\ref{eq:scaled-eigenvector}) that non-zero scalar multiples of
-eigenvectors are also eigenvectors themselves, this result, even if a
-little magical, really should not surprise us.
+the same, and all is well. Recalling from \cref{eq:scaled-eigenvector}
+that non-zero scalar multiples of eigenvectors are also eigenvectors
+themselves, this result, even if a little magical, really should not
+surprise us.
 
 We do not bother normalizing the eigenvectors associated with
 \(\lambda_{2}\) and \(\lambda_{3}\) because their column sums almost
@@ -774,8 +793,16 @@ true that the normalized eigenvector associated with an eigenvalue of
 \(1\) does indeed represent the steady state of the system represented
 by any transition matrix. If so, we would have a theorem on our hands.
 
-A PDF version of this article is
+\hypertarget{feedback}{%
+\paragraph{Feedback}\label{feedback}}
+
+Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
+comments and corrections.
+
+\noindent A PDF version of this article is
 \href{./eigenvalues-and-eigenvectors.pdf}{available for download here.}
+
+\noindent{\small Copyright © 2006 – 2021, R (Chandra) Chandrasekhar}
 
 \hypertarget{bibliography}{%
 \section*{References}\label{bibliography}}

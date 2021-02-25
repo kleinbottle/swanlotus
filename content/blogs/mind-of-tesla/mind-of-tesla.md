@@ -824,4 +824,6 @@ For helpful comments and discussions, I thank N Chandrasekhar, R Gopalkrishnan, 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
+\noindent A PDF version of this article is [available for download here.]({attach}./mind-of-tesla.pdf)
+
 \noindent{\small Copyright © 2006 – 2021, R (Chandra) Chandrasekhar}
