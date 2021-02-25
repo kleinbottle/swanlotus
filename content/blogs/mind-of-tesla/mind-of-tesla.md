@@ -823,3 +823,5 @@ For helpful comments and discussions, I thank N Chandrasekhar, R Gopalkrishnan, 
 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
+
+\noindent{\small Copyright © 2006 – 2021, R (Chandra) Chandrasekhar}
