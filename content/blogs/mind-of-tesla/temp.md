@@ -14,7 +14,7 @@ summary: 'Nikola Tesla was a complex genius whose prolific mind produced many el
 
 Nikola Tesla was a prodigious genius who benefited mankind immensely. He embodied a strange combination of fiery imagination, more suited to the poet or artist, tempered by the discipline of the engineer, grounded in mathematics and experimental science. The fact that he worked mostly alone and produced baffling inventions has led to his being labelled as both sorcerer and genius. He was superhuman in his will power and in his appetite for work. Yet he was also a frail human being who suffered a nervous breakdown, who had a fixation on the number three, and who, in later life, made bizarre claims which alienated him from mainstream science. Although he was well recognized by his scientific peers and the media in the late nineteenth and early twentieth century, Tesla today remains a largely unknown and unsung hero, who has not been accorded his rightful place in history.^[This was written _before_ the [electric vehicle brand Tesla](https://en.wikipedia.org/wiki/Tesla,_Inc.) gained global prominence.] It is also ironic that, although others profited immensely from his inventions, Tesla himself did not enjoy a prosperity commensurate with his abilities or contributions, and died alone and in penury.
 
-![Nikola Tesla at age 34; photograph by [Napoleon Sarony](https://en.wikipedia.org/wiki/Napoleon_Sarony); colorized by [Dana Keller](http://www.danarkeller.com/).^[The uncoloured image is [available at Wikipedia](https://commons.wikimedia.org/wiki/File:Tesla_circa_1890.jpeg) and is in the public domain in the US and certain other countries.]]({attach}images/tesla_in_color.jpg){#fig:tesla width=80%}
+![Nikola Tesla at age 34; photograph by [Napoleon Sarony](https://en.wikipedia.org/wiki/Napoleon_Sarony); colorized by [Dana Keller](http://www.danarkeller.com/).^[The uncoloured image is [available at Wikipedia](https://commons.wikimedia.org/wiki/File:Tesla_circa_1890.jpeg) and is in the public domain in the US and certain other countries.]](images/tesla_in_color.jpg){#fig:tesla width=80%}
 
 It is impossible to review the visionary contributions of Tesla within the
 compass of one paper, let alone do justice to analyzing his unique mind. Only
@@ -225,7 +225,7 @@ induction motors demonstrated by Tesla in his historic lecture of 16 May 1888,
 before the American Institute of Electrical Engineers at Columbia University.
 The motor developed one-half horsepower and showed that brushes and
 commutators could be eliminated. This image and the information in this footnote are taken from [the PBS (Public Broadcasting System) web site on
-Tesla](https://www.pbs.org/tesla/) [@tesla-pbs-bio].]]({attach}images/acmot_main02.jpg){#fig:ac-motor width=80%}
+Tesla](https://www.pbs.org/tesla/) [@tesla-pbs-bio].]](images/acmot_main02.jpg){#fig:ac-motor width=80%}
 
 In his own mind, the idea of the rotating magnetic fields, one chasing the
 other, that formed the basis of the induction motor and the AC generator, was
@@ -266,7 +266,7 @@ But look! What was that?  One of the snakes had seized hold of its own tail, and
 the form whirled mockingly before my eyes. As if by a flash of lightning I
 woke. [@findlay37 (p 43)].
 
-![The [benzene ring](https://en.wikipedia.org/wiki/Benzene#Structure) encircled by the snake eating its own tail, [the ouroboros](https://en.wikipedia.org/wiki/Ouroboros).^[The author of this image is [Haltopub](https://commons.wikimedia.org/wiki/User:Haltopub). The image has been copied [from Wikipedia](https://en.wikipedia.org/wiki/File:Ouroboros-benzene.svg) and it is subject to the [Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) licence](https://creativecommons.org/licenses/by-sa/4.0/legalcode).]]({attach}images/ouroboros-benzene.svg){#fig:benzene width=60%}
+![The [benzene ring](https://en.wikipedia.org/wiki/Benzene#Structure) encircled by the snake eating its own tail, [the ouroboros](https://en.wikipedia.org/wiki/Ouroboros).^[The author of this image is [Haltopub](https://commons.wikimedia.org/wiki/User:Haltopub). The image has been copied [from Wikipedia](https://en.wikipedia.org/wiki/File:Ouroboros-benzene.svg) and it is subject to the [Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) licence](https://creativecommons.org/licenses/by-sa/4.0/legalcode).]](images/ouroboros-benzene.svg){#fig:benzene width=60%}
 
 A low resolution video dramatization of Kekulé's dream is [available on YouTube](https://www.youtube.com/watch?v=2NRwd-JJFm4) [@kekules-dream]. It is interesting that, instead of "dozed", the original German word used by Kekulé in his description of the second dream was "Halbschlaf" which literally means "half-asleep" [@weisberg86 (p 32)]. So, it is clear that the revelation came to him during a period in the hypnagogic, twilight state between wakefulness and sleep.
 
@@ -409,11 +409,11 @@ Tesla's mental mode during his virtual laboratory experiments is given below.
 
 It has generally been believed that wakefulness and sleep are mutually exclusive states of both body and mind. Apart from episodes of absent-mindedness that pass for day-dreaming and for abnormal mental states such as hallucinations, it was also the general consensus that dreaming occurred only during the state of sleep. A simplified pictorial relationship between these states is shown in the Venn diagram of +@fig:three-states.
 
-![Relationship between wakefulness, dreaming and sleep.^[A simplified picture of the relationship between the states of wakefulness, sleep, and dreaming. Wakefulness and sleep are mutually exclusive. Dreaming only occurs in the sleep state.]]({attach}images/three-states.svg){#fig:three-states width=100%}
+![Relationship between wakefulness, dreaming and sleep.^[A simplified picture of the relationship between the states of wakefulness, sleep, and dreaming. Wakefulness and sleep are mutually exclusive. Dreaming only occurs in the sleep state.]](images/three-states.svg){#fig:three-states width=100%}
 
 The phenomenon of [lucid dreaming](https://en.wikipedia.org/wiki/Lucid_dream) was scientifically established only in the 1980s. Psychophysiological research has since discovered that it occurs in [Rapid Eye Movement (REM) sleep](https://en.wikipedia.org/wiki/Rapid_eye_movement_sleep) and is as vivid---if not more vivid than---a normal dream. Nevertheless, the subject who is dreaming is aware that he or she is dreaming and, moreover, can volitionally alter the dream, unlike the regular dreamer [@laberge85; @laberge2000]. This means that the lucid dreamer occupies a paradoxical state at the borderline between sleep and wakefulness in which the body is essentially in REM sleep, but the mind is aware that it is dreaming, and is capable of controlling the dream. Both the dream experience, and the fact that it was a conscious dream, can be recalled during the wakeful state. After the recognition and acceptance of lucid dreaming as a legitimate mental state, we may represent the relationship between wakefulness, sleep, and dreaming by the modified Venn diagram shown in +@fig:lucid.
 
-![Modified relationship between wakefulness, dreaming and sleep.^[Modified, simplified relationship between wakefulness, dreaming, and sleep after the recognition and acceptance of lucid dreaming as a legitimate mental state. Lucid dreamers are mentally aware that they are dreaming and have conscious control over their dreams, while paradoxically, their bodies are asleep.]]({attach}images/lucid.svg){#fig:lucid width=100%}
+![Modified relationship between wakefulness, dreaming and sleep.^[Modified, simplified relationship between wakefulness, dreaming, and sleep after the recognition and acceptance of lucid dreaming as a legitimate mental state. Lucid dreamers are mentally aware that they are dreaming and have conscious control over their dreams, while paradoxically, their bodies are asleep.]](images/lucid.svg){#fig:lucid width=100%}
 
 It is tempting to conjecture that Tesla, working in his virtual laboratory,
 functioned one level above the lucid dream, in being both physically and
@@ -752,7 +752,7 @@ circled colours were the ones newly recognized at any particular period. So,
 the progression of newly recognized colours was red/black, followed by
 yellow/green and later by white/blue. Bucke cites literary and scientific
 evidence in support of his conjecture. While his scientific arguments have now
-been supplanted, the literary arguments are still persuasive.]]({attach}images/colour-perception-tree.svg){#fig:colour-tree width=100%}
+been supplanted, the literary arguments are still persuasive.]](images/colour-perception-tree.svg){#fig:colour-tree width=100%}
 
 Extrapolating from his suggested hypothetical development of colour vision,
 etc., over time, Bucke postulated that the human mind also evolved with time.
