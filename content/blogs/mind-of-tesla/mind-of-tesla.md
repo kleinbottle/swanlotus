@@ -368,7 +368,7 @@ definitive explanation for Tesla's experience.
 
 ### Virtual laboratory
 
-The term [_gedankenexperiment_](https://www.britannica.com/science/Gedankenexperiment) or "thought experiment" gained currency, especially after Einstein's traveller riding on a light wave. However, Tesla's unique ability to use his mind as a fully equipped, albeit inexpensive laboratory, to conduct the entire design-prototype-test-repeat cycle iteratively, gives new meaning to what we _could_ mean by thought experiment or mental experiment. Indeed, it is perhaps more accurate to coin the term _virtual laboratory_ for describing what Tesla accomplished with his mind and vivid visualization. That is the term we will use hereafter in this paper. The experiments in his virtual laboratory all obeyed the known properties of matter and energy as enshrined in the known laws of physics, and he did not need to tend them until he wished to examine the results.
+The term [_gedankenexperiment_](https://www.britannica.com/science/Gedankenexperiment) or "thought experiment" gained currency, especially after Einstein's traveller riding on a wave of light. However, Tesla's unique ability to use his mind as a fully equipped, albeit inexpensive laboratory, to conduct the entire design-prototype-test-repeat cycle iteratively, gives new meaning to what we _could_ mean by thought experiment or mental experiment. Indeed, it is perhaps more accurate to coin the term _virtual laboratory_ for describing what Tesla accomplished with his mind and vivid visualization. That is the term we will use hereafter in this paper. The experiments in his virtual laboratory all obeyed the known properties of matter and energy as enshrined in the known laws of physics, and he did not need to tend them until he wished to examine the results.
 
 ### The importance of imagination
 
@@ -468,7 +468,7 @@ convinced. Some of his more notable traits are enumerated below:
 started [his] work at three o'clock in the morning and continued until eleven at
 night, no Sundays or holidays excepted" [@john83].
 #.  Tesla excelled at languages and knew English, French, German, Italian and
-the Slavic dialects[@cheney81 (p 14)].
+the Slavic dialects [@cheney81 (p 14)].
 #.  He had a prodigious memory and could store entire logarithmic tables in
 his mind [@cheney81 (p 14)].
 #.  He was left-handed but later became ambidextrous [@oneill80].
@@ -480,8 +480,7 @@ thirty-five years [@john83].
 #.  He was attracted to gambling but gave it up when admonished by his
 parents. He not only "conquered [his] passion then and there ... [but also] ... tore it from [his] heart so as not to leave even a trace
 of desire [@john83].
-#.  He took up smoking, but on realizing that it would ruin his health, he
-gave it up permanently [@john83].
+#.  He took up smoking, but on realizing that it would ruin his health, gave it up permanently [@john83].
 #.  When Tesla discovered that the innocent cup of coffee he consumed every
 morning could precipitate heart trouble, he discontinued it by strenuous
 will [@john83].
@@ -500,7 +499,7 @@ visualization was in any way related to his tremendous will power.
 
 Tesla was a humanist who desired to use his mind for the freedom of all mankind
 from the thralldom of matter. He wanted to liberate mankind from drudgery using
-his magical inventions. While this idealistic vision never left until the last,
+his magical inventions. While this idealistic vision never left until the end,
 Tesla was singularly inept in his business dealings. Indeed, one academic who
 teaches engineering management, and is a lifelong Tesla enthusiast and
 biographer, has written that he uses Tesla to teach his students how _not_
@@ -605,13 +604,13 @@ Arabia will not sweeten this little hand," [Shakespeare, _Macbeth_, act 5,
 scene, 1, lines 50--1].
 
 Synaesthesia is a condition in which stimulation of one sensory modality gives
-rise to a response in another modality [@marks00; cytowic96]. A synaesthete
+rise to a response in another modality [@marks00; @cytowic96]. A synaesthete
 may "taste" a shape for example. It is tempting to speculate that Tesla's
-awful taste when dropping paper squares onto a liquid may be symptomatic of
+awful taste when dropping paper squares into a liquid may be symptomatic of
 synaesthesia. It would also be interesting to explore whether his hyper-acute
 senses and cross-modal sensory responses influenced each other.
 
-Tesla's abnormal sensitivity to sounds, his single-minded absorption in what fascinated him, his solitary work habits, his inability to see through the dishonesty of some of his work associates, etc., all suggest that he might have been autistic. However, he had no difficulties with language and, in fact knew Göthe's _Faust_ by heart, along with several Serbian poems. This juxtaposition of some of the strengths found in the autistic with few of their deficiencies, has prompted some to suggest that Tesla probably suffered from high-functioning autism [@blume04] or from [Asperger's syndrome](https://en.wikipedia.org/wiki/Asperger_syndrome) [@tesla-faq; @peterson05], which is a rare condition in which the autistic child is intelligent, highly verbal, and near normal [@frith90]. This would explain both his extraordinary mental faculties and also a number of his mental quirks. The existence of ["autistic idiot savants"](https://en.wikipedia.org/wiki/Savant_syndrome) [@frith90 (pp 84--85); @savant2009] who function with super-human excellence in some areas of human endeavour but who are lacking severely in others, suggests that some compensatory mechanism---a sort of zero sum for the total mental capacity---might explain the co-existence of both their "islets of abilities" and concomitant deficits.
+Tesla's abnormal sensitivity to sounds, his single-minded absorption in what fascinated him, his solitary work habits, his inability to see through the dishonesty of some of his work associates, etc., all suggest that he might have been autistic. However, he had no difficulties with language and, in fact knew Göthe's _Faust_ by heart, along with several Serbian poems. This juxtaposition of some of the strengths found in the autistic with few of their deficiencies, has prompted some to suggest that Tesla probably suffered from high-functioning autism [@blume04] or from [Asperger's syndrome](https://en.wikipedia.org/wiki/Asperger_syndrome) [@tesla-faq], which is a rare condition in which the autistic child is intelligent, highly verbal, and near normal [@frith90]. This would explain both his extraordinary mental faculties and also a number of his mental quirks. The existence of ["autistic idiot savants"](https://en.wikipedia.org/wiki/Savant_syndrome) [@frith90 (pp 84--85); @savant2009] who function with super-human excellence in some areas of human endeavour but who are lacking severely in others, suggests that some compensatory mechanism---a sort of zero sum for the total mental capacity---might explain the co-existence of both their "islets of abilities" and concomitant deficits.
 
 ### Questions: idiosyncrasies
 
@@ -637,7 +636,7 @@ Tesla's plans were always grand. Typical of the visionary, he saw the fruition
 of his discoveries in his mind and spoke of them even before they had been
 realized. When commercial or financial imperatives obstructed their
 realization, he was often sidelined or ridiculed by the scientific
-establishment. Yet, the very things he envisaged then are realities in our
+establishment. Yet, the very things he envisioned then are realities in our
 present age of semiconductors, computers, and the Internet. To appreciate just
 how prophetic his vision was, let us look at just one example: his
 "World-System". In the vocabulary of Tesla's day, this system would be capable
@@ -803,7 +802,7 @@ One rather sad, recurring theme in the biographies of Tesla is that he was
 somehow a misfit either in the society in which he lived and worked, or the
 times in which his life was enacted. Margaret Cheney's biography, _Tesla:
 Man Out of Time_, clearly shows this in its very title. As does also the
-subtitle of Lomas's book [@{lomas99], _Nikola Tesla, Forgotten Genius of
+subtitle of Lomas's book [@lomas99], _Nikola Tesla, Forgotten Genius of
 Electricity_. Do these titles hold the key to Tesla's mystery? _Was Tesla from
 our future?_
 
