@@ -27,6 +27,6 @@ metadata:
   xnos-capitalise: true
   xnos-cleveref: true
   eqnos-star-name: Equation
-  eqnos-plus-name: equation
+  eqnos-plus-name: Equation
   fignos-star-name: Figure
   fignos-plus-name: Figure

@@ -5,6 +5,7 @@
 %
 \documentclass[
   11pt,
+  british,
   a4paper,
 ]{article}
 \usepackage{lmodern}
@@ -42,6 +43,7 @@
 \hypersetup{
   pdftitle={Reflections on the Mind of Nikola Tesla},
   pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
   colorlinks=true,
   linkcolor=TealBlue,
   filecolor=Purple,
@@ -70,7 +72,10 @@
 \AtBeginEnvironment{quote}{\small}
 \usepackage{etoolbox}
 \usepackage{graphicx}
-\usepackage{cleveref}
+\usepackage[capitalise]{cleveref}
+  \crefname{equation}{Equation}{Equations}
+  \crefname{figure}{Figure}{Figures}
+\usepackage{caption}
 \usepackage{subcaption}
 \usepackage{svg}
 \usepackage[Latin,Tamil,Devanagari]{ucharclasses}
@@ -103,6 +108,36 @@
 % Flexible fontsizes
 %
 \usepackage{fontsize}
+%
+%% pandoc-fignos: environment to disable figure caption prefixes
+    \makeatletter
+    \newcounter{figno}
+    \newenvironment{fignos:no-prefix-figure-caption}{
+      \caption@ifcompatibility{}{
+        \let\oldthefigure\thefigure
+        \let\oldtheHfigure\theHfigure
+        \renewcommand{\thefigure}{figno:\thefigno}
+        \renewcommand{\theHfigure}{figno:\thefigno}
+        \stepcounter{figno}
+        \captionsetup{labelformat=empty}
+      }
+    }{
+      \caption@ifcompatibility{}{
+        \captionsetup{labelformat=default}
+        \let\thefigure\oldthefigure
+        \let\theHfigure\oldtheHfigure
+        \addtocounter{figure}{-1}
+      }
+    }
+    \makeatother
+%%
+\ifxetex
+  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[variant=british]{english}
+\else
+  \usepackage[shorthands=off,main=british]{babel}
+\fi
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -143,9 +178,9 @@ publication in the prestigious journal
 \href{https://proceedingsoftheieee.ieee.org/}{\emph{Proceedings of the
 IEEE}} in 2006, the year of Tesla's 150th birth anniversary. Although
 well-received by some, it was, alas, rejected. That same manuscript has
-been updated and reformatted here, to be shared with the wider world.
-Hyperlinks have been added for the convenience of the reader. I
-apologize if this blog reads like a \emph{slog}.
+been augmented, updated, and reformatted here, to be shared with the
+wider world. Hyperlinks have been added for the convenience of the
+reader. I apologize if this blog reads like a \emph{slog}.
 \emojifont{😉}\normalfont
 \end{quote}
 
@@ -322,7 +357,7 @@ hearing and sight:
   Did his ``nervous breakdown'' influence his inventive abilities?
 \item
   Were his eccentric habits and behaviour in later life the sequelae of
-  his ``nervous breakdown?''
+  his ``nervous breakdown''?
 \end{enumerate}
 
 It is believed that these and other questions posed here are worthy of
@@ -566,7 +601,7 @@ ouroboros}.\footnotemark{}}\label{fig:benzene}
 
 A low resolution video dramatization of Kekulé's dream is
 \href{https://www.youtube.com/watch?v=2NRwd-JJFm4}{available on YouTube}
-{[}13{]}. It is interesting that, instead of ``dozed,'' the original
+{[}13{]}. It is interesting that, instead of ``dozed'', the original
 German word used by Kekulé in his description of the second dream was
 ``Halbschlaf'' which literally means ``half-asleep'' {[}11{]} (p 32).
 So, it is clear that the revelation came to him during a period in the
@@ -1222,7 +1257,7 @@ obstructed their realization, he was often sidelined or ridiculed by the
 scientific establishment. Yet, the very things he envisioned then are
 realities in our present age of semiconductors, computers, and the
 Internet. To appreciate just how prophetic his vision was, let us look
-at just one example: his ``World-System.'' In the vocabulary of Tesla's
+at just one example: his ``World-System''. In the vocabulary of Tesla's
 day, this system would be capable of:
 
 \begin{quote}
@@ -1355,7 +1390,7 @@ night, as he was lying on his bed in the dark, this pigeon flew in
 through the open window, as if to deliver a message. He looked at her
 and realized that she had come to tell him she was dying. As he looked
 at her, Tesla said, ``there came a light from her eyes---two powerful
-beams of light.'' He reaffirmed, ``Yes, it was a real light, a powerful,
+beams of light''. He reaffirmed, ``Yes, it was a real light, a powerful,
 dazzling, blinding light, a light more intense than I had ever produced
 by the most powerful lamps in my laboratory'' {[}3{]} (p 229). When that
 pigeon died, Tesla ``knew'' that his life's work was finished.
@@ -1374,7 +1409,7 @@ The medical doctor, Richard Maurice Bucke\footnote{Formerly Medical
   Superintendent of the Asylum for the Insane at London, Ontario, Canada},
 writing at the beginning of the twentieth century, advanced the radical
 hypothesis that evolution also applied to the human mind {[}9{]}.
-Although he used the word ``evolution,'' Bucke did not imply any
+Although he used the word ``evolution'', Bucke did not imply any
 particular engine, like Darwinian natural selection, for driving mental
 evolution, but rather asserted blandly ``that growth, evolution,
 development, \ldots{} has \ldots{} always gone on, is going on now, and
@@ -1527,8 +1562,8 @@ comments and corrections.
 \begin{CSLReferences}{0}{0}
 \leavevmode\hypertarget{ref-john83}{}%
 \CSLLeftMargin{{[}1{]} }
-\CSLRightInline{N. Tesla, {``{My Inventions: The Autobiography of Nikola
-Tesla},''} B. Johnston, Ed. Williston, VT, USA: Hart Brothers, 1983
+\CSLRightInline{N. Tesla, {`{My Inventions: The Autobiography of Nikola
+Tesla},'} B. Johnston, Ed. Williston, VT, USA: Hart Brothers, 1983
 {[}Online{]}. Available:
 \url{http://www.tfcbooks.com/special/mi_link.htm}. {[}Accessed:
 06-Jun-2002{]}}
@@ -1557,21 +1592,21 @@ Headline Book Publishing, 1999. }
 
 \leavevmode\hypertarget{ref-tesla-wiki}{}%
 \CSLLeftMargin{{[}6{]} }
-\CSLRightInline{---, {``{N}ikola {T}esla --- {Wikipedia}{,} the {F}ree
-{E}ncyclopedia,''} 2021. {[}Online{]}. Available:
+\CSLRightInline{---, {`{N}ikola {T}esla --- {Wikipedia}{,} the {F}ree
+{E}ncyclopedia,'} 2021. {[}Online{]}. Available:
 \url{https://en.wikipedia.org/wiki/Nikola_Tesla}. {[}Accessed:
 23-Feb-2021{]}}
 
 \leavevmode\hypertarget{ref-tesla-home}{}%
 \CSLLeftMargin{{[}7{]} }
-\CSLRightInline{J. M. Newlight, {``{Nikola Tesla}.''} {[}Online{]}.
+\CSLRightInline{J. M. Newlight, {`{Nikola Tesla}.'} {[}Online{]}.
 Available: \url{http://www.teslaplay.com/index.html}. {[}Accessed:
 23-Feb-2021{]}}
 
 \leavevmode\hypertarget{ref-tesla-pbs-bio}{}%
 \CSLLeftMargin{{[}8{]} }
-\CSLRightInline{R. Uth and M. Cheney, {``{PBS: Tesla---Master of
-Lightning: Who Was Nikola Tesla?}''} 2004. {[}Online{]}. Available:
+\CSLRightInline{R. Uth and M. Cheney, {`{PBS: Tesla---Master of
+Lightning: Who Was Nikola Tesla?}'} 2004. {[}Online{]}. Available:
 \url{https://www.pbs.org/tesla/}. {[}Accessed: 26-Jun-2006{]}}
 
 \leavevmode\hypertarget{ref-bucke48}{}%
@@ -1582,7 +1617,7 @@ Evolution of the Human Mind}}, 14th ed. New York, USA: E P Dutton, 1948.
 
 \leavevmode\hypertarget{ref-tesla-personal}{}%
 \CSLLeftMargin{{[}10{]} }
-\CSLRightInline{N. Tesla, {``{Some Personal Recollections},''}
+\CSLRightInline{N. Tesla, {`{Some Personal Recollections},'}
 \emph{Scientific American}, 1915 {[}Online{]}. Available:
 \url{https://www.pbs.org/tesla/res/res_art01.html}. {[}Accessed:
 06-Jun-2006{]}}
@@ -1599,22 +1634,22 @@ London, UK: Duckworth, 1937. }
 
 \leavevmode\hypertarget{ref-kekules-dream}{}%
 \CSLLeftMargin{{[}13{]} }
-\CSLRightInline{---, {``{Kekule's Dream}.''} {[}Online{]}. Available:
+\CSLRightInline{---, {`{Kekule's Dream}.'} {[}Online{]}. Available:
 \url{https://www.youtube.com/watch?v=2NRwd-JJFm4}. {[}Accessed:
 21-Feb-2021{]}}
 
 \leavevmode\hypertarget{ref-justin06}{}%
 \CSLLeftMargin{{[}14{]} }
-\CSLRightInline{R. G. Justin, {``{Otto Loewi's Great Dreams},''}
-\emph{The Permanente Journal}, vol. 10, no. 2, pp. 70--71, 2006
-{[}Online{]}. Available:
+\CSLRightInline{R. G. Justin, {`{Otto Loewi's Great Dreams},'} \emph{The
+Permanente Journal}, vol. 10, no. 2, pp. 70--71, 2006 {[}Online{]}.
+Available:
 \url{http://www.thepermanentejournal.org/files/Summer2006/otto.pdf}.
 {[}Accessed: 23-Feb-2021{]}}
 
 \leavevmode\hypertarget{ref-loewi2014}{}%
 \CSLLeftMargin{{[}15{]} }
-\CSLRightInline{A. N. McCoy and Y. S. Tan, {``{Otto Loewi (1873--1961):
-Dreamer and Nobel laureate},''} \emph{Singapore Medical Journal}, vol.
+\CSLRightInline{A. N. McCoy and Y. S. Tan, {`{Otto Loewi (1873--1961):
+Dreamer and Nobel laureate},'} \emph{Singapore Medical Journal}, vol.
 55, no. 1, pp. 3--4, 2014 {[}Online{]}. Available:
 \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4291908/}.
 {[}Accessed: 21-Feb-2021{]}}
@@ -1669,8 +1704,8 @@ Verlag, 1997. }
 
 \leavevmode\hypertarget{ref-einstein-quote}{}%
 \CSLLeftMargin{{[}25{]} }
-\CSLRightInline{A. Einstein, {``{Quote by Albert Einstein: {`I am enough
-of an artist to draw freely upon my \ldots{}'}},''} 2021. {[}Online{]}.
+\CSLRightInline{A. Einstein, {`{Quote by Albert Einstein: {``I am enough
+of an artist to draw freely upon my \ldots{}''}},'} 2021. {[}Online{]}.
 Available:
 \url{https://www.goodreads.com/quotes/2177-i-am-enough-of-an-artist-to-draw-freely-upon}.
 {[}Accessed: 24-Feb-2021{]}}
@@ -1682,14 +1717,14 @@ USA: Jeremy P Tarcher, 1985. }
 
 \leavevmode\hypertarget{ref-laberge2000}{}%
 \CSLLeftMargin{{[}27{]} }
-\CSLRightInline{S. LaBerge and J. Gackenbach, {``{Lucid Dreaming},''} in
+\CSLRightInline{S. LaBerge and J. Gackenbach, {`{Lucid Dreaming},'} in
 \emph{{Varieties of Anomalous Experience: Examining the Scientific
 Evidence}}, E. Cardeña, S. J. Lynn, and S. Krippner, Eds. Washington,
 DC, USA: American Psychological Association, 2000, pp. 151--182. }
 
 \leavevmode\hypertarget{ref-marks00}{}%
 \CSLLeftMargin{{[}28{]} }
-\CSLRightInline{L. E. Marks, {``Synesthesia,''} in \emph{{Varieties of
+\CSLRightInline{L. E. Marks, {`Synesthesia,'} in \emph{{Varieties of
 Anomalous Experience: Examining the Scientific Evidence}}, E. Cardeña,
 S. J. Lynn, and S. Krippner, Eds. Washington, DC, USA: American
 Psychological Association, 2000, pp. 121--149. }
@@ -1701,15 +1736,15 @@ London, UK: Abacus, 1996. }
 
 \leavevmode\hypertarget{ref-blume04}{}%
 \CSLLeftMargin{{[}30{]} }
-\CSLRightInline{H. Blume, {``{Autism \& The Internet or It's The Wiring,
-Stupid},''} 1997. {[}Online{]}. Available:
+\CSLRightInline{H. Blume, {`{Autism \& The Internet or It's The Wiring,
+Stupid},'} 1997. {[}Online{]}. Available:
 \url{http://web.mit.edu/comm-forum/legacy/papers/blume.html}.
 {[}Accessed: 23-Feb-2021{]}}
 
 \leavevmode\hypertarget{ref-tesla-faq}{}%
 \CSLLeftMargin{{[}31{]} }
-\CSLRightInline{G. Peterson, {``{Tesla's Mind \textbar{} Tesla FAQ No. 4
-\textbar{} Interesting Facts About Nikola Tesla}.''} {[}Online{]}.
+\CSLRightInline{G. Peterson, {`{Tesla's Mind \textbar{} Tesla FAQ No. 4
+\textbar{} Interesting Facts About Nikola Tesla}.'} {[}Online{]}.
 Available: \url{http://www.tfcbooks.com/teslafaq/q\&a_004.htm}.
 {[}Accessed: 26-Jun-2006{]}}
 
@@ -1720,8 +1755,8 @@ Oxford, UK: Basil Blackwell, 1990. }
 
 \leavevmode\hypertarget{ref-savant2009}{}%
 \CSLLeftMargin{{[}33{]} }
-\CSLRightInline{D. A. Treffert, {``The savant syndrome: An extraordinary
-condition. A synopsis: Past, present, future,''} \emph{Philosophical
+\CSLRightInline{D. A. Treffert, {`The savant syndrome: An extraordinary
+condition. A synopsis: Past, present, future,'} \emph{Philosophical
 Transactions of the Royal Society of London. Series B, Biological
 sciences}, vol. 364, no. 1522, pp. 1351--1357 {[}Online{]}. Available:
 \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2677584/}.
@@ -1729,22 +1764,22 @@ sciences}, vol. 364, no. 1522, pp. 1351--1357 {[}Online{]}. Available:
 
 \leavevmode\hypertarget{ref-tesla-energy}{}%
 \CSLLeftMargin{{[}34{]} }
-\CSLRightInline{N. Tesla, {``{The Problem Of Increasing Human Energy:
-With Special References to the Harnessing of the Sun's Energy}.''}
+\CSLRightInline{N. Tesla, {`{The Problem Of Increasing Human Energy:
+With Special References to the Harnessing of the Sun's Energy}.'}
 {[}Online{]}. Available:
 \url{https://www.pbs.org/tesla/res/res_art09.html}. {[}Accessed:
 26-Jun-2006{]}}
 
 \leavevmode\hypertarget{ref-grotz}{}%
 \CSLLeftMargin{{[}35{]} }
-\CSLRightInline{T. Grotz, {``{The Influence of Vedic Philosophy on
-Nikola Tesla's Understanding of Free Energy},''} 1997. {[}Online{]}.
-Available: \url{http://mountainman.com.au/aether_1.html}. {[}Accessed:
+\CSLRightInline{T. Grotz, {`{The Influence of Vedic Philosophy on Nikola
+Tesla's Understanding of Free Energy},'} 1997. {[}Online{]}. Available:
+\url{http://mountainman.com.au/aether_1.html}. {[}Accessed:
 06-Jun-2006{]}}
 
 \leavevmode\hypertarget{ref-dobson}{}%
 \CSLLeftMargin{{[}36{]} }
-\CSLRightInline{J. Dobson, {``{The Equations of Maya},''} 1993.
+\CSLRightInline{J. Dobson, {`{The Equations of Maya},'} 1993.
 {[}Online{]}. Available:
 \url{http://quanta-gaia.org/dobson/EquationsOfMaya.html}. {[}Accessed:
 23-Feb-2021{]}}
@@ -1756,14 +1791,14 @@ Philosophy}}. New Delhi, India: Chaukamba Sanskrit Pratishthan, 2001. }
 
 \leavevmode\hypertarget{ref-tesla-cosmic}{}%
 \CSLLeftMargin{{[}38{]} }
-\CSLRightInline{N. Tesla, {``{How Cosmic Forces Shape Our Destinies:
-({`Did the War Cause the Italian Earthquake'})}.''} {[}Online{]}.
+\CSLRightInline{N. Tesla, {`{How Cosmic Forces Shape Our Destinies:
+({``Did the War Cause the Italian Earthquake''})}.'} {[}Online{]}.
 Available: \url{https://www.pbs.org/tesla/res/res_art10.html}.
 {[}Accessed: 26-Jun-2006{]}}
 
 \leavevmode\hypertarget{ref-heil03}{}%
 \CSLLeftMargin{{[}39{]} }
-\CSLRightInline{J. L. Heilbron, {``Ether,''} in \emph{{The Oxford
+\CSLRightInline{J. L. Heilbron, {`Ether,'} in \emph{{The Oxford
 Companion to the History of Modern Science}}, J. L. Heilbron, Ed. Oxford
 University Press, 2003. }
 

@@ -5,6 +5,7 @@
 %
 \documentclass[
   11pt,
+  british,
   a4paper,
 ]{article}
 \usepackage{lmodern}
@@ -42,6 +43,7 @@
 \hypersetup{
   pdftitle={Eigenvalues and Eigenvectors---Why are they important?},
   pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
   colorlinks=true,
   linkcolor=TealBlue,
   filecolor=Purple,
@@ -57,7 +59,9 @@
 \AtBeginEnvironment{quote}{\small}
 \usepackage{etoolbox}
 \usepackage{graphicx}
-\usepackage{cleveref}
+\usepackage[capitalise]{cleveref}
+  \crefname{equation}{Equation}{Equations}
+\usepackage{caption}
 \usepackage{subcaption}
 \usepackage{svg}
 \usepackage[Latin,Tamil,Devanagari]{ucharclasses}
@@ -90,6 +94,36 @@
 % Flexible fontsizes
 %
 \usepackage{fontsize}
+%
+%% pandoc-fignos: environment to disable figure caption prefixes
+    \makeatletter
+    \newcounter{figno}
+    \newenvironment{fignos:no-prefix-figure-caption}{
+      \caption@ifcompatibility{}{
+        \let\oldthefigure\thefigure
+        \let\oldtheHfigure\theHfigure
+        \renewcommand{\thefigure}{figno:\thefigno}
+        \renewcommand{\theHfigure}{figno:\thefigno}
+        \stepcounter{figno}
+        \captionsetup{labelformat=empty}
+      }
+    }{
+      \caption@ifcompatibility{}{
+        \captionsetup{labelformat=default}
+        \let\thefigure\oldthefigure
+        \let\theHfigure\oldtheHfigure
+        \addtocounter{figure}{-1}
+      }
+    }
+    \makeatother
+%%
+\ifxetex
+  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[variant=british]{english}
+\else
+  \usepackage[shorthands=off,main=british]{babel}
+\fi
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -147,7 +181,7 @@ their
 \href{http://math.stackexchange.com/questions/23312/what-is-the-importance-of-eigenvalues-eigenvectors}{importance}.
 
 I then asked, ``Can I explain to \emph{myself} what eigenvalues and
-eigenvectors are, and why they are important?'' It also occurred to me
+eigenvectors are, and why they are important?''. It also occurred to me
 that the harried and hurried students of today might derive some benefit
 from my efforts; hence this blog. It is a brief, largely qualitative,
 and mathematically non-rigorous article on eigenvalues and eigenvectors
@@ -171,7 +205,7 @@ few.
 The word
 \href{https://en.wikipedia.org/wiki/Talk:Eigenvector}{\emph{eigen}} is
 German in origin and means ``inherent, characteristic, natural, own, or
-peculiar (to).'' So the prefix ``eigen'' captures the natural essence of
+peculiar (to)''. So the prefix ``eigen'' captures the natural essence of
 the noun it qualifies. Perhaps the word ``idiosyncratic'' comes closest
 to conveying its import.
 
@@ -267,7 +301,7 @@ a_2s^2 + a_1s + a_0 = 0.
 
 The \emph{roots} of this characteristic polynomial give us the
 eigenvalues of the system. Perhaps, the prefix ``eigen'' came to be used
-because of the adjective ``characteristic.''
+because of the adjective ``characteristic''.
 
 These ideas masquerade under different terminology in linear system and
 control theory where
@@ -446,17 +480,17 @@ To get an idea of the broad sweep of eigenvalues and their
 applicability, I strongly recommend that you should read a charming
 article entitled
 \href{http://people.maths.ox.ac.uk/trefethen/dec11.pdf}{``Favourite
-Eigenvalue Problems.''} Another article that takes a breezy look at the
+Eigenvalue Problems''.} Another article that takes a breezy look at the
 subject of this writeup is
 \href{http://hubpages.com/education/What-the-Heck-are-Eigenvalues-and-Eigenvectors}{``What
-the Heck are Eigenvalues and Eigenvectors?''} It has a disputed
+the Heck are Eigenvalues and Eigenvectors?''.} It has a disputed
 explanation (see comments on the article) of how a bridge collapsed---so
 take that
 \href{https://www.thefreedictionary.com/cum+grano+salis}{\emph{cum grano
 salis}}. It also contains a link to a PDF paper interestingly entitled
 \href{http://www.rose-hulman.edu/~bryan/googleFinalVersionFixed.pdf}{``The
 25,000,000,000.00 Dollar Eigenvector: The Linear Algebra Behind
-Google,''} which, in good faith, I think is not a spoof! Indeed, the
+Google'',} which, in good faith, I think is not a spoof! Indeed, the
 \href{http://ilpubs.stanford.edu:8090/422/}{citation to the original
 Stanford InfoLab technical report} and the
 \href{http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf}{actual report}

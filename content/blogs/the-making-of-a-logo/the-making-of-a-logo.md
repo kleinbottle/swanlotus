@@ -23,14 +23,14 @@ This unusual request sent the cogwheels in Sol's brain whirring furiously as he 
 He first thought of the philosophers [Socrates](https://en.wikipedia.org/wiki/Socrates) and [Diotima](https://en.wikipedia.org/wiki/Diotima_of_Mantinea) whose words had earned his undying admiration. He recalled his visit to Athens just before the 2004 summer Olympics, when he had marvelled that such noble thoughts could arise from such ancient minds!
 
 \begin{figure*}[h]
-  \begin{minipage}[b]{0.5\linewidth}
+  \begin{minipage}[b]{0.5\textwidth}
     \centering
-    \includegraphics[height=40mm]{images/socrates-close-up.jpg}
+    \includegraphics[height=60mm]{images/socrates-close-up.jpg}
     \subcaption*{Socrates}
-  \end{minipage}
-  \begin{minipage}[b]{0.5\linewidth}
+  \end{minipage}\hfill
+  \begin{minipage}[b]{0.5\textwidth}
     \centering
-    \includegraphics[height=40mm]{images/diotima-2.jpg}
+    \includegraphics[height=60mm]{images/diotima-2.jpg}
     \subcaption*{Diotima}
   \end{minipage}
 \end{figure*}
@@ -71,7 +71,7 @@ Mathematics and philosophy share another quality. Two related branches of mathem
     \centering
     \includesvg[height=40mm]{images/trefoil.svg}
     \subcaption*{Trefoil}
-  \end{minipage}
+  \end{minipage}\hfill
   \begin{minipage}[b]{0.5\linewidth}
     \centering
     \includesvg[height=40mm]{images/braid.svg}
@@ -320,3 +320,12 @@ As he gazed upon his latest effort, Sol experienced the exultation and closure f
 The statues of Socrates and Diotima shown in this blog are exhibited outside the [Undercroft](https://www.uwa.edu.au/theatres/venues/undercroft) of [The University of Western Australia](https://www.uwa.edu.au/).
 
 Apart from highlighted code, all other illustrations were generated using XeLaTeX and applicable [packages](https://ctan.org/pkg?lang=en), including the [TikZ-PGF suite](https://github.com/pgf-tikz/pgf). Much code that is freely available on the Web was accessed for guidance on typesetting these illustrations.
+
+#### Feedback
+
+Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
+corrections.
+
+\noindent A PDF version of this article is [available for download here.]({attach}./the-making-of-a-logo.pdf)
+
+\noindent{\small Copyright © 2006 – 2021, R (Chandra) Chandrasekhar}
