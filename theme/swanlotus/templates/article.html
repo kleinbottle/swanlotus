@@ -2,6 +2,15 @@
 {% block html_lang %}{{ article.lang }}{% endblock %}
 
 {% block title %}{{ SITENAME }} - {{ article.title|striptags }}{% endblock %}
+{% block ogtitle %}{{ SITENAME }} - {{ article.title|striptags }}{% endblock %}"
+{% block ogurl %}{{ SITEURL }}/blogs/{{ article.title|striptags|lower|replace(" ", "-") }}.html{% endblock %}"
+{% block ogimage %}
+{% if article.opengraphimage %}
+{{ SITEURL }}/blogs/images/{{ article.opengraphimage }}
+{% else %}
+{{ SITEURL }}/images/swanlotus-brand.svg
+{% endif %}
+{% endblock %}
 
 {% block head %}
   {{ super() }}
@@ -22,6 +31,7 @@
   {% endif %}
   {% if article.summary %}
     <meta name="summary" content="{{ article.summary|striptags }}" />
+    <meta property="og:description" content="{{ article.summary|striptags }}" />
   {% endif %}
 {% endblock %}
 

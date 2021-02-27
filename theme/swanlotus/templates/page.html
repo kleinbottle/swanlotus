@@ -3,6 +3,15 @@
 {% block html_lang %}{{ page.lang }}{% endblock %}
 
 {% block title %}{{ SITENAME }} - {{ page.title|striptags }}{% endblock %}
+{% block ogtitle %}{{ SITENAME }} - {{ page.title|striptags }}{% endblock %}"
+{% block ogurl %}{{ SITEURL }}/{{ page.save_as }}{% endblock %}
+{% block ogimage %}
+{% if page.opengraphimage %}
+{{ SITEURL }}/blogs/images/{{ page.opengraphimage }}
+{% else %}
+{{ SITEURL }}/images/swanlotus-brand.svg
+{% endif %}
+{% endblock %}
 
 {% block head %}
   {{ super() }}

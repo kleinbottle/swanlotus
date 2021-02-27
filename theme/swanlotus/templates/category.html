@@ -1,6 +1,9 @@
 {% extends "index.html" %}
 
 {% block title %}{{ SITENAME }} - {{ category }} category{% endblock %}
+{% block ogtitle %}{{ SITENAME }} - {{ category }} category{% endblock %}"
+{% block ogurl %}{{ SITEURL }}/category/{{ category|lower|replace(" ", "-") }}.html{% endblock %}
+
 
 {% block content_title %}
 <h2>Articles in the {{ category }} category</h2>
