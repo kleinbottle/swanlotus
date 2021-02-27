@@ -5,6 +5,7 @@
 {% block title %}{{ SITENAME }} - {{ page.title|striptags }}{% endblock %}
 {% block ogtitle %}{{ SITENAME }} - {{ page.title|striptags }}{% endblock %}"
 {% block ogurl %}{{ SITEURL }}/{{ page.save_as }}{% endblock %}
+
 {% block ogimage %}
 {% if page.opengraphimage %}
 {{ SITEURL }}/blogs/images/{{ page.opengraphimage }}
@@ -12,6 +13,7 @@
 {{ SITEURL }}/images/swanlotus-open-graph-image.jpg
 {% endif %}
 {% endblock %}
+
 {% block ogimagesecure %}
 {% if page.opengraphimage %}
 {{ SITEURL }}/blogs/images/{{ page.opengraphimage }}

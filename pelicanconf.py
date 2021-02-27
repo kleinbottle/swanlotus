@@ -9,7 +9,7 @@ PATH = "content"
 
 TIMEZONE = "Asia/Kolkata"
 
-DEFAULT_LANG = "en-GB"
+DEFAULT_LANG = "en"
 DEFAULT_DATE_FORMAT = "%Y-%m-%d"
 
 # Feed generation is usually not desired when developing
@@ -47,6 +47,7 @@ PATH = 'content'
 ARTICLE_PATHS = ['blogs']
 ARTICLE_SAVE_AS = ARTICLE_LANG_SAVE_AS = 'blogs/{slug}.html'
 ARTICLE_URL = ARTICLE_LANG_URL = 'blogs/{slug}.html'
+AUTHOR_SAVE_AS = ''
 
 USE_FOLDER_AS_CATEGORY = False
 

@@ -4,6 +4,7 @@
 {% block title %}{{ SITENAME }} - {{ article.title|striptags }}{% endblock %}
 {% block ogtitle %}{{ SITENAME }} - {{ article.title|striptags }}{% endblock %}"
 {% block ogurl %}{{ SITEURL }}/blogs/{{ article.title|striptags|lower|replace(" ", "-") }}.html{% endblock %}"
+
 {% block ogimage %}
 {% if article.opengraphimage %}
 {{ SITEURL }}/blogs/images/{{ article.opengraphimage }}
@@ -11,6 +12,7 @@
 {{ SITEURL }}/images/swanlotus-open-graph-image.jpg
 {% endif %}
 {% endblock %}
+
 {% block ogimagesecure %}
 {% if article.opengraphimage %}
 {{ SITEURL }}/blogs/images/{{ article.opengraphimage }}
