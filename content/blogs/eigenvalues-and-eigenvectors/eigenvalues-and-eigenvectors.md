@@ -6,6 +6,7 @@ modified: 2020-12-01
 category: Mathematics
 tags: eigenvalues, eigenvectors, linear algebra, invariants, diagonalization, applied mathematics, Mathematical Musings
 summary: "A university academic friend of mine recently remarked that it was not easy to motivate students to study [eigenvalues and eigenvectors,][lambda] let alone appreciate their importance: the subject itself was abstract, and the applications tended to be domain-specific and somewhat arcane."
+opengraphimage: "eigenvalue-equation.png"
 ---
 
 ## Stimulating interest in an arcane topic
@@ -28,6 +29,8 @@ I then asked, "Can I explain to _myself_ what eigenvalues and eigenvectors are, 
  As a general rule, the more powerful an idea, the more prevalent it becomes. Think about words and numbers, and you will see what I mean.
 
 Eigenvalues and eigenvectors are one such powerful idea. It is no surprise that they appear in different guises in different contexts: in oscillating electronic circuits, in dynamical systems, in computer games, in the spectra of atoms, and in Google searches, to name just a few.
+
+![]({attach}images/eigenvalue-equation.png){width=50%}
 
 The word [_eigen_ ][eigen] is German in origin and means "inherent, characteristic, natural, own, or peculiar (to)". So the prefix "eigen" captures the natural essence of the noun it qualifies. Perhaps the word "idiosyncratic" comes closest to conveying its import.
 
