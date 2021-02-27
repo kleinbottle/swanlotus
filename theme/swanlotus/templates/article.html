@@ -11,6 +11,13 @@
 {{ SITEURL }}/images/swanlotus-brand.svg
 {% endif %}
 {% endblock %}
+{% block ogimagesecure %}
+{% if article.opengraphimage %}
+{{ SITEURL }}/blogs/images/{{ article.opengraphimage }}
+{% else %}
+{{ SITEURL }}/images/swanlotus-brand.svg
+{% endif %}
+{% endblock %}
 
 {% block head %}
   {{ super() }}
