@@ -30,7 +30,7 @@ I then asked, "Can I explain to _myself_ what eigenvalues and eigenvectors are, 
 
 Eigenvalues and eigenvectors are one such powerful idea. It is no surprise that they appear in different guises in different contexts: in oscillating electronic circuits, in dynamical systems, in computer games, in the spectra of atoms, and in Google searches, to name just a few.
 
-![]({attach}images/eigenvalue-equation.png){width=50%}
+![]({attach}images/lambda.png){width=50%}
 
 The word [_eigen_ ][eigen] is German in origin and means "inherent, characteristic, natural, own, or peculiar (to)". So the prefix "eigen" captures the natural essence of the noun it qualifies. Perhaps the word "idiosyncratic" comes closest to conveying its import.
 
