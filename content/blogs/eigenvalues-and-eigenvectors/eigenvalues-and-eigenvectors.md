@@ -440,5 +440,3 @@ Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
 \noindent A PDF version of this article is [available for download here.]({attach}./eigenvalues-and-eigenvectors.pdf)
-
-\noindent{\small Copyright © 2006 – 2021, R (Chandra) Chandrasekhar}

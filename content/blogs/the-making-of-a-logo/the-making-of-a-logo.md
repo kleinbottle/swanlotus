@@ -328,5 +328,3 @@ Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
 \noindent A PDF version of this article is [available for download here.]({attach}./the-making-of-a-logo.pdf)
-
-\noindent{\small Copyright © 2006 – 2021, R (Chandra) Chandrasekhar}

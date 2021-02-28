@@ -6,19 +6,7 @@ modified: "2020-12-09"
 summary: "This blog is devoted to the art of asking questions in English. This seemingly undemanding task often trips up the aspiring learner of English, especially one who is studying it as a second or third language."
 category: Language
 tags: grammar, usage, questions, word order, verbs, nouns, Tamil, English
-header-includes:
-  - \usepackage{tcolorbox}
-  - \usepackage{alltt}
-  - \definecolor{noun}{HTML}{51847F}
-  - \definecolor{pronoun}{HTML}{F0DFAB}
-  - \definecolor{action}{HTML}{DCA3A3}
-  - \definecolor{normal}{HTML}{DBDBDB}
-  - \definecolor{background}{HTML}{363636}
-  - \newcommand\noun[1]{\textcolor{noun}{#1}}
-  - \newcommand\pronoun[1]{\textcolor{pronoun}{#1}}
-  - \newcommand\action[1]{\textcolor{action}{#1}}
-  - \newcommand\normal[1]{\textcolor{other}{#1}}
-  - \tcbset{boxrule=0mm, arc=0mm, colback=background}
+opengraphimage: 
 ---
 
 ## A tale of two tongues
@@ -412,3 +400,10 @@ The abstract structure of a question, taken more as a flexible guide than a rule
 Hopefully, this blog will help ensure that when you ask questions in English you neither embarrass yourself by wrong or inelegant usage nor confuse your interlocutor with a mangled question.
 
 Happy questioning! \emojifont :slightly_smiling_face: \normalfont
+
+#### Feedback
+
+Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
+corrections.
+
+\noindent A PDF version of this article is [available for download here.]({attach}./asking-questions-in-english.pdf)

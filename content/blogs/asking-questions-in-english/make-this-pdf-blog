@@ -1,0 +1,13 @@
+#! /bin/bash
+# Special make file ofr generating PDF onl;y for this blog
+#
+blogheader="$HOME/.pandoc/defaults/blog-xelatex-header-includes"
+base="asking-questions-in-english"
+#
+sed -e 's|{attach}||g' "$base.md" | sed -e 's|\\boldsymbol|\\symbf|g' > "temp.md"
+#
+pandoc --defaults xelatex.yaml --include-in-header "$blogheader" --include-in-header "special-includes" --output "$base.pdf" "temp.md";
+#
+    pandoc --defaults xelatex.yaml --include-in-header "$blogheader" --output "$base.tex" "temp.md";
+
+/usr/bin/rm "temp.md"

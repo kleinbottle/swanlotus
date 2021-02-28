@@ -59,9 +59,6 @@
 \AtBeginEnvironment{quote}{\small}
 \usepackage{etoolbox}
 \usepackage{graphicx}
-\usepackage[capitalise]{cleveref}
-  \crefname{equation}{Equation}{Equations}
-\usepackage{caption}
 \usepackage{subcaption}
 \usepackage{svg}
 \usepackage[Latin,Tamil,Devanagari]{ucharclasses}
@@ -71,9 +68,13 @@
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
   \setmathfont[bold-style=ISO]{STIX Two Math}
   \newfontfamily\tamilfont[Script=Tamil]{Noto Sans Tamil}
+  \setTransitionsFor{Tamil}{\tamilfont}{\normalfont}
   \setTransitionTo{Tamil}{\tamilfont}{}
+  \setTransitionFrom{Tamil}{\normalfont}
   \newfontfamily\devfont[Script=Devanagari]{Noto Sans Devanagari}
+  \setTransitionsFor{Devanagari}{\devfont}{\normalfont}
   \setTransitionTo{Devanagari}{\devfont}{}
+  \setTransitionFrom{Devanagari}{\normalfont}
   \newfontfamily{\emojifont}{Symbola}
 \usepackage[all]{nowidow}
 \usepackage[margins=raggedright]{floatrow}
@@ -95,6 +96,12 @@
 %
 \usepackage{fontsize}
 %
+%% pandoc-eqnos
+\usepackage[capitalise]{cleveref}
+  \crefname{equation}{Equation}{Equations}
+  \crefname{figure}{Figure}{Figures}
+%% pandoc-fignos
+\usepackage{caption}
 %% pandoc-fignos: environment to disable figure caption prefixes
     \makeatletter
     \newcounter{figno}
@@ -117,6 +124,11 @@
     }
     \makeatother
 %%
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead[CO,CE]{}
+    \fancyfoot[CO,CE]{\small Copyright © 2006--2021, R (Chandra) Chandrasekhar}
+    \fancyfoot[RE,RO]{\thepage}
 \ifxetex
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
   \usepackage{polyglossia}
@@ -835,8 +847,6 @@ comments and corrections.
 
 \noindent A PDF version of this article is
 \href{./eigenvalues-and-eigenvectors.pdf}{available for download here.}
-
-\noindent{\small Copyright © 2006 – 2021, R (Chandra) Chandrasekhar}
 
 \hypertarget{bibliography}{%
 \section*{References}\label{bibliography}}

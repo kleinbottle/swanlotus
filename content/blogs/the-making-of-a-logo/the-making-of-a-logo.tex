@@ -112,10 +112,6 @@
 \AtBeginEnvironment{quote}{\small}
 \usepackage{etoolbox}
 \usepackage{graphicx}
-\usepackage[capitalise]{cleveref}
-  \crefname{equation}{Equation}{Equations}
-  \crefname{figure}{Figure}{Figures}
-\usepackage{caption}
 \usepackage{subcaption}
 \usepackage{svg}
 \usepackage[Latin,Tamil,Devanagari]{ucharclasses}
@@ -149,6 +145,12 @@
 %
 \usepackage{fontsize}
 %
+%% pandoc-eqnos
+\usepackage[capitalise]{cleveref}
+  \crefname{equation}{Equation}{Equations}
+  \crefname{figure}{Figure}{Figures}
+%% pandoc-fignos
+\usepackage{caption}
 %% pandoc-fignos: environment to disable figure caption prefixes
     \makeatletter
     \newcounter{figno}
@@ -171,6 +173,11 @@
     }
     \makeatother
 %%
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead[CO,CE]{}
+    \fancyfoot[CO,CE]{\small Copyright © 2006--2021, R (Chandra) Chandrasekhar}
+    \fancyfoot[RE,RO]{\thepage}
 \ifxetex
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
   \usepackage{polyglossia}
@@ -911,8 +918,6 @@ comments and corrections.
 
 \noindent A PDF version of this article is
 \href{./the-making-of-a-logo.pdf}{available for download here.}
-
-\noindent{\small Copyright © 2006 – 2021, R (Chandra) Chandrasekhar}
 
 \hypertarget{bibliography}{%
 \section*{References}\label{bibliography}}

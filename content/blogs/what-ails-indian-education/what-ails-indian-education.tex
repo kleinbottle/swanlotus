@@ -4,7 +4,8 @@
 \PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
 %
 \documentclass[
-  12pt,
+  11pt,
+  british,
   a4paper,
 ]{article}
 \usepackage{lmodern}
@@ -42,6 +43,7 @@
 \hypersetup{
   pdftitle={What Ails Indian Education?},
   pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
   colorlinks=true,
   linkcolor=TealBlue,
   filecolor=Purple,
@@ -59,15 +61,81 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{svg}
-\usepackage[Latin,Tamil]{ucharclasses}
+\usepackage[Latin,Tamil,Devanagari]{ucharclasses}
   \setmainfont[SmallCapsFont={Charis SIL Small Caps}]{Charis SIL}
   \setsansfont[Numbers=OldStyle,BoldFont={* Semibold}]{Source Sans Pro}
   \setmonofont[Scale=0.90]{Fira Mono}
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-  \setmathfont[bold-style=ISO]{STIX2Math.otf}
+  \setmathfont[bold-style=ISO]{STIX Two Math}
   \newfontfamily\tamilfont[Script=Tamil]{Noto Sans Tamil}
   \setTransitionsFor{Tamil}{\tamilfont}{\normalfont}
+  \setTransitionTo{Tamil}{\tamilfont}{}
+  \setTransitionFrom{Tamil}{\normalfont}
+  \newfontfamily\devfont[Script=Devanagari]{Noto Sans Devanagari}
+  \setTransitionsFor{Devanagari}{\devfont}{\normalfont}
+  \setTransitionTo{Devanagari}{\devfont}{}
+  \setTransitionFrom{Devanagari}{\normalfont}
   \newfontfamily{\emojifont}{Symbola}
+\usepackage[all]{nowidow}
+\usepackage[margins=raggedright]{floatrow}
+%
+% Tables without rules
+%
+\let\addlinespace\relax
+\let\toprule\relax
+\let\bottomrule\relax
+\let\midrule\relax
+\let\addlinespace\relax
+%
+% Adjust punctuation for footnotes
+%
+\usepackage{fnpct} % footnote _before_ punctuation reversed and adjusted.
+  \setfnpct{after-dot-space=-0.15em,after-comma-space=-0.150em,add-punct-marks=;[0.06em]![0.06em]?[0.06em]:[0.06em]}
+%
+% Flexible fontsizes
+%
+\usepackage{fontsize}
+%
+%% pandoc-eqnos
+\usepackage[capitalise]{cleveref}
+  \crefname{equation}{Equation}{Equations}
+  \crefname{figure}{Figure}{Figures}
+%% pandoc-fignos
+\usepackage{caption}
+%% pandoc-fignos: environment to disable figure caption prefixes
+    \makeatletter
+    \newcounter{figno}
+    \newenvironment{fignos:no-prefix-figure-caption}{
+      \caption@ifcompatibility{}{
+        \let\oldthefigure\thefigure
+        \let\oldtheHfigure\theHfigure
+        \renewcommand{\thefigure}{figno:\thefigno}
+        \renewcommand{\theHfigure}{figno:\thefigno}
+        \stepcounter{figno}
+        \captionsetup{labelformat=empty}
+      }
+    }{
+      \caption@ifcompatibility{}{
+        \captionsetup{labelformat=default}
+        \let\thefigure\oldthefigure
+        \let\theHfigure\oldtheHfigure
+        \addtocounter{figure}{-1}
+      }
+    }
+    \makeatother
+%%
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead[CO,CE]{}
+    \fancyfoot[CO,CE]{\small Copyright © 2006--2021, R (Chandra) Chandrasekhar}
+    \fancyfoot[RE,RO]{\thepage}
+\ifxetex
+  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[variant=british]{english}
+\else
+  \usepackage[shorthands=off,main=british]{babel}
+\fi
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -132,7 +200,7 @@ sterner stuff, intellectually speaking.
 
 One factor contributing to the decline is the obvious present day
 malaise afflicting Indian society at large, where money has become the
-greatest good, period. That unthinking, unregenerate, single-minded
+highest good, period. That unthinking, unregenerate, single-minded
 fixation on money has kicked out the \emph{l} in \emph{learning} to
 yield \emph{earning} as the primary goal of the Indian student---whether
 in school or at college.
@@ -196,9 +264,9 @@ Lest one good custom should corrupt the world.
 
 Mark that I am not against developing a good memory or exercising it to
 keep fit mentally. Indeed, in my chapters entitled ``Poetry'' and
-``Arithmetic Revisited'' from the manuscript of my forthcoming book
+``Arithmetic Revisited''---from the manuscript of my forthcoming book
 \href{\%7Bstatic\%7D/sas-manuscript/SAS-partial.pdf}{\emph{Secrets of
-Academic Success}} I have suggested poetry recitation and mental
+Academic Success}}---I have suggested poetry recitation and mental
 arithmetic as ways to develop memory while at the same time becoming
 more literate and numerate.
 
@@ -211,7 +279,7 @@ when so much information is available from the Web, literally at the
 click of a mouse button.
 
 Memorization can scarce supplant the ability to think independently, or
-critically, or afresh. Alas, in India, recall has supplanted
+critically, or afresh. Alas, in India, recall has replaced
 understanding. A dozen years of education produce trained parrots rather
 than thinking human beings capable of dealing with the unforeseen and
 unforeseeable challenges of the future.
@@ -252,6 +320,9 @@ Apocryphal or not, and without prejudice to Galbraith's personal merit,
 this story well illustrates the \emph{automatic} adulation accorded a
 teacher in India.
 
+\hypertarget{debate-and-knowledge}{%
+\subsection{Debate and knowledge}\label{debate-and-knowledge}}
+
 The tradition of democracy developed in the West embraces adversarial
 debate as its basis in parliament. In similar fashion, the scientific
 paradigm in place today requires the practitioner to challenge the
@@ -262,8 +333,7 @@ approximations to reality.
 
 Thus it was that Einstein unseated Newton as the reigning monarch of
 time, space, and gravity after three hundred years. And surely, there
-will be another who will supplant the theories of Einstein in time to
-come.
+will be another who will dethrone Einstein in time to come.
 
 Let me digress now to give you another anecdote. While on my evening
 constitutional one day, I fell in step with an Indian student completing
@@ -290,8 +360,9 @@ tradition whose great
 treatises born of enquiry, bold and uncircumscribed. How strange that
 both problem and solution stem from the same scriptures!
 
-\hypertarget{prescription-for-a-malady}{%
-\subsection{Prescription for a malady}\label{prescription-for-a-malady}}
+\hypertarget{fun-imagination-and-learning}{%
+\subsection{Fun, imagination, and
+learning}\label{fun-imagination-and-learning}}
 
 To free the Indian education system from its constraining shackles,
 learning must become fun once more. Pedagogy must be reformed to allow
@@ -311,7 +382,7 @@ entanglement} or that the brain is
 \href{http://faculty.washington.edu/chudler/plast.html}{neuroplastic} or
 that carbon, already known to us as diamond and graphite, would disguise
 itself yet again to appear as
-\href{http://en.wikipedia.org/wiki/Bucky_balls}{bucky-balls} and
+\href{http://en.wikipedia.org/wiki/Bucky_balls}{Buckyballs} and
 \href{http://www.graphene.manchester.ac.uk/}{graphene}? Knowledge
 confines us to discovered facts. Imagination liberates us to find new
 ones.
@@ -321,6 +392,15 @@ discover lands undreamed of---must fuel the education, not just of the
 Indian student, but of all humankind. Education \emph{must} be reformed
 to accomplish this.
 
+\hypertarget{feedback}{%
+\paragraph{Feedback}\label{feedback}}
+
+Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
+comments and corrections.
+
+\noindent A PDF version of this article is
+\href{./what-ails-indian-education}{available for download here.}
+
 \hypertarget{bibliography}{%
 \section*{References}\label{bibliography}}
 \addcontentsline{toc}{section}{References}
@@ -329,9 +409,9 @@ to accomplish this.
 \begin{CSLReferences}{0}{0}
 \leavevmode\hypertarget{ref-bhatekak1993}{}%
 \CSLLeftMargin{{[}1{]} }
-\CSLRightInline{S. Bhate and S. Kak, {``{Pāṇini's Grammar and Computer
-Science},''} \emph{Annals of the Bhandarkar Oriental Research
-Institute}, vol. 72, pp. 79--94, 1993. }
+\CSLRightInline{S. Bhate and S. Kak, {`{Pāṇini's Grammar and Computer
+Science},'} \emph{Annals of the Bhandarkar Oriental Research Institute},
+vol. 72, pp. 79--94, 1993. }
 
 \end{CSLReferences}
 
