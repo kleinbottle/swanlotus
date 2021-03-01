@@ -9,7 +9,8 @@ PATH = "content"
 
 TIMEZONE = "Asia/Kolkata"
 
-DEFAULT_LANG = "en"
+# Pelican lower cases en-GB to en-gb this is fixed in the template using Jinja
+DEFAULT_LANG = "en-GB"
 DEFAULT_DATE_FORMAT = "%Y-%m-%d"
 
 # Feed generation is usually not desired when developing
