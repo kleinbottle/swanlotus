@@ -121,9 +121,13 @@
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
   \setmathfont[bold-style=ISO]{STIX Two Math}
   \newfontfamily\tamilfont[Script=Tamil]{Noto Sans Tamil}
+  \setTransitionsFor{Tamil}{\tamilfont}{\normalfont}
   \setTransitionTo{Tamil}{\tamilfont}{}
+  \setTransitionFrom{Tamil}{\normalfont}
   \newfontfamily\devfont[Script=Devanagari]{Noto Sans Devanagari}
+  \setTransitionsFor{Devanagari}{\devfont}{\normalfont}
   \setTransitionTo{Devanagari}{\devfont}{}
+  \setTransitionFrom{Devanagari}{\normalfont}
   \newfontfamily{\emojifont}{Symbola}
 \usepackage[all]{nowidow}
 \usepackage[margins=raggedright]{floatrow}
@@ -175,7 +179,11 @@
 %%
 \usepackage{fancyhdr}
     \pagestyle{fancy}
-    \fancyhead[CO,CE]{}
+    \fancyhead{}
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+    %\fancyhead[CE,CO]{\title}
     \fancyfoot[CO,CE]{\small Copyright © 2006--2021, R (Chandra) Chandrasekhar}
     \fancyfoot[RE,RO]{\thepage}
 \ifxetex

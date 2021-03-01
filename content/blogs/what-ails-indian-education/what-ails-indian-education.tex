@@ -126,7 +126,11 @@
 %%
 \usepackage{fancyhdr}
     \pagestyle{fancy}
-    \fancyhead[CO,CE]{}
+    \fancyhead{}
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+    %\fancyhead[CE,CO]{\title}
     \fancyfoot[CO,CE]{\small Copyright © 2006--2021, R (Chandra) Chandrasekhar}
     \fancyfoot[RE,RO]{\thepage}
 \ifxetex
@@ -399,7 +403,7 @@ Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
 
 \noindent A PDF version of this article is
-\href{./what-ails-indian-education}{available for download here.}
+\href{./what-ails-indian-education.pdf}{available for download here.}
 
 \hypertarget{bibliography}{%
 \section*{References}\label{bibliography}}
