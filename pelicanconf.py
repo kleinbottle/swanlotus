@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
+def format_lang(language_setting):
+    """Uppercases country code in DEFAULT_LANG setting in template."""
+    lang_code, country_code = language_setting.split("-")
+    language_setting = "-".join([lang_code, country_code.upper()])
+    return language_setting
+
 AUTHOR = "R (Chandra) Chandrasekhar"
 SITENAME = "SwanLotus"
 SITEURL = "http://localhost:8000"
@@ -9,8 +15,9 @@ PATH = "content"
 
 TIMEZONE = "Asia/Kolkata"
 
-# Pelican lower cases en-GB to en-gb this is fixed in the template using Jinja
 DEFAULT_LANG = "en-GB"
+JINJA_FILTERS = {"format_lang": format_lang}
+
 DEFAULT_DATE_FORMAT = "%Y-%m-%d"
 
 # Feed generation is usually not desired when developing

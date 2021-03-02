@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-{% set language_code, country = DEFAULT_LANG.split("-") %}
-<html prefix="og: http://ogp.me/ns#" lang="{% block html_lang %}{{ [language_code, country|upper]|join('-') }}{% endblock html_lang %}">
+<html prefix="og: http://ogp.me/ns#" lang="{% block html_lang %}{{ DEFAULT_LANG|format_lang }}{% endblock html_lang %}">
 
 <head>
     {% block head %}
