@@ -51,10 +51,13 @@ MENUITEMS = (
 
 DIRECT_TEMPLATES = ['index', 'categories', 'tags', 'archives']
 
-PATH = 'content'
-ARTICLE_PATHS = ['blogs']
-ARTICLE_SAVE_AS = ARTICLE_LANG_SAVE_AS = 'blogs/{slug}.html'
-ARTICLE_URL = ARTICLE_LANG_URL = 'blogs/{slug}.html'
+PATH = "content"
+ARTICLE_PATHS = ["blogs"]
+ARTICLE_SAVE_AS = ARTICLE_LANG_SAVE_AS = "blogs/{slug}.html"
+ARTICLE_URL = ARTICLE_LANG_URL = "blogs/{slug}.html"
+DRAFT_SAVE_AS = DRAFT_LANG_SAVE_AS = "drafts/{slug}.html"
+DRAFT_URL = DRAFT_LANG_URL = "drafts/{slug}.html"
+
 AUTHOR_SAVE_AS = ''
 
 USE_FOLDER_AS_CATEGORY = False
