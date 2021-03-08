@@ -67,42 +67,10 @@ ImageMagick comes with several command line utilities, each replete with options
 
 The above list is far from exhaustive. The interested reader is referred to the [excellent online documentation](https://imagemagick.org/script/command-line-tools.php) for further details. The power of ImageMagick is enhanced with the [magick-script](https://imagemagick.org/script/magick-script.php) Image Scripting Language. In the examples below, I will give both the command line invocations and scripts for performing image conversions.
 
-### ImageMagick's security vulnerabilities
-
-ImageMagick uses external libraries which are called via `system()` commands in accordance with command strings specified in a "delegate" or "policy" configuration file called `delegates.xml` or `policy.xml`. 
-
-In April 2016, it was reported that because of insufficient shell character filtering to validate the command string, it was possible for a bad actor to execute malicious code remotely, to the detriment of the unwitting user of ImageMagick. This was revealed at a website, interestingly named [ImageTragick](https://imagetragick.com/) to attract sufficient attention and remedial action to the discovered bug [@imagetragick2016].
-
-In November 2020, [another security vulnerability was discovered](https://portswigger.net/daily-swig/imagemagick-pdf-parsing-flaw-allowed-attacker-to-execute-shell-commands-via-maliciously-crafted-image). It was reported and patched by the ImageMagick developers.
-
-https://portswigger.net/daily-swig/imagemagick-pdf-parsing-flaw-allowed-attacker-to-execute-shell-commands-via-maliciously-crafted-image
-
-https://imagetragick.com/
-
-https://www.enisa.europa.eu/publications/info-notes/what2019s-behind-imagemagick-vulnerability
-
-https://blog.trendmicro.com/trendlabs-security-intelligence/imagemagick-vulnerability-allows-remote-code-execution-now-patched/
-
-https://bugs.archlinux.org/task/59778
-
-https://www.openwall.com/lists/oss-security/2018/08/22/3
-
-https://www.kb.cert.org/vuls/id/332928
-
-https://bugs.archlinux.org/task/62171
-
-https://www.openwall.com/lists/oss-security/2018/08/23/12
-
 ## Raster to raster
 
 
 
-
-
-
-## Recent vulnerabilities
-
-For many years, ImageMagick and its delegate programs were all that you needed to format-convert an image from raster to vector graphics and vice versa. But in 2016, a security vulnerability was found in the chain of tools that were used that led to certain format conversions to be disallowed because of weaknesses in some of the delegate tools. GIVE REFERENCES.
 
 
 ## Image to PDF
@@ -157,6 +125,16 @@ convert ernst-heackel-medium.jpg ernst-heackel-medium-direct.png
 convert ernst-heackel-medium.jpg ernst-heackel-medium-direct.png
 ```
 How to use resize etc.
+
+## Appendix: ImageMagick's security vulnerabilities
+
+It has been said that with great power comes great responsibility. ImageMagicks great power and ease of use does come at a price: vulnerability to exploits by malicious remote actors. This arises primarily from weaknesses in the way in which external lbraries are invoked to perform functions _delegated_ to them by ImageMagick.
+
+ImageMagick uses external libraries which are called via `system()` commands in accordance with command strings specified in a "delegate" or "policy" configuration file called `delegates.xml` or `policy.xml`. 
+
+In April 2016, it was reported that because of insufficient shell character filtering to validate the command string, it was possible for a bad actor to execute malicious code remotely, to the detriment of the unwitting user of ImageMagick. This was revealed at a website, interestingly named [ImageTragick](https://imagetragick.com/) to attract sufficient attention and remedial action to the discovered bug [@imagetragick2016].
+
+In November 2020, [another security vulnerability was discovered](https://portswigger.net/daily-swig/imagemagick-pdf-parsing-flaw-allowed-attacker-to-execute-shell-commands-via-maliciously-crafted-image) [@leyden2020]. It was [reported and promptly patched](https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html) by the ImageMagick maintainers [@infuhr2020].
 
 ## Image used below
 

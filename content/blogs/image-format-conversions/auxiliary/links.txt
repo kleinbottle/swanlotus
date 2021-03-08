@@ -1,0 +1,13 @@
+https://www.enisa.europa.eu/publications/info-notes/what2019s-behind-imagemagick-vulnerability
+
+https://blog.trendmicro.com/trendlabs-security-intelligence/imagemagick-vulnerability-allows-remote-code-execution-now-patched/
+
+https://bugs.archlinux.org/task/59778
+
+https://www.openwall.com/lists/oss-security/2018/08/22/3
+
+https://www.kb.cert.org/vuls/id/332928
+
+https://bugs.archlinux.org/task/62171
+
+https://www.openwall.com/lists/oss-security/2018/08/23/12
