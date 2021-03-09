@@ -1,0 +1,584 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode,linktoc=all}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+%
+\documentclass[
+  11pt,
+  british,
+  a4paper,
+]{article}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={A brief tutorial on image format conversions},
+  pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
+  colorlinks=true,
+  linkcolor=TealBlue,
+  filecolor=Purple,
+  citecolor=DarkKhaki,
+  urlcolor=Maroon,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=25mm]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\AtBeginEnvironment{quote}{\small}
+\setlength{\parindent}{0pt} % block paragraphs
+\usepackage{etoolbox}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{svg}
+\usepackage[Latin,Tamil,Devanagari]{ucharclasses}
+  \setmainfont[SmallCapsFont={Charis SIL Small Caps}]{Charis SIL}
+  \setsansfont[Numbers=OldStyle,BoldFont={* Semibold}]{Source Sans Pro}
+  \setmonofont[Scale=0.90]{Fira Mono}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \setmathfont[bold-style=ISO]{STIX Two Math}
+  \newfontfamily\tamilfont[Script=Tamil]{Noto Sans Tamil}
+  \setTransitionsFor{Tamil}{\tamilfont}{\normalfont}
+  \setTransitionTo{Tamil}{\tamilfont}{}
+  \setTransitionFrom{Tamil}{\normalfont}
+  \newfontfamily\devfont[Script=Devanagari]{Noto Sans Devanagari}
+  \setTransitionsFor{Devanagari}{\devfont}{\normalfont}
+  \setTransitionTo{Devanagari}{\devfont}{}
+  \setTransitionFrom{Devanagari}{\normalfont}
+  \newfontfamily{\emojifont}{Symbola}
+\usepackage[all]{nowidow}
+\usepackage[margins=raggedright]{floatrow}
+%
+% Tables without rules
+%
+\let\addlinespace\relax
+\let\toprule\relax
+\let\bottomrule\relax
+\let\midrule\relax
+\let\addlinespace\relax
+%
+% Adjust punctuation for footnotes
+%
+\usepackage{fnpct} % footnote _before_ punctuation reversed and adjusted.
+  \setfnpct{after-dot-space=-0.15em,after-comma-space=-0.150em,add-punct-marks=;[0.06em]![0.06em]?[0.06em]:[0.06em]}
+%
+% Flexible fontsizes
+%
+\usepackage{fontsize}
+%
+%% pandoc-eqnos
+\usepackage[capitalise]{cleveref}
+  \crefname{equation}{Equation}{Equations}
+  \crefname{figure}{Figure}{Figures}
+%% pandoc-fignos
+\usepackage{caption}
+%% pandoc-fignos: environment to disable figure caption prefixes
+    \makeatletter
+    \newcounter{figno}
+    \newenvironment{fignos:no-prefix-figure-caption}{
+      \caption@ifcompatibility{}{
+        \let\oldthefigure\thefigure
+        \let\oldtheHfigure\theHfigure
+        \renewcommand{\thefigure}{figno:\thefigno}
+        \renewcommand{\theHfigure}{figno:\thefigno}
+        \stepcounter{figno}
+        \captionsetup{labelformat=empty}
+      }
+    }{
+      \caption@ifcompatibility{}{
+        \captionsetup{labelformat=default}
+        \let\thefigure\oldthefigure
+        \let\theHfigure\oldtheHfigure
+        \addtocounter{figure}{-1}
+      }
+    }
+    \makeatother
+%%
+\usepackage{titling}
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0.2pt}
+    \renewcommand{\footrulewidth}{0pt}
+    \fancyhead[LO,RE]{\scshape\thetitle}
+    \fancyfoot[CO,CE]{\small Copyright © 2006--\the\year, R (Chandra) Chandrasekhar}
+    \fancyfoot[RE,RO]{\thepage}
+\ifxetex
+  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[variant=british]{english}
+\else
+  \usepackage[shorthands=off,main=british]{babel}
+\fi
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\title{A brief tutorial on image format conversions}
+\author{R (Chandra) Chandrasekhar}
+\date{2021-03-07 | 2021-03-07}
+
+\begin{document}
+\maketitle
+
+\thispagestyle{empty}
+
+
+\hypertarget{two-varieties-of-images}{%
+\subsection{Two varieties of images}\label{two-varieties-of-images}}
+
+Image formats come in two broad flavours:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://en.wikipedia.org/wiki/Raster_graphics}{raster} or
+  \href{https://en.wikipedia.org/wiki/Bitmap}{bitmap} graphics, and
+\item
+  \href{https://en.wikipedia.org/wiki/Vector_graphics}{vector graphics}.
+\end{itemize}
+
+The former leads to image blockiness or
+\href{https://en.wikipedia.org/wiki/Pixelation}{pixellation} at high
+magnifications, while the latter scales without degradation when
+magnified.
+
+\begin{figure*}[h]
+  \begin{minipage}[b]{0.5\textwidth}
+    \centering
+    \includegraphics[height=60mm]{images/vector.pdf}
+    \subcaption*{Vector}
+  \end{minipage}\hfill
+  \begin{minipage}[b]{0.5\textwidth}
+    \centering
+    \includegraphics[height=60mm]{images/raster-zoom.png}
+    \subcaption*{Raster}
+  \end{minipage}
+\end{figure*}
+
+\hypertarget{raster-graphics}{%
+\subsubsection{Raster Graphics}\label{raster-graphics}}
+
+There are dozens of image formats, including:
+
+\begin{enumerate}
+\tightlist
+\item
+  The \href{https://en.wikipedia.org/wiki/TIFF}{Tag(ged) Image File
+  Format (TIFF)} which is used in printing;
+\item
+  The \href{https://jpeg.org/about.html}{Joint Photographic Experts
+  Group(JPEG)} format for scene and portrait image display and
+  compression; and
+\item
+  The \href{http://www.libpng.org/pub/png/}{Portable Network Graphics
+  (PNG)} format, optimized principally for text-based image display and
+  compression.
+\end{enumerate}
+
+All three formats employ raster graphics.
+
+\hypertarget{vector-graphics}{%
+\subsubsection{Vector Graphics}\label{vector-graphics}}
+
+The two principal vector graphics formats are:
+
+\begin{enumerate}
+\tightlist
+\item
+  The \href{https://en.wikipedia.org/wiki/PDF}{Portable Document Format
+  (PDF)} format which is used primarily in archival quality electronic
+  and printed documents; while
+\item
+  The
+  \href{https://en.wikipedia.org/wiki/Scalable_Vector_Graphics}{Scalable
+  Vector Graphics (SVG)} format---interestingly text-based---is used for
+  graphics display on web browsers.
+\end{enumerate}
+
+Both these formats employ vector graphics.
+
+\hypertarget{format-conversions}{%
+\subsection{Format conversions}\label{format-conversions}}
+
+It is often necessary---for a variety of reasons---to convert from one
+image format to another. There are four possibilities:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  raster to raster;
+\item
+  raster to vector;
+\item
+  vector to raster; and
+\item
+  vector to vector
+\end{enumerate}
+
+We consider each of these in turn using
+\href{https://itlaw.wikia.org/wiki/Platform_neutral}{platform-neutral}
+\href{https://opensource.com/resources/what-open-source}{open source}
+tools. Since I run
+\href{https://en.wikipedia.org/wiki/GNU/Linux_naming_controversy}{GNU/Linux}
+on my desktop, my examples will feature commands from that
+setup.\footnote{There are a good number of websites that promise
+  conversion online, requiring you to upload the input file and download
+  the output file. These \emph{might be} fraught with security risks.
+  Use them only if you trust that your documents will not be misused.}
+
+\hypertarget{tools-for-image-format-conversion}{%
+\subsection{Tools for image format
+conversion}\label{tools-for-image-format-conversion}}
+
+There are four main tools for image format conversion:
+
+\begin{enumerate}
+\tightlist
+\item
+  ImageMagick
+
+  \begin{itemize}
+  \tightlist
+  \item
+    library plus executables
+  \item
+    pixel based
+  \item
+    converts raster to raster
+  \end{itemize}
+\item
+  cairo
+
+  \begin{itemize}
+  \tightlist
+  \item
+    library
+  \item
+    few executablea
+  \item
+    vector-based 2D drawing and rendering
+  \item
+    used by other programs
+  \end{itemize}
+\item
+  poppler
+
+  \begin{itemize}
+  \tightlist
+  \item
+    library plus executables
+  \item
+    vector-based
+  \item
+    renders pdf
+  \item
+    can use cairo as backend
+  \end{itemize}
+\item
+  Inkscape
+
+  \begin{itemize}
+  \tightlist
+  \item
+    GUI-based
+  \item
+    vector-based SVG is default
+  \item
+    two executables
+  \item
+    export options
+  \item
+    can use cairo for PDF export
+  \end{itemize}
+\end{enumerate}
+
+Better top formalize this in a table.
+
+\hypertarget{imagemagick-the-swiss-army-knife}{%
+\subsection{ImageMagick: the Swiss Army
+knife}\label{imagemagick-the-swiss-army-knife}}
+
+\href{https://imagemagick.org/index.php}{ImageMagick} is the name given
+to a suite of image processing tools originally created in 1987 by John
+Cristy, then working for \href{https://www.dupont.com/}{Du Pont}. In
+1990, it was freely released by Du Pont, who transferred copyright to
+\href{https://imagemagick.org/script/contact.php}{ImageMagick Studio
+LLC} who now maintain the project. It is distributed under a derived
+Apache 2.0 \href{https://imagemagick.org/script/license.php}{license}.
+The \href{https://github.com/ImageMagick/ImageMagick}{authoritative
+source code repository} shows active development even today, 34 years
+after the suite was first released {[}1{]}.
+
+ImageMagick is so versatile and useful that it may rightfully be called
+the \href{https://www.thefreedictionary.com/Swiss-army+knife}{Swiss Army
+knife} of the image processing world.
+
+ImageMagick comes with several command line utilities, each replete with
+options. Among these are:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://imagemagick.org/script/convert.php}{\texttt{convert}}
+  which converts from one format to another;
+\item
+  \href{https://imagemagick.org/script/display.php}{\texttt{display}}
+  which displays one or more images;
+\item
+  \href{https://imagemagick.org/script/identify.php}{\texttt{identify}}
+  which identifies the type of image and displays its characteristics;
+\item
+  \href{https://imagemagick.org/script/mogrify.php}{\texttt{mogrify}}
+  which transforms an image, modifying its appearance; and
+\item
+  \href{https://imagemagick.org/script/montage.php}{\texttt{montage}}
+  which generates an image montage.
+\end{itemize}
+
+The above list is far from exhaustive. The interested reader is referred
+to the
+\href{https://imagemagick.org/script/command-line-tools.php}{excellent
+online documentation} for further details. The power of ImageMagick is
+enhanced with the
+\href{https://imagemagick.org/script/magick-script.php}{magick-script}
+Image Scripting Language. In the examples below, I will give both the
+command line invocations and scripts for performing image conversions.
+
+\hypertarget{cairo}{%
+\subsection{Cairo}\label{cairo}}
+
+\texttt{rsvg-convert} \texttt{pdftocairo}
+
+https://en.wikipedia.org/wiki/Cairo\_(graphics)
+
+https://www.cairographics.org/
+
+https://cgit.freedesktop.org/cairo
+
+\hypertarget{inkscape}{%
+\subsubsection{Inkscape}\label{inkscape}}
+
+https://wiki.inkscape.org/wiki/index.php/Tools
+
+\hypertarget{pdf2svg}{%
+\subsection{pdf2svg}\label{pdf2svg}}
+
+https://cityinthesky.co.uk/opensource/pdf2svg/
+
+https://github.com/dawbarton/pdf2svg
+
+https://inkscape.org/develop/about-svg/
+
+\hypertarget{poppler}{%
+\subsection{poppler}\label{poppler}}
+
+\texttt{pdftoppm}
+
+pdftocairo
+
+\hypertarget{raster-to-raster}{%
+\subsection{Raster to raster}\label{raster-to-raster}}
+
+\hypertarget{image-to-pdf}{%
+\subsection{Image to PDF}\label{image-to-pdf}}
+
+Still works. No strictures. But the PDF can get grungy. Use a pyramid of
+resolutions.
+
+\hypertarget{avoiding-blurry-pdfs}{%
+\subsubsection{Avoiding blurry PDFs}\label{avoiding-blurry-pdfs}}
+
+-units pixelsperinch -density 1200 etc., in conversion
+
+Useful when a hgh resolution image is available. In any case: PDF and
+png/jpg sizes are similar.
+
+\hypertarget{choosing-the-optimal-image-resolution-for-a-clear-pdf}{%
+\subsection{Choosing the optimal image resolution for a clear
+PDF}\label{choosing-the-optimal-image-resolution-for-a-clear-pdf}}
+
+96dpi for screen 150 dpi default 300 dpi for print {[}give references{]}
+
+\begin{verbatim}
+convert -units pixelsperinch -density 300 file.png file.pdf
+\end{verbatim}
+
+\hypertarget{pdf-to-image-not-supported}{%
+\subsection{PDF to image not
+supported}\label{pdf-to-image-not-supported}}
+
+\begin{verbatim}
+#! /bin/magick
+convert file.pdf file.png
+\end{verbatim}
+
+\begin{verbatim}
+convert test.pdf test.png
+convert: unable to open image 'test.pdf': No such file or directory @ error/blob.c/OpenBlob/3537.
+convert: no images defined `test.png' @ error/convert.c/ConvertImageCommand/3304.
+\end{verbatim}
+
+\hypertarget{security-considerations}{%
+\subsubsection{Security considerations}\label{security-considerations}}
+
+ImageMagick is no more the famed Swiss army knife for conversions from
+PDFs to images.
+
+Give references to security concerns.
+
+\hypertarget{enter-poppler}{%
+\subsection{Enter poppler}\label{enter-poppler}}
+
+\hypertarget{pdf-to-png}{%
+\subsubsection{PDF to PNG}\label{pdf-to-png}}
+
+\hypertarget{pdf-to-svg-and-vice-versa}{%
+\subsection{PDF to SVG and vice versa}\label{pdf-to-svg-and-vice-versa}}
+
+https://wiki.gnome.org/Projects/LibRsvg
+
+\begin{verbatim}
+pdftoppm -png ernst-heackel-medium.pdf ernst-heackel-medium.png
+convert ernst-heackel-medium.jpg ernst-heackel-medium-direct.png
+convert ernst-heackel-medium.jpg ernst-heackel-medium-direct.png
+\end{verbatim}
+
+How to use resize etc.
+
+\hypertarget{appendix-imagemagicks-security-vulnerabilities}{%
+\subsection{Appendix: ImageMagick's security
+vulnerabilities}\label{appendix-imagemagicks-security-vulnerabilities}}
+
+Great power exacts a commensurate price. ImageMagick's great power and
+ease of use does come at a great price: vulnerability to exploits by
+malicious remote actors.
+
+ImageMagick uses external libraries or \emph{backend tools} which are
+called via \texttt{system()} commands in accordance with
+\emph{delegated} command strings specified in a configuration file
+called \texttt{policy.xml}.
+
+In April 2016, it was reported that because of insufficient validation
+of delegated command strings, it was possible for someone to execute
+malicious code remotely, to the detriment of the unwitting user of
+ImageMagick. This was revealed at a website, interestingly named
+\href{https://imagetragick.com/}{ImageTragick} to attract sufficient
+attention and remedial action to the discovered bug {[}2{]}.
+
+In November 2020,
+\href{https://portswigger.net/daily-swig/imagemagick-pdf-parsing-flaw-allowed-attacker-to-execute-shell-commands-via-maliciously-crafted-image}{another
+security vulnerability was discovered} {[}3{]}. It was
+\href{https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html}{reported
+and promptly patched} by the ImageMagick maintainers {[}4{]}.
+
+Recent versions of the ImageMagick suite, bundled with major
+distributions, should have correctly configured \texttt{policy.xml}
+files that will block known exploits.
+\href{https://www.techopedia.com/definition/25266/sandboxing}{Sandboxing}
+is another technique to quarantine the system from possible
+vulnerabilities. Above all, it is vital to keep system and application
+software up to date to avail of evolutions in performance and security.
+
+\hypertarget{image-used-below}{%
+\subsection{Image used below}\label{image-used-below}}
+
+https://www.rawpixel.com/board/1236113/kunstformen-der-natur-ernst-haeckel-free-cc0-public-domain-animal-prints
+
+\hypertarget{feedback}{%
+\paragraph{Feedback}\label{feedback}}
+
+Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
+comments and corrections.
+
+\hypertarget{bibliography}{%
+\section*{References}\label{bibliography}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{0}{0}
+\leavevmode\hypertarget{ref-imagemagicksource}{}%
+\CSLLeftMargin{{[}1{]} }
+\CSLRightInline{ImageMagick Studio LLC, {`ImageMagick 7.'} {[}Online{]}.
+Available: \url{https://github.com/ImageMagick/ImageMagick}.
+{[}Accessed: 08-Mar-2021{]}}
+
+\leavevmode\hypertarget{ref-imagetragick2016}{}%
+\CSLLeftMargin{{[}2{]} }
+\CSLRightInline{---, {`ImageMagick is on fire --- CVE-2016--3714,'}
+12-May-2016. {[}Online{]}. Available: \url{https://imagetragick.com/}.
+{[}Accessed: 08-Mar-2021{]}}
+
+\leavevmode\hypertarget{ref-leyden2020}{}%
+\CSLLeftMargin{{[}3{]} }
+\CSLRightInline{J. Leyden, {`ImageMagick PDF-parsing flaw allowed
+attacker to execute shell commands via maliciously crafted image,'}
+23-Nov-2020. {[}Online{]}. Available:
+\url{https://portswigger.net/daily-swig/imagemagick-pdf-parsing-flaw-allowed-attacker-to-execute-shell-commands-via-maliciously-crafted-image}.
+{[}Accessed: 08-Mar-2021{]}}
+
+\leavevmode\hypertarget{ref-infuhr2020}{}%
+\CSLLeftMargin{{[}4{]} }
+\CSLRightInline{A. Inführ, {`{ImageMagick - Shell injection via PDF
+password},'} 21-Nov-2020. {[}Online{]}. Available:
+\url{https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html}.
+{[}Accessed: 08-Mar-2021{]}}
+
+\end{CSLReferences}
+
+
+
+\end{document}

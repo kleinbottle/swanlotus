@@ -1,5 +1,5 @@
 ---
-title: A brief tutorial on image format conversions
+title: Image format conversions
 author: R (Chandra) Chandrasekhar
 date: 2021-03-07
 modified: 2021-03-07
@@ -17,9 +17,13 @@ Image formats come in two broad flavours:
 - [raster](https://en.wikipedia.org/wiki/Raster_graphics) or [bitmap](https://en.wikipedia.org/wiki/Bitmap) graphics, and 
 - [vector graphics](https://en.wikipedia.org/wiki/Vector_graphics).
 
-The former leads to image blockiness or [pixellation](https://en.wikipedia.org/wiki/Pixelation) at high magnifications, while the latter scales without degradation when magnified, as shown in +@fig:raster-vector.
+The former leads to image blockiness or [pixellation](https://en.wikipedia.org/wiki/Pixelation) at high magnifications, as shown in +@fig:raster, while the latter scales without degradation when magnified, as illustrated in +@fig:vector.
 
-![Difference between raster/bitmap and vector graphics.^[The original uploader was Darth Stabro at English Wikipedia., [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), via Wikimedia Commons. [This](https://upload.wikimedia.org/wikipedia/commons/a/aa/VectorBitmapExample.svg) is the original file URL.]]({attach}images/raster-vector.svg){#fig:raster-vector  width=40%}
+![Raster graphics image]({attach}images/raster.png){#fig:raster width=40%}
+
+![Vector graphics image]({attach}images/vector.svg){#fig:vector width=40%}
+
+
 
 ### Raster Graphics
 
@@ -29,20 +33,20 @@ There are dozens of image formats, including:
 #.  The [Joint Photographic Experts Group(JPEG)](https://jpeg.org/about.html) format for scene and portrait image display and compression; and
 #.  The [Portable Network Graphics (PNG)](http://www.libpng.org/pub/png/) format, optimized principally for text-based image display and compression.
 
-All three formats employ raster graphics.
+All three formats employ raster graphics and are represented as rectangular arrays of pixels.
 
 ### Vector Graphics
 
 The two principal vector graphics formats are:
 
 #.  The [Portable Document Format (PDF)](https://en.wikipedia.org/wiki/PDF) format which is used primarily in archival quality electronic and printed documents; while
-#.  The [Scalable Vector Graphics (SVG)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) format---interestingly text-based---is used for graphics display on web browsers.
+#.  The [Scalable Vector Graphics (SVG)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) format is used for graphics display on web browsers.
 
-Both these formats employ vector graphics.
+Both these formats employ vector graphics. While PDF is not human-readable, SVG is text-based and is designed to be both human- and machine-readable.
 
 ## Format conversions
 
-It is often necessary---for a variety of reasons---to convert from one image format to another. There are four possibilities:
+For a variety of reasons, it is often necessary to convert from one image format to another. There are four broad possibilities for this:
 
 a.  raster to raster;
 a.  raster to vector;
@@ -51,9 +55,34 @@ a.  vector to vector
 
 We consider each of these in turn using [platform-neutral](https://itlaw.wikia.org/wiki/Platform_neutral) [open source](https://opensource.com/resources/what-open-source) tools. Since I run [GNU/Linux](https://en.wikipedia.org/wiki/GNU/Linux_naming_controversy) on my desktop, my examples will feature commands from that setup.^[There are a good number of websites that promise conversion online, requiring you to upload the input file and download the output file. These _might be_ fraught with security risks. Use them only if you trust that your documents will not be misused.]
 
+## Tools for image format conversion
+
+There are four main tools for image format conversion:
+
+#.  [ImageMagick](https://imagemagick.org/index.php)
+    - library plus executables
+    - pixel based
+    - converts raster to raster
+#.  [cairo](https://www.cairographics.org/)
+    - library
+    - vector-based 2D drawing and rendering
+    - multiple output devices/formats
+    - used by other programs
+#.  [poppler](https://poppler.freedesktop.org/)
+    - vector-based PDF rendering library 
+    - used by several PDF viewers
+    - can and does use cairo as backend
+    - provides standalone utilities like `pdftotext` and `pdftoppm`
+#.  (Inkscape)[]
+    - GUI-based
+    - vector-based SVG is default
+    - two executables
+    - export options
+    - can use cairo for PDF export
+
 ## ImageMagick: the Swiss Army knife
 
-[ImageMagick](https://imagemagick.org/index.php) is the name given to a suite of image processing tools originally created in 1987 by John Cristy, then working for [Du Pont](https://www.dupont.com/). In 1990, it was freely released by Du Pont, who transferred copyright to [ImageMagick Studio LLC](https://imagemagick.org/script/contact.php) who now maintain the project. It is distributed under a derived Apache 2.0 [license](https://imagemagick.org/script/license.php). The [authoritative source code repository](https://github.com/ImageMagick/ImageMagick) shows active development even today, 34 years after the suite was first released [@imagemagicksource].
+[ImageMagick is the name given to a suite of image processing tools originally created in 1987 by John Cristy, then working for [Du Pont](https://www.dupont.com/). In 1990, it was freely released by Du Pont, who transferred copyright to [ImageMagick Studio LLC](https://imagemagick.org/script/contact.php) who now maintain the project. It is distributed under a derived Apache 2.0 [license](https://imagemagick.org/script/license.php). The [authoritative source code repository](https://github.com/ImageMagick/ImageMagick) shows active development even today, 34 years after the suite was first released [@imagemagicksource].
 
 ImageMagick is so versatile and useful that it may rightfully be called the [Swiss Army knife](https://www.thefreedictionary.com/Swiss-army+knife) of the image processing world. 
 
@@ -66,6 +95,36 @@ ImageMagick comes with several command line utilities, each replete with options
 - [`montage`](https://imagemagick.org/script/montage.php) which generates an image montage.
 
 The above list is far from exhaustive. The interested reader is referred to the [excellent online documentation](https://imagemagick.org/script/command-line-tools.php) for further details. The power of ImageMagick is enhanced with the [magick-script](https://imagemagick.org/script/magick-script.php) Image Scripting Language. In the examples below, I will give both the command line invocations and scripts for performing image conversions.
+
+## Cairo
+
+`rsvg-convert`
+`pdftocairo`
+
+
+https://en.wikipedia.org/wiki/Cairo_(graphics)
+
+https://www.cairographics.org/
+
+https://cgit.freedesktop.org/cairo
+
+### Inkscape
+
+https://wiki.inkscape.org/wiki/index.php/Tools
+
+## pdf2svg
+
+https://cityinthesky.co.uk/opensource/pdf2svg/
+
+https://github.com/dawbarton/pdf2svg
+
+https://inkscape.org/develop/about-svg/
+
+## poppler
+
+`pdftoppm`
+
+pdftocairo
 
 ## Raster to raster
 
@@ -90,12 +149,13 @@ Useful when a hgh resolution image is available. In any case: PDF and png/jpg si
 300 dpi for print [give references]
 
 
-```{bash}
+```{magick}
 convert -units pixelsperinch -density 300 file.png file.pdf
 ```
 ## PDF to image not supported
 
 ```{bash}
+#! /bin/magick
 convert file.pdf file.png
 ```
 
@@ -117,6 +177,7 @@ Give references to security concerns.
 
 ## PDF to SVG and vice versa
 
+https://wiki.gnome.org/Projects/LibRsvg
 
 
 ```{bash}
@@ -128,13 +189,15 @@ How to use resize etc.
 
 ## Appendix: ImageMagick's security vulnerabilities
 
-It has been said that with great power comes great responsibility. ImageMagicks great power and ease of use does come at a price: vulnerability to exploits by malicious remote actors. This arises primarily from weaknesses in the way in which external lbraries are invoked to perform functions _delegated_ to them by ImageMagick.
+Great power exacts a commensurate price. ImageMagick's great power and ease of use does come at a great price: vulnerability to exploits by malicious remote actors.
 
-ImageMagick uses external libraries which are called via `system()` commands in accordance with command strings specified in a "delegate" or "policy" configuration file called `delegates.xml` or `policy.xml`. 
+ImageMagick uses external libraries or _backend tools_ which are called via `system()` commands in accordance with _delegated_ command strings specified in a configuration file called `policy.xml`.
 
-In April 2016, it was reported that because of insufficient shell character filtering to validate the command string, it was possible for a bad actor to execute malicious code remotely, to the detriment of the unwitting user of ImageMagick. This was revealed at a website, interestingly named [ImageTragick](https://imagetragick.com/) to attract sufficient attention and remedial action to the discovered bug [@imagetragick2016].
+In April 2016, it was reported that because of insufficient validation of delegated command strings, it was possible for someone to execute malicious code remotely, to the detriment of the unwitting user of ImageMagick. This was revealed at a website, interestingly named [ImageTragick](https://imagetragick.com/) to attract sufficient attention and remedial action to the discovered bug [@imagetragick2016].
 
 In November 2020, [another security vulnerability was discovered](https://portswigger.net/daily-swig/imagemagick-pdf-parsing-flaw-allowed-attacker-to-execute-shell-commands-via-maliciously-crafted-image) [@leyden2020]. It was [reported and promptly patched](https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html) by the ImageMagick maintainers [@infuhr2020].
+
+Recent versions of the ImageMagick suite, bundled with major distributions, should have correctly configured `policy.xml` files that will block known exploits. [Sandboxing](https://www.techopedia.com/definition/25266/sandboxing) is another technique to quarantine the system from possible vulnerabilities. Above all, it is vital to keep  system and application software up to date to avail of evolutions in performance and security.
 
 ## Image used below
 
