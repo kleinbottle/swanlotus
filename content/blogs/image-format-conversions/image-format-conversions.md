@@ -91,7 +91,7 @@ ImageMagick comes with several command line utilities, each replete with options
 - [`display`](https://imagemagick.org/script/display.php) which displays one or more images;
 - [`identify`](https://imagemagick.org/script/identify.php) which identifies the type of image and displays its characteristics;
 - [`mogrify`](https://imagemagick.org/script/mogrify.php) which transforms an image, modifying its appearance; and
-- [`montage`](https://imagemagick.org/script/montage.php) which generates an image montage.
+- [`montage`](https://imagemagick.org/script/montage.php) which generates an image montage from several images.
 
 The above list is far from exhaustive. The interested reader is referred to the [excellent online documentation](https://imagemagick.org/script/command-line-tools.php) for further details. The power of ImageMagick is enhanced with the [magick-script](https://imagemagick.org/script/magick-script.php) Image Scripting Language. In the examples below, I will give both the command line invocations and scripts for performing image conversions.
 
