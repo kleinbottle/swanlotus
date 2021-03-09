@@ -33,16 +33,16 @@ There are dozens of image formats, including:
 #.  The [Joint Photographic Experts Group(JPEG)](https://jpeg.org/about.html) format for scene and portrait image display and compression; and
 #.  The [Portable Network Graphics (PNG)](http://www.libpng.org/pub/png/) format, optimized principally for text-based image display and compression.
 
-All three formats employ raster graphics and are represented as rectangular arrays of pixels.
+All three formats employ raster graphics and are represented as rectangular arrays of [pixels](https://en.wikipedia.org/wiki/Pixels).
 
 ### Vector Graphics
 
 The two principal vector graphics formats are:
 
-#.  The [Portable Document Format (PDF)](https://en.wikipedia.org/wiki/PDF) format which is used primarily in archival quality electronic and printed documents; while
-#.  The [Scalable Vector Graphics (SVG)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) format is used for graphics display on web browsers.
+#.  The [Portable Document Format (PDF)](https://en.wikipedia.org/wiki/PDF) format which is used primarily in archival quality electronic and printed documents; and
+#.  The [Scalable Vector Graphics (SVG)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) format which is used for graphics display on web browsers.
 
-Both these formats employ vector graphics. While PDF is not human-readable, SVG is text-based and is designed to be both human- and machine-readable.
+Both these formats yield images, which consist of mathematically defined points, lines, curves, and shapes. Whereas PDF is not human-readable, SVG is text-based and is designed to be both human- and machine-readable.
 
 ## Format conversions
 
@@ -53,36 +53,35 @@ a.  raster to vector;
 a.  vector to raster; and
 a.  vector to vector
 
-We consider each of these in turn using [platform-neutral](https://itlaw.wikia.org/wiki/Platform_neutral) [open source](https://opensource.com/resources/what-open-source) tools. Since I run [GNU/Linux](https://en.wikipedia.org/wiki/GNU/Linux_naming_controversy) on my desktop, my examples will feature commands from that setup.^[There are a good number of websites that promise conversion online, requiring you to upload the input file and download the output file. These _might be_ fraught with security risks. Use them only if you trust that your documents will not be misused.]
+We consider each of these in turn using [platform-neutral](https://itlaw.wikia.org/wiki/Platform_neutral) [open source](https://opensource.com/resources/what-open-source) tools. Since I run [GNU/Linux](https://en.wikipedia.org/wiki/GNU/Linux_naming_controversy) on my desktop, my examples will feature commands from that setup.^[There are many websites that promise conversion online, requiring you to upload the input file and download the output file. These _might be_ fraught with security risks. Use them with caution.]
 
 ## Tools for image format conversion
 
-There are four main tools for image format conversion:
+I consider here these four tools for image format conversion:
 
 #.  [ImageMagick](https://imagemagick.org/index.php)
-    - library plus executables
-    - pixel based
-    - converts raster to raster
+    - library plus standalone utilities linke `convert`, `display`, `identify`, etc.
+    - pixel-based
+    - converts raster to raster, and raster to vector
 #.  [cairo](https://www.cairographics.org/)
-    - library
-    - vector-based 2D drawing and rendering
+    - vector-based 2D drawing and rendering library
     - multiple output devices/formats
     - used by other programs
 #.  [poppler](https://poppler.freedesktop.org/)
     - vector-based PDF rendering library 
     - used by several PDF viewers
-    - can and does use cairo as backend
-    - provides standalone utilities like `pdftotext` and `pdftoppm`
-#.  (Inkscape)[]
-    - GUI-based
-    - vector-based SVG is default
-    - two executables
-    - export options
-    - can use cairo for PDF export
+    - uses cairo as backend
+    - provides standalone utilities like `pdftotext`, `pdftocairo`, and `pdftoppm`
+#.  [Inkscape](https://inkscape.org/)
+    - GUI-based vector graphics editor
+    - suitable both for technical illustration and digital art
+    - uses SVG as the main format
+    - can export to a wide variety of output formats
+    - option to use cairo for PDF export
 
 ## ImageMagick: the Swiss Army knife
 
-[ImageMagick is the name given to a suite of image processing tools originally created in 1987 by John Cristy, then working for [Du Pont](https://www.dupont.com/). In 1990, it was freely released by Du Pont, who transferred copyright to [ImageMagick Studio LLC](https://imagemagick.org/script/contact.php) who now maintain the project. It is distributed under a derived Apache 2.0 [license](https://imagemagick.org/script/license.php). The [authoritative source code repository](https://github.com/ImageMagick/ImageMagick) shows active development even today, 34 years after the suite was first released [@imagemagicksource].
+ImageMagick is the name given to a suite of image processing tools originally created in 1987 by John Cristy, then working for [Du Pont](https://www.dupont.com/). In 1990, it was freely released by Du Pont, who transferred copyright to [ImageMagick Studio LLC](https://imagemagick.org/script/contact.php) who now maintain the project. It is distributed under a derived Apache 2.0 [license](https://imagemagick.org/script/license.php). The [authoritative source code repository](https://github.com/ImageMagick/ImageMagick) shows active development even today, 34 years after the suite was first released [@imagemagicksource].
 
 ImageMagick is so versatile and useful that it may rightfully be called the [Swiss Army knife](https://www.thefreedictionary.com/Swiss-army+knife) of the image processing world. 
 
@@ -96,7 +95,9 @@ ImageMagick comes with several command line utilities, each replete with options
 
 The above list is far from exhaustive. The interested reader is referred to the [excellent online documentation](https://imagemagick.org/script/command-line-tools.php) for further details. The power of ImageMagick is enhanced with the [magick-script](https://imagemagick.org/script/magick-script.php) Image Scripting Language. In the examples below, I will give both the command line invocations and scripts for performing image conversions.
 
-## Cairo
+%%%% UP TO HERE %%%%
+
+## cairo and poppler
 
 `rsvg-convert`
 `pdftocairo`
