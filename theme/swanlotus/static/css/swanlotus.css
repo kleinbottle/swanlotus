@@ -4439,7 +4439,9 @@ a:hover code {
 }
 
 .content ul ul,
-.content ol ol {
+.content ol ol,
+.content ol ul,
+.content ul ol {
   margin-top: 0em;
 }
 
