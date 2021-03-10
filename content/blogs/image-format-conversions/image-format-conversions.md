@@ -19,11 +19,9 @@ Image formats come in two broad flavours:
 
 The former leads to image blockiness or [pixellation](https://en.wikipedia.org/wiki/Pixelation) at high magnifications, as shown in +@fig:raster, while the latter scales without degradation when magnified, as illustrated in +@fig:vector.
 
-![Raster graphics image]({attach}images/raster.png){#fig:raster width=40%}
+![Raster graphics image]({attach}images/raster.png){#fig:raster width=50%}
 
-![Vector graphics image]({attach}images/vector.svg){#fig:vector width=40%}
-
-
+![Vector graphics image]({attach}images/vector.svg){#fig:vector width=50%}
 
 ### Raster Graphics
 
@@ -94,6 +92,76 @@ ImageMagick comes with several command line utilities, each replete with options
 - [`montage`](https://imagemagick.org/script/montage.php) which generates an image montage from several images.
 
 The above list is far from exhaustive. The interested reader is referred to the [excellent online documentation](https://imagemagick.org/script/command-line-tools.php) for further details. The power of ImageMagick is enhanced with the [magick-script](https://imagemagick.org/script/magick-script.php) Image Scripting Language. In the examples below, I will give both the command line invocations and scripts for performing image conversions.
+
+## Raster to raster conversions
+
+It is more instructive if we have meaningful use-cases to illustrate why and how these conversions arise, and what command invocations get the job done. So let us set to.
+
+Suppose we want to make transparent the background in an image that is in JPEG format. After rummaging through the web for a while, we finally discover that JPEG _does not_ support transparency through an [alpha channel](https://www.techopedia.com/definition/1945/alpha-channel). The two popular formats that _do_ are GIF and PNG.
+
+### Simple conversion
+
+ImageMagick can do all the heavy lifting here. Simple format conversion is achieved by:
+
+```
+convert test.jpg test.png
+```
+
+### Background transparency
+
+And that is all there is to it! Of course, there is more juice to be squeezed out of ImageMagick if so desired, and anyway, we are not quite done yet. How do we make the background transparent? It helps if the background is of a single uniform colour. In this case, let us assume that the background is uniformly white. The correct invocation is now:
+
+```
+convert test.jpg -transparent white test-transparent.png
+```
+
+*@fig:raster is a case in point of an image with a transparent background that has been so processed.
+
+### Resizing
+
+But what if we wanted more? What if we wanted to crop or resize an image? There are command line options to do that too, and the best way forward is to consult and follow the documentation. While ImageMagick's options can be bewildering, the documentation is mature and comprehensive and will light the way.
+
+Let us further require the image to be half its original size in both the $x$ and $y$ directions. The correct invocation for this chain of operations is:
+
+```
+convert test.jpg -transparent white -resize 50% test-halfsize.png
+```
+
+### Putting it all together
+
+*@fig:animals-medium is a hand-drawn image of microscopic animals by the German naturalist Ernst Haeckel.
+
+![Vintage animals by Ernst Haeckel.^[These images are in the public domain and covered by the [CC0 licence](https://creativecommons.org/publicdomain/zero/1.0/). They are in the public domain and available for download [here](https://www.rawpixel.com/image/2266608/free-illustration-image-ernst-haeckel-vintage-animals).]]({attach}images/animals-medium.jpg){#fig:animals-medium width=50%}
+
+These images have a whitish border around the block print. This "border" has annotations and the background is also not of one colour but of closely related colours of slightly different combinations of the primary colours. Removing the border is a task tailor made for the _crop_ operation.
+
+Cropping is better done interactively using a GUI. ImageMagick's display utility provides a GUI with a left click when the mouse is over the image. Or we can use an interactive image viewer that provides a cropping function.
+
+The cropped image is now converted to a PNG at half the size:
+
+```
+convert animals-medium-cropped.jpg -resize 50% animals-medium-cropped-halfsize.png
+convert +append  animals-medium-cropped.jpg animals-medium-cropped-halfsize.png both.png
+```
+
+![Image cropped and shrunk to half its original dimensions.]({attach}images/both.png){#fig:cropped-resized width=50%}
+
+### Can cairo and [oppler do this?
+
+Can such processing be done using cairo or poppler? Not really, the _starting point_ or _input format_ for cairo and poppler is the PDF format. Moreover, these packages are directed toward other goals. ImageMacgik's forte is the processing of images.
+
+## Raster to vector conversions
+
+We might be printing a document on a printer that recognizes and accepts the PostScript or PDF format. In such cases, it might be sensible to convert a photographic image in the document from a JPEG or PNG into a PDF.
+
+We could go about doing this using ImageMagick's `convert` utility again. And following the previous syntax, we could try:
+
+```
+convert test.png test.pdf
+```
+
+And it would work! But the results might not be as expected. Here is an example.
+
 
 %%%% UP TO HERE %%%%
 
