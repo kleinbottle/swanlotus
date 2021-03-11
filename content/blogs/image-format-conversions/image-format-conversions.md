@@ -97,7 +97,7 @@ The above list is far from exhaustive. The interested reader is referred to the 
 
 It is more instructive if we have meaningful use-cases to illustrate why and how these conversions arise, and what command invocations get the job done. So let us set to.
 
-We invoke ImageMagick's `convert` function not only to convert from one format to another but also to accomplish cropping, image-resizing, and [montaging](https://www.thefreedictionary.com/montage).
+We invoke ImageMagick's `convert` function not only to convert from one format to another but also to accomplish cropping, image-resizing, making the background transparent, and [montaging](https://www.thefreedictionary.com/montage).
 
 ### Test image
 
@@ -131,17 +131,26 @@ Note that the combined image montage in +@fig:both is in the PNG format, not the
 
 ### Can cairo and poppler do all this?
 
-Can such processing be done using cairo or poppler? Not really. The _starting point_ or _input format_ for cairo and poppler is the PDF format. Our test image is scanned from an illustration and is therefore a JPEG raster image. ImageMacgik's forte is the processing of raster images; cairo and poppler have other goals.
+Can such processing be done using cairo or poppler? Not really. The _starting point_ or _input format_ for cairo and poppler is the PDF format. Our test image is scanned from an illustration and is therefore a JPEG raster image. ImageMagick's forte is the processing of raster images; cairo and poppler have other goals.
 
 ## Raster to vector conversions
 
-We might be printing a document on a printer that recognizes and accepts the PostScript or PDF format. In such cases, it might be sensible to convert a photographic image in the document from a JPEG or PNG into a PDF.
+We might be printing a document on a printer that recognizes and accepts the [PostScript]() or PDF format. Raster photographic images would then need to converted to PDF either beforehand or on the fly before they can be printed on paper. This is one reason why we might need to convert from a raster to a vector image.
 
 We could go about doing this using ImageMagick's `convert` utility again. And following the previous syntax, we could try:
 
 ```
-convert test.png test.pdf
+convert test-cropped.jpg test-cropped.pdf
 ```
+
+The converted image, [test-cropped.pdf]({attach}images/test-cropped.pdf), may be viewed from the given link. Web browsers, while they may feature PDF viewers on separate tabs, are still unable to display PDFs as part of a web page. If the converted PDF is magnified by zooming, it will be seen to reveal remarkable detail.
+
+What happens, though, if the half-sized image is use to generate the PDF. It is smaller and accordingly embodies less information than the original.
+
+```
+convert test-cropped-halfsize.png test-cropped-halfsize.pdf
+```
+
 
 And it would work! But the results might not be as expected. Here is an example.
 
