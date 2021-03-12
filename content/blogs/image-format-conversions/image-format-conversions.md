@@ -83,7 +83,7 @@ We consider each of these in turn using [platform-neutral](https://itlaw.wikia.o
 Among the very many tools available, we examine below four tools for image format conversion:
 
 #.  [ImageMagick](https://imagemagick.org/index.php)
-    - graphics library
+    - graphics library for image manipulation and display
     - standalone utilities like `convert`, `display`, `identify`, `mogrify`, etc.
     - pixel-based
     - raster to raster conversions
@@ -137,53 +137,139 @@ The non-text image is a colourful, graphically rich image with much detail. It i
 
 ![Non-text, graphically rich image in JPEG format.^[These images are in the public domain and covered by the [CC0 licence](https://creativecommons.org/publicdomain/zero/1.0/). They are available for download [here](https://www.rawpixel.com/image/2266608/free-illustration-image-ernst-haeckel-vintage-animals).]]({attach}images/animals.jpg){#fig:animals width=80%}
 
+This image has a whitish, non-monochromatic border around the block print, containing  annotations. Rather than setting a particular background colour to be transparent, it is more efficient to remove the border altogether by cropping, leaving us with only the illustration.
+
 ## Raster to raster conversions
 
 Before converting from one format to another, we may need to pre-process the image. For example, +@fig:animals has a whitish, non-monochromatic border around the block print, containing  annotations. For our purposes, this border is more of a distraction that is best removed altogether by _cropping_, leaving us with only the illustration.
 convert -crop 735x1036+59+84 animals.jpg animals-cropped.jpg
-### Cropping
-
-Use display. Left click on image.
-Top left and bottom right corners: (59, 84) and (794, 1120).
-`convert -crop 735x1036+59+84 animals.jpg animals-cropped.jpg`
-
-We invoke ImageMagick's `convert` function not only to convert from one format to another but also to accomplish cropping, image-resizing, making the background transparent, and [montaging](https://www.thefreedictionary.com/montage).
-
-### Test image
-
-We use a colourful image with much detail as the test image. *@fig:test is from a hand-drawn illustration of microscopic marine animals by the German naturalist [Ernst Haeckel](https://en.wikipedia.org/wiki/Ernst_Haeckel), scanned and made available in the public domain.
-
-![Vintage animals illustration by Ernst Haeckel.^[These images are in the public domain and covered by the [CC0 licence](https://creativecommons.org/publicdomain/zero/1.0/). They are in the public domain and available for download [here](https://www.rawpixel.com/image/2266608/free-illustration-image-ernst-haeckel-vintage-animals).]]({attach}images/test.jpg){#fig:test width=70%}
-
-This image has a whitish, non-monochromatic border around the block print, containing  annotations. Rather than setting a particular background colour to be transparent, it is more efficient to remove the border altogether by cropping, leaving us with only the illustration.
 
 ### Cropping
 
-Cropping is better done interactively using a [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface), than on the command line. ImageMagick's `display` utility pops up a GUI with a left click when the mouse is over the image. This can be used for interactive cropping. Or we can use any other interactive image viewer that provides a cropping function.
+Cropping is strictly not image format conversion, but is often a necessary pre-processing step in image manipulations. Cropping is better done interactively using a [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface), than on the command line.
+
+ImageMagick's `display` utility pops up a GUI with a left click when the mouse is over the image. We can then drag and fit a window to the _region we wish to keep_, clicking the crop function, and saving the cropped image. The steps are these:
+
+a.  left mouse click on the image to reveal the GUI (see +@fig:gui);
+a.  `Transform -> Crop`;
+a.  put the mouse over the top left corner and drag until the bottom right corner to enclose the region of interest;
+a.  Click again on `Crop`; and
+a.  `File -> Save` with a different name.
+
+![ImageMagick interactive GUI.]({attach}images/ImageMagick-display-gui.png){#fig:gui width=20%}
+
+Alternatively, we may just position the cursor on the top left and bottom right corners of the region we wish to _retain_, noting the co-ordinates in each case. If these coordinates are $(x_t, y_t)$ and $(x_b, y_b)$, respectively, we have $w = x_b - x_t$ and $h = y_b -y_t$. We may then invoke the convert command with crop as the option so:
+
+```
+convert -crop 'wxh+x_t+y_t' animals.jpg animals-cropped.jpg
+```
+
+In our case, $(x_t, y_t) = (60, 84)$ and $(x_b, y_b) = (795, 1119)$ giving $w = 735$ and $h = 1035$, leading to 
+
+```
+convert -crop '735x1035+60+84' animals.jpg animals-cropped.jpg
+```
+The resulting cropped image is shown in +@fig:cropped below.
 
 ![Cropped version of the image in +@fig:test.]({attach}images/test-cropped.jpg){#fig:cropped width=50%}
 
+#### File sizes
+
+The sizes of the original and cropped files are shown below in human friendly numbers:
+
+```{bash}
+ls -sh animals*.jpg | awk '{print $1 "\t" $2}'
+200K    animals-cropped.jpg
+312K    animals.jpg
+```
+As expected, the original file `animals.jpg` is larger than the cropped full-size version, `animals-cropped.jpg` and all is well.
+
 ### Resizing, format-conversion, and montaging
 
-The cropped image is now converted to a PNG at half the dimensions or one quarter the area. The latter is appended to the right of the cropped image, aligned at the bottom, and given a transparent background. The result is shown in +@fig:both.
+We may invoke ImageMagick's `convert` function not only to convert from one format to another but also to accomplish cropping (as we have already seen), image-resizing, making the background transparent, and [montaging](https://www.thefreedictionary.com/montage), etc.
 
+Suppose we want to reduce the dimensions of the cropped image to half their original values, and display the the full-size and half-size images side by side, we could run the following command:
+
+```{bash}
+convert animals-cropped.jpg -resize 50% animals-cropped-halfsize.jpg
+
+convert +append -gravity south animals-cropped.jpg animals-cropped-halfsize.jpg both.jpg
 ```
-convert test-cropped.jpg -resize 50% test-cropped-halfsize.png
-
-convert +append -gravity south -background transparent test-cropped.jpg test-cropped-halfsize.png both.png
-```
-
-![Cropped image on the left and half-sized image on the right.]({attach}images/both.png){#fig:both width=80%}
+![Full-size cropped image on the left and half-sized image on the right.]({attach}images/both.jpg){#fig:both-jpg width=80%}
 
 ### Background transparency
 
-Note that the combined image montage in +@fig:both is in the PNG format, not the original JPEG. The reason for this is that there is rectangular region at the top right that appears transparent, even though it is part of the image montage. A JPEG image _does not_ support such transparency through an [alpha channel](https://www.techopedia.com/definition/1945/alpha-channel). The two popular formats that _do_ are GIF and PNG.
+Notice that there is a coloured white rectangle atop the half-size image on the right in +@fig:both-jpg. We could remove it by rendering the background transparent, but because JPEG does not support transparency, through an [alpha channel](https://www.techopedia.com/definition/1945/alpha-channel), we have to convert the composite image to the PNG format, which does. This is one real-life circumstance necessitating raster to raster format conversion.
+
+```
+convert +append -gravity south -background transparent animals-cropped.jpg animals-cropped-halfsize.jpg both.png
+```
+![Composite image converted to PNG format with transparent background.]({attach}images/both.png){#fig:both-png width=80%}
+
+#### File sizes
+
+How do the file sizes of the two composite images compare? How high a price have we paid for the transparent background?
+
+```
+ls -sh both.* | awk '{print $1 "\t" $2}'
+
+264K    both.jpg
+2.2M    both.png
+```
+And the shocker is clearly shown above. The PNG composite image is _almost eight times larger_ than its JPEG counterpart.
+
+<!--#### Compression levels
+
+The [image compression level](https://en.wikipedia.org/wiki/Image_compression) used above is the default compression level in ImageMagick. Getting the right combination of image dimensions, image compression, and image quality so that the image loads fast and looks good is [quite an art](https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/). [@newton2015]
+
+To get an idea of the range of file sizes involved, let us try generating a composite image with extremes of the compression level, which can range from 0 to 9.
+
+```
+convert -define PNG:compression-level=0 +append -gravity south -background transparent  animals-cropped.jpg animals-cropped-halfsize.jpg both-compressed-0.png
+
+convert -define PNG:compression-level=9 +append -gravity south -background transparent  animals-cropped.jpg animals-cropped-halfsize.jpg both-compressed-9.png
+```
+
+The file sizes are:
+
+```
+ls -sh both* | awk '{print $1 "\t" $2}'
+
+4.4M    both-compressed-0.png
+2.2M    both-compressed-9.png
+4.4M    both-compressed.png
+264K    both.jpg
+2.2M    both.png
+```
+It appears that the default compression used by ImageMagick gives a file size that is the same as the highest compression level. Indeed, the uncompressed version---with a compression level of zero---gives a file _twice_ the size of the uncompressed version and _sixteen times_ the size of the JPEG. And we have not even used two other attributes: [filter and strategy](https://stackoverflow.com/questions/27267073/imagemagick-lossless-max-compression-for-png) [@setchell2014]. Getting the best tradeoff of image size, file size, loading time, and image quality is still an art to be mastered than an algorithm to be applied.-->
+
+<!--### Results with the text-only image
+
+For completeness, let us do a simple _no quality loss_ conversion from PNG to JPEG for the text-only test image, and compare file sizes.
+
+```
+convert -quality 100 text-only-600-dpi.png text-only-600-dpi.jpg
+
+convert +append text-only-600-dpi.png text-only-600-dpi.jpg text-only-both-600-dpi.png
+
+ls -sh text* | awk '{print $1 "\t" $2}'
+---
+148K    text-only-600-dpi.jpg
+40K     text-only-600-dpi.png
+108K    text-only-both-600-dpi.png
+```
+
+![Composite of the PNG on the left, and JPEG on the right, of the text-only image.]({attach}images/text-only-both-600-dpi.png){#fig:text-only-both width=80%}
+
+*@fig:text-only-both does not reveal any degradation in quality after conversion from PNG to JPEG. Note also that the _composite_ PNG image is smaller than the _single_ JPEG image. We conclude---rather shakily on the basis of one instance---that PNG is better suited for textual images and provides a smaller file size for the same quality. 
 
 ### Can cairo and poppler do all this?
 
-Can such processing be done using cairo or poppler? Not really. The _starting point_ or _input format_ for cairo and poppler is the PDF format. Our test image is scanned from an illustration and is therefore a JPEG raster image. ImageMagick's forte is the processing of raster images; cairo and poppler have other goals.
+Can such processing be done using cairo or poppler? Not really. The _starting point_ or _input format_ for cairo and poppler is the PDF format. Our test image is scanned from an illustration and is therefore a JPEG raster image. ImageMagick's forte is the display, manipulation, and processing of raster images; cairo and poppler have other goals.-->
 
-## Raster to vector conversions
+<!--%%% UP TO HERE %%%-->
+
+<!--## Raster to vector conversions
 
 We might be printing a document on a printer that recognizes and accepts the [PostScript]() or PDF format. Raster photographic images would then need to converted to PDF either beforehand or on the fly before they can be printed on paper. This is one reason why we might need to convert from a raster to a vector image.
 
@@ -327,3 +413,5 @@ corrections.
 
 <!--\noindent A PDF version of this article is [available for download here.]({attach}./image-format-conversions.pdf)-->
 
+
+https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/-->
