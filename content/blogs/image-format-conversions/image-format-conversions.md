@@ -301,9 +301,6 @@ convert test-cropped-halfsize.png test-cropped-halfsize.pdf
 
 And it would work! But the results might not be as expected. Here is an example.
 
-
-%%%% UP TO HERE %%%%
-
 ## cairo and poppler
 
 `rsvg-convert`
