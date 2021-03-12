@@ -179,6 +179,7 @@ The sizes of the original and cropped files are shown below in human friendly nu
 
 ```{bash}
 ls -sh animals*.jpg | awk '{print $1 "\t" $2}'
+---
 200K    animals-cropped.jpg
 312K    animals.jpg
 ```
@@ -193,7 +194,8 @@ Suppose we want to reduce the dimensions of the cropped image to half their orig
 ```{bash}
 convert animals-cropped.jpg -resize 50% animals-cropped-halfsize.jpg
 
-convert +append -gravity south animals-cropped.jpg animals-cropped-halfsize.jpg both.jpg
+convert +append -gravity south \
+animals-cropped.jpg animals-cropped-halfsize.jpg both.jpg
 ```
 ![Full-size cropped image on the left and half-sized image on the right.]({attach}images/both.jpg){#fig:both-jpg width=80%}
 
@@ -202,7 +204,8 @@ convert +append -gravity south animals-cropped.jpg animals-cropped-halfsize.jpg 
 Notice that there is a coloured white rectangle atop the half-size image on the right in +@fig:both-jpg. We could remove it by rendering the background transparent, but because JPEG does not support transparency, through an [alpha channel](https://www.techopedia.com/definition/1945/alpha-channel), we have to convert the composite image to the PNG format, which does. This is one real-life circumstance necessitating raster to raster format conversion.
 
 ```
-convert +append -gravity south -background transparent animals-cropped.jpg animals-cropped-halfsize.jpg both.png
+convert +append -gravity south -background transparent \
+animals-cropped.jpg animals-cropped-halfsize.jpg both.png
 ```
 ![Composite image converted to PNG format with transparent background.]({attach}images/both.png){#fig:both-png width=80%}
 
@@ -218,39 +221,47 @@ ls -sh both.* | awk '{print $1 "\t" $2}'
 ```
 And the shocker is clearly shown above. The PNG composite image is _almost eight times larger_ than its JPEG counterpart.
 
-<!--#### Compression levels
+#### Compression levels
 
 The [image compression level](https://en.wikipedia.org/wiki/Image_compression) used above is the default compression level in ImageMagick. Getting the right combination of image dimensions, image compression, and image quality so that the image loads fast and looks good is [quite an art](https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/). [@newton2015]
 
 To get an idea of the range of file sizes involved, let us try generating a composite image with extremes of the compression level, which can range from 0 to 9.
 
 ```
-convert -define PNG:compression-level=0 +append -gravity south -background transparent  animals-cropped.jpg animals-cropped-halfsize.jpg both-compressed-0.png
+convert -define PNG:compression-level=0 +append -gravity south \
+-background transparent \
+animals-cropped.jpg animals-cropped-halfsize.jpg \
+both-compressed-0.png
 
-convert -define PNG:compression-level=9 +append -gravity south -background transparent  animals-cropped.jpg animals-cropped-halfsize.jpg both-compressed-9.png
+convert -define PNG:compression-level=9 +append -gravity south \
+-background transparent \
+animals-cropped.jpg animals-cropped-halfsize.jpg \
+both-compressed-9.png
 ```
 
 The file sizes are:
 
 ```
 ls -sh both* | awk '{print $1 "\t" $2}'
-
+---
 4.4M    both-compressed-0.png
 2.2M    both-compressed-9.png
 4.4M    both-compressed.png
 264K    both.jpg
 2.2M    both.png
 ```
-It appears that the default compression used by ImageMagick gives a file size that is the same as the highest compression level. Indeed, the uncompressed version---with a compression level of zero---gives a file _twice_ the size of the uncompressed version and _sixteen times_ the size of the JPEG. And we have not even used two other attributes: [filter and strategy](https://stackoverflow.com/questions/27267073/imagemagick-lossless-max-compression-for-png) [@setchell2014]. Getting the best tradeoff of image size, file size, loading time, and image quality is still an art to be mastered than an algorithm to be applied.-->
+It appears that the default compression used by ImageMagick gives a file size that is the same as the highest compression level. Indeed, the uncompressed version---with a compression level of zero---gives a file _twice_ the size of the uncompressed version and _sixteen times_ the size of the JPEG. And we have not even used two other related attributes: [filter and strategy](https://stackoverflow.com/questions/27267073/imagemagick-lossless-max-compression-for-png) [@setchell2014]. Getting the best tradeoff of image size, file size, loading time, and image quality is still an art to be mastered than an algorithm to be applied.
 
-<!--### Results with the text-only image
+### Results with the text-only image
 
-For completeness, let us do a simple _no quality loss_ conversion from PNG to JPEG for the text-only test image, and compare file sizes.
+For completeness, let us do a simple _no quality loss_ conversion from PNG to JPEG for the text-only test image, and compare image appearances and file sizes.
 
 ```
 convert -quality 100 text-only-600-dpi.png text-only-600-dpi.jpg
 
-convert +append text-only-600-dpi.png text-only-600-dpi.jpg text-only-both-600-dpi.png
+convert text-only-600-dpi.png text-only-600-dpi.jpg \
+-background transparent -splice 20x0+0+0 +append -chop 20x0+0+0 \
+text-only-both-600-dpi.png
 
 ls -sh text* | awk '{print $1 "\t" $2}'
 ---
@@ -259,17 +270,17 @@ ls -sh text* | awk '{print $1 "\t" $2}'
 108K    text-only-both-600-dpi.png
 ```
 
-![Composite of the PNG on the left, and JPEG on the right, of the text-only image.]({attach}images/text-only-both-600-dpi.png){#fig:text-only-both width=80%}
+![Composite of the PNG on the left, and JPEG on the right, with a small separator.]({attach}images/text-only-both-600-dpi.png){#fig:text-only-both width=80%}
 
 *@fig:text-only-both does not reveal any degradation in quality after conversion from PNG to JPEG. Note also that the _composite_ PNG image is smaller than the _single_ JPEG image. We conclude---rather shakily on the basis of one instance---that PNG is better suited for textual images and provides a smaller file size for the same quality. 
 
 ### Can cairo and poppler do all this?
 
-Can such processing be done using cairo or poppler? Not really. The _starting point_ or _input format_ for cairo and poppler is the PDF format. Our test image is scanned from an illustration and is therefore a JPEG raster image. ImageMagick's forte is the display, manipulation, and processing of raster images; cairo and poppler have other goals.-->
+Can such processing be done using cairo or poppler? Not really. The _starting point_ or _input format_ for cairo and poppler is the PDF format. Our test image is scanned from an illustration and is therefore a JPEG raster image. ImageMagick's forte is the display, manipulation, and processing of raster images; cairo and poppler have other goals.
 
-<!--%%% UP TO HERE %%%-->
+%%% UP TO HERE %%%
 
-<!--## Raster to vector conversions
+## Raster to vector conversions
 
 We might be printing a document on a printer that recognizes and accepts the [PostScript]() or PDF format. Raster photographic images would then need to converted to PDF either beforehand or on the fly before they can be printed on paper. This is one reason why we might need to convert from a raster to a vector image.
 
@@ -414,4 +425,4 @@ corrections.
 <!--\noindent A PDF version of this article is [available for download here.]({attach}./image-format-conversions.pdf)-->
 
 
-https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/-->
+https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/
