@@ -19,28 +19,53 @@ Image formats come in two broad flavours:
 
 The former leads to image blockiness or [pixellation](https://en.wikipedia.org/wiki/Pixelation) at high magnifications, as shown in +@fig:raster, while the latter scales without degradation when magnified, as illustrated in +@fig:vector.
 
-![Raster graphics image]({attach}images/raster.png){#fig:raster width=50%}
+![Raster graphics image of the letter O]({attach}images/raster.png){#fig:raster width=50%}
 
-![Vector graphics image]({attach}images/vector.svg){#fig:vector width=50%}
+![Vector graphics image of the letter O]({attach}images/vector.svg){#fig:vector width=50%}
 
 ### Raster Graphics
 
-There are dozens of image formats, including:
+There are dozens of image formats, including these three:
 
-#.  The [Tag(ged) Image File Format (TIFF)](https://en.wikipedia.org/wiki/TIFF) which is used in printing;
-#.  The [Joint Photographic Experts Group(JPEG)](https://jpeg.org/about.html) format for scene and portrait image display and compression; and
-#.  The [Portable Network Graphics (PNG)](http://www.libpng.org/pub/png/) format, optimized principally for text-based image display and compression.
+#.  [Tag(ged) Image File Format (TIFF)](https://en.wikipedia.org/wiki/TIFF)
+    - lossless
+    - large file sizes
+    - used in printing and professional graphics
+    - preferred for archival of scanned photographs
 
-All three formats employ raster graphics and are represented as rectangular arrays of [pixels](https://en.wikipedia.org/wiki/Pixels).
+#.  [Joint Photographic Experts Group (JPEG)](https://jpeg.org/about.html) format
+    - small file sizes
+    - lossy compression
+    - good quality with fast downloads
+    - supported by web browsers
+    - preferred for scenes and portraits
+    - no transparency
+
+#.  [Portable Network Graphics (PNG)](http://www.libpng.org/pub/png/) format
+    - lossless compression
+    - preferred for text and high definition images
+    - supported by most web browsers
+    - transparency
+
+All three formats employ raster graphics in which image elements are represented as rectangular arrays of [pixels](https://en.wikipedia.org/wiki/Pixels).
 
 ### Vector Graphics
 
 The two principal vector graphics formats are:
 
-#.  The [Portable Document Format (PDF)](https://en.wikipedia.org/wiki/PDF) format which is used primarily in archival quality electronic and printed documents; and
-#.  The [Scalable Vector Graphics (SVG)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) format which is used for graphics display on web browsers.
+#.  [Portable Document Format (PDF)](https://en.wikipedia.org/wiki/PDF)
+    - preferred for archival quality electronic and printed documents
+    - supported by browsers with integrated PDF readers
+    - file sizes comparable to raster images
+    - machine-readable files
 
-Both these formats yield images, which consist of mathematically defined points, lines, curves, and shapes. Whereas PDF is not human-readable, SVG is text-based, and is designed to be both human- and machine-readable.
+#.  [Scalable Vector Graphics (SVG)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) format
+    - preferred for scalable graphics on web browsers
+    - used in digital image animations and digital art
+    - small file sizes
+    - human- and machine-readable files
+
+Both these formats yield images which consist of mathematically defined points, lines, curves, and shapes.
 
 ## Format conversions
 
@@ -55,21 +80,23 @@ We consider each of these in turn using [platform-neutral](https://itlaw.wikia.o
 
 ## Tools for image format conversion
 
-We examine four tools for image format conversion:
+Among the very many tools available, we examine below four tools for image format conversion:
 
 #.  [ImageMagick](https://imagemagick.org/index.php)
-    - library plus standalone utilities like `convert`, `display`, `identify`, etc.
+    - graphics library
+    - standalone utilities like `convert`, `display`, `identify`, `mogrify`, etc.
     - pixel-based
-    - converts raster to raster, and raster to vector
+    - raster to raster conversions
+    - raster to vector conversions
 #.  [cairo](https://www.cairographics.org/)
     - vector-based 2D drawing and rendering library
     - multiple output devices/formats
-    - used by other programs
+    - used by other programs rather than in standalone mode
 #.  [poppler](https://poppler.freedesktop.org/)
     - vector-based PDF rendering library 
     - used by several PDF viewers
     - uses cairo as backend
-    - provides standalone utilities like `pdftotext`, `pdftocairo`, and `pdftoppm`
+    - standalone utilities like `pdftotext`, `pdftocairo`, and `pdftoppm`
 #.  [Inkscape](https://inkscape.org/)
     - GUI-based vector graphics editor
     - suitable both for technical illustration and digital art
@@ -81,9 +108,7 @@ We examine four tools for image format conversion:
 
 ImageMagick is the name given to a suite of image processing tools originally created in 1987 by John Cristy, then working for [Du Pont](https://www.dupont.com/). In 1990, it was freely released by Du Pont, who transferred copyright to [ImageMagick Studio LLC](https://imagemagick.org/script/contact.php) who now maintain the project. It is distributed under a derived Apache 2.0 [license](https://imagemagick.org/script/license.php). The [authoritative source code repository](https://github.com/ImageMagick/ImageMagick) shows active development even today, 34 years after the suite was first released [@imagemagicksource].
 
-ImageMagick is so versatile and useful that it may rightfully be called the [Swiss Army knife](https://www.thefreedictionary.com/Swiss-army+knife) of the image processing world. 
-
-ImageMagick comes with several command line utilities, each replete with options. Among these are:
+ImageMagick is so versatile and useful that it may rightfully be called the [Swiss Army knife](https://www.thefreedictionary.com/Swiss-army+knife) of the image processing world. It comes with several command line utilities, each replete with options. Among these are:
 
 - [`convert`](https://imagemagick.org/script/convert.php) which converts from one format to another;
 - [`display`](https://imagemagick.org/script/display.php) which displays one or more images;
@@ -93,9 +118,34 @@ ImageMagick comes with several command line utilities, each replete with options
 
 The above list is far from exhaustive. The interested reader is referred to the [excellent online documentation](https://imagemagick.org/script/command-line-tools.php) for further details. The power of ImageMagick is enhanced with the [magick-script](https://imagemagick.org/script/magick-script.php) Image Scripting Language.
 
+## Test images
+
+Two quite different images are used to illustrate the format conversions we perform here. The two test images are:
+
+#.  a coloured, text-only test image called `text-only.png`; and
+#.  a non-text, coloured, graphically rich image called `animals.jpg`.
+
+### Text-only test image
+
+The text-only image was first generated as a PDF file, `text-only.pdf`, by compiling a [LaTeX](https://www.latex-project.org/) source file. That file was then converted to various raster formats using the methods [discussed later][vector to raster] to yield the images `text-only.png` and `text-only.jpg`.
+
+![Text-only image in PNG format.]({attach}images/text-only-600-dpi.png){#fig:text-only width=80%}
+
+### Non-text test image
+
+The non-text image is a colourful, graphically rich image with much detail. It is from a hand-drawn illustration of microscopic marine animals by the German naturalist [Ernst Haeckel](https://en.wikipedia.org/wiki/Ernst_Haeckel), scanned as a JPEG, and made available in the public domain.
+
+![Non-text, graphically rich image in JPEG format.^[These images are in the public domain and covered by the [CC0 licence](https://creativecommons.org/publicdomain/zero/1.0/). They are available for download [here](https://www.rawpixel.com/image/2266608/free-illustration-image-ernst-haeckel-vintage-animals).]]({attach}images/animals.jpg){#fig:animals width=80%}
+
 ## Raster to raster conversions
 
-It is more instructive if we have meaningful use-cases to illustrate why and how these conversions arise, and what command invocations get the job done. So let us set to.
+Before converting from one format to another, we may need to pre-process the image. For example, +@fig:animals has a whitish, non-monochromatic border around the block print, containing  annotations. For our purposes, this border is more of a distraction that is best removed altogether by _cropping_, leaving us with only the illustration.
+convert -crop 735x1036+59+84 animals.jpg animals-cropped.jpg
+### Cropping
+
+Use display. Left click on image.
+Top left and bottom right corners: (59, 84) and (794, 1120).
+`convert -crop 735x1036+59+84 animals.jpg animals-cropped.jpg`
 
 We invoke ImageMagick's `convert` function not only to convert from one format to another but also to accomplish cropping, image-resizing, making the background transparent, and [montaging](https://www.thefreedictionary.com/montage).
 
@@ -234,6 +284,8 @@ Give references to security concerns.
 
 ## Enter poppler
 
+## Vector to raster
+
 ### PDF to PNG
 
 ## PDF to SVG and vice versa
@@ -263,6 +315,10 @@ Recent versions of the ImageMagick suite, bundled with major distributions, shou
 ## Image used below
 
 https://www.rawpixel.com/board/1236113/kunstformen-der-natur-ernst-haeckel-free-cc0-public-domain-animal-prints
+
+#### Generation of test images
+
+
 
 #### Feedback
 
