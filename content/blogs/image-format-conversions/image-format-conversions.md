@@ -10,18 +10,18 @@ opengraphimage: test-cropped.jpg
 status: draft
 ---
 
-## Two varieties of images
+## Two varieties of digital images
 
-Image formats come in two broad flavours: 
+Digital images come in two broad flavours: 
 
 - [raster](https://en.wikipedia.org/wiki/Raster_graphics) or [bitmap](https://en.wikipedia.org/wiki/Bitmap) graphics, and 
 - [vector graphics](https://en.wikipedia.org/wiki/Vector_graphics).
 
 The former leads to image blockiness or [pixellation](https://en.wikipedia.org/wiki/Pixelation) at high magnifications, as shown in +@fig:raster, while the latter scales without degradation when magnified, as illustrated in +@fig:vector.
 
-![Raster graphics image of the letter O]({attach}images/raster.png){#fig:raster width=50%}
+![Raster graphics image of the letter O (PNG format)]({attach}images/raster.png){#fig:raster width=50%}
 
-![Vector graphics image of the letter O]({attach}images/vector.svg){#fig:vector width=50%}
+![Vector graphics image of the letter O (SVG format)]({attach}images/vector.svg){#fig:vector width=50%}
 
 ### Raster Graphics
 
@@ -29,6 +29,7 @@ There are dozens of image formats, including these three:
 
 #.  [Tag(ged) Image File Format (TIFF)](https://en.wikipedia.org/wiki/TIFF)
     - lossless
+    - compression
     - large file sizes
     - used in printing and professional graphics
     - preferred for archival of scanned photographs
@@ -85,18 +86,22 @@ Among the very many tools available, we examine below four tools for image forma
 #.  [ImageMagick](https://imagemagick.org/index.php)
     - graphics library for image manipulation and display
     - standalone utilities like `convert`, `display`, `identify`, `mogrify`, etc.
+    - scripting language
     - pixel-based
     - raster to raster conversions
     - raster to vector conversions
+    
 #.  [cairo](https://www.cairographics.org/)
     - vector-based 2D drawing and rendering library
     - multiple output devices/formats
     - used by other programs rather than in standalone mode
+    
 #.  [poppler](https://poppler.freedesktop.org/)
     - vector-based PDF rendering library 
     - used by several PDF viewers
     - uses cairo as backend
     - standalone utilities like `pdftotext`, `pdftocairo`, and `pdftoppm`
+    
 #.  [Inkscape](https://inkscape.org/)
     - GUI-based vector graphics editor
     - suitable both for technical illustration and digital art
@@ -116,7 +121,7 @@ ImageMagick is so versatile and useful that it may rightfully be called the [Swi
 - [`mogrify`](https://imagemagick.org/script/mogrify.php) which transforms an image, modifying its appearance; and
 - [`montage`](https://imagemagick.org/script/montage.php) which generates an image montage from several images.
 
-The above list is far from exhaustive. The interested reader is referred to the [excellent online documentation](https://imagemagick.org/script/command-line-tools.php) for further details. The power of ImageMagick is enhanced with the [magick-script](https://imagemagick.org/script/magick-script.php) Image Scripting Language.
+The above list is far from exhaustive. The interested reader is referred to the [excellent online documentation](https://imagemagick.org/script/command-line-tools.php) for further details. The power of ImageMagick is enhanced with the [magick-script](https://imagemagick.org/script/magick-script.php) Image Scripting Language.  The examples in this blog use the command line versions of invoking ImageMagick. If they seem daunting, [refer to this explanation](https://imagemagick.org/script/command-line-processing.php) [@imcli].
 
 ## Test images
 
@@ -125,28 +130,25 @@ Two quite different images are used to illustrate the format conversions we perf
 #.  a coloured, text-only test image called `text-only.png`; and
 #.  a non-text, coloured, graphically rich image called `animals.jpg`.
 
-### Text-only test image
+We will refer to these two images as `text-only` and `animals`, respectively hereafter.
 
-The text-only image was first generated as a PDF file, `text-only.pdf`, by compiling a [LaTeX](https://www.latex-project.org/) source file. That file was then converted to various raster formats using the methods [discussed later][vector to raster] to yield the images `text-only.png` and `text-only.jpg`.
+### Text-only image
+
+The `text-only` image was first generated as a PDF file, `text-only.pdf`, by compiling a [LaTeX](https://www.latex-project.org/) source file. That file was then converted to various raster formats using the methods [discussed later][vector to raster] to yield the images `text-only-600-dpi.png` and `text-only-600-dpi.jpg`.
 
 ![Text-only image in PNG format.]({attach}images/text-only-600-dpi.png){#fig:text-only width=80%}
 
 ### Non-text test image
 
-The non-text image is a colourful, graphically rich image with much detail. It is from a hand-drawn illustration of microscopic marine animals by the German naturalist [Ernst Haeckel](https://en.wikipedia.org/wiki/Ernst_Haeckel), scanned as a JPEG, and made available in the public domain.
+The non-text `animals` image is a colourful, graphically rich image with much detail. It is from a hand-drawn illustration of microscopic marine animals by the German naturalist [Ernst Haeckel](https://en.wikipedia.org/wiki/Ernst_Haeckel), scanned as a JPEG, and made available in the public domain.
 
-![Non-text, graphically rich image in JPEG format.^[These images are in the public domain and covered by the [CC0 licence](https://creativecommons.org/publicdomain/zero/1.0/). They are available for download [here](https://www.rawpixel.com/image/2266608/free-illustration-image-ernst-haeckel-vintage-animals).]]({attach}images/animals.jpg){#fig:animals width=80%}
+![Non-text, graphically rich `animals` image in JPEG format.^[These images are in the public domain and covered by the [CC0 licence](https://creativecommons.org/publicdomain/zero/1.0/). They are available for download [here](https://www.rawpixel.com/image/2266608/free-illustration-image-ernst-haeckel-vintage-animals).]]({attach}images/animals.jpg){#fig:animals width=80%}
 
-This image has a whitish, non-monochromatic border around the block print, containing  annotations. Rather than setting a particular background colour to be transparent, it is more efficient to remove the border altogether by cropping, leaving us with only the illustration.
+## Pre-processing: Cropping
 
-## Raster to raster conversions
+Cropping is strictly not image format conversion, but is often a necessary pre-processing step in image manipulations. For example, +@fig:animals has a whitish, non-monochromatic border around the block print, containing  annotations. For our purposes, this border is more of a distraction that is best removed altogether by _cropping_, leaving us with only the illustration. We will refer to the cropped image as `animals-cropped` and use it as the source image in our examples below.
 
-Before converting from one format to another, we may need to pre-process the image. For example, +@fig:animals has a whitish, non-monochromatic border around the block print, containing  annotations. For our purposes, this border is more of a distraction that is best removed altogether by _cropping_, leaving us with only the illustration.
-convert -crop 735x1036+59+84 animals.jpg animals-cropped.jpg
-
-### Cropping
-
-Cropping is strictly not image format conversion, but is often a necessary pre-processing step in image manipulations. Cropping is better done interactively using a [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface), than on the command line.
+Cropping is usually better done interactively using a [GUI (Graphical User Interface)](https://en.wikipedia.org/wiki/Graphical_user_interface), than on the command line. The latter, even if a bit tedious, is precisely repeatable.
 
 ImageMagick's `display` utility pops up a GUI with a left click when the mouse is over the image. We can then drag and fit a window to the _region we wish to keep_, clicking the crop function, and saving the cropped image. The steps are these:
 
@@ -173,7 +175,7 @@ The resulting cropped image is shown in +@fig:cropped below.
 
 ![Cropped version of the image in +@fig:test.]({attach}images/test-cropped.jpg){#fig:cropped width=50%}
 
-#### File sizes
+### File sizes
 
 The sizes of the original and cropped files are shown below in human friendly numbers:
 
@@ -185,17 +187,21 @@ ls -sh animals*.jpg | awk '{print $1 "\t" $2}'
 ```
 As expected, the original file `animals.jpg` is larger than the cropped full-size version, `animals-cropped.jpg` and all is well.
 
+## Raster to raster conversion
+
+We now perform a sequence of image manipulations, including raster to raster format conversions.
+
 ### Resizing, format-conversion, and montaging
 
 We may invoke ImageMagick's `convert` function not only to convert from one format to another but also to accomplish cropping (as we have already seen), image-resizing, making the background transparent, and [montaging](https://www.thefreedictionary.com/montage), etc.
 
-Suppose we want to reduce the dimensions of the cropped image to half their original values, and display the the full-size and half-size images side by side, we could run the following command:
+Suppose we want to reduce the dimensions of the cropped image to half their original values, and display the full-size and half-size images side by side, we could run the following command:
 
 ```{bash}
 convert animals-cropped.jpg -resize 50% animals-cropped-halfsize.jpg
 
-convert +append -gravity south \
-animals-cropped.jpg animals-cropped-halfsize.jpg both.jpg
+convert animals-cropped.jpg +append -gravity south \
+animals-cropped-halfsize.jpg both.jpg
 ```
 ![Full-size cropped image on the left and half-sized image on the right.]({attach}images/both.jpg){#fig:both-jpg width=80%}
 
@@ -209,7 +215,7 @@ animals-cropped.jpg animals-cropped-halfsize.jpg both.png
 ```
 ![Composite image converted to PNG format with transparent background.]({attach}images/both.png){#fig:both-png width=80%}
 
-#### File sizes
+#### File sizes again
 
 How do the file sizes of the two composite images compare? How high a price have we paid for the transparent background?
 
@@ -221,7 +227,7 @@ ls -sh both.* | awk '{print $1 "\t" $2}'
 ```
 And the shocker is clearly shown above. The PNG composite image is _almost eight times larger_ than its JPEG counterpart.
 
-#### Compression levels
+#### Compression levels and file sizes
 
 The [image compression level](https://en.wikipedia.org/wiki/Image_compression) used above is the default compression level in ImageMagick. Getting the right combination of image dimensions, image compression, and image quality so that the image loads fast and looks good is [quite an art](https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/). [@newton2015]
 
@@ -272,7 +278,9 @@ ls -sh text* | awk '{print $1 "\t" $2}'
 
 ![Composite of the PNG on the left, and JPEG on the right, with a small separator.]({attach}images/text-only-both-600-dpi.png){#fig:text-only-both width=80%}
 
-*@fig:text-only-both does not reveal any degradation in quality after conversion from PNG to JPEG. Note also that the _composite_ PNG image is smaller than the _single_ JPEG image. We conclude---rather shakily on the basis of one instance---that PNG is better suited for textual images and provides a smaller file size for the same quality. 
+*@fig:text-only-both does not reveal any degradation in quality after conversion from PNG to JPEG. Note also that the _composite_ PNG image is smaller than the _single_ JPEG image. We conclude---rather shakily on the basis of one instance---that PNG is better suited for textual images and provides a smaller file size for the same quality.
+
+XXXXX Need to compare with original pdfto jpeg and using convert to get jpeg
 
 ### Can cairo and poppler do all this?
 
@@ -380,9 +388,108 @@ Give references to security concerns.
 
 ## Vector to raster
 
-### PDF to PNG
+It was [mentioned above][text-only image] that `text-only` was originally generated as a PDF, vector graphics image and subsequently converted to the PNG and JPEG formats. We explain how that was done and also why the ImageMagick suite is not used for this purpose.
 
-## PDF to SVG and vice versa
+### `poppler` and `cairo`
+
+The `poppler` suite contains utilities to convert from PDF to several raster formats. Two versatile utilities called `pdftocairo` and `pdftoppm` are available for our purpose. One may view their usage by typing the name of the utility followed by `--help`, or `man` followed by the utility name.
+
+The value `-r 600` signifies a resolution of 600 pixels per inch (PPI). The default value is 150 PPI. The value of 600 is suitable for printing on laser printers to give output that will visually rival the original PDF in quality. Note that while raster images have inherent resolutions, PDF images have none: they scale without loss of quality.
+
+The `-singlefile` option is used because we are simply converting a single "page" of PDF rather than a numbered page sequence. In all cases, the destination filename is the "root" of the converted file sequence, which in this case is the basename.
+
+In addition, the JPEG version may feature lossy compression where quality is traded for filesize. Since PNG is lossless, to compare the two formats on an even keel, we specify that the `-quality` of the JPEG should be the maximum of 100.
+
+Both methods are used in the conversions below, with appropriately named filenames. One could also use ImageMagick to convert from PNG to JPEG, once the PDF has been converted to PNG using the `poppler` utilities. Just on a lark we have tried that here as well.
+
+```
+pdftocairo -png -r 600 -singlefile text-only.pdf \
+text-only-600-dpi-cairo
+
+pdftoppm -png -r 600 -singlefile text-only.pdf \
+text-only-600-dpi-ppm
+
+pdftocairo -jpeg -jpegopt "quality=100" -r 600 \
+-singlefile text-only.pdf text-only-600-dpi-cairo
+
+pdftoppm -jpeg -jpegopt "quality=100" -r 600 \
+-singlefile text-only.pdf text-only-600-dpi-ppm
+
+convert -units pixelsperinch -density 600 -quality 100 \
+text-only-600-dpi-cairo.png text-only-600-dpi-cairo-IM.jpg
+
+convert -units pixelsperinch -density 600 -quality 100 \
+text-only-600-dpi-ppm.png text-only-600-dpi-ppm-IM.jpg
+```
+
+The files sizes that result are shown below:
+
+```
+ls -sh text-only-600-dpi-* | awk '{print $1 "\t" $2}'
+---
+148K    text-only-600-dpi-cairo-IM.jpg
+120K    text-only-600-dpi-cairo.jpg
+40K     text-only-600-dpi-cairo.png
+140K    text-only-600-dpi-ppm-IM.jpg
+112K    text-only-600-dpi-ppm.jpg
+40K     text-only-600-dpi-ppm.png
+```
+
+The numbers tell their own story. I would have expected the resulting output raster images from `pdftocairo` and `pdftoppm` to be equal in size, given their identical options during invocation. Strangely, they are not. This could be either because of different defaults or different algorithms: I simply do not know.
+
+It appears that the `poppler` utilities give marginally smaller file sizes when used to convert directly from PDF to JPEG rather than via PDF to PNG through `poppler` and PNG to JPEG through ImageMagick.
+
+### Why is ImageMagick disallowed for this?
+
+If you try to convert a PDF to any raster image format, you will get an error:
+
+```
+convert text-only.pdf text-only.png
+---
+convert: attempt to perform an operation not allowed by the security policy `gs' @ error/delegate.c/ExternalDelegateCommand/378.
+convert: no images defined `text-only.png' @ error/convert.c/ConvertImageCommand/3304.
+```
+
+The reason why this is now disallowed is [explained in the appendix][Appendix: ImageMagick's security vulnerabilities].
+
+### SVG to raster
+
+What about SVG to PNG? CairoSVG
+Inkscape SVG to PNG?
+ImageMagick SVG to PNG?
+
+The cairosvg module offers 4 functions:
+
+    svg2pdf,
+    svg2png,
+    svg2ps, and
+    svg2svg.
+CairoSVG is designed to parse well-formed SVG files, and draw them on a Cairo surface. Cairo is then able to export them to PDF, PS, PNG, and even SVG files.
+
+## Vector to vector
+
+There are basically two possibilities:
+
+a.  PDF to SVG; and 
+a.  SVG to PDF.
+
+Both are possible with the `cairo` library and `poppler` suite as well as other libraries and utilities.
+
+### PDF to SVG
+
+pdftocairo -svg
+pdftoppm -svg?
+pdf2svg
+Any others?
+
+### SVG to PDF
+
+CairoSVG https://cairosvg.org/: single executabe cairosvg from python-cairosvg: safety
+rsvg-convert from librsvg
+Inkscape
+ImageMagick
+any others?
+
 
 https://wiki.gnome.org/Projects/LibRsvg
 
@@ -393,6 +500,20 @@ convert ernst-heackel-medium.jpg ernst-heackel-medium-direct.png
 convert ernst-heackel-medium.jpg ernst-heackel-medium-direct.png
 ```
 How to use resize etc.
+
+## Summary
+
+Tabular representation
+
+raster to rater     ImageMagick convert
+
+raster to vector    ImageMagick convert
+
+vector to raster    cairo/poppler
+
+vector to vector    cairosvg librsvg-convert Inkscape
+
+
 
 ## Appendix: ImageMagick's security vulnerabilities
 
