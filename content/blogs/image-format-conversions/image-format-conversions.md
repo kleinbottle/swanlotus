@@ -425,7 +425,8 @@ text-only-600-dpi-ppm.png text-only-600-dpi-ppm-IM.jpg
 The files sizes that result are shown below:
 
 ```
-ls -sh text-only-600-dpi-* | awk '{print $1 "\t" $2}'
+ls -sh text-only.pdf text-only-600-dpi-*.jpg \
+text-only-600-dpi-*.png | awk '{print $1 "\t" $2}'
 ---
 148K    text-only-600-dpi-cairo-IM.jpg
 120K    text-only-600-dpi-cairo.jpg
@@ -433,11 +434,14 @@ ls -sh text-only-600-dpi-* | awk '{print $1 "\t" $2}'
 140K    text-only-600-dpi-ppm-IM.jpg
 112K    text-only-600-dpi-ppm.jpg
 40K     text-only-600-dpi-ppm.png
+16K     text-only.pdf
 ```
 
-The numbers tell their own story. I would have expected the resulting output raster images from `pdftocairo` and `pdftoppm` to be equal in size, given their identical options during invocation. Strangely, they are not. This could be either because of different defaults or different algorithms: I simply do not know.
+The numbers tell their own story. I would have expected the two sets of raster images output by `pdftocairo` and `pdftoppm` to be roughly equal in size, given their identical options during invocation. Strangely, they are not. This could be either because of different defaults, or different algorithms, or something else: I simply do not know.
 
-It appears that the `poppler` utilities give marginally smaller file sizes when used to convert directly from PDF to JPEG rather than via PDF to PNG through `poppler` and PNG to JPEG through ImageMagick.
+It appears that the `poppler` utilities give marginally smaller file sizes when used to convert directly from PDF to JPEG rather than by PDF to PNG through `poppler` and PNG to JPEG through ImageMagick.
+
+One other takeaway is that text-rich images are better rendered in PNG: the PDF and PNG image file sizes are at least of the same order of magnitude. JPEGS are not suited as much to text.
 
 ### Why is ImageMagick disallowed for this?
 
