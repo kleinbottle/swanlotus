@@ -136,7 +136,7 @@ We will refer to these two images as `text-only` and `animals`, respectively her
 
 The `text-only` image was first generated as a PDF file, `text-only.pdf`, by compiling a [LaTeX](https://www.latex-project.org/) source file. That file was then converted to various raster formats using the methods [discussed later][vector to raster] to yield the images `text-only-600-dpi.png` and `text-only-600-dpi.jpg`.
 
-![Text-only image in PNG format.]({attach}images/text-only-600-dpi.png){#fig:text-only width=80%}
+![Text-only image in PNG format.]({attach}images/text-only-600-dpi-cairo.png){#fig:text-only width=80%}
 
 ### Non-text test image
 
@@ -263,20 +263,20 @@ It appears that the default compression used by ImageMagick gives a file size th
 For completeness, let us do a simple _no quality loss_ conversion from PNG to JPEG for the text-only test image, and compare image appearances and file sizes.
 
 ```
-convert -quality 100 text-only-600-dpi.png text-only-600-dpi.jpg
+convert -quality 100 text-only-600-dpi-cairo.png text-only-600-dpi-cairo.jpg
 
-convert text-only-600-dpi.png text-only-600-dpi.jpg \
+convert text-only-600-dpi-cairo.png text-only-600-dpi-cairo.jpg \
 -background transparent -splice 20x0+0+0 +append -chop 20x0+0+0 \
-text-only-both-600-dpi.png
+text-only-both-600-dpi-cairo.png
 
-ls -sh text* | awk '{print $1 "\t" $2}'
+ls -Xsh text*cairo* | awk '{print $1 "\t" $2}'
 ---
-148K    text-only-600-dpi.jpg
-40K     text-only-600-dpi.png
-108K    text-only-both-600-dpi.png
+148K    text-only-600-dpi-cairo.jpg
+40K     text-only-600-dpi-cairo.png
+120K    text-only-both-600-dpi-cairo.png
 ```
 
-![Composite of the PNG on the left, and JPEG on the right, with a small separator.]({attach}images/text-only-both-600-dpi.png){#fig:text-only-both width=80%}
+![Composite of the PNG on the left, and JPEG on the right, with a small separator.]({attach}images/text-only-both-600-dpi-cairo.png){#fig:text-only-both width=80%}
 
 *@fig:text-only-both does not reveal any degradation in quality after conversion from PNG to JPEG. Note also that the _composite_ PNG image is smaller than the _single_ JPEG image. We conclude---rather shakily on the basis of one instance---that PNG is better suited for textual images and provides a smaller file size for the same quality.
 
