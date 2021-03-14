@@ -425,16 +425,15 @@ text-only-600-dpi-ppm.png text-only-600-dpi-ppm-IM.jpg
 The files sizes that result are shown below:
 
 ```
-ls -sh text-only.pdf text-only-600-dpi-*.jpg \
-text-only-600-dpi-*.png | awk '{print $1 "\t" $2}'
+ls -Xsh text-only*| awk '{print $1 "\t" $2}'
 ---
 148K    text-only-600-dpi-cairo-IM.jpg
 120K    text-only-600-dpi-cairo.jpg
-40K     text-only-600-dpi-cairo.png
 140K    text-only-600-dpi-ppm-IM.jpg
 112K    text-only-600-dpi-ppm.jpg
-40K     text-only-600-dpi-ppm.png
 16K     text-only.pdf
+40K     text-only-600-dpi-cairo.png
+40K     text-only-600-dpi-ppm.png
 ```
 
 The numbers tell their own story. I would have expected the two sets of raster images output by `pdftocairo` and `pdftoppm` to be roughly equal in size, given their identical options during invocation. Strangely, they are not. This could be either because of different defaults, or different algorithms, or something else: I simply do not know.
