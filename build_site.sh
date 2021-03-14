@@ -2,7 +2,7 @@
 
 # Adapted from https://github.com/edemaine/topp/blob/master/netlify-pandoc.sh
 
-PANDOC_URL="https://github.com/jgm/pandoc/releases/download/2.11.4/pandoc-2.11.4-1-amd64.deb"
+PANDOC_URL="https://github.com/jgm/pandoc/releases/download/2.12/pandoc-2.12-1-amd64.deb"
 
 set -o errexit
 
