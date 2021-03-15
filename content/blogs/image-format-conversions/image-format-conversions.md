@@ -445,7 +445,7 @@ One other takeaway is that text-rich images are better rendered in PNG than JPEG
 
 If you try to convert a PDF to any raster image format, you will get an error:
 
-```
+```{bash}
 convert text-only.pdf text-only.png
 ---
 convert: attempt to perform an operation not allowed by the security policy `gs' @ error/delegate.c/ExternalDelegateCommand/378.
