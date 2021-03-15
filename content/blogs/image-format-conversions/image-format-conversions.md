@@ -392,17 +392,9 @@ It was [mentioned above][text-only image] that `text-only` was originally genera
 
 ### `poppler` and `cairo`
 
-The `poppler` suite contains utilities to convert from PDF to several raster formats. Two versatile utilities called `pdftocairo` and `pdftoppm` are available for our purpose. One may view their usage by typing the name of the utility followed by `--help`, or `man` followed by the utility name.
+The `poppler` suite contains utilities to convert from PDF to several raster formats. Two versatile utilities called `pdftocairo` and `pdftoppm` are available for our purpose. One may view their usage by typing the name of the utility prefixed by `man` or suffixed by `-help`, although the former is more exhaustive.
 
-The value `-r 600` signifies a resolution of 600 pixels per inch (PPI). The default value is 150 PPI. The value of 600 is suitable for printing on laser printers to give output that will visually rival the original PDF in quality. Note that while raster images have inherent resolutions, PDF images have none: they scale without loss of quality.
-
-The `-singlefile` option is used because we are simply converting a single "page" of PDF rather than a numbered page sequence. In all cases, the destination filename is the "root" of the converted file sequence, which in this case is the basename.
-
-In addition, the JPEG version may feature lossy compression where quality is traded for filesize. Since PNG is lossless, to compare the two formats on an even keel, we specify that the `-quality` of the JPEG should be the maximum of 100.
-
-Both methods are used in the conversions below, with appropriately named filenames. One could also use ImageMagick to convert from PNG to JPEG, once the PDF has been converted to PNG using the `poppler` utilities. Just on a lark we have tried that here as well.
-
-```
+```{bash}
 pdftocairo -png -r 600 -singlefile text-only.pdf \
 text-only-600-dpi-cairo
 
@@ -421,10 +413,17 @@ text-only-600-dpi-cairo.png text-only-600-dpi-cairo-IM.jpg
 convert -units pixelsperinch -density 600 -quality 100 \
 text-only-600-dpi-ppm.png text-only-600-dpi-ppm-IM.jpg
 ```
+The value `-r 600` signifies a resolution of 600 pixels per inch (PPI). The default value is 150 PPI. The value of 600 is suitable for printing on laser printers to give output that will visually rival the original PDF in quality. Note that while raster images have inherent resolutions, PDF images have none: they scale without loss of quality.
+
+The `-singlefile` option is used because we are simply converting a single "page" of PDF rather than a numbered page sequence. In all cases, the destination filename is the "root" of the converted file sequence, which in this case is the filename without any extension.
+
+In addition, the JPEG version may feature lossy compression where quality is traded for filesize. Since PNG is lossless, to compare the two formats on an even keel, we specify that the `-quality` of the JPEG should be the maximum of 100.
+
+Both `pdftocairo` and `pdftoppm` are used in the conversions above, with appropriately named filenames. One could also use ImageMagick's `convert` to convert from PNG to JPEG, and this is done in the last two commands.
 
 The files sizes that result are shown below:
 
-```
+```{bash}
 ls -Xsh text-only*| awk '{print $1 "\t" $2}'
 ---
 148K    text-only-600-dpi-cairo-IM.jpg
@@ -436,13 +435,13 @@ ls -Xsh text-only*| awk '{print $1 "\t" $2}'
 40K     text-only-600-dpi-ppm.png
 ```
 
-The numbers tell their own story. I would have expected the two sets of raster images output by `pdftocairo` and `pdftoppm` to be roughly equal in size, given their identical options during invocation. Strangely, they are not. This could be either because of different defaults, or different algorithms, or something else: I simply do not know.
+The numbers tell their own story. I would have expected the two sets of raster images output by `pdftocairo` and `pdftoppm` to be roughly equal in size, given their identical options during invocation. Strangely, they are not, at least for the JPEGs. This could be either because of different defaults, or different algorithms, or something else: I simply do not know.
 
-It appears that the `poppler` utilities give marginally smaller file sizes when used to convert directly from PDF to JPEG rather than by PDF to PNG through `poppler` and PNG to JPEG through ImageMagick.
+It appears that `pdftoppm` gives marginally smaller file sizes for JPEG than `pdftocairo`. Moreover, when `pdftoppm` is used to convert directly from PDF to JPEG, the file size is smaller than when PNG is used as an intermediate file format and conversion to JPEG is by ImageMagick's `convert`.
 
-One other takeaway is that text-rich images are better rendered in PNG: the PDF and PNG image file sizes are at least of the same order of magnitude. JPEGS are not suited as much to text.
+One other takeaway is that text-rich images are better rendered in PNG than JPEG. The PDF and PNG image file sizes are of the same order of magnitude, whereas the JPEGS are an order of magnitude larger.
 
-### Why is ImageMagick disallowed for this?
+### Why is ImageMagick disallowed for PDF to raster?
 
 If you try to convert a PDF to any raster image format, you will get an error:
 
