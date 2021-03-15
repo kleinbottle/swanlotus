@@ -5,16 +5,16 @@ date: 2021-03-07
 modified: 2021-03-07
 category: Software
 tags: image formats, Linux, PDF, PNG
-summary: 
+summary:
 opengraphimage: test-cropped.jpg
 status: draft
 ---
 
 ## Two varieties of digital images
 
-Digital images come in two broad flavours: 
+Digital images come in two broad flavours:
 
-- [raster](https://en.wikipedia.org/wiki/Raster_graphics) or [bitmap](https://en.wikipedia.org/wiki/Bitmap) graphics, and 
+- [raster](https://en.wikipedia.org/wiki/Raster_graphics) or [bitmap](https://en.wikipedia.org/wiki/Bitmap) graphics, and
 - [vector graphics](https://en.wikipedia.org/wiki/Vector_graphics).
 
 The former leads to image blockiness or [pixellation](https://en.wikipedia.org/wiki/Pixelation) at high magnifications, as shown in +@fig:raster, while the latter scales without degradation when magnified, as illustrated in +@fig:vector.
@@ -90,18 +90,18 @@ Among the very many tools available, we examine below four tools for image forma
     - pixel-based
     - raster to raster conversions
     - raster to vector conversions
-    
+
 #.  [cairo](https://www.cairographics.org/)
     - vector-based 2D drawing and rendering library
     - multiple output devices/formats
     - used by other programs rather than in standalone mode
-    
+
 #.  [poppler](https://poppler.freedesktop.org/)
-    - vector-based PDF rendering library 
+    - vector-based PDF rendering library
     - used by several PDF viewers
     - uses cairo as backend
     - standalone utilities like `pdftotext`, `pdftocairo`, and `pdftoppm`
-    
+
 #.  [Inkscape](https://inkscape.org/)
     - GUI-based vector graphics editor
     - suitable both for technical illustration and digital art
@@ -162,15 +162,16 @@ a.  `File -> Save` with a different name.
 
 Alternatively, we may just position the cursor on the top left and bottom right corners of the region we wish to _retain_, noting the co-ordinates in each case. If these coordinates are $(x_t, y_t)$ and $(x_b, y_b)$, respectively, we have $w = x_b - x_t$ and $h = y_b -y_t$. We may then invoke the convert command with crop as the option so:
 
-```
+```bash
 convert -crop 'wxh+x_t+y_t' animals.jpg animals-cropped.jpg
 ```
 
-In our case, $(x_t, y_t) = (60, 84)$ and $(x_b, y_b) = (795, 1119)$ giving $w = 735$ and $h = 1035$, leading to 
+In our case, $(x_t, y_t) = (60, 84)$ and $(x_b, y_b) = (795, 1119)$ giving $w = 735$ and $h = 1035$, leading to
 
-```
+```bash
 convert -crop '735x1035+60+84' animals.jpg animals-cropped.jpg
 ```
+
 The resulting cropped image is shown in +@fig:cropped below.
 
 ![Cropped version of the image in +@fig:test.]({attach}images/test-cropped.jpg){#fig:cropped width=50%}
@@ -179,12 +180,13 @@ The resulting cropped image is shown in +@fig:cropped below.
 
 The sizes of the original and cropped files are shown below in human friendly numbers:
 
-```{bash}
+```bash
 ls -sh animals*.jpg | awk '{print $1 "\t" $2}'
 ---
 200K    animals-cropped.jpg
 312K    animals.jpg
 ```
+
 As expected, the original file `animals.jpg` is larger than the cropped full-size version, `animals-cropped.jpg` and all is well.
 
 ## Raster to raster conversion
@@ -197,34 +199,37 @@ We may invoke ImageMagick's `convert` function not only to convert from one form
 
 Suppose we want to reduce the dimensions of the cropped image to half their original values, and display the full-size and half-size images side by side, we could run the following command:
 
-```{bash}
+```bash
 convert animals-cropped.jpg -resize 50% animals-cropped-halfsize.jpg
 
 convert animals-cropped.jpg +append -gravity south \
 animals-cropped-halfsize.jpg both.jpg
 ```
+
 ![Full-size cropped image on the left and half-sized image on the right.]({attach}images/both.jpg){#fig:both-jpg width=80%}
 
 ### Background transparency
 
 Notice that there is a coloured white rectangle atop the half-size image on the right in +@fig:both-jpg. We could remove it by rendering the background transparent, but because JPEG does not support transparency, through an [alpha channel](https://www.techopedia.com/definition/1945/alpha-channel), we have to convert the composite image to the PNG format, which does. This is one real-life circumstance necessitating raster to raster format conversion.
 
-```
+```bash
 convert +append -gravity south -background transparent \
 animals-cropped.jpg animals-cropped-halfsize.jpg both.png
 ```
+
 ![Composite image converted to PNG format with transparent background.]({attach}images/both.png){#fig:both-png width=80%}
 
 #### File sizes again
 
 How do the file sizes of the two composite images compare? How high a price have we paid for the transparent background?
 
-```
+```bash
 ls -sh both.* | awk '{print $1 "\t" $2}'
 
 264K    both.jpg
 2.2M    both.png
 ```
+
 And the shocker is clearly shown above. The PNG composite image is _almost eight times larger_ than its JPEG counterpart.
 
 #### Compression levels and file sizes
@@ -233,7 +238,7 @@ The [image compression level](https://en.wikipedia.org/wiki/Image_compression) u
 
 To get an idea of the range of file sizes involved, let us try generating a composite image with extremes of the compression level, which can range from 0 to 9.
 
-```
+```bash
 convert -define PNG:compression-level=0 +append -gravity south \
 -background transparent \
 animals-cropped.jpg animals-cropped-halfsize.jpg \
@@ -247,7 +252,7 @@ both-compressed-9.png
 
 The file sizes are:
 
-```
+```bash
 ls -sh both* | awk '{print $1 "\t" $2}'
 ---
 4.4M    both-compressed-0.png
@@ -256,13 +261,14 @@ ls -sh both* | awk '{print $1 "\t" $2}'
 264K    both.jpg
 2.2M    both.png
 ```
+
 It appears that the default compression used by ImageMagick gives a file size that is the same as the highest compression level. Indeed, the uncompressed version---with a compression level of zero---gives a file _twice_ the size of the uncompressed version and _sixteen times_ the size of the JPEG. And we have not even used two other related attributes: [filter and strategy](https://stackoverflow.com/questions/27267073/imagemagick-lossless-max-compression-for-png) [@setchell2014]. Getting the best tradeoff of image size, file size, loading time, and image quality is still an art to be mastered than an algorithm to be applied.
 
 ### Results with the text-only image
 
 For completeness, let us do a simple _no quality loss_ conversion from PNG to JPEG for the text-only test image, and compare image appearances and file sizes.
 
-```
+```bash
 convert -quality 100 text-only-600-dpi-cairo.png text-only-600-dpi-cairo.jpg
 
 convert text-only-600-dpi-cairo.png text-only-600-dpi-cairo.jpg \
@@ -294,7 +300,7 @@ We might be printing a document on a printer that recognizes and accepts the [Po
 
 We could go about doing this using ImageMagick's `convert` utility again. And following the previous syntax, we could try:
 
-```
+```bash
 convert test-cropped.jpg test-cropped.pdf
 ```
 
@@ -302,10 +308,9 @@ The converted image, [test-cropped.pdf]({attach}images/test-cropped.pdf), may be
 
 What happens, though, if the half-sized image is use to generate the PDF. It is smaller and accordingly embodies less information than the original.
 
-```
+```bash
 convert test-cropped-halfsize.png test-cropped-halfsize.pdf
 ```
-
 
 And it would work! But the results might not be as expected. Here is an example.
 
@@ -361,18 +366,18 @@ Useful when a hgh resolution image is available. In any case: PDF and png/jpg si
 150 dpi default
 300 dpi for print [give references]
 
-
-```{magick}
+```bash
 convert -units pixelsperinch -density 300 file.png file.pdf
 ```
+
 ## PDF to image not supported
 
-```{bash}
+```bash
 #! /bin/magick
 convert file.pdf file.png
 ```
 
-```
+```bash
 convert test.pdf test.png
 convert: unable to open image 'test.pdf': No such file or directory @ error/blob.c/OpenBlob/3537.
 convert: no images defined `test.png' @ error/convert.c/ConvertImageCommand/3304.
@@ -394,7 +399,7 @@ It was [mentioned above][text-only image] that `text-only` was originally genera
 
 The `poppler` suite contains utilities to convert from PDF to several raster formats. Two versatile utilities called `pdftocairo` and `pdftoppm` are available for our purpose. One may view their usage by typing the name of the utility prefixed by `man` or suffixed by `-help`, although the former is more exhaustive.
 
-```{bash}
+```bash
 pdftocairo -png -r 600 -singlefile text-only.pdf \
 text-only-600-dpi-cairo
 
@@ -413,6 +418,7 @@ text-only-600-dpi-cairo.png text-only-600-dpi-cairo-IM.jpg
 convert -units pixelsperinch -density 600 -quality 100 \
 text-only-600-dpi-ppm.png text-only-600-dpi-ppm-IM.jpg
 ```
+
 The value `-r 600` signifies a resolution of 600 pixels per inch (PPI). The default value is 150 PPI. The value of 600 is suitable for printing on laser printers to give output that will visually rival the original PDF in quality. Note that while raster images have inherent resolutions, PDF images have none: they scale without loss of quality.
 
 The `-singlefile` option is used because we are simply converting a single "page" of PDF rather than a numbered page sequence. In all cases, the destination filename is the "root" of the converted file sequence, which in this case is the filename without any extension.
@@ -423,7 +429,7 @@ Both `pdftocairo` and `pdftoppm` are used in the conversions above, with appropr
 
 The files sizes that result are shown below:
 
-```{bash}
+```bash
 ls -Xsh text-only*| awk '{print $1 "\t" $2}'
 ---
 148K    text-only-600-dpi-cairo-IM.jpg
@@ -445,7 +451,7 @@ One other takeaway is that text-rich images are better rendered in PNG than JPEG
 
 If you try to convert a PDF to any raster image format, you will get an error:
 
-```{bash}
+```bash
 convert text-only.pdf text-only.png
 ---
 convert: attempt to perform an operation not allowed by the security policy `gs' @ error/delegate.c/ExternalDelegateCommand/378.
@@ -472,7 +478,7 @@ CairoSVG is designed to parse well-formed SVG files, and draw them on a Cairo su
 
 There are basically two possibilities:
 
-a.  PDF to SVG; and 
+a.  PDF to SVG; and
 a.  SVG to PDF.
 
 Both are possible with the `cairo` library and `poppler` suite as well as other libraries and utilities.
@@ -495,12 +501,12 @@ any others?
 
 https://wiki.gnome.org/Projects/LibRsvg
 
-
-```{bash}
+```bash
 pdftoppm -png ernst-heackel-medium.pdf ernst-heackel-medium.png
 convert ernst-heackel-medium.jpg ernst-heackel-medium-direct.png
 convert ernst-heackel-medium.jpg ernst-heackel-medium-direct.png
 ```
+
 How to use resize etc.
 
 ## Summary
@@ -514,8 +520,6 @@ raster to vector    ImageMagick convert
 vector to raster    cairo/poppler
 
 vector to vector    cairosvg librsvg-convert Inkscape
-
-
 
 ## Appendix: ImageMagick's security vulnerabilities
 
