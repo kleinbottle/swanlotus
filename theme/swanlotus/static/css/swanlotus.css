@@ -4358,8 +4358,8 @@ html {
 
 /* Styles for code blocks */
 pre {
-  background-color: #363636;
-  color: #dbdbdb;
+  background-color: transparent;
+  color: inherit;
 }
 
 code {
