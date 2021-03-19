@@ -1,25 +1,24 @@
-1. Generate two identical PDF images of an uppercase O using the files `raster.tex` and `vector.tex`.
-
-2. Compile both with `xelatex` to get tow outputs of tight, cropped PDFs of the letter O:
+1. Generate a single PDF image of an uppercase O using the file `letter-O.tex` to yield `letter-O.pdf`:
 
 ```
-xelatex raster.tex
-xelatex vector.tex
+xelatex letter-O.tex
 ```
 
-3. Convert the file PDF to SVG:
-`pdftocairo -svg vector.pdf vector.svg`
-
-4. Convert the PDF to PNG:
-`pdftocairo -png raster.pdf raster.png`
-
-5. Remove white background in raster.png using `convert` from Imagemagick:
-
-`convert raster.png -transparent white raster-transparent.png`
-
-6. Copy over these two images from `auxiliary` to `images` so:
+2. Generate an SVG from the PDF:
 
 ```
-cp vector.svg ../images/vector.svg
-cp raster-transparent.png ../images/raster.png
+pdftocairo -svg letter-O.pdf letter-O.svg
+```
+
+3. Generate a single 150 dpi PNG image with transparent background from the PDF so:
+
+```
+pdftocairo -png -r 150 -singlefile -transp letter-O.pdf letter-O-150-dpi
+```
+
+4. Copy over the two images to the the `images` subdirectory.
+
+```
+cp letter-O.svg ../images/letter-O.svg
+cp letter-O-150-dpi.png ../images/letter-O-150-dpi.png
 ```

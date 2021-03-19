@@ -16,6 +16,7 @@ html-math-method:
 filters:
   - pandoc-eqnos
   - pandoc-fignos
+  - pandoc-tablenos
   - citeproc
 
 csl: "./ieee-with-url.csl"
@@ -30,3 +31,5 @@ metadata:
   eqnos-plus-name: Equation
   fignos-star-name: Figure
   fignos-plus-name: Figure
+  tablenos-star-name: Table
+  tablenos-plus-name: Table
