@@ -218,7 +218,7 @@ animals.jpg animals-halfsize.jpg animals-both.jpg
 
 ### Background transparency
 
-Notice that there is a coloured white rectangle atop the half-size image on the right in +@fig:animals-both-jpg. We could remove it by rendering the background transparent. However, because JPEG does not support transparency, through an [alpha channel](https://www.techopedia.com/definition/1945/alpha-channel), we have to convert the composite image to the PNG format, which does. This is one, real-life circumstance necessitating raster to raster format conversion.
+Notice that there is a coloured white rectangle atop the half-size image on the right in +@fig:animals-both-jpg. We could remove it by rendering the background transparent. However, because JPEG does not support transparency (through an [alpha channel](https://www.techopedia.com/definition/1945/alpha-channel)) we have to convert the composite image to the PNG format, which does. This is one, real-life circumstance necessitating raster to raster format conversion.
 
 ```bash
 # Non-transparent composite in PNG
@@ -282,9 +282,9 @@ It appears that the default compression used by `ImageMagick` gives a file size 
 
 We may conclude from the above that non-textual, detail-rich images are better stored and displayed as JPEGs than PNGs.
 
-### Results with the text-only image
+### Results with `text-only`
 
-For completeness, let us do a simple _no quality loss_ conversion from PNG to JPEG for the `text-only` test image, and compare image appearances and file sizes.
+Recall that `text-only` was originally generated as a PDF. To get a PNG version of the image, we need to [run a little ahead of ourselves and convert from PDF to PNG][PDF to PNG and JPEG: `poppler` and `cairo`]. From that PNG, let us do a simple _no quality loss_ conversion from PNG to JPEG for `text-only`, and compare appearances and file sizes.
 
 ```bash
 # Lossless JPEG with a 'quality' of 100
@@ -305,7 +305,7 @@ ls -Xsh text*cairo* | awk '{print $1 "\t" $2}'
 
 ![Composite PNG image of the PNG on the left, and JPEG on the right.]({attach}images/text-only-both-600-dpi-cairo.png){#fig:text-only-both width=80%}
 
-*@fig:text-only-both does not reveal any degradation in quality after conversion from PNG to JPEG. Note also that the file size of the _composite_ PNG image is smaller than the file size of the _single_ JPEG image.
+The right sub-image of +@fig:text-only-both does not reveal noticeable degradation in quality after conversion from PNG to JPEG, and back to PNG again. Note also that the file size of the _composite_ PNG image is smaller than the file size of the _single_ JPEG image.
 
 ### PNG versus JPEG
 
@@ -315,11 +315,11 @@ Conversely, we know from the `animals` images that JPEG is more suited to non-te
 
 ### Can `cairo` and `poppler` do all this?
 
-Can such processing be done using `cairo` or `poppler`? Not really, in the case of the `animals` image. The _starting point_ or _input format_ for `cairo` and `poppler` is the PDF format. Our `animals` image is scanned from an illustration and is therefore a JPEG raster image. `ImageMagick`'s forte is the display, manipulation, and processing of raster images; `cairo` and `poppler` start with PDFs and have other goals.
+Can such processing be done using `cairo` and `poppler`? Not really, in the case of the `animals` image. The _starting point_ or _input format_ for `cairo` and `poppler` is the PDF format. Our `animals` image is scanned from an illustration and is therefore a JPEG raster image. The forte of `ImageMagick` is the display, manipulation, format conversion, and processing of raster images; `cairo` and `poppler` start with PDFs and have other goals.
 
 ## Raster to vector conversions
 
-Let us say that we have a logo, designed and available as a raster image. To use it on the Web, we could, if necessary, reformat it as a JPEG or PNG file. But as we zoom into the page, the raster images will start becoming less sharp and more blocky as shown in +@fig:raster.
+Let us say that we have a logo, designed and available as a raster image in some format. To use it on the Web, we could, if necessary, reformat it as a JPEG or PNG file. But as we zoom into the page, the raster images will start becoming less sharp and more blocky as shown in +@fig:raster.
 
 However, if the graphic were in SVG format, supported by most web browsers, the logo would scale without visual degradation as we zoom into the page.
 
@@ -327,7 +327,7 @@ How do we convert a raster image to a vector format like PDF or SVG?
 
 ### Raster to PDF with `convert`
 
-We could do this using `ImageMagick`'s `convert` utility again. For example,
+The `convert` utility of `ImageMagick` comes to our rescue again. For example,
 
 ```bash
 # Convert JPEG image to PDF
@@ -339,9 +339,9 @@ ls -Xsh animals.jpg animals.pdf | awk '{print $1 "\t" $2}'
 204K    animals.pdf
 ```
 
-The converted image, [animals.pdf]({attach}images/animals.pdf), may be viewed from the given link. Web browsers, while they may feature PDF viewers on separate tabs, are still unable to display PDFs as part of a web page. If the converted PDF is magnified by zooming, it will be seen to reveal remarkable detail. And the difference between the JPEG and PDF file sizes is negligible.
+Web browsers, while they may feature PDF viewers on separate tabs, are still unable to display PDFs as part of a web page. The converted image, [animals.pdf]({attach}images/animals.pdf), may be viewed on a browser tab from the given link. If the converted PDF is magnified by zooming, it will be seen to reveal remarkable detail. And the difference between the JPEG and PDF file sizes is negligible.
 
-What happens, though, if the half-sized image is used to generate the PDF? It is smaller and accordingly embodies less information than the original.
+What happens, though, if the half-sized image is used to generate the PDF? It is smaller and accordingly embodies less information than the original, again commensurate with the respective file sizes.
 
 ```bash
 convert animals-halfsize.jpg animals-halfsize.pdf
@@ -353,11 +353,9 @@ awk '{print $1 "\t" $2}'
 64K     animals-halfsize.pdf
 ```
 
-Again, no surprises here. The half-sized PDF tracks the file size of the half-sized JPEG.
-
 ### Raster to SVG with `convert`
 
-Let us try to harness `ImageMagick`'s `convert` again, this time to change from JPEG to SVG:
+Will `convert` cater for a JPEG to SVG conversion?
 
 ```bash
 convert animals.jpg animals.svg
@@ -370,13 +368,44 @@ ls -Xsh animals.jpg animals.svg | awk '{print $1 "\t" $2}'
 
 The SVG file is more than _twice_ the size of the original JPEG. The question arises whether there is an alternative route to the SVG that could give us smaller file sizes but comparable fidelity. What if we did not convert from raster to SVG but from raster to PDF and thence to SVG?
 
-Since PDF to SVG conversion is really part of vector to vector conversion, we will revisit this question [later][PDF to SVG].
+Since PDF to SVG conversion is really part of vector to vector conversion, we will [revisit this question later][PDF to SVG].
 
-We will not consider the `text-only` image here as that image originated not as a raster but as a PDF in the first place.
+### Round tripping from PDF through PNG to PDF
+
+The `text-only` image first saw life as a PDF. We then converted it to a 600 dpi PNG. What happens if we convert that image back to a PDF?
+
+```bash
+convert text-only-600-dpi-cairo.png text-only-from-600-dpi-PNG.pdf
+
+ls -Xsh text-only*600*.pdf text-only.pdf | awk '{print $1 "\t" $2}'
+---
+40K     text-only-from-600-dpi-PNG.pdf
+16K     text-only.pdf
+```
+
+Not surprisingly, the round trip has resulted in a fatter file for the PDF the second time around. Judge for yourself [the image quality by viewing on a separate browser tab and zooming]({attach}images/text-only-from-600-dpi-PNG.pdf).
+
+What would you expect if the initial PDF to PNG image conversion had been done at 150 dpi, or 96 dpi, or 75 dpi? The command sequence is [explained later][PDF to PNG and JPEG: `poppler` and `cairo`] but the results and their consequences are noteworthy here:
+
+```bash
+pdftocairo -png -r 75 -singlefile text-only.pdf text-only-75-dpi
+
+convert text-only-75-dpi.png text-only-75-dpi.pdf
+
+ls -sh text-only.pdf text-only*75* | awk '{print $1 "\t" $2}'
+---
+8.0K    text-only-75-dpi.pdf
+8.0K    text-only-75-dpi.png
+16K     text-only.pdf
+```
+
+View the [PDF generated from the 75 dpi PNG]({attach}images/text-only-75-dpi.pdf) on a separate browser tab and zoom in on the image as before. How does it compare with the [one generated previously from the 600 dpi PNG]({attach}images/text-only-from-600-dpi-PNG.pdf)?
+
+This is one reason why conversion from a PNG to a PDF might result in a PDF which looks like a raster image when zoomed in close. The source image resolution was not high enough to generate a PDF that does not degrade on zooming. _The definition of the original raster image is what the output PDF will embody._ Just because a PDF image scales does not mean it cannot exhibit blockiness.
 
 ## Vector to raster
 
-The `poppler` utilities, with the `cairo` backend are the primary resource here. Because the `text-only` image has been produced natively in PDF, we will use it as the the example for these conversions.
+The `poppler` utilities, with the `cairo` backend are the primary resource for vector to raster conversions, especially when the source image is a PDF.
 
 ### PDF to PNG and JPEG: `poppler` and `cairo`
 
