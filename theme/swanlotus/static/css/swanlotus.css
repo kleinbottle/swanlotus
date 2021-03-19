@@ -4459,7 +4459,8 @@ a:hover code {
   align-items: baseline;
 }
 
-.content figure figcaption {
+.content figure figcaption,
+.content .tablenos table caption {
   font-family: "Source Sans Pro", sans-serif;
   font-style: normal;
   font-size: smaller;
