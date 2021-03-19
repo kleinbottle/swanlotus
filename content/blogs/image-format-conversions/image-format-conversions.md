@@ -4,13 +4,13 @@ author: R (Chandra) Chandrasekhar
 date: 2021-03-07
 modified: 2021-03-07
 category: Software
-tags: image formats, Linux, PDF, PNG
-summary: "Converting between image formats is something we could be required to do at short notice. This tutorial explores the different tools that are currently available and identifies the most efficient for each task. The ``ImageMagick`` suite, the `cairo` backend, the `poppler` utilities, `rsvg-convert`, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks."
-opengraphimage: test-cropped.jpg
+tags: image formats, Linux, PNG, JPEG, PDF, SVG, ImaheMagick, cairo, poppler
+summary: "Converting between image formats is something we could be required to do at short notice. To help cope with such a situation, this tutorial explores the different tools that are currently available and identifies the most efficient for each task. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks."
+opengraphimage: animals.jpg
 status: draft
 ---
 
-Converting between image formats is something we could be required to do at short notice. This tutorial explores the different tools that are currently available and identifies the most efficient for each task. The ``ImageMagick`` suite, the `cairo` backend, the `poppler` utilities, `rsvg-convert`, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks.
+Converting between image formats is something we could be required to do at short notice. To help cope with such a situation, this tutorial explores the different tools that are currently available and identifies the most efficient for each task. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks.
 
 ## Two varieties of digital images
 
@@ -21,13 +21,13 @@ Digital images come in two broad flavours:
 
 The former leads to image blockiness or [pixellation](https://en.wikipedia.org/wiki/Pixelation) and loss of definition at high magnifications, as shown in +@fig:raster, while the latter scales without degradation when magnified, as illustrated in +@fig:vector.
 
-![Raster graphics image of the letter O (150 dpi^[Dots per inch.] PNG format).]({attach}images/letter-O-150-dpi.png){#fig:raster width=50%}
+![Raster graphics image of the letter O (150 dots per inch (dpi) PNG format).]({attach}images/letter-O-150-dpi.png){#fig:raster width=50%}
 
 ![Vector graphics image of the letter O (SVG format).]({attach}images/letter-O.svg){#fig:vector width=50%}
 
 ### Raster Graphics
 
-There are dozens of image formats, including these three:
+There are dozens of image formats, including these three major ones:
 
 #.  [Tag(ged) Image File Format (TIFF)](https://en.wikipedia.org/wiki/TIFF)
     - lossless compression
@@ -49,7 +49,7 @@ There are dozens of image formats, including these three:
     - supported by most web browsers
     - transparency
 
-All three formats employ raster graphics in which image elements are represented as rectangular arrays of [pixels](https://en.wikipedia.org/wiki/Pixels).
+All three formats yield images displayed as rectangular arrays of [pixels](https://en.wikipedia.org/wiki/Pixels).
 
 ### Vector Graphics
 
@@ -67,16 +67,16 @@ The two principal vector graphics formats are:
     - small file sizes
     - human- and machine-readable files
 
-Both these formats yield images which consist of mathematically defined points, lines, curves, and shapes.
+Both these formats yield images which consist of mathematically defined points, lines, curves, and shapes, which do not degrade in visual quality when magnified.
 
 ## Format conversions
 
-For a variety of reasons, it is often necessary to convert from one image format to another. There are four broad possibilities for this:
+For many reasons, it is often necessary to convert from one image format to another. There are four broad possibilities for this, as shown below, with typical examples:
 
-a.  raster to raster;
-a.  raster to vector;
-a.  vector to raster; and
-a.  vector to vector
+#.  Raster to raster: PNG to JPEG and vice versa;
+#.  Raster to vector: PNG to PDF or PNG to SVG;
+#.  Vector to raster: PDF to PNG or SVG to PNG; and
+#.  Vector to vector: PDF to SVG, or vice versa.
 
 We consider each of these in turn using [platform-neutral](https://itlaw.wikia.org/wiki/Platform_neutral) [open source](https://opensource.com/resources/what-open-source) tools. Since I run [GNU/Linux](https://en.wikipedia.org/wiki/GNU/Linux_naming_controversy) on my desktop, my examples will feature commands from that setup.^[There are many websites that promise conversion online, requiring you to upload the input file and download the output file. These _might be_ fraught with security risks. Use them with caution.]
 
@@ -85,9 +85,9 @@ We consider each of these in turn using [platform-neutral](https://itlaw.wikia.o
 Among the very many tools available, we examine below four that support image format conversion:
 
 #.  [`ImageMagick`](https://imagemagick.org/index.php)
-    - graphics library for image manipulation and display
+    - versatile graphics library for image manipulation and display
     - standalone utilities like `convert`, `display`, `identify`, `mogrify`, etc.
-    - scripting language
+    - scripting language support
     - pixel-based
     - raster to raster conversions
     - raster to vector conversions
@@ -95,7 +95,7 @@ Among the very many tools available, we examine below four that support image fo
 #.  [cairo](https://www.cairographics.org/)
     - vector-based 2D drawing and rendering library
     - multiple output devices/formats
-    - used by other programs rather than in standalone mode
+    - used by other programs as a backend, rather than in standalone mode
 
 #.  [poppler](https://poppler.freedesktop.org/)
     - vector-based PDF rendering library
@@ -106,13 +106,13 @@ Among the very many tools available, we examine below four that support image fo
 #.  [Inkscape](https://inkscape.org/)
     - GUI-based vector graphics editor
     - suitable both for technical illustration and digital art
-    - uses SVG as the main format
+    - uses SVG as the working format
     - can export to a wide variety of output formats
-    - option to use cairo for PDF export
+    - option to use cairo for export to raster formats
 
 ## `ImageMagick`: the Swiss Army knife
 
-`ImageMagick` is the name given to a suite of image processing tools originally created in 1987 by John Cristy, then working for [Du Pont](https://www.dupont.com/). In 1990, it was freely released by Du Pont, who transferred copyright to [`ImageMagick` Studio LLC](https://imagemagick.org/script/contact.php) who now maintain the project. It is distributed under a derived Apache 2.0 [license](https://imagemagick.org/script/license.php). The [authoritative source code repository](https://github.com/`ImageMagick`/`ImageMagick`) shows active development even today, 34 years after the suite was first released [@imagemagicksource].
+`ImageMagick` is the name given to a suite of image processing tools originally created in 1987 by John Cristy, then working for [Du Pont](https://www.dupont.com/). In 1990, it was freely released by Du Pont, who transferred copyright to [ImageMagick Studio LLC](https://imagemagick.org/script/contact.php) who now maintain the project. It is distributed under a [derived Apache 2.0 license](https://imagemagick.org/script/license.php). The [authoritative source code repository](https://github.com/ImageMagick/ImageMagick) shows active development even today, 34 years after the suite was first released [@imagemagicksource].
 
 `ImageMagick` is so versatile and useful that it may rightfully be called the [Swiss Army knife](https://www.thefreedictionary.com/Swiss-army+knife) of the image processing world. It comes with several command line utilities, each replete with options. Among these are:
 
@@ -128,32 +128,34 @@ The above list is far from exhaustive. The interested reader is referred to the 
 
 Two quite different images are used to illustrate the format conversions we perform here. The two test images are:
 
-#.  a coloured, text-only test image called `text-only.png`; and
-#.  a non-text, coloured, graphically rich image called `animals.jpg`.
+#.  a coloured, text-only test image contained in the file `text-only.pdf`; and
+#.  a non-text, coloured, graphically rich image contained in the file `animals.jpg`.
 
-We will refer to these two images as `text-only` and `animals`, respectively hereafter.
-
-Note that, as [explained below][Non-text test image], `animals.jpg` is a cropped version of the original image `animals-original.jpg` downloaded from the Web.
+We will succinctly refer to these two images as `text-only` and `animals`, respectively hereafter.
 
 ### Text-only image
 
-The `text-only` image was first generated as a PDF file, `text-only.pdf`, by compiling a [LaTeX](https://www.latex-project.org/) source file. That file was then converted to various raster formats using the methods [discussed later][vector to raster] to yield the images `text-only-600-dpi.png` and `text-only-600-dpi.jpg`.
+The text-only image was first generated as a PDF file, `text-only.pdf`, by compiling a [LaTeX](https://www.latex-project.org/) [source file]({attach}auxiliary/text-only.tex). That PDF file was then converted to various raster formats using the methods [discussed later][vector to raster] to yield the raster images `text-only-600-dpi.png` and `text-only-600-dpi.jpg`.
 
 ![Text-only image in 600 dpi PNG format.]({attach}images/text-only-600-dpi-cairo.png){#fig:text-only width=80%}
 
-### Non-text test image
+### Non-text image
 
-The non-text image, `animals-original.jpg`, is a colourful, graphically rich image with much detail. It is from a hand-drawn illustration of microscopic marine animals by the German naturalist [Ernst Haeckel](https://en.wikipedia.org/wiki/Ernst_Haeckel), scanned as a JPEG, and made available in the public domain.
+The non-text image, `animals.jpg`, is a cropped version of an original image `animals-original.jpg` [downloaded from the Web](https://www.rawpixel.com/image/2266608/free-illustration-image-ernst-haeckel-vintage-animals). It is a colourful, graphically rich image with much detail, and is from a hand-drawn illustration of microscopic marine animals by the German naturalist [Ernst Haeckel](https://en.wikipedia.org/wiki/Ernst_Haeckel), scanned as a JPEG, and made available in the public domain.
 
-![Non-text, graphically rich `animals-original.jpg` image in JPEG format.^[These images are in the public domain and covered by the [CC0 licence](https://creativecommons.org/publicdomain/zero/1.0/). They are available for download [here](https://www.rawpixel.com/image/2266608/free-illustration-image-ernst-haeckel-vintage-animals).]]({attach}images/animals-original.jpg){#fig:animals-original width=80%}
+![Non-text, graphically rich `animals-original.jpg` image in JPEG format.^[These images are in the public domain and covered by the [CC0 licence](https://creativecommons.org/publicdomain/zero/1.0/). ]]({attach}images/animals-original.jpg){#fig:animals-original width=80%}
 
-## Pre-processing: Cropping
+How the original image was cropped to get the `animals` image is explained next.
 
-Cropping is strictly not image format conversion, but is often a necessary pre-processing step in image manipulations. For example, +@fig:animals-original has a whitish, non-monochromatic border around the block print, containing  annotations. For our purposes, this border is at best a distraction. It may be removed altogether by _cropping_, leaving us with only the illustration. We will refer to the resulting cropped image, `animals.jpg`, as `animals`, and use it as the source image in our examples below.
+## Pre-processing `animals`
+
+Cropping is strictly not image format conversion, but is often a necessary pre-processing step in image manipulations. For example, +@fig:animals-original has a whitish, non-monochromatic border around the block print, containing annotations. For our purposes, this border is at best a distraction. It may be removed altogether by _cropping_, leaving us with only the illustration. The resulting cropped image, `animals.jpg` will be the source image in our examples below.
+
+### Cropping
 
 Cropping is usually better done interactively using a [GUI (Graphical User Interface)](https://en.wikipedia.org/wiki/Graphical_user_interface), than on the command line. However, the latter, even if a bit tedious, is precisely repeatable.
 
-`ImageMagick`'s `display` utility pops up a GUI when the mouse is over the image and the left mouse button is clicked. We can then drag and fit a window to the _region we wish to keep_, clicking the `Crop` function, and saving the cropped image. The steps are these:
+The `display` utility of `ImageMagick` pops up a GUI when the mouse is over the image and the left mouse button is clicked. We can then drag and fit a window to the _region we wish to keep_, clicking the `Crop` function, and saving the cropped image. The steps are these:
 
 a.  left mouse click on the image to reveal the GUI (see +@fig:gui);
 a.  `Transform -> Crop`;
@@ -175,9 +177,9 @@ In our case, $(x_t, y_t) = (60, 84)$ and $(x_b, y_b) = (795, 1119)$ giving $w = 
 convert -crop '735x1035+60+84' animals-original.jpg animals.jpg
 ```
 
-The resulting cropped image is shown in +@fig:cropped below.
+The resulting cropped image, `animals.jpg` is shown in +@fig:cropped below.
 
-![Cropped version of the image in +@fig:animals-original. This is the `animals` image.]({attach}images/animals.jpg){#fig:cropped width=50%}
+![Cropped version of the original image in +@fig:animals-original. This is the `animals` image.]({attach}images/animals.jpg){#fig:cropped width=50%}
 
 ### File sizes
 
@@ -200,7 +202,7 @@ We now perform a sequence of image manipulations, including raster to raster for
 
 ### Resizing, format-conversion, and montaging
 
-We may invoke `ImageMagick`'s `convert` function not only to convert from one format to another but also to accomplish cropping (as we have already seen), image-resizing, making the background transparent, and [montaging](https://www.thefreedictionary.com/montage), etc.
+We may invoke the `convert` function of `ImageMagick` not only to convert from one format to another but also to accomplish cropping (as we have already seen), image-resizing, making the background transparent, and [montaging](https://www.thefreedictionary.com/montage), etc.
 
 Suppose we want to reduce the dimensions of the cropped image to half their original values, and display the full-size and half-size images side by side, we could run the following command:
 
@@ -744,21 +746,21 @@ When we start out with PDF as the source image format, and the destination forma
 
 When the source format is SVG and the destination format is either PDF or a raster format, the tool of choice is `cairosvg`.
 
-This is the current status and it could change as image utilities landscape changes with time. *@tbl:formats summarizes this information.
+*@tbl:formats summarizes this information, which is current at the time of writing, but could change as the image utilities landscape changes with time. 
 
-Conversion Type   Tool
-----------------  ----------- 
-raster to raster  `convert`
-raster to PDF     `convert`
-raster to SVG     `convert`
-PDF to raster     `pdftocairo`
-SVG to raster     `cairosvg`
-PDF to SVG        `pdftocairo`
-SVG to PDF        `cairosvg`
+Conversion Type     Tool
+----------------    ----------- 
+raster to raster    `convert`
+raster to PDF       `convert`
+raster to SVG       `convert`
+PDF to raster       `pdftocairo`
+SVG to raster       `cairosvg`
+PDF to SVG          `pdftocairo`
+SVG to PDF          `cairosvg`
 
 Table: Tools for image format conversions. {#tbl:formats}
 
-## Appendix: `ImageMagick`'s security vulnerabilities
+### Appendix: Security vulnerabilities in `ImageMagick`
 
 Great power exacts a commensurate price. `ImageMagick`'s great power and ease of use does come at a great price: vulnerability to exploits by malicious remote actors.
 
@@ -770,20 +772,9 @@ In November 2020, [another security vulnerability was discovered](https://portsw
 
 Recent versions of the `ImageMagick` suite, bundled with major distributions, should have correctly configured `policy.xml` files that will block known exploits. [Sandboxing](https://www.techopedia.com/definition/25266/sandboxing) is another technique to quarantine the system from possible vulnerabilities. Above all, it is vital to keep  system and application software up to date to avail of evolutions in performance and security.
 
-## Image used below
-
-https://www.rawpixel.com/board/1236113/kunstformen-der-natur-ernst-haeckel-free-cc0-public-domain-animal-prints
-
-#### Generation of test images
-
-
-
 #### Feedback
 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
 \noindent A PDF version of this article is [available for download here.]({attach}./image-format-conversions.pdf)
-
-
-https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/

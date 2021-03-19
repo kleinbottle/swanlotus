@@ -92,6 +92,16 @@
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.80,0.80,0.80}{#1}}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.80,0.58,0.58}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.50,0.62,0.50}{\textbf{#1}}}
+\usepackage{longtable,booktabs}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -109,47 +119,6 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
-\AtBeginEnvironment{quote}{\small}
-\setlength{\parindent}{0pt} % block paragraphs
-\usepackage{etoolbox}
-\usepackage{graphicx}
-\usepackage{subcaption}
-\usepackage{svg}
-\usepackage[Latin,Tamil,Devanagari]{ucharclasses}
-  \setmainfont[SmallCapsFont={Charis SIL Small Caps}]{Charis SIL}
-  \setsansfont[Numbers=OldStyle,BoldFont={* Semibold}]{Source Sans Pro}
-  \setmonofont[Scale=0.90]{Fira Mono}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-  \setmathfont[bold-style=ISO]{STIX Two Math}
-  \newfontfamily\tamilfont[Script=Tamil]{Noto Sans Tamil}
-  \setTransitionsFor{Tamil}{\tamilfont}{\normalfont}
-  \setTransitionTo{Tamil}{\tamilfont}{}
-  \setTransitionFrom{Tamil}{\normalfont}
-  \newfontfamily\devfont[Script=Devanagari]{Noto Sans Devanagari}
-  \setTransitionsFor{Devanagari}{\devfont}{\normalfont}
-  \setTransitionTo{Devanagari}{\devfont}{}
-  \setTransitionFrom{Devanagari}{\normalfont}
-  \newfontfamily{\emojifont}{Symbola}
-\usepackage[all]{nowidow}
-\usepackage[margins=raggedright]{floatrow}
-%
-% Tables without rules
-%
-\let\addlinespace\relax
-\let\toprule\relax
-\let\bottomrule\relax
-\let\midrule\relax
-\let\addlinespace\relax
-%
-% Adjust punctuation for footnotes
-%
-\usepackage{fnpct} % footnote _before_ punctuation reversed and adjusted.
-  \setfnpct{after-dot-space=-0.15em,after-comma-space=-0.150em,add-punct-marks=;[0.06em]![0.06em]?[0.06em]:[0.06em]}
-%
-% Flexible fontsizes
-%
-\usepackage{fontsize}
-%
 \usepackage{titling}
 \usepackage{fancyhdr}
     \pagestyle{fancy}
@@ -164,6 +133,7 @@
 \usepackage[capitalise]{cleveref}
   \crefname{equation}{Equation}{Equations}
   \crefname{figure}{Figure}{Figures}
+  \crefname{table}{Table}{Tables}
 %% pandoc-fignos
 \usepackage{caption}
 %% pandoc-fignos: environment to disable figure caption prefixes
@@ -189,6 +159,40 @@
     \makeatother
 %%
 
+\AtBeginEnvironment{quote}{\small}
+\setlength{\parindent}{0pt} % block paragraphs
+\usepackage{etoolbox}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{svg}
+\usepackage[Latin,Tamil,Devanagari]{ucharclasses}
+  \setmainfont[SmallCapsFont={Charis SIL Small Caps}]{Charis SIL}
+  \setsansfont[Numbers=OldStyle,BoldFont={* Semibold}]{Source Sans Pro}
+  \setmonofont[Scale=0.90]{Fira Mono}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \setmathfont[bold-style=ISO]{STIX Two Math}
+  \newfontfamily\tamilfont[Script=Tamil]{Noto Sans Tamil}
+  \setTransitionsFor{Tamil}{\tamilfont}{\normalfont}
+  \setTransitionTo{Tamil}{\tamilfont}{}
+  \setTransitionFrom{Tamil}{\normalfont}
+  \newfontfamily\devfont[Script=Devanagari]{Noto Sans Devanagari}
+  \setTransitionsFor{Devanagari}{\devfont}{\normalfont}
+  \setTransitionTo{Devanagari}{\devfont}{}
+  \setTransitionFrom{Devanagari}{\normalfont}
+  \newfontfamily{\emojifont}{Symbola}
+\usepackage[all]{nowidow}
+\usepackage[margins=raggedright]{floatrow}
+%
+%
+% Adjust punctuation for footnotes
+%
+\usepackage{fnpct} % footnote _before_ punctuation reversed and adjusted.
+  \setfnpct{after-dot-space=-0.15em,after-comma-space=-0.150em,add-punct-marks=;[0.06em]![0.06em]?[0.06em]:[0.06em]}
+%
+% Flexible fontsizes
+%
+\usepackage{fontsize}
+%
 \ifxetex
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
   \usepackage{polyglossia}
@@ -230,6 +234,14 @@
 \thispagestyle{empty}
 
 
+Converting between image formats is something we could be required to do
+at short notice. This tutorial explores the different tools that are
+currently available and identifies the most efficient for each task. The
+\texttt{ImageMagick} suite, the \texttt{cairo} backend, the
+\texttt{poppler} utilities, \texttt{rsvg-convert}, and \texttt{CairoSVG}
+are identified for the specific strengths that make them the tools of
+choice for different image conversion tasks.
+
 \hypertarget{two-varieties-of-digital-images}{%
 \subsection{Two varieties of digital
 images}\label{two-varieties-of-digital-images}}
@@ -246,25 +258,28 @@ Digital images come in two broad flavours:
 \end{itemize}
 
 The former leads to image blockiness or
-\href{https://en.wikipedia.org/wiki/Pixelation}{pixellation} at high
-magnifications, as shown in \cref{fig:raster}, while the latter scales
-without degradation when magnified, as illustrated in \cref{fig:vector}.
+\href{https://en.wikipedia.org/wiki/Pixelation}{pixellation} and loss of
+definition at high magnifications, as shown in \cref{fig:raster}, while
+the latter scales without degradation when magnified, as illustrated in
+\cref{fig:vector}.
 
 \begin{figure}
 \hypertarget{fig:raster}{%
 \centering
-\includegraphics[width=0.5\textwidth,height=\textheight]{images/raster.png}
-\caption{Raster graphics image of the letter O (PNG
-format)}\label{fig:raster}
+\includegraphics[width=0.5\textwidth,height=\textheight]{images/letter-O-150-dpi.png}
+\caption[Raster graphics image of the letter O (150 dpi PNG
+format).]{Raster graphics image of the letter O (150 dpi\footnotemark{}
+PNG format).}\label{fig:raster}
 }
 \end{figure}
+\footnotetext{Dots per inch.}
 
 \begin{figure}
 \hypertarget{fig:vector}{%
 \centering
-\includegraphics[width=0.5\textwidth,height=\textheight]{images/vector.svg}
+\includegraphics[width=0.5\textwidth,height=\textheight]{images/letter-O.svg}
 \caption{Vector graphics image of the letter O (SVG
-format)}\label{fig:vector}
+format).}\label{fig:vector}
 }
 \end{figure}
 
@@ -412,7 +427,7 @@ image format conversion:
 \begin{enumerate}
 \tightlist
 \item
-  \href{https://imagemagick.org/index.php}{ImageMagick}
+  \href{https://imagemagick.org/index.php}{\texttt{ImageMagick}}
 
   \begin{itemize}
   \tightlist
@@ -476,22 +491,24 @@ image format conversion:
 \end{enumerate}
 
 \hypertarget{imagemagick-the-swiss-army-knife}{%
-\subsection{ImageMagick: the Swiss Army
-knife}\label{imagemagick-the-swiss-army-knife}}
+\subsection{\texorpdfstring{\texttt{ImageMagick}: the Swiss Army
+knife}{ImageMagick: the Swiss Army knife}}\label{imagemagick-the-swiss-army-knife}}
 
-ImageMagick is the name given to a suite of image processing tools
-originally created in 1987 by John Cristy, then working for
+\texttt{ImageMagick} is the name given to a suite of image processing
+tools originally created in 1987 by John Cristy, then working for
 \href{https://www.dupont.com/}{Du Pont}. In 1990, it was freely released
 by Du Pont, who transferred copyright to
-\href{https://imagemagick.org/script/contact.php}{ImageMagick Studio
-LLC} who now maintain the project. It is distributed under a derived
-Apache 2.0 \href{https://imagemagick.org/script/license.php}{license}.
-The \href{https://github.com/ImageMagick/ImageMagick}{authoritative
+\href{https://imagemagick.org/script/contact.php}{\texttt{ImageMagick}
+Studio LLC} who now maintain the project. It is distributed under a
+derived Apache 2.0
+\href{https://imagemagick.org/script/license.php}{license}. The
+\href{https://github.com/\%60ImageMagick\%60/\%60ImageMagick\%60}{authoritative
 source code repository} shows active development even today, 34 years
 after the suite was first released {[}1{]}.
 
-ImageMagick is so versatile and useful that it may rightfully be called
-the \href{https://www.thefreedictionary.com/Swiss-army+knife}{Swiss Army
+\texttt{ImageMagick} is so versatile and useful that it may rightfully
+be called the
+\href{https://www.thefreedictionary.com/Swiss-army+knife}{Swiss Army
 knife} of the image processing world. It comes with several command line
 utilities, each replete with options. Among these are:
 
@@ -517,11 +534,11 @@ utilities, each replete with options. Among these are:
 The above list is far from exhaustive. The interested reader is referred
 to the
 \href{https://imagemagick.org/script/command-line-tools.php}{excellent
-online documentation} for further details. The power of ImageMagick is
-enhanced with the
+online documentation} for further details. The power of
+\texttt{ImageMagick} is enhanced with the
 \href{https://imagemagick.org/script/magick-script.php}{magick-script}
 Image Scripting Language. The examples in this blog use the command line
-versions of invoking ImageMagick. If they seem daunting,
+versions of invoking \texttt{ImageMagick}. If they seem daunting,
 \href{https://imagemagick.org/script/command-line-processing.php}{refer
 to this explanation} {[}2{]}.
 
@@ -543,6 +560,10 @@ we perform here. The two test images are:
 We will refer to these two images as \texttt{text-only} and
 \texttt{animals}, respectively hereafter.
 
+Note that, as \protect\hyperlink{non-text-test-image}{explained below},
+\texttt{animals.jpg} is a cropped version of the original image
+\texttt{animals-original.jpg} downloaded from the Web.
+
 \hypertarget{text-only-image}{%
 \subsubsection{Text-only image}\label{text-only-image}}
 
@@ -550,7 +571,7 @@ The \texttt{text-only} image was first generated as a PDF file,
 \texttt{text-only.pdf}, by compiling a
 \href{https://www.latex-project.org/}{LaTeX} source file. That file was
 then converted to various raster formats using the methods
-\protect\hyperlink{vector-to-raster}{discussed later} to yield the
+\protect\hyperlink{vector-to-raster-1}{discussed later} to yield the
 images \texttt{text-only-600-dpi.png} and
 \texttt{text-only-600-dpi.jpg}.
 
@@ -558,26 +579,27 @@ images \texttt{text-only-600-dpi.png} and
 \hypertarget{fig:text-only}{%
 \centering
 \includegraphics[width=0.8\textwidth,height=\textheight]{images/text-only-600-dpi-cairo.png}
-\caption{Text-only image in PNG format.}\label{fig:text-only}
+\caption{Text-only image in 600 dpi PNG format.}\label{fig:text-only}
 }
 \end{figure}
 
 \hypertarget{non-text-test-image}{%
 \subsubsection{Non-text test image}\label{non-text-test-image}}
 
-The non-text \texttt{animals} image is a colourful, graphically rich
-image with much detail. It is from a hand-drawn illustration of
-microscopic marine animals by the German naturalist
+The non-text image, \texttt{animals-original.jpg}, is a colourful,
+graphically rich image with much detail. It is from a hand-drawn
+illustration of microscopic marine animals by the German naturalist
 \href{https://en.wikipedia.org/wiki/Ernst_Haeckel}{Ernst Haeckel},
 scanned as a JPEG, and made available in the public domain.
 
 \begin{figure}
-\hypertarget{fig:animals}{%
+\hypertarget{fig:animals-original}{%
 \centering
-\includegraphics[width=0.8\textwidth,height=\textheight]{images/animals.jpg}
-\caption[Non-text, graphically rich \texttt{animals} image in JPEG
-format.]{Non-text, graphically rich \texttt{animals} image in JPEG
-format.\footnotemark{}}\label{fig:animals}
+\includegraphics[width=0.8\textwidth,height=\textheight]{images/animals-original.jpg}
+\caption[Non-text, graphically rich \texttt{animals-original.jpg} image
+in JPEG format.]{Non-text, graphically rich
+\texttt{animals-original.jpg} image in JPEG
+format.\footnotemark{}}\label{fig:animals-original}
 }
 \end{figure}
 \footnotetext{These images are in the public domain and covered by the
@@ -590,22 +612,23 @@ format.\footnotemark{}}\label{fig:animals}
 
 Cropping is strictly not image format conversion, but is often a
 necessary pre-processing step in image manipulations. For example,
-\cref{fig:animals} has a whitish, non-monochromatic border around the
-block print, containing annotations. For our purposes, this border is
-more of a distraction that is best removed altogether by
+\cref{fig:animals-original} has a whitish, non-monochromatic border
+around the block print, containing annotations. For our purposes, this
+border is at best a distraction. It may be removed altogether by
 \emph{cropping}, leaving us with only the illustration. We will refer to
-the cropped image as \texttt{animals-cropped} and use it as the source
-image in our examples below.
+the resulting cropped image, \texttt{animals.jpg}, as \texttt{animals},
+and use it as the source image in our examples below.
 
 Cropping is usually better done interactively using a
 \href{https://en.wikipedia.org/wiki/Graphical_user_interface}{GUI
-(Graphical User Interface)}, than on the command line. The latter, even
-if a bit tedious, is precisely repeatable.
+(Graphical User Interface)}, than on the command line. However, the
+latter, even if a bit tedious, is precisely repeatable.
 
-ImageMagick's \texttt{display} utility pops up a GUI with a left click
-when the mouse is over the image. We can then drag and fit a window to
-the \emph{region we wish to keep}, clicking the crop function, and
-saving the cropped image. The steps are these:
+\texttt{ImageMagick}'s \texttt{display} utility pops up a GUI when the
+mouse is over the image and the left mouse button is clicked. We can
+then drag and fit a window to the \emph{region we wish to keep},
+clicking the \texttt{Crop} function, and saving the cropped image. The
+steps are these:
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -627,7 +650,7 @@ saving the cropped image. The steps are these:
 \hypertarget{fig:gui}{%
 \centering
 \includegraphics[width=0.2\textwidth,height=\textheight]{images/ImageMagick-display-gui.png}
-\caption{ImageMagick interactive GUI.}\label{fig:gui}
+\caption{\texttt{ImageMagick} interactive GUI.}\label{fig:gui}
 }
 \end{figure}
 
@@ -640,7 +663,7 @@ the option so:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ExtensionTok{convert} \AttributeTok{{-}crop} \StringTok{\textquotesingle{}wxh+x\_t+y\_t\textquotesingle{}}\NormalTok{ animals.jpg animals{-}cropped.jpg}
+\ExtensionTok{convert} \AttributeTok{{-}crop} \StringTok{\textquotesingle{}wxh+x\_t+y\_t\textquotesingle{}}\NormalTok{ animals{-}original.jpg animals.jpg}
 \end{Highlighting}
 \end{Shaded}
 
@@ -649,7 +672,7 @@ giving \(w = 735\) and \(h = 1035\), leading to
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ExtensionTok{convert} \AttributeTok{{-}crop} \StringTok{\textquotesingle{}735x1035+60+84\textquotesingle{}}\NormalTok{ animals.jpg animals{-}cropped.jpg}
+\ExtensionTok{convert} \AttributeTok{{-}crop} \StringTok{\textquotesingle{}735x1035+60+84\textquotesingle{}}\NormalTok{ animals{-}original.jpg animals.jpg}
 \end{Highlighting}
 \end{Shaded}
 
@@ -658,9 +681,9 @@ The resulting cropped image is shown in \cref{fig:cropped} below.
 \begin{figure}
 \hypertarget{fig:cropped}{%
 \centering
-\includegraphics[width=0.5\textwidth,height=\textheight]{images/test-cropped.jpg}
-\caption{Cropped version of the image in
-\cref{fig:test}.}\label{fig:cropped}
+\includegraphics[width=0.5\textwidth,height=\textheight]{images/animals.jpg}
+\caption{Cropped version of the image in \cref{fig:animals-original}.
+This is the \texttt{animals} image.}\label{fig:cropped}
 }
 \end{figure}
 
@@ -672,15 +695,20 @@ friendly numbers:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ls} \AttributeTok{{-}sh}\NormalTok{ animals}\PreprocessorTok{*}\NormalTok{.jpg }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ animals}\PreprocessorTok{*}\NormalTok{.jpg }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
 \ExtensionTok{{-}{-}{-}}
-\ExtensionTok{200K}\NormalTok{    animals{-}cropped.jpg}
-\ExtensionTok{312K}\NormalTok{    animals.jpg}
+\ExtensionTok{200K}\NormalTok{    animals.jpg}
+\ExtensionTok{312K}\NormalTok{    animals{-}original.jpg}
 \end{Highlighting}
 \end{Shaded}
 
-As expected, the original file \texttt{animals.jpg} is larger than the
-cropped full-size version, \texttt{animals-cropped.jpg} and all is well.
+As a convention hereafter, when there is a \texttt{-\/-\/-} separator
+between a command and some results, the latter are the results displayed
+on execution of the command.
+
+As expected, the original file \texttt{animals-original.jpg} is larger
+than the cropped full-size version, \texttt{animals.jpg}, and all is
+well.
 
 \hypertarget{raster-to-raster-conversion}{%
 \subsection{Raster to raster
@@ -693,9 +721,9 @@ raster format conversions.
 \subsubsection{Resizing, format-conversion, and
 montaging}\label{resizing-format-conversion-and-montaging}}
 
-We may invoke ImageMagick's \texttt{convert} function not only to
-convert from one format to another but also to accomplish cropping (as
-we have already seen), image-resizing, making the background
+We may invoke \texttt{ImageMagick}'s \texttt{convert} function not only
+to convert from one format to another but also to accomplish cropping
+(as we have already seen), image-resizing, making the background
 transparent, and
 \href{https://www.thefreedictionary.com/montage}{montaging}, etc.
 
@@ -705,19 +733,20 @@ side by side, we could run the following command:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ExtensionTok{convert}\NormalTok{ animals{-}cropped.jpg }\AttributeTok{{-}resize}\NormalTok{ 50\% animals{-}cropped{-}halfsize.jpg}
+\ExtensionTok{convert}\NormalTok{ animals.jpg }\AttributeTok{{-}resize}\NormalTok{ 50\% animals{-}halfsize.jpg}
 
-\ExtensionTok{convert}\NormalTok{ animals{-}cropped.jpg +append }\AttributeTok{{-}gravity}\NormalTok{ south }\DataTypeTok{\textbackslash{}}
-\NormalTok{animals{-}cropped{-}halfsize.jpg both.jpg}
+\CommentTok{\# Composite the two images aligning their bottoms}
+\ExtensionTok{convert}\NormalTok{ +append }\AttributeTok{{-}gravity}\NormalTok{ south }\DataTypeTok{\textbackslash{}}
+\NormalTok{animals.jpg animals{-}halfsize.jpg animals{-}both.jpg}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{figure}
-\hypertarget{fig:both-jpg}{%
+\hypertarget{fig:animals-both-jpg}{%
 \centering
-\includegraphics[width=0.8\textwidth,height=\textheight]{images/both.jpg}
+\includegraphics[width=0.8\textwidth,height=\textheight]{images/animals-both.jpg}
 \caption{Full-size cropped image on the left and half-sized image on the
-right.}\label{fig:both-jpg}
+right.}\label{fig:animals-both-jpg}
 }
 \end{figure}
 
@@ -725,47 +754,55 @@ right.}\label{fig:both-jpg}
 \subsubsection{Background transparency}\label{background-transparency}}
 
 Notice that there is a coloured white rectangle atop the half-size image
-on the right in \cref{fig:both-jpg}. We could remove it by rendering the
-background transparent, but because JPEG does not support transparency,
-through an
+on the right in \cref{fig:animals-both-jpg}. We could remove it by
+rendering the background transparent. However, because JPEG does not
+support transparency, through an
 \href{https://www.techopedia.com/definition/1945/alpha-channel}{alpha
 channel}, we have to convert the composite image to the PNG format,
-which does. This is one real-life circumstance necessitating raster to
+which does. This is one, real-life circumstance necessitating raster to
 raster format conversion.
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{\# Non{-}transparent composite in PNG}
+\ExtensionTok{convert}\NormalTok{ +append }\AttributeTok{{-}gravity}\NormalTok{ south }\DataTypeTok{\textbackslash{}}
+\NormalTok{animals.jpg animals{-}halfsize.jpg animals{-}both{-}non{-}transparent.png}
+
+\CommentTok{\# Transparent composite in PNG}
 \ExtensionTok{convert}\NormalTok{ +append }\AttributeTok{{-}gravity}\NormalTok{ south }\AttributeTok{{-}background}\NormalTok{ transparent }\DataTypeTok{\textbackslash{}}
-\NormalTok{animals{-}cropped.jpg animals{-}cropped{-}halfsize.jpg both.png}
+\NormalTok{animals.jpg animals{-}halfsize.jpg animals{-}both{-}transparent.png}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{figure}
-\hypertarget{fig:both-png}{%
+\hypertarget{fig:animals-both-png}{%
 \centering
-\includegraphics[width=0.8\textwidth,height=\textheight]{images/both.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{images/animals-both-transparent.png}
 \caption{Composite image converted to PNG format with transparent
-background.}\label{fig:both-png}
+background.}\label{fig:animals-both-png}
 }
 \end{figure}
 
 \hypertarget{file-sizes-again}{%
 \paragraph{File sizes again}\label{file-sizes-again}}
 
-How do the file sizes of the two composite images compare? How high a
-price have we paid for the transparent background?
+How do the file sizes of the three composite images compare? How does
+the non-transparent JPEG compare with the non-transparent PNG? Also, how
+high a price have we paid for the transparent background?
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ls} \AttributeTok{{-}sh}\NormalTok{ both.}\PreprocessorTok{*} \KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
-
-\ExtensionTok{264K}\NormalTok{    both.jpg}
-\ExtensionTok{2.2M}\NormalTok{    both.png}
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ animals{-}both}\PreprocessorTok{*}\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{264K}\NormalTok{    animals{-}both.jpg}
+\ExtensionTok{2.0M}\NormalTok{    animals{-}both{-}non{-}transparent.png}
+\ExtensionTok{2.2M}\NormalTok{    animals{-}both{-}transparent.png}
 \end{Highlighting}
 \end{Shaded}
 
-And the shocker is clearly shown above. The PNG composite image is
-\emph{almost eight times larger} than its JPEG counterpart.
+The PNG composite image is \emph{more than seven times larger} than its
+JPEG counterpart, \emph{even without transparency}. And transparency
+makes the PNG file size ten percent larger.
 
 \hypertarget{compression-levels-and-file-sizes}{%
 \paragraph{Compression levels and file
@@ -773,9 +810,9 @@ sizes}\label{compression-levels-and-file-sizes}}
 
 The \href{https://en.wikipedia.org/wiki/Image_compression}{image
 compression level} used above is the default compression level in
-ImageMagick. Getting the right combination of image dimensions, image
-compression, and image quality so that the image loads fast and looks
-good is
+\texttt{ImageMagick}. Getting the right combination of image format,
+image dimensions, image compression, and image quality so that the image
+loads fast and looks good is
 \href{https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/}{quite
 an art}. {[}3{]}
 
@@ -785,15 +822,17 @@ which can range from 0 to 9.
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{\# Least compression}
 \ExtensionTok{convert} \AttributeTok{{-}define}\NormalTok{ PNG:compression{-}level=0 +append }\AttributeTok{{-}gravity}\NormalTok{ south }\DataTypeTok{\textbackslash{}}
 \NormalTok{{-}background transparent }\DataTypeTok{\textbackslash{}}
-\NormalTok{animals{-}cropped.jpg animals{-}cropped{-}halfsize.jpg }\DataTypeTok{\textbackslash{}}
-\NormalTok{both{-}compressed{-}0.png}
+\NormalTok{animals.jpg animals{-}halfsize.jpg }\DataTypeTok{\textbackslash{}}
+\NormalTok{animals{-}both{-}compressed{-}0.png}
 
+\CommentTok{\# Most compression}
 \ExtensionTok{convert} \AttributeTok{{-}define}\NormalTok{ PNG:compression{-}level=9 +append }\AttributeTok{{-}gravity}\NormalTok{ south }\DataTypeTok{\textbackslash{}}
 \NormalTok{{-}background transparent }\DataTypeTok{\textbackslash{}}
-\NormalTok{animals{-}cropped.jpg animals{-}cropped{-}halfsize.jpg }\DataTypeTok{\textbackslash{}}
-\NormalTok{both{-}compressed{-}9.png}
+\NormalTok{animals.jpg animals{-}halfsize.jpg }\DataTypeTok{\textbackslash{}}
+\NormalTok{animals{-}both{-}compressed{-}9.png}
 \end{Highlighting}
 \end{Shaded}
 
@@ -801,39 +840,45 @@ The file sizes are:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ls} \AttributeTok{{-}sh}\NormalTok{ both}\PreprocessorTok{*} \KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ animals{-}both}\PreprocessorTok{*} \KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
 \ExtensionTok{{-}{-}{-}}
-\ExtensionTok{4.4M}\NormalTok{    both{-}compressed{-}0.png}
-\ExtensionTok{2.2M}\NormalTok{    both{-}compressed{-}9.png}
-\ExtensionTok{4.4M}\NormalTok{    both{-}compressed.png}
-\ExtensionTok{264K}\NormalTok{    both.jpg}
-\ExtensionTok{2.2M}\NormalTok{    both.png}
+\ExtensionTok{264K}\NormalTok{    animals{-}both.jpg}
+\ExtensionTok{4.4M}\NormalTok{    animals{-}both{-}compressed{-}0.png}
+\ExtensionTok{2.2M}\NormalTok{    animals{-}both{-}compressed{-}9.png}
+\ExtensionTok{2.0M}\NormalTok{    animals{-}both{-}non{-}transparent.png}
+\ExtensionTok{2.2M}\NormalTok{    animals{-}both{-}transparent.png}
 \end{Highlighting}
 \end{Shaded}
 
-It appears that the default compression used by ImageMagick gives a file
-size that is the same as the highest compression level. Indeed, the
-uncompressed version---with a compression level of zero---gives a file
-\emph{twice} the size of the uncompressed version and \emph{sixteen
-times} the size of the JPEG. And we have not even used two other related
-attributes:
+It appears that the default compression used by \texttt{ImageMagick}
+gives a file size that is the same as the highest compression level.
+Indeed, the uncompressed version---with a compression level of
+zero---gives a file \emph{twice} the size of the uncompressed version
+and \emph{sixteen times} the size of the JPEG. And we have not even used
+two other related attributes:
 \href{https://stackoverflow.com/questions/27267073/imagemagick-lossless-max-compression-for-png}{filter
-and strategy} {[}4{]}. Getting the best tradeoff of image size, file
-size, loading time, and image quality is still more an art to be
-mastered than an algorithm to be applied.
+and strategy} {[}4{]}. Getting the best tradeoff of image format, image
+size, file size, loading time, and image quality is still more of an art
+to be mastered than an algorithm to be applied.
+
+We may conclude from the above that non-textual, detail-rich images are
+better stored and displayed as JPEGs than PNGs.
 
 \hypertarget{results-with-the-text-only-image}{%
 \subsubsection{Results with the text-only
 image}\label{results-with-the-text-only-image}}
 
 For completeness, let us do a simple \emph{no quality loss} conversion
-from PNG to JPEG for the text-only test image, and compare image
-appearances and file sizes.
+from PNG to JPEG for the \texttt{text-only} test image, and compare
+image appearances and file sizes.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ExtensionTok{convert} \AttributeTok{{-}quality}\NormalTok{ 100 text{-}only{-}600{-}dpi{-}cairo.png text{-}only{-}600{-}dpi{-}cairo.jpg}
+\CommentTok{\# Lossless JPEG with a \textquotesingle{}quality\textquotesingle{} of 100}
+\ExtensionTok{convert} \AttributeTok{{-}quality}\NormalTok{ 100 text{-}only{-}600{-}dpi{-}cairo.png }\DataTypeTok{\textbackslash{}}
+\NormalTok{text{-}only{-}600{-}dpi{-}cairo.jpg}
 
+\CommentTok{\# Composite both images into one with a transparent divider}
 \ExtensionTok{convert}\NormalTok{ text{-}only{-}600{-}dpi{-}cairo.png text{-}only{-}600{-}dpi{-}cairo.jpg }\DataTypeTok{\textbackslash{}}
 \NormalTok{{-}background transparent }\AttributeTok{{-}splice}\NormalTok{ 20x0+0+0 +append }\AttributeTok{{-}chop}\NormalTok{ 20x0+0+0 }\DataTypeTok{\textbackslash{}}
 \NormalTok{text{-}only{-}both{-}600{-}dpi{-}cairo.png}
@@ -850,74 +895,406 @@ appearances and file sizes.
 \hypertarget{fig:text-only-both}{%
 \centering
 \includegraphics[width=0.8\textwidth,height=\textheight]{images/text-only-both-600-dpi-cairo.png}
-\caption{Composite of the PNG on the left, and JPEG on the right, with a
-small separator.}\label{fig:text-only-both}
+\caption{Composite PNG image of the PNG on the left, and JPEG on the
+right.}\label{fig:text-only-both}
 }
 \end{figure}
 
 \Cref{fig:text-only-both} does not reveal any degradation in quality
-after conversion from PNG to JPEG. Note also that the \emph{composite}
-PNG image is smaller than the \emph{single} JPEG image. We
-conclude---rather shakily on the basis of one instance---that PNG is
-better suited for textual images and provides a smaller file size for
-the same quality.
+after conversion from PNG to JPEG. Note also that the file size of the
+\emph{composite} PNG image is smaller than the file size of the
+\emph{single} JPEG image.
 
-XXXXX Need to compare with original pdfto jpeg and using convert to get
-jpeg
+\hypertarget{png-versus-jpeg}{%
+\subsubsection{PNG versus JPEG}\label{png-versus-jpeg}}
+
+We conclude from the \texttt{text-only} images that PNG is better suited
+for textual images and provides a smaller file size for the same
+quality.
+
+Conversely, we know from the \texttt{animals} images that JPEG is more
+suited to non-textual detail and yields good quality images at far
+smaller file sizes than PNG.
 
 \hypertarget{can-cairo-and-poppler-do-all-this}{%
-\subsubsection{Can cairo and poppler do all
-this?}\label{can-cairo-and-poppler-do-all-this}}
+\subsubsection{\texorpdfstring{Can \texttt{cairo} and \texttt{poppler}
+do all
+this?}{Can cairo and poppler do all this?}}\label{can-cairo-and-poppler-do-all-this}}
 
-Can such processing be done using cairo or poppler? Not really. The
-\emph{starting point} or \emph{input format} for cairo and poppler is
-the PDF format. Our test image is scanned from an illustration and is
-therefore a JPEG raster image. ImageMagick's forte is the display,
-manipulation, and processing of raster images; cairo and poppler have
-other goals.
-
-\%\%\% UP TO HERE \%\%\%
+Can such processing be done using \texttt{cairo} or \texttt{poppler}?
+Not really, in the case of the \texttt{animals} image. The
+\emph{starting point} or \emph{input format} for \texttt{cairo} and
+\texttt{poppler} is the PDF format. Our \texttt{animals} image is
+scanned from an illustration and is therefore a JPEG raster image.
+\texttt{ImageMagick}'s forte is the display, manipulation, and
+processing of raster images; \texttt{cairo} and \texttt{poppler} start
+with PDFs and have other goals.
 
 \hypertarget{raster-to-vector-conversions}{%
 \subsection{Raster to vector
 conversions}\label{raster-to-vector-conversions}}
 
-We might be printing a document on a printer that recognizes and accepts
-the \href{}{PostScript} or PDF format. Raster photographic images would
-then need to converted to PDF either beforehand or on the fly before
-they can be printed on paper. This is one reason why we might need to
-convert from a raster to a vector image.
+Let us say that we have a logo, designed and available as a raster
+image. To use it on the Web, we could, if necessary, reformat it as a
+JPEG or PNG file. But as we zoom into the page, the raster images will
+start becoming less sharp and more blocky as shown in \cref{fig:raster}.
 
-We could go about doing this using ImageMagick's \texttt{convert}
-utility again. And following the previous syntax, we could try:
+However, if the graphic were in SVG format, supported by most web
+browsers, the logo would scale without visual degradation as we zoom
+into the page.
+
+How do we convert a raster image to a vector format like PDF or SVG?
+
+\hypertarget{raster-to-pdf-with-convert}{%
+\subsubsection{\texorpdfstring{Raster to PDF with
+\texttt{convert}}{Raster to PDF with convert}}\label{raster-to-pdf-with-convert}}
+
+We could do this using \texttt{ImageMagick}'s \texttt{convert} utility
+again. For example,
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ExtensionTok{convert}\NormalTok{ test{-}cropped.jpg test{-}cropped.pdf}
+\CommentTok{\# Convert JPEG image to PDF}
+\ExtensionTok{convert}\NormalTok{ animals.jpg animals.pdf}
+
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ animals.jpg animals.pdf }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{200K}\NormalTok{    animals.jpg}
+\ExtensionTok{204K}\NormalTok{    animals.pdf}
 \end{Highlighting}
 \end{Shaded}
 
-The converted image, \href{images/test-cropped.pdf}{test-cropped.pdf},
-may be viewed from the given link. Web browsers, while they may feature
-PDF viewers on separate tabs, are still unable to display PDFs as part
-of a web page. If the converted PDF is magnified by zooming, it will be
-seen to reveal remarkable detail.
+The converted image, \href{images/animals.pdf}{animals.pdf}, may be
+viewed from the given link. Web browsers, while they may feature PDF
+viewers on separate tabs, are still unable to display PDFs as part of a
+web page. If the converted PDF is magnified by zooming, it will be seen
+to reveal remarkable detail. And the difference between the JPEG and PDF
+file sizes is negligible.
 
-What happens, though, if the half-sized image is use to generate the
-PDF. It is smaller and accordingly embodies less information than the
+What happens, though, if the half-sized image is used to generate the
+PDF? It is smaller and accordingly embodies less information than the
 original.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ExtensionTok{convert}\NormalTok{ test{-}cropped{-}halfsize.png test{-}cropped{-}halfsize.pdf}
+\ExtensionTok{convert}\NormalTok{ animals{-}halfsize.jpg animals{-}halfsize.pdf}
+
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ animals{-}halfsize.jpg animals{-}halfsize.pdf }\KeywordTok{|} \DataTypeTok{\textbackslash{}}
+\FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{64K}\NormalTok{     animals{-}halfsize.jpg}
+\ExtensionTok{64K}\NormalTok{     animals{-}halfsize.pdf}
 \end{Highlighting}
 \end{Shaded}
 
-And it would work! But the results might not be as expected. Here is an
-example.
+Again, no surprises here. The half-sized PDF tracks the file size of the
+half-sized JPEG.
 
-\hypertarget{cairo-and-poppler}{%
-\subsection{cairo and poppler}\label{cairo-and-poppler}}
+\hypertarget{raster-to-svg-with-convert}{%
+\subsubsection{\texorpdfstring{Raster to SVG with
+\texttt{convert}}{Raster to SVG with convert}}\label{raster-to-svg-with-convert}}
+
+Let us try to harness \texttt{ImageMagick}'s \texttt{convert} again,
+this time to change from JPEG to SVG:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{convert}\NormalTok{ animals.jpg animals.svg}
+
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ animals.jpg animals.svg }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{200K}\NormalTok{    animals.jpg}
+\ExtensionTok{436K}\NormalTok{    animals.svg}
+\end{Highlighting}
+\end{Shaded}
+
+The SVG file is more than \emph{twice} the size of the original JPEG.
+The question arises whether there is an alternative route to the SVG
+that could give us smaller file sizes but comparable fidelity. What if
+we did not convert from raster to SVG but from raster to PDF and thence
+to SVG?
+
+Since PDF to SVG conversion is really part of vector to vector
+conversion, we will revisit this question
+\protect\hyperlink{pdf-to-svg}{later}.
+
+We will not consider the \texttt{text-only} image here as that image
+originated not as a raster but as a PDF in the first place.
+
+\hypertarget{vector-to-raster}{%
+\subsection{Vector to raster}\label{vector-to-raster}}
+
+The \texttt{poppler} utilities, with the \texttt{cairo} backend are the
+primary resource here. Because the \texttt{text-only} image has been
+produced natively in PDF, we will use it as the the example for these
+conversions.
+
+\hypertarget{pdf-to-png-and-jpeg-poppler-and-cairo}{%
+\subsubsection{\texorpdfstring{PDF to PNG and JPEG: \texttt{poppler} and
+\texttt{cairo}}{PDF to PNG and JPEG: poppler and cairo}}\label{pdf-to-png-and-jpeg-poppler-and-cairo}}
+
+It was \protect\hyperlink{text-only-image}{mentioned above} that
+\texttt{text-only} was originally generated as a PDF, vector graphics
+image and subsequently converted to the PNG and JPEG formats. We explain
+how that was done and also why the \texttt{ImageMagick} suite is not
+used for this purpose.
+
+The \texttt{poppler} suite contains utilities to convert from PDF to
+several raster formats. Two versatile utilities called
+\texttt{pdftocairo} and \texttt{pdftoppm} are available for our purpose.
+One may view their usage by typing the name of the utility prefixed by
+\texttt{man} or suffixed by \texttt{-help}, although the former is more
+exhaustive.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{pdftocairo} \AttributeTok{{-}png} \AttributeTok{{-}r}\NormalTok{ 600 }\AttributeTok{{-}singlefile}\NormalTok{ text{-}only.pdf }\DataTypeTok{\textbackslash{}}
+\NormalTok{text{-}only{-}600{-}dpi{-}cairo}
+
+\ExtensionTok{pdftoppm} \AttributeTok{{-}png} \AttributeTok{{-}r}\NormalTok{ 600 }\AttributeTok{{-}singlefile}\NormalTok{ text{-}only.pdf }\DataTypeTok{\textbackslash{}}
+\NormalTok{text{-}only{-}600{-}dpi{-}ppm}
+
+\ExtensionTok{pdftocairo} \AttributeTok{{-}jpeg} \AttributeTok{{-}jpegopt} \StringTok{"quality=100"} \AttributeTok{{-}r}\NormalTok{ 600 }\DataTypeTok{\textbackslash{}}
+\NormalTok{{-}singlefile text{-}only.pdf text{-}only{-}600{-}dpi{-}cairo}
+
+\ExtensionTok{pdftoppm} \AttributeTok{{-}jpeg} \AttributeTok{{-}jpegopt} \StringTok{"quality=100"} \AttributeTok{{-}r}\NormalTok{ 600 }\DataTypeTok{\textbackslash{}}
+\NormalTok{{-}singlefile text{-}only.pdf text{-}only{-}600{-}dpi{-}ppm}
+
+\ExtensionTok{convert} \AttributeTok{{-}units}\NormalTok{ pixelsperinch }\AttributeTok{{-}density}\NormalTok{ 600 }\AttributeTok{{-}quality}\NormalTok{ 100 }\DataTypeTok{\textbackslash{}}
+\NormalTok{text{-}only{-}600{-}dpi{-}cairo.png text{-}only{-}600{-}dpi{-}cairo{-}IM.jpg}
+
+\ExtensionTok{convert} \AttributeTok{{-}units}\NormalTok{ pixelsperinch }\AttributeTok{{-}density}\NormalTok{ 600 }\AttributeTok{{-}quality}\NormalTok{ 100 }\DataTypeTok{\textbackslash{}}
+\NormalTok{text{-}only{-}600{-}dpi{-}ppm.png text{-}only{-}600{-}dpi{-}ppm{-}IM.jpg}
+\end{Highlighting}
+\end{Shaded}
+
+The value \texttt{-r\ 600} signifies a resolution of 600 pixels per inch
+(PPI), or alternatively, dots per inch (dpi). The default value is 150
+PPI. The value of 600 is suitable for printing on laser printers to give
+output that will visually rival the original PDF in quality. Note that
+while raster images have inherent resolutions, PDF images have none:
+they scale without loss of quality.
+
+The \texttt{-singlefile} option is used because we are simply converting
+a single ``page'' of PDF rather than a numbered page sequence. In all
+cases, the destination filename is the ``root'' of the converted file
+sequence, which in this case is the filename without any extension.
+
+In addition, the JPEG version may feature lossy compression where
+quality is traded for file size. Since PNG is lossless, to compare the
+two formats on an even keel, we specify that the \texttt{-quality} of
+the JPEG should be the maximum of 100.
+
+Both \texttt{pdftocairo} and \texttt{pdftoppm} are used in the
+conversions above, with appropriately named filenames.
+
+We could also use \texttt{ImageMagick}'s \texttt{convert} to convert
+from PNG to JPEG, and this is done in the last two commands above. Note
+that this is strictly not a vector to raster conversion but merely
+raster to raster. See
+\protect\hyperlink{why-is-imagemagick-disallowed-for-pdf-to-raster-1}{below}
+for why we cannot convert from PDF to raster with \texttt{convert}.
+
+The files sizes that result are shown below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text{-}only}\PreprocessorTok{*}\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{148K}\NormalTok{    text{-}only{-}600{-}dpi{-}cairo{-}IM.jpg}
+\ExtensionTok{120K}\NormalTok{    text{-}only{-}600{-}dpi{-}cairo.jpg}
+\ExtensionTok{140K}\NormalTok{    text{-}only{-}600{-}dpi{-}ppm{-}IM.jpg}
+\ExtensionTok{112K}\NormalTok{    text{-}only{-}600{-}dpi{-}ppm.jpg}
+\ExtensionTok{16K}\NormalTok{     text{-}only.pdf}
+\ExtensionTok{40K}\NormalTok{     text{-}only{-}600{-}dpi{-}cairo.png}
+\ExtensionTok{40K}\NormalTok{     text{-}only{-}600{-}dpi{-}ppm.png}
+\end{Highlighting}
+\end{Shaded}
+
+The numbers tell their own story. I would have expected the two sets of
+raster images output by \texttt{pdftocairo} and \texttt{pdftoppm} to be
+roughly equal in size, given their identical options during invocation.
+Strangely, they are not, at least for the JPEGs. This could be either
+because of different defaults, or different algorithms, or something
+else: I simply do not know.
+
+It appears that \texttt{pdftoppm} gives marginally smaller file sizes
+for JPEG than \texttt{pdftocairo}. Moreover, when \texttt{pdftoppm} is
+used to convert directly from PDF to JPEG, the file size is smaller than
+when PNG is used as an intermediate file format and conversion to JPEG
+is by \texttt{ImageMagick}'s \texttt{convert}.
+
+One other takeaway is that text-rich images are better rendered in PNG
+than JPEG. The PDF and PNG image file sizes are of the same order of
+magnitude, whereas the JPEGS are an order of magnitude larger.
+
+\hypertarget{why-is-imagemagick-disallowed-for-pdf-to-raster}{%
+\subsubsection{\texorpdfstring{Why is \texttt{ImageMagick} disallowed
+for PDF to
+raster?}{Why is ImageMagick disallowed for PDF to raster?}}\label{why-is-imagemagick-disallowed-for-pdf-to-raster}}
+
+If you try to convert a PDF to any raster image format, you will get an
+error:
+
+\begin{verbatim}
+convert text-only.pdf text-only.png
+---
+convert: attempt to perform an operation not allowed by the security policy `gs' @ error/delegate.c/ExternalDelegateCommand/378.
+convert: no images defined `text-only.png' @ error/convert.c/ConvertImageCommand/3304.
+\end{verbatim}
+
+The reason why this is now disallowed is {[}explained in the
+appendix{]}{[}Appendix: \texttt{ImageMagick}'s security
+vulnerabilities{]}.
+
+\hypertarget{svg-to-png-and-jpeg}{%
+\subsubsection{SVG to PNG and JPEG}\label{svg-to-png-and-jpeg}}
+
+At present, most converters from SVG to other formats do not support
+fonts as well as PDF does. Bear this deficit in mind as SVG to raster
+converters are invoked. Both \texttt{ImageMagick} and \texttt{Inkscape}
+are able to convert SVG to PNG. Command line invocations for each and
+their resultng file sizes are detailed below. Note that the
+\texttt{cairo} backend might be used in many of these utilities.
+
+\%\%\% Clean up below \%\%\%
+
+The \texttt{Inkscape} GUI-based vector graphics editor supports SVG as
+its native format and allows export of the generated SVG graphics both
+as PDF and as PNG. Let us use the \texttt{text-only} image as an example
+and convert it from its original PDF format to an SVG using
+\texttt{pdftocairo}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{pdftocairo} \AttributeTok{{-}svg}\NormalTok{ text{-}only.pdf text{-}only.svg}
+
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text{-}only.}\PreprocessorTok{*}\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{16K}\NormalTok{     text{-}only.pdf}
+\ExtensionTok{12K}\NormalTok{     text{-}only.svg}
+\end{Highlighting}
+\end{Shaded}
+
+We could open up \texttt{text-only.svg} in \texttt{Inkscape} and save it
+as a PDF, \texttt{text-only-inkscape.pdf} completing the round trip. Or
+we could use the command line so:
+
+\begin{verbatim}
+inkscape text-only.svg -o text-only-inkscape.pdf
+
+ls -Xsh text-only*.{svg,pdf}| awk '{print $1 "\t" $2}'
+---
+8.0K    text-only-inkscape.pdf
+16K     text-only.pdf
+12K     text-only.svg
+\end{verbatim}
+
+What exactly has been gained or lost in this round trip is a little too
+recondite to consider here, and covers issues such as PDF version, font
+embedding or its absence, default borders, etc.
+
+More to the point, though, is how do we convert from SVG to PNG on the
+command line using inkscape?
+
+What about SVG to PNG? CairoSVG Inkscape SVG to PNG?
+\texttt{ImageMagick} SVG to PNG?
+
+The cairosvg module offers 4 functions:
+
+\begin{verbatim}
+svg2pdf,
+svg2png,
+svg2ps, and
+svg2svg.
+\end{verbatim}
+
+CairoSVG is designed to parse well-formed SVG files, and draw them on a
+Cairo surface. Cairo is then able to export them to PDF, PS, PNG, and
+even SVG files.
+
+\hypertarget{vector-to-vector}{%
+\subsection{Vector to vector}\label{vector-to-vector}}
+
+There are principally two format conversions here:
+
+\begin{itemize}
+\tightlist
+\item
+  PDF to SVG; and
+\item
+  SVG to PDF.
+\end{itemize}
+
+We look at each in turn below.
+
+\hypertarget{pdf-to-svg-pdftocairo-and-pdftoppm}{%
+\subsubsection{\texorpdfstring{PDF to SVG: \texttt{pdftocairo} and
+\texttt{pdftoppm}}{PDF to SVG: pdftocairo and pdftoppm}}\label{pdf-to-svg-pdftocairo-and-pdftoppm}}
+
+The \texttt{poppler} standalone utilities \texttt{pdftocairo} and
+\texttt{pdftoppm} offer a route from PDF to SVG. So, if we had the file
+\texttt{animals.pdf} we could convert it to SVG:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# PDF to SVG using pdftocairo}
+\ExtensionTok{pdftocairo} \AttributeTok{{-}svg}\NormalTok{ animals.pdf animals{-}pdftocairo.svg}
+
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ animals.pdf animals{-}pdftocairo.svg }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{204K}\NormalTok{    animals.pdf}
+\ExtensionTok{268K}\NormalTok{    animals{-}pdftocairo.svg}
+\end{Highlighting}
+\end{Shaded}
+
+Two observations are pertinent:
+
+\begin{enumerate}
+\item
+  It is preferable to convert from a raster image to PDF using
+  \texttt{convert} and then convert that PDF to SVG using
+  \texttt{pdftocairo} rather than convert directly from a raster to an
+  SVG using \texttt{convert} in a single step. The file sizes that
+  result are very much smaller with the two-stage conversion.
+\item
+  \texttt{pdftoppm} is not set up to convert \emph{to} SVG, and hence
+  cannot be used.
+\end{enumerate}
+
+\hypertarget{pdf2svg}{%
+\subsubsection{\texorpdfstring{\texttt{pdf2svg}}{pdf2svg}}\label{pdf2svg}}
+
+There is a utility called
+\href{https://github.com/dawbarton/pdf2svg}{\texttt{pdf2svg}} that has
+been available for some time now. It may be used to accomplish the same
+PDF to SVG conversion as \texttt{pdftocairo}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# PDF to SVG using pdf2svg}
+\ExtensionTok{pdf2svg}\NormalTok{ animals.pdf animals{-}pdf2svg.svg}
+
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ animals.pdf animals{-}pdf2svg.svg }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{204K}\NormalTok{    animals.pdf}
+\ExtensionTok{268K}\NormalTok{    animals{-}pdf2svg.svg}
+\end{Highlighting}
+\end{Shaded}
+
+The file sizes are identical to those from the \texttt{pdftocairo}
+conversion. Drew Barton, the author of \texttt{pdf2svg},
+\href{https://cityinthesky.co.uk/opensource/pdf2svg/}{has written}:
+
+\begin{quote}
+Note: since this utility was written, the maintainers of Poppler have
+written a utility that works on the same principle: \texttt{pdftocairo}.
+I recommend that you use their utility since it is better maintained
+than mine.
+\end{quote}
+
+So, it appears that \texttt{pdftocairo} is sufficient for converting
+from PDF to SVG.
 
 \texttt{rsvg-convert} \texttt{pdftocairo}
 
@@ -932,8 +1309,8 @@ https://cgit.freedesktop.org/cairo
 
 https://wiki.inkscape.org/wiki/index.php/Tools
 
-\hypertarget{pdf2svg}{%
-\subsection{pdf2svg}\label{pdf2svg}}
+\hypertarget{pdf2svg-1}{%
+\subsection{pdf2svg}\label{pdf2svg-1}}
 
 https://cityinthesky.co.uk/opensource/pdf2svg/
 
@@ -988,33 +1365,32 @@ supported}\label{pdf-to-image-not-supported}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\ExtensionTok{convert}\NormalTok{ test.pdf test.png}
-\ExtensionTok{convert:}\NormalTok{ unable to open image }\StringTok{\textquotesingle{}test.pdf\textquotesingle{}}\NormalTok{: No such file or directory @ error/blob.c/OpenBlob/3537.}
-\ExtensionTok{convert:}\NormalTok{ no images defined }\KeywordTok{\textasciigrave{}}\ExtensionTok{test.png}\StringTok{\textquotesingle{} @ error/convert.c/ConvertImageCommand/3304.}
-\end{Highlighting}
-\end{Shaded}
+\begin{verbatim}
+convert test.pdf test.png
+---
+convert: unable to open image 'test.pdf': No such file or directory @ error/blob.c/OpenBlob/3537.
+convert: no images defined `test.png' @ error/convert.c/ConvertImageCommand/3304.
+\end{verbatim}
 
 \hypertarget{security-considerations}{%
 \subsubsection{Security considerations}\label{security-considerations}}
 
-ImageMagick is no more the famed Swiss army knife for conversions from
-PDFs to images.
+\texttt{ImageMagick} is no more the famed Swiss army knife for
+conversions from PDFs to images.
 
 Give references to security concerns.
 
 \hypertarget{enter-poppler}{%
 \subsection{Enter poppler}\label{enter-poppler}}
 
-\hypertarget{vector-to-raster}{%
-\subsection{Vector to raster}\label{vector-to-raster}}
+\hypertarget{vector-to-raster-1}{%
+\subsection{Vector to raster}\label{vector-to-raster-1}}
 
 It was \protect\hyperlink{text-only-image}{mentioned above} that
 \texttt{text-only} was originally generated as a PDF, vector graphics
 image and subsequently converted to the PNG and JPEG formats. We explain
-how that was done and also why the ImageMagick suite is not used for
-this purpose.
+how that was done and also why the \texttt{ImageMagick} suite is not
+used for this purpose.
 
 \hypertarget{poppler-and-cairo}{%
 \subsubsection{\texorpdfstring{\texttt{poppler} and
@@ -1061,14 +1437,14 @@ cases, the destination filename is the ``root'' of the converted file
 sequence, which in this case is the filename without any extension.
 
 In addition, the JPEG version may feature lossy compression where
-quality is traded for filesize. Since PNG is lossless, to compare the
+quality is traded for file size. Since PNG is lossless, to compare the
 two formats on an even keel, we specify that the \texttt{-quality} of
 the JPEG should be the maximum of 100.
 
 Both \texttt{pdftocairo} and \texttt{pdftoppm} are used in the
 conversions above, with appropriately named filenames. One could also
-use ImageMagick's \texttt{convert} to convert from PNG to JPEG, and this
-is done in the last two commands.
+use \texttt{ImageMagick}'s \texttt{convert} to convert from PNG to JPEG,
+and this is done in the last two commands.
 
 The files sizes that result are shown below:
 
@@ -1097,37 +1473,36 @@ It appears that \texttt{pdftoppm} gives marginally smaller file sizes
 for JPEG than \texttt{pdftocairo}. Moreover, when \texttt{pdftoppm} is
 used to convert directly from PDF to JPEG, the file size is smaller than
 when PNG is used as an intermediate file format and conversion to JPEG
-is by ImageMagick's \texttt{convert}.
+is by \texttt{ImageMagick}'s \texttt{convert}.
 
 One other takeaway is that text-rich images are better rendered in PNG
 than JPEG. The PDF and PNG image file sizes are of the same order of
 magnitude, whereas the JPEGS are an order of magnitude larger.
 
-\hypertarget{why-is-imagemagick-disallowed-for-pdf-to-raster}{%
-\subsubsection{Why is ImageMagick disallowed for PDF to
-raster?}\label{why-is-imagemagick-disallowed-for-pdf-to-raster}}
+\hypertarget{why-is-imagemagick-disallowed-for-pdf-to-raster-1}{%
+\subsubsection{\texorpdfstring{Why is \texttt{ImageMagick} disallowed
+for PDF to
+raster?}{Why is ImageMagick disallowed for PDF to raster?}}\label{why-is-imagemagick-disallowed-for-pdf-to-raster-1}}
 
 If you try to convert a PDF to any raster image format, you will get an
 error:
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\ExtensionTok{convert}\NormalTok{ text{-}only.pdf text{-}only.png}
-\ExtensionTok{{-}{-}{-}}
-\ExtensionTok{convert:}\NormalTok{ attempt to perform an operation not allowed by the security policy }\KeywordTok{\textasciigrave{}}\ExtensionTok{gs}\StringTok{\textquotesingle{} @ error/delegate.c/ExternalDelegateCommand/378.}
-\StringTok{convert: no images defined \textasciigrave{}text{-}only.png\textquotesingle{}}\NormalTok{ @ error/convert.c/ConvertImageCommand/3304.}
-\end{Highlighting}
-\end{Shaded}
+\begin{verbatim}
+convert text-only.pdf text-only.png
+---
+convert: attempt to perform an operation not allowed by the security policy `gs' @ error/delegate.c/ExternalDelegateCommand/378.
+convert: no images defined `text-only.png' @ error/convert.c/ConvertImageCommand/3304.
+\end{verbatim}
 
-The reason why this is now disallowed is
-\protect\hyperlink{appendix-imagemagicks-security-vulnerabilities}{explained
-in the appendix}.
+The reason why this is now disallowed is {[}explained in the
+appendix{]}{[}Appendix: \texttt{ImageMagick}'s security
+vulnerabilities{]}.
 
 \hypertarget{svg-to-raster}{%
 \subsubsection{SVG to raster}\label{svg-to-raster}}
 
-What about SVG to PNG? CairoSVG Inkscape SVG to PNG? ImageMagick SVG to
-PNG?
+What about SVG to PNG? CairoSVG Inkscape SVG to PNG?
+\texttt{ImageMagick} SVG to PNG?
 
 The cairosvg module offers 4 functions:
 
@@ -1142,8 +1517,8 @@ CairoSVG is designed to parse well-formed SVG files, and draw them on a
 Cairo surface. Cairo is then able to export them to PDF, PS, PNG, and
 even SVG files.
 
-\hypertarget{vector-to-vector}{%
-\subsection{Vector to vector}\label{vector-to-vector}}
+\hypertarget{vector-to-vector-1}{%
+\subsection{Vector to vector}\label{vector-to-vector-1}}
 
 There are basically two possibilities:
 
@@ -1168,8 +1543,8 @@ pdftocairo -svg pdftoppm -svg? pdf2svg Any others?
 \subsubsection{SVG to PDF}\label{svg-to-pdf}}
 
 CairoSVG https://cairosvg.org/: single executabe cairosvg from
-python-cairosvg: safety rsvg-convert from librsvg Inkscape ImageMagick
-any others?
+python-cairosvg: safety rsvg-convert from librsvg Inkscape
+\texttt{ImageMagick} any others?
 
 https://wiki.gnome.org/Projects/LibRsvg
 
@@ -1186,43 +1561,69 @@ How to use resize etc.
 \hypertarget{summary}{%
 \subsection{Summary}\label{summary}}
 
-Tabular representation
+\texttt{ImageMagick}'s \texttt{convert} is the tool of choice for
+converting from any raster format to another raster format or to PDF or
+SVG.
 
-raster to rater ImageMagick convert
+When we start out with PDF as the source image format, and the
+destination format is either a raster format or SVG, the tool of choice
+is \texttt{pdftocairo} from the \texttt{poppler} utilities.
 
-raster to vector ImageMagick convert
+When the source format is SVG and the destination format is either PDF
+or a raster format, the tool of choice is \texttt{cairosvg}.
 
-vector to raster cairo/poppler
+*\textbf{tbl:formats?} summarizes this information, which is current at
+the time of writing, but could change as image utilities landscape
+changes with time.
 
-vector to vector cairosvg librsvg-convert Inkscape
+\begin{longtable}[]{@{}ll@{}}
+\caption{Tools for image format conversions.
+\{\#tbl:formats\}}\tabularnewline
+\toprule
+Conversion Type & Tool \\
+\midrule
+\endfirsthead
+\toprule
+Conversion Type & Tool \\
+\midrule
+\endhead
+raster to raster & \texttt{convert} \\
+raster to PDF & \texttt{convert} \\
+raster to SVG & \texttt{convert} \\
+PDF to raster & \texttt{pdftocairo} \\
+SVG to raster & \texttt{cairosvg} \\
+PDF to SVG & \texttt{pdftocairo} \\
+SVG to PDF & \texttt{cairosvg} \\
+\bottomrule
+\end{longtable}
 
-\hypertarget{appendix-imagemagicks-security-vulnerabilities}{%
-\subsection{Appendix: ImageMagick's security
-vulnerabilities}\label{appendix-imagemagicks-security-vulnerabilities}}
+\hypertarget{appendix-security-vulnerabilities-in-imagemagick}{%
+\subsubsection{\texorpdfstring{Appendix: Security vulnerabilities in
+\texttt{ImageMagick}}{Appendix: Security vulnerabilities in ImageMagick}}\label{appendix-security-vulnerabilities-in-imagemagick}}
 
-Great power exacts a commensurate price. ImageMagick's great power and
-ease of use does come at a great price: vulnerability to exploits by
-malicious remote actors.
+Great power exacts a commensurate price. \texttt{ImageMagick}'s great
+power and ease of use does come at a great price: vulnerability to
+exploits by malicious remote actors.
 
-ImageMagick uses external libraries or \emph{backend tools} which are
-called via \texttt{system()} commands in accordance with
+\texttt{ImageMagick} uses external libraries or \emph{backend tools}
+which are called via \texttt{system()} commands in accordance with
 \emph{delegated} command strings specified in a configuration file
 called \texttt{policy.xml}.
 
 In April 2016, it was reported that because of insufficient validation
 of delegated command strings, it was possible for someone to execute
 malicious code remotely, to the detriment of the unwitting user of
-ImageMagick. This was revealed at a website, interestingly named
-\href{https://imagetragick.com/}{ImageTragick} to attract sufficient
-attention and remedial action to the discovered bug {[}5{]}.
+\texttt{ImageMagick}. This was revealed at a website, interestingly
+named \href{https://imagetragick.com/}{ImageTragick} to attract
+sufficient attention and remedial action to the discovered bug {[}5{]}.
 
 In November 2020,
 \href{https://portswigger.net/daily-swig/imagemagick-pdf-parsing-flaw-allowed-attacker-to-execute-shell-commands-via-maliciously-crafted-image}{another
 security vulnerability was discovered} {[}6{]}. It was
 \href{https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html}{reported
-and promptly patched} by the ImageMagick maintainers {[}7{]}.
+and promptly patched} by the \texttt{ImageMagick} maintainers {[}7{]}.
 
-Recent versions of the ImageMagick suite, bundled with major
+Recent versions of the \texttt{ImageMagick} suite, bundled with major
 distributions, should have correctly configured \texttt{policy.xml}
 files that will block known exploits.
 \href{https://www.techopedia.com/definition/25266/sandboxing}{Sandboxing}
@@ -1230,21 +1631,14 @@ is another technique to quarantine the system from possible
 vulnerabilities. Above all, it is vital to keep system and application
 software up to date to avail of evolutions in performance and security.
 
-\hypertarget{image-used-below}{%
-\subsection{Image used below}\label{image-used-below}}
-
-https://www.rawpixel.com/board/1236113/kunstformen-der-natur-ernst-haeckel-free-cc0-public-domain-animal-prints
-
-\hypertarget{generation-of-test-images}{%
-\paragraph{Generation of test images}\label{generation-of-test-images}}
-
 \hypertarget{feedback}{%
 \paragraph{Feedback}\label{feedback}}
 
 Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
 
-https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/
+\noindent A PDF version of this article is
+\href{./image-format-conversions.pdf}{available for download here.}
 
 \hypertarget{bibliography}{%
 \section*{References}\label{bibliography}}
