@@ -486,6 +486,8 @@ The reason why this is now disallowed is [explained in the appendix][Appendix: S
 
 ### SVG to PNG and JPEG
 
+There was a time when SVGs were ill-supported by browsers and therefore, PNGs and JPEGs dominated the logo and icon landscape on the web. Now that most mainstream browsers support SVGs out of the box, there is healthy support for tools that support conversions to and from SVGs.
+
 #### SVG basics
 
 An SVG file is a text file _describing_ points, curves, and shapes as they are rendered on a page. Such a description is unshackled from the rectangular array of pixels that typify a raster image. So, what is the _natural size_ of an SVG image?
@@ -509,7 +511,18 @@ text-only-svg-convert.png PNG 286x70 286x70+0+0 8-bit sRGB 6548B 0.000u 0:00.000
 
 And, not unexpectedly, the numbers returned by `identify` match those we derived above by simple unit conversion. :slightly_smiling_face:
 
-Note that the resulting PNG image is often smaller than desired and must be rescaled. Other conversion tools are better able deliver larger PNGs as default than `convert`.
+Regarding file sizes, the PNG is actually smaller than the SVG:
+
+```bash
+ls -Xsh text-only.svg text-only-svg-convert.png | awk '{print $1 "\t" $2}'
+---
+8.0K    text-only-svg-convert.png
+12K     text-only.svg
+```
+
+![PNG image from SVG using `convert` with no options.]({attach}images/text-only-svg-convert.png){#fig:convertSVGtoPNG width=80%}
+
+The PNG image lacks the sharpness of definition the original exhibited, which is not surprising because an increase in image resolution has not been achieved, and moreover, file size is reduced. For SVG to PNG conversion, there are better tools than `convert`.
 
 Font support in SVG is not widespread and conversions might result in non-optimal font rendering after conversion.
 
@@ -527,30 +540,74 @@ a.  [`rsvg-convert`](https://en.wikipedia.org/wiki/Librsvg) from `librsvg`.
 
 We know that `convert` will produce a minimally sized PNG that faithfully converts `pt` to pixels. Other tools might enlarge the PNG by using some scaling factor larger than one. Moreover, different programs might insert borders, transparent backgrounds, etc., modifying the aspect ratio the PNG slightly. We will gloss over such details in the tool comparison below and simply focus on the command line invocations and resulting file sizes. Bear in mind also that some of the tools could use identical backends and therefore give identical output images.
 
-#### Tool comparison
+#### The tool faceoff
 
-We will convert `text-only` from SVG to PNGs at 600 dpi and compare results.
+We will convert `text-only` from SVG to PNGs at 600 dpi and compare results, starting with `inkscape`.
 
 ```bash
 inkscape  -d 600 -o text-only-600-dpi-inkscape-svg.png text-only.svg
-
-cairosvg -d 600 -f png -o text-only-600-dpi-cairosvg.png text-only.svg
-
-ls -Xsh text-only.svg text-only-600*svg.* | awk '{print $1 "\t" $2}'
 ---
-44K     text-only-600-dpi-cairosvg.png
-8.0K    text-only-600-dpi-convert-svg.png
+Background RRGGBBAA: ffffff00
+Area 0:0:285.747:69.5467 exported to 1786 x 435 pixels (600 dpi)
+---
+identify text-only-600-dpi-inkscape-svg.png
+---
+text-only-600-dpi-inkscape-svg.png PNG 1786x435 1786x435+0+0 8-bit sRGB 43268B 0.000u 0:00.000
+---
+ls -sh text-only-600-dpi-inkscape-svg.png | awk '{print $1 "\t" $2}'
+---
 44K     text-only-600-dpi-inkscape-svg.png
-12K     text-only.svg
 ```
 
-At present, most converters from SVG to other formats do not support fonts as well as PDF does. Bear this deficit in mind as SVG to raster converters are invoked. Both `ImageMagick` and `Inkscape` are able to convert SVG to PNG. Command line invocations for each and their resultng file sizes are detailed below. Note that the `cairo` backend might be used in many of these utilities.
+![PNG at 600 dpi of `text-only` from SVG using `inkscape`.]({attach}images/text-only-600-dpi-inkscape-svg.png){#fig:inkscapeSVGtoPNG width=80%}
 
+The explicit conversion from points to pixels at 600 dpi is clear, as is the image itself. We would expect the PNG have a size of 1786 by 435 pixels, and it does. No surprises here. :slightly_smiling_face:
 
+If we use `cairosvg`, we get these results:
 
-Later, we will generate an SVG version of the `animals` image and compare conversion results, specifically file sizes and image quality.
+```bash
+cairosvg -d 600 -f png -o text-only-600-dpi-cairosvg.png text-only.svg
 
-%%% Clean up below %%%
+identify text-only-600-dpi-cairosvg.png
+---
+text-only-600-dpi-cairosvg.png PNG 1785x434 1785x434+0+0 8-bit sRGB 42999B 0.000u 0:00.000
+---
+ls -sh text-only-600-dpi-cairosvg.png | awk '{print $1 "\t" $2}'
+---
+44K     text-only-600-dpi-cairosvg.png
+```
+
+![PNG at 600 dpi of `text-only` from SVG using `cairosvg`.]({attach}images/text-only-600-dpi-cairosvg.png){#fig:cairosvgSVGtoPNG width=80%}
+
+The image and file sizes are within a whisker of each other for `inkscape` and `cairosvg` and they are comparable in ease of use and fidelity. Indeed, it could very well be that `inkscape` uses the `cairo` backend.
+
+Now for the final tool, `rsvg-convert`.
+
+```bash
+rsvg-convert -a -d 600 -p 600 -f png -o text-only-600-dpi-rsvg-convert.png text-only.svg
+
+identify text-only-600-dpi-rsvg-convert.png
+---
+text-only-600-dpi-rsvg-convert.png PNG 1786x435 1786x435+0+0 8-bit sRGB 43171B 0.000u 0:00.000
+---
+ls -sh text-only-600-dpi-rsvg-convert.png | awk '{print $1 "\t" $2}'
+---
+44K     text-only-600-dpi-rsvg-convert.png
+```
+
+Note that the `-a` option preserves aspect ratio, and the $x$ and $y$ resolutions have to specified separately using `-d` and `-p` respectively. Though more verbose, it also offers options to shear or zoom the image is more versatile.
+
+All of `inkscape`, `cairosvg`, and `rsvg-convert` produce PNG files of the same size and visual quality, as is apparent from +@fig:inkscapeSVGtoPNG, +@fig:cairosvgSVGtoPNG, and +@fig:rsvg-convertSVGtoPNG.
+
+![PNG at 600 dpi of `text-only` from SVG using `rsvg-convert`.]({attach}images/text-only-600-dpi-rsvg-convert.png){#fig:rsvg-convertSVGtoPNG width=80%}
+
+Images like `animals` are best displayed as JPEGs. There is no need to convert such images from JPEG to SVG and back again, simply to view how the quality changed during the roundtrip. Accordingly, we will not consider the `animals` image here.
+
+%% TEXT BELOW NOT CLEANED UP YET %%%
+
+## Vector to vector
+
+### PDF to SVG
 
 The `Inkscape` GUI-based vector graphics editor supports SVG as its native format and allows export of the generated SVG graphics both as PDF and as PNG. Let us use the `text-only` image as an example and convert it from its  original PDF format to an SVG using `pdftocairo`:
 
