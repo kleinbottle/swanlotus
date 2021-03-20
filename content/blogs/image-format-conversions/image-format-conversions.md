@@ -401,7 +401,7 @@ ls -sh text-only.pdf text-only*75* | awk '{print $1 "\t" $2}'
 
 View the [PDF generated from the 75 dpi PNG]({attach}images/text-only-75-dpi.pdf) on a separate browser tab and zoom in on the image as before. How does it compare with the [one generated previously from the 600 dpi PNG]({attach}images/text-only-from-600-dpi-PNG.pdf)?
 
-This is one reason why conversion from a PNG to a PDF might result in a PDF which looks like a raster image when zoomed in close. The source image resolution was not high enough to generate a PDF that does not degrade on zooming. _The definition of the original raster image is what the output PDF will embody._ Just because a PDF image scales does not mean it cannot exhibit blockiness.
+This is one reason why conversion from a PNG to a PDF might result in a PDF which looks like a raster image when zoomed in close. The source image resolution was not high enough to generate a PDF that does not degrade on zooming. _The visual quality of the original raster image is what the output PDF will embody._ Just because a PDF image scales does not mean it cannot exhibit blockiness. It will, if a low resolution raster image was used as source.
 
 ## Vector to raster
 
@@ -409,31 +409,39 @@ The `poppler` utilities, with the `cairo` backend are the primary resource for v
 
 ### PDF to PNG and JPEG: `poppler` and `cairo`
 
-It was [mentioned above][text-only image] that `text-only` was originally generated as a PDF, vector graphics image and subsequently converted to the PNG and JPEG formats. We explain how that was done and also why the `ImageMagick` suite is not used for this purpose.
+It was [mentioned above][text-only image] that `text-only` was originally generated as a native PDF, vector graphics image, and subsequently converted to the PNG and JPEG formats. We explain how that was done and also why the `ImageMagick` suite is not used for this purpose.
 
 The `poppler` suite contains utilities to convert from PDF to several raster formats. Two versatile utilities called `pdftocairo` and `pdftoppm` are available for our purpose. One may view their usage by typing the name of the utility prefixed by `man` or suffixed by `-help`, although the former is more exhaustive.
 
+To convert from vector to raster, we invoke commands like these:
+
 ```bash
+# PDF to PNG at 600 dpi; root file is the last argument
 pdftocairo -png -r 600 -singlefile text-only.pdf \
 text-only-600-dpi-cairo
 
+# Using the `pdftoppm` utility instead; same syntax
 pdftoppm -png -r 600 -singlefile text-only.pdf \
 text-only-600-dpi-ppm
 
+# Options may be passed to JPEG
 pdftocairo -jpeg -jpegopt "quality=100" -r 600 \
 -singlefile text-only.pdf text-only-600-dpi-cairo
 
+# Same syntax for `pdftoppm` as for `pdftocairo`
 pdftoppm -jpeg -jpegopt "quality=100" -r 600 \
 -singlefile text-only.pdf text-only-600-dpi-ppm
 
+# Using `convert` from ImageMagick for PNG to JPEG
 convert -units pixelsperinch -density 600 -quality 100 \
 text-only-600-dpi-cairo.png text-only-600-dpi-cairo-IM.jpg
 
+# Source PNG file was output by `pdftoppm` 
 convert -units pixelsperinch -density 600 -quality 100 \
 text-only-600-dpi-ppm.png text-only-600-dpi-ppm-IM.jpg
 ```
 
-The value `-r 600` signifies a resolution of 600 pixels per inch (PPI), or alternatively, dots per inch (dpi). The default value is 150 PPI. The value of 600 is suitable for printing on laser printers to give output that will visually rival the original PDF in quality. Note that while raster images have inherent resolutions, PDF images have none: they scale without loss of quality.
+The value `-r 600` signifies a resolution of 600 pixels per inch (ppi), or alternatively, dots per inch (dpi). The default value is 150 ppi. The value of 600 is suitable for printing on laser printers to give output that will visually rival the original PDF in quality. Note that while raster images have inherent resolutions, PDF images have none: they scale without loss of quality when generated as the native output format.
 
 The `-singlefile` option is used because we are simply converting a single "page" of PDF rather than a numbered page sequence. In all cases, the destination filename is the "root" of the converted file sequence, which in this case is the filename without any extension.
 
@@ -441,12 +449,12 @@ In addition, the JPEG version may feature lossy compression where quality is tra
 
 Both `pdftocairo` and `pdftoppm` are used in the conversions above, with appropriately named filenames.
 
-We could also use `ImageMagick`'s `convert` to convert from PNG to JPEG, and this is done in the last two commands above. Note that this is strictly not a vector to raster conversion but merely raster to raster. See [below][Why is `ImageMagick` disallowed for PDF to raster?] for why we cannot convert from PDF to raster with `convert`.
+We could also use `convert` from `ImageMagick` to convert from PNG to JPEG, and this is done in the last two commands above. Note that this is strictly not a vector to raster conversion but merely raster to raster. See [below][Why is `ImageMagick` disallowed for PDF to raster?] for why we cannot convert from PDF to raster with `convert`.
 
 The files sizes that result are shown below:
 
 ```bash
-ls -Xsh text-only*| awk '{print $1 "\t" $2}'
+ls -Xsh text-only.pdf text-only-600* | awk '{print $1 "\t" $2}'
 ---
 148K    text-only-600-dpi-cairo-IM.jpg
 120K    text-only-600-dpi-cairo.jpg
@@ -459,26 +467,88 @@ ls -Xsh text-only*| awk '{print $1 "\t" $2}'
 
 The numbers tell their own story. I would have expected the two sets of raster images output by `pdftocairo` and `pdftoppm` to be roughly equal in size, given their identical options during invocation. Strangely, they are not, at least for the JPEGs. This could be either because of different defaults, or different algorithms, or something else: I simply do not know.
 
-It appears that `pdftoppm` gives marginally smaller file sizes for JPEG than `pdftocairo`. Moreover, when `pdftoppm` is used to convert directly from PDF to JPEG, the file size is smaller than when PNG is used as an intermediate file format and conversion to JPEG is by `ImageMagick`'s `convert`.
+It appears that `pdftoppm` gives marginally smaller file sizes for JPEG than `pdftocairo`. Moreover, when `pdftoppm` is used to convert directly from PDF to JPEG, the file size is smaller than when PNG is used as an intermediate file format and conversion to JPEG is by `convert`.
 
 One other takeaway is that text-rich images are better rendered in PNG than JPEG. The PDF and PNG image file sizes are of the same order of magnitude, whereas the JPEGS are an order of magnitude larger.
 
 ### Why is `ImageMagick` disallowed for PDF to raster?
 
-If you try to convert a PDF to any raster image format, you will get an error:
+If you try to `convert` a PDF to any raster image format, you will get an error:
 
-```
+```bash
 convert text-only.pdf text-only.png
 ---
-convert: attempt to perform an operation not allowed by the security policy `gs' @ error/delegate.c/ExternalDelegateCommand/378.
-convert: no images defined `text-only.png' @ error/convert.c/ConvertImageCommand/3304.
+convert: attempt to perform an operation not allowed by the security policy 'gs' @ error/delegate.c/ExternalDelegateCommand/378.
+convert: no images defined 'text-only.png' @ error/convert.c/ConvertImageCommand/3304.
 ```
 
-The reason why this is now disallowed is [explained in the appendix][Appendix: `ImageMagick`'s security vulnerabilities].
+The reason why this is now disallowed is [explained in the appendix][Appendix: Security vulnerabilities in `ImageMagick`].
 
 ### SVG to PNG and JPEG
 
+#### SVG basics
+
+An SVG file is a text file _describing_ points, curves, and shapes as they are rendered on a page. Such a description is unshackled from the rectangular array of pixels that typify a raster image. So, what is the _natural size_ of an SVG image?
+
+It is instructive to open the file `text-only.svg` and look at the first block of text:
+
+```html
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="214.31pt" height="52.16pt" viewBox="0 0 214.31 52.16" version="1.2">
+```
+
+The _width_, _height_, and _viewBox_ of the SVG image are all stated in _points_, abbreviated as `pt` where 1 `pt` equals 1/72 inch [@oreilly2019]. At a screen setting of 96 pixels per inch, 1 `pt` equals 4/3 pixels. So, the native size of the `test-only` image as a PNG should be about 286 pixels by 70 pixels. When`convert` is applied on the SVG to yield the PNG, the latter is faithful to these unit conversions:
+
+```bash
+convert text-only.svg text-only-svg-convert.png
+
+identify text-only-svg-convert.png
+---
+text-only-svg-convert.png PNG 286x70 286x70+0+0 8-bit sRGB 6548B 0.000u 0:00.000
+```
+
+And, not unexpectedly, the numbers returned by `identify` match those we derived above by simple unit conversion. :slightly_smiling_face:
+
+Note that the resulting PNG image is often smaller than desired and must be rescaled. Other conversion tools are better able deliver larger PNGs as default than `convert`.
+
+Font support in SVG is not widespread and conversions might result in non-optimal font rendering after conversion.
+
+#### Conversion tools
+
+There is a growing number of tools that can convert an SVG to a PNG image. Among these are:
+
+a.  [`convert`](https://imagemagick.org/script/convert.php) from `ImageMagick`; 
+
+a.  [`Inkscape`](https://inkscape.org/);
+
+a.  [`cairosvg`](https://cairosvg.org/);
+
+a.  [`rsvg-convert`](https://en.wikipedia.org/wiki/Librsvg) from `librsvg`.
+
+We know that `convert` will produce a minimally sized PNG that faithfully converts `pt` to pixels. Other tools might enlarge the PNG by using some scaling factor larger than one. Moreover, different programs might insert borders, transparent backgrounds, etc., modifying the aspect ratio the PNG slightly. We will gloss over such details in the tool comparison below and simply focus on the command line invocations and resulting file sizes. Bear in mind also that some of the tools could use identical backends and therefore give identical output images.
+
+#### Tool comparison
+
+We will convert `text-only` from SVG to PNGs at 600 dpi and compare results.
+
+```bash
+inkscape  -d 600 -o text-only-600-dpi-inkscape-svg.png text-only.svg
+
+cairosvg -d 600 -f png -o text-only-600-dpi-cairosvg.png text-only.svg
+
+ls -Xsh text-only.svg text-only-600*svg.* | awk '{print $1 "\t" $2}'
+---
+44K     text-only-600-dpi-cairosvg.png
+8.0K    text-only-600-dpi-convert-svg.png
+44K     text-only-600-dpi-inkscape-svg.png
+12K     text-only.svg
+```
+
 At present, most converters from SVG to other formats do not support fonts as well as PDF does. Bear this deficit in mind as SVG to raster converters are invoked. Both `ImageMagick` and `Inkscape` are able to convert SVG to PNG. Command line invocations for each and their resultng file sizes are detailed below. Note that the `cairo` backend might be used in many of these utilities.
+
+
+
+Later, we will generate an SVG version of the `animals` image and compare conversion results, specifically file sizes and image quality.
 
 %%% Clean up below %%%
 
@@ -677,7 +747,7 @@ convert -units pixelsperinch -density 600 -quality 100 \
 text-only-600-dpi-ppm.png text-only-600-dpi-ppm-IM.jpg
 ```
 
-The value `-r 600` signifies a resolution of 600 pixels per inch (PPI). The default value is 150 PPI. The value of 600 is suitable for printing on laser printers to give output that will visually rival the original PDF in quality. Note that while raster images have inherent resolutions, PDF images have none: they scale without loss of quality.
+The value `-r 600` signifies a resolution of 600 pixels per inch (ppi). The default value is 150 ppi. The value of 600 is suitable for printing on laser printers to give output that will visually rival the original PDF in quality. Note that while raster images have inherent resolutions, PDF images have none: they scale without loss of quality.
 
 The `-singlefile` option is used because we are simply converting a single "page" of PDF rather than a numbered page sequence. In all cases, the destination filename is the "root" of the converted file sequence, which in this case is the filename without any extension.
 
@@ -769,11 +839,11 @@ How to use resize etc.
 
 ## Summary
 
-`ImageMagick`'s `convert` is the tool of choice for converting from any raster format to another raster format or to PDF or SVG.
+#.  `convert` from `ImageMagick` is the tool of choice for converting from any raster format to another raster format or to PDF or SVG.
 
-When we start out with PDF as the source image format, and the destination format is either a raster format or SVG, the tool of choice is `pdftocairo` from the `poppler` utilities.
+#.  When we start out with PDF as the source image format, and the destination format is either a raster format or SVG, the tool of choice is `pdftocairo` from the `poppler` utilities.
 
-When the source format is SVG and the destination format is either PDF or a raster format, the tool of choice is `cairosvg`.
+#.  When the source format is SVG and the destination format is either PDF or a raster format, the tool of choice is `cairosvg`.
 
 *@tbl:formats summarizes this information, which is current at the time of writing, but could change as the image utilities landscape changes with time. 
 
@@ -782,7 +852,7 @@ Conversion Type     Tool
 raster to raster    `convert`
 raster to PDF       `convert`
 raster to SVG       `convert`
-PDF to raster       `pdftocairo`
+PDF to raster       `pdftoppm`
 SVG to raster       `cairosvg`
 PDF to SVG          `pdftocairo`
 SVG to PDF          `cairosvg`
