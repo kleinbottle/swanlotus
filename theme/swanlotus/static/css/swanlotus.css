@@ -1,35 +1,14 @@
-/* Zenburn Code Styles */
-/* Styles for Zenburn code highlighting */
+/* Zenburn Syntax Highlighting Styles*/
+/*
+Zenburn Syntax Highlighting Styles.
+
+These styles are programmatically generated using Pandoc's --highlight-style option.
+Please see https://github.com/pelican-plugins/pandoc-reader/issues/18 for detailed
+instructions on how this is achieved.
+*/
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap");
-code {
-  white-space: pre-wrap;
-}
-
-span.smallcaps {
-  font-variant: small-caps;
-}
-
-span.underline {
-  text-decoration: underline;
-}
-
-div.column {
-  display: inline-block;
-  vertical-align: top;
-  width: 50%;
-}
-
-div.hanging-indent {
-  margin-left: 1.5em;
-  text-indent: -1.5em;
-}
-
-ul.task-list {
-  list-style: none;
-}
-
 pre > code.sourceCode {
   white-space: pre;
   position: relative;
@@ -42,6 +21,10 @@ pre > code.sourceCode > span {
 
 pre > code.sourceCode > span:empty {
   height: 1.2em;
+}
+
+.sourceCode {
+  overflow: visible;
 }
 
 code.sourceCode > span {
@@ -115,132 +98,132 @@ div.sourceCode {
     text-decoration: underline;
   }
 }
-/* Alert */
 code span.al {
   color: #ffcfaf;
 }
 
-/* Annotation */
+/* Alert */
 code span.an {
   color: #7f9f7f;
   font-weight: bold;
 }
 
-/* BaseN */
+/* Annotation */
 code span.bn {
   color: #dca3a3;
 }
 
-/* ControlFlow */
+/* BaseN */
 code span.cf {
   color: #f0dfaf;
 }
 
-/* Char */
+/* ControlFlow */
 code span.ch {
   color: #dca3a3;
 }
 
-/* Constant */
+/* Char */
 code span.cn {
   color: #dca3a3;
   font-weight: bold;
 }
 
-/* Comment */
+/* Constant */
 code span.co {
   color: #7f9f7f;
 }
 
-/* CommentVar */
+/* Comment */
 code span.cv {
   color: #7f9f7f;
   font-weight: bold;
 }
 
-/* Documentation */
+/* CommentVar */
 code span.do {
   color: #7f9f7f;
 }
 
-/* DataType */
+/* Documentation */
 code span.dt {
   color: #dfdfbf;
 }
 
-/* DecVal */
+/* DataType */
 code span.dv {
   color: #dcdccc;
 }
 
-/* Error */
+/* DecVal */
 code span.er {
   color: #c3bf9f;
 }
 
-/* Float */
+/* Error */
 code span.fl {
   color: #c0bed1;
 }
 
-/* Function */
+/* Float */
 code span.fu {
   color: #efef8f;
 }
 
-/* Information */
+/* Function */
 code span.in {
   color: #7f9f7f;
   font-weight: bold;
 }
 
-/* Keyword */
+/* Information */
 code span.kw {
   color: #f0dfaf;
 }
 
-/* Operator */
+/* Keyword */
 code span.op {
   color: #f0efd0;
 }
 
-/* Other */
+/* Operator */
 code span.ot {
   color: #efef8f;
 }
 
-/* Preprocessor */
+/* Other */
 code span.pp {
   color: #ffcfaf;
   font-weight: bold;
 }
 
-/* SpecialChar */
+/* Preprocessor */
 code span.sc {
   color: #dca3a3;
 }
 
-/* SpecialString */
+/* SpecialChar */
 code span.ss {
   color: #cc9393;
 }
 
-/* String */
+/* SpecialString */
 code span.st {
   color: #cc9393;
 }
 
-/* VerbatimString */
+/* String */
 code span.vs {
   color: #cc9393;
 }
 
-/* Warning */
+/* VerbatimString */
 code span.wa {
   color: #7f9f7f;
   font-weight: bold;
 }
 
+/* Warning */
 /* Pandoc Citation Styles */
 code {
   white-space: pre-wrap;
@@ -364,7 +347,7 @@ h1#bibliography {
   width: 0.625em;
 }
 
-.content:not(:last-child) {
+.box:not(:last-child), .content:not(:last-child) {
   margin-bottom: 1.5rem;
 }
 
@@ -1830,6 +1813,22 @@ body.has-spaced-navbar-fixed-bottom {
 }
 .content.is-large {
   font-size: 1.5rem;
+}
+
+.box {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  color: #4a4a4a;
+  display: block;
+  padding: 1.25rem;
+}
+
+a.box:hover, a.box:focus {
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px #3273dc;
+}
+a.box:active {
+  box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2), 0 0 0 1px #3273dc;
 }
 
 .button {
@@ -4368,6 +4367,12 @@ code {
   border-radius: 5px;
 }
 
+div.sourceCode,
+pre {
+  border-radius: 6px;
+  box-shadow: 5px 5px 5px #7a7a7a;
+}
+
 /* Styles for links */
 a, a code {
   color: #1d72aa;
@@ -4495,7 +4500,7 @@ a:hover code {
   font-size: smaller;
 }
 
-/* Natural code styles */
+/* Natural language highlighting styles */
 .content .language {
   background-color: #363636;
   font-family: "Fira Mono", monospace;

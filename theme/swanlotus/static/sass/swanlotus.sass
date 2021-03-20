@@ -1,7 +1,7 @@
 @charset "utf-8"
 
-/* Zenburn Code Styles */
-@import "zenburn.scss"
+/* Zenburn Syntax Highlighting Styles*/
+@import "zenburn-highlighting.scss"
 
 /* Pandoc Citation Styles */
 @import "citations.scss"
@@ -42,6 +42,7 @@ $link-decoration: underline
 @import "../bulma-0.9.1/sass/elements/container.sass"
 @import "../bulma-0.9.1/sass/components/navbar.sass"
 @import "../bulma-0.9.1/sass/elements/content.sass"
+@import "../bulma-0.9.1/sass/elements/box.sass"
 @import "../bulma-0.9.1/sass/elements/button.sass"
 @import "../bulma-0.9.1/sass/helpers/typography.sass"
 @import "../bulma-0.9.1/sass/helpers/visibility.sass"
@@ -143,6 +144,11 @@ code
     padding: $code-padding
     color: $warning-dark
     border-radius: 5px
+
+div.sourceCode,
+pre
+    border-radius: $box-radius
+    box-shadow: 5px 5px 5px $grey
 
 /* Styles for links */
 a, a code
@@ -247,7 +253,7 @@ a:hover code
 .content .footnotes
     font-size: smaller
 
-/* Natural code styles */
+/* Natural language highlighting styles */
 .content .language
     background-color: $grey-darker
     font-family: $family-code
