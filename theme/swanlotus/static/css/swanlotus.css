@@ -4461,6 +4461,7 @@ a:hover code {
 
 .content figure figcaption,
 .content .tablenos table caption {
+  margin-top: 0.3em;
   font-family: "Source Sans Pro", sans-serif;
   font-style: normal;
   font-size: smaller;
