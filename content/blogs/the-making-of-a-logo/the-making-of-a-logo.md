@@ -39,11 +39,11 @@ He first thought of the philosophers [Socrates](https://en.wikipedia.org/wiki/So
 ```{=html}
 <div class="side-by-side">
 <figure>
-<img src="{attach}images/socrates-close-up.jpg" alt="Socrates" title="Socrates" style="flex: 50%">
+<img src="{attach}images/socrates-close-up.jpg" alt="Socrates" title="Socrates" style="flex: 50%" />
 <figcaption>Socrates</figcaption>
 </figure>
 <figure>
-<img src="{attach}images/diotima-2.jpg" alt="Diotima" title="Diotima" style="flex: 50%">
+<img src="{attach}images/diotima-2.jpg" alt="Diotima" title="Diotima" style="flex: 50%" />
 <figcaption>Diotima</figcaption>
 </figure>
 </div>
@@ -83,11 +83,11 @@ Mathematics and philosophy share another quality. Two related branches of mathem
 ```{=html}
 <div class="side-by-side">
 <figure>
-<img src="{attach}images/trefoil.svg" alt="Trefoil" title="Trefoil" style="flex: 50%">
+<img src="{attach}images/trefoil.svg" alt="Trefoil" title="Trefoil" style="flex: 50%" />
 <figcaption>Trefoil</figcaption>
 </figure>
 <figure>
-<img src="{attach}images/braid.svg" alt="Braid" title="Braid" style="flex: 50%">
+<img src="{attach}images/braid.svg" alt="Braid" title="Braid" style="flex: 50%" />
 <figcaption>Braid</figcaption>
 </figure>
 </div>
