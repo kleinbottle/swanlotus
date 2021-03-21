@@ -2,10 +2,10 @@
 title: Image format conversions
 author: R (Chandra) Chandrasekhar
 date: 2021-03-07
-modified: 2021-03-07
+modified: 2021-03-22
 category: Software
-tags: image formats, Linux, PNG, JPEG, PDF, SVG, ImaheMagick, cairo, poppler
-summary: "Converting between image formats is something we could be required to do at short notice. To help cope with such a situation, this tutorial explores the different tools that are currently available and identifies the most efficient for each task. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks."
+tags: image formats, PNG, JPEG, PDF, SVG, ImageMagick, Inkscape, cairo, poppler, Linux
+summary: "Converting between image formats is something we could be required to do at short notice. This tutorial explores the different tools that are currently available and identifies the most efficient for each task. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks."
 opengraphimage: animals.jpg
 status: draft
 ---
