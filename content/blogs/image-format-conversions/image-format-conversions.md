@@ -71,7 +71,7 @@ When photographic images are scanned, higher pixel densities lead to much larger
 
 Blocky images arise when the zoomed image exhibits a lower density than the display resolution, allowing individual pixels to show themselves as discernible "blocky" elements.
 
-The dpi used for format conversion, especially from raster to PDF, is critical to avoid getting "blurry" or "grungy-looking" PDFs. At the same time, ratcheting up the dpi before conversion from raster to PDF will result in bloated PDF files that convey no discernible improvement in visual quality. There is always a sweet spot for image density---in image scanning and format conversions---that gives good visual quality at a decent file size.
+The dpi used for format conversion, especially from raster to PDF, is critical to avoid getting "blurry" or "grungy-looking" PDFs. At the same time, ratcheting up the dpi before conversion from raster to PDF will result in bloated PDF files that convey no discernible improvement in visual quality. There is always a sweet spot for pixel density---in image scanning and format conversions---that gives good visual quality at a decent file size.
 
 ## Vector Graphics
 
@@ -159,33 +159,51 @@ The above list is far from exhaustive. The interested reader is referred to the 
 Two quite different images are used to illustrate the format conversions we perform here. The two test images are:
 
 #.  a coloured, text-only test image contained in the file `text-only.pdf`; and
-#.  a non-text, coloured, graphically rich image contained in the file `animals.jpg`.
+#.  a coloured, non-text, graphically rich image contained in the file `animals.jpg`.
 
 We will succinctly refer to these two images as `text-only` and `animals`, respectively hereafter.
 
-### `text-only`
+## The `text-only` image
 
-The text-only image was first generated programmatically as a PDF file, `text-only.pdf`, by compiling a [LaTeX](https://www.latex-project.org/) [source file]({attach}auxiliary/text-only.tex). PDF is its _native_ or natural format. Any other format that results from conversion must be measured against the benchmark of the original PDF in file size and visual quality.
+The text-only image was first generated programmatically as a PDF file, `text-only.pdf`, by compiling a [LaTeX](https://www.latex-project.org/) [source file]({attach}auxiliary/text-only.tex). PDF is the _native_ or natural format for this image. The `text-only` image converted into any other  format must be measured against the benchmark of the original PDF in file size and visual quality.
 
-PDFs may be displayed on _separate_ browser tabs, but cannot be displayed, among other content, _within_ a web page. [Click here]({attach}images/text-only.pdf) to see it as a zoomable PDF on a separate browser tab.
+PDFs may be displayed on _separate_ browser tabs, but cannot be displayed, among other content, _within_ a web page. [Click here]({attach}images/text-only.pdf) to see `text-only.pdf` as a zoomable PDF on a separate browser tab.
 
-To display `text-only` on this page, the original PDF file was converted to the PNG and JPEG formats using the methods [discussed later][vector to raster] to yield the raster images `text-only-600-dpi-cairo.png` and `text-only-600-dpi-cairo.jpg`. The commands we used are shown below for completeness, but  explained later:
+### Converting `text-only` from PDF to PNG and JPEG
+
+To display `text-only` on this page, the original PDF file was converted to the PNG and JPEG formats using the methods [discussed later][vector to raster] to yield the raster images `text-only-600-dpi-cairo.png` and `text-only-600-dpi-cairo.jpg`. The commands we used are shown below for completeness, but  [explained later][PDF to PNG and JPEG: `poppler` and `cairo`]:
 
 ```bash
 # PDF to PNG at 600 dpi
-pdftocairo -png -r 600 -singlefile text-only.pdf text-only-600-dpi-cairo
+pdftocairo -png -r 600 -singlefile \
+text-only.pdf text-only-600-dpi-cairo
 
 # PDF to lossless JPEG at 600 dpi
-pdftocairo -jpeg -jpegopt quality=100 -r 600 -singlefile text-only.pdf text-only-600-dpi-cairo
+pdftocairo -jpeg -jpegopt quality=100 -r 600 -singlefile \
+text-only.pdf text-only-600-dpi-cairo
 ```
 
 ![Text-only image in 600 dpi PNG format.]({attach}images/text-only-600-dpi-cairo.png){#fig:text-only-png-cairo width=80%}
 
 ![Text-only image in 600 dpi lossless JPEG format.]({attach}images/text-only-600-dpi-cairo.jpg){#fig:text-only-jpg-cairo width=80%}
 
-### `animals`
+### File sizes
 
-The non-text image, `animals.jpg`, is a cropped version of an original image `animals-original.jpg` [downloaded from the Web](https://www.rawpixel.com/image/2266608/free-illustration-image-ernst-haeckel-vintage-animals). It is a colourful, graphically rich image with much detail, and is from a hand-drawn illustration of microscopic marine animals by the German naturalist [Ernst Haeckel](https://en.wikipedia.org/wiki/Ernst_Haeckel), scanned as a JPEG, and made available in the public domain.
+```bash
+ls -Xsh text-only.pdf text-only-600-dpi-cairo.* | \
+awk '{print $1 "\t" $2}'
+---
+120K    text-only-600-dpi-cairo.jpg
+16K     text-only.pdf
+40K     text-only-600-dpi-cairo.png
+```
+As a convention hereafter, when there is a `---` separator between a command and some results, the latter are the results displayed on execution of the command.
+
+The file sizes are displayed above merely for information. Note that the JPEG file is an order of magnitude larger than both the original PDF and the PNG. The relative strengths and weaknesses of different file formats for displaying different image types are discussed later.
+
+## The `animals` image
+
+The non-text `animals.jpg` image is a cropped version of the original image `animals-original.jpg` [downloaded from the Web](https://www.rawpixel.com/image/2266608/free-illustration-image-ernst-haeckel-vintage-animals). It is a colourful, graphically rich image with much detail, and is from a hand-drawn illustration of microscopic marine animals by the German naturalist [Ernst Haeckel](https://en.wikipedia.org/wiki/Ernst_Haeckel), scanned as a JPEG, and made available in the public domain.
 
 Note that `animals-original.jpg` has been scanned from a printed, hard copy illustration and saved as a JPEG raster file. That is its native format. All conversions should be gauged against the file size and visual quality of the cropped original `animals.jpg`.
 
@@ -193,7 +211,7 @@ Note that `animals-original.jpg` has been scanned from a printed, hard copy illu
 
 How the original image was cropped to get the `animals` image is explained next.
 
-## Pre-processing `animals`
+### Pre-processing `animals`
 
 Cropping is strictly not image format conversion, but is often a necessary pre-processing step in image manipulations. For example, +@fig:animals-original has a whitish, non-monochromatic border around the block print, containing annotations. For our purposes, this border is at best a distraction. It may be removed altogether by _cropping_, leaving us with only the illustration. The resulting cropped image, `animals.jpg` will be the source image in our examples below.
 
@@ -201,15 +219,15 @@ Cropping is strictly not image format conversion, but is often a necessary pre-p
 
 Cropping is usually better done interactively using a [GUI (Graphical User Interface)](https://en.wikipedia.org/wiki/Graphical_user_interface), than on the command line. However, the latter, even if a bit tedious, is precisely repeatable.
 
-The `display` utility of `ImageMagick` pops up a GUI when the mouse is over the image and the left mouse button is clicked. We can then drag and fit a window to the _region we wish to keep_, clicking the `Crop` function, and saving the cropped image. The steps are these:
+The `display` utility of `ImageMagick` pops up a GUI, shown in +@fig:gui, when the mouse is over the image and the left mouse button is clicked. We can then drag and fit a window to the _region we wish to keep_, clicking the `Crop` function, and saving the cropped image. The steps are these:
 
-a.  left mouse click on the image to reveal the GUI (see +@fig:gui);
+a.  left mouse click on the image to reveal the GUI;
 a.  `Transform -> Crop`;
 a.  put the mouse over the top left corner and drag until the bottom right corner to enclose the region of interest;
 a.  Click again on `Crop`; and
 a.  `File -> Save` with a different name.
 
-![`ImageMagick` interactive GUI.]({attach}images/ImageMagick-display-gui.png){#fig:gui width=20%}
+![`ImageMagick` interactive GUI.]({attach}images/ImageMagick-display-gui.png){#fig:gui width=30%}
 
 Alternatively, we may just position the cursor on the top left and bottom right corners of the region we wish to _retain_, noting the co-ordinates in each case. If these coordinates are $(x_t, y_t)$ and $(x_b, y_b)$, respectively, we have $w = x_b - x_t$ and $h = y_b -y_t$. We may then invoke the convert command with crop as the option so:
 
@@ -225,7 +243,7 @@ convert -crop '735x1035+60+84' animals-original.jpg animals.jpg
 
 The resulting cropped image, `animals.jpg` is shown in +@fig:cropped below.
 
-![Cropped version of the original image in +@fig:animals-original. This is the `animals` image.]({attach}images/animals.jpg){#fig:cropped width=50%}
+![Cropped version of the original image in +@fig:animals-original. This is the `animals.jpg` image.]({attach}images/animals.jpg){#fig:cropped width=50%}
 
 ### File sizes
 
@@ -237,8 +255,6 @@ ls -Xsh animals*.jpg | awk '{print $1 "\t" $2}'
 200K    animals.jpg
 312K    animals-original.jpg
 ```
-
-As a convention hereafter, when there is a `---` separator between a command and some results, the latter are the results displayed on execution of the command.
 
 As expected, the original file `animals-original.jpg` is larger than the cropped full-size version, `animals.jpg`, and all is well.
 
@@ -255,16 +271,16 @@ Suppose we want to reduce the dimensions of the cropped image to half their orig
 ```bash
 convert animals.jpg -resize 50% animals-halfsize.jpg
 
-# Composite the two images aligning their bottoms
+# Composite the two images by aligning their bottoms
 convert +append -gravity south \
 animals.jpg animals-halfsize.jpg animals-both.jpg
 ```
 
-![Full-size cropped image on the left and half-sized image on the right.]({attach}images/animals-both.jpg){#fig:animals-both-jpg width=80%}
+![Full-size cropped image on the left and half-sized image on the right in JPEG format.]({attach}images/animals-both.jpg){#fig:animals-both-jpg width=80%}
 
 ### Background transparency
 
-Notice that there is a coloured white rectangle atop the half-size image on the right in +@fig:animals-both-jpg. We could remove it by rendering the background transparent. However, because JPEG does not support transparency (through an [alpha channel](https://www.techopedia.com/definition/1945/alpha-channel)) we have to convert the composite image to the PNG format, which does. This is one, real-life circumstance necessitating raster to raster format conversion.
+Notice that there is a coloured white rectangle atop the half-size image on the right in +@fig:animals-both-jpg. We could remove it by rendering the background transparent. However, because JPEG does not support transparency (through an [alpha channel](https://www.techopedia.com/definition/1945/alpha-channel)) we have to convert the composite image to the PNG format, which does support transparency. This is an example of why we need to convert from one format to another.
 
 ```bash
 # Non-transparent composite in PNG
@@ -276,7 +292,7 @@ convert +append -gravity south -background transparent \
 animals.jpg animals-halfsize.jpg animals-both-transparent.png
 ```
 
-![Composite image converted to PNG format with transparent background.]({attach}images/animals-both-transparent.png){#fig:animals-both-png width=80%}
+![Composite image converted to PNG format with transparent background.]({attach}images/animals-both-transparent.png){#fig:animals-both-transparent-png width=80%}
 
 #### File sizes again
 
@@ -330,23 +346,25 @@ We may conclude from the above that non-textual, detail-rich images are better s
 
 ### Results with `text-only`
 
-Recall that `text-only` was originally generated as a PDF. To get a PNG version of the image, we need to [run a little ahead of ourselves and convert from PDF to PNG][PDF to PNG and JPEG: `poppler` and `cairo`].
+Recall that `text-only` was originally generated as a PDF. [Previously][Converting `text-only` from PDF to PNG and JPEG], we briefly touched upon how we converted `text-only` from PDF to PNG and JPEG.
+
+To get a PNG version of the image, we need to [run a little ahead of ourselves and convert from PDF to PNG][PDF to PNG and JPEG: `poppler` and `cairo`].
 
 From that PNG, let us do a simple _no quality loss_ conversion from PNG to JPEG for `text-only`, and compare appearances and file sizes.
 
 ```bash
-# Lossless JPEG with a 'quality' of 100
+# Lossless JPEG with a 'quality' of 100 from PNG
 convert -quality 100 text-only-600-dpi-cairo.png \
-text-only-600-dpi-cairo.jpg
+text-only-600-dpi-cairo-IM.jpg
 
 # Composite both images into one with a transparent divider
-convert text-only-600-dpi-cairo.png text-only-600-dpi-cairo.jpg \
+convert text-only-600-dpi-cairo.png text-only-600-dpi-cairo-IM.jpg \
 -background transparent -splice 20x0+0+0 +append -chop 20x0+0+0 \
 text-only-both-600-dpi-cairo.png
 
 ls -Xsh text*cairo* | awk '{print $1 "\t" $2}'
 ---
-148K    text-only-600-dpi-cairo.jpg
+148K    text-only-600-dpi-cairo-IM.jpg
 40K     text-only-600-dpi-cairo.png
 120K    text-only-both-600-dpi-cairo.png
 ```
@@ -355,7 +373,7 @@ ls -Xsh text*cairo* | awk '{print $1 "\t" $2}'
 
 The right sub-image of +@fig:text-only-both does not reveal noticeable degradation in quality after conversion from PNG to JPEG, and back to PNG again. Note also that the file size of the _composite_ PNG image is smaller than the file size of the _single_ JPEG image.
 
-### PNG versus JPEG
+### PNG versus JPEG: text and non-text
 
 We conclude from the `text-only` images that PNG is better suited for textual images and provides a smaller file size for the same quality.
 
@@ -363,7 +381,11 @@ Conversely, we know from the `animals` images that JPEG is more suited to non-te
 
 ### Can `cairo` and `poppler` do all this?
 
-Can such processing be done using `cairo` and `poppler`? Not really, in the case of the `animals` image. The _starting point_ or _input format_ for `cairo` and `poppler` is the PDF format. Our `animals` image is scanned from an illustration and is therefore a JPEG raster image. The forte of `ImageMagick` is the display, manipulation, format conversion, and processing of raster images; `cairo` and `poppler` start with PDFs and have other goals.
+It is all a question of what format do we start with?
+
+Both  `cairo` and `poppler` are designed for PDF input images. They stand out as tools of choice when we start off with PDFs.
+
+The `animals` image, on the other hand, is scanned from an illustration. Our input is a JPEG raster image. The forte of `ImageMagick` is the display, manipulation, format conversion, and processing of raster images. So, we run with the utilities provided by `ImageMagick` in the latter case.
 
 ## Raster to vector conversions
 
@@ -373,7 +395,7 @@ However, if the graphic were in SVG format, supported by most web browsers, the 
 
 How do we convert a raster image to a vector format like PDF or SVG?
 
-### Raster to PDF with `convert`
+### Raster to PDF with `convert` for `animals`
 
 The `convert` utility of `ImageMagick` comes to our rescue again. For example,
 
@@ -387,7 +409,7 @@ ls -Xsh animals.jpg animals.pdf | awk '{print $1 "\t" $2}'
 204K    animals.pdf
 ```
 
-Web browsers, while they may feature PDF viewers on separate tabs, are still unable to display PDFs as part of a web page. The converted image, [animals.pdf]({attach}images/animals.pdf), may be viewed on a browser tab from the given link. If the converted PDF is magnified by zooming, it will be seen to reveal remarkable detail. And the difference between the JPEG and PDF file sizes is negligible.
+Web browsers, while they may feature PDF viewers on separate tabs, are still unable to display PDFs as part of a web page. The converted image, [`animals.pdf`]({attach}images/animals.pdf), may be viewed on a browser tab from the given link. If the converted PDF is magnified by zooming, it will be seen to reveal remarkable detail. And the difference between the JPEG and PDF file sizes is negligible.
 
 What happens, though, if the half-sized image is used to generate the PDF? It is smaller and accordingly embodies less information than the original, again commensurate with the respective file sizes.
 
@@ -400,6 +422,7 @@ awk '{print $1 "\t" $2}'
 64K     animals-halfsize.jpg
 64K     animals-halfsize.pdf
 ```
+Increasing detail demands larger file sizes: there is no free lunch.
 
 ### Raster to SVG with `convert`
 
@@ -453,30 +476,34 @@ This is one reason why conversion from a PNG to a PDF might result in a PDF whic
 
 ## Vector to raster
 
-The `poppler` utilities, with the `cairo` backend are the primary resource for vector to raster conversions, especially when the source image is a PDF.
+The `poppler` utilities, with the `cairo` backend are the primary resource for vector to raster conversions, specifically when the source image is a PDF.
 
 ### PDF to PNG and JPEG: `poppler` and `cairo`
 
-It was [mentioned above][text-only image] that `text-only` was originally generated as a native PDF, vector graphics image, and subsequently converted to the PNG and JPEG formats. We explain how that was done and also why the `ImageMagick` suite is not used for this purpose.
+It was mentioned [here][The `text-only` image] and [here][Results with `text-only`] that `text-only` was originally generated as a native PDF, vector graphics image, and subsequently converted to the PNG and JPEG formats. We explain how that was done and also why the `ImageMagick` suite is not used for this purpose.
 
 The `poppler` suite contains utilities to convert from PDF to several raster formats. Two versatile utilities called `pdftocairo` and `pdftoppm` are available for our purpose. One may view their usage by typing the name of the utility prefixed by `man` or suffixed by `-help`, although the former is more exhaustive.
 
 To convert from vector to raster, we invoke commands like these:
 
 ```bash
-# PDF to PNG at 600 dpi; root file is the last argument
+# `pdftocairo`: from PDF to 600 dpi PNG
+# root file is the last argument
 pdftocairo -png -r 600 -singlefile text-only.pdf \
 text-only-600-dpi-cairo
 
-# Using the `pdftoppm` utility instead; same syntax
+# `pdftoppm`: from PDF to 600 dpi PNG
+# root file is the last argument
 pdftoppm -png -r 600 -singlefile text-only.pdf \
 text-only-600-dpi-ppm
 
+# `pdftocairo`: PDF to 600 dpi JPEG
 # Options may be passed to JPEG
 pdftocairo -jpeg -jpegopt "quality=100" -r 600 \
 -singlefile text-only.pdf text-only-600-dpi-cairo
 
-# Same syntax for `pdftoppm` as for `pdftocairo`
+# `pdftoppm`: PDF to 600 dpi JPEG
+# Options may be passed to JPEG
 pdftoppm -jpeg -jpegopt "quality=100" -r 600 \
 -singlefile text-only.pdf text-only-600-dpi-ppm
 
@@ -491,11 +518,11 @@ text-only-600-dpi-ppm.png text-only-600-dpi-ppm-IM.jpg
 
 The value `-r 600` signifies a resolution of 600 pixels per inch (ppi), or alternatively, dots per inch (dpi). The default value is 150 ppi. The value of 600 is suitable for printing on laser printers to give output that will visually rival the original PDF in quality. Note that while raster images have inherent resolutions, PDF images have none: they scale without loss of quality when generated natively.
 
-The `-singlefile` option is used because we are simply converting a single "page" of PDF rather than a numbered page sequence. In all cases, the destination filename is the "root" of the converted file sequence, which in this case is the filename without any extension.
+The `-singlefile` option is used because we are simply converting a single "page" of PDF rather than a numbered page sequence. In all cases, the destination filename is the "root" of the converted file sequence, which in this case is the output filename without any extension.
 
 In addition, the JPEG version may feature lossy compression where quality is traded for file size. Since PNG is lossless, to compare the two formats on an even keel, we specify that the `-quality` of the JPEG should be the maximum of 100.
 
-Both `pdftocairo` and `pdftoppm` are used in the conversions above, with appropriately named filenames.
+Both `pdftocairo` and `pdftoppm` are used in the first four conversions above, with appropriately named filenames.
 
 We could also use `convert` from `ImageMagick` to convert from PNG to JPEG, and this is done in the last two commands above. Note that this is strictly not a vector to raster conversion but merely raster to raster. See [below][Why is `ImageMagick` disallowed for PDF to raster?] for why we cannot convert from PDF to raster with `convert`.
 
@@ -515,9 +542,9 @@ ls -Xsh text-only.pdf text-only-600* | awk '{print $1 "\t" $2}'
 
 The numbers tell their own story. I would have expected the two sets of raster images output by `pdftocairo` and `pdftoppm` to be roughly equal in size, given their identical options during invocation. Strangely, they are not, at least for the JPEGs. This could be either because of different defaults, or different algorithms, or something else: I simply do not know.
 
-It appears that `pdftoppm` gives marginally smaller file sizes for JPEG than `pdftocairo`. Moreover, when `pdftoppm` is used to convert directly from PDF to JPEG, the file size is smaller than when PNG is used as an intermediate file format and conversion to JPEG is by `convert`.
+It appears that `pdftoppm` gives marginally smaller file sizes for JPEG than `pdftocairo`. Moreover, when `pdftoppm` is used to convert directly from PDF to JPEG, the file size is smaller than when PNG is used as an intermediate file format and conversion to JPEG is by `convert` from `ImageMagick`.
 
-One other takeaway is that text-rich images are better rendered in PNG than JPEG. The PDF and PNG image file sizes are of the same order of magnitude, whereas the JPEGS are an order of magnitude larger.
+One other takeaway is that text-rich images are better rendered in PNG than JPEG. The PDF and PNG image file sizes are of the same order of magnitude, whereas the JPEGs are an order of magnitude larger.
 
 ### Why is `ImageMagick` disallowed for PDF to raster?
 
