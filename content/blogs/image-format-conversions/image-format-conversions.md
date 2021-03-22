@@ -163,13 +163,13 @@ Two quite different images are used to illustrate the format conversions we perf
 
 We will succinctly refer to these two images as `text-only` and `animals`, respectively hereafter.
 
-## The `text-only` image
+### The `text-only` image
 
 The text-only image was first generated programmatically as a PDF file, `text-only.pdf`, by compiling a [LaTeX](https://www.latex-project.org/) [source file]({attach}auxiliary/text-only.tex). PDF is the _native_ or natural format for this image. The `text-only` image converted into any other  format must be measured against the benchmark of the original PDF in file size and visual quality.
 
 PDFs may be displayed on _separate_ browser tabs, but cannot be displayed, among other content, _within_ a web page. [Click here]({attach}images/text-only.pdf) to see `text-only.pdf` as a zoomable PDF on a separate browser tab.
 
-### Converting `text-only` from PDF to PNG and JPEG
+#### Converting `text-only` from PDF to PNG and JPEG
 
 To display `text-only` on this page, the original PDF file was converted to the PNG and JPEG formats using the methods [discussed later][vector to raster] to yield the raster images `text-only-600-dpi-cairo.png` and `text-only-600-dpi-cairo.jpg`. The commands we used are shown below for completeness, but  [explained later][PDF to PNG and JPEG: `poppler` and `cairo`]:
 
@@ -187,7 +187,7 @@ text-only.pdf text-only-600-dpi-cairo
 
 ![Text-only image in 600 dpi lossless JPEG format.]({attach}images/text-only-600-dpi-cairo.jpg){#fig:text-only-jpg-cairo width=80%}
 
-### File sizes
+#### File sizes
 
 ```bash
 ls -Xsh text-only.pdf text-only-600-dpi-cairo.* | \
@@ -201,7 +201,7 @@ As a convention hereafter, when there is a `---` separator between a command and
 
 The file sizes are displayed above merely for information. Note that the JPEG file is an order of magnitude larger than both the original PDF and the PNG. The relative strengths and weaknesses of different file formats for displaying different image types are discussed later.
 
-## The `animals` image
+### The `animals` image
 
 The non-text `animals.jpg` image is a cropped version of the original image `animals-original.jpg` [downloaded from the Web](https://www.rawpixel.com/image/2266608/free-illustration-image-ernst-haeckel-vintage-animals). It is a colourful, graphically rich image with much detail, and is from a hand-drawn illustration of microscopic marine animals by the German naturalist [Ernst Haeckel](https://en.wikipedia.org/wiki/Ernst_Haeckel), scanned as a JPEG, and made available in the public domain.
 
@@ -211,11 +211,11 @@ Note that `animals-original.jpg` has been scanned from a printed, hard copy illu
 
 How the original image was cropped to get the `animals` image is explained next.
 
-### Pre-processing `animals`
+#### Pre-processing `animals`
 
 Cropping is strictly not image format conversion, but is often a necessary pre-processing step in image manipulations. For example, +@fig:animals-original has a whitish, non-monochromatic border around the block print, containing annotations. For our purposes, this border is at best a distraction. It may be removed altogether by _cropping_, leaving us with only the illustration. The resulting cropped image, `animals.jpg` will be the source image in our examples below.
 
-### Cropping
+#### Cropping
 
 Cropping is usually better done interactively using a [GUI (Graphical User Interface)](https://en.wikipedia.org/wiki/Graphical_user_interface), than on the command line. However, the latter, even if a bit tedious, is precisely repeatable.
 
@@ -245,7 +245,7 @@ The resulting cropped image, `animals.jpg` is shown in +@fig:cropped below.
 
 ![Cropped version of the original image in +@fig:animals-original. This is the `animals.jpg` image.]({attach}images/animals.jpg){#fig:cropped width=50%}
 
-### File sizes
+#### File sizes
 
 The sizes of the original and cropped files are shown below in human friendly numbers:
 
