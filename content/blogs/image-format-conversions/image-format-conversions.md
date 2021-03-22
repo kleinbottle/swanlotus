@@ -5,12 +5,12 @@ date: 2021-03-07
 modified: 2021-03-22
 category: Software
 tags: image formats, PNG, JPEG, PDF, SVG, ImageMagick, Inkscape, cairo, poppler, Linux
-summary: "Converting between image formats is something we could be required to do at short notice. This tutorial explores the different tools that are currently available and identifies the most efficient for each task. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks."
+summary: "We may be called upon to convert images between one format and another at short notice. This tutorial explores the different tools that are currently available and identifies the most efficient for each task. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks."
 opengraphimage: animals.jpg
 status: draft
 ---
 
-Converting between image formats is something we could be required to do at short notice. To help cope with such a situation, this tutorial explores the different tools that are currently available and identifies the most efficient for each task. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks.
+We may be called upon to convert images between one format and another at short notice. This tutorial explores the different tools that are currently available and identifies the most efficient for each task. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks.
 
 ## Two varieties of digital images
 
@@ -51,7 +51,7 @@ There are dozens of image formats, including these three major ones:
 
 All three formats yield images displayed as rectangular arrays of [pixels](https://en.wikipedia.org/wiki/Pixels).
 
-### Image resolutions
+### Pixel densities
 
 Raster images become larger and visually better defined at higher resolutions or pixel densities. The units of resolution, or density, commonly used are the _dots per inch_ (dpi) or _pixels per inch_ (ppi) both of which reference the number of pixels that may be accommodated in one linear inch. It is possible to specify these in dots per centimetre or pixels per centimetre but that usage has not caught on.
 
@@ -60,16 +60,18 @@ Commonly used resolutions for display devices are:
 - 72 dpi for low resolution monitors
 - 96 dpi for standard resolution monitors
 - 150 dpi, which is often the default value in image conversion programs
-- 300 dpi in some laser printers
-- 600 dpi in high end laser printers
+- 300 dpi for some laser printers
+- 600 dpi for high end laser printers
 
-Suppose we have an image that is a square of side 100 pixels. On a display that has a resolution of 96 dpi, such an image will take up 100/96 = 1.042 inches on each side. If the same image were magnified to _twice_ its dimensions, the number of pixels in it will become _fourfold_ as will, roughly, its file size.
+Suppose we have an image that is a square of side 100 pixels. On a display that has a resolution of 96 dpi, such an image will take up 100/96 = 1.042 inches on each side. If the same image were displayed on a 300 dpi output device, its image will span 100/300 = 0.333 inches on each side.
 
-When photographic images are scanned, higher densities lead to much larger image file sizes but such images capture more and more subtle detail.
+If the same image were magnified to _twice_ its dimensions, the number of pixels in it will become _fourfold_ as will, roughly, its file size.
+
+When photographic images are scanned, higher pixel densities lead to much larger image file sizes but such images capture more and more subtle detail.
 
 Blocky images arise when the zoomed image exhibits a lower density than the display resolution, allowing individual pixels to show themselves as discernible "blocky" elements.
 
-The dpi used for format conversion, especially from raster to PDF, is critical to avoid getting "blurry" or "grungy-looking" PDFs. At the same time, ratcheting up the dpi before conversion from raster to PDF will result in bloated PDF files that convey no discernible improvement in visual quality. There is always a sweet spot---for image density---in image scanning and format conversions that is best identified through experience.
+The dpi used for format conversion, especially from raster to PDF, is critical to avoid getting "blurry" or "grungy-looking" PDFs. At the same time, ratcheting up the dpi before conversion from raster to PDF will result in bloated PDF files that convey no discernible improvement in visual quality. There is always a sweet spot for image density---in image scanning and format conversions---that gives good visual quality at a decent file size.
 
 ## Vector Graphics
 
@@ -165,9 +167,21 @@ We will succinctly refer to these two images as `text-only` and `animals`, respe
 
 The text-only image was first generated programmatically as a PDF file, `text-only.pdf`, by compiling a [LaTeX](https://www.latex-project.org/) [source file]({attach}auxiliary/text-only.tex). PDF is its _native_ or natural format. Any other format that results from conversion must be measured against the benchmark of the original PDF in file size and visual quality.
 
-To display that file below, the original PDF file was converted to the PNG and JPEG raster formats using the methods [discussed later][vector to raster] to yield the raster images `text-only-600-dpi-cairo.png` and `text-only-600-dpi-cairo.jpg`.
+PDFs may be displayed on _separate_ browser tabs, but cannot be displayed, among other content, _within_ a web page. [Click here]({attach}images/text-only.pdf) to see it as a zoomable PDF on a separate browser tab.
 
-![Text-only image in 600 dpi PNG format.]({attach}images/text-only-600-dpi-cairo.png){#fig:text-only width=80%}
+To display `text-only` on this page, the original PDF file was converted to the PNG and JPEG formats using the methods [discussed later][vector to raster] to yield the raster images `text-only-600-dpi-cairo.png` and `text-only-600-dpi-cairo.jpg`. The commands we used are shown below for completeness, but  explained later:
+
+```bash
+# PDF to PNG at 600 dpi
+pdftocairo -png -r 600 -singlefile text-only.pdf text-only-600-dpi-cairo
+
+# PDF to lossless JPEG at 600 dpi
+pdftocairo -jpeg -jpegopt quality=100 -r 600 -singlefile text-only.pdf text-only-600-dpi-cairo
+```
+
+![Text-only image in 600 dpi PNG format.]({attach}images/text-only-600-dpi-cairo.png){#fig:text-only-png-cairo width=80%}
+
+![Text-only image in 600 dpi lossless JPEG format.]({attach}images/text-only-600-dpi-cairo.jpg){#fig:text-only-jpg-cairo width=80%}
 
 ### `animals`
 
@@ -316,7 +330,9 @@ We may conclude from the above that non-textual, detail-rich images are better s
 
 ### Results with `text-only`
 
-Recall that `text-only` was originally generated as a PDF. To get a PNG version of the image, we need to [run a little ahead of ourselves and convert from PDF to PNG][PDF to PNG and JPEG: `poppler` and `cairo`]. From that PNG, let us do a simple _no quality loss_ conversion from PNG to JPEG for `text-only`, and compare appearances and file sizes.
+Recall that `text-only` was originally generated as a PDF. To get a PNG version of the image, we need to [run a little ahead of ourselves and convert from PDF to PNG][PDF to PNG and JPEG: `poppler` and `cairo`].
+
+From that PNG, let us do a simple _no quality loss_ conversion from PNG to JPEG for `text-only`, and compare appearances and file sizes.
 
 ```bash
 # Lossless JPEG with a 'quality' of 100
