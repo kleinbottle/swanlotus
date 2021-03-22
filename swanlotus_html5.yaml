@@ -8,6 +8,7 @@ reader: markdown+emoji
 writer: html5
 
 table-of-contents: true
+toc-depth: 4
 
 html-math-method:
   method: mathjax
