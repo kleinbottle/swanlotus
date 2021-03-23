@@ -692,20 +692,16 @@ All of `inkscape`, `cairosvg`, and `rsvg-convert` produce PNG files of the same 
 
 Images like `animals` are best displayed as JPEGs. There is no obvious need to convert such images from JPEG to SVG and back again, simply to view how the quality changed during the roundtrip. Accordingly, we will not consider the `animals` image here.
 
-@@@@@ Start Here @@@@
-
 ## Vector to vector
 
-There are principally two format conversions here:
+Th last of the four types of format conversions is when both input and output files are in vector formats. There are principally two cases here:
 
-- PDF to SVG; and
-- SVG to PDF.
-
-
+a.  PDF to SVG; and
+a.  SVG to PDF.
 
 ### PDF to SVG: `pdftocairo` and `pdftoppm`
 
-The `poppler` standalone utilities `pdftocairo` and `pdftoppm` offer a route from PDF to SVG. So, if we had the file `animals.pdf` we could convert it to SVG:
+When PDF is the source format, the `poppler` standalone utilities `pdftocairo` and `pdftoppm` are the tools. So, if we had the file `animals.pdf` we could convert it to SVG:
 
 ```bash
 # PDF to SVG using pdftocairo
@@ -832,7 +828,7 @@ SVG to PDF          `cairosvg`
 
 Table: Tools for image format conversions. {#tbl:formats}
 
-### Appendix: Security vulnerabilities in `ImageMagick`
+## Appendix: Security vulnerabilities in `ImageMagick`
 
 Great power exacts a commensurate price. `ImageMagick`'s great power and ease of use does come at a great price: vulnerability to exploits by malicious remote actors.
 
@@ -844,7 +840,7 @@ In November 2020, [another security vulnerability was discovered](https://portsw
 
 Recent versions of the `ImageMagick` suite, bundled with major distributions, should have correctly configured `policy.xml` files that will block known exploits. [Sandboxing](https://www.techopedia.com/definition/25266/sandboxing) is another technique to quarantine the system from possible vulnerabilities. Above all, it is vital to keep  system and application software up to date to avail of evolutions in performance and security.
 
-#### Feedback
+## Feedback
 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
