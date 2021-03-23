@@ -2,15 +2,15 @@
 title: Image format conversions
 author: R (Chandra) Chandrasekhar
 date: 2021-03-07
-modified: 2021-03-22
+modified: 2021-03-24
 category: Software
 tags: image formats, PNG, JPEG, PDF, SVG, ImageMagick, Inkscape, cairo, poppler, Linux
-summary: "We may be called upon at short notice to convert images between one format and another. This tutorial explores the different tools that are currently available and identifies the most efficient for each task. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks."
+summary: "We may be called upon at short notice to convert images between one format and another. This tutorial explores the different tools that are currently available and identifies the most efficient for each task. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, `Inkscape`, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks."
 opengraphimage: animals.jpg
 status: draft
 ---
 
-We may be called upon at short notice to convert images between one format and another. This tutorial explores the different tools that are currently available and identifies the most efficient for each task. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks.
+We may be called upon at short notice to convert images between one format and another. This tutorial explores the different tools that are currently available and identifies the most efficient for each task. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, `Inkscape`, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks.
 
 ## Two varieties of digital images
 
@@ -598,7 +598,7 @@ identify text-only-svg-convert.png
 text-only-svg-convert.png PNG 286x70 286x70+0+0 8-bit sRGB 6548B 0.000u 0:00.000
 ```
 
-And, not unexpectedly, the numbers returned by `identify` match those we derived above by simple unit conversion. :slightly_smiling_face:
+And, not unexpectedly, the numbers returned by `identify` match those we derived above by simple unit conversion. \emojifont:slightly_smiling_face:\normalfont
 
 Regarding file sizes, the PNG is actually smaller than the SVG:
 
@@ -650,7 +650,7 @@ ls -sh text-only-600-dpi-inkscape-svg.png | awk '{print $1 "\t" $2}'
 
 ![PNG at 600 dpi of `text-only` from SVG using `inkscape`.]({attach}images/text-only-600-dpi-inkscape-svg.png){#fig:inkscapeSVGtoPNG width=80%}
 
-The explicit conversion from points to pixels at 600 dpi is clear, as is the image itself. We would expect the PNG to have a size of 1786 by 435 pixels, and it does. No surprises there. :slightly_smiling_face:
+The explicit conversion from points to pixels at 600 dpi is clear, as is the image itself. We would expect the PNG to have a size of 1786 by 435 pixels, and it does. No surprises there. \emojifont:slightly_smiling_face:\normalfont
 
 CairoSVG is designed to parse well-formed SVG files, and draw them on a Cairo surface. Cairo is then able to export them to PDF, PS, PNG, and even SVG files. If we use `cairosvg`, we get these results:
 
@@ -881,7 +881,7 @@ The image `animals-from-svg-IM.pdf` is pixellated on zooming in and we should av
 
 #.  When we start out with PDF as the source image format, and the destination format is either a raster format or SVG, the tool of choice is `pdftocairo` from the `poppler` utilities.
 
-#.  When the source format is SVG and the destination format is either PDF or a raster format, the tool of choice is `cairosvg`.
+#.  When the source format is SVG and the destination format is either PDF or a raster format, the tools of choice are either `cairosvg` or `inkscape` depending on image content.
 
 *@tbl:formats summarizes this information, which is current at the time of writing, but could change as the image utilities landscape changes with time. 
 
@@ -914,4 +914,4 @@ Recent versions of the `ImageMagick` suite, bundled with major distributions, sh
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here.]({attach}./image-format-conversions.pdf)
+\noindent A PDF version of this article is [available for download here.]({attach}image-format-conversions.pdf)

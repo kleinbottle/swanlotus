@@ -8,14 +8,13 @@
   british,
   a4paper,
 ]{article}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
-  \usepackage{amssymb}
 \else % if luatex or xetex
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
@@ -45,10 +44,10 @@
   pdfauthor={R (Chandra) Chandrasekhar},
   pdflang={en-GB},
   colorlinks=true,
-  linkcolor=TealBlue,
-  filecolor=Purple,
-  citecolor=DarkKhaki,
-  urlcolor=Maroon,
+  linkcolor={TealBlue},
+  filecolor={Purple},
+  citecolor={DarkKhaki},
+  urlcolor={Maroon},
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=25mm]{geometry}
@@ -92,7 +91,7 @@
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.80,0.80,0.80}{#1}}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.80,0.58,0.58}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.50,0.62,0.50}{\textbf{#1}}}
-\usepackage{longtable,booktabs}
+\usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -193,14 +192,17 @@
 %
 \usepackage{fontsize}
 %
-\ifxetex
+\ifXeTeX
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
   \usepackage{polyglossia}
   \setmainlanguage[variant=british]{english}
 \else
-  \usepackage[shorthands=off,main=british]{babel}
+  \usepackage[main=british]{babel}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
 \fi
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \newlength{\cslhangindent}
@@ -226,7 +228,7 @@
 
 \title{Image format conversions}
 \author{R (Chandra) Chandrasekhar}
-\date{2021-03-07 | 2021-03-07}
+\date{2021-03-07 | 2021-03-24}
 
 \begin{document}
 \maketitle
@@ -234,13 +236,13 @@
 \thispagestyle{empty}
 
 
-Converting between image formats is something we could be required to do
-at short notice. This tutorial explores the different tools that are
+We may be called upon at short notice to convert images between one
+format and another. This tutorial explores the different tools that are
 currently available and identifies the most efficient for each task. The
 \texttt{ImageMagick} suite, the \texttt{cairo} backend, the
-\texttt{poppler} utilities, \texttt{rsvg-convert}, and \texttt{CairoSVG}
-are identified for the specific strengths that make them the tools of
-choice for different image conversion tasks.
+\texttt{poppler} utilities, \texttt{Inkscape}, and \texttt{CairoSVG} are
+identified for the specific strengths that make them the tools of choice
+for different image conversion tasks.
 
 \hypertarget{two-varieties-of-digital-images}{%
 \subsection{Two varieties of digital
@@ -267,12 +269,10 @@ the latter scales without degradation when magnified, as illustrated in
 \hypertarget{fig:raster}{%
 \centering
 \includegraphics[width=0.5\textwidth,height=\textheight]{images/letter-O-150-dpi.png}
-\caption[Raster graphics image of the letter O (150 dpi PNG
-format).]{Raster graphics image of the letter O (150 dpi\footnotemark{}
+\caption{Raster graphics image of the letter O (150 dots per inch (dpi)
 PNG format).}\label{fig:raster}
 }
 \end{figure}
-\footnotetext{Dots per inch.}
 
 \begin{figure}
 \hypertarget{fig:vector}{%
@@ -284,9 +284,9 @@ format).}\label{fig:vector}
 \end{figure}
 
 \hypertarget{raster-graphics}{%
-\subsubsection{Raster Graphics}\label{raster-graphics}}
+\subsection{Raster Graphics}\label{raster-graphics}}
 
-There are dozens of image formats, including these three:
+There are dozens of image formats, including these three major ones:
 
 \begin{enumerate}
 \tightlist
@@ -341,12 +341,64 @@ There are dozens of image formats, including these three:
   \end{itemize}
 \end{enumerate}
 
-All three formats employ raster graphics in which image elements are
-represented as rectangular arrays of
+All three formats yield images displayed as rectangular arrays of
 \href{https://en.wikipedia.org/wiki/Pixels}{pixels}.
 
+\hypertarget{pixel-densities}{%
+\subsubsection{Pixel densities}\label{pixel-densities}}
+
+Raster images become larger and visually better defined at higher
+resolutions or pixel densities. The units of resolution, or density,
+commonly used are the \emph{dots per inch} (dpi) or \emph{pixels per
+inch} (ppi) both of which reference the number of pixels that may be
+accommodated in one linear inch. It is possible to specify these in dots
+per centimetre or pixels per centimetre but that usage has not caught
+on.
+
+Commonly used resolutions for display devices are:
+
+\begin{itemize}
+\tightlist
+\item
+  72 dpi for low resolution monitors
+\item
+  96 dpi for standard resolution monitors
+\item
+  150 dpi, which is often the default value in image conversion programs
+\item
+  300 dpi for some laser printers
+\item
+  600 dpi for high end laser printers
+\end{itemize}
+
+Suppose we have an image that is a square of side 100 pixels. On a
+display that has a resolution of 96 dpi, such an image will take up
+100/96 = 1.042 inches on each side. If the same image were displayed on
+a 300 dpi output device, its image will span 100/300 = 0.333 inches on
+each side.
+
+If the same image were magnified to \emph{twice} its dimensions, the
+number of pixels in it will become \emph{fourfold} as will, roughly, its
+file size.
+
+When photographic images are scanned, higher pixel densities lead to
+much larger image file sizes but such images capture more and more
+subtle detail.
+
+Blocky images arise when the zoomed image exhibits a lower density than
+the display resolution, allowing individual pixels to show themselves as
+discernible ``blocky'' elements.
+
+The dpi used for format conversion, especially from raster to PDF, is
+critical to avoid getting ``blurry'' or ``grungy-looking'' PDFs. At the
+same time, ratcheting up the dpi before conversion from raster to PDF
+will result in bloated PDF files that convey no discernible improvement
+in visual quality. There is always a sweet spot for pixel density---in
+image scanning and format conversions---that gives good visual quality
+at a decent file size.
+
 \hypertarget{vector-graphics}{%
-\subsubsection{Vector Graphics}\label{vector-graphics}}
+\subsection{Vector Graphics}\label{vector-graphics}}
 
 The two principal vector graphics formats are:
 
@@ -385,25 +437,46 @@ The two principal vector graphics formats are:
 \end{enumerate}
 
 Both these formats yield images which consist of mathematically defined
-points, lines, curves, and shapes.
+points, lines, curves, and shapes, which do not degrade in visual
+quality when magnified.
+
+\hypertarget{page-size-and-viewbox}{%
+\subsubsection{Page size and viewBox}\label{page-size-and-viewbox}}
+
+Vector images do not embody an intrinsic resolution and may therefore be
+zoomed in or out arbitrarily without loss of detail. But vector images
+do have intrinsic sizes that endow them with an
+\href{https://en.wikipedia.org/wiki/Aspect_ratio}{aspect ratio}.
+
+Sometimes, an image is developed for electronic archival, legal, or
+other purposes. Such documents are meant to be printed and so the
+document format embodies a \emph{paper size} to which it is paginated.
+Such is the case with PDFs.
+
+At other times, the primary medium of display for an image is the Web.
+Such images are defined in terms of a
+\href{https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox}{\emph{viewBox}}.
+They do not have a preferred or natural page size . They may be scaled
+but their appearance depends on the resolution of the display device.
+SVGs embody these characteristics.
 
 \hypertarget{format-conversions}{%
 \subsection{Format conversions}\label{format-conversions}}
 
-For a variety of reasons, it is often necessary to convert from one
-image format to another. There are four broad possibilities for this:
+For many reasons, it is often necessary to convert from one image format
+to another. There are four broad possibilities for this, as shown below,
+with typical examples:
 
 \begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
 \tightlist
 \item
-  raster to raster;
+  Raster to raster: PNG to JPEG and vice versa;
 \item
-  raster to vector;
+  Raster to vector: PNG to PDF or PNG to SVG;
 \item
-  vector to raster; and
+  Vector to raster: PDF to PNG or SVG to PNG; and
 \item
-  vector to vector
+  Vector to vector: PDF to SVG, or vice versa.
 \end{enumerate}
 
 We consider each of these in turn using
@@ -432,12 +505,12 @@ image format conversion:
   \begin{itemize}
   \tightlist
   \item
-    graphics library for image manipulation and display
+    versatile graphics library for image manipulation and display
   \item
     standalone utilities like \texttt{convert}, \texttt{display},
     \texttt{identify}, \texttt{mogrify}, etc.
   \item
-    scripting language
+    scripting language support
   \item
     pixel-based
   \item
@@ -455,7 +528,7 @@ image format conversion:
   \item
     multiple output devices/formats
   \item
-    used by other programs rather than in standalone mode
+    used by other programs as a backend, rather than in standalone mode
   \end{itemize}
 \item
   \href{https://poppler.freedesktop.org/}{poppler}
@@ -482,11 +555,11 @@ image format conversion:
   \item
     suitable both for technical illustration and digital art
   \item
-    uses SVG as the main format
+    uses SVG as the working format
   \item
     can export to a wide variety of output formats
   \item
-    option to use cairo for PDF export
+    option to use cairo for export to raster formats
   \end{itemize}
 \end{enumerate}
 
@@ -498,13 +571,13 @@ knife}{ImageMagick: the Swiss Army knife}}\label{imagemagick-the-swiss-army-knif
 tools originally created in 1987 by John Cristy, then working for
 \href{https://www.dupont.com/}{Du Pont}. In 1990, it was freely released
 by Du Pont, who transferred copyright to
-\href{https://imagemagick.org/script/contact.php}{\texttt{ImageMagick}
-Studio LLC} who now maintain the project. It is distributed under a
-derived Apache 2.0
-\href{https://imagemagick.org/script/license.php}{license}. The
-\href{https://github.com/\%60ImageMagick\%60/\%60ImageMagick\%60}{authoritative
-source code repository} shows active development even today, 34 years
-after the suite was first released {[}1{]}.
+\href{https://imagemagick.org/script/contact.php}{ImageMagick Studio
+LLC} who now maintain the project. It is distributed under a
+\href{https://imagemagick.org/script/license.php}{derived Apache 2.0
+license}. The
+\href{https://github.com/ImageMagick/ImageMagick}{authoritative source
+code repository} shows active development even today, 34 years after the
+suite was first released {[}1{]}.
 
 \texttt{ImageMagick} is so versatile and useful that it may rightfully
 be called the
@@ -551,46 +624,117 @@ we perform here. The two test images are:
 \begin{enumerate}
 \tightlist
 \item
-  a coloured, text-only test image called \texttt{text-only.png}; and
+  a coloured, text-only test image contained in the file
+  \texttt{text-only.pdf}; and
 \item
-  a non-text, coloured, graphically rich image called
+  a coloured, non-text, graphically rich image contained in the file
   \texttt{animals.jpg}.
 \end{enumerate}
 
-We will refer to these two images as \texttt{text-only} and
+We will succinctly refer to these two images as \texttt{text-only} and
 \texttt{animals}, respectively hereafter.
 
-Note that, as \protect\hyperlink{non-text-test-image}{explained below},
-\texttt{animals.jpg} is a cropped version of the original image
-\texttt{animals-original.jpg} downloaded from the Web.
+\hypertarget{the-text-only-image}{%
+\subsubsection{\texorpdfstring{The \texttt{text-only}
+image}{The text-only image}}\label{the-text-only-image}}
 
-\hypertarget{text-only-image}{%
-\subsubsection{Text-only image}\label{text-only-image}}
-
-The \texttt{text-only} image was first generated as a PDF file,
+The text-only image was first generated programmatically as a PDF file,
 \texttt{text-only.pdf}, by compiling a
-\href{https://www.latex-project.org/}{LaTeX} source file. That file was
-then converted to various raster formats using the methods
-\protect\hyperlink{vector-to-raster-1}{discussed later} to yield the
-images \texttt{text-only-600-dpi.png} and
-\texttt{text-only-600-dpi.jpg}.
+\href{https://www.latex-project.org/}{LaTeX}
+\href{auxiliary/text-only.tex}{source file}. PDF is the \emph{native} or
+natural format for this image. The \texttt{text-only} image converted
+into any other format must be measured against the benchmark of the
+original PDF in file size and visual quality.
+
+PDFs may be displayed on \emph{separate} browser tabs, but cannot be
+displayed, among other content, \emph{within} a web page.
+\href{images/text-only.pdf}{Click here} to see \texttt{text-only.pdf} as
+a zoomable PDF on a separate browser tab.
+
+\hypertarget{converting-text-only-from-pdf-to-png-and-jpeg}{%
+\paragraph{\texorpdfstring{Converting \texttt{text-only} from PDF to PNG
+and
+JPEG}{Converting text-only from PDF to PNG and JPEG}}\label{converting-text-only-from-pdf-to-png-and-jpeg}}
+
+To display \texttt{text-only} on this page, the original PDF file was
+converted to the PNG and JPEG formats using the methods
+\protect\hyperlink{vector-to-raster}{discussed later} to yield the
+raster images \texttt{text-only-600-dpi-cairo.png} and
+\texttt{text-only-600-dpi-cairo.jpg}. The commands we used are shown
+below for completeness, but
+\protect\hyperlink{pdf-to-png-and-jpeg-poppler-and-cairo}{explained
+later}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# PDF to PNG at 600 dpi}
+\ExtensionTok{pdftocairo} \AttributeTok{{-}png} \AttributeTok{{-}r}\NormalTok{ 600 }\AttributeTok{{-}singlefile} \DataTypeTok{\textbackslash{}}
+\NormalTok{text{-}only.pdf text{-}only{-}600{-}dpi{-}cairo}
+
+\CommentTok{\# PDF to lossless JPEG at 600 dpi}
+\ExtensionTok{pdftocairo} \AttributeTok{{-}jpeg} \AttributeTok{{-}jpegopt}\NormalTok{ quality=100 }\AttributeTok{{-}r}\NormalTok{ 600 }\AttributeTok{{-}singlefile} \DataTypeTok{\textbackslash{}}
+\NormalTok{text{-}only.pdf text{-}only{-}600{-}dpi{-}cairo}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{figure}
-\hypertarget{fig:text-only}{%
+\hypertarget{fig:text-only-png-cairo}{%
 \centering
 \includegraphics[width=0.8\textwidth,height=\textheight]{images/text-only-600-dpi-cairo.png}
-\caption{Text-only image in 600 dpi PNG format.}\label{fig:text-only}
+\caption{Text-only image in 600 dpi PNG
+format.}\label{fig:text-only-png-cairo}
 }
 \end{figure}
 
-\hypertarget{non-text-test-image}{%
-\subsubsection{Non-text test image}\label{non-text-test-image}}
+\begin{figure}
+\hypertarget{fig:text-only-jpg-cairo}{%
+\centering
+\includegraphics[width=0.8\textwidth,height=\textheight]{images/text-only-600-dpi-cairo.jpg}
+\caption{Text-only image in 600 dpi lossless JPEG
+format.}\label{fig:text-only-jpg-cairo}
+}
+\end{figure}
 
-The non-text image, \texttt{animals-original.jpg}, is a colourful,
-graphically rich image with much detail. It is from a hand-drawn
-illustration of microscopic marine animals by the German naturalist
+\hypertarget{file-sizes}{%
+\paragraph{File sizes}\label{file-sizes}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text{-}only.pdf text{-}only{-}600{-}dpi{-}cairo.}\PreprocessorTok{*} \KeywordTok{|} \DataTypeTok{\textbackslash{}}
+\FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{120K}\NormalTok{    text{-}only{-}600{-}dpi{-}cairo.jpg}
+\ExtensionTok{16K}\NormalTok{     text{-}only.pdf}
+\ExtensionTok{40K}\NormalTok{     text{-}only{-}600{-}dpi{-}cairo.png}
+\end{Highlighting}
+\end{Shaded}
+
+As a convention hereafter, when there is a \texttt{-\/-\/-} separator
+between a command and some results, the latter are the results displayed
+on execution of the command.
+
+The file sizes are displayed above merely for information. Note that the
+JPEG file is an order of magnitude larger than both the original PDF and
+the PNG. The relative strengths and weaknesses of different file formats
+for displaying different image types are discussed later.
+
+\hypertarget{the-animals-image}{%
+\subsubsection{\texorpdfstring{The \texttt{animals}
+image}{The animals image}}\label{the-animals-image}}
+
+The non-text \texttt{animals.jpg} image is a cropped version of the
+original image \texttt{animals-original.jpg}
+\href{https://www.rawpixel.com/image/2266608/free-illustration-image-ernst-haeckel-vintage-animals}{downloaded
+from the Web}. It is a colourful, graphically rich image with much
+detail, and is from a hand-drawn illustration of microscopic marine
+animals by the German naturalist
 \href{https://en.wikipedia.org/wiki/Ernst_Haeckel}{Ernst Haeckel},
 scanned as a JPEG, and made available in the public domain.
+
+Note that \texttt{animals-original.jpg} has been scanned from a printed,
+hard copy illustration and saved as a JPEG raster file. That is its
+native format. All conversions should be gauged against the file size
+and visual quality of the cropped original \texttt{animals.jpg}.
 
 \begin{figure}
 \hypertarget{fig:animals-original}{%
@@ -604,37 +748,43 @@ format.\footnotemark{}}\label{fig:animals-original}
 \end{figure}
 \footnotetext{These images are in the public domain and covered by the
   \href{https://creativecommons.org/publicdomain/zero/1.0/}{CC0
-  licence}. They are available for download
-  \href{https://www.rawpixel.com/image/2266608/free-illustration-image-ernst-haeckel-vintage-animals}{here}.}
+  licence}.}
 
-\hypertarget{pre-processing-cropping}{%
-\subsection{Pre-processing: Cropping}\label{pre-processing-cropping}}
+How the original image was cropped to get the \texttt{animals} image is
+explained next.
+
+\hypertarget{pre-processing-animals}{%
+\paragraph{\texorpdfstring{Pre-processing
+\texttt{animals}}{Pre-processing animals}}\label{pre-processing-animals}}
 
 Cropping is strictly not image format conversion, but is often a
 necessary pre-processing step in image manipulations. For example,
 \cref{fig:animals-original} has a whitish, non-monochromatic border
 around the block print, containing annotations. For our purposes, this
 border is at best a distraction. It may be removed altogether by
-\emph{cropping}, leaving us with only the illustration. We will refer to
-the resulting cropped image, \texttt{animals.jpg}, as \texttt{animals},
-and use it as the source image in our examples below.
+\emph{cropping}, leaving us with only the illustration. The resulting
+cropped image, \texttt{animals.jpg} will be the source image in our
+examples below.
+
+\hypertarget{cropping}{%
+\paragraph{Cropping}\label{cropping}}
 
 Cropping is usually better done interactively using a
 \href{https://en.wikipedia.org/wiki/Graphical_user_interface}{GUI
 (Graphical User Interface)}, than on the command line. However, the
 latter, even if a bit tedious, is precisely repeatable.
 
-\texttt{ImageMagick}'s \texttt{display} utility pops up a GUI when the
-mouse is over the image and the left mouse button is clicked. We can
-then drag and fit a window to the \emph{region we wish to keep},
-clicking the \texttt{Crop} function, and saving the cropped image. The
-steps are these:
+The \texttt{display} utility of \texttt{ImageMagick} pops up a GUI,
+shown in \cref{fig:gui}, when the mouse is over the image and the left
+mouse button is clicked. We can then drag and fit a window to the
+\emph{region we wish to keep}, clicking the \texttt{Crop} function, and
+saving the cropped image. The steps are these:
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
 \tightlist
 \item
-  left mouse click on the image to reveal the GUI (see \cref{fig:gui});
+  left mouse click on the image to reveal the GUI;
 \item
   \texttt{Transform\ -\textgreater{}\ Crop};
 \item
@@ -649,7 +799,7 @@ steps are these:
 \begin{figure}
 \hypertarget{fig:gui}{%
 \centering
-\includegraphics[width=0.2\textwidth,height=\textheight]{images/ImageMagick-display-gui.png}
+\includegraphics[width=0.3\textwidth,height=\textheight]{images/ImageMagick-display-gui.png}
 \caption{\texttt{ImageMagick} interactive GUI.}\label{fig:gui}
 }
 \end{figure}
@@ -676,19 +826,21 @@ giving \(w = 735\) and \(h = 1035\), leading to
 \end{Highlighting}
 \end{Shaded}
 
-The resulting cropped image is shown in \cref{fig:cropped} below.
+The resulting cropped image, \texttt{animals.jpg} is shown in
+\cref{fig:cropped} below.
 
 \begin{figure}
 \hypertarget{fig:cropped}{%
 \centering
 \includegraphics[width=0.5\textwidth,height=\textheight]{images/animals.jpg}
-\caption{Cropped version of the image in \cref{fig:animals-original}.
-This is the \texttt{animals} image.}\label{fig:cropped}
+\caption{Cropped version of the original image in
+\cref{fig:animals-original}. This is the \texttt{animals.jpg}
+image.}\label{fig:cropped}
 }
 \end{figure}
 
-\hypertarget{file-sizes}{%
-\subsubsection{File sizes}\label{file-sizes}}
+\hypertarget{file-sizes-1}{%
+\paragraph{File sizes}\label{file-sizes-1}}
 
 The sizes of the original and cropped files are shown below in human
 friendly numbers:
@@ -701,10 +853,6 @@ friendly numbers:
 \ExtensionTok{312K}\NormalTok{    animals{-}original.jpg}
 \end{Highlighting}
 \end{Shaded}
-
-As a convention hereafter, when there is a \texttt{-\/-\/-} separator
-between a command and some results, the latter are the results displayed
-on execution of the command.
 
 As expected, the original file \texttt{animals-original.jpg} is larger
 than the cropped full-size version, \texttt{animals.jpg}, and all is
@@ -721,10 +869,10 @@ raster format conversions.
 \subsubsection{Resizing, format-conversion, and
 montaging}\label{resizing-format-conversion-and-montaging}}
 
-We may invoke \texttt{ImageMagick}'s \texttt{convert} function not only
-to convert from one format to another but also to accomplish cropping
-(as we have already seen), image-resizing, making the background
-transparent, and
+We may invoke the \texttt{convert} function of \texttt{ImageMagick} not
+only to convert from one format to another but also to accomplish
+cropping (as we have already seen), image-resizing, making the
+background transparent, and
 \href{https://www.thefreedictionary.com/montage}{montaging}, etc.
 
 Suppose we want to reduce the dimensions of the cropped image to half
@@ -735,7 +883,7 @@ side by side, we could run the following command:
 \begin{Highlighting}[]
 \ExtensionTok{convert}\NormalTok{ animals.jpg }\AttributeTok{{-}resize}\NormalTok{ 50\% animals{-}halfsize.jpg}
 
-\CommentTok{\# Composite the two images aligning their bottoms}
+\CommentTok{\# Composite the two images by aligning their bottoms}
 \ExtensionTok{convert}\NormalTok{ +append }\AttributeTok{{-}gravity}\NormalTok{ south }\DataTypeTok{\textbackslash{}}
 \NormalTok{animals.jpg animals{-}halfsize.jpg animals{-}both.jpg}
 \end{Highlighting}
@@ -746,7 +894,7 @@ side by side, we could run the following command:
 \centering
 \includegraphics[width=0.8\textwidth,height=\textheight]{images/animals-both.jpg}
 \caption{Full-size cropped image on the left and half-sized image on the
-right.}\label{fig:animals-both-jpg}
+right in JPEG format.}\label{fig:animals-both-jpg}
 }
 \end{figure}
 
@@ -756,11 +904,11 @@ right.}\label{fig:animals-both-jpg}
 Notice that there is a coloured white rectangle atop the half-size image
 on the right in \cref{fig:animals-both-jpg}. We could remove it by
 rendering the background transparent. However, because JPEG does not
-support transparency, through an
+support transparency (through an
 \href{https://www.techopedia.com/definition/1945/alpha-channel}{alpha
-channel}, we have to convert the composite image to the PNG format,
-which does. This is one, real-life circumstance necessitating raster to
-raster format conversion.
+channel}) we have to convert the composite image to the PNG format,
+which does support transparency. This is an example of why we need to
+convert from one format to another.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -775,11 +923,11 @@ raster format conversion.
 \end{Shaded}
 
 \begin{figure}
-\hypertarget{fig:animals-both-png}{%
+\hypertarget{fig:animals-both-transparent-png}{%
 \centering
 \includegraphics[width=0.8\textwidth,height=\textheight]{images/animals-both-transparent.png}
 \caption{Composite image converted to PNG format with transparent
-background.}\label{fig:animals-both-png}
+background.}\label{fig:animals-both-transparent-png}
 }
 \end{figure}
 
@@ -864,28 +1012,37 @@ to be mastered than an algorithm to be applied.
 We may conclude from the above that non-textual, detail-rich images are
 better stored and displayed as JPEGs than PNGs.
 
-\hypertarget{results-with-the-text-only-image}{%
-\subsubsection{Results with the text-only
-image}\label{results-with-the-text-only-image}}
+\hypertarget{results-with-text-only}{%
+\subsubsection{\texorpdfstring{Results with
+\texttt{text-only}}{Results with text-only}}\label{results-with-text-only}}
 
-For completeness, let us do a simple \emph{no quality loss} conversion
-from PNG to JPEG for the \texttt{text-only} test image, and compare
-image appearances and file sizes.
+Recall that \texttt{text-only} was originally generated as a PDF.
+\protect\hyperlink{converting-text-only-from-pdf-to-png-and-jpeg}{Previously},
+we briefly touched upon how we converted \texttt{text-only} from PDF to
+PNG and JPEG.
+
+To get a PNG version of the image, we need to
+\protect\hyperlink{pdf-to-png-and-jpeg-poppler-and-cairo}{run a little
+ahead of ourselves and convert from PDF to PNG}.
+
+From that PNG, let us do a simple \emph{no quality loss} conversion from
+PNG to JPEG for \texttt{text-only}, and compare appearances and file
+sizes.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# Lossless JPEG with a \textquotesingle{}quality\textquotesingle{} of 100}
+\CommentTok{\# Lossless JPEG with a \textquotesingle{}quality\textquotesingle{} of 100 from PNG}
 \ExtensionTok{convert} \AttributeTok{{-}quality}\NormalTok{ 100 text{-}only{-}600{-}dpi{-}cairo.png }\DataTypeTok{\textbackslash{}}
-\NormalTok{text{-}only{-}600{-}dpi{-}cairo.jpg}
+\NormalTok{text{-}only{-}600{-}dpi{-}cairo{-}IM.jpg}
 
 \CommentTok{\# Composite both images into one with a transparent divider}
-\ExtensionTok{convert}\NormalTok{ text{-}only{-}600{-}dpi{-}cairo.png text{-}only{-}600{-}dpi{-}cairo.jpg }\DataTypeTok{\textbackslash{}}
+\ExtensionTok{convert}\NormalTok{ text{-}only{-}600{-}dpi{-}cairo.png text{-}only{-}600{-}dpi{-}cairo{-}IM.jpg }\DataTypeTok{\textbackslash{}}
 \NormalTok{{-}background transparent }\AttributeTok{{-}splice}\NormalTok{ 20x0+0+0 +append }\AttributeTok{{-}chop}\NormalTok{ 20x0+0+0 }\DataTypeTok{\textbackslash{}}
 \NormalTok{text{-}only{-}both{-}600{-}dpi{-}cairo.png}
 
 \FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text}\PreprocessorTok{*}\NormalTok{cairo}\PreprocessorTok{*} \KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
 \ExtensionTok{{-}{-}{-}}
-\ExtensionTok{148K}\NormalTok{    text{-}only{-}600{-}dpi{-}cairo.jpg}
+\ExtensionTok{148K}\NormalTok{    text{-}only{-}600{-}dpi{-}cairo{-}IM.jpg}
 \ExtensionTok{40K}\NormalTok{     text{-}only{-}600{-}dpi{-}cairo.png}
 \ExtensionTok{120K}\NormalTok{    text{-}only{-}both{-}600{-}dpi{-}cairo.png}
 \end{Highlighting}
@@ -900,13 +1057,14 @@ right.}\label{fig:text-only-both}
 }
 \end{figure}
 
-\Cref{fig:text-only-both} does not reveal any degradation in quality
-after conversion from PNG to JPEG. Note also that the file size of the
-\emph{composite} PNG image is smaller than the file size of the
-\emph{single} JPEG image.
+The right sub-image of \cref{fig:text-only-both} does not reveal
+noticeable degradation in quality after conversion from PNG to JPEG, and
+back to PNG again. Note also that the file size of the \emph{composite}
+PNG image is smaller than the file size of the \emph{single} JPEG image.
 
-\hypertarget{png-versus-jpeg}{%
-\subsubsection{PNG versus JPEG}\label{png-versus-jpeg}}
+\hypertarget{png-versus-jpeg-text-and-non-text}{%
+\subsubsection{PNG versus JPEG: text and
+non-text}\label{png-versus-jpeg-text-and-non-text}}
 
 We conclude from the \texttt{text-only} images that PNG is better suited
 for textual images and provides a smaller file size for the same
@@ -921,23 +1079,26 @@ smaller file sizes than PNG.
 do all
 this?}{Can cairo and poppler do all this?}}\label{can-cairo-and-poppler-do-all-this}}
 
-Can such processing be done using \texttt{cairo} or \texttt{poppler}?
-Not really, in the case of the \texttt{animals} image. The
-\emph{starting point} or \emph{input format} for \texttt{cairo} and
-\texttt{poppler} is the PDF format. Our \texttt{animals} image is
-scanned from an illustration and is therefore a JPEG raster image.
-\texttt{ImageMagick}'s forte is the display, manipulation, and
-processing of raster images; \texttt{cairo} and \texttt{poppler} start
-with PDFs and have other goals.
+It is all a question of what format do we start with?
+
+Both \texttt{cairo} and \texttt{poppler} are designed for PDF input
+images. They stand out as tools of choice when we start off with PDFs.
+
+The \texttt{animals} image, on the other hand, is scanned from an
+illustration. Our input is a JPEG raster image. The forte of
+\texttt{ImageMagick} is the display, manipulation, format conversion,
+and processing of raster images. So, we run with the utilities provided
+by \texttt{ImageMagick} in the latter case.
 
 \hypertarget{raster-to-vector-conversions}{%
 \subsection{Raster to vector
 conversions}\label{raster-to-vector-conversions}}
 
-Let us say that we have a logo, designed and available as a raster
-image. To use it on the Web, we could, if necessary, reformat it as a
-JPEG or PNG file. But as we zoom into the page, the raster images will
-start becoming less sharp and more blocky as shown in \cref{fig:raster}.
+Let us say that we have a logo, designed and available as a raster image
+in some format. To use it on the Web, we could, if necessary, reformat
+it as a JPEG or PNG file. But as we zoom into the page, the raster
+images will start becoming less sharp and more blocky as shown in
+\cref{fig:raster}.
 
 However, if the graphic were in SVG format, supported by most web
 browsers, the logo would scale without visual degradation as we zoom
@@ -945,35 +1106,35 @@ into the page.
 
 How do we convert a raster image to a vector format like PDF or SVG?
 
-\hypertarget{raster-to-pdf-with-convert}{%
-\subsubsection{\texorpdfstring{Raster to PDF with
-\texttt{convert}}{Raster to PDF with convert}}\label{raster-to-pdf-with-convert}}
+\hypertarget{raster-to-pdf-with-convert-for-animals}{%
+\subsubsection{\texorpdfstring{Raster to PDF with \texttt{convert} for
+\texttt{animals}}{Raster to PDF with convert for animals}}\label{raster-to-pdf-with-convert-for-animals}}
 
-We could do this using \texttt{ImageMagick}'s \texttt{convert} utility
+The \texttt{convert} utility of \texttt{ImageMagick} comes to our rescue
 again. For example,
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Convert JPEG image to PDF}
-\ExtensionTok{convert}\NormalTok{ animals.jpg animals.pdf}
+\ExtensionTok{convert}\NormalTok{ animals.jpg animals{-}IM.pdf}
 
-\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ animals.jpg animals.pdf }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ animals.jpg animals{-}IM.pdf }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
 \ExtensionTok{{-}{-}{-}}
 \ExtensionTok{200K}\NormalTok{    animals.jpg}
-\ExtensionTok{204K}\NormalTok{    animals.pdf}
+\ExtensionTok{204K}\NormalTok{    animals{-}IM.pdf}
 \end{Highlighting}
 \end{Shaded}
 
-The converted image, \href{images/animals.pdf}{animals.pdf}, may be
-viewed from the given link. Web browsers, while they may feature PDF
-viewers on separate tabs, are still unable to display PDFs as part of a
-web page. If the converted PDF is magnified by zooming, it will be seen
-to reveal remarkable detail. And the difference between the JPEG and PDF
-file sizes is negligible.
+Web browsers, while they may feature PDF viewers on separate tabs, are
+still unable to display PDFs as part of a web page. The converted image,
+\href{images/animals-IM.pdf}{\texttt{animals-IM.pdf}}, may be viewed on
+a browser tab from the given link. If the converted PDF is magnified by
+zooming, it will be seen to reveal remarkable detail. And the difference
+between the JPEG and PDF file sizes is negligible.
 
 What happens, though, if the half-sized image is used to generate the
 PDF? It is smaller and accordingly embodies less information than the
-original.
+original, again commensurate with the respective file sizes.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -987,24 +1148,22 @@ original.
 \end{Highlighting}
 \end{Shaded}
 
-Again, no surprises here. The half-sized PDF tracks the file size of the
-half-sized JPEG.
+Increasing detail demands larger file sizes: there is no free lunch.
 
 \hypertarget{raster-to-svg-with-convert}{%
 \subsubsection{\texorpdfstring{Raster to SVG with
 \texttt{convert}}{Raster to SVG with convert}}\label{raster-to-svg-with-convert}}
 
-Let us try to harness \texttt{ImageMagick}'s \texttt{convert} again,
-this time to change from JPEG to SVG:
+Will \texttt{convert} cater for a JPEG to SVG conversion?
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ExtensionTok{convert}\NormalTok{ animals.jpg animals.svg}
+\ExtensionTok{convert}\NormalTok{ animals.jpg animals{-}IM.svg}
 
-\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ animals.jpg animals.svg }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ animals.jpg animals{-}IM.svg }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
 \ExtensionTok{{-}{-}{-}}
 \ExtensionTok{200K}\NormalTok{    animals.jpg}
-\ExtensionTok{436K}\NormalTok{    animals.svg}
+\ExtensionTok{436K}\NormalTok{    animals{-}IM.svg}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1015,29 +1174,82 @@ we did not convert from raster to SVG but from raster to PDF and thence
 to SVG?
 
 Since PDF to SVG conversion is really part of vector to vector
-conversion, we will revisit this question
-\protect\hyperlink{pdf-to-svg}{later}.
+conversion, we will {[}revisit this question later{]}{[}PDF to SVG{]}.
 
-We will not consider the \texttt{text-only} image here as that image
-originated not as a raster but as a PDF in the first place.
+\hypertarget{round-tripping-from-pdf-through-png-to-pdf}{%
+\subsubsection{Round tripping from PDF through PNG to
+PDF}\label{round-tripping-from-pdf-through-png-to-pdf}}
+
+The \texttt{text-only} image first saw life as a PDF. We then converted
+it to a 600 dpi PNG. What happens if we convert that image back to a
+PDF?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{convert}\NormalTok{ text{-}only{-}600{-}dpi{-}cairo.png text{-}only{-}from{-}600{-}dpi{-}PNG.pdf}
+
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text{-}only}\PreprocessorTok{*}\NormalTok{600}\PreprocessorTok{*}\NormalTok{.pdf text{-}only.pdf }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{40K}\NormalTok{     text{-}only{-}from{-}600{-}dpi{-}PNG.pdf}
+\ExtensionTok{16K}\NormalTok{     text{-}only.pdf}
+\end{Highlighting}
+\end{Shaded}
+
+Not surprisingly, the round trip has resulted in a fatter file for the
+PDF the second time around. Judge for yourself
+\href{images/text-only-from-600-dpi-PNG.pdf}{the image quality by
+viewing on a separate browser tab and zooming}.
+
+What would you expect if the initial PDF to PNG image conversion had
+been done at 150 dpi, or 96 dpi, or 75 dpi? The command sequence is
+\protect\hyperlink{pdf-to-png-and-jpeg-poppler-and-cairo}{explained
+later} but the results and their consequences are noteworthy here:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{pdftocairo} \AttributeTok{{-}png} \AttributeTok{{-}r}\NormalTok{ 75 }\AttributeTok{{-}singlefile}\NormalTok{ text{-}only.pdf text{-}only{-}75{-}dpi}
+
+\ExtensionTok{convert}\NormalTok{ text{-}only{-}75{-}dpi.png text{-}only{-}75{-}dpi.pdf}
+
+\FunctionTok{ls} \AttributeTok{{-}sh}\NormalTok{ text{-}only.pdf text{-}only}\PreprocessorTok{*}\NormalTok{75}\PreprocessorTok{*} \KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{8.0K}\NormalTok{    text{-}only{-}75{-}dpi.pdf}
+\ExtensionTok{8.0K}\NormalTok{    text{-}only{-}75{-}dpi.png}
+\ExtensionTok{16K}\NormalTok{     text{-}only.pdf}
+\end{Highlighting}
+\end{Shaded}
+
+View the \href{images/text-only-75-dpi.pdf}{PDF generated from the 75
+dpi PNG} on a separate browser tab and zoom in on the image as before.
+How does it compare with the
+\href{images/text-only-from-600-dpi-PNG.pdf}{one generated previously
+from the 600 dpi PNG}?
+
+This is one reason why conversion from a PNG to a PDF might result in a
+PDF which looks like a raster image when zoomed in close. The source
+image resolution was not high enough to generate a PDF that does not
+degrade on zooming. \emph{The visual quality of the original raster
+image is what the output PDF will embody.} Just because a PDF image
+scales does not mean it cannot exhibit blockiness. It will, if a low
+resolution raster image was used as source.
 
 \hypertarget{vector-to-raster}{%
 \subsection{Vector to raster}\label{vector-to-raster}}
 
 The \texttt{poppler} utilities, with the \texttt{cairo} backend are the
-primary resource here. Because the \texttt{text-only} image has been
-produced natively in PDF, we will use it as the the example for these
-conversions.
+primary resource for vector to raster conversions, specifically when the
+source image is a PDF.
 
 \hypertarget{pdf-to-png-and-jpeg-poppler-and-cairo}{%
 \subsubsection{\texorpdfstring{PDF to PNG and JPEG: \texttt{poppler} and
 \texttt{cairo}}{PDF to PNG and JPEG: poppler and cairo}}\label{pdf-to-png-and-jpeg-poppler-and-cairo}}
 
-It was \protect\hyperlink{text-only-image}{mentioned above} that
-\texttt{text-only} was originally generated as a PDF, vector graphics
-image and subsequently converted to the PNG and JPEG formats. We explain
-how that was done and also why the \texttt{ImageMagick} suite is not
-used for this purpose.
+It was mentioned \protect\hyperlink{the-text-only-image}{here} and
+\protect\hyperlink{results-with-text-only}{here} that \texttt{text-only}
+was originally generated as a native PDF, vector graphics image, and
+subsequently converted to the PNG and JPEG formats. We explain how that
+was done and also why the \texttt{ImageMagick} suite is not used for
+this purpose.
 
 The \texttt{poppler} suite contains utilities to convert from PDF to
 several raster formats. Two versatile utilities called
@@ -1046,60 +1258,73 @@ One may view their usage by typing the name of the utility prefixed by
 \texttt{man} or suffixed by \texttt{-help}, although the former is more
 exhaustive.
 
+To convert from vector to raster, we invoke commands like these:
+
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{\# \textasciigrave{}pdftocairo\textasciigrave{}: from PDF to 600 dpi PNG}
+\CommentTok{\# root file is the last argument}
 \ExtensionTok{pdftocairo} \AttributeTok{{-}png} \AttributeTok{{-}r}\NormalTok{ 600 }\AttributeTok{{-}singlefile}\NormalTok{ text{-}only.pdf }\DataTypeTok{\textbackslash{}}
 \NormalTok{text{-}only{-}600{-}dpi{-}cairo}
 
+\CommentTok{\# \textasciigrave{}pdftoppm\textasciigrave{}: from PDF to 600 dpi PNG}
+\CommentTok{\# root file is the last argument}
 \ExtensionTok{pdftoppm} \AttributeTok{{-}png} \AttributeTok{{-}r}\NormalTok{ 600 }\AttributeTok{{-}singlefile}\NormalTok{ text{-}only.pdf }\DataTypeTok{\textbackslash{}}
 \NormalTok{text{-}only{-}600{-}dpi{-}ppm}
 
+\CommentTok{\# \textasciigrave{}pdftocairo\textasciigrave{}: PDF to 600 dpi JPEG}
+\CommentTok{\# Options may be passed to JPEG}
 \ExtensionTok{pdftocairo} \AttributeTok{{-}jpeg} \AttributeTok{{-}jpegopt} \StringTok{"quality=100"} \AttributeTok{{-}r}\NormalTok{ 600 }\DataTypeTok{\textbackslash{}}
 \NormalTok{{-}singlefile text{-}only.pdf text{-}only{-}600{-}dpi{-}cairo}
 
+\CommentTok{\# \textasciigrave{}pdftoppm\textasciigrave{}: PDF to 600 dpi JPEG}
+\CommentTok{\# Options may be passed to JPEG}
 \ExtensionTok{pdftoppm} \AttributeTok{{-}jpeg} \AttributeTok{{-}jpegopt} \StringTok{"quality=100"} \AttributeTok{{-}r}\NormalTok{ 600 }\DataTypeTok{\textbackslash{}}
 \NormalTok{{-}singlefile text{-}only.pdf text{-}only{-}600{-}dpi{-}ppm}
 
+\CommentTok{\# Using \textasciigrave{}convert\textasciigrave{} from ImageMagick for PNG to JPEG}
 \ExtensionTok{convert} \AttributeTok{{-}units}\NormalTok{ pixelsperinch }\AttributeTok{{-}density}\NormalTok{ 600 }\AttributeTok{{-}quality}\NormalTok{ 100 }\DataTypeTok{\textbackslash{}}
 \NormalTok{text{-}only{-}600{-}dpi{-}cairo.png text{-}only{-}600{-}dpi{-}cairo{-}IM.jpg}
 
+\CommentTok{\# Source PNG file was output by \textasciigrave{}pdftoppm\textasciigrave{} }
 \ExtensionTok{convert} \AttributeTok{{-}units}\NormalTok{ pixelsperinch }\AttributeTok{{-}density}\NormalTok{ 600 }\AttributeTok{{-}quality}\NormalTok{ 100 }\DataTypeTok{\textbackslash{}}
 \NormalTok{text{-}only{-}600{-}dpi{-}ppm.png text{-}only{-}600{-}dpi{-}ppm{-}IM.jpg}
 \end{Highlighting}
 \end{Shaded}
 
 The value \texttt{-r\ 600} signifies a resolution of 600 pixels per inch
-(PPI), or alternatively, dots per inch (dpi). The default value is 150
-PPI. The value of 600 is suitable for printing on laser printers to give
+(ppi), or alternatively, dots per inch (dpi). The default value is 150
+ppi. The value of 600 is suitable for printing on laser printers to give
 output that will visually rival the original PDF in quality. Note that
 while raster images have inherent resolutions, PDF images have none:
-they scale without loss of quality.
+they scale without loss of quality when generated natively.
 
 The \texttt{-singlefile} option is used because we are simply converting
 a single ``page'' of PDF rather than a numbered page sequence. In all
 cases, the destination filename is the ``root'' of the converted file
-sequence, which in this case is the filename without any extension.
+sequence, which in this case is the output filename without any
+extension.
 
 In addition, the JPEG version may feature lossy compression where
 quality is traded for file size. Since PNG is lossless, to compare the
 two formats on an even keel, we specify that the \texttt{-quality} of
 the JPEG should be the maximum of 100.
 
-Both \texttt{pdftocairo} and \texttt{pdftoppm} are used in the
-conversions above, with appropriately named filenames.
+Both \texttt{pdftocairo} and \texttt{pdftoppm} are used in the first
+four conversions above, with appropriately named filenames.
 
-We could also use \texttt{ImageMagick}'s \texttt{convert} to convert
+We could also use \texttt{convert} from \texttt{ImageMagick} to convert
 from PNG to JPEG, and this is done in the last two commands above. Note
 that this is strictly not a vector to raster conversion but merely
 raster to raster. See
-\protect\hyperlink{why-is-imagemagick-disallowed-for-pdf-to-raster-1}{below}
+\protect\hyperlink{why-is-imagemagick-disallowed-for-pdf-to-raster}{below}
 for why we cannot convert from PDF to raster with \texttt{convert}.
 
 The files sizes that result are shown below:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text{-}only}\PreprocessorTok{*}\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text{-}only.pdf text{-}only{-}600}\PreprocessorTok{*} \KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
 \ExtensionTok{{-}{-}{-}}
 \ExtensionTok{148K}\NormalTok{    text{-}only{-}600{-}dpi{-}cairo{-}IM.jpg}
 \ExtensionTok{120K}\NormalTok{    text{-}only{-}600{-}dpi{-}cairo.jpg}
@@ -1122,148 +1347,364 @@ It appears that \texttt{pdftoppm} gives marginally smaller file sizes
 for JPEG than \texttt{pdftocairo}. Moreover, when \texttt{pdftoppm} is
 used to convert directly from PDF to JPEG, the file size is smaller than
 when PNG is used as an intermediate file format and conversion to JPEG
-is by \texttt{ImageMagick}'s \texttt{convert}.
+is by \texttt{convert} from \texttt{ImageMagick}.
 
 One other takeaway is that text-rich images are better rendered in PNG
 than JPEG. The PDF and PNG image file sizes are of the same order of
-magnitude, whereas the JPEGS are an order of magnitude larger.
+magnitude, whereas the JPEGs are an order of magnitude larger.
 
 \hypertarget{why-is-imagemagick-disallowed-for-pdf-to-raster}{%
 \subsubsection{\texorpdfstring{Why is \texttt{ImageMagick} disallowed
 for PDF to
 raster?}{Why is ImageMagick disallowed for PDF to raster?}}\label{why-is-imagemagick-disallowed-for-pdf-to-raster}}
 
-If you try to convert a PDF to any raster image format, you will get an
-error:
+If you try to \texttt{convert} a PDF to any raster image format, you
+will get an error:
 
-\begin{verbatim}
-convert text-only.pdf text-only.png
----
-convert: attempt to perform an operation not allowed by the security policy `gs' @ error/delegate.c/ExternalDelegateCommand/378.
-convert: no images defined `text-only.png' @ error/convert.c/ConvertImageCommand/3304.
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{convert}\NormalTok{ text{-}only.pdf text{-}only.png}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{convert:}\NormalTok{ attempt to perform an operation not allowed by the security policy }\StringTok{\textquotesingle{}gs\textquotesingle{}}\NormalTok{ @ error/delegate.c/ExternalDelegateCommand/378.}
+\ExtensionTok{convert:}\NormalTok{ no images defined }\StringTok{\textquotesingle{}text{-}only.png\textquotesingle{}}\NormalTok{ @ error/convert.c/ConvertImageCommand/3304.}
+\end{Highlighting}
+\end{Shaded}
 
-The reason why this is now disallowed is {[}explained in the
-appendix{]}{[}Appendix: \texttt{ImageMagick}'s security
-vulnerabilities{]}.
+The reason why this is now disallowed is
+\protect\hyperlink{appendix-security-vulnerabilities-in-imagemagick}{explained
+in the appendix}.
 
 \hypertarget{svg-to-png-and-jpeg}{%
 \subsubsection{SVG to PNG and JPEG}\label{svg-to-png-and-jpeg}}
 
-At present, most converters from SVG to other formats do not support
-fonts as well as PDF does. Bear this deficit in mind as SVG to raster
-converters are invoked. Both \texttt{ImageMagick} and \texttt{Inkscape}
-are able to convert SVG to PNG. Command line invocations for each and
-their resultng file sizes are detailed below. Note that the
-\texttt{cairo} backend might be used in many of these utilities.
+There was a time when SVGs were ill-supported by browsers and therefore,
+PNGs and JPEGs dominated the logo and icon landscape on the web. Now
+that most mainstream browsers support SVGs out of the box, there is
+healthy support for tools that support conversions to and from SVGs.
 
-\%\%\% Clean up below \%\%\%
+\hypertarget{some-svg-basics}{%
+\paragraph{Some SVG basics}\label{some-svg-basics}}
 
-The \texttt{Inkscape} GUI-based vector graphics editor supports SVG as
-its native format and allows export of the generated SVG graphics both
-as PDF and as PNG. Let us use the \texttt{text-only} image as an example
-and convert it from its original PDF format to an SVG using
-\texttt{pdftocairo}:
+An SVG file is a text file \emph{describing} points, curves, and shapes
+as they are rendered on a page. Such a description is unshackled from
+the rectangular array of pixels that typify a raster image. So, what is
+the \emph{natural size} of an SVG image? We touched upon this
+\protect\hyperlink{page-size-and-viewbox}{at the very beginning of this
+blog}.
+
+\hypertarget{generating-an-svg-from-a-pdf}{%
+\subparagraph{Generating an SVG from a
+PDF}\label{generating-an-svg-from-a-pdf}}
+
+First, we need to generate an SVG version of the file
+\texttt{text-only.pdf}. We are running ahead of ourselves because we
+{[}need to convert from PDF to SVG{]}{[}PDF to SVG{]}. We use
+\texttt{pdftocairo} for this because we cannot use \texttt{convert} as
+\protect\hyperlink{why-is-imagemagick-disallowed-for-pdf-to-raster}{explained
+here}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ExtensionTok{pdftocairo} \AttributeTok{{-}svg}\NormalTok{ text{-}only.pdf text{-}only.svg}
+\ExtensionTok{pdftocairo} \AttributeTok{{-}svg}\NormalTok{ text{-}only.pdf text{-}only{-}pdftocairo.svg}
 
-\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text{-}only.}\PreprocessorTok{*}\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text{-}only.pdf text{-}only{-}pdftocairo.svg }\KeywordTok{|} \DataTypeTok{\textbackslash{}}
+\FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
 \ExtensionTok{{-}{-}{-}}
 \ExtensionTok{16K}\NormalTok{     text{-}only.pdf}
-\ExtensionTok{12K}\NormalTok{     text{-}only.svg}
+\ExtensionTok{12K}\NormalTok{     text{-}only{-}pdftocairo.svg}
 \end{Highlighting}
 \end{Shaded}
 
-We could open up \texttt{text-only.svg} in \texttt{Inkscape} and save it
-as a PDF, \texttt{text-only-inkscape.pdf} completing the round trip. Or
-we could use the command line so:
+It is instructive to open the file \texttt{text-only-pdftocairo.svg} and
+look at the first block of text:
 
-\begin{verbatim}
-inkscape text-only.svg -o text-only-inkscape.pdf
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textless{}?xml}\NormalTok{ version="1.0" encoding="UTF{-}8"}\KeywordTok{?\textgreater{}}
+\KeywordTok{\textless{}svg}\OtherTok{ xmlns=}\StringTok{"http://www.w3.org/2000/svg"}\OtherTok{ xmlns:xlink=}\StringTok{"http://www.w3.org/1999/xlink"}\OtherTok{ width=}\StringTok{"214.31pt"}\OtherTok{ height=}\StringTok{"52.16pt"}\OtherTok{ viewBox=}\StringTok{"0 0 214.31 52.16"}\OtherTok{ version=}\StringTok{"1.2"}\KeywordTok{\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
 
-ls -Xsh text-only*.{svg,pdf}| awk '{print $1 "\t" $2}'
----
-8.0K    text-only-inkscape.pdf
-16K     text-only.pdf
-12K     text-only.svg
-\end{verbatim}
+The \emph{width}, \emph{height}, and \emph{viewBox} of the SVG image are
+all stated in \emph{points}, abbreviated as pt where 1 pt equals 1/72
+inch {[}5{]}. At a screen setting of 96 pixels per inch, 1 pt equals 4/3
+pixels. So, the native size of the \texttt{test-only} image as a PNG
+should be about 286 pixels by 70 pixels. When\texttt{convert} is applied
+on the SVG to yield the PNG, the latter is faithful to these unit
+conversions:
 
-What exactly has been gained or lost in this round trip is a little too
-recondite to consider here, and covers issues such as PDF version, font
-embedding or its absence, default borders, etc.
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{convert}\NormalTok{ text{-}only{-}pdftocairo.svg text{-}only{-}svg{-}convert.png}
 
-More to the point, though, is how do we convert from SVG to PNG on the
-command line using inkscape?
+\ExtensionTok{identify}\NormalTok{ text{-}only{-}svg{-}convert.png}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{text{-}only{-}svg{-}convert.png}\NormalTok{ PNG 286x70 286x70+0+0 8{-}bit sRGB 6548B 0.000u 0:00.000}
+\end{Highlighting}
+\end{Shaded}
 
-What about SVG to PNG? CairoSVG Inkscape SVG to PNG?
-\texttt{ImageMagick} SVG to PNG?
+And, not unexpectedly, the numbers returned by \texttt{identify} match
+those we derived above by simple unit conversion.
+\emojifont{🙂}\normalfont
 
-The cairosvg module offers 4 functions:
+Regarding file sizes, the PNG is actually smaller than the SVG:
 
-\begin{verbatim}
-svg2pdf,
-svg2png,
-svg2ps, and
-svg2svg.
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text{-}only{-}pdftocairo.svg text{-}only{-}svg{-}convert.png }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{8.0K}\NormalTok{    text{-}only{-}svg{-}convert.png}
+\ExtensionTok{12K}\NormalTok{     text{-}only{-}pdftocairo.svg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\hypertarget{fig:convertSVGtoPNG}{%
+\centering
+\includegraphics[width=0.8\textwidth,height=\textheight]{images/text-only-svg-convert.png}
+\caption{PNG image from SVG using \texttt{convert} with no
+options.}\label{fig:convertSVGtoPNG}
+}
+\end{figure}
+
+The PNG image lacks the sharpness of definition the original exhibited,
+which is not surprising because an increase in image resolution has not
+been achieved, and moreover, the file size has been reduced. Note the
+white border that has been added to three sides of the image, perhaps to
+arrive at an integer number of pixels for the image dimensions. For SVG
+to PNG conversion, there are better tools than \texttt{convert}.
+
+Font support in SVG is not widespread, and format conversions might
+result in non-optimal font rendering after conversion.
+
+\hypertarget{conversion-tools}{%
+\paragraph{Conversion tools}\label{conversion-tools}}
+
+There is a growing number of tools that can convert an SVG to a PNG
+image. Among these are:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \href{https://imagemagick.org/script/convert.php}{\texttt{convert}}
+  from \texttt{ImageMagick};
+\item
+  \href{https://inkscape.org/}{\texttt{Inkscape}};
+\item
+  \href{https://cairosvg.org/}{\texttt{cairosvg}};
+\item
+  \href{https://en.wikipedia.org/wiki/Librsvg}{\texttt{rsvg-convert}}
+  from \texttt{librsvg}.
+\end{enumerate}
+
+We know that \texttt{convert} will produce a minimally sized PNG that
+faithfully converts pt to pixels. Other tools might enlarge the PNG by
+using some scaling factor larger than one. Moreover, different programs
+might insert borders, transparent backgrounds, etc., modifying the
+aspect ratio of the PNG slightly. We will gloss over such details in the
+tool comparison below and simply focus on the command line invocations
+and resulting file sizes. Bear in mind also that some of the tools could
+use identical backends and therefore give identical output images.
+
+\hypertarget{the-tool-faceoff}{%
+\paragraph{The tool faceoff}\label{the-tool-faceoff}}
+
+We will convert \texttt{text-only} from SVG to PNGs at 600 dpi, using
+different tools, and compare results, starting with \texttt{inkscape}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{inkscape}  \AttributeTok{{-}d}\NormalTok{ 600 }\AttributeTok{{-}o}\NormalTok{ text{-}only{-}600{-}dpi{-}inkscape{-}svg.png text{-}only{-}pdftocairo.svg}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{Background}\NormalTok{ RRGGBBAA: ffffff00}
+\ExtensionTok{Area}\NormalTok{ 0:0:285.747:69.5467 exported to 1786 x 435 pixels }\ErrorTok{(}\ExtensionTok{600}\NormalTok{ dpi}\KeywordTok{)}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{identify}\NormalTok{ text{-}only{-}600{-}dpi{-}inkscape{-}svg.png}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{text{-}only{-}600{-}dpi{-}inkscape{-}svg.png}\NormalTok{ PNG 1786x435 1786x435+0+0 8{-}bit sRGB 43268B 0.000u 0:00.000}
+\ExtensionTok{{-}{-}{-}}
+\FunctionTok{ls} \AttributeTok{{-}sh}\NormalTok{ text{-}only{-}600{-}dpi{-}inkscape{-}svg.png }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{44K}\NormalTok{     text{-}only{-}600{-}dpi{-}inkscape{-}svg.png}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\hypertarget{fig:inkscapeSVGtoPNG}{%
+\centering
+\includegraphics[width=0.8\textwidth,height=\textheight]{images/text-only-600-dpi-inkscape-svg.png}
+\caption{PNG at 600 dpi of \texttt{text-only} from SVG using
+\texttt{inkscape}.}\label{fig:inkscapeSVGtoPNG}
+}
+\end{figure}
+
+The explicit conversion from points to pixels at 600 dpi is clear, as is
+the image itself. We would expect the PNG to have a size of 1786 by 435
+pixels, and it does. No surprises there. \emojifont{🙂}\normalfont
 
 CairoSVG is designed to parse well-formed SVG files, and draw them on a
 Cairo surface. Cairo is then able to export them to PDF, PS, PNG, and
-even SVG files.
+even SVG files. If we use \texttt{cairosvg}, we get these results:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{cairosvg} \AttributeTok{{-}d}\NormalTok{ 600 }\AttributeTok{{-}f}\NormalTok{ png }\AttributeTok{{-}o}\NormalTok{ text{-}only{-}600{-}dpi{-}cairosvg.png text{-}only.svg}
+
+\ExtensionTok{identify}\NormalTok{ text{-}only{-}600{-}dpi{-}cairosvg.png}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{text{-}only{-}600{-}dpi{-}cairosvg.png}\NormalTok{ PNG 1785x434 1785x434+0+0 8{-}bit sRGB 42999B 0.000u 0:00.000}
+\ExtensionTok{{-}{-}{-}}
+\FunctionTok{ls} \AttributeTok{{-}sh}\NormalTok{ text{-}only{-}600{-}dpi{-}cairosvg.png }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{44K}\NormalTok{     text{-}only{-}600{-}dpi{-}cairosvg.png}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\hypertarget{fig:cairosvgSVGtoPNG}{%
+\centering
+\includegraphics[width=0.8\textwidth,height=\textheight]{images/text-only-600-dpi-cairosvg.png}
+\caption{PNG at 600 dpi of \texttt{text-only} from SVG using
+\texttt{cairosvg}.}\label{fig:cairosvgSVGtoPNG}
+}
+\end{figure}
+
+The image and file sizes are within a whisker of each other for
+\texttt{inkscape} and \texttt{cairosvg} and they are comparable in ease
+of use and fidelity. Indeed, it could very well be that
+\texttt{inkscape} uses the \texttt{cairo} backend.
+
+Now for the final tool, \texttt{rsvg-convert}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{rsvg{-}convert} \AttributeTok{{-}a} \AttributeTok{{-}d}\NormalTok{ 600 }\AttributeTok{{-}p}\NormalTok{ 600 }\AttributeTok{{-}f}\NormalTok{ png }\AttributeTok{{-}o}\NormalTok{ text{-}only{-}600{-}dpi{-}rsvg{-}convert.png text{-}only.svg}
+
+\ExtensionTok{identify}\NormalTok{ text{-}only{-}600{-}dpi{-}rsvg{-}convert.png}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{text{-}only{-}600{-}dpi{-}rsvg{-}convert.png}\NormalTok{ PNG 1786x435 1786x435+0+0 8{-}bit sRGB 43171B 0.000u 0:00.000}
+\ExtensionTok{{-}{-}{-}}
+\FunctionTok{ls} \AttributeTok{{-}sh}\NormalTok{ text{-}only{-}600{-}dpi{-}rsvg{-}convert.png }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{44K}\NormalTok{     text{-}only{-}600{-}dpi{-}rsvg{-}convert.png}
+\end{Highlighting}
+\end{Shaded}
+
+Note that the \texttt{-a} option preserves aspect ratio, and the \(x\)
+and \(y\) resolutions have to be specified separately using \texttt{-d}
+and \texttt{-p} respectively. Though more verbose, it also offers
+options to shear or zoom the image and is more versatile.
+
+All of \texttt{inkscape}, \texttt{cairosvg}, and \texttt{rsvg-convert}
+produce PNG files of the same size and visual quality, as is apparent
+from \cref{fig:inkscapeSVGtoPNG}, \cref{fig:cairosvgSVGtoPNG}, and
+\cref{fig:rsvg-convertSVGtoPNG}.
+
+\begin{figure}
+\hypertarget{fig:rsvg-convertSVGtoPNG}{%
+\centering
+\includegraphics[width=0.8\textwidth,height=\textheight]{images/text-only-600-dpi-rsvg-convert.png}
+\caption{PNG at 600 dpi of \texttt{text-only} from SVG using
+\texttt{rsvg-convert}.}\label{fig:rsvg-convertSVGtoPNG}
+}
+\end{figure}
+
+Images like \texttt{animals} are best displayed as JPEGs. There is no
+obvious need to convert such images from JPEG to SVG and back again,
+simply to view how the quality changed during the roundtrip.
+Accordingly, we will not consider the \texttt{animals} image here.
 
 \hypertarget{vector-to-vector}{%
 \subsection{Vector to vector}\label{vector-to-vector}}
 
-There are principally two format conversions here:
+Th last of the four types of format conversions is when both input and
+output files are in vector formats. There are principally two cases
+here:
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
 \tightlist
 \item
   PDF to SVG; and
 \item
   SVG to PDF.
-\end{itemize}
+\end{enumerate}
 
-We look at each in turn below.
+The \texttt{cairo} and \texttt{poppler} libraries and their utilities
+are our ``go to'' resource if the source image is PDF. \texttt{cairosvg}
+and \texttt{rsvg-convert} are our resource when the source image is an
+SVG. The \texttt{Inkscape} GUI-based vector graphics editor supports SVG
+as its native format and allows export of the generated SVG graphics
+both as PDF and as PNG.
 
-\hypertarget{pdf-to-svg-pdftocairo-and-pdftoppm}{%
-\subsubsection{\texorpdfstring{PDF to SVG: \texttt{pdftocairo} and
-\texttt{pdftoppm}}{PDF to SVG: pdftocairo and pdftoppm}}\label{pdf-to-svg-pdftocairo-and-pdftoppm}}
+\hypertarget{pdf-to-svg-with-the-animals-image}{%
+\subsubsection{\texorpdfstring{PDF to SVG with the \texttt{animals}
+image}{PDF to SVG with the animals image}}\label{pdf-to-svg-with-the-animals-image}}
 
-The \texttt{poppler} standalone utilities \texttt{pdftocairo} and
-\texttt{pdftoppm} offer a route from PDF to SVG. So, if we had the file
-\texttt{animals.pdf} we could convert it to SVG:
+When PDF is the source format, the \texttt{poppler} standalone utilities
+\texttt{pdftocairo} and \texttt{pdftoppm} are the preferred tools.
+
+We have
+\protect\hyperlink{raster-to-pdf-with-convert-for-animals}{already
+generated} \href{images/animals-IM.pdf}{\texttt{animals-IM.pdf}}. Let us
+now convert it SVG and view it.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# PDF to SVG using pdftocairo}
-\ExtensionTok{pdftocairo} \AttributeTok{{-}svg}\NormalTok{ animals.pdf animals{-}pdftocairo.svg}
+\ExtensionTok{pdftocairo} \AttributeTok{{-}svg}\NormalTok{ animals{-}IM.pdf animals{-}pdftocairo.svg}
+\end{Highlighting}
+\end{Shaded}
 
-\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ animals.pdf animals{-}pdftocairo.svg }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\begin{figure}
+\hypertarget{fig:animals-pdftocairo-svg}{%
+\centering
+\includegraphics[width=0.5\textwidth,height=\textheight]{images/animals-pdftocairo.svg}
+\caption{SVG version of the \texttt{animals}
+image.}\label{fig:animals-pdftocairo-svg}
+}
+\end{figure}
+
+The images appear the same visually and do not seem to have lost
+definition in the conversion from the original JPEG to the two vector
+formats.
+
+Let us collate and view the file sizes of all the \texttt{animals}
+images in the PDF and SVG formats, including those previously converted
+using \texttt{convert} from \texttt{ImgeMagick}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ animals.jpg animals{-}}\DataTypeTok{\{I}\OperatorTok{,}\DataTypeTok{p\}}\PreprocessorTok{*}\NormalTok{.pdf animals}\PreprocessorTok{*}\NormalTok{.svg }\KeywordTok{|} \DataTypeTok{\textbackslash{}}
+\FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
 \ExtensionTok{{-}{-}{-}}
-\ExtensionTok{204K}\NormalTok{    animals.pdf}
+\ExtensionTok{200K}\NormalTok{    animals.jpg}
+\ExtensionTok{204K}\NormalTok{    animals{-}IM.pdf}
+\ExtensionTok{436K}\NormalTok{    animals{-}IM.svg}
 \ExtensionTok{268K}\NormalTok{    animals{-}pdftocairo.svg}
 \end{Highlighting}
 \end{Shaded}
 
-Two observations are pertinent:
+We may infer that, for conversion to SVG:
 
 \begin{enumerate}
 \item
-  It is preferable to convert from a raster image to PDF using
-  \texttt{convert} and then convert that PDF to SVG using
-  \texttt{pdftocairo} rather than convert directly from a raster to an
-  SVG using \texttt{convert} in a single step. The file sizes that
-  result are very much smaller with the two-stage conversion.
+  Direct conversion from JPEG to PDF, or from PDF to SVG, does not
+  substantially degrade image quality or increase file size for visually
+  rich, non-textual images like \texttt{animals}.
+\item
+  Direct conversion from JPEG to SVG using \texttt{convert} results in a
+  much larger file size than if we converted from JPEG to PDF and used
+  \texttt{pdftocairo} to convert that PDF to SVG. Two stage-conversion
+  may be preferable in some cases.
 \item
   \texttt{pdftoppm} is not set up to convert \emph{to} SVG, and hence
   cannot be used.
 \end{enumerate}
 
-\hypertarget{pdf2svg}{%
-\subsubsection{\texorpdfstring{\texttt{pdf2svg}}{pdf2svg}}\label{pdf2svg}}
+\hypertarget{the-standalone-pdf2svg-utility}{%
+\paragraph{\texorpdfstring{The standalone \texttt{pdf2svg}
+utility}{The standalone pdf2svg utility}}\label{the-standalone-pdf2svg-utility}}
 
 There is a utility called
 \href{https://github.com/dawbarton/pdf2svg}{\texttt{pdf2svg}} that has
@@ -1273,12 +1714,14 @@ PDF to SVG conversion as \texttt{pdftocairo}:
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# PDF to SVG using pdf2svg}
-\ExtensionTok{pdf2svg}\NormalTok{ animals.pdf animals{-}pdf2svg.svg}
+\ExtensionTok{pdf2svg}\NormalTok{ animals{-}IM.pdf animals{-}pdf2svg.svg}
 
-\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ animals.pdf animals{-}pdf2svg.svg }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ animals{-}IM.pdf animals{-}pdf2svg.svg animals{-}pdftocairo.svg }\KeywordTok{|} \DataTypeTok{\textbackslash{}}
+\FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
 \ExtensionTok{{-}{-}{-}}
-\ExtensionTok{204K}\NormalTok{    animals.pdf}
+\ExtensionTok{204K}\NormalTok{    animals{-}IM.pdf}
 \ExtensionTok{268K}\NormalTok{    animals{-}pdf2svg.svg}
+\ExtensionTok{268K}\NormalTok{    animals{-}pdftocairo.svg}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1296,289 +1739,231 @@ than mine.
 So, it appears that \texttt{pdftocairo} is sufficient for converting
 from PDF to SVG.
 
-\texttt{rsvg-convert} \texttt{pdftocairo}
+\hypertarget{pdf-to-svg-with-the-text-only-image}{%
+\subsubsection{\texorpdfstring{PDF to SVG with the \texttt{text-only}
+image}{PDF to SVG with the text-only image}}\label{pdf-to-svg-with-the-text-only-image}}
 
-https://en.wikipedia.org/wiki/Cairo\_(graphics)
-
-https://www.cairographics.org/
-
-https://cgit.freedesktop.org/cairo
-
-\hypertarget{inkscape}{%
-\subsubsection{Inkscape}\label{inkscape}}
-
-https://wiki.inkscape.org/wiki/index.php/Tools
-
-\hypertarget{pdf2svg-1}{%
-\subsection{pdf2svg}\label{pdf2svg-1}}
-
-https://cityinthesky.co.uk/opensource/pdf2svg/
-
-https://github.com/dawbarton/pdf2svg
-
-https://inkscape.org/develop/about-svg/
-
-\hypertarget{poppler}{%
-\subsection{poppler}\label{poppler}}
-
-\texttt{pdftoppm}
-
-pdftocairo
-
-\hypertarget{raster-to-raster}{%
-\subsection{Raster to raster}\label{raster-to-raster}}
-
-\hypertarget{image-to-pdf}{%
-\subsection{Image to PDF}\label{image-to-pdf}}
-
-Still works. No strictures. But the PDF can get grungy. Use a pyramid of
-resolutions.
-
-\hypertarget{avoiding-blurry-pdfs}{%
-\subsubsection{Avoiding blurry PDFs}\label{avoiding-blurry-pdfs}}
-
--units pixelsperinch -density 1200 etc., in conversion
-
-Useful when a hgh resolution image is available. In any case: PDF and
-png/jpg sizes are similar.
-
-\hypertarget{choosing-the-optimal-image-resolution-for-a-clear-pdf}{%
-\subsection{Choosing the optimal image resolution for a clear
-PDF}\label{choosing-the-optimal-image-resolution-for-a-clear-pdf}}
-
-96dpi for screen 150 dpi default 300 dpi for print {[}give references{]}
+We have already converted from PDF to SVG using \texttt{pdftocairo}
+\protect\hyperlink{generating-an-svg-from-a-pdf}{previously}. We repeat
+below the identical command used previously to generate the SVG image:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ExtensionTok{convert} \AttributeTok{{-}units}\NormalTok{ pixelsperinch }\AttributeTok{{-}density}\NormalTok{ 300 file.png file.pdf}
-\end{Highlighting}
-\end{Shaded}
+\ExtensionTok{pdftocairo} \AttributeTok{{-}svg}\NormalTok{ text{-}only.pdf text{-}only{-}pdftocairo.svg}
 
-\hypertarget{pdf-to-image-not-supported}{%
-\subsection{PDF to image not
-supported}\label{pdf-to-image-not-supported}}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\#! /bin/magick}
-\ExtensionTok{convert}\NormalTok{ file.pdf file.png}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-convert test.pdf test.png
----
-convert: unable to open image 'test.pdf': No such file or directory @ error/blob.c/OpenBlob/3537.
-convert: no images defined `test.png' @ error/convert.c/ConvertImageCommand/3304.
-\end{verbatim}
-
-\hypertarget{security-considerations}{%
-\subsubsection{Security considerations}\label{security-considerations}}
-
-\texttt{ImageMagick} is no more the famed Swiss army knife for
-conversions from PDFs to images.
-
-Give references to security concerns.
-
-\hypertarget{enter-poppler}{%
-\subsection{Enter poppler}\label{enter-poppler}}
-
-\hypertarget{vector-to-raster-1}{%
-\subsection{Vector to raster}\label{vector-to-raster-1}}
-
-It was \protect\hyperlink{text-only-image}{mentioned above} that
-\texttt{text-only} was originally generated as a PDF, vector graphics
-image and subsequently converted to the PNG and JPEG formats. We explain
-how that was done and also why the \texttt{ImageMagick} suite is not
-used for this purpose.
-
-\hypertarget{poppler-and-cairo}{%
-\subsubsection{\texorpdfstring{\texttt{poppler} and
-\texttt{cairo}}{poppler and cairo}}\label{poppler-and-cairo}}
-
-The \texttt{poppler} suite contains utilities to convert from PDF to
-several raster formats. Two versatile utilities called
-\texttt{pdftocairo} and \texttt{pdftoppm} are available for our purpose.
-One may view their usage by typing the name of the utility prefixed by
-\texttt{man} or suffixed by \texttt{-help}, although the former is more
-exhaustive.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ExtensionTok{pdftocairo} \AttributeTok{{-}png} \AttributeTok{{-}r}\NormalTok{ 600 }\AttributeTok{{-}singlefile}\NormalTok{ text{-}only.pdf }\DataTypeTok{\textbackslash{}}
-\NormalTok{text{-}only{-}600{-}dpi{-}cairo}
-
-\ExtensionTok{pdftoppm} \AttributeTok{{-}png} \AttributeTok{{-}r}\NormalTok{ 600 }\AttributeTok{{-}singlefile}\NormalTok{ text{-}only.pdf }\DataTypeTok{\textbackslash{}}
-\NormalTok{text{-}only{-}600{-}dpi{-}ppm}
-
-\ExtensionTok{pdftocairo} \AttributeTok{{-}jpeg} \AttributeTok{{-}jpegopt} \StringTok{"quality=100"} \AttributeTok{{-}r}\NormalTok{ 600 }\DataTypeTok{\textbackslash{}}
-\NormalTok{{-}singlefile text{-}only.pdf text{-}only{-}600{-}dpi{-}cairo}
-
-\ExtensionTok{pdftoppm} \AttributeTok{{-}jpeg} \AttributeTok{{-}jpegopt} \StringTok{"quality=100"} \AttributeTok{{-}r}\NormalTok{ 600 }\DataTypeTok{\textbackslash{}}
-\NormalTok{{-}singlefile text{-}only.pdf text{-}only{-}600{-}dpi{-}ppm}
-
-\ExtensionTok{convert} \AttributeTok{{-}units}\NormalTok{ pixelsperinch }\AttributeTok{{-}density}\NormalTok{ 600 }\AttributeTok{{-}quality}\NormalTok{ 100 }\DataTypeTok{\textbackslash{}}
-\NormalTok{text{-}only{-}600{-}dpi{-}cairo.png text{-}only{-}600{-}dpi{-}cairo{-}IM.jpg}
-
-\ExtensionTok{convert} \AttributeTok{{-}units}\NormalTok{ pixelsperinch }\AttributeTok{{-}density}\NormalTok{ 600 }\AttributeTok{{-}quality}\NormalTok{ 100 }\DataTypeTok{\textbackslash{}}
-\NormalTok{text{-}only{-}600{-}dpi{-}ppm.png text{-}only{-}600{-}dpi{-}ppm{-}IM.jpg}
-\end{Highlighting}
-\end{Shaded}
-
-The value \texttt{-r\ 600} signifies a resolution of 600 pixels per inch
-(PPI). The default value is 150 PPI. The value of 600 is suitable for
-printing on laser printers to give output that will visually rival the
-original PDF in quality. Note that while raster images have inherent
-resolutions, PDF images have none: they scale without loss of quality.
-
-The \texttt{-singlefile} option is used because we are simply converting
-a single ``page'' of PDF rather than a numbered page sequence. In all
-cases, the destination filename is the ``root'' of the converted file
-sequence, which in this case is the filename without any extension.
-
-In addition, the JPEG version may feature lossy compression where
-quality is traded for file size. Since PNG is lossless, to compare the
-two formats on an even keel, we specify that the \texttt{-quality} of
-the JPEG should be the maximum of 100.
-
-Both \texttt{pdftocairo} and \texttt{pdftoppm} are used in the
-conversions above, with appropriately named filenames. One could also
-use \texttt{ImageMagick}'s \texttt{convert} to convert from PNG to JPEG,
-and this is done in the last two commands.
-
-The files sizes that result are shown below:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text{-}only}\PreprocessorTok{*}\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text{-}only.pdf text{-}only{-}pdftocairo.svg }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
 \ExtensionTok{{-}{-}{-}}
-\ExtensionTok{148K}\NormalTok{    text{-}only{-}600{-}dpi{-}cairo{-}IM.jpg}
-\ExtensionTok{120K}\NormalTok{    text{-}only{-}600{-}dpi{-}cairo.jpg}
-\ExtensionTok{140K}\NormalTok{    text{-}only{-}600{-}dpi{-}ppm{-}IM.jpg}
-\ExtensionTok{112K}\NormalTok{    text{-}only{-}600{-}dpi{-}ppm.jpg}
 \ExtensionTok{16K}\NormalTok{     text{-}only.pdf}
-\ExtensionTok{40K}\NormalTok{     text{-}only{-}600{-}dpi{-}cairo.png}
-\ExtensionTok{40K}\NormalTok{     text{-}only{-}600{-}dpi{-}ppm.png}
+\ExtensionTok{12K}\NormalTok{     text{-}only{-}pdftocairo.svg}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{pdfinfo}\NormalTok{ text{-}only.pdf }\KeywordTok{|} \FunctionTok{grep}\NormalTok{ pts}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{Page}\NormalTok{ size:      214.31 x 52.16 pts}
+\ExtensionTok{{-}{-}{-}}
+\FunctionTok{less}\NormalTok{ text{-}only{-}pdftocairo.svg }\KeywordTok{|} \FunctionTok{grep}\NormalTok{ viewBox}
+\ExtensionTok{{-}{-}{-}}
+\OperatorTok{\textless{}}\NormalTok{svg }\VariableTok{xmlns}\OperatorTok{=}\StringTok{"http://www.w3.org/2000/svg"} \ExtensionTok{xmlns:xlink=}\StringTok{"http://www.w3.org/1999/xlink"}\NormalTok{ width=}\StringTok{"214.31pt"}\NormalTok{ height=}\StringTok{"52.16pt"}\NormalTok{ viewBox=}\StringTok{"0 0 214.31 52.16"}\NormalTok{ version=}\StringTok{"1.2"}\OperatorTok{\textgreater{}}
 \end{Highlighting}
 \end{Shaded}
 
-The numbers tell their own story. I would have expected the two sets of
-raster images output by \texttt{pdftocairo} and \texttt{pdftoppm} to be
-roughly equal in size, given their identical options during invocation.
-Strangely, they are not, at least for the JPEGs. This could be either
-because of different defaults, or different algorithms, or something
-else: I simply do not know.
+The PDF page size and the SVG viewBox are identical at 214.31 by 52.16
+pts, as we would expect. For comparison, the
+\href{images/text-only.pdf}{\texttt{text-only.pdf} image} may be opened
+on a separate browser tab and compared with the SVG shown in
+\cref{fig:SVGfromPDFviapdftocairo}.
 
-It appears that \texttt{pdftoppm} gives marginally smaller file sizes
-for JPEG than \texttt{pdftocairo}. Moreover, when \texttt{pdftoppm} is
-used to convert directly from PDF to JPEG, the file size is smaller than
-when PNG is used as an intermediate file format and conversion to JPEG
-is by \texttt{ImageMagick}'s \texttt{convert}.
+\begin{figure}
+\hypertarget{fig:SVGfromPDFviapdftocairo}{%
+\centering
+\includegraphics[width=0.8\textwidth,height=\textheight]{images/text-only-pdftocairo.svg}
+\caption{SVG version of \texttt{text-only} image converted from PDF by
+\texttt{pdftocairo}.}\label{fig:SVGfromPDFviapdftocairo}
+}
+\end{figure}
 
-One other takeaway is that text-rich images are better rendered in PNG
-than JPEG. The PDF and PNG image file sizes are of the same order of
-magnitude, whereas the JPEGS are an order of magnitude larger.
+\hypertarget{pdf-to-svg-to-pdf-roundtrip}{%
+\paragraph{PDF to SVG to PDF
+roundtrip}\label{pdf-to-svg-to-pdf-roundtrip}}
 
-\hypertarget{why-is-imagemagick-disallowed-for-pdf-to-raster-1}{%
-\subsubsection{\texorpdfstring{Why is \texttt{ImageMagick} disallowed
-for PDF to
-raster?}{Why is ImageMagick disallowed for PDF to raster?}}\label{why-is-imagemagick-disallowed-for-pdf-to-raster-1}}
+We could open up \texttt{text-only.svg} in \texttt{Inkscape} and save it
+as a PDF, \texttt{text-only-inkscape.pdf} completing the round trip. Or
+we could use the command line so:
 
-If you try to convert a PDF to any raster image format, you will get an
-error:
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{inkscape}\NormalTok{ text{-}only.svg }\AttributeTok{{-}o}\NormalTok{ text{-}only{-}inkscape.pdf}
 
-\begin{verbatim}
-convert text-only.pdf text-only.png
----
-convert: attempt to perform an operation not allowed by the security policy `gs' @ error/delegate.c/ExternalDelegateCommand/378.
-convert: no images defined `text-only.png' @ error/convert.c/ConvertImageCommand/3304.
-\end{verbatim}
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text{-}only}\PreprocessorTok{*}\NormalTok{.}\DataTypeTok{\{svg}\OperatorTok{,}\DataTypeTok{pdf\}}\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{8.0K}\NormalTok{    text{-}only{-}inkscape.pdf}
+\ExtensionTok{16K}\NormalTok{     text{-}only.pdf}
+\ExtensionTok{12K}\NormalTok{     text{-}only.svg}
+\end{Highlighting}
+\end{Shaded}
 
-The reason why this is now disallowed is {[}explained in the
-appendix{]}{[}Appendix: \texttt{ImageMagick}'s security
-vulnerabilities{]}.
-
-\hypertarget{svg-to-raster}{%
-\subsubsection{SVG to raster}\label{svg-to-raster}}
-
-What about SVG to PNG? CairoSVG Inkscape SVG to PNG?
-\texttt{ImageMagick} SVG to PNG?
-
-The cairosvg module offers 4 functions:
-
-\begin{verbatim}
-svg2pdf,
-svg2png,
-svg2ps, and
-svg2svg.
-\end{verbatim}
-
-CairoSVG is designed to parse well-formed SVG files, and draw them on a
-Cairo surface. Cairo is then able to export them to PDF, PS, PNG, and
-even SVG files.
-
-\hypertarget{vector-to-vector-1}{%
-\subsection{Vector to vector}\label{vector-to-vector-1}}
-
-There are basically two possibilities:
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\tightlist
-\item
-  PDF to SVG; and
-\item
-  SVG to PDF.
-\end{enumerate}
-
-Both are possible with the \texttt{cairo} library and \texttt{poppler}
-suite as well as other libraries and utilities.
-
-\hypertarget{pdf-to-svg}{%
-\subsubsection{PDF to SVG}\label{pdf-to-svg}}
-
-pdftocairo -svg pdftoppm -svg? pdf2svg Any others?
+What exactly has been gained or lost in this round trip is a little too
+recondite to consider here, and covers issues such as PDF version, font
+embedding or its absence, default borders, etc.
 
 \hypertarget{svg-to-pdf}{%
 \subsubsection{SVG to PDF}\label{svg-to-pdf}}
 
-CairoSVG https://cairosvg.org/: single executabe cairosvg from
-python-cairosvg: safety rsvg-convert from librsvg Inkscape
-\texttt{ImageMagick} any others?
+When SVG is the source image, there are four routes to format
+conversion:
 
-https://wiki.gnome.org/Projects/LibRsvg
+\begin{enumerate}
+\item
+  \href{https://cairosvg.org/}{\texttt{cairosvg}} which parses
+  well-formed SVG files, draws them on a Cairo surface, and then uses
+  \texttt{cairo} to export them to PDF, PS, PNG, and even to SVG again.
+\item
+  \href{https://en.wikipedia.org/wiki/Librsvg}{\texttt{rsvg-convert}} is
+  based on \texttt{librsvg} which uses \texttt{libxml} and
+  \texttt{cairo} to render and convert SVG files into other formats.
+\item
+  \href{https://inkscape.org/}{\texttt{inkscape}} which opens SVG files
+  natively and can export them as a PDF, PNG, etc.
+\item
+  \href{https://imagemagick.org/script/convert.php}{\texttt{convert}}
+  which can convert an SVG to PDF and also to any raster format like
+  PNG.
+\end{enumerate}
+
+\hypertarget{svg-to-pdftext-only}{%
+\subsubsection{\texorpdfstring{SVG to
+PDF:\texttt{text-only}}{SVG to PDF:text-only}}\label{svg-to-pdftext-only}}
+
+Let us use the file \texttt{text-only-pdftocairo.svg} as the input and
+convert it to PDF using all four means, and compare the resulting file
+sizes:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ExtensionTok{pdftoppm} \AttributeTok{{-}png}\NormalTok{ ernst{-}heackel{-}medium.pdf ernst{-}heackel{-}medium.png}
-\ExtensionTok{convert}\NormalTok{ ernst{-}heackel{-}medium.jpg ernst{-}heackel{-}medium{-}direct.png}
-\ExtensionTok{convert}\NormalTok{ ernst{-}heackel{-}medium.jpg ernst{-}heackel{-}medium{-}direct.png}
+\ExtensionTok{cairosvg} \AttributeTok{{-}f}\NormalTok{ pdf }\AttributeTok{{-}o}\NormalTok{ text{-}only{-}cairosvg.pdf text{-}only{-}pdftocairo.svg}
+
+\ExtensionTok{rsvg{-}convert} \AttributeTok{{-}f}\NormalTok{ pdf }\AttributeTok{{-}o}\NormalTok{ text{-}only{-}rsvg{-}convert.pdf text{-}only{-}pdftocairo.svg}
+
+\ExtensionTok{inkscape}\NormalTok{ text{-}only{-}pdftocairo.svg }\AttributeTok{{-}o}\NormalTok{ text{-}only{-}inkscape.pdf}
+
+\ExtensionTok{convert}\NormalTok{ text{-}only{-}pdftocairo.svg text{-}only{-}IM.pdf}
+
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text{-}only{-}pdftocairo.svg text{-}only{-}}\DataTypeTok{\{c}\OperatorTok{,}\DataTypeTok{r}\OperatorTok{,}\DataTypeTok{i}\OperatorTok{,}\DataTypeTok{I\}}\PreprocessorTok{*}\NormalTok{.pdf }\KeywordTok{|} \DataTypeTok{\textbackslash{}}
+\FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{8.0K}\NormalTok{    text{-}only{-}cairosvg.pdf}
+\ExtensionTok{8.0K}\NormalTok{    text{-}only{-}IM.pdf}
+\ExtensionTok{8.0K}\NormalTok{    text{-}only{-}inkscape.pdf}
+\ExtensionTok{8.0K}\NormalTok{    text{-}only{-}rsvg{-}convert.pdf}
+\ExtensionTok{12K}\NormalTok{     text{-}only{-}pdftocairo.svg}
 \end{Highlighting}
 \end{Shaded}
 
-How to use resize etc.
+The files sizes are the same from the different conversion methods.
+Since the \emph{viewBox} of the input SVG is the same and the file
+content is the same, the PDF \emph{Page size} is the same for all PDFs.
+
+Comparison with the original file
+\href{images/text-only.pdf}{\texttt{text-only.pdf}} shows the following
+differences:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  The three files \href{attach}{\texttt{text-only-cairosvg.pdf}},
+  \href{images/text-only-inkscape.pdf}{\texttt{text-only-inkscape.pdf}},
+  and
+  \href{images/text-only-rsvg-convert.pdf}{\texttt{text-only-rsvg-convert.pdf}}
+  all show a white border on three sides of the converted PDF file.
+  Zooming shows no degradation in image quality.
+\item
+  The fourth file,
+  \href{images/text-only-IM.pdf}{\texttt{text-only-IM.pdf}} obviously
+  went through an intermediate raster phase and shows blockiness when
+  zoomed. Direct conversion from SVG to PDF vis
+  \texttt{ImageMagick\ convert} should be avoided.
+\end{enumerate}
+
+\hypertarget{svg-to-pdf-animals}{%
+\subsubsection{\texorpdfstring{SVG to PDF:
+\texttt{animals}}{SVG to PDF: animals}}\label{svg-to-pdf-animals}}
+
+We use the file \texttt{animals-pdftocairo.svg} as source to convert to
+PDF and list the commands and file sizes below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{cairosvg} \AttributeTok{{-}f}\NormalTok{ pdf }\AttributeTok{{-}o}\NormalTok{ animals{-}cairosvg.pdf animals{-}pdftocairo.svg}
+
+\ExtensionTok{rsvg{-}convert} \AttributeTok{{-}f}\NormalTok{ pdf }\AttributeTok{{-}o}\NormalTok{ animals{-}rsvg{-}convert.pdf animals{-}pdftocairo.svg}
+
+\ExtensionTok{inkscape}\NormalTok{ animals{-}pdftocairo.svg }\AttributeTok{{-}o}\NormalTok{ animals{-}inkscape.pdf}
+
+\ExtensionTok{convert}\NormalTok{ animals{-}pdftocairo.svg animals{-}from{-}svg{-}IM.pdf}
+
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ animals{-}pdftocairo.svg animals{-}}\DataTypeTok{\{c}\OperatorTok{,}\DataTypeTok{r}\OperatorTok{,}\DataTypeTok{i}\OperatorTok{,}\DataTypeTok{f\}}\PreprocessorTok{*}\NormalTok{.pdf }\KeywordTok{|} \DataTypeTok{\textbackslash{}}
+\FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{1.9M}\NormalTok{    animals{-}cairosvg.pdf}
+\ExtensionTok{200K}\NormalTok{    animals{-}from{-}svg{-}IM.pdf}
+\ExtensionTok{204K}\NormalTok{    animals{-}inkscape.pdf}
+\ExtensionTok{1.9M}\NormalTok{    animals{-}rsvg{-}convert.pdf}
+\ExtensionTok{268K}\NormalTok{    animals{-}pdftocairo.svg}
+\end{Highlighting}
+\end{Shaded}
+
+The page sizes are similar but the file sizes are an order of magnitude
+for the different PDFs. Those output by the \texttt{cairo} library are
+almost ten times larger than those put out by \texttt{ImageMagick} and
+\texttt{Inkscape}.
+
+You may compare the appearance of all four images by clicking on
+separate browser tabs for these four images and zooming in to see
+details:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{images/animals-cairosvg.pdf}{\texttt{animals-cairosvg.pdf}}
+\item
+  \href{images/animals-from-svg-IM.pdf}{\texttt{animals-from-svg-IM.pdf}}
+\item
+  \href{images/animals-inkscape.pdf}{\texttt{animals-inkscape.pdf}}
+\item
+  \href{images/animals-rsvg-convert.pdf}{\texttt{animals-rsvg-convert.pdf}}
+\end{itemize}
+
+The image \texttt{animals-from-svg-IM.pdf} is pixellated on zooming in
+and we should avoid this conversion for images with fine detail. The two
+images weighing in at a file size of 1.9M exhibit detail commensurate
+with their heft. The image \texttt{animals-inkscape.pdf} is the
+preferred option as it balances good rendition of detail with a
+tractable file size.
 
 \hypertarget{summary}{%
 \subsection{Summary}\label{summary}}
 
-\texttt{ImageMagick}'s \texttt{convert} is the tool of choice for
-converting from any raster format to another raster format or to PDF or
-SVG.
+\begin{enumerate}
+\item
+  \texttt{convert} from \texttt{ImageMagick} is the tool of choice for
+  converting from any raster format to another raster format or to PDF
+  or SVG.
+\item
+  When we start out with PDF as the source image format, and the
+  destination format is either a raster format or SVG, the tool of
+  choice is \texttt{pdftocairo} from the \texttt{poppler} utilities.
+\item
+  When the source format is SVG and the destination format is either PDF
+  or a raster format, the tools of choice are either \texttt{cairosvg}
+  or \texttt{inkscape} depending on image content.
+\end{enumerate}
 
-When we start out with PDF as the source image format, and the
-destination format is either a raster format or SVG, the tool of choice
-is \texttt{pdftocairo} from the \texttt{poppler} utilities.
-
-When the source format is SVG and the destination format is either PDF
-or a raster format, the tool of choice is \texttt{cairosvg}.
-
-*\textbf{tbl:formats?} summarizes this information, which is current at
-the time of writing, but could change as image utilities landscape
+\Cref{tbl:formats} summarizes this information, which is current at the
+time of writing, but could change as the image utilities landscape
 changes with time.
 
 \begin{longtable}[]{@{}ll@{}}
 \caption{Tools for image format conversions.
-\{\#tbl:formats\}}\tabularnewline
+\label{tbl:formats}}\tabularnewline
 \toprule
 Conversion Type & Tool \\
 \midrule
@@ -1590,15 +1975,15 @@ Conversion Type & Tool \\
 raster to raster & \texttt{convert} \\
 raster to PDF & \texttt{convert} \\
 raster to SVG & \texttt{convert} \\
-PDF to raster & \texttt{pdftocairo} \\
+PDF to raster & \texttt{pdftoppm} \\
 SVG to raster & \texttt{cairosvg} \\
 PDF to SVG & \texttt{pdftocairo} \\
-SVG to PDF & \texttt{cairosvg} \\
+SVG to PDF & \texttt{inkscape} \\
 \bottomrule
 \end{longtable}
 
 \hypertarget{appendix-security-vulnerabilities-in-imagemagick}{%
-\subsubsection{\texorpdfstring{Appendix: Security vulnerabilities in
+\subsection{\texorpdfstring{Appendix: Security vulnerabilities in
 \texttt{ImageMagick}}{Appendix: Security vulnerabilities in ImageMagick}}\label{appendix-security-vulnerabilities-in-imagemagick}}
 
 Great power exacts a commensurate price. \texttt{ImageMagick}'s great
@@ -1615,13 +2000,13 @@ of delegated command strings, it was possible for someone to execute
 malicious code remotely, to the detriment of the unwitting user of
 \texttt{ImageMagick}. This was revealed at a website, interestingly
 named \href{https://imagetragick.com/}{ImageTragick} to attract
-sufficient attention and remedial action to the discovered bug {[}5{]}.
+sufficient attention and remedial action to the discovered bug {[}6{]}.
 
 In November 2020,
 \href{https://portswigger.net/daily-swig/imagemagick-pdf-parsing-flaw-allowed-attacker-to-execute-shell-commands-via-maliciously-crafted-image}{another
-security vulnerability was discovered} {[}6{]}. It was
+security vulnerability was discovered} {[}7{]}. It was
 \href{https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html}{reported
-and promptly patched} by the \texttt{ImageMagick} maintainers {[}7{]}.
+and promptly patched} by the \texttt{ImageMagick} maintainers {[}8{]}.
 
 Recent versions of the \texttt{ImageMagick} suite, bundled with major
 distributions, should have correctly configured \texttt{policy.xml}
@@ -1632,7 +2017,7 @@ vulnerabilities. Above all, it is vital to keep system and application
 software up to date to avail of evolutions in performance and security.
 
 \hypertarget{feedback}{%
-\paragraph{Feedback}\label{feedback}}
+\section{Feedback}\label{feedback}}
 
 Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
@@ -1674,14 +2059,22 @@ for PNG?---Stack Overflow},'} 03-Dec-2014. {[}Online{]}. Available:
 \url{https://stackoverflow.com/questions/27267073/imagemagick-lossless-max-compression-for-png/27269260\#27269260}.
 {[}Accessed: 12-Mar-2021{]}}
 
-\leavevmode\hypertarget{ref-imagetragick2016}{}%
+\leavevmode\hypertarget{ref-oreilly2019}{}%
 \CSLLeftMargin{{[}5{]} }
+\CSLRightInline{A. Bellamy-Royds, K. Cagle, and D. Storey, {`{Units for
+Measurements Reference --- Using SVG with CSS3 and HTML5---Supplementary
+Material},'} 05-Oct-2019. {[}Online{]}. Available:
+\url{https://oreillymedia.github.io/Using_SVG/guide/units.html}.
+{[}Accessed: 20-Mar-2021{]}}
+
+\leavevmode\hypertarget{ref-imagetragick2016}{}%
+\CSLLeftMargin{{[}6{]} }
 \CSLRightInline{---, {`ImageMagick is on fire --- CVE-2016--3714,'}
 12-May-2016. {[}Online{]}. Available: \url{https://imagetragick.com/}.
 {[}Accessed: 08-Mar-2021{]}}
 
 \leavevmode\hypertarget{ref-leyden2020}{}%
-\CSLLeftMargin{{[}6{]} }
+\CSLLeftMargin{{[}7{]} }
 \CSLRightInline{J. Leyden, {`ImageMagick PDF-parsing flaw allowed
 attacker to execute shell commands via maliciously crafted image,'}
 23-Nov-2020. {[}Online{]}. Available:
@@ -1689,7 +2082,7 @@ attacker to execute shell commands via maliciously crafted image,'}
 {[}Accessed: 08-Mar-2021{]}}
 
 \leavevmode\hypertarget{ref-infuhr2020}{}%
-\CSLLeftMargin{{[}7{]} }
+\CSLLeftMargin{{[}8{]} }
 \CSLRightInline{A. Inführ, {`{ImageMagick - Shell injection via PDF
 password},'} 21-Nov-2020. {[}Online{]}. Available:
 \url{https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html}.
