@@ -279,15 +279,6 @@ div.csl-indent {
   margin-left: 2em;
 }
 
-h1#bibliography {
-  margin-top: 1.3333em;
-  font-size: 1.5em;
-  margin-bottom: 0.6666em;
-  color: #363636;
-  font-weight: 600;
-  line-height: 1.125;
-}
-
 /* Pandoc Equation numbers Styles */
 .eqnos {
   display: inline-block;
@@ -4541,6 +4532,17 @@ a:hover code {
 
 .content .article {
   color: #cc9393;
+}
+
+/* Reducing size of h1 headings References and Feedback to h3 */
+h1#bibliography,
+h1#feedback {
+  margin-top: 1.3333em;
+  font-size: 1.5em;
+  margin-bottom: 0.6666em;
+  color: #363636;
+  font-weight: 600;
+  line-height: 1.125;
 }
 
 /* Styles for footer */
