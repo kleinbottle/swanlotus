@@ -5,12 +5,12 @@ date: 2021-03-07
 modified: 2021-03-22
 category: Software
 tags: image formats, PNG, JPEG, PDF, SVG, ImageMagick, Inkscape, cairo, poppler, Linux
-summary: "We may be called upon to convert images between one format and another at short notice. This tutorial explores the different tools that are currently available and identifies the most efficient for each task. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks."
+summary: "We may be called upon at short notice to convert images between one format and another. This tutorial explores the different tools that are currently available and identifies the most efficient for each task. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks."
 opengraphimage: animals.jpg
 status: draft
 ---
 
-We may be called upon to convert images between one format and another at short notice. This tutorial explores the different tools that are currently available and identifies the most efficient for each task. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks.
+We may be called upon at short notice to convert images between one format and another. This tutorial explores the different tools that are currently available and identifies the most efficient for each task. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks.
 
 ## Two varieties of digital images
 
@@ -401,15 +401,15 @@ The `convert` utility of `ImageMagick` comes to our rescue again. For example,
 
 ```bash
 # Convert JPEG image to PDF
-convert animals.jpg animals.pdf
+convert animals.jpg animals-IM.pdf
 
-ls -Xsh animals.jpg animals.pdf | awk '{print $1 "\t" $2}'
+ls -Xsh animals.jpg animals-IM.pdf | awk '{print $1 "\t" $2}'
 ---
 200K    animals.jpg
-204K    animals.pdf
+204K    animals-IM.pdf
 ```
 
-Web browsers, while they may feature PDF viewers on separate tabs, are still unable to display PDFs as part of a web page. The converted image, [`animals.pdf`]({attach}images/animals.pdf), may be viewed on a browser tab from the given link. If the converted PDF is magnified by zooming, it will be seen to reveal remarkable detail. And the difference between the JPEG and PDF file sizes is negligible.
+Web browsers, while they may feature PDF viewers on separate tabs, are still unable to display PDFs as part of a web page. The converted image, [`animals-IM.pdf`]({attach}images/animals-IM.pdf), may be viewed on a browser tab from the given link. If the converted PDF is magnified by zooming, it will be seen to reveal remarkable detail. And the difference between the JPEG and PDF file sizes is negligible.
 
 What happens, though, if the half-sized image is used to generate the PDF? It is smaller and accordingly embodies less information than the original, again commensurate with the respective file sizes.
 
@@ -429,12 +429,12 @@ Increasing detail demands larger file sizes: there is no free lunch.
 Will `convert` cater for a JPEG to SVG conversion?
 
 ```bash
-convert animals.jpg animals.svg
+convert animals.jpg animals-IM.svg
 
-ls -Xsh animals.jpg animals.svg | awk '{print $1 "\t" $2}'
+ls -Xsh animals.jpg animals-IM.svg | awk '{print $1 "\t" $2}'
 ---
 200K    animals.jpg
-436K    animals.svg
+436K    animals-IM.svg
 ```
 
 The SVG file is more than _twice_ the size of the original JPEG. The question arises whether there is an alternative route to the SVG that could give us smaller file sizes but comparable fidelity. What if we did not convert from raster to SVG but from raster to PDF and thence to SVG?
@@ -699,48 +699,56 @@ Th last of the four types of format conversions is when both input and output fi
 a.  PDF to SVG; and
 a.  SVG to PDF.
 
-### PDF to SVG: `pdftocairo` and `pdftoppm`
+The `cairo` and `poppler` libraries and their utilities are our "go to" resource if the source image is PDF. `cairosvg` and `rsvg-convert` are our resource when the source image is an SVG. The `Inkscape` GUI-based vector graphics editor supports SVG as its native format and allows export of the generated SVG graphics both as PDF and as PNG.
+
+### PDF to SVG with the `animals` image
 
 When PDF is the source format, the `poppler` standalone utilities `pdftocairo` and `pdftoppm` are the preferred tools.
 
-We have [already generated][Raster to PDF with `convert` for `animals`] [`animals.pdf`]({attach}images/animals.pdf). Let us now convert it SVG and view it.
+We have [already generated][Raster to PDF with `convert` for `animals`] [`animals-IM.pdf`]({attach}images/animals-IM.pdf). Let us now convert it SVG and view it.
 
 ```bash
 # PDF to SVG using pdftocairo
-pdftocairo -svg animals.pdf animals-pdftocairo.svg
-
-ls -Xsh animals.jpg animals.pdf animals-pdftocairo.svg | \
-awk '{print $1 "\t" $2}'
----
-200K    animals.jpg
-204K    animals.pdf
-268K    animals-pdftocairo.svg
+pdftocairo -svg animals-IM.pdf animals-pdftocairo.svg
 ```
 
 ![SVG version of the `animals` image.]({attach}images/animals-pdftocairo.svg){#fig:animals-pdftocairo-svg width=50%}
 
-The image appears the same visually and does not seem to have lost definition in the conversion from the original JPEG to the two vector formats. The file sizes are also in the same ball park. We may conclude that conversion from JPEG to PDF or SVG, or from PDF to SVG, does not substantially degrade image quality or increase file size for visually rich, non-textual images like `animals`.
+The images appear the same visually and do not seem to have lost definition in the conversion from the original JPEG to the two vector formats.
 
-%%% START HERE %%%
+Let us collate and view the file sizes of all the `animals` images in the PDF and SVG formats, including those previously converted using `convert` from `ImgeMagick`.
 
-Two observations are pertinent:
+```bash
+ls -Xsh animals.jpg animals-{I,p}*.pdf animals*.svg | \
+awk '{print $1 "\t" $2}'
+---
+200K    animals.jpg
+204K    animals-IM.pdf
+436K    animals-IM.svg
+268K    animals-pdftocairo.svg
+```
+We may infer that, for conversion to SVG:
 
-#.  It is preferable to convert from a raster image to PDF using `convert` and then convert that PDF to SVG using `pdftocairo` rather than convert directly from a raster to an SVG using `convert` in a single step. The file sizes that result are very much smaller with the two-stage conversion.
+#.  Direct conversion from JPEG to PDF, or from PDF to SVG, does not substantially degrade image quality or increase file size for visually rich, non-textual images like `animals`.
+
+#.  Direct conversion from JPEG to SVG using `convert` results in a much larger file size than if we converted from JPEG to PDF and used `pdftocairo` to convert that PDF to SVG. Two stage-conversion may be preferable in some cases.
 
 #.  `pdftoppm` is not set up to convert _to_ SVG, and hence cannot be used.
 
-### `pdf2svg`
+#### The standalone `pdf2svg` utility
 
 There is a utility called [`pdf2svg`](https://github.com/dawbarton/pdf2svg) that has been available for some time now. It may be used to accomplish the same PDF to SVG conversion as `pdftocairo`:
 
 ```bash
 # PDF to SVG using pdf2svg
-pdf2svg animals.pdf animals-pdf2svg.svg
+pdf2svg animals-IM.pdf animals-pdf2svg.svg
 
-ls -Xsh animals.pdf animals-pdf2svg.svg | awk '{print $1 "\t" $2}'
+ls -Xsh animals-IM.pdf animals-pdf2svg.svg animals-pdftocairo.svg | \
+awk '{print $1 "\t" $2}'
 ---
-204K    animals.pdf
+204K    animals-IM.pdf
 268K    animals-pdf2svg.svg
+268K    animals-pdftocairo.svg
 ```
 
 The file sizes are identical to those from the `pdftocairo` conversion. Drew Barton, the author of `pdf2svg`, [has written](https://cityinthesky.co.uk/opensource/pdf2svg/):
@@ -749,13 +757,9 @@ The file sizes are identical to those from the `pdftocairo` conversion. Drew Bar
 
 So, it appears that `pdftocairo` is sufficient for converting from PDF to SVG.
 
+### PDF to SVG with the `text-only` image
 
-
-PDF to SVG and SVG to PDF are the two types of vector conversions we consider here. The `cairo` and `poppler` libraries and their utilities are our "go to" resource if the source image is PDF. `cairosvg` and `rsvg-convert` are our resource when the source image is an SVG. The `Inkscape` GUI-based vector graphics editor supports SVG as its native format and allows export of the generated SVG graphics both as PDF and as PNG.
-
-### PDF to SVG
-
-WE have already converted from PDF to SVG using `pdftocairo` [previously][Generating an SVG from a PDF]. We repeat below the identical command used previously to generate the SVG image:
+We have already converted from PDF to SVG using `pdftocairo` [previously][Generating an SVG from a PDF]. We repeat below the identical command used previously to generate the SVG image:
 
 ```bash
 pdftocairo -svg text-only.pdf text-only-pdftocairo.svg
@@ -774,11 +778,11 @@ less text-only-pdftocairo.svg | grep viewBox
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="214.31pt" height="52.16pt" viewBox="0 0 214.31 52.16" version="1.2">
 ```
 
-The PDF page size and the SVG viewBox are identical at 214.31 by 52.16 `pts`, as we would expect. For comparison, the [`text-only.pdf` image]({attach}images/text-only.pdf) may be opened on a separate browser tab and compared with the SVG shown in +@fig:SVGfromPDFviapdftocairo.
+The PDF page size and the SVG viewBox are identical at 214.31 by 52.16 pts, as we would expect. For comparison, the [`text-only.pdf` image]({attach}images/text-only.pdf) may be opened on a separate browser tab and compared with the SVG shown in +@fig:SVGfromPDFviapdftocairo.
 
 ![SVG version of `text-only` image converted from PDF by `pdftocairo`.]({attach}images/text-only-pdftocairo.svg){#fig:SVGfromPDFviapdftocairo width=80%}
 
-### PDF to SVG to PDF roundtrip
+#### PDF to SVG to PDF roundtrip
 
 We could open up `text-only.svg` in `Inkscape` and save it as a PDF, `text-only-inkscape.pdf` completing the round trip. Or we could use the command line so:
 
@@ -794,27 +798,82 @@ ls -Xsh text-only*.{svg,pdf}| awk '{print $1 "\t" $2}'
 
 What exactly has been gained or lost in this round trip is a little too recondite to consider here, and covers issues such as PDF version, font embedding or its absence, default borders, etc.
 
-More to the point, though, is how do we convert from SVG to PNG on the command line using inkscape?
+### SVG to PDF
 
-What about SVG to PNG? CairoSVG
-Inkscape SVG to PNG?
-`ImageMagick` SVG to PNG?
+When SVG is the source image, there are four routes to format conversion:
 
-The cairosvg module offers 4 functions:
+#.  [`cairosvg`](https://cairosvg.org/) which parses well-formed SVG files, draws them on a Cairo surface, and then uses  `cairo` to export them to PDF, PS, PNG, and even to SVG again.
 
-    svg2pdf,
-    svg2png,
-    svg2ps, and
-    svg2svg.
-CairoSVG is designed to parse well-formed SVG files, and draw them on a Cairo surface. Cairo is then able to export them to PDF, PS, PNG, and even SVG files.
+#.  [`rsvg-convert`](https://en.wikipedia.org/wiki/Librsvg)  is based on `librsvg` which uses `libxml` and `cairo` to render and convert SVG files into other formats.
+ 
+#.  [`inkscape`](https://inkscape.org/) which opens SVG files natively and can export them as a PDF, PNG, etc.
 
-## SVG to PDFs
+#.  [`convert`](https://imagemagick.org/script/convert.php) which can convert an SVG to PDF and also to any raster format like PNG.
 
+### SVG to PDF:`text-only`
 
+Let us use the file `text-only-pdftocairo.svg` as the input and convert it to PDF using all four means, and compare the resulting file sizes:
 
+```bash
+cairosvg -f pdf -o text-only-cairosvg.pdf text-only-pdftocairo.svg
 
-`rsvg-convert`
-`pdftocairo`
+rsvg-convert -f pdf -o text-only-rsvg-convert.pdf text-only-pdftocairo.svg
+
+inkscape text-only-pdftocairo.svg -o text-only-inkscape.pdf
+
+convert text-only-pdftocairo.svg text-only-IM.pdf
+
+ls -Xsh text-only-pdftocairo.svg text-only-{c,r,i,I}*.pdf | \
+awk '{print $1 "\t" $2}'
+---
+8.0K    text-only-cairosvg.pdf
+8.0K    text-only-IM.pdf
+8.0K    text-only-inkscape.pdf
+8.0K    text-only-rsvg-convert.pdf
+12K     text-only-pdftocairo.svg
+```
+
+The files sizes are the same from the different conversion methods. Since the _viewBox_ of the input SVG is the same and the file content is the same, the PDF _Page size_ is the same for all PDFs.
+
+Comparison with the original file [`text-only.pdf`]({attach}images/text-only.pdf) shows the following differences:
+
+a.  The three files [`text-only-cairosvg.pdf`](attach), [`text-only-inkscape.pdf`]({attach}images/text-only-inkscape.pdf), and [`text-only-rsvg-convert.pdf`]({attach}images/text-only-rsvg-convert.pdf) all show a white border on three sides of the converted PDF file. Zooming shows no degradation in image quality.
+
+a.  The fourth file, [`text-only-IM.pdf`]({attach}images/text-only-IM.pdf) obviously went through an intermediate raster phase and shows blockiness when zoomed. Direct conversion from SVG to PDF vis `ImageMagick convert` should be avoided.
+
+### SVG to PDF: `animals`
+
+We use the file `animals-pdftocairo.svg` as source to convert to PDF and list the commands and file sizes below:
+
+```bash
+cairosvg -f pdf -o animals-cairosvg.pdf animals-pdftocairo.svg
+
+rsvg-convert -f pdf -o animals-rsvg-convert.pdf animals-pdftocairo.svg
+
+inkscape animals-pdftocairo.svg -o animals-inkscape.pdf
+
+convert animals-pdftocairo.svg animals-from-svg-IM.pdf
+
+ls -Xsh animals-pdftocairo.svg animals-{c,r,i,f}*.pdf | \
+awk '{print $1 "\t" $2}'
+---
+1.9M    animals-cairosvg.pdf
+200K    animals-from-svg-IM.pdf
+204K    animals-inkscape.pdf
+1.9M    animals-rsvg-convert.pdf
+268K    animals-pdftocairo.svg
+```
+
+The page sizes are similar but the file sizes are an order of magnitude for the different PDFs. Those output by the `cairo` library are almost ten times larger than those put out by `ImageMagick` and `Inkscape`.
+
+You may compare the appearance of all four images by clicking on separate browser tabs for these four images and zooming in to see details:
+
+- [`animals-cairosvg.pdf`]({attach}images/animals-cairosvg.pdf)
+- [`animals-from-svg-IM.pdf`]({attach}images/animals-from-svg-IM.pdf)
+- [`animals-inkscape.pdf`]({attach}images/animals-inkscape.pdf)
+- [`animals-rsvg-convert.pdf`]({attach}images/animals-rsvg-convert.pdf)
+
+The image `animals-from-svg-IM.pdf` is pixellated on zooming in and we should avoid this conversion for images with fine detail. The two images weighing in at a file size of 1.9M exhibit detail commensurate with their heft. The image `animals-inkscape.pdf` is the preferred option as it balances good rendition of detail with a tractable file size.
 
 ## Summary
 
@@ -834,7 +893,7 @@ raster to SVG       `convert`
 PDF to raster       `pdftoppm`
 SVG to raster       `cairosvg`
 PDF to SVG          `pdftocairo`
-SVG to PDF          `cairosvg`
+SVG to PDF          `inkscape`
 
 Table: Tools for image format conversions. {#tbl:formats}
 
