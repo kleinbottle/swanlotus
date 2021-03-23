@@ -701,17 +701,27 @@ a.  SVG to PDF.
 
 ### PDF to SVG: `pdftocairo` and `pdftoppm`
 
-When PDF is the source format, the `poppler` standalone utilities `pdftocairo` and `pdftoppm` are the tools. So, if we had the file `animals.pdf` we could convert it to SVG:
+When PDF is the source format, the `poppler` standalone utilities `pdftocairo` and `pdftoppm` are the preferred tools.
+
+We have [already generated][Raster to PDF with `convert` for `animals`] [`animals.pdf`]({attach}images/animals.pdf). Let us now convert it SVG and view it.
 
 ```bash
 # PDF to SVG using pdftocairo
 pdftocairo -svg animals.pdf animals-pdftocairo.svg
 
-ls -Xsh animals.pdf animals-pdftocairo.svg | awk '{print $1 "\t" $2}'
+ls -Xsh animals.jpg animals.pdf animals-pdftocairo.svg | \
+awk '{print $1 "\t" $2}'
 ---
+200K    animals.jpg
 204K    animals.pdf
 268K    animals-pdftocairo.svg
 ```
+
+![SVG version of the `animals` image.]({attach}images/animals-pdftocairo.svg){#fig:animals-pdftocairo-svg width=50%}
+
+The image appears the same visually and does not seem to have lost definition in the conversion from the original JPEG to the two vector formats. The file sizes are also in the same ball park. We may conclude that conversion from JPEG to PDF or SVG, or from PDF to SVG, does not substantially degrade image quality or increase file size for visually rich, non-textual images like `animals`.
+
+%%% START HERE %%%
 
 Two observations are pertinent:
 
@@ -840,7 +850,7 @@ In November 2020, [another security vulnerability was discovered](https://portsw
 
 Recent versions of the `ImageMagick` suite, bundled with major distributions, should have correctly configured `policy.xml` files that will block known exploits. [Sandboxing](https://www.techopedia.com/definition/25266/sandboxing) is another technique to quarantine the system from possible vulnerabilities. Above all, it is vital to keep  system and application software up to date to avail of evolutions in performance and security.
 
-## Feedback
+# Feedback
 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
