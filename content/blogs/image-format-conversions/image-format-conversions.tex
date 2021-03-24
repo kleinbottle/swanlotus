@@ -159,6 +159,8 @@
 %%
 
 \AtBeginEnvironment{quote}{\small}
+\AtBeginEnvironment{longtable}{\centering}
+%
 \setlength{\parindent}{0pt} % block paragraphs
 \usepackage{etoolbox}
 \usepackage{graphicx}
@@ -180,7 +182,7 @@
   \setTransitionFrom{Devanagari}{\normalfont}
   \newfontfamily{\emojifont}{Symbola}
 \usepackage[all]{nowidow}
-\usepackage[margins=raggedright]{floatrow}
+%\usepackage[margins=raggedright]{floatrow}
 %
 %
 % Adjust punctuation for footnotes
@@ -2023,7 +2025,7 @@ Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
 
 \noindent A PDF version of this article is
-\href{./image-format-conversions.pdf}{available for download here.}
+\href{image-format-conversions.pdf}{available for download here.}
 
 \hypertarget{bibliography}{%
 \section*{References}\label{bibliography}}
