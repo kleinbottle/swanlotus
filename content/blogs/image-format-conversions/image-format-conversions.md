@@ -5,12 +5,12 @@ date: 2021-03-07
 modified: 2021-03-24
 category: Software
 tags: image formats, PNG, JPEG, PDF, SVG, ImageMagick, Inkscape, cairo, poppler, Linux
-summary: "Digital images are ubiquitous, and one image format does not suit all applications. Printed paper, electronic displays, images on the Web, etc., each call for the same image in a different format. In this tutorial, we explore the different format conversion tools that are currently available. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, `Inkscape`, and `CairoSVG` are identified for their specific strengths that make them the tools of choice for different image conversion tasks."
+summary: "Digital images are ubiquitous, but one image format does not suit all applications. Printed paper, electronic displays, images on the Web, etc., each call for the same image in a different format. In this tutorial, we explore the different format conversion tools that are currently available. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, the `Inkscape` vector graphics editor, and `CairoSVG` are each identified for their individual strengths, that make them the tools of choice for specific image conversion tasks."
 opengraphimage: animals.jpg
 status: draft
 ---
 
-Digital images are ubiquitous, and one image format does not suit all applications. Printed paper, electronic displays, images on the Web, etc., each call for the same image in a different format. In this tutorial, we explore the different format conversion tools that are currently available. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, `Inkscape`, and `CairoSVG` are identified for their specific strengths that make them the tools of choice for different image conversion tasks.
+Digital images are ubiquitous, but one image format does not suit all applications. Printed paper, electronic displays, images on the Web, etc., each call for the same image in a different format. In this tutorial, we explore the different format conversion tools that are currently available. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, the `Inkscape` vector graphics editor, and `CairoSVG` are each identified for their individual strengths, that make them the tools of choice for specific image conversion tasks.
 
 ## Two varieties of digital images
 
@@ -51,9 +51,9 @@ There are dozens of image formats, including these three major ones:
 
 All three formats yield images displayed as rectangular arrays of [pixels](https://en.wikipedia.org/wiki/Pixels).
 
-### Pixel densities
+### Pixel densities and such
 
-Raster images become larger and visually better defined at higher resolutions or pixel densities. The units of resolution, or density, commonly used are the _dots per inch_ (dpi) or _pixels per inch_ (ppi) both of which reference the number of pixels that may be accommodated in one linear inch. It is possible to specify these in dots per centimetre or pixels per centimetre but that usage has not caught on.
+Raster images become larger and visually better defined at higher resolutions or pixel densities. The units of resolution, or density, commonly used are _dots per inch_ (dpi) or _pixels per inch_ (ppi), both of which reference the number of pixels that may be accommodated in one linear inch. It is possible to specify these in dots per centimetre, or pixels per centimetre, but that usage has not caught on.
 
 Commonly used resolutions for display devices are:
 
@@ -63,11 +63,13 @@ Commonly used resolutions for display devices are:
 - 300 dpi for some laser printers
 - 600 dpi for high end laser printers
 
-Suppose we have an image that is a square of side 100 pixels. On a display that has a resolution of 96 dpi, such an image will take up 100/96 = 1.042 inches on each side. If the same image were displayed on a 300 dpi output device, its image will span 100/300 = 0.333 inches on each side.
+Raster images have an intrinsic image size related to the number of pixels comprising the width and height of an image. The actual dimensions of the displayed image, however, depend on the resolution of the display device.
 
-If the same image were magnified to _twice_ its dimensions, the number of pixels in it will become _fourfold_ as will, roughly, its file size.
+Suppose we have an image that is a square of side 100 pixels. Its width and height are each 100 pixels, and the image consists of a square array of 100^2^ or 10,000 pixels. On a display that has a resolution of 96 dpi, such an image will take up 100/96 = 1.042 inches on each side. If the same image were displayed on a 300 dpi output device, its image will span 100/300 = 0.333 inches on each side. Image dimensions in pixels are quite different from image sizes in inches.
 
-When photographic images are scanned, higher pixel densities lead to much larger image file sizes but such images capture more and more subtle detail.
+If this image were resized to _twice_ its dimensions, the number of pixels in it will become _fourfold_ as will, roughly, its file size.
+
+When photographic images are scanned, higher pixel densities lead to much larger file sizes, resulting in images of remarkable detail. Conversely, low resolution scans sacrifice image quality for small file size. Good visual quality at reasonable file size is the much sought-after optimal goal for any image.
 
 Blocky images arise when the zoomed image exhibits a lower density than the display resolution, allowing individual pixels to show themselves as discernible "blocky" elements.
 
@@ -93,11 +95,13 @@ Both these formats yield images which consist of mathematically defined points, 
 
 ### Page size and viewBox
 
-Vector images do not embody an intrinsic resolution and may therefore be zoomed in or out arbitrarily without loss of detail. But vector images do have intrinsic sizes that endow them with an [aspect ratio](https://en.wikipedia.org/wiki/Aspect_ratio).
+A raster image has a width and a height that are directly related to the number of pixels in those two orthogonal directions. Vector images, on the other hand, do not embody an intrinsic resolution, and may therefore be zoomed in or out arbitrarily without loss of detail. But vector images too do have intrinsic sizes that endow them with a fixed [aspect ratio](https://en.wikipedia.org/wiki/Aspect_ratio), no less than raster images.
 
-Sometimes, an image is developed for electronic archival, legal, or other purposes. Such documents are meant to be printed and so the document format embodies a _paper size_ to which it is paginated. Such is the case with PDFs.
+The PDF format was developed for documents meant to be printed on paper. It therefore embodies an intrinsic _page size_ in [points](https://en.wikipedia.org/wiki/Point_(typography)) where one point is 1/72 of an inch. Points are absolute linear dimensions which do not change. In the PDF format, each graphic unit is paginated to the page size in points defined in the PDF.
 
-At other times, the primary medium of display for an image is the Web. Such images are defined in terms of a [_viewBox_](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox). They do not have a preferred or natural page size . They may be scaled but their appearance depends on the resolution of the display device. SVGs embody these characteristics.
+With an image format that is designed primarily for display on the Web via a Web browser---as is the case with SVG---image size is defined in terms of a [_viewBox_](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox). The latter are  again measured in points, and have a fixed [aspect ratio](https://en.wikipedia.org/wiki/Aspect_ratio), determined by the image. Although such an SVG image may be zoomed without loss of visual quality when displayed on the Web, it does possess intrinsic dimensions in terms of linear measure.
+
+The fact that raster images use pixels, which are relative to an image array, and vector images use points, which are an absolute linear measure, must be kept in mind during format conversion to avoid perplexing results.
 
 ## Format conversions
 
