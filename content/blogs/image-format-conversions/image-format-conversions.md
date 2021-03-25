@@ -5,12 +5,12 @@ date: 2021-03-07
 modified: 2021-03-24
 category: Software
 tags: image formats, PNG, JPEG, PDF, SVG, ImageMagick, Inkscape, cairo, poppler, Linux
-summary: "We may be called upon at short notice to convert images between one format and another. This tutorial explores the different tools that are currently available and identifies the most efficient for each task. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, `Inkscape`, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks."
+summary: "Digital images are ubiquitous, and one image format does not suit all applications. Printed paper, electronic displays, images on the Web, etc., each call for the same image in a different format. In this tutorial, we explore the different format conversion tools that are currently available. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, `Inkscape`, and `CairoSVG` are identified for their specific strengths that make them the tools of choice for different image conversion tasks."
 opengraphimage: animals.jpg
 status: draft
 ---
 
-We may be called upon at short notice to convert images between one format and another. This tutorial explores the different tools that are currently available and identifies the most efficient for each task. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, `Inkscape`, and `CairoSVG` are identified for the specific strengths that make them the tools of choice for different image conversion tasks.
+Digital images are ubiquitous, and one image format does not suit all applications. Printed paper, electronic displays, images on the Web, etc., each call for the same image in a different format. In this tutorial, we explore the different format conversion tools that are currently available. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, `Inkscape`, and `CairoSVG` are identified for their specific strengths that make them the tools of choice for different image conversion tasks.
 
 ## Two varieties of digital images
 
