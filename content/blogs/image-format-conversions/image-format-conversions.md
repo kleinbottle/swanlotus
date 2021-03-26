@@ -5,12 +5,12 @@ date: 2021-03-07
 modified: 2021-03-24
 category: Software
 tags: image formats, PNG, JPEG, PDF, SVG, ImageMagick, Inkscape, cairo, poppler, Linux
-summary: "Digital images are ubiquitous, but one image format does not suit all applications. Printed paper, electronic displays, images on the Web, etc., each call for the same image in a different format. In this tutorial, we explore the different format conversion tools that are currently available. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, the `Inkscape` vector graphics editor, and `CairoSVG` are each identified for their individual strengths, that make them the tools of choice for specific image conversion tasks."
+summary: "Although digital images are ubiquitous, one image format does not suit all applications. Printed paper, electronic displays, images on the Web, etc., each call for the same image in a different format. In this tutorial, we explore the different format conversion tools that are currently available. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, the `Inkscape` vector graphics editor, and `CairoSVG` are each identified for their individual strengths, that make them the tools of choice for specific image conversion tasks."
 opengraphimage: animals.jpg
 status: draft
 ---
 
-Digital images are ubiquitous, but one image format does not suit all applications. Printed paper, electronic displays, images on the Web, etc., each call for the same image in a different format. In this tutorial, we explore the different format conversion tools that are currently available. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, the `Inkscape` vector graphics editor, and `CairoSVG` are each identified for their individual strengths, that make them the tools of choice for specific image conversion tasks.
+Although digital images are ubiquitous, one image format does not suit all applications. Printed paper, electronic displays, images on the Web, etc., each call for the same image in a different format. In this tutorial, we explore the different format conversion tools that are currently available. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, the `Inkscape` vector graphics editor, and `CairoSVG` are each identified for their individual strengths, that make them the tools of choice for specific image conversion tasks.
 
 ## Two varieties of digital images
 
@@ -49,11 +49,32 @@ There are dozens of image formats, including these three major ones:
     - supported by most web browsers
     - transparency
 
-All three formats yield images displayed as rectangular arrays of [pixels](https://en.wikipedia.org/wiki/Pixels).
+All three formats yield images displayed as rectangular arrays of [_pixels_](https://en.wikipedia.org/wiki/Pixels).
+
+### From pictures to pixels
+
+Imagine a picture on a square canvas being converted into a jig-saw puzzle, only this time with square-shaped rather than irregular pieces. If the picture were divided into a hundred pieces in one direction and another hundred pieces in a  perpendicular direction, we would have 100^2^ = 10,000 pieces in our jig-saw puzzle. Each piece is a _picture element_ or _pixel_ contributing to the overall picture.
+
+Digital pictures are much the same, except for one difference. Whereas each jig-saw puzzle piece carries a small, detailed part of the big picture, each pixel consists of only _one_ colour. _Pixels are coloured tiles in a picture mosaic. Each tile contributes to the overall picture, but it carries not a small picture, but a single colour_.
+
+Clearly, the more tiles we have, the more detailed the emergent picture. Conversely, if the entire picture were composed of a single tile, we would see not a picture but a square of a single colour. Information has been lost and we would have no idea what the picture was about, save for that one dominant colour.
+
+This possibility of information loss on converting an analog picture into digital form is why, when we scan an image, we should take care to digitize the picture with sufficient detail so that it represents the original with fidelity.
+
+All raster images are rectangular arrays of pixels. How many pixels in the _width_ and _height_ directions depends on how the original analog image was scanned. Suppose the original image was captured by a mobile phone, and thus already in digital form. If the phone boasts of a 16 million pixel camera, we have a square image of side $\sqrt{16\times 10^6} = 4000$ pixels on each side.
+
+While such an image would be incredibly detailed, it is inconvenient---because of its large file size---for transmission on social media or for display on the Web. The picture would have to be _resized_ to smaller dimensions to yield a more manageable image file size that still represents the original picture with fidelity. This tradeoff between file size and visual quality or definition is at the heart of digital image manipulation and format conversion.
+
+It should be clear by now that we cannot tack a specific number of pixels onto a digital image and say that is its one and only size. Rather the number of pixels representing the width and height of a picture are _one digital representation_ of the original analog image. We may _derive_ another equally meaningful digital representation by judiciously resizing the image to have a different number of pixels in the width and height directions, while at the same time yielding a more tractable file size, without loss of visual quality.
+
+%%% CONTINUE FROM HERE %%%
+
 
 ### Pixel densities and such
 
-Raster images become larger and visually better defined at higher resolutions or pixel densities. The units of resolution, or density, commonly used are _dots per inch_ (dpi) or _pixels per inch_ (ppi), both of which reference the number of pixels that may be accommodated in one linear inch. It is possible to specify these in dots per centimetre, or pixels per centimetre, but that usage has not caught on.
+Raster images have an intrinsic image size related to the number of pixels comprising the width and height of the image. The actual dimensions of the displayed image, however, depend on the resolution of the display device.
+
+Such images appear better defined at higher resolutions or pixel densities. The units of resolution, or density, commonly used are _dots per inch_ (dpi) or _pixels per inch_ (ppi), both of which reference the number of pixels that may be accommodated in one linear inch. It is possible to specify these in dots per centimetre, or pixels per centimetre, but that usage has not caught on.
 
 Commonly used resolutions for display devices are:
 
@@ -63,15 +84,13 @@ Commonly used resolutions for display devices are:
 - 300 dpi for some laser printers
 - 600 dpi for high end laser printers
 
-Raster images have an intrinsic image size related to the number of pixels comprising the width and height of an image. The actual dimensions of the displayed image, however, depend on the resolution of the display device.
-
 Suppose we have an image that is a square of side 100 pixels. Its width and height are each 100 pixels, and the image consists of a square array of 100^2^ or 10,000 pixels. On a display that has a resolution of 96 dpi, such an image will take up 100/96 = 1.042 inches on each side. If the same image were displayed on a 300 dpi output device, its image will span 100/300 = 0.333 inches on each side. Image dimensions in pixels are quite different from image sizes in inches.
 
-If this image were resized to _twice_ its dimensions, the number of pixels in it will become _fourfold_ as will, roughly, its file size.
+If an image were resized to _twice_ its dimensions, the number of pixels in it will become _fourfold_ as will, roughly, its file size.
 
 When photographic images are scanned, higher pixel densities lead to much larger file sizes, resulting in images of remarkable detail. Conversely, low resolution scans sacrifice image quality for small file size. Good visual quality at reasonable file size is the much sought-after optimal goal for any image.
 
-Blocky images arise when the zoomed image exhibits a lower density than the display resolution, allowing individual pixels to show themselves as discernible "blocky" elements.
+Blocky images arise when the zoomed image is not matched to the display resolution, allowing individual pixels to show themselves as discernible "blocky" elements.
 
 The dpi used for format conversion, especially from raster to PDF, is critical to avoid getting "blurry" or "grungy-looking" PDFs. At the same time, ratcheting up the dpi before conversion from raster to PDF will result in bloated PDF files that convey no discernible improvement in visual quality. There is always a sweet spot for pixel density---in image scanning and format conversions---that gives good visual quality at a decent file size.
 
@@ -95,13 +114,13 @@ Both these formats yield images which consist of mathematically defined points, 
 
 ### Page size and viewBox
 
-A raster image has a width and a height that are directly related to the number of pixels in those two orthogonal directions. Vector images, on the other hand, do not embody an intrinsic resolution, and may therefore be zoomed in or out arbitrarily without loss of detail. But vector images too do have intrinsic sizes that endow them with a fixed [aspect ratio](https://en.wikipedia.org/wiki/Aspect_ratio), no less than raster images.
+A raster image has a _width_ and a _height_ that are directly related to the number of pixels in those two perpendicular directions. Vector images, on the other hand, do not embody an intrinsic resolution, and may therefore be zoomed in or out arbitrarily without loss of detail. But vector images also have intrinsic sizes that endow them with a fixed [aspect ratio](https://en.wikipedia.org/wiki/Aspect_ratio), no less than raster images.
 
-The PDF format was developed for documents meant to be printed on paper. It therefore embodies an intrinsic _page size_ in [points](https://en.wikipedia.org/wiki/Point_(typography)) where one point is 1/72 of an inch. Points are absolute linear dimensions which do not change. In the PDF format, each graphic unit is paginated to the page size in points defined in the PDF.
+The PDF format was developed for documents meant to be printed on paper. It therefore embodies an intrinsic _page size_ in [points](https://en.wikipedia.org/wiki/Point_(typography)) where one point is 1/72 of an inch. Points are absolute linear dimensions which do not change with magnification. In the PDF format, each graphic unit is paginated to the page size in points defined in the PDF.
 
-With an image format that is designed primarily for display on the Web via a Web browser---as is the case with SVG---image size is defined in terms of a [_viewBox_](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox). The latter are  again measured in points, and have a fixed [aspect ratio](https://en.wikipedia.org/wiki/Aspect_ratio), determined by the image. Although such an SVG image may be zoomed without loss of visual quality when displayed on the Web, it does possess intrinsic dimensions in terms of linear measure.
+With an image format that is designed primarily for display on the Web via a Web browser---as is the case with SVG---image size is defined in terms of a [_viewBox_](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox). The latter are  again measured in points, and have a fixed [aspect ratio](https://en.wikipedia.org/wiki/Aspect_ratio), determined by the image. Although such an SVG image may be zoomed without loss of visual quality when displayed on the Web, it also has  intrinsic dimensions in terms of linear measure.
 
-The fact that raster images use pixels, which are relative to an image array, and vector images use points, which are an absolute linear measure, must be kept in mind during format conversion to avoid perplexing results.
+The fact that raster images use pixels, which are relative to an image array, and vector images use points, which are an absolute linear measure, must be kept in mind during format conversion, to avoid perplexing results after conversion.
 
 ## Format conversions
 
