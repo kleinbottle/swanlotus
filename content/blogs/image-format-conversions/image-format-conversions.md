@@ -67,12 +67,11 @@ While such an image would be incredibly detailed, it is inconvenient---because o
 
 It should be clear by now that we cannot tack a specific number of pixels onto a digital image and say that is its one and only size. Rather the number of pixels representing the width and height of a picture are _one digital representation_ of the original analog image. We may _derive_ another equally meaningful digital representation by judiciously resizing the image to have a different number of pixels in the width and height directions, while at the same time yielding a more tractable file size, without loss of visual quality.
 
-%%% CONTINUE FROM HERE %%%
-
+Some image file formats are amenable to compression, which further reduces file size. Certain formats are capable only of lossless compression, leading to files that are slow to load, but with no loss of information. Others allow lossy compression, where file size reduction results in faster loading, but accompanied by loss of information. Why a specific file format is used, and with what parameters, is determined by image content, purpose, and application domain.
 
 ### Pixel densities and such
 
-Raster images have an intrinsic image size related to the number of pixels comprising the width and height of the image. The actual dimensions of the displayed image, however, depend on the resolution of the display device.
+Raster images have a size denoted by the number of pixels comprising the width and height of the image. The actual _dimensions_ of the displayed image, however, depend on the resolution of the display device.
 
 Such images appear better defined at higher resolutions or pixel densities. The units of resolution, or density, commonly used are _dots per inch_ (dpi) or _pixels per inch_ (ppi), both of which reference the number of pixels that may be accommodated in one linear inch. It is possible to specify these in dots per centimetre, or pixels per centimetre, but that usage has not caught on.
 
@@ -84,7 +83,7 @@ Commonly used resolutions for display devices are:
 - 300 dpi for some laser printers
 - 600 dpi for high end laser printers
 
-Suppose we have an image that is a square of side 100 pixels. Its width and height are each 100 pixels, and the image consists of a square array of 100^2^ or 10,000 pixels. On a display that has a resolution of 96 dpi, such an image will take up 100/96 = 1.042 inches on each side. If the same image were displayed on a 300 dpi output device, its image will span 100/300 = 0.333 inches on each side. Image dimensions in pixels are quite different from image sizes in inches.
+Suppose we have an image that is a square of side 100 pixels. Its width and height are each 100 pixels, and the image consists of a square array of 100^2^ or 10,000 pixels. On a display that has a resolution of 96 dpi, such an image will take up 100/96 = 1.042 inches on each side. If the same image were displayed on a 300 dpi output device, its image will span 100/300 = 0.333 inches on each side. Image sizes in pixels are therefore quite different from displayed image dimensions in inches.
 
 If an image were resized to _twice_ its dimensions, the number of pixels in it will become _fourfold_ as will, roughly, its file size.
 
