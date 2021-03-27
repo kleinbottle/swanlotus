@@ -181,8 +181,11 @@
   \setTransitionTo{Devanagari}{\devfont}{}
   \setTransitionFrom{Devanagari}{\normalfont}
   \newfontfamily{\emojifont}{Symbola}
+\urlstyle{sf}
 \usepackage[all]{nowidow}
-%\usepackage[margins=raggedright]{floatrow}
+%
+%\usepackage[margins=raggedright]{floatrow} 
+% Left aligns tables: Pandoc Tips and Tricks
 %
 %
 % Adjust punctuation for footnotes
@@ -238,13 +241,15 @@
 \thispagestyle{empty}
 
 
-We may be called upon at short notice to convert images between one
-format and another. This tutorial explores the different tools that are
-currently available and identifies the most efficient for each task. The
-\texttt{ImageMagick} suite, the \texttt{cairo} backend, the
-\texttt{poppler} utilities, \texttt{Inkscape}, and \texttt{CairoSVG} are
-identified for the specific strengths that make them the tools of choice
-for different image conversion tasks.
+Although digital images are ubiquitous, one image format does not suit
+all applications. Printed paper, electronic displays, images on the Web,
+etc., each call for the same image in a different format. In this
+tutorial, we explore the different format conversion tools that are
+currently available. The \texttt{ImageMagick} suite, the \texttt{cairo}
+backend, the \texttt{poppler} utilities, the \texttt{Inkscape} vector
+graphics editor, and \texttt{CairoSVG} are each identified for their
+individual strengths, that make them the tools of choice for specific
+image conversion tasks.
 
 \hypertarget{two-varieties-of-digital-images}{%
 \subsection{Two varieties of digital
@@ -344,60 +349,155 @@ There are dozens of image formats, including these three major ones:
 \end{enumerate}
 
 All three formats yield images displayed as rectangular arrays of
-\href{https://en.wikipedia.org/wiki/Pixels}{pixels}.
+\href{https://en.wikipedia.org/wiki/Pixels}{\emph{pixels}}.
 
-\hypertarget{pixel-densities}{%
-\subsubsection{Pixel densities}\label{pixel-densities}}
+\hypertarget{from-pictures-to-pixels}{%
+\subsubsection{From pictures to pixels}\label{from-pictures-to-pixels}}
 
-Raster images become larger and visually better defined at higher
-resolutions or pixel densities. The units of resolution, or density,
-commonly used are the \emph{dots per inch} (dpi) or \emph{pixels per
-inch} (ppi) both of which reference the number of pixels that may be
-accommodated in one linear inch. It is possible to specify these in dots
-per centimetre or pixels per centimetre but that usage has not caught
-on.
+Imagine a picture on a square canvas being converted into a jig-saw
+puzzle, only this time with square-shaped rather than irregular pieces.
+If the picture were divided into a hundred pieces in one direction and
+another hundred pieces in an
+\href{https://en.wikipedia.org/wiki/Orthogonality}{orthogonal}
+direction, we would have 100\textsuperscript{2} = 10,000 pieces in our
+jig-saw puzzle. Each piece is a \emph{picture element} or \emph{pixel}
+contributing to the overall picture.
 
-Commonly used resolutions for display devices are:
+Digital pictures are much the same, except for one difference. Whereas
+each jig-saw puzzle piece carries a small, detailed part of the big
+picture, each pixel consists of only \emph{one} colour. \emph{Pixels are
+coloured tiles in a picture mosaic. Each tile contributes to the overall
+picture, but it carries not a small picture, but a single colour}.
+
+Clearly, the more tiles we have, the more detailed the emergent picture.
+Conversely, if the entire picture were composed of a single tile, we
+would see not a picture but a square of a single colour. Information has
+been lost and we would have no idea what the picture was about, save for
+that one dominant colour.
+
+This possibility of information loss on converting an analog picture
+into digital form is why, when we scan an image, we should take care to
+digitize the picture with sufficient detail so that it represents the
+original with fidelity.
+
+\hypertarget{file-size-quality-and-compression}{%
+\subsubsection{File size, quality, and
+compression}\label{file-size-quality-and-compression}}
+
+All raster images are rectangular arrays of pixels. How many pixels in
+the \emph{width} and \emph{height} directions depends on how the
+original analog image was scanned. Suppose the original image was
+captured by a mobile phone, and thus already in digital form. If the
+phone boasts of a 16 million pixel camera, we have a square image of
+side \(\sqrt{16\times 10^6} = 4000\) pixels on each side.
+
+While such an image would be incredibly detailed, it is
+inconvenient---because of its large file size---for transmission on
+social media or for display on the Web. The picture would have to be
+\emph{resized} to smaller dimensions to yield a more manageable image
+file size that still represents the original picture with fidelity. This
+tradeoff between file size and visual quality or definition is at the
+heart of digital image manipulation and format conversion.
+
+It should be clear by now that we cannot tack a specific number of
+pixels onto a digital image and say that is its one and only size.
+Rather the number of pixels representing the width and height of a
+picture are \emph{one digital representation} of the original analog
+image. We may \emph{derive} another equally meaningful digital
+representation by judiciously resizing the image to have a different
+number of pixels in the width and height directions, while at the same
+time yielding a more tractable file size, without loss of visual
+quality.
+
+Some image file formats are amenable to compression, which further
+reduces file size. Certain formats are capable only of lossless
+compression, leading to files that are slow to load, but with no loss of
+information. Others allow lossy compression, where file size reduction
+results in faster loading, but accompanied by loss of information. Why a
+specific file format is used, and with what parameters, is determined by
+image content, purpose, and application domain.
+
+\hypertarget{pixel-densities-and-such}{%
+\subsubsection{Pixel densities and
+such}\label{pixel-densities-and-such}}
+
+Raster images have a size denoted by the number of pixels comprising the
+\emph{width} and \emph{height} of the image. The actual
+\emph{dimensions} of the displayed image, however, depend on the
+resolution of the display device.
+
+Such images appear better defined at higher resolutions or pixel
+densities. The units of resolution, or density, commonly used are
+\emph{dots per inch} (dpi)---in the context of printers---or
+\emph{pixels per inch} (ppi)---in the context of displays---both of
+which reference the number of dots or pixels that may be accommodated in
+one linear inch. It is possible to specify these in dots per centimetre,
+or pixels per centimetre, but that usage has not caught on.
+
+Commonly used resolutions for output devices are:
 
 \begin{itemize}
 \tightlist
 \item
-  72 dpi for low resolution monitors
+  72 ppi for low resolution monitors
 \item
-  96 dpi for standard resolution monitors
+  96 ppi for standard resolution monitors
 \item
-  150 dpi, which is often the default value in image conversion programs
+  150 dpi/ppi, which is often the default value in image conversion
+  programs
 \item
-  300 dpi for some laser printers
+  300 dpi/ppi for some mobile phones and laser printers
 \item
-  600 dpi for high end laser printers
+  600 dpi/ppi for higher end mobile phones and laser printers
 \end{itemize}
 
-Suppose we have an image that is a square of side 100 pixels. On a
-display that has a resolution of 96 dpi, such an image will take up
-100/96 = 1.042 inches on each side. If the same image were displayed on
-a 300 dpi output device, its image will span 100/300 = 0.333 inches on
-each side.
+Suppose we have an image that is a square of side 100 pixels. Its width
+and height are each 100 pixels, and the image consists of a square array
+of 100\textsuperscript{2} or 10,000 pixels. On a display that has a
+resolution of 96 dpi, such an image will take up
+\textsuperscript{100}/\textsubscript{96} = 1.042 inches on each side. If
+the same image were displayed on a 300 dpi output device, its image will
+span \textsuperscript{100}/\textsubscript{300} = 0.333 inches on each
+side. Image sizes in pixels are therefore quite different from displayed
+image dimensions in inches.
 
-If the same image were magnified to \emph{twice} its dimensions, the
-number of pixels in it will become \emph{fourfold} as will, roughly, its
-file size.
+\begin{quote}
+A pixel has no size, no physical value or meaning outside of its
+mathematical representation.
+
+\ldots{}
+
+A pixel in itself has no size or physical representation, it can only
+carry value through its relationship with the screen physical size,
+creating the resolution, or PPI. Understand this and screen density will
+have no secret for you. {[}1{]}
+\end{quote}
+
+\hypertarget{file-size-and-quality-again}{%
+\subsubsection{File size and quality
+again}\label{file-size-and-quality-again}}
+
+If an image were resized to \emph{twice} its dimensions, the number of
+pixels in it will become \emph{fourfold} as will, roughly, its file
+size.
 
 When photographic images are scanned, higher pixel densities lead to
-much larger image file sizes but such images capture more and more
-subtle detail.
+much larger file sizes, resulting in images of remarkable detail.
+Conversely, low resolution scans sacrifice image quality for small file
+size. Good visual quality at reasonable file size is the much
+sought-after optimal goal for any image.
 
-Blocky images arise when the zoomed image exhibits a lower density than
-the display resolution, allowing individual pixels to show themselves as
-discernible ``blocky'' elements.
+Blocky images arise when the zoomed image is not matched to the display
+resolution, allowing individual pixels to show themselves as discernible
+``blocky'' elements, as in \cref{fig:raster}.
 
-The dpi used for format conversion, especially from raster to PDF, is
-critical to avoid getting ``blurry'' or ``grungy-looking'' PDFs. At the
-same time, ratcheting up the dpi before conversion from raster to PDF
-will result in bloated PDF files that convey no discernible improvement
-in visual quality. There is always a sweet spot for pixel density---in
-image scanning and format conversions---that gives good visual quality
-at a decent file size.
+The dpi/ppi used for format conversion, especially between raster and
+PDF, is critical to avoid getting ``blurry'' or ``grungy-looking''
+images. Merely ratcheting up the source dpi/ppi before conversion from
+raster to PDF will result in bloated PDF files that convey no
+discernible improvement in visual quality. There is always a sweet spot
+for pixel density---in image scanning and format conversions---that
+gives good visual quality at a decent file size. We should aim for that.
 
 \hypertarget{vector-graphics}{%
 \subsection{Vector Graphics}\label{vector-graphics}}
@@ -445,22 +545,36 @@ quality when magnified.
 \hypertarget{page-size-and-viewbox}{%
 \subsubsection{Page size and viewBox}\label{page-size-and-viewbox}}
 
-Vector images do not embody an intrinsic resolution and may therefore be
-zoomed in or out arbitrarily without loss of detail. But vector images
-do have intrinsic sizes that endow them with an
-\href{https://en.wikipedia.org/wiki/Aspect_ratio}{aspect ratio}.
+A raster image has a \emph{width} and a \emph{height} that are directly
+related to the number of pixels in those two orthogonal directions.
+Vector images, on the other hand, do not embody an intrinsic resolution,
+and may therefore be zoomed in or out arbitrarily without loss of
+detail. But vector images \emph{do have} intrinsic sizes that endow them
+with a fixed \href{https://en.wikipedia.org/wiki/Aspect_ratio}{aspect
+ratio}, no less than raster images.
 
-Sometimes, an image is developed for electronic archival, legal, or
-other purposes. Such documents are meant to be printed and so the
-document format embodies a \emph{paper size} to which it is paginated.
-Such is the case with PDFs.
+The PDF format was developed for documents meant to be printed on paper.
+It therefore embodies an intrinsic \emph{page size} in
+\href{https://en.wikipedia.org/wiki/Point_(typography)}{points}, where
+one point is \textsuperscript{1}/\textsubscript{72} of an inch. Points
+are absolute linear dimensions which do not change with magnification.
+In the PDF format, each graphic unit is paginated to the page size
+parameter in points defined in the file.
 
-At other times, the primary medium of display for an image is the Web.
-Such images are defined in terms of a
+With an image format that is designed primarily for display on the Web
+via a Web browser---as is the case with SVG---image size is defined in
+terms of a
 \href{https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox}{\emph{viewBox}}.
-They do not have a preferred or natural page size . They may be scaled
-but their appearance depends on the resolution of the display device.
-SVGs embody these characteristics.
+The latter are again measured in points, and have a fixed
+\href{https://en.wikipedia.org/wiki/Aspect_ratio}{aspect ratio},
+determined by the image. Although such an SVG image may be zoomed
+without loss of visual quality when displayed on the Web, it too has
+intrinsic dimensions in terms of its viewBox.
+
+The fact that raster images use pixels, which are relative to an image
+array, and vector images use points, which are an absolute linear
+measure, must be kept in mind during format conversion, to avoid
+perplexing results after conversion.
 
 \hypertarget{format-conversions}{%
 \subsection{Format conversions}\label{format-conversions}}
@@ -579,7 +693,7 @@ LLC} who now maintain the project. It is distributed under a
 license}. The
 \href{https://github.com/ImageMagick/ImageMagick}{authoritative source
 code repository} shows active development even today, 34 years after the
-suite was first released {[}1{]}.
+suite was first released {[}2{]}.
 
 \texttt{ImageMagick} is so versatile and useful that it may rightfully
 be called the
@@ -615,7 +729,7 @@ online documentation} for further details. The power of
 Image Scripting Language. The examples in this blog use the command line
 versions of invoking \texttt{ImageMagick}. If they seem daunting,
 \href{https://imagemagick.org/script/command-line-processing.php}{refer
-to this explanation} {[}2{]}.
+to this explanation} {[}3{]}.
 
 \hypertarget{test-images}{%
 \subsection{Test images}\label{test-images}}
@@ -964,7 +1078,7 @@ compression level} used above is the default compression level in
 image dimensions, image compression, and image quality so that the image
 loads fast and looks good is
 \href{https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/}{quite
-an art}. {[}3{]}
+an art}. {[}4{]}
 
 To get an idea of the range of file sizes involved, let us try
 generating a composite image with extremes of the compression level,
@@ -1007,7 +1121,7 @@ zero---gives a file \emph{twice} the size of the uncompressed version
 and \emph{sixteen times} the size of the JPEG. And we have not even used
 two other related attributes:
 \href{https://stackoverflow.com/questions/27267073/imagemagick-lossless-max-compression-for-png}{filter
-and strategy} {[}4{]}. Getting the best tradeoff of image format, image
+and strategy} {[}5{]}. Getting the best tradeoff of image format, image
 size, file size, loading time, and image quality is still more of an art
 to be mastered than an algorithm to be applied.
 
@@ -1429,7 +1543,7 @@ look at the first block of text:
 
 The \emph{width}, \emph{height}, and \emph{viewBox} of the SVG image are
 all stated in \emph{points}, abbreviated as pt where 1 pt equals 1/72
-inch {[}5{]}. At a screen setting of 96 pixels per inch, 1 pt equals 4/3
+inch {[}6{]}. At a screen setting of 96 pixels per inch, 1 pt equals 4/3
 pixels. So, the native size of the \texttt{test-only} image as a PNG
 should be about 286 pixels by 70 pixels. When\texttt{convert} is applied
 on the SVG to yield the PNG, the latter is faithful to these unit
@@ -2002,13 +2116,13 @@ of delegated command strings, it was possible for someone to execute
 malicious code remotely, to the detriment of the unwitting user of
 \texttt{ImageMagick}. This was revealed at a website, interestingly
 named \href{https://imagetragick.com/}{ImageTragick} to attract
-sufficient attention and remedial action to the discovered bug {[}6{]}.
+sufficient attention and remedial action to the discovered bug {[}7{]}.
 
 In November 2020,
 \href{https://portswigger.net/daily-swig/imagemagick-pdf-parsing-flaw-allowed-attacker-to-execute-shell-commands-via-maliciously-crafted-image}{another
-security vulnerability was discovered} {[}7{]}. It was
+security vulnerability was discovered} {[}8{]}. It was
 \href{https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html}{reported
-and promptly patched} by the \texttt{ImageMagick} maintainers {[}8{]}.
+and promptly patched} by the \texttt{ImageMagick} maintainers {[}9{]}.
 
 Recent versions of the \texttt{ImageMagick} suite, bundled with major
 distributions, should have correctly configured \texttt{policy.xml}
@@ -2033,21 +2147,28 @@ comments and corrections.
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{0}{0}
-\leavevmode\hypertarget{ref-imagemagicksource}{}%
+\leavevmode\hypertarget{ref-gabriel2017}{}%
 \CSLLeftMargin{{[}1{]} }
+\CSLRightInline{S. Gabriel, {`{Designer's guide to DPI},'} 15-May-2015.
+{[}Online{]}. Available:
+\url{https://sebastien-gabriel.com/designers-guide-to-dpi/}.
+{[}Accessed: 27-Mar-2021{]}}
+
+\leavevmode\hypertarget{ref-imagemagicksource}{}%
+\CSLLeftMargin{{[}2{]} }
 \CSLRightInline{ImageMagick Studio LLC, {`ImageMagick 7.'} {[}Online{]}.
 Available: \url{https://github.com/ImageMagick/ImageMagick}.
 {[}Accessed: 08-Mar-2021{]}}
 
 \leavevmode\hypertarget{ref-imcli}{}%
-\CSLLeftMargin{{[}2{]} }
+\CSLLeftMargin{{[}3{]} }
 \CSLRightInline{{`{ImageMagick---Command-line Processing}. {Anatomy of
 the Command-line}.'} {[}Online{]}. Available:
 \url{https://imagemagick.org/script/command-line-processing.php}.
 {[}Accessed: 12-Mar-2021{]}}
 
 \leavevmode\hypertarget{ref-newton2015}{}%
-\CSLLeftMargin{{[}3{]} }
+\CSLLeftMargin{{[}4{]} }
 \CSLRightInline{D. Newton, {`{Efficient Image Resizing With
 ImageMagick---Smashing Magazine},'} 25-Jun-2015. {[}Online{]}.
 Available:
@@ -2055,14 +2176,14 @@ Available:
 {[}Accessed: 11-Mar-2021{]}}
 
 \leavevmode\hypertarget{ref-setchell2014}{}%
-\CSLLeftMargin{{[}4{]} }
+\CSLLeftMargin{{[}5{]} }
 \CSLRightInline{M. Setchell, {`{ImageMagick: Lossless max compression
 for PNG?---Stack Overflow},'} 03-Dec-2014. {[}Online{]}. Available:
 \url{https://stackoverflow.com/questions/27267073/imagemagick-lossless-max-compression-for-png/27269260\#27269260}.
 {[}Accessed: 12-Mar-2021{]}}
 
 \leavevmode\hypertarget{ref-oreilly2019}{}%
-\CSLLeftMargin{{[}5{]} }
+\CSLLeftMargin{{[}6{]} }
 \CSLRightInline{A. Bellamy-Royds, K. Cagle, and D. Storey, {`{Units for
 Measurements Reference --- Using SVG with CSS3 and HTML5---Supplementary
 Material},'} 05-Oct-2019. {[}Online{]}. Available:
@@ -2070,13 +2191,13 @@ Material},'} 05-Oct-2019. {[}Online{]}. Available:
 {[}Accessed: 20-Mar-2021{]}}
 
 \leavevmode\hypertarget{ref-imagetragick2016}{}%
-\CSLLeftMargin{{[}6{]} }
+\CSLLeftMargin{{[}7{]} }
 \CSLRightInline{---, {`ImageMagick is on fire --- CVE-2016--3714,'}
 12-May-2016. {[}Online{]}. Available: \url{https://imagetragick.com/}.
 {[}Accessed: 08-Mar-2021{]}}
 
 \leavevmode\hypertarget{ref-leyden2020}{}%
-\CSLLeftMargin{{[}7{]} }
+\CSLLeftMargin{{[}8{]} }
 \CSLRightInline{J. Leyden, {`ImageMagick PDF-parsing flaw allowed
 attacker to execute shell commands via maliciously crafted image,'}
 23-Nov-2020. {[}Online{]}. Available:
@@ -2084,7 +2205,7 @@ attacker to execute shell commands via maliciously crafted image,'}
 {[}Accessed: 08-Mar-2021{]}}
 
 \leavevmode\hypertarget{ref-infuhr2020}{}%
-\CSLLeftMargin{{[}8{]} }
+\CSLLeftMargin{{[}9{]} }
 \CSLRightInline{A. Inführ, {`{ImageMagick - Shell injection via PDF
 password},'} 21-Nov-2020. {[}Online{]}. Available:
 \url{https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html}.

@@ -53,13 +53,15 @@ All three formats yield images displayed as rectangular arrays of [_pixels_](htt
 
 ### From pictures to pixels
 
-Imagine a picture on a square canvas being converted into a jig-saw puzzle, only this time with square-shaped rather than irregular pieces. If the picture were divided into a hundred pieces in one direction and another hundred pieces in a  perpendicular direction, we would have 100^2^ = 10,000 pieces in our jig-saw puzzle. Each piece is a _picture element_ or _pixel_ contributing to the overall picture.
+Imagine a picture on a square canvas being converted into a jig-saw puzzle, only this time with square-shaped rather than irregular pieces. If the picture were divided into a hundred pieces in one direction and another hundred pieces in an [orthogonal](https://en.wikipedia.org/wiki/Orthogonality) direction, we would have 100^2^ = 10,000 pieces in our jig-saw puzzle. Each piece is a _picture element_ or _pixel_ contributing to the overall picture.
 
 Digital pictures are much the same, except for one difference. Whereas each jig-saw puzzle piece carries a small, detailed part of the big picture, each pixel consists of only _one_ colour. _Pixels are coloured tiles in a picture mosaic. Each tile contributes to the overall picture, but it carries not a small picture, but a single colour_.
 
 Clearly, the more tiles we have, the more detailed the emergent picture. Conversely, if the entire picture were composed of a single tile, we would see not a picture but a square of a single colour. Information has been lost and we would have no idea what the picture was about, save for that one dominant colour.
 
 This possibility of information loss on converting an analog picture into digital form is why, when we scan an image, we should take care to digitize the picture with sufficient detail so that it represents the original with fidelity.
+
+### File size, quality, and compression
 
 All raster images are rectangular arrays of pixels. How many pixels in the _width_ and _height_ directions depends on how the original analog image was scanned. Suppose the original image was captured by a mobile phone, and thus already in digital form. If the phone boasts of a 16 million pixel camera, we have a square image of side $\sqrt{16\times 10^6} = 4000$ pixels on each side.
 
@@ -71,27 +73,35 @@ Some image file formats are amenable to compression, which further reduces file 
 
 ### Pixel densities and such
 
-Raster images have a size denoted by the number of pixels comprising the width and height of the image. The actual _dimensions_ of the displayed image, however, depend on the resolution of the display device.
+Raster images have a size denoted by the number of pixels comprising the _width_ and _height_ of the image. The actual _dimensions_ of the displayed image, however, depend on the resolution of the display device. 
 
-Such images appear better defined at higher resolutions or pixel densities. The units of resolution, or density, commonly used are _dots per inch_ (dpi) or _pixels per inch_ (ppi), both of which reference the number of pixels that may be accommodated in one linear inch. It is possible to specify these in dots per centimetre, or pixels per centimetre, but that usage has not caught on.
+Such images appear better defined at higher resolutions or pixel densities. The units of resolution, or density, commonly used are _dots per inch_ (dpi)---in the context of printers---or _pixels per inch_ (ppi)---in the context of displays---both of which reference the number of dots or pixels that may be accommodated in one linear inch. It is possible to specify these in dots per centimetre, or pixels per centimetre, but that usage has not caught on.
 
-Commonly used resolutions for display devices are:
+Commonly used resolutions for output devices are:
 
-- 72 dpi for low resolution monitors
-- 96 dpi for standard resolution monitors
-- 150 dpi, which is often the default value in image conversion programs
-- 300 dpi for some laser printers
-- 600 dpi for high end laser printers
+- 72 ppi for low resolution monitors
+- 96 ppi  for standard resolution monitors
+- 150 dpi/ppi, which is often the default value in image conversion programs
+- 300 dpi/ppi for some mobile phones and laser printers
+- 600 dpi/ppi for higher end mobile phones and laser printers
 
-Suppose we have an image that is a square of side 100 pixels. Its width and height are each 100 pixels, and the image consists of a square array of 100^2^ or 10,000 pixels. On a display that has a resolution of 96 dpi, such an image will take up 100/96 = 1.042 inches on each side. If the same image were displayed on a 300 dpi output device, its image will span 100/300 = 0.333 inches on each side. Image sizes in pixels are therefore quite different from displayed image dimensions in inches.
+Suppose we have an image that is a square of side 100 pixels. Its width and height are each 100 pixels, and the image consists of a square array of 100^2^ or 10,000 pixels. On a display that has a resolution of 96 dpi, such an image will take up ^100^/~96~ = 1.042 inches on each side. If the same image were displayed on a 300 dpi output device, its image will span ^100^/~300~ = 0.333 inches on each side. Image sizes in pixels are therefore quite different from displayed image dimensions in inches.
+
+>A pixel has no size, no physical value or meaning outside of its mathematical representation.
+>
+>...
+>
+A pixel in itself has no size or physical representation, it can only carry value through its relationship with the screen physical size, creating the resolution, or PPI. Understand this and screen density will have no secret for you. [@gabriel2017]
+
+### File size and quality again
 
 If an image were resized to _twice_ its dimensions, the number of pixels in it will become _fourfold_ as will, roughly, its file size.
 
 When photographic images are scanned, higher pixel densities lead to much larger file sizes, resulting in images of remarkable detail. Conversely, low resolution scans sacrifice image quality for small file size. Good visual quality at reasonable file size is the much sought-after optimal goal for any image.
 
-Blocky images arise when the zoomed image is not matched to the display resolution, allowing individual pixels to show themselves as discernible "blocky" elements.
+Blocky images arise when the zoomed image is not matched to the display resolution, allowing individual pixels to show themselves as discernible "blocky" elements, as in +@fig:raster.
 
-The dpi used for format conversion, especially from raster to PDF, is critical to avoid getting "blurry" or "grungy-looking" PDFs. At the same time, ratcheting up the dpi before conversion from raster to PDF will result in bloated PDF files that convey no discernible improvement in visual quality. There is always a sweet spot for pixel density---in image scanning and format conversions---that gives good visual quality at a decent file size.
+The dpi/ppi used for format conversion, especially between raster and PDF, is critical to avoid getting "blurry" or "grungy-looking" images. Merely ratcheting up the source dpi/ppi before conversion from raster to PDF will result in bloated PDF files that convey no discernible improvement in visual quality. There is always a sweet spot for pixel density---in image scanning and format conversions---that gives good visual quality at a decent file size. We should aim for that.
 
 ## Vector Graphics
 
@@ -113,11 +123,11 @@ Both these formats yield images which consist of mathematically defined points, 
 
 ### Page size and viewBox
 
-A raster image has a _width_ and a _height_ that are directly related to the number of pixels in those two perpendicular directions. Vector images, on the other hand, do not embody an intrinsic resolution, and may therefore be zoomed in or out arbitrarily without loss of detail. But vector images also have intrinsic sizes that endow them with a fixed [aspect ratio](https://en.wikipedia.org/wiki/Aspect_ratio), no less than raster images.
+A raster image has a _width_ and a _height_ that are directly related to the number of pixels in those two orthogonal directions. Vector images, on the other hand, do not embody an intrinsic resolution, and may therefore be zoomed in or out arbitrarily without loss of detail. But vector images _do have_ intrinsic sizes that endow them with a fixed [aspect ratio](https://en.wikipedia.org/wiki/Aspect_ratio), no less than raster images.
 
-The PDF format was developed for documents meant to be printed on paper. It therefore embodies an intrinsic _page size_ in [points](https://en.wikipedia.org/wiki/Point_(typography)) where one point is 1/72 of an inch. Points are absolute linear dimensions which do not change with magnification. In the PDF format, each graphic unit is paginated to the page size in points defined in the PDF.
+The PDF format was developed for documents meant to be printed on paper. It therefore embodies an intrinsic _page size_ in [points](https://en.wikipedia.org/wiki/Point_(typography)), where one point is ^1^/~72~ of an inch. Points are absolute linear dimensions which do not change with magnification. In the PDF format, each graphic unit is paginated to the page size parameter in points defined in the file.
 
-With an image format that is designed primarily for display on the Web via a Web browser---as is the case with SVG---image size is defined in terms of a [_viewBox_](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox). The latter are  again measured in points, and have a fixed [aspect ratio](https://en.wikipedia.org/wiki/Aspect_ratio), determined by the image. Although such an SVG image may be zoomed without loss of visual quality when displayed on the Web, it also has  intrinsic dimensions in terms of linear measure.
+With an image format that is designed primarily for display on the Web via a Web browser---as is the case with SVG---image size is defined in terms of a [_viewBox_](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox). The latter are  again measured in points, and have a fixed [aspect ratio](https://en.wikipedia.org/wiki/Aspect_ratio), determined by the image. Although such an SVG image may be zoomed without loss of visual quality when displayed on the Web, it too has  intrinsic dimensions in terms of its viewBox.
 
 The fact that raster images use pixels, which are relative to an image array, and vector images use points, which are an absolute linear measure, must be kept in mind during format conversion, to avoid perplexing results after conversion.
 
