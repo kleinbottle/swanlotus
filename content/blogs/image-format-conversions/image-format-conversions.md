@@ -190,8 +190,8 @@ The above list is far from exhaustive. The interested reader is referred to the 
 
 Two quite different images are used to illustrate the format conversions we perform here. The two test images are:
 
-#.  a coloured, text-only test image contained in the file `text-only.pdf`; and
-#.  a coloured, non-text, graphically rich image contained in the file `animals.jpg`.
+#.  a coloured, text-only test image contained in the file [`text-only.pdf`]({attach}images/text-only.pdf); and
+#.  a coloured, non-text, graphically rich image contained in the file [`animals.jpg`]({attach}images/animals.jpg).
 
 We will succinctly refer to these two images as `text-only` and `animals`, respectively hereafter.
 
@@ -471,7 +471,7 @@ ls -Xsh animals.jpg animals-IM.svg | awk '{print $1 "\t" $2}'
 
 The SVG file is more than _twice_ the size of the original JPEG. The question arises whether there is an alternative route to the SVG that could give us smaller file sizes but comparable fidelity. What if we did not convert from raster to SVG but from raster to PDF and thence to SVG?
 
-Since PDF to SVG conversion is really part of vector to vector conversion, we will [revisit this question later][PDF to SVG].
+Since PDF to SVG conversion is really part of vector to vector conversion, we will [revisit this question later][PDF to SVG with the `animals` image].
 
 ### Round tripping from PDF through PNG to PDF
 
@@ -486,7 +486,7 @@ ls -Xsh text-only*600*.pdf text-only.pdf | awk '{print $1 "\t" $2}'
 16K     text-only.pdf
 ```
 
-Not surprisingly, the round trip has resulted in a fatter file for the PDF the second time around. Judge for yourself [the image quality by viewing on a separate browser tab and zooming]({attach}images/text-only-from-600-dpi-PNG.pdf).
+Not surprisingly, the round trip has resulted in a fatter file for the PDF the second time around. Compare for yourself [`text-only.pdf`]({attach}images/text-only.pdf) and [`text-only-from-600-dpi-PNG.pdf`]({attach}images/text-only-from-600-dpi-PNG.pdf) by viewing each on a separate browser tab and zooming.
 
 What would you expect if the initial PDF to PNG image conversion had been done at 150 dpi, or 96 dpi, or 75 dpi? The command sequence is [explained later][PDF to PNG and JPEG: `poppler` and `cairo`] but the results and their consequences are noteworthy here:
 
@@ -504,7 +504,7 @@ ls -sh text-only.pdf text-only*75* | awk '{print $1 "\t" $2}'
 
 View the [PDF generated from the 75 dpi PNG]({attach}images/text-only-75-dpi.pdf) on a separate browser tab and zoom in on the image as before. How does it compare with the [one generated previously from the 600 dpi PNG]({attach}images/text-only-from-600-dpi-PNG.pdf)?
 
-This is one reason why conversion from a PNG to a PDF might result in a PDF which looks like a raster image when zoomed in close. The source image resolution was not high enough to generate a PDF that does not degrade on zooming. _The visual quality of the original raster image is what the output PDF will embody._ Just because a PDF image scales does not mean it cannot exhibit blockiness. It will, if a low resolution raster image was used as source.
+This is one reason why conversion from a PNG to a PDF might result in a PDF which looks like a raster image when zoomed in close. The source image resolution was not high enough to generate a PDF that does not degrade on zooming, _on the monitor being used for display_. _The visual quality of the original raster image is what the output PDF will embody._ Just because a PDF image scales does not mean it cannot exhibit blockiness. It will, if a low resolution raster image was used as source.
 
 ## Vector to raster
 
