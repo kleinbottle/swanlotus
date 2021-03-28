@@ -4545,6 +4545,10 @@ h1#feedback {
   line-height: 1.125;
 }
 
+.references a {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
 /* Styles for footer */
 .footer {
   background-color: #fffbeb;
