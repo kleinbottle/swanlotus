@@ -81,7 +81,7 @@ Commonly used resolutions for output devices are:
 
 - 72 ppi for low resolution monitors
 - 96 ppi  for standard resolution monitors
-- 150 dpi/ppi, which is often the default value in image conversion programs
+- 150 dpi/ppi^[We will use dpi and ppi interchangeably hereafter to avoid inelegant expressions.], which is often the default value in image conversion programs
 - 300 dpi/ppi for some mobile phones and laser printers
 - 600 dpi/ppi for higher end mobile phones and laser printers
 
@@ -461,6 +461,7 @@ Increasing detail demands larger file sizes: there is no free lunch.
 Will `convert` cater for a JPEG to SVG conversion?
 
 ```bash
+# Original `animals.jpg` to SVG using `convert`
 convert animals.jpg animals-IM.svg
 
 ls -Xsh animals.jpg animals-IM.svg | awk '{print $1 "\t" $2}'
@@ -478,6 +479,7 @@ Since PDF to SVG conversion is really part of vector to vector conversion, we wi
 The `text-only` image first saw life as a PDF. We then converted it to a 600 dpi PNG. What happens if we convert that image back to a PDF?
 
 ```bash
+# Generate PDF from 600 dpi PNG using `convert`
 convert text-only-600-dpi-cairo.png text-only-from-600-dpi-PNG.pdf
 
 ls -Xsh text-only*600*.pdf text-only.pdf | awk '{print $1 "\t" $2}'
@@ -491,8 +493,10 @@ Not surprisingly, the round trip has resulted in a fatter file for the PDF the s
 What would you expect if the initial PDF to PNG image conversion had been done at 150 dpi, or 96 dpi, or 75 dpi? The command sequence is [explained later][PDF to PNG and JPEG: `poppler` and `cairo`] but the results and their consequences are noteworthy here:
 
 ```bash
+# Generate 75 dpi PNG from `text-only.pdf` using `pdftocairo`
 pdftocairo -png -r 75 -singlefile text-only.pdf text-only-75-dpi
 
+# Round trip convert the 75 dpi PNG back to PDF using `convert`
 convert text-only-75-dpi.png text-only-75-dpi.pdf
 
 ls -sh text-only.pdf text-only*75* | awk '{print $1 "\t" $2}'
@@ -540,9 +544,11 @@ pdftoppm -jpeg -jpegopt "quality=100" -r 600 \
 -singlefile text-only.pdf text-only-600-dpi-ppm
 
 # Using `convert` from ImageMagick for PNG to JPEG
+# Source PNG file was output by `pdftocairo` 
 convert -units pixelsperinch -density 600 -quality 100 \
 text-only-600-dpi-cairo.png text-only-600-dpi-cairo-IM.jpg
 
+# Using `convert` from ImageMagick for PNG to JPEG
 # Source PNG file was output by `pdftoppm` 
 convert -units pixelsperinch -density 600 -quality 100 \
 text-only-600-dpi-ppm.png text-only-600-dpi-ppm-IM.jpg
@@ -583,17 +589,18 @@ One other takeaway is that text-rich images are better rendered in PNG than JPEG
 If you try to `convert` a PDF to any raster image format, you will get an error:
 
 ```bash
+# Try to convert from PDF to PNG using `convert`
 convert text-only.pdf text-only.png
 ---
 convert: attempt to perform an operation not allowed by the security policy 'gs' @ error/delegate.c/ExternalDelegateCommand/378.
 convert: no images defined 'text-only.png' @ error/convert.c/ConvertImageCommand/3304.
 ```
 
-The reason why this is now disallowed is [explained in the appendix][Appendix: Security vulnerabilities in `ImageMagick`].
+Such a conversion was commonplace some years ago, but is now disallowed, [for reasons explained in the appendix][Appendix: Security vulnerabilities in `ImageMagick`].
 
 ### SVG to PNG and JPEG
 
-There was a time when SVGs were ill-supported by browsers and therefore, PNGs and JPEGs dominated the logo and icon landscape on the web. Now that most mainstream browsers support SVGs out of the box, there is healthy support for tools that support conversions to and from SVGs.
+There was a time when SVGs were ill-supported by browsers and therefore, PNGs and JPEGs dominated the logo and icon landscape on the web. Now that most mainstream browsers support SVGs out of the box, there is healthy support for tools that  convert to and from SVGs.
 
 #### Some SVG basics
 
@@ -601,9 +608,10 @@ An SVG file is a text file _describing_ points, curves, and shapes as they are r
 
 ##### Generating an SVG from a PDF
 
-First, we need to generate an SVG version of the file `text-only.pdf`. We are running ahead of ourselves because we [need to convert from PDF to SVG][PDF to SVG]. We use `pdftocairo` for this because we cannot use `convert` as [explained here][Why is `ImageMagick` disallowed for PDF to raster?].
+First, we need to generate an SVG version of the file `text-only.pdf`. We are running ahead of ourselves because we [need to convert from PDF to SVG][PDF to SVG with the `text-only` image]. We use `pdftocairo` for this because we cannot use `convert` as [explained in the appendix][Why is `ImageMagick` disallowed for PDF to raster?]. Moreover, `pdftoppm` does not support SVG as an output format. So, `pdftocairo` is our preferred option.
 
 ```bash
+# PDF to SVG using `pdftocairo`
 pdftocairo -svg text-only.pdf text-only-pdftocairo.svg
 
 ls -Xsh text-only.pdf text-only-pdftocairo.svg | \
@@ -620,14 +628,17 @@ It is instructive to open the file `text-only-pdftocairo.svg` and look at the fi
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="214.31pt" height="52.16pt" viewBox="0 0 214.31 52.16" version="1.2">
 ```
 
-The _width_, _height_, and _viewBox_ of the SVG image are all stated in _points_, abbreviated as pt where 1 pt equals 1/72 inch [@oreilly2019]. At a screen setting of 96 pixels per inch, 1 pt equals 4/3 pixels. So, the native size of the `test-only` image as a PNG should be about 286 pixels by 70 pixels. When`convert` is applied on the SVG to yield the PNG, the latter is faithful to these unit conversions:
+The _width_, _height_, and _viewBox_ of the SVG image are all stated in _points_, abbreviated as pt where, as we have already seen, 1 pt equals ^1^/~72~ inch [@oreilly2019]. At a screen setting of 96 pixels per inch, 1 pt equals ^4^/~3~ pixels. So, the native size of the `test-only` image as a PNG should be about 286 pixels by 70 pixels on a 96 ppi monitor. When`convert` is applied on the SVG to yield the PNG, the latter is faithful to these unit conversions:
 
 ```bash
-convert text-only-pdftocairo.svg text-only-svg-convert.png
+# SVG to PNG using `convert` at 96 ppi
+convert -units pixelsperinch -density 96 \
+text-only-pdftocairo.svg text-only-96-dpi-svg-convert.png
 
-identify text-only-svg-convert.png
+# Display basic information about an image using `identify`
+identify text-only-96-dpi-svg-convert.png
 ---
-text-only-svg-convert.png PNG 286x70 286x70+0+0 8-bit sRGB 6548B 0.000u 0:00.000
+text-only-96-dpi-svg-convert.png PNG 286x70 286x70+0+0 8-bit sRGB 6548B 0.000u 0:00.000
 ```
 
 And, not unexpectedly, the numbers returned by `identify` match those we derived above by simple unit conversion. \emojifont:slightly_smiling_face:\normalfont
@@ -635,17 +646,45 @@ And, not unexpectedly, the numbers returned by `identify` match those we derived
 Regarding file sizes, the PNG is actually smaller than the SVG:
 
 ```bash
-ls -Xsh text-only-pdftocairo.svg text-only-svg-convert.png | awk '{print $1 "\t" $2}'
+ls -Xsh text-only-pdftocairo.svg text-only-96-dpi-svg-convert.png | \
+awk '{print $1 "\t" $2}'
 ---
-8.0K    text-only-svg-convert.png
+8.0K    text-only-96-dpi-svg-convert.png
 12K     text-only-pdftocairo.svg
 ```
 
-![PNG image from SVG using `convert` with no options.]({attach}images/text-only-svg-convert.png){#fig:convertSVGtoPNG width=80%}
+![Fuzzy PNG image from SVG using `convert` at 96 dpi.]({attach}images/text-only-96-dpi-svg-convert.png){#fig:convert96dpiSVGtoPNG width=80%}
 
-The PNG image lacks the sharpness of definition the original exhibited, which is not surprising because an increase in image resolution has not been achieved, and moreover, the file size has been reduced. Note the white border that has been added to three sides of the image, perhaps to arrive at an integer number of pixels for the image dimensions. For SVG to PNG conversion, there are better tools than `convert`.
+The PNG image lacks the sharpness of definition the original exhibited, which is not surprising because an increase in image resolution has not been achieved, and moreover, the file size has been reduced. Note the white border that has been added to three sides of the image, perhaps to arrive at an integer number of pixels for the image dimensions. 
+
+Let us repeat the above process but with a higher ppi for the PNG, say 600:
+
+```bash
+# SVG to PNG using `convert` at 600 dpi
+convert -units pixelsperinch -density 600 \
+text-only-pdftocairo.svg text-only-600-dpi-svg-convert.png
+
+# Display basic information about an image using `identify`
+identify text-only-600-dpi-svg-convert.png
+---
+text-only-600-dpi-svg-convert.png PNG 1786x435 1786x435+0+0 8-bit sRGB 43439B 0.000u 0:00.000
+---
+ls -Xsh text-only-pdftocairo.svg text-only-600-dpi-svg-convert.png | \
+awk '{print $1 "\t" $2}'
+---
+44K     text-only-600-dpi-svg-convert.png
+12K     text-only-pdftocairo.svg
+```
+
+The PNG image is now 1786 by 435 pixels as expected, and the file size is also modestly larger. The PNG image, displayed on a standard desktop screen or even a mobile phone display should now appear sharper, as shown in +@fig:convert600dpiSVGtoPNG. But the white border on three sides still shows up for reasons unclear to me. My guess is that it might have to do with getting an integer number of pixels in the PNG output.
+
+![Sharper PNG image from SVG using `convert` at 600 dpi.]({attach}images/text-only-600-dpi-svg-convert.png){#fig:convert600dpiSVGtoPNG width=80%}
+
+It is important to know which options to use with `convert` to get the desired results at economical files sizes and acceptable visual quality. `ImageMagick` could use either its builtin SVG renderer MSVG or `rsvg-convrt` from `librsvg`. Knowing the intermediate delegates involved in the conversion chain helps optimize the process.
 
 Font support in SVG is not widespread, and format conversions might result in non-optimal font rendering after conversion.
+
+%%%%% CONTINUE ERE %%%%
 
 #### Conversion tools
 
@@ -659,7 +698,7 @@ a.  [`cairosvg`](https://cairosvg.org/);
 
 a.  [`rsvg-convert`](https://en.wikipedia.org/wiki/Librsvg) from `librsvg`.
 
-We know that `convert` will produce a minimally sized PNG that faithfully converts pt to pixels. Other tools might enlarge the PNG by using some scaling factor larger than one. Moreover, different programs might insert borders, transparent backgrounds, etc., modifying the aspect ratio of the PNG slightly. We will gloss over such details in the tool comparison below and simply focus on the command line invocations and resulting file sizes. Bear in mind also that some of the tools could use identical backends and therefore give identical output images.
+We know that `convert` will produce a minimally sized PNG that faithfully converts pt to pixels at 96 dpi. Other tools might use different default dpi values. Moreover, different programs might insert borders, transparent backgrounds, etc., modifying the aspect ratio of the PNG slightly. We will gloss over such details in the tool comparison below and simply focus on the command line invocations and resulting file sizes. Bear in mind also that some of the tools could use identical backends and therefore give identical output images.
 
 #### The tool faceoff
 
