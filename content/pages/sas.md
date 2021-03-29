@@ -53,4 +53,4 @@ The book is a work-in-progress. Not all parts and chapters are ready yet. The ma
 
 _Secrets of Academic Success_ may be [downloaded from here]({static}../sas-manuscript/SAS-partial.pdf).
 
-Read! Benefit! Succeed!
+Read! Apply! Benefit! Succeed!
