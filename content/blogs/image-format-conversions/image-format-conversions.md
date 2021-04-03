@@ -684,7 +684,7 @@ It is important to know which options to use with `convert` to get the desired r
 
 Font support in SVG is not widespread, and format conversions might result in non-optimal font rendering after conversion.
 
-%%%%% CONTINUE ERE %%%%
+%%%%% CONTINUE FROM HERE %%%%
 
 #### Conversion tools
 
