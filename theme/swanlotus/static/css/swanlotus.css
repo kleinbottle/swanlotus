@@ -4420,10 +4420,6 @@ a:hover code {
   margin-left: 0em;
 }
 
-.content ul.tags {
-  margin-bottom: 1em;
-}
-
 .content .category {
   margin-bottom: 0.5em;
   margin-top: 2em;
@@ -4545,12 +4541,14 @@ h1#feedback {
   line-height: 1.125;
 }
 
+/* Make links in references have the sans-serif font */
 .references a {
   font-family: "Source Sans Pro", sans-serif;
 }
 
 /* Styles for footer */
 .footer {
+  margin-top: 1em;
   background-color: #fffbeb;
   color: #0a0a0a;
   font-family: "Source Sans Pro", sans-serif;
