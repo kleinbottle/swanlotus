@@ -6,8 +6,6 @@ date: "2021-04-06"
 save_as: "about.html"
 ---
 
-## Why SwanLotus?
-
 The swan and the lotus are ancient symbols in the tradition of [Sanātana Dharma](https://www.britannica.com/topic/sanatana-dharma). The swan is a symbol of discrimination, and is the vehicle for [Sarasvatī](https://en.wikipedia.org/wiki/Saraswati), the Goddess of Learning. The lotus blossom, even though rooted in mud, is unsullied by it, and represents purity and beauty. Sarasvatī is depicted as seated on a white lotus. So, this website, concerned as it is with learning, knowledge, and wisdom, is named SwanLotus.
 
 ## The logo
@@ -26,16 +24,16 @@ The symbol "L" for the lotus is in white, signifying the white lotus:
 
 ## The author
 
-My name is R (Chandra) Chandrasekhar. I am a retired biomedical engineer and university academic. I am a lifelong learner. My purpose in setting up this website is twofold.
+My name is R (Chandra) Chandrasekhar. I am a retired biomedical engineer and university academic. I am also a lifelong learner. My purpose in setting up this website is twofold:
 
-First, it is the home on the Web for my book-in-preparation entitled [_Secrets of Academic Success_](sas.html). In it I have tried to impart some of the knowledge about studying and learning that my teachers and others have inculcated in me. The book is in electronic form and may be [freely downloaded]({static}../sas-manuscript/SAS-partial.pdf).
+#.  It is the home on the Web for my book-in-preparation entitled [_Secrets of Academic Success_](sas.html). In it I have tried to impart some of the knowledge about studying and learning that my teachers and others have inculcated in me. The book is in electronic form and may be [freely downloaded]({static}../sas-manuscript/SAS-partial.pdf).
 
-Second, I blog on this site, writing about whatever takes my fancy. Many of my blogs are long reads, which I have christened _slogs_. If you display the intellectual fortitude to read them to the end, I salute and thank you. \emojifont:smile:\normalfont
+#.  I blog on this site, writing about whatever takes my fancy. Many of my blogs are long reads, which I have christened _slogs_. If you display the intellectual and intestinal fortitude to read them to the end, I salute and thank you. \emojifont:wink:\normalfont
 
-Many of the blogs are from the early days of the Web and have found a second home here. I have taken the opportunity to update them where necessary. They are arranged by the original date, rather than when last modified.
+    Many of the blogs are from the early days of the Web and have found a durable home here. I have taken the opportunity to update them where necessary. They are arranged by the original date, rather than when last modified.
 
 For the curious among you, who wonder what I look like, I have appended two photographs below, taken some decades ago.
 
-![Professor Yianni Attikiouzel, my PhD supervisor, and me, displaying the PhD gold medal awarded to me by the Department of Electrical and Electronic Engineering, The University of Western Australia, in September 1997.^[Image is copyright by the University of Western Australia with citation: UWA Archives 29071P. First published in the "The Leader"  dated 22 September 1997, Vol. 16, No. 15, pp 1--2.]]({static}images/yianni-attikiouzel-gold-medal.jpg){width=80%}
+![Professor Yianni Attikiouzel, my PhD supervisor, and me, displaying the PhD gold medal awarded to me by the Department of Electrical and Electronic Engineering, [The University of Western Australia](https://www.uwa.edu.au/home), in September 1997.^[Image is copyright by the University of Western Australia with citation: UWA Archives 29071P. First published in the "The Leader"  dated 22 September 1997, Vol. 16, No. 15, pp 1--2.]]({static}images/yianni-attikiouzel-gold-medal.jpg){width=80%}
 
-![[Dr A P J Abdul Kalam](https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam), President of India from 25 July 2002 to 25 July 2007, autographing my copy of his autobiography [_Wings of Fire_](https://www.amazon.in/Wings-Fire-Autobiography-Abdul-Kalam/dp/8173711461/) at the BioVision 2001 Conference in Bangalore, India, in December 2001.]({static}images/abdul-kalam-autograph.jpg){width=80%}
+![[Dr A P J Abdul Kalam](https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam), President of India from 25 July 2002 to 25 July 2007, autographing my copy of his autobiography, [_Wings of Fire_](https://www.amazon.in/Wings-Fire-Autobiography-Abdul-Kalam/dp/8173711461/), at the BioVision 2001 conference in Bangalore, India, in December 2001.]({static}images/abdul-kalam-autograph.jpg){width=80%}
