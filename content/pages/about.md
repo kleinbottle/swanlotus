@@ -18,11 +18,11 @@ The website logo for SwanLotus is shown below:
 
 The symbol "S" for the swan is in black, because for some periods in my life, I lived in [Perth](https://en.wikipedia.org/wiki/Perth), Australia, where the blue [Swan River](https://en.wikipedia.org/wiki/Swan_River_(Western_Australia)) flows, and where black swans abound.
 
-![[Black Swan](http://absfreepic.com/free-photos/download/the-black-swan-on-lake-2701x1800_84370.html): [CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).]({static}images/black-swan.jpg){width=50%}
+![[Black Swan](http://absfreepic.com/free-photos/download/the-black-swan-on-lake-2701x1800_84370.html): [CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).]({static}images/black-swan.jpg){width=80%}
 
 The symbol "L" for the lotus is in white, signifying the white lotus:
 
-![[White Lotus](https://www.publicdomainpictures.net/pictures/270000/velka/white-lotus-flower-close-up.jpg): [CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).]({static}images/white-lotus-flower-close-up.jpg){width=50%}
+![[White Lotus](https://www.publicdomainpictures.net/pictures/270000/velka/white-lotus-flower-close-up.jpg): [CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).]({static}images/white-lotus-flower-close-up.jpg){width=80%}
 
 ## The author
 
@@ -30,7 +30,7 @@ My name is R (Chandra) Chandrasekhar. I am a retired biomedical engineer and uni
 
 #.  It is the Web-home for my book-in-preparation entitled [_Secrets of Academic Success_](sas.html). In it, I have tried to impart some of the knowledge about studying and learning that my various teachers have inculcated in me. The book is in electronic form, and is protected by [copyright](https://en.wikipedia.org/wiki/Copyright), with [all rights reserved](https://en.wikipedia.org/wiki/All_rights_reserved). It may be [downloaded from here](sas-manuscript/SAS-partial.pdf) at no charge.
 
-#.  I also blog on this site, writing about whatever takes my fancy. Many of my blogs are long reads, which I have christened _slogs_. If you display the intellectual and intestinal fortitude to read them to the end, I salute and thank you. \emojifont:wink:\normalfont
+#.  I also [blog](blogs.html) on this site, writing about whatever takes my fancy. Many of my blogs are long reads, which I have christened _slogs_. If you display the intellectual and intestinal fortitude to read them to the end, I salute and thank you. \emojifont:wink:\normalfont
 
     Many of the blogs are from the early days of the Web and have found a durable home here. I have taken the opportunity to update them where necessary. They are arranged by the original date, rather than when last modified.
 
