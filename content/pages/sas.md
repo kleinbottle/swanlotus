@@ -17,7 +17,7 @@ Accordingly, the book is _very_ long. It is not meant to be read in one go from 
 
 The book is divided into ten parts, each of which addresses one aspect of learning. These are briefly described below:
 
-#.  **You**: Your motivation, habits, etc., are vital ingredients for your success. So, we begin at the beginning with _you_.
+#.  **You**: Your motivation, habits, etc., are vital ingredients for your success. So, we begin at the beginning, with _you_.
 
 #.  **Mind**: You use your mind to learn. Listening, seeing, thinking, memory, concentration, relaxation, moods, and related subjects are considered here.
 
@@ -57,7 +57,7 @@ For licence details, [see here](https://creativecommons.org/licenses/by-nc-nd/4.
 
 ## Work-in-progress
 
-The book is a work-in-progress. Not all parts and chapters are ready yet. The material that _is ready_ is included in the download. But even that material is updated as and when necessary. So, always make sure that you have the most recent version of the draft manuscript available from the link below.
+The book is a work-in-progress. Not all parts and chapters are ready yet. The material that _is ready_ is included in the download. But even that material is updated as and when necessary. So, always make sure that you have _the most recent version of the draft manuscript_ available from the link below.
 
 _Secrets of Academic Success_ may be [downloaded from here](sas-manuscript/SAS-partial.pdf).
 
