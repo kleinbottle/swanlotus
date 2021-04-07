@@ -4254,7 +4254,7 @@ a.box:active {
 
 .footer {
   background-color: #fafafa;
-  padding: 0em;
+  padding: 0em 0.3em;
 }
 
 /* Background Colors */
@@ -4484,7 +4484,7 @@ a:hover code {
 }
 
 .content .footnotes {
-  font-size: smaller;
+  font-size: small;
 }
 
 /* Natural language highlighting styles */
@@ -4552,7 +4552,7 @@ h1#feedback {
   background-color: #fffbeb;
   color: #0a0a0a;
   font-family: "Source Sans Pro", sans-serif;
-  padding: 0em;
+  padding: 0em 0.3em;
   clear: both;
 }
 
