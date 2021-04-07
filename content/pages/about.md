@@ -36,6 +36,6 @@ Many of the blogs are from the early days of the Web and have found a second hom
 
 For the curious among you, who wonder what I look like, I have appended two photographs below, taken some decades ago.
 
-![Professor Yianni Attikiouzel, my PhD supervisor, and me, displaying the PhD gold medal that the Department of Electrical, Electronic, and Computer Engineering bestowed upon me in 1997.^[Photograph courtesy of the UWA Arvhives Number XXX]](){}
+![Professor Yianni Attikiouzel, my PhD supervisor, and me, displaying the PhD gold medal awarded to me by the Department of Electrical and Electronic Engineering, The University of Western Australia, in September 1997.^[Image is copyright by the University of Western Australia with citation: UWA Archives 29071P. First published in the "The Leader"  dated 22 September 1997, Vol. 16, No. 15, pp 1--2.]]({static}images/yianni-attikiouzel-gold-medal.jpg){width=80%}
 
-![Dr A P J Abdul Kalam, President of India from XXXX to YYYY, autographing my copy of his autobiography _Wings of Fire_ at the BioVision 2001 Confenece in Bangalore, India, in 2001.](){}
+![[Dr A P J Abdul Kalam](https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam), President of India from 25 July 2002 to 25 July 2007, autographing my copy of his autobiography [_Wings of Fire_](https://www.amazon.in/Wings-Fire-Autobiography-Abdul-Kalam/dp/8173711461/) at the BioVision 2001 Conference in Bangalore, India, in December 2001.]({static}images/abdul-kalam-autograph.jpg){width=80%}
