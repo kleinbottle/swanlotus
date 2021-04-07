@@ -6,7 +6,7 @@ date: "2021-04-06"
 save_as: "about.html"
 ---
 
-The swan and the lotus are ancient symbols in the tradition of [Sanātana Dharma](https://www.britannica.com/topic/sanatana-dharma). The swan is purported to be able to extract milk from a mixture of milk and water, and thus signifies discrimination. The lotus is rooted in mud. But it produces an unsullied blossom, emblematic of purity and beauty.
+The swan and the lotus are ancient symbols in the tradition of [Sanātana Dharma](https://www.britannica.com/topic/sanatana-dharma). The swan is purported to be able to extract milk from a mixture of milk and water, and thus signifies discrimination. The lotus is rooted in mud, but produces an unsullied blossom, emblematic of purity and beauty.
 
 [Sarasvatī](https://en.wikipedia.org/wiki/Saraswati), the Goddess of Learning, is depicted as seated on a white lotus, and having a swan for her vehicle. So, this website, concerned as it is with learning, knowledge, and hopefully wisdom, has been named SwanLotus in [CamelCase](https://en.wikipedia.org/wiki/Camel_case).
 
@@ -16,7 +16,7 @@ The website logo for SwanLotus is shown below:
 
 ![Logo of SwanLotus: a black S and a white L on a blue background.]({static}../images/swanlotus-open-graph-image.jpg){width=30%}
 
-The symbol "S" for the swan is in black, because for some periods in my life, I lived in [Perth](https://en.wikipedia.org/wiki/Perth), Australia, where the blue [Swan River](https://en.wikipedia.org/wiki/Swan_River_(Western_Australia)) flows, and where black swans abound.
+The symbol "S" for the swan is in black, because for some periods of my life, I lived in [Perth](https://en.wikipedia.org/wiki/Perth), Australia, where the blue [Swan River](https://en.wikipedia.org/wiki/Swan_River_(Western_Australia)) flows, and where black swans abound.
 
 ![[Black Swan](http://absfreepic.com/free-photos/download/the-black-swan-on-lake-2701x1800_84370.html): [CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).]({static}images/black-swan.jpg){width=80%}
 
