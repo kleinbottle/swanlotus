@@ -12,7 +12,7 @@ The swan and the lotus are ancient symbols in the tradition of [Sanātana Dharma
 
 ## The logo
 
-The website logo for SwanLotus is shown below:
+The abbreviated website logo for SwanLotus is shown below:
 
 ![Logo of SwanLotus: a black S and a white L on a blue background.]({static}../images/swanlotus-open-graph-image.jpg){width=30%}
 
