@@ -10,7 +10,7 @@ save_as: "index.html"
 
 ## Secrets of Academic Success
 
-SwanLotus is the home on the Web for my book [_Secrets of Academic Success_](sas.html). It has been written specifically to help students study effectively and learn better. The completed chapters of the draft manuscript in [PDF format](https://acrobat.adobe.com/in/en/acrobat/about-adobe-pdf.html) may be [downloaded here](sas-manuscript/SAS-partial.pdf).
+SwanLotus is the home on the Web for my book [_Secrets of Academic Success_](sas.html). It has been written specifically to help students study effectively and learn better. The completed chapters of the draft manuscript in [PDF format](https://acrobat.adobe.com/in/en/acrobat/about-adobe-pdf.html) may be [downloaded here]({static}../sas-manuscript/SAS-partial.pdf).
 
 ## Blogs
 

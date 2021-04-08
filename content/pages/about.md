@@ -28,7 +28,7 @@ The symbol "L" for the lotus is in white, signifying the white lotus:
 
 My name is R (Chandra) Chandrasekhar. I am a retired biomedical engineer and university academic. I am also a lifelong learner. My purpose in setting up this website is twofold:
 
-#.  It is the Web-home for my book-in-preparation entitled [_Secrets of Academic Success_](sas.html). In it, I have tried to impart some of the knowledge about studying and learning that my various teachers have inculcated in me. The book is in electronic form, and is protected by [copyright](https://en.wikipedia.org/wiki/Copyright), with [all rights reserved](https://en.wikipedia.org/wiki/All_rights_reserved). It may be [downloaded from here](sas-manuscript/SAS-partial.pdf) at no charge.
+#.  It is the Web-home for my book-in-preparation entitled [_Secrets of Academic Success_](sas.html). In it, I have tried to impart some of the knowledge about studying and learning that my various teachers have inculcated in me. The book is in electronic form, and is protected by [copyright](https://en.wikipedia.org/wiki/Copyright), with [all rights reserved](https://en.wikipedia.org/wiki/All_rights_reserved). It may be [downloaded from here]({static}../sas-manuscript/SAS-partial.pdf) at no charge.
 
 #.  I also [blog](blogs.html) on this site, writing about whatever takes my fancy. Many of my blogs are long reads, which I have christened _slogs_. If you display the intellectual and intestinal fortitude to read them to the end, I salute and thank you. \emojifont:wink:\normalfont
 

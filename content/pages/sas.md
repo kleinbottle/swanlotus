@@ -39,27 +39,21 @@ The book is divided into ten parts, each of which addresses one aspect of learni
 
 ## Honour copyright and download
 
-I am making this book freely available as a no-charge, [soft copy download](sas-manuscript/SAS-partial.pdf), in the PDF electronic format, so that it may benefit the largest number of sincere students worldwide.
+I am making this book freely available as a no-charge, [soft copy download]({static}../sas-manuscript/SAS-partial.pdf), in the PDF electronic format, so that it may benefit the largest number of sincere students worldwide.
 
 This book is protected by copyright; please honour it:
 
-```
+```text
 Copyright © 2007–2021 R (Chandra) Chandrasekhar.
 
 All rights reserved.
 ```
 
-<!--This book is released under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International licence](https://creativecommons.org/licenses/by-nc-nd/4.0/), easily recognized by the following logo:
-
-![CC-BY-NC-ND-logo]({static}images/by-nc-nd.svg){ width=50% }
-
-For licence details, [see here](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode)-->
-
 ## Work-in-progress
 
 The book is a work-in-progress. Not all parts and chapters are ready yet. The material that _is ready_ is included in the download. But even that material is updated as and when necessary. So, always make sure that you have _the most recent version of the draft manuscript_ available from the link below.
 
-_Secrets of Academic Success_ may be [downloaded from here](sas-manuscript/SAS-partial.pdf).
+_Secrets of Academic Success_ may be [downloaded from here]({static}../sas-manuscript/SAS-partial.pdf).
 
 Please [email me](mailto:feedback.sasbook@gmailcom) your corrections and other feedback.
 
