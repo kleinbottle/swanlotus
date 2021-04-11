@@ -25,6 +25,7 @@
 #   touch "$PANDOC_SUCCESS"
 # fi
 
-"$PANDOC_BIN/pandoc" --version
+# "$PANDOC_BIN/pandoc" --version
+pandoc --version
 
 pelican content -s publishconf.py
