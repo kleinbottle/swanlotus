@@ -23,6 +23,4 @@ DELETE_OUTPUT_DIRECTORY = True
 # DISQUS_SITENAME = ""
 # GOOGLE_ANALYTICS = ""
 
-PANDOC_EXECUTABLE_PATH = "/opt/build/cache/pandoc/usr/bin/pandoc"
-
 ARTICLE_PATHS = ["blogs"]
