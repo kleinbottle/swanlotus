@@ -443,8 +443,9 @@ Commonly used resolutions for output devices are:
 \item
   96 ppi for standard resolution monitors
 \item
-  150 dpi/ppi, which is often the default value in image conversion
-  programs
+  150 dpi/ppi\footnote{We will use dpi and ppi interchangeably hereafter
+    to avoid inelegant expressions.}, which is often the default value
+  in image conversion programs
 \item
   300 dpi/ppi for some mobile phones and laser printers
 \item
@@ -741,10 +742,10 @@ we perform here. The two test images are:
 \tightlist
 \item
   a coloured, text-only test image contained in the file
-  \texttt{text-only.pdf}; and
+  \href{images/text-only.pdf}{\texttt{text-only.pdf}}; and
 \item
   a coloured, non-text, graphically rich image contained in the file
-  \texttt{animals.jpg}.
+  \href{images/animals.jpg}{\texttt{animals.jpg}}.
 \end{enumerate}
 
 We will succinctly refer to these two images as \texttt{text-only} and
@@ -1274,6 +1275,7 @@ Will \texttt{convert} cater for a JPEG to SVG conversion?
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{\# Original \textasciigrave{}animals.jpg\textasciigrave{} to SVG using \textasciigrave{}convert\textasciigrave{}}
 \ExtensionTok{convert}\NormalTok{ animals.jpg animals{-}IM.svg}
 
 \FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ animals.jpg animals{-}IM.svg }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
@@ -1290,7 +1292,9 @@ we did not convert from raster to SVG but from raster to PDF and thence
 to SVG?
 
 Since PDF to SVG conversion is really part of vector to vector
-conversion, we will {[}revisit this question later{]}{[}PDF to SVG{]}.
+conversion, we will
+\protect\hyperlink{pdf-to-svg-with-the-animals-image}{revisit this
+question later}.
 
 \hypertarget{round-tripping-from-pdf-through-png-to-pdf}{%
 \subsubsection{Round tripping from PDF through PNG to
@@ -1302,6 +1306,7 @@ PDF?
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{\# Generate PDF from 600 dpi PNG using \textasciigrave{}convert\textasciigrave{}}
 \ExtensionTok{convert}\NormalTok{ text{-}only{-}600{-}dpi{-}cairo.png text{-}only{-}from{-}600{-}dpi{-}PNG.pdf}
 
 \FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text{-}only}\PreprocessorTok{*}\NormalTok{600}\PreprocessorTok{*}\NormalTok{.pdf text{-}only.pdf }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
@@ -1312,9 +1317,10 @@ PDF?
 \end{Shaded}
 
 Not surprisingly, the round trip has resulted in a fatter file for the
-PDF the second time around. Judge for yourself
-\href{images/text-only-from-600-dpi-PNG.pdf}{the image quality by
-viewing on a separate browser tab and zooming}.
+PDF the second time around. Compare for yourself
+\href{images/text-only.pdf}{\texttt{text-only.pdf}} and
+\href{images/text-only-from-600-dpi-PNG.pdf}{\texttt{text-only-from-600-dpi-PNG.pdf}}
+by viewing each on a separate browser tab and zooming.
 
 What would you expect if the initial PDF to PNG image conversion had
 been done at 150 dpi, or 96 dpi, or 75 dpi? The command sequence is
@@ -1323,8 +1329,10 @@ later} but the results and their consequences are noteworthy here:
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{\# Generate 75 dpi PNG from \textasciigrave{}text{-}only.pdf\textasciigrave{} using \textasciigrave{}pdftocairo\textasciigrave{}}
 \ExtensionTok{pdftocairo} \AttributeTok{{-}png} \AttributeTok{{-}r}\NormalTok{ 75 }\AttributeTok{{-}singlefile}\NormalTok{ text{-}only.pdf text{-}only{-}75{-}dpi}
 
+\CommentTok{\# Round trip convert the 75 dpi PNG back to PDF using \textasciigrave{}convert\textasciigrave{}}
 \ExtensionTok{convert}\NormalTok{ text{-}only{-}75{-}dpi.png text{-}only{-}75{-}dpi.pdf}
 
 \FunctionTok{ls} \AttributeTok{{-}sh}\NormalTok{ text{-}only.pdf text{-}only}\PreprocessorTok{*}\NormalTok{75}\PreprocessorTok{*} \KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
@@ -1344,10 +1352,11 @@ from the 600 dpi PNG}?
 This is one reason why conversion from a PNG to a PDF might result in a
 PDF which looks like a raster image when zoomed in close. The source
 image resolution was not high enough to generate a PDF that does not
-degrade on zooming. \emph{The visual quality of the original raster
-image is what the output PDF will embody.} Just because a PDF image
-scales does not mean it cannot exhibit blockiness. It will, if a low
-resolution raster image was used as source.
+degrade on zooming, \emph{on the monitor being used for display}.
+\emph{The visual quality of the original raster image is what the output
+PDF will embody.} Just because a PDF image scales does not mean it
+cannot exhibit blockiness. It will, if a low resolution raster image was
+used as source.
 
 \hypertarget{vector-to-raster}{%
 \subsection{Vector to raster}\label{vector-to-raster}}
@@ -1399,9 +1408,11 @@ To convert from vector to raster, we invoke commands like these:
 \NormalTok{{-}singlefile text{-}only.pdf text{-}only{-}600{-}dpi{-}ppm}
 
 \CommentTok{\# Using \textasciigrave{}convert\textasciigrave{} from ImageMagick for PNG to JPEG}
+\CommentTok{\# Source PNG file was output by \textasciigrave{}pdftocairo\textasciigrave{} }
 \ExtensionTok{convert} \AttributeTok{{-}units}\NormalTok{ pixelsperinch }\AttributeTok{{-}density}\NormalTok{ 600 }\AttributeTok{{-}quality}\NormalTok{ 100 }\DataTypeTok{\textbackslash{}}
 \NormalTok{text{-}only{-}600{-}dpi{-}cairo.png text{-}only{-}600{-}dpi{-}cairo{-}IM.jpg}
 
+\CommentTok{\# Using \textasciigrave{}convert\textasciigrave{} from ImageMagick for PNG to JPEG}
 \CommentTok{\# Source PNG file was output by \textasciigrave{}pdftoppm\textasciigrave{} }
 \ExtensionTok{convert} \AttributeTok{{-}units}\NormalTok{ pixelsperinch }\AttributeTok{{-}density}\NormalTok{ 600 }\AttributeTok{{-}quality}\NormalTok{ 100 }\DataTypeTok{\textbackslash{}}
 \NormalTok{text{-}only{-}600{-}dpi{-}ppm.png text{-}only{-}600{-}dpi{-}ppm{-}IM.jpg}
@@ -1479,6 +1490,7 @@ will get an error:
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{\# Try to convert from PDF to PNG using \textasciigrave{}convert\textasciigrave{}}
 \ExtensionTok{convert}\NormalTok{ text{-}only.pdf text{-}only.png}
 \ExtensionTok{{-}{-}{-}}
 \ExtensionTok{convert:}\NormalTok{ attempt to perform an operation not allowed by the security policy }\StringTok{\textquotesingle{}gs\textquotesingle{}}\NormalTok{ @ error/delegate.c/ExternalDelegateCommand/378.}
@@ -1486,9 +1498,9 @@ will get an error:
 \end{Highlighting}
 \end{Shaded}
 
-The reason why this is now disallowed is
-\protect\hyperlink{appendix-security-vulnerabilities-in-imagemagick}{explained
-in the appendix}.
+Such a conversion was commonplace some years ago, but is now disallowed,
+\protect\hyperlink{appendix-security-vulnerabilities-in-imagemagick}{for
+reasons explained in the appendix}.
 
 \hypertarget{svg-to-png-and-jpeg}{%
 \subsubsection{SVG to PNG and JPEG}\label{svg-to-png-and-jpeg}}
@@ -1496,7 +1508,7 @@ in the appendix}.
 There was a time when SVGs were ill-supported by browsers and therefore,
 PNGs and JPEGs dominated the logo and icon landscape on the web. Now
 that most mainstream browsers support SVGs out of the box, there is
-healthy support for tools that support conversions to and from SVGs.
+healthy support for tools that convert to and from SVGs.
 
 \hypertarget{some-svg-basics}{%
 \paragraph{Some SVG basics}\label{some-svg-basics}}
@@ -1514,13 +1526,16 @@ PDF}\label{generating-an-svg-from-a-pdf}}
 
 First, we need to generate an SVG version of the file
 \texttt{text-only.pdf}. We are running ahead of ourselves because we
-{[}need to convert from PDF to SVG{]}{[}PDF to SVG{]}. We use
-\texttt{pdftocairo} for this because we cannot use \texttt{convert} as
+\protect\hyperlink{pdf-to-svg-with-the-text-only-image}{need to convert
+from PDF to SVG}. We use \texttt{pdftocairo} for this because we cannot
+use \texttt{convert} as
 \protect\hyperlink{why-is-imagemagick-disallowed-for-pdf-to-raster}{explained
-here}.
+in the appendix}. Moreover, \texttt{pdftoppm} does not support SVG as an
+output format. So, \texttt{pdftocairo} is our preferred option.
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{\# PDF to SVG using \textasciigrave{}pdftocairo\textasciigrave{}}
 \ExtensionTok{pdftocairo} \AttributeTok{{-}svg}\NormalTok{ text{-}only.pdf text{-}only{-}pdftocairo.svg}
 
 \FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text{-}only.pdf text{-}only{-}pdftocairo.svg }\KeywordTok{|} \DataTypeTok{\textbackslash{}}
@@ -1537,25 +1552,29 @@ look at the first block of text:
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{\textless{}?xml}\NormalTok{ version="1.0" encoding="UTF{-}8"}\KeywordTok{?\textgreater{}}
-\KeywordTok{\textless{}svg}\OtherTok{ xmlns=}\StringTok{"http://www.w3.org/2000/svg"}\OtherTok{ xmlns:xlink=}\StringTok{"http://www.w3.org/1999/xlink"}\OtherTok{ width=}\StringTok{"214.31pt"}\OtherTok{ height=}\StringTok{"52.16pt"}\OtherTok{ viewBox=}\StringTok{"0 0 214.31 52.16"}\OtherTok{ version=}\StringTok{"1.2"}\KeywordTok{\textgreater{}}
+\KeywordTok{\textless{}svg} \ErrorTok{xmlns}\OtherTok{=}\StringTok{"http://www.w3.org/2000/svg"} \ErrorTok{xmlns:xlink}\OtherTok{=}\StringTok{"http://www.w3.org/1999/xlink"} \ErrorTok{width}\OtherTok{=}\StringTok{"214.31pt"} \ErrorTok{height}\OtherTok{=}\StringTok{"52.16pt"} \ErrorTok{viewBox}\OtherTok{=}\StringTok{"0 0 214.31 52.16"} \ErrorTok{version}\OtherTok{=}\StringTok{"1.2"}\KeywordTok{\textgreater{}}
 \end{Highlighting}
 \end{Shaded}
 
 The \emph{width}, \emph{height}, and \emph{viewBox} of the SVG image are
-all stated in \emph{points}, abbreviated as pt where 1 pt equals 1/72
-inch {[}6{]}. At a screen setting of 96 pixels per inch, 1 pt equals 4/3
-pixels. So, the native size of the \texttt{test-only} image as a PNG
-should be about 286 pixels by 70 pixels. When\texttt{convert} is applied
-on the SVG to yield the PNG, the latter is faithful to these unit
-conversions:
+all stated in \emph{points}, abbreviated as pt where, as we have already
+seen, 1 pt equals \textsuperscript{1}/\textsubscript{72} inch {[}6{]}.
+At a screen setting of 96 pixels per inch, 1 pt equals
+\textsuperscript{4}/\textsubscript{3} pixels. So, the native size of the
+\texttt{test-only} image as a PNG should be about 286 pixels by 70
+pixels on a 96 ppi monitor. When\texttt{convert} is applied on the SVG
+to yield the PNG, the latter is faithful to these unit conversions:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ExtensionTok{convert}\NormalTok{ text{-}only{-}pdftocairo.svg text{-}only{-}svg{-}convert.png}
+\CommentTok{\# SVG to PNG using \textasciigrave{}convert\textasciigrave{} at 96 ppi}
+\ExtensionTok{convert} \AttributeTok{{-}units}\NormalTok{ pixelsperinch }\AttributeTok{{-}density}\NormalTok{ 96 }\DataTypeTok{\textbackslash{}}
+\NormalTok{text{-}only{-}pdftocairo.svg text{-}only{-}96{-}dpi{-}svg{-}convert.png}
 
-\ExtensionTok{identify}\NormalTok{ text{-}only{-}svg{-}convert.png}
+\CommentTok{\# Display basic information about an image using \textasciigrave{}identify\textasciigrave{}}
+\ExtensionTok{identify}\NormalTok{ text{-}only{-}96{-}dpi{-}svg{-}convert.png}
 \ExtensionTok{{-}{-}{-}}
-\ExtensionTok{text{-}only{-}svg{-}convert.png}\NormalTok{ PNG 286x70 286x70+0+0 8{-}bit sRGB 6548B 0.000u 0:00.000}
+\ExtensionTok{text{-}only{-}96{-}dpi{-}svg{-}convert.png}\NormalTok{ PNG 286x70 286x70+0+0 8{-}bit sRGB 6548B 0.000u 0:00.000}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1567,19 +1586,20 @@ Regarding file sizes, the PNG is actually smaller than the SVG:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text{-}only{-}pdftocairo.svg text{-}only{-}svg{-}convert.png }\KeywordTok{|} \FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text{-}only{-}pdftocairo.svg text{-}only{-}96{-}dpi{-}svg{-}convert.png }\KeywordTok{|} \DataTypeTok{\textbackslash{}}
+\FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
 \ExtensionTok{{-}{-}{-}}
-\ExtensionTok{8.0K}\NormalTok{    text{-}only{-}svg{-}convert.png}
+\ExtensionTok{8.0K}\NormalTok{    text{-}only{-}96{-}dpi{-}svg{-}convert.png}
 \ExtensionTok{12K}\NormalTok{     text{-}only{-}pdftocairo.svg}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{figure}
-\hypertarget{fig:convertSVGtoPNG}{%
+\hypertarget{fig:convert96dpiSVGtoPNG}{%
 \centering
-\includegraphics[width=0.8\textwidth,height=\textheight]{images/text-only-svg-convert.png}
-\caption{PNG image from SVG using \texttt{convert} with no
-options.}\label{fig:convertSVGtoPNG}
+\includegraphics[width=0.8\textwidth,height=\textheight]{images/text-only-96-dpi-svg-convert.png}
+\caption{Fuzzy PNG image from SVG using \texttt{convert} at 96
+dpi.}\label{fig:convert96dpiSVGtoPNG}
 }
 \end{figure}
 
@@ -1587,11 +1607,58 @@ The PNG image lacks the sharpness of definition the original exhibited,
 which is not surprising because an increase in image resolution has not
 been achieved, and moreover, the file size has been reduced. Note the
 white border that has been added to three sides of the image, perhaps to
-arrive at an integer number of pixels for the image dimensions. For SVG
-to PNG conversion, there are better tools than \texttt{convert}.
+arrive at an integer number of pixels for the image dimensions.
+
+Let us repeat the above process but with a higher ppi for the PNG, say
+600:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# SVG to PNG using \textasciigrave{}convert\textasciigrave{} at 600 dpi}
+\ExtensionTok{convert} \AttributeTok{{-}units}\NormalTok{ pixelsperinch }\AttributeTok{{-}density}\NormalTok{ 600 }\DataTypeTok{\textbackslash{}}
+\NormalTok{text{-}only{-}pdftocairo.svg text{-}only{-}600{-}dpi{-}svg{-}convert.png}
+
+\CommentTok{\# Display basic information about an image using \textasciigrave{}identify\textasciigrave{}}
+\ExtensionTok{identify}\NormalTok{ text{-}only{-}600{-}dpi{-}svg{-}convert.png}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{text{-}only{-}600{-}dpi{-}svg{-}convert.png}\NormalTok{ PNG 1786x435 1786x435+0+0 8{-}bit sRGB 43439B 0.000u 0:00.000}
+\ExtensionTok{{-}{-}{-}}
+\FunctionTok{ls} \AttributeTok{{-}Xsh}\NormalTok{ text{-}only{-}pdftocairo.svg text{-}only{-}600{-}dpi{-}svg{-}convert.png }\KeywordTok{|} \DataTypeTok{\textbackslash{}}
+\FunctionTok{awk} \StringTok{\textquotesingle{}\{print $1 "\textbackslash{}t" $2\}\textquotesingle{}}
+\ExtensionTok{{-}{-}{-}}
+\ExtensionTok{44K}\NormalTok{     text{-}only{-}600{-}dpi{-}svg{-}convert.png}
+\ExtensionTok{12K}\NormalTok{     text{-}only{-}pdftocairo.svg}
+\end{Highlighting}
+\end{Shaded}
+
+The PNG image is now 1786 by 435 pixels as expected, and the file size
+is also modestly larger. The PNG image, displayed on a standard desktop
+screen or even a mobile phone display should now appear sharper, as
+shown in \cref{fig:convert600dpiSVGtoPNG}. But the white border on three
+sides still shows up for reasons unclear to me. My guess is that it
+might have to do with getting an integer number of pixels in the PNG
+output.
+
+\begin{figure}
+\hypertarget{fig:convert600dpiSVGtoPNG}{%
+\centering
+\includegraphics[width=0.8\textwidth,height=\textheight]{images/text-only-600-dpi-svg-convert.png}
+\caption{Sharper PNG image from SVG using \texttt{convert} at 600
+dpi.}\label{fig:convert600dpiSVGtoPNG}
+}
+\end{figure}
+
+It is important to know which options to use with \texttt{convert} to
+get the desired results at economical files sizes and acceptable visual
+quality. \texttt{ImageMagick} could use either its builtin SVG renderer
+MSVG or \texttt{rsvg-convrt} from \texttt{librsvg}. Knowing the
+intermediate delegates involved in the conversion chain helps optimize
+the process.
 
 Font support in SVG is not widespread, and format conversions might
 result in non-optimal font rendering after conversion.
+
+\%\%\%\%\% CONTINUE FROM HERE \%\%\%\%
 
 \hypertarget{conversion-tools}{%
 \paragraph{Conversion tools}\label{conversion-tools}}
@@ -1614,13 +1681,13 @@ image. Among these are:
 \end{enumerate}
 
 We know that \texttt{convert} will produce a minimally sized PNG that
-faithfully converts pt to pixels. Other tools might enlarge the PNG by
-using some scaling factor larger than one. Moreover, different programs
-might insert borders, transparent backgrounds, etc., modifying the
-aspect ratio of the PNG slightly. We will gloss over such details in the
-tool comparison below and simply focus on the command line invocations
-and resulting file sizes. Bear in mind also that some of the tools could
-use identical backends and therefore give identical output images.
+faithfully converts pt to pixels at 96 dpi. Other tools might use
+different default dpi values. Moreover, different programs might insert
+borders, transparent backgrounds, etc., modifying the aspect ratio of
+the PNG slightly. We will gloss over such details in the tool comparison
+below and simply focus on the command line invocations and resulting
+file sizes. Bear in mind also that some of the tools could use identical
+backends and therefore give identical output images.
 
 \hypertarget{the-tool-faceoff}{%
 \paragraph{The tool faceoff}\label{the-tool-faceoff}}
@@ -2147,27 +2214,27 @@ comments and corrections.
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{0}{0}
-\leavevmode\hypertarget{ref-gabriel2017}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-gabriel2017}{}}%
 \CSLLeftMargin{{[}1{]} }
 \CSLRightInline{S. Gabriel, {`{Designer's guide to DPI},'} 15-May-2015.
 {[}Online{]}. Available:
 \url{https://sebastien-gabriel.com/designers-guide-to-dpi/}.
 {[}Accessed: 27-Mar-2021{]}}
 
-\leavevmode\hypertarget{ref-imagemagicksource}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-imagemagicksource}{}}%
 \CSLLeftMargin{{[}2{]} }
 \CSLRightInline{ImageMagick Studio LLC, {`ImageMagick 7.'} {[}Online{]}.
 Available: \url{https://github.com/ImageMagick/ImageMagick}.
 {[}Accessed: 08-Mar-2021{]}}
 
-\leavevmode\hypertarget{ref-imcli}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-imcli}{}}%
 \CSLLeftMargin{{[}3{]} }
 \CSLRightInline{{`{ImageMagick---Command-line Processing}. {Anatomy of
 the Command-line}.'} {[}Online{]}. Available:
 \url{https://imagemagick.org/script/command-line-processing.php}.
 {[}Accessed: 12-Mar-2021{]}}
 
-\leavevmode\hypertarget{ref-newton2015}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-newton2015}{}}%
 \CSLLeftMargin{{[}4{]} }
 \CSLRightInline{D. Newton, {`{Efficient Image Resizing With
 ImageMagick---Smashing Magazine},'} 25-Jun-2015. {[}Online{]}.
@@ -2175,14 +2242,14 @@ Available:
 \url{https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/}.
 {[}Accessed: 11-Mar-2021{]}}
 
-\leavevmode\hypertarget{ref-setchell2014}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-setchell2014}{}}%
 \CSLLeftMargin{{[}5{]} }
 \CSLRightInline{M. Setchell, {`{ImageMagick: Lossless max compression
 for PNG?---Stack Overflow},'} 03-Dec-2014. {[}Online{]}. Available:
 \url{https://stackoverflow.com/questions/27267073/imagemagick-lossless-max-compression-for-png/27269260\#27269260}.
 {[}Accessed: 12-Mar-2021{]}}
 
-\leavevmode\hypertarget{ref-oreilly2019}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-oreilly2019}{}}%
 \CSLLeftMargin{{[}6{]} }
 \CSLRightInline{A. Bellamy-Royds, K. Cagle, and D. Storey, {`{Units for
 Measurements Reference --- Using SVG with CSS3 and HTML5---Supplementary
@@ -2190,13 +2257,13 @@ Material},'} 05-Oct-2019. {[}Online{]}. Available:
 \url{https://oreillymedia.github.io/Using_SVG/guide/units.html}.
 {[}Accessed: 20-Mar-2021{]}}
 
-\leavevmode\hypertarget{ref-imagetragick2016}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-imagetragick2016}{}}%
 \CSLLeftMargin{{[}7{]} }
 \CSLRightInline{---, {`ImageMagick is on fire --- CVE-2016--3714,'}
 12-May-2016. {[}Online{]}. Available: \url{https://imagetragick.com/}.
 {[}Accessed: 08-Mar-2021{]}}
 
-\leavevmode\hypertarget{ref-leyden2020}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-leyden2020}{}}%
 \CSLLeftMargin{{[}8{]} }
 \CSLRightInline{J. Leyden, {`ImageMagick PDF-parsing flaw allowed
 attacker to execute shell commands via maliciously crafted image,'}
@@ -2204,7 +2271,7 @@ attacker to execute shell commands via maliciously crafted image,'}
 \url{https://portswigger.net/daily-swig/imagemagick-pdf-parsing-flaw-allowed-attacker-to-execute-shell-commands-via-maliciously-crafted-image}.
 {[}Accessed: 08-Mar-2021{]}}
 
-\leavevmode\hypertarget{ref-infuhr2020}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-infuhr2020}{}}%
 \CSLLeftMargin{{[}9{]} }
 \CSLRightInline{A. Inführ, {`{ImageMagick - Shell injection via PDF
 password},'} 21-Nov-2020. {[}Online{]}. Available:
