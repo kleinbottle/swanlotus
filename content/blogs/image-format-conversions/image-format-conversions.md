@@ -2,12 +2,12 @@
 title: Image format conversions
 author: R (Chandra) Chandrasekhar
 date: 2021-03-07
-modified: 2021-03-24
+modified: 2021-04-18
 category: Software
 tags: image formats, PNG, JPEG, PDF, SVG, ImageMagick, Inkscape, cairo, poppler, Linux
 summary: "Although digital images are ubiquitous, one image format does not suit all applications. Printed paper, electronic displays, images on the Web, etc., each call for the same image in a different format. In this tutorial, we explore the different format conversion tools that are currently available. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, the `Inkscape` vector graphics editor, and `CairoSVG` are each identified for their individual strengths, that make them the tools of choice for specific image conversion tasks."
 opengraphimage: animals.jpg
-status: draft
+status: published
 ---
 
 Although digital images are ubiquitous, one image format does not suit all applications. Printed paper, electronic displays, images on the Web, etc., each call for the same image in a different format. In this tutorial, we explore the different format conversion tools that are currently available. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, the `Inkscape` vector graphics editor, and `CairoSVG` are each identified for their individual strengths, that make them the tools of choice for specific image conversion tasks.
@@ -389,23 +389,36 @@ From that PNG, let us do a simple _no quality loss_ conversion from PNG to JPEG 
 convert -quality 100 text-only-600-dpi-cairo.png \
 text-only-600-dpi-cairo-IM.jpg
 
-# Composite both images into one with a transparent divider
+# Composite both images into one PNG with a transparent divider
 convert text-only-600-dpi-cairo.png text-only-600-dpi-cairo-IM.jpg \
 -background transparent -splice 20x0+0+0 +append -chop 20x0+0+0 \
 text-only-both-600-dpi-cairo.png
 
-ls -Xsh text*cairo* | awk '{print $1 "\t" $2}'
+# Composite both images into one JPEG with a transparent divider
+convert text-only-600-dpi-cairo.png text-only-600-dpi-cairo-IM.jpg \
+-background transparent -splice 20x0+0+0 +append -chop 20x0+0+0 \
+text-only-both-600-dpi-cairo.jpg
+
+ls -Xsh text-only-600-dpi-cairo.png \
+text-only-600-dpi-cairo-IM.jpg \
+text-only-both-600-dpi-cairo.* \
+| awk '{print $1 "\t" $2}'
 ---
 148K    text-only-600-dpi-cairo-IM.jpg
+148K    text-only-both-600-dpi-cairo.jpg
 40K     text-only-600-dpi-cairo.png
 120K    text-only-both-600-dpi-cairo.png
 ```
 
-![Composite PNG image of the PNG on the left, and JPEG on the right.]({attach}images/text-only-both-600-dpi-cairo.png){#fig:text-only-both width=80%}
+![Composite PNG image of the PNG on the left, and JPEG on the right.]({attach}images/text-only-both-600-dpi-cairo.png){#fig:text-only-both-png width=80%}
 
-The right sub-image of +@fig:text-only-both does not reveal noticeable degradation in quality after conversion from PNG to JPEG, and back to PNG again. Note also that the file size of the _composite_ PNG image is smaller than the file size of the _single_ JPEG image.
+The right sub-image of +@fig:text-only-both-png does not reveal noticeable degradation in quality after conversion from PNG to JPEG, and back to PNG again. Note also that the file size of the _composite_ PNG image is smaller than the file size of the _single_ JPEG image.
 
-### PNG versus JPEG: text and non-text
+![Composite JPEG image of the PNG on the left, and JPEG on the right.]({attach}images/text-only-both-600-dpi-cairo.jpg){#fig:text-only-both-jpg width=80%}
+
+Likewise, notice that when the composite image, +@fig:text-only-both-jpg is a JPEG, there is no noticeable degradation in image quality. Moreover, the file size of the composite is the same as for the singleton JPEG image. Note also that because JPEG does not support transparency, the sliver of "transparent background" sandwiched between the two images now appears black.
+
+### PNG for text and JPEG for non-text
 
 We conclude from the `text-only` images that PNG is better suited for textual images and provides a smaller file size for the same quality.
 
@@ -454,7 +467,7 @@ awk '{print $1 "\t" $2}'
 64K     animals-halfsize.jpg
 64K     animals-halfsize.pdf
 ```
-Increasing detail demands larger file sizes: there is no free lunch.
+Increasing detail demands larger file sizes: there is no free lunch. But the conversion from PDF to JPEG does not cost us much, if at all, in file size.
 
 ### Raster to SVG with `convert`
 
@@ -580,9 +593,9 @@ ls -Xsh text-only.pdf text-only-600* | awk '{print $1 "\t" $2}'
 
 The numbers tell their own story. I would have expected the two sets of raster images output by `pdftocairo` and `pdftoppm` to be roughly equal in size, given their identical options during invocation. Strangely, they are not, at least for the JPEGs. This could be either because of different defaults, or different algorithms, or something else: I simply do not know.
 
-It appears that `pdftoppm` gives marginally smaller file sizes for JPEG than `pdftocairo`. Moreover, when `pdftoppm` is used to convert directly from PDF to JPEG, the file size is smaller than when PNG is used as an intermediate file format and conversion to JPEG is by `convert` from `ImageMagick`.
+It appears that `pdftoppm` gives marginally smaller file sizes for JPEG than `pdftocairo`. Moreover, when `pdftoppm` is used to convert _directly_ from PDF to JPEG, the file size is smaller than when PNG is used as an intermediate file format and conversion to JPEG is by `convert` from `ImageMagick`.
 
-One other takeaway is that text-rich images are better rendered in PNG than JPEG. The PDF and PNG image file sizes are of the same order of magnitude, whereas the JPEGs are an order of magnitude larger.
+One other takeaway is that text-rich images are better rendered in PNG than JPEG, as we have already noted. The PDF and PNG image file sizes are of the same order of magnitude, whereas the JPEGs are an order of magnitude larger.
 
 ### Why is `ImageMagick` disallowed for PDF to raster?
 
@@ -604,7 +617,7 @@ There was a time when SVGs were ill-supported by browsers and therefore, PNGs an
 
 #### Some SVG basics
 
-An SVG file is a text file _describing_ points, curves, and shapes as they are rendered on a page. Such a description is unshackled from the rectangular array of pixels that typify a raster image. So, what is the _natural size_ of an SVG image? We touched upon this [at the very beginning of this blog][Page size and viewBox].
+An SVG file is a text file _describing_ the points, curves, and shapes as they are rendered on a page. Such a description is unshackled from the rectangular array of pixels that typify a raster image. So, what is the _natural size_ of an SVG image? We touched upon this [at the very beginning of this blog][Page size and viewBox].
 
 ##### Generating an SVG from a PDF
 
@@ -684,8 +697,6 @@ It is important to know which options to use with `convert` to get the desired r
 
 Font support in SVG is not widespread, and format conversions might result in non-optimal font rendering after conversion.
 
-%%%%% CONTINUE FROM HERE %%%%
-
 #### Conversion tools
 
 There is a growing number of tools that can convert an SVG to a PNG image. Among these are:
@@ -757,24 +768,26 @@ ls -sh text-only-600-dpi-rsvg-convert.png | awk '{print $1 "\t" $2}'
 
 Note that the `-a` option preserves aspect ratio, and the $x$ and $y$ resolutions have to be specified separately using `-d` and `-p` respectively. Though more verbose, it also offers options to shear or zoom the image and is more versatile.
 
-All of `inkscape`, `cairosvg`, and `rsvg-convert` produce PNG files of the same size and visual quality, as is apparent from +@fig:inkscapeSVGtoPNG, +@fig:cairosvgSVGtoPNG, and +@fig:rsvg-convertSVGtoPNG.
+All of `inkscape`, `cairosvg`, and `rsvg-convert` produce PNG files of the same size and visual quality, as is apparent from Figures !@fig:inkscapeSVGtoPNG, !@fig:cairosvgSVGtoPNG, and !@fig:rsvg-convertSVGtoPNG.
 
 ![PNG at 600 dpi of `text-only` from SVG using `rsvg-convert`.]({attach}images/text-only-600-dpi-rsvg-convert.png){#fig:rsvg-convertSVGtoPNG width=80%}
 
-Images like `animals` are best displayed as JPEGs. There is no obvious need to convert such images from JPEG to SVG and back again, simply to view how the quality changed during the roundtrip. Accordingly, we will not consider the `animals` image here.
+Non-textual, scanned mages like `animals` are best displayed as JPEGs, given their compact file sizes in that format. There is no obvious need to convert such images from JPEG to SVG and back again, simply to view how the quality and file size changed during the roundtrip. Accordingly, we will not consider the `animals` image here.
 
 ## Vector to vector
 
-Th last of the four types of format conversions is when both input and output files are in vector formats. There are principally two cases here:
+We have now reached the _last_ of the four types of format conversion when both input and output files are in vector formats. \emojifont :sweat_smile: :relieved: \normalfont
+
+There are principally two cases here:
 
 a.  PDF to SVG; and
 a.  SVG to PDF.
 
-The `cairo` and `poppler` libraries and their utilities are our "go to" resource if the source image is PDF. `cairosvg` and `rsvg-convert` are our resource when the source image is an SVG. The `Inkscape` GUI-based vector graphics editor supports SVG as its native format and allows export of the generated SVG graphics both as PDF and as PNG.
+The `cairo` and `poppler` libraries and their utilities are our "go to" resource if the source image is PDF. `cairosvg` and `rsvg-convert` are our resources when the source image is an SVG. Also, the `Inkscape` GUI-based vector graphics editor supports SVG as its native format, and allows export of the generated SVG graphics both as PDF and as PNG.
 
 ### PDF to SVG with the `animals` image
 
-When PDF is the source format, the `poppler` standalone utilities `pdftocairo` and `pdftoppm` are the preferred tools.
+When PDF is the source format, the `poppler` standalone utilities `pdftocairo` and `pdftoppm` are the tools of choice.
 
 We have [already generated][Raster to PDF with `convert` for `animals`] [`animals-IM.pdf`]({attach}images/animals-IM.pdf). Let us now convert it SVG and view it.
 
@@ -785,7 +798,7 @@ pdftocairo -svg animals-IM.pdf animals-pdftocairo.svg
 
 ![SVG version of the `animals` image.]({attach}images/animals-pdftocairo.svg){#fig:animals-pdftocairo-svg width=50%}
 
-The images appear the same visually and do not seem to have lost definition in the conversion from the original JPEG to the two vector formats.
+The images appear the same visually and do not seem to have lost definition in the conversion from the original JPEG through the two vector formats.
 
 Let us collate and view the file sizes of all the `animals` images in the PDF and SVG formats, including those previously converted using `convert` from `ImgeMagick`.
 
@@ -802,7 +815,7 @@ We may infer that, for conversion to SVG:
 
 #.  Direct conversion from JPEG to PDF, or from PDF to SVG, does not substantially degrade image quality or increase file size for visually rich, non-textual images like `animals`.
 
-#.  Direct conversion from JPEG to SVG using `convert` results in a much larger file size than if we converted from JPEG to PDF and used `pdftocairo` to convert that PDF to SVG. Two stage-conversion may be preferable in some cases.
+#.  Direct conversion from JPEG to SVG using `convert` results in a much larger file size than if we converted from JPEG to PDF and used `pdftocairo` to convert that PDF to SVG. Two stage-conversion may therefore be preferable, at least in some cases.
 
 #.  `pdftoppm` is not set up to convert _to_ SVG, and hence cannot be used.
 
@@ -830,7 +843,7 @@ So, it appears that `pdftocairo` is sufficient for converting from PDF to SVG.
 
 ### PDF to SVG with the `text-only` image
 
-We have already converted from PDF to SVG using `pdftocairo` [previously][Generating an SVG from a PDF]. We repeat below the identical command used previously to generate the SVG image:
+We have already converted from PDF to SVG using `pdftocairo` [previously][Generating an SVG from a PDF]. We repeat below the identical command used before to generate the SVG image:
 
 ```bash
 pdftocairo -svg text-only.pdf text-only-pdftocairo.svg
@@ -849,7 +862,7 @@ less text-only-pdftocairo.svg | grep viewBox
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="214.31pt" height="52.16pt" viewBox="0 0 214.31 52.16" version="1.2">
 ```
 
-The PDF page size and the SVG viewBox are identical at 214.31 by 52.16 pts, as we would expect. For comparison, the [`text-only.pdf` image]({attach}images/text-only.pdf) may be opened on a separate browser tab and compared with the SVG shown in +@fig:SVGfromPDFviapdftocairo.
+The PDF _page size_ and the SVG _viewBox_ are identical at 214.31 by 52.16 pts, as we would expect. For comparison, the [`text-only.pdf` image]({attach}images/text-only.pdf) may be opened on a separate browser tab and compared with the SVG shown in +@fig:SVGfromPDFviapdftocairo.
 
 ![SVG version of `text-only` image converted from PDF by `pdftocairo`.]({attach}images/text-only-pdftocairo.svg){#fig:SVGfromPDFviapdftocairo width=80%}
 
@@ -873,13 +886,13 @@ What exactly has been gained or lost in this round trip is a little too recondit
 
 When SVG is the source image, there are four routes to format conversion:
 
-#.  [`cairosvg`](https://cairosvg.org/) which parses well-formed SVG files, draws them on a Cairo surface, and then uses  `cairo` to export them to PDF, PS, PNG, and even to SVG again.
+#.  [`cairosvg`](https://cairosvg.org/), which parses well-formed SVG files, draws them on a Cairo surface, and then uses  `cairo` to export them to PDF, [PS](https://techterms.com/definition/postscript), PNG, and even to SVG again.
 
-#.  [`rsvg-convert`](https://en.wikipedia.org/wiki/Librsvg)  is based on `librsvg` which uses `libxml` and `cairo` to render and convert SVG files into other formats.
+#.  [`rsvg-convert`](https://en.wikipedia.org/wiki/Librsvg), which is based on `librsvg` and which uses `libxml` and `cairo` to render and convert SVG files into other formats.
  
-#.  [`inkscape`](https://inkscape.org/) which opens SVG files natively and can export them as a PDF, PNG, etc.
+#.  [`inkscape`](https://inkscape.org/), which opens SVG files natively and can export them as a PDF, PNG, etc.
 
-#.  [`convert`](https://imagemagick.org/script/convert.php) which can convert an SVG to PDF and also to any raster format like PNG.
+#.  [`convert`](https://imagemagick.org/script/convert.php), which can convert an SVG to PDF and also to any raster format like PNG.
 
 ### SVG to PDF:`text-only`
 
@@ -904,7 +917,7 @@ awk '{print $1 "\t" $2}'
 12K     text-only-pdftocairo.svg
 ```
 
-The files sizes are the same from the different conversion methods. Since the _viewBox_ of the input SVG is the same and the file content is the same, the PDF _Page size_ is the same for all PDFs.
+The PDF file sizes are the same from the different conversion methods. Since the _viewBox_ of the input SVG is the same and the file content is the same, the PDF _Page size_ is the same for all PDFs.
 
 Comparison with the original file [`text-only.pdf`]({attach}images/text-only.pdf) shows the following differences:
 
@@ -935,7 +948,7 @@ awk '{print $1 "\t" $2}'
 268K    animals-pdftocairo.svg
 ```
 
-The page sizes are similar but the file sizes are an order of magnitude for the different PDFs. Those output by the `cairo` library are almost ten times larger than those put out by `ImageMagick` and `Inkscape`.
+The page sizes are similar but the file sizes differ by an order of magnitude for the different PDFs. Those output by the `cairo` library are almost ten times larger than those put out by `ImageMagick` and `Inkscape`.
 
 You may compare the appearance of all four images by clicking on separate browser tabs for these four images and zooming in to see details:
 
