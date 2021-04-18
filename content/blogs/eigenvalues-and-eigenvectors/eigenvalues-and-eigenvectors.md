@@ -158,9 +158,9 @@ A worked example would normally have made its way here at this point in the arti
 
 ## Resources
 
-I hope that this article has not been so brief as to be cryptic and off-putting. To those in search of greater rigour or a more formal exposition, I would recommend a good linear algebra textbook. The venerable tome that I used at university went by the acronym "KKOP" after the initials of the surnames of the four authors^[Kreider, Kuller, Ostberg, and Perkins.]. Fortunately, it is freely available online in a variety of formats, and its actual title is [_An Introduction to Linear Analysis_][kkop] [@kkop1966].
+I hope that this article has not been so brief as to be cryptic and off-putting. To those in search of greater rigour or a more formal exposition, I would recommend a good linear algebra textbook. The venerable tome that I used at university went by the acronym "KKOP" after the initials of the surnames of the four authors, Kreider, Kuller, Ostberg, and Perkins [@kkop1966]. Unfortunately, it is out of print, but as a consolation, +@fig:kkop is an image of my copy. \emojifont :disappointed:\normalfont
 
-[kkop]: https://archive.org/details/AnIntroductionToLinearAnalysis
+![The KKOP book: _An Introduction to Linear Analysis_.]({attach}images/kkop.jpg){#fig:kkop width=50%}
 
 For something more contemporary, I would recommend the textbooks and lectures of Professor Gilbert Strang of MIT. They are attuned to those who _apply_ mathematics, like engineers and scientists. There is an [archived video of his lecture on eigenvalues and eigenvectors.][strang-eigen-video] There are also links to [his MIT Open Course Ware (OCW) page for Course 18.06 of Spring 2010][strang-ocw-mit], [his linear algebra textbook home page][strang-latext] [@strang2016], and [his academic home page.][strang-academic]
 
