@@ -4484,7 +4484,7 @@ a:hover code {
 }
 
 .content .footnotes {
-  font-size: small;
+  font-size: 75%;
 }
 
 /* Natural language highlighting styles */
