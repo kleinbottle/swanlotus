@@ -52,7 +52,7 @@ MENUITEMS = (
 DIRECT_TEMPLATES = ['index', 'categories', 'tags', 'archives']
 
 PATH = "content"
-ARTICLE_PATHS = [""]
+ARTICLE_PATHS = ["blogs/nitric-oxide"]
 ARTICLE_SAVE_AS = ARTICLE_LANG_SAVE_AS = "blogs/{slug}.html"
 ARTICLE_URL = ARTICLE_LANG_URL = "blogs/{slug}.html"
 DRAFT_SAVE_AS = DRAFT_LANG_SAVE_AS = "drafts/{slug}.html"
