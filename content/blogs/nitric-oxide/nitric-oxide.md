@@ -1,5 +1,5 @@
 ---
-title: Nitric oxide
+title: "Nitric Oxide: Pollutant or Panacea?"
 author: R (Chandra) Chandrasekhar
 date: 2021-05-17
 modified: 2021-05-17
@@ -14,25 +14,25 @@ Nitric oxide is a simple chemical compound that has generated great interest and
 
 ## Nitric oxide, NO: a brief history
 
-[Nitric oxide](https://en.wikipedia.org/wiki/Nitric_oxide) was discovered by [Joseph Priestly](https://en.wikipedia.org/wiki/Joseph_Priestley) about 250 years ago in 1772. He called it "nitrous air". It is a molecule consisting of a single atom of nitrogen and a single atom of oxygen, and is preferably called nitogen monoxide, given the plethora opf oxides of nitrogen.
+[Nitric oxide](https://en.wikipedia.org/wiki/Nitric_oxide) was discovered by [Joseph Priestly](https://en.wikipedia.org/wiki/Joseph_Priestley) about 250 years ago in 1772. He called it "nitrous air". It is a molecule consisting of a single atom of nitrogen and a single atom of oxygen. Given given the plethora of oxides of nitrogen, it is perhaps better referred to as _nitrogen monoxide_.
 
 Note that nitrogen, with atomic number 7, and oxygen, with atomic number 8, are next-door neighbours in the [periodic table](https://pubchem.ncbi.nlm.nih.gov/periodic-table/). Not only that, they were discovered in 1772 and 1774 respectively, just two years apart.
 
-Given that the air we breathe is approximately 78% nitrogen and 21% oxygen, one would think that this simple compound of nitrogen and oxygen would be a well-known entity. But that is not so.
+The air we breathe is approximately 78% nitrogen and 21% oxygen. One would therefore think that this simple compound of nitrogen and oxygen would be a well-known, well-studied, and well-understood entity. But that is not so.
 
 It has lain hidden in plain sight for almost two centuries---being thought of as little more than an atmospheric pollutant---until the elucidation of its biological significance in the 1980s brought it into greater prominence.
 
 ## The chemical relatives of nitric oxide
 
-The chemical relatives of nitric oxide have often eclipsed it in significance, because, historically, they have been better studied, and better applied or coped with in everyday life.
+The chemical relatives of nitric oxide have often eclipsed it in significance historically, because they have been better studied, better understood, better applied, and better coped with in everyday life.
 
 ### Nitrous oxide, N~2~O
  
-_Nitrous_ oxide, N~2~O, is often confounded with _nitric_ oxide, NO. Given its propensity to excite mirth when inhaled, [Sir Humphry Davy](https://en.wikipedia.org/wiki/Humphry_Davy) christened nitrous oxide as "laughing gas". It is used as an anaesthetic, and as a rocket propellant, among other applications.
+_Nitrous_ oxide, N~2~O, is often confounded with _nitric_ oxide, NO. Because of its propensity to excite mirth when inhaled, [Sir Humphry Davy](https://en.wikipedia.org/wiki/Humphry_Davy) christened nitrous oxide as "laughing gas". It is used as a medical and dental anaesthetic, and as a rocket propellant, among other applications.
 
 ### Nitrogen dioxide, NO~2~
 
-Nitrogen dioxide, NO~2~, is the villain of the piece. It is a toxic, brown, acrid gas and a major atmospheric pollutant that contributes to [photochemical smog](https://energyeducation.ca/encyclopedia/Photochemical_smog). But it also has its uses as an intermediate in the production of nitric acid which is used for fertilizers, and as rocket fuel, among others.
+Nitrogen dioxide, NO~2~, is the villain of the piece. It is a toxic, brown, acrid gas and a major atmospheric pollutant that contributes to [photochemical smog](https://energyeducation.ca/encyclopedia/Photochemical_smog). But it also has its uses as an intermediate in the production of nitric acid which is used for fertilizers, and as rocket fuel, among others. The fact that nitric oxide is unstable in air and undergoes spontaneous oxidation to nitrogen dioxide is most pertinent to our discussion here.
 
 ### Dinitrogen tetroxide, N~2~O~4~
 
@@ -40,13 +40,27 @@ Dinitrogen tetroxide, N~2~O~4~ is a [dimer](https://en.wikipedia.org/wiki/Dimer_
 
 ### NO~$x$~
 
-It should be clear by now that most of the chemical relatives of nitric oxide are powerful, toxic substances that can also pollute. Indeed the atmospherically polluting oxides of nitrogen have been lumped into a class and given the tongue-in-cheek chemical formula NO~$x$~ to refer to [oxides of nitrogen, specifically NO and NO~2~](http://www.apis.ac.uk/overview/pollutants/overview_nox.htm). Indeed, [ozone](https://en.wikipedia.org/wiki/Ozone), NO, and NO~2~ perform a dance of dynamic equilibrium that leads to severe air pollution.
+It should be clear by now that most of the chemical relatives of nitric oxide are powerful, toxic substances that can also pollute. Indeed the atmospherically polluting oxides of nitrogen have been lumped into a class and given the tongue-in-cheek chemical formula NO~$x$~ to refer to [oxides of nitrogen, specifically NO and NO~2~](http://www.apis.ac.uk/overview/pollutants/overview_nox.htm). Indeed, [ozone](https://en.wikipedia.org/wiki/Ozone), NO, and NO~2~ perform a dance of dynamic equilibrium that leads to [severe air pollution](https://www.aeroqual.com/meet-the-nitrogen-oxide-family).
 
 ### So, where does NO fit into all this?
 
-In light of this, we may justifiably speculate that nitric oxide is also a polluting gas, perhaps with some toxicity, and we would not be entirely wrong in that characterization.
+In light of this, we may justifiably speculate that nitric oxide is a polluting and toxic gas, and we would not be entirely wrong in that characterization.
 
-But NO is also profoundly significant biologically: so much so that the [Nobel Prize in Medicine or Physiology for 1998](https://www.nobelprize.org/prizes/medicine/1998/summary/) was awarded to a trio^[Robert F Furchgott, Louis J Ignarro, and Ferid Murad.] of researchers who triangulated on its physiological function as a signalling molecule in the cardiovascular system, and thereby opened the doors to greater scrutiny of this tiny molecule.
+But nitric oxide is also profoundly significant biologically: so much so that the [Nobel Prize in Medicine or Physiology for 1998](https://www.nobelprize.org/prizes/medicine/1998/summary/) was awarded to a trio^[Robert F Furchgott, Louis J Ignarro, and Ferid Murad.] of researchers who triangulated on its physiological function as a signalling molecule in the cardiovascular system, and thereby opened the doors to greater scrutiny of this tiny molecule. Indeed, nitric oxide was named the ["Molecule of the Year"](https://science.sciencemag.org/content/258/5090/1861) by _Science_ in 1992.
+
+## Poison or messenger?
+
+### Dose matters
+
+## Inadequate knowledge
+
+## Vasodilation
+
+## Toxicity to bactera, viruses, and fungi
+
+## Does nitric oxide harm human cells?
+
+
 
 ## Its rise to prominence
 
@@ -62,3 +76,8 @@ A cursory scan of current popular health literature will tell you that a free ra
 
 But are free-radicals oxidants or reducing agents?
 
+https://www.japi.org/q284e4b4/nitric-oxide-no-molecule-of-the-year-1992
+
+https://athensscienceobserver.com/2018/09/10/miracle-molecule-of-1992/
+
+https://www.independent.co.uk/news/uk/nitric-oxide-is-molecule-of-the-year-1564427.html
