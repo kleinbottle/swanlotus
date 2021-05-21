@@ -52,17 +52,17 @@ But nitric oxide is also profoundly significant biologically: so much so that th
 
 ## Poison or messenger?
 
-So, what exactly is nitric oxide? Is it a poison or a messenger? Carbon is a next-door neighbour to nitrogen in the periodic table. Just as nitrogen has a monoxide, so does carbon. Carbon monoxide is toxic if inhaled and leads to death by the formation of carboxyhemoglobin. Likewise, nitrogen monoxide is toxic if inhaled in large quantities and can lead to death by the formation of [methemoglobin](https://en.wikipedia.org/wiki/Methemoglobin). But unlike carbon dioxide which is an active participant in the biochemistry of living systems, nitrogen dioxide is essentially toxic and a gas to be avoided. In a nutshell, nitric oxice is unstable and becomes nitrogen dioxide which is toxic. Therefore, inhaling nitric oxide is not soemthing you waoul want to do.
+So, what exactly is nitric oxide? Is it a poison or a messenger? Carbon is a next-door neighbour to nitrogen in the periodic table. Just as nitrogen has a monoxide, so does carbon. Carbon monoxide is toxic if inhaled and leads to death by the formation of carboxyhemoglobin. Likewise, nitrogen monoxide is toxic if inhaled in large quantities and can lead to death by the formation of [methemoglobin](https://en.wikipedia.org/wiki/Methemoglobin). But unlike carbon dioxide which is an active participant in the biochemistry of living systems, nitrogen dioxide is essentially toxic and a gas to be avoided. In a nutshell, nitric oxide is unstable and becomes nitrogen dioxide which is toxic. Therefore, inhaling nitric oxide is not something you would want to do.
 
-If everythig is so cut and dried, then why the buzz around nitric oxide and its multiple uses that led to its "Moleculeof the Year" award?
+If everything is so cut and dried, then why the buzz around nitric oxide and its multiple uses that led to its "Molecule of the Year" award?
 
-It all boils bown to the concentration or the fraction of inhlaed gas that is nitric oxide, and the dose or total amount taken in. If the values are above a threshold, the effect is toxic.
+It all boils down to the concentration or the fraction of inhaled gas that is nitric oxide, and the dose or total amount taken in. If the values are above a threshold, the effect is toxic.
 
 ## An analogy from electrical engineering
 
 An analogy from electrical engineering could help in this context. The same electrical power is used to heat in a kettle and to receive, decode, and play an audio signal in a radio. But the energy used is vastly different. On the case of the kettle, electricity is used for its "brute strength" while in the radio, the same electricity is used for its "finesse" in making manifest a minuscule signal, seemingly out of nowhere into an intelligible audible signal. The different orders of energy involved translate also into different effects.
 
-In like fashion, large concentrations and doses of nitric oxide translate into macroscopically detectable toxocoty in the body whereas small concentrations and doses confer benefits.
+In like fashion, large concentrations and doses of nitric oxide translate into macroscopically detectable toxicity in the body whereas small concentrations and doses confer benefits.
 
 ## Poison and panacea/nostrum
 
@@ -126,3 +126,7 @@ https://www.japi.org/q284e4b4/nitric-oxide-no-molecule-of-the-year-1992
 https://athensscienceobserver.com/2018/09/10/miracle-molecule-of-1992/
 
 https://www.independent.co.uk/news/uk/nitric-oxide-is-molecule-of-the-year-1564427.html
+
+## Treading the fine line
+
+There is a proverb from yesteryear that runs thus: ["One man's meat is another man's poison."](https://wordhistories.net/2017/05/07/one-mans-meat-is-anothers-poison/) This adage may be adapted for nitric oxide to refer to its twin properties of therapeutics and toxicity. In this day and age of masking, we have a molecule that wears _two_ masks at the same time: a signalling nanomolecule that relaxes the smooth muscles surrounding blood vessels, leading to vasodilation; and the little brother of nitrogen dioxide, ever ready to masquerade as its more toxic elder brother. Which masked face we see and how we react requires the nuanced guidance of a medical professional schooled in the arts of mask-reading.
