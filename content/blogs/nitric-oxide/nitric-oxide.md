@@ -12,6 +12,8 @@ status: draft
 
 Nitric oxide is a simple chemical compound that has generated great interest and research effort in the scramble to cope with COVID-19. It promises prophylaxis and possibly therapy against this novel plague.
 
+>Disclaimer: moderately informed layman with no medcal qualification attempting to understand the hue and cry for nitirc oxide as a cure for COVID-19 in the current pandemic. Inaccuracies are uniintentional: email me so that I might correct them.
+
 ## Nitric oxide, NO: a brief history
 
 [Nitric oxide](https://en.wikipedia.org/wiki/Nitric_oxide) was discovered by [Joseph Priestly](https://en.wikipedia.org/wiki/Joseph_Priestley) about 250 years ago in 1772. He called it "nitrous air". It is a molecule consisting of a single atom of nitrogen and a single atom of oxygen. Given given the plethora of oxides of nitrogen, it is perhaps better referred to as _nitrogen monoxide_.
@@ -46,9 +48,52 @@ It should be clear by now that most of the chemical relatives of nitric oxide ar
 
 In light of this, we may justifiably speculate that nitric oxide is a polluting and toxic gas, and we would not be entirely wrong in that characterization.
 
-But nitric oxide is also profoundly significant biologically: so much so that the [Nobel Prize in Medicine or Physiology for 1998](https://www.nobelprize.org/prizes/medicine/1998/summary/) was awarded to a trio^[Robert F Furchgott, Louis J Ignarro, and Ferid Murad.] of researchers who triangulated on its physiological function as a signalling molecule in the cardiovascular system, and thereby opened the doors to greater scrutiny of this tiny molecule. Indeed, nitric oxide was named the ["Molecule of the Year"](https://science.sciencemag.org/content/258/5090/1861) by _Science_ in 1992.
+But nitric oxide is also profoundly significant biologically: so much so that the [Nobel Prize in Medicine or Physiology for 1998](https://www.nobelprize.org/prizes/medicine/1998/summary/) was awarded to a trio^[Robert F Furchgott, Louis J Ignarro, and Ferid Murad.] of researchers who triangulated on its physiological function as a signalling molecule in the cardiovascular system, and thereby opened the doors to greater scrutiny of this tiny molecule. Indeed, nitric oxide was named the ["Molecule of the Year"](https://science.sciencemag.org/content/258/5090/1861) by  _Science_ magazine in 1992.
 
 ## Poison or messenger?
+
+So, what exactly is nitric oxide? Is it a poison or a messenger? Carbon is a next-door neighbour to nitrogen in the periodic table. Just as nitrogen has a monoxide, so does carbon. Carbon monoxide is toxic if inhaled and leads to death by the formation of carboxyhemoglobin. Likewise, nitrogen monoxide is toxic if inhaled in large quantities and can lead to death by the formation of [methemoglobin](https://en.wikipedia.org/wiki/Methemoglobin). But unlike carbon dioxide which is an active participant in the biochemistry of living systems, nitrogen dioxide is essentially toxic and a gas to be avoided. In a nutshell, nitric oxice is unstable and becomes nitrogen dioxide which is toxic. Therefore, inhaling nitric oxide is not soemthing you waoul want to do.
+
+If everythig is so cut and dried, then why the buzz around nitric oxide and its multiple uses that led to its "Moleculeof the Year" award?
+
+It all boils bown to the concentration or the fraction of inhlaed gas that is nitric oxide, and the dose or total amount taken in. If the values are above a threshold, the effect is toxic.
+
+## An analogy from electrical engineering
+
+An analogy from electrical engineering could help in this context. The same electrical power is used to heat in a kettle and to receive, decode, and play an audio signal in a radio. But the energy used is vastly different. On the case of the kettle, electricity is used for its "brute strength" while in the radio, the same electricity is used for its "finesse" in making manifest a minuscule signal, seemingly out of nowhere into an intelligible audible signal. The different orders of energy involved translate also into different effects.
+
+In like fashion, large concentrations and doses of nitric oxide translate into macroscopically detectable toxocoty in the body whereas small concentrations and doses confer benefits.
+
+## Poison and panacea/nostrum
+
+## The confusion of jargon
+
+Free radical, antioxidant, oxidation, reduction
+
+## The biological role of nitric oxide
+
+The [biological functions of nitric oxide](https://en.wikipedia.org/wiki/Biological_functions_of_nitric_oxide) are many and varied.
+
+persistent pulmonary hypertension of the newborn (PPHN)
+
+Nitric oxide has been found to be an important inter- and intracellular messenger in virtually every organ in the body. Inhaled nitric oxide (iNO) is a selective pulmonary vasodilator. https://pubmed.ncbi.nlm.nih.gov/11728280/
+
+exogenous and endogenous NO
+
+## Signalling and vasoilation
+
+## Cytotoxicity
+
+Who is an enemy of my enemy is my friend.
+
+Why does my friend not hurt me?
+
+The free radical nitric oxide (NO) has emerged in recent years as a fundamental signaling molecule for the maintenance of homeostasis, as well as a potent cytotoxic effector involved in the pathogenesis of a wide range of human diseases. Although this paradoxical fate has generated confusion, separating the biological actions of NO on the basis of its physiologic chemistry provides a conceptual framework which helps to distinguish between the beneficial and toxic consequences of NO, and to envision potential therapeutic strategies for the future. Under normal conditions, NO produced in low concentration acts as a messenger and cytoprotective (antioxidant) factor, via direct interactions with transition metals and other free radicals. Alternatively, when the circumstances allow the formation of substantial amounts of NO and modify the cellular microenvironment (formation of the superoxide radical), the chemistry of NO will turn into indirect effects consecutive to the formation of dinitrogen trioxide and peroxynitrite. These "reactive nitrogen species" will, in turn, mediate both oxidative and nitrosative stresses, which form the basis of the cytotoxicity generally attributed to NO, relevant to the pathophysiology of inflammation, circulatory shock, and ischemia-reperfusion injury. https://pubmed.ncbi.nlm.nih.gov/10807315/
+
+## 
+
+
+
 
 ### Dose matters
 
