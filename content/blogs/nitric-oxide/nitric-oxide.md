@@ -129,4 +129,10 @@ https://www.independent.co.uk/news/uk/nitric-oxide-is-molecule-of-the-year-15644
 
 ## Treading the fine line
 
-There is a proverb from yesteryear that runs thus: ["One man's meat is another man's poison."](https://wordhistories.net/2017/05/07/one-mans-meat-is-anothers-poison/) This adage may be adapted for nitric oxide to refer to its twin properties of therapeutics and toxicity. In this day and age of masking, we have a molecule that wears _two_ masks at the same time: a signalling nanomolecule that relaxes the smooth muscles surrounding blood vessels, leading to vasodilation; and the little brother of nitrogen dioxide, ever ready to masquerade as its more toxic elder brother. Which masked face we see and how we react requires the nuanced guidance of a medical professional schooled in the arts of mask-reading.
+There is a proverb from yesteryear that runs thus: ["One man's meat is another man's poison."](https://wordhistories.net/2017/05/07/one-mans-meat-is-anothers-poison/) This adage may be adapted for nitric oxide to refer to its twin properties of therapeutics and toxicity. In this day and age of [masking](https://www.cdc.gov/coronavirus/2019-ncov/your-health/effective-masks.html), we have a molecule that wears _two masks_ at the same time: 
+
+(a) a signalling nanomolecule that relaxes the smooth muscles surrounding blood vessels, leading to vasodilation; and
+
+(b) the little brother of nitrogen dioxide, ever ready to masquerade as its more toxic elder brother. 
+
+Which masked face we see and how we react requires the nuanced guidance of a medical professional schooled in the art of uncovering masks.
