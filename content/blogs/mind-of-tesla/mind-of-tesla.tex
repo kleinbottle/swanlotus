@@ -4,18 +4,17 @@
 \PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
 %
 \documentclass[
-  11pt,
+  12pt,
   british,
   a4paper,
 ]{article}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
-  \usepackage{amssymb}
 \else % if luatex or xetex
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
@@ -45,10 +44,10 @@
   pdfauthor={R (Chandra) Chandrasekhar},
   pdflang={en-GB},
   colorlinks=true,
-  linkcolor=TealBlue,
-  filecolor=Purple,
-  citecolor=DarkKhaki,
-  urlcolor=Maroon,
+  linkcolor={TealBlue},
+  filecolor={Purple},
+  citecolor={DarkKhaki},
+  urlcolor={Maroon},
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=25mm]{geometry}
@@ -70,10 +69,13 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \AtBeginEnvironment{quote}{\small}
+\AtBeginEnvironment{longtable}{\centering}
+%
 \usepackage{etoolbox}
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{svg}
+  \svgsetup{inkscapeversion=1}
 \usepackage[Latin,Tamil,Devanagari]{ucharclasses}
   \setmainfont[SmallCapsFont={Charis SIL Small Caps}]{Charis SIL}
   \setsansfont[Numbers=OldStyle,BoldFont={* Semibold}]{Source Sans Pro}
@@ -89,18 +91,15 @@
   \setTransitionTo{Devanagari}{\devfont}{}
   \setTransitionFrom{Devanagari}{\normalfont}
   \newfontfamily{\emojifont}{Symbola}
+\urlstyle{tt}
 \usepackage[all]{nowidow}
-\usepackage[margins=raggedright]{floatrow}
 %
-% Tables without rules
+%\usepackage[margins=raggedright]{floatrow} 
+% Left aligns tables: Pandoc Tips and Tricks
 %
-\let\addlinespace\relax
-\let\toprule\relax
-\let\bottomrule\relax
-\let\midrule\relax
-\let\addlinespace\relax
 %
 % Adjust punctuation for footnotes
+%
 %
 \usepackage{fnpct} % footnote _before_ punctuation reversed and adjusted.
   \setfnpct{after-dot-space=-0.15em,after-comma-space=-0.150em,add-punct-marks=;[0.06em]![0.06em]?[0.06em]:[0.06em]}
@@ -109,10 +108,12 @@
 %
 \usepackage{fontsize}
 %
-%% pandoc-eqnos
+\usepackage{pdflscape}
+ %% pandoc-eqnos
 \usepackage[capitalise]{cleveref}
   \crefname{equation}{Equation}{Equations}
   \crefname{figure}{Figure}{Figures}
+  \crefname{table}{Table}{Tables}
 %% pandoc-fignos
 \usepackage{caption}
 %% pandoc-fignos: environment to disable figure caption prefixes
@@ -137,23 +138,29 @@
     }
     \makeatother
 %%
+\usepackage{titling}
 \usepackage{fancyhdr}
     \pagestyle{fancy}
     \fancyhead{}
     \fancyfoot{}
-    \renewcommand{\headrulewidth}{0pt}
-    \renewcommand{\footrulewidth}{0pt}
-    %\fancyhead[CE,CO]{\title}
-    \fancyfoot[CO,CE]{\small Copyright © 2006--2021, R (Chandra) Chandrasekhar}
+    \renewcommand{\headrulewidth}{0.2pt}
+    \renewcommand{\footrulewidth}{0.2pt}
+    \fancyhead[LO,RE]{\scshape\thetitle}
+    \fancyfoot[CO,CE]{\small Copyright © 2006--\the\year, R (Chandra) Chandrasekhar}
     \fancyfoot[RE,RO]{\thepage}
-\ifxetex
+
+
+\ifXeTeX
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
   \usepackage{polyglossia}
   \setmainlanguage[variant=british]{english}
 \else
-  \usepackage[shorthands=off,main=british]{babel}
+  \usepackage[main=british]{babel}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
 \fi
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \newlength{\cslhangindent}
@@ -184,6 +191,7 @@
 \begin{document}
 \maketitle
 
+\setlength{\parindent}{0pt} % block paragraph
 \thispagestyle{empty}
 
 
@@ -1573,7 +1581,7 @@ comments and corrections.
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{0}{0}
-\leavevmode\hypertarget{ref-john83}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-john83}{}}%
 \CSLLeftMargin{{[}1{]} }
 \CSLRightInline{N. Tesla, {`{My Inventions: The Autobiography of Nikola
 Tesla},'} B. Johnston, Ed. Williston, VT, USA: Hart Brothers, 1983
@@ -1581,77 +1589,77 @@ Tesla},'} B. Johnston, Ed. Williston, VT, USA: Hart Brothers, 1983
 \url{http://www.tfcbooks.com/special/mi_link.htm}. {[}Accessed:
 06-Jun-2002{]}}
 
-\leavevmode\hypertarget{ref-oneill80}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-oneill80}{}}%
 \CSLLeftMargin{{[}2{]} }
 \CSLRightInline{J. J. O' Neill, \emph{{Prodigal Genius: The Life of
 Nikola Tesla}}. St Albans, Herts, UK: Granada Publishing, 1980. }
 
-\leavevmode\hypertarget{ref-cheney81}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-cheney81}{}}%
 \CSLLeftMargin{{[}3{]} }
 \CSLRightInline{M. Cheney, \emph{{Tesla: Man Out of Time}}. Englewood
 Cliffs, NJ, USA: Prentice-Hall, 1981. }
 
-\leavevmode\hypertarget{ref-seifer98}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-seifer98}{}}%
 \CSLLeftMargin{{[}4{]} }
 \CSLRightInline{M. J. Seifer, \emph{{Wizard: The Life and Times of
 Nikola Tesla : Biography of a Genius}}, Reprint. New York, NY, USA:
 Citadel Press, 1998. }
 
-\leavevmode\hypertarget{ref-lomas99}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-lomas99}{}}%
 \CSLLeftMargin{{[}5{]} }
 \CSLRightInline{R. Lomas, \emph{{The Man Who Invented the Twentieth
 Century: Nikola Tesla, Forgotten Genius of Electricity}}. London, UK:
 Headline Book Publishing, 1999. }
 
-\leavevmode\hypertarget{ref-tesla-wiki}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-tesla-wiki}{}}%
 \CSLLeftMargin{{[}6{]} }
 \CSLRightInline{---, {`{N}ikola {T}esla --- {Wikipedia}{,} the {F}ree
 {E}ncyclopedia,'} 2021. {[}Online{]}. Available:
 \url{https://en.wikipedia.org/wiki/Nikola_Tesla}. {[}Accessed:
 23-Feb-2021{]}}
 
-\leavevmode\hypertarget{ref-tesla-home}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-tesla-home}{}}%
 \CSLLeftMargin{{[}7{]} }
 \CSLRightInline{J. M. Newlight, {`{Nikola Tesla}.'} {[}Online{]}.
 Available: \url{http://www.teslaplay.com/index.html}. {[}Accessed:
 23-Feb-2021{]}}
 
-\leavevmode\hypertarget{ref-tesla-pbs-bio}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-tesla-pbs-bio}{}}%
 \CSLLeftMargin{{[}8{]} }
 \CSLRightInline{R. Uth and M. Cheney, {`{PBS: Tesla---Master of
 Lightning: Who Was Nikola Tesla?}'} 2004. {[}Online{]}. Available:
 \url{https://www.pbs.org/tesla/}. {[}Accessed: 26-Jun-2006{]}}
 
-\leavevmode\hypertarget{ref-bucke48}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-bucke48}{}}%
 \CSLLeftMargin{{[}9{]} }
 \CSLRightInline{R. M. Bucke, \emph{{Cosmic Consciousness: A Study in the
 Evolution of the Human Mind}}, 14th ed. New York, USA: E P Dutton, 1948.
 }
 
-\leavevmode\hypertarget{ref-tesla-personal}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-tesla-personal}{}}%
 \CSLLeftMargin{{[}10{]} }
 \CSLRightInline{N. Tesla, {`{Some Personal Recollections},'}
 \emph{Scientific American}, 1915 {[}Online{]}. Available:
 \url{https://www.pbs.org/tesla/res/res_art01.html}. {[}Accessed:
 06-Jun-2006{]}}
 
-\leavevmode\hypertarget{ref-weisberg86}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-weisberg86}{}}%
 \CSLLeftMargin{{[}11{]} }
 \CSLRightInline{R. Weisberg, \emph{{Creativity: genius and other
 myths}}. New York, NY, USA: W H Freeman, 1986. }
 
-\leavevmode\hypertarget{ref-findlay37}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-findlay37}{}}%
 \CSLLeftMargin{{[}12{]} }
 \CSLRightInline{A. Findlay, \emph{{A Hundred Years of Chemistry}}.
 London, UK: Duckworth, 1937. }
 
-\leavevmode\hypertarget{ref-kekules-dream}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-kekules-dream}{}}%
 \CSLLeftMargin{{[}13{]} }
 \CSLRightInline{---, {`{Kekule's Dream}.'} {[}Online{]}. Available:
 \url{https://www.youtube.com/watch?v=2NRwd-JJFm4}. {[}Accessed:
 21-Feb-2021{]}}
 
-\leavevmode\hypertarget{ref-justin06}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-justin06}{}}%
 \CSLLeftMargin{{[}14{]} }
 \CSLRightInline{R. G. Justin, {`{Otto Loewi's Great Dreams},'} \emph{The
 Permanente Journal}, vol. 10, no. 2, pp. 70--71, 2006 {[}Online{]}.
@@ -1659,7 +1667,7 @@ Available:
 \url{http://www.thepermanentejournal.org/files/Summer2006/otto.pdf}.
 {[}Accessed: 23-Feb-2021{]}}
 
-\leavevmode\hypertarget{ref-loewi2014}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-loewi2014}{}}%
 \CSLLeftMargin{{[}15{]} }
 \CSLRightInline{A. N. McCoy and Y. S. Tan, {`{Otto Loewi (1873--1961):
 Dreamer and Nobel laureate},'} \emph{Singapore Medical Journal}, vol.
@@ -1667,55 +1675,55 @@ Dreamer and Nobel laureate},'} \emph{Singapore Medical Journal}, vol.
 \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4291908/}.
 {[}Accessed: 21-Feb-2021{]}}
 
-\leavevmode\hypertarget{ref-springer89}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-springer89}{}}%
 \CSLLeftMargin{{[}16{]} }
 \CSLRightInline{S. P. Springer and G. Deutsch, Eds., \emph{{Left Brain,
 Right Brain}}. New York, NY, USA: W H Freeman, 1989. }
 
-\leavevmode\hypertarget{ref-silver02}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-silver02}{}}%
 \CSLLeftMargin{{[}17{]} }
 \CSLRightInline{L. K. Silverman, \emph{{Upside-Down Brilliance: The
 Visual-Spatial Learner}}. Denver, CO, USA: De Leon Publishing, 2002. }
 
-\leavevmode\hypertarget{ref-west91}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-west91}{}}%
 \CSLLeftMargin{{[}18{]} }
 \CSLRightInline{T. G. West, \emph{{In the mind's eye: visual thinkers,
 gifted people with learning difficulties, computer images, and the
 ironies of creativity}}. Buffalo, NY, USA: Prometheus Books, 1991. }
 
-\leavevmode\hypertarget{ref-koestler64}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-koestler64}{}}%
 \CSLLeftMargin{{[}19{]} }
 \CSLRightInline{A. Koestler, \emph{{The Act of Creation}}. New York, NY,
 USA: Macmillan, 1964. }
 
-\leavevmode\hypertarget{ref-kanigel91}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-kanigel91}{}}%
 \CSLLeftMargin{{[}20{]} }
 \CSLRightInline{R. Kanigel, \emph{{The Man Who Knew Infinity: A Life of
 the Genius Ramanujan}}. New York, NY, USA: Charles Scribner's Sons,
 1991. }
 
-\leavevmode\hypertarget{ref-mckim72}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-mckim72}{}}%
 \CSLLeftMargin{{[}21{]} }
 \CSLRightInline{R. H. McKim, \emph{{Experiences in Visual Thinking}}.
 Belmont, CA, USA: Brooks/Cole, 1972. }
 
-\leavevmode\hypertarget{ref-hubel88}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-hubel88}{}}%
 \CSLLeftMargin{{[}22{]} }
 \CSLRightInline{D. H. Hubel, \emph{{Eye, Brain, and Vision}}. New York,
 NY, USA: Scientific American Library, 1988. }
 
-\leavevmode\hypertarget{ref-zeki93}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-zeki93}{}}%
 \CSLLeftMargin{{[}23{]} }
 \CSLRightInline{S. Zeki, \emph{{A Vision of the Brain}}. Oxford, UK:
 Blackwell Scientific Publications, 1993. }
 
-\leavevmode\hypertarget{ref-pvi97}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-pvi97}{}}%
 \CSLLeftMargin{{[}24{]} }
 \CSLRightInline{W. R. Hendee and P. N. T. Wells, Eds., \emph{{The
 Perception of Visual Information}}, 2nd ed. New York, USA: Springer
 Verlag, 1997. }
 
-\leavevmode\hypertarget{ref-einstein-quote}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-einstein-quote}{}}%
 \CSLLeftMargin{{[}25{]} }
 \CSLRightInline{A. Einstein, {`{Quote by Albert Einstein: {``I am enough
 of an artist to draw freely upon my \ldots{}''}},'} 2021. {[}Online{]}.
@@ -1723,50 +1731,50 @@ Available:
 \url{https://www.goodreads.com/quotes/2177-i-am-enough-of-an-artist-to-draw-freely-upon}.
 {[}Accessed: 24-Feb-2021{]}}
 
-\leavevmode\hypertarget{ref-laberge85}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-laberge85}{}}%
 \CSLLeftMargin{{[}26{]} }
 \CSLRightInline{S. LaBerge, \emph{{Lucid Dreaming}}. Los Angeles, CA,
 USA: Jeremy P Tarcher, 1985. }
 
-\leavevmode\hypertarget{ref-laberge2000}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-laberge2000}{}}%
 \CSLLeftMargin{{[}27{]} }
 \CSLRightInline{S. LaBerge and J. Gackenbach, {`{Lucid Dreaming},'} in
 \emph{{Varieties of Anomalous Experience: Examining the Scientific
 Evidence}}, E. Cardeña, S. J. Lynn, and S. Krippner, Eds. Washington,
 DC, USA: American Psychological Association, 2000, pp. 151--182. }
 
-\leavevmode\hypertarget{ref-marks00}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-marks00}{}}%
 \CSLLeftMargin{{[}28{]} }
 \CSLRightInline{L. E. Marks, {`Synesthesia,'} in \emph{{Varieties of
 Anomalous Experience: Examining the Scientific Evidence}}, E. Cardeña,
 S. J. Lynn, and S. Krippner, Eds. Washington, DC, USA: American
 Psychological Association, 2000, pp. 121--149. }
 
-\leavevmode\hypertarget{ref-cytowic96}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-cytowic96}{}}%
 \CSLLeftMargin{{[}29{]} }
 \CSLRightInline{R. E. Cytowic, \emph{{The Man Who Tasted Shapes}}.
 London, UK: Abacus, 1996. }
 
-\leavevmode\hypertarget{ref-blume04}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-blume04}{}}%
 \CSLLeftMargin{{[}30{]} }
 \CSLRightInline{H. Blume, {`{Autism \& The Internet or It's The Wiring,
 Stupid},'} 1997. {[}Online{]}. Available:
 \url{http://web.mit.edu/comm-forum/legacy/papers/blume.html}.
 {[}Accessed: 23-Feb-2021{]}}
 
-\leavevmode\hypertarget{ref-tesla-faq}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-tesla-faq}{}}%
 \CSLLeftMargin{{[}31{]} }
 \CSLRightInline{G. Peterson, {`{Tesla's Mind \textbar{} Tesla FAQ No. 4
 \textbar{} Interesting Facts About Nikola Tesla}.'} {[}Online{]}.
 Available: \url{http://www.tfcbooks.com/teslafaq/q\&a_004.htm}.
 {[}Accessed: 26-Jun-2006{]}}
 
-\leavevmode\hypertarget{ref-frith90}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-frith90}{}}%
 \CSLLeftMargin{{[}32{]} }
 \CSLRightInline{U. Frith, \emph{{Autism: Explaining the Enigma}}.
 Oxford, UK: Basil Blackwell, 1990. }
 
-\leavevmode\hypertarget{ref-savant2009}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-savant2009}{}}%
 \CSLLeftMargin{{[}33{]} }
 \CSLRightInline{D. A. Treffert, {`The savant syndrome: An extraordinary
 condition. A synopsis: Past, present, future,'} \emph{Philosophical
@@ -1775,7 +1783,7 @@ sciences}, vol. 364, no. 1522, pp. 1351--1357 {[}Online{]}. Available:
 \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2677584/}.
 {[}Accessed: 22-Feb-2021{]}}
 
-\leavevmode\hypertarget{ref-tesla-energy}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-tesla-energy}{}}%
 \CSLLeftMargin{{[}34{]} }
 \CSLRightInline{N. Tesla, {`{The Problem Of Increasing Human Energy:
 With Special References to the Harnessing of the Sun's Energy}.'}
@@ -1783,33 +1791,33 @@ With Special References to the Harnessing of the Sun's Energy}.'}
 \url{https://www.pbs.org/tesla/res/res_art09.html}. {[}Accessed:
 26-Jun-2006{]}}
 
-\leavevmode\hypertarget{ref-grotz}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-grotz}{}}%
 \CSLLeftMargin{{[}35{]} }
 \CSLRightInline{T. Grotz, {`{The Influence of Vedic Philosophy on Nikola
 Tesla's Understanding of Free Energy},'} 1997. {[}Online{]}. Available:
 \url{http://mountainman.com.au/aether_1.html}. {[}Accessed:
 06-Jun-2006{]}}
 
-\leavevmode\hypertarget{ref-dobson}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-dobson}{}}%
 \CSLLeftMargin{{[}36{]} }
 \CSLRightInline{J. Dobson, {`{The Equations of Maya},'} 1993.
 {[}Online{]}. Available:
 \url{http://quanta-gaia.org/dobson/EquationsOfMaya.html}. {[}Accessed:
 23-Feb-2021{]}}
 
-\leavevmode\hypertarget{ref-agra01}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-agra01}{}}%
 \CSLLeftMargin{{[}37{]} }
 \CSLRightInline{Madan Mohan Agrawal, Ed., \emph{{Six Systems of Indian
 Philosophy}}. New Delhi, India: Chaukamba Sanskrit Pratishthan, 2001. }
 
-\leavevmode\hypertarget{ref-tesla-cosmic}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-tesla-cosmic}{}}%
 \CSLLeftMargin{{[}38{]} }
 \CSLRightInline{N. Tesla, {`{How Cosmic Forces Shape Our Destinies:
 ({``Did the War Cause the Italian Earthquake''})}.'} {[}Online{]}.
 Available: \url{https://www.pbs.org/tesla/res/res_art10.html}.
 {[}Accessed: 26-Jun-2006{]}}
 
-\leavevmode\hypertarget{ref-heil03}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-heil03}{}}%
 \CSLLeftMargin{{[}39{]} }
 \CSLRightInline{J. L. Heilbron, {`Ether,'} in \emph{{The Oxford
 Companion to the History of Modern Science}}, J. L. Heilbron, Ed. Oxford
