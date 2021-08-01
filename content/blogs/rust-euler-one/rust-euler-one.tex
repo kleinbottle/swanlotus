@@ -1,0 +1,206 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode,linktoc=all}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+%
+\documentclass[
+  12pt,
+  british,
+  a4paper,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={A Foray into Rust: Euler One},
+  pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
+  colorlinks=true,
+  linkcolor={TealBlue},
+  filecolor={Purple},
+  citecolor={DarkKhaki},
+  urlcolor={Maroon},
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=25mm]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\AtBeginEnvironment{quote}{\small}
+\AtBeginEnvironment{longtable}{\centering}
+%
+\usepackage{etoolbox}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{svg}
+  \svgsetup{inkscapeversion=1}
+\usepackage[Latin,Tamil,Devanagari]{ucharclasses}
+  \setmainfont[SmallCapsFont={Charis SIL Small Caps}]{Charis SIL}
+  \setsansfont[Numbers=OldStyle,BoldFont={* Semibold}]{Source Sans Pro}
+  \setmonofont[Scale=0.90]{Fira Mono}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \setmathfont[bold-style=ISO]{STIX Two Math}
+  \newfontfamily\tamilfont[Script=Tamil]{Noto Sans Tamil}
+  \setTransitionsFor{Tamil}{\tamilfont}{\normalfont}
+  \setTransitionTo{Tamil}{\tamilfont}{}
+  \setTransitionFrom{Tamil}{\normalfont}
+  \newfontfamily\devfont[Script=Devanagari]{Noto Sans Devanagari}
+  \setTransitionsFor{Devanagari}{\devfont}{\normalfont}
+  \setTransitionTo{Devanagari}{\devfont}{}
+  \setTransitionFrom{Devanagari}{\normalfont}
+  \newfontfamily{\emojifont}{Symbola}
+\urlstyle{tt}
+\usepackage[all]{nowidow}
+%
+%\usepackage[margins=raggedright]{floatrow} 
+% Left aligns tables: Pandoc Tips and Tricks
+%
+%
+% Adjust punctuation for footnotes
+%
+%
+\usepackage{fnpct} % footnote _before_ punctuation reversed and adjusted.
+  \setfnpct{after-dot-space=-0.15em,after-comma-space=-0.150em,add-punct-marks=;[0.06em]![0.06em]?[0.06em]:[0.06em]}
+%
+% Flexible fontsizes
+%
+\usepackage{fontsize}
+%
+\usepackage{pdflscape}
+ %% pandoc-eqnos
+\usepackage[capitalise]{cleveref}
+  \crefname{equation}{Equation}{Equations}
+  \crefname{figure}{Figure}{Figures}
+  \crefname{table}{Table}{Tables}
+%% pandoc-fignos
+\usepackage{caption}
+%% pandoc-fignos: environment to disable figure caption prefixes
+    \makeatletter
+    \newcounter{figno}
+    \newenvironment{fignos:no-prefix-figure-caption}{
+      \caption@ifcompatibility{}{
+        \let\oldthefigure\thefigure
+        \let\oldtheHfigure\theHfigure
+        \renewcommand{\thefigure}{figno:\thefigno}
+        \renewcommand{\theHfigure}{figno:\thefigno}
+        \stepcounter{figno}
+        \captionsetup{labelformat=empty}
+      }
+    }{
+      \caption@ifcompatibility{}{
+        \captionsetup{labelformat=default}
+        \let\thefigure\oldthefigure
+        \let\theHfigure\oldtheHfigure
+        \addtocounter{figure}{-1}
+      }
+    }
+    \makeatother
+%%
+%% pandoc-tablenos: environment to disable table caption prefixes
+    \makeatletter
+    \newcounter{tableno}
+    \newenvironment{tablenos:no-prefix-table-caption}{
+      \caption@ifcompatibility{}{
+        \let\oldthetable\thetable
+        \let\oldtheHtable\theHtable
+        \renewcommand{\thetable}{tableno:\thetableno}
+        \renewcommand{\theHtable}{tableno:\thetableno}
+        \stepcounter{tableno}
+        \captionsetup{labelformat=empty}
+      }
+    }{
+      \caption@ifcompatibility{}{
+        \captionsetup{labelformat=default}
+        \let\thetable\oldthetable
+        \let\theHtable\oldtheHtable
+        \addtocounter{table}{-1}
+      }
+    }
+    \makeatother
+\usepackage{titling}
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0.2pt}
+    \renewcommand{\footrulewidth}{0.2pt}
+    \fancyhead[LO,RE]{\scshape\thetitle}
+    \fancyfoot[CO,CE]{\small Copyright © 2006--\the\year, R (Chandra) Chandrasekhar}
+    \fancyfoot[RE,RO]{\thepage}
+
+
+\ifXeTeX
+  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[variant=british]{english}
+\else
+  \usepackage[main=british]{babel}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{A Foray into Rust: Euler One}
+\author{R (Chandra) Chandrasekhar}
+\date{2021-07-31 | 2021-07-31}
+
+\begin{document}
+\maketitle
+
+\setlength{\parindent}{0pt} % block paragraph
+\thispagestyle{empty}
+
+
+Rust is \emph{the} emerging programming language. To learn Rust, I
+decided to start by solving Euler Project One using Rust. This is a
+chronicle of my first efforts.
+
+As a programmer, I am long in the tooth. I started out with FORTRAN,
+went on to Forth, and settled with C through three decades or more. For
+scripting, I used Perl or bash. Python, the current darling of
+programmers is an unknown bourne to me.
+
+\hypertarget{feedback}{%
+\paragraph{Feedback}\label{feedback}}
+
+Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
+comments and corrections.
+
+\noindent A PDF version of this article is
+\href{./rust-euler-one.pdf}{available for download here.}
+
+
+
+\end{document}
