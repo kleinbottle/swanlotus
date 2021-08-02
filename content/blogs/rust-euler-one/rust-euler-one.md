@@ -32,8 +32,7 @@ The [statement of the problem](https://projecteuler.net/problem=1) is simple and
 
 
 
-
-#### Feedback
+# Feedback
 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
