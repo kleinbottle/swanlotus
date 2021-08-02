@@ -820,7 +820,7 @@ capabilities of humankind?_
 
 For helpful comments and discussions, I thank N Chandrasekhar, R Gopalkrishnan, M Jegasothy, P Jones, M R Jupp, B Raguram, B Readhead, and R Sivasankar.
 
-#### Feedback
+# Feedback
 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
