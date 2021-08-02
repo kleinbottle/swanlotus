@@ -14,9 +14,9 @@ As a programmer, I am long in the tooth. I started out with [FORTRAN](https://fo
 
 So why did I choose [Rust](https://www.rust-lang.org/) as the new programming language to learn? Rust is _the_ emerging programming language, developed at [Mozilla](https://research.mozilla.org/rust/) [@rust]. It has been consistently voted [_the most loved_](https://insights.stackoverflow.com/survey/2020#most-loved-dreaded-and-wanted) programming language in Stack Overflow Developer Surveys [@goulding2020]. End-users, such as [scientists](https://www.nature.com/articles/d41586-020-03382-2), are turning to Rust when Python has proven inadequate for some reason [@perkel2020]. And [corporate users](https://serokell.io/blog/rust-companies) include Dropbox, Mozilla, Microsoft, npm, etc. [@dreimanis2020].
 
-But there are other, more personal, reasons as well. My previous bet was on [Haskell](https://www.haskell.org/). I have tried many times to learn it, almost always giving up in despair, because I was fobbed off by the unfamiliar notation, and its corpus of arcana, like [monads](en.wikipedia.org/wiki/Monad_(functional_programming)), touted by the cognoscenti, as the way to tell the men from the boys. Enough about the why. Now for the how.
+But there are other, more personal, reasons as well. My previous bet on the future was on [Haskell](https://www.haskell.org/). I have tried many times to learn it, almost always giving up in despair, because I was put off by the unfamiliar notation, and its corpus of arcana, like [monads](en.wikipedia.org/wiki/Monad_(functional_programming)), touted by the cognoscenti, as the way to tell the men from the boys. Enough about the why. Now for the how.
 
-To learn the language, I decided to start by solving [Project Euler Problem One](https://projecteuler.net/problem=1), henceforth called PEP1, using Rust. This is a chronicle of my first efforts.
+To learn the language, I decided to start by solving [Project Euler Problem One](https://projecteuler.net/problem=1), henceforth called _the problem_, using Rust. This is a chronicle of my first efforts.
 
 ## Project Euler Problem One
 
