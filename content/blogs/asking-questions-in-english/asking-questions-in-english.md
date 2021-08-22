@@ -401,7 +401,7 @@ Hopefully, this blog will help ensure that when you ask questions in English you
 
 Happy questioning! \emojifont :slightly_smiling_face: \normalfont
 
-#### Feedback
+# Feedback
 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
