@@ -19,7 +19,7 @@ Digital images come in two broad flavours:
 - [raster](https://en.wikipedia.org/wiki/Raster_graphics) or [bitmap](https://en.wikipedia.org/wiki/Bitmap) graphics, and
 - [vector graphics](https://en.wikipedia.org/wiki/Vector_graphics).
 
-The former leads to image blockiness or [pixellation](https://en.wikipedia.org/wiki/Pixelation) and loss of definition at high magnifications, as shown in +@fig:raster, while the latter scales without degradation when magnified, as illustrated in +@fig:vector.
+The former leads to image blockiness or [pixellation](https://en.wikipedia.org/wiki/Pixelation) and loss of definition at high magnifications, as shown in @fig:raster, while the latter scales without degradation when magnified, as illustrated in @fig:vector.
 
 ![Raster graphics image of the letter O (150 dots per inch (dpi) PNG format).]({attach}images/letter-O-150-dpi.png){#fig:raster width=50%}
 
@@ -99,7 +99,7 @@ If an image were resized to _twice_ its dimensions, the number of pixels in it w
 
 When photographic images are scanned, higher pixel densities lead to much larger file sizes, resulting in images of remarkable detail. Conversely, low resolution scans sacrifice image quality for small file size. Good visual quality at reasonable file size is the much sought-after optimal goal for any image.
 
-Blocky images arise when the zoomed image is not matched to the display resolution, allowing individual pixels to show themselves as discernible "blocky" elements, as in +@fig:raster.
+Blocky images arise when the zoomed image is not matched to the display resolution, allowing individual pixels to show themselves as discernible "blocky" elements, as in @fig:raster.
 
 The dpi/ppi used for format conversion, especially between raster and PDF, is critical to avoid getting "blurry" or "grungy-looking" images. Merely ratcheting up the source dpi/ppi before conversion from raster to PDF will result in bloated PDF files that convey no discernible improvement in visual quality. There is always a sweet spot for pixel density---in image scanning and format conversions---that gives good visual quality at a decent file size. We should aim for that.
 
@@ -245,13 +245,13 @@ How the original image was cropped to get the `animals` image is explained next.
 
 #### Pre-processing `animals`
 
-Cropping is strictly not image format conversion, but is often a necessary pre-processing step in image manipulations. For example, +@fig:animals-original has a whitish, non-monochromatic border around the block print, containing annotations. For our purposes, this border is at best a distraction. It may be removed altogether by _cropping_, leaving us with only the illustration. The resulting cropped image, `animals.jpg` will be the source image in our examples below.
+Cropping is strictly not image format conversion, but is often a necessary pre-processing step in image manipulations. For example, @fig:animals-original has a whitish, non-monochromatic border around the block print, containing annotations. For our purposes, this border is at best a distraction. It may be removed altogether by _cropping_, leaving us with only the illustration. The resulting cropped image, `animals.jpg` will be the source image in our examples below.
 
 #### Cropping
 
 Cropping is usually better done interactively using a [GUI (Graphical User Interface)](https://en.wikipedia.org/wiki/Graphical_user_interface), than on the command line. However, the latter, even if a bit tedious, is precisely repeatable.
 
-The `display` utility of `ImageMagick` pops up a GUI, shown in +@fig:gui, when the mouse is over the image and the left mouse button is clicked. We can then drag and fit a window to the _region we wish to keep_, clicking the `Crop` function, and saving the cropped image. The steps are these:
+The `display` utility of `ImageMagick` pops up a GUI, shown in @fig:gui, when the mouse is over the image and the left mouse button is clicked. We can then drag and fit a window to the _region we wish to keep_, clicking the `Crop` function, and saving the cropped image. The steps are these:
 
 a.  left mouse click on the image to reveal the GUI;
 a.  `Transform -> Crop`;
@@ -273,9 +273,9 @@ In our case, $(x_t, y_t) = (60, 84)$ and $(x_b, y_b) = (795, 1119)$ giving $w = 
 convert -crop '735x1035+60+84' animals-original.jpg animals.jpg
 ```
 
-The resulting cropped image, `animals.jpg` is shown in +@fig:cropped below.
+The resulting cropped image, `animals.jpg` is shown in @fig:cropped below.
 
-![Cropped version of the original image in +@fig:animals-original. This is the `animals.jpg` image.]({attach}images/animals.jpg){#fig:cropped width=50%}
+![Cropped version of the original image in @fig:animals-original. This is the `animals.jpg` image.]({attach}images/animals.jpg){#fig:cropped width=50%}
 
 #### File sizes
 
@@ -312,7 +312,7 @@ animals.jpg animals-halfsize.jpg animals-both.jpg
 
 ### Background transparency
 
-Notice that there is a coloured white rectangle atop the half-size image on the right in +@fig:animals-both-jpg. We could remove it by rendering the background transparent. However, because JPEG does not support transparency (through an [alpha channel](https://www.techopedia.com/definition/1945/alpha-channel)) we have to convert the composite image to the PNG format, which does support transparency. This is an example of why we need to convert from one format to another.
+Notice that there is a coloured white rectangle atop the half-size image on the right in @fig:animals-both-jpg. We could remove it by rendering the background transparent. However, because JPEG does not support transparency (through an [alpha channel](https://www.techopedia.com/definition/1945/alpha-channel)) we have to convert the composite image to the PNG format, which does support transparency. This is an example of why we need to convert from one format to another.
 
 ```bash
 # Non-transparent composite in PNG
@@ -412,11 +412,11 @@ text-only-both-600-dpi-cairo.* \
 
 ![Composite PNG image of the PNG on the left, and JPEG on the right.]({attach}images/text-only-both-600-dpi-cairo.png){#fig:text-only-both-png width=80%}
 
-The right sub-image of +@fig:text-only-both-png does not reveal noticeable degradation in quality after conversion from PNG to JPEG, and back to PNG again. Note also that the file size of the _composite_ PNG image is smaller than the file size of the _single_ JPEG image.
+The right sub-image of @fig:text-only-both-png does not reveal noticeable degradation in quality after conversion from PNG to JPEG, and back to PNG again. Note also that the file size of the _composite_ PNG image is smaller than the file size of the _single_ JPEG image.
 
 ![Composite JPEG image of the PNG on the left, and JPEG on the right.]({attach}images/text-only-both-600-dpi-cairo.jpg){#fig:text-only-both-jpg width=80%}
 
-Likewise, notice that when the composite image, +@fig:text-only-both-jpg is a JPEG, there is no noticeable degradation in image quality. Moreover, the file size of the composite is the same as for the singleton JPEG image. Note also that because JPEG does not support transparency, the sliver of "transparent background" sandwiched between the two images now appears black.
+Likewise, notice that when the composite image, @fig:text-only-both-jpg is a JPEG, there is no noticeable degradation in image quality. Moreover, the file size of the composite is the same as for the singleton JPEG image. Note also that because JPEG does not support transparency, the sliver of "transparent background" sandwiched between the two images now appears black.
 
 ### PNG for text and JPEG for non-text
 
@@ -434,7 +434,7 @@ The `animals` image, on the other hand, is scanned from an illustration. Our inp
 
 ## Raster to vector conversions
 
-Let us say that we have a logo, designed and available as a raster image in some format. To use it on the Web, we could, if necessary, reformat it as a JPEG or PNG file. But as we zoom into the page, the raster images will start becoming less sharp and more blocky as shown in +@fig:raster.
+Let us say that we have a logo, designed and available as a raster image in some format. To use it on the Web, we could, if necessary, reformat it as a JPEG or PNG file. But as we zoom into the page, the raster images will start becoming less sharp and more blocky as shown in @fig:raster.
 
 However, if the graphic were in SVG format, supported by most web browsers, the logo would scale without visual degradation as we zoom into the page.
 
@@ -689,7 +689,7 @@ awk '{print $1 "\t" $2}'
 12K     text-only-pdftocairo.svg
 ```
 
-The PNG image is now 1786 by 435 pixels as expected, and the file size is also modestly larger. The PNG image, displayed on a standard desktop screen or even a mobile phone display should now appear sharper, as shown in +@fig:convert600dpiSVGtoPNG. But the white border on three sides still shows up for reasons unclear to me. My guess is that it might have to do with getting an integer number of pixels in the PNG output.
+The PNG image is now 1786 by 435 pixels as expected, and the file size is also modestly larger. The PNG image, displayed on a standard desktop screen or even a mobile phone display should now appear sharper, as shown in @fig:convert600dpiSVGtoPNG. But the white border on three sides still shows up for reasons unclear to me. My guess is that it might have to do with getting an integer number of pixels in the PNG output.
 
 ![Sharper PNG image from SVG using `convert` at 600 dpi.]({attach}images/text-only-600-dpi-svg-convert.png){#fig:convert600dpiSVGtoPNG width=80%}
 
@@ -862,7 +862,7 @@ less text-only-pdftocairo.svg | grep viewBox
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="214.31pt" height="52.16pt" viewBox="0 0 214.31 52.16" version="1.2">
 ```
 
-The PDF _page size_ and the SVG _viewBox_ are identical at 214.31 by 52.16 pts, as we would expect. For comparison, the [`text-only.pdf` image]({attach}images/text-only.pdf) may be opened on a separate browser tab and compared with the SVG shown in +@fig:SVGfromPDFviapdftocairo.
+The PDF _page size_ and the SVG _viewBox_ are identical at 214.31 by 52.16 pts, as we would expect. For comparison, the [`text-only.pdf` image]({attach}images/text-only.pdf) may be opened on a separate browser tab and compared with the SVG shown in @fig:SVGfromPDFviapdftocairo.
 
 ![SVG version of `text-only` image converted from PDF by `pdftocairo`.]({attach}images/text-only-pdftocairo.svg){#fig:SVGfromPDFviapdftocairo width=80%}
 
