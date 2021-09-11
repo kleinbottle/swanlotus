@@ -15,9 +15,7 @@ html-math-method:
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 
 filters:
-  - pandoc-eqnos
-  - pandoc-fignos
-  - pandoc-tablenos
+  - pandoc-crossref
   - citeproc
 
 csl: "./ieee-with-url.csl"
@@ -26,12 +24,11 @@ metadata:
   link-citations: false
   reference-section-title: References
   lang: en-GB
-  xnos-capitalise: true
-  xnos-cleveref: true
-  tablenos-cleveref: true
-  eqnos-star-name: Equation
-  eqnos-plus-name: Equation
-  fignos-star-name: Figure
-  fignos-plus-name: Figure
-  tablenos-star-name: Table
-  tablenos-plus-name: Table
+# pandoc-crossref metadata
+  figureTitle: "Figure"
+  tableTitle: "Table"
+  figPrefix: "Figure"
+  eqnPrefix: "Equation"
+  tblPrefix: "Table"
+  loftitle: "# List of Figures"
+  lotTitle: "# List of Tables"
