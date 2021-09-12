@@ -322,7 +322,7 @@ The statues of Socrates and Diotima shown in this blog are exhibited outside the
 
 Apart from highlighted code, all other illustrations were generated using XeLaTeX and applicable [packages](https://ctan.org/pkg?lang=en), including the [TikZ-PGF suite](https://github.com/pgf-tikz/pgf). Much code that is freely available on the Web was accessed for guidance on typesetting these illustrations.
 
-# Feedback
+## Feedback
 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.

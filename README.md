@@ -38,17 +38,18 @@ Follow the steps below to set up your development environment:
 
     You will be asked for your username and password again but they will be saved in the file `~/.git-credentials` for future use.
 
-1. Set the commit username and email address locally just for this repository.
+1. Set the commit username, email address and rebase option globally. To set them for just this repository remove `--global` option in the commands below.
 
     ```bash
-    git config user.name "<github-username>"
-    git config user.email "<github-email-address>"
+    git config --global user.name "<github-username>"
+    git config --global user.email "<github-email-address>"
+    git config --global pull.rebase true
     ```
 
-1. Set up the default editor for amending of commits.
+1. Set up the default editor for amending commits. Again remove `--global` to just set it for this repository.
 
     ```bash
-    git config core.editor "<editor>"
+    git config --global core.editor "<editor>"
     ```
 
 1. Create a Python 3 virtual environment, activate it and install pelican and associated dependencies.
@@ -121,6 +122,12 @@ To create a new blog entry follow the steps below:
     **Note: Execute the following commands from the repository root.**
 
     Once you have pushed the changes Netlify will build the site automatically and the new content will be available on the [site](https://swanlotus.netlify.app).
+
+### Writing only selected blogs
+
+If you are working on a single blog you may want to just regenerate that blog instead of the whole site to save time.
+
+To do the above set the `ARTICLE_PATHS = ["blogs"]` to `ARTICLE_PATHS = ["blogs/<blog-directory>"]` this way only the blog in that directory will be regenerated.
 
 ## Creating Static Pages
 

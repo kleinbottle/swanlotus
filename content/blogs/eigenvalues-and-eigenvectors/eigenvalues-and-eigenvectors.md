@@ -434,7 +434,7 @@ Observations like these suggest that our inferences are only as good as our assu
 
 One general hypothesis that we could examine is whether it is generally true that the normalized eigenvector associated with an eigenvalue of $1$ does indeed represent the steady state of the system represented by any transition matrix. If so, we would have a theorem on our hands.
 
-#### Feedback
+## Feedback
 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.

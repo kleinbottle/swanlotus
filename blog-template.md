@@ -1,17 +1,17 @@
 ---
-title: 
+title:
 author: R (Chandra) Chandrasekhar
-date: 
-modified: 
-category: 
-tags: 
-summary: 
-opengraphimage: 
+date:
+modified:
+category:
+tags:
+summary:
+opengraphimage:
 ---
 
 
 
-# Feedback
+## Feedback
 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.

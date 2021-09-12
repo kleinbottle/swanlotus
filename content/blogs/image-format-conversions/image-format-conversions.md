@@ -73,7 +73,7 @@ Some image file formats are amenable to compression, which further reduces file 
 
 ### Pixel densities and such
 
-Raster images have a size denoted by the number of pixels comprising the _width_ and _height_ of the image. The actual _dimensions_ of the displayed image, however, depend on the resolution of the display device. 
+Raster images have a size denoted by the number of pixels comprising the _width_ and _height_ of the image. The actual _dimensions_ of the displayed image, however, depend on the resolution of the display device.
 
 Such images appear better defined at higher resolutions or pixel densities. The units of resolution, or density, commonly used are _dots per inch_ (dpi)---in the context of printers---or _pixels per inch_ (ppi)---in the context of displays---both of which reference the number of dots or pixels that may be accommodated in one linear inch. It is possible to specify these in dots per centimetre, or pixels per centimetre, but that usage has not caught on.
 
@@ -557,12 +557,12 @@ pdftoppm -jpeg -jpegopt "quality=100" -r 600 \
 -singlefile text-only.pdf text-only-600-dpi-ppm
 
 # Using `convert` from ImageMagick for PNG to JPEG
-# Source PNG file was output by `pdftocairo` 
+# Source PNG file was output by `pdftocairo`
 convert -units pixelsperinch -density 600 -quality 100 \
 text-only-600-dpi-cairo.png text-only-600-dpi-cairo-IM.jpg
 
 # Using `convert` from ImageMagick for PNG to JPEG
-# Source PNG file was output by `pdftoppm` 
+# Source PNG file was output by `pdftoppm`
 convert -units pixelsperinch -density 600 -quality 100 \
 text-only-600-dpi-ppm.png text-only-600-dpi-ppm-IM.jpg
 ```
@@ -668,7 +668,7 @@ awk '{print $1 "\t" $2}'
 
 ![Fuzzy PNG image from SVG using `convert` at 96 dpi.]({attach}images/text-only-96-dpi-svg-convert.png){#fig:convert96dpiSVGtoPNG width=80%}
 
-The PNG image lacks the sharpness of definition the original exhibited, which is not surprising because an increase in image resolution has not been achieved, and moreover, the file size has been reduced. Note the white border that has been added to three sides of the image, perhaps to arrive at an integer number of pixels for the image dimensions. 
+The PNG image lacks the sharpness of definition the original exhibited, which is not surprising because an increase in image resolution has not been achieved, and moreover, the file size has been reduced. Note the white border that has been added to three sides of the image, perhaps to arrive at an integer number of pixels for the image dimensions.
 
 Let us repeat the above process but with a higher ppi for the PNG, say 600:
 
@@ -701,7 +701,7 @@ Font support in SVG is not widespread, and format conversions might result in no
 
 There is a growing number of tools that can convert an SVG to a PNG image. Among these are:
 
-a.  [`convert`](https://imagemagick.org/script/convert.php) from `ImageMagick`; 
+a.  [`convert`](https://imagemagick.org/script/convert.php) from `ImageMagick`;
 
 a.  [`Inkscape`](https://inkscape.org/);
 
@@ -889,7 +889,7 @@ When SVG is the source image, there are four routes to format conversion:
 #.  [`cairosvg`](https://cairosvg.org/), which parses well-formed SVG files, draws them on a Cairo surface, and then uses  `cairo` to export them to PDF, [PS](https://techterms.com/definition/postscript), PNG, and even to SVG again.
 
 #.  [`rsvg-convert`](https://en.wikipedia.org/wiki/Librsvg), which is based on `librsvg` and which uses `libxml` and `cairo` to render and convert SVG files into other formats.
- 
+
 #.  [`inkscape`](https://inkscape.org/), which opens SVG files natively and can export them as a PDF, PNG, etc.
 
 #.  [`convert`](https://imagemagick.org/script/convert.php), which can convert an SVG to PDF and also to any raster format like PNG.
@@ -967,10 +967,10 @@ The image `animals-from-svg-IM.pdf` is pixellated on zooming in and we should av
 
 #.  When the source format is SVG and the destination format is either PDF or a raster format, the tools of choice are either `cairosvg` or `inkscape` depending on image content.
 
-*@tbl:formats summarizes this information, which is current at the time of writing, but could change as the image utilities landscape changes with time. 
+*@tbl:formats summarizes this information, which is current at the time of writing, but could change as the image utilities landscape changes with time.
 
 Conversion Type     Tool
-----------------    ----------- 
+----------------    -----------
 raster to raster    `convert`
 raster to PDF       `convert`
 raster to SVG       `convert`
@@ -993,7 +993,7 @@ In November 2020, [another security vulnerability was discovered](https://portsw
 
 Recent versions of the `ImageMagick` suite, bundled with major distributions, should have correctly configured `policy.xml` files that will block known exploits. [Sandboxing](https://www.techopedia.com/definition/25266/sandboxing) is another technique to quarantine the system from possible vulnerabilities. Above all, it is vital to keep  system and application software up to date to avail of evolutions in performance and security.
 
-# Feedback
+## Feedback
 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.

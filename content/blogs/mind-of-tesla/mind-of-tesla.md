@@ -816,11 +816,11 @@ autistic idiot savant, _or was it simply that Tesla was a man from our future wh
 had torn the veil of time to visit us and give us a glimpse of the future
 capabilities of humankind?_
 
-#### Acknowledgements
+## Acknowledgements
 
 For helpful comments and discussions, I thank N Chandrasekhar, R Gopalkrishnan, M Jegasothy, P Jones, M R Jupp, B Raguram, B Readhead, and R Sivasankar.
 
-# Feedback
+## Feedback
 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
