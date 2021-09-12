@@ -170,3 +170,17 @@ To create a static page like the Home page follow the steps below:
     **Note: Execute the following commands from the repository root.**
 
     Once you have pushed the changes Netlify will build the site automatically and the new content will be available on the [site](https://swanlotus.netlify.app).
+
+## Building on Netlify
+
+[Netlify](https://www.netlify.com/) uses the [Ubuntu 20.04 LTS Focal Fossa](https://releases.ubuntu.com/20.04/) image to build this site. The latest version of Python on this image is 3.8, so we have set the Python version in `runtime.txt` accordingly. More information about the available packages and their versions are available [here](https://github.com/netlify/build-image/blob/focal/included_software.md).
+
+We always want to use the latest version of Pandoc and the [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref) filter. These packages may be unavailable or outdated on the image. The Netlify community suggested specifying the pandoc and pandoc-crossref packages in a `Brewfile.netlify` file, which will instruct the builder to download these packages from [Homebrew](https://brew.sh/) and install them on the image. This feature has been released as an Alpha and may change significantly in the future.
+
+The build system on Netlify uses the following command to build the site:
+
+```bash
+pelican content -s publishconf.py
+```
+
+The `publishconf.py` file contains settings that are specific to the live site and override the settings in `pelicanconf.py`. Do not update `publishconf.py` unless absolutely necessary as this may break the live site.
