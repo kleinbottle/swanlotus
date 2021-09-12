@@ -127,7 +127,7 @@ To create a new blog entry follow the steps below:
 
 If you are working on a single blog you may want to just regenerate that blog instead of the whole site to save time.
 
-To do the above set the `ARTICLE_PATHS = ["blogs"]` to `ARTICLE_PATHS = ["blogs/<blog-directory>"]` in `pelicanconf.py` this way only the blog in that directory will be regenerated.
+To do the above set the `ARTICLE_PATHS = ["blogs"]` to `ARTICLE_PATHS = ["blogs/<blog-directory>"]` in `pelicanconf.py`. This way only the blog in that specific directory will be regenerated.
 
 ## Creating Static Pages
 
