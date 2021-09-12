@@ -1,6 +1,6 @@
 # SwanLotus Website
 
-This repository contains the source code and content for the [SwanLotus](http://swanlotus.org) website.
+This repository contains the source code and content for the [SwanLotus](https://swanlotus.netlify.app) website.
 
 The website uses the [Pelican](https://blog.getpelican.com/) static site generator.
 
