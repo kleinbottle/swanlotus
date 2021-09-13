@@ -21,10 +21,11 @@ filters:
 csl: "./ieee-with-url.csl"
 
 metadata:
-  link-citations: false
+  link-citations: true
   reference-section-title: References
   lang: en-GB
 # pandoc-crossref metadata
+  linkReferences: true
   figureTitle: "Figure"
   tableTitle: "Table"
   figPrefix: "Figure"
