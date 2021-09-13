@@ -4346,6 +4346,11 @@ html {
   position: fixed;
   top: 0em;
   width: 100%;
+}
+
+.container > .navbar,
+.container > .navbar .navbar-menu,
+.container > .navbar .navbar-brand {
   background-color: #7a7a7a;
   padding: 0em;
 }
