@@ -1,5 +1,0 @@
-<!--This book is released under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International licence](https://creativecommons.org/licenses/by-nc-nd/4.0/), easily recognized by the following logo:
-
-![CC-BY-NC-ND-logo]({static}images/by-nc-nd.svg){ width=50% }
-
-For licence details, [see here](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode)-->
