@@ -65,12 +65,15 @@ html
     background-color: $body-background-color
 
 /* Styles for navigation bar */
-.navbar,
-.container .navbar .navbar-menu,
-.container .navbar .navbar-brand
+.container > .navbar
+    position: fixed
+    top: 0em
+    width: 100%
     background-color: $navbar-background-color
-    margin: 0 0.75em
     padding: $navbar-padding
+
+.container > .navbar .navbar-brand
+    margin-left: 0em
 
 .navbar-item img
     max-height: 3.5rem
@@ -92,6 +95,7 @@ html
 
 /* Style for two column container */
 #two-column
+    margin-top: 4.5em // Added so that fixed navigation bar does not overlap content
     padding: $two-column-padding
 
 /* Styles for main column */
