@@ -4339,11 +4339,11 @@ a.box:active {
 /* Set Background for body tag */
 html {
   background-color: #7a7a7a;
-  scroll-padding-top: 5em;
+  scroll-padding-top: 4.5em;
 }
 
 body {
-  margin: 5em auto 0;
+  margin: 4.5em auto 0;
 }
 
 /* Styles for navigation bar */
