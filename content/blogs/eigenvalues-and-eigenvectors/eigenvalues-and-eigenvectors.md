@@ -55,7 +55,7 @@ I\boldsymbol{v} = 1\boldsymbol{v}
 $$ {#eq:succinct}
 $I$, on the left, is the _identity matrix_, the number $1$ on the right is called an _eigenvalue_ and the vector $\boldsymbol{v}$ is called an _eigenvector_. Note that there are no strictures on $\boldsymbol{v}$. So, in this particular case, _all_ vectors $\boldsymbol{v}$ are eigenvectors but there is only _one_ eigenvalue, namely $1$. This example, however, is both unusual and contrived, because the identity matrix is a _special_ type of _square matrix_ with ones on its principal diagonal and zeros elsewhere.
 
-*@eq:succinct is a particular case of the general equation for eigenvalues and eigenvectors, which is written:
+@eq:succinct is a particular case of the general equation for eigenvalues and eigenvectors, which is written:
 $$
 M\boldsymbol{v} = \lambda \boldsymbol{v}
 $$ {#eq:eigen}
@@ -219,7 +219,7 @@ Let the column-vector $\boldsymbol{w}_{k}$ represent the probabilities for a par
 $$
 \boldsymbol{w}_{k+1} = M\boldsymbol{w}_{k}
 $$ {#eq:recurrence}
-*@eq:recurrence) is called a [_recurrence relation_][recurrence] or _difference equation_, and in our case, it represents the evolution of a dynamical system in time, namely the weather. Just for completeness, let the initial condition be given by:
+@eq:recurrence) is called a [_recurrence relation_][recurrence] or _difference equation_, and in our case, it represents the evolution of a dynamical system in time, namely the weather. Just for completeness, let the initial condition be given by:
 $$
 \boldsymbol{w}_{0} = \begin{bmatrix}0.55\\0.34\\0.11\end{bmatrix}
 $$ {#eq:initial}
