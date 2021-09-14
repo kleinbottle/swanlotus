@@ -158,7 +158,7 @@ A worked example would normally have made its way here at this point in the arti
 
 ## Resources
 
-I hope that this article has not been so brief as to be cryptic and off-putting. To those in search of greater rigour or a more formal exposition, I would recommend a good linear algebra textbook. The venerable tome that I used at university went by the acronym "KKOP" after the initials of the surnames of the four authors, Kreider, Kuller, Ostberg, and Perkins [@kkop1966]. Unfortunately, it is out of print, but as a consolation, +@fig:kkop is an image of my copy. \emojifont :disappointed:\normalfont
+I hope that this article has not been so brief as to be cryptic and off-putting. To those in search of greater rigour or a more formal exposition, I would recommend a good linear algebra textbook. The venerable tome that I used at university went by the acronym "KKOP" after the initials of the surnames of the four authors, Kreider, Kuller, Ostberg, and Perkins [@kkop1966]. Unfortunately, it is out of print, but as a consolation, @fig:kkop is an image of my copy. \emojifont :disappointed:\normalfont
 
 ![The KKOP book: _An Introduction to Linear Analysis_.]({attach}images/kkop.jpg){#fig:kkop width=50%}
 

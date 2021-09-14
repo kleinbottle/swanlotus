@@ -967,7 +967,7 @@ The image `animals-from-svg-IM.pdf` is pixellated on zooming in and we should av
 
 #.  When the source format is SVG and the destination format is either PDF or a raster format, the tools of choice are either `cairosvg` or `inkscape` depending on image content.
 
-*@tbl:formats summarizes this information, which is current at the time of writing, but could change as the image utilities landscape changes with time.
+@tbl:formats summarizes this information, which is current at the time of writing, but could change as the image utilities landscape changes with time.
 
 Conversion Type     Tool
 ----------------    -----------

@@ -408,11 +408,11 @@ Tesla's mental mode during his virtual laboratory experiments is given below.
 
 ### Dreams, lucid dreams, and the virtual laboratory
 
-It has generally been believed that wakefulness and sleep are mutually exclusive states of both body and mind. Apart from episodes of absent-mindedness that pass for day-dreaming and for abnormal mental states such as hallucinations, it was also the general consensus that dreaming occurred only during the state of sleep. A simplified pictorial relationship between these states is shown in the Venn diagram of +@fig:three-states.
+It has generally been believed that wakefulness and sleep are mutually exclusive states of both body and mind. Apart from episodes of absent-mindedness that pass for day-dreaming and for abnormal mental states such as hallucinations, it was also the general consensus that dreaming occurred only during the state of sleep. A simplified pictorial relationship between these states is shown in the Venn diagram of @fig:three-states.
 
 ![Relationship between wakefulness, dreaming and sleep.^[A simplified picture of the relationship between the states of wakefulness, sleep, and dreaming. Wakefulness and sleep are mutually exclusive. Dreaming only occurs in the sleep state.]]({attach}images/three-states.svg){#fig:three-states width=100%}
 
-The phenomenon of [lucid dreaming](https://en.wikipedia.org/wiki/Lucid_dream) was scientifically established only in the 1980s. Psychophysiological research has since discovered that it occurs in [Rapid Eye Movement (REM) sleep](https://en.wikipedia.org/wiki/Rapid_eye_movement_sleep) and is as vivid---if not more vivid than---a normal dream. Nevertheless, the subject who is dreaming is aware that he or she is dreaming and, moreover, can volitionally alter the dream, unlike the regular dreamer [@laberge85; @laberge2000]. This means that the lucid dreamer occupies a paradoxical state at the borderline between sleep and wakefulness in which the body is essentially in REM sleep, but the mind is aware that it is dreaming, and is capable of controlling the dream. Both the dream experience, and the fact that it was a conscious dream, can be recalled during the wakeful state. After the recognition and acceptance of lucid dreaming as a legitimate mental state, we may represent the relationship between wakefulness, sleep, and dreaming by the modified Venn diagram shown in +@fig:lucid.
+The phenomenon of [lucid dreaming](https://en.wikipedia.org/wiki/Lucid_dream) was scientifically established only in the 1980s. Psychophysiological research has since discovered that it occurs in [Rapid Eye Movement (REM) sleep](https://en.wikipedia.org/wiki/Rapid_eye_movement_sleep) and is as vivid---if not more vivid than---a normal dream. Nevertheless, the subject who is dreaming is aware that he or she is dreaming and, moreover, can volitionally alter the dream, unlike the regular dreamer [@laberge85; @laberge2000]. This means that the lucid dreamer occupies a paradoxical state at the borderline between sleep and wakefulness in which the body is essentially in REM sleep, but the mind is aware that it is dreaming, and is capable of controlling the dream. Both the dream experience, and the fact that it was a conscious dream, can be recalled during the wakeful state. After the recognition and acceptance of lucid dreaming as a legitimate mental state, we may represent the relationship between wakefulness, sleep, and dreaming by the modified Venn diagram shown in @fig:lucid.
 
 ![Modified relationship between wakefulness, dreaming and sleep.^[Modified, simplified relationship between wakefulness, dreaming, and sleep after the recognition and acceptance of lucid dreaming as a legitimate mental state. Lucid dreamers are mentally aware that they are dreaming and have conscious control over their dreams, while paradoxically, their bodies are asleep.]]({attach}images/lucid.svg){#fig:lucid width=100%}
 
@@ -737,7 +737,7 @@ sensory perception evolved, the vocabulary of languages kept pace to deal with
 this increasing sophistication. Tracking the gradual development of the words
 for different colours in ancient languages and literature, he suggested that the
 perception and recognition of colours kept pace with each other according to the
-tree illustrated in +@fig:colour-tree. Bucke claimed that:
+tree illustrated in @fig:colour-tree. Bucke claimed that:
 
 >When a new faculty appears in a race it will be found, in the very beginning, in
 one individual of that race; later it will be found in a few individuals; after
