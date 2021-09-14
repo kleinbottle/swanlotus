@@ -16,7 +16,7 @@ SwanLotus is the home on the Web for my book [_Secrets of Academic Success_](sas
 
 I also [blog](blogs.html) here on [eclectic](https://www.etymonline.com/search?q=eclectic) subjects. Some blogs are short and light. Others are long and heavy, and are better described as _slogs_. :wink:
 
-## Feedback
+## Contact
 
 I value and look forward to your ideas for improving _Secrets of Academic Success_ and  this website. Please [email your feedback to me](mailto:feedback.sasbook@gmail.com).
 
