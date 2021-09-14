@@ -60,14 +60,24 @@ $navbar-item-color: $white
 $main-content-order: 2
 $sidebar-content-order: 1
 
+/* Height of fixed navigation bar
+$navbar-height: 4.5em
+
 /* Set Background for body tag */
 html
     background-color: $body-background-color
-    scroll-padding-top: 4.5em // Setting to fixed navbar height so that anchors are not covered by navbar
+    // Without this setting whenever we clicked on link pointing to a heading
+    // or equation the navigation bar was covering the content that was linked
+    // adding this padding fixed the issue.
+    // See https://stackoverflow.com/questions/15676399/prevent-fixed-navigation-bar-from-covering-texts-titles-after-clicking-a-link-or
+    scroll-padding-top: $navbar-height
 
 
 body
-    margin: 4.5em auto 0 // Setting to fixed navbar height so that anchors are not covered by navbar
+    // Without this setting whenever we clicked on link pointing to a heading
+    // or equation the navigation bar was covering the content that was linked.
+    // See https://stackoverflow.com/questions/15676399/prevent-fixed-navigation-bar-from-covering-texts-titles-after-clicking-a-link-or
+    margin: $navbar-height auto 0
 
 /* Styles for navigation bar */
 .container > .navbar
@@ -104,7 +114,7 @@ body
 
 /* Style for two column container */
 #two-column
-    margin-top: 4.5em // Added so that fixed navigation bar does not overlap content
+    margin-top: $navbar-height // Added so that navigation bar does not cover content
     padding: $two-column-padding
 
 /* Styles for main column */
