@@ -11,7 +11,7 @@ opengraphimage: "rene-descartes.jpg"
 
 ## The request
 
-My friend Solus "Sol" Simkin has a well-earned reputation as a [Renaissance man](https://www.thefreedictionary.com/renaissance+man). Among other things, he is a virtuoso of design. He endows his creations with an ethereal air of perfection---where mathematics meets aesthetics---to transmogrify the mundane or banal into unforgettable works of art.
+My friend Solus "Sol" Simkin has a well-earned reputation as a [Renaissance man](https://www.thefreedictionary.com/renaissance+man). Among other things, he is a virtuoso of design. He endows his creations with an air of ethereal perfection---where mathematics meets aesthetics---to transmogrify the mundane or banal into unforgettable works of art.
 
 Some weeks ago, he was approached by---of all establishments---a firm of consulting philosophers, who wanted to brand their practice with a logo. They wanted something impressive, memorable, and easily recognized as pertaining to philosophy. They left the details to him, emphatically observing that they did not want their personal biases to colour their logo (pun intended). Image, icon, shield, or plain text: the choice of logo was his.
 

@@ -7,7 +7,10 @@
   12pt,
   british,
   a4paper,
-]{article}
+  rgb,
+  dvipsnames,
+  svgnames,
+  hyphens]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -108,38 +111,28 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% $HOME/.pandoc/defaults/latex-header-includes.tex
+% Common header includes for both lualatex and xelatex engines.
+%
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor} % Done as classoptions in latex.yaml
 \AtBeginEnvironment{quote}{\small}
 \AtBeginEnvironment{longtable}{\centering}
+%
+\usepackage{setspace} % Font-specific spacing set in font-specific selection file
 %
 \usepackage{etoolbox}
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{svg}
   \svgsetup{inkscapeversion=1}
-\usepackage[Latin,Tamil,Devanagari]{ucharclasses}
-  \setmainfont[SmallCapsFont={Charis SIL Small Caps}]{Charis SIL}
-  \setsansfont[Numbers=OldStyle,BoldFont={* Semibold}]{Source Sans Pro}
-  \setmonofont[Scale=0.90]{Fira Mono}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-  \setmathfont[bold-style=ISO]{STIX Two Math}
-  \newfontfamily\tamilfont[Script=Tamil]{Noto Sans Tamil}
-  \setTransitionsFor{Tamil}{\tamilfont}{\normalfont}
-  \setTransitionTo{Tamil}{\tamilfont}{}
-  \setTransitionFrom{Tamil}{\normalfont}
-  \newfontfamily\devfont[Script=Devanagari]{Noto Sans Devanagari}
-  \setTransitionsFor{Devanagari}{\devfont}{\normalfont}
-  \setTransitionTo{Devanagari}{\devfont}{}
-  \setTransitionFrom{Devanagari}{\normalfont}
-  \newfontfamily{\emojifont}{Symbola}
-\urlstyle{tt}
-\usepackage[all]{nowidow}
 %
-%\usepackage[margins=raggedright]{floatrow} 
+\urlstyle{tt}
+\usepackage[defaultlines=4,all]{nowidow}
+%
+%\usepackage[margins=raggedright]{floatrow} % Commented out since it can be problematic 
 % Left aligns tables: Pandoc Tips and Tricks
 %
-%
 % Adjust punctuation for footnotes
-%
 %
 \usepackage{fnpct} % footnote _before_ punctuation reversed and adjusted.
   \setfnpct{after-dot-space=-0.15em,after-comma-space=-0.150em,add-punct-marks=;[0.06em]![0.06em]?[0.06em]:[0.06em]}
@@ -149,56 +142,33 @@
 \usepackage{fontsize}
 %
 \usepackage{pdflscape}
- %% pandoc-eqnos
-\usepackage[capitalise]{cleveref}
-  \crefname{equation}{Equation}{Equations}
-  \crefname{figure}{Figure}{Figures}
-  \crefname{table}{Table}{Tables}
-%% pandoc-fignos
-\usepackage{caption}
-%% pandoc-fignos: environment to disable figure caption prefixes
-    \makeatletter
-    \newcounter{figno}
-    \newenvironment{fignos:no-prefix-figure-caption}{
-      \caption@ifcompatibility{}{
-        \let\oldthefigure\thefigure
-        \let\oldtheHfigure\theHfigure
-        \renewcommand{\thefigure}{figno:\thefigno}
-        \renewcommand{\theHfigure}{figno:\thefigno}
-        \stepcounter{figno}
-        \captionsetup{labelformat=empty}
-      }
-    }{
-      \caption@ifcompatibility{}{
-        \captionsetup{labelformat=default}
-        \let\thefigure\oldthefigure
-        \let\theHfigure\oldtheHfigure
-        \addtocounter{figure}{-1}
-      }
-    }
-    \makeatother
-%%
-%% pandoc-tablenos: environment to disable table caption prefixes
-    \makeatletter
-    \newcounter{tableno}
-    \newenvironment{tablenos:no-prefix-table-caption}{
-      \caption@ifcompatibility{}{
-        \let\oldthetable\thetable
-        \let\oldtheHtable\theHtable
-        \renewcommand{\thetable}{tableno:\thetableno}
-        \renewcommand{\theHtable}{tableno:\thetableno}
-        \stepcounter{tableno}
-        \captionsetup{labelformat=empty}
-      }
-    }{
-      \caption@ifcompatibility{}{
-        \captionsetup{labelformat=default}
-        \let\thetable\oldthetable
-        \let\theHtable\oldtheHtable
-        \addtocounter{table}{-1}
-      }
-    }
-    \makeatother
+%
+\usepackage[capitalize,noabbrev]{cleveref}
+%
+% Font-related; font-selection is in iles $HOME/.pandoc/defaults/[fontname]-font.tex
+% 
+\usepackage[main=british]{babel}
+%
+\newfontfamily{\emojifont}{Symbola} % since used generally; KIV proper solution
+%
+\usepackage{newunicodechar}
+%\newcommand*{\myrightarrow}{\textsf{→}} % U+2192 or 0x2192
+%\newunicodechar{→}{\myrightarrow}
+% Also OK:
+% \newunicodechar{→}{\texttt{→}} % U+2192 or 0x2192
+\newunicodechar{→}{\texttt{→}}
+%
+% $HOME/.pandoc/defaults/charis-font.tex
+% Standard font selection a la fontspec
+% 
+\setromanfont{Merriweather}
+\setsansfont[BoldFont={* Semibold}]{Source Sans Pro}
+\setmonofont[Scale=0.95]{Fira Mono}
+\setmathfont[bold-style=ISO]{STIX Two Math}
+\defaultfontfeatures{Mapping=TeX,Scale=MatchLowercase,Ligatures=TeX,Renderer=HarfBuzz}
+%
+\spacing{1.3} % For merriweather
+%
 \usepackage{titling}
 \usepackage{fancyhdr}
     \pagestyle{fancy}
@@ -209,8 +179,6 @@
     \fancyhead[LO,RE]{\scshape\thetitle}
     \fancyfoot[CO,CE]{\small Copyright © 2006--\the\year, R (Chandra) Chandrasekhar}
     \fancyfoot[RE,RO]{\thepage}
-
-
 \ifXeTeX
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
   \usepackage{polyglossia}
@@ -262,7 +230,7 @@
 My friend Solus ``Sol'' Simkin has a well-earned reputation as a
 \href{https://www.thefreedictionary.com/renaissance+man}{Renaissance
 man}. Among other things, he is a virtuoso of design. He endows his
-creations with an ethereal air of perfection---where mathematics meets
+creations with an air of ethereal perfection---where mathematics meets
 aesthetics---to transmogrify the mundane or banal into unforgettable
 works of art.
 
@@ -410,9 +378,11 @@ question by
 \href{https://www.britannica.com/science/string-theory}{String Theory},
 which is a relative newcomer to theoretical physics, but one that has
 captured the common imagination, judging by the popular explanations
-that abound on the Web {[}1{]}--{[}3{]}. And whether string theory is or
-is not science, Popper notwithstanding, is an issue that is still up for
-debate {[}4{]}--{[}7{]}.
+that abound on the Web
+\protect\hyperlink{ref-mann2019}{{[}1{]}}--\protect\hyperlink{ref-jones2020}{{[}3{]}}.
+And whether string theory is or is not science, Popper notwithstanding,
+is an issue that is still up for debate
+\protect\hyperlink{ref-siegel2015}{{[}4{]}}--\protect\hyperlink{ref-francis2019}{{[}7{]}}.
 
 But, coming back to the task at hand, how would such an abstract idea as
 falsifiability find expression in a logo? Perhaps the correct medium for
@@ -431,11 +401,12 @@ coined by \href{https://en.wikipedia.org/wiki/Thomas_Kuhn}{Thomas
 Kuhn}---another celebrated philosopher of science---and popularized in
 his enduring tome,
 \href{https://www.amazon.com/Structure-Scientific-Revolutions-50th-Anniversary/dp/0226458121/}{\emph{The
-Structure of Scientific Revolutions}} {[}8{]}. Kuhn held that science
-did not evolve smoothly, but every so often experienced seismic
-corrections or radical changes of perspective that led to new theories
-that predicted the world much better than before. But how in heaven was
-he to squeeze all that into a logo? And wouldn't that narrow it to the
+Structure of Scientific Revolutions}}
+\protect\hyperlink{ref-kuhn2012}{{[}8{]}}. Kuhn held that science did
+not evolve smoothly, but every so often experienced seismic corrections
+or radical changes of perspective that led to new theories that
+predicted the world much better than before. But how in heaven was he to
+squeeze all that into a logo? And wouldn't that narrow it to the
 philosophy of science rather than to all of philosophy? Sol rued that he
 had entered another
 \href{https://www.merriam-webster.com/dictionary/cul-de-sac}{cul-de-sac}
@@ -492,12 +463,12 @@ too different from those in his dream.
 
 Since both Leibniz and Newton were renowned mathematicians as well, Sol
 got side-tracked thinking about whether the calculus was discovered or
-invented.\footnote{Such meandering, away from the straight and narrow of
+invented \footnote{Such meandering, away from the straight and narrow of
   his specified task, endowed his designs with a resplendent
-  intellectual sheen, but took its toll on timeliness.} It was probably
+  intellectual sheen, but took its toll on timeliness.}. It was probably
 the greatest scientific advance of its time. And priority for its
 discovery was an ugly bone of contention between Leibniz and Newton
-{[}9{]}.
+\protect\hyperlink{ref-bardi2007}{{[}9{]}}.
 
 And then it hit him like a ton of bricks. \emph{Calculus could not have
 been invented without coordinate geometry---that extraordinary offspring
@@ -507,8 +478,6 @@ of \emph{that} wunderkind was
 Descartes}. With bated breath, Sol searched the Web for images of René
 Descartes.
 
-\begin{fignos:no-prefix-figure-caption}
-
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth,height=\textheight]{images/rene-descartes.jpg}
@@ -516,8 +485,6 @@ Descartes.
 \href{https://commons.wikimedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren\%C3\%A9_Descartes.jpg}{Wikimedia
 Commons})}
 \end{figure}
-
-\end{fignos:no-prefix-figure-caption}
 
 And bingo! he had a \href{https://tinyurl.com/y57nykjd}{gallery full of
 faces} that were remarkably similar to the image of his reverie, with
@@ -529,14 +496,15 @@ eyes that were piercing and dreamy at the same time.
 Relieved that at last he was on the scent, Sol relaxed for a couple of
 days, which he spent reading about the
 \href{https://www.britannica.com/biography/Rene-Descartes}{life of
-Descartes} {[}10{]}. He chuckled when he read that ``the 22-year-old
-{[}Queen{]} Christina {[}of Sweden{]} perversely made the 53-year-old
-Descartes rise before 5:00 am to give her philosophy lessons, even
-though she knew of his habit of lying in bed until 11 o'clock in the
-morning.'' {[}10{]}. He read with chagrin that Descartes tragically died
-in Sweden from pneumonia, presumably caused by the Scandinavian winter
-and the duress of having to rise early in the morning to keep his
-appointment with his royal student.
+Descartes} \protect\hyperlink{ref-watson2020}{{[}10{]}}. He chuckled
+when he read that ``the 22-year-old {[}Queen{]} Christina {[}of
+Sweden{]} perversely made the 53-year-old Descartes rise before 5:00 am
+to give her philosophy lessons, even though she knew of his habit of
+lying in bed until 11 o'clock in the morning.''
+\protect\hyperlink{ref-watson2020}{{[}10{]}}. He read with chagrin that
+Descartes tragically died in Sweden from pneumonia, presumably caused by
+the Scandinavian winter and the duress of having to rise early in the
+morning to keep his appointment with his royal student.
 
 Sol foraged for anything that could throw light---like Newton's falling
 apple---on how Descartes got his primary insight of superimposing an
@@ -755,15 +723,11 @@ The above incantation, used with the
 \href{https://fonts.google.com/specimen/Noto+Serif}{Noto Serif} font,
 gave birth to this image:
 
-\begin{fignos:no-prefix-figure-caption}
-
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth,height=\textheight]{images/firstcut.svg}
 \caption{Logo: the first cut}
 \end{figure}
-
-\end{fignos:no-prefix-figure-caption}
 
 \hypertarget{the-second-and-third-cuts}{%
 \subsubsection{The second and third
@@ -786,15 +750,11 @@ context-sensitive bunch. Background, foreground, and contrast would hold
 final sway. After experimenting for half a day, Sol settled on the logo
 shown below:
 
-\begin{fignos:no-prefix-figure-caption}
-
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth,height=\textheight]{images/secondcut.svg}
 \caption{Logo: the second cut}
 \end{figure}
-
-\end{fignos:no-prefix-figure-caption}
 
 He stared at this version long and hard and felt satisfied, but not
 fully. There was a nagging sense of incompleteness hanging over the logo
@@ -816,15 +776,11 @@ on either side of the centre line that dissected the logo into two: left
 and right. He fiddled with the keyboard on the computer and finally
 settled on his third, and possibly final cut, shown below:
 
-\begin{fignos:no-prefix-figure-caption}
-
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth,height=\textheight]{images/thirdcut.svg}
 \caption{Logo: the third cut}
 \end{figure}
-
-\end{fignos:no-prefix-figure-caption}
 
 It was not perfect but it had \emph{some} symmetry, \emph{some}
 gradation in colour to invoke a theme, \emph{some} changes in level to
@@ -855,15 +811,11 @@ versions were ghastly to his gaze. So, he turned to
 \href{https://en.wikipedia.org/wiki/Small_caps}{small capitals} in the
 serif family, and got a result that was more than half pleasing:
 
-\begin{fignos:no-prefix-figure-caption}
-
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth,height=\textheight]{images/penultimatecut.svg}
 \caption{Logo: the penultimate cut}
 \end{figure}
-
-\end{fignos:no-prefix-figure-caption}
 
 For the sheer heck of it, he simply inserted three extra words in his
 code, to see how the sans serif fonts would look like in small capitals.
@@ -911,15 +863,11 @@ For the record, his code is shown in full below:
 And the result, with sans serif, small capitals, without first-letter
 capitalization, appeared thus:
 
-\begin{fignos:no-prefix-figure-caption}
-
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth,height=\textheight]{images/finalcut.svg}
 \caption{Logo: the final cut}
 \end{figure}
-
-\end{fignos:no-prefix-figure-caption}
 
 \hypertarget{finale}{%
 \subsubsection{Finale}\label{finale}}
@@ -948,7 +896,7 @@ is freely available on the Web was accessed for guidance on typesetting
 these illustrations.
 
 \hypertarget{feedback}{%
-\paragraph{Feedback}\label{feedback}}
+\subsection{Feedback}\label{feedback}}
 
 Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
@@ -964,7 +912,7 @@ comments and corrections.
 \begin{CSLReferences}{0}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-mann2019}{}}%
 \CSLLeftMargin{{[}1{]} }
-\CSLRightInline{A. Mann, {`{What Is String Theory?}'} 20-Mar-2019.
+\CSLRightInline{A. Mann, {`{What Is String Theory?}'}, 20-Mar-2019.
 {[}Online{]}. Available:
 \url{https://www.livescience.com/65033-what-is-string-theory.html}.
 {[}Accessed: 12-Nov-2020{]}}
@@ -972,14 +920,14 @@ comments and corrections.
 \leavevmode\vadjust pre{\hypertarget{ref-wood2019}{}}%
 \CSLLeftMargin{{[}2{]} }
 \CSLRightInline{C. Wood, {`{What Is String Theory?}: Reference article:
-A simplified explanation and brief history of string theory,'}
+A simplified explanation and brief history of string theory'},
 11-Jul-2019. {[}Online{]}. Available:
 \url{https://www.space.com/17594-string-theory.html}. {[}Accessed:
 12-Nov-2020{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-jones2020}{}}%
 \CSLLeftMargin{{[}3{]} }
-\CSLRightInline{A. Z. Jones, {`{The Basics of String Theory},'}
+\CSLRightInline{A. Z. Jones, {`{The Basics of String Theory}'},
 02-Mar-2019. {[}Online{]}. Available:
 \url{https://www.thoughtco.com/what-is-string-theory-2699363}.
 {[}Accessed: 12-Nov-2020{]}}
@@ -987,7 +935,7 @@ A simplified explanation and brief history of string theory,'}
 \leavevmode\vadjust pre{\hypertarget{ref-siegel2015}{}}%
 \CSLLeftMargin{{[}4{]} }
 \CSLRightInline{E. Siegel, {`{Why String Theory Is Not A Scientific
-Theory},'} 23-Dec-2015. {[}Online{]}. Available:
+Theory}'}, 23-Dec-2015. {[}Online{]}. Available:
 \url{https://www.forbes.com/sites/startswithabang/2015/12/23/why-string-theory-is-not-science/}.
 {[}Accessed: 12-Nov-2020{]}}
 
@@ -995,7 +943,7 @@ Theory},'} 23-Dec-2015. {[}Online{]}. Available:
 \CSLLeftMargin{{[}5{]} }
 \CSLRightInline{D. Castelvecchi, {`{Feuding physicists turn to
 philosophy for help}: String theory is at the heart of a debate over the
-integrity of the scientific method itself,'} 05-Jan-2016. {[}Online{]}.
+integrity of the scientific method itself'}, 05-Jan-2016. {[}Online{]}.
 Available:
 \url{https://www.nature.com/news/feuding-physicists-turn-to-philosophy-for-help-1.19076}.
 {[}Accessed: 12-Nov-2020{]}}
@@ -1004,14 +952,14 @@ Available:
 \CSLLeftMargin{{[}6{]} }
 \CSLRightInline{R. A. Batista and J. Primack, {`{Is String theory
 falsifiable?}: Can a theory that isn't completely testable still be
-useful to physics?'} {[}Online{]}. Available:
+useful to physics?'}. {[}Online{]}. Available:
 \url{https://metafact.io/factchecks/30-is-string-theory-falsifiable}.
 {[}Accessed: 12-Nov-2020{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-francis2019}{}}%
 \CSLLeftMargin{{[}7{]} }
 \CSLRightInline{M. R. Francis, {`{Falsifiability and physics}: Can a
-theory that isn't completely testable still be useful to physics?'}
+theory that isn't completely testable still be useful to physics?'},
 23-Apr-2019. {[}Online{]}. Available:
 \url{https://www.scientificamerican.com/article/is-string-theory-science/}.
 {[}Accessed: 12-Nov-2020{]}}
@@ -1030,7 +978,7 @@ Books, 2007. }
 
 \leavevmode\vadjust pre{\hypertarget{ref-watson2020}{}}%
 \CSLLeftMargin{{[}10{]} }
-\CSLRightInline{R. A. Watson, {`René descartes,'} 10-Apr-2020.
+\CSLRightInline{R. A. Watson, {`René descartes'}, 10-Apr-2020.
 {[}Online{]}. Available:
 \url{https://www.britannica.com/biography/Rene-Descartes}. {[}Accessed:
 12-Nov-2020{]}}
