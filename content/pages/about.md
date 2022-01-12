@@ -8,7 +8,7 @@ save_as: "about.html"
 
 The swan and the lotus are ancient symbols in the tradition of [Sanātana Dharma](https://www.britannica.com/topic/sanatana-dharma). The swan is purported to be able to extract milk from a mixture of milk and water, and thus signifies discrimination. The lotus is rooted in mud, but produces an unsullied blossom, emblematic of purity and beauty.
 
-[Sarasvatī](https://en.wikipedia.org/wiki/Saraswati), the Goddess of Learning, is depicted as seated on a white lotus, and having a swan for her vehicle. So, this website, concerned as it is with learning, knowledge, and hopefully wisdom, has been named SwanLotus in [CamelCase](https://en.wikipedia.org/wiki/Camel_case).
+[Sarasvatī](https://en.wikipedia.org/wiki/Saraswati), the Goddess of Learning, is depicted as seated on a white lotus, and having a swan for her vehicle. So, this website---concerned as it is with learning, knowledge, and hopefully wisdom---has been named SwanLotus in [CamelCase](https://en.wikipedia.org/wiki/Camel_case).
 
 ## The logo
 
