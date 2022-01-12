@@ -4,10 +4,13 @@
 \PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
 %
 \documentclass[
-  11pt,
+  12pt,
   british,
   a4paper,
-]{article}
+  rgb,
+  dvipsnames,
+  svgnames,
+  hyphens]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -118,75 +121,26 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
-\usepackage{titling}
-\usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \fancyhead{}
-    \fancyfoot{}
-    \renewcommand{\headrulewidth}{0.2pt}
-    \renewcommand{\footrulewidth}{0.2pt}
-    \fancyhead[LO,RE]{\scshape\thetitle}
-    \fancyfoot[CO,CE]{\small Copyright © 2006--\the\year, R (Chandra) Chandrasekhar}
-    \fancyfoot[RE,RO]{\thepage}
-%% pandoc-eqnos
-\usepackage[capitalise]{cleveref}
-  \crefname{equation}{Equation}{Equations}
-  \crefname{figure}{Figure}{Figures}
-  \crefname{table}{Table}{Tables}
-%% pandoc-fignos
-\usepackage{caption}
-%% pandoc-fignos: environment to disable figure caption prefixes
-    \makeatletter
-    \newcounter{figno}
-    \newenvironment{fignos:no-prefix-figure-caption}{
-      \caption@ifcompatibility{}{
-        \let\oldthefigure\thefigure
-        \let\oldtheHfigure\theHfigure
-        \renewcommand{\thefigure}{figno:\thefigno}
-        \renewcommand{\theHfigure}{figno:\thefigno}
-        \stepcounter{figno}
-        \captionsetup{labelformat=empty}
-      }
-    }{
-      \caption@ifcompatibility{}{
-        \captionsetup{labelformat=default}
-        \let\thefigure\oldthefigure
-        \let\theHfigure\oldtheHfigure
-        \addtocounter{figure}{-1}
-      }
-    }
-    \makeatother
-%%
-
+% $HOME/.pandoc/defaults/latex-header-includes.tex
+% Common header includes for both lualatex and xelatex engines.
+%
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor} % Done as classoptions in latex.yaml
 \AtBeginEnvironment{quote}{\small}
 \AtBeginEnvironment{longtable}{\centering}
 %
-\setlength{\parindent}{0pt} % block paragraphs
+\usepackage{setspace} % Font-specific spacing set in font-specific selection file
+%
 \usepackage{etoolbox}
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{svg}
-\usepackage[Latin,Tamil,Devanagari]{ucharclasses}
-  \setmainfont[SmallCapsFont={Charis SIL Small Caps}]{Charis SIL}
-  \setsansfont[Numbers=OldStyle,BoldFont={* Semibold}]{Source Sans Pro}
-  \setmonofont[Scale=0.90]{Fira Mono}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-  \setmathfont[bold-style=ISO]{STIX Two Math}
-  \newfontfamily\tamilfont[Script=Tamil]{Noto Sans Tamil}
-  \setTransitionsFor{Tamil}{\tamilfont}{\normalfont}
-  \setTransitionTo{Tamil}{\tamilfont}{}
-  \setTransitionFrom{Tamil}{\normalfont}
-  \newfontfamily\devfont[Script=Devanagari]{Noto Sans Devanagari}
-  \setTransitionsFor{Devanagari}{\devfont}{\normalfont}
-  \setTransitionTo{Devanagari}{\devfont}{}
-  \setTransitionFrom{Devanagari}{\normalfont}
-  \newfontfamily{\emojifont}{Symbola}
-\urlstyle{sf}
-\usepackage[all]{nowidow}
+  \svgsetup{inkscapeversion=1}
 %
-%\usepackage[margins=raggedright]{floatrow} 
+\urlstyle{tt}
+\usepackage[defaultlines=4,all]{nowidow}
+%
+%\usepackage[margins=raggedright]{floatrow} % Commented out since it can be problematic 
 % Left aligns tables: Pandoc Tips and Tricks
-%
 %
 % Adjust punctuation for footnotes
 %
@@ -197,6 +151,44 @@
 %
 \usepackage{fontsize}
 %
+\usepackage{pdflscape}
+%
+\usepackage[capitalize,noabbrev]{cleveref}
+%
+% Font-related; font-selection is in iles $HOME/.pandoc/defaults/[fontname]-font.tex
+% 
+\usepackage[main=british]{babel}
+%
+\newfontfamily{\emojifont}{Symbola} % since used generally; KIV proper solution
+%
+\usepackage{newunicodechar}
+%\newcommand*{\myrightarrow}{\textsf{→}} % U+2192 or 0x2192
+%\newunicodechar{→}{\myrightarrow}
+% Also OK:
+% \newunicodechar{→}{\texttt{→}} % U+2192 or 0x2192
+\newunicodechar{→}{\texttt{→}}
+%
+% $HOME/.pandoc/defaults/charis-font.tex
+% Standard font selection a la fontspec
+% 
+\setromanfont{Merriweather}
+\setsansfont[BoldFont={* Semibold}]{Source Sans Pro}
+\setmonofont[Scale=0.95]{Fira Mono}
+\setmathfont[bold-style=ISO]{STIX Two Math}
+\defaultfontfeatures{Mapping=TeX,Scale=MatchLowercase,Ligatures=TeX,Renderer=HarfBuzz}
+%
+\spacing{1.3} % For merriweather
+%
+\usepackage{titling}
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0.2pt}
+    \renewcommand{\footrulewidth}{0.2pt}
+    \fancyhead[LO,RE]{\scshape\thetitle}
+    \fancyfoot[CO,CE]{\small Copyright © 2006--\the\year, R (Chandra) Chandrasekhar}
+    \fancyfoot[RE,RO]{\thepage}
 \ifXeTeX
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
   \usepackage{polyglossia}
@@ -238,6 +230,7 @@
 \begin{document}
 \maketitle
 
+\setlength{\parindent}{0pt} % block paragraph
 \thispagestyle{empty}
 
 
@@ -471,7 +464,7 @@ mathematical representation.
 A pixel in itself has no size or physical representation, it can only
 carry value through its relationship with the screen physical size,
 creating the resolution, or PPI. Understand this and screen density will
-have no secret for you. {[}1{]}
+have no secret for you. \protect\hyperlink{ref-gabriel2017}{{[}1{]}}
 \end{quote}
 
 \hypertarget{file-size-and-quality-again}{%
@@ -694,7 +687,8 @@ LLC} who now maintain the project. It is distributed under a
 license}. The
 \href{https://github.com/ImageMagick/ImageMagick}{authoritative source
 code repository} shows active development even today, 34 years after the
-suite was first released {[}2{]}.
+suite was first released
+\protect\hyperlink{ref-imagemagicksource}{{[}2{]}}.
 
 \texttt{ImageMagick} is so versatile and useful that it may rightfully
 be called the
@@ -730,7 +724,7 @@ online documentation} for further details. The power of
 Image Scripting Language. The examples in this blog use the command line
 versions of invoking \texttt{ImageMagick}. If they seem daunting,
 \href{https://imagemagick.org/script/command-line-processing.php}{refer
-to this explanation} {[}3{]}.
+to this explanation} \protect\hyperlink{ref-imcli}{{[}3{]}}.
 
 \hypertarget{test-images}{%
 \subsection{Test images}\label{test-images}}
@@ -1079,7 +1073,7 @@ compression level} used above is the default compression level in
 image dimensions, image compression, and image quality so that the image
 loads fast and looks good is
 \href{https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/}{quite
-an art}. {[}4{]}
+an art}. \protect\hyperlink{ref-newton2015}{{[}4{]}}
 
 To get an idea of the range of file sizes involved, let us try
 generating a composite image with extremes of the compression level,
@@ -1122,9 +1116,10 @@ zero---gives a file \emph{twice} the size of the uncompressed version
 and \emph{sixteen times} the size of the JPEG. And we have not even used
 two other related attributes:
 \href{https://stackoverflow.com/questions/27267073/imagemagick-lossless-max-compression-for-png}{filter
-and strategy} {[}5{]}. Getting the best tradeoff of image format, image
-size, file size, loading time, and image quality is still more of an art
-to be mastered than an algorithm to be applied.
+and strategy} \protect\hyperlink{ref-setchell2014}{{[}5{]}}. Getting the
+best tradeoff of image format, image size, file size, loading time, and
+image quality is still more of an art to be mastered than an algorithm
+to be applied.
 
 We may conclude from the above that non-textual, detail-rich images are
 better stored and displayed as JPEGs than PNGs.
@@ -1435,12 +1430,12 @@ To convert from vector to raster, we invoke commands like these:
 \NormalTok{{-}singlefile text{-}only.pdf text{-}only{-}600{-}dpi{-}ppm}
 
 \CommentTok{\# Using \textasciigrave{}convert\textasciigrave{} from ImageMagick for PNG to JPEG}
-\CommentTok{\# Source PNG file was output by \textasciigrave{}pdftocairo\textasciigrave{} }
+\CommentTok{\# Source PNG file was output by \textasciigrave{}pdftocairo\textasciigrave{}}
 \ExtensionTok{convert} \AttributeTok{{-}units}\NormalTok{ pixelsperinch }\AttributeTok{{-}density}\NormalTok{ 600 }\AttributeTok{{-}quality}\NormalTok{ 100 }\DataTypeTok{\textbackslash{}}
 \NormalTok{text{-}only{-}600{-}dpi{-}cairo.png text{-}only{-}600{-}dpi{-}cairo{-}IM.jpg}
 
 \CommentTok{\# Using \textasciigrave{}convert\textasciigrave{} from ImageMagick for PNG to JPEG}
-\CommentTok{\# Source PNG file was output by \textasciigrave{}pdftoppm\textasciigrave{} }
+\CommentTok{\# Source PNG file was output by \textasciigrave{}pdftoppm\textasciigrave{}}
 \ExtensionTok{convert} \AttributeTok{{-}units}\NormalTok{ pixelsperinch }\AttributeTok{{-}density}\NormalTok{ 600 }\AttributeTok{{-}quality}\NormalTok{ 100 }\DataTypeTok{\textbackslash{}}
 \NormalTok{text{-}only{-}600{-}dpi{-}ppm.png text{-}only{-}600{-}dpi{-}ppm{-}IM.jpg}
 \end{Highlighting}
@@ -1586,12 +1581,13 @@ look at the first block of text:
 
 The \emph{width}, \emph{height}, and \emph{viewBox} of the SVG image are
 all stated in \emph{points}, abbreviated as pt where, as we have already
-seen, 1 pt equals \textsuperscript{1}/\textsubscript{72} inch {[}6{]}.
-At a screen setting of 96 pixels per inch, 1 pt equals
-\textsuperscript{4}/\textsubscript{3} pixels. So, the native size of the
-\texttt{test-only} image as a PNG should be about 286 pixels by 70
-pixels on a 96 ppi monitor. When\texttt{convert} is applied on the SVG
-to yield the PNG, the latter is faithful to these unit conversions:
+seen, 1 pt equals \textsuperscript{1}/\textsubscript{72} inch
+\protect\hyperlink{ref-oreilly2019}{{[}6{]}}. At a screen setting of 96
+pixels per inch, 1 pt equals \textsuperscript{4}/\textsubscript{3}
+pixels. So, the native size of the \texttt{test-only} image as a PNG
+should be about 286 pixels by 70 pixels on a 96 ppi monitor.
+When\texttt{convert} is applied on the SVG to yield the PNG, the latter
+is faithful to these unit conversions:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1806,8 +1802,8 @@ options to shear or zoom the image and is more versatile.
 
 All of \texttt{inkscape}, \texttt{cairosvg}, and \texttt{rsvg-convert}
 produce PNG files of the same size and visual quality, as is apparent
-from Figures \ref{fig:inkscapeSVGtoPNG}, \ref{fig:cairosvgSVGtoPNG}, and
-\ref{fig:rsvg-convertSVGtoPNG}.
+from Figures !\cref{fig:inkscapeSVGtoPNG}, !\cref{fig:cairosvgSVGtoPNG},
+and !\cref{fig:rsvg-convertSVGtoPNG}.
 
 \begin{figure}
 \hypertarget{fig:rsvg-convertSVGtoPNG}{%
@@ -2172,13 +2168,14 @@ tractable file size.
   or \texttt{inkscape} depending on image content.
 \end{enumerate}
 
-\Cref{tbl:formats} summarizes this information, which is current at the
+\cref{tbl:formats} summarizes this information, which is current at the
 time of writing, but could change as the image utilities landscape
 changes with time.
 
+\hypertarget{tbl:formats}{}
 \begin{longtable}[]{@{}ll@{}}
-\caption{Tools for image format conversions.
-\label{tbl:formats}}\tabularnewline
+\caption{\label{tbl:formats}Tools for image format
+conversions.}\tabularnewline
 \toprule
 Conversion Type & Tool \\
 \midrule
@@ -2215,13 +2212,16 @@ of delegated command strings, it was possible for someone to execute
 malicious code remotely, to the detriment of the unwitting user of
 \texttt{ImageMagick}. This was revealed at a website, interestingly
 named \href{https://imagetragick.com/}{ImageTragick} to attract
-sufficient attention and remedial action to the discovered bug {[}7{]}.
+sufficient attention and remedial action to the discovered bug
+\protect\hyperlink{ref-imagetragick2016}{{[}7{]}}.
 
 In November 2020,
 \href{https://portswigger.net/daily-swig/imagemagick-pdf-parsing-flaw-allowed-attacker-to-execute-shell-commands-via-maliciously-crafted-image}{another
-security vulnerability was discovered} {[}8{]}. It was
+security vulnerability was discovered}
+\protect\hyperlink{ref-leyden2020}{{[}8{]}}. It was
 \href{https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html}{reported
-and promptly patched} by the \texttt{ImageMagick} maintainers {[}9{]}.
+and promptly patched} by the \texttt{ImageMagick} maintainers
+\protect\hyperlink{ref-infuhr2020}{{[}9{]}}.
 
 Recent versions of the \texttt{ImageMagick} suite, bundled with major
 distributions, should have correctly configured \texttt{policy.xml}
@@ -2232,7 +2232,7 @@ vulnerabilities. Above all, it is vital to keep system and application
 software up to date to avail of evolutions in performance and security.
 
 \hypertarget{feedback}{%
-\section{Feedback}\label{feedback}}
+\subsection{Feedback}\label{feedback}}
 
 Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
@@ -2248,28 +2248,28 @@ comments and corrections.
 \begin{CSLReferences}{0}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-gabriel2017}{}}%
 \CSLLeftMargin{{[}1{]} }
-\CSLRightInline{S. Gabriel, {`{Designer's guide to DPI},'} 15-May-2015.
+\CSLRightInline{S. Gabriel, {`{Designer's guide to DPI}'}, 15-May-2015.
 {[}Online{]}. Available:
 \url{https://sebastien-gabriel.com/designers-guide-to-dpi/}.
 {[}Accessed: 27-Mar-2021{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-imagemagicksource}{}}%
 \CSLLeftMargin{{[}2{]} }
-\CSLRightInline{ImageMagick Studio LLC, {`ImageMagick 7.'} {[}Online{]}.
+\CSLRightInline{ImageMagick Studio LLC, {`ImageMagick 7'}. {[}Online{]}.
 Available: \url{https://github.com/ImageMagick/ImageMagick}.
 {[}Accessed: 08-Mar-2021{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-imcli}{}}%
 \CSLLeftMargin{{[}3{]} }
 \CSLRightInline{{`{ImageMagick---Command-line Processing}. {Anatomy of
-the Command-line}.'} {[}Online{]}. Available:
+the Command-line}'}. {[}Online{]}. Available:
 \url{https://imagemagick.org/script/command-line-processing.php}.
 {[}Accessed: 12-Mar-2021{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-newton2015}{}}%
 \CSLLeftMargin{{[}4{]} }
 \CSLRightInline{D. Newton, {`{Efficient Image Resizing With
-ImageMagick---Smashing Magazine},'} 25-Jun-2015. {[}Online{]}.
+ImageMagick---Smashing Magazine}'}, 25-Jun-2015. {[}Online{]}.
 Available:
 \url{https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/}.
 {[}Accessed: 11-Mar-2021{]}}
@@ -2277,7 +2277,7 @@ Available:
 \leavevmode\vadjust pre{\hypertarget{ref-setchell2014}{}}%
 \CSLLeftMargin{{[}5{]} }
 \CSLRightInline{M. Setchell, {`{ImageMagick: Lossless max compression
-for PNG?---Stack Overflow},'} 03-Dec-2014. {[}Online{]}. Available:
+for PNG?---Stack Overflow}'}, 03-Dec-2014. {[}Online{]}. Available:
 \url{https://stackoverflow.com/questions/27267073/imagemagick-lossless-max-compression-for-png/27269260\#27269260}.
 {[}Accessed: 12-Mar-2021{]}}
 
@@ -2285,20 +2285,20 @@ for PNG?---Stack Overflow},'} 03-Dec-2014. {[}Online{]}. Available:
 \CSLLeftMargin{{[}6{]} }
 \CSLRightInline{A. Bellamy-Royds, K. Cagle, and D. Storey, {`{Units for
 Measurements Reference --- Using SVG with CSS3 and HTML5---Supplementary
-Material},'} 05-Oct-2019. {[}Online{]}. Available:
+Material}'}, 05-Oct-2019. {[}Online{]}. Available:
 \url{https://oreillymedia.github.io/Using_SVG/guide/units.html}.
 {[}Accessed: 20-Mar-2021{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-imagetragick2016}{}}%
 \CSLLeftMargin{{[}7{]} }
-\CSLRightInline{---, {`ImageMagick is on fire --- CVE-2016--3714,'}
+\CSLRightInline{---, {`ImageMagick is on fire --- CVE-2016--3714'},
 12-May-2016. {[}Online{]}. Available: \url{https://imagetragick.com/}.
 {[}Accessed: 08-Mar-2021{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-leyden2020}{}}%
 \CSLLeftMargin{{[}8{]} }
 \CSLRightInline{J. Leyden, {`ImageMagick PDF-parsing flaw allowed
-attacker to execute shell commands via maliciously crafted image,'}
+attacker to execute shell commands via maliciously crafted image'},
 23-Nov-2020. {[}Online{]}. Available:
 \url{https://portswigger.net/daily-swig/imagemagick-pdf-parsing-flaw-allowed-attacker-to-execute-shell-commands-via-maliciously-crafted-image}.
 {[}Accessed: 08-Mar-2021{]}}
@@ -2306,7 +2306,7 @@ attacker to execute shell commands via maliciously crafted image,'}
 \leavevmode\vadjust pre{\hypertarget{ref-infuhr2020}{}}%
 \CSLLeftMargin{{[}9{]} }
 \CSLRightInline{A. Inführ, {`{ImageMagick - Shell injection via PDF
-password},'} 21-Nov-2020. {[}Online{]}. Available:
+password}'}, 21-Nov-2020. {[}Online{]}. Available:
 \url{https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html}.
 {[}Accessed: 08-Mar-2021{]}}
 

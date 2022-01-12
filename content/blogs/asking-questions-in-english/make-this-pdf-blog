@@ -6,8 +6,20 @@ base="asking-questions-in-english"
 #
 sed -e 's|{attach}||g' "$base.md" | sed -e 's|\\boldsymbol|\\symbf|g' > "temp.md"
 #
-pandoc --defaults xelatex.yaml --include-in-header "$blogheader" --include-in-header "special-includes" --output "$base.pdf" "temp.md";
+blogheader="$HOME/.pandoc/defaults/blog-header-includes"
+# defaults files to use
+standard="$HOME/.pandoc/defaults/latex.yaml"
+lua="$HOME/.pandoc/defaults/lua-engine.yaml"
+merriweather="$HOME/.pandoc/defaults/fonts/merriweather-font.tex"
+indicgreek="$HOME/.pandoc/defaults/fonts/indic-greek-fonts.tex"
+
+pandoc --defaults "$standard" --defaults "$lua" --include-in-header "$merriweather" --include-in-header "$indicgreek" --include-in-header "$blogheader" --include-in-header "./special-includes" --output "$base.pdf" "temp.md";
 #
-    pandoc --defaults xelatex.yaml --include-in-header "$blogheader" --output "$base.tex" "temp.md";
+pandoc --defaults "$standard" --defaults "$lua" --include-in-header "$merriweather" --include-in-header "$indicgreek" --include-in-header "$blogheader" --include-in-header "./special-includes" --output "$base.tex" "temp.md";
+
+
+# pandoc --defaults xelatex.yaml --include-in-header "$blogheader" --include-in-header "./special-includes" --output "$base.pdf" "temp.md";
+# #
+#     pandoc --defaults xelatex.yaml --include-in-header "$blogheader" --output "$base.tex" "temp.md";
 
 /usr/bin/rm "temp.md"

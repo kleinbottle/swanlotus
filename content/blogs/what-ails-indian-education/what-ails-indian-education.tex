@@ -4,18 +4,20 @@
 \PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
 %
 \documentclass[
-  11pt,
+  12pt,
   british,
   a4paper,
-]{article}
+  rgb,
+  dvipsnames,
+  svgnames,
+  hyphens]{article}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
-  \usepackage{amssymb}
 \else % if luatex or xetex
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
@@ -45,10 +47,10 @@
   pdfauthor={R (Chandra) Chandrasekhar},
   pdflang={en-GB},
   colorlinks=true,
-  linkcolor=TealBlue,
-  filecolor=Purple,
-  citecolor=DarkKhaki,
-  urlcolor=Maroon,
+  linkcolor={TealBlue},
+  filecolor={Purple},
+  citecolor={DarkKhaki},
+  urlcolor={Maroon},
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=25mm]{geometry}
@@ -56,36 +58,26 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% $HOME/.pandoc/defaults/latex-header-includes.tex
+% Common header includes for both lualatex and xelatex engines.
+%
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor} % Done as classoptions in latex.yaml
 \AtBeginEnvironment{quote}{\small}
+\AtBeginEnvironment{longtable}{\centering}
+%
+\usepackage{setspace} % Font-specific spacing set in font-specific selection file
+%
 \usepackage{etoolbox}
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{svg}
-\usepackage[Latin,Tamil,Devanagari]{ucharclasses}
-  \setmainfont[SmallCapsFont={Charis SIL Small Caps}]{Charis SIL}
-  \setsansfont[Numbers=OldStyle,BoldFont={* Semibold}]{Source Sans Pro}
-  \setmonofont[Scale=0.90]{Fira Mono}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-  \setmathfont[bold-style=ISO]{STIX Two Math}
-  \newfontfamily\tamilfont[Script=Tamil]{Noto Sans Tamil}
-  \setTransitionsFor{Tamil}{\tamilfont}{\normalfont}
-  \setTransitionTo{Tamil}{\tamilfont}{}
-  \setTransitionFrom{Tamil}{\normalfont}
-  \newfontfamily\devfont[Script=Devanagari]{Noto Sans Devanagari}
-  \setTransitionsFor{Devanagari}{\devfont}{\normalfont}
-  \setTransitionTo{Devanagari}{\devfont}{}
-  \setTransitionFrom{Devanagari}{\normalfont}
-  \newfontfamily{\emojifont}{Symbola}
-\usepackage[all]{nowidow}
-\usepackage[margins=raggedright]{floatrow}
+  \svgsetup{inkscapeversion=1}
 %
-% Tables without rules
+\urlstyle{tt}
+\usepackage[defaultlines=4,all]{nowidow}
 %
-\let\addlinespace\relax
-\let\toprule\relax
-\let\bottomrule\relax
-\let\midrule\relax
-\let\addlinespace\relax
+%\usepackage[margins=raggedright]{floatrow} % Commented out since it can be problematic 
+% Left aligns tables: Pandoc Tips and Tricks
 %
 % Adjust punctuation for footnotes
 %
@@ -96,52 +88,55 @@
 %
 \usepackage{fontsize}
 %
-%% pandoc-eqnos
-\usepackage[capitalise]{cleveref}
-  \crefname{equation}{Equation}{Equations}
-  \crefname{figure}{Figure}{Figures}
-%% pandoc-fignos
-\usepackage{caption}
-%% pandoc-fignos: environment to disable figure caption prefixes
-    \makeatletter
-    \newcounter{figno}
-    \newenvironment{fignos:no-prefix-figure-caption}{
-      \caption@ifcompatibility{}{
-        \let\oldthefigure\thefigure
-        \let\oldtheHfigure\theHfigure
-        \renewcommand{\thefigure}{figno:\thefigno}
-        \renewcommand{\theHfigure}{figno:\thefigno}
-        \stepcounter{figno}
-        \captionsetup{labelformat=empty}
-      }
-    }{
-      \caption@ifcompatibility{}{
-        \captionsetup{labelformat=default}
-        \let\thefigure\oldthefigure
-        \let\theHfigure\oldtheHfigure
-        \addtocounter{figure}{-1}
-      }
-    }
-    \makeatother
-%%
+\usepackage{pdflscape}
+%
+\usepackage[capitalize,noabbrev]{cleveref}
+%
+% Font-related; font-selection is in iles $HOME/.pandoc/defaults/[fontname]-font.tex
+% 
+\usepackage[main=british]{babel}
+%
+\newfontfamily{\emojifont}{Symbola} % since used generally; KIV proper solution
+%
+\usepackage{newunicodechar}
+%\newcommand*{\myrightarrow}{\textsf{→}} % U+2192 or 0x2192
+%\newunicodechar{→}{\myrightarrow}
+% Also OK:
+% \newunicodechar{→}{\texttt{→}} % U+2192 or 0x2192
+\newunicodechar{→}{\texttt{→}}
+%
+% $HOME/.pandoc/defaults/charis-font.tex
+% Standard font selection a la fontspec
+% 
+\setromanfont{Merriweather}
+\setsansfont[BoldFont={* Semibold}]{Source Sans Pro}
+\setmonofont[Scale=0.95]{Fira Mono}
+\setmathfont[bold-style=ISO]{STIX Two Math}
+\defaultfontfeatures{Mapping=TeX,Scale=MatchLowercase,Ligatures=TeX,Renderer=HarfBuzz}
+%
+\spacing{1.3} % For merriweather
+%
 \usepackage{titling}
 \usepackage{fancyhdr}
     \pagestyle{fancy}
     \fancyhead{}
     \fancyfoot{}
     \renewcommand{\headrulewidth}{0.2pt}
-    \renewcommand{\footrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0.2pt}
     \fancyhead[LO,RE]{\scshape\thetitle}
     \fancyfoot[CO,CE]{\small Copyright © 2006--\the\year, R (Chandra) Chandrasekhar}
     \fancyfoot[RE,RO]{\thepage}
-\ifxetex
+\ifXeTeX
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
   \usepackage{polyglossia}
   \setmainlanguage[variant=british]{english}
 \else
-  \usepackage[shorthands=off,main=british]{babel}
+  \usepackage[main=british]{babel}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
 \fi
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \newlength{\cslhangindent}
@@ -172,6 +167,7 @@
 \begin{document}
 \maketitle
 
+\setlength{\parindent}{0pt} % block paragraph
 \thispagestyle{empty}
 
 
@@ -243,7 +239,7 @@ transmitted down the ages. But the Vedas enjoy an additional, singular
 distinction: they have been preserved almost error-free from the hoary
 times when they were first recited, by virtue of the almost mathematical
 rigour that Sanskrit embodies for its grammar and phonetics, not to
-mention mnemonics {[}1{]}.
+mention mnemonics \protect\hyperlink{ref-bhatekak1993}{{[}1{]}}.
 
 \hypertarget{memorization-as-the-great-bane}{%
 \subsection{Memorization as the great
@@ -398,7 +394,7 @@ Indian student, but of all humankind. Education \emph{must} be reformed
 to accomplish this.
 
 \hypertarget{feedback}{%
-\paragraph{Feedback}\label{feedback}}
+\subsection{Feedback}\label{feedback}}
 
 Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
@@ -412,10 +408,10 @@ comments and corrections.
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{0}{0}
-\leavevmode\hypertarget{ref-bhatekak1993}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-bhatekak1993}{}}%
 \CSLLeftMargin{{[}1{]} }
 \CSLRightInline{S. Bhate and S. Kak, {`{Pāṇini's Grammar and Computer
-Science},'} \emph{Annals of the Bhandarkar Oriental Research Institute},
+Science}'}, \emph{Annals of the Bhandarkar Oriental Research Institute},
 vol. 72, pp. 79--94, 1993. }
 
 \end{CSLReferences}

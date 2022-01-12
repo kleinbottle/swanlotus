@@ -4,18 +4,20 @@
 \PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
 %
 \documentclass[
-  11pt,
+  12pt,
   british,
   a4paper,
-]{article}
+  rgb,
+  dvipsnames,
+  svgnames,
+  hyphens]{article}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
-  \usepackage{amssymb}
 \else % if luatex or xetex
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
@@ -45,14 +47,14 @@
   pdfauthor={R (Chandra) Chandrasekhar},
   pdflang={en-GB},
   colorlinks=true,
-  linkcolor=TealBlue,
-  filecolor=Purple,
-  citecolor=DarkKhaki,
-  urlcolor=Maroon,
+  linkcolor={TealBlue},
+  filecolor={Purple},
+  citecolor={DarkKhaki},
+  urlcolor={Maroon},
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=25mm]{geometry}
-\usepackage{longtable,booktabs}
+\usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -66,36 +68,26 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% $HOME/.pandoc/defaults/latex-header-includes.tex
+% Common header includes for both lualatex and xelatex engines.
+%
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor} % Done as classoptions in latex.yaml
 \AtBeginEnvironment{quote}{\small}
+\AtBeginEnvironment{longtable}{\centering}
+%
+\usepackage{setspace} % Font-specific spacing set in font-specific selection file
+%
 \usepackage{etoolbox}
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{svg}
-\usepackage[Latin,Tamil,Devanagari]{ucharclasses}
-  \setmainfont[SmallCapsFont={Charis SIL Small Caps}]{Charis SIL}
-  \setsansfont[Numbers=OldStyle,BoldFont={* Semibold}]{Source Sans Pro}
-  \setmonofont[Scale=0.90]{Fira Mono}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-  \setmathfont[bold-style=ISO]{STIX Two Math}
-  \newfontfamily\tamilfont[Script=Tamil]{Noto Sans Tamil}
-  \setTransitionsFor{Tamil}{\tamilfont}{\normalfont}
-  \setTransitionTo{Tamil}{\tamilfont}{}
-  \setTransitionFrom{Tamil}{\normalfont}
-  \newfontfamily\devfont[Script=Devanagari]{Noto Sans Devanagari}
-  \setTransitionsFor{Devanagari}{\devfont}{\normalfont}
-  \setTransitionTo{Devanagari}{\devfont}{}
-  \setTransitionFrom{Devanagari}{\normalfont}
-  \newfontfamily{\emojifont}{Symbola}
-\usepackage[all]{nowidow}
-\usepackage[margins=raggedright]{floatrow}
+  \svgsetup{inkscapeversion=1}
 %
-% Tables without rules
+\urlstyle{tt}
+\usepackage[defaultlines=4,all]{nowidow}
 %
-\let\addlinespace\relax
-\let\toprule\relax
-\let\bottomrule\relax
-\let\midrule\relax
-\let\addlinespace\relax
+%\usepackage[margins=raggedright]{floatrow} % Commented out since it can be problematic 
+% Left aligns tables: Pandoc Tips and Tricks
 %
 % Adjust punctuation for footnotes
 %
@@ -106,51 +98,127 @@
 %
 \usepackage{fontsize}
 %
-%% pandoc-eqnos
-\usepackage[capitalise]{cleveref}
-  \crefname{equation}{Equation}{Equations}
-  \crefname{figure}{Figure}{Figures}
-%% pandoc-fignos
-\usepackage{caption}
-%% pandoc-fignos: environment to disable figure caption prefixes
-    \makeatletter
-    \newcounter{figno}
-    \newenvironment{fignos:no-prefix-figure-caption}{
-      \caption@ifcompatibility{}{
-        \let\oldthefigure\thefigure
-        \let\oldtheHfigure\theHfigure
-        \renewcommand{\thefigure}{figno:\thefigno}
-        \renewcommand{\theHfigure}{figno:\thefigno}
-        \stepcounter{figno}
-        \captionsetup{labelformat=empty}
-      }
-    }{
-      \caption@ifcompatibility{}{
-        \captionsetup{labelformat=default}
-        \let\thefigure\oldthefigure
-        \let\theHfigure\oldtheHfigure
-        \addtocounter{figure}{-1}
-      }
-    }
-    \makeatother
-%%
+\usepackage{pdflscape}
+%
+\usepackage[capitalize,noabbrev]{cleveref}
+%
+% Font-related; font-selection is in iles $HOME/.pandoc/defaults/[fontname]-font.tex
+% 
+\usepackage[main=british]{babel}
+%
+\newfontfamily{\emojifont}{Symbola} % since used generally; KIV proper solution
+%
+\usepackage{newunicodechar}
+%\newcommand*{\myrightarrow}{\textsf{→}} % U+2192 or 0x2192
+%\newunicodechar{→}{\myrightarrow}
+% Also OK:
+% \newunicodechar{→}{\texttt{→}} % U+2192 or 0x2192
+\newunicodechar{→}{\texttt{→}}
+%
+% $HOME/.pandoc/defaults/charis-font.tex
+% Standard font selection a la fontspec
+% 
+\setromanfont{Merriweather}
+\setsansfont[BoldFont={* Semibold}]{Source Sans Pro}
+\setmonofont[Scale=0.95]{Fira Mono}
+\setmathfont[bold-style=ISO]{STIX Two Math}
+\defaultfontfeatures{Mapping=TeX,Scale=MatchLowercase,Ligatures=TeX,Renderer=HarfBuzz}
+%
+\spacing{1.3} % For merriweather
+%
+% indic-greekfonts.tex
+% $HOME/.pandoc/defaults/indic-greek-fonts.tex
+% $Usage: --include-in-header="$HOME/.pandoc/defaults/indic-greek-fonts.tex"
+% Assumes that we already have
+% 
+% \usepackage[main=british]{babel}
+% 
+% in another header-includes file;
+% in this case "$HOME/.pandoc/defaults/latex-header-includes.tex"
+% 
+% We use this file only when we need Tamil, Devanagari, Greek scripts.
+% Do not invoke if not needed, to speed up compilation.
+% 
+% Tamil, Devanagari, and Greek fonts
+%
+\newfontfamily\devanagarifont{Noto Serif Devanagari}
+\newfontfamily\tamilfont{Noto Serif Tamil}
+\newfontfamily\greekfont{Noto Serif}
+%
+% Put babel to work
+% 
+\babelprovide[import,onchar=ids fonts]{sanskrit}
+\babelprovide[import,onchar=ids fonts]{tamil}
+\babelprovide[import,onchar=ids fonts]{greek}
+%
+% Relative font sizes may be tweaked here for visual congruity
+%
+\babelfont[sanskrit]{rm}[Scale=1]{Noto Serif Devanagari}
+\babelfont[sanskrit]{sf}[Scale=1]{Noto Sans Devanagari}
+\babelfont[tamil]{rm}[Scale=0.9]{Noto Serif Tamil} % visual scaling to match
+\babelfont[tamil]{sf}[Scale=0.9]{Noto Sans Tamil} 
+\babelfont[greek]{rm}[Scale=0.9]{Noto Serif}
+\babelfont[greek]{sf}[Scale=0.9]{Noto Sans}
+%
+% NOTES
+% Specific invocations when using lualatex as the engine.
+% Especially useful with multi-lingual typesetting with babel.
+% 
+% Separate file xelatex-header-includes must be invoked when using xelatex as the engine.
+%
+
+% NOTE: xelatex works with polyglossia and ucharclasses; lualatex does not.
+% Moreover, the package `ucharclasses` does not reliably preserve italics, etc.,
+% when used in a mutli-script/multi-language setting.
+% 
+% Accordingly, with multi-lingual documents, we should prefer 
+% lualatex with babel instead of xelatex with ucharclasses.
+% 
+% See
+% https://tex.stackexchange.com/questions/199773/how-to-type-hindi-words-in-latex/
+% 
+% and
+% 
+% https://tex.stackexchange.com/questions/613999/switching-between-three-scripts-using-ucharclasses-does-not-seem-to-work
+%
+% Use babel; since babel is in rapid development, 
+% this part could change in future.
+% 
+%  Note that Sanskrit can have many scripts; we use Devanagari.
+% This might need to be tweaked in future.
+\usepackage{titling}
 \usepackage{fancyhdr}
     \pagestyle{fancy}
     \fancyhead{}
     \fancyfoot{}
-    \renewcommand{\headrulewidth}{0pt}
-    \renewcommand{\footrulewidth}{0pt}
-    %\fancyhead[CE,CO]{\title}
-    \fancyfoot[CO,CE]{\small Copyright © 2006--2021, R (Chandra) Chandrasekhar}
+    \renewcommand{\headrulewidth}{0.2pt}
+    \renewcommand{\footrulewidth}{0.2pt}
+    \fancyhead[LO,RE]{\scshape\thetitle}
+    \fancyfoot[CO,CE]{\small Copyright © 2006--\the\year, R (Chandra) Chandrasekhar}
     \fancyfoot[RE,RO]{\thepage}
-\ifxetex
+\usepackage{tcolorbox}
+\usepackage{alltt}
+\definecolor{noun}{HTML}{51847F}
+\definecolor{pronoun}{HTML}{F0DFAB}
+\definecolor{action}{HTML}{DCA3A3}
+\definecolor{normal}{HTML}{DBDBDB}
+\definecolor{background}{HTML}{363636}
+\newcommand\noun[1]{\textcolor{noun}{#1}}
+\newcommand\pronoun[1]{\textcolor{pronoun}{#1}}
+\newcommand\action[1]{\textcolor{action}{#1}}
+\newcommand\normal[1]{\textcolor{other}{#1}}
+  \tcbset{boxrule=0mm, arc=0mm, colback=background}
+\ifXeTeX
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
   \usepackage{polyglossia}
   \setmainlanguage[variant=british]{english}
 \else
-  \usepackage[shorthands=off,main=british]{babel}
+  \usepackage[main=british]{babel}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
 \fi
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 
@@ -161,6 +229,7 @@
 \begin{document}
 \maketitle
 
+\setlength{\parindent}{0pt} % block paragraph
 \thispagestyle{empty}
 
 
@@ -341,14 +410,14 @@ sentences:
   Declarative: ``Today is Thursday.'' These types of sentences simply
   state facts. They are also called statements or assertions.
 \item
-  Interrogative: "What is your name? Sentences of this type are
+  Interrogative: ``What is your name? Sentences of this type are
   questions.
 \item
-  Imperative: ``Come here.'' This is a command.\footnote{ As we have
+  Imperative: ``Come here.'' This is a command \footnote{ As we have
     already seen, the \emph{implicit subject} of this sentence is the
     pronoun ``You'' which should rightly have come first, so that the
     sentence reads ``You come here.'' Leaving out the understood second
-    person pronoun has become established usage; so we omit it.}
+    person pronoun has become established usage; so we omit it.}.
 \item
   Exclamatory: ``How nice!'' This type of sentence carries strong
   emotional overtones which distinguish it from a plain assertion.
@@ -467,14 +536,14 @@ altered in questions. Analytically, we may say:
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-Word & Part of Speech \\ \addlinespace
+Word & Part of Speech \\
 \midrule
 \endhead
-What & interrogative (strictly interrogative pronoun) \\ \addlinespace
-is & verb \\ \addlinespace
+What & interrogative (strictly interrogative pronoun) \\
+is & verb \\
 your & adjective; possessive case of pronoun ``you''; qualifies noun
-``name'' \\ \addlinespace
-name & noun \\ \addlinespace
+``name'' \\
+name & noun \\
 \bottomrule
 \end{longtable}
 
@@ -725,7 +794,7 @@ confuse your interlocutor with a mangled question.
 Happy questioning! \emojifont {🙂} \normalfont
 
 \hypertarget{feedback}{%
-\paragraph{Feedback}\label{feedback}}
+\subsection{Feedback}\label{feedback}}
 
 Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.

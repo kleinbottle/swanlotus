@@ -4,10 +4,13 @@
 \PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
 %
 \documentclass[
-  11pt,
+  12pt,
   british,
   a4paper,
-]{article}
+  rgb,
+  dvipsnames,
+  svgnames,
+  hyphens]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -68,75 +71,26 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
-\usepackage{titling}
-\usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \fancyhead{}
-    \fancyfoot{}
-    \renewcommand{\headrulewidth}{0.2pt}
-    \renewcommand{\footrulewidth}{0.2pt}
-    \fancyhead[LO,RE]{\scshape\thetitle}
-    \fancyfoot[CO,CE]{\small Copyright © 2006--\the\year, R (Chandra) Chandrasekhar}
-    \fancyfoot[RE,RO]{\thepage}
-%% pandoc-eqnos
-\usepackage[capitalise]{cleveref}
-  \crefname{equation}{Equation}{Equations}
-  \crefname{figure}{Figure}{Figures}
-  \crefname{table}{Table}{Tables}
-%% pandoc-fignos
-\usepackage{caption}
-%% pandoc-fignos: environment to disable figure caption prefixes
-    \makeatletter
-    \newcounter{figno}
-    \newenvironment{fignos:no-prefix-figure-caption}{
-      \caption@ifcompatibility{}{
-        \let\oldthefigure\thefigure
-        \let\oldtheHfigure\theHfigure
-        \renewcommand{\thefigure}{figno:\thefigno}
-        \renewcommand{\theHfigure}{figno:\thefigno}
-        \stepcounter{figno}
-        \captionsetup{labelformat=empty}
-      }
-    }{
-      \caption@ifcompatibility{}{
-        \captionsetup{labelformat=default}
-        \let\thefigure\oldthefigure
-        \let\theHfigure\oldtheHfigure
-        \addtocounter{figure}{-1}
-      }
-    }
-    \makeatother
-%%
+% $HOME/.pandoc/defaults/latex-header-includes.tex
+% Common header includes for both lualatex and xelatex engines.
+%
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor} % Done as classoptions in latex.yaml
 \AtBeginEnvironment{quote}{\small}
 \AtBeginEnvironment{longtable}{\centering}
 %
-\setlength{\parindent}{0pt} % block paragraphs
+\usepackage{setspace} % Font-specific spacing set in font-specific selection file
+%
 \usepackage{etoolbox}
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{svg}
   \svgsetup{inkscapeversion=1}
-\usepackage[Latin,Tamil,Devanagari]{ucharclasses}
-  \setmainfont[SmallCapsFont={Charis SIL Small Caps}]{Charis SIL}
-  \setsansfont[Numbers=OldStyle,BoldFont={* Semibold}]{Source Sans Pro}
-  \setmonofont[Scale=0.90]{Fira Mono}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-  \setmathfont[bold-style=ISO]{STIX Two Math}
-  \newfontfamily\tamilfont[Script=Tamil]{Noto Sans Tamil}
-  \setTransitionsFor{Tamil}{\tamilfont}{\normalfont}
-  \setTransitionTo{Tamil}{\tamilfont}{}
-  \setTransitionFrom{Tamil}{\normalfont}
-  \newfontfamily\devfont[Script=Devanagari]{Noto Sans Devanagari}
-  \setTransitionsFor{Devanagari}{\devfont}{\normalfont}
-  \setTransitionTo{Devanagari}{\devfont}{}
-  \setTransitionFrom{Devanagari}{\normalfont}
-  \newfontfamily{\emojifont}{Symbola}
-\urlstyle{sf}
-\usepackage[all]{nowidow}
 %
-%\usepackage[margins=raggedright]{floatrow} 
+\urlstyle{tt}
+\usepackage[defaultlines=4,all]{nowidow}
+%
+%\usepackage[margins=raggedright]{floatrow} % Commented out since it can be problematic 
 % Left aligns tables: Pandoc Tips and Tricks
-%
 %
 % Adjust punctuation for footnotes
 %
@@ -147,6 +101,44 @@
 %
 \usepackage{fontsize}
 %
+\usepackage{pdflscape}
+%
+\usepackage[capitalize,noabbrev]{cleveref}
+%
+% Font-related; font-selection is in iles $HOME/.pandoc/defaults/[fontname]-font.tex
+% 
+\usepackage[main=british]{babel}
+%
+\newfontfamily{\emojifont}{Symbola} % since used generally; KIV proper solution
+%
+\usepackage{newunicodechar}
+%\newcommand*{\myrightarrow}{\textsf{→}} % U+2192 or 0x2192
+%\newunicodechar{→}{\myrightarrow}
+% Also OK:
+% \newunicodechar{→}{\texttt{→}} % U+2192 or 0x2192
+\newunicodechar{→}{\texttt{→}}
+%
+% $HOME/.pandoc/defaults/charis-font.tex
+% Standard font selection a la fontspec
+% 
+\setromanfont{Merriweather}
+\setsansfont[BoldFont={* Semibold}]{Source Sans Pro}
+\setmonofont[Scale=0.95]{Fira Mono}
+\setmathfont[bold-style=ISO]{STIX Two Math}
+\defaultfontfeatures{Mapping=TeX,Scale=MatchLowercase,Ligatures=TeX,Renderer=HarfBuzz}
+%
+\spacing{1.3} % For merriweather
+%
+\usepackage{titling}
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0.2pt}
+    \renewcommand{\footrulewidth}{0.2pt}
+    \fancyhead[LO,RE]{\scshape\thetitle}
+    \fancyfoot[CO,CE]{\small Copyright © 2006--\the\year, R (Chandra) Chandrasekhar}
+    \fancyfoot[RE,RO]{\thepage}
 \ifXeTeX
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
   \usepackage{polyglossia}
@@ -188,6 +180,7 @@
 \begin{document}
 \maketitle
 
+\setlength{\parindent}{0pt} % block paragraph
 \thispagestyle{empty}
 
 
@@ -266,17 +259,18 @@ leaves it unchanged. Multiplying a number by one again leaves it
 unchanged. And zero and one are important numbers, usually called the
 \emph{additive} and \emph{multiplicative identity elements}
 respectively. Consider now the matrix equivalent of multiplying by
-\(1\), an example of which is: \begin{equation}
+\(1\), an example of which is:
+\begin{equation}\protect\hypertarget{eq:identity}{}{
 \begin{bmatrix}1 & 0\\0 & 1\end{bmatrix}\begin{bmatrix}v_{1}\\v_{2}\end{bmatrix}
 = 1\begin{bmatrix}v_{1}\\v_{2}\end{bmatrix} = \begin{bmatrix}v_{1}\\v_{2}\end{bmatrix}
-\label{eq:identity}\end{equation}
+}\label{eq:identity}\end{equation}
 
 The \(2 \times 2\) matrix on the extreme left of \cref{eq:identity} is
 the \emph{identity matrix} of dimension \(2\), analogous to the
 multiplicative identity. We could write this equation more succinctly
-as: \begin{equation}
+as: \begin{equation}\protect\hypertarget{eq:succinct}{}{
 I\symbf{v} = 1\symbf{v}
-\label{eq:succinct}\end{equation} \(I\), on the left, is the
+}\label{eq:succinct}\end{equation} \(I\), on the left, is the
 \emph{identity matrix}, the number \(1\) on the right is called an
 \emph{eigenvalue} and the vector \(\symbf{v}\) is called an
 \emph{eigenvector}. Note that there are no strictures on \(\symbf{v}\).
@@ -286,10 +280,11 @@ example, however, is both unusual and contrived, because the identity
 matrix is a \emph{special} type of \emph{square matrix} with ones on its
 principal diagonal and zeros elsewhere.
 
-\Cref{eq:succinct} is a particular case of the general equation for
-eigenvalues and eigenvectors, which is written: \begin{equation}
+\cref{eq:succinct} is a particular case of the general equation for
+eigenvalues and eigenvectors, which is written:
+\begin{equation}\protect\hypertarget{eq:eigen}{}{
 M\symbf{v} = \lambda \symbf{v}
-\label{eq:eigen}\end{equation} where \(M\) is a \emph{general square
+}\label{eq:eigen}\end{equation} where \(M\) is a \emph{general square
 matrix}, \({\lambda}\) is a \emph{real or complex scalar} called an
 \emph{eigenvalue}, and \(\symbf{v}\) is a \emph{non-zero vector} called
 an \emph{eigenvector}. The matrix \(M\) is assigned meaning according to
@@ -328,9 +323,10 @@ dependent variable \(y\) may be written as
 \(a_2D^2(y) + a_1D(y) + a_0(y) = 0\). Plugging in a solution of the form
 \(y = e^{st}\), we get \((a_2s^2 + a_1s + a_0)e^{st} = 0.\) Since
 \(e^{st}\) can never be zero, we may divide by it to get the
-\emph{characteristic polynomial} \begin{equation}
+\emph{characteristic polynomial}
+\begin{equation}\protect\hypertarget{eq:cp}{}{
 a_2s^2 + a_1s + a_0 = 0.
-\label{eq:cp}\end{equation}
+}\label{eq:cp}\end{equation}
 
 The \emph{roots} of this characteristic polynomial give us the
 eigenvalues of the system. Perhaps, the prefix ``eigen'' came to be used
@@ -359,8 +355,8 @@ this implies that the matrix \((M -\lambda I)\) is
 non-invertible, which in turn implies that its
 \href{https://en.wikipedia.org/wiki/Determinant}{determinant} is zero.
 So, the characteristic polynomial is the equation
-\begin{equation}\det(M - \lambda I) = 0
-\label{eq:cp-matrix}\end{equation} and its roots are the eigenvalues of
+\begin{equation}\protect\hypertarget{eq:cp-matrix}{}{\det(M - \lambda I) = 0
+}\label{eq:cp-matrix}\end{equation} and its roots are the eigenvalues of
 \(M\). The determinant of a square matrix is a \emph{number} associated
 with it, obtained by adding and subtracting products of its elements in
 a specific order.
@@ -374,12 +370,13 @@ powerful mathematical abstraction that allows us to unify many disparate
 branches of mathematics under a uniform taxonomy.
 \href{http://mathworld.wolfram.com/LinearTransformation.html}{Linear
 transformations} are a particular type of mapping between two vector
-spaces over a scalar field, satisfying: \begin{equation}
+spaces over a scalar field, satisfying:
+\begin{equation}\protect\hypertarget{eq:linear}{}{
 \begin{aligned}
 T(\symbf{u} + \symbf{v}) &= T(\symbf{u}) + T(\symbf{v})\\
 T(\alpha\symbf{u}) &= \alpha T(\symbf{u})\\
 \end{aligned}
-\label{eq:linear}\end{equation} where \(T\) is the transformation,
+}\label{eq:linear}\end{equation} where \(T\) is the transformation,
 \(\symbf{u}\) and \(\symbf{v}\) are two vectors, and \(\alpha\) is a
 scalar.
 
@@ -436,9 +433,10 @@ I will here belabour a point that might seem blindingly obvious to some
 but frustratingly obscure to others. Let \(\symbf{v}\) be an eigenvector
 associated with a distinct eigenvalue \(\lambda\) as in \cref{eq:eigen},
 and let \(k\) be a non-zero scalar. Then, using the second of the
-equation-pair \cref{eq:linear}, we have \begin{equation}
+equation-pair \cref{eq:linear}, we have
+\begin{equation}\protect\hypertarget{eq:scaled-eigenvector}{}{
 M(k\symbf{v}) = k(M\symbf{v}) = k(\lambda\symbf{v}) = \lambda(k\symbf{v}),
-\label{eq:scaled-eigenvector}\end{equation} which means that if
+}\label{eq:scaled-eigenvector}\end{equation} which means that if
 \(\symbf{v}\) is an eigenvector, any non-zero scalar multiple of
 \(\symbf{v}\) is also an eigenvector for that same eigenvalue. So,
 strictly speaking, we really should be referring to \emph{an}
@@ -461,9 +459,9 @@ off-putting. To those in search of greater rigour or a more formal
 exposition, I would recommend a good linear algebra textbook. The
 venerable tome that I used at university went by the acronym ``KKOP''
 after the initials of the surnames of the four authors, Kreider, Kuller,
-Ostberg, and Perkins {[}1{]}. Unfortunately, it is out of print, but as
-a consolation, \cref{fig:kkop} is an image of my copy.
-\emojifont {😞}\normalfont
+Ostberg, and Perkins \protect\hyperlink{ref-kkop1966}{{[}1{]}}.
+Unfortunately, it is out of print, but as a consolation, \cref{fig:kkop}
+is an image of my copy. \emojifont {😞}\normalfont
 
 \begin{figure}
 \hypertarget{fig:kkop}{%
@@ -482,8 +480,8 @@ lecture on eigenvalues and eigenvectors.} There are also links to
 \href{http://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/}{his
 MIT Open Course Ware (OCW) page for Course 18.06 of Spring 2010},
 \href{http://math.mit.edu/~gs/linearalgebra/}{his linear algebra
-textbook home page} {[}2{]}, and \href{http://www-math.mit.edu/~gs/}{his
-academic home page.}
+textbook home page} \protect\hyperlink{ref-strang2016}{{[}2{]}}, and
+\href{http://www-math.mit.edu/~gs/}{his academic home page.}
 
 Many academics make their lecture notes freely available online:
 \href{https://www.google.com/}{google} for them.
@@ -556,13 +554,13 @@ headings represent \emph{today's weather} and the row headings represent
 \emph{tomorrow's weather.} We then have the
 \href{https://en.wikipedia.org/wiki/Stochastic_matrix}{\emph{state-transition
 matrix}} or \emph{Markov matrix} \(M\) given in \cref{eq:state}:
-\begin{equation}
+\begin{equation}\protect\hypertarget{eq:state}{}{
 M = \begin{bmatrix}
 0.65 & 0.30 & 0.10\\
 0.25 & 0.45 & 0.40\\
 0.10 & 0.25 & 0.50
 \end{bmatrix}
-\label{eq:state}\end{equation}
+}\label{eq:state}\end{equation}
 
 Note that each \emph{column} of \(M\) represents the probabilities of
 \href{https://en.wikipedia.org/wiki/Mutual_exclusivity}{\emph{mutually
@@ -574,16 +572,17 @@ probability of today being rainy and tomorrow cloudy is given by
 
 Let the column-vector \(\symbf{w}_{k}\) represent the probabilities for
 a particular day's weather and the column-vector \(\symbf{ w}_{k+1}\),
-the next day's weather. The two are then related by: \begin{equation}
+the next day's weather. The two are then related by:
+\begin{equation}\protect\hypertarget{eq:recurrence}{}{
 \symbf{w}_{k+1} = M\symbf{w}_{k}
-\label{eq:recurrence}\end{equation} \Cref{eq:recurrence}) is called a
+}\label{eq:recurrence}\end{equation} \cref{eq:recurrence}) is called a
 \href{https://en.wikipedia.org/wiki/Recurrence_relation}{\emph{recurrence
 relation}} or \emph{difference equation}, and in our case, it represents
 the evolution of a dynamical system in time, namely the weather. Just
 for completeness, let the initial condition be given by:
-\begin{equation}
+\begin{equation}\protect\hypertarget{eq:initial}{}{
 \symbf{w}_{0} = \begin{bmatrix}0.55\\0.34\\0.11\end{bmatrix}
-\label{eq:initial}\end{equation}
+}\label{eq:initial}\end{equation}
 
 We want to know whether, for this model, there will be an equilibrium or
 steady-state in the weather, represented by a probability vector with
@@ -605,9 +604,9 @@ following: \[
 \]
 
 By induction, the weather vector \(n\) days downstream is given by
-\begin{equation}
+\begin{equation}\protect\hypertarget{eq:Mn}{}{
 \symbf{w}_{n} = M^{n}\symbf{w}_{0}.
-\label{eq:Mn}\end{equation}
+}\label{eq:Mn}\end{equation}
 
 In this manner, we can trace the time evolution of the weather and, if
 desired, draw a three-dimensional parametric plot of the successive
@@ -641,13 +640,13 @@ D = \begin{bmatrix}
 \end{bmatrix}.
 \]
 
-Observe that: \begin{equation}
+Observe that: \begin{equation}\protect\hypertarget{eq:D-to-the-n}{}{
 D^{n} = \begin{bmatrix}
 \lambda_{1}^{n}& 0 & 0\\
 0 & \lambda_{2} ^{n}& 0\\
 0 & 0 & \lambda_{3}^{n}
 \end{bmatrix}.
-\label{eq:D-to-the-n}\end{equation}
+}\label{eq:D-to-the-n}\end{equation}
 
 If we could somehow decompose \(M\) into a matrix product where a
 diagonal matrix was featured, we might be able to circumvent the
@@ -681,7 +680,7 @@ e_{13} & e_{23} & e_{33}
 = \begin{bmatrix}
 \symbf{e}_{1} & \symbf{e}_{2} & \symbf{e}_{3}\\
 \end{bmatrix}
-\] Now, \begin{equation}
+\] Now, \begin{equation}\protect\hypertarget{eq:diag1}{}{
 \begin{aligned}
 MP &= M\begin{bmatrix}
 \symbf{e}_{1} & \symbf{e}_{2} & \symbf{e}_{3}
@@ -704,23 +703,24 @@ e_{13} & e_{23} & e_{33}
 \end{bmatrix}\\
 &= PD
 \end{aligned}
-\label{eq:diag1}\end{equation} To get only \(M\) on the left-hand side
+}\label{eq:diag1}\end{equation} To get only \(M\) on the left-hand side
 of \cref{eq:diag1}, we post-multiply both sides by \(P^{-1}\), the
-inverse of \(P\): \begin{equation}
+inverse of \(P\):
+\begin{equation}\protect\hypertarget{eq:eigendecomp}{}{
 MPP^{-1} = MI = M = PDP^{-1}
-\label{eq:eigendecomp}\end{equation} If we now square \(M\), we get
-\begin{equation}
+}\label{eq:eigendecomp}\end{equation} If we now square \(M\), we get
+\begin{equation}\protect\hypertarget{eq:D-squared}{}{
 \begin{aligned}
 M^{2} &= (PDP^{-1})(PDP^{-1})\\
 &= PD(P^{-1}P)DP^{-1}\\
 &= P(DID)P^{-1}\\
 &= PD^{2}P^{-1}
 \end{aligned}
-\label{eq:D-squared}\end{equation}
+}\label{eq:D-squared}\end{equation}
 
-By induction, \begin{equation}
+By induction, \begin{equation}\protect\hypertarget{eq:M-to-the-n}{}{
 M^{n} = PD^{n}P^{-1}
-\label{eq:M-to-the-n}\end{equation} The role of eigenvalues and
+}\label{eq:M-to-the-n}\end{equation} The role of eigenvalues and
 eigenvectors in the plot of raising a square matrix to a power is now
 fully revealed: recall that in \cref{eq:M-to-the-n}, \(P\) is the matrix
 whose columns are the eigenvectors, and \(D\) is the diagonal matrix
@@ -810,13 +810,14 @@ corresponding eigenvalues. With these numerical values, the truth of
 The time evolution of the initial weather vector is then tracked with 1,
 10, 20, 50, and 100 iterations of \cref{eq:recurrence}. In this case,
 the weather vector stabilizes after about twenty iterations to a
-steady-state vector, \(\symbf{w}_{\infty}\), given by \begin{equation}
+steady-state vector, \(\symbf{w}_{\infty}\), given by
+\begin{equation}\protect\hypertarget{eq:steady-state}{}{
 \symbf{w}_{\infty} = \begin{bmatrix}
 0.38251\\
 0.36066\\
 0.25683\\
 \end{bmatrix}
-\label{eq:steady-state}\end{equation}
+}\label{eq:steady-state}\end{equation}
 
 When we track the same temporal evolution for eigenvector
 \(\symbf{e}_{1}\), the result after each iteration is \(\symbf{e}_{1}\)
@@ -830,13 +831,14 @@ What may be disconcerting, though, is that we now seem to have
 Observe, however, that \(\symbf{e}_{1}\) is not a probability vector
 whose columns sum to one. To convert it to a probability vector, we
 \emph{normalize} \(\symbf{e}_{1}\) by dividing it by its column sum, to
-get the \emph{normalized eigenvector:} \begin{equation}
+get the \emph{normalized eigenvector:}
+\begin{equation}\protect\hypertarget{eq:normalized-eigenvector-1}{}{
 \symbf{n}_{1} = \begin{bmatrix}
 0.38251\\
 0.36066\\
 0.25683\\
 \end{bmatrix}
-\label{eq:normalized-eigenvector-1}\end{equation}
+}\label{eq:normalized-eigenvector-1}\end{equation}
 
 Lo and behold! \(\symbf{n}_{1}\) and \(\symbf{w}_{\infty}\) are one and
 the same, and all is well. Recalling from \cref{eq:scaled-eigenvector}
@@ -869,7 +871,7 @@ true that the normalized eigenvector associated with an eigenvalue of
 by any transition matrix. If so, we would have a theorem on our hands.
 
 \hypertarget{feedback}{%
-\paragraph{Feedback}\label{feedback}}
+\subsection{Feedback}\label{feedback}}
 
 Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.

@@ -34,3 +34,10 @@ I sorely wanted to capture the peacock in mid-flight, but it was too swift and s
 [annu]: http://www.trekearth.com/gallery/Asia/India/West/Rajasthan/Sujangarh/photo772964.htm
 
 For now, word pictures from me of the peacock in mid-flight must suffice. The peacock I saw was a dream gliding through air. It was effortless, efficient, smooth, graceful, unfluttered,  unflustered, powerful, silent, and exquisitely matched to the element. It was a superb blend of engineering and art, of power and poise, honed to perfection by millennia of evolution, a dream of heavenly beauty on earth.
+
+## Feedback
+
+Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
+corrections.
+
+\noindent A PDF version of this article is [available for download here.]({attach}./a-peacock-in-midflight.pdf)

@@ -7,7 +7,10 @@
   12pt,
   british,
   a4paper,
-]{article}
+  rgb,
+  dvipsnames,
+  svgnames,
+  hyphens]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -68,38 +71,28 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% $HOME/.pandoc/defaults/latex-header-includes.tex
+% Common header includes for both lualatex and xelatex engines.
+%
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor} % Done as classoptions in latex.yaml
 \AtBeginEnvironment{quote}{\small}
 \AtBeginEnvironment{longtable}{\centering}
+%
+\usepackage{setspace} % Font-specific spacing set in font-specific selection file
 %
 \usepackage{etoolbox}
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{svg}
   \svgsetup{inkscapeversion=1}
-\usepackage[Latin,Tamil,Devanagari]{ucharclasses}
-  \setmainfont[SmallCapsFont={Charis SIL Small Caps}]{Charis SIL}
-  \setsansfont[Numbers=OldStyle,BoldFont={* Semibold}]{Source Sans Pro}
-  \setmonofont[Scale=0.90]{Fira Mono}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-  \setmathfont[bold-style=ISO]{STIX Two Math}
-  \newfontfamily\tamilfont[Script=Tamil]{Noto Sans Tamil}
-  \setTransitionsFor{Tamil}{\tamilfont}{\normalfont}
-  \setTransitionTo{Tamil}{\tamilfont}{}
-  \setTransitionFrom{Tamil}{\normalfont}
-  \newfontfamily\devfont[Script=Devanagari]{Noto Sans Devanagari}
-  \setTransitionsFor{Devanagari}{\devfont}{\normalfont}
-  \setTransitionTo{Devanagari}{\devfont}{}
-  \setTransitionFrom{Devanagari}{\normalfont}
-  \newfontfamily{\emojifont}{Symbola}
-\urlstyle{tt}
-\usepackage[all]{nowidow}
 %
-%\usepackage[margins=raggedright]{floatrow} 
+\urlstyle{tt}
+\usepackage[defaultlines=4,all]{nowidow}
+%
+%\usepackage[margins=raggedright]{floatrow} % Commented out since it can be problematic 
 % Left aligns tables: Pandoc Tips and Tricks
 %
-%
 % Adjust punctuation for footnotes
-%
 %
 \usepackage{fnpct} % footnote _before_ punctuation reversed and adjusted.
   \setfnpct{after-dot-space=-0.15em,after-comma-space=-0.150em,add-punct-marks=;[0.06em]![0.06em]?[0.06em]:[0.06em]}
@@ -109,35 +102,33 @@
 \usepackage{fontsize}
 %
 \usepackage{pdflscape}
- %% pandoc-eqnos
-\usepackage[capitalise]{cleveref}
-  \crefname{equation}{Equation}{Equations}
-  \crefname{figure}{Figure}{Figures}
-  \crefname{table}{Table}{Tables}
-%% pandoc-fignos
-\usepackage{caption}
-%% pandoc-fignos: environment to disable figure caption prefixes
-    \makeatletter
-    \newcounter{figno}
-    \newenvironment{fignos:no-prefix-figure-caption}{
-      \caption@ifcompatibility{}{
-        \let\oldthefigure\thefigure
-        \let\oldtheHfigure\theHfigure
-        \renewcommand{\thefigure}{figno:\thefigno}
-        \renewcommand{\theHfigure}{figno:\thefigno}
-        \stepcounter{figno}
-        \captionsetup{labelformat=empty}
-      }
-    }{
-      \caption@ifcompatibility{}{
-        \captionsetup{labelformat=default}
-        \let\thefigure\oldthefigure
-        \let\theHfigure\oldtheHfigure
-        \addtocounter{figure}{-1}
-      }
-    }
-    \makeatother
-%%
+%
+\usepackage[capitalize,noabbrev]{cleveref}
+%
+% Font-related; font-selection is in iles $HOME/.pandoc/defaults/[fontname]-font.tex
+% 
+\usepackage[main=british]{babel}
+%
+\newfontfamily{\emojifont}{Symbola} % since used generally; KIV proper solution
+%
+\usepackage{newunicodechar}
+%\newcommand*{\myrightarrow}{\textsf{→}} % U+2192 or 0x2192
+%\newunicodechar{→}{\myrightarrow}
+% Also OK:
+% \newunicodechar{→}{\texttt{→}} % U+2192 or 0x2192
+\newunicodechar{→}{\texttt{→}}
+%
+% $HOME/.pandoc/defaults/charis-font.tex
+% Standard font selection a la fontspec
+% 
+\setromanfont{Merriweather}
+\setsansfont[BoldFont={* Semibold}]{Source Sans Pro}
+\setmonofont[Scale=0.95]{Fira Mono}
+\setmathfont[bold-style=ISO]{STIX Two Math}
+\defaultfontfeatures{Mapping=TeX,Scale=MatchLowercase,Ligatures=TeX,Renderer=HarfBuzz}
+%
+\spacing{1.3} % For merriweather
+%
 \usepackage{titling}
 \usepackage{fancyhdr}
     \pagestyle{fancy}
@@ -148,8 +139,6 @@
     \fancyhead[LO,RE]{\scshape\thetitle}
     \fancyfoot[CO,CE]{\small Copyright © 2006--\the\year, R (Chandra) Chandrasekhar}
     \fancyfoot[RE,RO]{\thepage}
-
-
 \ifXeTeX
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
   \usepackage{polyglossia}
@@ -251,8 +240,10 @@ It is impossible to review the visionary contributions of Tesla within
 the compass of one paper, let alone do justice to analyzing his unique
 mind. Only certain aspects of Tesla's mind will concern us here; the
 interested reader is referred to brief synopses and fuller accounts of
-his life and writings elsewhere {[}1{]}--{[}8{]}. In this paper, we
-focus on only four of his documented mental characteristics:
+his life and writings elsewhere
+\protect\hyperlink{ref-john83}{{[}1{]}}--\protect\hyperlink{ref-tesla-pbs-bio}{{[}8{]}}.
+In this paper, we focus on only four of his documented mental
+characteristics:
 
 \begin{enumerate}
 \tightlist
@@ -273,22 +264,24 @@ creativity. Comparisons are made with other well known scientists with
 similar characteristics, and speculative comments are made, along with a
 list of questions worthy of further investigation. Finally, a hypothesis
 is put forward---based on the idea of mental evolution, as proposed by R
-M Bucke {[}9{]}---as one possible explanation for Tesla's prodigious and
-rare mind.
+M Bucke \protect\hyperlink{ref-bucke48}{{[}9{]}}---as one possible
+explanation for Tesla's prodigious and rare mind.
 
 \hypertarget{teslas-hypersensitive-hearing-and-sight}{%
 \subsection{Tesla's hypersensitive hearing and
 sight}\label{teslas-hypersensitive-hearing-and-sight}}
 
 From a young age, Tesla had hypersensitive hearing and sight. For
-example, he recounted {[}3{]} that in his boyhood, he saved his
-neighbours' lives when he heard the crackling of flames consuming their
-homes at night. At the age of 25, he suffered what was termed by his
-doctors a ``nervous breakdown'' for want of a better term. While he was
-ill, Tesla's pulse varied from a few beats to two hundred and sixty
-beats per minute and all the tissues of his body quivered and twitched
-{[}1{]}. During the period he was ill, Tesla had the following
-extraordinary aural experiences{[}1{]}, {[}3{]}:
+example, he recounted \protect\hyperlink{ref-cheney81}{{[}3{]}} that in
+his boyhood, he saved his neighbours' lives when he heard the crackling
+of flames consuming their homes at night. At the age of 25, he suffered
+what was termed by his doctors a ``nervous breakdown'' for want of a
+better term. While he was ill, Tesla's pulse varied from a few beats to
+two hundred and sixty beats per minute and all the tissues of his body
+quivered and twitched \protect\hyperlink{ref-john83}{{[}1{]}}. During
+the period he was ill, Tesla had the following extraordinary aural
+experiences\protect\hyperlink{ref-john83}{{[}1{]}},
+\protect\hyperlink{ref-cheney81}{{[}3{]}}:
 
 \begin{enumerate}
 \item
@@ -312,7 +305,9 @@ extraordinary aural experiences{[}1{]}, {[}3{]}:
 Even when Tesla was past forty, and conducting research into lightning
 in the Colorado mountains, in the USA, he could hear thunderclaps 880
 kilometres away, whereas his assistants, at half his age, could only
-hear them up to 240 kilometres away {[}1{]}, {[}3{]}.
+hear them up to 240 kilometres away
+\protect\hyperlink{ref-john83}{{[}1{]}},
+\protect\hyperlink{ref-cheney81}{{[}3{]}}.
 
 Not only was his hearing acute, Tesla's sense of sight was incredible.
 It enabled him to perform what may be termed \emph{peregrinations of the
@@ -342,7 +337,8 @@ during the day), when alone, I would start on my journeys---see new
 places, cities and countries---live there, meet people and make
 friendships and acquaintances and, however unbelievable, it is a fact
 that they were just as clear to me as those in actual life and not a bit
-less intense in their manifestations. {[}1{]} (\emph{emphasis} is mine)
+less intense in their manifestations.
+\protect\hyperlink{ref-john83}{{[}1{]}} (\emph{emphasis} is mine)
 \end{quote}
 
 Here we see that it was not a hypersensitivity to an actual stimulus,
@@ -418,8 +414,9 @@ taking place at the commutator. His professor replied that the sparking
 was inevitable, being inherent in the design of the machine. Tesla was
 unconvinced and felt that there must be some way to circumvent the use
 of commutators. He felt inwardly assured that there was a solution to
-this problem, although his instructors did not share this view {[}2{]}.
-He later used these words to describe this inner certitude:
+this problem, although his instructors did not share this view
+\protect\hyperlink{ref-oneill80}{{[}2{]}}. He later used these words to
+describe this inner certitude:
 
 \begin{quote}
 In attacking the problem again I almost regretted that the struggle was
@@ -428,15 +425,16 @@ was not with a resolve such as men often make. With me it was a sacred
 vow, a question of life and death. I knew that I would perish if I
 failed. Now I felt that the battle was won. Back in the deep recesses of
 the brain was the solution, but I could not yet give it outward
-expression. {[}1{]}
+expression. \protect\hyperlink{ref-john83}{{[}1{]}}
 \end{quote}
 
 Paradoxically, the demonstration of the DC motor had convinced him that
 by using alternating current (AC) with its changing direction of current
 flow, the commutator could be eliminated altogether. While he felt an
 inner assurance that it could be done, what he did not know was how to
-accomplish it {[}2{]}. The answer came to him, not by logical reasoning,
-but by a flash of insight that he later described in these words:
+accomplish it \protect\hyperlink{ref-oneill80}{{[}2{]}}. The answer came
+to him, not by logical reasoning, but by a flash of insight that he
+later described in these words:
 
 \begin{quote}
 I could not demonstrate my belief at that time, but it came to me
@@ -444,8 +442,8 @@ through what I might call instinct, for lack of a better name. But
 instinct is something which transcends knowledge. We undoubtedly have in
 our brains some finer fibres which enable us to perceive truths which we
 could not attain through logical deduction, and which it would be futile
-to attempt to achieve through any wilful effort of thinking. {[}2{]} (p
-49).
+to attempt to achieve through any wilful effort of thinking.
+\protect\hyperlink{ref-oneill80}{{[}2{]}} (p 49).
 \end{quote}
 
 After six years of intensive thought, Tesla did finally get the
@@ -470,7 +468,7 @@ Ihr nach und immer nach zu streben!\\
 Ein schöner Traum, indessen sie entweicht,\\
 Ach, zu des Geistes Flügeln wird so leicht\\
 Kein körperlicher Flügel sich gesellen!\\
-~\\
+\strut \\
 The glow retreats, done is the day of toil;\\
 It yonder hastes, new fields of life exploring;\\
 Ah, that no wing can lift me from the soil\\
@@ -479,7 +477,7 @@ Upon its track to follow, follow soaring!\\
 A glorious dream! though now the glories fade.\\
 Alas! the wings that lift the mind no aid\\
 Of wings to lift the body can bequeath me.\\
-~\\
+\strut \\
 
 As I uttered these inspiring words the idea came like a flash of
 lightning and in an instant the truth was revealed. I drew with a stick
@@ -492,7 +490,7 @@ emotions. Pygmalion seeing his statue come to life could not have been
 more deeply moved. A thousand secrets of nature which I might have
 stumbled upon accidentally I would have given for that one which I had
 wrested from her against all odds and at the peril of my existence.
-{[}1{]}
+\protect\hyperlink{ref-john83}{{[}1{]}}
 \end{quote}
 
 Writing in the \emph{Scientific American}, Tesla explains this
@@ -504,7 +502,8 @@ reader in its true light and significance for it is so altogether
 extraordinary. When an idea presents itself it is, as a rule, crude and
 imperfect. Birth, growth and development are phases normal and natural.
 It was different with my invention. In the very moment I became
-conscious of it, I saw it fully developed and perfected. {[}10{]}
+conscious of it, I saw it fully developed and perfected.
+\protect\hyperlink{ref-tesla-personal}{{[}10{]}}
 \end{quote}
 
 \begin{figure}
@@ -521,7 +520,8 @@ motor.\footnotemark{}}\label{fig:ac-motor}
   The motor developed one-half horsepower and showed that brushes and
   commutators could be eliminated. This image and the information in
   this footnote are taken from \href{https://www.pbs.org/tesla/}{the PBS
-  (Public Broadcasting System) web site on Tesla} {[}8{]}.}
+  (Public Broadcasting System) web site on Tesla}
+  \protect\hyperlink{ref-tesla-pbs-bio}{{[}8{]}}.}
 
 In his own mind, the idea of the rotating magnetic fields, one chasing
 the other, that formed the basis of the induction motor and the AC
@@ -560,7 +560,7 @@ on the part of the scientist. The mathematician
 Poincaré} believed that after prolonged thinking on a problem, there is
 a period of \emph{incubation} or unconscious thought, after which the
 solution would pop up spontaneously, and seemingly without conscious
-effort {[}11{]} (p 15).
+effort \protect\hyperlink{ref-weisberg86}{{[}11{]}} (p 15).
 
 \hypertarget{kekuluxe9-and-the-benzene-ring}{%
 \subsubsection{Kekulé and the benzene
@@ -596,8 +596,8 @@ the kind, could now distinguish larger structures of manifold
 conformation; long rows, sometimes more closely fitted together; all
 twining and twisting in a snake-like motion. But look! What was that?
 One of the snakes had seized hold of its own tail, and the form whirled
-mockingly before my eyes. As if by a flash of lightning I woke. {[}12{]}
-(p 43).
+mockingly before my eyes. As if by a flash of lightning I woke.
+\protect\hyperlink{ref-findlay37}{{[}12{]}} (p 43).
 \end{quote}
 
 \begin{figure}
@@ -624,10 +624,11 @@ ouroboros}.\footnotemark{}}\label{fig:benzene}
 
 A low resolution video dramatization of Kekulé's dream is
 \href{https://www.youtube.com/watch?v=2NRwd-JJFm4}{available on YouTube}
-{[}13{]}. It is interesting that, instead of ``dozed'', the original
-German word used by Kekulé in his description of the second dream was
-``Halbschlaf'' which literally means ``half-asleep'' {[}11{]} (p 32).
-So, it is clear that the revelation came to him during a period in the
+\protect\hyperlink{ref-kekules-dream}{{[}13{]}}. It is interesting that,
+instead of ``dozed'', the original German word used by Kekulé in his
+description of the second dream was ``Halbschlaf'' which literally means
+``half-asleep'' \protect\hyperlink{ref-weisberg86}{{[}11{]}} (p 32). So,
+it is clear that the revelation came to him during a period in the
 hypnagogic, twilight state between wakefulness and sleep.
 
 \hypertarget{otto-loewis-dream}{%
@@ -636,9 +637,9 @@ hypnagogic, twilight state between wakefulness and sleep.
 Another famous discovery inspired by dreams was that of the Nobel
 Prize-winning physiologist
 \href{https://en.wikipedia.org/wiki/Otto_Loewi}{Otto Loewi}, who showed
-conclusively that nerve impulses were chemically transmitted {[}14{]}.
-The quaint story behind this discovery is given by Otto Loewi himself
-so:
+conclusively that nerve impulses were chemically transmitted
+\protect\hyperlink{ref-justin06}{{[}14{]}}. The quaint story behind this
+discovery is given by Otto Loewi himself so:
 
 \begin{quote}
 The night before Easter Sunday of {[}1920{]} I awoke, turned on the
@@ -650,7 +651,7 @@ returned. It was the design of an experiment to determine whether or not
 the hypothesis of chemical transmission that I had uttered 17 years ago
 was correct. I got up immediately, went to the laboratory, and performed
 a simple experiment on a frog heart according to the nocturnal design.
-{[}15{]}
+\protect\hyperlink{ref-loewi2014}{{[}15{]}}
 \end{quote}
 
 \hypertarget{vivid-visualization-and-mental-experiments}{%
@@ -695,7 +696,8 @@ positive in results. There is scarcely a subject that cannot be
 mathematically treated and the effects calculated or the results
 determined beforehand from the available theoretical and practical data.
 The carrying out into practice of a crude idea as is being generally
-done is, I hold, nothing but a waste of energy, money and time. {[}1{]}
+done is, I hold, nothing but a waste of energy, money and time.
+\protect\hyperlink{ref-john83}{{[}1{]}}
 \end{quote}
 
 Thus, Tesla produced his inventions without drawings or blueprints. He
@@ -723,8 +725,8 @@ attended to other tasks.
 Moreover, Tesla asserts that his mental experiments never failed him
 even once in a long and fecund inventing career. Even more surprisingly,
 ``his memory ever afterward retained all of the details, even to the
-finest dimensions,'' {[}2{]} of each of his mental experiments. Such a
-mind is a researcher's
+finest dimensions,'' \protect\hyperlink{ref-oneill80}{{[}2{]}} of each
+of his mental experiments. Such a mind is a researcher's
 \href{https://www.thefreedictionary.com/El+dorado}{El Dorado}, and it
 has the capability to revolutionize the way scientific research is
 conducted, and is itself worthy of further research.
@@ -735,10 +737,12 @@ experiments}\label{conjectures-vivid-visualization-and-mental-experiments}}
 
 The fact that we have a brain that is split into two hemispheres with
 accompanying hemispherical asymmetry has been known since the nineteenth
-century {[}16{]}. Interestingly, though, it is researchers in education,
-working in the field of children with learning difficulties, who have
-come up with the classification that some people are predominantly
-visual thinkers and learners {[}17{]}, {[}18{]}. The terms \emph{visual
+century \protect\hyperlink{ref-springer89}{{[}16{]}}. Interestingly,
+though, it is researchers in education, working in the field of children
+with learning difficulties, who have come up with the classification
+that some people are predominantly visual thinkers and learners
+\protect\hyperlink{ref-silver02}{{[}17{]}},
+\protect\hyperlink{ref-west91}{{[}18{]}}. The terms \emph{visual
 thinker} or \emph{visual-spatial learner} are used to describe
 individuals who think in visual rather than verbal mode. They
 predominantly use the right side of their brain, and may excel in art
@@ -752,9 +756,10 @@ people}\label{tesla-and-other-visually-gifted-people}}
 Tesla was a visual thinker par excellence. He possessed an ability to
 visualize that is unparalleled in the annals of science. There have been
 many eminent scientists, mathematicians, artists, and poets who have had
-unusual abilities to visualize {[}18{]}. Among them may be quoted the
-scientists \href{https://en.wikipedia.org/wiki/Michael_Faraday}{Michael
-Faraday} and \href{https://en.wikipedia.org/wiki/Albert_Einstein}{Albert
+unusual abilities to visualize \protect\hyperlink{ref-west91}{{[}18{]}}.
+Among them may be quoted the scientists
+\href{https://en.wikipedia.org/wiki/Michael_Faraday}{Michael Faraday}
+and \href{https://en.wikipedia.org/wiki/Albert_Einstein}{Albert
 Einstein}, the mathematicians
 \href{https://en.wikipedia.org/wiki/Henri_Poincar\%C3\%A9}{Henri
 Poincaré} and
@@ -767,16 +772,18 @@ Einstein, for example, imagined a man riding on a wave of light, and
 developed his theory of special relativity based on the consequences of
 this visualization. Faraday was also a visual thinker who liberally
 illustrated his scientific diaries with diagrams but rarely, if ever,
-used algebraic equations {[}18{]} (p 29), {[}19{]}. Poincaré, one of the
+used algebraic equations \protect\hyperlink{ref-west91}{{[}18{]}} (p
+29), \protect\hyperlink{ref-koestler64}{{[}19{]}}. Poincaré, one of the
 founding fathers of
 \href{https://mathworld.wolfram.com/Topology.html}{topology}---the
 mathematical field that explores what happens to objects as they are
 deformed, twisted, or stretched, but not torn---was by his own admission
 a visual thinker. Ramanujan claimed that many of his results appeared in
-his dreams as ready-made theorems {[}20{]} (p 66). William Blake saw
+his dreams as ready-made theorems
+\protect\hyperlink{ref-kanigel91}{{[}20{]}} (p 66). William Blake saw
 visions of realms finer and subtler than this world, while he was, it
 has been conjectured, in a hallucinatory state of consciousness
-{[}21{]}.
+\protect\hyperlink{ref-mckim72}{{[}21{]}}.
 
 What sets Tesla apart from even this distinguished company of gifted
 people, is that his visualization was conscious and volitional and had
@@ -786,10 +793,12 @@ except that, in his case, there was nothing in front of his eyes
 resembling what he saw}. Tesla accepted this gift of his in a matter of
 fact fashion and even suggested an explanation for what he saw: it was
 simply the reverse phenomenon of normal vision, in that a mental image
-in his brain projected a corresponding image on his retina {[}1{]}. The
-current state of knowledge about human visual perception
-{[}22{]}--{[}24{]} is such that there is, at present, no definitive
-explanation for Tesla's experience.
+in his brain projected a corresponding image on his retina
+\protect\hyperlink{ref-john83}{{[}1{]}}. The current state of knowledge
+about human visual perception
+\protect\hyperlink{ref-hubel88}{{[}22{]}}--\protect\hyperlink{ref-pvi97}{{[}24{]}}
+is such that there is, at present, no definitive explanation for Tesla's
+experience.
 
 \hypertarget{virtual-laboratory}{%
 \subsubsection{Virtual laboratory}\label{virtual-laboratory}}
@@ -826,13 +835,14 @@ though not immediately productive, are of the greatest moment and may
 shape our very destinies. Indeed, I feel now that had I understood and
 cultivated instead of suppressing them, I would have added substantial
 value to my bequest to the world. But not until I had attained manhood
-did I realize that I was an inventor. {[}1{]}
+did I realize that I was an inventor.
+\protect\hyperlink{ref-john83}{{[}1{]}}
 \end{quote}
 
 This resonates with Einstein's statement, ``I am enough of an artist to
 draw freely upon my imagination. Imagination is more important than
 knowledge. Knowledge is limited. Imagination encircles the world.''
-{[}25{]}.
+\protect\hyperlink{ref-einstein-quote}{{[}25{]}}.
 
 \hypertarget{conjectures-on-the-virtual-laboratory}{%
 \subsubsection{Conjectures on the virtual
@@ -886,7 +896,8 @@ Psychophysiological research has since discovered that it occurs in
 Movement (REM) sleep} and is as vivid---if not more vivid than---a
 normal dream. Nevertheless, the subject who is dreaming is aware that he
 or she is dreaming and, moreover, can volitionally alter the dream,
-unlike the regular dreamer {[}26{]}, {[}27{]}. This means that the lucid
+unlike the regular dreamer \protect\hyperlink{ref-laberge85}{{[}26{]}},
+\protect\hyperlink{ref-laberge2000}{{[}27{]}}. This means that the lucid
 dreamer occupies a paradoxical state at the borderline between sleep and
 wakefulness in which the body is essentially in REM sleep, but the mind
 is aware that it is dreaming, and is capable of controlling the dream.
@@ -927,7 +938,8 @@ respect for objective truth. Moreover, his mode of working in his
 virtual laboratory, without blueprints and prototypes, confounded and
 frustrated his co-workers. So we may safely assume that Tesla indeed ran
 his motor, examined its wear and tear, and then machined it to
-compensate for that, all in his mind {[}2{]} (p 58). This leads to many
+compensate for that, all in his mind
+\protect\hyperlink{ref-oneill80}{{[}2{]}} (p 58). This leads to many
 tantalizing questions, including these:
 
 \begin{enumerate}
@@ -977,45 +989,51 @@ and was prone to nervous exhaustion after long periods without rest, his
 body exhibited remarkable features. Tesla had a superhuman appetite for
 work. He was ``able to work thirty-eight years almost without a day's
 interruption, and {[}could{]} find himself still strong and fresh in
-body and mind'' {[}1{]}. He also had enormous will power that could not
-only sustain a punishing schedule but could also permanently banish
-undesirable habits that he had formed, once he was so convinced. Some of
-his more notable traits are enumerated below:
+body and mind'' \protect\hyperlink{ref-john83}{{[}1{]}}. He also had
+enormous will power that could not only sustain a punishing schedule but
+could also permanently banish undesirable habits that he had formed,
+once he was so convinced. Some of his more notable traits are enumerated
+below:
 
 \begin{enumerate}
 \tightlist
 \item
   During his first year at the Polytechnic at Graz, he ``regularly
   started {[}his{]} work at three o'clock in the morning and continued
-  until eleven at night, no Sundays or holidays excepted'' {[}1{]}.
+  until eleven at night, no Sundays or holidays excepted''
+  \protect\hyperlink{ref-john83}{{[}1{]}}.
 \item
   Tesla excelled at languages and knew English, French, German, Italian
-  and the Slavic dialects {[}3{]} (p 14).
+  and the Slavic dialects \protect\hyperlink{ref-cheney81}{{[}3{]}} (p
+  14).
 \item
   He had a prodigious memory and could store entire logarithmic tables
-  in his mind {[}3{]} (p 14).
+  in his mind \protect\hyperlink{ref-cheney81}{{[}3{]}} (p 14).
 \item
-  He was left-handed but later became ambidextrous {[}2{]}.
+  He was left-handed but later became ambidextrous
+  \protect\hyperlink{ref-oneill80}{{[}2{]}}.
 \item
-  He was not good at drawing {[}1{]}.
+  He was not good at drawing \protect\hyperlink{ref-john83}{{[}1{]}}.
 \item
   At the age of fifty-nine, when he slipped on icy ground, he righted
-  himself like a cat while in the air and landed on his feet {[}1{]}.
+  himself like a cat while in the air and landed on his feet
+  \protect\hyperlink{ref-john83}{{[}1{]}}.
 \item
   At sixty-three his body shape and weight had remained unchanged for
-  thirty-five years {[}1{]}.
+  thirty-five years \protect\hyperlink{ref-john83}{{[}1{]}}.
 \item
   He was attracted to gambling but gave it up when admonished by his
-  parents. He not only "conquered {[}his{]} passion then and there
+  parents. He not only ``conquered {[}his{]} passion then and there
   \ldots{} {[}but also{]} \ldots{} tore it from {[}his{]} heart so as
-  not to leave even a trace of desire {[}1{]}.
+  not to leave even a trace of desire
+  \protect\hyperlink{ref-john83}{{[}1{]}}.
 \item
   He took up smoking, but on realizing that it would ruin his health,
-  gave it up permanently {[}1{]}.
+  gave it up permanently \protect\hyperlink{ref-john83}{{[}1{]}}.
 \item
   When Tesla discovered that the innocent cup of coffee he consumed
   every morning could precipitate heart trouble, he discontinued it by
-  strenuous will {[}1{]}.
+  strenuous will \protect\hyperlink{ref-john83}{{[}1{]}}.
 \end{enumerate}
 
 He saw his conquest of bad habits in a different light from most people.
@@ -1024,7 +1042,8 @@ He said:
 \begin{quote}
 In this way I checked and bridled other habits and passions and have not
 only preserved my life but derived an immense amount of satisfaction
-from what most men would consider privation and sacrifice. {[}1{]}
+from what most men would consider privation and sacrifice.
+\protect\hyperlink{ref-john83}{{[}1{]}}
 \end{quote}
 
 One interesting question that arises is whether Tesla's extraordinary
@@ -1041,27 +1060,28 @@ never left until the end, Tesla was singularly inept in his business
 dealings. Indeed, one academic who teaches engineering management, and
 is a lifelong Tesla enthusiast and biographer, has written that he uses
 Tesla to teach his students how \emph{not} to run their business affairs
-{[}5{]}. Two incidents that well illustrate not only Tesla's integrity
-and moral sense but also his business
-\href{https://www.thefreedictionary.com/naivete}{naïveté} are noted
-below.
+\protect\hyperlink{ref-lomas99}{{[}5{]}}. Two incidents that well
+illustrate not only Tesla's integrity and moral sense but also his
+business \href{https://www.thefreedictionary.com/naivete}{naïveté} are
+noted below.
 
 Thomas Edison once offered Tesla the then staggering sum of USD 50,000
 for improving motor and generator designs. Tesla assiduously applied
 himself to the changes and gave the Edison company several very
 profitable patents in the process. When Tesla asked for the USD 50,000,
 Edison is reported to have replied, ``Tesla, you don't understand our
-American humor,'' and reneged on his promise {[}6{]}. Tesla promptly
-resigned.
+American humor,'' and reneged on his promise
+\protect\hyperlink{ref-tesla-wiki}{{[}6{]}}. Tesla promptly resigned.
 
 The \href{https://en.wikipedia.org/wiki/War_of_the_currents}{``War of
-the Currents''} {[}3{]} (chapter 5) between DC and AC, waged between
-Thomas Edison and George Westinghouse, left both almost bankrupt. Tesla,
-feeling loyalty and generosity toward his new backer, Westinghouse, did
-not re-negotiate his patent royalties but rather released Westinghouse
-altogether. In the process, he lost what would have amounted to almost
-USD 12,000,000 in royalties {[}3{]} (p 48--49). Tragically, toward the
-end of his life, he was plagued by a chronic shortage of funds.
+the Currents''} \protect\hyperlink{ref-cheney81}{{[}3{]}} (chapter 5)
+between DC and AC, waged between Thomas Edison and George Westinghouse,
+left both almost bankrupt. Tesla, feeling loyalty and generosity toward
+his new backer, Westinghouse, did not re-negotiate his patent royalties
+but rather released Westinghouse altogether. In the process, he lost
+what would have amounted to almost USD 12,000,000 in royalties
+\protect\hyperlink{ref-cheney81}{{[}3{]}} (p 48--49). Tragically, toward
+the end of his life, he was plagued by a chronic shortage of funds.
 
 \hypertarget{tesla-as-a-humanist}{%
 \subsubsection{Tesla as a humanist}\label{tesla-as-a-humanist}}
@@ -1081,12 +1101,13 @@ task of the inventor who is often misunderstood and unrewarded. But he
 finds ample compensation in the pleasing exercises of his powers and in
 the knowledge of being one of that exceptionally privileged class
 without whom the race would have long ago perished in the bitter
-struggle against pitiless elements. {[}1{]}
+struggle against pitiless elements.
+\protect\hyperlink{ref-john83}{{[}1{]}}
 \end{quote}
 
 Besides his innumerable inventions, he had also discovered the
 following, each of which was later ``re-discovered'' by others who won
-Nobel Prizes {[}2{]} (p 166):
+Nobel Prizes \protect\hyperlink{ref-oneill80}{{[}2{]}} (p 166):
 
 \begin{enumerate}
 \tightlist
@@ -1110,7 +1131,8 @@ Nobel Prizes {[}2{]} (p 166):
 Tesla was also the rightful inventor of radio, as established by the US
 Patent and Trademark Office after his death, although
 \href{https://en.wikipedia.org/wiki/Guglielmo_Marconi}{Guglielmo
-Marconi} won the Nobel Prize for it {[}7{]}. It is regrettable that
+Marconi} won the Nobel Prize for it
+\protect\hyperlink{ref-tesla-home}{{[}7{]}}. It is regrettable that
 Tesla was not only a man ahead of his time, but also one whom society
 failed to recognize and reward, and whom time has literally forgotten.
 
@@ -1142,7 +1164,8 @@ trying to mould themselves in living shapes. It is curious that I cannot
 project a form into this grey until the second phase is reached. Every
 time, before falling asleep, images of persons or objects flit before my
 view. When I see them I know that I am about to lose consciousness. If
-they are absent and refuse to come it means a sleepless night. {[}1{]}
+they are absent and refuse to come it means a sleepless night.
+\protect\hyperlink{ref-john83}{{[}1{]}}
 \end{quote}
 
 \hypertarget{idiosyncrasies}{%
@@ -1150,13 +1173,15 @@ they are absent and refuse to come it means a sleepless night. {[}1{]}
 
 Undoubted genius that he was, Tesla also exhibited traits that most of
 us would consider anomalous, if not downright abnormal. He had an
-abnormal fear of germs {[}3{]} (p 263--264) causing him to wash his
-hands several (but always a multiple of three) times. While dining, he
-needed eighteen clean linen napkins at the dining table {[}3{]} (p 1).
-He was also extremely fond of pigeons and used to nurse and feed any
-sick pigeons he found {[}3{]}. In his early life, Tesla developed a
-number of what he called ``strange likes, dislikes and habits'' {[}1{]}.
-His own account of them is as follows:
+abnormal fear of germs \protect\hyperlink{ref-cheney81}{{[}3{]}} (p
+263--264) causing him to wash his hands several (but always a multiple
+of three) times. While dining, he needed eighteen clean linen napkins at
+the dining table \protect\hyperlink{ref-cheney81}{{[}3{]}} (p 1). He was
+also extremely fond of pigeons and used to nurse and feed any sick
+pigeons he found \protect\hyperlink{ref-cheney81}{{[}3{]}}. In his early
+life, Tesla developed a number of what he called ``strange likes,
+dislikes and habits'' \protect\hyperlink{ref-john83}{{[}1{]}}. His own
+account of them is as follows:
 
 \begin{quote}
 During that period I contracted many strange likes, dislikes and habits,
@@ -1175,7 +1200,7 @@ counted the steps in my walks and calculated the cubical contents of
 soup plates, coffee cups and pieces of food---otherwise my meal was
 unenjoyable. All repeated acts or operations I performed had to be
 divisible by three and if I missed I felt impelled to do it all over
-again, even if it took hours. {[}1{]}
+again, even if it took hours. \protect\hyperlink{ref-john83}{{[}1{]}}
 \end{quote}
 
 The above quirks of mind and habit suggest that Tesla experienced the
@@ -1196,26 +1221,29 @@ following anomalies of mind:
 His fixation on the number three and having to wash his hands three
 times, have eighteen napkins on the table during meals, walking around a
 building thrice before entering it, etc., are all symptomatic of
-obsessive-compulsive disorder {[}6{]}. So, too, his counting the number
-of steps in his walks, and the cubic capacity of his soup plates and
-items of food and drink. Tesla's compulsion with germs and cleanliness
-may be traced back to periods in his life when he made a trans-Atlantic
-voyage without his luggage, and when he spent a year digging ditches in
-the United States to make ends meet. He vowed after these experiences
-that he would never use a towel twice {[}5{]} (pp 167--168). One is
-reminded in this context of how a deeply-felt regret can lead to an
-obsession, as in the case of Lady Macbeth who famously said, ``Here's
-the smell of the blood still: all the perfumes of Arabia will not
-sweeten this little hand,'' {[}Shakespeare, \emph{Macbeth}, act 5,
-scene, 1, lines 50--1{]}.
+obsessive-compulsive disorder
+\protect\hyperlink{ref-tesla-wiki}{{[}6{]}}. So, too, his counting the
+number of steps in his walks, and the cubic capacity of his soup plates
+and items of food and drink. Tesla's compulsion with germs and
+cleanliness may be traced back to periods in his life when he made a
+trans-Atlantic voyage without his luggage, and when he spent a year
+digging ditches in the United States to make ends meet. He vowed after
+these experiences that he would never use a towel twice
+\protect\hyperlink{ref-lomas99}{{[}5{]}} (pp 167--168). One is reminded
+in this context of how a deeply-felt regret can lead to an obsession, as
+in the case of Lady Macbeth who famously said, ``Here's the smell of the
+blood still: all the perfumes of Arabia will not sweeten this little
+hand,'' {[}Shakespeare, \emph{Macbeth}, act 5, scene, 1, lines 50--1{]}.
 
 Synaesthesia is a condition in which stimulation of one sensory modality
-gives rise to a response in another modality {[}28{]}, {[}29{]}. A
-synaesthete may ``taste'' a shape for example. It is tempting to
-speculate that Tesla's awful taste when dropping paper squares into a
-liquid may be symptomatic of synaesthesia. It would also be interesting
-to explore whether his hyper-acute senses and cross-modal sensory
-responses influenced each other.
+gives rise to a response in another modality
+\protect\hyperlink{ref-marks00}{{[}28{]}},
+\protect\hyperlink{ref-cytowic96}{{[}29{]}}. A synaesthete may ``taste''
+a shape for example. It is tempting to speculate that Tesla's awful
+taste when dropping paper squares into a liquid may be symptomatic of
+synaesthesia. It would also be interesting to explore whether his
+hyper-acute senses and cross-modal sensory responses influenced each
+other.
 
 Tesla's abnormal sensitivity to sounds, his single-minded absorption in
 what fascinated him, his solitary work habits, his inability to see
@@ -1225,18 +1253,21 @@ language and, in fact knew Göthe's \emph{Faust} by heart, along with
 several Serbian poems. This juxtaposition of some of the strengths found
 in the autistic with few of their deficiencies, has prompted some to
 suggest that Tesla probably suffered from high-functioning autism
-{[}30{]} or from
+\protect\hyperlink{ref-blume04}{{[}30{]}} or from
 \href{https://en.wikipedia.org/wiki/Asperger_syndrome}{Asperger's
-syndrome} {[}31{]}, which is a rare condition in which the autistic
-child is intelligent, highly verbal, and near normal {[}32{]}. This
-would explain both his extraordinary mental faculties and also a number
-of his mental quirks. The existence of
+syndrome} \protect\hyperlink{ref-tesla-faq}{{[}31{]}}, which is a rare
+condition in which the autistic child is intelligent, highly verbal, and
+near normal \protect\hyperlink{ref-frith90}{{[}32{]}}. This would
+explain both his extraordinary mental faculties and also a number of his
+mental quirks. The existence of
 \href{https://en.wikipedia.org/wiki/Savant_syndrome}{``autistic idiot
-savants''} {[}32{]} (pp 84--85), {[}33{]} who function with super-human
-excellence in some areas of human endeavour but who are lacking severely
-in others, suggests that some compensatory mechanism---a sort of zero
-sum for the total mental capacity---might explain the co-existence of
-both their ``islets of abilities'' and concomitant deficits.
+savants''} \protect\hyperlink{ref-frith90}{{[}32{]}} (pp 84--85),
+\protect\hyperlink{ref-savant2009}{{[}33{]}} who function with
+super-human excellence in some areas of human endeavour but who are
+lacking severely in others, suggests that some compensatory
+mechanism---a sort of zero sum for the total mental capacity---might
+explain the co-existence of both their ``islets of abilities'' and
+concomitant deficits.
 
 \hypertarget{questions-idiosyncrasies}{%
 \subsubsection{Questions:
@@ -1320,7 +1351,7 @@ day, this system would be capable of:
   The inauguration of a system of world-printing on land and sea; and
 \item
   The world reproduction of photographic pictures and all kinds of
-  drawings or records. {[}1{]}
+  drawings or records. \protect\hyperlink{ref-john83}{{[}1{]}}
 \end{enumerate}
 \end{quote}
 
@@ -1331,13 +1362,14 @@ coils, he could visualize what electricity was capable of, in the
 service of mankind.
 
 In his later years, he formulated grand plans to use lightning to
-generate artificial rain to turn deserts into gardens {[}1{]}. Another
-of Tesla's pet projects was the wireless transmission of free electrical
-energy from which all mankind could benefit {[}34{]}. This was in
-keeping with his mission statement. It was also consistent with the fact
-the earth receives its sum total of energy from the sun in precisely the
-same fashion. Yet, such grandiose projects and claims led to the
-marginalization of Tesla as a force in science. Are his claims of
+generate artificial rain to turn deserts into gardens
+\protect\hyperlink{ref-john83}{{[}1{]}}. Another of Tesla's pet projects
+was the wireless transmission of free electrical energy from which all
+mankind could benefit \protect\hyperlink{ref-tesla-energy}{{[}34{]}}.
+This was in keeping with his mission statement. It was also consistent
+with the fact the earth receives its sum total of energy from the sun in
+precisely the same fashion. Yet, such grandiose projects and claims led
+to the marginalization of Tesla as a force in science. Are his claims of
 tapping an infinite energy source all around us worth re-investigation
 in these times when global warming and the finitude of fossil fuels is
 forcing a re-examination of all energy options?
@@ -1349,18 +1381,21 @@ Vivekananda}\label{tesla-and-swami-vivekananda}}
 Ideas about unlimited, free energy might have found resonance with Tesla
 after his meeting with the famous Hindu monk,
 \href{https://en.wikipedia.org/wiki/Swami_Vivekananda}{Swami
-Vivekananda}, who visited the United States in the 1890s {[}7{]},
-{[}35{]}, {[}36{]}. It is held that Tesla met the Swami in 1895--6 and
-that he was receptive to the ideas expressed in the Sanskrit language of
-Hindu cosmology about a universal energy, called \emph{prāṇa}, and the
-vehicle for it, called \emph{ākāśa}, literally the medium for radiance.
-The exposure to the idea that everything is floating in a sea of
-universal \emph{prāṇa} must have taken hold in his fertile imagination
-and given rise to claims about the possibility of free energy from the
-capture of solar ``cosmic rays'' that could be used to drive machines.
-His biographer O'Neill states that---in an unpublished article entitled
-``Man's Greatest Achievement''---Tesla speaks of mankind in general,
-saying {[}2{]} (p 270):
+Vivekananda}, who visited the United States in the 1890s
+\protect\hyperlink{ref-tesla-home}{{[}7{]}},
+\protect\hyperlink{ref-grotz}{{[}35{]}},
+\protect\hyperlink{ref-dobson}{{[}36{]}}. It is held that Tesla met the
+Swami in 1895--6 and that he was receptive to the ideas expressed in the
+Sanskrit language of Hindu cosmology about a universal energy, called
+\emph{prāṇa}, and the vehicle for it, called \emph{ākāśa}, literally the
+medium for radiance. The exposure to the idea that everything is
+floating in a sea of universal \emph{prāṇa} must have taken hold in his
+fertile imagination and given rise to claims about the possibility of
+free energy from the capture of solar ``cosmic rays'' that could be used
+to drive machines. His biographer O'Neill states that---in an
+unpublished article entitled ``Man's Greatest Achievement''---Tesla
+speaks of mankind in general, saying
+\protect\hyperlink{ref-oneill80}{{[}2{]}} (p 270):
 
 \begin{quote}
 There manifests itself in the fully developed being, Man, a desire
@@ -1385,38 +1420,42 @@ The fact that Tesla, who did not know Sanskrit, used the words prāṇa and
 ākāśa, lends support to the claim that he did indeed meet Swami
 Vivekananda. Tesla's expression ``tenuity beyond conception''
 corresponds perfectly with the statement \emph{``ta ākāśe na vidyante''}
-meaning ``(this) ākāśa is imperceptible'' {[}37{]} (p 92), showing
-Tesla's ability to grasp abstruse philosophical points. Indeed, he did
-expound on philosophy, and was in that sense a well-rounded scholar
-{[}38{]}.
+meaning ``(this) ākāśa is imperceptible''
+\protect\hyperlink{ref-agra01}{{[}37{]}} (p 92), showing Tesla's ability
+to grasp abstruse philosophical points. Indeed, he did expound on
+philosophy, and was in that sense a well-rounded scholar
+\protect\hyperlink{ref-tesla-cosmic}{{[}38{]}}.
 
 Post-Einsteinian physics has not found a need for \emph{ākāśa} or the
 luminiferous ether, but there is a need for \emph{something}, regardless
 of label. Indeed, in a recent article on the ether, it has been observed
 that ``Physicists appear to need an ether on which to load all the
 properties of the physical world they cannot otherwise explain. Ether,
-alias the vacuum, exists. Void is anything but nothing'' {[}39{]}.
+alias the vacuum, exists. Void is anything but nothing''
+\protect\hyperlink{ref-heil03}{{[}39{]}}.
 
 \hypertarget{teslas-pigeon}{%
 \subsubsection{Tesla's pigeon}\label{teslas-pigeon}}
 
 Although possessed of mental abilities that could almost be termed
 psychic, Tesla did not give vent to the expression of his spiritual side
-{[}2{]}. Indeed, when once approached by a team of engineers to join a
-psychological society for investigating psychic phenomena, Tesla almost
-threw them out {[}1{]}.
+\protect\hyperlink{ref-oneill80}{{[}2{]}}. Indeed, when once approached
+by a team of engineers to join a psychological society for investigating
+psychic phenomena, Tesla almost threw them out
+\protect\hyperlink{ref-john83}{{[}1{]}}.
 
 With regard to his neglected spiritual side, Tesla's pigeon fixation
-affords an interesting story {[}3{]}. Tesla loved one particular female
-pigeon, almost as he would love a human being. He recalled that one
-night, as he was lying on his bed in the dark, this pigeon flew in
-through the open window, as if to deliver a message. He looked at her
-and realized that she had come to tell him she was dying. As he looked
-at her, Tesla said, ``there came a light from her eyes---two powerful
-beams of light''. He reaffirmed, ``Yes, it was a real light, a powerful,
-dazzling, blinding light, a light more intense than I had ever produced
-by the most powerful lamps in my laboratory'' {[}3{]} (p 229). When that
-pigeon died, Tesla ``knew'' that his life's work was finished.
+affords an interesting story \protect\hyperlink{ref-cheney81}{{[}3{]}}.
+Tesla loved one particular female pigeon, almost as he would love a
+human being. He recalled that one night, as he was lying on his bed in
+the dark, this pigeon flew in through the open window, as if to deliver
+a message. He looked at her and realized that she had come to tell him
+she was dying. As he looked at her, Tesla said, ``there came a light
+from her eyes---two powerful beams of light''. He reaffirmed, ``Yes, it
+was a real light, a powerful, dazzling, blinding light, a light more
+intense than I had ever produced by the most powerful lamps in my
+laboratory'' \protect\hyperlink{ref-cheney81}{{[}3{]}} (p 229). When
+that pigeon died, Tesla ``knew'' that his life's work was finished.
 
 Although Tesla never publicly gave expression to his religious or
 spiritual beliefs, this pigeon episode inevitably calls for comparison
@@ -1431,12 +1470,13 @@ evolution}\label{buckes-hypothesis-on-human-mental-evolution}}
 The medical doctor, Richard Maurice Bucke\footnote{Formerly Medical
   Superintendent of the Asylum for the Insane at London, Ontario, Canada},
 writing at the beginning of the twentieth century, advanced the radical
-hypothesis that evolution also applied to the human mind {[}9{]}.
-Although he used the word ``evolution'', Bucke did not imply any
-particular engine, like Darwinian natural selection, for driving mental
-evolution, but rather asserted blandly ``that growth, evolution,
-development, \ldots{} has \ldots{} always gone on, is going on now, and
-\ldots{} will always go on'' {[}9{]} (p 61).
+hypothesis that evolution also applied to the human mind
+\protect\hyperlink{ref-bucke48}{{[}9{]}}. Although he used the word
+``evolution'', Bucke did not imply any particular engine, like Darwinian
+natural selection, for driving mental evolution, but rather asserted
+blandly ``that growth, evolution, development, \ldots{} has \ldots{}
+always gone on, is going on now, and \ldots{} will always go on''
+\protect\hyperlink{ref-bucke48}{{[}9{]}} (p 61).
 
 As a lead-in to his idea of mental evolution, Bucke proposed, among
 other things, that man's sense of colour, sense of fragrance, and
@@ -1456,7 +1496,8 @@ beginning, in one individual of that race; later it will be found in a
 few individuals; after a further time in a larger percentage of the
 members of that race; still later in half the members; and so on, until,
 after thousands of generations, an individual who misses having the
-faculty is regarded as a monstrosity. {[}9{]} (p 52)
+faculty is regarded as a monstrosity.
+\protect\hyperlink{ref-bucke48}{{[}9{]}} (p 52)
 \end{quote}
 
 \begin{figure}
@@ -1469,14 +1510,14 @@ beings.\footnotemark{}}\label{fig:colour-tree}
 }
 \end{figure}
 \footnotetext{Evolution of colour perception in human beings as
-  conjectured by R M Bucke. This diagram is adapted from Bucke {[}9{]}
-  (p 36). Time increases as one moves right. The circled colours were
-  the ones newly recognized at any particular period. So, the
-  progression of newly recognized colours was red/black, followed by
-  yellow/green and later by white/blue. Bucke cites literary and
-  scientific evidence in support of his conjecture. While his scientific
-  arguments have now been supplanted, the literary arguments are still
-  persuasive.}
+  conjectured by R M Bucke. This diagram is adapted from Bucke
+  \protect\hyperlink{ref-bucke48}{{[}9{]}} (p 36). Time increases as one
+  moves right. The circled colours were the ones newly recognized at any
+  particular period. So, the progression of newly recognized colours was
+  red/black, followed by yellow/green and later by white/blue. Bucke
+  cites literary and scientific evidence in support of his conjecture.
+  While his scientific arguments have now been supplanted, the literary
+  arguments are still persuasive.}
 
 Extrapolating from his suggested hypothetical development of colour
 vision, etc., over time, Bucke postulated that the human mind also
@@ -1497,12 +1538,13 @@ consciousness so:
 \item
   Cosmic consciousness which includes simple and self consciousness, but
   which in addition allows ``a consciousness of the cosmos, that is, of
-  the life and order of the universe'' {[}9{]} (p 3) and ``an
-  intellectual enlightenment or illumination which alone would place the
-  individual on a new plane of existence---would make him almost a
-  member of a new species'' {[}9{]} (p 3). Bucke stated that the burden
-  of his book was to expound the nature of this exalted state and
-  identify some of its exemplars.
+  the life and order of the universe''
+  \protect\hyperlink{ref-bucke48}{{[}9{]}} (p 3) and ``an intellectual
+  enlightenment or illumination which alone would place the individual
+  on a new plane of existence---would make him almost a member of a new
+  species'' \protect\hyperlink{ref-bucke48}{{[}9{]}} (p 3). Bucke stated
+  that the burden of his book was to expound the nature of this exalted
+  state and identify some of its exemplars.
 \end{enumerate}
 
 While there have been many extraordinary spiritual leaders of humankind
@@ -1545,9 +1587,10 @@ One rather sad, recurring theme in the biographies of Tesla is that he
 was somehow a misfit either in the society in which he lived and worked,
 or the times in which his life was enacted. Margaret Cheney's biography,
 \emph{Tesla: Man Out of Time}, clearly shows this in its very title. As
-does also the subtitle of Lomas's book {[}5{]}, \emph{Nikola Tesla,
-Forgotten Genius of Electricity}. Do these titles hold the key to
-Tesla's mystery? \emph{Was Tesla from our future?}
+does also the subtitle of Lomas's book
+\protect\hyperlink{ref-lomas99}{{[}5{]}}, \emph{Nikola Tesla, Forgotten
+Genius of Electricity}. Do these titles hold the key to Tesla's mystery?
+\emph{Was Tesla from our future?}
 
 The most important contribution of Tesla may not be the alternating
 current grid, or the induction motor, or any of his other electrical
@@ -1560,14 +1603,14 @@ the veil of time to visit us and give us a glimpse of the future
 capabilities of humankind?}
 
 \hypertarget{acknowledgements}{%
-\paragraph{Acknowledgements}\label{acknowledgements}}
+\subsection{Acknowledgements}\label{acknowledgements}}
 
 For helpful comments and discussions, I thank N Chandrasekhar, R
 Gopalkrishnan, M Jegasothy, P Jones, M R Jupp, B Raguram, B Readhead,
 and R Sivasankar.
 
 \hypertarget{feedback}{%
-\paragraph{Feedback}\label{feedback}}
+\subsection{Feedback}\label{feedback}}
 
 Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
@@ -1584,7 +1627,7 @@ comments and corrections.
 \leavevmode\vadjust pre{\hypertarget{ref-john83}{}}%
 \CSLLeftMargin{{[}1{]} }
 \CSLRightInline{N. Tesla, {`{My Inventions: The Autobiography of Nikola
-Tesla},'} B. Johnston, Ed. Williston, VT, USA: Hart Brothers, 1983
+Tesla}'}, B. Johnston, Ed. Williston, VT, USA: Hart Brothers, 1983
 {[}Online{]}. Available:
 \url{http://www.tfcbooks.com/special/mi_link.htm}. {[}Accessed:
 06-Jun-2002{]}}
@@ -1614,20 +1657,20 @@ Headline Book Publishing, 1999. }
 \leavevmode\vadjust pre{\hypertarget{ref-tesla-wiki}{}}%
 \CSLLeftMargin{{[}6{]} }
 \CSLRightInline{---, {`{N}ikola {T}esla --- {Wikipedia}{,} the {F}ree
-{E}ncyclopedia,'} 2021. {[}Online{]}. Available:
+{E}ncyclopedia'}, 2021. {[}Online{]}. Available:
 \url{https://en.wikipedia.org/wiki/Nikola_Tesla}. {[}Accessed:
 23-Feb-2021{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-tesla-home}{}}%
 \CSLLeftMargin{{[}7{]} }
-\CSLRightInline{J. M. Newlight, {`{Nikola Tesla}.'} {[}Online{]}.
+\CSLRightInline{J. M. Newlight, {`{Nikola Tesla}'}. {[}Online{]}.
 Available: \url{http://www.teslaplay.com/index.html}. {[}Accessed:
 23-Feb-2021{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-tesla-pbs-bio}{}}%
 \CSLLeftMargin{{[}8{]} }
 \CSLRightInline{R. Uth and M. Cheney, {`{PBS: Tesla---Master of
-Lightning: Who Was Nikola Tesla?}'} 2004. {[}Online{]}. Available:
+Lightning: Who Was Nikola Tesla?}'}, 2004. {[}Online{]}. Available:
 \url{https://www.pbs.org/tesla/}. {[}Accessed: 26-Jun-2006{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-bucke48}{}}%
@@ -1638,7 +1681,7 @@ Evolution of the Human Mind}}, 14th ed. New York, USA: E P Dutton, 1948.
 
 \leavevmode\vadjust pre{\hypertarget{ref-tesla-personal}{}}%
 \CSLLeftMargin{{[}10{]} }
-\CSLRightInline{N. Tesla, {`{Some Personal Recollections},'}
+\CSLRightInline{N. Tesla, {`{Some Personal Recollections}'},
 \emph{Scientific American}, 1915 {[}Online{]}. Available:
 \url{https://www.pbs.org/tesla/res/res_art01.html}. {[}Accessed:
 06-Jun-2006{]}}
@@ -1655,13 +1698,13 @@ London, UK: Duckworth, 1937. }
 
 \leavevmode\vadjust pre{\hypertarget{ref-kekules-dream}{}}%
 \CSLLeftMargin{{[}13{]} }
-\CSLRightInline{---, {`{Kekule's Dream}.'} {[}Online{]}. Available:
+\CSLRightInline{---, {`{Kekule's Dream}'}. {[}Online{]}. Available:
 \url{https://www.youtube.com/watch?v=2NRwd-JJFm4}. {[}Accessed:
 21-Feb-2021{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-justin06}{}}%
 \CSLLeftMargin{{[}14{]} }
-\CSLRightInline{R. G. Justin, {`{Otto Loewi's Great Dreams},'} \emph{The
+\CSLRightInline{R. G. Justin, {`{Otto Loewi's Great Dreams}'}, \emph{The
 Permanente Journal}, vol. 10, no. 2, pp. 70--71, 2006 {[}Online{]}.
 Available:
 \url{http://www.thepermanentejournal.org/files/Summer2006/otto.pdf}.
@@ -1670,7 +1713,7 @@ Available:
 \leavevmode\vadjust pre{\hypertarget{ref-loewi2014}{}}%
 \CSLLeftMargin{{[}15{]} }
 \CSLRightInline{A. N. McCoy and Y. S. Tan, {`{Otto Loewi (1873--1961):
-Dreamer and Nobel laureate},'} \emph{Singapore Medical Journal}, vol.
+Dreamer and Nobel laureate}'}, \emph{Singapore Medical Journal}, vol.
 55, no. 1, pp. 3--4, 2014 {[}Online{]}. Available:
 \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4291908/}.
 {[}Accessed: 21-Feb-2021{]}}
@@ -1726,7 +1769,7 @@ Verlag, 1997. }
 \leavevmode\vadjust pre{\hypertarget{ref-einstein-quote}{}}%
 \CSLLeftMargin{{[}25{]} }
 \CSLRightInline{A. Einstein, {`{Quote by Albert Einstein: {``I am enough
-of an artist to draw freely upon my \ldots{}''}},'} 2021. {[}Online{]}.
+of an artist to draw freely upon my \ldots{}''}}'}, 2021. {[}Online{]}.
 Available:
 \url{https://www.goodreads.com/quotes/2177-i-am-enough-of-an-artist-to-draw-freely-upon}.
 {[}Accessed: 24-Feb-2021{]}}
@@ -1738,14 +1781,14 @@ USA: Jeremy P Tarcher, 1985. }
 
 \leavevmode\vadjust pre{\hypertarget{ref-laberge2000}{}}%
 \CSLLeftMargin{{[}27{]} }
-\CSLRightInline{S. LaBerge and J. Gackenbach, {`{Lucid Dreaming},'} in
+\CSLRightInline{S. LaBerge and J. Gackenbach, {`{Lucid Dreaming}'}, in
 \emph{{Varieties of Anomalous Experience: Examining the Scientific
 Evidence}}, E. Cardeña, S. J. Lynn, and S. Krippner, Eds. Washington,
 DC, USA: American Psychological Association, 2000, pp. 151--182. }
 
 \leavevmode\vadjust pre{\hypertarget{ref-marks00}{}}%
 \CSLLeftMargin{{[}28{]} }
-\CSLRightInline{L. E. Marks, {`Synesthesia,'} in \emph{{Varieties of
+\CSLRightInline{L. E. Marks, {`Synesthesia'}, in \emph{{Varieties of
 Anomalous Experience: Examining the Scientific Evidence}}, E. Cardeña,
 S. J. Lynn, and S. Krippner, Eds. Washington, DC, USA: American
 Psychological Association, 2000, pp. 121--149. }
@@ -1758,14 +1801,14 @@ London, UK: Abacus, 1996. }
 \leavevmode\vadjust pre{\hypertarget{ref-blume04}{}}%
 \CSLLeftMargin{{[}30{]} }
 \CSLRightInline{H. Blume, {`{Autism \& The Internet or It's The Wiring,
-Stupid},'} 1997. {[}Online{]}. Available:
+Stupid}'}, 1997. {[}Online{]}. Available:
 \url{http://web.mit.edu/comm-forum/legacy/papers/blume.html}.
 {[}Accessed: 23-Feb-2021{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-tesla-faq}{}}%
 \CSLLeftMargin{{[}31{]} }
 \CSLRightInline{G. Peterson, {`{Tesla's Mind \textbar{} Tesla FAQ No. 4
-\textbar{} Interesting Facts About Nikola Tesla}.'} {[}Online{]}.
+\textbar{} Interesting Facts About Nikola Tesla}'}. {[}Online{]}.
 Available: \url{http://www.tfcbooks.com/teslafaq/q\&a_004.htm}.
 {[}Accessed: 26-Jun-2006{]}}
 
@@ -1777,7 +1820,7 @@ Oxford, UK: Basil Blackwell, 1990. }
 \leavevmode\vadjust pre{\hypertarget{ref-savant2009}{}}%
 \CSLLeftMargin{{[}33{]} }
 \CSLRightInline{D. A. Treffert, {`The savant syndrome: An extraordinary
-condition. A synopsis: Past, present, future,'} \emph{Philosophical
+condition. A synopsis: Past, present, future'}, \emph{Philosophical
 Transactions of the Royal Society of London. Series B, Biological
 sciences}, vol. 364, no. 1522, pp. 1351--1357 {[}Online{]}. Available:
 \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2677584/}.
@@ -1786,7 +1829,7 @@ sciences}, vol. 364, no. 1522, pp. 1351--1357 {[}Online{]}. Available:
 \leavevmode\vadjust pre{\hypertarget{ref-tesla-energy}{}}%
 \CSLLeftMargin{{[}34{]} }
 \CSLRightInline{N. Tesla, {`{The Problem Of Increasing Human Energy:
-With Special References to the Harnessing of the Sun's Energy}.'}
+With Special References to the Harnessing of the Sun's Energy}'}.
 {[}Online{]}. Available:
 \url{https://www.pbs.org/tesla/res/res_art09.html}. {[}Accessed:
 26-Jun-2006{]}}
@@ -1794,13 +1837,13 @@ With Special References to the Harnessing of the Sun's Energy}.'}
 \leavevmode\vadjust pre{\hypertarget{ref-grotz}{}}%
 \CSLLeftMargin{{[}35{]} }
 \CSLRightInline{T. Grotz, {`{The Influence of Vedic Philosophy on Nikola
-Tesla's Understanding of Free Energy},'} 1997. {[}Online{]}. Available:
+Tesla's Understanding of Free Energy}'}, 1997. {[}Online{]}. Available:
 \url{http://mountainman.com.au/aether_1.html}. {[}Accessed:
 06-Jun-2006{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-dobson}{}}%
 \CSLLeftMargin{{[}36{]} }
-\CSLRightInline{J. Dobson, {`{The Equations of Maya},'} 1993.
+\CSLRightInline{J. Dobson, {`{The Equations of Maya}'}, 1993.
 {[}Online{]}. Available:
 \url{http://quanta-gaia.org/dobson/EquationsOfMaya.html}. {[}Accessed:
 23-Feb-2021{]}}
@@ -1813,13 +1856,13 @@ Philosophy}}. New Delhi, India: Chaukamba Sanskrit Pratishthan, 2001. }
 \leavevmode\vadjust pre{\hypertarget{ref-tesla-cosmic}{}}%
 \CSLLeftMargin{{[}38{]} }
 \CSLRightInline{N. Tesla, {`{How Cosmic Forces Shape Our Destinies:
-({``Did the War Cause the Italian Earthquake''})}.'} {[}Online{]}.
+({``Did the War Cause the Italian Earthquake''})}'}. {[}Online{]}.
 Available: \url{https://www.pbs.org/tesla/res/res_art10.html}.
 {[}Accessed: 26-Jun-2006{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-heil03}{}}%
 \CSLLeftMargin{{[}39{]} }
-\CSLRightInline{J. L. Heilbron, {`Ether,'} in \emph{{The Oxford
+\CSLRightInline{J. L. Heilbron, {`Ether'}, in \emph{{The Oxford
 Companion to the History of Modern Science}}, J. L. Heilbron, Ed. Oxford
 University Press, 2003. }
 
