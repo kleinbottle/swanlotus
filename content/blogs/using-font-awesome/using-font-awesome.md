@@ -8,3 +8,4 @@ summary: ""
 opengraphimage: "font-awesome.svg"
 ---
 
+![](./images/font-awesome.png){width=70%}
