@@ -1,0 +1,15 @@
+variables:
+  fontsize: 12pt
+  mainfont: Source Serif Pro
+  mainfontoptions:
+    - Scale=MatchLowercase
+    - Mapping=TeX
+    - Ligatures=TeX
+    - BoldFont =* Semibold
+  sansfont: Source Sans Pro
+  sansfontoptions:
+    - BoldFont=* Semibold
+  monofont: Fira Mono
+  monofontoptions:
+    - Scale=0.9
+  linestretch: 1.2

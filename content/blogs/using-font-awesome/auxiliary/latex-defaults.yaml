@@ -1,0 +1,32 @@
+# latex-defaults.yaml
+#
+# YAML defaults file for use with pandoc and lualatex/xelatex
+# to generate PDF output from pandoc-markdown.
+# 
+reader: markdown
+
+writer: latex
+pdf-engine: lualatex
+pdf-engine-opts:
+- "-shell-escape"
+
+standalone: true
+
+variables:
+  documentclass: article
+  classoption:
+    - rgb
+    - dvipsnames
+    - svgnames
+    - hyphens
+  papersize: A4
+  geometry:
+    - margin=25mm
+#
+  linkcolor: Maroon
+  urlcolor: Maroon
+  hyperrefoptions:
+    - colorlinks=true
+
+metadata:
+  lang: en-GB

@@ -4659,4 +4659,32 @@ a:hover code {
   clear: both;
 }
 
+.fa-solid {
+  color: maroon;
+}
+
+.fa-paper-plane {
+  color: #004369;
+}
+
+.fa-envelope, .fa-mobile-screen-button, .fa-linkedin-in, .fa-github {
+  color: #2e8bc0;
+}
+
+.center {
+  text-align: center;
+}
+
+.larger {
+  font-size: larger;
+}
+
+.smaller {
+  font-size: smaller;
+}
+
+.typewriter {
+  font: "Fira Mono", monospace;
+}
+
 /*# sourceMappingURL=swanlotus.css.map */

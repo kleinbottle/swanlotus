@@ -50,6 +50,7 @@ help:
 	@echo '   make ssh_upload                     upload the web site via SSH        '
 	@echo '   make rsync_upload                   upload the web site via rsync+ssh  '
 	@echo '   make ftp_upload                     upload the web site via FTP        '
+	@echo '   make css                            compile sass to css                '
 	@echo '                                                                          '
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   '
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
@@ -87,6 +88,8 @@ rsync_upload: publish
 
 ftp_upload: publish
 	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
+	
+css:
+	sass $(HOME)/swanlotus/theme/swanlotus/static/sass/swanlotus.sass $(HOME)/swanlotus/theme/swanlotus/static/css/swanlotus.css
 
-
-.PHONY: html help clean regenerate serve serve-global devserver publish ssh_upload rsync_upload ftp_upload
+.PHONY: html help clean regenerate serve serve-global devserver publish ssh_upload rsync_upload ftp_upload css
