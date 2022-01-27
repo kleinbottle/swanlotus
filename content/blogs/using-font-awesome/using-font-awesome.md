@@ -98,13 +98,13 @@ He stared at his non-negotiable specifications once again. It was then that he r
 
 He first checked whether Pandoc could take in plain text and put out the three desired formats. After confirming that it could, he realized that it would be prudent to start off with [Markdown](https://daringfireball.net/projects/markdown/) and use that almost-plain-text source to generate the other three.
 
-He next took a look at the somewhat [intricate network diagram](https://pandoc.org/diagram.svg) on the right of the Pandoc home page. The plethora of formats available convinced him that Pandoc would future-proof his work in case even more output formats were required by his client later on. Sol decided to pitch his conversion tent squarely on the Pandoc field.
+He next took a look at the somewhat [intricate network diagram](https://pandoc.org/diagram.svg) on the right of the Pandoc home page. The plethora of formats available convinced him that Pandoc would future-proof his work in case even more output formats were required by his client later on. Sol decided to pitch his format conversion tent squarely on the Pandoc field.
 
 ## A skeleton in Markdown
 
 "A résumé must have content: in this case, my client's", said Sol, stating the blindingly obvious. "But for our intellectual excursion, we shall skip the content and replace it by abstract placeholders. That way, I keep my client's details confidential, and we will not [muddy the waters](https://idioms.thefreedictionary.com/muddy+the+waters) with needless detail. In fact, I propose to show you only one simple line of pseudo content, which is also _the single line_ where Font Awesome makes its debut."
 
-Sol then showed a snippet of a markdown text file with the pseudo content shown below:
+Sol then showed a snippet of a Pandoc Markdown text file with the pseudo content shown below:
 
 ```markdown
 :::::center
@@ -121,19 +121,21 @@ He explained that the four icons above were a sufficient complement of Awesome F
 
 Schooled as he was Greek philosophy, Sol decided that the atom would be the fittest icon to begin his acquaintance with Font Awesome. He would experiment and build his knowledge atom by atom.
 
-He went to the [latest icons page](https://fontawesome.com/v6.0/icons), selected `Free` and typed "atom". From the gallery of 32 icons, he selected the one that best met his expectations. The popup screen he saw is shown below:
+He went to the [latest icons page](https://fontawesome.com/v6.0/icons), selected `Free` on the left checkbox and typed "atom". From the gallery of 32 icons, he selected the one that best met his expectations. The popup screen he saw is shown below:
 
 ![]({attach}images/atom.png){width=90%}
 
-Its Unicode code point was `f5d2`, its name was `atom`, and its SVG icon file was called `atom.svg`. He was seeing the `Solid` flavour of the icon; other variants were not included in the free version he had dwnloaded. Interestingly, the code snippet for HTML was also given with the icon as
+Its Unicode code point was `f5d2`, its name was `atom`, its SVG icon file was called `atom.svg`, and the glyph could be copied by clicking on the picture of the atom next to the Unicode value. He was seeing the `Solid` flavour of the icon; other variants were not included in the free version he had downloaded. Interestingly, the code snippet for HTML was also given with the icon as:
+
 ```html
 <i class="fa-solid fa-atom"></i>
 ```
+
 where the [`<i>` stood for "Idiomatic Text element"](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i).
 
 Not one to take things at face value, Sol immediately tested the HTML invocation on his browser [hoping against hope](https://www.thefreedictionary.com/hoping+against+hope) that the given incantation _alone_ could automagically conjure up the envelope icon. When it did not, Sol muttered to himself that more work was in store.
 
-He wracked his brain, and after some effort, decided to simulate his web browser in his head by attempting to "act" like it. "I will assume that the given incantation is meaningful and correct. But it is only an HTML fragment. If I were a web browser, what would I need _in addition to the incantation_ to display the envelope icon?  How does my browser _know_ what that incantation means? It was not born with that knowledge pre-programmed into it somehow. _So who tells it what the incantation means, and where to look for that icon?_" With that thought uppermost in his mind, Sol retired for the night.
+He wracked his brain for the reason for failure. After some effort, he decided to simulate his web browser in his head by attempting to "act" like it. "I will assume that the given incantation is meaningful and correct. But it is only an HTML fragment. If I were a web browser, what would I need _in addition to the incantation_ to display the envelope icon? How does my browser _know_ what that incantation means? It was not born with that knowledge pre-programmed into it somehow. _So who tells it what the incantation means, and where to look for that icon?_" With that thought uppermost in his mind, Sol retired for the night.
 
 ### A second look at the atom icon
 
@@ -143,13 +145,13 @@ Sol loaded [this page](https://fontawesome.com/v6.0) to be greeted by two large 
 
 ![]({attach}images/start-for-free.png){width=90%}
 
-And when he selected the [`Start for Free`](https://fontawesome.com/v6.0/docs/web/setup/quick-start)  button, he was led to a clear and [detailed algorithm](https://fontawesome.com/v6.0/docs/web/setup/quick-start) on how  to set up and use Font Awesome. Central to everything was a simple [one-liner](https://en.wikipedia.org/wiki/One-liner_program) customized for him that yielded an HTML script when he clicked [`Set up a Kit`](https://fontawesome.com/kits). The script he got looked like this:
+And when he selected [`Start for Free`](https://fontawesome.com/v6.0/docs/web/setup/quick-start), he was led to a clear and [detailed algorithm](https://fontawesome.com/v6.0/docs/web/setup/quick-start) on how  to set up and use Font Awesome. Central to everything was a simple [one-liner](https://en.wikipedia.org/wiki/One-liner_program) customized for him that yielded an HTML script when he clicked [`Set up a Kit`](https://fontawesome.com/kits). The script he got looked like this:
 
 ```html
 <script src="https://kit.fontawesome.com/[some-hex-digits].js" crossorigin="anonymous"></script>
 ```
 
-It was supposed to be included in the `<head>` of the HTML document. This one line was the automagical incantation that Sol was looking for the previous night. He tried it out on the `atom` icon and got: <i class="fa-solid fa-atom"></i>. Voila!
+The script was supposed to be included in the `<head>` of the HTML document. This one line was the automagical incantation that Sol was looking for the previous night. He tried it out on the `atom` icon and got: <i class="fa-solid fa-atom"></i>. Voila!
 
 The maroon colour arose from a little CSS fragment that set the colour of the icon to maroon with
 
@@ -159,7 +161,7 @@ The maroon colour arose from a little CSS fragment that set the colour of the ic
 }
 ```
 
-This meant that _all_ Font Awesome Solid icons will show up in maroon. If he wanted another `Solid` icon, say, `paper-plane`, to show up in a blue-green colour, he would need to override this setting with
+This meant that _all_ Font Awesome `Solid` icons will show up in maroon. If he wanted another `Solid` icon, say, `paper-plane`, to show up in a blue-green colour, he would need to override this setting with
 
 ```css
 .fa-paper-plane {
@@ -167,7 +169,7 @@ This meant that _all_ Font Awesome Solid icons will show up in maroon. If he wan
 }
 ```
 
-to got a correctly coloured `paper-plane` icon from the `Solid` set: <i class="fa-solid fa-paper-plane"></i>. Indeed, even the version from the `Regular` set would be in the same colour: <i class="fa-regular fa-paper-plane"></i>
+to get a correctly coloured `paper-plane` icon from the `Solid` set: <i class="fa-solid fa-paper-plane"></i>. Indeed, even the version from the `Regular` set would be in the same colour: <i class="fa-regular fa-paper-plane"></i>
 
 ### The four-icon alphabet
 
@@ -180,9 +182,11 @@ Inspired by his success and encouraged by the ease of use of the icons in HTML, 
 | `f0e1` | Brands | `linkedin-in` | <i class="fa-brands fa-linkedin-in"></i> |  |
 | `f09b` | Brands | `github` | <i class="fa-brands fa-github"></i> |  |
 
-The mobile phone icon that was in the free version only featured the `Solid` version, whereas the envelope icon was available in `Regular` and `Solid` as well. [Check this]
+The column headed `Icons` was generated by the `<i class="fa-... fa-..."></i>` code while that labelled `Glyphs` contained the relevant glyph directly copied from the popup.
 
- The icon colour was set by this CSS fragment:
+Note that the mobile phone icon available in the free version was only from the `Solid` set, whereas the envelope icon was available in both the `Regular` and `Solid` sets.
+
+The icon colour was set by this CSS fragment, and applies only to the `Icons` column:
 
 ```css
 .fa-envelope, .fa-mobile-screen-button, .fa-linkedin-in, .fa-github {
@@ -190,15 +194,15 @@ The mobile phone icon that was in the free version only featured the `Solid` ver
 }
 ```
 
-Sol told me, "Notice that the Glyph column only shows up [tofu rectangles](https://en.wikipedia.org/wiki/Noto_fonts#Origin_of_Noto_name). This is because the browser has not been instructed on which fonts to use for these specialized characters.
+"Notice that the Glyph column only shows [tofu rectangles](https://en.wikipedia.org/wiki/Noto_fonts#Origin_of_Noto_name)" continued Sol. "This is because the browser has not been instructed on which fonts to use for these specialized Unicode characters from the PUA."
 
-"On my text editor, the glyphs I see in column 5 correspond exactly with those displayed on the web page in column 4. To get the browser to display the glyphs without ` <i class=...></i>` invocation requires more effort than I am willing to expend right now. So, I took the easy route here. :wink:"
+"On my text editor, the glyphs I see in column 5 correspond exactly with those displayed on the web page in column 4. To get the browser to display the glyphs directly, without the ` <i class=...></i>` invocation, requires more effort than I am willing to expend right now. So, I took the easy route here. :wink:"
 
 ## Wrapping up the HTML version
 
 "Wait a minute," I said. What about the PDF and the `.docx` versions?
 
-"Patience! Patience," he replied. "Markdown was devised to play well with HTML. Pandoc has carried that ball far and wide into other formats. All I have told you thus far applies only to HTML. Let me wrap it up first before moving on top PDF. In HTML, the one-line template becomes:
+"Patience! Patience," he replied. "Markdown was originally devised to play well with HTML. Pandoc has carried that ball far and wide into many other formats. All I have told you thus far applies only to HTML. Let me wrap it up first before moving on to PDF. In HTML, the one-line template in Markdown looks like this:
 
 ```html
 Joe Bloggs
@@ -208,7 +212,7 @@ Joe Bloggs
 <i class="fa-brands fa-github"></i> [Github account of Joe Bloggs]()
 ```
 
-which looks like this:
+which appears like this:
 
 :::::center
 [Joe Bloggs]{.larger}\
@@ -218,21 +222,22 @@ which looks like this:
 <i class="fa-brands fa-github"></i> [Github]()]{.smaller}
 :::::
 <br> <!--Increase vertical spacing.-->
-The styling like font size and text-alignment is accomplished using CSS." With a look of accomplishment, Sol ended his narration and asked me whether I honestly wanted to hear how the PDF version was generated. When I nodded in eager assent, he said he would take up the thread on another day.
+
+The styling, like font size and text-alignment, is accomplished using CSS." With a look of accomplishment, Sol ended his narration and asked me whether I honestly wanted to hear how the PDF version was generated. When I nodded in eager agreement, he said he would take up the thread on another day.
 
 ## The route to PDF
 
-"The single most important difference between HTML on the one hand, and PDF and `.docx` on the other is that the latter two are bound to a physical paper size. The maximum width of text in these two formats are constrained by the type of paper used. I will assume either A4 or US letter sizes for the output.
+"The single most important difference between HTML on the one hand, and PDF and `.docx` on the other is that the latter two are bound to a physical paper size. The maximum width of text in these two formats are constrained by the type of paper used. I will assume either [A4](https://en.wikipedia.org/wiki/ISO_216#A_series) or [US letter](https://en.wikipedia.org/wiki/Letter_(paper_size)) sizes for the output.
 
-"The second aspect of these latter two formats is that the requisite font must reside on the device generating the output. Moreover it is possible, with some effort, to [embed]() the fonts within the document so that another person viewing the document on another device _without_ the fonts on his or her system can still see document with the intended fonts."
+"The second aspect of these latter two formats is that the requisite font must reside on the device generating the output. Moreover it is possible, with some effort, to [embed the fonts](https://en.wikipedia.org/wiki/Font_embedding) within the document so that another person viewing the document on another device _without_ the fonts on his or her system can still view the document with precisely the intended fonts."
 
 With this preamble, Sol started on his story of how he got the PDF version of the résumé.
 
 ### Does the font exist on my desktop?
 
-He said he used a combination of Pandoc and the TeX/LaTeX typesetting eco-system to generate the PDF. A very important first step was to confirm that the desired glyphs are indeed provided by the font in question. For that, Sol used `albatross`. This utility may be invoked either with the Unicode glyph itself as argument, or with the Unicode code point prefixed either as `0x` or as `U+`.
+He said he used a combination of Pandoc and the [TeX/LaTeX](https://www.tug.org/begin.html) typesetting eco-system to generate the PDF. A very important first step was to confirm that the desired glyphs were indeed provided by the font in question. For that, Sol used [`albatross`](https://ctan.org/pkg/albatross?lang=en). This utility may be invoked either with the Unicode glyph itself as argument, or with the Unicode code point prefixed with either `0x` or `U+`.
 
-Sol tried the `albatross U+f3cd` and got `Font Awesome 6 Free Solid` as the only result. But when he typed `albatross 0xf0e0` he got a total of seven fonts, including `Font Awesome 6 Free Regular` which he intended to use. This underscored the importance of the need to specify the font to be used to avoid the same glyphs from a different font, possibly with an incompatible style, or worse, of an entirely different glyph as well because the location is the PUA area of the font.
+Sol tried `albatross U+f3cd` (for the `mobile-screen-button`) and got `Font Awesome 6 Free Solid` as the only result. But when he typed `albatross 0xf0e0` (for the `envelope`) he got a total of seven fonts, including `Font Awesome 6 Free Regular` and also `Font Awesome 6 Free Solid`. This was why one should  specify the font to be used---to avoid the same glyphs from a different font, possibly with an incompatible style, or worse, of an entirely different glyph as well, because the glyph is in the PUA area of the font.
 
 The results he got were sufficient for Sol to write the following fragments in LaTeX:
 
@@ -243,14 +248,12 @@ The results he got were sufficient for Sol to write the following fragments in L
 %
 \newcommand{\faEnvelope}{\regulariconfont\ ^^^^f0e0\normalfont}
 \newcommand{\faMobile}{\solidiconfont\ ^^^^f3cd\normalfont}
-\newcommand{\faLinkedin}{\brandsiconfont\ f0e1\normalfont}
+\newcommand{\faLinkedin}{\brandsiconfont\ ^^^^f0e1\normalfont}
 \newcommand{\faGithub}{\brandsiconfont\ ^^^^f09b\normalfont}
-```
-
-```latex
+...
 \begin{center}
 {\Large Joe Bloggs}\\
-{\small \faEnvelope\ \href{mailto: joebloggs@mydomain.com}{joebloggs@mydomain.com} | \faMobile\ +1-555-3456-7890 | \faLinkedin\ \href{https://www.linkedin.com/in/joe-bloggs}{LinkedIn account of Joe Bloggs} | \faGithub\ \href{https://github.com/joebloggs}{GitHub account of Joe Bloggs}}\normalsize
+{\small \faEnvelope\ \href{mailto: joebloggs@mydomain.com}{joebloggs@mydomain.com} | \faMobile\ +1-555-3456-7890 | \faLinkedin\ \href{https://www.linkedin.com/}{LinkedIn} | \faGithub\ \href{https://github.com/}{GitHub}}\normalsize
 \end{center}
 ```
 
@@ -258,7 +261,7 @@ The PDF fragment imaged below, matches the HTML output shown earlier.
 
 ![Note that the Font Awesome icons are grey, following the settings above.]({attach}images/pdf-template.png){width=90%}
 
-Sol concluded by saying that the following files, in the order of their invocation in the [`make-opening`]({auxiliary}/make-opening) script, were used to generate the PDF output from Pandoc's Markdown source:
+Sol concluded by saying that the following files, in the order of their invocation in the [`make-pdf`]({auxiliary}/make-pdf) script, were used to generate the PDF output from Pandoc's Markdown source:
 
 #.  [`latex-defaults.yaml`]({attach}auxiliary/latex-defaults.yaml)
 #.  [`latex-font.yaml`]({attach}auxiliary/latex-font.yaml)
