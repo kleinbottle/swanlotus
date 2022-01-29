@@ -1,10 +1,10 @@
 ---
-title: "Using Font Awesome in PDF, HTML, and Microsoft Word documents"
+title: "Using Font Awesome in HTML and PDF documents"
 author: R (Chandra) Chandrasekhar
 date: 2022-01-20
 category: Software
 tags: résumé, curriculum vitae, icons, fonts, LuaLaTeX, graphics, coding, typesetting, The Simkin Chronicles
-summary: "Sol took on the challenge of creating a résumé featuring Font Awesome icons from the _same_ source file to yield output in three different formats: HTML, PDF, and `.docx`. This blog chronicles how he managed to generate the résumé in the first two formats. The `.docx` story is reserved for another blog on another day."
+summary: "Sol took on the challenge of creating a résumé featuring Font Awesome icons from the _same_ source file to yield output in three different formats: HTML, PDF, and `.docx`. This blog chronicles how he managed to generate the résumé in the first two formats. The `.docx` story is reserved for another day and another blog."
 opengraphimage: "envelope-popup.png"
 ---
 
@@ -250,7 +250,11 @@ The results he got were sufficient for Sol to write the following fragments in L
 ...
 \begin{center}
 {\Large Joe Bloggs}\\
-{\small \faEnvelope\ \href{mailto: joebloggs@mydomain.com}{joebloggs@mydomain.com} | \faMobile\ +1-555-3456-7890 | \faLinkedin\ \href{https://www.linkedin.com/}{LinkedIn} | \faGithub\ \href{https://github.com/}{GitHub}}\normalsize
+{\small \faEnvelope\
+\href{mailto: joebloggs@mydomain.com}{joebloggs@mydomain.com} |
+\faMobile\ +1-555-3456-7890 |
+\faLinkedin\ \href{https://www.linkedin.com/}{LinkedIn} |
+\faGithub\ \href{https://github.com/}{GitHub}}\normalsize
 \end{center}
 ```
 
@@ -277,7 +281,7 @@ With that admonitory preamble, Sol launched into the third part of his exploit: 
 
 "I do not claim to be an expert on Microsoft Word or its `.docx` format. But I do have a secret weapon, or should I say, a secret agent: my paternal cousin, once removed, Hieronymus Septimus Simkin, who is affectionately known to me as Seven. He has been steeped and pickled in the brine of Microsoft software since he barely started walking, and he is my go-to resource on all matters relating to Windows applications.
 
-"The road to `.docx` is a little convoluted and very tedious. Why don't I try to get Seven to brief you himself. Let us agree to held that story in abeyance for another day.
+"The road to `.docx` is a little convoluted and very tedious. Why don't I try to get Seven to brief you himself. Let us agree to hold that story in abeyance for another day and another blog.
 
 
 ## Feedback
@@ -287,4 +291,4 @@ corrections.
 
 \noindent A PDF version of this article is [available for download here]({attach}./using-font-awesome.pdf).[^1]
 
-[^1]: Note that some icons that show up in the HTML version are missing from the PDF version of the blog, and vice versa. It was too tedious to make them feature-identical. One workaround would have been to use scaled SVG icons for both output formats, instead of HTML snippets for HTML, and  OTF fonts invoked by Unicode code points, for LaTeX, but Sol felt that was a [cop out](https://www.thefreedictionary.com/cop+out). The opening of the resume is almost identical in the HTML and PDF versions, and that was the challenge that was to be fulfilled: so no rules were broken in playing the game. \emojifont :sweat_smile: \normalfont
+[^1]: Note that some icons that show up in the HTML version are missing from the PDF version of the blog, and vice versa. It was too tedious to make them feature-identical. One workaround would have been to use scaled SVG icons for both output formats, instead of HTML snippets for HTML, and  OTF fonts invoked by Unicode code points, for LaTeX, but Sol felt that was a [cop out](https://www.thefreedictionary.com/cop+out). The opening of the résumé is almost identical in the HTML and PDF versions, and that was the challenge that was to be fulfilled: so no rules were broken in playing the game. \emojifont :sweat_smile: \normalfont

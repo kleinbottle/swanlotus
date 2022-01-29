@@ -42,7 +42,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Using Font Awesome in PDF, HTML, and Microsoft Word documents},
+  pdftitle={Using Font Awesome in HTML and PDF documents},
   pdfauthor={R (Chandra) Chandrasekhar},
   pdflang={en-GB},
   colorlinks=true,
@@ -222,7 +222,7 @@
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 
-\title{Using Font Awesome in PDF, HTML, and Microsoft Word documents}
+\title{Using Font Awesome in HTML and PDF documents}
 \author{R (Chandra) Chandrasekhar}
 \date{2022-01-20}
 
@@ -832,7 +832,11 @@ fragments in LaTeX:
 \NormalTok{...}
 \KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{center}\NormalTok{\}}
 \NormalTok{\{}\FunctionTok{\textbackslash{}Large}\NormalTok{ Joe Bloggs\}}\FunctionTok{\textbackslash{}\textbackslash{}}
-\NormalTok{\{}\FunctionTok{\textbackslash{}small} \FunctionTok{\textbackslash{}faEnvelope\textbackslash{} \textbackslash{}href}\NormalTok{\{mailto: joebloggs@mydomain.com\}\{joebloggs@mydomain.com\} | }\FunctionTok{\textbackslash{}faMobile\textbackslash{} }\NormalTok{+1{-}555{-}3456{-}7890 | }\FunctionTok{\textbackslash{}faLinkedin\textbackslash{} \textbackslash{}href}\NormalTok{\{https://www.linkedin.com/\}\{LinkedIn\} | }\FunctionTok{\textbackslash{}faGithub\textbackslash{} \textbackslash{}href}\NormalTok{\{https://github.com/\}\{GitHub\}\}}\FunctionTok{\textbackslash{}normalsize}
+\NormalTok{\{}\FunctionTok{\textbackslash{}small} \FunctionTok{\textbackslash{}faEnvelope\textbackslash{}}
+\FunctionTok{\textbackslash{}href}\NormalTok{\{mailto: joebloggs@mydomain.com\}\{joebloggs@mydomain.com\} |}
+\FunctionTok{\textbackslash{}faMobile\textbackslash{} }\NormalTok{+1{-}555{-}3456{-}7890 |}
+\FunctionTok{\textbackslash{}faLinkedin\textbackslash{} \textbackslash{}href}\NormalTok{\{https://www.linkedin.com/\}\{LinkedIn\} |}
+\FunctionTok{\textbackslash{}faGithub\textbackslash{} \textbackslash{}href}\NormalTok{\{https://github.com/\}\{GitHub\}\}}\FunctionTok{\textbackslash{}normalsize}
 \KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{center}\NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
@@ -894,8 +898,8 @@ the brine of Microsoft software since he barely started walking, and he
 is my go-to resource on all matters relating to Windows applications.
 
 ``The road to \texttt{.docx} is a little convoluted and very tedious.
-Why don't I try to get Seven to brief you himself. Let us agree to held
-that story in abeyance for another day.
+Why don't I try to get Seven to brief you himself. Let us agree to hold
+that story in abeyance for another day and another blog.
 
 \hypertarget{feedback}{%
 \subsection{Feedback}\label{feedback}}
@@ -904,7 +908,16 @@ Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
 
 \noindent A PDF version of this article is
-\href{./using-font-awesome.pdf}{available for download here.}
+\href{./using-font-awesome.pdf}{available for download here}.\footnote{Note
+  that some icons that show up in the HTML version are missing from the
+  PDF version of the blog, and vice versa. It was too tedious to make
+  them feature-identical. One workaround would have been to use scaled
+  SVG icons for both output formats, instead of HTML snippets for HTML,
+  and OTF fonts invoked by Unicode code points, for LaTeX, but Sol felt
+  that was a \href{https://www.thefreedictionary.com/cop+out}{cop out}.
+  The opening of the résumé is almost identical in the HTML and PDF
+  versions, and that was the challenge that was to be fulfilled: so no
+  rules were broken in playing the game. \emojifont {😅} \normalfont}
 
 
 
