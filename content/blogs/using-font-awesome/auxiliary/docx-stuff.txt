@@ -1,0 +1,16 @@
+
+
+### Pandoc, Word, and the reference document
+
+Seven told Sol that the `.docx` format of Word was closed and proprietary. Pandoc had been able to breach that fortress through a loophole called a [reference document](https://pandoc.org/MANUAL.html). The trick is to:
+
+#.  Generate a custom reference reference document `custom-reference.docx` so:
+
+```bash
+pandoc -o custom-reference.docx --print-default-data-file reference.docx
+```
+#.  Open `custom-reference.docx` in Word and click on the `Styles Pane`.
+#.  Create new character styles for Font Awesome in all three flavours: Regular, Solid, and Brands.
+#.  Set the names of the new styles as `FontAwesomeRegular`, `FontAwesomeSolid`, and `FontAwesomeBrands`.
+#.  Set the style type to `character` and the `Style based on` to `Default Paragraph Font`.
+#.  Choose the fonts from the `Font` dropdown to accord with the three styles.

@@ -12,4 +12,4 @@ variables:
   monofont: Fira Mono
   monofontoptions:
     - Scale=0.9
-  linestretch: 1.2
+  linestretch: 1.5

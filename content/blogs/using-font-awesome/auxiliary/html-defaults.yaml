@@ -1,0 +1,18 @@
+# html5.yaml
+#
+# Defaults for generating HTML5 from Markdown using pandoc
+# Location: $HOME/.pandoc/defaults/html5.yaml
+
+reader: markdown+emoji
+
+writer: html5
+
+highlight-style: zenburn
+
+# standalone: true
+
+resource-path: ["./", "./images/", "./auxiliary/", "/home/chandra/.pandoc/", "/home/chandra/.pandoc/defaults", "/home/chandra/.pandoc/filters", "/home/chandra/.pandoc/templates"]
+
+metadata:
+  link-citations: true
+  lang: en-GB

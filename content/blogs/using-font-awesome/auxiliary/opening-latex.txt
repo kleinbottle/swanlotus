@@ -1,7 +1,11 @@
 ---
 pagetitle: Resume of Joe Bloggs
 ---
+
 \begin{center}
 {\Large Joe Bloggs}\\
 {\small \faEnvelope\ \href{mailto: joebloggs@mydomain.com}{joebloggs@mydomain.com} | \faMobile\ +1-555-3456-7890 | \faLinkedin\ \href{https://www.linkedin.com/}{LinkedIn} | \faGithub\ \href{https://github.com/}{GitHub}}\normalsize
 \end{center}
+
+
+

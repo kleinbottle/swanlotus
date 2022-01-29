@@ -1,0 +1,9 @@
+#!/bin/bash
+# make-html-pdf
+# Generate HTML and PDF output from Markdown source featuring
+# Font Awesome icons.
+#
+
+pandoc --from markdown --to html5 --defaults html-defaults.yaml --include-in-header html-header-includes.html --css awesome.css --output opening.html opening-html.txt
+
+pandoc --from markdown --to latex --pdf-engine lualatex --defaults latex-defaults.yaml --defaults latex-font.yaml --include-in-header latex-header-includes.tex --include-before-body latex-before-body-includes.tex --output opening.pdf opening-latex.txt

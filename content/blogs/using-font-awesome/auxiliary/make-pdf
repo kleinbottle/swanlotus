@@ -1,5 +1,0 @@
-#!/bin/bash
-#
-# Generate PDF output from Markdown source using LuaLaTeX
-#
-pandoc --from markdown --to latex --pdf-engine lualatex --defaults latex-defaults.yaml --defaults latex-font.yaml --include-in-header latex-header-includes.tex --include-before-body latex-before-body-includes.tex --output latex-resume-opening.pdf latex-resume-opening.txt

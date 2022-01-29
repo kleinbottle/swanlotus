@@ -1,0 +1,63 @@
+body {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    font-size: 16px;
+    font-family: "Merriweather", "Noto Serif", serif;
+}
+
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Merriweather", "Noto Serif", serif;
+}
+
+code, kbd {
+    font-family: "Fira Mono", "Hack", monospace, monospace;
+}
+
+figcaption {
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+/* Link Colors */
+
+a:link {
+    color: #800000;
+}
+
+
+/* Maroon: unvisited links */
+
+a:visited {
+    color: #006080;
+}
+
+
+/* visited links   */
+
+a:hover {
+    color: #00c;
+}
+
+.fa-envelope, .fa-mobile-screen-button, .fa-linkedin-in, .fa-github {
+  color: #2e8bc0;
+}
+
+.center {
+    text-align: center;
+}
+
+.larger {
+    font-size: larger;
+}
+
+.smaller {
+    font-size: smaller;
+}

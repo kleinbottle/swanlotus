@@ -1,0 +1,69 @@
+Before using this plugin you would need to satisfy the following prerequisites:
+
+1. First download the Font Awesome Desktop fonts from [Font Awesome Download](https://fontawesome.com/download) and install them on your computer.
+
+1. Then create a docx reference document by using the following command:
+
+
+bash
+    pandoc -o custom-reference.docx --print-default-data-file reference.docx
+
+
+1. Next open the custom-reference.docx file in Microsoft Word and double click on the Styles Pane as annotated in the screenshot below:
+
+    ![Styles Pane in Microsoft Word](images/styles-pane.png)
+
+1. Then click on the _New Style_ button.
+
+    ![New Style button](images/new-style.png)
+
+1. In the _Create New Style_ dialog set the name of the style to _FontAwesomeRegular_.
+
+    N.B. If you name the style something else the filter will not function correctly.
+
+1. Ensure that the _Style type_ field is set to _Character_.
+
+1. Ensure that the _Style based on_ field is set to _Default Paragraph Font_.
+
+1. Then choose the font for the Font Awesome regular icons by choosing the appropriate font and click _OK_.
+
+    For the free version of Font Awesome the font name for the regular icons would be similar to _Font Awesome 6 Free Regular_.
+
+    The annotated figure below shows all the settings described above:
+
+    ![New Style Formatting Dialog Box](images/new-style-formatting-dialog.png)
+
+    The color of the icon matches the font color of the text in the Word document. You may optionally choose a color for the icons but this will change the color for all Font Awesome regular icons.
+
+1. Next add the text _FontAwesomeRegular_ to the end of the custom-reference.docx reference document.
+
+1. Then, highlight the text you added above and scroll down the Styles Pane until you find the _FontAwesomeRegular_ style. Then click on it to set the text to that style.
+
+    ![Font Awesome Regular Style](images/font-awesome-regular-style.png)
+
+1. Finally, save the custom-reference.docx reference document.
+
+1. If you are using the Font Awesome Solid or Font Awesome Brands icons as well repeat steps 3 to 11.
+
+    N.B. Please make sure that the Font Awesome Solid style is named _FontAwesomeSolid_, and the Font Awesome Brands style is named _FontAwesomeBrands_.
+
+    Also ensure that the correct font is selected.
+
+## Usage
+
+The lua filter looks for a custom style being appended to the Font Awesome icons in your markdown source document.
+
+1. First your regular icons  should be modified to look like []{.fa-regular}.
+
+1. Your solid icons  will need to be modified to look like []{.fa-solid}.
+
+1. Brands icons set like  will need to look like this []{.fa-brands}.
+
+1. Once you have made the above changes in your markdown run the following command:
+
+
+bash
+    pandoc -f markdown -t docx --reference-doc custom-reference.docx --lua-filter handle-font-awesome-docx.lua -o sample.docx sample.md
+
+
+You should now see the Font Awesome icons showing up in the resulting Word document.
