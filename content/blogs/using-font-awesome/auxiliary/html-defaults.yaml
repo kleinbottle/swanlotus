@@ -1,4 +1,4 @@
-# html5.yaml
+# html-defaults.yaml
 #
 # Defaults for generating HTML5 from Markdown using pandoc
 # Location: $HOME/.pandoc/defaults/html5.yaml

@@ -46,7 +46,7 @@
   pdfauthor={R (Chandra) Chandrasekhar},
   pdflang={en-GB},
   colorlinks=true,
-  linkcolor={TealBlue},
+  linkcolor={DarkOliveGreen},
   filecolor={Purple},
   citecolor={DarkKhaki},
   urlcolor={Maroon},
@@ -201,6 +201,10 @@
 \newcommand{\faMobile}{\solidiconfont\ ^^^^f3cd\normalfont}
 \newcommand{\faLinkedin}{\brandsiconfont\ ^^^^f0e1\normalfont}
 \newcommand{\faGithub}{\brandsiconfont\ ^^^^f09b\normalfont}
+\newcommand{\faAtom}{\solidiconfont\ ^^^^f5d2\normalfont}
+\newcommand{\faPaperPlaneRegular}{\regulariconfont\ ^^^^f1d8\normalfont}
+\newcommand{\faPaperPlaneSolid}{\solidiconfont\ ^^^^f1d8\normalfont}
+
 %
 % The block below is commented out because of Tofu glyphs in HTML
 %
@@ -260,13 +264,14 @@ Christopher Davies. In it, I discovered that a CV in the UK is called a
 résumé in the US, but that a CV is typically longer than a résumé.
 \emph{So, a condensed CV was indeed called a résumé in the US}. In
 search of more details, I happened upon
-\href{https://icc.ucdavis.edu/materials/résumé/résumécv}{this
+\href{https://icc.ucdavis.edu/materials/résumé/résumécv}{this clear
 explanation of the distinction between the two}.
 
 Armed with this authoritative knowledge, I was prepared for Sol the next
-time we met. Somewhat piqued, I asked him why he sniggered at me the
-last time, when I had been correct---even if not complete---in my
-answer.
+time we met. Somewhat piqued, I asked him why he
+\href{https://www.collinsdictionary.com/dictionary/english/snigger}{sniggered}
+at me the last time, when I had been correct---even if not complete---in
+my answer.
 
 He apologized and said, ``I enjoy seeing you
 \href{https://www.thefreedictionary.com/stew}{stew} sometimes. That's
@@ -325,15 +330,16 @@ treat me to another of his tales of cerebral sleuthing.
 \subsection{Font Awesome and Unicode
 real-estate}\label{font-awesome-and-unicode-real-estate}}
 
-Sol recounted that Font Awesome was an atypical font. Its
-\href{https://en.wikipedia.org/wiki/Glyph}{glyphs} did not fit into
-standard \href{https://en.wikipedia.org/wiki/Unicode_block}{Unicode
+Sol recounted that Font Awesome was an
+\href{https://www.merriam-webster.com/dictionary/atypical}{atypical}
+font. Its \href{https://en.wikipedia.org/wiki/Glyph}{glyphs} did not fit
+into standard \href{https://en.wikipedia.org/wiki/Unicode_block}{Unicode
 blocks} reserved for the symbols of a natural language or academic
 discipline. The fonts did not represent a finite alphabet, but were
 rather an extensible set of hieroglyphs, not unlike
 \href{https://en.wikipedia.org/wiki/Emoticon}{emoticons}. And while the
 latter have been recognized and given their own
-\href{https://en.wikipedia.org/wiki/Emoticons_(Unicode_block)}{emoticon
+\href{https://en.wikipedia.org/wiki/Emoticons_(Unicode_block)}{Emoticon
 Unicode block}, the Font Awesome icons are yet to receive their due
 recognition through allocation of dedicated Unicode real estate.
 
@@ -351,7 +357,7 @@ the problem of collisions---two \emph{different} fonts using the
 unresolved issue. Such ambiguity might give rise to unpredictable output
 due to glyph clashes.
 
-Font Awesome has in the past strayed away from the PUA, and
+Moreover, Font Awesome has in the past strayed away from the PUA, and
 \href{https://fontawesome.com/v5.15/how-to-use/on-the-web/advanced/css-pseudo-elements}{encroached
 upon the domains reserved for other purposes}. This has thankfully been
 corrected in more recent versions. Sol decided to avoid altogether the
@@ -363,10 +369,10 @@ Awesome.
 \subsection{Glyphs: characters, numbers, or
 images?}\label{glyphs-characters-numbers-or-images}}
 
-When Sol downloaded the desktop version of the latest Font Awesome free
-version, he noticed when rummaging into the downloaded files that each
-glyph had a name, not unlike the name we give to letters of the Latin
-alphabet. The downloaded fonts shared a
+When Sol downloaded the desktop and web versions of the latest Font
+Awesome free version, he noticed when rummaging into the downloaded
+files that each glyph had a name, not unlike the name we give to letters
+of the Latin alphabet. The downloaded fonts shared a
 \href{https://www.collinsdictionary.com/dictionary/english/triune}{triune}
 property:
 
@@ -377,15 +383,16 @@ property:
   was called, not unsurprisingly, \emph{font-awesome} since the flag it
   embodies is the branding chosen by Font Awesome for itself.
 \item
-  As an \href{https://en.wikipedia.org/wiki/OpenType}{OpenType} or OTF
-  font, each glyph has a
+  As an \href{https://en.wikipedia.org/wiki/OpenType}{OpenType} (OTF) or
+  \href{https://en.wikipedia.org/wiki/TrueType}{TrueType} (TTF) font,
+  each glyph had a
   \href{https://en.wikipedia.org/wiki/Code_point}{\emph{Unicode code
-  point}}. For example the \emph{font-awesome} icon has the
+  point}}. For example the \emph{font-awesome} icon had the
   \href{https://en.wikipedia.org/wiki/Hexadecimal}{hexadecimal} location
   code \texttt{f2b4} or \texttt{F2B4}.
 \item
-  In addition to its expression as a glyph in an OTF font, each symbol
-  is also available as a \emph{scalable vector image} in
+  In addition to its expression as a glyph in an OTF/TTF font, each
+  symbol was also available as a \emph{scalable vector image} in
   \href{https://developer.mozilla.org/en-US/docs/Web/SVG}{SVG} format.
   This is unsurprising as we are dealing with a character set of icons
   or images.
@@ -397,13 +404,20 @@ deeper into the downloaded Font Awesome files. He said that the triad of
 a named glyph, a Unicode point, and an SVG icon each came to his rescue
 for output to PDF, HTML, and \texttt{docx}.
 
+Sol made a
+\href{https://www.lexico.com/definition/mule-headed}{mule-headed}
+decision after this discovery: he would not fall back upon the SVG
+versions for his assignment, for it would defeat the very idea of a font
+if he started using the SVG icons that could as well have been arbitrary
+images. He wanted a \emph{true} challenge rather than a staged one.
+
 \hypertarget{two-additional-layers-of-identity}{%
 \subsubsection{Two additional layers of
 identity}\label{two-additional-layers-of-identity}}
 
 Font Awesome is distributed in two versions: a free version available at
 no charge, and a paid version called \texttt{Font\ Awesome\ Pro}. Over
-and above that, the free version comes in three \emph{sets}:
+and above that, the free version comes in three \emph{flavours}:
 
 \begin{itemize}
 \tightlist
@@ -417,8 +431,8 @@ and above that, the free version comes in three \emph{sets}:
 
 The first two contained icons for general use while the third was
 explicitly for the logos of brands. Sol confided that skill was needed
-to invoke the correct set of free fonts in the appropriate font file to
-get the desired output.
+to invoke the correct flavour of free fonts from the appropriate font
+file to get the desired output.
 ``\href{https://idioms.thefreedictionary.com/a+miss+is+as+good+as+a+mile}{A
 miss is as good as a mile, mind you},'' he said.
 
@@ -435,47 +449,51 @@ stipulation of a single source file that would generate three target
 files in three different formats: PDF, HTML, and \texttt{docx}.
 
 Sol had relaxed in his \emph{cogitation hammock} and decided that he
-would ruminate on the vital requirement of a single source document to
-generate output in three formats. His first thought was to do it all in
-\href{https://www.microsoft.com/en-in/microsoft-365/word}{MS Word} and
-use its built-in conversion capabilities to generate the PDF and HTML
-outputs. But there was a mute dissension at the background of his mind
-that refused to be silenced. He decided to let the creative yeast do its
-work undisturbed, and left the problem to ferment.
+would ruminate on this vital requirement. His first thought was to do it
+all in
+\href{https://www.microsoft.com/en-in/microsoft-365/word}{Microsoft
+Word} and use its built-in conversion capabilities to generate the PDF
+and HTML outputs. But there was a mute dissension at the background of
+his mind that refused to be silenced. He decided to let the creative
+yeast do its work undisturbed, and left the problem to ferment.
 
 A few days later, it struck him that if Microsoft Word changed its
 default format as a result of program development in the same way that
 PDF version 1.4 gave way to PDF 1.5, or as HTML 4 deferred to HTML 5,
-his work would not survive the march of time. The more he thought about
-it, the more he became convinced that the most granitic of formats would
-be \emph{pure text encoded in}
+his work would not survive the
+\href{https://www.youtube.com/watch?v=FTLylKsI8xY\&feature=emb_imp_woyt}{march
+of time}. The more he thought about it, the more he became convinced
+that the most granitic of formats would be \emph{pure text encoded in}
 \href{https://en.wikipedia.org/wiki/UTF-8}{\emph{UTF 8}}.
 
-He rued that---by giving up on using MS Word as hi base document---he
-was now further away from his goal than ever before. He now had to
-convert text into three formats, not two, and that too, unaided by any
-professional program. The responsibility for this was his alone.
+He rued that---by giving up on using Microsoft Word as his base
+document---he was now further away from his goal than ever before. He
+now had to convert text into three formats, not two, and that too,
+unaided by any professional program. The responsibility for this was his
+alone.
 
-There was a nagging temptation to revert in silent acquiescence to MS
-Word and \href{https://www.phrases.org.uk/meanings/put-paid-to.html}{put
-paid} to the issue. But each time, he had to contend with the disquiet
-in his heart. It was a heavy feeling that he was running away from a
-hard problem rather than facing it
+There was a nagging temptation to revert in silent acquiescence to
+Microsoft Word and
+\href{https://www.phrases.org.uk/meanings/put-paid-to.html}{put paid} to
+the issue. But each time, he had to contend with the disquiet in his
+heart. It was a heavy feeling that he was running away from a hard
+problem rather than facing it
 \href{https://www.dictionary.com/browse/manful}{manfully}. He felt that
 he would sooner or later be forced to convert a single plain text source
-to multiple formatted documents: a challenge better faced sooner than
-later.
+to multiple formatted documents: a challenge better faced sooner rather
+than later.
 
 \hypertarget{pandoc-to-the-rescue}{%
 \subsubsection{Pandoc to the rescue}\label{pandoc-to-the-rescue}}
 
-He first thought of \href{https://en.wikipedia.org/wiki/LaTeX}{LaTeX}
-with which he was familiar. It had several paths to convert output to
-PDF and also HTML. While there was no guarantee of foolproof conversion,
-it seemed promising. But the
+In his quest for a plain text input format, Sol first thought of
+\href{https://en.wikipedia.org/wiki/LaTeX}{LaTeX} with which he was
+familiar. It had several paths to convert output to PDF and also HTML.
+While there was no guarantee of foolproof conversion, it seemed
+promising. But the
 \href{https://dictionary.cambridge.org/dictionary/english/dealbreaker}{dealbreaker}
-was that there was no route to MS Word's \texttt{.docx} format. Sadly,
-he let his firstborn inspiration take flight.
+was that there was no route to Microsoft Word's \texttt{.docx} format.
+Sadly, he let his firstborn inspiration take flight.
 
 He next surfed the Web for
 \href{https://themightyprogrammer.dev/article/parsing}{parsing} programs
@@ -485,11 +503,12 @@ conversion would be \emph{almost} error-free if indeed not
 structure like an
 \href{https://en.wikipedia.org/wiki/Abstract_syntax_tree}{abstract
 syntax tree} that could again be re-converted into formatted text. He
-thought it strange that the most robust route from \emph{A} to \emph{B}
-was through \emph{C}, but granted that it could be so sometimes.
+thought it strange that the most robust or efficient route from \emph{A}
+to \emph{B} was sometimes through \emph{C}, but granted that it could be
+so sometimes.
 
-He spent the next few days sweeping the Web for ``format converters
-using parsing''. But the results he got were about \emph{data} parsing:
+He spent the next day sweeping the Web for ``format converters using
+parsing''. But the results he got were about \emph{data} parsing:
 extraction of possibly useful data from documents. He decided to set
 that right by specifying ``document format converters using parsing''.
 But again he got mired in results for \emph{parsing of data extracted
@@ -500,10 +519,10 @@ promising cloud-based service called
 \href{https://convertio.co/document-converter/}{Convertio}. Another was
 \href{https://document.online-convert.com/}{Online-Convert.com}. But the
 more he thought about it, the less inclined was he to use such services.
-For one, he could have stuck to his original idea of using MS Word as
-his input format, and using its built-in converters for PDF and HTML. No
-uploading to the cloud. No security hassles. No fuss. No muss. But that
-was a road he had decided to avoid.
+For one, he could have stuck to his original idea of using Microsoft
+Word as his input format, and using its built-in converters for PDF and
+HTML. No uploading to the cloud. No security hassles. No fuss. No muss.
+But that was a road he had already decided to avoid.
 
 He stared at his non-negotiable specifications once again. It was then
 that he realized that two of the three stipulated formats, PDF and HTML,
@@ -516,7 +535,9 @@ He first checked whether Pandoc could take in plain text and put out the
 three desired formats. After confirming that it could, he realized that
 it would be prudent to start off with
 \href{https://daringfireball.net/projects/markdown/}{Markdown} and use
-that almost-plain-text source to generate the other three.
+that almost-plain-text source to generate the other three. He decided to
+use Pandoc's Markdown, which was a sophisticated outgrowth from the
+original Markdown.
 
 He next took a look at the somewhat
 \href{https://pandoc.org/diagram.svg}{intricate network diagram} on the
@@ -533,9 +554,9 @@ stating the blindingly obvious. ``But for our intellectual excursion, we
 shall skip the content and replace it by abstract placeholders. That
 way, I keep my client's details confidential, and we will not
 \href{https://idioms.thefreedictionary.com/muddy+the+waters}{muddy the
-waters} with needless detail. In fact, I propose to show you only one
-simple line of pseudo content, which is also \emph{the single line}
-where Font Awesome makes its debut.''
+waters} with needless detail. In fact, I propose to show you only
+\emph{one} simple line of pseudo content, which is also \emph{the single
+line} where Font Awesome makes its debut.''
 
 Sol then showed a snippet of a Pandoc Markdown text file with the pseudo
 content shown below:
@@ -544,8 +565,10 @@ content shown below:
 \begin{Highlighting}[]
 \NormalTok{:::::center}
 \CommentTok{[}\OtherTok{Joe Bloggs}\CommentTok{]}\NormalTok{\{.larger\}\textbackslash{}}
-\NormalTok{[}\CommentTok{[}\OtherTok{mail icon}\CommentTok{]} \OtherTok{\textless{}joebloggs@mydomain.com\textgreater{}}\NormalTok{ | }\CommentTok{[}\OtherTok{mobile icon}\CommentTok{]}\NormalTok{ +1{-}555{-}3456{-}7890 |}
-\CommentTok{[}\OtherTok{LinkedIn icon}\CommentTok{] [LinkedIn]}\NormalTok{ | }\CommentTok{[}\OtherTok{Github icon}\CommentTok{] [Github]}\NormalTok{]\{.smaller\}}
+\NormalTok{[}\CommentTok{[}\OtherTok{mail icon}\CommentTok{]} \OtherTok{\textless{}joebloggs@mydomain.com\textgreater{}}\NormalTok{ |}
+\CommentTok{[}\OtherTok{mobile icon}\CommentTok{]}\NormalTok{ +1{-}555{-}3456{-}7890 |}
+\CommentTok{[}\OtherTok{LinkedIn icon}\CommentTok{] [LinkedIn]}\NormalTok{ |}
+\CommentTok{[}\OtherTok{Github icon}\CommentTok{] [Github]}\NormalTok{]\{.smaller\}}
 \NormalTok{:::::}
 \end{Highlighting}
 \end{Shaded}
@@ -553,8 +576,7 @@ content shown below:
 He explained that the four icons above were a sufficient complement of
 Awesome Font icons to demonstrate
 \href{https://en.wikipedia.org/wiki/Proof_of_concept}{proof of concept},
-and that any additions would simply translate to ``more of the same''.
-
+and that any additions would simply translate to `more of the same'.
 ``Now that the scaffolding is in place, let us get to
 \href{https://idioms.thefreedictionary.com/meat+of+the+matter}{the meat
 of the matter}.''
@@ -594,19 +616,19 @@ Not one to take things at face value, Sol immediately tested the HTML
 invocation on his browser
 \href{https://www.thefreedictionary.com/hoping+against+hope}{hoping
 against hope} that the given incantation \emph{alone} could
-automagically conjure up the envelope icon. When it did not, Sol
-muttered to himself that more work was in store.
+automagically conjure up the atom icon. When it did not, Sol muttered to
+himself that more work was in store.
 
 He wracked his brain for the reason for failure. After some effort, he
-decided to simulate his web browser in his head by attempting to ``act''
+decided to simulate his web browser in his head by attempting to `act'
 like it. ``I will assume that the given incantation is meaningful and
 correct. But it is only an HTML fragment. If I were a web browser, what
-would I need \emph{in addition to the incantation} to display the
-envelope icon? How does my browser \emph{know} what that incantation
-means? It was not born with that knowledge pre-programmed into it
-somehow. \emph{So who tells it what the incantation means, and where to
-look for that icon?}'' With that thought uppermost in his mind, Sol
-retired for the night.
+would I need \emph{in addition to the incantation} to display the atom
+icon? How does my browser \emph{know} what that incantation means? It
+was not born with that knowledge pre-programmed into it somehow.
+\emph{So who tells it what the incantation means, and where to look for
+that icon?}'' With that thought uppermost in his mind, Sol retired for
+the night.
 
 \hypertarget{a-second-look-at-the-atom-icon}{%
 \subsubsection{A second look at the atom
@@ -615,7 +637,7 @@ icon}\label{a-second-look-at-the-atom-icon}}
 When Sol took a second look at the problem the next day, he was aghast
 that he had missed many clues strewn all over the Font Awesome website
 that would have guided him in the right direction. Not one to waste time
-on regret, he started to assemble the sequence of instructions and
+on regret, he started to assemble the given sequence of instructions and
 follow them meticulously.
 
 Sol loaded \href{https://fontawesome.com/v6.0}{this page} to be greeted
@@ -630,7 +652,7 @@ he was led to a clear and
 algorithm} on how to set up and use Font Awesome. Central to everything
 was a simple
 \href{https://en.wikipedia.org/wiki/One-liner_program}{one-liner}
-customized for him that yielded an HTML script when he clicked
+\emph{customized for him} that yielded an HTML script when he clicked
 \href{https://fontawesome.com/kits}{\texttt{Set\ up\ a\ Kit}}. The
 script he got looked like this:
 
@@ -644,11 +666,19 @@ script he got looked like this:
 The script was supposed to be included in the
 \texttt{\textless{}head\textgreater{}} of the HTML document. This one
 line was the automagical incantation that Sol was looking for the
-previous night. He tried it out on the \texttt{atom} icon and got: .
-Voila!
+previous night. He tried it out on the \texttt{atom} icon. The text
 
-The maroon colour arose from a little CSS fragment that set the colour
-of the icon to maroon with
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textless{}i} \ErrorTok{class}\OtherTok{=}\StringTok{"fa{-}solid fa{-}atom"}\KeywordTok{\textgreater{}\textless{}/i\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+yielded the icon \faAtom Voila!
+
+The maroon\footnote{The PDF version of this font on the PDF version of
+  this blog will be shown in grey as explained later.} colour arose from
+a little CSS fragment that set the colour of the icon to maroon with
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -672,8 +702,9 @@ to override this setting with
 \end{Shaded}
 
 to get a correctly coloured \texttt{paper-plane} icon from the
-\texttt{Solid} set: . Indeed, even the version from the \texttt{Regular}
-set would be in the same colour:
+\texttt{Solid} flavour: \faPaperPlaneSolid . Indeed, even the version
+from the \texttt{Regular} flavour would be in the same colour:
+\faPaperPlaneRegular
 
 \hypertarget{the-four-icon-alphabet}{%
 \subsubsection{The four-icon alphabet}\label{the-four-icon-alphabet}}
@@ -685,7 +716,7 @@ so:
 
 \begin{longtable}[]{@{}lllcc@{}}
 \toprule
-Unicode & Set & Name & Icon & Glyph \\
+Unicode & Flavour & Name & Icon & Glyph \\
 \midrule
 \endhead
 \texttt{f0e0} & Regular & \texttt{envelope} & &
@@ -705,8 +736,8 @@ code while that labelled \texttt{Glyphs} contained the relevant glyph
 directly copied from the popup.
 
 Note that the mobile phone icon available in the free version was only
-from the \texttt{Solid} set, whereas the envelope icon was available in
-both the \texttt{Regular} and \texttt{Solid} sets.
+from the \texttt{Solid} flavour, whereas the envelope icon was available
+in both the \texttt{Regular} and \texttt{Solid} flavours.
 
 The icon colour was set by this CSS fragment, and applies only to the
 \texttt{Icons} column:
@@ -719,7 +750,9 @@ The icon colour was set by this CSS fragment, and applies only to the
 \end{Highlighting}
 \end{Shaded}
 
-``Notice that the Glyph column only shows
+``Notice that the Glyph column\footnote{In the PDF version of the blog,
+  it is the \texttt{Icon} column that is blank, whereas the
+  \texttt{Glyph} column, containing the glyph, shows up.} only shows
 \href{https://en.wikipedia.org/wiki/Noto_fonts\#Origin_of_Noto_name}{tofu
 rectangles}'' continued Sol. ``This is because the browser has not been
 instructed on which fonts to use for these specialized Unicode
@@ -730,7 +763,7 @@ with those displayed on the web page in column 4. To get the browser to
 display the glyphs directly, without the
 \texttt{\textless{}i\ class=...\textgreater{}\textless{}/i\textgreater{}}
 invocation, requires more effort than I am willing to expend right now.
-So, I took the easy route here. \emojifont {😉} \normalfont''
+So, I took the easy route here.'' \emojifont {😉} \normalfont
 
 \hypertarget{wrapping-up-the-html-version}{%
 \subsection{Wrapping up the HTML
@@ -742,8 +775,8 @@ versions?
 ``Patience! Patience,'' he replied. ``Markdown was originally devised to
 play well with HTML. Pandoc has carried that ball far and wide into many
 other formats. All I have told you thus far applies only to HTML. Let me
-wrap it up first before moving on to PDF. In HTML, the one-line template
-in Markdown looks like this:
+wrap it up first before moving on to PDF. In HTML, the one-line résumé
+template in Markdown looks like this:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -755,7 +788,13 @@ in Markdown looks like this:
 \end{Highlighting}
 \end{Shaded}
 
-which appears like this:
+which \href{auxiliary/opening-html}{appears like this}\footnote{This
+  file could not be named as \texttt{opening-html.html} because of an
+  operational quirk in the \href{https://blog.getpelican.com/}{Pelican
+  Static Site Generator} being used on this site. Accordingly, the
+  \texttt{.html} file extension has been left out. Save this file,
+  rename it as \texttt{opening-html.html}, open it in a Web browser, and
+  verify for yourself the claim made here.}:
 
 \begin{figure}
 \centering
@@ -789,7 +828,7 @@ another device \emph{without} the fonts on his or her system can still
 view the document with precisely the intended fonts.''
 
 With this preamble, Sol started on his story of how he got the PDF
-version of the résumé.
+version of the one-line résumé template.
 
 \hypertarget{does-the-font-exist-on-my-desktop}{%
 \subsubsection{Does the font exist on my
@@ -841,7 +880,8 @@ fragments in LaTeX:
 \end{Highlighting}
 \end{Shaded}
 
-The PDF fragment imaged below, matches the HTML output shown earlier.
+The resulting PDF content, imaged below, matches the HTML output shown
+earlier.
 
 \begin{figure}
 \centering
@@ -850,12 +890,26 @@ The PDF fragment imaged below, matches the HTML output shown earlier.
 settings above.}
 \end{figure}
 
+\hypertarget{file-manifest}{%
+\subsection{File manifest}\label{file-manifest}}
+
 Sol concluded by saying that the following files, in the order of their
-invocation in the \href{auxiliary/make-pdf}{\texttt{make-pdf}} script,
-were used to generate the PDF output from Pandoc's Markdown source:
+invocation in the \href{auxiliary/make-html-pdf}{\texttt{make-html-pdf}}
+script, were used to generate the HTML and PDF output from Pandoc's
+Markdown source:
 
 \begin{enumerate}
 \tightlist
+\item
+  \href{auxiliary/html-defaults.yaml}{\texttt{html-defaults.yaml}}
+\item
+  \href{auxiliary/html-header-includes}{\texttt{html-header-includes}}
+\item
+  \href{auxiliary/awesome.css}{\texttt{awesome.css}}
+\item
+  \href{auxiliary/opening-html}{\texttt{opening-html}}
+\item
+  \href{auxiliary/opening-html.txt}{\texttt{opening-html.txt}}
 \item
   \href{auxiliary/latex-defaults.yaml}{\texttt{latex-defaults.yaml}}
 \item
@@ -865,14 +919,23 @@ were used to generate the PDF output from Pandoc's Markdown source:
 \item
   \href{auxiliary/latex-before-body-includes.tex}{\texttt{latex-before-body-includes.tex}}
 \item
-  \href{auxiliary/latex-opening.pdf}{\texttt{latex-opening.pdf}}
+  \href{auxiliary/opening-latex.pdf}{\texttt{opening-latex.pdf}}
 \item
-  \href{auxiliary/latex-opening.txt}{\texttt{latex-opening.txt}}
+  \href{auxiliary/opening-latex.txt}{\texttt{opening-latex.txt}}
 \end{enumerate}
 
-I was lost in admiration for his tenacity, which bent fonts and
+It bears noting that the input files for the two formats,
+\texttt{opening-latex.txt} and \texttt{opening-html.txt}, are indeed
+non-identical. In that sense the challenge has not been met. But given
+that the first line of the résumé may be concatenated with the rest of
+the résumé, \emph{which is unchanged for both formats}, the challenge
+has been successfully, in spirit if not in letter.
+
+I was lost in admiration for Sol's tenacity, which bent fonts and
 typesetting systems to his will, to generate near-identical output in
-two different, ubiquitous formats.
+two different, ubiquitous formats. Even if the effort expended on this
+single line of text was disproportionate to the outcome, the experience
+earned was worth every ounce of effort.
 
 \hypertarget{the-.docx-output}{%
 \subsection{\texorpdfstring{The \texttt{.docx}

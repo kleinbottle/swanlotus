@@ -2,7 +2,7 @@
 #
 # YAML defaults file for use with pandoc and lualatex/xelatex
 # to generate PDF output from pandoc-markdown.
-# 
+#
 reader: markdown
 
 writer: latex
@@ -23,8 +23,11 @@ variables:
   geometry:
     - margin=25mm
 #
-  linkcolor: Maroon
+  linkcolor: DarkOliveGreen
+  filecolor: Purple
+  citecolor: DarkKhaki
   urlcolor: Maroon
+  toccolor: MidnightBlue
   hyperrefoptions:
     - colorlinks=true
 

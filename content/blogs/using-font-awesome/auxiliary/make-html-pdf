@@ -4,6 +4,6 @@
 # Font Awesome icons.
 #
 
-pandoc --from markdown --to html5 --defaults html-defaults.yaml --include-in-header html-header-includes.html --css awesome.css --output opening.html opening-html.txt
+pandoc --from markdown --to html5 --defaults html-defaults.yaml --include-in-header html-header-includes --css awesome.css --standalone --output opening-html opening-html.txt
 
-pandoc --from markdown --to latex --pdf-engine lualatex --defaults latex-defaults.yaml --defaults latex-font.yaml --include-in-header latex-header-includes.tex --include-before-body latex-before-body-includes.tex --output opening.pdf opening-latex.txt
+pandoc --from markdown --to latex --pdf-engine lualatex --defaults latex-defaults.yaml --defaults latex-font.yaml --include-in-header latex-header-includes.tex --include-before-body latex-before-body-includes.tex --standalone --output opening-latex.pdf opening-latex.txt
