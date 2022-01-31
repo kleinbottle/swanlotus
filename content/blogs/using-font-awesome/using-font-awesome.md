@@ -309,6 +309,6 @@ With that admonitory preamble, Sol launched into the third part of his exploit: 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here]({attach}./using-font-awesome.pdf).[^4]
+\noindent A PDF version of this article is [available for download here]({attach}using-font-awesome.pdf).[^4]
 
 [^4]: Note that some icons that show up in the HTML version are missing from the PDF version of the blog, and vice versa. It was too tedious to make them feature-identical. One workaround would have been to use scaled SVG icons for both output formats, instead of HTML snippets for HTML, and  OTF fonts invoked by Unicode code points, for LaTeX, but Sol felt that was a [cop out](https://www.thefreedictionary.com/cop+out). The opening of the résumé is almost identical in the HTML and PDF versions, and that was the challenge that was to be fulfilled: so no rules were broken in playing the game. \emojifont :sweat_smile: \normalfont
