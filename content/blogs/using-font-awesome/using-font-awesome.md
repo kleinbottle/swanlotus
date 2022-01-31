@@ -289,7 +289,7 @@ Sol concluded by saying that the following files, in the order of their invocati
 #.  [`opening-latex.pdf`]({attach}auxiliary/opening-latex.pdf)
 #.  [`opening-latex.txt`]({attach}auxiliary/opening-latex.txt)
 
-It bears noting that the input files for the two formats, `opening-latex.txt` and `opening-html.txt`, are indeed non-identical. In that sense the challenge has not been met. But given that the first line of the résumé may be concatenated with the rest of the résumé, _which is unchanged for both formats_, the challenge has been successfully, in spirit if not in letter.
+It bears noting that the input files for the two formats, `opening-latex.txt` and `opening-html.txt`, are indeed non-identical. In that sense the challenge has not been met. But given that the first line of the résumé may be concatenated with the rest of the résumé, _which is unchanged for both formats_, the challenge has been successfully met, in spirit if not in letter.
 
 I was lost in admiration for Sol's tenacity, which bent fonts and typesetting systems to his will, to generate near-identical output in two different, ubiquitous formats. Even if the effort expended on this single line of text was disproportionate to the outcome, the experience earned was worth every ounce of effort.
 
