@@ -72,7 +72,7 @@ Font Awesome is distributed in two versions: a free version available at no char
 - `Solid`, and
 - `Brands`.
 
-The first two contained icons for general use while the third was explicitly for the logos of brands. Sol confided that skill was needed to invoke the correct flavour of free fonts from the appropriate font file to get the desired output. "[A miss is as good as a mile, mind you](https://idioms.thefreedictionary.com/a+miss+is+as+good+as+a+mile)," he said.
+The first two contained icons for general use while the third was explicitly for the logos of brands. Sol confided that skill was needed to invoke the correct flavour of free fonts from the appropriate font file to get the desired output, especially as some flavours were excluded from the free font selection. "[A miss is as good as a mile, mind you](https://idioms.thefreedictionary.com/a+miss+is+as+good+as+a+mile)," he said.
 
 With this convoluted introduction, Sol excused himself to rush away for an appointment. It would be a week before he took up the dangling thread of his narrative again.
 
@@ -130,7 +130,7 @@ He went to the [latest icons page](https://fontawesome.com/v6.0/icons), selected
 
 ![]({attach}images/atom-solid.png){width=90%}
 
-Its Unicode code point was `f5d2`, its name was `atom`, its SVG icon file was called `atom.svg`, and the glyph could be copied by clicking on the picture of the atom next to the Unicode value. He was seeing the `Solid` flavour of the icon; other variants were not included in the free version he had downloaded. Interestingly, the code snippet for HTML was also given with the icon as:
+Its Unicode code point was `f5d2`, its name was `atom`, its SVG icon file was called `atom-solid.svg`, and the glyph could be copied by clicking on the picture of the atom next to the Unicode value. He was seeing the `Solid` flavour of the icon; other variants were not included in the free version he had downloaded. Interestingly, the code snippet for HTML was also given with the icon as:
 
 
 <!--NOTE: Doesn't matter what the flavour is; One name and one Unicode point.-->
@@ -143,7 +143,7 @@ where the [`<i>` stood for "Idiomatic Text element"](https://developer.mozilla.o
 
 Not one to take things at face value, Sol immediately tested the HTML invocation on his browser [hoping against hope](https://www.thefreedictionary.com/hoping+against+hope) that the given incantation _alone_ could automagically conjure up the atom icon. When it did not, Sol muttered to himself that more work was in store.
 
-He wracked his brain for the reason for failure. After some effort, he decided to simulate his web browser in his head by attempting to 'act' like it. "I will assume that the given incantation is meaningful and correct. But it is only an HTML fragment. If I were a web browser, what would I need _in addition to the incantation_ to display the atom icon? How does my browser _know_ what that incantation means? It was not born with that knowledge pre-programmed into it somehow. _So who tells it what the incantation means, and where to look for that icon?_" With that thought uppermost in his mind, Sol retired for the night.
+He wracked his brain for the reason behind the failure. After some effort, he decided to simulate his web browser in his head by attempting to 'act' like it. "I will assume that the given incantation is meaningful and correct. But it is only an HTML fragment. If I were a web browser, what would I need _in addition to the incantation_ to display the atom icon? How does my browser _know_ what that incantation means? It was not born with that knowledge pre-programmed into it somehow. _So who tells it what the incantation means, and where to look for that icon?_" With that thought uppermost in his mind, Sol retired for the night.
 
 ### A second look at the atom icon
 
@@ -184,6 +184,8 @@ This meant that _all_ Font Awesome `Solid` icons will show up in maroon. If he w
 ```
 
 to get a correctly coloured `paper-plane` icon from the `Solid` flavour: <i class="fa-solid fa-paper-plane"></i> \faPaperPlaneSolid . Indeed, even the version from the `Regular` flavour would be in the same colour: <i class="fa-regular fa-paper-plane"></i> \faPaperPlaneRegular
+
+Sol also found out that though the solid and regular versions of the paper plane look quite different, they shared the _same_ Unicode code point `f1d8` although their SVG files were respectively `paper-plane-solid.svg` and `paper-plane-regular.svg` respectively. He compared this to the Unicode code point of any letter, say, `a`, for the regular and bold versions even though the two versions looked different.
 
 ### The four-icon alphabet
 
