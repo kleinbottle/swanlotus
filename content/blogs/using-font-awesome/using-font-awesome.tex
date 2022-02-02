@@ -297,7 +297,7 @@ for my contact details.'
 
 ``Only that the résumé must be generated from the \emph{same} source
 document to give \emph{identical} outputs in three formats: PDF, HTML,
-and \texttt{docx}. That will make maintenance a
+and docx. That will make maintenance a
 \href{https://www.merriam-webster.com/dictionary/cinch}{cinch}. No other
 stipulations.''
 
@@ -317,10 +317,10 @@ icons. In the end, though,
 and slugging it out}, I managed the feat. I am sure you don't want to
 hear about it.''
 
-He knew my weakness---\emph{I crave the thing denied}---and used it to
+Sol knew my weakness---\emph{I crave the thing denied}---and used it to
 tease me. So, I had to coax and cajole Sol to narrate to me yet another
 of his \href{https://www.lexico.com/definition/scriptorial}{scriptorial}
-escapades, leaving out no essential clue so, that I could track his
+escapades, leaving out no essential clue, so that I could track his
 mental trajectory and experience for myself
 \href{https://www.collinsdictionary.com/dictionary/english/the-thrill-of-the-chase}{the
 thrill of the chase}. Exuding the essence of amicability, Sol agreed to
@@ -400,9 +400,12 @@ property:
 
 Sol told me that he was not at first aware of this triple
 correspondence, but that he accidentally stumbled upon it as he delved
-deeper into the downloaded Font Awesome files. He said that the triad of
-a named glyph, a Unicode point, and an SVG icon each came to his rescue
-for output to PDF, HTML, and \texttt{docx}.
+deeper into the downloaded Font Awesome files. He said that the
+triad\footnote{In fact it later became a tetrad with a special
+  invocation for HTML of the form
+  \texttt{\textless{}i\ class="fa-...\ fa-..."\textgreater{}\textless{}/i\textgreater{}},
+  as explained later.} of a named glyph, a Unicode point, and an SVG
+icon each came to his rescue for output to PDF, HTML, and docx.
 
 Sol made a
 \href{https://www.lexico.com/definition/mule-headed}{mule-headed}
@@ -446,7 +449,7 @@ targets}\label{single-source-file-to-multiple-targets}}
 
 When next we met, Sol started explaining how he fulfilled the
 stipulation of a single source file that would generate three target
-files in three different formats: PDF, HTML, and \texttt{docx}.
+files in three different formats: PDF, HTML, and docx.
 
 Sol had relaxed in his \emph{cogitation hammock} and decided that he
 would ruminate on this vital requirement. His first thought was to do it
@@ -492,8 +495,8 @@ familiar. It had several paths to convert output to PDF and also HTML.
 While there was no guarantee of foolproof conversion, it seemed
 promising. But the
 \href{https://dictionary.cambridge.org/dictionary/english/dealbreaker}{dealbreaker}
-was that there was no route to Microsoft Word's \texttt{.docx} format.
-Sadly, he let his firstborn inspiration take flight.
+was that there was no route to Microsoft Word's .docx format. Sadly, he
+let his firstborn inspiration take flight.
 
 He next surfed the Web for
 \href{https://themightyprogrammer.dev/article/parsing}{parsing} programs
@@ -526,9 +529,9 @@ But that was a road he had already decided to avoid.
 
 He stared at his non-negotiable specifications once again. It was then
 that he realized that two of the three stipulated formats, PDF and HTML,
-were publicly specified, standardized specifications. Only the
-\texttt{.docx} format was proprietary. Sol decided to search using
-``open source document format converter''. The first result showed
+were publicly specified, standardized specifications. Only the .docx
+format was proprietary. Sol decided to search using ``open source
+document format converter''. The first result showed
 \href{https://pandoc.org/}{Pandoc}.
 
 He first checked whether Pandoc could take in plain text and put out the
@@ -769,8 +772,7 @@ So, I took the easy route here.'' \emojifont {😉} \normalfont
 \subsection{Wrapping up the HTML
 version}\label{wrapping-up-the-html-version}}
 
-``Wait a minute,'' I said. What about the PDF and the \texttt{.docx}
-versions?
+``Wait a minute,'' I said. What about the PDF and the .docx versions?
 
 ``Patience! Patience,'' he replied. ``Markdown was originally devised to
 play well with HTML. Pandoc has carried that ball far and wide into many
@@ -812,9 +814,9 @@ another day.
 \subsection{The route to PDF}\label{the-route-to-pdf}}
 
 ``The single most important difference between HTML on the one hand, and
-PDF and \texttt{.docx} on the other is that the latter two are bound to
-a physical paper size. The maximum width of text in these two formats
-are constrained by the type of paper used. I will assume either
+PDF and .docx on the other is that the latter two are bound to a
+physical paper size. The maximum width of text in these two formats are
+constrained by the type of paper used. I will assume either
 \href{https://en.wikipedia.org/wiki/ISO_216\#A_series}{A4} or
 \href{https://en.wikipedia.org/wiki/Letter_(paper_size)}{US letter}
 sizes for the output.
@@ -938,31 +940,30 @@ single line of text was disproportionate to the outcome, the experience
 earned was worth every ounce of effort.
 
 \hypertarget{the-.docx-output}{%
-\subsection{\texorpdfstring{The \texttt{.docx}
-output}{The .docx output}}\label{the-.docx-output}}
+\subsection{The .docx output}\label{the-.docx-output}}
 
 It was some weeks before I met Sol again in an unhurried setting. I then
 reminded him to finish his saga with Font Awesome by explaining how he
-generated the \texttt{.docx} version of the résumé opening. Sol squinted
-his eyes and addressed me seriously: ``Do you \emph{really} want to know
-that? If you do, grab a chair and have some water handy, in case you
-feel dizzy. \emojifont {😉} \normalfont''
+generated the .docx version of the résumé opening. Sol squinted his eyes
+and addressed me seriously: ``Do you \emph{really} want to know that? If
+you do, grab a chair and have some water handy, in case you feel dizzy.
+\emojifont {😉} \normalfont''
 
 With that admonitory preamble, Sol launched into the third part of his
-exploit: to get a \texttt{.docx} fragment visually identical to the HTML
-and PDF versions from the same Markdown source. It was more a marathon
-than a sprint, and required fortitude of body and mind.
+exploit: to get a .docx fragment visually identical to the HTML and PDF
+versions from the same Markdown source. It was more a marathon than a
+sprint, and required fortitude of body and mind.
 
-``I do not claim to be an expert on Microsoft Word or its \texttt{.docx}
-format. But I do have a secret weapon, or should I say, a secret agent:
-my paternal cousin, once removed, Hieronymus Septimus Simkin, who is
+``I do not claim to be an expert on Microsoft Word or its .docx format.
+But I do have a secret weapon, or should I say, a secret agent: my
+paternal cousin, once removed, Hieronymus Septimus Simkin, who is
 affectionately known to me as Seven. He has been steeped and pickled in
 the brine of Microsoft software since he barely started walking, and he
 is my go-to resource on all matters relating to Windows applications.
 
-``The road to \texttt{.docx} is a little convoluted and very tedious.
-Why don't I try to get Seven to brief you himself. Let us agree to hold
-that story in abeyance for another day and another blog.
+``The road to .docx is a little convoluted and very tedious. Why don't I
+try to get Seven to brief you himself. Let us agree to hold that story
+in abeyance for another day and another blog.
 
 \hypertarget{feedback}{%
 \subsection{Feedback}\label{feedback}}
@@ -971,7 +972,7 @@ Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
 
 \noindent A PDF version of this article is
-\href{./using-font-awesome.pdf}{available for download here}.\footnote{Note
+\href{using-font-awesome.pdf}{available for download here}.\footnote{Note
   that some icons that show up in the HTML version are missing from the
   PDF version of the blog, and vice versa. It was too tedious to make
   them feature-identical. One workaround would have been to use scaled

@@ -4,7 +4,7 @@ author: R (Chandra) Chandrasekhar
 date: 2022-01-20
 category: Software
 tags: résumé, curriculum vitae, icons, fonts, Pandoc, LuaLaTeX, graphics, coding, typesetting, The Simkin Chronicles
-summary: "Sol took on the challenge of creating a résumé featuring Font Awesome icons from the _same_ source file to yield output in three different formats: HTML, PDF, and `.docx`. This blog chronicles how he managed to generate the résumé in the first two formats. The `.docx` story is reserved for another day and another blog."
+summary: "Sol took on the challenge of creating a résumé featuring Font Awesome icons from the _same_ source file to yield output in three different formats: HTML, PDF, and .docx. This blog chronicles how he managed to generate the résumé in the first two formats. The .docx story is reserved for another day and another blog."
 opengraphimage: "atom.png"
 ---
 
@@ -28,7 +28,7 @@ I then asked him what his non-negotiable requirements were. His reply was prompt
 
 "Anything else?"
 
-"Only that the résumé must be generated from the _same_ source document to give _identical_ outputs in three formats: PDF, HTML, and `docx`. That will make maintenance a [cinch](https://www.merriam-webster.com/dictionary/cinch). No other stipulations."
+"Only that the résumé must be generated from the _same_ source document to give _identical_ outputs in three formats: PDF, HTML, and docx. That will make maintenance a [cinch](https://www.merriam-webster.com/dictionary/cinch). No other stipulations."
 
 ## The yeast gets to work
 
@@ -36,7 +36,7 @@ Sol continued: "For the world of me, I didn't know what Font Awesome was, let al
 
 But how wrong I was! It cost me a week in time just to investigate and meet the single source document requirement, let alone the Font Awesome icons. In the end, though, [slogging and slugging it out](https://idioms.thefreedictionary.com/slog%2Fslug+it+outslogging), I managed the feat. I am sure you don't want to hear about it."
 
-He knew my weakness---_I crave the thing denied_---and used it to tease me. So, I had to coax and cajole Sol to narrate to me yet another of his [scriptorial](https://www.lexico.com/definition/scriptorial) escapades, leaving out no essential clue so, that I could track his mental trajectory and experience for myself [the thrill of the chase](https://www.collinsdictionary.com/dictionary/english/the-thrill-of-the-chase). Exuding the essence of amicability, Sol agreed to treat me to another of his tales of cerebral sleuthing.
+Sol knew my weakness---_I crave the thing denied_---and used it to tease me. So, I had to coax and cajole Sol to narrate to me yet another of his [scriptorial](https://www.lexico.com/definition/scriptorial) escapades, leaving out no essential clue, so that I could track his mental trajectory and experience for myself [the thrill of the chase](https://www.collinsdictionary.com/dictionary/english/the-thrill-of-the-chase). Exuding the essence of amicability, Sol agreed to treat me to another of his tales of cerebral sleuthing.
 
 ## Font Awesome and Unicode real-estate
 
@@ -58,7 +58,9 @@ When Sol downloaded the desktop and web versions of the latest Font Awesome free
 
 #.  In addition to its expression as a glyph in an OTF/TTF font, each symbol was also available as a _scalable vector image_ in [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) format. This is unsurprising as we are dealing with a character set of icons or images.
 
-Sol told me that he was not at first aware of this triple correspondence, but that he accidentally stumbled upon it as he delved deeper into the downloaded Font Awesome files. He said that the triad of a named glyph, a Unicode point, and an SVG icon each came to his rescue for output to PDF, HTML, and `docx`.
+Sol told me that he was not at first aware of this triple correspondence, but that he accidentally stumbled upon it as he delved deeper into the downloaded Font Awesome files. He said that the triad[^1] of a named glyph, a Unicode point, and an SVG icon each came to his rescue for output to PDF, HTML, and docx.
+
+[^1]: In fact it later became a tetrad with a special invocation for HTML of the form `<i class="fa-... fa-..."></i>`, as explained later.
 
 Sol made a [mule-headed](https://www.lexico.com/definition/mule-headed) decision after this discovery: he would not fall back upon the SVG versions for his assignment, for it would defeat the very idea of a font if he started using the SVG icons that could as well have been arbitrary images. He wanted a _true_ challenge rather than a staged one.
 
@@ -76,7 +78,7 @@ With this convoluted introduction, Sol excused himself to rush away for an appoi
 
 ## Single source file to multiple targets
 
-When next we met, Sol started explaining how he fulfilled the stipulation of a single source file that would generate three target files in three different formats: PDF, HTML, and `docx`.
+When next we met, Sol started explaining how he fulfilled the stipulation of a single source file that would generate three target files in three different formats: PDF, HTML, and docx.
 
 Sol had relaxed in his _cogitation hammock_ and decided that he would ruminate on this vital requirement. His first thought was to do it all in [Microsoft Word](https://www.microsoft.com/en-in/microsoft-365/word) and use its built-in conversion capabilities to generate the PDF and HTML outputs. But there was a mute dissension at the background of his mind that refused to be silenced. He decided to let the creative yeast do its work undisturbed, and left the problem to ferment.
 
@@ -88,7 +90,7 @@ There was a nagging temptation to revert in silent acquiescence to Microsoft Wor
 
 ### Pandoc to the rescue
 
-In his quest for a plain text input format, Sol first thought of [LaTeX](https://en.wikipedia.org/wiki/LaTeX) with which he was familiar. It had several paths to convert output to PDF and also HTML. While there was no guarantee of foolproof conversion, it seemed promising. But the [dealbreaker](https://dictionary.cambridge.org/dictionary/english/dealbreaker) was that there was no route to Microsoft Word's `.docx` format. Sadly, he let his firstborn inspiration take flight.
+In his quest for a plain text input format, Sol first thought of [LaTeX](https://en.wikipedia.org/wiki/LaTeX) with which he was familiar. It had several paths to convert output to PDF and also HTML. While there was no guarantee of foolproof conversion, it seemed promising. But the [dealbreaker](https://dictionary.cambridge.org/dictionary/english/dealbreaker) was that there was no route to Microsoft Word's docx format. Sadly, he let his firstborn inspiration take flight.
 
 He next surfed the Web for [parsing](https://themightyprogrammer.dev/article/parsing) programs that wielded the power of computer science to guarantee that the conversion would be _almost_ error-free if indeed not _totally_ error-free. He needed to convert formatted text into a structure like an [abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree) that could again be re-converted into formatted text. He thought it strange that the most robust or efficient route from _A_ to _B_ was sometimes through _C_, but granted that it could be so sometimes.
 
@@ -96,7 +98,7 @@ He spent the next day sweeping the Web for "format converters using parsing". Bu
 
 Somewhat vexed, he tried "document format converters" and was led to a promising cloud-based service called [Convertio](https://convertio.co/document-converter/). Another was [Online-Convert.com](https://document.online-convert.com/). But the more he thought about it, the less inclined was he to use such services. For one, he could have stuck to his original idea of using Microsoft Word as his input format, and using its built-in converters for PDF and HTML. No uploading to the cloud. No security hassles. No fuss. No muss. But that was a road he had already decided to avoid.
 
-He stared at his non-negotiable specifications once again. It was then that he realized that two of the three stipulated formats, PDF and HTML, were publicly specified, standardized specifications. Only the `.docx` format was proprietary. Sol decided to search using "open source document format converter". The first result showed [Pandoc](https://pandoc.org/).
+He stared at his non-negotiable specifications once again. It was then that he realized that two of the three stipulated formats, PDF and HTML, were publicly specified, standardized specifications. Only the docx format was proprietary. Sol decided to search using "open source document format converter". The first result showed [Pandoc](https://pandoc.org/).
 
 He first checked whether Pandoc could take in plain text and put out the three desired formats. After confirming that it could, he realized that it would be prudent to start off with [Markdown](https://daringfireball.net/projects/markdown/) and use that almost-plain-text source to generate the other three. He decided to use Pandoc's Markdown, which was a sophisticated outgrowth from the original Markdown.
 
@@ -122,13 +124,16 @@ He explained that the four icons above were a sufficient complement of Awesome F
 
 ### The atom icon
 
-Schooled as he was Greek philosophy, Sol decided that the atom would be the fittest icon to begin his acquaintance with Font Awesome. He would experiment and build his knowledge atom by atom.
+Schooled as he was in Greek philosophy, Sol decided that the atom would be the fittest icon to begin his acquaintance with Font Awesome. He would experiment and build his knowledge atom by atom.
 
 He went to the [latest icons page](https://fontawesome.com/v6.0/icons), selected `Free` on the left checkbox and typed "atom". From the gallery of 32 icons, he selected the one that best met his expectations. The popup screen he saw is shown below:
 
-![]({attach}images/atom.png){width=90%}
+![]({attach}images/atom-solid.png){width=90%}
 
 Its Unicode code point was `f5d2`, its name was `atom`, its SVG icon file was called `atom.svg`, and the glyph could be copied by clicking on the picture of the atom next to the Unicode value. He was seeing the `Solid` flavour of the icon; other variants were not included in the free version he had downloaded. Interestingly, the code snippet for HTML was also given with the icon as:
+
+
+<!--NOTE: Doesn't matter what the flavour is; One name and one Unicode point.-->
 
 ```html
 <i class="fa-solid fa-atom"></i>
@@ -161,14 +166,14 @@ The script was supposed to be included in the `<head>` of the HTML document. Thi
 ```
 yielded the icon <i class="fa-solid fa-atom"></i> \faAtom Voila!
 
-The maroon[^1] colour arose from a little CSS fragment that set the colour of the icon to maroon with
+The maroon[^2] colour arose from a little CSS fragment that set the colour of the icon to maroon with
 ```css
 .fa-solid {
     color: maroon;
 }
 ```
 
-[^1]: The PDF version of this font on the PDF version of this blog will be shown in grey as explained later.
+[^2]: The PDF version of this font on the PDF version of this blog will be shown in grey as explained later.
 
 This meant that _all_ Font Awesome `Solid` icons will show up in maroon. If he wanted another `Solid` icon, say, `paper-plane`, to show up in a blue-green colour, he would need to override this setting with
 
@@ -203,15 +208,15 @@ The icon colour was set by this CSS fragment, and applies only to the `Icons` co
 }
 ```
 
-"Notice that the Glyph column[^2] only shows [tofu rectangles](https://en.wikipedia.org/wiki/Noto_fonts#Origin_of_Noto_name)" continued Sol. "This is because the browser has not been instructed on which fonts to use for these specialized Unicode characters from the PUA."
+"Notice that the Glyph column[^3] only shows [tofu rectangles](https://en.wikipedia.org/wiki/Noto_fonts#Origin_of_Noto_name)" continued Sol. "This is because the browser has not been instructed on which fonts to use for these specialized Unicode characters from the PUA."
 
-[^2]: In the PDF version of the blog, it is the `Icon` column that is blank, whereas the `Glyph` column, containing the glyph, shows up.
+[^3]: In the PDF version of the blog, it is the `Icon` column that is blank, whereas the `Glyph` column, containing the glyph, shows up.
 
 "On my text editor, the glyphs I see in column 5 correspond exactly with those displayed on the web page in column 4. To get the browser to display the glyphs directly, without the ` <i class=...></i>` invocation, requires more effort than I am willing to expend right now. So, I took the easy route here." \emojifont :wink: \normalfont
 
 ## Wrapping up the HTML version
 
-"Wait a minute," I said. What about the PDF and the `.docx` versions?
+"Wait a minute," I said. What about the PDF and the .docx versions?
 
 "Patience! Patience," he replied. "Markdown was originally devised to play well with HTML. Pandoc has carried that ball far and wide into many other formats. All I have told you thus far applies only to HTML. Let me wrap it up first before moving on to PDF. In HTML, the one-line résumé template in Markdown looks like this:
 
@@ -223,9 +228,9 @@ Joe Bloggs
 <i class="fa-brands fa-github"></i> [Github account of Joe Bloggs]()
 ```
 
-which [appears like this]({attach}auxiliary/opening-html)[^3]:
+which [appears like this]({attach}auxiliary/opening-html)[^4]:
 
-[^3]: This file could not be named as `opening-html.html` because of an operational quirk in the [Pelican Static Site Generator](https://blog.getpelican.com/) being used on this site. Accordingly, the `.html` file extension has been left out. Save this file, rename it as `opening-html.html`, open it in a Web browser, and verify for yourself the claim made here.
+[^4]: This file could not be named as `opening-html.html` because of an operational quirk in the [Pelican Static Site Generator](https://blog.getpelican.com/) being used on this site. Accordingly, the `.html` file extension has been left out. Save this file, rename it as `opening-html.html`, open it in a Web browser, and verify for yourself the claim made here.
 
 :::::center
 ![The Font Awesome icons take on the blue colour above.]({attach}images/opening-html.png){width=90%}
@@ -235,7 +240,7 @@ The styling, like font size and text-alignment, is accomplished using CSS." With
 
 ## The route to PDF
 
-"The single most important difference between HTML on the one hand, and PDF and `.docx` on the other is that the latter two are bound to a physical paper size. The maximum width of text in these two formats are constrained by the type of paper used. I will assume either [A4](https://en.wikipedia.org/wiki/ISO_216#A_series) or [US letter](https://en.wikipedia.org/wiki/Letter_(paper_size)) sizes for the output.
+"The single most important difference between HTML on the one hand, and PDF and .docx on the other is that the latter two are bound to a physical paper size. The maximum width of text in these two formats are constrained by the type of paper used. I will assume either [A4](https://en.wikipedia.org/wiki/ISO_216#A_series) or [US letter](https://en.wikipedia.org/wiki/Letter_(paper_size)) sizes for the output.
 
 "The second aspect of these latter two formats is that the requisite font must reside on the device generating the output. Moreover it is possible, with some effort, to [embed the fonts](https://en.wikipedia.org/wiki/Font_embedding) within the document so that another person viewing the document on another device _without_ the fonts on his or her system can still view the document with precisely the intended fonts."
 
@@ -293,15 +298,15 @@ It bears noting that the input files for the two formats, `opening-latex.txt` an
 
 I was lost in admiration for Sol's tenacity, which bent fonts and typesetting systems to his will, to generate near-identical output in two different, ubiquitous formats. Even if the effort expended on this single line of text was disproportionate to the outcome, the experience earned was worth every ounce of effort.
 
-## The `.docx` output
+## The .docx output
 
-It was some weeks before I met Sol again in an unhurried setting. I then reminded him to finish his saga with Font Awesome by explaining how he generated the `.docx` version of the résumé opening. Sol squinted his eyes and addressed me seriously: "Do you _really_ want to know that? If you do, grab a chair and have some water handy, in case you feel dizzy. \emojifont :wink: \normalfont"
+It was some weeks before I met Sol again in an unhurried setting. I then reminded him to finish his saga with Font Awesome by explaining how he generated the .docx version of the résumé opening. Sol squinted his eyes and addressed me seriously: "Do you _really_ want to know that? If you do, grab a chair and have some water handy, in case you feel dizzy. \emojifont :wink: \normalfont"
 
-With that admonitory preamble, Sol launched into the third part of his exploit: to get a `.docx` fragment visually identical to the HTML and PDF versions from the same Markdown source. It was more a marathon than a sprint, and required fortitude of body and mind.
+With that admonitory preamble, Sol launched into the third part of his exploit: to get a .docx fragment visually identical to the HTML and PDF versions from the same Markdown source. It was more a marathon than a sprint, and required fortitude of body and mind.
 
-"I do not claim to be an expert on Microsoft Word or its `.docx` format. But I do have a secret weapon, or should I say, a secret agent: my paternal cousin, once removed, Hieronymus Septimus Simkin, who is affectionately known to me as Seven. He has been steeped and pickled in the brine of Microsoft software since he barely started walking, and he is my go-to resource on all matters relating to Windows applications.
+"I do not claim to be an expert on Microsoft Word or its docx format. But I do have a secret weapon, or should I say, a secret agent: my paternal cousin, once removed, Hieronymus Septimus Simkin, who is affectionately known to me as Seven. He has been steeped and pickled in the brine of Microsoft software since he barely started walking, and he is my go-to resource on all matters relating to Windows applications.
 
-"The road to `.docx` is a little convoluted and very tedious. Why don't I try to get Seven to brief you himself. Let us agree to hold that story in abeyance for another day and another blog.
+"The road to .docx is a little convoluted and very tedious. Why don't I try to get Seven to brief you himself. Let us agree to hold that story in abeyance for another day and another blog.
 
 
 ## Feedback
@@ -309,6 +314,6 @@ With that admonitory preamble, Sol launched into the third part of his exploit: 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here]({attach}using-font-awesome.pdf).[^4]
+\noindent A PDF version of this article is [available for download here]({attach}using-font-awesome.pdf).[^5]
 
-[^4]: Note that some icons that show up in the HTML version are missing from the PDF version of the blog, and vice versa. It was too tedious to make them feature-identical. One workaround would have been to use scaled SVG icons for both output formats, instead of HTML snippets for HTML, and  OTF fonts invoked by Unicode code points, for LaTeX, but Sol felt that was a [cop out](https://www.thefreedictionary.com/cop+out). The opening of the résumé is almost identical in the HTML and PDF versions, and that was the challenge that was to be fulfilled: so no rules were broken in playing the game. \emojifont :sweat_smile: \normalfont
+[^5]: Note that some icons that show up in the HTML version are missing from the PDF version of the blog, and vice versa. It was too tedious to make them feature-identical. One workaround would have been to use scaled SVG icons for both output formats, instead of HTML snippets for HTML, and  OTF fonts invoked by Unicode code points, for LaTeX, but Sol felt that was a [cop out](https://www.thefreedictionary.com/cop+out). The opening of the résumé is almost identical in the HTML and PDF versions, and that was the challenge that was to be fulfilled: so no rules were broken in playing the game. \emojifont :sweat_smile: \normalfont
