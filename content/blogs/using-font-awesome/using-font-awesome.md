@@ -185,7 +185,7 @@ This meant that _all_ Font Awesome `Solid` icons will show up in maroon. If he w
 
 to get a correctly coloured `paper-plane` icon from the `Solid` flavour: <i class="fa-solid fa-paper-plane"></i> \faPaperPlaneSolid . Indeed, even the version from the `Regular` flavour would be in the same colour: <i class="fa-regular fa-paper-plane"></i> \faPaperPlaneRegular
 
-Sol also found out that though the solid and regular versions of the paper plane look quite different, they shared the _same_ Unicode code point `f1d8` although their SVG files were respectively `paper-plane-solid.svg` and `paper-plane-regular.svg` respectively. He compared this to the Unicode code point of any letter, say, `a`, for the regular and bold versions even though the two versions looked different.
+Sol also found out that while the solid and regular versions of the paper plane look quite different, they shared the _same_ Unicode code point `f1d8` although their SVG files were respectively `paper-plane-solid.svg` and `paper-plane-regular.svg` respectively. He compared this to the Unicode code point of any letter, say, `a`, for the regular and bold versions even though the two versions looked different.
 
 ### The four-icon alphabet
 
@@ -302,14 +302,11 @@ I was lost in admiration for Sol's tenacity, which bent fonts and typesetting sy
 
 ## The .docx output
 
-It was some weeks before I met Sol again in an unhurried setting. I then reminded him to finish his saga with Font Awesome by explaining how he generated the .docx version of the résumé opening. Sol squinted his eyes and addressed me seriously: "Do you _really_ want to know that? If you do, grab a chair and have some water handy, in case you feel dizzy. \emojifont :wink: \normalfont"
-
-With that admonitory preamble, Sol launched into the third part of his exploit: to get a .docx fragment visually identical to the HTML and PDF versions from the same Markdown source. It was more a marathon than a sprint, and required fortitude of body and mind.
+It was some weeks before I met Sol again in an unhurried setting. I then reminded him to finish his saga with Font Awesome by explaining how he generated the .docx version of the résumé opening. Sol squinted his eyes and addressed me seriously: "Do you _really_ want to know that?" Sol seemed reluctant to venture into the third part of his exploit: to get a .docx fragment visually identical to the HTML and PDF versions from the same Markdown source.
 
 "I do not claim to be an expert on Microsoft Word or its docx format. But I do have a secret weapon, or should I say, a secret agent: my paternal cousin, once removed, Hieronymus Septimus Simkin, who is affectionately known to me as Seven. He has been steeped and pickled in the brine of Microsoft software since he barely started walking, and he is my go-to resource on all matters relating to Windows applications.
 
-"The road to .docx is a little convoluted and very tedious. Why don't I try to get Seven to brief you himself. Let us agree to hold that story in abeyance for another day and another blog.
-
+"The road to .docx is a little convoluted and very tedious. It is more a marathon than a sprint, and requires fortitude of body and mind. When you hear it, you should grab a chair and have some water handy, in case you feel dizzy.\emojifont :wink: \normalfont Why don't I try to get Seven to brief you himself. Let us agree to hold that story in abeyance for another day and another blog."
 
 ## Feedback
 

@@ -1,0 +1,17 @@
+---
+pagetitle: Resume of Joe Bloggs
+---
+
+```{=latex}
+\begin{center}
+{\Large Joe Bloggs}\\
+{\small \faEnvelope\ \href{mailto: joebloggs@mydomain.com}{joebloggs@mydomain.com} | \faMobile\ +1-555-3456-7890 | \faLinkedin\ \href{https://www.linkedin.com/}{LinkedIn} | \faGithub\ \href{https://github.com/}{GitHub}}\normalsize
+\end{center}
+```
+
+```{=html}
+<div class="center">
+<p><span class="larger">Joe Bloggs</span><br />
+<span class="smaller"><i class="fa-regular fa-envelope"></i> <a href="mailto:joebloggs@mydomain.com" class="email">joebloggs@mydomain.com</a> | <i class="fa-solid fa-mobile-screen-button"></i> +1-555-3456-7890 | <i class="fa-brands fa-linkedin-in"></i> <a href="">LinkedIn</a> | <i class="fa-brands fa-github"></i> <a href="">Github</a></span></p>
+</div>
+```

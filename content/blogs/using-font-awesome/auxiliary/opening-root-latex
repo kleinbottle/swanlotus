@@ -1,0 +1,5 @@
+{Joe Bloggs}\\
+{
+\href{mailto:joebloggs@mydomain.com}{\nolinkurl{joebloggs@mydomain.com}}
+\textbar{} +1-555-3456-7890 \textbar{} \href{}{LinkedIn} \textbar{}
+\href{}{Github}}
