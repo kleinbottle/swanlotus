@@ -7,7 +7,6 @@ category: Education
 tags: India, Veda, Sanskrit, imagination, understanding, enquiry, memorization, rank
 summary: The [QS World University rankings for 2013](http://www.topuniversities.com/university-rankings/world-university-rankings/2013#sorting=rank+region=+country=+faculty=+stars=false+search=) have just been released. This is one of several league tables ranking universities according to various criteria of academic performance. Such rankings are symptomatic of the relentless trend to quantify more and more aspects of our lives. May this madness be checked before intangible attributes best left qualitative---like love and loyalty---are also subjected to mindless, simplistic metrology!
 opengraphimage: "school-ga9b21f7d6_640.jpg"
-status: published
 ---
 
 >This blog was originally written in 2013 when the ranking links were valid and active. They have now faded away into cyber-oblivion. The numbers quoted were carefully verified at the time of first writing, but cannot now be validated against live links.
