@@ -62,7 +62,7 @@ In any case, developing a good memory is quite distinct from memorizing facts wi
 
 Memorization can scarce supplant the ability to think independently, or critically, or afresh. Alas, in India, recall has replaced understanding. A dozen years of education produce trained parrots rather than thinking human beings capable of dealing with the unforeseen and unforeseeable challenges of the future.
 
-Despite the [rot][hack] that is periodically revealed about examinations in India, they enjoy sacred status in the minds of parents and, by transitivity, students. Rank---that fateful word again for position in a sequence---means everything. To top an examination by memorization rather than thinking thus becomes the Holy Grail of an earnest student nurtured on the soil of academe in India. This, I consider the first great bane in the Indian education system.
+Despite the [rot][hack] that is periodically revealed about examinations in India, they enjoy sacred status in the minds of parents and, by transitivity, students. Rank---that fateful word again for position in a sequence---means everything. To top an examination---by memorization rather than thinking---thus becomes the Holy Grail of an earnest student nurtured on the soil of academe in India. This, I consider the first great bane in the Indian education system.
 
 [hack]: http://deedy.quora.com/Hacking-into-the-Indian-Education-System
 
