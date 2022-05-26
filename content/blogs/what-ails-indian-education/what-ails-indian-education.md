@@ -1,14 +1,16 @@
 ---
 title: "What Ails Indian Education?"
 author: "R (Chandra) Chandrasekhar"
-date: "2013-09-18"
-modified: "2020-12-06"
+date: 2013-09-18
+modified: 2022-05-26
 category: Education
 tags: India, Veda, Sanskrit, imagination, understanding, enquiry, memorization, rank
-summary: "The [QS World University rankings for 2013](http://www.topuniversities.com/university-rankings/world-university-rankings/2013#sorting=rank+region=+country=+faculty=+stars=false+search=) have just been released. This is one of several league tables ranking universities according to various criteria of academic performance. Such rankings are symptomatic of the relentless trend to quantify more and more aspects of our lives. May this madness be checked before intangible attributes best left qualitative---like love and loyalty---are also subjected to mindless, simplistic metrology!"
-opengraphimage:
-status: draft
+summary: The [QS World University rankings for 2013](http://www.topuniversities.com/university-rankings/world-university-rankings/2013#sorting=rank+region=+country=+faculty=+stars=false+search=) have just been released. This is one of several league tables ranking universities according to various criteria of academic performance. Such rankings are symptomatic of the relentless trend to quantify more and more aspects of our lives. May this madness be checked before intangible attributes best left qualitative---like love and loyalty---are also subjected to mindless, simplistic metrology!
+opengraphimage: "school-ga9b21f7d6_640.jpg"
+status: published
 ---
+
+>This blog was originally written in 2013 when the ranking links were valid and active. They have now faded away into cyber-oblivion. The numbers quoted were carefully verified at the time of first writing, but cannot now be validated against live links.
 
 ## No place at the top
 
@@ -39,16 +41,19 @@ Lacking a script that could store the Vedic lore, the ancients decided to use th
 
 This is not a unique achievement---witness the Norse sagas and the ancient mythology of most cultures which have also been orally transmitted down the ages. But the Vedas enjoy an additional, singular distinction: they have been preserved almost error-free from the hoary times when they were first recited, by virtue of the almost mathematical rigour that Sanskrit embodies for its grammar and phonetics, not to mention mnemonics [@bhatekak1993].
 
+![Teacher with students in India.[^1]]({attach}images/school-ga9b21f7d6_640.jpg){#fig:teacher-students width=80%}
+
+[^1]: Image by [Anil Sharma](https://pixabay.com/users/anilsharma26-13475484/) from [Pixabay](https://pixabay.com/).
+
 ## Memorization as the great bane
 
 The upshot of this "mind over matter" preservation of the Vedas was that *memorization and scholarship became fused in Indian culture.* This is a fundamental drawback that trips the contemporary Indian student. Rather than developing the ability to think logically and independently, she or he is encouraged by parents, teachers, and the system in general, to memorize knowledge and parrot it out in an examination: something which is charmingly described as the *commit and vomit* method.
 
 One is reminded here of these lines from Tennyson's _Morte D'Arthur_:
 
->
-| The old order changeth, yielding place to new,
-| And God fulfils Himself in many ways,
-| Lest one good custom should corrupt the world.
+>| The old order changeth, yielding place to new,
+>| And God fulfils Himself in many ways,
+>| Lest one good custom should corrupt the world.
 
 Mark that I am not against developing a good memory or exercising it to keep fit mentally. Indeed, in my chapters entitled "Poetry" and "Arithmetic Revisited"---from the manuscript of my forthcoming book [_Secrets of Academic Success_]({static}/sas-manuscript/SAS-partial.pdf)---I have suggested poetry recitation and mental arithmetic as ways to develop memory while at the same time becoming more literate and numerate.
 
@@ -104,4 +109,4 @@ The thrill of discovery and the unleashing of the imagination---to discover land
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here.]({attach}./what-ails-indian-education.pdf)
+A PDF version of this article is [available for download here.]({attach}./what-ails-indian-education.pdf)
