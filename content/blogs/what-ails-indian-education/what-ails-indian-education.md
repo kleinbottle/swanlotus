@@ -108,4 +108,4 @@ The thrill of discovery and the unleashing of the imagination---to discover land
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-A PDF version of this article is [available for download here.]({attach}./what-ails-indian-education.pdf)
+\noindent A PDF version of this article is [available for download here.]({attach}./what-ails-indian-education.pdf)
