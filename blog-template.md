@@ -21,6 +21,6 @@ corrections.
 
 \noindent A PDF version of this article is [available for download here:]({attach}./blogfilename.pdf):
 
-::: xsmall
+::: {.small .tt}
 <https://swanlotus.netlify.app/blogs/blogfilename.pdf>
 :::
