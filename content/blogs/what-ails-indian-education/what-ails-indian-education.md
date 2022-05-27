@@ -9,7 +9,7 @@ summary: The [QS World University rankings for 2013](http://www.topuniversities.
 opengraphimage: "school-ga9b21f7d6_640.jpg"
 ---
 
->This blog was originally written in 2013 when the ranking links were valid and active. They have now faded away into cyber-oblivion. The numbers quoted were carefully verified at the time of first writing, but cannot now be validated against live links.
+>This blog was originally written in 2013 when the links giving the rankings were active. They have now faded away into cyber-oblivion, but might be restored in future. It bears noting that some Indian universities have improved their global rankings since.
 
 ## No place at the top
 
