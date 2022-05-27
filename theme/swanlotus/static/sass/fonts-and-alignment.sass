@@ -1,0 +1,127 @@
+// Calculate REM font sizes that correspond to LaTeX font sizes
+$tiny: calc(1rem / 12) * 6
+$xxsmall: calc(1rem / 12) * 8
+$xsmall: calc(1rem / 12) * 10
+$small: calc(1rem / 12) * 10.95
+$normal: calc(1rem / 12) * 12
+$large: calc(1rem / 12) * 14.4
+$xlarge: calc(1rem / 12) * 17.28
+$xxlarge: calc(1rem / 12) * 20.74
+$huge: calc(1rem / 12) * 24.88
+
+/* The styles below are for the classes defined in the fonts and alignment
+  Lua filter. Modify them as required to style the HTML document. */
+
+/* Font Styles */
+.bold,
+.bf
+  font-weight: 700
+
+.emphasis,
+.italic,
+.it,
+.slanted,
+.sl
+  font-style: italic
+
+.lower
+  text-transform: lowercase
+
+.medium,
+.md
+  font-weight: 400
+
+.normalfont,
+.nf,
+.upright,
+.up
+  font-family: $body-family
+  font-style: normal
+  font-weight: 400
+
+.monospace,
+.tt
+  font-family: $family-code
+
+.sans,
+.sf
+  font-family: $family-secondary
+
+.serif,
+.rm
+  font-family: $body-family
+
+.smallcaps,
+.sc
+  font-variant: small-caps
+
+.upper
+  text-transform: uppercase
+
+/* Font Sizes relative to a 16px/12pt document
+.tiny
+  font-size: $tiny
+
+.xxsmall
+  font-size: $xxsmall
+
+.xsmall
+  font-size: $xsmall
+
+.small
+  font-size: $small
+
+.normal
+  font-size: $normal
+
+.large
+  font-size: $large
+
+.xlarge
+  font-size: $xlarge
+
+.xxlarge
+  font-size: $xxlarge
+
+.huge
+  font-size: $huge
+
+/* Text Alignments */
+div
+  &.center,
+  &.centering
+    text-align: center
+
+  &.flushright,
+  &.raggedleft
+    text-align: right
+
+  &.flushleft,
+  &.raggedright
+    text-align: left
+
+/* Underline Styles */
+span
+  &.dashuline,
+  &.dau
+    text-decoration: underline dashed
+
+  &.dotuline,
+  &.dou
+    text-decoration: underline dotted
+
+  &.uline,
+  &.u
+    text-decoration: underline
+
+  &.uuline,
+  &.uu
+    text-decoration: underline double
+
+  &.uwave,
+  &.uw
+    text-decoration: underline wavy
+
+  &.sout,
+  &.so
+    text-decoration: line-through
