@@ -1,0 +1,30 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+beautifulsoup4 = "*"
+blinker = "*"
+colorama = "*"
+commonmark = "*"
+docutils = "*"
+feedgenerator = "*"
+markdown-word-count = "*"
+pelican = "*"
+pelican-pandoc-reader = "*"
+python-dateutil = "*"
+pytz = "*"
+rich = "*"
+six = "*"
+soupsieve = "*"
+Jinja2 = "*"
+MarkupSafe = "*"
+Pygments = "*"
+PyYAML = "*"
+Unidecode = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
