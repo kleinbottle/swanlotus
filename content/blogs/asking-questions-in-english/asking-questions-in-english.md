@@ -32,6 +32,8 @@ Suppose you see someone and want to ask in Tamil where that person was going. Yo
 
 Now, for another example. When asking someone for his or her name, a Tamil speaker says "உன் பெயர் என்ன?" (un peyar enna?). In English, this word order would be rendered as "Your name what?" Horror of horrors! Where has the verb gone?
 
+![The same question in English and Tamil; the latter version reads "You are well?".]({attach}images/engtam.png){#fig:questions width=80%}
+
 ## Implicit verbs and nouns
 
 We have all been taught that a complete sentence must have a verb. The simplest sentence is an imperative "Come!". So, how did the Tamil sentence dispense with the verb?
