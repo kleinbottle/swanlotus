@@ -2,7 +2,7 @@
 title: "Asking Questions in English"
 author: "R (Chandra) Chandrasekhar"
 date: "2012-09-15"
-modified: "2020-12-09"
+modified: "2022-05-29"
 summary: "This blog is devoted to the art of asking questions in English. This seemingly undemanding task often trips up the aspiring learner of English, especially one who is studying it as a second or third language."
 category: Language
 tags: grammar, usage, questions, word order, verbs, nouns, Tamil, English
@@ -13,7 +13,7 @@ opengraphimage: "engtam.jpg"
 
 This blog is devoted to the art of asking questions correctly in English. This seemingly undemanding task often trips up the aspiring learner of English, especially one who is studying it as a second or third language.
 
-My mother tongue is [Tamil,][tamil] written தமிழ் (tamiḻ), in its markedly curly script.^[If you see rectangular boxes where you would expect to see letters, please ensure that you have a font on your device capable of displaying Tamil script.] Tamil is an alphabetic, syllabic, inflected Indic language with ancient roots. Asking questions in Tamil and English require two very different ways of thinking and speaking. Knowing about these can be instructive to many non-native speakers of English. Let me elaborate.
+My mother tongue is [Tamil,][tamil] written தமிழ் (tamiḻ)^[The transliteration adopted here follows [ISO 15919](https://en.wikipedia.org/wiki/ISO_15919)], in its markedly curly script.^[If you see rectangular boxes where you would expect to see letters, please ensure that you have a font on your device capable of displaying Tamil script.] Tamil is an alphabetic, syllabic, inflected Indic language with ancient roots. Asking questions in Tamil and English require two very different ways of thinking and speaking. Knowing about these can be instructive to many non-native speakers of English. Let me elaborate.
 
 [tamil]: http://en.wikipedia.org/wiki/Tamil_language
 [inflected]: http://en.wikipedia.org/wiki/Inflection
@@ -22,17 +22,21 @@ My mother tongue is [Tamil,][tamil] written தமிழ் (tamiḻ), in its ma
 
 A friend, fairly proficient in English, but not so much in Tamil, translated the question "Can I come to your house now?" into the Tamil "முடியுமா நான் வருவதற்கு உங்கள் வீட்டுக்கு இப்பொழுது?" (muḍiyumā nān varuvadaṟku uṅgaḷ vīṭṭukku ippoḻudu?). This sentence replicates the English word sequence faithfully, and while certainly not the best of Tamil in elegance or usage, it is at least intelligible *and* grammatical. That is because Tamil is more of an [inflected][inflected] language than English, and is therefore less sensitive to change in meaning due to change in word order.
 
-But the reverse translation from Tamil into English, especially when applied to asking questions, is infelicitous. Following Tamil word order to phrase English questions often leads to ungrammatical and discordant results. Let me give you two examples.
+But the reverse translation from Tamil into English, especially when applied to asking questions, is infelicitous. Following Tamil word order to phrase English questions often leads to ungrammatical and discordant results. Let me give you some examples.
 
 ### "Where are you going?"
 
 Suppose you see someone and want to ask in Tamil where that person was going. You would ask, in the less respectful mode of address used between equals, "நீ எங்கே போகிறாய்?" (nī engē pōgiṟāi?). Translated into English, these words literally become "You where going?" and that is often how a newcomer to English, with a Tamil language background, will at first speak.
 
+### "Are you well?"
+
+When meeting someone, it is polite and customary to ask "How are you?" in English. In Tamil, the more sanguine "நீங்கள் நலமா?" (nīṅkaḷ nalamā?) is used, where the respectful plural form of the second person pronoun is employed. Literally, it is a statement, posed as a question, with a slight raise in pitch at the end to indicate the interrogative sense when spoken. And the _literal_ translation into English is the strange-sounding "You are well?" instead of the correct "Are you well?".
+
+![The same question in English and Tamil; the latter version _literally_ reads "You are well?".]({attach}images/engtam.jpg){#fig:questions width=80%}
+
 ### "What is your name?"
 
 Now, for another example. When asking someone for his or her name, a Tamil speaker says "உன் பெயர் என்ன?" (un peyar enna?). In English, this word order would be rendered as "Your name what?" Horror of horrors! Where has the verb gone?
-
-![The same question in English and Tamil; the latter version reads "You are well?".]({attach}images/engtam.png){#fig:questions width=80%}
 
 ## Implicit verbs and nouns
 
@@ -408,4 +412,8 @@ Happy questioning! \emojifont :slightly_smiling_face: \normalfont
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here.]({attach}./asking-questions-in-english.pdf)
+\noindent A PDF version of this article is [available for download here]({attach}./asking-questions-in-english.pdf):
+
+::: {.normal .tt}
+<https://swanlotus.netlify.app/blogs/asking-questions-in-english.pdf>
+:::
