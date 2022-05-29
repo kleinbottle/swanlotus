@@ -6,7 +6,7 @@ modified: "2020-12-09"
 summary: "This blog is devoted to the art of asking questions in English. This seemingly undemanding task often trips up the aspiring learner of English, especially one who is studying it as a second or third language."
 category: Language
 tags: grammar, usage, questions, word order, verbs, nouns, Tamil, English
-opengraphimage: "engtam.png"
+opengraphimage: "engtam.jpg"
 ---
 
 ## A tale of two tongues
