@@ -110,6 +110,6 @@ corrections.
 
 \noindent A PDF version of this article is [available for download here:]({attach}./what-ails-indian-education.pdf)
 
-::: {.small .tt}
+::: {.normal .tt}
 <https://swanlotus.netlify.app/blogs/what-ails-indian-education.pdf>
 :::
