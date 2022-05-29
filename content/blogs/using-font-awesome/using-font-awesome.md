@@ -6,6 +6,7 @@ category: Software
 tags: résumé, curriculum vitae, icons, fonts, Pandoc, LuaLaTeX, graphics, coding, typesetting, The Simkin Chronicles
 summary: "Sol took on the challenge of creating a résumé featuring Font Awesome icons from the _same_ source file to yield output in three different formats: HTML, PDF, and .docx. This blog chronicles how he managed to generate the résumé in the first two formats. The .docx story is reserved for another day and another blog."
 opengraphimage: "atom.png"
+status: "draft"
 ---
 
 ## Make me a résumé, bake me a résumé

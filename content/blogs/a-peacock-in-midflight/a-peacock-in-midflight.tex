@@ -1,16 +1,11 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode,linktoc=all}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
-  12pt,
-  british,
   a4paper,
-  rgb,
-  dvipsnames,
-  svgnames,
-  hyphens]{article}
+]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -47,7 +42,7 @@
   pdfauthor={R (Chandra) Chandrasekhar},
   pdflang={en-GB},
   colorlinks=true,
-  linkcolor={TealBlue},
+  linkcolor={DarkOliveGreen},
   filecolor={Purple},
   citecolor={DarkKhaki},
   urlcolor={Maroon},
@@ -58,63 +53,77 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{british}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
 % $HOME/.pandoc/defaults/latex-header-includes.tex
 % Common header includes for both lualatex and xelatex engines.
 %
-% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor} % Done as classoptions in latex.yaml
+% Preliminaries
+%
+\PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+\PassOptionsToPackage{main=british}{babel}
 \AtBeginEnvironment{quote}{\small}
+\AtBeginEnvironment{quotation}{\small}
 \AtBeginEnvironment{longtable}{\centering}
 %
-\usepackage{setspace} % Font-specific spacing set in font-specific selection file
+% Packages that are useful to include
 %
-\usepackage{etoolbox}
 \usepackage{graphicx}
 \usepackage{subcaption}
-\usepackage{svg}
-  \svgsetup{inkscapeversion=1}
-%
-\urlstyle{tt}
+\usepackage[inkscapeversion=1]{svg}
 \usepackage[defaultlines=4,all]{nowidow}
-%
-%\usepackage[margins=raggedright]{floatrow} % Commented out since it can be problematic 
-% Left aligns tables: Pandoc Tips and Tricks
-%
-% Adjust punctuation for footnotes
-%
-\usepackage{fnpct} % footnote _before_ punctuation reversed and adjusted.
-  \setfnpct{after-dot-space=-0.15em,after-comma-space=-0.150em,add-punct-marks=;[0.06em]![0.06em]?[0.06em]:[0.06em]}
-%
-% Flexible fontsizes
-%
-\usepackage{fontsize}
-%
-\usepackage{pdflscape}
-%
 \usepackage[capitalize,noabbrev]{cleveref}
-%
-% Font-related; font-selection is in iles $HOME/.pandoc/defaults/[fontname]-font.tex
-% 
-\usepackage[main=british]{babel}
-%
-\newfontfamily{\emojifont}{Symbola} % since used generally; KIV proper solution
-%
+\usepackage{etoolbox}
+\usepackage{fontsize}
 \usepackage{newunicodechar}
-%\newcommand*{\myrightarrow}{\textsf{→}} % U+2192 or 0x2192
-%\newunicodechar{→}{\myrightarrow}
-% Also OK:
-% \newunicodechar{→}{\texttt{→}} % U+2192 or 0x2192
-\newunicodechar{→}{\texttt{→}}
+\usepackage{pdflscape}
+\usepackage{fnpct}
+\usepackage{parskip}
+  \setlength{\parindent}{0pt}
+\usepackage[style=american]{csquotes}
+
+% charis-plus.tex
+% Font-setting header file for use with Pandoc Markdown
+% to generate PDF via LuaLaTeX.
+% The main font is Charis SIL.
+% Other main fonts are also available in appropriately named file.
+\usepackage{fontspec}
+\usepackage{setspace}
+\setstretch{1.2}
 %
-% $HOME/.pandoc/defaults/charis-font.tex
-% Standard font selection a la fontspec
-% 
-\setromanfont{Merriweather}
-\setsansfont[BoldFont={* Semibold}]{Source Sans Pro}
-\setmonofont[Scale=0.95]{Fira Mono}
-\setmathfont[bold-style=ISO]{STIX Two Math}
-\defaultfontfeatures{Mapping=TeX,Scale=MatchLowercase,Ligatures=TeX,Renderer=HarfBuzz}
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase} % at the start always
 %
-\spacing{1.3} % For merriweather
+% For English
+%
+\babelfont{rm}[Scale=1]{Merriweather}
+\babelfont{sf}[BoldFont={* Semibold}]{Source Sans Pro}
+\babelfont{tt}[Scale=0.9]{Fira Mono}
+%
+\babelprovide[import,onchar=ids fonts]{sanskrit}
+\babelprovide[import,onchar=ids fonts]{tamil}
+\babelprovide[import,onchar=ids fonts]{greek}
+%
+\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz]{Noto Serif Devanagari}
+\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz]{Noto Sans Devanagari}
+\babelfont[tamil]{rm}[Renderer=HarfBuzz]{Noto Serif Tamil}
+\babelfont[tamil]{sf}[Renderer=HarfBuzz]{Noto Sans Tamil}
+\babelfont[greek]{rm}{Gentium Book Plus}
+%
+% Math font
+%
+\usepackage{unicode-math} % seems not to hurt % fallabck
+\setmathfont[bold-style=TeX]{STIX Two Math}
+%
+% Other fonts
+%
+\newfontfamily{\emojifont}{Symbola}
 %
 \usepackage{titling}
 \usepackage{fancyhdr}
@@ -124,18 +133,29 @@
     \renewcommand{\headrulewidth}{0.2pt}
     \renewcommand{\footrulewidth}{0.2pt}
     \fancyhead[LO,RE]{\scshape\thetitle}
-    \fancyfoot[CO,CE]{\small Copyright © 2006--\the\year, R (Chandra) Chandrasekhar}
+    \fancyfoot[CO,CE]{\footnotesize Copyright © 2006\textendash\the\year, R (Chandra) Chandrasekhar}
     \fancyfoot[RE,RO]{\thepage}
-\ifXeTeX
-  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
-  \usepackage{polyglossia}
-  \setmainlanguage[variant=british]{english}
-\else
-  \usepackage[main=british]{babel}
-% get rid of language-specific shorthands (see #6817):
-\let\LanguageShortHands\languageshorthands
-\def\languageshorthands#1{}
-\fi
+\newfontfamily{\regulariconfont}{Font Awesome 6 Free Regular}[Color=Grey]
+\newfontfamily{\solidiconfont}{Font Awesome 6 Free Solid}[Color=Grey]
+\newfontfamily{\brandsiconfont}{Font Awesome 6 Brands}[Color=Grey]
+%
+% Direct input of Unicode code points
+%
+\newcommand{\faEnvelope}{\regulariconfont\ ^^^^f0e0\normalfont}
+\newcommand{\faMobile}{\solidiconfont\ ^^^^f3cd\normalfont}
+\newcommand{\faLinkedin}{\brandsiconfont\ ^^^^f0e1\normalfont}
+\newcommand{\faGithub}{\brandsiconfont\ ^^^^f09b\normalfont}
+\newcommand{\faAtom}{\solidiconfont\ ^^^^f5d2\normalfont}
+\newcommand{\faPaperPlaneRegular}{\regulariconfont\ ^^^^f1d8\normalfont}
+\newcommand{\faPaperPlaneSolid}{\solidiconfont\ ^^^^f1d8\normalfont}
+
+%
+% The block below is commented out because of Tofu glyphs in HTML
+%
+% \newcommand{\faEnvelope}{\regulariconfont\ \normalfont}
+% \newcommand{\faMobile}{\solidiconfont\ \normalfont}
+% \newcommand{\faLinkedin}{\brandsiconfont\ \normalfont}
+% \newcommand{\faGithub}{\brandsiconfont\ \normalfont}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -147,8 +167,7 @@
 \begin{document}
 \maketitle
 
-\setlength{\parindent}{0pt} % block paragraph
-\thispagestyle{empty}
+
 
 
 This morning, I saw a peacock in mid-flight. It was a wondrous and
@@ -171,12 +190,12 @@ simply a gorgeous rudder I cannot tell. But I marvelled at how Nature
 has patiently crafted the peacock---with its beautiful opalescent cyan
 neck and uniquely patterned feathers---over evolutionary time to
 complete the perfect marriage of form and function, of beauty and
-utility, of grace and majesty. Here was a bird that that flew like
-poetry in motion.
+utility, of grace and majesty. Here was a bird that flew like poetry in
+motion.
 
 We human beings, when confronted by the magnificent feathers of a
-peacock, have have unfairly imposed our misshapen human values on them,
-and coined expressions like ``proud as a peacock'' and ``strutting about
+peacock, have unfairly imposed our misshapen human values on them, and
+coined expressions like ``proud as a peacock'' and ``strutting about
 like a peacock'' even though we have no access to a peacock's feelings.
 
 From a biological point of view, colourful plumage in birds is designed
@@ -186,33 +205,35 @@ of the peacock, it is the male that is spectacular; the female is more
 modestly beplumed.
 
 I have always \emph{heard} the neighbourhood peacocks more than
-\emph{seen} them. And the call of the peacock does not not quite do
-justice to its looks. There is an old description of female pulchritude
-as embodying ``the voice of a nightingale and the plumage of a
-peacock''. After hearing the peacocks, I have often chuckled to myself
-that if the two birds had been interchanged, the result would certainly
-be less than attractive.
+\emph{seen} them. And the call of the peacock does not quite do justice
+to its looks. There is an old description of female pulchritude as
+embodying ``the voice of a nightingale and the plumage of a peacock''.
+After hearing the peacocks, I have often chuckled to myself that if the
+two birds had been interchanged, the result would certainly be less than
+attractive.
 
 If you had thought the peacock to be flightless, you would be excused.
 It is a rather large bird, like the swan. Seeing the peacock in flight,
 reminded me of the famed
 \href{http://www.boeing.com/commercial/787family/background.html}{Boeing
 787 Dreamliner} aircraft now making its début worldwide, and being
-hailed for its efficiency and comfort. The peacock is proof that
-engineering and art can and do meet with superlative results.
+hailed for its efficiency and comfort\footnote{This was true at the time
+  of writing, but issues of quality and cost have surfaced since, to mar
+  the \emph{dream}.}. The peacock is proof that engineering and art can
+and do meet with superlative results.
 
 The swan and the peacock are both large birds. Each has a peculiar
 beauty and grace. The swan serenely floating on water, and the peacock
 standing with its tail spread out, are epitomes of natural beauty. And
 when they fly, they both do so effortlessly and gracefully.
 
-Interestingly, both birds feature in the mythology of Hinduism.
-Subrahmaṇya or Kārtikeya, the Divine General, rides a peacock. And
-Sarasvatī, the Goddess of Wisdom, is surrounded by both a peacock and a
-swan. The peacock's call is supposed to act as a tuning fork to help her
-tune her stringed instrument, the
-\href{http://www.thefreedictionary.com/vina}{vīṇā,} while the white swan
-represents divine discrimination.
+Interestingly, both birds feature in the mythology of \emph{Sanātana
+Dharma}, more commonly known as Hinduism. Subrahmaṇya or Kārtikeya, the
+Divine General, rides a peacock. And Sarasvatī, the Goddess of Wisdom,
+is surrounded by both a peacock and a swan. The peacock's call is
+supposed to act as a tuning fork to help her tune her stringed
+instrument, the \href{http://www.thefreedictionary.com/vina}{vīṇā,}
+while the white swan represents divine discrimination.
 
 I sorely wanted to capture the peacock in mid-flight, but it was too
 swift and sudden for me to photograph it. ``Perhaps some other time,'' I
@@ -239,7 +260,17 @@ Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
 
 \noindent A PDF version of this article is
-\href{./a-peacock-in-midflight.pdf}{available for download here.}
+\href{./a-peacock-in-midflight.pdf}{available for download here}:
+
+\begin{normalsize}
+
+\begin{ttfamily}
+
+\url{https://swanlotus.netlify.app/blogs/a-peacock-in-mid-flight.pdf}
+
+\end{ttfamily}
+
+\end{normalsize}
 
 
 
