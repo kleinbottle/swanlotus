@@ -327,4 +327,8 @@ Apart from highlighted code, all other illustrations were generated using XeLaTe
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here.]({attach}./the-making-of-a-logo.pdf)
+\noindent A PDF version of this article is [available for download here]({attach}./the-making-of-a-logo.pdf):
+
+::: {.normal .tt}
+<https://swanlotus.netlify.app/blogs/the-making-of-a-logo.pdf>
+:::

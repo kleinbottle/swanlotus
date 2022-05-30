@@ -154,18 +154,18 @@ Among the very many tools available, we examine below four that support image fo
     - raster to raster conversions
     - raster to vector conversions
 
-#.  [cairo](https://www.cairographics.org/)
+#.  [`cairo`](https://www.cairographics.org/)
     - vector-based 2D drawing and rendering library
     - multiple output devices/formats
     - used by other programs as a backend, rather than in standalone mode
 
-#.  [poppler](https://poppler.freedesktop.org/)
+#.  [`poppler`](https://poppler.freedesktop.org/)
     - vector-based PDF rendering library
     - used by several PDF viewers
     - uses cairo as backend
     - standalone utilities like `pdftotext`, `pdftocairo`, and `pdftoppm`
 
-#.  [Inkscape](https://inkscape.org/)
+#.  [`Inkscape`](https://inkscape.org/)
     - GUI-based vector graphics editor
     - suitable both for technical illustration and digital art
     - uses SVG as the working format
@@ -998,4 +998,8 @@ Recent versions of the `ImageMagick` suite, bundled with major distributions, sh
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here.]({attach}image-format-conversions.pdf)
+\noindent A PDF version of this article is [available for download here]({attach}image-format-conversions.pdf):
+
+::: {.normal .tt}
+<https://swanlotus.netlify.app/blogs/image-format-conversions.pdf>
+:::

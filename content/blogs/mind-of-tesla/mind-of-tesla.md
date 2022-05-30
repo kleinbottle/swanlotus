@@ -825,4 +825,8 @@ For helpful comments and discussions, I thank N Chandrasekhar, R Gopalkrishnan, 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here.]({attach}./mind-of-tesla.pdf)
+\noindent A PDF version of this article is [available for download here]({attach}./mind-of-tesla.pdf):
+
+::: {.normal .tt}
+<https://swanlotus.netlify.app/blogs/mind-of-tesla.pdf>
+:::

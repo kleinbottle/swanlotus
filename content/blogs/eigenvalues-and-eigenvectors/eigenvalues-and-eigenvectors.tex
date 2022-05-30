@@ -1,16 +1,11 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode,linktoc=all}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
-  12pt,
-  british,
   a4paper,
-  rgb,
-  dvipsnames,
-  svgnames,
-  hyphens]{article}
+]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -47,7 +42,7 @@
   pdfauthor={R (Chandra) Chandrasekhar},
   pdflang={en-GB},
   colorlinks=true,
-  linkcolor={TealBlue},
+  linkcolor={DarkOliveGreen},
   filecolor={Purple},
   citecolor={DarkKhaki},
   urlcolor={Maroon},
@@ -71,63 +66,101 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{british}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
 % $HOME/.pandoc/defaults/latex-header-includes.tex
 % Common header includes for both lualatex and xelatex engines.
 %
-% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor} % Done as classoptions in latex.yaml
+% Preliminaries
+%
+\PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+\PassOptionsToPackage{main=british}{babel}
 \AtBeginEnvironment{quote}{\small}
+\AtBeginEnvironment{quotation}{\small}
 \AtBeginEnvironment{longtable}{\centering}
 %
-\usepackage{setspace} % Font-specific spacing set in font-specific selection file
+% Packages that are useful to include
 %
-\usepackage{etoolbox}
 \usepackage{graphicx}
 \usepackage{subcaption}
-\usepackage{svg}
-  \svgsetup{inkscapeversion=1}
-%
-\urlstyle{tt}
+\usepackage[inkscapeversion=1]{svg}
 \usepackage[defaultlines=4,all]{nowidow}
-%
-%\usepackage[margins=raggedright]{floatrow} % Commented out since it can be problematic 
-% Left aligns tables: Pandoc Tips and Tricks
-%
-% Adjust punctuation for footnotes
-%
-\usepackage{fnpct} % footnote _before_ punctuation reversed and adjusted.
-  \setfnpct{after-dot-space=-0.15em,after-comma-space=-0.150em,add-punct-marks=;[0.06em]![0.06em]?[0.06em]:[0.06em]}
-%
-% Flexible fontsizes
-%
-\usepackage{fontsize}
-%
-\usepackage{pdflscape}
-%
 \usepackage[capitalize,noabbrev]{cleveref}
-%
-% Font-related; font-selection is in iles $HOME/.pandoc/defaults/[fontname]-font.tex
-% 
-\usepackage[main=british]{babel}
-%
-\newfontfamily{\emojifont}{Symbola} % since used generally; KIV proper solution
-%
+\usepackage{etoolbox}
+\usepackage{fontsize}
 \usepackage{newunicodechar}
-%\newcommand*{\myrightarrow}{\textsf{→}} % U+2192 or 0x2192
-%\newunicodechar{→}{\myrightarrow}
-% Also OK:
-% \newunicodechar{→}{\texttt{→}} % U+2192 or 0x2192
-\newunicodechar{→}{\texttt{→}}
+\usepackage{pdflscape}
+\usepackage{fnpct}
+\usepackage{parskip}
+  \setlength{\parindent}{0pt}
+\usepackage[style=american]{csquotes}
+% \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
 %
-% $HOME/.pandoc/defaults/charis-font.tex
-% Standard font selection a la fontspec
-% 
-\setromanfont{Merriweather}
-\setsansfont[BoldFont={* Semibold}]{Source Sans Pro}
-\setmonofont[Scale=0.95]{Fira Mono}
-\setmathfont[bold-style=ISO]{STIX Two Math}
-\defaultfontfeatures{Mapping=TeX,Scale=MatchLowercase,Ligatures=TeX,Renderer=HarfBuzz}
+% charis-plus.tex
+% Font-setting header file for use with Pandoc Markdown
+% to generate PDF via LuaLaTeX.
+% The main font is Charis SIL.
+% Other main fonts are also available in appropriately named file.
+\usepackage{fontspec}
+\usepackage{setspace}
+\setstretch{1.3}
 %
-\spacing{1.3} % For merriweather
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=HarfBuzz} % at the start always
+%
+% For English
+%
+\babelfont{rm}[Scale=1]{Merriweather}
+\babelfont{sf}[BoldFont={* Semibold}]{Source Sans Pro}
+\babelfont{tt}[Scale=0.9]{Fira Mono}
+%
+\babelprovide[import,onchar=ids fonts]{sanskrit}
+\babelprovide[import,onchar=ids fonts]{tamil}
+\babelprovide[import,onchar=ids fonts]{greek}
+%
+\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz]{Noto Serif Devanagari}
+\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz]{Noto Sans Devanagari}
+\babelfont[tamil]{rm}[Renderer=HarfBuzz]{Noto Serif Tamil}
+\babelfont[tamil]{sf}[Renderer=HarfBuzz]{Noto Sans Tamil}
+\babelfont[greek]{rm}{Gentium Book Plus}
+%
+% Math font
+%
+\usepackage{unicode-math} % seems not to hurt % fallabck
+\setmathfont[bold-style=TeX]{STIX Two Math}
+%
+% Other fonts
+%
+\newfontfamily{\emojifont}{Symbola}
 %
 \usepackage{titling}
 \usepackage{fancyhdr}
@@ -137,41 +170,32 @@
     \renewcommand{\headrulewidth}{0.2pt}
     \renewcommand{\footrulewidth}{0.2pt}
     \fancyhead[LO,RE]{\scshape\thetitle}
-    \fancyfoot[CO,CE]{\small Copyright © 2006--\the\year, R (Chandra) Chandrasekhar}
+    \fancyfoot[CO,CE]{\footnotesize Copyright © 2006\textendash\the\year, R (Chandra) Chandrasekhar}
     \fancyfoot[RE,RO]{\thepage}
-\ifXeTeX
-  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
-  \usepackage{polyglossia}
-  \setmainlanguage[variant=british]{english}
-\else
-  \usepackage[main=british]{babel}
-% get rid of language-specific shorthands (see #6817):
-\let\LanguageShortHands\languageshorthands
-\def\languageshorthands#1{}
-\fi
+\newfontfamily{\regulariconfont}{Font Awesome 6 Free Regular}[Color=Grey]
+\newfontfamily{\solidiconfont}{Font Awesome 6 Free Solid}[Color=Grey]
+\newfontfamily{\brandsiconfont}{Font Awesome 6 Brands}[Color=Grey]
+%
+% Direct input of Unicode code points
+%
+\newcommand{\faEnvelope}{\regulariconfont\ ^^^^f0e0\normalfont}
+\newcommand{\faMobile}{\solidiconfont\ ^^^^f3cd\normalfont}
+\newcommand{\faLinkedin}{\brandsiconfont\ ^^^^f0e1\normalfont}
+\newcommand{\faGithub}{\brandsiconfont\ ^^^^f09b\normalfont}
+\newcommand{\faAtom}{\solidiconfont\ ^^^^f5d2\normalfont}
+\newcommand{\faPaperPlaneRegular}{\regulariconfont\ ^^^^f1d8\normalfont}
+\newcommand{\faPaperPlaneSolid}{\solidiconfont\ ^^^^f1d8\normalfont}
+
+%
+% The block below is commented out because of Tofu glyphs in HTML
+%
+% \newcommand{\faEnvelope}{\regulariconfont\ \normalfont}
+% \newcommand{\faMobile}{\solidiconfont\ \normalfont}
+% \newcommand{\faLinkedin}{\brandsiconfont\ \normalfont}
+% \newcommand{\faGithub}{\brandsiconfont\ \normalfont}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
-  % set entry spacing
-  \ifnum #2 > 0
-  \setlength{\parskip}{#2\baselineskip}
-  \fi
- }%
- {}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \title{Eigenvalues and Eigenvectors---Why are they important?}
 \author{R (Chandra) Chandrasekhar}
@@ -180,8 +204,7 @@
 \begin{document}
 \maketitle
 
-\setlength{\parindent}{0pt} % block paragraph
-\thispagestyle{empty}
+
 
 
 \hypertarget{stimulating-interest-in-an-arcane-topic}{%
@@ -877,7 +900,17 @@ Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
 
 \noindent A PDF version of this article is
-\href{./eigenvalues-and-eigenvectors.pdf}{available for download here.}
+\href{./eigenvalues-and-eigenvectors.pdf}{available for download here}:
+
+\begin{normalsize}
+
+\begin{ttfamily}
+
+\url{https://swanlotus.netlify.app/blogs/eigenvalues-and-eigenvectors.pdf}
+
+\end{ttfamily}
+
+\end{normalsize}
 
 \hypertarget{bibliography}{%
 \section*{References}\label{bibliography}}

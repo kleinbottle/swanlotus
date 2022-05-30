@@ -439,4 +439,8 @@ One general hypothesis that we could examine is whether it is generally true tha
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here.]({attach}./eigenvalues-and-eigenvectors.pdf)
+\noindent A PDF version of this article is [available for download here]({attach}./eigenvalues-and-eigenvectors.pdf):
+
+::: {.normal .tt}
+<https://swanlotus.netlify.app/blogs/eigenvalues-and-eigenvectors.pdf>
+:::
