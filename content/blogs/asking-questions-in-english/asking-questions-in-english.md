@@ -20,13 +20,13 @@ My mother tongue is [Tamil,][tamil] written தமிழ் (tamiḻ)^[The trans
 
 ## Word order in English and Tamil
 
-A friend, fairly proficient in English, but not so much in Tamil, translated the question "Can I come to your house now?" into the Tamil "முடியுமா நான் வருவதற்கு உங்கள் வீட்டுக்கு இப்பொழுது?" (muḍiyumā nān varuvadaṟku uṅgaḷ vīṭṭukku ippoḻudu?). This sentence replicates the English word sequence faithfully, and while certainly not the best of Tamil in elegance or usage, it is at least intelligible *and* grammatical. That is because Tamil is more of an [inflected][inflected] language than English, and is therefore less sensitive to change in meaning due to change in word order.
+A friend, fairly proficient in English, but not so much in Tamil, translated the question "Can I come to your house now?" into the Tamil "முடியுமா நான் வருவதற்கு உங்கள் வீட்டுக்கு இப்பொழுது?" (muḍiyumā nān varuvadaṟku uṅkaḷ vīṭṭukku ippoḻudu?). This sentence replicates the English word sequence faithfully, and while certainly not the best of Tamil in elegance or usage, it is at least intelligible *and* grammatical. That is because Tamil is more of an [inflected][inflected] language than English, and is therefore less sensitive to change in meaning due to change in word order.
 
 But the reverse translation from Tamil into English, especially when applied to asking questions, is infelicitous. Following Tamil word order to phrase English questions often leads to ungrammatical and discordant results. Let me give you some examples.
 
 ### "Where are you going?"
 
-Suppose you see someone and want to ask in Tamil where that person was going. You would ask, in the less respectful mode of address used between equals, "நீ எங்கே போகிறாய்?" (nī engē pōgiṟāi?). Translated into English, these words literally become "You where going?" and that is often how a newcomer to English, with a Tamil language background, will at first speak.
+Suppose you see someone and want to ask in Tamil where that person was going. You would ask, in the less respectful mode of address used between equals, "நீ எங்கே போகிறாய்?" (nī eṅkē pōkiṟāi?)^[Just for the record, the letters "k" in the transliteration are pronounced as "g" due to [sandhi](https://en.wikipedia.org/wiki/Sandhi).]. Translated into English, these words literally become "You where going?" and that is often how a newcomer to English, with a Tamil language background, will at first speak.
 
 ### "Are you well?"
 

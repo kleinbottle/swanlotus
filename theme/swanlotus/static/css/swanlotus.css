@@ -6,7 +6,7 @@ These styles are programmatically generated using Pandoc's --highlight-style opt
 Please see https://github.com/pelican-plugins/pandoc-reader/issues/18 for detailed
 instructions on how this is achieved.
 */
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,900;1,400;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap");
 pre > code.sourceCode {
@@ -280,7 +280,7 @@ div.csl-indent {
 }
 
 /* Font Imports */
-/* Merriweather */
+/* Noto Serif */
 /* Source Sans Pro */
 /* Fira Mono */
 /* Fonts */
@@ -314,7 +314,7 @@ div.csl-indent {
 .nf,
 .upright,
 .up {
-  font-family: "Merriweather", "PT Serif", "Noto Serif", serif;
+  font-family: "Noto Serif", "Merriweather", "PT Serif", serif;
   font-style: normal;
   font-weight: 400;
 }
@@ -331,7 +331,7 @@ div.csl-indent {
 
 .serif,
 .rm {
-  font-family: "Merriweather", "PT Serif", "Noto Serif", serif;
+  font-family: "Noto Serif", "Merriweather", "PT Serif", serif;
 }
 
 .smallcaps,
@@ -416,7 +416,7 @@ span.sout, span.so {
 /* Arvo*/
 /* Libre Baskerville */
 /* Bitter */
-/* Noto Serif */
+/* Merriweather */
 /* Andada Pro */
 /* Lora */
 /* *************************************************************** */
@@ -615,7 +615,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: "Merriweather", "PT Serif", "Noto Serif", serif;
+  font-family: "Noto Serif", "Merriweather", "PT Serif", serif;
 }
 
 code,
@@ -4534,7 +4534,7 @@ body {
 #main {
   background-color: hsl(0deg, 0%, 86%);
   color: hsl(0deg, 0%, 4%);
-  font-family: "Merriweather", "PT Serif", "Noto Serif", serif;
+  font-family: "Noto Serif", "Merriweather", "PT Serif", serif;
   padding: 1.65em;
   order: 2;
 }

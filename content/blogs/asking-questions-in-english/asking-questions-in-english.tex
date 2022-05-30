@@ -141,20 +141,20 @@
 \usepackage[style=american]{csquotes}
 % \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
 %
-% charis-plus.tex
+% noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
-% The main font is Charis SIL.
+% The main font is Noto Serif.
 % Other main fonts are also available in appropriately named file.
 \usepackage{fontspec}
 \usepackage{setspace}
-\setstretch{1.3}
+\setstretch{1.25}
 %
 \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=HarfBuzz} % at the start always
 %
 % For English
 %
-\babelfont{rm}[Scale=1]{Merriweather}
+\babelfont{rm}[Scale=1,BoldFont=NotoSerif-Bold]{Noto Serif Regular}
 \babelfont{sf}[BoldFont={* Semibold}]{Source Sans Pro}
 \babelfont{tt}[Scale=0.9]{Fira Mono}
 %
@@ -173,10 +173,20 @@
 \usepackage{unicode-math} % seems not to hurt % fallabck
 \setmathfont[bold-style=TeX]{STIX Two Math}
 %
+%
 % Other fonts
 %
 \newfontfamily{\emojifont}{Symbola}
 %
+
+%% NOTE:
+% the notomath packageis buggy; the Noto Sans ath font is defunct
+%
+% \let\arrowvert\undefined % https://tex.stackexchange.com/questions/312019/latex-error-command-circleds-already-defined-mathdesign-conflict-with-amssy
+%
+% \usepackage{notomath}
+% \usepackage[scale=3,pf,osf]{notomath}
+
 % indic-greekfonts.tex
 % $HOME/.pandoc/defaults/indic-greek-fonts.tex
 % $Usage: --include-in-header="$HOME/.pandoc/defaults/indic-greek-fonts.tex"
@@ -297,7 +307,7 @@ Tamil}\label{word-order-in-english-and-tamil}}
 A friend, fairly proficient in English, but not so much in Tamil,
 translated the question ``Can I come to your house now?'' into the Tamil
 ``முடியுமா நான் வருவதற்கு உங்கள் வீட்டுக்கு இப்பொழுது?'' (muḍiyumā nān
-varuvadaṟku uṅgaḷ vīṭṭukku ippoḻudu?). This sentence replicates the
+varuvadaṟku uṅkaḷ vīṭṭukku ippoḻudu?). This sentence replicates the
 English word sequence faithfully, and while certainly not the best of
 Tamil in elegance or usage, it is at least intelligible \emph{and}
 grammatical. That is because Tamil is more of an
@@ -315,10 +325,13 @@ results. Let me give you some examples.
 
 Suppose you see someone and want to ask in Tamil where that person was
 going. You would ask, in the less respectful mode of address used
-between equals, ``நீ எங்கே போகிறாய்?'' (nī engē pōgiṟāi?). Translated
-into English, these words literally become ``You where going?'' and that
-is often how a newcomer to English, with a Tamil language background,
-will at first speak.
+between equals, ``நீ எங்கே போகிறாய்?'' (nī eṅkē pōkiṟāi?)\footnote{Just
+  for the record, the letters ``k'' in the transliteration are
+  pronounced as ``g'' due to
+  \href{https://en.wikipedia.org/wiki/Sandhi}{sandhi}.}. Translated into
+English, these words literally become ``You where going?'' and that is
+often how a newcomer to English, with a Tamil language background, will
+at first speak.
 
 \hypertarget{are-you-well}{%
 \subsubsection{``Are you well?''}\label{are-you-well}}
