@@ -29,6 +29,8 @@ The book is divided into ten parts, each of which addresses one aspect of learni
 
 #.  **Writing**: This is perhaps the most important part of the book. Techniques for writing well, including building an extensive vocabulary, and expressing yourself efficiently and fluently, are addressed here.
 
+#.  **Vocabulary**: A good vocabulary is indispensable to academic success. Words, their origins, their spellings and pronunciations, their changing usage, common mistakes in expression, how to augment one's vocabulary, etc., are covered in this part.
+
 #.  **Mathematics**: Possibly the most dreaded of the three R's is Arithmetic or its mature cousin, Mathematics. Pertinent issues---from overcoming a dread of the subject, through enjoying popular mathematics books, to avoiding common mistakes when solving problems---are covered here.
 
 #.  **Examinations**: Even if not ideal, the ultimate test of your learning is your performance in examinations. Helpful hints on how to prepare for them, how to answer examination questions, etc., are the subject of this part. Example questions are discussed and answered, with commentaries highlighting techniques to follow and pitfalls to avoid.
