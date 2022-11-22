@@ -46,6 +46,7 @@ MENUITEMS = (
     ("Home", "index.html"),
     ("Blogs", "blogs.html"),
     ("Secrets of Academic Success", "sas.html"),
+    ("Sanskrit for Spiritual Seekers", "sss.html"),
     ("About", "about.html"),
 )
 
