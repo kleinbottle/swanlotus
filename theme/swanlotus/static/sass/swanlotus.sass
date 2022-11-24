@@ -141,6 +141,17 @@ body
     border-bottom: $white 3px solid
     font-weight: $weight-bold
 
+.navbar a.navbar-item:hover
+    background-color: $navbar-background-color
+    color: $navbar-item-color
+
+.navbar .navbar-dropdown
+    background-color: $navbar-background-color
+    color: $navbar-item-color
+
+.navbar .has-dropdown a.navbar-link:after
+    border-color: $white
+
 /* Style for two column container */
 #two-column
     margin-top: $navbar-height // Added so that navigation bar does not cover content

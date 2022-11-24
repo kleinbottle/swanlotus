@@ -1,4 +1,4 @@
-<nav class="navbar" aria-label="main navigation">
+<nav class="navbar" aria-label="main navigation dropdown">
     <div class="navbar-brand">
         <a class="navbar-item" href="{{ SITEURL }}">
             <img src="{{ SITEURL }}/images/swanlotus-logo-tagline.svg" alt="" />
@@ -13,22 +13,49 @@
     </div>
     <div id="navMenu" class="navbar-menu">
         <div class="navbar-start">
-            {% for title, link in MENUITEMS %}
-            {% if output_file == link %}
-            <a class="navbar-item current" href="{{ SITEURL }}/{{ link }}">
-                {{ title }}
-            </a>
-            {% else %}
-            {% if article and link == "blogs.html" %}
-            <a class="navbar-item current" href="{{ SITEURL }}/{{ link }}">
-                {{ title }}
-            </a>
-            {% else %}
-            <a class="navbar-item" href="{{ SITEURL }}/{{ link }}">
-                {{ title }}
-            </a>
-            {% endif %}
-            {% endif %}
+            {% for title, pages in MENUITEMS %}
+                {% if pages|length == 1 %}
+                    {% if output_file == pages[0] %}
+                        <!--Handles the home page where the link is home but page is index.html -->
+                        <a class="navbar-item current" href="{{ SITEURL }}/{{ pages[0] }}">
+                            {{ title }}
+                        </a>
+                    {% else %}
+                        {% if article and pages[0] == "blogs.html" %}
+                            <!-- Handles the blogs page which is a special case -->
+                            <a class="navbar-item current" href="{{ SITEURL }}/{{ pages[0] }}">
+                                {{ title }}
+                            </a>
+                        {% else %}
+                            <!-- Handle all other pages -->
+                            <a class="navbar-item" href="{{ SITEURL }}/{{ pages[0] }}">
+                                {{ title }}
+                            </a>
+                        {% endif %}
+                    {% endif %}
+                {% else %}
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <!-- Add inline style due to inability to override style -->
+                        <a class="navbar-link" style="background-color: hsl(0deg, 0%, 48%);">
+                            {{ title }}
+                        </a>
+                        <div class="navbar-dropdown">
+                            <!-- Dropdown submenu items -->
+                            {% for pagetitle, link in pages %}
+                                {% if output_file == link %}
+                                    <a class="navbar-item current" href="{{ SITEURL }}/{{ link }}">
+                                        {{ pagetitle }}
+                                    </a>
+                                {% else %}
+                                    <a class="navbar-item" href="{{ SITEURL }}/{{ link }}">
+                                        {{ pagetitle }}
+                                    </a>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <hr class="navbar-divider">
+                {% endif %}
             {% endfor %}
         </div>
         <div class="navbar-end">
