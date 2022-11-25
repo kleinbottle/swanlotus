@@ -59,7 +59,14 @@
   </header>
   {% if article.toc %}
     <div class="is-hidden-tablet is-size-6-mobile">
-      {{ article.toc }}
+      <a role="button" id="tocBurger" class="navbar-burger" aria-label="contents" aria-expanded="false" data-target="mobile-contents" title="Expand contents">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+      <div id="mobile-contents" class="is-hidden">
+        {{ article.toc }}
+      </div>
     </div>
   {% endif %}
   {{ article.content }}

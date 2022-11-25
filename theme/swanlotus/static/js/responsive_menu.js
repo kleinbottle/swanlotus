@@ -2,10 +2,19 @@
 // Using JavaScript example from https://bulma.io/documentation/components/navbar/#navbar-menu
 $(document).ready(function() {
     // Check for click events on the navbar burger icon
-    $(".navbar-burger").click(function() {
+    $("#navBurger").click(function() {
 
         // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-        $(".navbar-burger").toggleClass("is-active");
-        $(".navbar-menu").toggleClass("is-active");
+        $("#navBurger").toggleClass("is-active");
+        $("#navMenu").toggleClass("is-active");
+    });
+
+    $("#tocBurger").click(function(){
+        $("#mobile-contents").toggleClass("is-hidden");
+        if ($("#mobile-contents").is(":hidden") === true) {
+            $("#tocBurger").attr("title", "Expand contents")
+        } else if ($("#mobile-contents").is(":visible") === true) {
+            $("#tocBurger").attr("title", "Collapse contents")
+        }
     });
 });
