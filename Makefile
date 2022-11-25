@@ -95,4 +95,7 @@ ftp_upload: publish
 css:
 	sass "$(SASS_INPUT)" "$(CSS_OUTPUT)"
 
+syncsl:
+	git pull --rebase
+
 .PHONY: html help clean regenerate serve serve-global devserver publish ssh_upload rsync_upload ftp_upload css
