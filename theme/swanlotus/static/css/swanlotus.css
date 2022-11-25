@@ -4720,7 +4720,7 @@ a:hover code {
 }
 
 .typewriter {
-  font: "Fira Mono", monospace;
+  font-family: "Fira Mono", monospace;
 }
 
 /*# sourceMappingURL=swanlotus.css.map */
