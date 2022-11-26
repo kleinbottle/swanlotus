@@ -98,4 +98,4 @@ css:
 syncSL:
 	git pull --rebase
 
-.PHONY: html help clean regenerate serve serve-global devserver publish ssh_upload rsync_upload ftp_upload css
+.PHONY: html help clean regenerate serve serve-global devserver publish ssh_upload rsync_upload ftp_upload css syncSL

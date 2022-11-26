@@ -8,11 +8,7 @@ tags:
 summary:
 opengraphimage:
 ---
-
-
-
 ## Acknowledgements
-
 
 ## Feedback
 
