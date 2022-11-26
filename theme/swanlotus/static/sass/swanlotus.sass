@@ -159,22 +159,27 @@ body
 #two-column
     margin-top: $navbar-height // Added so that navigation bar does not cover content
     padding: $two-column-padding
+    height: 100vh
 
-/* Styles for main column */
+/* Styles for main column with independent scrolling */
 #main
     background-color: $grey-lighter
     color: $black
     font-family: $body-family
     padding: $content-padding
     order: $main-content-order
+    flex: 1 auto
+    overflow-y: scroll
 
-/* Styles for sidebar */
+/* Styles for sidebar with independent scrolling */
 #sidebar
     background-color: $info-dark
     color: $white
     font-family: $family-secondary
     padding: $content-padding
     order: $sidebar-content-order
+    flex: 1 auto
+    overflow-y: scroll
 
 /* Styles for table of contents
 #main nav,

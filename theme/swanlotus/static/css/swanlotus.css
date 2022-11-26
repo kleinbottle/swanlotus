@@ -4525,24 +4525,29 @@ body {
 #two-column {
   margin-top: 4.5em;
   padding: 0em 0.75em;
+  height: 100vh;
 }
 
-/* Styles for main column */
+/* Styles for main column with independent scrolling */
 #main {
   background-color: hsl(0deg, 0%, 86%);
   color: hsl(0deg, 0%, 4%);
   font-family: "Noto Serif", "Merriweather", "PT Serif", serif;
   padding: 1.65em;
   order: 2;
+  flex: 1 auto;
+  overflow-y: scroll;
 }
 
-/* Styles for sidebar */
+/* Styles for sidebar with independent scrolling */
 #sidebar {
   background-color: #296fa8;
   color: hsl(0deg, 0%, 100%);
   font-family: "Source Sans Pro", sans-serif;
   padding: 1.65em;
   order: 1;
+  flex: 1 auto;
+  overflow-y: scroll;
 }
 
 /* Styles for table of contents */
