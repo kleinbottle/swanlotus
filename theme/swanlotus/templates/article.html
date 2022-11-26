@@ -22,68 +22,71 @@
 {% endblock %}
 
 {% block head %}
-  {{ super() }}
-  {% if article.author %}
-    <meta name="author" content="{{ article.author }}" />
-  {% endif %}
-  {% if article.date %}
-    <meta name="date" content="{{ article.date }}" />
-  {% endif %}
-  {% if article.modified %}
-    <meta name="modified" content="{{ article.modified }}" />
-  {% endif %}
-  {% if article.category %}
-    <meta name="category" content="{{ article.category }}" />
-  {% endif %}
-  {% if article.tags %}
-    <meta name="keywords" content="{{ article.tags|join(", ") }}" />
-  {% endif %}
-  {% if article.summary %}
-    <meta name="summary" content="{{ article.summary|striptags }}" />
-    <meta property="og:description" content="{{ article.summary|striptags }}" />
-  {% endif %}
+{{ super() }}
+{% if article.author %}
+<meta name="author" content="{{ article.author }}" />
+{% endif %}
+{% if article.date %}
+<meta name="date" content="{{ article.date }}" />
+{% endif %}
+{% if article.modified %}
+<meta name="modified" content="{{ article.modified }}" />
+{% endif %}
+{% if article.category %}
+<meta name="category" content="{{ article.category }}" />
+{% endif %}
+{% if article.tags %}
+<meta name="keywords" content="{{ article.tags|join(" , ") }}" />
+{% endif %}
+{% if article.summary %}
+<meta name="summary" content="{{ article.summary|striptags }}" />
+<meta property="og:description" content="{{ article.summary|striptags }}" />
+{% endif %}
 {% endblock %}
 
 {% block content %}
-  <header class="mb-4">
-    <h1 id="{{ article.title|lower|replace(' ', '-') }}">{{ article.title }}</h1>
-    <p class="author">{{ article.author }}</p>
-    {% if article.locale_date and article.locale_modified %}
-      <p class="date">{{ article.locale_date }} | {{ article.locale_modified }}</p>
-    {% elif article.locale_date %}
-      <p class="date">{{ article.locale_date }}</p>
-    {% endif %}
-    {% if article.reading_time %}
-      <p class="reading-time">Estimated Reading Time: {{ article.reading_time }}</p>
-    {% endif %}
-  </header>
-  {% if article.toc %}
-    <div class="is-hidden-tablet is-size-6-mobile">
-      <a role="button" id="tocBurger" class="navbar-burger" aria-label="contents" aria-expanded="false" data-target="mobile-contents" title="Expand contents">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-      <div id="mobile-contents" class="is-hidden">
-        {{ article.toc }}
-      </div>
-    </div>
+<header class="mb-4">
+  <h1 id="{{ article.title|lower|replace(' ', '-') }}">{{ article.title }}</h1>
+  <p class="author">{{ article.author }}</p>
+  {% if article.locale_date and article.locale_modified %}
+  <p class="date">{{ article.locale_date }} | {{ article.locale_modified }}</p>
+  {% elif article.locale_date %}
+  <p class="date">{{ article.locale_date }}</p>
   {% endif %}
-  {{ article.content }}
-  {% for category, articles in categories|sort %}
-    {% if category == article.category %}
-      <div class="category">
-        <a class="button is-light is-size-7-mobile is-size-6-tablet" href="{{ SITEURL }}/{{ category.url }}"><i title="category" class="fas fa-folder fa-fw"></i>&nbsp;{{ category }} ({{ articles|count }})</a>
-      </div>
-    {% endif %}
+  {% if article.reading_time %}
+  <p class="reading-time">Estimated Reading Time: {{ article.reading_time }}</p>
+  {% endif %}
+</header>
+{% if article.toc %}
+<div class="is-hidden-tablet is-size-6-mobile">
+  <a role="button" id="toc-small-screens" class="navbar-burger" aria-label="toc" aria-expanded="false"
+    data-target="table-of-contents-small-screens" title="Expand contents">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+  <div id="table-of-contents-small-screens" class="is-hidden">
+    {{ article.toc }}
+  </div>
+</div>
+{% endif %}
+{{ article.content }}
+{% for category, articles in categories|sort %}
+{% if category == article.category %}
+<div class="category">
+  <a class="button is-light is-size-7-mobile is-size-6-tablet" href="{{ SITEURL }}/{{ category.url }}"><i
+      title="category" class="fas fa-folder fa-fw"></i>&nbsp;{{ category }} ({{ articles|count }})</a>
+</div>
+{% endif %}
+{% endfor %}
+<ul class="tags">
+  {% for tag, articles in tags|sort %}
+  {% if tag in article.tags %}
+  <li><a class="button is-light is-size-7-mobile is-size-6-tablet mb-1" href="{{ SITEURL }}/{{ tag.url }}"><i
+        title="tag" class="fas fa-tag fa-fw"></i>&nbsp;{{ tag }} ({{ articles|count }})</a></li>
+  {% endif %}
   {% endfor %}
-  <ul class="tags">
-    {% for tag, articles in tags|sort %}
-        {% if tag in article.tags %}
-          <li><a class="button is-light is-size-7-mobile is-size-6-tablet mb-1" href="{{ SITEURL }}/{{ tag.url }}"><i title="tag" class="fas fa-tag fa-fw"></i>&nbsp;{{ tag }} ({{ articles|count }})</a></li>
-        {% endif %}
-    {% endfor %}
-  </ul>
+</ul>
 {% endblock %}
 
 {% block sidebar_content %}
