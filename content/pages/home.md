@@ -10,7 +10,11 @@ save_as: "index.html"
 
 ## Secrets of Academic Success
 
-SwanLotus is the home on the Web for my book [_Secrets of Academic Success_](sas.html). It has been written specifically to help students study effectively and learn better. The completed chapters of the draft manuscript in [PDF format](https://acrobat.adobe.com/in/en/acrobat/about-adobe-pdf.html) may be [downloaded here]({static}../sas-manuscript/SAS-partial.pdf).
+SwanLotus is the home on the Web for my book [_Secrets of Academic Success_](sas.html). It has been written specifically to help students study effectively and learn better. The book is a [soup to nuts](https://dictionary.cambridge.org/dictionary/english/from-soup-to-nuts) exposition on the process of learning. Specific attention is paid to the basic traits and skills underlying successful learning. The completed chapters of the draft manuscript in [PDF format](https://acrobat.adobe.com/in/en/acrobat/about-adobe-pdf.html) may be [downloaded here]({static}../sas-manuscript/SAS-partial.pdf).
+
+## Sanskrit for Spiritual Seekers
+
+The companion website for my evolving manuscript, [_Sanskrit for Spiritual Seekers_](sss.html) is also found here. While I lay no claim to expertise in Sanskrit, I am fascinated by the systematic, almost algorithmic fashion, in which its vocabulary is generated. This book is more like the notes I have written to myself in consequence. Take a look if it interests you.
 
 ## Blogs
 
