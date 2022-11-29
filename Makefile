@@ -103,7 +103,8 @@ pullSL:
 	@git stash apply
 
 pushSL:
-	@git commit -am "${COMMIT_MSG}"
+	@git add .
+	@git commit -m "${COMMIT_MSG}"
 	@git push
 
 .PHONY: html help clean regenerate serve serve-global devserver publish ssh_upload rsync_upload ftp_upload css pullSL pushSL
