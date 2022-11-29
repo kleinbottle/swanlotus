@@ -34,6 +34,8 @@ My name is R (Chandra) Chandrasekhar. I am a retired biomedical engineer and uni
 
     Many of the blogs are from the early days of the Web and have found a durable home here. I have taken the opportunity to update them where necessary. They are arranged by the original date, rather than when last modified.
 
+If you are interested in knowing my credentials, here is a [link to my curriculum vitae](cv.pdf).
+
 For the curious among you, who wonder what I look like, I have appended two photographs below, taken with eminent personages, some decades ago.
 
 ![Professor Yianni Attikiouzel, my PhD supervisor, with me holding the PhD gold medal awarded by the Department of Electrical and Electronic Engineering, [The University of Western Australia](https://www.uwa.edu.au/home), in September 1997.^[This image is copyright by the University of Western Australia with citation: UWA Archives 29071P. First published in the "The Leader"  dated 22 September 1997, Vol. 16, No. 15, pp 1--2. Used with permision.]]({static}images/yianni-attikiouzel-gold-medal.jpg){width=80%}
