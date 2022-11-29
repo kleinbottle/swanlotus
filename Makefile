@@ -20,6 +20,7 @@ SSH_PORT=22
 SSH_USER=root
 SSH_TARGET_DIR=/var/www
 
+COMMIT_MSG?="Updated website content"
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -102,7 +103,7 @@ pullSL:
 	@git stash apply
 
 pushSL:
-	@git commit -am "Updated website content"
+	@git commit -am "${COMMIT_MSG}"
 	@git push
 
 .PHONY: html help clean regenerate serve serve-global devserver publish ssh_upload rsync_upload ftp_upload css pullSL pushSL
