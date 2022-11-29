@@ -34,7 +34,7 @@ My name is R (Chandra) Chandrasekhar. I am a retired biomedical engineer and uni
 
     Many of the blogs are from the early days of the Web and have found a durable home here. I have taken the opportunity to update them where necessary. They are arranged by the original date, rather than when last modified.
 
-If you are interested in knowing my credentials, here is a [link to my curriculum vitae](cv.pdf).
+If you are interested in knowing my credentials, here is a [link to my curriculum vitae]({static}../CV/cv.pdf).
 
 For the curious among you, who wonder what I look like, I have appended two photographs below, taken with eminent personages, some decades ago.
 
