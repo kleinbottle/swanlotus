@@ -4535,7 +4535,6 @@ body {
   font-family: "Noto Serif", "Merriweather", "PT Serif", serif;
   padding: 1.65em;
   order: 2;
-  flex: 1 auto;
   overflow-y: scroll;
 }
 
@@ -4546,7 +4545,6 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   padding: 1.65em;
   order: 1;
-  flex: 1 auto;
   overflow-y: scroll;
 }
 
