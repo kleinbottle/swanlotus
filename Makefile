@@ -10,6 +10,7 @@ CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 SASS_INPUT=$(BASEDIR)/theme/swanlotus/static/sass/swanlotus.sass
 CSS_OUTPUT=$(BASEDIR)/theme/swanlotus/static/css/swanlotus.css
+PULL_PUSH_SCRIPT=git-pull-push.sh
 
 FTP_HOST=localhost
 FTP_USER=anonymous
@@ -19,8 +20,6 @@ SSH_HOST=localhost
 SSH_PORT=22
 SSH_USER=root
 SSH_TARGET_DIR=/var/www
-
-COMMIT_MSG?="Updated website content"
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -39,6 +38,7 @@ ifneq ($(PORT), 0)
 	PELICANOPTS += -p $(PORT)
 endif
 
+COMMIT_MSG=
 
 help:
 	@echo 'Makefile for a pelican Web site                                           '
@@ -97,14 +97,9 @@ css:
 	sass "$(SASS_INPUT)" "$(CSS_OUTPUT)"
 
 pullSL:
-	@git stash clear
-	@git stash
-	@git pull --rebase
-	@git stash apply
+	"./$(PULL_PUSH_SCRIPT)" pull
 
 pushSL:
-	@git add .
-	@git commit -m "${COMMIT_MSG}"
-	@git push
+	"./$(PULL_PUSH_SCRIPT)" push $(COMMIT_MSG)
 
 .PHONY: html help clean regenerate serve serve-global devserver publish ssh_upload rsync_upload ftp_upload css pullSL pushSL
