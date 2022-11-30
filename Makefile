@@ -38,7 +38,7 @@ ifneq ($(PORT), 0)
 	PELICANOPTS += -p $(PORT)
 endif
 
-COMMIT_MSG=
+# COMMIT_MSG=
 
 help:
 	@echo 'Makefile for a pelican Web site                                           '
@@ -100,6 +100,6 @@ pullSL:
 	"./$(PULL_PUSH_SCRIPT)" pull
 
 pushSL:
-	"./$(PULL_PUSH_SCRIPT)" push $(COMMIT_MSG)
+	"./$(PULL_PUSH_SCRIPT)" push '$(COMMIT_MSG)'
 
 .PHONY: html help clean regenerate serve serve-global devserver publish ssh_upload rsync_upload ftp_upload css pullSL pushSL
