@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+# Check if there any changed files
 function get_changed_files {
     CHANGED_FILES=$({ git diff --name-only; git diff --name-only --staged; } | uniq)
     export CHANGED_FILES
 }
 
+# Pull in changes from remote repository
 function git_pull {
     get_changed_files
     if [[ $CHANGED_FILES != "" ]]; then
@@ -18,6 +20,7 @@ function git_pull {
     fi
 }
 
+# Push changes to remote repository with optional commit message
 function git_push {
     get_changed_files
     if [[ $CHANGED_FILES != "" ]]; then
