@@ -54,7 +54,7 @@ help:
 	@echo '   make ftp_upload                     upload the web site via FTP           '
 	@echo '   make css                            compile sass to css                   '
 	@echo '   make pullSL                         pull in changes from remote repository'
-	@echo '   make pushSL                         push changes to remote repository     '
+	@echo '   make pushSL [COMMIT_MSG="message"]  push changes to remote repository     '
 	@echo '                                                                             '
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html      '
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                       '
