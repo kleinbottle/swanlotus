@@ -39,11 +39,11 @@ He first thought of the philosophers [Socrates](https://en.wikipedia.org/wiki/So
 ```{=html}
 <div class="side-by-side">
 <figure>
-<img src="{attach}images/socrates-close-up.jpg" alt="Socrates" title="Socrates" style="flex: 50%" />
+<img src="{attach}images/socrates-close-up.jpg" class="modal-target" alt="Socrates" title="Socrates" style="flex: 50%" />
 <figcaption>Socrates</figcaption>
 </figure>
 <figure>
-<img src="{attach}images/diotima-2.jpg" alt="Diotima" title="Diotima" style="flex: 50%" />
+<img src="{attach}images/diotima-2.jpg" class="modal-target" alt="Diotima" title="Diotima" style="flex: 50%" />
 <figcaption>Diotima</figcaption>
 </figure>
 </div>
@@ -83,11 +83,11 @@ Mathematics and philosophy share another quality. Two related branches of mathem
 ```{=html}
 <div class="side-by-side">
 <figure>
-<img src="{attach}images/trefoil.svg" alt="Trefoil" title="Trefoil" style="flex: 50%" />
+<img src="{attach}images/trefoil.svg" class="modal-target" alt="Trefoil" title="Trefoil" style="flex: 50%" />
 <figcaption>Trefoil</figcaption>
 </figure>
 <figure>
-<img src="{attach}images/braid.svg" alt="Braid" title="Braid" style="flex: 50%" />
+<img src="{attach}images/braid.svg" class="modal-target" alt="Braid" title="Braid" style="flex: 50%" />
 <figcaption>Braid</figcaption>
 </figure>
 </div>
@@ -137,7 +137,7 @@ Since both Leibniz and Newton were renowned mathematicians as well, Sol got side
 
 And then it hit him like a ton of bricks. _Calculus could not have been invented without coordinate geometry---that extraordinary offspring of the fortuitous marriage of geometry and algebra_. And the progenitor of _that_ wunderkind was [René Descartes](https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes). With bated breath, Sol searched the Web for images of René Descartes.
 
-![René Descartes (after Frans Hals, Public domain, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg))]({attach}images/rene-descartes.jpg){ width=60% }
+![René Descartes (after Frans Hals, Public domain, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg))]({attach}images/rene-descartes.jpg){width=60% .modal-target}
 
 And bingo! he had a [gallery full of faces](https://tinyurl.com/y57nykjd) that were remarkably similar to the image of his reverie, with eyes that were piercing and dreamy at the same time.
 
@@ -237,7 +237,7 @@ Sol's first cut had its operative code in this fragment which I reproduce below 
 
 The above incantation, used with the [Noto Serif](https://fonts.google.com/specimen/Noto+Serif) font, gave birth to this image:
 
-![Logo: the first cut]({attach}images/firstcut.svg){ width=60% }
+![Logo: the first cut]({attach}images/firstcut.svg){width=60% .modal-target}
 
 ### The second and third cuts
 
@@ -247,7 +247,7 @@ But something else struck Sol even more. The progression of ideas was not reflec
 
 He also wanted to emphasize the theme with a gradual whitening or blackening of the colours of the words. That would emphasize the idea of monotonic change. But as always, colours were a finicky, context-sensitive bunch. Background, foreground, and contrast would hold final sway. After experimenting for half a day, Sol settled on the logo shown below:
 
-![Logo: the second cut]({attach}images/secondcut.svg){ width=60% }
+![Logo: the second cut]({attach}images/secondcut.svg){width=60% .modal-target}
 
 He stared at this version long and hard and felt satisfied, but not fully. There was a nagging sense of incompleteness hanging over the logo like a pall of smoke. He wanted to go back and start from scratch again, but his deadline was fast looming. He could make small changes, but could never hope to start over.
 
@@ -257,7 +257,7 @@ He sat down with a sigh and relaxed into a particularly worn out but comfy beanb
 
 After a half hour of rest, he saw what was needed. Some form of balance on either side of the centre line that dissected the logo into two: left and right. He fiddled with the keyboard on the computer and finally settled on his third, and possibly final cut, shown below:
 
-![Logo: the third cut]({attach}images/thirdcut.svg){ width=60% }
+![Logo: the third cut]({attach}images/thirdcut.svg){width=60% .modal-target}
 
 It was not perfect but it had _some_ symmetry, _some_ gradation in colour to invoke a theme, _some_ changes in level to connote a logical progression. _Some_ of everything: some but not enough. And he went to his thinking-beanbag and closed his eyes in rumination. By Jove, perfect symmetry in the plane comes with the circle. A logo on a circle with the colours leading one to the other. That would be a logo worthy of philosophers.
 
@@ -267,7 +267,7 @@ Sol first tried to place the three words _on_ the circumference of a circle to f
 
 With renewed gusto, Sol placed the three words on top of each other on a coloured annulus formed by two concentric circles. At last, he was vaguely satisfied. But again, something was amiss. The circular background did not match the mixture of uppercase and lowercase letters. Somehow, gravity, dignity, or seriousness was lacking. First-letter capitalization upset the symmetry. And all-uppercase or all-lowercase versions were ghastly to his gaze. So, he turned to [small capitals](https://en.wikipedia.org/wiki/Small_caps) in the serif family, and got a result that was more than half pleasing:
 
-![Logo: the penultimate cut]({attach}images/penultimatecut.svg){ width=60% }
+![Logo: the penultimate cut]({attach}images/penultimatecut.svg){width=60% .modal-target}
 
 For the sheer heck of it, he simply inserted three extra words in his code, to see how the sans serif fonts would look like in small capitals. For the record, his code is shown in full below:
 
@@ -310,7 +310,7 @@ For the sheer heck of it, he simply inserted three extra words in his code, to s
 
 And the result, with sans serif, small capitals, without first-letter capitalization,  appeared thus:
 
-![Logo: the final cut]({attach}images/finalcut.svg){ width=60% }
+![Logo: the final cut]({attach}images/finalcut.svg){width=60% .modal-target}
 
 ### Finale
 

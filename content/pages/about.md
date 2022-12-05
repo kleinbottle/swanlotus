@@ -14,15 +14,15 @@ The swan and the lotus are ancient symbols in the tradition of [Sanātana Dharma
 
 The abbreviated website logo for SwanLotus is shown below:
 
-![Logo of SwanLotus: a black S and a white L on a blue background.]({static}../images/swanlotus-open-graph-image.jpg){width=30%}
+![Logo of SwanLotus: a black S and a white L on a blue background.]({static}../images/swanlotus-open-graph-image.jpg){width=30% .modal-target}
 
 The symbol "S" for the swan is in black, because for some periods of my life, I lived in [Perth](https://en.wikipedia.org/wiki/Perth), Australia, where the blue [Swan River](https://en.wikipedia.org/wiki/Swan_River_(Western_Australia)) flows, and where black swans abound.
 
-![[Black Swan](http://absfreepic.com/free-photos/download/the-black-swan-on-lake-2701x1800_84370.html): [CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).]({static}images/black-swan.jpg){width=80%}
+![[Black Swan](http://absfreepic.com/free-photos/download/the-black-swan-on-lake-2701x1800_84370.html): [CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).]({static}images/black-swan.jpg){width=80% .modal-target}
 
 The symbol "L" for the lotus is in white, signifying the white lotus:
 
-![[White Lotus](https://www.publicdomainpictures.net/pictures/270000/velka/white-lotus-flower-close-up.jpg): [CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).]({static}images/white-lotus-flower-close-up.jpg){width=80%}
+![[White Lotus](https://www.publicdomainpictures.net/pictures/270000/velka/white-lotus-flower-close-up.jpg): [CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).]({static}images/white-lotus-flower-close-up.jpg){width=80% .modal-target}
 
 ## The author
 
@@ -38,6 +38,6 @@ If you are interested in knowing my credentials, here is a [link to my curriculu
 
 For the curious among you, who wonder what I look like, I have appended two photographs below, taken with eminent personages, some decades ago.
 
-![Professor Yianni Attikiouzel, my PhD supervisor, with me holding the PhD gold medal awarded by the Department of Electrical and Electronic Engineering, [The University of Western Australia](https://www.uwa.edu.au/home), in September 1997.^[This image is copyright by the University of Western Australia with citation: UWA Archives 29071P. First published in the "The Leader"  dated 22 September 1997, Vol. 16, No. 15, pp 1--2. Used with permision.]]({static}images/yianni-attikiouzel-gold-medal.jpg){width=80%}
+![Professor Yianni Attikiouzel, my PhD supervisor, with me holding the PhD gold medal awarded by the Department of Electrical and Electronic Engineering, [The University of Western Australia](https://www.uwa.edu.au/home), in September 1997.^[This image is copyright by the University of Western Australia with citation: UWA Archives 29071P. First published in the "The Leader"  dated 22 September 1997, Vol. 16, No. 15, pp 1--2. Used with permision.]]({static}images/yianni-attikiouzel-gold-medal.jpg){width=80% .modal-target}
 
-![[Dr A P J Abdul Kalam](https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam), President of India from 25 July 2002 to 25 July 2007, autographing my copy of his autobiography, [_Wings of Fire_](https://www.amazon.in/Wings-Fire-Autobiography-Abdul-Kalam/dp/8173711461/), at the BioVision 2001 conference in Bangalore, India, in December 2001, at which he delivered the keynote address.]({static}images/abdul-kalam-autograph.jpg){width=80%}
+![[Dr A P J Abdul Kalam](https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam), President of India from 25 July 2002 to 25 July 2007, autographing my copy of his autobiography, [_Wings of Fire_](https://www.amazon.in/Wings-Fire-Autobiography-Abdul-Kalam/dp/8173711461/), at the BioVision 2001 conference in Bangalore, India, in December 2001, at which he delivered the keynote address.]({static}images/abdul-kalam-autograph.jpg){width=80% .modal-target}

@@ -32,7 +32,7 @@ Suppose you see someone and want to ask in Tamil where that person was going. Yo
 
 When meeting someone, it is polite and customary to ask "How are you?" in English. In Tamil, the more sanguine "நீங்கள் நலமா?" (nīṅkaḷ nalamā?) is used, where the respectful plural form of the second person pronoun is employed. Literally, it is a statement, posed as a question, with a slight raise in pitch at the end to indicate the interrogative sense when spoken. And the _literal_ translation into English is the strange-sounding "You are well?" instead of the correct "Are you well?".
 
-![The same question in English and Tamil; the latter version _literally_ reads "You are well?".]({attach}images/engtam.jpg){#fig:questions width=80%}
+![The same question in English and Tamil; the latter version _literally_ reads "You are well?".]({attach}images/engtam.jpg){#fig:questions width=80% .modal-target}
 
 ### "What is your name?"
 

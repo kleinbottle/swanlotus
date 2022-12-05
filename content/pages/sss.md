@@ -7,7 +7,7 @@ save_as: sss.html
 
 This is the companion website for my book
 
-![_Sanskrit for Spiritual Seekers_]({static}images/sss-cover.png){width=40%}
+![_Sanskrit for Spiritual Seekers_]({static}images/sss-cover.png){width=40% .modal-target}
 
 It is an evolving manuscript that takes the interested reader through a leisurely journey, exploring Sanskrit as both a language and as a stargate leading to spirituality. It is replete with references that allow the zealous reader to plumb the depths of the language to her or his own satisfaction.
 

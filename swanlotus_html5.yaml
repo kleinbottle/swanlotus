@@ -24,7 +24,7 @@ metadata:
   link-citations: true
   reference-section-title: References
   lang: en-GB
-# pandoc-crossref metadata
+  # pandoc-crossref metadata
   linkReferences: true
   figureTitle: "Figure"
   tableTitle: "Table"

@@ -25,7 +25,7 @@ He apologized and said, "I enjoy seeing you [stew](https://www.thefreedictionary
 
 "I took him to mean that he wanted a short but piquant résumé, that so stood out from all the others, that it would bag him whatever job he fancied."
 
-I then asked him what his non-negotiable requirements were. His reply was prompt, as though he had rehearsed for this very question. He said, 'I want dinky [_Font Awesome_](https://fontawesome.com/) icons ![]({attach}images/font-awesome.svg){width=2.5%} for my contact details.'
+I then asked him what his non-negotiable requirements were. His reply was prompt, as though he had rehearsed for this very question. He said, 'I want dinky [_Font Awesome_](https://fontawesome.com/) icons ![]({attach}images/font-awesome.svg){width=2.5% .modal-target} for my contact details.'
 
 "Anything else?"
 
@@ -53,7 +53,7 @@ Moreover, Font Awesome has in the past strayed away from the PUA, and [encroache
 
 When Sol downloaded the desktop and web versions of the latest Font Awesome free version, he noticed when rummaging into the downloaded files that each glyph had a name, not unlike the name we give to letters of the Latin alphabet. The downloaded fonts shared a [triune](https://www.collinsdictionary.com/dictionary/english/triune) property:
 
-#.  Each glyph had a _name_. For example, ![]({attach}images/font-awesome.svg){width=2%} was called, not unsurprisingly, _font-awesome_ since the flag it embodies is the branding chosen by Font Awesome for itself.
+#.  Each glyph had a _name_. For example, ![]({attach}images/font-awesome.svg){width=2% .modal-target} was called, not unsurprisingly, _font-awesome_ since the flag it embodies is the branding chosen by Font Awesome for itself.
 
 #.   As an [OpenType](https://en.wikipedia.org/wiki/OpenType) (OTF) or [TrueType](https://en.wikipedia.org/wiki/TrueType) (TTF) font, each glyph had a [_Unicode code point_](https://en.wikipedia.org/wiki/Code_point). For example the  _font-awesome_ icon had the [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) location code `f2b4` or `F2B4`.
 
@@ -129,7 +129,7 @@ Schooled as he was in Greek philosophy, Sol decided that the atom would be the f
 
 He went to the [latest icons page](https://fontawesome.com/v6.0/icons), selected `Free` on the left checkbox and typed "atom". From the gallery of 32 icons, he selected the one that best met his expectations. The popup screen he saw is shown below:
 
-![]({attach}images/atom-solid.png){width=90%}
+![]({attach}images/atom-solid.png){width=90% .modal-target}
 
 Its Unicode code point was `f5d2`, its name was `atom`, its SVG icon file was called `atom-solid.svg`, and the glyph could be copied by clicking on the picture of the atom next to the Unicode value. He was seeing the `Solid` flavour of the icon; other variants were not included in the free version he had downloaded. Interestingly, the code snippet for HTML was also given with the icon as:
 
@@ -152,7 +152,7 @@ When Sol took a second look at the problem the next day, he was aghast that he h
 
 Sol loaded [this page](https://fontawesome.com/v6.0) to be greeted by two large selection buttons:
 
-![]({attach}images/start-for-free.png){width=90%}
+![]({attach}images/start-for-free.png){width=90% .modal-target}
 
 And when he selected [`Start for Free`](https://fontawesome.com/v6.0/docs/web/setup/quick-start), he was led to a clear and [detailed algorithm](https://fontawesome.com/v6.0/docs/web/setup/quick-start) on how  to set up and use Font Awesome. Central to everything was a simple [one-liner](https://en.wikipedia.org/wiki/One-liner_program) _customized for him_ that yielded an HTML script when he clicked [`Set up a Kit`](https://fontawesome.com/kits). The script he got looked like this:
 
@@ -162,12 +162,15 @@ And when he selected [`Start for Free`](https://fontawesome.com/v6.0/docs/web/se
 ```
 
 The script was supposed to be included in the `<head>` of the HTML document. This one line was the automagical incantation that Sol was looking for the previous night. He tried it out on the `atom` icon. The text
+
 ```html
 <i class="fa-solid fa-atom"></i>
 ```
+
 yielded the icon <i class="fa-solid fa-atom"></i> \faAtom Voila!
 
 The maroon[^2] colour arose from a little CSS fragment that set the colour of the icon to maroon with
+
 ```css
 .fa-solid {
     color: maroon;
@@ -236,7 +239,7 @@ which [appears like this]({attach}auxiliary/opening-html)[^4]:
 [^4]: This file could not be named as `opening-html.html` because of an operational quirk in the [Pelican Static Site Generator](https://blog.getpelican.com/) being used on this site. Accordingly, the `.html` file extension has been left out. Save this file, rename it as `opening-html.html`, open it in a Web browser, and verify for yourself the claim made here.
 
 :::::center
-![The Font Awesome icons take on the blue colour above.]({attach}images/opening-html.png){width=90%}
+![The Font Awesome icons take on the blue colour above.]({attach}images/opening-html.png){width=90% .modal-target}
 :::::
 
 The styling, like font size and text-alignment, is accomplished using CSS." With a look of accomplishment, Sol ended his narration and asked me whether I honestly wanted to hear how the PDF version was generated. When I nodded in eager agreement, he said he would take up the thread on another day.
@@ -279,7 +282,7 @@ The results he got were sufficient for Sol to write the following fragments in L
 
 The resulting PDF content, imaged below, matches the HTML output shown earlier.
 
-![Note that the Font Awesome icons are grey, following the settings above.]({attach}images/opening-pdf.png){width=90%}
+![Note that the Font Awesome icons are grey, following the settings above.]({attach}images/opening-pdf.png){width=90% .modal-target}
 
 ## File manifest
 

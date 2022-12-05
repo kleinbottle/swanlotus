@@ -40,7 +40,7 @@ Lacking a script that could store the Vedic lore, the ancients decided to use th
 
 This is not a unique achievement---witness the Norse sagas and the ancient mythology of most cultures which have also been orally transmitted down the ages. But the Vedas enjoy an additional, singular distinction: they have been preserved almost error-free from the hoary times when they were first recited, by virtue of the almost mathematical rigour that Sanskrit embodies for its grammar and phonetics, not to mention mnemonics [@bhatekak1993].
 
-![Teacher with students in India.[^1]]({attach}images/school-ga9b21f7d6_640.jpg){#fig:teacher-students width=80%}
+![Teacher with students in India.[^1]]({attach}images/school-ga9b21f7d6_640.jpg){#fig:teacher-students width=80% .modal-target}
 
 [^1]: Image by [Anil Sharma](https://pixabay.com/users/anilsharma26-13475484/) from [Pixabay](https://pixabay.com/).
 

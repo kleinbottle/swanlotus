@@ -10,8 +10,10 @@
     <meta property="og:title" content="{% block ogtitle %}{{ SITENAME }}{% endblock %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{% block ogurl %}{{ SITEURL }}{% endblock %}">
-    <meta property="og:image" content="{% block ogimage %}{{ SITEURL }}/images/swanlotus-open-graph-image.jpg{% endblock %}">
-    <meta property="og:image:secure_url" content="{% block ogimagesecure %}{{ SITEURL }}/images/swanlotus-open-graph-image.jpg{% endblock %}">
+    <meta property="og:image"
+        content="{% block ogimage %}{{ SITEURL }}/images/swanlotus-open-graph-image.jpg{% endblock %}">
+    <meta property="og:image:secure_url"
+        content="{% block ogimagesecure %}{{ SITEURL }}/images/swanlotus-open-graph-image.jpg{% endblock %}">
 
     <!--Required for site to be responsive-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,13 +35,17 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <!--[if lt IE 9]>
         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-    <![endif]-->
+    <![endif]-->.modal-target
 
     <!--jQuery-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/responsive_menu.js"></script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/table_of_contents.js"></script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/modal.js"></script>
     {% endblock head %}
 </head>
+
 <body>
     <div class="container">
         <!--Navigation Bar-->
@@ -58,11 +64,18 @@
                 {% block sidebar_content %}
                 {% endblock %}
                 <ul>
-                    <li><a href="{{ SITEURL }}/categories.html"><i class="fas fa-folder-open fa-fw"></i>&nbsp;Categories</a></li>
+                    <li><a href="{{ SITEURL }}/categories.html"><i
+                                class="fas fa-folder-open fa-fw"></i>&nbsp;Categories</a></li>
                     <li><a href="{{ SITEURL }}/tags.html"><i class="fas fa-tags fa-fw"></i>&nbsp;Tags</a></li>
-                    <li><a href="{{ SITEURL }}/archives.html"><i class="fas fa-archive fa-fw"></i>&nbsp;Archives</a></li>
+                    <li><a href="{{ SITEURL }}/archives.html"><i class="fas fa-archive fa-fw"></i>&nbsp;Archives</a>
+                    </li>
                 </ul>
             </div>
+        </div>
+        <div id="modal" class="modal">
+            <span id="modal-close" class="modal-close">&times;</span>
+            <img id="modal-content" class="modal-content" alt="">
+            <div id="modal-caption" class="modal-caption is-size-5-desktop is-size-6-tablet is-size-7-mobile"></div>
         </div>
     </div>
 </body>

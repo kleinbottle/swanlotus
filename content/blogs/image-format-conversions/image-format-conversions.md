@@ -21,9 +21,9 @@ Digital images come in two broad flavours:
 
 The former leads to image blockiness or [pixellation](https://en.wikipedia.org/wiki/Pixelation) and loss of definition at high magnifications, as shown in @fig:raster, while the latter scales without degradation when magnified, as illustrated in @fig:vector.
 
-![Raster graphics image of the letter O (150 dots per inch (dpi) PNG format).]({attach}images/letter-O-150-dpi.png){#fig:raster width=50%}
+![Raster graphics image of the letter O (150 dots per inch (dpi) PNG format).]({attach}images/letter-O-150-dpi.png){#fig:raster width=50% .modal-target}
 
-![Vector graphics image of the letter O (SVG format).]({attach}images/letter-O.svg){#fig:vector width=50%}
+![Vector graphics image of the letter O (SVG format).]({attach}images/letter-O.svg){#fig:vector width=50% .modal-target}
 
 ## Raster Graphics
 
@@ -215,9 +215,9 @@ pdftocairo -jpeg -jpegopt quality=100 -r 600 -singlefile \
 text-only.pdf text-only-600-dpi-cairo
 ```
 
-![Text-only image in 600 dpi PNG format.]({attach}images/text-only-600-dpi-cairo.png){#fig:text-only-png-cairo width=80%}
+![Text-only image in 600 dpi PNG format.]({attach}images/text-only-600-dpi-cairo.png){#fig:text-only-png-cairo width=80% .modal-target}
 
-![Text-only image in 600 dpi lossless JPEG format.]({attach}images/text-only-600-dpi-cairo.jpg){#fig:text-only-jpg-cairo width=80%}
+![Text-only image in 600 dpi lossless JPEG format.]({attach}images/text-only-600-dpi-cairo.jpg){#fig:text-only-jpg-cairo width=80% .modal-target}
 
 #### File sizes
 
@@ -239,7 +239,7 @@ The non-text `animals.jpg` image is a cropped version of the original image `ani
 
 Note that `animals-original.jpg` has been scanned from a printed, hard copy illustration and saved as a JPEG raster file. That is its native format. All conversions should be gauged against the file size and visual quality of the cropped original `animals.jpg`.
 
-![Non-text, graphically rich `animals-original.jpg` image in JPEG format.^[These images are in the public domain and covered by the [CC0 licence](https://creativecommons.org/publicdomain/zero/1.0/). ]]({attach}images/animals-original.jpg){#fig:animals-original width=80%}
+![Non-text, graphically rich `animals-original.jpg` image in JPEG format.^[These images are in the public domain and covered by the [CC0 licence](https://creativecommons.org/publicdomain/zero/1.0/). ]]({attach}images/animals-original.jpg){#fig:animals-original width=80% .modal-target}
 
 How the original image was cropped to get the `animals` image is explained next.
 
@@ -259,7 +259,7 @@ a.  put the mouse over the top left corner and drag until the bottom right corne
 a.  Click again on `Crop`; and
 a.  `File -> Save` with a different name.
 
-![`ImageMagick` interactive GUI.]({attach}images/ImageMagick-display-gui.png){#fig:gui width=30%}
+![`ImageMagick` interactive GUI.]({attach}images/ImageMagick-display-gui.png){#fig:gui width=30% .modal-target}
 
 Alternatively, we may just position the cursor on the top left and bottom right corners of the region we wish to _retain_, noting the co-ordinates in each case. If these coordinates are $(x_t, y_t)$ and $(x_b, y_b)$, respectively, we have $w = x_b - x_t$ and $h = y_b -y_t$. We may then invoke the convert command with crop as the option so:
 
@@ -275,7 +275,7 @@ convert -crop '735x1035+60+84' animals-original.jpg animals.jpg
 
 The resulting cropped image, `animals.jpg` is shown in @fig:cropped below.
 
-![Cropped version of the original image in @fig:animals-original. This is the `animals.jpg` image.]({attach}images/animals.jpg){#fig:cropped width=50%}
+![Cropped version of the original image in @fig:animals-original. This is the `animals.jpg` image.]({attach}images/animals.jpg){#fig:cropped width=50% .modal-target}
 
 #### File sizes
 
@@ -308,7 +308,7 @@ convert +append -gravity south \
 animals.jpg animals-halfsize.jpg animals-both.jpg
 ```
 
-![Full-size cropped image on the left and half-sized image on the right in JPEG format.]({attach}images/animals-both.jpg){#fig:animals-both-jpg width=80%}
+![Full-size cropped image on the left and half-sized image on the right in JPEG format.]({attach}images/animals-both.jpg){#fig:animals-both-jpg width=80% .modal-target}
 
 ### Background transparency
 
@@ -324,7 +324,7 @@ convert +append -gravity south -background transparent \
 animals.jpg animals-halfsize.jpg animals-both-transparent.png
 ```
 
-![Composite image converted to PNG format with transparent background.]({attach}images/animals-both-transparent.png){#fig:animals-both-transparent-png width=80%}
+![Composite image converted to PNG format with transparent background.]({attach}images/animals-both-transparent.png){#fig:animals-both-transparent-png width=80% .modal-target}
 
 #### File sizes again
 
@@ -410,11 +410,11 @@ text-only-both-600-dpi-cairo.* \
 120K    text-only-both-600-dpi-cairo.png
 ```
 
-![Composite PNG image of the PNG on the left, and JPEG on the right.]({attach}images/text-only-both-600-dpi-cairo.png){#fig:text-only-both-png width=80%}
+![Composite PNG image of the PNG on the left, and JPEG on the right.]({attach}images/text-only-both-600-dpi-cairo.png){#fig:text-only-both-png width=80% .modal-target}
 
 The right sub-image of @fig:text-only-both-png does not reveal noticeable degradation in quality after conversion from PNG to JPEG, and back to PNG again. Note also that the file size of the _composite_ PNG image is smaller than the file size of the _single_ JPEG image.
 
-![Composite JPEG image of the PNG on the left, and JPEG on the right.]({attach}images/text-only-both-600-dpi-cairo.jpg){#fig:text-only-both-jpg width=80%}
+![Composite JPEG image of the PNG on the left, and JPEG on the right.]({attach}images/text-only-both-600-dpi-cairo.jpg){#fig:text-only-both-jpg width=80% .modal-target}
 
 Likewise, notice that when the composite image, @fig:text-only-both-jpg is a JPEG, there is no noticeable degradation in image quality. Moreover, the file size of the composite is the same as for the singleton JPEG image. Note also that because JPEG does not support transparency, the sliver of "transparent background" sandwiched between the two images now appears black.
 
@@ -467,6 +467,7 @@ awk '{print $1 "\t" $2}'
 64K     animals-halfsize.jpg
 64K     animals-halfsize.pdf
 ```
+
 Increasing detail demands larger file sizes: there is no free lunch. But the conversion from PDF to JPEG does not cost us much, if at all, in file size.
 
 ### Raster to SVG with `convert`
@@ -666,7 +667,7 @@ awk '{print $1 "\t" $2}'
 12K     text-only-pdftocairo.svg
 ```
 
-![Fuzzy PNG image from SVG using `convert` at 96 dpi.]({attach}images/text-only-96-dpi-svg-convert.png){#fig:convert96dpiSVGtoPNG width=80%}
+![Fuzzy PNG image from SVG using `convert` at 96 dpi.]({attach}images/text-only-96-dpi-svg-convert.png){#fig:convert96dpiSVGtoPNG width=80% .modal-target}
 
 The PNG image lacks the sharpness of definition the original exhibited, which is not surprising because an increase in image resolution has not been achieved, and moreover, the file size has been reduced. Note the white border that has been added to three sides of the image, perhaps to arrive at an integer number of pixels for the image dimensions.
 
@@ -691,7 +692,7 @@ awk '{print $1 "\t" $2}'
 
 The PNG image is now 1786 by 435 pixels as expected, and the file size is also modestly larger. The PNG image, displayed on a standard desktop screen or even a mobile phone display should now appear sharper, as shown in @fig:convert600dpiSVGtoPNG. But the white border on three sides still shows up for reasons unclear to me. My guess is that it might have to do with getting an integer number of pixels in the PNG output.
 
-![Sharper PNG image from SVG using `convert` at 600 dpi.]({attach}images/text-only-600-dpi-svg-convert.png){#fig:convert600dpiSVGtoPNG width=80%}
+![Sharper PNG image from SVG using `convert` at 600 dpi.]({attach}images/text-only-600-dpi-svg-convert.png){#fig:convert600dpiSVGtoPNG width=80% .modal-target}
 
 It is important to know which options to use with `convert` to get the desired results at economical files sizes and acceptable visual quality. `ImageMagick` could use either its builtin SVG renderer MSVG or `rsvg-convrt` from `librsvg`. Knowing the intermediate delegates involved in the conversion chain helps optimize the process.
 
@@ -730,7 +731,7 @@ ls -sh text-only-600-dpi-inkscape-svg.png | awk '{print $1 "\t" $2}'
 44K     text-only-600-dpi-inkscape-svg.png
 ```
 
-![PNG at 600 dpi of `text-only` from SVG using `inkscape`.]({attach}images/text-only-600-dpi-inkscape-svg.png){#fig:inkscapeSVGtoPNG width=80%}
+![PNG at 600 dpi of `text-only` from SVG using `inkscape`.]({attach}images/text-only-600-dpi-inkscape-svg.png){#fig:inkscapeSVGtoPNG width=80% .modal-target}
 
 The explicit conversion from points to pixels at 600 dpi is clear, as is the image itself. We would expect the PNG to have a size of 1786 by 435 pixels, and it does. No surprises there. \emojifont:slightly_smiling_face:\normalfont
 
@@ -748,7 +749,7 @@ ls -sh text-only-600-dpi-cairosvg.png | awk '{print $1 "\t" $2}'
 44K     text-only-600-dpi-cairosvg.png
 ```
 
-![PNG at 600 dpi of `text-only` from SVG using `cairosvg`.]({attach}images/text-only-600-dpi-cairosvg.png){#fig:cairosvgSVGtoPNG width=80%}
+![PNG at 600 dpi of `text-only` from SVG using `cairosvg`.]({attach}images/text-only-600-dpi-cairosvg.png){#fig:cairosvgSVGtoPNG width=80% .modal-target}
 
 The image and file sizes are within a whisker of each other for `inkscape` and `cairosvg` and they are comparable in ease of use and fidelity. Indeed, it could very well be that `inkscape` uses the `cairo` backend.
 
@@ -770,7 +771,7 @@ Note that the `-a` option preserves aspect ratio, and the $x$ and $y$ resolution
 
 All of `inkscape`, `cairosvg`, and `rsvg-convert` produce PNG files of the same size and visual quality, as is apparent from Figures !@fig:inkscapeSVGtoPNG, !@fig:cairosvgSVGtoPNG, and !@fig:rsvg-convertSVGtoPNG.
 
-![PNG at 600 dpi of `text-only` from SVG using `rsvg-convert`.]({attach}images/text-only-600-dpi-rsvg-convert.png){#fig:rsvg-convertSVGtoPNG width=80%}
+![PNG at 600 dpi of `text-only` from SVG using `rsvg-convert`.]({attach}images/text-only-600-dpi-rsvg-convert.png){#fig:rsvg-convertSVGtoPNG width=80% .modal-target}
 
 Non-textual, scanned mages like `animals` are best displayed as JPEGs, given their compact file sizes in that format. There is no obvious need to convert such images from JPEG to SVG and back again, simply to view how the quality and file size changed during the roundtrip. Accordingly, we will not consider the `animals` image here.
 
@@ -796,7 +797,7 @@ We have [already generated][Raster to PDF with `convert` for `animals`] [`animal
 pdftocairo -svg animals-IM.pdf animals-pdftocairo.svg
 ```
 
-![SVG version of the `animals` image.]({attach}images/animals-pdftocairo.svg){#fig:animals-pdftocairo-svg width=50%}
+![SVG version of the `animals` image.]({attach}images/animals-pdftocairo.svg){#fig:animals-pdftocairo-svg width=50% .modal-target}
 
 The images appear the same visually and do not seem to have lost definition in the conversion from the original JPEG through the two vector formats.
 
@@ -864,7 +865,7 @@ less text-only-pdftocairo.svg | grep viewBox
 
 The PDF _page size_ and the SVG _viewBox_ are identical at 214.31 by 52.16 pts, as we would expect. For comparison, the [`text-only.pdf` image]({attach}images/text-only.pdf) may be opened on a separate browser tab and compared with the SVG shown in @fig:SVGfromPDFviapdftocairo.
 
-![SVG version of `text-only` image converted from PDF by `pdftocairo`.]({attach}images/text-only-pdftocairo.svg){#fig:SVGfromPDFviapdftocairo width=80%}
+![SVG version of `text-only` image converted from PDF by `pdftocairo`.]({attach}images/text-only-pdftocairo.svg){#fig:SVGfromPDFviapdftocairo width=80% .modal-target}
 
 #### PDF to SVG to PDF roundtrip
 
