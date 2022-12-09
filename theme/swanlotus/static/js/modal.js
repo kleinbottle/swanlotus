@@ -4,7 +4,6 @@ $(document).ready(function () {
     var modal = document.getElementById('modal');
 
     var modalClose = document.getElementById('modal-close');
-    console.log(modalClose);
     modalClose.addEventListener('click', function () {
         modal.style.display = "none";
     });

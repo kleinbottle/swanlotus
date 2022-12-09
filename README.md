@@ -6,14 +6,15 @@ The website uses the [Pelican](https://blog.getpelican.com/) static site generat
 
 ## Getting Started
 
-Follow the steps below to set up your development environment:
+Before setting up your development environment please ensure that you have the latest version of Python installed on your machine.
 
-1. Install [Pandoc](https://pandoc.org/MANUAL.html) and [Git](https://git-scm.com/).
+Then follow the steps below to set up your development environment:
+
+1. Install [Pandoc](https://pandoc.org/MANUAL.html), [Git](https://git-scm.com/) [pipenv](https://pipenv.pypa.io/en/latest/) and [Sass](https://sass-lang.com/).
 
     ```bash
     sudo pacman -Syyu
-    sudo pacman -S git pandoc
-    sudo pacman -S python-pipenv
+    sudo pacman -S git pandoc python-pipenv dart-sass
     ```
 
 1. Clone the swanlotus repository.
@@ -131,6 +132,20 @@ To create a static page like the Home page follow the steps below:
         ("Secrets of Academic Success", "sas.html"),
         ("<page-title>", "<page-title>.html"),  # New entry added to the end of the tuple
     )
+    ```
+
+    If you wish to add submenus you may specify them as:
+
+    ```python
+    MENUITEMS = (
+        ...
+        ...
+        ("Books", [
+            ("Secrets of Academic Success", "sas.html"),
+            ("Sanskrit for Spiritual Seekers", "sss.html"),
+        ]),
+        ...
+        ...
     ```
 
     **Note: The pages on the menu will follow the order of the menu items shown above.**
