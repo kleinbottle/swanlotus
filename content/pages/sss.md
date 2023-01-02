@@ -2,7 +2,8 @@
 title: "Sanskrit for Spiritual Seekers"
 author: "R (Chandra) Chandrasekhar"
 date: "2022-11-21"
-save_as: sss.html
+save_as: "sss.html"
+url: "sss.html"
 ---
 
 This is the companion website for my book

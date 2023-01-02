@@ -2,7 +2,8 @@
 title: "Secrets of Academic Success"
 author: "R (Chandra) Chandrasekhar"
 date: "2020-11-29"
-save_as: sas.html
+save_as: "sas.html"
+url: "sas.html"
 ---
 
 _Secrets of Academic Success_ is the title of a book that I have been writing since 2007. It is a [soup to nuts](https://en.wikipedia.org/wiki/Soup_to_nuts) exposition of how to learn effectively and succeed in your studies. The book espouses [lifelong learning](https://en.wikipedia.org/wiki/Lifelong_learning) and is suitable for anyone wishing to excel academically, regardless of age, clime, and time.

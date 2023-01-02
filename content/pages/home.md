@@ -4,6 +4,7 @@ content_title: "Welcome to SwanLotus"
 author: "R (Chandra) Chandrasekhar"
 date: "2020-02-17"
 save_as: "index.html"
+url: "index.html"
 ---
 
 [SwanLotus](index.html) exists to help you learn better. Regardless of where you live, what you study, and how old you are, may you be empowered to learn better, remember longer, and keep learning all your life. Enjoy learning! Keep on learning! :slightly_smiling_face:

@@ -22,13 +22,17 @@
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 
+    <!--Stork CSS-->
+    <link rel="stylesheet" href="https://files.stork-search.net/releases/v1.5.0/edible.css" />
+
     <!--Stylesheet-->
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}">
 
     <!--Favicon-->
     <link rel="shortcut icon" href="{{ SITEURL }}/images/favicon.ico" type="image/x-icon">
 
-    <!--Font Awesome 6q-->
+
+    <!--Font Awesome 6-->
     <script defer src="https://kit.fontawesome.com/602f92f586.js" crossorigin="anonymous"></script>
 
     <!--MathJax-->
@@ -54,8 +58,10 @@
         <div id="two-column" class="tile is-parent">
             <!--Main Column-->
             <div id="main" class="tile is-child is-9 is-size-6-mobile is-size-5-tablet is-size-4-desktop content">
+                <main>
                 {% block content %}
                 {% endblock %}
+                </main>
                 {% include "_includes/footer.html" %}
             </div>
             <!--Side Column-->
@@ -73,4 +79,11 @@
         </div>
         {% include "_includes/modal.html" %}
     </div>
+    <script src="https://files.stork-search.net/releases/v1.5.0/stork.js"></script>
+    <script>
+        stork.register("federalist-edible", "{{ SITEURL }}/search-index.st")
+    </script>
+    <script type="text/javascript">
+        $(".stork-input").focus();
+    </script>
 </body>

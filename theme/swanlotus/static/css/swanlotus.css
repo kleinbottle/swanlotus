@@ -4903,6 +4903,29 @@ a:hover code {
   color: #2e8bc0;
 }
 
+.fa-magnifying-glass {
+  color: hsl(0deg, 0%, 100%);
+}
+
+.stork-wrapper-edible .stork-output-visible {
+  background-color: hsl(0deg, 0%, 86%);
+  position: relative;
+  border: none;
+  box-shadow: none;
+}
+
+.stork-wrapper-edible .stork-results {
+  box-shadow: none;
+}
+
+.stork-wrapper-edible .stork-message, .stork-wrapper-edible .stork-attribution {
+  font-size: small;
+}
+
+.stork-wrapper-edible .stork-excerpt {
+  line-height: inherit;
+}
+
 .center {
   text-align: center;
 }

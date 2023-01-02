@@ -50,9 +50,10 @@ MENUITEMS = (
         ("Sanskrit for Spiritual Seekers", "sss.html"),
     ]),
     ("About", ["about.html"]),
+    ("Search", ["search.html"])
 )
 
-DIRECT_TEMPLATES = ['index', 'categories', 'tags', 'archives']
+DIRECT_TEMPLATES = ['index', 'search', 'categories', 'tags', 'archives']
 
 PATH = "content"
 ARTICLE_PATHS = ["blogs/"] # draft value: ["blogs/rust-euler-one"]
@@ -64,6 +65,19 @@ DRAFT_URL = DRAFT_LANG_URL = "drafts/{slug}.html"
 AUTHOR_SAVE_AS = ''
 
 USE_FOLDER_AS_CATEGORY = False
+
+# pelican-search settings
+SEARCH_HTML_SELECTOR = "main"
+
+# Add after code has been merged for this commit
+# https://github.com/pelican-plugins/search/pull/5
+# SEARCH_EXCLUDE_HTML_SELECTOR = [
+#     "img",
+#     ".author",
+#     ".date",
+#     ".reading-time",
+#     "#toc-small-screens"
+# ]
 
 # Blogroll
 LINKS = (("Pelican", "https://getpelican.com/"),

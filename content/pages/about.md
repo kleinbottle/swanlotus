@@ -4,6 +4,7 @@ content_title: "About SwanLotus"
 author: "R (Chandra) Chandrasekhar"
 date: "2021-04-06"
 save_as: "about.html"
+url: "about.html"
 ---
 
 The swan and the lotus are ancient symbols in the tradition of [Sanātana Dharma](https://www.britannica.com/topic/sanatana-dharma). The swan is purported to be able to extract milk from a mixture of milk and water, and thus signifies discrimination. The lotus is rooted in mud, but produces an unsullied blossom, emblematic of purity and beauty.
