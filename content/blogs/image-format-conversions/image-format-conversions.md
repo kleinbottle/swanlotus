@@ -21,9 +21,11 @@ Digital images come in two broad flavours:
 
 The former leads to image blockiness or [pixellation](https://en.wikipedia.org/wiki/Pixelation) and loss of definition at high magnifications, as shown in @fig:raster, while the latter scales without degradation when magnified, as illustrated in @fig:vector.
 
-![Raster graphics image of the letter O (150 dots per inch (dpi) PNG format).]({attach}images/letter-O-150-dpi.png){#fig:raster width=50% .modal-target}
+:::{.side-by-side}
+![Raster graphics image of the letter O (150 dots per inch (dpi) PNG format).]({attach}images/letter-O-150-dpi.png){#fig:raster width=75% .modal-target}
 
-![Vector graphics image of the letter O (SVG format).]({attach}images/letter-O.svg){#fig:vector width=50% .modal-target}
+![Vector graphics image of the letter O (SVG format).]({attach}images/letter-O.svg){#fig:vector width=90% .modal-target}
+:::
 
 ## Raster Graphics
 
