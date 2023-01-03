@@ -36,18 +36,11 @@ He first thought of the philosophers [Socrates](https://en.wikipedia.org/wiki/So
   \end{minipage}
 \end{figure*}
 
-```{=html}
-<div class="side-by-side">
-<figure>
-<img src="{attach}images/socrates-close-up.jpg" class="modal-target" alt="Socrates" title="Socrates" style="flex: 50%" />
-<figcaption>Socrates</figcaption>
-</figure>
-<figure>
-<img src="{attach}images/diotima-2.jpg" class="modal-target" alt="Diotima" title="Diotima" style="flex: 50%" />
-<figcaption>Diotima</figcaption>
-</figure>
-</div>
-```
+:::{.side-by-side}
+![Socrates]({attach}images/socrates-close-up.jpg){.modal-target}
+
+![Diotima]({attach}images/diotima-2.jpg){.modal-target}
+:::
 
 But would a layperson recognize those statues and make the link? He thought not, in these days of frenetic and fading fashions and fads, which came and went faster than the famed fruitfly, [Drosophila melanogaster](https://en.wikipedia.org/wiki/Drosophila_melanogaster#Lifecycle_and_reproduction). Why, most people would not even recognize their own national flags nowadays, let alone intellectual icons from the past.
 
@@ -80,18 +73,11 @@ Mathematics and philosophy share another quality. Two related branches of mathem
   \end{minipage}
 \end{figure*}
 
-```{=html}
-<div class="side-by-side">
-<figure>
-<img src="{attach}images/trefoil.svg" class="modal-target" alt="Trefoil" title="Trefoil" style="flex: 50%" />
-<figcaption>Trefoil</figcaption>
-</figure>
-<figure>
-<img src="{attach}images/braid.svg" class="modal-target" alt="Braid" title="Braid" style="flex: 50%" />
-<figcaption>Braid</figcaption>
-</figure>
-</div>
-```
+:::{.side-by-side}
+![Trefoil]({attach}images/trefoil.svg){.modal-target}
+
+![Braid]({attach}images/braid.svg){.modal-target}
+:::
 
 But after he slept on the idea, it struck him as too vague: how would one know which [aspect of the braid](http://symboldictionary.net/?p=159) was being alluded to? What if someone thought of it as, say, the logo of a Society of [Druids](https://www.britannica.com/topic/Druid)? Too many ifs and buts obfuscated what had initially seemed an inspired  choice.
 
