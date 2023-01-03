@@ -10,11 +10,19 @@ Before setting up your development environment please ensure that you have the l
 
 Then follow the steps below to set up your development environment:
 
-1. Install [Pandoc](https://pandoc.org/MANUAL.html), [Git](https://git-scm.com/) [pipenv](https://pipenv.pypa.io/en/latest/) and [Sass](https://sass-lang.com/).
+1. Install [Pandoc](https://pandoc.org/MANUAL.html), [Git](https://git-scm.com/) [pipenv](https://pipenv.pypa.io/en/latest/), [Sass](https://sass-lang.com/) and [Rust](https://www.rust-lang.org/)).
 
     ```bash
     sudo pacman -Syyu
-    sudo pacman -S git pandoc python-pipenv dart-sass
+    sudo pacman -S git pandoc python-pipenv dart-sass rust
+    ```
+
+    We need rust to install the [Stork](https://stork-search.net/) package as it is required for the search functionality explained [here](https://github.com/kleinbottle/swanlotus#searching-the-website).
+
+1. Install the Stork package.
+
+    ```bash
+    cargo install stork-search --locked
     ```
 
 1. Clone the swanlotus repository.
@@ -216,13 +224,27 @@ Due to the limitations of Open Graph only JPG images are supported.
 
 Also, you cannot use an image that is not used in the content of a page or blog as an Open Graph image. This is because Pelican **will not** move an image not used in the content to the desired location on the website.
 
+## Searching the website
+
+The SwanLotus website is searchable and uses the [pelican-search](https://github.com/pelican-plugins/search) plugin to achieve this.
+
+The plugin is a wrapper around the Stork package and hence, requires the Stork CLI to be installed and available on the `PATH`.
+
+Every time the site builds it is reindexed by the plugin avoiding the need for any manual intervention if new content is added.
+
+Please reae the [documentation](https://github.com/pelican-plugins/search#readme) on the pelican-search homepage to understand how it is setup on the site.
+
 ## Netlify Deployment
 
 [Netlify](https://www.netlify.com/) currently uses the [Ubuntu 20.04 LTS Focal Fossa](https://releases.ubuntu.com/20.04/) image to build this site. The latest version of Python on this image is 3.8, so we have set the Python version in the `Pipfile` accordingly. More information about the available packages and their versions are available [here](https://github.com/netlify/build-image/blob/focal/included_software.md).
 
-We always want to use the latest version of Pandoc and the pandoc-crossref filter. These packages may be unavailable or outdated on the image. The Netlify community suggested specifying the pandoc and pandoc-crossref packages in a `Brewfile.netlify` file, which will instruct the builder to download these packages from [Homebrew](https://brew.sh/) and install them on the image. This feature is in early Alpha and may change significantly in the future.
+We always want to use the latest version of Pandoc, the pandoc-crossref filter and Stork to make avail of the most recent features. Since the default Ubuntu image does not always have the most recent versions or may not contain the package at all, the Netlify community suggested to make use of [HomeBrew](https://brew.sh/).
 
-The build system on Netlify uses the following command to build the site:
+By specifying the packages in a `Brewfile.netlify` we instruct the builder to download the latest version of these packages from Homebrew and install them on the image.
+
+This feature is in early Alpha and may change significantly in the future.
+
+Netlify uses the following command to build the site:
 
 ```bash
 pelican content -s publishconf.py
