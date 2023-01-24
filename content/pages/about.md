@@ -19,11 +19,11 @@ The abbreviated website logo for SwanLotus is shown below:
 
 The symbol "S" for the swan is in black, because for some periods of my life, I lived in [Perth](https://en.wikipedia.org/wiki/Perth), Australia, where the blue [Swan River](https://en.wikipedia.org/wiki/Swan_River_(Western_Australia)) flows, and where black swans abound.
 
-![[Black Swan](http://absfreepic.com/free-photos/download/the-black-swan-on-lake-2701x1800_84370.html): [CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).]({static}images/black-swan.jpg){width=80% .modal-target}
+![[Black Swan (_Cygnus atratus_)](http://absfreepic.com/free-photos/download/the-black-swan-on-lake-2701x1800_84370.html): [CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).]({static}images/black-swan.jpg){width=80% .modal-target}
 
 The symbol "L" for the lotus is in white, signifying the white lotus:
 
-![[White Lotus](https://www.publicdomainpictures.net/pictures/270000/velka/white-lotus-flower-close-up.jpg): [CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).]({static}images/white-lotus-flower-close-up.jpg){width=80% .modal-target}
+![[White Lotus (_Nelumbo nucifera_)](https://www.publicdomainpictures.net/pictures/270000/velka/white-lotus-flower-close-up.jpg): [CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).]({static}images/white-lotus-flower-close-up.jpg){width=80% .modal-target}
 
 ## The author
 
