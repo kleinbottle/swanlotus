@@ -4805,6 +4805,7 @@ a:hover code {
   background-color: transparent;
   border-left: 4px solid hsl(0deg, 0%, 71%);
   font-size: smaller;
+  padding: 1em 1em;
 }
 
 /* Styles for tables */
