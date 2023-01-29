@@ -1,13 +1,13 @@
-// Calculate REM font sizes that correspond to LaTeX font sizes
-$tiny: calc(1rem / 12) * 6
-$xxsmall: calc(1rem / 12) * 8
-$xsmall: calc(1rem / 12) * 10
-$small: calc(1rem / 12) * 10.95
-$normal: calc(1rem / 12) * 12
-$large: calc(1rem / 12) * 14.4
-$xlarge: calc(1rem / 12) * 17.28
-$xxlarge: calc(1rem / 12) * 20.74
-$huge: calc(1rem / 12) * 24.88
+// Calculate EM font sizes. Font sizes are relative to parent elements font size
+$tiny: calc(1em / 16) * 8
+$xxsmall: calc(1em / 16) * 10.66
+$xsmall: calc(1em / 16) * 13.33
+$small: calc(1em / 16) * 14.6
+$normal: calc(1em / 16) * 16
+$large: calc(1em / 16) * 19.2
+$xlarge: calc(1em / 16) * 23.04
+$xxlarge: calc(1em / 16) * 27.65
+$huge: calc(1em / 16) * 31.17
 
 /* The styles below are for the classes defined in the fonts and alignment
  Lua filter. Modify them as required to style the HTML document. */
@@ -58,7 +58,7 @@ $huge: calc(1rem / 12) * 24.88
 .upper
     text-transform: uppercase
 
-/* Font Sizes relative to a 16px/12pt document
+/* Font Sizes */
 .tiny
     font-size: $tiny
 

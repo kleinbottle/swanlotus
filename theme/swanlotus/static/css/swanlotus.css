@@ -388,133 +388,6 @@ div.csl-indent {
 /* Source Sans Pro */
 /* Fira Mono */
 /* Fonts */
-/* Fonts and Alignment Styles can only be set after fonts are defined */
-/* The styles below are for the classes defined in the fonts and alignment
- * Lua filter. Modify them as required to style the HTML document. */
-/* Font Styles */
-.bold,
-.bf {
-  font-weight: 700;
-}
-
-.emphasis,
-.italic,
-.it,
-.slanted,
-.sl {
-  font-style: italic;
-}
-
-.lower {
-  text-transform: lowercase;
-}
-
-.medium,
-.md {
-  font-weight: 400;
-}
-
-.normalfont,
-.nf,
-.upright,
-.up {
-  font-family: "Noto Serif", "Merriweather", "PT Serif", serif;
-  font-style: normal;
-  font-weight: 400;
-}
-
-.monospace,
-.tt {
-  font-family: "Fira Mono", monospace;
-}
-
-.sans,
-.sf {
-  font-family: "Source Sans Pro", sans-serif;
-}
-
-.serif,
-.rm {
-  font-family: "Noto Serif", "Merriweather", "PT Serif", serif;
-}
-
-.smallcaps,
-.sc {
-  font-variant: small-caps;
-}
-
-.upper {
-  text-transform: uppercase;
-}
-
-/* Font Sizes relative to a 16px/12pt document */
-.tiny {
-  font-size: 0.5rem;
-}
-
-.xxsmall {
-  font-size: 0.6666666667rem;
-}
-
-.xsmall {
-  font-size: 0.8333333333rem;
-}
-
-.small {
-  font-size: 0.9125rem;
-}
-
-.normal {
-  font-size: 1rem;
-}
-
-.large {
-  font-size: 1.2rem;
-}
-
-.xlarge {
-  font-size: 1.44rem;
-}
-
-.xxlarge {
-  font-size: 1.7283333333rem;
-}
-
-.huge {
-  font-size: 2.0733333333rem;
-}
-
-/* Text Alignments */
-div.center, div.centering {
-  text-align: center;
-}
-div.flushright, div.raggedleft {
-  text-align: right;
-}
-div.flushleft, div.raggedright {
-  text-align: left;
-}
-
-/* Underline Styles */
-span.dashuline, span.dau {
-  text-decoration: underline dashed;
-}
-span.dotuline, span.dou {
-  text-decoration: underline dotted;
-}
-span.uline, span.u {
-  text-decoration: underline;
-}
-span.uuline, span.uu {
-  text-decoration: underline double;
-}
-span.uwave, span.uw {
-  text-decoration: underline wavy;
-}
-span.sout, span.so {
-  text-decoration: line-through;
-}
-
 /* Unused Font Imports */
 /* PT Serif */
 /* Arvo*/
@@ -4553,6 +4426,133 @@ a.box:active {
   padding: 0;
 }
 
+/* Fonts and Alignment Styles */
+/* The styles below are for the classes defined in the fonts and alignment
+ * Lua filter. Modify them as required to style the HTML document. */
+/* Font Styles */
+.bold,
+.bf {
+  font-weight: 700;
+}
+
+.emphasis,
+.italic,
+.it,
+.slanted,
+.sl {
+  font-style: italic;
+}
+
+.lower {
+  text-transform: lowercase;
+}
+
+.medium,
+.md {
+  font-weight: 400;
+}
+
+.normalfont,
+.nf,
+.upright,
+.up {
+  font-family: "Noto Serif", "Merriweather", "PT Serif", serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.monospace,
+.tt {
+  font-family: "Fira Mono", monospace;
+}
+
+.sans,
+.sf {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.serif,
+.rm {
+  font-family: "Noto Serif", "Merriweather", "PT Serif", serif;
+}
+
+.smallcaps,
+.sc {
+  font-variant: small-caps;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+/* Font Sizes */
+.tiny {
+  font-size: 0.5em;
+}
+
+.xxsmall {
+  font-size: 0.66625em;
+}
+
+.xsmall {
+  font-size: 0.833125em;
+}
+
+.small {
+  font-size: 0.9125em;
+}
+
+.normal {
+  font-size: 1em;
+}
+
+.large {
+  font-size: 1.2em;
+}
+
+.xlarge {
+  font-size: 1.44em;
+}
+
+.xxlarge {
+  font-size: 1.728125em;
+}
+
+.huge {
+  font-size: 1.948125em;
+}
+
+/* Text Alignments */
+div.center, div.centering {
+  text-align: center;
+}
+div.flushright, div.raggedleft {
+  text-align: right;
+}
+div.flushleft, div.raggedright {
+  text-align: left;
+}
+
+/* Underline Styles */
+span.dashuline, span.dau {
+  text-decoration: underline dashed;
+}
+span.dotuline, span.dou {
+  text-decoration: underline dotted;
+}
+span.uline, span.u {
+  text-decoration: underline;
+}
+span.uuline, span.uu {
+  text-decoration: underline double;
+}
+span.uwave, span.uw {
+  text-decoration: underline wavy;
+}
+span.sout, span.so {
+  text-decoration: line-through;
+}
+
 /* Background Colors */
 /* Foreground Colors */
 /* Content Ordering */
@@ -4924,18 +4924,6 @@ a:hover code {
 
 .stork-wrapper-edible .stork-excerpt {
   line-height: inherit;
-}
-
-.center {
-  text-align: center;
-}
-
-.larger {
-  font-size: larger;
-}
-
-.smaller {
-  font-size: smaller;
 }
 
 /*# sourceMappingURL=swanlotus.css.map */

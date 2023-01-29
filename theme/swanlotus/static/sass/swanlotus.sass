@@ -25,8 +25,7 @@ $body-family: "Noto Serif", "Merriweather", "PT Serif", serif
 $family-secondary: "Source Sans Pro", sans-serif
 $family-code: "Fira Mono", monospace
 
-/* Fonts and Alignment Styles can only be set after fonts are defined */
-@import "fonts-and-alignment.sass"
+
 
 /* Unused Font Imports */
 
@@ -78,6 +77,9 @@ $link-decoration: underline
 @import "../bulma-0.9.4/sass/helpers/visibility.sass"
 @import "../bulma-0.9.4/sass/layout/footer.sass"
 @import "../bulma-0.9.4/sass/utilities/_all.sass"
+
+/* Fonts and Alignment Styles */
+@import "fonts-and-alignment.sass"
 
 /* Background Colors */
 $pre-background: $grey-darker // Setting Bulma's code background-color to match Zenburn's background
@@ -403,13 +405,3 @@ a:hover code
 
 .stork-wrapper-edible .stork-excerpt
     line-height: inherit
-
-// General
-.center
-    text-align: center
-
-.larger
-    font-size: larger
-
-.smaller
-    font-size: smaller
