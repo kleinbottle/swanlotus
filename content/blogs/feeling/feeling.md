@@ -5,7 +5,7 @@ date: 2023-01-29
 modified: 2023-01-29
 category: Mind
 tags: success, mind, manifesting
-summary:
+summary: "The nursery rhyme tells us that life is but a dream. Imagine, however, if someone told you that your dreams could become your life. Would you be inclined to believe that statement? If you are imbued with the scientific spirit, you would at the very least subject that assertion to experimental validation or refutation. If you are of that mind, read this blog carefully, because it could be the single most important _secret of success_---academic or otherwise---that you might encounter in your entire life."
 opengraphimage:
 status: draft
 ---
@@ -15,18 +15,17 @@ Row, row, row your boat\
 Gently down the stream.\
 Merrily, merrily, merrily, merrily,\
 Life is but a dream.\
-
-[---Nursery Rhyme](https://en.wikipedia.org/wiki/Row,_Row,_Row_Your_Boat){.smallcaps}
+[Nursery Rhyme](https://en.wikipedia.org/wiki/Row,_Row,_Row_Your_Boat){.smallcaps}
 :::
 
 
-## From Dreams to Real Life
+## From dreams to real life
 
-The nursery rhyme tells us that life is but a dream. But, imagine if someone told you that your dream could become your life. Would you be inclined to believe that statement? If you are imbued with the scientific spirit, you would at the very least subject that assertion to experimental validation or refutation. If you are of that mind, read this blog carefully, because it could be the single most important _secret of success_---academic or otherwise---that you might encounter in your entire life.
+The nursery rhyme tells us that life is but a dream. Imagine, however, if someone told you that your dreams could become your life. Would you be inclined to believe that statement? If you are imbued with the scientific spirit, you would at the very least subject that assertion to experimental validation or refutation. If you are of that mind, read this blog carefully, because it could be the single most important _secret of success_---academic or otherwise---that you might encounter in your entire life.
 
 ## An example from a famous life
 
-[Dr A P J Abdul Kalam](https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam), past-President of India, in his autobiography [_Wings of Fire_]( https://en.wikipedia.org/wiki/Wings_of_Fire_(autobiography)) recounts a deeply personal episode from his life about how his own ambition in his early years---to be an Air Force pilot---was shattered by events outside his control. Crestfallen, he wends his way to the ashram of the saintly monk, [Sri Swami Sivananda](https://en.wikipedia.org/wiki/Sivananda_Saraswati) in [Rishikesh](https://en.wikipedia.org/wiki/Rishikesh). Let us hear his recountal in his own words:
+[Dr A P J Abdul Kalam](https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam), eleventh President of India, in his autobiography [_Wings of Fire_]( https://en.wikipedia.org/wiki/Wings_of_Fire_(autobiography)), recounts a deeply personal episode from his life, about how his own ambition in his early years---to be an Air Force pilot---was shattered when he was not chosen for the role by the Selection Board. Crestfallen, he wended his way to the ashram of the saintly monk, [Sri Swami Sivananda](https://en.wikipedia.org/wiki/Sivananda_Saraswati) in [Rishikesh](https://en.wikipedia.org/wiki/Rishikesh). Let us hear what transpired in his own words:
 
 >It took me some time to comprehend that the opportunity to join the Air Force had just slipped through my fingers. I dragged myself out of the Selection Board and stood at the edge of a cliff. There was a lake far below. I knew that the days ahead would be difficult. There were questions to be answered and a plan of action to be prepared. I trekked down to Rishikesh.\
 \
