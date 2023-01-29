@@ -40,8 +40,7 @@ The nursery rhyme tells us that life is but a dream. Imagine, however, if someon
 \
 >When the student is ready, the teacher will appear---How true! Here was the teacher to show the way to a student who had nearly gone astray!\
 \
->“Accept your destiny and go ahead with your life. You are not destined to become an Air Force pilot. What you are destined to become is not revealed now but it is predetermined. Forget this failure, as it was essential to lead you to your destined path. Search, instead, for the true purpose of your existence. Become one with yourself, my son! Surrender yourself to the wish of God,” Swamiji said. [@kalam-wof1999; @kalam-wof-online]
-
+>“Accept your destiny and go ahead with your life. You are not destined to become an Air Force pilot. What you are destined to become is not revealed now but it is predetermined. Forget this failure, as it was essential to lead you to your destined path. Search, instead, for the true purpose of your existence. Become one with yourself, my son! Surrender yourself to the wish of God,” Swamiji said [@kalam-wof-1999; @kalam-wof-online].
 
 ## Books on "manifesting"
 
@@ -91,14 +90,14 @@ corrections.
 %
 % Master key book
 %
-\chapter{\textit{Feeling Is the Secret}}\label{chap:feeling}
+\textit{Feeling Is the Secret}}
 %
 % YouTube video features an audio-video book: it isr read aloud and you can also see the pages.
 %
 % https://www.youtube.com/watch?v=ffNWoefuwPM
 %
 
-\synopsisbox{As a student, you want to excel in your studies by putting in the effort, and reaping success at the examinations. It is the mismatch between expectations and results that leads to the slippery slope of academic failure, which robs you of the exhilaration of success, and sometimes even of the desire to achieve.
+{As a student, you want to excel in your studies by putting in the effort, and reaping success at the examinations. It is the mismatch between expectations and results that leads to the slippery slope of academic failure, which robs you of the exhilaration of success, and sometimes even of the desire to achieve.
 
 Suppose someone told you that the world that you encounter externally is really a reflection of the world you harbour within yourself in your mind. And, moreover that frustration with failure, and the futility of all effort, may be flipped completely, simply by changing the internal worldview in your mind.
 
