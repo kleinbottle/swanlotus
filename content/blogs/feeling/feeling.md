@@ -7,7 +7,6 @@ category: Mind
 tags: success, mind, manifesting
 summary: "The nursery rhyme tells us that life is but a dream. Imagine, however, if someone told you that your dreams could become your life. Would you be inclined to believe that statement? If you are imbued with the scientific spirit, you would at the very least subject that assertion to experimental validation or refutation. If you are of that mind, read this blog carefully, because it could be the single most important _secret of success_---academic or otherwise---that you might encounter in your entire life."
 opengraphimage:
-status: draft
 ---
 
 ::: {.flushright .xsmall}
@@ -41,8 +40,7 @@ The nursery rhyme tells us that life is but a dream. Imagine, however, if someon
 \
 >When the student is ready, the teacher will appear---How true! Here was the teacher to show the way to a student who had nearly gone astray!\
 \
->“Accept your destiny and go ahead with your life. You are not destined to become an Air Force pilot. What you are destined to become is not revealed now but it is predetermined. Forget this failure, as it was essential to lead you to your destined path. Search, instead, for the true purpose of your existence. Become one with yourself, my son! Surrender yourself to the wish of God,” Swamiji said.
-
+>“Accept your destiny and go ahead with your life. You are not destined to become an Air Force pilot. What you are destined to become is not revealed now but it is predetermined. Forget this failure, as it was essential to lead you to your destined path. Search, instead, for the true purpose of your existence. Become one with yourself, my son! Surrender yourself to the wish of God,” Swamiji said. [@kalam-wof1999; @kalam-wof-online]
 
 
 ## Books on "manifesting"
