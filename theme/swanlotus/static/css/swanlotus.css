@@ -4892,6 +4892,7 @@ a:hover code {
   clear: both;
 }
 
+/* Font Awesome styles */
 .fa-solid {
   color: maroon;
 }
@@ -4908,6 +4909,7 @@ a:hover code {
   color: hsl(0deg, 0%, 100%);
 }
 
+/* Stork search related styles */
 .stork-wrapper-edible .stork-output-visible {
   background-color: hsl(0deg, 0%, 86%);
   position: relative;
