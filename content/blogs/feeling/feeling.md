@@ -70,7 +70,7 @@ yad bhāvaṃ tad bhavati.
 
 यद् भावं तद् भवति ।
 
-As you feel, so you become.।
+As you feel, so you become.
 
 Happy manifesting!
 
