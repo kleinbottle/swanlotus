@@ -66,6 +66,12 @@ Fortunately for us, [the book is available on YouTube](https://www.youtube.com/w
 
 Because the book is short---at 53 pages, and is less than forty minutes long when heard as audio---it is ideal for each person to distil the book into an algorithm that they can use for their entire life. This law of consciousness may be used by each person to manifest his or her personal desires. The only caveat is that one's intentions should be clear, whole-hearted, noble, pure, and sincere.
 
+yad bhāvaṃ tad bhavati.
+
+यद् भावं तद् भवति ।
+
+As you feel, so you become.।
+
 Happy manifesting!
 
 ## Acknowledgements
