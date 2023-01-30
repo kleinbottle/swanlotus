@@ -6,7 +6,7 @@ modified: 2023-01-30
 category: Mind
 tags: success, mind, manifesting
 summary: "The nursery rhyme tells us that life is but a dream. Imagine, however, if someone told you that your dreams could become your life. Would you be inclined to believe that statement? If you are imbued with the scientific spirit, you would at the very least subject that assertion to experimental validation or refutation. If you are of that mind, read this blog carefully, because it could be the single most important _secret of success_---academic or otherwise---that you might encounter in your entire life."
-opengraphimage:
+opengraphimage: Feeling-is-the-Secret.jpg
 ---
 
 ::: {.flushright .xsmall}
@@ -42,6 +42,8 @@ If you are imbued with the scientific spirit, you would at the very least subjec
 ...\
 >“Accept your destiny and go ahead with your life. You are not destined to become an Air Force pilot. What you are destined to become is not revealed now but it is predetermined. Forget this failure, as it was essential to lead you to your destined path. Search, instead, for the true purpose of your existence. Become one with yourself, my son! Surrender yourself to the wish of God,” Swamiji said [@kalam-wof-1999; @kalam-wof-online].
 
+![_Wings of Fire_.]({attach}images/Wings-of-Fire.jpg){width=45% .modal-target}
+
 ## A quote to ponder on
 
 Part of the above quote encapsulates a little known truth about a law of human consciousness, and bears repeated reading so that its full import may be imbibed gradually. I repeat it below:
@@ -59,6 +61,8 @@ After Dr Abdul Kalam became President of India, he _did get_ an opportunity both
 In 1944, a book was published bearing the title _Feeling Is the Secret_, by [Neville Goddard](feeling is the secret). I like it among all the books of the "manifesting" genre because it is clear, succinct, precise, and algorithmic. It provides a step-by-step method to implement the technique alluded to by Swami Sivananda, with very little filler material.
 
 Fortunately for us, [the book is available on YouTube](https://www.youtube.com/watch?v=ffNWoefuwPM) where a gentleman reads out the text at a decent pace. The distinctive feature of this presentation is that the book's pages are also clearly visible for us to read along as we hear the video presentation.
+
+![_Feeling Is the Secret_.]({attach}images/Feeling-is-the-Secret.jpg){width=45% .modal-target}
 
 Because the book is short---at 53 pages, and is less than forty minutes long when heard as audio---it is ideal for each person to distil the book into an algorithm that they can use for their entire life. This law of consciousness may be used by each person to manifest his or her personal desires. The only caveat is that one's intentions should be clear, whole-hearted, noble, pure, and sincere.
 
