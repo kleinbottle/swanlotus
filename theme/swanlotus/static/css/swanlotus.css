@@ -543,7 +543,7 @@ code {
   color: #da1039;
   font-size: 0.875em;
   font-weight: normal;
-  padding: 0.1em 0.3em;
+  padding: 0.25em 0.5em 0.25em;
 }
 
 hr {
@@ -4686,10 +4686,11 @@ pre {
 }
 
 code {
-  padding: 0.1em 0.3em;
+  padding: 0;
   color: #946c00;
   border-radius: 5px;
   background-color: transparent;
+  font-size: 1em;
 }
 
 div.sourceCode,
