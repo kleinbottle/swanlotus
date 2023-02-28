@@ -56,7 +56,7 @@ MENUITEMS = (
 DIRECT_TEMPLATES = ['index', 'search', 'categories', 'tags', 'archives']
 
 PATH = "content"
-ARTICLE_PATHS = ["blogs"] # draft value: ["blogs/rust-euler-one"]
+ARTICLE_PATHS = ["blogs/pattern-matching-in-bash"] # draft value: ["blogs/rust-euler-one"]
 ARTICLE_SAVE_AS = ARTICLE_LANG_SAVE_AS = "blogs/{slug}.html"
 ARTICLE_URL = ARTICLE_LANG_URL = "blogs/{slug}.html"
 DRAFT_SAVE_AS = DRAFT_LANG_SAVE_AS = "drafts/{slug}.html"
