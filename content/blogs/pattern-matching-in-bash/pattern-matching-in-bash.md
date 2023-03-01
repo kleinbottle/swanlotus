@@ -11,18 +11,18 @@ opengraphimage: "bash-pattern.png"
 
 ## Parsing filenames
 
-A fully qualified filename consists of a `path`, a `basename`, and a file `extension`. While not all filenames are encountered in their full glory, it helps to decompose any given filename into its constituent parts to help with housekeeping functions on a machine running `bash`---for example, to facilitate searching, sorting and other file-related functions.
+A fully qualified filename consists of a `path`, a `basename`, and an `extension`. While not all filenames are encountered in their full glory, it helps to decompose any given filename into its constituent parts to help with housekeeping functions on a machine running `bash`---for example, to facilitate searching, sorting and other file-related functions.
 
 ### Extended globbing
 
-_Globbing_ is the unflattering term---abbreviation for _global_---used to denote an operation to extract files satisfying certain conditions [@glob2023]. It is applicable also to the `bash` command line. For our purposes, it is useful and sometimes mandatory to set `shopt -s extglob` after the [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) line.
+[_Globbing_](https://en.wikipedia.org/w/index.php?title=Glob_(programming)&oldid=1133836865) is the unflattering term---an abbreviation for _global_---used to denote an operation to extract files satisfying certain conditions [@glob2023]. It is applicable also to the `bash` command line. For our purposes, it is useful and sometimes mandatory to set `shopt -s extglob` after the [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) line.
 
 ### A canonical filename
 
 A canonical filename will comprise these components:
 
 a.  a _path_ with the forward slash `/` as the separator between elements denoting the path;
-a.  a filename comprising a _basename_ which appears immediately after the _last_ `/` character;
+a.  a filename comprising a _basename_ which appears immediately after the _last_ `/` character; and
 a.  a _file extension_ that occurs after the basename immediately after a `.` or period character.
 
 `/my_path/is/quite/long/basename.ext` is a canonical filename where the abovenamed elements are as follows:
@@ -44,7 +44,7 @@ fullname="/my_path/is/quite/long/basename.ext"
 echo "fullname is ${fullname}"
 
 #
-# Extract path
+# Extract $path
 # Approach from the right until the _first_ `/` is encountered
 # and throw away everything from the _right_ end up to and including that `/`.
 #
@@ -52,15 +52,15 @@ path="${fullname%/*}"
 echo "path is ${fullname%/*}"
 
 #
-# Extract filename
-# Approach from the left until the _last_+ `/` character is encountered
+# Extract $filename
+# Approach from the left until the _last_ `/` character is encountered
 # and throw away everything from the _left_ end up to and including that `/`.
 #
 filename="${fullname##*/}"
 echo "filename is ${fullname##*/}"
 
 #
-# Extract file extension
+# Extract $extension
 # Approach from the _left_ until the _last_ `.` character is encountered
 # and throw away everything from the _left_ up to and including that last `.`.
 #
@@ -68,7 +68,7 @@ ext="${fullname##*.}"
 echo "extension is ${fullname##*.}"
 
 #
-# Extract basename
+# Extract $basename
 # This requires trimming strings from both the left and the right of `fullname`
 # and requires _two_ steps.
 #
