@@ -4639,7 +4639,7 @@ body {
   font-family: "Noto Serif", "Merriweather", "PT Serif", serif;
   padding: 1.65em;
   order: 2;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 /* Styles for sidebar with independent scrolling */
@@ -4649,7 +4649,7 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   padding: 1.65em;
   order: 1;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 /* Styles for table of contents */
@@ -4677,6 +4677,7 @@ body {
 
 #sidebar nav code {
   background-color: transparent;
+  font-size: 0.875em;
 }
 
 /* Styles for code blocks */

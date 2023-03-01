@@ -172,7 +172,7 @@ body
     font-family: $body-family
     padding: $content-padding
     order: $main-content-order
-    overflow-y: scroll
+    overflow-y: auto
 
 /* Styles for sidebar with independent scrolling */
 #sidebar
@@ -181,7 +181,7 @@ body
     font-family: $family-secondary
     padding: $content-padding
     order: $sidebar-content-order
-    overflow-y: scroll
+    overflow-y: auto
 
 /* Styles for table of contents
 #main nav,
@@ -203,6 +203,7 @@ body
 
 #sidebar nav code
     background-color: transparent
+    font-size: 0.875em  // Make monospace font slightly smaller to match the sans-serif
 
 /* Styles for code blocks */
 pre
