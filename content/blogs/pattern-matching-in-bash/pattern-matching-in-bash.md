@@ -39,6 +39,7 @@ Our next task is to dissect the canonical filename into its above components usi
 
 ```bash
 #!/bin/bash
+#file-parse.sh
 shopt -s extglob
 
 fullname="/my_path/is/quite/long/basename.ext"
@@ -82,7 +83,7 @@ echo "extension is ${fullname##*.}"
 #
 # For this, we approach from the _right_ until we encounter
 # the _first_ `.` character and throw away everything
-# from the _right_ up to and including that last `.`.
+# from the _right_ up to and including that first `.`.
 #
 basename="${filename%.*}"
 echo "basename is ${filename%.*}"
@@ -109,12 +110,81 @@ To summarize:
 #. When we use `#` or `##`, we discard a substring to the left of the anchor; and
 #. When we use `%` or `%%`, we discard a substring to the right of the anchor.
 
-### Minefields to beware of
+## Minefields to beware of
 
-No extension
-Wrong results
-Need to test that our assumptions are corrections
+The pattern-matching capabilities in `bash` throw up unexpected results when the assumptions made above are not fulfilled. The structure of the `fullname` is one such. What happens if our assumptions are false?
 
+## Filenames without an extension
+
+There are occasions when, for a variety of reasons, filenames might not have extensions. In such cases, we might rightfully expect the extension to be a null or empty string. But is that what happens in practice? Let us try a simple experiment. You could fire up a bash terminal and run what follows interactively.
+
+~~~bash
+#!/bin/bash
+shopt -s extglob
+fullname=$HOME/myPDFfile
+ext="${fullname##*.}"
+echo "Extension is $ext."
+~~~
+
+Surely, you did not expect the extension to be the fullname of the file. Yet, that is what we get. Though  unexpected, is it yet logically correct?
+
+Imagine you are moving from left to right until you hit the _last_ `.` character. When you do, you discard whatever is to the left of the `.` along with that character itself. If there is no `.` character, you do not stop and you do not discard anything. So, you are left with what you started with. _But, although logical, that is not the intent._
+
+One way to overcome this issue is to test for a period or dot character in the original `fullname` string. If there is no `.` character, we set the extension to the empty string. Otherwise, we set it to what we get by the pattern-matching we have discussed. The corrected routine for the extension should thus run:
+
+~~~bash
+#!/bin/bash
+# ext.sh
+shopt -s extglob
+
+fullname="/path/myPDFfile"
+
+if [[ "$fullname" =~ '.' ]]
+then
+  echo $?
+  ext="${fullname##*.}"
+else
+  echo $?
+  ext=""
+fi
+echo "Extension is $ext."
+~~~
+
+Note that the `=~` sign is a regular expression operator that has been inducted into `bash`. It returns a `0` for `true` and a `1` for `false`, which may sound contrary to expectations, but that is the correct behaviour. This may be seen by appending `echo $?` above to each branch of the `if` conditional.
+
+Mporeover, when match, the left side is double quoted while the right side is either a literal, like `'.'`, or the dot character is escaped as in `\.`. If a plain `.` is used, with no "protection", it will natch any character in accordance with regex rules, and we risk getting the wrong result. It is attention to every small detail that ensures success with `bash` scripts. In the process, you also learn patience. :wink:
+
+### Filenames with multiple dot characters
+
+I have encountered occasions where the `fullname` of a file contains multiple `.` characters. In such cases, we must adopt a convention that the extension is what occurs to the _right of the rightmost_ dot character. We will avoid pathological cases like a filename _ending_ with a `.` character. If theseadditional assumptions hold, our pattern-matching for the extension will return the correct result.
+
+## Filenames without a path
+
+Before attempting to extract a `path`, we must check for the presence of a `/` in the `fullname` string. Otherwise, we risk getting the same errors as with missing extensions. The following script should be self-explanatory by now. Again, note that we either need to make the `/` character a literal, enclosed by single quotes, or we must escape it with a backslash. Note that this time,the forward slash is enclosed by single quotes.
+
+~~~bash
+#!/bin/bash
+# path.sh
+shopt -s extglob
+
+fullname="myPDFfile.pdf"
+
+if [[ "$fullname" =~ '/' ]]
+then
+  echo $?
+  path="${fullname%/*}"
+else
+  echo $?
+  path=""
+fi
+echo "Path is $path."
+~~~
+
+## The generalized filename parser
+
+The revised file for parsing a filename into its components therefore needs to be augmented with these tests if it is to be general and robust. Note also that if no input is given, there can be no meaningful output. The file [`parsefilename.sh`](./parsefilename.sh) embodies the improvements we have discussed and is available for completeness.
+
+We have now concluded the first part of processing a filename, and are ready to proceed to the second part, which is prettifying a filename. Although filenames with spaces, tabs, and and non-alphanumeric characters can be processed in Linux, the natural etiquette in file naming is not to use such characters. But what happens if we are bequeathed with files having such names? Renaming them one-by-one by hand will be laborious and even impractical. How do we automate the renaming of such files with filenames that are Linux-friendly? That is what will occupy us for the rest of this blog.
 
 
 ## Filenames: cacophony to harmony
