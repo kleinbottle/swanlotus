@@ -150,13 +150,13 @@ fi
 echo "Extension is $ext."
 ~~~
 
-Note that the `=~` sign is a regular expression operator that has been inducted into `bash`. It returns a `0` for `true` and a `1` for `false`, which may sound contrary to expectations, but that is the correct behaviour. This may be seen by appending `echo $?` above to each branch of the `if` conditional.
+Note that the `=~` sign is a _regular expression_ operator that has been inducted into `bash`. It returns a `0` for `true` and a `1` for `false`, which may sound contrary to expectations, but that is the correct behaviour. This may be seen by appending `echo $?` above to each branch of the `if` conditional.
 
-Mporeover, when match, the left side is double quoted while the right side is either a literal, like `'.'`, or the dot character is escaped as in `\.`. If a plain `.` is used, with no "protection", it will natch any character in accordance with regex rules, and we risk getting the wrong result. It is attention to every small detail that ensures success with `bash` scripts. In the process, you also learn patience. :wink:
+Moreover, when match, the left side is double quoted while the right side is either a literal, like `'.'`, or the dot character is escaped as in `\.`. If a plain `.` is used, with no "protection", it will natch any character in accordance with regex rules, and we risk getting the wrong result. It is attention to every small detail that ensures success with `bash` scripts. In the process, you also learn patience. :wink:
 
 ### Filenames with multiple dot characters
 
-I have encountered occasions where the `fullname` of a file contains multiple `.` characters. In such cases, we must adopt a convention that the extension is what occurs to the _right of the rightmost_ dot character. We will avoid pathological cases like a filename _ending_ with a `.` character. If theseadditional assumptions hold, our pattern-matching for the extension will return the correct result.
+I have encountered occasions where the `fullname` of a file contains multiple `.` characters. In such cases, we must adopt a convention that the extension is what occurs to the _right of the rightmost_ dot character. We will avoid pathological cases like a filename _ending_ with a `.` character. If these additional assumptions hold, our pattern-matching for the extension will return the correct result.
 
 ## Filenames without a path
 
@@ -182,12 +182,37 @@ echo "Path is $path."
 
 ## The generalized filename parser
 
-The revised file for parsing a filename into its components therefore needs to be augmented with these tests if it is to be general and robust. Note also that if no input is given, there can be no meaningful output. The file [`parsefilename.sh`](./parsefilename.sh) embodies the improvements we have discussed and is available for completeness.
+The revised file for parsing a filename into its components therefore needs to be augmented with these tests if it is to be general and robust. Note also that if no input is given, there can be no meaningful output. The file [`parsefilename.sh`]({attach}scripts/parsefilename.sh) embodies the improvements we have discussed and is available for completeness.
 
 We have now concluded the first part of processing a filename, and are ready to proceed to the second part, which is prettifying a filename. Although filenames with spaces, tabs, and and non-alphanumeric characters can be processed in Linux, the natural etiquette in file naming is not to use such characters. But what happens if we are bequeathed with files having such names? Renaming them one-by-one by hand will be laborious and even impractical. How do we automate the renaming of such files with filenames that are Linux-friendly? That is what will occupy us for the rest of this blog.
 
-
 ## Filenames: cacophony to harmony
+
+The file naming convention in Linux is that there will be no spaces or other non-alphanumeric characters, _except for the underscore_ character `_` in a filename. This is because spaces are used as field separators to break up a string into its components: something known as [_word splitting_](https://mywiki.wooledge.org/WordSplitting?highlight=%28spaces%29%7C%28word%29%7C%28splitting%29).
+
+But not all files respect this nomenclature of alphanumeric plus underscore characters alone. What if you encountered a file named so: `El??Condor   _Pasa%^!.mp3`. How would you sanitize it into something that could be easily processed by Linux when supplied as an argument?
+
+This set me developing a simple script to convert all non-compatible characters into acceptable characters so that the end result would be a sanitized, Linux-compatible filename. Here is my thought process as an algorith:
+
+#.  Replace all non-standard characters with dashes `-`.
+#.  Retain underscores, `_`, unchanged.
+#.  Multiple instances of spaces,or visible characters, will be replaced by a _single_ dash.
+
+The standard and most obvious way to do this was by using regular expressions and a tool such as [`sed`](https://www.grymoire.com/Unix/Sed.html) or [`perl`](https://perldoc.perl.org/perlretut). I also realized that the [POSIX character classes](https://www.regular-expressions.info/posixbrackets.html) such as `[:space:]`, `[:blank:]`, `[:punct:]` held the key to concisely including all characters that needed to be substituted with dashes. And that was the trajectory I took at the start.
+
+## Using `sed` to sanitize a filename
+
+How might the pathological filename (or string) `El??Condor   _Pasa%^!.mp3` be sanitized using `sed`? We will hence forth only use the basename of this filename. Typically, `sed` works on text within a file. But we may also pass strings to `sed` as [literals rather than an input file](https://www.baeldung.com/linux/sed-with-string). Rather than stumble through the tedious path I took to success, I record below the final [`sed` one-liner](https://catonmat.net/sed-one-liners-explained-part-one) that I assembled.
+
+```sed
+sed -re 's/([[:space:]]|[[:punct]])+/-/g' <<< 'El??Condor   _Pasa%^!'
+```
+
+
+
+But there was always the nagging refrain, "Why not do it all in `bash` itself, using pattern matching?". In response to this, I hacked my way through several iterations of trying to perform the substitution in `bash` itself.
+
+
 
 Spaces Non-alphanumeric characters
 Need to preserve _
