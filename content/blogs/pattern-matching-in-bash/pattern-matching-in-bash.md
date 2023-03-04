@@ -202,22 +202,96 @@ The standard and most obvious way to do this was by using regular expressions an
 
 ## Using `sed` to sanitize a filename
 
-How might the pathological filename (or string) `El??Condor   _Pasa%^!.mp3` be sanitized using `sed`? We will hence forth only use the basename of this filename. Typically, `sed` works on text within a file. But we may also pass strings to `sed` as [literals rather than an input file](https://www.baeldung.com/linux/sed-with-string). Rather than stumble through the tedious path I took to success, I record below the final [`sed` one-liner](https://catonmat.net/sed-one-liners-explained-part-one) that I assembled.
+How might the pathological filename (or string) `El??Condor   _Pasa%^!.mp3`---which contains spaces and punctuation---be sanitized using `sed`?
 
-```sed
-sed -re 's/([[:space:]]|[[:punct]])+/-/g' <<< 'El??Condor   _Pasa%^!'
+Typically, `sed` works on text within a file. But we may also pass strings to `sed` as [literals rather than an input file](https://www.baeldung.com/linux/sed-with-string). Rather than stumble through the tedious path I took to success, I record below the final [`sed` one-liner](https://catonmat.net/sed-one-liners-explained-part-one) that I assembled. Note that we will henceforth use only the basename of this filename in all examples.
+
+```bash
+sed -re "s/([[:space:]]|[[:punct:]])+/-/g" <<< 'El??Condor   _Pasa%^!'
 ```
 
+which gives the result:
+
+```text
+El-Condor-Pasa-
+```
+
+Note that _multiple_ spaces and punctuation characters have been replaced by _single_ hyphens or dashes. The '+' sign in the expression confers this behaviour. The fact that we want to change _both_ spaces and punctuation is the reason for the `|` alternation sign which might be loosely looked at as a logical [or]{.smallcaps}. The `g` parameter at the end (for global) means that _all_ such occurrences will be substituted. The `[[:space":]]` and `[[:punct:]]` incantations are called [POSIX character classes](https://www.regular-expressions.info/posixbrackets.html). The option `-re` is given to `sed` to confer the regular expression matching behaviour we are after. And the `<<<` allows an input to be given immediately to `sed`.
+
+Now, are we satisfied with our result? Not really, on two counts:
+
+#.  We want to retain the underscore `_` character unchanged, if and when it occurs in the original string.
+#.  We do not want a terminal hyphen in the modified filename, as in this case.
+
+The second is easier to fix first. We will resort to the end-of-line anchor `$` to identify the terminal hyphen after the first replacement. Since `sed` can work consecutively on the string, or its modified variant, we can simply chain two substitutions using pipes so:
 
 
-But there was always the nagging refrain, "Why not do it all in `bash` itself, using pattern matching?". In response to this, I hacked my way through several iterations of trying to perform the substitution in `bash` itself.
+```bash
+sed -r "s/([[:space:]]|[[:punct:]])+/-/g"  <<< 'El??Condor   _Pasa%^!' | sed - -r "s/-$//"
+```
+
+to get
+
+```
+El-Condor-Pasa
+```
+
+as desired. Note that the `-` character in the second invocation of `sed` indicates that the input for this second `sed` substitution is the _standard input_ piped through the command line.
+
+The requirement to pass underscores unchanged is more serious because we need to modify the first `sed` replacement. Because the `[[:punct:]]` class also includes the underscore character, it is a sticky business to keep all the underscores but replace every other punctuation symbol by a dash. This is like a set complement for which the regex syntax is not available. One _could_ enumerate all punctuation symbols and exclude only `_` from that list, use that class instead of `[[:punct:]]`, but this approach strikes me as inelegant.
+
+A better and more elegant way is to invert the requirement and _preserve_ the alphanumeric and underscore characters alone, and _replace everything else_ by a dash:
+
+```bash
+sed -r "s/([^A-Za-z0-9_])+/-/g" <<< 'El??Condor   _Pasa%^!' | sed - -r "s/-$//"
+```
+
+One caveat is that this expression will only work with ASCII characters.
+
+## Can it be done in `bash`?
+
+But there was always the nagging refrain, "Why not do it all in `bash` itself, using pattern matching?". So, rather than considering how to do this in `perl`, I hacked my way through several iterations of trying to perform the substitution in `bash` itself.
+
+The expression `[A-Za-z0-9_]` has a rather fortuitious abbreviation as a POSIX character class in `bash`. It is denoted by `[[:word:]]`. The pattern-matching/replacement expression in `bash` becomes:
+
+```bash
+#!/bin/bash
+shopt -s extglob
+
+filename='El??Condor   _Pasa%^!'
+
+#
+# The character class [:word:] includes all
+# alphanumeric characters and the underscore.
+# ^[:word:] is the negation of this condition.
+# So, we replace all non-alphanumeric characters and non-underscores
+# with the dash.
+#
+# We then extract the last character in the string newname
+# and check whether it matches the dash character.
+# If it does, we strip it off, to get the finalname.
+#
+newname="${filename//+([^[:word:]])/-}"
+lastchar="${newname: -1}"
+echo "$lastchar"
+if [[ "$lastchar" =~ '-' ]]
+then
+  finalname="${newname::-1}"
+fi
+echo "$finalname"
+```
+
+The syntax for substring extraction in `bash` is `${parameter:offset:length}` where `offset` is measured starting fron `0` at the extreme left. Note especially the space bwenteen the `:` and the `-` in the expression `"${newname: -1}"`. It is to avoid ambiguity with another expression of the form `${parameter:-word}`. Another idiom used above is `"${newname::-1}"`, which is shorthand for `"${newname:0:-1}"`. The interested reader is referred to the [official documentation online](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion) for a comprehensive explanation of the dazzling features of _parameter expansion_ ` in `bash`. For an admirable summary of features like parameter expansion, do also visit the [BashGuide website](https://mywiki.wooledge.org/BashGuide/Parameters).
 
 
 
-Spaces Non-alphanumeric characters
-Need to preserve _
-My preference for -
-
+https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameters
+https://tldp.org/LDP/abs/html/string-manipulation.html
+https://www.baeldung.com/linux/remove-last-character-from-line
+https://stackpointer.io/script/shell-script-get-last-character-string/299/
+https://www.baeldung.com/linux/remove-last-character-from-line
+https://www.baeldung.com/linux/bash-substring
+https://www.cyberciti.biz/faq/how-to-extract-substring-in-bash/
 
 ## Acknowledgements
 
