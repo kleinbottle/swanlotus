@@ -14,7 +14,7 @@ def format_lang(language_setting):
 
 def get_blog_image_dirs():
     """Return a list of directories that contain the images for each blog."""
-    blog_image_dirs = []
+    blog_image_dirs = ["images"]
     blogs_dir = "content/blogs"
     for item in os.listdir(blogs_dir):
         if os.path.isdir(os.path.join(blogs_dir, item)):
@@ -27,7 +27,8 @@ def get_extra_metadata_paths():
     """Return a dictionary that specifies the destination for image directories."""
     extra_metadata_paths = {}
     for image_path in get_blog_image_dirs():
-        extra_metadata_paths[image_path] = {"path": "blogs/images"}
+        if image_path != "images":
+            extra_metadata_paths[image_path] = {"path": "blogs/images"}
     return extra_metadata_paths
 
 
