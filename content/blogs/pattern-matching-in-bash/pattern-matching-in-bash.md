@@ -6,7 +6,7 @@ modified: "2023-03-01"
 summary: "The `bash` shell embodies powerful pattern-matching and substitution capabilities These have been growing steadily since version 2.02, released in 1998. This blog gives practical examples for using these powerful, but somewhat understated features, to achieve common tasks efficiently and tersely."
 category: Programming
 tags: bash, globs, regular expressions, parameter replacement, pattern matching, substitution
-opengraphimage: "bash-script.png"
+opengraphimage: "../../images/bash-script.jpg"
 ---
 
 ## The arcane powers of the `bash` shell
