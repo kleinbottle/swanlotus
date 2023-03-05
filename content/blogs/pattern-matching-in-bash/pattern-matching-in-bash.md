@@ -11,7 +11,7 @@ opengraphimage: "bash-script.jpg"
 
 ## The arcane powers of the `bash` shell
 
-The [`bash` shell](https://www.gnu.org/software/bash/) embodies powerful pattern-matching and substitution capabilities, many of which are relatively unknown [@parametersubs; @frazier2019; @gnupattern; @stringops]. The programs, [`sed`](https://www.gnu.org/software/sed/), [`awk`](https://www.grymoire.com/Unix/Awk.html), [`grep`](https://www.gnu.org/software/grep/manual/grep.html), and [`perl`](https://learnbyexample.github.io/learn_perl_oneliners/line-processing.html) have been traditionally used for matching and manipulating lines and strings in Linux.
+The [`bash` shell](https://www.gnu.org/software/bash/) [@newham2005] embodies powerful pattern-matching and substitution capabilities, many of which are relatively unknown [@parametersubs; @frazier2019; @gnupattern; @stringops]. The programs, [`sed`](https://www.gnu.org/software/sed/), [`awk`](https://www.grymoire.com/Unix/Awk.html), [`grep`](https://www.gnu.org/software/grep/manual/grep.html), and [`perl`](https://learnbyexample.github.io/learn_perl_oneliners/line-processing.html) have been traditionally used for matching and manipulating lines and strings in Linux.
 
 But the pattern-matching and string manipulation capabilities of `bash` have grown steadily since version 2.02, which was released in 1998. This blog gives practical examples for using these powerful, but somewhat understated features, to achieve common tasks efficiently and tersely, directly from within `bash` itself.
 
@@ -99,7 +99,7 @@ echo "basename is ${filename%.*}"
 
 The use of the symbols `#` and `%` in the pattern matching expressions might seem arbitrary or whimsical. For a start, they do not conform to the usual delimiters `^` and `$` for the beginning and end of a line. Because we are dealing with strings rather than lines here, those symbols are not used.
 
-One other point to keep in view constantly is to avoid looking at `bash` pattern matching through the lens of [regular expressions](https://www.regular-expressions.info/tutorial.html). There are some similarities, but the two are not identical.
+One other point to keep in view constantly is to avoid looking at `bash` pattern matching through the lens of [regular expressions](https://www.regular-expressions.info/tutorial.html) [@posixcharclass; @introbashregex; @writeregexp]. There are some similarities, but the two are not identical.
 
 So, [what's the dope](https://www.ldoceonline.com/dictionary/the-dope-on-somebody-something) on `#` and `%`? These two symbols have been chosen for their near universal usage as a prefix and suffix respectively. It is customary to write `#1` for "number one", and `20%` for "twenty percent", where you will notice that the `#` is written as a _prefix_ and the `%` is written as a _suffix_ to the number.
 
@@ -142,7 +142,7 @@ Surely, you did not expect the extension to be the fullname of the file. Yet, th
 
 Imagine you are moving from left to right until you hit the _last_ `.` character. When you do, you discard whatever is to the left of the `.` along with that character itself. If there is no `.` character, you do not stop and you do not discard anything. So, you are left with what you started with. _But, although logical, that is not the intent._
 
-One way to overcome this issue is to test for a period or dot character in the original `fullname` string. If there is no `.` character, we set the extension to the empty string. Otherwise, we set it to what we get by the pattern-matching we have discussed. The corrected routine for the extension should thus run:
+One way to overcome this issue is to test for a period or dot character in the original `fullname` string [@periodtest; @dottest; @bashscriptpatmatch]. If there is no `.` character, we set the extension to the empty string. Otherwise, we set it to what we get by the pattern-matching we have discussed. The corrected routine for the extension should thus run:
 
 ~~~bash
 #!/bin/bash
@@ -162,7 +162,7 @@ fi
 echo "Extension is $ext."
 ~~~
 
-Note that the `=~` sign is a _regular expression_ operator that has been inducted into `bash`. It returns a `0` for `true` and a `1` for `false`, which may sound contrary to expectations, but that is the correct behaviour. This may be seen by appending `echo $?` above to each branch of the `if` conditional.
+Note that the `=~` sign is a _regular expression_ operator that has been inducted into `bash` [@equaltilde]. It returns a `0` for `true` and a `1` for `false`, which may sound contrary to expectations, but that is the correct behaviour. This may be seen by appending `echo $?` above to each branch of the `if` conditional.
 
 Moreover, when matching, the left side is double quoted while the right side is either escaped as in `\.` or is a literal, like `'.'` [@dottest]. If a plain `.` is used, with no "protection", it will natch any character in accordance with regex rules, and we risk getting the wrong result. It is attention to every small detail that ensures success with `bash` scripts. In the process, you also learn patience. :wink:
 
@@ -307,7 +307,7 @@ fi
 echo "$finalname"
 ```
 
-The syntax for substring extraction in `bash` is `${parameter:offset:length}` where `offset` is measured starting from `0` at the extreme left.
+The syntax for substring extraction in `bash` is `${parameter:offset:length}` where `offset` is measured starting from `0` at the extreme left [@substring; @parametersubs; @stringops].
 
 (a)  Note especially the space between the `:` and the `-` in the expression `"${newname: -1}"`. This space is inserted to avoid ambiguity with _another_ expression of the form `${parameter:-word}` which has a different function.
 
@@ -317,7 +317,7 @@ The syntax for substring extraction in `bash` is `${parameter:offset:length}` wh
 
 The interested reader is referred to the [official documentation online](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion) for a comprehensive explanation of the dazzling features of _parameter expansion_ [@shellparamexp] and _substring removal_ [@wikisubstring] in `bash`. For an admirable summary of features like parameter expansion, do also visit the clear and comprehensive [BashGuide website](https://mywiki.wooledge.org/BashGuide/Parameters).
 
-If you are familiar with `bash` but require an [aide-mémoire](https://www.thefreedictionary.com/aide+memoire) for some aspect of string matching or manipulation, the section with the heading ["Recommended Shell resources"](https://wiki.bash-hackers.org/start#recommended_shell_resources) is the best place to start your search[@.bhwstart]. It contains a wealth of authoritative links that will speedily dispel your doubts.
+If you are familiar with `bash` but require an [aide-mémoire](https://www.thefreedictionary.com/aide+memoire) for some aspect of string matching or manipulation, the section with the heading ["Recommended Shell resources"](https://wiki.bash-hackers.org/start#recommended_shell_resources) is the best place to start your search[@bhwstart]. It contains a wealth of authoritative links that will speedily dispel your doubts.
 
 ## Feedback
 
