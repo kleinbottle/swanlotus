@@ -3,10 +3,10 @@ title: Pattern Matching and Substitution in `bash`
 author: "R (Chandra) Chandrasekhar"
 date: "2023-02-28"
 modified: "2023-03-01"
-summary: "The `bash` shell embodies powerful pattern-matching and substitution capabilities These have been growing steadily since version 2.02, released in 1998. This blog gives practical examples for using these powerful, but somewhat understated features, to achieve common tasks efficiently and tersely."
+summary: "... the pattern-matching and string manipulation capabilities of `bash` have grown steadily since version 2.02, which was released in 1998. This blog gives practical examples for using these powerful, but somewhat understated features, to achieve common tasks efficiently and tersely, directly from within `bash` itself."
 category: Programming
 tags: bash, globs, regular expressions, parameter replacement, pattern matching, substitution
-opengraphimage: "../../images/bash-script.jpg"
+opengraphimage: "bash-script.jpg"
 ---
 
 ## The arcane powers of the `bash` shell
