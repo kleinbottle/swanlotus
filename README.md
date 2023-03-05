@@ -222,8 +222,6 @@ opengraphimage: "<image-name>.jpg"
 
 Due to the limitations of Open Graph only JPG images are supported.
 
-Also, you cannot use an image that is not used in the content of a page or blog as an Open Graph image. This is because Pelican **will not** move an image not used in the content to the desired location on the website.
-
 ## Searching the website
 
 The SwanLotus website is searchable and uses the [pelican-search](https://github.com/pelican-plugins/search) plugin to achieve this.
