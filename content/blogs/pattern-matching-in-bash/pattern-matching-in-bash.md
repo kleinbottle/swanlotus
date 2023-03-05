@@ -6,8 +6,14 @@ modified: "2023-03-01"
 summary: "The `bash` shell embodies powerful pattern-matching and substitution capabilities These have been growing steadily since version 2.02, released in 1998. This blog gives practical examples for using these powerful, but somewhat understated features, to achieve common tasks efficiently and tersely."
 category: Programming
 tags: bash, globs, regular expressions, parameter replacement, pattern matching, substitution
-opengraphimage: "bash-pattern.png"
+opengraphimage: "bash-script.png"
 ---
+
+## The arcane powers of the `bash` shell
+
+The [`bash` shell](https://www.gnu.org/software/bash/) embodies powerful pattern-matching and substitution capabilities, many of which are relatively unknown [@parametersubs; @frazier2019; @gnupattern; @stringops]. The programs, [`sed`](https://www.gnu.org/software/sed/), [`awk`](https://www.grymoire.com/Unix/Awk.html), and [`perl`](https://learnbyexample.github.io/learn_perl_oneliners/line-processing.html) have been traditionally used for matching and manipulating lines and strings in Linux.
+
+But the pattern-matching and string manipulation capabilities of `bash` have grown steadily since version 2.02, which was released in 1998. This blog gives practical examples for using these powerful, but somewhat understated features, to achieve common tasks efficiently and tersely, directly from within `bash` itself.
 
 ## Parsing filenames
 
@@ -15,11 +21,11 @@ A fully qualified filename consists of a `path`, a `basename`, and an `extension
 
 ### Extended globbing
 
-[_Globbing_](https://en.wikipedia.org/w/index.php?title=Glob_(programming)&oldid=1133836865) is the unflattering term---an abbreviation for _global_---used to denote an operation to extract files satisfying certain conditions [@glob2023 @globbingref]. It is applicable also to the `bash` command line. For our purposes, it is useful and sometimes mandatory, to set `shopt -s extglob` after the [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) line.
+[_Globbing_](https://en.wikipedia.org/w/index.php?title=Glob_(programming)&oldid=1133836865) is the unflattering term---an abbreviation for _global_---used to denote an operation to extract files satisfying certain conditions [@glob2023; @globbingref]. It is applicable also to the `bash` command line. For our purposes, it is useful and sometimes mandatory, to set `shopt -s extglob` after the [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) line.
 
 ### A canonical filename
 
-A canonical filename will comprise these components:
+A [canonical](https://www.thefreedictionary.com/canonicalfilename) will comprise these components:
 
 #.  a _path_ with the forward slash `/` as the separator between elements denoting the path;
 #.  a _filename_ in two parts:
