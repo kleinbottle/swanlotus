@@ -3,7 +3,7 @@ title: Pattern Matching and Substitution in `bash`
 author: "R (Chandra) Chandrasekhar"
 date: "2023-02-28"
 modified: "2023-03-01"
-summary: "... the pattern-matching and string manipulation capabilities of `bash` have grown steadily since version 2.02, which was released in 1998. This blog gives practical examples for using these powerful, but somewhat understated features, to achieve common tasks efficiently and tersely, directly from within `bash` itself."
+summary: "The `bash` shell embodies powerful pattern-matching and substitution capabilities, many of which are relatively unknown. The programs, `sed`, `awk`, `grep`, and `perl` have been traditionally used for matching and manipulating lines and strings in Linux. But the pattern-matching and string manipulation capabilities of `bash` have grown steadily since version 2.02, which was released in 1998. This blog gives practical examples for using these powerful, but somewhat understated features, to achieve common tasks efficiently and tersely, directly from within `bash` itself."
 category: Programming
 tags: bash, globs, regular expressions, parameter replacement, pattern matching, substitution
 opengraphimage: "bash-script.jpg"
@@ -11,7 +11,7 @@ opengraphimage: "bash-script.jpg"
 
 ## The arcane powers of the `bash` shell
 
-The [`bash` shell](https://www.gnu.org/software/bash/) embodies powerful pattern-matching and substitution capabilities, many of which are relatively unknown [@parametersubs; @frazier2019; @gnupattern; @stringops]. The programs, [`sed`](https://www.gnu.org/software/sed/), [`awk`](https://www.grymoire.com/Unix/Awk.html), and [`perl`](https://learnbyexample.github.io/learn_perl_oneliners/line-processing.html) have been traditionally used for matching and manipulating lines and strings in Linux.
+The [`bash` shell](https://www.gnu.org/software/bash/) embodies powerful pattern-matching and substitution capabilities, many of which are relatively unknown [@parametersubs; @frazier2019; @gnupattern; @stringops]. The programs, [`sed`](https://www.gnu.org/software/sed/), [`awk`](https://www.grymoire.com/Unix/Awk.html), [`grep`](https://www.gnu.org/software/grep/manual/grep.html), and [`perl`](https://learnbyexample.github.io/learn_perl_oneliners/line-processing.html) have been traditionally used for matching and manipulating lines and strings in Linux.
 
 But the pattern-matching and string manipulation capabilities of `bash` have grown steadily since version 2.02, which was released in 1998. This blog gives practical examples for using these powerful, but somewhat understated features, to achieve common tasks efficiently and tersely, directly from within `bash` itself.
 
@@ -21,7 +21,7 @@ A fully qualified filename consists of a `path`, a `basename`, and an `extension
 
 ### Extended globbing
 
-[_Globbing_](https://en.wikipedia.org/w/index.php?title=Glob_(programming)&oldid=1133836865) is the unflattering term---an abbreviation for _global_---used to denote an operation to extract files satisfying certain conditions [@glob2023; @globbingref; globhistory]. It is applicable also to the `bash` command line. For our purposes, it is useful and sometimes mandatory, to set `shopt -s extglob` after the [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) line.
+[_Globbing_](https://en.wikipedia.org/w/index.php?title=Glob_(programming)&oldid=1133836865) is the unflattering term---an abbreviation for _global_---used to denote an operation to extract files satisfying certain conditions [@glob2023; @globbingref; @globhistory]. It is applicable also to the `bash` command line. For our purposes, it is useful and sometimes mandatory, to set `shopt -s extglob` after the [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) line.
 
 ### A canonical filename
 
@@ -276,7 +276,7 @@ Although it looks awkward---having a `-` followed by a `_`---this is exactly the
 
 But there was always the nagging refrain, "Why not do it all in `bash` itself, using pattern matching?". So, rather than considering how to do this in `perl`, I hacked my way through several iterations of trying to perform the substitution in `bash` itself.
 
-The expression `[A-Za-z0-9_]` has a rather fortuitious abbreviation as a POSIX character class in `bash`: it is denoted by `[[:word:]]`. The pattern-matching/replacement expression in `bash` therefore becomes:
+The expression `[A-Za-z0-9_]` has a rather fortuitous abbreviation as a POSIX character class in `bash`: it is denoted by `[[:word:]]`. The pattern-matching/replacement expression in `bash` therefore becomes:
 
 ```bash
 #!/bin/bash
@@ -313,19 +313,11 @@ The syntax for substring extraction in `bash` is `${parameter:offset:length}` wh
 
 (b) The final idiom used above is `"${newname::-1}"`, which is shorthand for `"${newname:0:-1}"`. This operation strips off the final character in the variable `"${newname}"`.
 
-The interested reader is referred to the [official documentation online](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion) [@shellparamexp] for a comprehensive explanation of the dazzling features of _parameter expansion_ in `bash`. For an admirable summary of features like parameter expansion, do also visit the clear and comprehensive [BashGuide website](https://mywiki.wooledge.org/BashGuide/Parameters).
+## To explore further
 
+The interested reader is referred to the [official documentation online](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion) for a comprehensive explanation of the dazzling features of _parameter expansion_ [@shellparamexp] and _substring removal_ [@wikisubstring] in `bash`. For an admirable summary of features like parameter expansion, do also visit the clear and comprehensive [BashGuide website](https://mywiki.wooledge.org/BashGuide/Parameters).
 
-
-https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameters
-https://tldp.org/LDP/abs/html/string-manipulation.html
-https://www.baeldung.com/linux/remove-last-character-from-line
-https://stackpointer.io/script/shell-script-get-last-character-string/299/
-https://www.baeldung.com/linux/remove-last-character-from-line
-https://www.baeldung.com/linux/bash-substring
-https://www.cyberciti.biz/faq/how-to-extract-substring-in-bash/
-
-## Acknowledgements
+If you are familiar with `bash` but require an [aide-mémoire](https://www.thefreedictionary.com/aide+memoire) for some aspect of string matching or manipulation, the section with the heading ["Recommended Shell resources"](https://wiki.bash-hackers.org/start#recommended_shell_resources) is the best place to start your search[@.bhwstart]. It contains a wealth of authoritative links that will speedily dispel your doubts.
 
 ## Feedback
 

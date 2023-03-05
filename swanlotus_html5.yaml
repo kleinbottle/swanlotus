@@ -19,7 +19,7 @@ filters:
   - pandoc-crossref
   - citeproc
 
-csl: "./ieee-with-url.csl"
+csl: "./association-for-computing-machinery.csl"
 
 metadata:
   link-citations: true
