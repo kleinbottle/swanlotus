@@ -19,7 +19,7 @@ filters:
   - pandoc-crossref
   - citeproc
 
-csl: "./association-for-computing-machinery.csl"
+csl: "./springer-humanities-brackets.csl"
 
 metadata:
   link-citations: true
