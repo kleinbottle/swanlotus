@@ -164,7 +164,7 @@ echo "Extension is $ext."
 
 Note that the `=~` sign is a _regular expression_ operator that has been inducted into `bash` [@equaltilde]. It returns a `0` for `true` and a `1` for `false`, which may sound contrary to expectations, but that is the correct behaviour. This may be seen by appending `echo $?` above to each branch of the `if` conditional.
 
-Moreover, when matching, the left side is double quoted while the right side is either escaped as in `\.` or is a literal, like `'.'` [@dottest]. If a plain `.` is used, with no "protection", it will natch any character in accordance with regex rules, and we risk getting the wrong result. It is attention to every small detail that ensures success with `bash` scripts. In the process, you also learn patience. :wink:
+Moreover, when matching, the left side is double quoted while the right side is either escaped as in `\.` or is a literal, like `'.'` [@dottest]. If a plain `.` is used, with no "protection", it will natch any character in accordance with regex rules, and we risk getting the wrong result. It is attention to every small detail that ensures success with `bash` scripts. In the process, you also learn patience. \emojifont :wink: \normalfont
 
 ### Filenames with multiple dot characters
 
@@ -317,7 +317,7 @@ The syntax for substring extraction in `bash` is `${parameter:offset:length}` wh
 
 The interested reader is referred to the [official documentation online](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion) for a comprehensive explanation of the dazzling features of _parameter expansion_ [@shellparamexp] and _substring removal_ [@wikisubstring] in `bash`. For an admirable summary of features like parameter expansion, do also visit the clear and comprehensive [BashGuide website](https://mywiki.wooledge.org/BashGuide/Parameters).
 
-If you are familiar with `bash` but require an [aide-mémoire](https://www.thefreedictionary.com/aide+memoire) for some aspect of string matching or manipulation, the section with the heading ["Recommended Shell resources"](https://wiki.bash-hackers.org/start#recommended_shell_resources) is the best place to start your search[@bhwstart]. It contains a wealth of authoritative links that will speedily dispel your doubts.
+If you are familiar with `bash` but require an [aide-mémoire](https://www.thefreedictionary.com/aide+memoire) for some aspect of string matching or manipulation, the section with the heading ["Recommended Shell resources"](https://wiki.bash-hackers.org/start#recommended_shell_resources) is the best place to start your search [@bhwstart]. It contains a wealth of authoritative links that will speedily dispel your doubts.
 
 ## Feedback
 

@@ -252,44 +252,75 @@
 \thispagestyle{empty}
 
 
+\hypertarget{the-arcane-powers-of-the-bash-shell}{%
+\subsection{\texorpdfstring{The arcane powers of the \texttt{bash}
+shell}{The arcane powers of the bash shell}}\label{the-arcane-powers-of-the-bash-shell}}
+
+The \href{https://www.gnu.org/software/bash/}{\texttt{bash} shell}
+{[}\protect\hyperlink{ref-newham2005}{15}{]} embodies powerful
+pattern-matching and substitution capabilities, many of which are
+relatively unknown
+{[}\protect\hyperlink{ref-gnupattern}{1},\protect\hyperlink{ref-parametersubs}{7},\protect\hyperlink{ref-frazier2019}{13},\protect\hyperlink{ref-stringops}{14}{]}.
+The programs, \href{https://www.gnu.org/software/sed/}{\texttt{sed}},
+\href{https://www.grymoire.com/Unix/Awk.html}{\texttt{awk}},
+\href{https://www.gnu.org/software/grep/manual/grep.html}{\texttt{grep}},
+and
+\href{https://learnbyexample.github.io/learn_perl_oneliners/line-processing.html}{\texttt{perl}}
+have been traditionally used for matching and manipulating lines and
+strings in Linux.
+
+But the pattern-matching and string manipulation capabilities of
+\texttt{bash} have grown steadily since version 2.02, which was released
+in 1998. This blog gives practical examples for using these powerful,
+but somewhat understated features, to achieve common tasks efficiently
+and tersely, directly from within \texttt{bash} itself.
+
 \hypertarget{parsing-filenames}{%
-\section{Parsing filenames}\label{parsing-filenames}}
+\subsection{Parsing filenames}\label{parsing-filenames}}
 
 A fully qualified filename consists of a \texttt{path}, a
-\texttt{basename}, and a file \texttt{extension}. While not all
-filenames are encountered in their full glory, it helps to decompose any
-given filename into its constituent parts to help with housekeeping
-functions on a machine running \texttt{bash}---for example, to
-facilitate searching, sorting and other file-related functions.
+\texttt{basename}, and an \texttt{extension}. While not all filenames
+are encountered in their full glory, it helps to decompose any given
+filename into its constituent parts to help with housekeeping functions
+on a machine running \texttt{bash}---for example, to facilitate
+searching, sorting and other file-related functions.
 
 \hypertarget{extended-globbing}{%
-\subsection{Extended globbing}\label{extended-globbing}}
+\subsubsection{Extended globbing}\label{extended-globbing}}
 
-\emph{Globbing} is the unflattering term---abbreviation for
-\emph{global}---used to denote an operation to extract files satisfying
-certain conditions \protect\hyperlink{ref-glob2023}{{[}1{]}}. It is
-applicable also to the \texttt{bash} command line. For our purposes, it
-is useful and sometimes mandatory to set \texttt{shopt\ -s\ extglob}
-after the \href{https://en.wikipedia.org/wiki/Shebang_(Unix)}{shebang}
-line.
+\href{https://en.wikipedia.org/w/index.php?title=Glob_(programming)\&oldid=1133836865}{\emph{Globbing}}
+is the unflattering term---an abbreviation for \emph{global}---used to
+denote an operation to extract files satisfying certain conditions
+{[}\protect\hyperlink{ref-globhistory}{2},\protect\hyperlink{ref-globbingref}{16},\protect\hyperlink{ref-glob2023}{20}{]}.
+It is applicable also to the \texttt{bash} command line. For our
+purposes, it is useful and sometimes mandatory, to set
+\texttt{shopt\ -s\ extglob} after the
+\href{https://en.wikipedia.org/wiki/Shebang_(Unix)}{shebang} line.
 
 \hypertarget{a-canonical-filename}{%
-\subsection{A canonical filename}\label{a-canonical-filename}}
+\subsubsection{A canonical filename}\label{a-canonical-filename}}
 
-A canonical filename will comprise these components:
+A \href{https://www.thefreedictionary.com/canonical}{canonical} filename
+will comprise these components:
 
 \begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
 \tightlist
 \item
   a \emph{path} with the forward slash \texttt{/} as the separator
   between elements denoting the path;
 \item
-  a filename comprising a \emph{basename} which appears immediately
-  after the \emph{last} \texttt{/} character;
-\item
-  a \emph{file extension} that occurs after the basename immediately
-  after a \texttt{.} or period character.
+  a \emph{filename} in two parts:
+
+  \begin{enumerate}
+  \def\labelenumii{(\alph{enumii})}
+  \tightlist
+  \item
+    comprising a \emph{basename} which appears immediately after the
+    \emph{last} \texttt{/} character; and
+  \item
+    a \emph{file extension} that occurs after the basename and
+    immediately after a \texttt{.} or period character.
+  \end{enumerate}
 \end{enumerate}
 
 \texttt{/my\_path/is/quite/long/basename.ext} is a canonical filename
@@ -298,7 +329,7 @@ where the abovenamed elements are as follows:
 \begin{enumerate}
 \tightlist
 \item
-  path: \texttt{/my\_path/is/quite/long/}
+  path: \texttt{/my\_path/is/quite/long}
 \item
   basename: \texttt{basename}
 \item
@@ -308,51 +339,59 @@ where the abovenamed elements are as follows:
 \end{enumerate}
 
 \hypertarget{parsing-the-filename}{%
-\subsection{Parsing the filename}\label{parsing-the-filename}}
+\subsubsection{Parsing the filename}\label{parsing-the-filename}}
 
 Our next task is to dissect the canonical filename into its above
-components using \texttt{bashisms}:
+components using pattern-matching in \texttt{bash}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\#!/bin/bash}
+\CommentTok{\#file{-}parse.sh}
 \BuiltInTok{shopt} \AttributeTok{{-}s}\NormalTok{ extglob}
 
 \VariableTok{fullname}\OperatorTok{=}\StringTok{"/my\_path/is/quite/long/basename.ext"}
 \BuiltInTok{echo} \StringTok{"fullname is }\VariableTok{$\{fullname\}}\StringTok{"}
 
 \CommentTok{\#}
-\CommentTok{\# Extract path}
-\CommentTok{\# Approach from the right until the \_first\_ \textasciigrave{}/\textasciigrave{} is encountered}
-\CommentTok{\# and throw away everything from the \_right\_ end up to and including that \textasciigrave{}/\textasciigrave{}.}
+\CommentTok{\# Extract $path}
+\CommentTok{\# Approach from the right until the \_first\_ \textasciigrave{}/\textasciigrave{}}
+\CommentTok{\# is encountered and throw away everything}
+\CommentTok{\# from the \_right\_ end up to and including that \textasciigrave{}/\textasciigrave{}.}
 \CommentTok{\#}
 \VariableTok{path}\OperatorTok{=}\StringTok{"}\VariableTok{$\{fullname}\OperatorTok{\%}\NormalTok{/}\PreprocessorTok{*}\VariableTok{\}}\StringTok{"}
 \BuiltInTok{echo} \StringTok{"path is }\VariableTok{$\{fullname}\OperatorTok{\%}\NormalTok{/}\PreprocessorTok{*}\VariableTok{\}}\StringTok{"}
 
 \CommentTok{\#}
-\CommentTok{\# Extract filename}
-\CommentTok{\# Approach from the left until the \_last\_+ \textasciigrave{}/\textasciigrave{} character is encountered}
-\CommentTok{\# and throw away everything from the \_left\_ end up to and including that \textasciigrave{}/\textasciigrave{}.}
+\CommentTok{\# Extract $filename}
+\CommentTok{\# Approach from the left until the \_last\_ \textasciigrave{}/\textasciigrave{} character}
+\CommentTok{\# is encountered and throw away everything}
+\CommentTok{\# from the \_left\_ end up to and including that \textasciigrave{}/\textasciigrave{}.}
 \CommentTok{\#}
 \VariableTok{filename}\OperatorTok{=}\StringTok{"}\VariableTok{$\{fullname}\OperatorTok{\#\#}\PreprocessorTok{*}\NormalTok{/}\VariableTok{\}}\StringTok{"}
 \BuiltInTok{echo} \StringTok{"filename is }\VariableTok{$\{fullname}\OperatorTok{\#\#}\PreprocessorTok{*}\NormalTok{/}\VariableTok{\}}\StringTok{"}
 
 \CommentTok{\#}
-\CommentTok{\# Extract file extension}
-\CommentTok{\# Approach from the \_left\_ until the \_last\_ \textasciigrave{}.\textasciigrave{} character is encountered}
-\CommentTok{\# and throw away everything from the \_left\_ up to and including that last \textasciigrave{}.\textasciigrave{}.}
+\CommentTok{\# Extract $extension}
+\CommentTok{\# Approach from the \_left\_ until the \_last\_ \textasciigrave{}.\textasciigrave{} character}
+\CommentTok{\# is encountered and throw away everything}
+\CommentTok{\# from the \_left\_ end up to and including that last \textasciigrave{}.\textasciigrave{}.}
 \CommentTok{\#}
 \VariableTok{ext}\OperatorTok{=}\StringTok{"}\VariableTok{$\{fullname}\OperatorTok{\#\#}\PreprocessorTok{*}\NormalTok{.}\VariableTok{\}}\StringTok{"}
 \BuiltInTok{echo} \StringTok{"extension is }\VariableTok{$\{fullname}\OperatorTok{\#\#}\PreprocessorTok{*}\NormalTok{.}\VariableTok{\}}\StringTok{"}
 
 \CommentTok{\#}
-\CommentTok{\# Extract basename}
-\CommentTok{\# This requires trimming strings from both the left and the right of \textasciigrave{}fullname\textasciigrave{}}
+\CommentTok{\# Extract $basename}
+\CommentTok{\# This requires trimming strings from both}
+\CommentTok{\# the left and the right of \textasciigrave{}fullname\textasciigrave{}}
 \CommentTok{\# and requires \_two\_ steps.}
 \CommentTok{\#}
-\CommentTok{\# Instead, we use \textasciigrave{}filename\textasciigrave{} which is already available, and excise the extension.}
-\CommentTok{\# For this, we approach from the \_right\_ until we encounter the \_first\_ \textasciigrave{}.\textasciigrave{} character}
-\CommentTok{\# and throw away everything from the \_right\_ up to and including that last \textasciigrave{}.\textasciigrave{}.}
+\CommentTok{\# Instead, we use \textasciigrave{}filename\textasciigrave{} which is already available,}
+\CommentTok{\# and excise the extension.}
+\CommentTok{\#}
+\CommentTok{\# For this, we approach from the \_right\_ until we encounter}
+\CommentTok{\# the \_first\_ \textasciigrave{}.\textasciigrave{} character and throw away everything}
+\CommentTok{\# from the \_right\_ up to and including that first \textasciigrave{}.\textasciigrave{}.}
 \CommentTok{\#}
 \VariableTok{basename}\OperatorTok{=}\StringTok{"}\VariableTok{$\{filename}\OperatorTok{\%}\NormalTok{.}\PreprocessorTok{*}\VariableTok{\}}\StringTok{"}
 \BuiltInTok{echo} \StringTok{"basename is }\VariableTok{$\{filename}\OperatorTok{\%}\NormalTok{.}\PreprocessorTok{*}\VariableTok{\}}\StringTok{"}
@@ -360,51 +399,56 @@ components using \texttt{bashisms}:
 \end{Shaded}
 
 \hypertarget{mnemonics-behind-the-and-symbols}{%
-\subsection{\texorpdfstring{Mnemonics behind the \texttt{\#} and
+\subsubsection{\texorpdfstring{Mnemonics behind the \texttt{\#} and
 \texttt{\%}
 symbols}{Mnemonics behind the \# and \% symbols}}\label{mnemonics-behind-the-and-symbols}}
 
 The use of the symbols \texttt{\#} and \texttt{\%} in the pattern
 matching expressions might seem arbitrary or whimsical. For a start,
 they do not conform to the usual delimiters \texttt{\^{}} and
-\texttt{\$} for the beginning and end of a line. Because we are not
-line-oriented here, those symbols are not used.
+\texttt{\$} for the beginning and end of a line. Because we are dealing
+with strings rather than lines here, those symbols are not used.
 
-One other point to keep in view constantly is t avoid looking at
+One other point to keep in view constantly is to avoid looking at
 \texttt{bash} pattern matching through the lens of
 \href{https://www.regular-expressions.info/tutorial.html}{regular
-expressions}. There are some similarities but the two are not identical.
+expressions}
+{[}\protect\hyperlink{ref-introbashregex}{8},\protect\hyperlink{ref-posixcharclass}{9},\protect\hyperlink{ref-writeregexp}{19}{]}.
+There are some similarities, but the two are not identical.
 
 So,
 \href{https://www.ldoceonline.com/dictionary/the-dope-on-somebody-something}{what's
 the dope} on \texttt{\#} and \texttt{\%}? These two symbols have been
-chosen for their near universal usage a prefix and suffix respectively.
-It is customary to write \texttt{\#1} for ``number one'' and
-\texttt{20\%} for ``twenty percent'' where you will notice that the
+chosen for their near universal usage as a prefix and suffix
+respectively. It is customary to write \texttt{\#1} for ``number one'',
+and \texttt{20\%} for ``twenty percent'', where you will notice that the
 \texttt{\#} is written as a \emph{prefix} and the \texttt{\%} is written
 as a \emph{suffix} to the number.
 
 In the \texttt{bash} pattern-matching we have encountered so far, we are
-matching elements in a string and throwing away the matching portion,
-using some known delimiter. When we match from the left, we use
-\texttt{\#} because it is a prefix. Likewise, when we match from the
+matching elements in a string, \emph{and throwing away the matching
+portion}, using some known delimiter. When we match from the left, we
+use \texttt{\#} because it is a prefix. Likewise, when we match from the
 right, we use \texttt{\%}, which is a suffix. In both cases, we stop at
-the first match from whichever direction we are starting the match. The
-single \texttt{\#} and \texttt{\%} therefore denote
+the first match from whichever direction we are starting the search for
+the match. The single \texttt{\#} and \texttt{\%} therefore denote
 \href{https://stackoverflow.com/questions/2301285/what-do-lazy-and-greedy-mean-in-the-context-of-regular-expressions}{lazy
 matching}.
 
 The symbol \texttt{\#\#} means we deal with the \emph{longest} substring
 from the left that matches: a case of
 \href{https://www.geeksforgeeks.org/perl-greedy-and-non-greedy-match/}{greedy
-matching}.The same applies to \texttt{\%\%}.
+matching}. The same applies to \texttt{\%\%} where we stop at the
+longest matching substring from the right.
 
-If you look carefully, you will see that what we do not care about what
-we are throwing away. We can therefore refer to it with the \texttt{*}
-character, which denotes one or more characters, whether as a
-\href{https://en.wikipedia.org/wiki/Wildcard_character}{wildcard} or a
-glob. What \emph{is} important to us, though, is the \emph{delimiter}
-that anchors the string that we are trimming off.
+If you look carefully, you will see that---apart from the anchor
+character(s)---we do not care about what we are throwing away. We can
+therefore denote these ``don't care'' characters with the \texttt{*},
+which is a
+\href{https://en.wikipedia.org/wiki/Wildcard_character}{wildcard} that
+denotes zero or more characters. What \emph{is} important to us, though,
+is the \emph{delimiter} that anchors the string that we are trimming
+off.
 
 This delimiting character will be placed to the right of the \texttt{*}
 when used with \texttt{\#} or \texttt{\#\#}, and it will be placed to
@@ -413,8 +457,436 @@ will notice that the \texttt{/} and \texttt{.} characters obey this
 simple, logical placement rule in the code above. In both cases, the
 anchoring delimiter is also trimmed off.
 
-\hypertarget{acknowledgements}{%
-\subsection{Acknowledgements}\label{acknowledgements}}
+To summarize:
+
+\begin{enumerate}
+\tightlist
+\item
+  When we use \texttt{\#} or \texttt{\#\#}, we discard a substring to
+  the left of the anchor; and
+\item
+  When we use \texttt{\%} or \texttt{\%\%}, we discard a substring to
+  the right of the anchor.
+\end{enumerate}
+
+\hypertarget{minefields-to-beware-of}{%
+\subsection{Minefields to beware of}\label{minefields-to-beware-of}}
+
+The pattern-matching capabilities in \texttt{bash} throw up unexpected
+results when the assumptions made above are not fulfilled. The structure
+of the \texttt{fullname} is one such. What happens if our assumptions
+are false?
+
+\hypertarget{filenames-without-an-extension}{%
+\subsection{Filenames without an
+extension}\label{filenames-without-an-extension}}
+
+There are occasions when, for a variety of reasons, filenames might not
+have extensions. In such cases, we might rightfully expect the extension
+to be a null or empty string. But is that what happens in practice? Let
+us try a simple experiment. You could fire up a bash terminal and run
+what follows interactively.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#!/bin/bash}
+\BuiltInTok{shopt} \AttributeTok{{-}s}\NormalTok{ extglob}
+\VariableTok{fullname}\OperatorTok{=}\VariableTok{$HOME}\NormalTok{/myPDFfile}
+\VariableTok{ext}\OperatorTok{=}\StringTok{"}\VariableTok{$\{fullname}\OperatorTok{\#\#}\PreprocessorTok{*}\NormalTok{.}\VariableTok{\}}\StringTok{"}
+\BuiltInTok{echo} \StringTok{"Extension is }\VariableTok{$ext}\StringTok{."}
+\end{Highlighting}
+\end{Shaded}
+
+The result is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{Extension}\NormalTok{ is /home/chandra/myPDFfile.}
+\end{Highlighting}
+\end{Shaded}
+
+Surely, you did not expect the extension to be the fullname of the file.
+Yet, that is what we get. Though unexpected, is it yet logically
+correct?
+
+Imagine you are moving from left to right until you hit the \emph{last}
+\texttt{.} character. When you do, you discard whatever is to the left
+of the \texttt{.} along with that character itself. If there is no
+\texttt{.} character, you do not stop and you do not discard anything.
+So, you are left with what you started with. \emph{But, although
+logical, that is not the intent.}
+
+One way to overcome this issue is to test for a period or dot character
+in the original \texttt{fullname} string
+{[}\protect\hyperlink{ref-dottest}{6},\protect\hyperlink{ref-periodtest}{12},\protect\hyperlink{ref-bashscriptpatmatch}{18}{]}.
+If there is no \texttt{.} character, we set the extension to the empty
+string. Otherwise, we set it to what we get by the pattern-matching we
+have discussed. The corrected routine for the extension should thus run:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#!/bin/bash}
+\CommentTok{\# ext.sh}
+\BuiltInTok{shopt} \AttributeTok{{-}s}\NormalTok{ extglob}
+
+\VariableTok{fullname}\OperatorTok{=}\StringTok{"/path/myPDFfile"}
+
+\ControlFlowTok{if} \KeywordTok{[[} \StringTok{"}\VariableTok{$fullname}\StringTok{"} \OtherTok{=\textasciitilde{}} \DataTypeTok{\textbackslash{}.} \KeywordTok{]]}
+\ControlFlowTok{then}
+  \BuiltInTok{echo} \VariableTok{$?}
+  \VariableTok{ext}\OperatorTok{=}\StringTok{"}\VariableTok{$\{fullname}\OperatorTok{\#\#}\PreprocessorTok{*}\NormalTok{.}\VariableTok{\}}\StringTok{"}
+\ControlFlowTok{else}
+  \BuiltInTok{echo} \VariableTok{$?}
+  \VariableTok{ext}\OperatorTok{=}\StringTok{""}
+\ControlFlowTok{fi}
+\BuiltInTok{echo} \StringTok{"Extension is }\VariableTok{$ext}\StringTok{."}
+\end{Highlighting}
+\end{Shaded}
+
+Note that the \texttt{=\textasciitilde{}} sign is a \emph{regular
+expression} operator that has been inducted into \texttt{bash}
+{[}\protect\hyperlink{ref-equaltilde}{10}{]}. It returns a \texttt{0}
+for \texttt{true} and a \texttt{1} for \texttt{false}, which may sound
+contrary to expectations, but that is the correct behaviour. This may be
+seen by appending \texttt{echo\ \$?} above to each branch of the
+\texttt{if} conditional.
+
+Moreover, when matching, the left side is double quoted while the right
+side is either escaped as in \texttt{\textbackslash{}.} or is a literal,
+like \texttt{\textquotesingle{}.\textquotesingle{}}
+{[}\protect\hyperlink{ref-dottest}{6}{]}. If a plain \texttt{.} is used,
+with no ``protection'', it will natch any character in accordance with
+regex rules, and we risk getting the wrong result. It is attention to
+every small detail that ensures success with \texttt{bash} scripts. In
+the process, you also learn patience. \emojifont {😉} \normalfont
+
+\hypertarget{filenames-with-multiple-dot-characters}{%
+\subsubsection{Filenames with multiple dot
+characters}\label{filenames-with-multiple-dot-characters}}
+
+I have encountered occasions where the \texttt{fullname} of a file
+contains multiple \texttt{.} characters. In such cases, we must adopt a
+convention that the extension is what occurs to the \emph{right of the
+rightmost} dot character. We will avoid pathological cases like a
+filename \emph{ending} with a \texttt{.} character. If these additional
+assumptions hold, our pattern-matching for the extension will return the
+correct result.
+
+\hypertarget{filenames-without-a-path}{%
+\subsection{Filenames without a path}\label{filenames-without-a-path}}
+
+Before attempting to extract a \texttt{path}, we must check for the
+presence of a \texttt{/} in the \texttt{fullname} string. Otherwise, we
+risk getting the same errors as with missing extensions. The following
+script should be self-explanatory by now. Again, note that we either
+need to make the \texttt{/} character a literal, enclosed by single
+quotes, or we must escape it with a backslash. Note that this time,the
+forward slash is enclosed by single quotes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#!/bin/bash}
+\CommentTok{\# path.sh}
+\BuiltInTok{shopt} \AttributeTok{{-}s}\NormalTok{ extglob}
+
+\VariableTok{fullname}\OperatorTok{=}\StringTok{"myPDFfile.pdf"}
+
+\ControlFlowTok{if} \KeywordTok{[[} \StringTok{"}\VariableTok{$fullname}\StringTok{"} \OtherTok{=\textasciitilde{}} \StringTok{\textquotesingle{}/\textquotesingle{}} \KeywordTok{]]}
+\ControlFlowTok{then}
+  \BuiltInTok{echo} \VariableTok{$?}
+  \VariableTok{path}\OperatorTok{=}\StringTok{"}\VariableTok{$\{fullname}\OperatorTok{\%}\NormalTok{/}\PreprocessorTok{*}\VariableTok{\}}\StringTok{"}
+\ControlFlowTok{else}
+  \BuiltInTok{echo} \VariableTok{$?}
+  \VariableTok{path}\OperatorTok{=}\StringTok{""}
+\ControlFlowTok{fi}
+\BuiltInTok{echo} \StringTok{"Path is }\VariableTok{$path}\StringTok{."}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{the-generalized-filename-parser}{%
+\subsection{The generalized filename
+parser}\label{the-generalized-filename-parser}}
+
+The revised file for parsing a filename into its components therefore
+needs to be augmented with these tests if it is to be robust and
+general. Note also that if no input is given, there can be no meaningful
+output. The file
+\href{scripts/parsefilename.sh}{\texttt{parsefilename.sh}} embodies the
+improvements we have discussed and is available here for completeness.
+
+\hypertarget{prettifying-non-standard-filenames}{%
+\subsection{Prettifying non-standard
+filenames}\label{prettifying-non-standard-filenames}}
+
+We have now concluded the first part of processing a filename, and are
+ready to proceed to the second part, which is
+\href{https://www.thefreedictionary.com/prettifying}{prettifying} a
+filename. Although filenames containing spaces, tabs, and and
+non-alphanumeric characters can be processed in Linux---when enclosed by
+single quotes---the natural etiquette in Linux file naming is not to use
+such non-standard characters.
+
+But what happens if we are bequeathed files having such names? Renaming
+them one-by-one by hand will be laborious and even impractical. How may
+we automate the renaming of such files---to result in filenames that are
+meaningful as well as Linux-friendly? That is what will occupy us for
+the rest of this blog.
+
+\hypertarget{from-cacophony-to-harmony}{%
+\subsection{From cacophony to harmony}\label{from-cacophony-to-harmony}}
+
+The file naming convention in Linux is that there will be no spaces or
+other non-alphanumeric characters, \emph{except for the underscore}
+character \texttt{\_} in a filename. This is because spaces are used as
+input field separators (IFS) to break up a string into its components:
+something known as
+\href{https://mywiki.wooledge.org/WordSplitting?highlight=\%28spaces\%29\%7C\%28word\%29\%7C\%28splitting\%29}{\emph{word
+splitting}} {[}\protect\hyperlink{ref-wordsplitting}{5}{]}.
+
+But not all files respect this nomenclature of alphanumeric plus
+underscore characters alone. What if you encountered a file named so:
+\texttt{El??Condor\ \ \ \_Pasa\%\^{}!.mp3}. How would you sanitize it
+into something that could be easily processed by Linux when supplied as
+an argument?
+
+This set me developing a simple script to convert all non-compatible
+characters into acceptable characters so that the end result would be a
+sanitized, Linux-compatible filename that still retained its meaning.
+Here is my thought process as an algorithm:
+
+\begin{enumerate}
+\tightlist
+\item
+  Replace all non-standard characters with dashes \texttt{-}.
+\item
+  Replace consecutive spaces, or other non-alphanumeric characters, by a
+  \emph{single} dash.
+\item
+  Retain underscores, \texttt{\_}, unchanged.
+\end{enumerate}
+
+The standard and most obvious way to do this is by using regular
+expressions and a tool such as
+\href{https://www.grymoire.com/Unix/Sed.html}{\texttt{sed}} or
+\href{https://tldp.org/LDP/abs/html/awk.html}{\texttt{awk}} or
+\href{https://perldoc.perl.org/perlretut}{\texttt{perl}}. Moreover, the
+\href{https://www.regular-expressions.info/posixbrackets.html}{POSIX
+character classes} such as \texttt{{[}:space:{]}},
+\texttt{{[}:blank:{]}}, \texttt{{[}:punct:{]}} hold the key to concisely
+including all characters that need to be substituted with dashes. This
+was the trajectory I followed initially.
+
+\hypertarget{using-sed-to-sanitize-a-filename}{%
+\subsection{\texorpdfstring{Using \texttt{sed} to sanitize a
+filename}{Using sed to sanitize a filename}}\label{using-sed-to-sanitize-a-filename}}
+
+How might the pathological filename (or string)
+\texttt{El??Condor\ \ \ \_Pasa\%\^{}!.mp3}---which contains spaces and
+punctuation---be sanitized using \texttt{sed}?
+
+Typically, \texttt{sed} works on text within a file. But we may also
+pass strings to \texttt{sed} as
+\href{https://www.baeldung.com/linux/sed-with-string}{literals rather
+than an input file}. Rather than stumble through the tedious path I took
+to success, I record below the final
+\href{https://catonmat.net/sed-one-liners-explained-part-one}{\texttt{sed}
+one-liner} that I assembled. Note that we will henceforth use only the
+basename of this filename in all examples.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sed} \AttributeTok{{-}r} \StringTok{"s/([[:space:]]|[[:punct:]])+/{-}/g"} \OperatorTok{\textless{}\textless{}\textless{}} \StringTok{\textquotesingle{}El??Condor   \_Pasa\%\^{}!\textquotesingle{}}
+\end{Highlighting}
+\end{Shaded}
+
+which gives the result:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{El{-}Condor{-}Pasa{-}}
+\end{Highlighting}
+\end{Shaded}
+
+Note that \emph{multiple} spaces and punctuation characters have been
+replaced by \emph{single} hyphens or dashes. The \texttt{+} sign in the
+expression confers this behaviour. The fact that we want to change
+\emph{both} spaces and punctuation is the reason for the
+\texttt{\textbar{}} alternation sign which might be loosely looked at as
+a logical \textsc{or}. The \texttt{g} parameter at the end (for global)
+means that \emph{all} such occurrences will be substituted. The
+\texttt{{[}{[}:space:{]}{]}} and \texttt{{[}{[}:punct:{]}{]}}
+incantations are called
+\href{https://www.regular-expressions.info/posixbrackets.html}{POSIX
+character classes} {[}\protect\hyperlink{ref-posixcharclass}{9}{]}. The
+option \texttt{-r} is given to \texttt{sed} to confer the regular
+expression matching behaviour we are after. And the
+\texttt{\textless{}\textless{}\textless{}} allows an input to be given
+immediately to \texttt{sed} from the command line rather than from a
+file.
+
+Now, are we satisfied with our result? Not really, on two counts:
+
+\begin{enumerate}
+\tightlist
+\item
+  We want to retain the underscore \texttt{\_} character unchanged, if
+  and when it occurs in the original string. An underscore in our
+  original string has disappeared.
+\item
+  We do not want a terminal hyphen in the modified filename, as in this
+  case.
+\end{enumerate}
+
+The second is easier to fix first. We will resort to the end-of-line
+anchor \texttt{\$} to identify the terminal hyphen after the first
+replacement. Since \texttt{sed} can work consecutively on the string, or
+its modified variant, we can simply chain two substitutions using pipes
+so:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sed} \AttributeTok{{-}E} \StringTok{"s/([[:space:]]|[[:punct:]])+/{-}/g"}  \OperatorTok{\textless{}\textless{}\textless{}} \StringTok{\textquotesingle{}El??Condor   \_Pasa\%\^{}!\textquotesingle{}} \KeywordTok{|} \FunctionTok{sed}  \StringTok{"s/{-}$//"}
+\end{Highlighting}
+\end{Shaded}
+
+to get
+
+\begin{verbatim}
+El-Condor-Pasa
+\end{verbatim}
+
+as desired. The \texttt{-E} option is POSIX-compliant and needed to deal
+with extended regular expressions. In
+\href{https://www.gnu.org/software/sed/manual/html_node/Command_002dLine-Options.html}{GNU
+\texttt{sed}} it is synonymous with the \texttt{-r} option. The
+\texttt{\textbar{}} character indicates that the input for this second
+\texttt{sed} substitution is the output from the previous \texttt{sed}
+command.
+
+The requirement to pass underscores unchanged is more serious because we
+need to modify the first \texttt{sed} replacement. Because the
+\texttt{{[}{[}:punct:{]}{]}} class also includes the underscore
+character, it is a sticky business to keep all the underscores but
+replace every other punctuation symbol by a dash. In fact, it negates
+the very notion of a POSIX character class.
+
+What we want is some operation like a
+\href{https://mathworld.wolfram.com/SetDifference.html}{set difference}
+for which the regex syntax is not available for \texttt{sed}. One
+\emph{could} enumerate all punctuation symbols and exclude only
+\texttt{\_} from that list, and use that class instead of
+\texttt{{[}{[}:punct:{]}{]}}, but this approach strikes me as grossly
+inelegant.
+
+A better and more felicitous way is to invert the requirement and
+\emph{preserve} the alphanumeric and underscore characters alone, and
+\emph{replace everything else} by a dash:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sed} \AttributeTok{{-}E} \StringTok{"s/([\^{}A{-}Za{-}z0{-}9\_])+/{-}/g"} \OperatorTok{\textless{}\textless{}\textless{}} \StringTok{\textquotesingle{}El??Condor   \_Pasa\%\^{}!\textquotesingle{}} \KeywordTok{|} \FunctionTok{sed} \StringTok{"s/{-}$//"}
+\end{Highlighting}
+\end{Shaded}
+
+which gives:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{El{-}Condor{-}\_Pasa}
+\end{Highlighting}
+\end{Shaded}
+
+Although it looks awkward---having a \texttt{-} followed by a
+\texttt{\_}---this is exactly the desired output given our
+transformation rules. One caveat is that this expression will only work
+with ASCII characters.
+
+\hypertarget{can-it-be-done-in-bash}{%
+\subsection{\texorpdfstring{Can it be done in
+\texttt{bash}?}{Can it be done in bash?}}\label{can-it-be-done-in-bash}}
+
+But there was always the nagging refrain, ``Why not do it all in
+\texttt{bash} itself, using pattern matching?''. So, rather than
+considering how to do this in \texttt{perl}, I hacked my way through
+several iterations of trying to perform the substitution in
+\texttt{bash} itself.
+
+The expression \texttt{{[}A-Za-z0-9\_{]}} has a rather fortuitous
+abbreviation as a POSIX character class in \texttt{bash}: it is denoted
+by \texttt{{[}{[}:word:{]}{]}}. The pattern-matching/replacement
+expression in \texttt{bash} therefore becomes:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#!/bin/bash}
+\BuiltInTok{shopt} \AttributeTok{{-}s}\NormalTok{ extglob}
+
+\VariableTok{filename}\OperatorTok{=}\StringTok{\textquotesingle{}El??Condor   \_Pasa\%\^{}!\textquotesingle{}}
+
+\CommentTok{\#}
+\CommentTok{\# The character class [:word:] includes all}
+\CommentTok{\# alphanumeric characters and the underscore.}
+\CommentTok{\# \^{}[:word:] is the negation of this condition.}
+\CommentTok{\# So, we replace all non{-}alphanumeric characters and non{-}underscores}
+\CommentTok{\# with the dash.}
+\CommentTok{\#}
+\VariableTok{newname}\OperatorTok{=}\StringTok{"}\VariableTok{$\{filename}\OperatorTok{//}\PreprocessorTok{+(}\SpecialStringTok{[\^{}[:word:]]}\PreprocessorTok{)}\OperatorTok{/}\NormalTok{{-}}\VariableTok{\}}\StringTok{"}
+
+\CommentTok{\#}
+\CommentTok{\# We then extract the last character in the string newname}
+\CommentTok{\# and check whether it matches the dash character.}
+\CommentTok{\# If it does, we strip it off, to get the finalname.}
+\CommentTok{\#}
+
+\VariableTok{lastchar}\OperatorTok{=}\StringTok{"}\VariableTok{$\{newname}\OperatorTok{:}\NormalTok{ {-}}\DecValTok{1}\VariableTok{\}}\StringTok{"}
+\ControlFlowTok{if} \KeywordTok{[[} \StringTok{"}\VariableTok{$lastchar}\StringTok{"} \OtherTok{=\textasciitilde{}} \StringTok{\textquotesingle{}{-}\textquotesingle{}} \KeywordTok{]]}
+\ControlFlowTok{then}
+  \VariableTok{finalname}\OperatorTok{=}\StringTok{"}\VariableTok{$\{newname}\OperatorTok{::}\NormalTok{{-}}\DecValTok{1}\VariableTok{\}}\StringTok{"}
+\ControlFlowTok{fi}
+\BuiltInTok{echo} \StringTok{"}\VariableTok{$finalname}\StringTok{"}
+\end{Highlighting}
+\end{Shaded}
+
+The syntax for substring extraction in \texttt{bash} is
+\texttt{\$\{parameter:offset:length\}} where \texttt{offset} is measured
+starting from \texttt{0} at the extreme left
+{[}\protect\hyperlink{ref-parametersubs}{7},\protect\hyperlink{ref-substring}{11},\protect\hyperlink{ref-stringops}{14}{]}.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  Note especially the space between the \texttt{:} and the \texttt{-} in
+  the expression \texttt{"\$\{newname:\ -1\}"}. This space is inserted
+  to avoid ambiguity with \emph{another} expression of the form
+  \texttt{\$\{parameter:-word\}} which has a different function.
+\item
+  The final idiom used above is \texttt{"\$\{newname::-1\}"}, which is
+  shorthand for \texttt{"\$\{newname:0:-1\}"}. This operation strips off
+  the final character in the variable \texttt{"\$\{newname\}"}.
+\end{enumerate}
+
+\hypertarget{to-explore-further}{%
+\subsection{To explore further}\label{to-explore-further}}
+
+The interested reader is referred to the
+\href{https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html\#Shell-Parameter-Expansion}{official
+documentation online} for a comprehensive explanation of the dazzling
+features of \emph{parameter expansion}
+{[}\protect\hyperlink{ref-shellparamexp}{17}{]} and \emph{substring
+removal} {[}\protect\hyperlink{ref-wikisubstring}{3}{]} in
+\texttt{bash}. For an admirable summary of features like parameter
+expansion, do also visit the clear and comprehensive
+\href{https://mywiki.wooledge.org/BashGuide/Parameters}{BashGuide
+website}.
+
+If you are familiar with \texttt{bash} but require an
+\href{https://www.thefreedictionary.com/aide+memoire}{aide-mémoire} for
+some aspect of string matching or manipulation, the section with the
+heading
+\href{https://wiki.bash-hackers.org/start\#recommended_shell_resources}{``Recommended
+Shell resources''} is the best place to start your search
+{[}\protect\hyperlink{ref-bhwstart}{4}{]}. It contains a wealth of
+authoritative links that will speedily dispel your doubts.
 
 \hypertarget{feedback}{%
 \subsection{Feedback}\label{feedback}}
@@ -441,12 +913,121 @@ comments and corrections.
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{0}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-glob2023}{}}%
+\leavevmode\vadjust pre{\hypertarget{ref-gnupattern}{}}%
 \CSLLeftMargin{{[}1{]} }%
-\CSLRightInline{Wikipedia, {`Glob (programming)'}, 15-Jan-2023.
-{[}Online{]}. Available:
-\url{https://en.wikipedia.org/w/index.php?title=Glob_(programming)\&oldid=1133836865}.
-{[}Accessed: 28-Feb-2023{]}}
+\CSLRightInline{2022. Pattern matching. Retrieved 4 March 2023 from
+\url{https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-globhistory}{}}%
+\CSLLeftMargin{{[}2{]} }%
+\CSLRightInline{---. 2014. History of bash globbing. Retrieved 5 March
+2023 from
+\url{https://unix.stackexchange.com/questions/136353/history-of-bash-globbing}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-wikisubstring}{}}%
+\CSLLeftMargin{{[}3{]} }%
+\CSLRightInline{---. 2021. Parameter expansion {[}bash hackers wiki{]}.
+Retrieved 5 March 2023 from
+\url{https://wiki.bash-hackers.org/syntax/pe\#substring_removal}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-bhwstart}{}}%
+\CSLLeftMargin{{[}4{]} }%
+\CSLRightInline{---. 2023. The bash hackers wiki: Recommended shell
+resources. Retrieved 5 March 2023 from
+\url{https://wiki.bash-hackers.org/start\#recommended_shell_resources}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-wordsplitting}{}}%
+\CSLLeftMargin{{[}5{]} }%
+\CSLRightInline{lhunath aka Maarten Billemont and Greg Wooledge aka
+GreyCat. 2018. Word splitting. Retrieved 5 March 2023 from
+\url{https://mywiki.wooledge.org/WordSplitting?highlight=\%28spaces\%29\%7C\%28word\%29\%7C\%28splitting\%29}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-dottest}{}}%
+\CSLLeftMargin{{[}6{]} }%
+\CSLRightInline{Mark Byers. 2010. Test for a dot in bash. Retrieved 4
+March 2023 from \url{https://stackoverflow.com/a/2745096}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-parametersubs}{}}%
+\CSLLeftMargin{{[}7{]} }%
+\CSLRightInline{Mendel Cooper. 2014. Parameter substitution. Retrieved 4
+March 2023 from
+\url{https://tldp.org/LDP/abs/html/parameter-substitution.html}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-introbashregex}{}}%
+\CSLLeftMargin{{[}8{]} }%
+\CSLRightInline{Zach Gollwitzer. 2020. Intro to bash regular
+expressions. Retrieved 5 March 2023 from
+\url{https://dev.to/zachgoll/intro-to-bash-regular-expressions-4d2p}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-posixcharclass}{}}%
+\CSLLeftMargin{{[}9{]} }%
+\CSLRightInline{Jan Goyvaerts. 2019. Regex tutorial---POSIX bracket
+expressions. Retrieved 5 March 2023 from
+\url{https://www.regular-expressions.info/posixbrackets.html}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-equaltilde}{}}%
+\CSLLeftMargin{{[}10{]} }%
+\CSLRightInline{Kusalananda. 2017. Bash test: What does "=~" do?
+Retrieved 4 March 2023 from
+\url{https://unix.stackexchange.com/a/340485/11610}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-substring}{}}%
+\CSLLeftMargin{{[}11{]} }%
+\CSLRightInline{Linuxize. 2019. How to check if a string contains a
+substring in bash. Retrieved 4 March 2023 from
+\url{https://linuxize.com/post/how-to-check-if-string-contains-substring-in-bash/\#google_vignette}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-periodtest}{}}%
+\CSLLeftMargin{{[}12{]} }%
+\CSLRightInline{lmcanavals. 2013. Test if a string has a period in it
+with bash. Retrieved 4 March 2023 from
+\url{https://unix.stackexchange.com/a/63374/11610}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-frazier2019}{}}%
+\CSLLeftMargin{{[}13{]} }%
+\CSLRightInline{Mitch Frazier. 2019. Pattern matching in bash. Retrieved
+28 February 2023 from
+\url{https://www.linuxjournal.com/content/pattern-matching-bash}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-stringops}{}}%
+\CSLLeftMargin{{[}14{]} }%
+\CSLRightInline{Cameron Newham and Bill Rosenblatt. 1998. String
+operators. Retrieved 4 March 2023 from
+\url{https://www.oreilly.com/library/view/learning-the-bash/1565923472/ch04s03.html}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-newham2005}{}}%
+\CSLLeftMargin{{[}15{]} }%
+\CSLRightInline{Cameron Newham and Bill Rosenblatt. 2005. \emph{Learning
+the bash shell} (3rd ed.). O'Reilly.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-globbingref}{}}%
+\CSLLeftMargin{{[}16{]} }%
+\CSLRightInline{Gilles Quénot. 2023. Unix. Run script across multiple
+dirs on specific files, where pathname has regex. Retrieved 5 March 2023
+from \url{https://unix.stackexchange.com/a/738684/11610}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-shellparamexp}{}}%
+\CSLLeftMargin{{[}17{]} }%
+\CSLRightInline{Chet Ramey. 2020. Bash reference manual: Shell parameter
+expansion. Retrieved 5 April 2023 from
+\url{https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html\#Shell-Parameter-Expansion}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-bashscriptpatmatch}{}}%
+\CSLLeftMargin{{[}18{]} }%
+\CSLRightInline{Mark Reed. 2017. Bash script pattern matching. Retrieved
+5 March 2023 from \url{https://stackoverflow.com/a/44688520}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-writeregexp}{}}%
+\CSLLeftMargin{{[}19{]} }%
+\CSLRightInline{Abhinav Tiwari. 2023. How to write regular
+expressions?---GeeksforGeeks. Retrieved 5 March 2023 from
+\url{https://www.geeksforgeeks.org/write-regular-expressions/}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-glob2023}{}}%
+\CSLLeftMargin{{[}20{]} }%
+\CSLRightInline{Wikipedia. 2023. Glob (programming). Retrieved 28
+February 2023 from
+\url{https://en.wikipedia.org/w/index.php?title=Glob_(programming)\&oldid=1133836865}}
 
 \end{CSLReferences}
 
