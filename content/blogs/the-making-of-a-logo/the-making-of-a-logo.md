@@ -315,6 +315,6 @@ corrections.
 
 \noindent A PDF version of this article is [available for download here]({attach}./the-making-of-a-logo.pdf):
 
-::: {.normal .tt}
+::: {.small .sf}
 <https://swanlotus.netlify.app/blogs/the-making-of-a-logo.pdf>
 :::

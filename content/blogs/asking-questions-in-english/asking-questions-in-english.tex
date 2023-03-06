@@ -90,8 +90,8 @@
 %
 % Preliminaries
 %
-\PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
-\PassOptionsToPackage{main=british}{babel}
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+% \PassOptionsToPackage{main=british}{babel}
 \AtBeginEnvironment{quote}{\small}
 \AtBeginEnvironment{quotation}{\small}
 \AtBeginEnvironment{longtable}{\centering}
@@ -118,8 +118,8 @@
 %
 % Preliminaries
 %
-\PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
-\PassOptionsToPackage{main=british}{babel}
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+% \PassOptionsToPackage{main=british}{babel}
 \AtBeginEnvironment{quote}{\small}
 \AtBeginEnvironment{quotation}{\small}
 \AtBeginEnvironment{longtable}{\centering}
@@ -148,25 +148,31 @@
 % Other main fonts are also available in appropriately named file.
 \usepackage{fontspec}
 \usepackage{setspace}
-\setstretch{1.25}
+\setstretch{1.3}
 %
-\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=HarfBuzz} % at the start always
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=Node} % at the start always
 %
 % For English
+% See also https://tex.stackexchange.com/questions/574047/lualatex-amsthm-polyglossia-charissil-error
+% We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
 %
-\babelfont{rm}[Scale=1,BoldFont=NotoSerif-Bold]{Noto Serif Regular}
-\babelfont{sf}[BoldFont={* Semibold}]{Source Sans Pro}
-\babelfont{tt}[Scale=0.9]{Fira Mono}
+\babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
 %
-\babelprovide[import,onchar=ids fonts]{sanskrit}
-\babelprovide[import,onchar=ids fonts]{tamil}
-\babelprovide[import,onchar=ids fonts]{greek}
+\babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
 %
-\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz]{Noto Serif Devanagari}
-\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz]{Noto Sans Devanagari}
-\babelfont[tamil]{rm}[Renderer=HarfBuzz]{Noto Serif Tamil}
-\babelfont[tamil]{sf}[Renderer=HarfBuzz]{Noto Sans Tamil}
-\babelfont[greek]{rm}{Gentium Book Plus}
+\babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
+%
+% Sanskrit, Tamil, and Greek fonts
+%
+\babelprovide[import, onchar=ids fonts]{sanskrit}
+\babelprovide[import, onchar=ids fonts]{tamil}
+\babelprovide[import, onchar=ids fonts]{greek}
+%
+\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSerifDevanagari}
+\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSansDevanagari}
+\babelfont[tamil]{rm}[Renderer=HarfBuzz,Script=Tamil]{NotoSerifTamil}
+\babelfont[tamil]{sf}[Renderer=HarfBuzz,Script=Tamil]{NotoSansTamil}
+\babelfont[greek]{rm}[Script=Greek]{GentiumBookPlus}
 %
 % Math font
 %
@@ -179,71 +185,6 @@
 \newfontfamily{\emojifont}{Symbola}
 %
 
-%% NOTE:
-% the notomath packageis buggy; the Noto Sans ath font is defunct
-%
-% \let\arrowvert\undefined % https://tex.stackexchange.com/questions/312019/latex-error-command-circleds-already-defined-mathdesign-conflict-with-amssy
-%
-% \usepackage{notomath}
-% \usepackage[scale=3,pf,osf]{notomath}
-
-% indic-greekfonts.tex
-% $HOME/.pandoc/defaults/indic-greek-fonts.tex
-% $Usage: --include-in-header="$HOME/.pandoc/defaults/indic-greek-fonts.tex"
-% Assumes that we already have
-%
-% \usepackage[main=british]{babel}
-%
-% in another header-includes file; % in this case
-% "$HOME/.pandoc/defaults/latex-header-includes.tex"
-%
-% We use this file only when we need Tamil, Devanagari, Greek scripts.
-% Do not invoke if not needed, to speed up compilation.
-%
-% Tamil, Devanagari, and Greek fonts
-%
-\newfontfamily\devanagarifont{Noto Serif Devanagari}
-\newfontfamily\tamilfont{Noto Serif Tamil}
-\newfontfamily\greekfont{Noto Serif}
-%
-% Put babel to work
-%
-\babelprovide[import onchar=ids fonts]{sanskrit}
-\babelprovide[import onchar=ids fonts]{tamil}
-\babelprovide[import onchar=ids fonts]{greek}
-%
-% Relative font sizes may be tweaked here for visual congruity
-%
-\babelfont[sanskrit]{rm}[Scale=1]{Noto Serif Devanagari}
-\babelfont[sanskrit]{sf}[Scale=1]{Noto Sans Devanagari}
-\babelfont[tamil]{rm}[Scale=0.9]{Noto Serif Tamil} % visual scaling to match
-\babelfont[tamil]{sf}[Scale=0.9]{Noto Sans Tamil}
-\babelfont[greek]{rm}[Scale=0.9]{Noto Serif}
-\babelfont[greek]{sf}[Scale=0.9]{Noto Sans}
-%
-% NOTES
-% Specific invocations when using lualatex as the engine.
-% Especially useful with multi-lingual typesetting with babel.
-
-% NOTE: xelatex works with polyglossia and ucharclasses; lualatex does not.
-% Moreover, the package `ucharclasses` does not reliably preserve italics, etc.,
-% when used in a mutli-script/multi-language setting.
-%
-% Accordingly, with multi-lingual documents, we should prefer
-% lualatex with babel instead of xelatex with ucharclasses.
-%
-% See
-% https://tex.stackexchange.com/questions/199773/how-to-type-hindi-words-in-latex/
-%
-% and
-%
-% https://tex.stackexchange.com/questions/613999/switching-between-three-scripts-using-ucharclasses-does-not-seem-to-work
-%
-% Use babel; since babel is in rapid development,
-% this part could change in future.
-%
-%  Note that Sanskrit can have many scripts; we use Devanagari.
-% This might need to be tweaked in future.
 \usepackage{titling}
 \usepackage{fancyhdr}
     \pagestyle{fancy}
@@ -277,7 +218,7 @@
 \begin{document}
 \maketitle
 
-
+\thispagestyle{empty}
 
 
 \hypertarget{a-tale-of-two-tongues}{%
@@ -325,24 +266,23 @@ results. Let me give you some examples.
 
 Suppose you see someone and want to ask in Tamil where that person was
 going. You would ask, in the less respectful mode of address used
-between equals, ``நீ எங்கே போகிறாய்?'' (nī eṅkē pōkiṟāi?)\footnote{Just
-  for the record, the letters ``k'' in the transliteration are
-  pronounced as ``g'' due to
-  \href{https://en.wikipedia.org/wiki/Sandhi}{sandhi}.}. Translated into
-English, these words literally become ``You where going?'' and that is
-often how a newcomer to English, with a Tamil language background, will
-at first speak.
+between equals, ``நீ எங்கே போகிறாய்?'' (nī eṅkē pōkiṟāi?)\footnote{Just for
+  the record, the letters ``k'' in the transliteration are pronounced as
+  ``g'' due to \href{https://en.wikipedia.org/wiki/Sandhi}{sandhi}.}.
+Translated into English, these words literally become ``You where
+going?'' and that is often how a newcomer to English, with a Tamil
+language background, will at first speak.
 
 \hypertarget{are-you-well}{%
 \subsubsection{``Are you well?''}\label{are-you-well}}
 
 When meeting someone, it is polite and customary to ask ``How are you?''
-in English. In Tamil, the more sanguine ``நீங்கள் நலமா?'' (nīṅkaḷ
-nalamā?) is used, where the respectful plural form of the second person
-pronoun is employed. Literally, it is a statement, posed as a question,
-with a slight raise in pitch at the end to indicate the interrogative
-sense when spoken. And the \emph{literal} translation into English is
-the strange-sounding ``You are well?'' instead of the correct ``Are you
+in English. In Tamil, the more sanguine ``நீங்கள் நலமா?'' (nīṅkaḷ nalamā?)
+is used, where the respectful plural form of the second person pronoun
+is employed. Literally, it is a statement, posed as a question, with a
+slight raise in pitch at the end to indicate the interrogative sense
+when spoken. And the \emph{literal} translation into English is the
+strange-sounding ``You are well?'' instead of the correct ``Are you
 well?''.
 
 \begin{figure}
@@ -358,9 +298,9 @@ well?''.
 \subsubsection{``What is your name?''}\label{what-is-your-name}}
 
 Now, for another example. When asking someone for his or her name, a
-Tamil speaker says ``உன் பெயர் என்ன?'' (un peyar enna?). In English,
-this word order would be rendered as ``Your name what?'' Horror of
-horrors! Where has the verb gone?
+Tamil speaker says ``உன் பெயர் என்ன?'' (un peyar enna?). In English, this
+word order would be rendered as ``Your name what?'' Horror of horrors!
+Where has the verb gone?
 
 \hypertarget{implicit-verbs-and-nouns}{%
 \subsection{Implicit verbs and nouns}\label{implicit-verbs-and-nouns}}
@@ -608,16 +548,17 @@ adjective\footnote{Also called a \emph{possessive determiner} in modern
 altered in questions. Analytically, we may say:
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule
+\toprule\noalign{}
 Word & Part of Speech \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 What & interrogative (strictly interrogative pronoun) \\
 is & verb \\
 your & adjective; possessive case of pronoun ``you''; qualifies noun
 ``name'' \\
 name & noun \\
-\bottomrule
 \end{longtable}
 
 \hypertarget{mangled-questions}{%
@@ -875,15 +816,15 @@ comments and corrections.
 \noindent A PDF version of this article is
 \href{./asking-questions-in-english.pdf}{available for download here}:
 
-\begin{normalsize}
+\begin{small}
 
-\begin{ttfamily}
+\begin{sffamily}
 
 \url{https://swanlotus.netlify.app/blogs/asking-questions-in-english.pdf}
 
-\end{ttfamily}
+\end{sffamily}
 
-\end{normalsize}
+\end{small}
 
 
 

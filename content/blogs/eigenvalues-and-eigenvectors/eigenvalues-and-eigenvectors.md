@@ -441,6 +441,6 @@ corrections.
 
 \noindent A PDF version of this article is [available for download here]({attach}./eigenvalues-and-eigenvectors.pdf):
 
-::: {.normal .tt}
+::: {.small .sf}
 <https://swanlotus.netlify.app/blogs/eigenvalues-and-eigenvectors.pdf>
 :::

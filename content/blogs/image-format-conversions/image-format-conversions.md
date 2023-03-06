@@ -1003,6 +1003,6 @@ corrections.
 
 \noindent A PDF version of this article is [available for download here]({attach}image-format-conversions.pdf):
 
-::: {.normal .tt}
+::: {.small .sf}
 <https://swanlotus.netlify.app/blogs/image-format-conversions.pdf>
 :::

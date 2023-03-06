@@ -41,6 +41,6 @@ corrections.
 
 \noindent A PDF version of this article is [available for download here]({attach}./a-peacock-in-midflight.pdf):
 
-::: {.normal .tt}
+::: {.small .sf}
 <https://swanlotus.netlify.app/blogs/a-peacock-in-mid-flight.pdf>
 :::

@@ -49,6 +49,16 @@
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=25mm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -103,8 +113,8 @@
 %
 % Preliminaries
 %
-\PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
-\PassOptionsToPackage{main=british}{babel}
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+% \PassOptionsToPackage{main=british}{babel}
 \AtBeginEnvironment{quote}{\small}
 \AtBeginEnvironment{quotation}{\small}
 \AtBeginEnvironment{longtable}{\centering}
@@ -126,42 +136,50 @@
 \usepackage[style=american]{csquotes}
 % \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
 %
-% charis-plus.tex
+% noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
-% The main font is Charis SIL.
+% The main font is Noto Serif.
 % Other main fonts are also available in appropriately named file.
 \usepackage{fontspec}
 \usepackage{setspace}
 \setstretch{1.3}
 %
-\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=HarfBuzz} % at the start always
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=Node} % at the start always
 %
 % For English
+% See also https://tex.stackexchange.com/questions/574047/lualatex-amsthm-polyglossia-charissil-error
+% We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
 %
-\babelfont{rm}[Scale=1]{Merriweather}
-\babelfont{sf}[BoldFont={* Semibold}]{Source Sans Pro}
-\babelfont{tt}[Scale=0.9]{Fira Mono}
+\babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
 %
-\babelprovide[import,onchar=ids fonts]{sanskrit}
-\babelprovide[import,onchar=ids fonts]{tamil}
-\babelprovide[import,onchar=ids fonts]{greek}
+\babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
 %
-\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz]{Noto Serif Devanagari}
-\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz]{Noto Sans Devanagari}
-\babelfont[tamil]{rm}[Renderer=HarfBuzz]{Noto Serif Tamil}
-\babelfont[tamil]{sf}[Renderer=HarfBuzz]{Noto Sans Tamil}
-\babelfont[greek]{rm}{Gentium Book Plus}
+\babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
+%
+% Sanskrit, Tamil, and Greek fonts
+%
+\babelprovide[import, onchar=ids fonts]{sanskrit}
+\babelprovide[import, onchar=ids fonts]{tamil}
+\babelprovide[import, onchar=ids fonts]{greek}
+%
+\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSerifDevanagari}
+\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSansDevanagari}
+\babelfont[tamil]{rm}[Renderer=HarfBuzz,Script=Tamil]{NotoSerifTamil}
+\babelfont[tamil]{sf}[Renderer=HarfBuzz,Script=Tamil]{NotoSansTamil}
+\babelfont[greek]{rm}[Script=Greek]{GentiumBookPlus}
 %
 % Math font
 %
 \usepackage{unicode-math} % seems not to hurt % fallabck
 \setmathfont[bold-style=TeX]{STIX Two Math}
 %
+%
 % Other fonts
 %
 \newfontfamily{\emojifont}{Symbola}
 %
+
 \usepackage{titling}
 \usepackage{fancyhdr}
     \pagestyle{fancy}
@@ -204,7 +222,7 @@
 \begin{document}
 \maketitle
 
-
+\thispagestyle{empty}
 
 
 \hypertarget{stimulating-interest-in-an-arcane-topic}{%
@@ -482,7 +500,7 @@ off-putting. To those in search of greater rigour or a more formal
 exposition, I would recommend a good linear algebra textbook. The
 venerable tome that I used at university went by the acronym ``KKOP''
 after the initials of the surnames of the four authors, Kreider, Kuller,
-Ostberg, and Perkins \protect\hyperlink{ref-kkop1966}{{[}1{]}}.
+Ostberg, and Perkins {[}\protect\hyperlink{ref-kkop1966}{1}{]}.
 Unfortunately, it is out of print, but as a consolation, \cref{fig:kkop}
 is an image of my copy. \emojifont {😞}\normalfont
 
@@ -503,7 +521,7 @@ lecture on eigenvalues and eigenvectors.} There are also links to
 \href{http://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/}{his
 MIT Open Course Ware (OCW) page for Course 18.06 of Spring 2010},
 \href{http://math.mit.edu/~gs/linearalgebra/}{his linear algebra
-textbook home page} \protect\hyperlink{ref-strang2016}{{[}2{]}}, and
+textbook home page} {[}\protect\hyperlink{ref-strang2016}{2}{]}, and
 \href{http://www-math.mit.edu/~gs/}{his academic home page.}
 
 Many academics make their lecture notes freely available online:
@@ -902,15 +920,15 @@ comments and corrections.
 \noindent A PDF version of this article is
 \href{./eigenvalues-and-eigenvectors.pdf}{available for download here}:
 
-\begin{normalsize}
+\begin{small}
 
-\begin{ttfamily}
+\begin{sffamily}
 
 \url{https://swanlotus.netlify.app/blogs/eigenvalues-and-eigenvectors.pdf}
 
-\end{ttfamily}
+\end{sffamily}
 
-\end{normalsize}
+\end{small}
 
 \hypertarget{bibliography}{%
 \section*{References}\label{bibliography}}
@@ -919,15 +937,16 @@ comments and corrections.
 \hypertarget{refs}{}
 \begin{CSLReferences}{0}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-kkop1966}{}}%
-\CSLLeftMargin{{[}1{]} }
-\CSLRightInline{D. L. Kreider, R. G. Kuller, D. R. Ostberg, and F. W.
-Perkins, \emph{{An Introduction to Linear Analysis}}. Addison-Wesley
-Publishing Company, 1966. }
+\CSLLeftMargin{1. }%
+\CSLRightInline{Kreider, Donald L, Kuller, Robert G, Ostberg, Donald R
+and Perkins, Fred W. \emph{{An Introduction to Linear Analysis}}.
+Addison-Wesley Publishing Company, 1966. Addison-wesley series in
+mathematics. }
 
 \leavevmode\vadjust pre{\hypertarget{ref-strang2016}{}}%
-\CSLLeftMargin{{[}2{]} }
-\CSLRightInline{G. Strang, \emph{{Introduction to Linear Algebra}}, 5th
-ed. Wellesley-Cambridge Press, 2016. }
+\CSLLeftMargin{2. }%
+\CSLRightInline{Strang, Gilbert. \emph{{Introduction to Linear
+Algebra}}. 5th ed. Wellesley-Cambridge Press, 2016. }
 
 \end{CSLReferences}
 

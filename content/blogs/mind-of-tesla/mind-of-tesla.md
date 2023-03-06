@@ -827,6 +827,6 @@ corrections.
 
 \noindent A PDF version of this article is [available for download here]({attach}./mind-of-tesla.pdf):
 
-::: {.normal .tt}
+::: {.small .sf}
 <https://swanlotus.netlify.app/blogs/mind-of-tesla.pdf>
 :::

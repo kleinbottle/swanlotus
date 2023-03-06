@@ -153,8 +153,8 @@
 %
 % Preliminaries
 %
-\PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
-\PassOptionsToPackage{main=british}{babel}
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+% \PassOptionsToPackage{main=british}{babel}
 \AtBeginEnvironment{quote}{\small}
 \AtBeginEnvironment{quotation}{\small}
 \AtBeginEnvironment{longtable}{\centering}
@@ -176,42 +176,50 @@
 \usepackage[style=american]{csquotes}
 % \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
 %
-% charis-plus.tex
+% noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
-% The main font is Charis SIL.
+% The main font is Noto Serif.
 % Other main fonts are also available in appropriately named file.
 \usepackage{fontspec}
 \usepackage{setspace}
 \setstretch{1.3}
 %
-\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=HarfBuzz} % at the start always
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=Node} % at the start always
 %
 % For English
+% See also https://tex.stackexchange.com/questions/574047/lualatex-amsthm-polyglossia-charissil-error
+% We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
 %
-\babelfont{rm}[Scale=1]{Merriweather}
-\babelfont{sf}[BoldFont={* Semibold}]{Source Sans Pro}
-\babelfont{tt}[Scale=0.9]{Fira Mono}
+\babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
 %
-\babelprovide[import,onchar=ids fonts]{sanskrit}
-\babelprovide[import,onchar=ids fonts]{tamil}
-\babelprovide[import,onchar=ids fonts]{greek}
+\babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
 %
-\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz]{Noto Serif Devanagari}
-\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz]{Noto Sans Devanagari}
-\babelfont[tamil]{rm}[Renderer=HarfBuzz]{Noto Serif Tamil}
-\babelfont[tamil]{sf}[Renderer=HarfBuzz]{Noto Sans Tamil}
-\babelfont[greek]{rm}{Gentium Book Plus}
+\babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
+%
+% Sanskrit, Tamil, and Greek fonts
+%
+\babelprovide[import, onchar=ids fonts]{sanskrit}
+\babelprovide[import, onchar=ids fonts]{tamil}
+\babelprovide[import, onchar=ids fonts]{greek}
+%
+\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSerifDevanagari}
+\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSansDevanagari}
+\babelfont[tamil]{rm}[Renderer=HarfBuzz,Script=Tamil]{NotoSerifTamil}
+\babelfont[tamil]{sf}[Renderer=HarfBuzz,Script=Tamil]{NotoSansTamil}
+\babelfont[greek]{rm}[Script=Greek]{GentiumBookPlus}
 %
 % Math font
 %
 \usepackage{unicode-math} % seems not to hurt % fallabck
 \setmathfont[bold-style=TeX]{STIX Two Math}
 %
+%
 % Other fonts
 %
 \newfontfamily{\emojifont}{Symbola}
 %
+
 \usepackage{titling}
 \usepackage{fancyhdr}
     \pagestyle{fancy}
@@ -254,7 +262,7 @@
 \begin{document}
 \maketitle
 
-
+\thispagestyle{empty}
 
 
 Although digital images are ubiquitous, one image format does not suit
@@ -291,7 +299,7 @@ the latter scales without degradation when magnified, as illustrated in
 \begin{figure}
 \hypertarget{fig:raster}{%
 \centering
-\includegraphics[width=0.5\textwidth,height=\textheight]{images/letter-O-150-dpi.png}
+\includegraphics[width=0.64\textwidth,height=\textheight]{images/letter-O-150-dpi.png}
 \caption{Raster graphics image of the letter O (150 dots per inch (dpi)
 PNG format).}\label{fig:raster}
 }
@@ -300,7 +308,7 @@ PNG format).}\label{fig:raster}
 \begin{figure}
 \hypertarget{fig:vector}{%
 \centering
-\includegraphics[width=0.5\textwidth,height=\textheight]{images/letter-O.svg}
+\includesvg[width=0.9\textwidth,height=\textheight]{images/letter-O.svg}
 \caption{Vector graphics image of the letter O (SVG
 format).}\label{fig:vector}
 }
@@ -487,7 +495,7 @@ mathematical representation.
 A pixel in itself has no size or physical representation, it can only
 carry value through its relationship with the screen physical size,
 creating the resolution, or PPI. Understand this and screen density will
-have no secret for you. \protect\hyperlink{ref-gabriel2017}{{[}1{]}}
+have no secret for you. {[}\protect\hyperlink{ref-gabriel2017}{1}{]}
 \end{quote}
 
 \hypertarget{file-size-and-quality-again}{%
@@ -711,7 +719,7 @@ license}. The
 \href{https://github.com/ImageMagick/ImageMagick}{authoritative source
 code repository} shows active development even today, 34 years after the
 suite was first released
-\protect\hyperlink{ref-imagemagicksource}{{[}2{]}}.
+{[}\protect\hyperlink{ref-imagemagicksource}{2}{]}.
 
 \texttt{ImageMagick} is so versatile and useful that it may rightfully
 be called the
@@ -747,7 +755,7 @@ online documentation} for further details. The power of
 Image Scripting Language. The examples in this blog use the command line
 versions of invoking \texttt{ImageMagick}. If they seem daunting,
 \href{https://imagemagick.org/script/command-line-processing.php}{refer
-to this explanation} \protect\hyperlink{ref-imcli}{{[}3{]}}.
+to this explanation} {[}\protect\hyperlink{ref-imcli}{3}{]}.
 
 \hypertarget{test-images}{%
 \subsection{Test images}\label{test-images}}
@@ -1096,7 +1104,7 @@ compression level} used above is the default compression level in
 image dimensions, image compression, and image quality so that the image
 loads fast and looks good is
 \href{https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/}{quite
-an art}. \protect\hyperlink{ref-newton2015}{{[}4{]}}
+an art}. {[}\protect\hyperlink{ref-newton2015}{4}{]}
 
 To get an idea of the range of file sizes involved, let us try
 generating a composite image with extremes of the compression level,
@@ -1139,7 +1147,7 @@ zero---gives a file \emph{twice} the size of the uncompressed version
 and \emph{sixteen times} the size of the JPEG. And we have not even used
 two other related attributes:
 \href{https://stackoverflow.com/questions/27267073/imagemagick-lossless-max-compression-for-png}{filter
-and strategy} \protect\hyperlink{ref-setchell2014}{{[}5{]}}. Getting the
+and strategy} {[}\protect\hyperlink{ref-setchell2014}{5}{]}. Getting the
 best tradeoff of image format, image size, file size, loading time, and
 image quality is still more of an art to be mastered than an algorithm
 to be applied.
@@ -1605,7 +1613,7 @@ look at the first block of text:
 The \emph{width}, \emph{height}, and \emph{viewBox} of the SVG image are
 all stated in \emph{points}, abbreviated as pt where, as we have already
 seen, 1 pt equals \textsuperscript{1}/\textsubscript{72} inch
-\protect\hyperlink{ref-oreilly2019}{{[}6{]}}. At a screen setting of 96
+{[}\protect\hyperlink{ref-oreilly2019}{6}{]}. At a screen setting of 96
 pixels per inch, 1 pt equals \textsuperscript{4}/\textsubscript{3}
 pixels. So, the native size of the \texttt{test-only} image as a PNG
 should be about 286 pixels by 70 pixels on a 96 ppi monitor.
@@ -1891,7 +1899,7 @@ now convert it SVG and view it.
 \begin{figure}
 \hypertarget{fig:animals-pdftocairo-svg}{%
 \centering
-\includegraphics[width=0.5\textwidth,height=\textheight]{images/animals-pdftocairo.svg}
+\includesvg[width=0.5\textwidth,height=\textheight]{images/animals-pdftocairo.svg}
 \caption{SVG version of the \texttt{animals}
 image.}\label{fig:animals-pdftocairo-svg}
 }
@@ -2007,7 +2015,7 @@ on a separate browser tab and compared with the SVG shown in
 \begin{figure}
 \hypertarget{fig:SVGfromPDFviapdftocairo}{%
 \centering
-\includegraphics[width=0.8\textwidth,height=\textheight]{images/text-only-pdftocairo.svg}
+\includesvg[width=0.8\textwidth,height=\textheight]{images/text-only-pdftocairo.svg}
 \caption{SVG version of \texttt{text-only} image converted from PDF by
 \texttt{pdftocairo}.}\label{fig:SVGfromPDFviapdftocairo}
 }
@@ -2199,14 +2207,16 @@ changes with time.
 \begin{longtable}[]{@{}ll@{}}
 \caption{\label{tbl:formats}Tools for image format
 conversions.}\tabularnewline
-\toprule
+\toprule\noalign{}
 Conversion Type & Tool \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Conversion Type & Tool \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 raster to raster & \texttt{convert} \\
 raster to PDF & \texttt{convert} \\
 raster to SVG & \texttt{convert} \\
@@ -2214,7 +2224,6 @@ PDF to raster & \texttt{pdftoppm} \\
 SVG to raster & \texttt{cairosvg} \\
 PDF to SVG & \texttt{pdftocairo} \\
 SVG to PDF & \texttt{inkscape} \\
-\bottomrule
 \end{longtable}
 
 \hypertarget{appendix-security-vulnerabilities-in-imagemagick}{%
@@ -2236,15 +2245,15 @@ malicious code remotely, to the detriment of the unwitting user of
 \texttt{ImageMagick}. This was revealed at a website, interestingly
 named \href{https://imagetragick.com/}{ImageTragick} to attract
 sufficient attention and remedial action to the discovered bug
-\protect\hyperlink{ref-imagetragick2016}{{[}7{]}}.
+{[}\protect\hyperlink{ref-imagetragick2016}{7}{]}.
 
 In November 2020,
 \href{https://portswigger.net/daily-swig/imagemagick-pdf-parsing-flaw-allowed-attacker-to-execute-shell-commands-via-maliciously-crafted-image}{another
 security vulnerability was discovered}
-\protect\hyperlink{ref-leyden2020}{{[}8{]}}. It was
+{[}\protect\hyperlink{ref-leyden2020}{8}{]}. It was
 \href{https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html}{reported
 and promptly patched} by the \texttt{ImageMagick} maintainers
-\protect\hyperlink{ref-infuhr2020}{{[}9{]}}.
+{[}\protect\hyperlink{ref-infuhr2020}{9}{]}.
 
 Recent versions of the \texttt{ImageMagick} suite, bundled with major
 distributions, should have correctly configured \texttt{policy.xml}
@@ -2263,15 +2272,15 @@ comments and corrections.
 \noindent A PDF version of this article is
 \href{image-format-conversions.pdf}{available for download here}:
 
-\begin{normalsize}
+\begin{small}
 
-\begin{ttfamily}
+\begin{sffamily}
 
 \url{https://swanlotus.netlify.app/blogs/image-format-conversions.pdf}
 
-\end{ttfamily}
+\end{sffamily}
 
-\end{normalsize}
+\end{small}
 
 \hypertarget{bibliography}{%
 \section*{References}\label{bibliography}}
@@ -2280,68 +2289,64 @@ comments and corrections.
 \hypertarget{refs}{}
 \begin{CSLReferences}{0}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-gabriel2017}{}}%
-\CSLLeftMargin{{[}1{]} }
-\CSLRightInline{S. Gabriel, {`{Designer's guide to DPI}'}, 15-May-2015.
-{[}Online{]}. Available:
-\url{https://sebastien-gabriel.com/designers-guide-to-dpi/}.
-{[}Accessed: 27-Mar-2021{]}}
+\CSLLeftMargin{1. }%
+\CSLRightInline{Gabriel, Sebastien. {Designer's guide to DPI}. Online.
+15 May 2015. {[}Accessed~27~March~2021{]}. Available from:
+\url{https://sebastien-gabriel.com/designers-guide-to-dpi/}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-imagemagicksource}{}}%
-\CSLLeftMargin{{[}2{]} }
-\CSLRightInline{ImageMagick Studio LLC, {`ImageMagick 7'}. {[}Online{]}.
-Available: \url{https://github.com/ImageMagick/ImageMagick}.
-{[}Accessed: 08-Mar-2021{]}}
+\CSLLeftMargin{2. }%
+\CSLRightInline{ImageMagick Studio LLC. ImageMagick 7. Online.
+{[}Accessed~8~March~2021{]}. Available from:
+\url{https://github.com/ImageMagick/ImageMagick}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-imcli}{}}%
-\CSLLeftMargin{{[}3{]} }
-\CSLRightInline{{`{ImageMagick---Command-line Processing}. {Anatomy of
-the Command-line}'}. {[}Online{]}. Available:
-\url{https://imagemagick.org/script/command-line-processing.php}.
-{[}Accessed: 12-Mar-2021{]}}
+\CSLLeftMargin{3. }%
+\CSLRightInline{{ImageMagick---Command-line Processing}. {Anatomy of the
+Command-line}. Online. {[}Accessed~12~March~2021{]}. Available from:
+\url{https://imagemagick.org/script/command-line-processing.php}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-newton2015}{}}%
-\CSLLeftMargin{{[}4{]} }
-\CSLRightInline{D. Newton, {`{Efficient Image Resizing With
-ImageMagick---Smashing Magazine}'}, 25-Jun-2015. {[}Online{]}.
-Available:
-\url{https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/}.
-{[}Accessed: 11-Mar-2021{]}}
+\CSLLeftMargin{4. }%
+\CSLRightInline{Newton, Dave. {Efficient Image Resizing With
+ImageMagick---Smashing Magazine}. Online. 25 June 2015.
+{[}Accessed~11~March~2021{]}. Available from:
+\url{https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-setchell2014}{}}%
-\CSLLeftMargin{{[}5{]} }
-\CSLRightInline{M. Setchell, {`{ImageMagick: Lossless max compression
-for PNG?---Stack Overflow}'}, 03-Dec-2014. {[}Online{]}. Available:
-\url{https://stackoverflow.com/questions/27267073/imagemagick-lossless-max-compression-for-png/27269260\#27269260}.
-{[}Accessed: 12-Mar-2021{]}}
+\CSLLeftMargin{5. }%
+\CSLRightInline{Setchell, Mark. {ImageMagick: Lossless max compression
+for PNG?---Stack Overflow}. Online. 3 December 2014.
+{[}Accessed~12~March~2021{]}. Available from:
+\url{https://stackoverflow.com/questions/27267073/imagemagick-lossless-max-compression-for-png/27269260\#27269260}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-oreilly2019}{}}%
-\CSLLeftMargin{{[}6{]} }
-\CSLRightInline{A. Bellamy-Royds, K. Cagle, and D. Storey, {`{Units for
-Measurements Reference --- Using SVG with CSS3 and HTML5---Supplementary
-Material}'}, 05-Oct-2019. {[}Online{]}. Available:
-\url{https://oreillymedia.github.io/Using_SVG/guide/units.html}.
-{[}Accessed: 20-Mar-2021{]}}
+\CSLLeftMargin{6. }%
+\CSLRightInline{Bellamy-Royds, Amelia, Cagle, Kurt and Storey, Dudley.
+{Units for Measurements Reference --- Using SVG with CSS3 and
+HTML5---Supplementary Material}. Online. 5 October 2019.
+{[}Accessed~20~March~2021{]}. Available from:
+\url{https://oreillymedia.github.io/Using_SVG/guide/units.html}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-imagetragick2016}{}}%
-\CSLLeftMargin{{[}7{]} }
-\CSLRightInline{---, {`ImageMagick is on fire --- CVE-2016--3714'},
-12-May-2016. {[}Online{]}. Available: \url{https://imagetragick.com/}.
-{[}Accessed: 08-Mar-2021{]}}
+\CSLLeftMargin{7. }%
+\CSLRightInline{---. ImageMagick is on fire --- CVE-2016--3714. Online.
+12 May 2016. {[}Accessed~8~March~2021{]}. Available from:
+\url{https://imagetragick.com/}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-leyden2020}{}}%
-\CSLLeftMargin{{[}8{]} }
-\CSLRightInline{J. Leyden, {`ImageMagick PDF-parsing flaw allowed
-attacker to execute shell commands via maliciously crafted image'},
-23-Nov-2020. {[}Online{]}. Available:
-\url{https://portswigger.net/daily-swig/imagemagick-pdf-parsing-flaw-allowed-attacker-to-execute-shell-commands-via-maliciously-crafted-image}.
-{[}Accessed: 08-Mar-2021{]}}
+\CSLLeftMargin{8. }%
+\CSLRightInline{Leyden, John. ImageMagick PDF-parsing flaw allowed
+attacker to execute shell commands via maliciously crafted image.
+Online. 23 November 2020. {[}Accessed~8~March~2021{]}. Available from:
+\url{https://portswigger.net/daily-swig/imagemagick-pdf-parsing-flaw-allowed-attacker-to-execute-shell-commands-via-maliciously-crafted-image}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-infuhr2020}{}}%
-\CSLLeftMargin{{[}9{]} }
-\CSLRightInline{A. Inführ, {`{ImageMagick - Shell injection via PDF
-password}'}, 21-Nov-2020. {[}Online{]}. Available:
-\url{https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html}.
-{[}Accessed: 08-Mar-2021{]}}
+\CSLLeftMargin{9. }%
+\CSLRightInline{Inführ, Alex. {ImageMagick - Shell injection via PDF
+password}. Online. 21 November 2020. {[}Accessed~8~March~2021{]}.
+Available from:
+\url{https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html}}
 
 \end{CSLReferences}
 

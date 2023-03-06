@@ -10,11 +10,11 @@ blogheader="$HOME/.pandoc/defaults/blog-header-includes.tex"
 standard="$HOME/.pandoc/defaults/latex.yaml"
 stdheader="$HOME/.pandoc/defaults/latex-header-includes.tex"
 font="$HOME/.pandoc/defaults/fonts/noto-plus.tex"
-indicgreek="$HOME/.pandoc/defaults/fonts/indic-greek-fonts.tex"
+# indicgreek="$HOME/.pandoc/defaults/fonts/indic-greek-fonts.tex"
 
-pandoc --defaults "$standard" --include-in-header "$stdheader" --include-in-header "$font" --include-in-header "$indicgreek" --include-in-header "$blogheader" --include-in-header "./special-includes" --output "$base.pdf" "temp.md";
+pandoc --defaults "$standard" --include-in-header "$stdheader" --include-in-header "$font" --include-in-header "$blogheader" --include-in-header "./special-includes" --output "$base.pdf" "temp.md";
 #
-pandoc --defaults "$standard"  --include-in-header "$stdheader" --include-in-header "$font" --include-in-header "$indicgreek" --include-in-header "$blogheader" --include-in-header "./special-includes" --output "$base.tex" "temp.md";
+pandoc --defaults "$standard"  --include-in-header "$stdheader" --include-in-header "$font" --include-in-header "$blogheader" --include-in-header "./special-includes" --output "$base.tex" "temp.md";
 
 
 # pandoc --defaults xelatex.yaml --include-in-header "$blogheader" --include-in-header "./special-includes" --output "$base.pdf" "temp.md";

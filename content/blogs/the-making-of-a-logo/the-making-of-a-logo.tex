@@ -89,6 +89,16 @@
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.80,0.80,0.80}{#1}}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.80,0.58,0.58}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.50,0.62,0.50}{\textbf{#1}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -143,8 +153,8 @@
 %
 % Preliminaries
 %
-\PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
-\PassOptionsToPackage{main=british}{babel}
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+% \PassOptionsToPackage{main=british}{babel}
 \AtBeginEnvironment{quote}{\small}
 \AtBeginEnvironment{quotation}{\small}
 \AtBeginEnvironment{longtable}{\centering}
@@ -166,42 +176,50 @@
 \usepackage[style=american]{csquotes}
 % \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
 %
-% charis-plus.tex
+% noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
-% The main font is Charis SIL.
+% The main font is Noto Serif.
 % Other main fonts are also available in appropriately named file.
 \usepackage{fontspec}
 \usepackage{setspace}
 \setstretch{1.3}
 %
-\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=HarfBuzz} % at the start always
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=Node} % at the start always
 %
 % For English
+% See also https://tex.stackexchange.com/questions/574047/lualatex-amsthm-polyglossia-charissil-error
+% We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
 %
-\babelfont{rm}[Scale=1]{Merriweather}
-\babelfont{sf}[BoldFont={* Semibold}]{Source Sans Pro}
-\babelfont{tt}[Scale=0.9]{Fira Mono}
+\babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
 %
-\babelprovide[import,onchar=ids fonts]{sanskrit}
-\babelprovide[import,onchar=ids fonts]{tamil}
-\babelprovide[import,onchar=ids fonts]{greek}
+\babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
 %
-\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz]{Noto Serif Devanagari}
-\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz]{Noto Sans Devanagari}
-\babelfont[tamil]{rm}[Renderer=HarfBuzz]{Noto Serif Tamil}
-\babelfont[tamil]{sf}[Renderer=HarfBuzz]{Noto Sans Tamil}
-\babelfont[greek]{rm}{Gentium Book Plus}
+\babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
+%
+% Sanskrit, Tamil, and Greek fonts
+%
+\babelprovide[import, onchar=ids fonts]{sanskrit}
+\babelprovide[import, onchar=ids fonts]{tamil}
+\babelprovide[import, onchar=ids fonts]{greek}
+%
+\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSerifDevanagari}
+\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSansDevanagari}
+\babelfont[tamil]{rm}[Renderer=HarfBuzz,Script=Tamil]{NotoSerifTamil}
+\babelfont[tamil]{sf}[Renderer=HarfBuzz,Script=Tamil]{NotoSansTamil}
+\babelfont[greek]{rm}[Script=Greek]{GentiumBookPlus}
 %
 % Math font
 %
 \usepackage{unicode-math} % seems not to hurt % fallabck
 \setmathfont[bold-style=TeX]{STIX Two Math}
 %
+%
 % Other fonts
 %
 \newfontfamily{\emojifont}{Symbola}
 %
+
 \usepackage{titling}
 \usepackage{fancyhdr}
     \pagestyle{fancy}
@@ -244,7 +262,7 @@
 \begin{document}
 \maketitle
 
-
+\thispagestyle{empty}
 
 
 \hypertarget{the-request}{%
@@ -295,6 +313,18 @@ noble thoughts could arise from such ancient minds!
     \subcaption*{Diotima}
   \end{minipage}
 \end{figure*}
+
+\begin{figure}
+\centering
+\includegraphics{images/socrates-close-up.jpg}
+\caption{Socrates}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{images/diotima-2.jpg}
+\caption{Diotima}
+\end{figure}
 
 But would a layperson recognize those statues and make the link? He
 thought not, in these days of frenetic and fading fashions and fads,
@@ -352,6 +382,18 @@ design.
   \end{minipage}
 \end{figure*}
 
+\begin{figure}
+\centering
+\includesvg{images/trefoil.svg}
+\caption{Trefoil}
+\end{figure}
+
+\begin{figure}
+\centering
+\includesvg{images/braid.svg}
+\caption{Braid}
+\end{figure}
+
 But after he slept on the idea, it struck him as too vague: how would
 one know which \href{http://symboldictionary.net/?p=159}{aspect of the
 braid} was being alluded to? What if someone thought of it as, say, the
@@ -402,10 +444,10 @@ question by
 which is a relative newcomer to theoretical physics, but one that has
 captured the common imagination, judging by the popular explanations
 that abound on the Web
-\protect\hyperlink{ref-mann2019}{{[}1{]}}--\protect\hyperlink{ref-jones2020}{{[}3{]}}.
+{[}\protect\hyperlink{ref-mann2019}{1}--\protect\hyperlink{ref-jones2020}{3}{]}.
 And whether string theory is or is not science, Popper notwithstanding,
 is an issue that is still up for debate
-\protect\hyperlink{ref-siegel2015}{{[}4{]}}--\protect\hyperlink{ref-francis2019}{{[}7{]}}.
+{[}\protect\hyperlink{ref-siegel2015}{4}--\protect\hyperlink{ref-francis2019}{7}{]}.
 
 But, coming back to the task at hand, how would such an abstract idea as
 falsifiability find expression in a logo? Perhaps the correct medium for
@@ -425,7 +467,7 @@ Kuhn}---another celebrated philosopher of science---and popularized in
 his enduring tome,
 \href{https://www.amazon.com/Structure-Scientific-Revolutions-50th-Anniversary/dp/0226458121/}{\emph{The
 Structure of Scientific Revolutions}}
-\protect\hyperlink{ref-kuhn2012}{{[}8{]}}. Kuhn held that science did
+{[}\protect\hyperlink{ref-kuhn2012}{8}{]}. Kuhn held that science did
 not evolve smoothly, but every so often experienced seismic corrections
 or radical changes of perspective that led to new theories that
 predicted the world much better than before. But how in heaven was he to
@@ -491,7 +533,7 @@ invented \footnote{Such meandering, away from the straight and narrow of
   intellectual sheen, but took its toll on timeliness.}. It was probably
 the greatest scientific advance of its time. And priority for its
 discovery was an ugly bone of contention between Leibniz and Newton
-\protect\hyperlink{ref-bardi2007}{{[}9{]}}.
+{[}\protect\hyperlink{ref-bardi2007}{9}{]}.
 
 And then it hit him like a ton of bricks. \emph{Calculus could not have
 been invented without coordinate geometry---that extraordinary offspring
@@ -519,12 +561,12 @@ eyes that were piercing and dreamy at the same time.
 Relieved that at last he was on the scent, Sol relaxed for a couple of
 days, which he spent reading about the
 \href{https://www.britannica.com/biography/Rene-Descartes}{life of
-Descartes} \protect\hyperlink{ref-watson2020}{{[}10{]}}. He chuckled
+Descartes} {[}\protect\hyperlink{ref-watson2020}{10}{]}. He chuckled
 when he read that ``the 22-year-old {[}Queen{]} Christina {[}of
 Sweden{]} perversely made the 53-year-old Descartes rise before 5:00 am
 to give her philosophy lessons, even though she knew of his habit of
 lying in bed until 11 o'clock in the morning.''
-\protect\hyperlink{ref-watson2020}{{[}10{]}}. He read with chagrin that
+{[}\protect\hyperlink{ref-watson2020}{10}{]}. He read with chagrin that
 Descartes tragically died in Sweden from pneumonia, presumably caused by
 the Scandinavian winter and the duress of having to rise early in the
 morning to keep his appointment with his royal student.
@@ -748,7 +790,7 @@ gave birth to this image:
 
 \begin{figure}
 \centering
-\includegraphics[width=0.6\textwidth,height=\textheight]{images/firstcut.svg}
+\includesvg[width=0.6\textwidth,height=\textheight]{images/firstcut.svg}
 \caption{Logo: the first cut}
 \end{figure}
 
@@ -775,7 +817,7 @@ shown below:
 
 \begin{figure}
 \centering
-\includegraphics[width=0.6\textwidth,height=\textheight]{images/secondcut.svg}
+\includesvg[width=0.6\textwidth,height=\textheight]{images/secondcut.svg}
 \caption{Logo: the second cut}
 \end{figure}
 
@@ -801,7 +843,7 @@ settled on his third, and possibly final cut, shown below:
 
 \begin{figure}
 \centering
-\includegraphics[width=0.6\textwidth,height=\textheight]{images/thirdcut.svg}
+\includesvg[width=0.6\textwidth,height=\textheight]{images/thirdcut.svg}
 \caption{Logo: the third cut}
 \end{figure}
 
@@ -836,7 +878,7 @@ serif family, and got a result that was more than half pleasing:
 
 \begin{figure}
 \centering
-\includegraphics[width=0.6\textwidth,height=\textheight]{images/penultimatecut.svg}
+\includesvg[width=0.6\textwidth,height=\textheight]{images/penultimatecut.svg}
 \caption{Logo: the penultimate cut}
 \end{figure}
 
@@ -888,7 +930,7 @@ capitalization, appeared thus:
 
 \begin{figure}
 \centering
-\includegraphics[width=0.6\textwidth,height=\textheight]{images/finalcut.svg}
+\includesvg[width=0.6\textwidth,height=\textheight]{images/finalcut.svg}
 \caption{Logo: the final cut}
 \end{figure}
 
@@ -927,15 +969,15 @@ comments and corrections.
 \noindent A PDF version of this article is
 \href{./the-making-of-a-logo.pdf}{available for download here}:
 
-\begin{normalsize}
+\begin{small}
 
-\begin{ttfamily}
+\begin{sffamily}
 
 \url{https://swanlotus.netlify.app/blogs/the-making-of-a-logo.pdf}
 
-\end{ttfamily}
+\end{sffamily}
 
-\end{normalsize}
+\end{small}
 
 \hypertarget{bibliography}{%
 \section*{References}\label{bibliography}}
@@ -944,77 +986,72 @@ comments and corrections.
 \hypertarget{refs}{}
 \begin{CSLReferences}{0}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-mann2019}{}}%
-\CSLLeftMargin{{[}1{]} }
-\CSLRightInline{A. Mann, {`{What Is String Theory?}'}, 20-Mar-2019.
-{[}Online{]}. Available:
-\url{https://www.livescience.com/65033-what-is-string-theory.html}.
-{[}Accessed: 12-Nov-2020{]}}
+\CSLLeftMargin{1. }%
+\CSLRightInline{Mann, Adam. {What Is String Theory?} Online. 20 March
+2019. {[}Accessed~12~November~2020{]}. Available from:
+\url{https://www.livescience.com/65033-what-is-string-theory.html}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-wood2019}{}}%
-\CSLLeftMargin{{[}2{]} }
-\CSLRightInline{C. Wood, {`{What Is String Theory?}: Reference article:
-A simplified explanation and brief history of string theory'},
-11-Jul-2019. {[}Online{]}. Available:
-\url{https://www.space.com/17594-string-theory.html}. {[}Accessed:
-12-Nov-2020{]}}
+\CSLLeftMargin{2. }%
+\CSLRightInline{Wood, Charlie. {What Is String Theory?}: Reference
+article: A simplified explanation and brief history of string theory.
+Online. 11 July 2019. {[}Accessed~12~November~2020{]}. Available from:
+\url{https://www.space.com/17594-string-theory.html}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-jones2020}{}}%
-\CSLLeftMargin{{[}3{]} }
-\CSLRightInline{A. Z. Jones, {`{The Basics of String Theory}'},
-02-Mar-2019. {[}Online{]}. Available:
-\url{https://www.thoughtco.com/what-is-string-theory-2699363}.
-{[}Accessed: 12-Nov-2020{]}}
+\CSLLeftMargin{3. }%
+\CSLRightInline{Jones, Andrew Zimmerman. {The Basics of String Theory}.
+Online. 2 March 2019. {[}Accessed~12~November~2020{]}. Available from:
+\url{https://www.thoughtco.com/what-is-string-theory-2699363}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-siegel2015}{}}%
-\CSLLeftMargin{{[}4{]} }
-\CSLRightInline{E. Siegel, {`{Why String Theory Is Not A Scientific
-Theory}'}, 23-Dec-2015. {[}Online{]}. Available:
-\url{https://www.forbes.com/sites/startswithabang/2015/12/23/why-string-theory-is-not-science/}.
-{[}Accessed: 12-Nov-2020{]}}
+\CSLLeftMargin{4. }%
+\CSLRightInline{Siegel, Ethan. {Why String Theory Is Not A Scientific
+Theory}. Online. 23 December 2015. {[}Accessed~12~November~2020{]}.
+Available from:
+\url{https://www.forbes.com/sites/startswithabang/2015/12/23/why-string-theory-is-not-science/}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-castelvecchi2016}{}}%
-\CSLLeftMargin{{[}5{]} }
-\CSLRightInline{D. Castelvecchi, {`{Feuding physicists turn to
+\CSLLeftMargin{5. }%
+\CSLRightInline{Castelvecchi, Davide. {Feuding physicists turn to
 philosophy for help}: String theory is at the heart of a debate over the
-integrity of the scientific method itself'}, 05-Jan-2016. {[}Online{]}.
-Available:
-\url{https://www.nature.com/news/feuding-physicists-turn-to-philosophy-for-help-1.19076}.
-{[}Accessed: 12-Nov-2020{]}}
+integrity of the scientific method itself. Online. 5 January 2016.
+{[}Accessed~12~November~2020{]}. Available from:
+\url{https://www.nature.com/news/feuding-physicists-turn-to-philosophy-for-help-1.19076}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-alves2017}{}}%
-\CSLLeftMargin{{[}6{]} }
-\CSLRightInline{R. A. Batista and J. Primack, {`{Is String theory
-falsifiable?}: Can a theory that isn't completely testable still be
-useful to physics?'} {[}Online{]}. Available:
-\url{https://metafact.io/factchecks/30-is-string-theory-falsifiable}.
-{[}Accessed: 12-Nov-2020{]}}
+\CSLLeftMargin{6. }%
+\CSLRightInline{Batista, Rafael Alves and Primack, Joel. {Is String
+theory falsifiable?}: Can a theory that isn't completely testable still
+be useful to physics? Online. {[}Accessed~12~November~2020{]}. Available
+from:
+\url{https://metafact.io/factchecks/30-is-string-theory-falsifiable}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-francis2019}{}}%
-\CSLLeftMargin{{[}7{]} }
-\CSLRightInline{M. R. Francis, {`{Falsifiability and physics}: Can a
-theory that isn't completely testable still be useful to physics?'},
-23-Apr-2019. {[}Online{]}. Available:
-\url{https://www.scientificamerican.com/article/is-string-theory-science/}.
-{[}Accessed: 12-Nov-2020{]}}
+\CSLLeftMargin{7. }%
+\CSLRightInline{Francis, Matthew R. {Falsifiability and physics}: Can a
+theory that isn't completely testable still be useful to physics?
+Online. 23 April 2019. {[}Accessed~12~November~2020{]}. Available from:
+\url{https://www.scientificamerican.com/article/is-string-theory-science/}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-kuhn2012}{}}%
-\CSLLeftMargin{{[}8{]} }
-\CSLRightInline{T. S. Kuhn, \emph{{The Structure of Scientific
-Revolutions}}, 50th Anniversary Edition. University of Chicago Press,
-2012. }
+\CSLLeftMargin{8. }%
+\CSLRightInline{Kuhn, Thomas S. \emph{{The Structure of Scientific
+Revolutions}}. 50th Anniversary Edition. University of Chicago Press,
+2012. }%
+\CSLRightInline{First published in 1962}
 
 \leavevmode\vadjust pre{\hypertarget{ref-bardi2007}{}}%
-\CSLLeftMargin{{[}9{]} }
-\CSLRightInline{J. S. Bardi, \emph{{The Calculus Wars: Newton, Leibniz,
-and the Greatest Mathematical Clash of All}}, Illustrated Edition. Basic
-Books, 2007. }
+\CSLLeftMargin{9. }%
+\CSLRightInline{Bardi, Jason Socrates. \emph{{The Calculus Wars: Newton,
+Leibniz, and the Greatest Mathematical Clash of All}}. Illustrated
+Edition. Basic Books, 2007. }
 
 \leavevmode\vadjust pre{\hypertarget{ref-watson2020}{}}%
-\CSLLeftMargin{{[}10{]} }
-\CSLRightInline{R. A. Watson, {`René descartes'}, 10-Apr-2020.
-{[}Online{]}. Available:
-\url{https://www.britannica.com/biography/Rene-Descartes}. {[}Accessed:
-12-Nov-2020{]}}
+\CSLLeftMargin{10. }%
+\CSLRightInline{Watson, Richard A. René descartes. Online. 10 April
+2020. {[}Accessed~12~November~2020{]}. Available from:
+\url{https://www.britannica.com/biography/Rene-Descartes}}
 
 \end{CSLReferences}
 

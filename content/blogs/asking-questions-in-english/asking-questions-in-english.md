@@ -414,6 +414,6 @@ corrections.
 
 \noindent A PDF version of this article is [available for download here]({attach}./asking-questions-in-english.pdf):
 
-::: {.normal .tt}
+::: {.small .sf}
 <https://swanlotus.netlify.app/blogs/asking-questions-in-english.pdf>
 :::
