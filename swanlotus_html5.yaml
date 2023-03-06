@@ -19,7 +19,7 @@ filters:
   - pandoc-crossref
   - citeproc
 
-csl: "./springer-humanities-brackets.csl"
+csl: "./chandra-iso690-numeric-en.csl"
 
 metadata:
   link-citations: true
