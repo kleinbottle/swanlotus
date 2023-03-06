@@ -312,7 +312,7 @@ newname="${newname%-}"
 echo "$newname"
 ```
 
-We have accomplished what we set out to do with the filename. The absence of the `*` in the expression `newname="${newname%-}"` has morphed the pattern matching and substring removal we with filenames into a robust, removal of a terminal `-` without the need to test if it is the last character in the string. To demonstrate the terseness of this approach, I give below the same operation, with a slightly longer syntax, that is also available to us in `bash`.
+We have accomplished what we set out to do with the filename. The absence of the `*` in the expression `newname="${newname%-}"` has morphed the pattern matching and substring removal we used for parsing filenames into a robust, removal of a terminal `-`, without the need to test if it is the last character in the string. To demonstrate the terseness of this approach, I give below the same operation, with a slightly longer syntax, that is also available to us in `bash`.
 
 ### Using substring extraction
 
