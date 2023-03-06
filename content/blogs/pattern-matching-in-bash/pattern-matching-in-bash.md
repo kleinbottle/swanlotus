@@ -326,7 +326,7 @@ corrections.
 
 \noindent A PDF version of this article is [available for download here]({attach}./pattern-matching-in-bash.pdf):
 
-::: {.tt .small}
+::: {.small .sf}
 <https://swanlotus.netlify.app/blogs/pattern-matching-in-bash.pdf>
 :::
 

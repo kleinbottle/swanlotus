@@ -257,11 +257,12 @@
 shell}{The arcane powers of the bash shell}}\label{the-arcane-powers-of-the-bash-shell}}
 
 The \href{https://www.gnu.org/software/bash/}{\texttt{bash} shell}
-{[}\protect\hyperlink{ref-newham2005}{15}{]} embodies powerful
-pattern-matching and substitution capabilities, many of which are
-relatively unknown
-{[}\protect\hyperlink{ref-gnupattern}{1},\protect\hyperlink{ref-parametersubs}{7},\protect\hyperlink{ref-frazier2019}{13},\protect\hyperlink{ref-stringops}{14}{]}.
-The programs, \href{https://www.gnu.org/software/sed/}{\texttt{sed}},
+{[}\protect\hyperlink{ref-newham2005}{1},
+\protect\hyperlink{ref-ryder2018}{2}{]} embodies powerful
+pattern-matching and substitution capabilities
+{[}\protect\hyperlink{ref-parametersubs}{3}--\protect\hyperlink{ref-stringops}{6}{]},
+many of which are relatively unknown. The programs,
+\href{https://www.gnu.org/software/sed/}{\texttt{sed}},
 \href{https://www.grymoire.com/Unix/Awk.html}{\texttt{awk}},
 \href{https://www.gnu.org/software/grep/manual/grep.html}{\texttt{grep}},
 and
@@ -291,11 +292,12 @@ searching, sorting and other file-related functions.
 \href{https://en.wikipedia.org/w/index.php?title=Glob_(programming)\&oldid=1133836865}{\emph{Globbing}}
 is the unflattering term---an abbreviation for \emph{global}---used to
 denote an operation to extract files satisfying certain conditions
-{[}\protect\hyperlink{ref-globhistory}{2},\protect\hyperlink{ref-globbingref}{16},\protect\hyperlink{ref-glob2023}{20}{]}.
+{[}\protect\hyperlink{ref-glob2023}{7}--\protect\hyperlink{ref-globhistory}{9}{]}.
 It is applicable also to the \texttt{bash} command line. For our
-purposes, it is useful and sometimes mandatory, to set
-\texttt{shopt\ -s\ extglob} after the
-\href{https://en.wikipedia.org/wiki/Shebang_(Unix)}{shebang} line.
+purposes, it is sometimes mandatory, to set \texttt{shopt\ -s\ extglob}
+after the \href{https://en.wikipedia.org/wiki/Shebang_(Unix)}{shebang}
+line, depending on the sort of matching we perform
+{[}\protect\hyperlink{ref-extglob}{10}{]}.
 
 \hypertarget{a-canonical-filename}{%
 \subsubsection{A canonical filename}\label{a-canonical-filename}}
@@ -413,7 +415,7 @@ One other point to keep in view constantly is to avoid looking at
 \texttt{bash} pattern matching through the lens of
 \href{https://www.regular-expressions.info/tutorial.html}{regular
 expressions}
-{[}\protect\hyperlink{ref-introbashregex}{8},\protect\hyperlink{ref-posixcharclass}{9},\protect\hyperlink{ref-writeregexp}{19}{]}.
+{[}\protect\hyperlink{ref-posixcharclass}{11}--\protect\hyperlink{ref-writeregexp}{13}{]}.
 There are some similarities, but the two are not identical.
 
 So,
@@ -518,7 +520,7 @@ logical, that is not the intent.}
 
 One way to overcome this issue is to test for a period or dot character
 in the original \texttt{fullname} string
-{[}\protect\hyperlink{ref-dottest}{6},\protect\hyperlink{ref-periodtest}{12},\protect\hyperlink{ref-bashscriptpatmatch}{18}{]}.
+{[}\protect\hyperlink{ref-periodtest}{14}--\protect\hyperlink{ref-bashscriptpatmatch}{16}{]}.
 If there is no \texttt{.} character, we set the extension to the empty
 string. Otherwise, we set it to what we get by the pattern-matching we
 have discussed. The corrected routine for the extension should thus run:
@@ -545,7 +547,7 @@ have discussed. The corrected routine for the extension should thus run:
 
 Note that the \texttt{=\textasciitilde{}} sign is a \emph{regular
 expression} operator that has been inducted into \texttt{bash}
-{[}\protect\hyperlink{ref-equaltilde}{10}{]}. It returns a \texttt{0}
+{[}\protect\hyperlink{ref-equaltilde}{17}{]}. It returns a \texttt{0}
 for \texttt{true} and a \texttt{1} for \texttt{false}, which may sound
 contrary to expectations, but that is the correct behaviour. This may be
 seen by appending \texttt{echo\ \$?} above to each branch of the
@@ -554,11 +556,11 @@ seen by appending \texttt{echo\ \$?} above to each branch of the
 Moreover, when matching, the left side is double quoted while the right
 side is either escaped as in \texttt{\textbackslash{}.} or is a literal,
 like \texttt{\textquotesingle{}.\textquotesingle{}}
-{[}\protect\hyperlink{ref-dottest}{6}{]}. If a plain \texttt{.} is used,
-with no ``protection'', it will natch any character in accordance with
-regex rules, and we risk getting the wrong result. It is attention to
-every small detail that ensures success with \texttt{bash} scripts. In
-the process, you also learn patience. \emojifont {😉} \normalfont
+{[}\protect\hyperlink{ref-dottest}{15}{]}. If a plain \texttt{.} is
+used, with no ``protection'', it will natch any character in accordance
+with regex rules, and we risk getting the wrong result. It is attention
+to every small detail that ensures success with \texttt{bash} scripts.
+In the process, you also learn patience. \emojifont {😉} \normalfont
 
 \hypertarget{filenames-with-multiple-dot-characters}{%
 \subsubsection{Filenames with multiple dot
@@ -641,7 +643,7 @@ character \texttt{\_} in a filename. This is because spaces are used as
 input field separators (IFS) to break up a string into its components:
 something known as
 \href{https://mywiki.wooledge.org/WordSplitting?highlight=\%28spaces\%29\%7C\%28word\%29\%7C\%28splitting\%29}{\emph{word
-splitting}} {[}\protect\hyperlink{ref-wordsplitting}{5}{]}.
+splitting}} {[}\protect\hyperlink{ref-wordsplitting}{18}{]}.
 
 But not all files respect this nomenclature of alphanumeric plus
 underscore characters alone. What if you encountered a file named so:
@@ -717,7 +719,7 @@ means that \emph{all} such occurrences will be substituted. The
 \texttt{{[}{[}:space:{]}{]}} and \texttt{{[}{[}:punct:{]}{]}}
 incantations are called
 \href{https://www.regular-expressions.info/posixbrackets.html}{POSIX
-character classes} {[}\protect\hyperlink{ref-posixcharclass}{9}{]}. The
+character classes} {[}\protect\hyperlink{ref-posixcharclass}{11}{]}. The
 option \texttt{-r} is given to \texttt{sed} to confer the regular
 expression matching behaviour we are after. And the
 \texttt{\textless{}\textless{}\textless{}} allows an input to be given
@@ -850,7 +852,9 @@ expression in \texttt{bash} therefore becomes:
 The syntax for substring extraction in \texttt{bash} is
 \texttt{\$\{parameter:offset:length\}} where \texttt{offset} is measured
 starting from \texttt{0} at the extreme left
-{[}\protect\hyperlink{ref-parametersubs}{7},\protect\hyperlink{ref-substring}{11},\protect\hyperlink{ref-stringops}{14}{]}.
+{[}\protect\hyperlink{ref-parametersubs}{3},
+\protect\hyperlink{ref-stringops}{6},
+\protect\hyperlink{ref-substring}{19}{]}.
 
 \begin{enumerate}
 \def\labelenumi{(\alph{enumi})}
@@ -872,8 +876,8 @@ The interested reader is referred to the
 \href{https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html\#Shell-Parameter-Expansion}{official
 documentation online} for a comprehensive explanation of the dazzling
 features of \emph{parameter expansion}
-{[}\protect\hyperlink{ref-shellparamexp}{17}{]} and \emph{substring
-removal} {[}\protect\hyperlink{ref-wikisubstring}{3}{]} in
+{[}\protect\hyperlink{ref-shellparamexp}{20}{]} and \emph{substring
+removal} {[}\protect\hyperlink{ref-wikisubstring}{21}{]} in
 \texttt{bash}. For an admirable summary of features like parameter
 expansion, do also visit the clear and comprehensive
 \href{https://mywiki.wooledge.org/BashGuide/Parameters}{BashGuide
@@ -885,7 +889,7 @@ some aspect of string matching or manipulation, the section with the
 heading
 \href{https://wiki.bash-hackers.org/start\#recommended_shell_resources}{``Recommended
 Shell resources''} is the best place to start your search
-{[}\protect\hyperlink{ref-bhwstart}{4}{]}. It contains a wealth of
+{[}\protect\hyperlink{ref-bhwstart}{22}{]}. It contains a wealth of
 authoritative links that will speedily dispel your doubts.
 
 \hypertarget{feedback}{%
@@ -897,15 +901,15 @@ comments and corrections.
 \noindent A PDF version of this article is
 \href{./pattern-matching-in-bash.pdf}{available for download here}:
 
-\begin{ttfamily}
-
 \begin{small}
+
+\begin{sffamily}
 
 \url{https://swanlotus.netlify.app/blogs/pattern-matching-in-bash.pdf}
 
-\end{small}
+\end{sffamily}
 
-\end{ttfamily}
+\end{small}
 
 \hypertarget{bibliography}{%
 \section*{References}\label{bibliography}}
@@ -913,121 +917,137 @@ comments and corrections.
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{0}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-gnupattern}{}}%
-\CSLLeftMargin{{[}1{]} }%
-\CSLRightInline{2022. Pattern matching. Retrieved 4 March 2023 from
-\url{https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html}}
+\leavevmode\vadjust pre{\hypertarget{ref-newham2005}{}}%
+\CSLLeftMargin{1. }%
+\CSLRightInline{Cameron Newham, and Bill Rosenblatt. 2005.
+\emph{Learning the bash shell}. 3rd ed. O'Reilly.}
 
-\leavevmode\vadjust pre{\hypertarget{ref-globhistory}{}}%
-\CSLLeftMargin{{[}2{]} }%
-\CSLRightInline{---. 2014. History of bash globbing. Retrieved 5 March
-2023 from
-\url{https://unix.stackexchange.com/questions/136353/history-of-bash-globbing}}
-
-\leavevmode\vadjust pre{\hypertarget{ref-wikisubstring}{}}%
-\CSLLeftMargin{{[}3{]} }%
-\CSLRightInline{---. 2021. Parameter expansion {[}bash hackers wiki{]}.
-Retrieved 5 March 2023 from
-\url{https://wiki.bash-hackers.org/syntax/pe\#substring_removal}}
-
-\leavevmode\vadjust pre{\hypertarget{ref-bhwstart}{}}%
-\CSLLeftMargin{{[}4{]} }%
-\CSLRightInline{---. 2023. The bash hackers wiki: Recommended shell
-resources. Retrieved 5 March 2023 from
-\url{https://wiki.bash-hackers.org/start\#recommended_shell_resources}}
-
-\leavevmode\vadjust pre{\hypertarget{ref-wordsplitting}{}}%
-\CSLLeftMargin{{[}5{]} }%
-\CSLRightInline{lhunath aka Maarten Billemont and Greg Wooledge aka
-GreyCat. 2018. Word splitting. Retrieved 5 March 2023 from
-\url{https://mywiki.wooledge.org/WordSplitting?highlight=\%28spaces\%29\%7C\%28word\%29\%7C\%28splitting\%29}}
-
-\leavevmode\vadjust pre{\hypertarget{ref-dottest}{}}%
-\CSLLeftMargin{{[}6{]} }%
-\CSLRightInline{Mark Byers. 2010. Test for a dot in bash. Retrieved 4
-March 2023 from \url{https://stackoverflow.com/a/2745096}}
+\leavevmode\vadjust pre{\hypertarget{ref-ryder2018}{}}%
+\CSLLeftMargin{2. }%
+\CSLRightInline{Ryder, Tom. 2018. \emph{Bash quick start guide: Get up
+and running with shell scripting with bash}. Packt.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-parametersubs}{}}%
-\CSLLeftMargin{{[}7{]} }%
-\CSLRightInline{Mendel Cooper. 2014. Parameter substitution. Retrieved 4
-March 2023 from
-\url{https://tldp.org/LDP/abs/html/parameter-substitution.html}}
-
-\leavevmode\vadjust pre{\hypertarget{ref-introbashregex}{}}%
-\CSLLeftMargin{{[}8{]} }%
-\CSLRightInline{Zach Gollwitzer. 2020. Intro to bash regular
-expressions. Retrieved 5 March 2023 from
-\url{https://dev.to/zachgoll/intro-to-bash-regular-expressions-4d2p}}
-
-\leavevmode\vadjust pre{\hypertarget{ref-posixcharclass}{}}%
-\CSLLeftMargin{{[}9{]} }%
-\CSLRightInline{Jan Goyvaerts. 2019. Regex tutorial---POSIX bracket
-expressions. Retrieved 5 March 2023 from
-\url{https://www.regular-expressions.info/posixbrackets.html}}
-
-\leavevmode\vadjust pre{\hypertarget{ref-equaltilde}{}}%
-\CSLLeftMargin{{[}10{]} }%
-\CSLRightInline{Kusalananda. 2017. Bash test: What does "=~" do?
-Retrieved 4 March 2023 from
-\url{https://unix.stackexchange.com/a/340485/11610}}
-
-\leavevmode\vadjust pre{\hypertarget{ref-substring}{}}%
-\CSLLeftMargin{{[}11{]} }%
-\CSLRightInline{Linuxize. 2019. How to check if a string contains a
-substring in bash. Retrieved 4 March 2023 from
-\url{https://linuxize.com/post/how-to-check-if-string-contains-substring-in-bash/\#google_vignette}}
-
-\leavevmode\vadjust pre{\hypertarget{ref-periodtest}{}}%
-\CSLLeftMargin{{[}12{]} }%
-\CSLRightInline{lmcanavals. 2013. Test if a string has a period in it
-with bash. Retrieved 4 March 2023 from
-\url{https://unix.stackexchange.com/a/63374/11610}}
+\CSLLeftMargin{3. }%
+\CSLRightInline{Mendel Cooper. 2014.
+\href{https://tldp.org/LDP/abs/html/parameter-substitution.html}{Parameter
+substitution}. March 10.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-frazier2019}{}}%
-\CSLLeftMargin{{[}13{]} }%
-\CSLRightInline{Mitch Frazier. 2019. Pattern matching in bash. Retrieved
-28 February 2023 from
-\url{https://www.linuxjournal.com/content/pattern-matching-bash}}
+\CSLLeftMargin{4. }%
+\CSLRightInline{Mitch Frazier. 2019.
+\href{https://www.linuxjournal.com/content/pattern-matching-bash}{Pattern
+matching in bash}. April 15.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-gnupattern}{}}%
+\CSLLeftMargin{5. }%
+\CSLRightInline{---. 2022.
+\href{https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html}{Pattern
+matching}. September 26.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-stringops}{}}%
-\CSLLeftMargin{{[}14{]} }%
-\CSLRightInline{Cameron Newham and Bill Rosenblatt. 1998. String
-operators. Retrieved 4 March 2023 from
-\url{https://www.oreilly.com/library/view/learning-the-bash/1565923472/ch04s03.html}}
-
-\leavevmode\vadjust pre{\hypertarget{ref-newham2005}{}}%
-\CSLLeftMargin{{[}15{]} }%
-\CSLRightInline{Cameron Newham and Bill Rosenblatt. 2005. \emph{Learning
-the bash shell} (3rd ed.). O'Reilly.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-globbingref}{}}%
-\CSLLeftMargin{{[}16{]} }%
-\CSLRightInline{Gilles Quénot. 2023. Unix. Run script across multiple
-dirs on specific files, where pathname has regex. Retrieved 5 March 2023
-from \url{https://unix.stackexchange.com/a/738684/11610}}
-
-\leavevmode\vadjust pre{\hypertarget{ref-shellparamexp}{}}%
-\CSLLeftMargin{{[}17{]} }%
-\CSLRightInline{Chet Ramey. 2020. Bash reference manual: Shell parameter
-expansion. Retrieved 5 April 2023 from
-\url{https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html\#Shell-Parameter-Expansion}}
-
-\leavevmode\vadjust pre{\hypertarget{ref-bashscriptpatmatch}{}}%
-\CSLLeftMargin{{[}18{]} }%
-\CSLRightInline{Mark Reed. 2017. Bash script pattern matching. Retrieved
-5 March 2023 from \url{https://stackoverflow.com/a/44688520}}
-
-\leavevmode\vadjust pre{\hypertarget{ref-writeregexp}{}}%
-\CSLLeftMargin{{[}19{]} }%
-\CSLRightInline{Abhinav Tiwari. 2023. How to write regular
-expressions?---GeeksforGeeks. Retrieved 5 March 2023 from
-\url{https://www.geeksforgeeks.org/write-regular-expressions/}}
+\CSLLeftMargin{6. }%
+\CSLRightInline{Cameron Newham, and Bill Rosenblatt. 1998.
+\href{https://www.oreilly.com/library/view/learning-the-bash/1565923472/ch04s03.html}{String
+operators}. January 26.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-glob2023}{}}%
-\CSLLeftMargin{{[}20{]} }%
-\CSLRightInline{Wikipedia. 2023. Glob (programming). Retrieved 28
-February 2023 from
-\url{https://en.wikipedia.org/w/index.php?title=Glob_(programming)\&oldid=1133836865}}
+\CSLLeftMargin{7. }%
+\CSLRightInline{Wikipedia. 2023.
+\href{https://en.wikipedia.org/w/index.php?title=Glob_(programming)\&oldid=1133836865}{Glob
+(programming)}. Wikipedia, The Free Encyclopedia. January 15.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-globbingref}{}}%
+\CSLLeftMargin{8. }%
+\CSLRightInline{Gilles Quénot. 2023.
+\href{https://unix.stackexchange.com/a/738684/11610}{Unix. Run script
+across multiple dirs on specific files, where pathname has regex}. March
+5.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-globhistory}{}}%
+\CSLLeftMargin{9. }%
+\CSLRightInline{---. 2014.
+\href{https://unix.stackexchange.com/questions/136353/history-of-bash-globbing}{History
+of bash globbing}. June 10.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-extglob}{}}%
+\CSLLeftMargin{10. }%
+\CSLRightInline{Krzysztof Kowalczyk. 2023.
+\href{https://www.programming-books.io/essential/bash/extended-globbing-7c7bf6bd68b64f0e919716228ef9f3df}{Extended
+globbing}. January 30.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-posixcharclass}{}}%
+\CSLLeftMargin{11. }%
+\CSLRightInline{Jan Goyvaerts. 2019.
+\href{https://www.regular-expressions.info/posixbrackets.html}{Regex
+tutorial---POSIX bracket expressions}. November 22.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-introbashregex}{}}%
+\CSLLeftMargin{12. }%
+\CSLRightInline{Zach Gollwitzer. 2020.
+\href{https://dev.to/zachgoll/intro-to-bash-regular-expressions-4d2p}{Intro
+to bash regular expressions}. October 21.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-writeregexp}{}}%
+\CSLLeftMargin{13. }%
+\CSLRightInline{Abhinav Tiwari. 2023.
+\href{https://www.geeksforgeeks.org/write-regular-expressions/}{How to
+write regular expressions?---GeeksforGeeks}. March 2.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-periodtest}{}}%
+\CSLLeftMargin{14. }%
+\CSLRightInline{lmcanavals. 2013.
+\href{https://unix.stackexchange.com/a/63374/11610}{Test if a string has
+a period in it with bash}. February 1.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-dottest}{}}%
+\CSLLeftMargin{15. }%
+\CSLRightInline{Mark Byers. 2010.
+\href{https://stackoverflow.com/a/2745096}{Test for a dot in bash}.
+April 30.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-bashscriptpatmatch}{}}%
+\CSLLeftMargin{16. }%
+\CSLRightInline{Mark Reed. 2017.
+\href{https://stackoverflow.com/a/44688520}{Bash script pattern
+matching}. June 22.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-equaltilde}{}}%
+\CSLLeftMargin{17. }%
+\CSLRightInline{Kusalananda. 2017.
+\href{https://unix.stackexchange.com/a/340485/11610}{Bash test: What
+does "=~" {[}equal-tilde{]} do?} January 17.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-wordsplitting}{}}%
+\CSLLeftMargin{18. }%
+\CSLRightInline{Maarten Billemont, aka lhunath, and Greg Wooledge aka
+GreyCat. 2018.
+\href{https://mywiki.wooledge.org/WordSplitting?highlight=\%28spaces\%29\%7C\%28word\%29\%7C\%28splitting\%29}{Word
+splitting}. May 23.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-substring}{}}%
+\CSLLeftMargin{19. }%
+\CSLRightInline{Linuxize. 2019.
+\href{https://linuxize.com/post/how-to-check-if-string-contains-substring-in-bash/\#google_vignette}{How
+to check if a string contains a substring in bash}. July 19.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-shellparamexp}{}}%
+\CSLLeftMargin{20. }%
+\CSLRightInline{Chet Ramey. 2020.
+\href{https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html\#Shell-Parameter-Expansion}{Bash
+reference manual: Shell parameter expansion}. September 22.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-wikisubstring}{}}%
+\CSLLeftMargin{21. }%
+\CSLRightInline{---. 2021.
+\href{https://wiki.bash-hackers.org/syntax/pe\#substring_removal}{Parameter
+expansion {[}bash hackers wiki{]}}. December 10.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-bhwstart}{}}%
+\CSLLeftMargin{22. }%
+\CSLRightInline{---. 2023.
+\href{https://wiki.bash-hackers.org/start\#recommended_shell_resources}{The
+bash hackers wiki: Recommended shell resources}. March 5.}
 
 \end{CSLReferences}
 

@@ -18,6 +18,6 @@ corrections.
 
 \noindent A PDF version of this article is [available for download here]({attach}./blogfilename.pdf):
 
-::: {.normal .tt}
+::: {.small .sf}
 <https://swanlotus.netlify.app/blogs/blogfilename.pdf>
 :::
