@@ -2,7 +2,7 @@
 title: Pattern Matching and Substitution in `bash`
 author: "R (Chandra) Chandrasekhar"
 date: "2023-02-28"
-modified: "2023-03-01"
+modified: "2023-03-07"
 summary: "The `bash` shell embodies powerful pattern-matching and substitution capabilities, many of which are relatively unknown. The programs, `sed`, `awk`, `grep`, and `perl` have been traditionally used for matching and manipulating lines and strings in Linux. But the pattern-matching and string manipulation capabilities of `bash` have grown steadily since version 2.02, which was released in 1998. This blog gives practical examples for using these powerful, but somewhat understated features, to achieve common tasks efficiently and tersely, directly from within `bash` itself."
 category: Programming
 tags: bash, globs, regular expressions, parameter replacement, pattern matching, substitution
@@ -25,21 +25,21 @@ A fully qualified filename consists of a `path`, a `basename`, and an `extension
 
 ### A canonical filename
 
-A [canonical](https://www.thefreedictionary.com/canonical) filename will comprise these components:
+A [canonical](https://www.thefreedictionary.com/canonical) filename should comprise these components:
 
 #.  a _path_ with the forward slash `/` as the separator between elements denoting the path;
 #.  a _filename_ in two parts:
     (a)   comprising a _basename_ which appears immediately after the _last_ `/` character; and
     (a)  a _file extension_ that occurs after the basename and immediately after a `.` or period character.
 
-`/my_path/is/quite/long/basename.ext` is a canonical filename where the abovenamed elements are as follows:
+`/my_path/is/quite/long/basename.ext` is a canonical filename, or full filename, where the abovenamed structural elements are as follows:
 
 #.  path: `/my_path/is/quite/long`
 #.  basename: `basename`
 #.  extension: `ext`
 #.  filename: `basename.ext`
 
-### Parsing the filename
+### Parsing the full filename
 
 Our next task is to dissect the canonical filename into its above components using pattern-matching in `bash`:
 
@@ -81,11 +81,11 @@ echo "extension is ${fullname##*.}"
 #
 # Extract $basename
 # This requires trimming strings from both
-# the left and the right of `fullname`
-# and requires _two_ steps.
+# the left and the right of $fullname
+# and requires _two_ steps if start with $fullname.
 #
-# Instead, we use `filename` which is already available,
-# and excise the extension.
+# Instead, we use $filename, which is already available,
+# and excise the extension to get $basename.
 #
 # For this, we approach from the _right_ until we encounter
 # the _first_ `.` character and throw away everything
@@ -140,7 +140,7 @@ Extension is /home/chandra/myPDFfile.
 
 Surely, you did not expect the extension to be the fullname of the file. Yet, that is what we get. Though  unexpected, is it yet logically correct?
 
-Imagine you are moving from left to right until you hit the _last_ `.` character. When you do, you discard whatever is to the left of the `.` along with that character itself. If there is no `.` character, you do not stop and you do not discard anything. So, you are left with what you started with. _But, although logical, that is not the intent._
+Imagine you are moving from left to right until you hit the _last_ `.` character. When you do, you discard whatever is to the left of the `.` along with that character itself. If there is no `.` character, you do not stop and you do not discard anything. So, you are left with what you started with. _But, although logical, that is not the intent._ The error arises from the unfulfilled assumption that `fullname` contains a dot character,  followed by alphanumeric characters that denote the extension.
 
 One way to overcome this issue is to test for a period or dot character in the original `fullname` string [@periodtest; @dottest; @bashscriptpatmatch]. If there is no `.` character, we set the extension to the empty string. Otherwise, we set it to what we get by the pattern-matching we have discussed. The corrected routine for the extension should thus run:
 
@@ -162,9 +162,9 @@ fi
 echo "Extension is $ext."
 ~~~
 
-Note that the `=~` sign is a _regular expression_ operator that has been inducted into `bash` [@equaltilde]. It returns a `0` for `true` and a `1` for `false`, which may sound contrary to expectations, but that is the correct behaviour. This may be seen by appending `echo $?` above to each branch of the `if` conditional.
+Note that the `=~` sign is a _regular expression_ operator that has been inducted from `perl` into `bash` [@equaltilde]. It returns a `0` for `true` and a `1` for `false`, which may sound contrary to expectations, but that is the correct behaviour. This may be seen by pre-pending [`echo $?`](https://stackoverflow.com/questions/6834487/what-is-the-dollar-question-mark-variable-in-shell-scripting) to each branch of the `if` conditional.
 
-Moreover, when matching, the left side is double quoted while the right side is either escaped as in `\.` or is a literal, like `'.'` [@dottest]. If a plain `.` is used, with no "protection", it will natch any character in accordance with regex rules, and we risk getting the wrong result. It is attention to every small detail that ensures success with `bash` scripts. In the process, you also learn patience. \emojifont :wink: \normalfont
+Moreover, when matching, the left side is a string that should be double quoted to avoid errors, while the right side is a regular expression, or a constant that is either escaped as in `\.`, or in single quotes, like `'.'` [@dottest]. If a plain `.` is used, with no "protection", it will match any single character in accordance with regex rules, and we risk getting the wrong result. It is attention to every small detail that ensures success with `bash` scripts. On the way, you also learn patience. \emojifont :wink: \normalfont
 
 ### Filenames with multiple dot characters
 
@@ -172,7 +172,7 @@ I have encountered occasions where the `fullname` of a file contains multiple `.
 
 ## Filenames without a path
 
-Before attempting to extract a `path`, we must check for the presence of a `/` in the `fullname` string. Otherwise, we risk getting the same errors as with missing extensions. The following script should be self-explanatory by now. Again, note that we either need to make the `/` character a literal, enclosed by single quotes, or we must escape it with a backslash. Note that this time,the forward slash is enclosed by single quotes.
+Before attempting to extract a `path`, we must check for the presence of a `/` in the `fullname` string. Otherwise, we risk getting the same errors as with missing extensions. The following script should be self-explanatory by now. Again, note that we either need to make the `/` character a literal, enclosed by single quotes, or we must escape it with a backslash, `\`. Note that this time,the forward slash is enclosed by single quotes; I find `\/` both inelegant and somewhat perplexing.
 
 ~~~bash
 #!/bin/bash
@@ -194,21 +194,21 @@ echo "Path is $path."
 
 ## The generalized filename parser
 
-The revised file for parsing a filename into its components therefore needs to be augmented with these tests if it is to be robust and general. Note also that if no input is given, there can be no meaningful output. The file [`parsefilename.sh`]({attach}scripts/parsefilename.sh) embodies the improvements we have discussed and is available here for completeness.
+The revised file for parsing a filename into its components therefore needs to be augmented with these tests if it is to be robust and general. Note also that if no input is given, there can be no meaningful output; so we have to test that there is at least one command-line argument. The file [`parsefilename.sh`]({attach}scripts/parsefilename.sh) embodies the improvements we have discussed and is made available here for completeness. [The usual disclaimers about software merchantability](https://core.ac.uk/download/pdf/267973227.pdf) are implicit! \emojifont :wink: \normalfont
 
 ## Prettifying non-standard filenames
 
-We have now concluded the first part of processing a filename, and are ready to proceed to the second part, which is [prettifying](https://www.thefreedictionary.com/prettifying) a filename. Although filenames containing spaces, tabs, and and non-alphanumeric characters can be processed in Linux---when enclosed by single quotes---the natural etiquette in Linux file naming is not to use such non-standard characters.
+We have now concluded the first part of processing a filename, and are ready to proceed to the second part, which is [prettifying](https://www.thefreedictionary.com/prettifying) a filename. Although filenames containing spaces, tabs, and non-alphanumeric characters _can_ be processed in Linux---when enclosed by single quotes---the natural etiquette in Linux file naming is not to use such non-standard characters.
 
-But what happens if we are bequeathed files having such names? Renaming them one-by-one by hand will be laborious and even impractical. How may we automate the renaming of such files---to result in filenames that are meaningful as well as Linux-friendly? That is what will occupy us for the rest of this blog.
+But what happens if we are bequeathed files having such names? Renaming them one-by-one, by hand, will be laborious and even impractical. How may we automate the renaming of such files---to result in filenames that are both meaningful and Linux-friendly? That is what will occupy us for the rest of this blog.
 
 ## From cacophony to harmony
 
-The file naming convention in Linux is that there will be no spaces or other non-alphanumeric characters, _except for the underscore_ character `_` in a filename. This is because spaces are used as input field separators (IFS) to break up a string into its components: something known as [_word splitting_](https://mywiki.wooledge.org/WordSplitting?highlight=%28spaces%29%7C%28word%29%7C%28splitting%29) [@wordsplitting].
+The original file naming convention in Linux is that there will be no spaces or other non-alphanumeric characters, _except for the underscore_ character `_` in a filename; the dash, `-` is also accepted nowadays. This is because spaces are used as input field separators (IFS) to break up a string into its components: something known as [_word splitting_](https://mywiki.wooledge.org/WordSplitting?highlight=%28spaces%29%7C%28word%29%7C%28splitting%29) [@wordsplitting].
 
-But not all files respect this nomenclature of alphanumeric plus underscore characters alone. What if you encountered a file named so: `El??Condor   _Pasa%^!.mp3`. How would you sanitize it into something that could be easily processed by Linux when supplied as an argument?
+But not all filenames respect this nomenclature of alphanumeric plus underscore characters alone. What if you encountered a file named so: `El??Condor   _Pasa%^!.mp3`. How would you sanitize it into something that could be easily processed by Linux when supplied as an argument?
 
-This set me developing a simple script to convert all non-compatible characters into acceptable characters so that the end result would be a sanitized, Linux-compatible filename that still retained its meaning. Here is my thought process as an algorithm:
+This set me developing a simple script to convert all non-compatible characters into acceptable characters so that the end result would be a sanitized, Linux-compatible filename that still retained some of its meaning. Here is my thought process as an algorithm:
 
 #.  Replace all non-standard characters with dashes `-`.
 #.  Replace consecutive spaces, or other non-alphanumeric characters, by a _single_ dash.
@@ -232,18 +232,18 @@ which gives the result:
 El-Condor-Pasa-
 ```
 
-Note that _multiple_ spaces and punctuation characters have been replaced by _single_ hyphens or dashes. The `+` sign in the expression confers this behaviour. The fact that we want to change _both_ spaces and punctuation is the reason for the `|` alternation sign which might be loosely looked at as a logical [or]{.smallcaps}. The `g` parameter at the end (for global) means that _all_ such occurrences will be substituted. The `[[:space:]]` and `[[:punct:]]` incantations are called [POSIX character classes](https://www.regular-expressions.info/posixbrackets.html) [@posixcharclass]. The option `-r` is given to `sed` to confer the regular expression matching behaviour we are after. And the `<<<` allows an input to be given immediately to `sed` from the command line rather than from a file.
+Note that _multiple_ spaces and punctuation characters have been replaced by _single_ hyphens or dashes. The `+` sign in the expression confers this behaviour. The fact that we want to change _both_ spaces and punctuation is the reason for the `|` alternation sign which might be loosely looked at as a logical [or]{.smallcaps}. The `g` parameter at the end (for global) means that _all_ such occurrences will be substituted. The `[[:space:]]` and `[[:punct:]]` incantations are called [POSIX character classes](https://www.regular-expressions.info/posixbrackets.html) [@posixcharclass]. The option `-r` is given to `sed` to confer the regular expression matching behaviour we are after. And the `<<<` allows an input to be given immediately to `sed` from the command line rather than from a file. The `s` refers to a substitution.
 
 Now, are we satisfied with our result? Not really, on two counts:
 
 #.  We want to retain the underscore `_` character unchanged, if and when it occurs in the original string. An underscore in our original string has disappeared.
 #.  We do not want a terminal hyphen in the modified filename, as in this case.
 
-The second is easier to fix first. We will resort to the end-of-line anchor `$` to identify the terminal hyphen after the first replacement. Since `sed` can work consecutively on the string, or its modified variant, we can simply chain two substitutions using pipes so:
-
+The second is easier to fix first. We will resort to the end-of-line anchor `$` to identify the terminal hyphen. Since `sed` can work consecutively on the original string, or its modified variant, we can simply chain two substitutions using pipes so:
 
 ```bash
-sed -E "s/([[:space:]]|[[:punct:]])+/-/g"  <<< 'El??Condor   _Pasa%^!' | sed  "s/-$//"
+sed -E "s/([[:space:]]|[[:punct:]])+/-/g"  <<< 'El??Condor   _Pasa%^!' | \
+sed  "s/-$//"
 ```
 
 to get
@@ -252,16 +252,17 @@ to get
 El-Condor-Pasa
 ```
 
-as desired. The `-E` option is POSIX-compliant and needed to deal with extended regular expressions. In [GNU `sed`](https://www.gnu.org/software/sed/manual/html_node/Command_002dLine-Options.html) it is synonymous with the `-r` option. The `|` character indicates that the input for this second `sed` substitution is the output from the previous `sed` command.
+almost as desired. The `-E` option is POSIX-compliant and needed to deal with extended regular expressions; in [GNU `sed`](https://www.gnu.org/software/sed/manual/html_node/Command_002dLine-Options.html) it is synonymous with the `-r` option. The `|` character indicates that the input for this second `sed` substitution is the output from the previous `sed` command. The `+` denotes multiple consecutive instances of spaces and punctuation characters and the `g` denotes performing the substitution globally, i.e., as many times as the conditions require.
 
-The requirement to pass underscores unchanged is more serious because we need to modify the first `sed` replacement. Because the `[[:punct:]]` class also includes the underscore character, it is a sticky business to keep all the underscores but replace every other punctuation symbol by a dash. In fact, it negates the very notion of a POSIX character class.
+The requirement to pass underscores unchanged is more serious, because we need to modify the first `sed` replacement. Because the `[[:punct:]]` class also includes the underscore character, it is a sticky business to keep all the underscores but replace every other punctuation symbol by a dash. In fact, it negates the very notion and convenience of a POSIX character class.
 
-What we want is some operation like a [set difference](https://mathworld.wolfram.com/SetDifference.html) for which the regex syntax is not available for `sed`. One _could_ enumerate all punctuation symbols and exclude only `_` from that list, and use that class instead of `[[:punct:]]`, but this approach strikes me as grossly inelegant.
+What we want is some operation like a [set difference](https://mathworld.wolfram.com/SetDifference.html) for which the regex syntax is not available for `sed`. One _could_ enumerate all punctuation symbols and exclude only `_` from that list, and use that class instead of `[[:punct:]]`, but this approach strikes me as [ham-fisted](https://idioms.thefreedictionary.com/Ham+Fisted).
 
 A better and more felicitous way is to invert the requirement and _preserve_ the alphanumeric and underscore characters alone, and _replace everything else_ by a dash:
 
 ```bash
-sed -E "s/([^A-Za-z0-9_])+/-/g" <<< 'El??Condor   _Pasa%^!' | sed "s/-$//"
+sed -E "s/([^A-Za-z0-9_])+/-/g" <<< 'El??Condor   _Pasa%^!' | \
+sed "s/-$//"
 ```
 
 which gives:
@@ -274,16 +275,54 @@ Although it looks awkward---having a `-` followed by a `_`---this is exactly the
 
 ## Can it be done in `bash`?
 
-But there was always the nagging refrain, "Why not do it all in `bash` itself, using pattern matching?". So, rather than considering how to do this in `perl`, I hacked my way through several iterations of trying to perform the substitution in `bash` itself.
+But what about the nagging refrain, "Why not do it all in `bash` itself, using pattern matching?". So, rather than considering how to do this in `perl`, etc., I hacked my way through several iterations of trying to perform the substitution in `bash` itself.
+
+### Pattern-matching, substitution, and substring removal
 
 The expression `[A-Za-z0-9_]` has a rather fortuitous abbreviation as a POSIX character class in `bash`: it is denoted by `[[:word:]]`. The pattern-matching/replacement expression in `bash` therefore becomes:
 
 ```bash
 #!/bin/bash
 shopt -s extglob
-
+#
 filename='El??Condor   _Pasa%^!'
+#
+# The character class `[:word:]` includes all
+# alphanumeric characters and the underscore.
+# `^[:word:]` is the negation of this condition.
+# So, we replace _all_ non-alphanumeric characters
+# and non-underscores with the dash.
+#
+# The `+` sign though placed at the beginning rather than the end
+# has the same meaning as in the `sed` expression.
+# The `//` after $filename denotes multiple replacements
+# just like the `g` in the `sed` substitution expression.
+#
+newname="${filename//+([^[:word:]])/-}"
+#
+# We then trim off the last character in $newname
+# if it matches a dash. Note that
+# (a) there is no wildcard `*` after the `-`; we are matching
+#     a _single_ character, and since it is from the right end,
+#     we are matching a _terminal_ `-`.
+# (b) we may assign the possibly truncated variable `newname`
+#     to itself.
+#
+newname="${newname%-}"
+echo "$newname"
+```
 
+We have accomplished what we set out to do with the filename. The absence of the `*` in the expression `newname="${newname%-}"` has morphed the pattern matching and substring removal we with filenames into a robust, removal of a terminal `-` without the need to test if it is the last character in the string. To demonstrate the terseness of this approach, I give below the same operation, with a slightly longer syntax, that is also available to us in `bash`.
+
+### Using substring extraction
+
+The syntax for substring extraction in `bash` is `${parameter:offset:length}` where `offset` is measured starting from `0` at the extreme left [@substring; @parametersubs; @stringops].
+
+```bash
+#!/bin/bash
+shopt -s extglob
+#
+filename='El??Condor   _Pasa%^!'
 #
 # The character class [:word:] includes all
 # alphanumeric characters and the underscore.
@@ -292,32 +331,30 @@ filename='El??Condor   _Pasa%^!'
 # with the dash.
 #
 newname="${filename//+([^[:word:]])/-}"
-
 #
 # We then extract the last character in the string newname
-# and check whether it matches the dash character.
-# If it does, we strip it off, to get the finalname.
+# and check whether it is the dash character.
+# If it is, we strip it off, to get the finalname.
 #
-
 lastchar="${newname: -1}"
-if [[ "$lastchar" =~ '-' ]]
+if [[ "$lastchar" == '-' ]]
 then
   finalname="${newname::-1}"
 fi
 echo "$finalname"
 ```
 
-The syntax for substring extraction in `bash` is `${parameter:offset:length}` where `offset` is measured starting from `0` at the extreme left [@substring; @parametersubs; @stringops].
+(a) Note especially the space between the `:` and the `-` in the expression `"${newname: -1}"`. This space is inserted to avoid ambiguity with _another_ expression of the form `${parameter:-word}` which has a different function. The `-1` in `"${newname: -1}"` denotes the leftmost character in the string.
 
-(a)  Note especially the space between the `:` and the `-` in the expression `"${newname: -1}"`. This space is inserted to avoid ambiguity with _another_ expression of the form `${parameter:-word}` which has a different function.
+(b) The final idiom used above is `"${newname::-1}"`, which is shorthand for `"${newname:0:-1}"`. This operation strips off the final character in the variable `"${newname}"`. Because it is positional in nature, rather than the result of a pattern match, we have to test whether the terminal character is indeed a `-`.
 
-(b) The final idiom used above is `"${newname::-1}"`, which is shorthand for `"${newname:0:-1}"`. This operation strips off the final character in the variable `"${newname}"`.
+(c) One could also have used the `=~` sign for this test since we are matching a _single_ character. Nevertheless, it is better programming discipline to test for equality when dealing with a single character.
 
 ## To explore further
 
 The interested reader is referred to the [official documentation online](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion) for a comprehensive explanation of the dazzling features of _parameter expansion_ [@shellparamexp] and _substring removal_ [@wikisubstring] in `bash`. For an admirable summary of features like parameter expansion, do also visit the clear and comprehensive [BashGuide website](https://mywiki.wooledge.org/BashGuide/Parameters).
 
-If you are familiar with `bash` but require an [aide-mémoire](https://www.thefreedictionary.com/aide+memoire) for some aspect of string matching or manipulation, the section with the heading ["Recommended Shell resources"](https://wiki.bash-hackers.org/start#recommended_shell_resources) is the best place to start your search [@bhwstart]. It contains a wealth of authoritative links that will speedily dispel your doubts.
+If you are familiar with `bash` but require an [aide-mémoire](https://www.thefreedictionary.com/aide+memoire) for some aspect of string matching or manipulation, the section with the heading ["Recommended Shell resources"](https://wiki.bash-hackers.org/start#recommended_shell_resources) is the best place to start your search [@bhwstart]. It contains a wealth of authoritative links that will speedily dispel your doubts, not to speak of saving you time.
 
 ## Feedback
 
