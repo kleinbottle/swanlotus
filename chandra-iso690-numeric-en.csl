@@ -199,7 +199,21 @@
     </choose>
   </macro>
   <macro name="edition">
-    <text variable="edition" form="long"/>
+    <choose>
+      <if type="bill book chapter graphic legal_case legislation motion_picture paper-conference report song" match="any">
+        <choose>
+          <if is-numeric="edition">
+            <group delimiter=" ">
+              <number variable="edition" form="ordinal"/>
+              <text term="edition" form="short"/>
+            </group>
+          </if>
+          <else>
+            <text variable="edition" text-case="capitalize-first" suffix="."/>
+          </else>
+        </choose>
+      </if>
+    </choose>
   </macro>
   <macro name="publisher-group">
     <group delimiter="&#160;: ">
@@ -364,7 +378,7 @@
           <group display="right-inline">
             <text macro="responsability" suffix=". "/>
             <text macro="title" font-style="normal" suffix=". "/>
-            <text macro="edition" suffix=". "/>
+            <text macro="edition" suffix="edition. "/>
             <text macro="publisher-group" suffix=", "/>
             <text macro="year-date" suffix=". "/>
             <text macro="page" suffix=". "/>
