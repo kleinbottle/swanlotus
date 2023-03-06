@@ -1,36 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 """Pelican configuration file for SwanLotus website."""
+import sys
 
-import os
+# Append current directory to the path so that utils module is found
+sys.path.append('.')
 
-
-def format_lang(language_setting):
-    """Uppercases country code in DEFAULT_LANG setting in template."""
-    lang_code, country_code = language_setting.split("-")
-    language_setting = "-".join([lang_code, country_code.upper()])
-    return language_setting
-
-
-def get_blog_image_dirs():
-    """Return a list of directories that contain the images for each blog."""
-    blog_image_dirs = ["images"]
-    blogs_dir = "content/blogs"
-    for item in os.listdir(blogs_dir):
-        if os.path.isdir(os.path.join(blogs_dir, item)):
-            if "images" in os.listdir(os.path.join(blogs_dir, item)):
-                blog_image_dirs.append(os.path.join("blogs", item, "images"))
-    return blog_image_dirs
-
-
-def get_extra_metadata_paths():
-    """Return a dictionary that specifies the destination for image directories."""
-    extra_metadata_paths = {}
-    for image_path in get_blog_image_dirs():
-        if image_path != "images":
-            extra_metadata_paths[image_path] = {"path": "blogs/images"}
-    return extra_metadata_paths
-
+from utils import format_lang, get_image_destination_paths, get_image_dirs
 
 AUTHOR = "R (Chandra) Chandrasekhar"
 SITENAME = "SwanLotus"
@@ -63,9 +39,9 @@ THEME_STATIC_PATHS = ["static"]
 THEME_STATIC_DIR = "theme"
 CSS_FILE = "swanlotus.css"
 
-STATIC_PATHS = get_blog_image_dirs()
+STATIC_PATHS = get_image_dirs()
 
-EXTRA_PATH_METADATA = get_extra_metadata_paths()
+EXTRA_PATH_METADATA = get_image_destination_paths()
 
 INDEX_SAVE_AS = "blogs.html"
 
