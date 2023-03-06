@@ -1,4 +1,6 @@
+"""Custom functions to programmatically set constants in pelicanconf.py."""
 import os
+
 
 def format_lang(language_setting):
     """Uppercase country code in DEFAULT_LANG setting in template."""
@@ -29,4 +31,3 @@ def get_image_destination_paths():
         if image_path != "images":
             extra_metadata_paths[image_path] = {"path": "blogs/images"}
     return extra_metadata_paths
-

@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 """Pelican configuration file for SwanLotus website."""
+import os
 import sys
 
-# Append current directory to the path so that utils module is found
-sys.path.append('.')
+# Append current directory to the path so that custom_functions module is found
+sys.path.append(os.curdir)
 
-from utils import format_lang, get_image_destination_paths, get_image_dirs
+from custom_functions import format_lang, get_image_destination_paths, get_image_dirs
 
 AUTHOR = "R (Chandra) Chandrasekhar"
 SITENAME = "SwanLotus"
@@ -62,7 +63,9 @@ MENUITEMS = (
 DIRECT_TEMPLATES = ["index", "search", "categories", "tags", "archives"]
 
 PATH = "content"
-ARTICLE_PATHS = ["blogs/pattern-matching-in-bash"]  # draft value: ["blogs/rust-euler-one"]
+ARTICLE_PATHS = [
+    "blogs/pattern-matching-in-bash"
+]  # draft value: ["blogs/rust-euler-one"]
 ARTICLE_SAVE_AS = ARTICLE_LANG_SAVE_AS = "blogs/{slug}.html"
 ARTICLE_URL = ARTICLE_LANG_URL = "blogs/{slug}.html"
 DRAFT_SAVE_AS = DRAFT_LANG_SAVE_AS = "drafts/{slug}.html"
