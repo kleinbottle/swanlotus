@@ -25,8 +25,6 @@ $body-family: "Noto Serif", "Merriweather", "PT Serif", serif
 $family-secondary: "Source Sans Pro", sans-serif
 $family-code: "Fira Mono", monospace
 
-
-
 /* Unused Font Imports */
 
 /* PT Serif */
@@ -139,14 +137,15 @@ body
     font-family: $family-secondary
     font-size: larger
 
-.navbar a:hover
+.navbar a:hover,
+.navbar a:focus-within
     background-color: $navbar-background-color
     color: $navbar-item-color
     text-decoration: $link-decoration
 
 .navbar a.navbar-item.current
     color: $navbar-item-color
-    font-weight: $weight-bold
+    font-weight: 700
 
 .navbar a.navbar-item:hover
     background-color: $navbar-background-color

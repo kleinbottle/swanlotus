@@ -4600,7 +4600,8 @@ body {
   font-size: larger;
 }
 
-.navbar a:hover {
+.navbar a:hover,
+.navbar a:focus-within {
   background-color: hsl(0, 0%, 48%);
   color: hsl(0, 0%, 100%);
   text-decoration: underline;
