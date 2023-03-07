@@ -220,7 +220,9 @@ If you wish to add an [Open Graph image](https://ogp.me/) to a page or a blog yo
 opengraphimage: "<image-name>.jpg"
 ```
 
-Due to the limitations of Open Graph only JPG images are supported.
+Both JPG and PNG images are supported by the Open Graph protocol.
+
+Typically, it takes 24 hours for an Open Graph image to appear in WhatsApp. If the image does not appear in Telegram even after 24 hours access the [Webpage Bot](https://t.me/WebpageBot) and input the webpage link to update the link preview.
 
 ## Searching the website
 
