@@ -13,19 +13,19 @@ opengraphimage: "bash-script.jpg"
 
 The programs, [`sed`](https://www.gnu.org/software/sed/), [`awk`](https://www.grymoire.com/Unix/Awk.html), [`grep`](https://www.gnu.org/software/grep/manual/grep.html), and [`perl`](https://learnbyexample.github.io/learn_perl_oneliners/line-processing.html) have been the traditionally used tools for matching and manipulating lines and strings in Linux. But the [`bash` shell](https://www.gnu.org/software/bash/) [@newham2005; @ryder2018] also embodies powerful pattern-matching and substitution capabilities [@parametersubs; @frazier2019; @gnupattern; @stringops], many of which are relatively unknown and unused. This blog gives practical examples for using these powerful, but somewhat understated features, to achieve common tasks efficiently and tersely, directly from within `bash` itself.
 
-## Parsing filenames
-
-A fully qualified filename consists of a `path`, a `basename`, and an `extension`. While not all filenames are encountered in their full glory, it helps to decompose any given filename into its constituent parts to help with housekeeping functions on a machine running `bash`---for example, to facilitate searching, sorting, renamimg, and other file-related functions.
-
 ### Extended globbing
 
 [_Globbing_](https://en.wikipedia.org/w/index.php?title=Glob_(programming)&oldid=1133836865) is the unflattering term---an abbreviation for _global_---used to denote an operation to extract files satisfying certain conditions [@glob2023; @globbingref; @globhistory]. It is applicable also to the `bash` command line. For our purposes, depending on the sort of matching we perform, it will also be necessary sometimes to set `shopt -s extglob` after the [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) line [@extglob].
+
+## Parsing filenames
+
+A fully qualified filename consists of a `path`, a `basename`, and an `extension`. While not all filenames are encountered in their full glory, it helps to decompose any given filename into its constituent parts to help with housekeeping functions on a machine running `bash`---for example, to facilitate searching, sorting, renamimg, and other file-related functions.
 
 ### A canonical filename
 
 A [canonical](https://www.thefreedictionary.com/canonical) filename should comprise these components:
 
-#.  a _path_ with the forward slash `/` as the separator between elements denoting the path;
+#.  a _path_ with the forward slash `/` as the separator [^1] between elements denoting the path;
 #.  a _filename_ in two parts:
     (a)   comprising a _basename_ which appears immediately after the _last_ `/` character; and
     (a)  a _file extension_ that occurs after the basename and immediately after a `.` or period character.
@@ -36,6 +36,8 @@ A [canonical](https://www.thefreedictionary.com/canonical) filename should compr
 #.  basename: `basename`
 #.  extension: `ext`
 #.  filename: `basename.ext`
+
+[^1]: The separator in Microsoft Windows is a _backslash_, but since we are discussing `bash` which runs on Linux machines, it is the _forward slash_ that is our character of interest.
 
 ### Parsing the full filename
 
