@@ -15,31 +15,31 @@ The programs, [`sed`](https://www.gnu.org/software/sed/), [`awk`](https://www.gr
 
 ### Extended globbing
 
-[_Globbing_](https://en.wikipedia.org/w/index.php?title=Glob_(programming)&oldid=1133836865) is the unflattering term---an abbreviation for _global_---used to denote an operation to extract files satisfying certain conditions [@glob2023; @globbingref; @globhistory]. It is applicable also to the `bash` command line. For our purposes, depending on the sort of matching we perform, it will also be necessary sometimes to set `shopt -s extglob` after the [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) line [@extglob].
+[_Globbing_](https://en.wikipedia.org/w/index.php?title=Glob_(programming)&oldid=1133836865) is the unflattering term---an abbreviation for _global_---used to denote an operation to extract files satisfying certain conditions [@glob2023; @globbingref; @globhistory]. It is applicable also to the `bash` command line. For our purposes, depending on the sort of matching we perform, it will be sometimes necessary to set `shopt -s extglob` after the [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) line [@extglob].
 
 ## Parsing filenames
 
 A fully qualified filename consists of a `path`, a `basename`, and an `extension`. While not all filenames are encountered in their full glory, it helps to decompose any given filename into its constituent parts to help with housekeeping functions on a machine running `bash`---for example, to facilitate searching, sorting, renamimg, and other file-related functions.
 
-### A canonical filename
+### The canonical filename
 
 A [canonical](https://www.thefreedictionary.com/canonical) filename should comprise these components:
 
-#.  a _path_ with the forward slash `/` as the separator [^1] between elements denoting the path;
+#.  a _path_ with the forward slash `/` as the separator[^1] between elements denoting the path;
 #.  a _filename_ in two parts:
     (a)   comprising a _basename_ which appears immediately after the _last_ `/` character; and
     (a)  a _file extension_ that occurs after the basename and immediately after a `.` or period character.
 
-`/my_path/is/quite/long/basename.ext` is a canonical filename, or full filename, where the abovenamed structural elements are as follows:
+`/my_path/is/quite/long/basename.ext` is a canonical filename---hereafter referred to as `fullname`---where the above-named structural elements are as follows:
 
 #.  path: `/my_path/is/quite/long`
 #.  basename: `basename`
 #.  extension: `ext`
 #.  filename: `basename.ext`
 
-[^1]: The separator in Microsoft Windows is a _backslash_, but since we are discussing `bash` which runs on Linux machines, it is the _forward slash_ that is our character of interest.
+[^1]: The separator in Microsoft Windows is a _backslash_, `\`, but since we are discussing `bash`, running on Linux machines, it is the _forward slash_, `/`, that is our character of interest.
 
-### Parsing the full filename
+### Parsing the `fullname`
 
 Our next task is to dissect the canonical filename into its above components using pattern-matching in `bash`:
 
@@ -49,7 +49,7 @@ Our next task is to dissect the canonical filename into its above components usi
 shopt -s extglob
 
 fullname="/my_path/is/quite/long/basename.ext"
-echo "fullname is ${fullname}"
+echo "fullname is $fullname"
 
 #
 # Extract $path
@@ -58,7 +58,7 @@ echo "fullname is ${fullname}"
 # from the _right_ end up to and including that `/`.
 #
 path="${fullname%/*}"
-echo "path is ${fullname%/*}"
+echo "path is $path"
 
 #
 # Extract $filename
@@ -67,16 +67,16 @@ echo "path is ${fullname%/*}"
 # from the _left_ end up to and including that `/`.
 #
 filename="${fullname##*/}"
-echo "filename is ${fullname##*/}"
+echo "filename is $filename"
 
 #
-# Extract $extension
+# Extract $ext
 # Approach from the _left_ until the _last_ `.` character
 # is encountered and throw away everything
 # from the _left_ end up to and including that last `.`.
 #
 ext="${fullname##*.}"
-echo "extension is ${fullname##*.}"
+echo "extension is $ext"
 
 #
 # Extract $basename
@@ -92,14 +92,14 @@ echo "extension is ${fullname##*.}"
 # from the _right_ up to and including that first `.`.
 #
 basename="${filename%.*}"
-echo "basename is ${filename%.*}"
+echo "basename is $basename"
 ```
 
 ### Mnemonics behind the `#` and `%` symbols
 
 The use of the symbols `#` and `%` in the pattern matching expressions might seem arbitrary or whimsical. For a start, they do not conform to the usual delimiters `^` and `$` for the beginning and end of a line. Because we are dealing with strings rather than lines here, those symbols are not used.
 
-One other point to keep in view constantly is to avoid looking at `bash` pattern matching through the lens of [regular expressions](https://www.regular-expressions.info/tutorial.html) [@posixcharclass; @introbashregex; @writeregexp]. There are some similarities, but the two are not identical.
+One other point to keep in view constantly is to avoid looking at `bash` pattern matching solely through the lens of [regular expressions](https://www.regular-expressions.info/tutorial.html) [@posixcharclass; @introbashregex; @writeregexp]. There are some similarities, but the two are not identical.
 
 So, [what's the dope](https://www.ldoceonline.com/dictionary/the-dope-on-somebody-something) on `#` and `%`? These two symbols have been chosen for their near universal usage as a prefix and suffix respectively. It is customary to write `#1` for "number one", and `20%` for "twenty percent", where you will notice that the `#` is written as a _prefix_ and the `%` is written as a _suffix_ to the number.
 
@@ -162,9 +162,9 @@ fi
 echo "Extension is $ext."
 ~~~
 
-Note that the `=~` sign is a _regular expression_ operator that has been inducted from `perl` into `bash` [@equaltilde]. It returns a `0` for `true` and a `1` for `false`, which may sound contrary to expectations, but that is the correct behaviour. This may be seen by pre-pending [`echo $?`](https://stackoverflow.com/questions/6834487/what-is-the-dollar-question-mark-variable-in-shell-scripting) to each branch of the `if` conditional.
+Note that the `=~` sign is a _regular expression_ operator that has been inducted from `perl` into `bash` [@equaltilde]. The `[[...]]` expression returns a `0` for `true` and a `1` for `false`, which may sound contrary to expectations, but that is the correct behaviour in `bash`. This may be seen by pre-pending [`echo $?`](https://stackoverflow.com/questions/6834487/what-is-the-dollar-question-mark-variable-in-shell-scripting) to each branch of the `if` conditional.
 
-Moreover, when matching, the left side is a string that should be double quoted to avoid errors, while the right side is a regular expression, or a constant that is either escaped as in `\.`, or in single quotes, like `'.'` [@dottest]. If a plain `.` is used, with no "protection", it will match any single character in accordance with regex rules, and we risk getting the wrong result. It is attention to every small detail that ensures success with `bash` scripts. On the way, you also learn patience. \emojifont :wink: \normalfont
+Moreover, when matching, the left side is a string that should be double quoted to avoid errors, while the right side is a regular expression, or a constant that is either escaped as in `\.`, or in single quotes, like `'.'` [@dottest]. If a plain `.` is used, with no "protection", it will match any single character in accordance with regex rules, and we risk getting the wrong result. It is attention to every small detail that ensures success with `bash` scripts. You also learn patience on the way. \emojifont :wink: \normalfont
 
 ### Filenames with multiple dot characters
 
@@ -172,7 +172,7 @@ I have encountered occasions where the `fullname` of a file contains multiple `.
 
 ## Filenames without a path
 
-Before attempting to extract a `path`, we must check for the presence of a `/` in the `fullname` string. Otherwise, we risk getting the same errors as with missing extensions. The following script should be self-explanatory by now. Again, note that we either need to make the `/` character a literal, enclosed by single quotes, or we must escape it with a backslash, `\`. Note that this time,the forward slash is enclosed by single quotes; I find `\/` both inelegant and somewhat perplexing.
+Before attempting to extract a `path`, we must check for the presence of a `/` in the `fullname` string. Otherwise, we risk getting the same errors as with missing extensions. The following script should be self-explanatory by now. Again, note that we either need to make the `/` character a literal, enclosed by single quotes, or we must escape it with a backslash, `\`. Note that this time, the forward slash is enclosed by single quotes; I find `\/` both inelegant and somewhat perplexing.
 
 ~~~bash
 #!/bin/bash
@@ -204,21 +204,30 @@ But what happens if we are bequeathed files having such names? Renaming them one
 
 ## From cacophony to harmony
 
-The original file naming convention in Linux is that there will be no spaces or other non-alphanumeric characters, _except for the underscore_ character `_` in a filename; the dash, `-` is also accepted nowadays. This is because spaces are used as input field separators (IFS) to break up a string into its components: something known as [_word splitting_](https://mywiki.wooledge.org/WordSplitting?highlight=%28spaces%29%7C%28word%29%7C%28splitting%29) [@wordsplitting].
+The original file naming convention in Linux is that there will be _no spaces_ or other non-alphanumeric characters, _except for the underscore_ character `_` in a filename[^2] [@unix]. This is because spaces are used as input field separators (IFS) to break up a string into its components: something known as [_word splitting_](https://mywiki.wooledge.org/WordSplitting?highlight=%28spaces%29%7C%28word%29%7C%28splitting%29) [@wordsplitting].
+
+[^2]: The `-` character (dash or hyphen) assumes many roles: as the [standard input and standard output](https://en.wikipedia.org/wiki/Standard_streams), as a prefix to an option for commands, as a range specifier in regular expressions like `[a-z]`, etc. So, a filename should not start or end with the `-` character; its position elsewhere in a filename should not cause problems.
 
 But not all filenames respect this nomenclature of alphanumeric plus underscore characters alone. What if you encountered a file named so: `El??Condor   _Pasa%^!.mp3`. How would you sanitize it into something that could be easily processed by Linux when supplied as an argument?
 
 This set me developing a simple script to convert all non-compatible characters into acceptable characters so that the end result would be a sanitized, Linux-compatible filename that still retained some of its meaning. Here is my thought process as an algorithm:
 
-#.  Replace all non-standard characters with dashes `-`.
-#.  Replace consecutive spaces, or other non-alphanumeric characters, by a _single_ dash.
-#.  Retain underscores, `_`, unchanged.
+#.  Retain underscores `_` unchanged;
+#.  Replace every other non-alphanumeric character by a `-`; and
+#.  Replace strings of consecutive `-` characters from the previous step by a single `-` character.
+#.  Neither the first nor the last character of the modified filename shall be a `-` character.
 
 The standard and most obvious way to do this is by using regular expressions and a tool such as [`sed`](https://www.grymoire.com/Unix/Sed.html) or [`awk`](https://tldp.org/LDP/abs/html/awk.html) or [`perl`](https://perldoc.perl.org/perlretut). Moreover, the [POSIX character classes](https://www.regular-expressions.info/posixbrackets.html) such as `[:space:]`, `[:blank:]`, `[:punct:]` hold the key to concisely including all characters that need to be substituted with dashes. This was the trajectory I followed initially.
 
 ## Using `sed` to sanitize a filename
 
-How might the pathological filename (or string) `El??Condor   _Pasa%^!.mp3`---which contains spaces and punctuation---be sanitized using `sed`?
+How might the unusual filename (or string)
+
+`El??Condor   _Pasa%^!.mp3`
+
+which contains three spaces, and five punctuation characters, be sanitized using `sed`[^3]?
+
+[^3]: The underscore does not count as a punctuation character because it is not replaced.
 
 Typically, `sed` works on text within a file. But we may also pass strings to `sed` as [literals rather than an input file](https://www.baeldung.com/linux/sed-with-string). Rather than stumble through the tedious path I took to success, I record below the final [`sed` one-liner](https://catonmat.net/sed-one-liners-explained-part-one) that I assembled. Note that we will henceforth use only the basename of this filename in all examples.
 
@@ -234,16 +243,16 @@ El-Condor-Pasa-
 
 Note that _multiple_ spaces and punctuation characters have been replaced by _single_ hyphens or dashes. The `+` sign in the expression confers this behaviour. The fact that we want to change _both_ spaces and punctuation is the reason for the `|` alternation sign which might be loosely looked at as a logical [or]{.smallcaps}. The `g` parameter at the end (for global) means that _all_ such occurrences will be substituted. The `[[:space:]]` and `[[:punct:]]` incantations are called [POSIX character classes](https://www.regular-expressions.info/posixbrackets.html) [@posixcharclass]. The option `-r` is given to `sed` to confer the regular expression matching behaviour we are after. And the `<<<` allows an input to be given immediately to `sed` from the command line rather than from a file. The `s` refers to a substitution.
 
-Now, are we satisfied with our result? Not really, on two counts:
+But, are we satisfied with our result? Not really, on two counts:
 
 #.  We want to retain the underscore `_` character unchanged, if and when it occurs in the original string. An underscore in our original string has disappeared.
 #.  We do not want a terminal hyphen in the modified filename, as in this case.
 
-The second is easier to fix first. We will resort to the end-of-line anchor `$` to identify the terminal hyphen. Since `sed` can work consecutively on the original string, or its modified variant, we can simply chain two substitutions using pipes so:
+The second is easier to fix first. We will resort to the start-of-line anchor `^` and the end-of-line anchor `$` to eliminate (possible) initial and terminal hyphens. Since `sed` can work consecutively on the original string, or its modified variant, we can simply chain the three substitutions using pipes so:
 
 ```bash
 sed -E "s/([[:space:]]|[[:punct:]])+/-/g"  <<< 'El??Condor   _Pasa%^!' | \
-sed  "s/-$//"
+sed "s/^-//" | sed  "s/-$//"
 ```
 
 to get
@@ -252,17 +261,17 @@ to get
 El-Condor-Pasa
 ```
 
-almost as desired. The `-E` option is POSIX-compliant and needed to deal with extended regular expressions; in [GNU `sed`](https://www.gnu.org/software/sed/manual/html_node/Command_002dLine-Options.html) it is synonymous with the `-r` option. The `|` character indicates that the input for this second `sed` substitution is the output from the previous `sed` command. The `+` denotes multiple consecutive instances of spaces and punctuation characters and the `g` denotes performing the substitution globally, i.e., as many times as the conditions require.
+almost as desired. The `-E` option is POSIX-compliant and needed to deal with extended regular expressions; in [GNU `sed`](https://www.gnu.org/software/sed/manual/html_node/Command_002dLine-Options.html) it is synonymous with the `-r` option. The `|` character indicates that the input for the second and third `sed` substitutions is the output from the previous `sed` command. The `+` denotes multiple consecutive instances of spaces and punctuation characters and the `g` denotes performing the substitution globally, i.e., as many times as the conditions require. The `//` means that there is no replacement character.
 
 The requirement to pass underscores unchanged is more serious, because we need to modify the first `sed` replacement. Because the `[[:punct:]]` class also includes the underscore character, it is a sticky business to keep all the underscores but replace every other punctuation symbol by a dash. In fact, it negates the very notion and convenience of a POSIX character class.
 
-What we want is some operation like a [set difference](https://mathworld.wolfram.com/SetDifference.html) for which the regex syntax is not available for `sed`. One _could_ enumerate all punctuation symbols and exclude only `_` from that list, and use that class instead of `[[:punct:]]`, but this approach strikes me as [ham-fisted](https://idioms.thefreedictionary.com/Ham+Fisted).
+What we want is some operation like a [set difference](https://mathworld.wolfram.com/SetDifference.html), for which the regex syntax is not available for `sed`. One _could_ enumerate all punctuation symbols and exclude only `_` from that list, and use that class instead of `[[:punct:]]`, but this approach strikes me as particularly [ham-fisted](https://idioms.thefreedictionary.com/Ham+Fisted).
 
 A better and more felicitous way is to invert the requirement and _preserve_ the alphanumeric and underscore characters alone, and _replace everything else_ by a dash:
 
 ```bash
 sed -E "s/([^A-Za-z0-9_])+/-/g" <<< 'El??Condor   _Pasa%^!' | \
-sed "s/-$//"
+sed "s/^-//" | sed  "s/-$//"
 ```
 
 which gives:
@@ -271,11 +280,11 @@ which gives:
 El-Condor-_Pasa
 ```
 
-Although it looks awkward---having a `-` followed by a `_`---this is exactly the desired output given our transformation rules. One caveat is that this expression will only work with ASCII characters.
+Although it looks awkward---having a `-` followed by a `_`---this is exactly the desired output given our transformation rules. Note that the `^` character is used in the first line as a _negation_ of a character class, and in the second line as a start-of-string anchor. It is this overloading of meanings on a single symbol that leads to difficulties in understanding such expressions.
 
 ## Can it be done in `bash`?
 
-But what about the nagging refrain, "Why not do it all in `bash` itself, using pattern matching?". So, rather than considering how to do this in `perl`, etc., I hacked my way through several iterations of trying to perform the substitution in `bash` itself.
+But what about the nagging refrain, "Why not do it all in `bash` itself, using pattern matching"? So, rather than considering how to do this in `perl`, etc., I hacked my way through several iterations of trying to perform the substitution in `bash` itself.
 
 ### Pattern-matching, substitution, and substring removal
 
@@ -296,21 +305,33 @@ filename='El??Condor   _Pasa%^!'
 # The `+` sign though placed at the beginning rather than the end
 # has the same meaning as in the `sed` expression.
 # The `//` after $filename denotes multiple replacements
-# just like the `g` in the `sed` substitution expression.
+# just like the terminal `g` in the `sed` substitution expression.
 #
 newname="${filename//+([^[:word:]])/-}"
 #
-# We then trim off the last character in $newname
-# if it matches a dash. Note that
-# (a) there is no wildcard `*` after the `-`; we are matching
-#     a _single_ character, and since it is from the right end,
-#     we are matching a _terminal_ `-`.
-# (b) we may assign the possibly truncated variable `newname`
-#     to itself.
+# We then trim off the first character in $newname in case
+# it begins with a `-` character.
+# Nothing happens if the first character is not a `-`.
+#
+newname="${newname/#-}"
+#
+# Next, we trim off the last character in $newname
+# if it matches a dash.
+# Nothing happens if the last character is not a `-`.
 #
 newname="${newname%-}"
 echo "$newname"
 ```
+
+It bears noting that:
+
+(a) there is no wildcard character `*` before the `-` in the first substring expression;
+
+(a) there is no wildcard character `*` after the `-` in the second substring expression;
+
+(a) consequently, in both cases, we are matching a _single_ initial or terminal`-` character, with no ill effects if either or both are missing; and
+
+(a) we may assign the possibly truncated variable `newname` to itself.
 
 We have accomplished what we set out to do with the filename. The absence of the `*` in the expression `newname="${newname%-}"` has morphed the pattern matching and substring removal we used for parsing filenames into a robust, removal of a terminal `-`, without the need to test if it is the last character in the string. To demonstrate the terseness of this approach, I give below the same operation, with a slightly longer syntax, that is also available to us in `bash`.
 
@@ -332,23 +353,38 @@ filename='El??Condor   _Pasa%^!'
 #
 newname="${filename//+([^[:word:]])/-}"
 #
-# We then extract the last character in the string newname
-# and check whether it is the dash character.
-# If it is, we strip it off, to get the finalname.
+# Extract the first character in $newname and test if it is `-`.
+# If so, remove it; else do nothing.
+# Indexing starts with zero.
+#
+firstchar="${newname:0:1}"
+if [[ "$firstchar" == '-' ]]
+then
+  newname="${newname::-1}"
+fi
+echo "$newname"
+#
+# Extract the last character in $newname and test if it is `-`.
+# If so, remove it; else do nothing.
 #
 lastchar="${newname: -1}"
 if [[ "$lastchar" == '-' ]]
 then
-  finalname="${newname::-1}"
+  newname="${newname::-1}"
 fi
-echo "$finalname"
+echo "$newname"
 ```
+The points to especially note here are:
 
-(a) Note especially the space between the `:` and the `-` in the expression `"${newname: -1}"`. This space is inserted to avoid ambiguity with _another_ expression of the form `${parameter:-word}` which has a different function. The `-1` in `"${newname: -1}"` denotes the leftmost character in the string.
+(a) The expression `"${newname:0:1}"` denotes the substring of length 1 starting from the beginning of the string `$newname` is obviously the first character in that string. It may also be written as `"${newname::1}"`.
 
-(b) The final idiom used above is `"${newname::-1}"`, which is shorthand for `"${newname:0:-1}"`. This operation strips off the final character in the variable `"${newname}"`. Because it is positional in nature, rather than the result of a pattern match, we have to test whether the terminal character is indeed a `-`.
+(a) There is a space between the `:` and the `-` in the expression `"${newname: -1}"`. This space is inserted to avoid ambiguity with _another_ expression of the form `${parameter:-word}` which has a different function. The `-1` in `"${newname: -1}"` denotes the leftmost character in the string. Another way to write this is as `"${newname:0-1}"` [@lastchar].
 
-(c) One could also have used the `=~` sign for this test since we are matching a _single_ character. Nevertheless, it is better programming discipline to test for equality when dealing with a single character.
+(a) The final idiom used above is `"${newname::-1}"`, which is shorthand for `"${newname:0:-1}"`. This operation strips off the final character in the variable `"${newname}"`. Because it is positional in nature, rather than the result of a pattern match, we have to test whether the terminal character is indeed a `-`.
+
+(a) We could also have used the `=~` sign for these tests since we are matching a _single_ character. Nevertheless, it is better programming discipline to test for equality when dealing with a single character, as it is more specific.
+
+It should be clear that the first version is clearer, less verbose, and less prone the error than the second one.
 
 ## To explore further
 
