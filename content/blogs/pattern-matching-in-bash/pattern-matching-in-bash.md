@@ -3,25 +3,23 @@ title: Pattern Matching and Substitution in `bash`
 author: "R (Chandra) Chandrasekhar"
 date: "2023-02-28"
 modified: "2023-03-07"
-summary: "The `bash` shell embodies powerful pattern-matching and substitution capabilities, many of which are relatively unknown. The programs, `sed`, `awk`, `grep`, and `perl` have been traditionally used for matching and manipulating lines and strings in Linux. But the pattern-matching and string manipulation capabilities of `bash` have grown steadily since version 2.02, which was released in 1998. This blog gives practical examples for using these powerful, but somewhat understated features, to achieve common tasks efficiently and tersely, directly from within `bash` itself."
+summary: "The programs, [`sed`](https://www.gnu.org/software/sed/), [`awk`](https://www.grymoire.com/Unix/Awk.html), [`grep`](https://www.gnu.org/software/grep/manual/grep.html), and [`perl`](https://learnbyexample.github.io/learn_perl_oneliners/line-processing.html) have been the traditionally used tools for matching and manipulating lines and strings in Linux. But the [`bash` shell](https://www.gnu.org/software/bash/) [@newham2005; @ryder2018] also embodies powerful pattern-matching and substitution capabilities [@parametersubs; @frazier2019; @gnupattern; @stringops], many of which are relatively unknown and unused. This blog gives practical examples for using these powerful, but somewhat understated features, to achieve common tasks efficiently and tersely, directly from within `bash` itself."
 category: Programming
-tags: bash, globs, regular expressions, parameter replacement, pattern matching, substitution
+tags: bash, globs, regular expressions, parameter replacement, pattern matching, substitution, string manipulation
 opengraphimage: "bash-script.jpg"
 ---
 
-## The arcane powers of the `bash` shell
+## The [arcane](https://www.thefreedictionary.com/arcane) powers of the `bash` shell
 
-The [`bash` shell](https://www.gnu.org/software/bash/) [@newham2005; @ryder2018] embodies powerful pattern-matching and substitution capabilities [@parametersubs; @frazier2019; @gnupattern; @stringops], many of which are relatively unknown. The programs, [`sed`](https://www.gnu.org/software/sed/), [`awk`](https://www.grymoire.com/Unix/Awk.html), [`grep`](https://www.gnu.org/software/grep/manual/grep.html), and [`perl`](https://learnbyexample.github.io/learn_perl_oneliners/line-processing.html) have been traditionally used for matching and manipulating lines and strings in Linux.
-
-But the pattern-matching and string manipulation capabilities of `bash` have grown steadily since version 2.02, which was released in 1998. This blog gives practical examples for using these powerful, but somewhat understated features, to achieve common tasks efficiently and tersely, directly from within `bash` itself.
+The programs, [`sed`](https://www.gnu.org/software/sed/), [`awk`](https://www.grymoire.com/Unix/Awk.html), [`grep`](https://www.gnu.org/software/grep/manual/grep.html), and [`perl`](https://learnbyexample.github.io/learn_perl_oneliners/line-processing.html) have been the traditionally used tools for matching and manipulating lines and strings in Linux. But the [`bash` shell](https://www.gnu.org/software/bash/) [@newham2005; @ryder2018] also embodies powerful pattern-matching and substitution capabilities [@parametersubs; @frazier2019; @gnupattern; @stringops], many of which are relatively unknown and unused. This blog gives practical examples for using these powerful, but somewhat understated features, to achieve common tasks efficiently and tersely, directly from within `bash` itself.
 
 ## Parsing filenames
 
-A fully qualified filename consists of a `path`, a `basename`, and an `extension`. While not all filenames are encountered in their full glory, it helps to decompose any given filename into its constituent parts to help with housekeeping functions on a machine running `bash`---for example, to facilitate searching, sorting and other file-related functions.
+A fully qualified filename consists of a `path`, a `basename`, and an `extension`. While not all filenames are encountered in their full glory, it helps to decompose any given filename into its constituent parts to help with housekeeping functions on a machine running `bash`---for example, to facilitate searching, sorting, renamimg, and other file-related functions.
 
 ### Extended globbing
 
-[_Globbing_](https://en.wikipedia.org/w/index.php?title=Glob_(programming)&oldid=1133836865) is the unflattering term---an abbreviation for _global_---used to denote an operation to extract files satisfying certain conditions [@glob2023; @globbingref; @globhistory]. It is applicable also to the `bash` command line. For our purposes, it is sometimes mandatory, to set `shopt -s extglob` after the [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) line, depending on the sort of matching we perform [@extglob].
+[_Globbing_](https://en.wikipedia.org/w/index.php?title=Glob_(programming)&oldid=1133836865) is the unflattering term---an abbreviation for _global_---used to denote an operation to extract files satisfying certain conditions [@glob2023; @globbingref; @globhistory]. It is applicable also to the `bash` command line. For our purposes, depending on the sort of matching we perform, it will also be necessary sometimes to set `shopt -s extglob` after the [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) line [@extglob].
 
 ### A canonical filename
 
