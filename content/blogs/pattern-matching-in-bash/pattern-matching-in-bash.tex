@@ -622,14 +622,28 @@ inelegant and somewhat perplexing.
 parser}\label{the-generalized-filename-parser}}
 
 The revised file for parsing a filename into its components therefore
-needs to be augmented with these tests if it is to be robust and
-general. Note also that if no input is given, there can be no meaningful
-output; so we have to test that there is at least one command-line
-argument. The file
-\href{scripts/parsefilename.sh}{\texttt{parsefilename.sh}} embodies the
-improvements we have discussed and is made available here for
-completeness. \href{https://core.ac.uk/download/pdf/267973227.pdf}{The
-usual disclaimers about software merchantability} are implicit!
+needs to be augmented with these tests if it is to be robust and general
+{[}\protect\hyperlink{ref-caveats}{18}{]}. Note also that if no input is
+given, there can be no meaningful output; so we have to test that there
+is at least one command-line argument.
+
+Because filename parsing is a task that I have had to do repeatedly in
+different \texttt{bash} scripts, I decided that the final version of the
+script should find expression as a \texttt{bash\ function} rather than
+as a script.
+
+Along the way, I encountered pitfalls and errors, too many to recount.
+Suffice it to say that my helper and guide in the debugging process has
+been the \href{https://www.shellcheck.net/}{Shellcheck utility}
+{[}\protect\hyperlink{ref-shellcheck}{19}{]}. The file
+\href{scripts/parse_filename.sh}{\texttt{parse\_filename.sh}}\footnote{Beware
+  that although I have liberally replaced characters unsuited to Linux
+  filenames with a hyphen or dash, later in this blog, the \texttt{-}
+  character \emph{cannot} be used in the names of variables, functions,
+  and the filenames of functions in \texttt{bash}.} is made available
+here for completeness without any warranties whatsoever.
+\href{https://core.ac.uk/download/pdf/267973227.pdf}{The usual
+disclaimers about software merchantability} are implicit!
 \emojifont {😉} \normalfont
 
 \hypertarget{prettifying-non-standard-filenames}{%
@@ -662,11 +676,11 @@ the underscore} character \texttt{\_} in a filename\footnote{The
   range specifier in regular expressions like \texttt{{[}a-z{]}}, etc.
   So, a filename should not start or end with the \texttt{-} character;
   its position elsewhere in a filename should not cause problems.}
-{[}\protect\hyperlink{ref-unix}{18}{]}. This is because spaces are used
+{[}\protect\hyperlink{ref-unix}{20}{]}. This is because spaces are used
 as input field separators (IFS) to break up a string into its
 components: something known as
 \href{https://mywiki.wooledge.org/WordSplitting?highlight=\%28spaces\%29\%7C\%28word\%29\%7C\%28splitting\%29}{\emph{word
-splitting}} {[}\protect\hyperlink{ref-wordsplitting}{19}{]}.
+splitting}} {[}\protect\hyperlink{ref-wordsplitting}{21}{]}.
 
 But not all filenames respect this nomenclature of alphanumeric plus
 underscore characters alone. What if you encountered a file named so:
@@ -919,10 +933,10 @@ We have accomplished what we set out to do with the filename. The
 absence of the \texttt{*} in the expression
 \texttt{newname="\$\{newname\%-\}"} has morphed the pattern matching and
 substring removal we used for parsing filenames into a robust, removal
-of a terminal \texttt{-}, without the need to test if it is the last
-character in the string. To demonstrate the terseness of this approach,
-I give below the same operation, with a slightly longer syntax, that is
-also available to us in \texttt{bash}.
+of a \emph{terminal} \texttt{-}, without the need to test if it is the
+last character in the string. To demonstrate the terseness of this
+approach, I give below the same operation, with a slightly longer
+syntax, that is also available to us in \texttt{bash}.
 
 \hypertarget{using-substring-extraction}{%
 \subsubsection{Using substring
@@ -933,7 +947,7 @@ The syntax for substring extraction in \texttt{bash} is
 starting from \texttt{0} at the extreme left
 {[}\protect\hyperlink{ref-parametersubs}{3},
 \protect\hyperlink{ref-stringops}{6},
-\protect\hyperlink{ref-substring}{20}{]}.
+\protect\hyperlink{ref-substring}{22}{]}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -990,7 +1004,7 @@ The points to especially note here are:
   \texttt{-1} in \texttt{"\$\{newname:\ -1\}"} denotes the leftmost
   character in the string. Another way to write this is as
   \texttt{"\$\{newname:0-1\}"}
-  {[}\protect\hyperlink{ref-lastchar}{21}{]}.
+  {[}\protect\hyperlink{ref-lastchar}{23}{]}.
 \item
   The final idiom used above is \texttt{"\$\{newname::-1\}"}, which is
   shorthand for \texttt{"\$\{newname:0:-1\}"}. This operation strips off
@@ -1007,6 +1021,21 @@ The points to especially note here are:
 It should be clear that the first version is clearer, less verbose, and
 less prone the error than the second one.
 
+\hypertarget{wrapping-it-all-up}{%
+\subsection{Wrapping it all up}\label{wrapping-it-all-up}}
+
+Because the simple filename cleanup attempted above is likely to find
+repeated use, it seemed sensible to bundle these latter manipulations
+into another function called
+\href{scripts/prettify_filename.sh}{\texttt{prettify\_filename.sh}}. To
+use these functions from within a script requires one to \texttt{source}
+the functions before using them. The file
+\href{scripts/MyFileRename.sh}{\texttt{MyFileRename.sh}} is an example
+of how the two scripts may be used. Along with
+\href{scripts/parse_filename.sh}{\texttt{parse\_filename.sh}}, this
+triad of files gives a complete set of tools to automate the renaming of
+problematic filenames in Linux.
+
 \hypertarget{to-explore-further}{%
 \subsection{To explore further}\label{to-explore-further}}
 
@@ -1014,8 +1043,8 @@ The interested reader is referred to the
 \href{https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html\#Shell-Parameter-Expansion}{official
 documentation online} for a comprehensive explanation of the dazzling
 features of \emph{parameter expansion}
-{[}\protect\hyperlink{ref-shellparamexp}{22}{]} and \emph{substring
-removal} {[}\protect\hyperlink{ref-wikisubstring}{23}{]} in
+{[}\protect\hyperlink{ref-shellparamexp}{24}{]} and \emph{substring
+removal} {[}\protect\hyperlink{ref-wikisubstring}{25}{]} in
 \texttt{bash}. For an admirable summary of features like parameter
 expansion, do also visit the clear and comprehensive
 \href{https://mywiki.wooledge.org/BashGuide/Parameters}{BashGuide
@@ -1027,7 +1056,7 @@ some aspect of string matching or manipulation, the section with the
 heading
 \href{https://wiki.bash-hackers.org/start\#recommended_shell_resources}{``Recommended
 Shell resources''} is the best place to start your search
-{[}\protect\hyperlink{ref-bhwstart}{24}{]}. It contains a wealth of
+{[}\protect\hyperlink{ref-bhwstart}{26}{]}. It contains a wealth of
 authoritative links that will speedily dispel your doubts, not to speak
 of saving you time.
 
@@ -1092,8 +1121,8 @@ Online. 26 January 1998. {[}Accessed~4~March~2023{]}. Available from:
 
 \leavevmode\vadjust pre{\hypertarget{ref-glob2023}{}}%
 \CSLLeftMargin{7. }%
-\CSLRightInline{Wikipedia. Glob (programming). Online. 15 January 2023.
-{[}Accessed~28~February~2023{]}. Available from:
+\CSLRightInline{Wikipedia authors. Glob (programming). Online. 15
+January 2023. {[}Accessed~28~February~2023{]}. Available from:
 \url{https://en.wikipedia.org/w/index.php?title=Glob_(programming)\&oldid=1133836865}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-globbingref}{}}%
@@ -1159,46 +1188,60 @@ from: \url{https://unix.stackexchange.com/a/63374/11610}}
 Online. 17 January 2017. {[}Accessed~4~March~2023{]}. Available from:
 \url{https://unix.stackexchange.com/a/340485/11610}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-unix}{}}%
+\leavevmode\vadjust pre{\hypertarget{ref-caveats}{}}%
 \CSLLeftMargin{18. }%
+\CSLRightInline{Geirha. How can i use parameter expansion? How can i get
+substrings? How can i get a file without its extension, or get just a
+file's extension? What are some good ways to do basename and dirname?
+Online. 9 November 2021. {[}Accessed~9~March~2023{]}. Available from:
+\url{http://mywiki.wooledge.org/BashFAQ/073}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-shellcheck}{}}%
+\CSLLeftMargin{19. }%
+\CSLRightInline{Koalaman, Vidar Holen aka. ShellCheck. Finds bugs in
+your shell scripts. Online. 12 March 2023. {[}Accessed~12~March~2023{]}.
+Available from: \url{https://www.shellcheck.net/}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-unix}{}}%
+\CSLLeftMargin{20. }%
 \CSLRightInline{Peek, Jerry, Todino, Grace and Strang, John.
 \emph{Learning the UNIX operating system}. 5th ed. O'Reilly, 2002. }
 
 \leavevmode\vadjust pre{\hypertarget{ref-wordsplitting}{}}%
-\CSLLeftMargin{19. }%
+\CSLLeftMargin{21. }%
 \CSLRightInline{Aka Maarten Billemont, lhunath and Aka Greg Wooledge,
 GreyCat. Word splitting. Online. 23 May 2018.
 {[}Accessed~5~March~2023{]}. Available from:
 \url{https://mywiki.wooledge.org/WordSplitting?highlight=\%28spaces\%29\%7C\%28word\%29\%7C\%28splitting\%29}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-substring}{}}%
-\CSLLeftMargin{20. }%
+\CSLLeftMargin{22. }%
 \CSLRightInline{Linuxize. How to check if a string contains a substring
 in bash. Online. 19 July 2019. {[}Accessed~4~March~2023{]}. Available
 from:
 \url{https://linuxize.com/post/how-to-check-if-string-contains-substring-in-bash/\#google_vignette}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-lastchar}{}}%
-\CSLLeftMargin{21. }%
+\CSLLeftMargin{23. }%
 \CSLRightInline{thinker3. How to get the last character of a string in a
 shell? Online. 9 July 2013. {[}Accessed~7~March~2023{]}. Available from:
 \url{https://stackoverflow.com/a/21635778}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-shellparamexp}{}}%
-\CSLLeftMargin{22. }%
+\CSLLeftMargin{24. }%
 \CSLRightInline{Chet Ramey. Bash reference manual: Shell parameter
 expansion. Online. 22 September 2020. {[}Accessed~5~April~2023{]}.
 Available from:
 \url{https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html\#Shell-Parameter-Expansion}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-wikisubstring}{}}%
-\CSLLeftMargin{23. }%
+\CSLLeftMargin{25. }%
 \CSLRightInline{---. Parameter expansion {[}bash hackers wiki{]}.
 Online. 10 December 2021. {[}Accessed~5~March~2023{]}. Available from:
 \url{https://wiki.bash-hackers.org/syntax/pe\#substring_removal}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-bhwstart}{}}%
-\CSLLeftMargin{24. }%
+\CSLLeftMargin{26. }%
 \CSLRightInline{---. The bash hackers wiki: Recommended shell resources.
 Online. 5 March 2023. {[}Accessed~5~March~2023{]}. Available from:
 \url{https://wiki.bash-hackers.org/start\#recommended_shell_resources}}

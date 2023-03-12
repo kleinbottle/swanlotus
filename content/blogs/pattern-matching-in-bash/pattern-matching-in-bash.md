@@ -194,7 +194,13 @@ echo "Path is $path."
 
 ## The generalized filename parser
 
-The revised file for parsing a filename into its components therefore needs to be augmented with these tests if it is to be robust and general. Note also that if no input is given, there can be no meaningful output; so we have to test that there is at least one command-line argument. The file [`parsefilename.sh`]({attach}scripts/parsefilename.sh) embodies the improvements we have discussed and is made available here for completeness. [The usual disclaimers about software merchantability](https://core.ac.uk/download/pdf/267973227.pdf) are implicit! \emojifont :wink: \normalfont
+The revised file for parsing a filename into its components therefore needs to be augmented with these tests if it is to be robust and general [@caveats]. Note also that if no input is given, there can be no meaningful output; so we have to test that there is at least one command-line argument.
+
+Because filename parsing is a task that I have had to do repeatedly in different `bash` scripts, I decided that the final version of the script should find expression as a `bash function` rather than as a script.
+
+Along the way, I encountered pitfalls and errors, too many to recount. Suffice it to say that my helper and guide in the debugging process has been the [Shellcheck utility](https://www.shellcheck.net/) [@shellcheck]. The file [`parse_filename.sh`]({attach}scripts/parse_filename.sh)[^2] is made available here for completeness without any warranties whatsoever. [The usual disclaimers about software merchantability](https://core.ac.uk/download/pdf/267973227.pdf) are implicit! \emojifont :wink: \normalfont
+
+[^2]: Beware that although I have liberally replaced characters unsuited to Linux filenames with a hyphen or dash, later in this blog, the `-` character _cannot_ be used in the names of variables, functions, and the filenames of functions in `bash`.
 
 ## Prettifying non-standard filenames
 
@@ -204,9 +210,9 @@ But what happens if we are bequeathed files having such names? Renaming them one
 
 ## From cacophony to harmony
 
-The original file naming convention in Linux is that there will be _no spaces_ or other non-alphanumeric characters, _except for the underscore_ character `_` in a filename[^2] [@unix]. This is because spaces are used as input field separators (IFS) to break up a string into its components: something known as [_word splitting_](https://mywiki.wooledge.org/WordSplitting?highlight=%28spaces%29%7C%28word%29%7C%28splitting%29) [@wordsplitting].
+The original file naming convention in Linux is that there will be _no spaces_ or other non-alphanumeric characters, _except for the underscore_ character `_` in a filename[^3] [@unix]. This is because spaces are used as input field separators (IFS) to break up a string into its components: something known as [_word splitting_](https://mywiki.wooledge.org/WordSplitting?highlight=%28spaces%29%7C%28word%29%7C%28splitting%29) [@wordsplitting].
 
-[^2]: The `-` character (dash or hyphen) assumes many roles: as the [standard input and standard output](https://en.wikipedia.org/wiki/Standard_streams), as a prefix to an option for commands, as a range specifier in regular expressions like `[a-z]`, etc. So, a filename should not start or end with the `-` character; its position elsewhere in a filename should not cause problems.
+[^3]: The `-` character (dash or hyphen) assumes many roles: as the [standard input and standard output](https://en.wikipedia.org/wiki/Standard_streams), as a prefix to an option for commands, as a range specifier in regular expressions like `[a-z]`, etc. So, a filename should not start or end with the `-` character; its position elsewhere in a filename should not cause problems.
 
 But not all filenames respect this nomenclature of alphanumeric plus underscore characters alone. What if you encountered a file named so: `El??Condor   _Pasa%^!.mp3`. How would you sanitize it into something that could be easily processed by Linux when supplied as an argument?
 
@@ -225,9 +231,9 @@ How might the unusual filename (or string)
 
 `El??Condor   _Pasa%^!.mp3`
 
-which contains three spaces, and five punctuation characters, be sanitized using `sed`[^3]?
+which contains three spaces, and five punctuation characters, be sanitized using `sed`[^4]?
 
-[^3]: The underscore does not count as a punctuation character because it is not replaced.
+[^4]: The underscore does not count as a punctuation character because it is not replaced.
 
 Typically, `sed` works on text within a file. But we may also pass strings to `sed` as [literals rather than an input file](https://www.baeldung.com/linux/sed-with-string). Rather than stumble through the tedious path I took to success, I record below the final [`sed` one-liner](https://catonmat.net/sed-one-liners-explained-part-one) that I assembled. Note that we will henceforth use only the basename of this filename in all examples.
 
@@ -333,7 +339,7 @@ It bears noting that:
 
 (a) we may assign the possibly truncated variable `newname` to itself.
 
-We have accomplished what we set out to do with the filename. The absence of the `*` in the expression `newname="${newname%-}"` has morphed the pattern matching and substring removal we used for parsing filenames into a robust, removal of a terminal `-`, without the need to test if it is the last character in the string. To demonstrate the terseness of this approach, I give below the same operation, with a slightly longer syntax, that is also available to us in `bash`.
+We have accomplished what we set out to do with the filename. The absence of the `*` in the expression `newname="${newname%-}"` has morphed the pattern matching and substring removal we used for parsing filenames into a robust, removal of a _terminal_ `-`, without the need to test if it is the last character in the string. To demonstrate the terseness of this approach, I give below the same operation, with a slightly longer syntax, that is also available to us in `bash`.
 
 ### Using substring extraction
 
@@ -385,6 +391,10 @@ The points to especially note here are:
 (a) We could also have used the `=~` sign for these tests since we are matching a _single_ character. Nevertheless, it is better programming discipline to test for equality when dealing with a single character, as it is more specific.
 
 It should be clear that the first version is clearer, less verbose, and less prone the error than the second one.
+
+## Wrapping it all up
+
+Because the simple filename cleanup attempted above is likely to find repeated use, it seemed sensible to bundle these latter manipulations into another function called [`prettify_filename.sh`]({attach}scripts/prettify_filename.sh). To use these functions from within a script requires one to `source` the functions before using them. The file [`MyFileRename.sh`]({attach}scripts/MyFileRename.sh) is an example of how the two scripts may be used. Along with [`parse_filename.sh`]({attach}scripts/parse_filename.sh), this triad of files gives a complete set of tools to automate the renaming of problematic filenames in Linux.
 
 ## To explore further
 
