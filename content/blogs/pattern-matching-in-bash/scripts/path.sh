@@ -12,4 +12,4 @@ else
   echo $?
   path=""
 fi
-echo "Path is $path."
+echo "Path is $path"

@@ -1,5 +1,5 @@
 #!/bin/bash
-#file-parse.sh
+# file-parse.sh
 shopt -s extglob
 
 fullname="/my_path/is/quite/long/basename.ext"
@@ -36,7 +36,7 @@ echo "extension is $ext"
 # Extract $basename
 # This requires trimming strings from both
 # the left and the right of $fullname
-# and requires _two_ steps if start with $fullname.
+# and requires _two_ steps if we start with $fullname.
 #
 # Instead, we use $filename, which is already available,
 # and excise the extension to get $basename.

@@ -244,7 +244,7 @@
 
 \title{Pattern Matching and Substitution in \texttt{bash}}
 \author{R (Chandra) Chandrasekhar}
-\date{2023-02-28 | 2023-03-07}
+\date{2023-02-28 | 2023-03-12}
 
 \begin{document}
 \maketitle
@@ -354,7 +354,7 @@ components using pattern-matching in \texttt{bash}:
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\#!/bin/bash}
-\CommentTok{\#file{-}parse.sh}
+\CommentTok{\# file{-}parse.sh}
 \BuiltInTok{shopt} \AttributeTok{{-}s}\NormalTok{ extglob}
 
 \VariableTok{fullname}\OperatorTok{=}\StringTok{"/my\_path/is/quite/long/basename.ext"}
@@ -391,7 +391,7 @@ components using pattern-matching in \texttt{bash}:
 \CommentTok{\# Extract $basename}
 \CommentTok{\# This requires trimming strings from both}
 \CommentTok{\# the left and the right of $fullname}
-\CommentTok{\# and requires \_two\_ steps if start with $fullname.}
+\CommentTok{\# and requires \_two\_ steps if we start with $fullname.}
 \CommentTok{\#}
 \CommentTok{\# Instead, we use $filename, which is already available,}
 \CommentTok{\# and excise the extension to get $basename.}
@@ -413,8 +413,7 @@ symbols}{Mnemonics behind the \# and \% symbols}}\label{mnemonics-behind-the-and
 The use of the symbols \texttt{\#} and \texttt{\%} in the pattern
 matching expressions might seem arbitrary or whimsical. For a start,
 they do not conform to the usual delimiters \texttt{\^{}} and
-\texttt{\$} for the beginning and end of a line. Because we are dealing
-with strings rather than lines here, those symbols are not used.
+\texttt{\$} for the beginning and end of a line or string.
 
 One other point to keep in view constantly is to avoid looking at
 \texttt{bash} pattern matching solely through the lens of
@@ -500,7 +499,7 @@ what follows interactively.
 \BuiltInTok{shopt} \AttributeTok{{-}s}\NormalTok{ extglob}
 \VariableTok{fullname}\OperatorTok{=}\VariableTok{$HOME}\NormalTok{/myPDFfile}
 \VariableTok{ext}\OperatorTok{=}\StringTok{"}\VariableTok{$\{fullname}\OperatorTok{\#\#}\PreprocessorTok{*}\NormalTok{.}\VariableTok{\}}\StringTok{"}
-\BuiltInTok{echo} \StringTok{"Extension is }\VariableTok{$ext}\StringTok{."}
+\BuiltInTok{echo} \StringTok{"Extension is }\VariableTok{$ext}\StringTok{"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -508,7 +507,7 @@ The result is:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ExtensionTok{Extension}\NormalTok{ is /home/chandra/myPDFfile.}
+\ExtensionTok{Extension}\NormalTok{ is /home/}\OperatorTok{\textless{}}\NormalTok{redacted}\OperatorTok{\textgreater{}}\NormalTok{/myPDFfile}
 \end{Highlighting}
 \end{Shaded}
 
@@ -548,7 +547,7 @@ have discussed. The corrected routine for the extension should thus run:
   \BuiltInTok{echo} \VariableTok{$?}
   \VariableTok{ext}\OperatorTok{=}\StringTok{""}
 \ControlFlowTok{fi}
-\BuiltInTok{echo} \StringTok{"Extension is }\VariableTok{$ext}\StringTok{."}
+\BuiltInTok{echo} \StringTok{"Extension is }\VariableTok{$ext}\StringTok{"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -613,7 +612,7 @@ inelegant and somewhat perplexing.
   \BuiltInTok{echo} \VariableTok{$?}
   \VariableTok{path}\OperatorTok{=}\StringTok{""}
 \ControlFlowTok{fi}
-\BuiltInTok{echo} \StringTok{"Path is }\VariableTok{$path}\StringTok{."}
+\BuiltInTok{echo} \StringTok{"Path is }\VariableTok{$path}\StringTok{"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -622,7 +621,7 @@ inelegant and somewhat perplexing.
 parser}\label{the-generalized-filename-parser}}
 
 The revised file for parsing a filename into its components therefore
-needs to be augmented with these tests if it is to be robust and general
+needs to be augmented with these tests if it is to be robust and generic
 {[}\protect\hyperlink{ref-caveats}{18}{]}. Note also that if no input is
 given, there can be no meaningful output; so we have to test that there
 is at least one command-line argument.
@@ -709,8 +708,8 @@ meaning. Here is my thought process as an algorithm:
 
 The standard and most obvious way to do this is by using regular
 expressions and a tool such as
-\href{https://www.grymoire.com/Unix/Sed.html}{\texttt{sed}} or
-\href{https://tldp.org/LDP/abs/html/awk.html}{\texttt{awk}} or
+\href{https://www.grymoire.com/Unix/Sed.html}{\texttt{sed}},
+\href{https://tldp.org/LDP/abs/html/awk.html}{\texttt{awk}}, or
 \href{https://perldoc.perl.org/perlretut}{\texttt{perl}}. Moreover, the
 \href{https://www.regular-expressions.info/posixbrackets.html}{POSIX
 character classes} such as \texttt{{[}:space:{]}},
@@ -852,10 +851,10 @@ which gives:
 Although it looks awkward---having a \texttt{-} followed by a
 \texttt{\_}---this is exactly the desired output given our
 transformation rules. Note that the \texttt{\^{}} character is used in
-the first line as a \emph{negation} of a character class, and in the
-second line as a start-of-string anchor. It is this overloading of
-meanings on a single symbol that leads to difficulties in understanding
-such expressions.
+the first \texttt{sed} command as a \emph{negation} of a character
+class, and in the second \texttt{sed} command as a start-of-string
+anchor. It is this overloading of meanings on a single symbol that leads
+to difficulties in understanding such expressions.
 
 \hypertarget{can-it-be-done-in-bash}{%
 \subsection{\texorpdfstring{Can it be done in
@@ -910,7 +909,7 @@ expression in \texttt{bash} therefore becomes:
 \end{Highlighting}
 \end{Shaded}
 
-It bears noting that:
+It bears noting that in the last two expressions:
 
 \begin{enumerate}
 \def\labelenumi{(\alph{enumi})}
@@ -971,7 +970,7 @@ starting from \texttt{0} at the extreme left
 \VariableTok{firstchar}\OperatorTok{=}\StringTok{"}\VariableTok{$\{newname}\OperatorTok{:}\DecValTok{0}\OperatorTok{:}\DecValTok{1}\VariableTok{\}}\StringTok{"}
 \ControlFlowTok{if} \KeywordTok{[[} \StringTok{"}\VariableTok{$firstchar}\StringTok{"} \OtherTok{==} \StringTok{\textquotesingle{}{-}\textquotesingle{}} \KeywordTok{]]}
 \ControlFlowTok{then}
-  \VariableTok{newname}\OperatorTok{=}\StringTok{"}\VariableTok{$\{newname}\OperatorTok{::}\NormalTok{{-}}\DecValTok{1}\VariableTok{\}}\StringTok{"}
+  \VariableTok{newname}\OperatorTok{=}\StringTok{"}\VariableTok{$\{newname}\OperatorTok{:}\DecValTok{1}\VariableTok{\}}\StringTok{"}
 \ControlFlowTok{fi}
 \BuiltInTok{echo} \StringTok{"}\VariableTok{$newname}\StringTok{"}
 \CommentTok{\#}
@@ -1004,7 +1003,8 @@ The points to especially note here are:
   \texttt{-1} in \texttt{"\$\{newname:\ -1\}"} denotes the leftmost
   character in the string. Another way to write this is as
   \texttt{"\$\{newname:0-1\}"}
-  {[}\protect\hyperlink{ref-lastchar}{23}{]}.
+  {[}\protect\hyperlink{ref-lastchar}{23}{]}. Still another equivalent
+  expression is \texttt{"\$\{newname:(-1)\}"}.
 \item
   The final idiom used above is \texttt{"\$\{newname::-1\}"}, which is
   shorthand for \texttt{"\$\{newname:0:-1\}"}. This operation strips off
@@ -1018,8 +1018,8 @@ The points to especially note here are:
   with a single character, as it is more specific.
 \end{enumerate}
 
-It should be clear that the first version is clearer, less verbose, and
-less prone the error than the second one.
+It should be clear that the first version of substring extraction is
+clearer, less verbose, and less prone to error than the second one.
 
 \hypertarget{wrapping-it-all-up}{%
 \subsection{Wrapping it all up}\label{wrapping-it-all-up}}
@@ -1027,14 +1027,29 @@ less prone the error than the second one.
 Because the simple filename cleanup attempted above is likely to find
 repeated use, it seemed sensible to bundle these latter manipulations
 into another function called
-\href{scripts/prettify_filename.sh}{\texttt{prettify\_filename.sh}}. To
-use these functions from within a script requires one to \texttt{source}
-the functions before using them. The file
+\href{scripts/prettify_filename.sh}{\texttt{prettify\_filename.sh}}.
+Along with
+\href{scripts/parse_filename.sh}{\texttt{parse\_filename.sh}}, these two
+functions may be used from within a third script file as long as they
+are invoked with a \texttt{source} command. The script
 \href{scripts/MyFileRename.sh}{\texttt{MyFileRename.sh}} is an example
-of how the two scripts may be used. Along with
-\href{scripts/parse_filename.sh}{\texttt{parse\_filename.sh}}, this
-triad of files gives a complete set of tools to automate the renaming of
+of how these two functions may be used together. This triad of files,
+then, gives a complete set of tools to automate the renaming of
 problematic filenames in Linux.
+
+The \texttt{parse\_filename} and \texttt{prettify\_filename} functions
+invoke certain environment variables to allow terminal output in colour.
+That functionality comes from a third \texttt{bash} function called
+\href{scripts/colorize_terminal.sh}{\texttt{colorize\_terminal.sh}}. My
+\texttt{\$HOME/.bashrc} file calls this function through the line
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{source} \StringTok{"}\VariableTok{$HOME}\StringTok{"}\NormalTok{/bin/colorize\_terminal.sh}
+\end{Highlighting}
+\end{Shaded}
+
+to make coloured terminal output available to all scripts.
 
 \hypertarget{to-explore-further}{%
 \subsection{To explore further}\label{to-explore-further}}

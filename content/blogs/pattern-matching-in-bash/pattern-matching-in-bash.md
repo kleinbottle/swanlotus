@@ -2,10 +2,10 @@
 title: Pattern Matching and Substitution in `bash`
 author: "R (Chandra) Chandrasekhar"
 date: "2023-02-28"
-modified: "2023-03-07"
+modified: "2023-03-12"
 summary: "The programs, [`sed`](https://www.gnu.org/software/sed/), [`awk`](https://www.grymoire.com/Unix/Awk.html), [`grep`](https://www.gnu.org/software/grep/manual/grep.html), and [`perl`](https://learnbyexample.github.io/learn_perl_oneliners/line-processing.html) have been the traditionally used tools for matching and manipulating lines and strings in Linux. But the [`bash` shell](https://www.gnu.org/software/bash/) [@newham2005; @ryder2018] also embodies powerful pattern-matching and substitution capabilities [@parametersubs; @frazier2019; @gnupattern; @stringops], many of which are relatively unknown and unused. This blog gives practical examples for using these powerful, but somewhat understated features, to achieve common tasks efficiently and tersely, directly from within `bash` itself."
 category: Programming
-tags: bash, globs, regular expressions, parameter replacement, pattern matching, substitution, string manipulation
+tags: bash, globs, regular expressions, parameter replacement, pattern matching, substitution, substring extraction, string manipulation
 opengraphimage: "bash-script.jpg"
 ---
 
@@ -45,7 +45,7 @@ Our next task is to dissect the canonical filename into its above components usi
 
 ```bash
 #!/bin/bash
-#file-parse.sh
+# file-parse.sh
 shopt -s extglob
 
 fullname="/my_path/is/quite/long/basename.ext"
@@ -82,7 +82,7 @@ echo "extension is $ext"
 # Extract $basename
 # This requires trimming strings from both
 # the left and the right of $fullname
-# and requires _two_ steps if start with $fullname.
+# and requires _two_ steps if we start with $fullname.
 #
 # Instead, we use $filename, which is already available,
 # and excise the extension to get $basename.
@@ -97,7 +97,7 @@ echo "basename is $basename"
 
 ### Mnemonics behind the `#` and `%` symbols
 
-The use of the symbols `#` and `%` in the pattern matching expressions might seem arbitrary or whimsical. For a start, they do not conform to the usual delimiters `^` and `$` for the beginning and end of a line. Because we are dealing with strings rather than lines here, those symbols are not used.
+The use of the symbols `#` and `%` in the pattern matching expressions might seem arbitrary or whimsical. For a start, they do not conform to the usual delimiters `^` and `$` for the beginning and end of a line or string.
 
 One other point to keep in view constantly is to avoid looking at `bash` pattern matching solely through the lens of [regular expressions](https://www.regular-expressions.info/tutorial.html) [@posixcharclass; @introbashregex; @writeregexp]. There are some similarities, but the two are not identical.
 
@@ -129,13 +129,13 @@ There are occasions when, for a variety of reasons, filenames might not have ext
 shopt -s extglob
 fullname=$HOME/myPDFfile
 ext="${fullname##*.}"
-echo "Extension is $ext."
+echo "Extension is $ext"
 ~~~
 
 The result is:
 
 ```bash
-Extension is /home/chandra/myPDFfile.
+Extension is /home/<redacted>/myPDFfile
 ```
 
 Surely, you did not expect the extension to be the fullname of the file. Yet, that is what we get. Though  unexpected, is it yet logically correct?
@@ -159,7 +159,7 @@ else
   echo $?
   ext=""
 fi
-echo "Extension is $ext."
+echo "Extension is $ext"
 ~~~
 
 Note that the `=~` sign is a _regular expression_ operator that has been inducted from `perl` into `bash` [@equaltilde]. The `[[...]]` expression returns a `0` for `true` and a `1` for `false`, which may sound contrary to expectations, but that is the correct behaviour in `bash`. This may be seen by pre-pending [`echo $?`](https://stackoverflow.com/questions/6834487/what-is-the-dollar-question-mark-variable-in-shell-scripting) to each branch of the `if` conditional.
@@ -189,12 +189,12 @@ else
   echo $?
   path=""
 fi
-echo "Path is $path."
+echo "Path is $path"
 ~~~
 
 ## The generalized filename parser
 
-The revised file for parsing a filename into its components therefore needs to be augmented with these tests if it is to be robust and general [@caveats]. Note also that if no input is given, there can be no meaningful output; so we have to test that there is at least one command-line argument.
+The revised file for parsing a filename into its components therefore needs to be augmented with these tests if it is to be robust and generic [@caveats]. Note also that if no input is given, there can be no meaningful output; so we have to test that there is at least one command-line argument.
 
 Because filename parsing is a task that I have had to do repeatedly in different `bash` scripts, I decided that the final version of the script should find expression as a `bash function` rather than as a script.
 
@@ -223,7 +223,7 @@ This set me developing a simple script to convert all non-compatible characters 
 #.  Replace strings of consecutive `-` characters from the previous step by a single `-` character.
 #.  Neither the first nor the last character of the modified filename shall be a `-` character.
 
-The standard and most obvious way to do this is by using regular expressions and a tool such as [`sed`](https://www.grymoire.com/Unix/Sed.html) or [`awk`](https://tldp.org/LDP/abs/html/awk.html) or [`perl`](https://perldoc.perl.org/perlretut). Moreover, the [POSIX character classes](https://www.regular-expressions.info/posixbrackets.html) such as `[:space:]`, `[:blank:]`, `[:punct:]` hold the key to concisely including all characters that need to be substituted with dashes. This was the trajectory I followed initially.
+The standard and most obvious way to do this is by using regular expressions and a tool such as [`sed`](https://www.grymoire.com/Unix/Sed.html), [`awk`](https://tldp.org/LDP/abs/html/awk.html), or [`perl`](https://perldoc.perl.org/perlretut). Moreover, the [POSIX character classes](https://www.regular-expressions.info/posixbrackets.html) such as `[:space:]`, `[:blank:]`, `[:punct:]` hold the key to concisely including all characters that need to be substituted with dashes. This was the trajectory I followed initially.
 
 ## Using `sed` to sanitize a filename
 
@@ -286,7 +286,7 @@ which gives:
 El-Condor-_Pasa
 ```
 
-Although it looks awkward---having a `-` followed by a `_`---this is exactly the desired output given our transformation rules. Note that the `^` character is used in the first line as a _negation_ of a character class, and in the second line as a start-of-string anchor. It is this overloading of meanings on a single symbol that leads to difficulties in understanding such expressions.
+Although it looks awkward---having a `-` followed by a `_`---this is exactly the desired output given our transformation rules. Note that the `^` character is used in the first `sed` command as a _negation_ of a character class, and in the second `sed` command as a start-of-string anchor. It is this overloading of meanings on a single symbol that leads to difficulties in understanding such expressions.
 
 ## Can it be done in `bash`?
 
@@ -329,7 +329,7 @@ newname="${newname%-}"
 echo "$newname"
 ```
 
-It bears noting that:
+It bears noting that in the last two expressions:
 
 (a) there is no wildcard character `*` before the `-` in the first substring expression;
 
@@ -366,7 +366,7 @@ newname="${filename//+([^[:word:]])/-}"
 firstchar="${newname:0:1}"
 if [[ "$firstchar" == '-' ]]
 then
-  newname="${newname::-1}"
+  newname="${newname:1}"
 fi
 echo "$newname"
 #
@@ -384,17 +384,25 @@ The points to especially note here are:
 
 (a) The expression `"${newname:0:1}"` denotes the substring of length 1 starting from the beginning of the string `$newname` is obviously the first character in that string. It may also be written as `"${newname::1}"`.
 
-(a) There is a space between the `:` and the `-` in the expression `"${newname: -1}"`. This space is inserted to avoid ambiguity with _another_ expression of the form `${parameter:-word}` which has a different function. The `-1` in `"${newname: -1}"` denotes the leftmost character in the string. Another way to write this is as `"${newname:0-1}"` [@lastchar].
+(a) There is a space between the `:` and the `-` in the expression `"${newname: -1}"`. This space is inserted to avoid ambiguity with _another_ expression of the form `${parameter:-word}` which has a different function. The `-1` in `"${newname: -1}"` denotes the leftmost character in the string. Another way to write this is as `"${newname:0-1}"` [@lastchar]. Still another equivalent expression is `"${newname:(-1)}"`.
 
 (a) The final idiom used above is `"${newname::-1}"`, which is shorthand for `"${newname:0:-1}"`. This operation strips off the final character in the variable `"${newname}"`. Because it is positional in nature, rather than the result of a pattern match, we have to test whether the terminal character is indeed a `-`.
 
 (a) We could also have used the `=~` sign for these tests since we are matching a _single_ character. Nevertheless, it is better programming discipline to test for equality when dealing with a single character, as it is more specific.
 
-It should be clear that the first version is clearer, less verbose, and less prone the error than the second one.
+It should be clear that the first version of substring extraction is clearer, less verbose, and less prone to error than the second one.
 
 ## Wrapping it all up
 
-Because the simple filename cleanup attempted above is likely to find repeated use, it seemed sensible to bundle these latter manipulations into another function called [`prettify_filename.sh`]({attach}scripts/prettify_filename.sh). To use these functions from within a script requires one to `source` the functions before using them. The file [`MyFileRename.sh`]({attach}scripts/MyFileRename.sh) is an example of how the two scripts may be used. Along with [`parse_filename.sh`]({attach}scripts/parse_filename.sh), this triad of files gives a complete set of tools to automate the renaming of problematic filenames in Linux.
+Because the simple filename cleanup attempted above is likely to find repeated use, it seemed sensible to bundle these latter manipulations into another function called [`prettify_filename.sh`]({attach}scripts/prettify_filename.sh). Along with [`parse_filename.sh`]({attach}scripts/parse_filename.sh), these two functions may be used from within a third script file as long as they are invoked with a `source` command. The script  [`MyFileRename.sh`]({attach}scripts/MyFileRename.sh) is an example of how these two functions may be used together. This triad of files, then, gives a complete set of tools to automate the renaming of problematic filenames in Linux.
+
+The `parse_filename` and `prettify_filename` functions invoke certain environment variables to allow terminal output in colour. That functionality comes from a third `bash` function called [`colorize_terminal.sh`]({attach}scripts/colorize_terminal.sh). My `$HOME/.bashrc` file calls this function through the line
+
+```bash
+source "$HOME"/bin/colorize_terminal.sh
+```
+
+to make coloured terminal output available to all scripts.
 
 ## To explore further
 

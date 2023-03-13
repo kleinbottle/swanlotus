@@ -12,4 +12,4 @@ else
   echo $?
   ext=""
 fi
-echo "Extension is $ext."
+echo "Extension is $ext"
