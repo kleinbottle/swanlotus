@@ -133,7 +133,7 @@ $$
 $${#eq:solution}
 If we set $x + 1 = 5$, we get $x = 4$. Likewise, setting $y + 1 = 11$ gives $y = 10$. Therefore, $x + y = 4 + 10 = 14$. It should be abundantly clear that $x$ and $y$ could interchange their values but their sum will still be the same. So, the solution to the problem is $x + y = 14$, and we are home and dry.
 
-### The final picture
+## The final picture
 
 To get a sense of finality, let us see the graphical representation of our algebraic result in @fig:four below.
 
