@@ -38,7 +38,7 @@ Mathematics may be approached through pictures, or through words, or through a c
 
 How do we graph the given curve? And after that, how do we obtain the value of $x + y$, which is our ultimate goal? Let us see how this approach pans out.
 
-For a start, I am [loath](https://www.thefreedictionary.com/loath) to graph curves by hand. So, I went to my favourite graphing destination on the Web, [Desmos](https://www.desmos.com), to experiment with the given curve. The [Desmos Graphing Calculator](https://www.desmos.com/calculator) offers the easiest and laziest route to visualize algebraic curves.
+For a start, I am [loath](https://www.thefreedictionary.com/loath) to graph curves by hand. So, I went to my favourite graphing destination on the Web, [Desmos](https://www.desmos.com), to experiment with the given curve. The [Desmos Graphing Calculator](https://www.desmos.com/calculator) offers the easiest and laziest route to visualize various curves.
 
 I typed in [$x + xy + y = 54$](https://www.desmos.com/calculator/nwkikstcm6) into the textbox for the first graph and got what seemed at first sight to be a pair of curves for a rectangular hyperbola of the form $xy = k$ where $k$ is some constant (or number).
 
@@ -88,7 +88,7 @@ x + xy + y = 54
 $$
 what is $x + y$?
 
-By restricting the numbers to be positive, we may discard the entire solution set in the fourth quadrant, as well as any solutions that intersect near the (negative-valued) asymptotes. Moreover, by restricting the solution to integers, we are changing the domain of the solution from a quadrant of the real plane to a [_point lattice_]( https://mathworld.wolfram.com/PointLattice.html) in the first quadrant. The solution set has thus changed from [uncountably infinite](https://mathworld.wolfram.com/UncountablyInfinite.html) to [countably infinite](https://mathworld.wolfram.com/CountablyInfinite.html).
+By restricting the numbers to be positive, we may discard the entire solution set in the fourth quadrant, as well as any solutions that intersect near the (negative-valued) asymptotes. Moreover, by restricting the solution to integers, we are changing the domain of the solution from a quadrant of the Cartesian plane to a [_point lattice_]( https://mathworld.wolfram.com/PointLattice.html) in the first quadrant. The solution set has thus changed from [uncountably infinite](https://mathworld.wolfram.com/UncountablyInfinite.html) to [countably infinite](https://mathworld.wolfram.com/CountablyInfinite.html).
 
 If you observe @fig:three carefully, when $k$ is large and positive, the intersection with the given curve will occur near the values of the asymptotes. One way to identify the solution is to vary $k$ in the straight line $x + y = k$ by animation, and to identify cases where the intersection occurs at _integer values_ of $x$ and $y$. If you are curious how that will look like, go to [this animation at the Desmos website](https://www.desmos.com/calculator/1mklcrdbxw) to see what happens to the solution as $k$ varies between $-30$ and $30$.
 
