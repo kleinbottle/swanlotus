@@ -15,12 +15,11 @@ During a casual tour of the Web, my attention was drawn to a problem that was st
 
 ## The problem
 
-The problem, as I first came across it, was posed thus:
-
-If
+The problem, as I first came across it, was posed thus.
 $$
+\text{If}\quad
 x + xy + y = 54
-$$ {#eq:problem}
+$${#eq:problem}
 what is $x + y$?
 
 If you are good at mathematics, or relish a challenge, do not read further until you have given this problem your very best shot. After that, do read on.
@@ -41,7 +40,7 @@ How do we graph the given curve? And after that, how do we obtain the value of $
 
 For a start, I am [loath](https://www.thefreedictionary.com/loath) to graph curves by hand. So, I went to my favourite graphing destination on the Web, [Desmos](https://www.desmos.com), to experiment with the given curve. The [Desmos Graphing Calculator](https://www.desmos.com/calculator) offers the easiest and laziest route to visualize algebraic curves.
 
-I typed in $x + xy + y = 54$ into the textbox for the first curve and got what seemed at first sight to be a pair of curves for a rectangular hyperbola of the form $xy = k$ where $k$ is some constant (or number).
+I typed in [$x + xy + y = 54$](https://www.desmos.com/calculator/nwkikstcm6) into the textbox for the first graph and got what seemed at first sight to be a pair of curves for a rectangular hyperbola of the form $xy = k$ where $k$ is some constant (or number).
 
 ![A graph of the curve $x + xy + y = 54$.]({attach}images/olympiad-one.png){#fig:one width=75% .modal-target}
 
@@ -61,11 +60,11 @@ Wonder no more why the curve resembles a rectangular hyperbola. Its horizontal (
 
 ![The _family of curves_ $x + y = k$ plotted for three values of $k$. The solution _cannot_ lie within the purple region, bounded by the broken purple lines because no intersection with the nonlinear red curve is possible there. The lines are shown broken because the region does not include the two broken purple lines themselves. The green dotted line represents $x + y = 0$.]({attach}images/olympiad-two.png){#fig:two width=75% .modal-target}
 
-Let us now look at possible solutions. For this we need to plot straight lines like $x + y = 20$ and $x + y = -30$ which will intersect the red curves as shown in @fig:three.
+To look for possible solutions, we need to plot straight lines like $x + y = 20$ and $x + y = -30$ which will intersect the red curves as shown in @fig:three.
 
 ![Two straight lines that intersect the curve $x + xy + y = 54$. The respective solutions are $x + y = 20$ and $x + y = -30$.]({attach}images/olympiad-three.png){#fig:three width=75% .modal-target}
 
-It should clear that there is nothing special about the numbers $20$ or $-30$. So, there is an infinity of solutions for $x + y = k$ in two disjoint sets: $x + y \geq 12.832$ and $x + y \leq -16.832$, as shown in the [Appendix](#appendix).
+It should be clear that there is nothing special about the numbers $20$ or $-30$. So, there is an infinity of solutions for $x + y = k$ in two disjoint sets: $x + y \geq 12.832$ and $x + y \leq -16.832$, as shown in the [Appendix](#appendix).
 
 Although we have reached the end of the prescribed quest, there is a sense of hollowness, because there is no _unique_ solution (set), except that the solution can lie anywhere along the given curves, and is forbidden in the purple region of @fig:two.
 
@@ -73,7 +72,7 @@ It is appropriate now to take a breather and re-examine all assumptions. Perhaps
 
 ## Mathematics problems and detective novels
 
-Mathematics problems function like detective novels. The author of a detective novel enters into an implicit understanding with the reader, that the clues will be peppered throughout the novel, which when viewed as whole,  will lead to a _single_ culprit, preferably at the end of the novel. If there were still ten possible culprits at the end of the novel, the author would have completely let down the reader's expectations, and cheated him or her of the reward of discovery for the time spent reading the novel.
+Mathematics problems function like detective novels. The author of a detective novel enters into an implicit understanding with the reader, that the clues will be peppered throughout the novel, which when viewed as a whole,  will lead to a _single_ culprit, preferably at the end of the novel. If there were still ten possible culprits at the end of the novel, the author would have completely let down the reader's expectations, and cheated him or her of the reward of discovery for the time spent reading the novel.
 
 A similar compact holds between the one who poses a mathematics problem and the student who is expected to solve it. If a problem has no solutions, or has countless solutions, it will not necessarily entrance the student, especially at school level. Indeed, it will be considered a breach of faith if either of these two conditions held.
 
@@ -89,7 +88,7 @@ x + xy + y = 54
 $$
 what is $x + y$?
 
-By restricting the numbers to be positive, we may discard the entire solution set in the fourth quadrant, as well as any solutions that intersect near the (negative-valued) asymptotes. Moreover, by restricting the solution to integers, we are changing the domain of the solution from a quadrant of the real plane to an _integer lattice_ in the first quadrant. The solution set has changed from [uncountably infinite](https://mathworld.wolfram.com/UncountablyInfinite.html) to [countably infinite](https://mathworld.wolfram.com/CountablyInfinite.html).
+By restricting the numbers to be positive, we may discard the entire solution set in the fourth quadrant, as well as any solutions that intersect near the (negative-valued) asymptotes. Moreover, by restricting the solution to integers, we are changing the domain of the solution from a quadrant of the real plane to a [_point lattice_]( https://mathworld.wolfram.com/PointLattice.html) in the first quadrant. The solution set has thus changed from [uncountably infinite](https://mathworld.wolfram.com/UncountablyInfinite.html) to [countably infinite](https://mathworld.wolfram.com/CountablyInfinite.html).
 
 If you observe @fig:three carefully, when $k$ is large and positive, the intersection with the given curve will occur near the values of the asymptotes. One way to identify the solution is to vary $k$ in the straight line $x + y = k$ by animation, and to identify cases where the intersection occurs at _integer values_ of $x$ and $y$. If you are curious how that will look like, go to [this animation at the Desmos website](https://www.desmos.com/calculator/1mklcrdbxw) to see what happens to the solution as $k$ varies between $-30$ and $30$.
 
@@ -132,7 +131,7 @@ We may now write @eq:three as:
 $$
 (x+1)(y+1) = 55 = 5\times 11
 $${#eq:solution}
-If we set $x + 1 = 5$, we get $x = 4$. Likewise, setting $y + 1 = 11$ gives $y = 10$. Therefore, $x + y = 4 + 10 = 14$. It should abundantly clear that $x$ and $y$ could interchange their values but their sum will still be the same. So, the solution to the problem is $x + y = 14$, and we are home and dry.
+If we set $x + 1 = 5$, we get $x = 4$. Likewise, setting $y + 1 = 11$ gives $y = 10$. Therefore, $x + y = 4 + 10 = 14$. It should be abundantly clear that $x$ and $y$ could interchange their values but their sum will still be the same. So, the solution to the problem is $x + y = 14$, and we are home and dry.
 
 ### The final picture
 
@@ -159,7 +158,7 @@ x &\approx 6.416 \;\mbox{and}\; -8.416
 $$
 The corresponding $y$ values may be deduced from symmetry, or calculated from @eq:hyperbola, to be 6.416, and -8.416 respectively. The two tangents therefore touch the given curve at (6.416, 6.416) and (-8.416, -8.416) and that is why those two tangents that define the solution space were selected for @fig:two. Note that the tangents obey $x + y = k$ and the two values of $k$ are $6.416 + 6.416 = 12.832$ and $-8.416 + (-8.416) = -16.832$.
 
-Therefore all lines with $x + y \geq 12.832$ and $x + y \leq -16.832$ will intersect the given curve and constitute the solution set for the problem as originally stated.
+Therefore all lines with $x + y \geq 12.832$ and $x + y \leq -16.832$ will intersect the given curve and constitute the solution set for the problem, as originally stated.
 
 ## Acknowledgements
 
