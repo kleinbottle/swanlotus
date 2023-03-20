@@ -1,0 +1,17 @@
+\documentclass{article}
+
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+\draw (0,0) grid (5,5);
+\draw[densely dashed, shift={(-.5,-.5)}] (.1,.1) grid (5.9,5.9);
+\draw[line width=3pt, line cap=round, dash pattern=on 0pt off 1cm](0,0) grid (5,5);
+\draw[shift={(-.5,-.5)}, double, double distance=2.2pt, line cap=round, dash pattern=on 0pt off 1cm] (1,1) grid (5,5);
+\end{tikzpicture}
+
+\end{document}
+
+
+https://tex.stackexchange.com/questions/670160/drawing-lattice-and-its-dual-in-tikzpicture

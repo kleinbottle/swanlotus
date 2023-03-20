@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# parse_filename.sh
+# parse_filename
 #
 # Generic filename parsing routine that can be used in all scripts.
 #
@@ -81,7 +81,7 @@ ext=""
 # Check whether exactly one argument
 # is supplied with command invocation.
 #
-echo "Number of arguments is: $#"
+# echo "Number of arguments is: $#"
 if [[ $# -ne 1 ]] # Need exactly one command line argument
 then
   echo -e "${BOLD_YELLOW}Usage: $(basename "$0") /path/basename.ext${RESET_COLOR}"

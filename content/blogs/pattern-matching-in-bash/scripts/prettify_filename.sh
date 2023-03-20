@@ -1,5 +1,5 @@
 #!/bin/bash
-# prettify_filename.sh
+# prettify_filename
 #
 # The function expects one argument, $1, which represents the
 # $filename to be modified.
@@ -63,7 +63,7 @@ basename="$1"
 # just like the terminal `g` in the `sed` substitution expression.
 #
 new_basename="${basename//+([^[:word:]])/-}"
-echo -e "1 new_basename is $new_basename"
+# echo -e "1 new_basename is $new_basename"
 #
 # We then trim off the first character in $newname in case
 # it begins with a `-` character.
@@ -76,7 +76,7 @@ new_basename="${new_basename/#-}"
 # Nothing happens if the last character is not a `-`.
 #
 new_basename="${new_basename%-}"
-echo -e "2 new_basename is $new_basename"
+# echo -e "2 new_basename is $new_basename"
 
 # if [[ "$ext" == "" ]]
 # then
@@ -85,7 +85,7 @@ echo -e "2 new_basename is $new_basename"
 #   new_filename="$new_basename.$ext"
 # fi
 
-echo -e "new_basename is $new_basename"
+echo -e "new_basename is ${BOLD_YELLOW}$new_basename${RESET_COLOR}"
 # export new_basename
 }
 

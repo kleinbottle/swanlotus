@@ -1,0 +1,20 @@
+### The algebraic approach
+
+When I pondered a little more, I realized that there were _two_ variables and _one_ equation: a classic case of an [under-determined system](https://en.wikipedia.org/wiki/Underdetermined_system), had the equation been linear, which it is not, thanks to the $xy$ term.
+While I was imagining how an infinity of solutions could be coned down to a finite set of solutions, or even to a unique solution, I realized that the problem statement I had seen was deficient.
+
+When I first saw it somewhere on the Web, the problem had been stated without the _constraint_ imposed upon it as part of the question. When it was baldly stated as in (@eq:problem), one would indeed be hard put to nail a decent number of solutions, even if it took several days, let alone under the conditions of an Olympiad.
+
+### The constraint to the rescue
+
+After I wracked my head to tunnel a way to the solution set, I came upon the missing---but all important---constraint that $x$ and $y$ _are positive integers_. Let me illustrate why this simple condition suddenly transformed the problem from intractable to tractable.
+
+
+
+### Reduction of the solution space
+
+Without the the condition that $x$ and $y$ are _positive integers_ the solution could belong anywhere in the _entire_ $xy$ plane of ordered, real pairs: a diffuseness that could not be called a solution.
+
+If, on the contrary, $x$ and $y$ are positive integers, the possible solution space is immediately reduced from the $xy$ plane into the _positive quadrant_ of the plane. Moreover, because $x$ and $y$ are whole numbers, rather than the everywhere dense set of points, $(x, y)$, making up the _plane_, our solution set lives on a finite _grid_ or _lattice_ of points on  the positive quadrant. This is a _huge_ simplification of scope of the problem and its solution. It is evocative of the tacit agreement that the author of a detective novel has with her or his reader.
+
+A graphical depiction of how much the solution space has been narrowed as a result of this simple constraint may e seen by comparing FIGURES ONE and TWO.
