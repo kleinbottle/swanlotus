@@ -258,10 +258,10 @@ that, do read on.
 \subsection{First thoughts}\label{first-thoughts}}
 
 At first, I thought that this problem was too easy to be featured in a
-Mathematics Olympiad\footnote{I have not checked the if, which, when,
-  and level of the Olympiad, but simply took on the problem in good
-  faith.}. After all, the problem statement would be intelligible to
-anyone who has gone through mathematics up to middle (or secondary)
+Mathematics Olympiad\footnote{I have not checked the if, the which, the
+  when, and the level of the Olympiad, but simply took on the problem in
+  good faith.}. After all, the problem statement would be intelligible
+to anyone who has gone through mathematics up to middle (or secondary)
 school level. But after a short while, I realized that it posed some
 definite challenges.
 
@@ -319,13 +319,15 @@ From \cref{fig:one}, we can deduce the following:
   y = \frac{54-x}{x+1} = \frac{54}{x+1} -\frac{x}{x+1} \approx \frac{54}{x} - 1 \approx -1 \; \mbox{for large $x$}
   }\label{eq:hyperbola}\end{equation} Wonder no more why the curve
   resembles a rectangular hyperbola. Its horizontal (and vertical)
-  \href{https://en.wikipedia.org/wiki/Asymptote}{asymptotes} equal -1.
-  That is why it lies \emph{largely} in the first and third quadrants.
+  \href{https://en.wikipedia.org/wiki/Asymptote}{asymptotes} equal
+  \(-1\). That is why it lies \emph{largely} in the first and third
+  quadrants.
 \item
   Only those points \((x, y)\) that satisfy \cref{eq:problem} are
   relevant for our second condition \(x + y\), i.e., our solution space
-  is defined by the two halves of the plotted curve. The rest of the
-  \(xy\) plane does not contain the solution we seek.
+  is defined by the curves comprising the two halves of the plotted
+  graph. The rest of the \(xy\) plane does not contain the solution we
+  seek.
 \item
   Since we are after the value of \(x + y\), we can plot the
   \emph{family of curves} \(x + y = k\) where \(k\) is some real
@@ -340,13 +342,13 @@ From \cref{fig:one}, we can deduce the following:
 \hypertarget{fig:two}{%
 \centering
 \includegraphics[width=0.75\textwidth,height=\textheight]{images/olympiad-two.png}
-\caption{The \emph{family of curves} \(x + y = k\) plotted for three
-values of \(k\). The solution \emph{cannot} lie within the purple
-region, bounded by the broken purple lines because no intersection with
-the nonlinear red curve is possible there. The lines are shown broken
-because the region does not include the two broken purple lines
-themselves. The green dotted line represents
-\(x + y = 0\).}\label{fig:two}
+\caption{The \emph{family of curves} \(x + y = k\) is plotted for three
+values of \(k\). The green dotted line represents \(x + y = 0\). The two
+purple lines represent \(x + y = 12.832\) and \(x + y = -16.832\). The
+solution \emph{cannot} lie within the purple region, bounded by the
+latter two lines because no intersection with the nonlinear red curve is
+possible there. The purple lines are shown broken because the purple
+region does not include these two lines themselves.}\label{fig:two}
 }
 \end{figure}
 
@@ -365,14 +367,14 @@ as shown in \cref{fig:three}.
 \end{figure}
 
 It should be clear that there is nothing special about the numbers
-\(20\) or \(-30\). So, there is an infinity of solutions for
+\(20\) or \(-30\). So, there is an infinity of possible solutions for
 \(x + y = k\) in two disjoint sets: \(x + y \geq 12.832\) and
 \(x + y \leq -16.832\), as shown in the
 \protect\hyperlink{appendix}{Appendix}.
 
 Although we have reached the end of the prescribed quest, there is a
 sense of hollowness, because there is no \emph{unique} solution (set),
-except that the solution can lie anywhere along the given curves, and is
+except that the solution can lie anywhere along the red curves, and is
 forbidden in the purple region of \cref{fig:two}.
 
 It is appropriate now to take a breather and re-examine all assumptions.
@@ -394,12 +396,12 @@ time spent reading the novel.
 
 A similar compact holds between the one who poses a mathematics problem
 and the student who is expected to solve it. If a problem has no
-solutions, or has countless solutions, it will not necessarily entrance
+solutions, or has countless solutions, it will not necessarily enthrall
 the student, especially at school level. Indeed, it will be considered a
 breach of faith if either of these two conditions held.
 
 It is unlikely that an Olympiad problem in mathematics will indulge in
-such breach of trust. What was the \emph{exact wording} of the problem?
+such antics. What was the \emph{exact wording} of the problem?
 
 \hypertarget{the-all-important-constraint}{%
 \subsection{The all-important
@@ -541,19 +543,23 @@ enumerate \emph{both} points.}\label{fig:four}
 \hypertarget{appendix}{%
 \subsection{Appendix}\label{appendix}}
 
-The somewhat magic numbers 12.832 and -16.832 in \cref{fig:two} were not
-drawn out of thin air, but are the result of simple calculations. It
-should be clear that the straight lines in \cref{fig:two} all have a
-gradient of \(-1\) and that when they are tangent to---or just
-touching---the given curve \(x + xy + y = 54\), that curve should also
-have a gradient of \(-1\) at the point of contact, or
+The somewhat magic numbers \(12.832\) and \(-16.832\) in \cref{fig:two}
+were not drawn out of thin air, but are the result of simple
+calculations. It should be clear that the straight lines in
+\cref{fig:two} all have a gradient of \(-1\) and that when they are
+tangent to---or just touching---the given curve \(x + xy + y = 54\),
+that curve should also have a gradient of \(-1\) at the point of
+contact, or
 \href{https://en.wikipedia.org/wiki/Osculating_curve}{osculation}.
 
-Rewriting the given equation as \cref{eq:hyperbola}, we want the
-derivative \(\frac{\mathrm{d}y}{\mathrm{d}x}\). This is accomplished
-with little effort or thinking, by going to
-\href{https://www.wolframalpha.com}{Wolfram Alpha} and asking the engine
-to
+Rewriting the given equation as
+\begin{equation}\protect\hypertarget{eq:diff}{}{
+y = \frac{54-x}{x+1}
+}\label{eq:diff}\end{equation} we want the derivative
+\(\frac{\mathrm{d}y}{\mathrm{d}x}\). This is accomplished with little
+effort or thinking, by going to
+\href{https://www.wolframalpha.com}{Wolfram Alpha}, and asking the
+engine to
 \href{https://www.wolframalpha.com/calculators/derivative-calculator/}{compute
 the derivative} so: \[
 \frac{\mathrm{d}y}{\mathrm{d}x} = \frac{\mathrm{d}}{\mathrm{d}x}\left[\frac{54 - x}{x + 1}\right] = -\frac{55}{(x + 1)^2}
@@ -566,27 +572,30 @@ x &= \pm\sqrt{55} - 1 \; \mbox{i.e.,}\\
 x &\approx 6.416 \;\mbox{and}\; -8.416
 \end{aligned}
 \] The corresponding \(y\) values may be deduced from symmetry, or
-calculated from \cref{eq:hyperbola}, to be 6.416, and -8.416
-respectively. The two tangents therefore touch the given curve at
-(6.416, 6.416) and (-8.416, -8.416) and that is why those two tangents
-that define the solution space were selected for \cref{fig:two}. Note
-that the tangents obey \(x + y = k\) and the two values of \(k\) are
-\(6.416 + 6.416 = 12.832\) and \(-8.416 + (-8.416) = -16.832\).
+calculated from \cref{eq:diff}, to be 6.416, and -8.416 respectively.
+The two tangents therefore touch the given curve at (6.416, 6.416) and
+(-8.416, -8.416) and that is why those two tangents that define the
+solution space were selected for \cref{fig:two}. Note that the tangents
+obey \(x + y = k\) and the two values of \(k\) are
+\(6.416 + 6.416 = 12.832\), and \(-8.416 + (-8.416) = -16.832\).
 
 Therefore all lines with \(x + y \geq 12.832\) and
-\(x + y \leq -16.832\) will intersect the given curve and constitute the
-solution set for the problem, as originally stated.
+\(x + y \leq -16.832\) will intersect the given curve and those points
+of intersection will constitute the solution set for the problem, as
+originally stated.
 
 \hypertarget{acknowledgements}{%
 \subsection{Acknowledgements}\label{acknowledgements}}
 
 The \href{https://www.desmos.com/}{Desmos webiste} is a boon to both
 teachers and students of mathematics, not to mention digital artists.
-Surf \href{desmos}{YouTube} and the rest of the Web to know the full
-extent of the largess available. My thanks to Desmos. I would also like
-to express my appreciation to
+\href{desmos}{YouTube} and the rest of the Web contain information on
+the full extent of the largess available. My grateful thanks to Desmos.
+
+I would also like to express my appreciation to
 \href{https://www.wolframalpha.com/}{Wolfram Alpha} for the
-computational facilities they have made available at no charge.
+computational facilities they have made available at no charge. Much
+tedium may be avoided, and many insights gained therefrom.
 
 \hypertarget{feedback}{%
 \subsection{Feedback}\label{feedback}}

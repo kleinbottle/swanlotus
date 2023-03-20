@@ -30,7 +30,7 @@ At first, I thought that this problem was too easy to be featured in a Mathemati
 
 In this blog, I am not setting out to expound a blazingly fast method of solution, nor am I attempting mathematical terseness. I will be discursive because I want to _savour_ the problem in all its aspects, as they suggested themselves to me. I also hope that, by so doing, I stimulate mathematical thinking in my readers, and give them an experience of the mathematical adventure, if nothing else.
 
-[^1]: I have not checked the if, which, when, and level of the Olympiad, but simply took on the problem in good  faith.
+[^1]: I have not checked the if, the which, the when, and the level of the Olympiad, but simply took on the problem in good  faith.
 
 ## A pictorial approach
 
@@ -52,21 +52,21 @@ From @fig:one, we can deduce the following:
 $$
 y = \frac{54-x}{x+1} = \frac{54}{x+1} -\frac{x}{x+1} \approx \frac{54}{x} - 1 \approx -1 \; \mbox{for large $x$}
 $$ {#eq:hyperbola}
-Wonder no more why the curve resembles a rectangular hyperbola. Its horizontal (and vertical) [asymptotes](https://en.wikipedia.org/wiki/Asymptote) equal -1. That is why it lies _largely_ in the first and third quadrants.
+Wonder no more why the curve resembles a rectangular hyperbola. Its horizontal (and vertical) [asymptotes](https://en.wikipedia.org/wiki/Asymptote) equal $-1$. That is why it lies _largely_ in the first and third quadrants.
 
-(a) Only those points $(x, y)$ that satisfy @eq:problem are relevant for our second condition $x + y$, i.e., our solution space is defined by the two halves of the plotted curve. The rest of the $xy$ plane does not contain the solution we seek.
+(a) Only those points $(x, y)$ that satisfy @eq:problem are relevant for our second condition $x + y$, i.e., our solution space is defined by the curves comprising the two halves of the plotted graph. The rest of the $xy$ plane does not contain the solution we seek.
 
 (a) Since we are after the value of $x + y$, we can plot the _family of curves_ $x + y = k$ where $k$ is some real constant. This is done in @fig:two. The two straight lines that are tangent can be derived from calculation, as shown in the [Appendix](#appendix) at the end. They represent limiting cases of the values of $k$ within which a solution _cannot_ lie.
 
-![The _family of curves_ $x + y = k$ plotted for three values of $k$. The solution _cannot_ lie within the purple region, bounded by the broken purple lines because no intersection with the nonlinear red curve is possible there. The lines are shown broken because the region does not include the two broken purple lines themselves. The green dotted line represents $x + y = 0$.]({attach}images/olympiad-two.png){#fig:two width=75% .modal-target}
+![The _family of curves_ $x + y = k$ is plotted for three values of $k$. The green dotted line represents $x + y = 0$. The two purple lines represent $x + y = 12.832$ and $x + y = -16.832$. The solution _cannot_ lie within the purple region, bounded by the latter two lines because no intersection with the nonlinear red curve is possible there. The purple lines are shown broken because the purple region does not include these two lines themselves.]({attach}images/olympiad-two.png){#fig:two width=75% .modal-target}
 
 To look for possible solutions, we need to plot straight lines like $x + y = 20$ and $x + y = -30$ which will intersect the red curves as shown in @fig:three.
 
 ![Two straight lines that intersect the curve $x + xy + y = 54$. The respective solutions are $x + y = 20$ and $x + y = -30$.]({attach}images/olympiad-three.png){#fig:three width=75% .modal-target}
 
-It should be clear that there is nothing special about the numbers $20$ or $-30$. So, there is an infinity of solutions for $x + y = k$ in two disjoint sets: $x + y \geq 12.832$ and $x + y \leq -16.832$, as shown in the [Appendix](#appendix).
+It should be clear that there is nothing special about the numbers $20$ or $-30$. So, there is an infinity of possible solutions for $x + y = k$ in two disjoint sets: $x + y \geq 12.832$ and $x + y \leq -16.832$, as shown in the [Appendix](#appendix).
 
-Although we have reached the end of the prescribed quest, there is a sense of hollowness, because there is no _unique_ solution (set), except that the solution can lie anywhere along the given curves, and is forbidden in the purple region of @fig:two.
+Although we have reached the end of the prescribed quest, there is a sense of hollowness, because there is no _unique_ solution (set), except that the solution can lie anywhere along the red curves, and is forbidden in the purple region of @fig:two.
 
 It is appropriate now to take a breather and re-examine all assumptions. Perhaps, it is the time to ruminate philosophically about mathematical problems.
 
@@ -74,9 +74,9 @@ It is appropriate now to take a breather and re-examine all assumptions. Perhaps
 
 Mathematics problems function like detective novels. The author of a detective novel enters into an implicit understanding with the reader, that the clues will be peppered throughout the novel, which when viewed as a whole,  will lead to a _single_ culprit, preferably at the end of the novel. If there were still ten possible culprits at the end of the novel, the author would have completely let down the reader's expectations, and cheated him or her of the reward of discovery for the time spent reading the novel.
 
-A similar compact holds between the one who poses a mathematics problem and the student who is expected to solve it. If a problem has no solutions, or has countless solutions, it will not necessarily entrance the student, especially at school level. Indeed, it will be considered a breach of faith if either of these two conditions held.
+A similar compact holds between the one who poses a mathematics problem and the student who is expected to solve it. If a problem has no solutions, or has countless solutions, it will not necessarily enthrall the student, especially at school level. Indeed, it will be considered a breach of faith if either of these two conditions held.
 
-It is unlikely that an Olympiad problem in mathematics will indulge in such breach of trust. What was the _exact wording_ of the problem?
+It is unlikely that an Olympiad problem in mathematics will indulge in such antics. What was the _exact wording_ of the problem?
 
 ## The all-important constraint
 
@@ -141,9 +141,13 @@ To get a sense of finality, let us see the graphical representation of our algeb
 
 ## Appendix
 
-The somewhat magic numbers 12.832 and -16.832 in @fig:two were not drawn out of thin air, but are the result of simple calculations. It should be clear that the straight lines in @fig:two all have a gradient of $-1$ and that when they are tangent to---or just touching---the given curve $x + xy + y = 54$, that curve should also have a gradient of $-1$ at the point of contact, or [osculation](https://en.wikipedia.org/wiki/Osculating_curve).
+The somewhat magic numbers $12.832$ and $-16.832$ in @fig:two were not drawn out of thin air, but are the result of simple calculations. It should be clear that the straight lines in @fig:two all have a gradient of $-1$ and that when they are tangent to---or just touching---the given curve $x + xy + y = 54$, that curve should also have a gradient of $-1$ at the point of contact, or [osculation](https://en.wikipedia.org/wiki/Osculating_curve).
 
-Rewriting the given equation as @eq:hyperbola, we want the derivative $\frac{\mathrm{d}y}{\mathrm{d}x}$. This is accomplished with little effort or thinking, by going to [Wolfram Alpha](https://www.wolframalpha.com) and asking the engine to [compute the derivative](https://www.wolframalpha.com/calculators/derivative-calculator/) so:
+Rewriting the given equation as
+$$
+y = \frac{54-x}{x+1}
+$${#eq:diff}
+we want the derivative $\frac{\mathrm{d}y}{\mathrm{d}x}$. This is accomplished with little effort or thinking, by going to [Wolfram Alpha](https://www.wolframalpha.com), and asking the engine to [compute the derivative](https://www.wolframalpha.com/calculators/derivative-calculator/) so:
 $$
 \frac{\mathrm{d}y}{\mathrm{d}x} = \frac{\mathrm{d}}{\mathrm{d}x}\left[\frac{54 - x}{x + 1}\right] = -\frac{55}{(x + 1)^2}
 $$
@@ -156,13 +160,15 @@ x &= \pm\sqrt{55} - 1 \; \mbox{i.e.,}\\
 x &\approx 6.416 \;\mbox{and}\; -8.416
 \end{aligned}
 $$
-The corresponding $y$ values may be deduced from symmetry, or calculated from @eq:hyperbola, to be 6.416, and -8.416 respectively. The two tangents therefore touch the given curve at (6.416, 6.416) and (-8.416, -8.416) and that is why those two tangents that define the solution space were selected for @fig:two. Note that the tangents obey $x + y = k$ and the two values of $k$ are $6.416 + 6.416 = 12.832$ and $-8.416 + (-8.416) = -16.832$.
+The corresponding $y$ values may be deduced from symmetry, or calculated from @eq:diff, to be 6.416, and -8.416 respectively. The two tangents therefore touch the given curve at (6.416, 6.416) and (-8.416, -8.416) and that is why those two tangents that define the solution space were selected for @fig:two. Note that the tangents obey $x + y = k$ and the two values of $k$ are $6.416 + 6.416 = 12.832$, and $-8.416 + (-8.416) = -16.832$.
 
-Therefore all lines with $x + y \geq 12.832$ and $x + y \leq -16.832$ will intersect the given curve and constitute the solution set for the problem, as originally stated.
+Therefore all lines with $x + y \geq 12.832$ and $x + y \leq -16.832$ will intersect the given curve and those points of intersection will constitute the solution set for the problem, as originally stated.
 
 ## Acknowledgements
 
-The [Desmos webiste](https://www.desmos.com/) is a boon to both teachers and students of mathematics, not to mention digital artists. Surf [YouTube](desmos) and the rest of the Web to know the full extent of the largess available. My thanks to Desmos. I would also like to express my appreciation to [Wolfram Alpha](https://www.wolframalpha.com/) for the computational facilities they have made available at no charge.
+The [Desmos webiste](https://www.desmos.com/) is a boon to both teachers and students of mathematics, not to mention digital artists. [YouTube](desmos) and the rest of the Web contain information on the full extent of the largess available. My grateful thanks to Desmos.
+
+I would also like to express my appreciation to [Wolfram Alpha](https://www.wolframalpha.com/) for the computational facilities they have made available at no charge. Much tedium may be avoided, and many insights gained therefrom.
 
 ## Feedback
 
