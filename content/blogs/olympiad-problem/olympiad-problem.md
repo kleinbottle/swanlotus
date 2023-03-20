@@ -162,7 +162,7 @@ Therefore all lines with $x + y \geq 12.832$ and $x + y \leq -16.832$ will inter
 
 ## Acknowledgements
 
-The [Desmos webiste](https://www.desmos.com/) is a boon to both teachers and students of mathematics, not to mention digital artists. Surf [YouTube](desmos) and the rest of the Web to know the full extent of the largess available. My thanks to Desmos.
+The [Desmos webiste](https://www.desmos.com/) is a boon to both teachers and students of mathematics, not to mention digital artists. Surf [YouTube](desmos) and the rest of the Web to know the full extent of the largess available. My thanks to Desmos. I would also like to express my appreciation to [Wolfram Alpha](https://www.wolframalpha.com/) for the computational facilities they have made available at no charge.
 
 ## Feedback
 
