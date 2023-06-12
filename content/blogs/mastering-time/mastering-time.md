@@ -38,7 +38,7 @@ If I did not like doing doctoral research---with all its vicissitudes---I would 
 
 ## Shed the need for approval
 
-Professor Kravitis added poignantly, "Others do not care who you are, what you are, what you do, or how you fare. You wrongly think---like the [Ptolemaic astronomers](https://www.princeton.edu/~hos/mike/texts/ptolemy/ptolemy.html)---that you are the center of everyone's universe. Nothing could be further from the truth.
+Professor Karavitis added poignantly, "Others do not care who you are, what you are, what you do, or how you fare. You wrongly think---like the [Ptolemaic astronomers](https://www.princeton.edu/~hos/mike/texts/ptolemy/ptolemy.html)---that you are the center of everyone's universe. Nothing could be further from the truth.
 
 "Each person is deeply involved in thinking about his or her _own_ life. The approval or disapproval of others is as short-lived as their memories. Do not live your life to satisfy others. Rather, strive to live in harmony with your innermost self. That is the sure road to contentment and peace with yourself.
 
@@ -46,7 +46,7 @@ Professor Kravitis added poignantly, "Others do not care who you are, what you a
 
 ## Start early and start well
 
-Having metaphorically yeasted the dough of my mind, Professor Kravitis---he actually insisted that I should call him Stavros---said the next step was to start early, and start well.
+Having metaphorically yeasted the dough of my mind, Professor Karavitis---he actually insisted that I should call him Stavros---said the next step was to start early, and start well.
 
 "Never leave anything to the last minute," he said. "No one likes a half-baked cake. So, bake your cake well. Start early, start well, secure in your own inner, sublime reassurance that you are going to do a fine job. And hang on to that redeeming thought until you finish."
 
@@ -58,9 +58,9 @@ Stavros said that anything worth doing should be done well. Re-engineering a poo
 
 ## Done and dusted: out of mind
 
-"Professor Kravitis was unsentimental about his own accomplishments, which were staggering, given that when he became a full professor, he was half the average age of his peers," Sol resumed his narration. "One day, I picked up enough courage to ask him why he did not celebrate his considerable academic accomplishments. He seemed almost diffident about his own capabilities."
+"Professor Karavitis was unsentimental about his own accomplishments, which were staggering, given that when he became a full professor, he was half the average age of his peers," Sol resumed his narration. "One day, I picked up enough courage to ask him why he did not celebrate his considerable academic accomplishments. He seemed almost diffident about his own capabilities."
 
-The answer that Professor Kravitis gave me was supremely insightful. He said, "Once a task is done and dusted, forget about it. Even if what you did is worth a Nobel Prize, the fame that attends upon you lasts a paltry 15 minutes, if even that.
+The answer that Professor Karavitis gave me was supremely insightful. He said, "Once a task is done and dusted, forget about it. Even if what you did is worth a Nobel Prize, the fame that attends upon you lasts a paltry 15 minutes, if even that.
 
 "Sports stars, film actors, politicians, criminals, influencers, and such like are the modern glitterati, who bask in the glare of public attention and thrive on adulation.
 
@@ -70,23 +70,23 @@ The answer that Professor Kravitis gave me was supremely insightful. He said, "O
 
 Sol continued, "Do not for a moment think that this concentrated wisdom was all delivered to me in a single enlightening dose. No chance of that. Stavros was unassuming and genial. He treated me more like a friend than as a student. I do not know why, but I suspect that he saw me imbibing and putting into practice the sage truths that he imparted. I believe that I absorbed the quiet wisdom that flowed from him by osmosis rather than from overtly didactic efforts."
 
-"And what was most impressive was that he practised what he preached. One Friday afternoon, in the early days of my research, I diffidently approached Ms Juanita Peres, the secretary of Professor Kravitis, to ask if he could spare me a half hour, as I had been stuck with some experiments, and needed to bounce ideas off him, to better set my bearings for future work." I was totally engrossed by Sol's tale by now, and my lethargy had been replaced by keen interest.
+"And what was most impressive was that he practised what he preached. One Friday afternoon, in the early days of my research, I diffidently approached Ms Juanita Peres, the secretary of Professor Karavitis, to ask if he could spare me a half hour, as I had been stuck with some experiments, and needed to bounce ideas off him, to better set my bearings for future work." I was totally engrossed by Sol's tale by now, and my lethargy had been replaced by keen interest.
 
 "Of course, you can see Stavros now," Juanita said with confidence. "He does not have any scheduled meeting this afternoon. So, you may go right in."
 
 Sol said, "I entered the professor's room and had a good forty minutes of academic to-and-fro that opened windows in my mind. I had a clear picture of what I should be doing, why, and how, as my work approached the 'real research' part of my PhD programme.
 
-"And again, Professor Kravitis made it seem that I was the one who came up with all those brilliant insights. Paraphrasing Socrates, and without any pretentiousness, he simply said, 'Those ideas are yours. I was simply the [midwife](https://philosophycourse.info/lecsite/lec-socmidwife.html) who helped deliver them.' And I was flattered by the total attention he gave me during our meeting.
+"And again, Professor Karavitis made it seem that I was the one who came up with all those brilliant insights. Paraphrasing Socrates, and without any pretentiousness, he simply said, 'Those ideas are yours. I was simply the [midwife](https://philosophycourse.info/lecsite/lec-socmidwife.html) who helped deliver them.' And I was flattered by the total attention he gave me during our meeting.
 
-"After that inspiring session, I asked Juanita a very pertinent question. I knew that Professor Kravitis was the Opening Keynote Speaker at a conference that was taking place the following Monday at the university. And it was a prestigious professional conference.
+"After that inspiring session, I asked Juanita a very pertinent question. I knew that Professor Karavitis was the Opening Keynote Speaker at a conference that was taking place the following Monday at the university. And it was a prestigious professional conference.
 
 "I myself could not have thought about anything else that Friday afternoon, had I been tasked to deliver the opening keynote address for the conference the following Monday morning. So, I asked Juanita how Stavros managed to give me his whole time and attention for those forty minutes, when in sixty hours or so, he had to deliver an important keynote address. What Juanita told me next both shocked and educated me in one go."
 
-She said, "I have known Professor Kravitis for more than twenty years. In all that time, I have never seen him allow one event to interfere with another. _He has compartmentalized his mind_.
+She said, "I have known Professor Karavitis for more than twenty years. In all that time, I have never seen him allow one event to interfere with another. _He has compartmentalized his mind_.
 
 "So, he is well aware that he has this important keynote address on Monday morning. But he has no anxiety about it. He set aside ample time, weeks ago, to research, prepare, revise, and rehearse delivering the paper. Once that was done, he has forgotten about it. It does not evoke any worry in him because he has bequeathed adequate time and preparation to it. The result is his best effort. And that leaves him free to attend to everything else that intervenes between then and Monday next."
 
-"The aphorism 'Done and dusted: out of mind,' echoed in my memory again. Professor Kravitis was indeed one who practised what he preached. A mentor for the ages, whom we can all beneficially emulate," concluded Sol.
+"The aphorism 'Done and dusted: out of mind,' echoed in my memory again. Professor Karavitis was indeed one who practised what he preached. A mentor for the ages, whom we can all beneficially emulate," concluded Sol.
 
 ## Closing thoughts
 
