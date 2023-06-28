@@ -263,7 +263,7 @@ sed "s/^-//" | sed  "s/-$//"
 
 to get
 
-```
+```bash
 El-Condor-Pasa
 ```
 

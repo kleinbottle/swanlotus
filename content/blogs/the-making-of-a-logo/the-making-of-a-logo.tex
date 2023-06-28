@@ -7,16 +7,19 @@
   a4paper,
 ]{article}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -35,19 +38,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={The Making of a Logo},
-  pdfauthor={R (Chandra) Chandrasekhar},
-  pdflang={en-GB},
-  colorlinks=true,
-  linkcolor={DarkOliveGreen},
-  filecolor={Purple},
-  citecolor={DarkKhaki},
-  urlcolor={Maroon},
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=25mm]{geometry}
 \usepackage{color}
 \usepackage{fancyvrb}
@@ -112,6 +102,7 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+\usepackage{svg}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -155,6 +146,7 @@
 %
 % \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
 % \PassOptionsToPackage{main=british}{babel}
+\PassOptionsToPackage{english}{selnolig}
 \AtBeginEnvironment{quote}{\small}
 \AtBeginEnvironment{quotation}{\small}
 \AtBeginEnvironment{longtable}{\centering}
@@ -165,7 +157,6 @@
 \usepackage{subcaption}
 \usepackage[inkscapeversion=1]{svg}
 \usepackage[defaultlines=4,all]{nowidow}
-\usepackage[capitalize,noabbrev]{cleveref}
 \usepackage{etoolbox}
 \usepackage{fontsize}
 \usepackage{newunicodechar}
@@ -176,6 +167,10 @@
 \usepackage[style=american]{csquotes}
 % \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
 %
+\usepackage{esdiff} % for derivative symbols
+\usepackage{amsmath}
+\usepackage{hyperref} % cleveref must come AFTER hyperref
+\usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
 % noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
@@ -254,6 +249,19 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{sf}
+\hypersetup{
+  pdftitle={The Making of a Logo},
+  pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
+  colorlinks=true,
+  linkcolor={DarkOliveGreen},
+  filecolor={Purple},
+  citecolor={DarkKhaki},
+  urlcolor={Maroon},
+  pdfcreator={LaTeX via pandoc}}
 
 \title{The Making of a Logo}
 \author{R (Chandra) Chandrasekhar}
@@ -444,10 +452,10 @@ question by
 which is a relative newcomer to theoretical physics, but one that has
 captured the common imagination, judging by the popular explanations
 that abound on the Web
-{[}\protect\hyperlink{ref-mann2019}{1}--\protect\hyperlink{ref-jones2020}{3}{]}.
+\protect\hyperlink{ref-mann2019}{{[}1{]}}--\protect\hyperlink{ref-jones2020}{{[}3{]}}.
 And whether string theory is or is not science, Popper notwithstanding,
 is an issue that is still up for debate
-{[}\protect\hyperlink{ref-siegel2015}{4}--\protect\hyperlink{ref-francis2019}{7}{]}.
+\protect\hyperlink{ref-siegel2015}{{[}4{]}}--\protect\hyperlink{ref-francis2019}{{[}7{]}}.
 
 But, coming back to the task at hand, how would such an abstract idea as
 falsifiability find expression in a logo? Perhaps the correct medium for
@@ -467,7 +475,7 @@ Kuhn}---another celebrated philosopher of science---and popularized in
 his enduring tome,
 \href{https://www.amazon.com/Structure-Scientific-Revolutions-50th-Anniversary/dp/0226458121/}{\emph{The
 Structure of Scientific Revolutions}}
-{[}\protect\hyperlink{ref-kuhn2012}{8}{]}. Kuhn held that science did
+\protect\hyperlink{ref-kuhn2012}{{[}8{]}}. Kuhn held that science did
 not evolve smoothly, but every so often experienced seismic corrections
 or radical changes of perspective that led to new theories that
 predicted the world much better than before. But how in heaven was he to
@@ -533,7 +541,7 @@ invented \footnote{Such meandering, away from the straight and narrow of
   intellectual sheen, but took its toll on timeliness.}. It was probably
 the greatest scientific advance of its time. And priority for its
 discovery was an ugly bone of contention between Leibniz and Newton
-{[}\protect\hyperlink{ref-bardi2007}{9}{]}.
+\protect\hyperlink{ref-bardi2007}{{[}9{]}}.
 
 And then it hit him like a ton of bricks. \emph{Calculus could not have
 been invented without coordinate geometry---that extraordinary offspring
@@ -561,12 +569,12 @@ eyes that were piercing and dreamy at the same time.
 Relieved that at last he was on the scent, Sol relaxed for a couple of
 days, which he spent reading about the
 \href{https://www.britannica.com/biography/Rene-Descartes}{life of
-Descartes} {[}\protect\hyperlink{ref-watson2020}{10}{]}. He chuckled
+Descartes} \protect\hyperlink{ref-watson2020}{{[}10{]}}. He chuckled
 when he read that ``the 22-year-old {[}Queen{]} Christina {[}of
 Sweden{]} perversely made the 53-year-old Descartes rise before 5:00 am
 to give her philosophy lessons, even though she knew of his habit of
 lying in bed until 11 o'clock in the morning.''
-{[}\protect\hyperlink{ref-watson2020}{10}{]}. He read with chagrin that
+\protect\hyperlink{ref-watson2020}{{[}10{]}}. He read with chagrin that
 Descartes tragically died in Sweden from pneumonia, presumably caused by
 the Scandinavian winter and the duress of having to rise early in the
 morning to keep his appointment with his royal student.
@@ -986,71 +994,74 @@ comments and corrections.
 \hypertarget{refs}{}
 \begin{CSLReferences}{0}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-mann2019}{}}%
-\CSLLeftMargin{1. }%
-\CSLRightInline{Mann, Adam. {What Is String Theory?} Online. 20 March
-2019. {[}Accessed~12~November~2020{]}. Available from:
-\url{https://www.livescience.com/65033-what-is-string-theory.html}}
+\CSLLeftMargin{{[}1{]} }%
+\CSLRightInline{Adam Mann, {`{What Is String Theory?}'}, Mar. 20, 2019.
+Available:
+\url{https://www.livescience.com/65033-what-is-string-theory.html}.
+{[}Accessed: Nov. 12, 2020{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-wood2019}{}}%
-\CSLLeftMargin{2. }%
-\CSLRightInline{Wood, Charlie. {What Is String Theory?}: Reference
-article: A simplified explanation and brief history of string theory.
-Online. 11 July 2019. {[}Accessed~12~November~2020{]}. Available from:
-\url{https://www.space.com/17594-string-theory.html}}
+\CSLLeftMargin{{[}2{]} }%
+\CSLRightInline{Charlie Wood, {`{What Is String Theory?}: Reference
+article: A simplified explanation and brief history of string theory'},
+Jul. 11, 2019. Available:
+\url{https://www.space.com/17594-string-theory.html}. {[}Accessed: Nov.
+12, 2020{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-jones2020}{}}%
-\CSLLeftMargin{3. }%
-\CSLRightInline{Jones, Andrew Zimmerman. {The Basics of String Theory}.
-Online. 2 March 2019. {[}Accessed~12~November~2020{]}. Available from:
-\url{https://www.thoughtco.com/what-is-string-theory-2699363}}
+\CSLLeftMargin{{[}3{]} }%
+\CSLRightInline{Andrew Zimmerman Jones, {`{The Basics of String
+Theory}'}, Mar. 02, 2019. Available:
+\url{https://www.thoughtco.com/what-is-string-theory-2699363}.
+{[}Accessed: Nov. 12, 2020{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-siegel2015}{}}%
-\CSLLeftMargin{4. }%
-\CSLRightInline{Siegel, Ethan. {Why String Theory Is Not A Scientific
-Theory}. Online. 23 December 2015. {[}Accessed~12~November~2020{]}.
-Available from:
-\url{https://www.forbes.com/sites/startswithabang/2015/12/23/why-string-theory-is-not-science/}}
+\CSLLeftMargin{{[}4{]} }%
+\CSLRightInline{Ethan Siegel, {`{Why String Theory Is Not A Scientific
+Theory}'}, Dec. 23, 2015. Available:
+\url{https://www.forbes.com/sites/startswithabang/2015/12/23/why-string-theory-is-not-science/}.
+{[}Accessed: Nov. 12, 2020{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-castelvecchi2016}{}}%
-\CSLLeftMargin{5. }%
-\CSLRightInline{Castelvecchi, Davide. {Feuding physicists turn to
+\CSLLeftMargin{{[}5{]} }%
+\CSLRightInline{Davide Castelvecchi, {`{Feuding physicists turn to
 philosophy for help}: String theory is at the heart of a debate over the
-integrity of the scientific method itself. Online. 5 January 2016.
-{[}Accessed~12~November~2020{]}. Available from:
-\url{https://www.nature.com/news/feuding-physicists-turn-to-philosophy-for-help-1.19076}}
+integrity of the scientific method itself'}, Jan. 05, 2016. Available:
+\url{https://www.nature.com/news/feuding-physicists-turn-to-philosophy-for-help-1.19076}.
+{[}Accessed: Nov. 12, 2020{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-alves2017}{}}%
-\CSLLeftMargin{6. }%
-\CSLRightInline{Batista, Rafael Alves and Primack, Joel. {Is String
+\CSLLeftMargin{{[}6{]} }%
+\CSLRightInline{Rafael Alves Batista and Joel Primack, {`{Is String
 theory falsifiable?}: Can a theory that isn't completely testable still
-be useful to physics? Online. {[}Accessed~12~November~2020{]}. Available
-from:
-\url{https://metafact.io/factchecks/30-is-string-theory-falsifiable}}
+be useful to physics?'} Available:
+\url{https://metafact.io/factchecks/30-is-string-theory-falsifiable}.
+{[}Accessed: Nov. 12, 2020{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-francis2019}{}}%
-\CSLLeftMargin{7. }%
-\CSLRightInline{Francis, Matthew R. {Falsifiability and physics}: Can a
-theory that isn't completely testable still be useful to physics?
-Online. 23 April 2019. {[}Accessed~12~November~2020{]}. Available from:
-\url{https://www.scientificamerican.com/article/is-string-theory-science/}}
+\CSLLeftMargin{{[}7{]} }%
+\CSLRightInline{Matthew R Francis, {`{Falsifiability and physics}: Can a
+theory that isn't completely testable still be useful to physics?'},
+Apr. 23, 2019. Available:
+\url{https://www.scientificamerican.com/article/is-string-theory-science/}.
+{[}Accessed: Nov. 12, 2020{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-kuhn2012}{}}%
-\CSLLeftMargin{8. }%
-\CSLRightInline{Kuhn, Thomas S. \emph{{The Structure of Scientific
-Revolutions}}. 50th Anniversary. University of Chicago Press, 2012. }%
-\CSLRightInline{First published in 1962}
+\CSLLeftMargin{{[}8{]} }%
+\CSLRightInline{Thomas S Kuhn, \emph{{The Structure of Scientific
+Revolutions}}, 50th Anniversary. University of Chicago Press, 2012.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-bardi2007}{}}%
-\CSLLeftMargin{9. }%
-\CSLRightInline{Bardi, Jason Socrates. \emph{{The Calculus Wars: Newton,
-Leibniz, and the Greatest Mathematical Clash of All}}. Illustrated.
-Basic Books, 2007. }
+\CSLLeftMargin{{[}9{]} }%
+\CSLRightInline{Jason Socrates Bardi, \emph{{The Calculus Wars: Newton,
+Leibniz, and the Greatest Mathematical Clash of All}}, Illustrated.
+Basic Books, 2007.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-watson2020}{}}%
-\CSLLeftMargin{10. }%
-\CSLRightInline{Watson, Richard A. René descartes. Online. 10 April
-2020. {[}Accessed~12~November~2020{]}. Available from:
-\url{https://www.britannica.com/biography/Rene-Descartes}}
+\CSLLeftMargin{{[}10{]} }%
+\CSLRightInline{Richard A Watson, {`{René Descartes}'}, Apr. 10, 2020.
+Available: \url{https://www.britannica.com/biography/Rene-Descartes}.
+{[}Accessed: Nov. 12, 2020{]}}
 
 \end{CSLReferences}
 

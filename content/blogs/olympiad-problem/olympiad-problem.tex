@@ -7,16 +7,19 @@
   a4paper,
 ]{article}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -35,19 +38,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={Solving a Mathematics Olympiad problem},
-  pdfauthor={R (Chandra) Chandrasekhar},
-  pdflang={en-GB},
-  colorlinks=true,
-  linkcolor={DarkOliveGreen},
-  filecolor={Purple},
-  citecolor={DarkKhaki},
-  urlcolor={Maroon},
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=25mm]{geometry}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
@@ -115,6 +105,7 @@
 %
 % \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
 % \PassOptionsToPackage{main=british}{babel}
+\PassOptionsToPackage{english}{selnolig}
 \AtBeginEnvironment{quote}{\small}
 \AtBeginEnvironment{quotation}{\small}
 \AtBeginEnvironment{longtable}{\centering}
@@ -125,7 +116,6 @@
 \usepackage{subcaption}
 \usepackage[inkscapeversion=1]{svg}
 \usepackage[defaultlines=4,all]{nowidow}
-\usepackage[capitalize,noabbrev]{cleveref}
 \usepackage{etoolbox}
 \usepackage{fontsize}
 \usepackage{newunicodechar}
@@ -138,6 +128,8 @@
 %
 \usepackage{esdiff} % for derivative symbols
 \usepackage{amsmath}
+\usepackage{hyperref} % cleveref must come AFTER hyperref
+\usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
 % noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
@@ -216,6 +208,19 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{sf}
+\hypersetup{
+  pdftitle={Solving a Mathematics Olympiad problem},
+  pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
+  colorlinks=true,
+  linkcolor={DarkOliveGreen},
+  filecolor={Purple},
+  citecolor={DarkKhaki},
+  urlcolor={Maroon},
+  pdfcreator={LaTeX via pandoc}}
 
 \title{Solving a Mathematics Olympiad problem}
 \author{R (Chandra) Chandrasekhar}
@@ -473,7 +478,7 @@ partitioning}}, and is represented by the function \(p(n)\), while
 decomposing a number into a product of numbers is called
 \href{https://mathworld.wolfram.com/UnorderedFactorization.html}{\emph{multiplicative
 partitioning} or \emph{unordered factorization}} and is represented by
-the expression \(f(n)\) {[}\protect\hyperlink{ref-brown-2017}{1}{]}.
+the expression \(f(n)\) \protect\hyperlink{ref-brown-2017}{{[}1{]}}.
 
 Consider the number \(6\). We may express it as a sum, using the numbers
 from \(1\) to \(6\), in eleven different ways, i.e., \(p(6) = 11\). But
@@ -486,7 +491,7 @@ It is tempting to speculate that for any positive integer \(n\),
 our purposes though, it is patently reasonable\footnote{Surprisingly,
   research into the multiplicative partition of a positive integer seems
   to be a relatively recent endeavour
-  {[}\protect\hyperlink{ref-dodd-1987}{2}{]}. So, I am hand-waving here.}
+  \protect\hyperlink{ref-dodd-1987}{{[}2{]}}. So, I am hand-waving here.}
 to claim that the number of ways in which the number \(55\) may be
 decomposed as a product is far fewer than the number of ways in which it
 can be decomposed as a sum, i.e., \(f(n) < p(n)\). And that is why we
@@ -623,16 +628,17 @@ comments and corrections.
 \hypertarget{refs}{}
 \begin{CSLReferences}{0}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-brown-2017}{}}%
-\CSLLeftMargin{1. }%
-\CSLRightInline{Brown, Kevin. Additive and multiplicative partitions.
-Online. 2 December 2017. {[}Accessed~19~March~2023{]}. Available from:
-\url{https://www.mathpages.com/home/kmath091.htm}}
+\CSLLeftMargin{{[}1{]} }%
+\CSLRightInline{Kevin Brown, {`Additive and multiplicative partitions'},
+Dec. 02, 2017. Available:
+\url{https://www.mathpages.com/home/kmath091.htm}. {[}Accessed: Mar. 19,
+2023{]}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-dodd-1987}{}}%
-\CSLLeftMargin{2. }%
-\CSLRightInline{F W Dodd and Mattics, L E. Estimating the number of
-multiplicative partitions. \emph{Rocky Mountain Journal of Mathematics}.
-1987. Vol.~17, no.~4, p.~797--813. }
+\CSLLeftMargin{{[}2{]} }%
+\CSLRightInline{F W Dodd and L E Mattics, {`Estimating the number of
+multiplicative partitions'}, \emph{Rocky Mountain Journal of
+Mathematics}, vol. 17, no. 4, pp. 797--813, 1987.}
 
 \end{CSLReferences}
 

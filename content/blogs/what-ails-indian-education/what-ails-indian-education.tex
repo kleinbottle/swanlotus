@@ -7,16 +7,19 @@
   a4paper,
 ]{article}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -35,19 +38,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={What Ails Indian Education?},
-  pdfauthor={R (Chandra) Chandrasekhar},
-  pdflang={en-GB},
-  colorlinks=true,
-  linkcolor={DarkOliveGreen},
-  filecolor={Purple},
-  citecolor={DarkKhaki},
-  urlcolor={Maroon},
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=25mm]{geometry}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
@@ -115,6 +105,7 @@
 %
 % \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
 % \PassOptionsToPackage{main=british}{babel}
+\PassOptionsToPackage{english}{selnolig}
 \AtBeginEnvironment{quote}{\small}
 \AtBeginEnvironment{quotation}{\small}
 \AtBeginEnvironment{longtable}{\centering}
@@ -125,7 +116,6 @@
 \usepackage{subcaption}
 \usepackage[inkscapeversion=1]{svg}
 \usepackage[defaultlines=4,all]{nowidow}
-\usepackage[capitalize,noabbrev]{cleveref}
 \usepackage{etoolbox}
 \usepackage{fontsize}
 \usepackage{newunicodechar}
@@ -136,6 +126,10 @@
 \usepackage[style=american]{csquotes}
 % \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
 %
+\usepackage{esdiff} % for derivative symbols
+\usepackage{amsmath}
+\usepackage{hyperref} % cleveref must come AFTER hyperref
+\usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
 % noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
@@ -214,6 +208,19 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{sf}
+\hypersetup{
+  pdftitle={What Ails Indian Education?},
+  pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
+  colorlinks=true,
+  linkcolor={DarkOliveGreen},
+  filecolor={Purple},
+  citecolor={DarkKhaki},
+  urlcolor={Maroon},
+  pdfcreator={LaTeX via pandoc}}
 
 \title{What Ails Indian Education?}
 \author{R (Chandra) Chandrasekhar}
@@ -300,7 +307,7 @@ transmitted down the ages. But the Vedas enjoy an additional, singular
 distinction: they have been preserved almost error-free from the hoary
 times when they were first recited, by virtue of the almost mathematical
 rigour that Sanskrit embodies for its grammar and phonetics, not to
-mention mnemonics {[}\protect\hyperlink{ref-bhatekak1993}{1}{]}.
+mention mnemonics \protect\hyperlink{ref-bhatekak1993}{{[}1{]}}.
 
 \begin{figure}
 \hypertarget{fig:teacher-students}{%
@@ -492,10 +499,10 @@ comments and corrections.
 \hypertarget{refs}{}
 \begin{CSLReferences}{0}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-bhatekak1993}{}}%
-\CSLLeftMargin{1. }%
-\CSLRightInline{Bhate, Saroja and Kak, Subhash. {Pāṇini's Grammar and
-Computer Science}. \emph{Annals of the Bhandarkar Oriental Research
-Institute}. 1993. Vol.~72, p.~79--94. }
+\CSLLeftMargin{{[}1{]} }%
+\CSLRightInline{Saroja Bhate and Subhash Kak, {`{Pāṇini's Grammar and
+Computer Science}'}, \emph{Annals of the Bhandarkar Oriental Research
+Institute}, vol. 72, pp. 79--94, 1993.}
 
 \end{CSLReferences}
 

@@ -2,7 +2,7 @@
 title: Open Secrets
 author: R (Chandra) Chandrasekhar
 date: 2023-03-21
-modified:
+modified: 2023-06-28
 category: Simkin Tales
 tags: pi, e, mathematics, irrational numbers, transcendental numbers, infinite series, decimal representation
 summary:
@@ -23,8 +23,8 @@ opengraphimage:
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here]({attach}./blogfilename.pdf):
+\noindent A PDF version of this article is [available for download here]({attach}./open-secrets.pdf):
 
 ::: {.small .sf}
-<https://swanlotus.netlify.app/blogs/blogfilename.pdf>
+<https://swanlotus.netlify.app/blogs/open-secrets.pdf>
 :::
