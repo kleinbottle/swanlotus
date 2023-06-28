@@ -112,10 +112,10 @@
     </layout>
   </citation>
   <bibliography second-field-align="flush" entry-spacing="0">
-<!--    <sort>
+    <!--<sort>
       <key macro="author"/>
       <key variable="issued"/>
-    </sort>-->
+    </sort>--> <!--See https://groups.google.com/g/pandoc-discuss/c/UeCHHABxJnI/m/duj7Cww1AgAJ-->
     <layout>
       <text variable="citation-number" prefix="[" suffix="]"/>
       <group delimiter=". " suffix=". ">

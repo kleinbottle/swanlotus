@@ -19,7 +19,7 @@ filters:
   - pandoc-crossref
   - citeproc
 
-csl: "./chandra-association-for-computing-machinery.csl"
+csl: "./ieee-with-url.csl"
 
 metadata:
   link-citations: true
