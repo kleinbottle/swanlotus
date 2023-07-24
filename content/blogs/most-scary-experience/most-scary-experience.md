@@ -64,7 +64,7 @@ Venkata Vara Prasad episode
 
 Loneliness versus Solitude
 
-Only swimmer in the swimming pol; the last thought; the immensity of the void
+Only swimmer in the swimming pool; the last thought; the immensity of the void
 
 <https://www.youtube.com/watch?v=Iy99Zhp24LY>
 
