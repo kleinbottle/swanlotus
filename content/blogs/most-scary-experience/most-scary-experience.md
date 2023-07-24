@@ -5,7 +5,7 @@ date: "2023-07-14"
 modified: "2023-07-24"
 category: Simkin Tales
 tags:
-summary:
+summary: ""
 opengraphimage:
 ---
 
