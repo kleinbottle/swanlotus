@@ -4,6 +4,7 @@ author: "R (Chandra) Chandrasekhar"
 date: "2019-11-17"
 summary: "This morning, I saw a peacock in mid-flight. It was a wondrous and unforgettable sight, the more so because unexpected. I was walking as usual in the neighbourhood, which is known to be home to a large number of peacocks. As I turned to my right, I saw what I thought was an unusually long bird in flight. Only as it approached me did I realize that it was a peacock in mid-flight."
 ---
+
 This morning, I saw a peacock in mid-flight. It was a wondrous and unforgettable sight, the more so because unexpected. I was walking as usual in the neighbourhood, which is known to be home to a large number of peacocks. As I turned to my right, I saw what I thought was an unusually long bird in flight. Only as it approached me did I realize that it was a peacock in mid-flight.
 
 Its passage through the air was fluid and effortless: a picture of grace and elegance. It was like a silent airborne missile cruising at low altitude. It flapped its wings barely once or twice when it banked to turn right. And then it landed with aplomb. That was when I saw how long its tail really was. It appeared longer than the body and should certainly have contributed to the smoothest of landings of an airborne bird that I have ever seen.
