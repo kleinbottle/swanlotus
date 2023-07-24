@@ -24,7 +24,6 @@ Pygments = "*"
 PyYAML = "*"
 Unidecode = "*"
 typing-extensions = "*"
-pelican-search = "*"
 
 [dev-packages]
 black = "*"

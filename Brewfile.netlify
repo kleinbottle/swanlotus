@@ -1,4 +1,2 @@
-tap "stork-search/stork-tap"
 brew "pandoc"
 brew "pandoc-crossref"
-brew "stork-search/stork-tap/stork"
