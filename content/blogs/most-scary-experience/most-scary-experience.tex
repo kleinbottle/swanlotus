@@ -1,0 +1,339 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode,linktoc=all}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  a4paper,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=25mm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{british}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+% $HOME/.pandoc/defaults/latex-header-includes.tex
+% Common header includes for both lualatex and xelatex engines.
+%
+% Preliminaries
+%
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+% \PassOptionsToPackage{main=british}{babel}
+\PassOptionsToPackage{english}{selnolig}
+\AtBeginEnvironment{quote}{\small}
+\AtBeginEnvironment{quotation}{\small}
+\AtBeginEnvironment{longtable}{\centering}
+%
+% Packages that are useful to include
+%
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[inkscapeversion=1]{svg}
+\usepackage[defaultlines=4,all]{nowidow}
+\usepackage{etoolbox}
+\usepackage{fontsize}
+\usepackage{newunicodechar}
+\usepackage{pdflscape}
+\usepackage{fnpct}
+\usepackage{parskip}
+  \setlength{\parindent}{0pt}
+\usepackage[style=american]{csquotes}
+% \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
+%
+\usepackage{esdiff} % for derivative symbols
+\usepackage{amsmath}
+\usepackage{hyperref} % cleveref must come AFTER hyperref
+\usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
+% noto-plus.tex
+% Font-setting header file for use with Pandoc Markdown
+% to generate PDF via LuaLaTeX.
+% The main font is Noto Serif.
+% Other main fonts are also available in appropriately named file.
+\usepackage{fontspec}
+\usepackage{setspace}
+\setstretch{1.3}
+%
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=Node} % at the start always
+%
+% For English
+% See also https://tex.stackexchange.com/questions/574047/lualatex-amsthm-polyglossia-charissil-error
+% We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
+%
+\babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
+%
+\babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
+%
+\babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
+%
+% Sanskrit, Tamil, and Greek fonts
+%
+\babelprovide[import, onchar=ids fonts]{sanskrit}
+\babelprovide[import, onchar=ids fonts]{tamil}
+\babelprovide[import, onchar=ids fonts]{greek}
+%
+\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSerifDevanagari}
+\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSansDevanagari}
+\babelfont[tamil]{rm}[Renderer=HarfBuzz,Script=Tamil]{NotoSerifTamil}
+\babelfont[tamil]{sf}[Renderer=HarfBuzz,Script=Tamil]{NotoSansTamil}
+\babelfont[greek]{rm}[Script=Greek]{GentiumBookPlus}
+%
+% Math font
+%
+\usepackage{unicode-math} % seems not to hurt % fallabck
+\setmathfont[bold-style=TeX]{STIX Two Math}
+%
+%
+% Other fonts
+%
+\newfontfamily{\emojifont}{Symbola}
+%
+
+\usepackage{titling}
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0.2pt}
+    \renewcommand{\footrulewidth}{0.2pt}
+    \fancyhead[LO,RE]{\scshape\thetitle}
+    \fancyfoot[CO,CE]{\footnotesize Copyright © 2006\textendash\the\year, R (Chandra) Chandrasekhar}
+    \fancyfoot[RE,RO]{\thepage}
+\newfontfamily{\regulariconfont}{Font Awesome 6 Free Regular}[Color=Grey]
+\newfontfamily{\solidiconfont}{Font Awesome 6 Free Solid}[Color=Grey]
+\newfontfamily{\brandsiconfont}{Font Awesome 6 Brands}[Color=Grey]
+%
+% Direct input of Unicode code points
+%
+\newcommand{\faEnvelope}{\regulariconfont\ ^^^^f0e0\normalfont}
+\newcommand{\faMobile}{\solidiconfont\ ^^^^f3cd\normalfont}
+\newcommand{\faLinkedin}{\brandsiconfont\ ^^^^f0e1\normalfont}
+\newcommand{\faGithub}{\brandsiconfont\ ^^^^f09b\normalfont}
+\newcommand{\faAtom}{\solidiconfont\ ^^^^f5d2\normalfont}
+\newcommand{\faPaperPlaneRegular}{\regulariconfont\ ^^^^f1d8\normalfont}
+\newcommand{\faPaperPlaneSolid}{\solidiconfont\ ^^^^f1d8\normalfont}
+
+%
+% The block below is commented out because of Tofu glyphs in HTML
+%
+% \newcommand{\faEnvelope}{\regulariconfont\ \normalfont}
+% \newcommand{\faMobile}{\solidiconfont\ \normalfont}
+% \newcommand{\faLinkedin}{\brandsiconfont\ \normalfont}
+% \newcommand{\faGithub}{\brandsiconfont\ \normalfont}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{sf}
+\hypersetup{
+  pdftitle={The Most Scary Experience},
+  pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
+  colorlinks=true,
+  linkcolor={DarkOliveGreen},
+  filecolor={Purple},
+  citecolor={DarkKhaki},
+  urlcolor={Maroon},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{The Most Scary Experience}
+\author{R (Chandra) Chandrasekhar}
+\date{2023-07-14 | 2023-07-24}
+
+\begin{document}
+\maketitle
+
+\thispagestyle{empty}
+
+
+\hypertarget{probing-fear}{%
+\subsection{Probing fear}\label{probing-fear}}
+
+My redoubtable friend Solus ``Sol'' Simkin wandered into my office late
+one afternoon and asked me, ``What is the most scary experience for a
+human being?''
+
+I thought for an instant as I replied, almost reflexively, ``Death. What
+else? Or a close shave with death.''
+
+The hard taskmaster that he is, Sol told me to think again. He told me
+to imagine something that pursues one's days and nights like a
+relentless shadow. A fear with no respite. Not the fear of encountering
+a cobra that wears out in half an hour at most. Not the fear of a
+narrowly missed road accident that leaves one rattled and shivering for
+a full five minutes. No, this was a shoreless fear. And nothing
+supernatural. It is a fear as mundane as the Earth and yet, it is a fear
+that we do not normally encounter, let alone experience. But when
+recognized and felt, it was a fear that chilled the spine and shook
+one's very core.
+
+``Sol,'' I said. What you are asking me to probe calls for long, deep,
+and hard thought. I need more time''.
+
+I had hastily tried to assemble a quick list of scary tales from
+\href{https://americanliterature.com/author/hh-munro-saki}{H H Munro's}
+\href{https://www.classicshorts.com/stories/vashtar.html}{\emph{Shredni
+Vashtar}}, to \href{https://www.hplovecraft.com/}{H P Lovecraft's}
+\href{https://www.hplovecraft.com/writings/texts/fiction/cc.aspx}{\emph{The
+Call of Cthulhu}}. Then there was
+\href{https://openlibrary.org/books/OL4122966M/The_Arbor_House_treasury_of_horror_and_the_supernatural}{\emph{The
+Arbor House Treasury of Horror and the Supernatural}} that engrossed me
+for many days and nights with its eclectic collection of terrifying
+tales, but none of them had left me a helpless heap of jelly, paralyzed
+with fear. Then I remembered my one of my favourite authors,
+\href{https://www.poetryfoundation.org/poets/edgar-allan-poe}{Edgar
+Allan Poe}, and his
+\href{https://www.amazon.in/Tales-Mystery-Imagination-Collins-Classics/dp/0007420226}{\emph{Tales
+of Mystery and Imagination}}, surely among the choicest morsels of the
+macabre. The injection of fear from these stories had been swift and
+intense, but not long-lasting. Even the movie,
+\href{https://www.imdb.com/title/tt0081505/}{\emph{The Shining}}, based
+on angst-meister
+\href{https://www.britannica.com/biography/Stephen-King}{Stephen King's}
+novel of the same name, had been able to terrify me, but fleetingly.
+
+``Take your time, and wend your way slowly through the labyrinth of your
+own memories and pluck for me that single, shiny nugget of fear that
+dazzles you even today, its power to enchant , enthrall and engulf,
+undiminished by the passage of time,'' Sol told me soothingly. ``I have
+a reason for asking you to undertake this introspection. I had my own
+close brush with depthless fear recently. What I learned from it was
+unusual to say the least. I wish to discuss it with you. So, when you
+are ready, we will discuss it in the relaxing ambiance of our favourite
+coffee hangout. Mind you, be prepared for many sessions before the
+denouement takes place.''
+
+\url{https://www.302aw.afrc.af.mil/News/Commentaries/Display/Article/191174/the-prison-of-hopelessness/}
+
+Help O Power Eternal
+\url{https://www.gutenberg.org/files/64988/64988-h/64988-h.htm}
+
+\begin{quote}
+``Why is the word `hope' magic?'' asked the youngest camel, stretching
+out one stiff leg to see if it still could move. And now Mohammed's son
+lifted the little camel's head up again and laid it against his shoulder
+while he shook the remaining cords away. When he did this, the little
+camel saw that he was young and very handsome. He was wearing a silk
+turban with pearls and turquoises embroidered on it, and carved gold
+ornaments{[}35{]} hung from his ears, and there was a look of great
+gentleness in his face.
+\end{quote}
+
+\begin{quote}
+``Well, you see, h stands for `help,' and o stands for `O,' and p stands
+for `power,' and e stands for `eternal,'\,'' he said so lightly and
+merrily that he seemed to be making fun of something. He took out a
+little ivory flask from his garments and poured some fresh water between
+the little camel's burning lips. ``So when you say `hope' like that,
+you're really saying `Help, O power eternal!' And that means me because
+I've been appointed your patron saint this year.''
+\end{quote}
+
+Unfinished business
+
+PhD-release syndrome
+
+Post-partum depression
+
+Sri Ramaksishna
+
+Unfinished symphonies/unfinished business
+
+The scariness of the Void
+
+Networking: We are all connected
+
+We are Nature's Children: smell the roses; smell the coffee; listen to
+birdsong etc.
+
+Be part of something greater than yourself: serve others
+
+Ultimately, live life with gusto so that joie de vivre spreads from you
+to others like a sunshine laden zephyr
+
+Poem on ``Purpose'' from my book
+
+Venkata Vara Prasad ep{[}isode
+
+Loneliness versus Solitude
+
+Only swimmer in the swimming pol; the last thought; the immensity of the
+void
+
+\url{https://www.youtube.com/watch?v=Iy99Zhp24LY}
+
+\hypertarget{acknowledgements}{%
+\subsection{Acknowledgements}\label{acknowledgements}}
+
+\hypertarget{feedback}{%
+\subsection{Feedback}\label{feedback}}
+
+Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
+comments and corrections.
+
+\noindent A PDF version of this article is
+\href{./most-scary-experience.pdf}{available for download here}:
+
+\begin{small}
+
+\begin{sffamily}
+
+\url{https://swanlotus.netlify.app/blogs/most-scary-experience.pdf}
+
+\end{sffamily}
+
+\end{small}
+
+
+
+\end{document}
