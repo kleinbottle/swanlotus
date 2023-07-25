@@ -19,13 +19,17 @@ The hard taskmaster that he is, Sol told me to think again. He told me to imagin
 
 "Sol," I said. What you are asking me to probe calls for long, deep, and hard thought. I need more time, for sure."
 
-## The genre of horror fiction
-
-I had hastily tried to assemble a quick list of scary tales from [H H Munro's](https://americanliterature.com/author/hh-munro-saki) [_Shredni Vashtar_](https://www.classicshorts.com/stories/vashtar.html), to [H P Lovecraft's](https://www.hplovecraft.com/) [_The Call of Cthulhu_](https://www.hplovecraft.com/writings/texts/fiction/cc.aspx). Then there was [_The Arbor House Treasury of Horror and the Supernatural_](https://openlibrary.org/books/OL4122966M/The_Arbor_House_treasury_of_horror_and_the_supernatural) that engrossed me for many days and nights with its eclectic collection of terrifying tales, but none of them had left me a helpless heap of jelly, paralyzed with fear. Then I remembered one of my favourite authors, [Edgar Allan Poe](https://www.poetryfoundation.org/poets/edgar-allan-poe), and his [_Tales of Mystery and Imagination_](https://www.amazon.in/Tales-Mystery-Imagination-Collins-Classics/dp/0007420226), surely among the choicest morsels of the macabre. The injection of fear from these stories had been swift and intense, but not long-lasting. Even the movie, [_The Shining_](https://www.imdb.com/title/tt0081505/), based on angst-meister [Stephen King's](https://www.britannica.com/biography/Stephen-King) novel of the same name, had been able to terrify me, but only fleetingly.
-
 ## Homework
 
 "Take your time, and wend your way slowly through the labyrinth of your own memories and pluck for me that single, shiny nugget of fear that dazzles you even today---its power to enchant, enthrall, and engulf, undiminished by the passage of time," Sol told me soothingly. "I have a reason for asking you to undertake this introspection. I had my own close brush with depthless fear recently. What I learned from it was unusual, to say the least. I wish to discuss it with you after you have done your own inner exploration. So, when you are ready, we will discuss it in the relaxing and reassuring confines of our favourite coffeehouse. Mind you, be prepared for many sessions before the denouement takes place!"
+
+## The genre of horror fiction
+
+Vicarious experiences are always easier to draw upon, and for the category of fear, there was the ready-mage genre of horror fiction. Before my next meeting with Sol, I tried to assemble a quick list of scary tales from [H H Munro's](https://americanliterature.com/author/hh-munro-saki) [_Shredni Vashtar_](https://www.classicshorts.com/stories/vashtar.html), to [H P Lovecraft's](https://www.hplovecraft.com/) [_The Call of Cthulhu_](https://www.hplovecraft.com/writings/texts/fiction/cc.aspx). Then there was [_The Arbor House Treasury of Horror and the Supernatural_](https://openlibrary.org/books/OL4122966M/The_Arbor_House_treasury_of_horror_and_the_supernatural) that engrossed me for many days and nights with its eclectic collection of terrifying tales, but none of them had left me a helpless heap of jelly, paralyzed with fear. Then I remembered one of my favourite authors, [Edgar Allan Poe](https://www.poetryfoundation.org/poets/edgar-allan-poe), and his [_Tales of Mystery and Imagination_](https://www.amazon.in/Tales-Mystery-Imagination-Collins-Classics/dp/0007420226), surely among the choicest morsels of the macabre. The injection of fear from these stories had been swift and intense, but not long-lasting. Even the movie, [_The Shining_](https://www.imdb.com/title/tt0081505/), based on angst-meister [Stephen King's](https://www.britannica.com/biography/Stephen-King) novel of the same name, had been able to terrify me, but only fleetingly.
+
+I came to the conclusion that ideas imposed from the outside, as in short stories or movies, did not possess the power to frighten as intensely one's own inner experiences. A dream, spun from the yarn of a short story, and convoluted to one's fancy, was more potent in invoking fear than the original short story itself. Personal input was a necessary ingredient for get-wrenching terror.
+
+When I met Sol a week later, I shared my insight with him about the need for some personal contribution to the
 
 
 
