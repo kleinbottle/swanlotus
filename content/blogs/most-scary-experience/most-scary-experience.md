@@ -13,7 +13,7 @@ opengraphimage:
 
 My [redoubtable](https://www.thefreedictionary.com/redoubtable) friend Solus "Sol" Simkin wandered into my office late one afternoon and asked me, "What is the most scary experience for a human being?"
 
-I thought for but an instant as I replied, almost reflexively, "Death. What else? Or a close shave with death."
+I thought but for an instant as I replied, almost reflexively, "Death. What else? Or a close shave with death."
 
 The hard taskmaster that he is, Sol told me to think again. He told me to imagine a fear that pursues one's days and nights like a relentless shadow. A fear with no respite. Not the fear of encountering a cobra that wears out in half an hour at most. Not the fear of a narrowly missed road accident that leaves one rattled and shivering for a full five minutes. Not the transient thrill of the roller-coaster. Nor the fear of falling. No, this is a shoreless fear. And nothing supernatural. It is a fear as mundane as the Earth and yet, it is a fear that we do not normally encounter, let alone experience. But when recognized and felt, it is a fear that chills the spine and shakes one's very core.
 
