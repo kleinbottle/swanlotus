@@ -29,8 +29,13 @@ Vicarious experiences are always easier to draw upon, and for the category of fe
 
 I came to the conclusion that ideas imposed from the outside, as in short stories or movies, did not possess the power to frighten as intensely one's own inner experiences. A dream, spun from the yarn of a short story, and convoluted to one's fancy, was more potent in invoking fear than the original short story itself. Personal input was a necessary ingredient for get-wrenching terror.
 
-When I met Sol a week later, I shared my insight with him about the need for some personal contribution to the
+When I met Sol a week later, I shared my insight with him about the need for some personal contribution to whatever triggered fear. He nodded in agreement and told me to continue.
 
+I said that the unexpected in any situation stimulated fear as we were wired to the [fight or flight](https://www.verywellmind.com/what-is-the-fight-or-flight-response-2795194) response to ensure survival. The hormones released in the process give fear its physical manifestations. Fact or fiction, however well crafted, could not match the immediacy of a physical threat to induce acute but short-lived fear.
+
+We stayed silent awhile, gently sipping a latte and nibbling at a cherry cake. The [Orchard Valley Coffee House](http://www.orchardvalleycoffee.net/) was the cozy nest in which we explored leisurely the twists and turns of fear. After an eloquent silence, we agreed to meet again, as Sol said, "We have but scratched the surface. The immensity of the fear-iceberg is largely hidden. Let meet again to chat.
+
+## The miracle of hope
 
 
 <https://www.302aw.afrc.af.mil/News/Commentaries/Display/Article/191174/the-prison-of-hopelessness/>
