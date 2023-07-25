@@ -27,15 +27,17 @@ The hard taskmaster that he is, Sol told me to think again. He told me to imagin
 
 Vicarious experiences are always easier to draw upon, and for the category of fear, there was the ready-mage genre of horror fiction. Before my next meeting with Sol, I tried to assemble a quick list of scary tales from [H H Munro's](https://americanliterature.com/author/hh-munro-saki) [_Shredni Vashtar_](https://www.classicshorts.com/stories/vashtar.html), to [H P Lovecraft's](https://www.hplovecraft.com/) [_The Call of Cthulhu_](https://www.hplovecraft.com/writings/texts/fiction/cc.aspx). Then there was [_The Arbor House Treasury of Horror and the Supernatural_](https://openlibrary.org/books/OL4122966M/The_Arbor_House_treasury_of_horror_and_the_supernatural) that engrossed me for many days and nights with its eclectic collection of terrifying tales, but none of them had left me a helpless heap of jelly, paralyzed with fear. Then I remembered one of my favourite authors, [Edgar Allan Poe](https://www.poetryfoundation.org/poets/edgar-allan-poe), and his [_Tales of Mystery and Imagination_](https://www.amazon.in/Tales-Mystery-Imagination-Collins-Classics/dp/0007420226), surely among the choicest morsels of the macabre. The injection of fear from these stories had been swift and intense, but not long-lasting. Even the movie, [_The Shining_](https://www.imdb.com/title/tt0081505/), based on angst-meister [Stephen King's](https://www.britannica.com/biography/Stephen-King) novel of the same name, had been able to terrify me, but only fleetingly.
 
-I came to the conclusion that ideas imposed from the outside, as in short stories or movies, did not possess the power to frighten as intensely one's own inner experiences. A dream, spun from the yarn of a short story, and convoluted to one's fancy, was more potent in invoking fear than the original short story itself. Personal input was a necessary ingredient for get-wrenching terror.
+I came to the conclusion that, no matter how good, ideas imposed from the outside, as in short stories or movies, did not possess the power to frighten as intensely one's own inner experiences. A dream, spun from the yarn of a short story, and convoluted to one's fancy, is more potent in invoking fear than the original short story itself. _Personal input is a necessary ingredient for get-wrenching terror_.
 
-When I met Sol a week later, I shared my insight with him about the need for some personal contribution to whatever triggered fear. He nodded in agreement and told me to continue.
+When I met Sol a week later, I shared this insight with him. He nodded in agreement and told me to continue.
 
 I said that the _unexpected_ in any situation stimulated fear as we were wired to the [fight or flight](https://www.verywellmind.com/what-is-the-fight-or-flight-response-2795194) response to ensure survival. The hormones released in the process give fear its physical manifestations. Fact or fiction, however well crafted, could not match the immediacy of a physical threat to induce acute but short-lived fear.
 
 We stayed silent awhile, gently sipping a latte and nibbling at a cherry cake. The [Orchard Valley Coffee House](http://www.orchardvalleycoffee.net/) was our cosy haven for kaffeeklatsch, in which we explored at leisure the twists and turns of fear. After a little discussion and an eloquent silence, we agreed to meet again. Sol said, "We have but scratched the surface. The immensity of the fear-iceberg is largely hidden. Let us meet again to chat. I find our exchanges insightful."
 
 ## The miracle of hope
+
+[It has been reported](https://www.302aw.afrc.af.mil/News/Commentaries/Display/Article/191174/the-prison-of-hopelessness/) that healthy American POWs from the Korean War succumbed to death, one by one in North Korean POW camps.
 
 
 <https://www.302aw.afrc.af.mil/News/Commentaries/Display/Article/191174/the-prison-of-hopelessness/>
