@@ -21,7 +21,6 @@ soupsieve = "*"
 Jinja2 = "*"
 MarkupSafe = "*"
 Pygments = "*"
-PyYAML = "*"
 Unidecode = "*"
 typing-extensions = "*"
 

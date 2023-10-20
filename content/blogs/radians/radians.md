@@ -41,6 +41,7 @@ What is the root concept behind the idea of an angle? Harking back to the equila
 The quintessential two-dimensional geometric figure that is associated with rotation is of course the _circle_. It is the most simple and symmetrical two-dimensional figure we can construct. It is the path or _locus_ traced out by a point that remains the _same_ distance from a fixed point called the _centre_. When a protractor is centred on the centre of a circle, we can measure out degrees on the circumference of the circle. So far so good. But what about that magic number 360? Well, we are about to exorcise it now. \emojifont :wink: \normalfont
 
 ## Radians as an alternative to degrees
+
 One traumatic transition for the student of elementary mathematics is when he or she is forced to abandon the warm comfort of degrees as angular measure, and compulsorily made to embrace the cold and cruel radian as _the_ angular measure forever afterward. Why this unfair compulsion?
 
 ### Using circles to measure angles

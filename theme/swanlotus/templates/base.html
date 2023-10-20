@@ -22,21 +22,24 @@
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 
-    <!--Stork CSS-->
-    <link rel="stylesheet" href="https://files.stork-search.net/releases/v1.5.0/edible.css" />
-
     <!--Stylesheet-->
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}">
 
     <!--Favicon-->
     <link rel="shortcut icon" href="{{ SITEURL }}/images/favicon.ico" type="image/x-icon">
 
-
     <!--Font Awesome 6-->
     <script defer src="https://kit.fontawesome.com/602f92f586.js" crossorigin="anonymous"></script>
 
     <!--MathJax-->
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+        output: {
+            font: 'mathjax-stix2'
+        }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.4/tex-mml-chtml.js"></script>
     <!--[if lt IE 9]>
         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
     <![endif]-->
@@ -79,11 +82,4 @@
         </div>
         {% include "_includes/modal.html" %}
     </div>
-    <script src="https://files.stork-search.net/releases/v1.5.0/stork.js"></script>
-    <script>
-        stork.register("federalist-edible", "{{ SITEURL }}/search-index.st")
-    </script>
-    <script type="text/javascript">
-        $(".stork-input").focus();
-    </script>
 </body>
