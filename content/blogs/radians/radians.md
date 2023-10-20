@@ -16,7 +16,7 @@ The transition from degrees to radians is often the most traumatic mathematical 
 
 We first came across the idea of an _angle_ when we studied geometry in elementary or primary school. We then encountered _triangles_, which are closed figures with three straight sides and three enclosed angles. An _equilateral triangle_ is particularly symmetric, with three equal sides and three equal angles, as shown in @fig:equilateral.
 
-![An equilateral triangle is one in which the three sides are equal. The points at which the lines meet to form the triangle are called _vertices_ (singular _vertex_). By convention, vertices are labelled with uppercase letters like $A$, $B$, and $C$. The lengths of the sides opposite the vertices are assigned the lowercase labels $a$, $b$, and $c$ respectively. The angles are here labelled $\alpha$, $\beta$, and $\gamma$. In this triangle, $a = b = c$, by definition, and by symmetry, $\alpha = \beta = \gamma$.]({attach}images/equilateral.png){#fig:equilateral width=75%}
+![An equilateral triangle is one in which the three sides are equal. The points at which the lines meet to form the triangle are called _vertices_ (singular _vertex_). By convention, vertices are labelled with uppercase letters like $A$, $B$, and $C$. The lengths of the sides opposite the vertices are assigned the lowercase labels $a$, $b$, and $c$ respectively. The angles are here labelled $\alpha$, $\beta$, and $\gamma$. In this triangle, $a = b = c$, by definition, and by symmetry, $\alpha = \beta = \gamma$.]({attach}images/equilateral.png){#fig:equilateral width=75% .modal-target}
 
 ## Degrees
 
@@ -56,11 +56,11 @@ And $\pi$ is not $\frac{22}{7}$ as we were originally taught, but really a numbe
 
 So, how does one define a radian? If, on the basis of its name, you guessed that it very likely involves the radius of a circle, your suspicion is well-founded. _One radian is the angle subtended at the centre of a circle of radius one unit by an arc that is also one unit long_. This is illustrated in @fig:radian.
 
-![One radian is the angle subtended at the centre of a unit circle by an arc of length equal to one unit.]({attach}images/one-radian.png){#fig:radian width=80% .modal-image}
+![One radian is the angle subtended at the centre of a unit circle by an arc of length equal to one unit.]({attach}images/one-radian.png){#fig:radian width=80% .modal-target}
 
 But what happens when our circle has a radius larger or smaller than one unit? The generalized definition of a radian is shown in @fig:general.
 
-![Generalized measure of an angle in radians. The angle in radians is defined as $\theta = \frac{s_1}{r_1} = \frac{s_2}{r_2}$. The equality is valid because all circles are similar to each other.]({attach}images/general-radian.png){#fig:general width=65% .modal-image}
+![Generalized measure of an angle in radians. The angle in radians is defined as $\theta = \frac{s_1}{r_1} = \frac{s_2}{r_2}$. The equality is valid because all circles are similar to each other.]({attach}images/general-radian.png){#fig:general width=65% .modal-target}
 
 ### Congruence and similarity
 
@@ -92,21 +92,36 @@ If you think about it, with radians the size of an angle is expressed as a ratio
 
 Trigonometric functions are one of the workhorses of applied mathematics. They arose from the study of right-angled triangles. The three standard trigonometric functions are the _sine_, _cosine_, and _tangent_ functions. They are represented by the abbreviated functional names $\sin$, $\cos$, and $\tan$ when used in mathematics. @fig:trig shows the pictorial definitions of these three trigonometric functions. Notice particularly how these function values are the unitless _ratios of two lengths_, just as with radians.
 
-![Trigonometric functions defined as ratios of lengths of sides in a right-angled triangle.]({attach}images/trig.png){#fig:trig width=90% .modal-image}
+![Trigonometric functions defined as ratios of lengths of sides in a right-angled triangle.]({attach}images/trig.png){#fig:trig width=90% .modal-target}
 
-## Circular (Trigonometric) Functions
+## The Circular Functions
 
-The trigonometric functions are also called the _circular_ trigonometric functions, uniting the circle _and_ the triangle as the progenitors of the trigonometric functions. We will briefly review that relationship here, to better understand not only the terminology but also the hidden relationships between the triangle and circle^[The equilateral triangle is the regular $n$-gon with the smallest number of sides and the circle is the limiting case of an $n$-gon when $n$ tends to infinity. The trigonometric functions are the children of these unlikely parents.].
+The trigonometric functions are also called the _circular_ trigonometric functions, uniting the circle _and_ the triangle as their progenitors. We will briefly review that relationship here, to better understand not only the terminology but also the hidden relationships between the triangle and the circle^[The equilateral triangle is the regular $n$-gon with the smallest number of sides and the circle is the limiting case of an $n$-gon when $n$ tends to infinity. The trigonometric functions are the children of these unlikely parents, at the extreme ends of the $n$-gon spectrum.].
 
-There used to be occasions when I used to wonder why the word _tangent_ was used for the name of a trigonometric function because a circle was not involved in its definition using a triangle. It was only after I came across the definitions of the three standard trigonometric functions that I understood the mystery behind the nomenclature.
+I used to wonder why the word _tangent_ was used for the name of a trigonometric function because a circle was not involved in its definition; a triangle was. But when the three standard trigonometric functions are viewed vis-a-vis a unit circle, the mystery behind the nomenclature is revealed.
 
-The radian was introduced with a _unit circle_. The same helpful figure will serve to relate the triangle and circle to the trigonometric functions, as illustrated in @fig:unit below.
+The radian was introduced here using a _unit circle_. The same helpful unit circle will serve to relate the triangle and the circle to the trigonometric functions, as illustrated in @fig:unit below.
 
-![A pictorial representation of the unit circle and the three standard trigonometric functions and their inter-relationships. See the text for a full explanation.]({attach}images/unit-circle.png){#fig:unit width=85% .modal-image}
+![A pictorial representation of the unit circle, the three standard trigonometric functions, and their inter-relationships. See the text for a full explanation.]({attach}images/unit-circle.png){#fig:unit width=85% .modal-target}
 
+@fig:unit shows a unit circle drawn on the two-dimensional coordinate plane with $x$ and $y$ axes and grid markings. The centre of the circle is $O$ and $S$ is a variable point on the circumference of the circle, that makes a counter-clockwise angle $\theta$ with the positive $x$-axis. As $\theta$ varies, so does the position of $S$ on the circle.
 
- In triangle $OSC$, note that the hypoteneuse $OS$, being the radius, is one unit long. Therefore the length of $OC$ equals $\cos\theta$ and the length of $CS$ equals $\sin\theta$. The point $T$ denotes the intersection of $OS$ produced and the tangent to the circle at $D$. Given that $OD$, being a radius, is also one unit long, the length $DT$ is equal to $\tan\theta$. The fact that $DT$ is a _tangent_ to the circle should explain why this function is called the $\tan$.
+The line $OS$ is a radius and therefore one unit in length. The perpendicular from $S$ to the $x$-axis meets it at $C$. Referring to @fig:trig, we may say $\cos\theta = \frac{OC}{OS} = OC$ since $OS = 1$. Accordingly, the $x$-coordinate of $S$ is $\cos\theta$. Likewise, $\sin\theta = \frac{SC}{OS} = SC$. Thus, the $y$-coordinate of $S$ is $\sin\theta$.
+
+_$S$ is therefore the point with coordinates $(\cos\theta, \sin\theta)$_.
+
+The really insightful revelation from @fig:unit comes from looking at $\tan\theta$. Have you ever wondered why the function $\tan\theta = \frac{\sin\theta}{\cos\theta}$ is called the _tangent_ function? Take a look at @fig:unit to see that the line $DT$ is _tangent_ to the circle at the point $(1, 0)$, which is $D$. In this case, $\tan\theta = \frac{DT}{OD} = DT$ since $OD$ is equal to one unit.
+
+The value of the tangent function for an angle $\theta$ may be determined geometrically by extrapolating the radius $OS$ until it intersects the tangent to the circle at $D$ at a point called $T$. The length $DT$ is the value of $\tan\theta$.
+
+Note that since the coordinates of $S$ are confined to the unit circle, the values of $\sin\theta$ and $\cos\theta$ are confined to the closed interval $[-1, 1]$, i.e. they perforce have values lying  between $-1$ and $1$, both inclusive.
+
+However, $\tan\theta$ is a length _outside the unit circle_ and is therefore not similarly constrained. Indeed, as $\theta$ starts increasing in the first quadrant of the unit circle, you will notice that as $OS$ approaches the $y$-axis and as $\theta$ approaches $\frac{\pi}{2}$ (or 90°, if you are still attached to degrees), the line $OS$ is increasingly aligned with $DT$. At $\theta=\frac{\pi}{2}$, $OS$ is parallel to $CT$ and the "twain will never meet". Another way of saying this is that the points $S$ and $T$ will coincide only at infinity. This is the reason $\tan\theta$ does not have a finite value at $\theta=\frac{\pi}{2}$. I find this geometric explanation most fulfilling.
+
+In triangle $OSC$, note that the hypotenuse $OS$, being the radius, is one unit long. Therefore the length of $OC$ equals $\cos\theta$ and the length of $CS$ equals $\sin\theta$. The point $T$ denotes the intersection of $OS$ produced and the tangent to the circle at $D$. Given that $OD$, being a radius, is also one unit long, the length $DT$ is equal to $\tan\theta$. The fact that $DT$ is a _tangent_ to the circle should explain why this function is called the $\tan$.
+
 The simple device of unit radius helps us understand how the $\cos$ and $\sin$ functions are the $x$ and $y$ taken on the signed $x$ and $y$ co-ordinates of $S$.
+
 
 Also, try to visualize what would happen when $S$ lies on the $y$ axis, i.e, at $\frac{\pi}{2}$ radians. The lines $OS$ and $DT$ would be parallel and never meet. Loosely speaking, parallel lines are supposed to "meet at infinity" and that is why $\tan\frac{\pi}{2}$ is said to be infinite at that point.
 
