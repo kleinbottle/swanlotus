@@ -6,7 +6,6 @@ modified: 2023-10-17
 category: Mathematics
 tags: Mathematics, Mathematical musings
 summary: 'The transition from degrees to radians is often the most traumatic mathematical change that the student has to endure when moving from elementary to intermediate mathematics. The simplicity of 360° seems so much more welcoming than the equivalent of $2\pi$ radians for a full circle. $\pi$ is forbidding, because it is not [the convenient fractional fiction $\frac{22}{7}$](https://en.wikipedia.org/wiki/Proof_that_22/7_exceeds_%CF%80), but rather a number which is both [transcendental](https://mathworld.wolfram.com/TranscendentalNumber.html) and [irrational](https://en.wikipedia.org/wiki/Irrational_number) and therefore, somewhat "untidy". Surely this tradeoff between simplicity and complexity must have been worth it, or it would not have been so ordained. Here we attempt to fathom the method behind the madness for this change.'
-
 opengraphimage: one-radian.png
 ---
 
@@ -110,7 +109,7 @@ The line $OS$ is a radius and therefore one unit in length. The perpendicular fr
 
 _$S$ is therefore the point with coordinates $(\cos\theta, \sin\theta)$_.
 
-### The $\tan$ function
+### The tangent function
 
 The really insightful revelation from @fig:unit comes from looking at $\tan\theta$. Have you ever wondered why the function $\tan\theta = \frac{\sin\theta}{\cos\theta}$ is called the _tangent_ function? Take a look at @fig:unit to see that the line $DT$ is _tangent_ to the circle at the point $(1, 0)$, which is $D$. In this case, $\tan\theta = \frac{DT}{OD} = DT$ since $OD$ is equal to one unit.
 
@@ -122,29 +121,37 @@ However, $\tan\theta$ is a length _outside the unit circle_ and is therefore not
 
 In triangle $OSC$, note that the hypotenuse $OS$, being the radius, is one unit long. Therefore the length of $OC$ equals $\cos\theta$ and the length of $CS$ equals $\sin\theta$. The point $T$ denotes the intersection of $OS$ produced and the tangent to the circle at $D$. Given that $OD$, being a radius, is also one unit long, the length $DT$ is equal to $\tan\theta$. The fact that $DT$ is a _tangent_ to the circle should explain why this function is called the $\tan$.
 
-The simple device of unit radius helps us understand how the $\cos$ and $\sin$ functions are the $x$ and $y$ taken on the signed $x$ and $y$ co-ordinates of $S$.
+The simple device of unit radius helps us understand how the $\cos$ and $\sin$ functions takeo n the are the $x$ and $y$ taken on the signed $x$ and $y$ co-ordinates of $S$.
 
 ### The signed trigonometric functions
 
-But that is not all. The signs of the $x$ and $y$ axes in the respective quadrants give their values to the _lengths_ associated with the functions, as shown in @fig:unit. For example, when $\theta$ is in the third quadrant, $OS$ extrapolated in the negative direction will not intersect the tangent $DT$ in the negative $y$ direction. So, the line $SO$ must be produced in the positive $y$ direction to once more intersect intersect the tangent at $T$. That explains why tangents of angles in the third quadrant are positive.
+From @fig:unit, we see that the $(\cos\theta, \sin\theta)$---which represent the coordinates of $S$---take on signed values in accordance with the signs of $x$ and $y$ in the respective quadrants. One could also view the associated _lengths_ as signed values.
+
+For example, when $\theta$ is in the third quadrant, $OS$ extrapolated in the negative direction will not intersect the tangent $DT$ in the negative $y$ direction. So, the line $SO$ must be produced in the positive $y$ direction to once more intersect intersect the tangent at $T$. That explains why tangents of angles in the third quadrant are positive.
+
+<!--![A graph of $\sin\theta$ versus $\theta$ for $0 \geq \theta \leq 2\pi$.]({attach}images/sine.png){#fig:sine width=80% .modal-target}-->
 
 By moving from triangles to the unit circle, we have enabled the trigonometric functions to take on any value between 0 and $2\pi$ radians. Note that when  $\theta = 2\pi$ radians, we cannot really distinguish $\theta$ from $0$ radians. So, one angle may masquerade as another unless we have accounting devices to optionally add $2n\pi$ to angles with the proviso that $n$ is an integer. And this concept is a segue to power series expansions of trigonometric functions, their use in calculus, and later on, in Fourier series.
 
-## Power series expansions of trigonometric functions
+## Power series for trigonometric functions
 
 This is where the plot thickens.
 
+Both the statements $\sin(30°)=0.5$ and $\sin(\frac{\pi}{6})=0.5$ are factually correct and perfectly acceptable. We will not be committing any mathematical heresies through either statement^[Note that while it is mandatory to affix the degree sign as a superscript, radians being pure numbers do not require any special identification.].
+
+But it is possible to express trigonometric functions in terms of power series in which an argument in degrees would be inadmissible. It is only after we cross this threshold in mathematics that radians truly come into their own, and after which there is "no going back to the old ways".
+
+I will now do a bit of hand-waving and say that others have proved^[Search the web for Taylor Series or Maclaurin series, thinking of it as a treasure hunt and enrich yourself with knowledge!] that:
+
+$$
+\sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \frac{\theta^7}{7!} + \cdots
+$${#eq:sineseries}
+
+where the dots at the end of @eq:sineseries tells us to imagine that this series _never ends but goes on forever_ following the pattern shown.
+
 $\sin \theta \approx \theta$ for $\theta$ close to zero. The number on the left hand side is a unitless ratio of lengths or "pure" number. This requires the right hand side to also be expressed in a similar unitless measure, and radians fits the bill.
 
-## Calculus and Fourier series
-
 When we deal with trigonometric functions in calculus or when applying Fourier series, we will fully realize the boon conferred by the unitless radians as an angular measure since they will be compatible with the other _pure numbers_ (real or complex) that we will be dealing with.
-
-
-
-
-
-
 
 
 ## Acknowledgements

@@ -49,6 +49,19 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -176,7 +189,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{sf}
 \hypersetup{
-  pdftitle={Why radians when measuring angles?},
+  pdftitle={A tale of two measures: degrees and radians},
   pdfauthor={R (Chandra) Chandrasekhar},
   pdflang={en-GB},
   colorlinks=true,
@@ -186,7 +199,7 @@
   urlcolor={Maroon},
   pdfcreator={LaTeX via pandoc}}
 
-\title{Why radians when measuring angles?}
+\title{A tale of two measures: degrees and radians}
 \author{R (Chandra) Chandrasekhar}
 \date{2023-10-17 | 2023-10-17}
 
@@ -195,6 +208,439 @@
 
 \thispagestyle{empty}
 
+
+The transition from degrees to radians is often the most traumatic
+mathematical change that the student has to endure when moving from
+elementary to intermediate mathematics. The simplicity of 360° seems so
+much more welcoming than the equivalent of \(2\pi\) radians for a full
+circle. \(\pi\) is forbidding, because it is not
+\href{https://en.wikipedia.org/wiki/Proof_that_22/7_exceeds_\%CF\%80}{the
+convenient fractional fiction \(\frac{22}{7}\)}, but rather a number
+which is both
+\href{https://mathworld.wolfram.com/TranscendentalNumber.html}{transcendental}
+and \href{https://en.wikipedia.org/wiki/Irrational_number}{irrational},
+and therefore somewhat ``untidy''. Surely this tradeoff between
+simplicity and complexity must have been worth it, or it would not have
+been so ordained. Here we attempt to fathom the method behind the
+madness for this change.
+
+\hypertarget{what-is-an-angle}{%
+\subsection{What is an angle?}\label{what-is-an-angle}}
+
+We first came across the idea of an \emph{angle} when we studied
+geometry in elementary or primary school. We then encountered
+\emph{triangles}, which are closed figures with three straight sides and
+three enclosed angles. An \emph{equilateral triangle} is particularly
+symmetric, with three equal sides and three equal angles, as shown in
+\cref{fig:equilateral}.
+
+\begin{figure}
+\hypertarget{fig:equilateral}{%
+\centering
+\includegraphics[width=0.75\textwidth,height=\textheight]{images/equilateral.png}
+\caption{An equilateral triangle is one in which the three sides are
+equal. The points at which the lines meet to form the triangle are
+called \emph{vertices} (singular \emph{vertex}). By convention, vertices
+are labelled with uppercase letters like \(A\), \(B\), and \(C\). The
+lengths of the sides opposite the vertices are assigned the lowercase
+labels \(a\), \(b\), and \(c\) respectively. The angles are here
+labelled \(\alpha\), \(\beta\), and \(\gamma\). In this triangle,
+\(a = b = c\), by definition, and by symmetry,
+\(\alpha = \beta = \gamma\).}\label{fig:equilateral}
+}
+\end{figure}
+
+\hypertarget{degrees}{%
+\subsection{Degrees}\label{degrees}}
+
+When we started on geometry, we would proudly trot out our set of
+mathematical instruments, which would include a pair of compasses, a
+protractor, one or two set squares, and a ruler or straight edge. Of
+these, the protractor---that plastic semi-circle marked out in
+\emph{degrees}---was the proud badge that proclaimed that we had left
+behind arithmetic and progressed onto geometry.
+
+After we had learned to construct an equilateral triangle, using only
+compasses and a straight edge---\emph{without measurement} by ruler---we
+would take out the protractor to verify that each angle of an
+equilateral triangle was indeed 60°. That small circle ° at the
+top---the superscript---was called the \emph{degree sign}, and we could
+then jubilantly celebrate our first rite of passage into geometry and
+mathematical symbols.
+
+\hypertarget{where-did-degrees-come-from}{%
+\subsubsection{Where did degrees come
+from?}\label{where-did-degrees-come-from}}
+
+Surely, degrees did not come from a protractor, although we use one to
+measure angles. How did degrees come about? With sixty degrees each in
+an equilateral triangle, ninety in a right angle , 180° in a straight
+line, and 360° in a full circle, how did degrees come to rule the roost
+of angular measure in elementary school?
+
+Why not 100° in a full circle, or half circle, or even a quarter circle,
+also known as a right angle? Who imposed this measure upon us and what
+is its basis?
+
+My favourite explanation for 360° degrees equalling a full circle is
+that the ancients estimated a solar year at around 360 days, and
+assigned one degree for each day of the year. Even if inexact, the
+number 360 had some
+\href{https://en.wikipedia.org/wiki/Sexagesimal}{sexagesimal}\footnote{It
+  appears that all measures of time, from seconds, minutes, and hours,
+  to months and days in a year, are based on 60 or its factors or
+  multiples.} charm as it could be divided by the first three primes 2,
+3, 5, and by their products. Indeed, 360 = 2\textsuperscript{3} ×
+3\textsuperscript{2} × 5. Accordingly, 360 has a large family of
+factors: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20, 24, 30, 36, 40, 45,
+60, 72, 90, 120, 180, and 360.
+
+But beyond the approximation of a solar year, and the convenience of
+ready division by its factors, the use of degrees as a unit of angular
+measure is, to me, arbitrary. Who deemed the circle to be 360°, despite
+it being very factor-friendly?
+
+\hypertarget{from-triangles-to-circles}{%
+\subsection{From triangles to circles}\label{from-triangles-to-circles}}
+
+What is the root concept behind the idea of an angle? Harking back to
+the equilateral triangle, when one line \emph{changes direction} by
+sixty degrees, we get the second line. These two lines form the angle.
+Change of direction may also be called \emph{turning}. And when
+something turns, we may also say that it \emph{rotates}.
+
+The quintessential two-dimensional geometric figure that is associated
+with rotation is of course the \emph{circle}. It is the most simple and
+symmetrical two-dimensional figure we can construct. It is the path or
+\emph{locus} traced out by a point that remains the \emph{same} distance
+from a fixed point called the \emph{centre}. When a protractor is
+centred on the centre of a circle, we can measure out degrees on the
+circumference of the circle. So far so good. But what about that magic
+number 360? Well, we are about to exorcise it now. \emojifont {😉}
+\normalfont
+
+\hypertarget{radians-as-an-alternative-to-degrees}{%
+\subsection{Radians as an alternative to
+degrees}\label{radians-as-an-alternative-to-degrees}}
+
+One traumatic transition for the student of elementary mathematics is
+when he or she is forced to abandon the warm comfort of degrees as
+angular measure, and compulsorily made to embrace the cold and cruel
+radian as \emph{the} angular measure forever afterward. Why this unfair
+compulsion?
+
+\hypertarget{using-circles-to-measure-angles}{%
+\subsubsection{Using circles to measure
+angles}\label{using-circles-to-measure-angles}}
+
+Because the idea of an angle is related to rotation, it seems natural
+that we should define angles using the circle as a basis, rather the
+triangles that we encountered at first.
+
+It is a fact that the length of a circle, or its \emph{perimeter}, or
+its \emph{circumference}, \(C\), is always related to its radius, \(r\),
+through the formula \(C = 2\pi r\).
+
+And \(\pi\) is not \(\frac{22}{7}\) as we were originally taught, but
+really a number whose precise expression cannot be predicted or
+exhausted. The digits simply keep rolling on, without pattern or end.
+But the beauty is that \(\pi\) is nevertheless a unique number, a
+universal mathematical constant. It seems that Nature has played a game
+on us by making the simple symmetrical circle have a length that can
+only be approximated but never entirely known to an unlimited
+precision\footnote{\(\pi\), \(e\) the base or natural logarithms,
+  \(\phi\) the golden ratio, along with a large pantheon of mathematical
+  constants are irrational, and some are even possibly transcendental.
+  Why Nature has this preference for the irrational is an intriguing
+  question that needs an answer.}.
+
+\hypertarget{one-radian}{%
+\subsubsection{One radian}\label{one-radian}}
+
+So, how does one define a radian? If, on the basis of its name, you
+guessed that it very likely involves the radius of a circle, your
+suspicion is well-founded. \emph{One radian is the angle subtended at
+the centre of a circle of radius one unit by an arc that is also one
+unit long}. This is illustrated in \cref{fig:radian}.
+
+\begin{figure}
+\hypertarget{fig:radian}{%
+\centering
+\includegraphics[width=0.8\textwidth,height=\textheight]{images/one-radian.png}
+\caption{One radian is the angle subtended at the centre of a unit
+circle by an arc of length equal to one unit.}\label{fig:radian}
+}
+\end{figure}
+
+But what happens when our circle has a radius larger or smaller than one
+unit? The generalized definition of a radian is shown in
+\cref{fig:general}.
+
+\begin{figure}
+\hypertarget{fig:general}{%
+\centering
+\includegraphics[width=0.65\textwidth,height=\textheight]{images/general-radian.png}
+\caption{Generalized measure of an angle in radians. The angle in
+radians is defined as \(\theta = \frac{s_1}{r_1} = \frac{s_2}{r_2}\).
+The equality is valid because all circles are similar to each
+other.}\label{fig:general}
+}
+\end{figure}
+
+\hypertarget{congruence-and-similarity}{%
+\subsubsection{Congruence and
+similarity}\label{congruence-and-similarity}}
+
+This is a mathematically non-rigorous digression on congruence and
+similarity. One two-dimensional geometrical shape is \emph{congruent} to
+another if the two shapes may be rotated and translated, if necessary,
+and superimposed on each other to visually demonstrate that they are
+identical in size and shape and cannot then be told apart.
+
+\emph{Similarity} is less restrictive than congruence and applies to
+geometric objects that have the same shape but not necessarily the same
+size. Intuitively, if two objects are similar, one may \emph{zoom in} or
+\emph{zoom out} on one object of the pair---without distortion---to
+obtain a version that may be superimposed on the other object to
+demonstrate that they are identical or congruent.
+
+The ratios of the respective lengths of corresponding sides of similar
+triangles are the same. In like fashion, the ratio of the circumference
+to the radius of two circles of radii \(r_1\) and \(r_2\) will be
+\(\frac{2\pi r_1}{r_1} =\frac{2\pi r_2}{r_2} = 2\pi\)\footnote{This is
+  also a demonstration that a full circle corresponds to an angle of
+  360° or \(2\pi\) radians.}. This is a consequence of the fact that
+\emph{all circles are similar to each other}.
+
+What other classes of geometrical objects can you think of that are
+similar to each other within their class?\footnote{All circles are
+  similar, as are all equilateral triangles, all squares, and indeed,
+  all regular \(n\)-gons, and all parabolas. What exactly does
+  similarity mean? It means that the shape remains the same. Imagine a
+  square or a circle. If you zoomed on the figure to enlarge or diminish
+  it without distortion, and you could not see a change of shape, that
+  figure exhibits similarity to every other figure in that class.}
+
+\hypertarget{radians-as-angular-measure}{%
+\subsection{Radians as angular
+measure}\label{radians-as-angular-measure}}
+
+We are now ready to define any angle \(\theta\) in radians. The ratio of
+the length of the arc that subtends an angle of \(\theta\) at the
+centre, to its radius, is the value of \(\theta\) in radians.
+Succinctly, with reference to \cref{fig:general},
+\(\theta = \frac{s}{r}\). By dividing by the radius, we have in effect
+\emph{normalized} the definition of the radian, and removed any trace of
+arbitrariness in the definition. And that is why we started out slowly
+with \cref{fig:radian}, which dealt with a circle with unit radius.
+
+Note that the value of \(\theta\) is a ratio of two lengths and is
+therefore dimensionless in the sense of Physics. It may be considered a
+unitless \emph{pure number}
+\href{https://en.wikipedia.org/wiki/Radian}{although the SI units do
+define the radian as the SI unit of angular measure}.
+
+With radians, we have the following:
+
+\begin{enumerate}
+\tightlist
+\item
+  Angular measure is directly proportional to arc length on a circle for
+  all angles less than or equal to a full circle.
+\item
+  This measure is independent of the radius of the circle.
+\item
+  The resulting ``unit'' is really a unitless ratio of two lengths.
+\end{enumerate}
+
+By defining radians as above, we remove the arbitrariness associated
+with 360° for a full circle. But the mathematical elegance and rigour
+conferred by radians comes at a cost. The angle of a full circle is
+\(2\pi\), which is a computationally inconvenient number to say the
+least.
+
+If you think about it, with radians the size of an angle is expressed as
+a ratio of two lengths. But we have encountered angles being associated
+with ratios of lengths elsewhere in mathematics as well. Such ratios are
+familiar to us from trigonometry where the \(\sin\), \(\cos\), and
+\(\tan\) functions are expressed as the ratios of lengths in a
+right-angled triangle. We review this relationship next.
+
+\hypertarget{trigonometric-functions}{%
+\subsection{Trigonometric functions}\label{trigonometric-functions}}
+
+Trigonometric functions are one of the workhorses of applied
+mathematics. They arose from the study of right-angled triangles. The
+three standard trigonometric functions are the \emph{sine},
+\emph{cosine}, and \emph{tangent} functions. They are represented by the
+abbreviated functional names \(\sin\), \(\cos\), and \(\tan\) when used
+in mathematics. \cref{fig:trig} shows the pictorial definitions of these
+three trigonometric functions. Notice particularly how these function
+values are the unitless \emph{ratios of two lengths}, just as with
+radians.
+
+\begin{figure}
+\hypertarget{fig:trig}{%
+\centering
+\includegraphics[width=0.9\textwidth,height=\textheight]{images/trig.png}
+\caption{Trigonometric functions defined as ratios of lengths of sides
+in a right-angled triangle.}\label{fig:trig}
+}
+\end{figure}
+
+\hypertarget{the-circular-functions}{%
+\subsection{The Circular Functions}\label{the-circular-functions}}
+
+The trigonometric functions are also called the \emph{circular}
+trigonometric functions, uniting the circle \emph{and} the triangle as
+their progenitors. We will briefly review that relationship here, to
+better understand not only the terminology but also the hidden
+relationships between the triangle and the circle\footnote{The
+  equilateral triangle is the regular \(n\)-gon with the smallest number
+  of sides and the circle is the limiting case of an \(n\)-gon when
+  \(n\) tends to infinity. The trigonometric functions are the children
+  of these unlikely parents, at the extreme ends of the \(n\)-gon
+  spectrum.}.
+
+I used to wonder why the word \emph{tangent} was used for the name of a
+trigonometric function because a circle was not involved in its
+definition; a triangle was. But when the three standard trigonometric
+functions are viewed vis-a-vis a unit circle, the mystery behind the
+nomenclature is revealed.
+
+The radian was introduced here using a \emph{unit circle}. The same
+helpful unit circle will serve to relate the triangle and the circle to
+the trigonometric functions, as illustrated in \cref{fig:unit} below.
+
+\begin{figure}
+\hypertarget{fig:unit}{%
+\centering
+\includegraphics[width=0.85\textwidth,height=\textheight]{images/unit-circle.png}
+\caption{A pictorial representation of the unit circle, the three
+standard trigonometric functions, and their inter-relationships. See the
+text for a full explanation.}\label{fig:unit}
+}
+\end{figure}
+
+\cref{fig:unit} shows a unit circle drawn on the two-dimensional
+coordinate plane with \(x\) and \(y\) axes and grid markings. The centre
+of the circle is \(O\) and \(S\) is a variable point on the
+circumference of the circle, that makes a counter-clockwise angle
+\(\theta\) with the positive \(x\)-axis. As \(\theta\) varies, so does
+the position of \(S\) on the circle.
+
+The line \(OS\) is a radius and therefore one unit in length. The
+perpendicular from \(S\) to the \(x\)-axis meets it at \(C\). Referring
+to \cref{fig:trig}, we may say \(\cos\theta = \frac{OC}{OS} = OC\) since
+\(OS = 1\). Accordingly, the \(x\)-coordinate of \(S\) is
+\(\cos\theta\). Likewise, \(\sin\theta = \frac{SC}{OS} = SC\). Thus, the
+\(y\)-coordinate of \(S\) is \(\sin\theta\).
+
+\emph{\(S\) is therefore the point with coordinates
+\((\cos\theta, \sin\theta)\)}.
+
+\hypertarget{the-tangent-function}{%
+\subsubsection{The tangent function}\label{the-tangent-function}}
+
+The really insightful revelation from \cref{fig:unit} comes from looking
+at \(\tan\theta\). Have you ever wondered why the function
+\(\tan\theta = \frac{\sin\theta}{\cos\theta}\) is called the
+\emph{tangent} function? Take a look at \cref{fig:unit} to see that the
+line \(DT\) is \emph{tangent} to the circle at the point \((1, 0)\),
+which is \(D\). In this case, \(\tan\theta = \frac{DT}{OD} = DT\) since
+\(OD\) is equal to one unit.
+
+The value of the tangent function for an angle \(\theta\) may be
+determined geometrically by extrapolating the radius \(OS\) until it
+intersects the tangent to the circle at \(D\) at a point called \(T\).
+The length \(DT\) is the value of \(\tan\theta\).
+
+Note that since the coordinates of \(S\) are confined to the unit
+circle, the values of \(\sin\theta\) and \(\cos\theta\) are confined to
+the closed interval \([-1, 1]\), i.e.~they perforce have values lying
+between \(-1\) and \(1\), both inclusive.
+
+However, \(\tan\theta\) is a length \emph{outside the unit circle} and
+is therefore not similarly constrained. Indeed, as \(\theta\) starts
+increasing in the first quadrant of the unit circle, you will notice
+that as \(OS\) approaches the \(y\)-axis and as \(\theta\) approaches
+\(\frac{\pi}{2}\) (or 90°, if you are still attached to degrees), the
+line \(OS\) is increasingly aligned with \(DT\). At
+\(\theta=\frac{\pi}{2}\), \(OS\) is parallel to \(DT\) and
+\href{https://en.wikipedia.org/wiki/The_Ballad_of_East_and_West}{``never
+the twain shall meet''}. Loosely speaking, parallel lines are only
+supposed to ``meet at infinity'' and that is why \(\tan\frac{\pi}{2}\)
+is said to be ``infinite'' at that point. This is why \(\tan\theta\)
+does not assume a finite value at \(\theta=\frac{\pi}{2}\). I find this
+geometric explanation most fulfilling.
+
+In triangle \(OSC\), note that the hypotenuse \(OS\), being the radius,
+is one unit long. Therefore the length of \(OC\) equals \(\cos\theta\)
+and the length of \(CS\) equals \(\sin\theta\). The point \(T\) denotes
+the intersection of \(OS\) produced and the tangent to the circle at
+\(D\). Given that \(OD\), being a radius, is also one unit long, the
+length \(DT\) is equal to \(\tan\theta\). The fact that \(DT\) is a
+\emph{tangent} to the circle should explain why this function is called
+the \(\tan\).
+
+The simple device of unit radius helps us understand how the \(\cos\)
+and \(\sin\) functions takeo n the are the \(x\) and \(y\) taken on the
+signed \(x\) and \(y\) co-ordinates of \(S\).
+
+\hypertarget{the-signed-trigonometric-functions}{%
+\subsubsection{The signed trigonometric
+functions}\label{the-signed-trigonometric-functions}}
+
+From \cref{fig:unit}, we see that the
+\((\cos\theta, \sin\theta)\)---which represent the coordinates of
+\(S\)---take on signed values in accordance with the signs of \(x\) and
+\(y\) in the respective quadrants. One could also view the associated
+\emph{lengths} as signed values.
+
+For example, when \(\theta\) is in the third quadrant, \(OS\)
+extrapolated in the negative direction will not intersect the tangent
+\(DT\) in the negative \(y\) direction. So, the line \(SO\) must be
+produced in the positive \(y\) direction to once more intersect
+intersect the tangent at \(T\). That explains why tangents of angles in
+the third quadrant are positive.
+
+By moving from triangles to the unit circle, we have enabled the
+trigonometric functions to take on any value between 0 and \(2\pi\)
+radians. Note that when \(\theta = 2\pi\) radians, we cannot really
+distinguish \(\theta\) from \(0\) radians. So, one angle may masquerade
+as another unless we have accounting devices to optionally add \(2n\pi\)
+to angles with the proviso that \(n\) is an integer. And this concept is
+a segue to power series expansions of trigonometric functions, their use
+in calculus, and later on, in Fourier series.
+
+\hypertarget{power-series-expansions-of-trigonometric-functions}{%
+\subsection{Power series expansions of trigonometric
+functions}\label{power-series-expansions-of-trigonometric-functions}}
+
+This is where the plot thickens.
+
+Both the statements \(\sin(30°)=0.5\) and \(\sin(\frac{\pi}{6})=0.5\)
+are factually correct and perfectly acceptable. We will not be
+committing any mathematical heresies through either statement.
+
+But there are some infinite series expansions or power series expansions
+for the trigonometric functions in which an argument in degrees would be
+inadmissible. It is after we cross this threshold in mathematics that
+radians truly come into their own, and after which there is ``no going
+back to the old ways''.
+
+The Taylor and Maclaurin series for \(\sin\theta\) are given below:
+
+\(\sin \theta \approx \theta\) for \(\theta\) close to zero. The number
+on the left hand side is a unitless ratio of lengths or ``pure'' number.
+This requires the right hand side to also be expressed in a similar
+unitless measure, and radians fits the bill.
+
+When we deal with trigonometric functions in calculus or when applying
+Fourier series, we will fully realize the boon conferred by the unitless
+radians as an angular measure since they will be compatible with the
+other \emph{pure numbers} (real or complex) that we will be dealing
+with.
 
 \hypertarget{acknowledgements}{%
 \subsection{Acknowledgements}\label{acknowledgements}}
@@ -217,62 +663,6 @@ comments and corrections.
 \end{sffamily}
 
 \end{small}
-
-How do I measure an angle?
-
-Most of us first hear of an angle when we encounter triangles. When two
-lines that are not parallel meet, they enclose an angle. So, is an angle
-a measure of lack of alignment? If a string is fixed to two points, and
-you put your finger somewhere in between, the string will make an angle.
-Can lines be used to measure angles?
-
-If you chased angles by chasing lines, it is likely that your pursuit of
-a robust definition of angle would hit some roadblocks. But f you
-introduced the idea of \emph{rotation} on the plane, then you would
-discover that two lines that are aligned, i.e., that are parallel, do
-not make any angle, each with the other.
-
-But the moment they move out of alignment or out of being parallel, you
-would notice that one line \emph{turned} with respect to the other.
-Turning is rotation. And angles measure this rotation. How do you rotate
-your body? By moving in a circle, turning east, north, west, and south,
-for example. Rotation implies movement in a circle.
-
-So, we measure angles using the circle as the basis. And the largest
-angle we can make is one full circle. After that, any further rotation
-gives us more of the same. So, angles may be measured from zero to one
-full circle, before everything starts repeating itself.
-
-Why are radians used?
-
-Radians are an angular measure in which the size of the angle is
-expressed as a ratio of two lengths. These ratios are familiar to us
-from trigonometry where the sin, cos, and tan functions are expressed as
-the ratios of lengths in a right-angled triangle.
-
-But if you think carefully, an angle involves \emph{rotation} and the
-simplest and most symmetrical figure in two-dimensions involving a
-rotation is a circle. So, angles are best measured using a circle as the
-basis for denoting angular size rather than from a triangle, even if
-triangles are the first time when you encountered angles.
-
-All circles are similar. As are all squares, all equilateral triangles,
-all regular n-gons. What exactly does similarity mean? It means that the
-shape remains the same.Imagine a square or a circle. If you zoomed the
-figure to enlarge or diminish it without distortion, and you could not
-see a change pf shape, that figure exhibits similarity to every other
-figure in that class.
-
-When we attempt to define a standardized angular measure we require the
-following:
-
-\begin{enumerate}
-\tightlist
-\item
-  the measure should be based on a circle or its arc
-\item
-  the measure should be independent of the radius of the circle
-\end{enumerate}
 
 
 
