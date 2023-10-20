@@ -110,20 +110,25 @@ The line $OS$ is a radius and therefore one unit in length. The perpendicular fr
 
 _$S$ is therefore the point with coordinates $(\cos\theta, \sin\theta)$_.
 
+### The $\tan$ function
+
 The really insightful revelation from @fig:unit comes from looking at $\tan\theta$. Have you ever wondered why the function $\tan\theta = \frac{\sin\theta}{\cos\theta}$ is called the _tangent_ function? Take a look at @fig:unit to see that the line $DT$ is _tangent_ to the circle at the point $(1, 0)$, which is $D$. In this case, $\tan\theta = \frac{DT}{OD} = DT$ since $OD$ is equal to one unit.
 
 The value of the tangent function for an angle $\theta$ may be determined geometrically by extrapolating the radius $OS$ until it intersects the tangent to the circle at $D$ at a point called $T$. The length $DT$ is the value of $\tan\theta$.
 
 Note that since the coordinates of $S$ are confined to the unit circle, the values of $\sin\theta$ and $\cos\theta$ are confined to the closed interval $[-1, 1]$, i.e. they perforce have values lying  between $-1$ and $1$, both inclusive.
 
-However, $\tan\theta$ is a length _outside the unit circle_ and is therefore not similarly constrained. Indeed, as $\theta$ starts increasing in the first quadrant of the unit circle, you will notice that as $OS$ approaches the $y$-axis and as $\theta$ approaches $\frac{\pi}{2}$ (or 90°, if you are still attached to degrees), the line $OS$ is increasingly aligned with $DT$. At $\theta=\frac{\pi}{2}$, $OS$ is parallel to $CT$ and the "twain will never meet". Another way of saying this is that the points $S$ and $T$ will coincide only at infinity. This is the reason $\tan\theta$ does not have a finite value at $\theta=\frac{\pi}{2}$. I find this geometric explanation most fulfilling.
+However, $\tan\theta$ is a length _outside the unit circle_ and is therefore not similarly constrained. Indeed, as $\theta$ starts increasing in the first quadrant of the unit circle, you will notice that as $OS$ approaches the $y$-axis and as $\theta$ approaches $\frac{\pi}{2}$ (or 90°, if you are still attached to degrees), the line $OS$ is increasingly aligned with $DT$. At $\theta=\frac{\pi}{2}$, $OS$ is parallel to $DT$ and ["never the twain shall meet"](https://en.wikipedia.org/wiki/The_Ballad_of_East_and_West). Loosely speaking, parallel lines are only supposed to "meet at infinity" and that is why $\tan\frac{\pi}{2}$ is said to be "infinite" at that point. This is why $\tan\theta$ does not assume a finite value at $\theta=\frac{\pi}{2}$. I find this geometric explanation most fulfilling.
 
 In triangle $OSC$, note that the hypotenuse $OS$, being the radius, is one unit long. Therefore the length of $OC$ equals $\cos\theta$ and the length of $CS$ equals $\sin\theta$. The point $T$ denotes the intersection of $OS$ produced and the tangent to the circle at $D$. Given that $OD$, being a radius, is also one unit long, the length $DT$ is equal to $\tan\theta$. The fact that $DT$ is a _tangent_ to the circle should explain why this function is called the $\tan$.
 
 The simple device of unit radius helps us understand how the $\cos$ and $\sin$ functions are the $x$ and $y$ taken on the signed $x$ and $y$ co-ordinates of $S$.
 
+### The signed trigonometric functions
 
-Also, try to visualize what would happen when $S$ lies on the $y$ axis, i.e, at $\frac{\pi}{2}$ radians. The lines $OS$ and $DT$ would be parallel and never meet. Loosely speaking, parallel lines are supposed to "meet at infinity" and that is why $\tan\frac{\pi}{2}$ is said to be infinite at that point.
+But that is not all. The signs of the $x$ and $y$ axes in the respective quadrants give their values to the _lengths_ associated with the functions, as shown in @fig:unit. For example, when $\theta$ is in the third quadrant, $OS$ extrapolated in the negative direction will not intersect the tangent $DT$ in the negative $y$ direction. So, the line $SO$ must be produced in the positive $y$ direction to once more intersect intersect the tangent at $T$. That explains why tangents of angles in the third quadrant are positive.
+
+By moving from triangles to the unit circle, we have enabled the trigonometric functions to take on any value between 0 and $2\pi$ radians. Note that when  $\theta = 2\pi$ radians, we cannot really distinguish $\theta$ from $0$ radians. So, one angle may masquerade as another unless we have accounting devices to optionally add $2n\pi$ to angles with the proviso that $n$ is an integer. And this concept is a segue to power series expansions of trigonometric functions, their use in calculus, and later on, in Fourier series.
 
 ## Power series expansions of trigonometric functions
 
