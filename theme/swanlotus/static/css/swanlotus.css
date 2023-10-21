@@ -400,7 +400,8 @@ div.csl-indent {
 /* Paddings */
 /* Text */
 /* Bulma Styles */
-/* Bulma Base */ /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+/* Bulma Base */
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 html,
 body,
 p,
@@ -2652,8 +2653,8 @@ a.box:active {
 }
 .button.is-loading::after {
   position: absolute;
-  left: calc(50% - (1em * 0.5));
-  top: calc(50% - (1em * 0.5));
+  left: calc(50% - 1em * 0.5);
+  top: calc(50% - 1em * 0.5);
   position: absolute !important;
 }
 .button.is-static {
@@ -4911,26 +4912,6 @@ a:hover code {
 
 .fa-magnifying-glass {
   color: hsl(0, 0%, 100%);
-}
-
-/* Stork search related styles */
-.stork-wrapper-edible .stork-output-visible {
-  background-color: hsl(0, 0%, 86%);
-  position: relative;
-  border: none;
-  box-shadow: none;
-}
-
-.stork-wrapper-edible .stork-results {
-  box-shadow: none;
-}
-
-.stork-wrapper-edible .stork-message, .stork-wrapper-edible .stork-attribution {
-  font-size: small;
-}
-
-.stork-wrapper-edible .stork-excerpt {
-  line-height: inherit;
 }
 
 /*# sourceMappingURL=swanlotus.css.map */

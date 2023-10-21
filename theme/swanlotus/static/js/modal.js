@@ -1,3 +1,4 @@
+// Requires jQuery
 // Copied from https://codepen.io/sinisag/pen/vPEajE
 // Modal Setup
 $(document).ready(function () {

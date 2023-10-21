@@ -10,22 +10,14 @@ Before setting up your development environment please ensure that you have the l
 
 Then follow the steps below to set up your development environment:
 
-1. Install [Pandoc](https://pandoc.org/MANUAL.html), [Git](https://git-scm.com/) [pipenv](https://pipenv.pypa.io/en/latest/), [Sass](https://sass-lang.com/) and [Rust](https://www.rust-lang.org/)).
+1. Install [Pandoc](https://pandoc.org/MANUAL.html), [Git](https://git-scm.com/) [pipenv](https://pipenv.pypa.io/en/latest/) and [Sass](https://sass-lang.com/).
 
     ```bash
     sudo pacman -Syyu
-    sudo pacman -S git pandoc python-pipenv dart-sass rust
+    sudo pacman -S git pandoc python-pipenv dart-sass
     ```
 
-    We need rust to install the [Stork](https://stork-search.net/) package as it is required for the search functionality explained [here](https://github.com/kleinbottle/swanlotus#searching-the-website).
-
-1. Install the Stork package.
-
-    ```bash
-    cargo install stork-search --locked
-    ```
-
-1. Clone the swanlotus repository.
+1. Clone the swanlotus repository:
 
     ```bash
     git clone https://github.com/kleinbottle/swanlotus <directory-name>
@@ -33,13 +25,13 @@ Then follow the steps below to set up your development environment:
 
     You will be asked to enter your username and password to clone the repository.
 
-1. Change into the directory you have cloned swanlotus into.
+1. Change into the directory you have cloned swanlotus into:
 
     ```bash
     cd <directory-name>
     ```
 
-1. Save your username and password in the git credential store and do a `git pull`.
+1. Save your username and password in the git credential store and update your repository:
 
     ```bash
     git config credential.helper store
@@ -48,7 +40,7 @@ Then follow the steps below to set up your development environment:
 
     You will be asked for your username and password again but they will be saved in the file `~/.git-credentials` for future use.
 
-1. Set the commit username, email address and rebase option globally. To set them for just this repository remove `--global` option in the commands below.
+1. Set the commit username, email address and rebase option globally. To set them for just this repository remove `--global` option in the commands below:
 
     ```bash
     git config --global user.name "<github-username>"
@@ -56,16 +48,16 @@ Then follow the steps below to set up your development environment:
     git config --global pull.rebase true
     ```
 
-1. Set up the default editor for amending commits. Again remove `--global` to just set it for this repository.
+1. Set up the default editor for amending commits. Again remove `--global` to just set it for this repository:
 
     ```bash
     git config --global core.editor "<editor>"
     ```
 
-1. Create a Python 3 development environment for Pelican and associated dependencies.
+1. Create a Python 3 development environment for Pelican and associated dependencies:
 
     ```bash
-    pipenv install
+    pipenv install --dev
     ```
 
 ## Updating your local repository
@@ -121,9 +113,9 @@ To create a new blog entry follow the steps below:
 
 If you are working on a single blog you may want to just generate that blog instead of the whole site to save time.
 
-To do the above set the `ARTICLE_PATHS = ["blogs"]` to `ARTICLE_PATHS = ["blogs/<blog-directory>"]` in `pelicanconf.py`. This way only the blog in that specific directory will be generated.
+To do so, set the `ARTICLE_PATHS = ["blogs/"]` to `ARTICLE_PATHS = ["blogs/<blog-directory>"]` in `pelicanconf.py`. This way only the blog in that specific directory will be generated.
 
-## Creating Static Pages
+## Creating Pages
 
 To create a static page like the Home page follow the steps below:
 
@@ -135,9 +127,7 @@ To create a static page like the Home page follow the steps below:
 
     ```python
     MENUITEMS = (
-        ("Home", "index.html"),
-        ("Blogs", "blogs.html"),
-        ("Secrets of Academic Success", "sas.html"),
+        ...
         ("<page-title>", "<page-title>.html"),  # New entry added to the end of the tuple
     )
     ```
@@ -148,9 +138,9 @@ To create a static page like the Home page follow the steps below:
     MENUITEMS = (
         ...
         ...
-        ("Books", [
-            ("Secrets of Academic Success", "sas.html"),
-            ("Sanskrit for Spiritual Seekers", "sss.html"),
+        ("<menu-item>", [
+            ("<submenu-item-one>", "<item-one.html>"),
+            ("<submenu-item-two>", "<item-two.html>"),
         ]),
         ...
         ...
@@ -177,30 +167,45 @@ To create a static page like the Home page follow the steps below:
 
 ## CSS Stylesheets
 
-The main CSS stylesheet for the site is `swanlotus.css` uses the [Bulma CSS framework](https://bulma.io/) and is generated through [SASS](https://sass-lang.com/).
+The main CSS stylesheet `swanlotus.css` is generated through [SASS](https://sass-lang.com/) and uses the [Bulma CSS framework](https://bulma.io/).
 
-The stylesheet imports three other stylesheets:
+The main stylesheet imports three other stylesheets:
 
-* `citations.scss` - CSS file for citations generated by [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref) filter in standalone mode.
+* `citations.scss` - CSS stylesheet for citations generated by [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref) filter in standalone mode.
 * `fonts-and-alignment.sass` - SASS file corresponding to LaTeX commands for fonts and alignment adapted from the [fonts-and-alignment Lua filter SASS specimen](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.sass).
-* `modal.scss` - Provides Modal boxes for images through the addition of the `modal-target` class adapted from the [Simple image modal Codepen example](https://codepen.io/sinisag/pen/vPEajE).
-* `zenburn-highlighting.scss` - CSS file for Zenburn code highlighting generated by `pandoc --highlight-style=zenburn --template=highlighting-css.template sample.md -o zenburn-highlighting.css`.
+* `modal.scss` - CSS stylesheet Provides Modal boxes for images through the addition of the `modal-target` class adapted from the [Simple image modal Codepen example](https://codepen.io/sinisag/pen/vPEajE).
+* `zenburn-highlighting.scss` - CSS stylesheet for Zenburn code highlighting generated using the command `pandoc --highlight-style=zenburn --template=highlighting-css.template sample.md -o zenburn-highlighting.css`.
 
-To combine all the CSS and SASS files into the one single CSS file execute:
+To generate the final stylesheet `swanlotus.css` execute:
 
 ```bash
 make css
 ```
 
-This will create the `swanlotus.css` file in the `theme/swanlotus/static/css` directory.
+The stylesheet will now be available in the `theme/swanlotus/static/css` directory.
 
-## JavaScript Files
+## JavaScript
 
-The site also uses some JavaScript to enhance the behaviour for certain elements. They are:
+The site also uses some JavaScript to enhance the behaviour of the site as explained below:
 
-* `modal.js` - Used by the modal boxes for the animation and enlargment of the images adapted from the [Simple image modal Codepen example](https://codepen.io/sinisag/pen/vPEajE).
-* `responsive_meny.js` - Used by the navigation bar to reduce and expand as needed to support multiple screen sizes adapated from the [Bulma Documentation](https://bulma.io/documentation/components/navbar/#navbar-menu).
-* `table_of_contents.js` - Expands and collapses the table of contents of blogs on small screen sizes.
+* `modal.js` - Used by the modal boxes for the enlargment of the images whe clicked. The code for this is adapted from the [Simple image modal Codepen example](https://codepen.io/sinisag/pen/vPEajE).
+* `responsive_menu.js` - Used to reduce and expand navigation bar as needed to support multiple screen sizes. The code for this is adapated from the [Bulma Documentation](https://bulma.io/documentation/components/navbar/#navbar-menu).
+* `table_of_contents.js` - Expands and collapses the table of contents of blogs as needed to support muliple screen sizes.
+* `mathjax-config.js` - Used to load configuration options for MathJax.
+
+### MathJax
+
+As several blogs on this site are mathematical in nature the [MathJax](https://www.mathjax.org/) display engine is used to render mathematical equations and expressions.
+
+MathJax has been configured to use the [STIX2 fonts](https://www.stixfonts.org/) for mathematical expressions.
+
+In addition, all mathematial expressions are scaled to 91% of the original size to match the size of the surrounding text.
+
+These configuration options are set in the `/theme/swanlotus/static/js/mathjax-config.js` file. You may modify these settings as needed.
+
+Please note that the site is using a 4.0.0 Beta release of MathJax as the current stable release 3.2.2 does not have font selection capabilities. For more information on font selection please see these [release notes](https://github.com/mathjax/MathJax-src/releases/tag/4.0.0-alpha.1#fonts).
+
+Once a new stable release of MathJax is available the site will be updated.
 
 ## Images
 
@@ -222,32 +227,26 @@ opengraphimage: "<image-name>.jpg"
 
 Both JPG and PNG images are supported by the Open Graph protocol.
 
-Typically, it takes 24 hours for an Open Graph image to appear in WhatsApp. If the image does not appear in Telegram even after 24 hours access the [Webpage Bot](https://t.me/WebpageBot) and input the webpage link to update the link preview.
-
-## Searching the website
-
-The SwanLotus website is searchable and uses the [pelican-search](https://github.com/pelican-plugins/search) plugin to achieve this.
-
-The plugin is a wrapper around the Stork package and hence, requires the Stork CLI to be installed and available on the `PATH`.
-
-Every time the site builds it is reindexed by the plugin avoiding the need for any manual intervention if new content is added.
-
-Please reae the [documentation](https://github.com/pelican-plugins/search#readme) on the pelican-search homepage to understand how it is setup on the site.
+Typically, it takes 24 hours for an Open Graph image to appear in WhatsApp. In Telegram access the [Webpage Bot](https://t.me/WebpageBot) and input the webpage link to update the link preview to have it appear immediately.
 
 ## Netlify Deployment
 
-[Netlify](https://www.netlify.com/) currently uses the [Ubuntu 20.04 LTS Focal Fossa](https://releases.ubuntu.com/20.04/) image to build this site. The latest version of Python on this image is 3.8, so we have set the Python version in the `Pipfile` accordingly. More information about the available packages and their versions are available [here](https://github.com/netlify/build-image/blob/focal/included_software.md).
+[Netlify](https://www.netlify.com/) currently uses the [Ubuntu 20.04 LTS Focal Fossa](https://releases.ubuntu.com/20.04/) image to build this site. More information about the available packages and their versions are available [here](https://github.com/netlify/build-image/blob/focal/included_software.md).
 
-We always want to use the latest version of Pandoc, the pandoc-crossref filter and Stork to make avail of the most recent features. Since the default Ubuntu image does not always have the most recent versions or may not contain the package at all, the Netlify community suggested to make use of [HomeBrew](https://brew.sh/).
+We always want to use the latest version of Pandoc and pandoc-crossref to avail of new features. Since the default Ubuntu image does not always have the most recent versions or may not contain the package at all, the Netlify community suggested to make use of [HomeBrew](https://brew.sh/).
 
 By specifying the packages in a `Brewfile.netlify` we instruct the builder to download the latest version of these packages from Homebrew and install them on the image.
 
 This feature is in early Alpha and may change significantly in the future.
 
-Netlify uses the following command to build the site:
+Please see the [Netlify documentation](https://docs.netlify.com/configure-builds/available-software-at-build-time/#tools) for a list of available packages.
+
+To build the site on Netlify use the following Pelican command:
 
 ```bash
 pelican content -s publishconf.py
 ```
 
-The `publishconf.py` file contains settings that are specific to the live site and override the settings in `pelicanconf.py`. **Do not** update `publishconf.py` as this may break the live site.
+The `publishconf.py` file contains settings that are specific to the live site and overrides the settings in `pelicanconf.py`.
+
+**Do not** update `publishconf.py` unless you need to change settings on the live site.

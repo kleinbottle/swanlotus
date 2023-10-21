@@ -1,3 +1,4 @@
+// Requires jQuery
 $(document).ready(function () {
     $("#toc-small-screens").click(function () {
         // Show or hide the table of contents on mobile devices when
