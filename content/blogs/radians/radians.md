@@ -109,29 +109,23 @@ The line $OS$ is a radius and therefore one unit in length. The perpendicular fr
 
 _$S$ is therefore the point with coordinates $(\cos\theta, \sin\theta)$_.
 
+Note that since the coordinates of $S$ are confined to the unit circle, the values of $\sin\theta$ and $\cos\theta$ are confined to the closed interval $[-1, 1]$, i.e. they perforce have values lying  between $-1$ and $1$, both inclusive. From @fig:unit, we see that $(\cos\theta, \sin\theta)$---which represent the coordinates of $S$---take on signed values in accordance with the signs of $x$ and $y$ in the respective quadrants. One could also view the associated _lengths_ as signed values.
+
+<!--![A graph of $\sin\theta$ versus $\theta$ for $0 \geq \theta \leq 2\pi$.]({attach}images/sine.png){#fig:sine width=80% .modal-target}-->
+
 ### The tangent function
 
 The really insightful revelation from @fig:unit comes from looking at $\tan\theta$. Have you ever wondered why the function $\tan\theta = \frac{\sin\theta}{\cos\theta}$ is called the _tangent_ function? Take a look at @fig:unit to see that the line $DT$ is _tangent_ to the circle at the point $(1, 0)$, which is $D$. In this case, $\tan\theta = \frac{DT}{OD} = DT$ since $OD$ is equal to one unit.
 
-The value of the tangent function for an angle $\theta$ may be determined geometrically by extrapolating the radius $OS$ until it intersects the tangent to the circle at $D$ at a point called $T$. The length $DT$ is the value of $\tan\theta$.
+Therefore, the value of the tangent function for an angle $\theta$ may be determined geometrically by extrapolating the radius $OS$ until it intersects the tangent to the circle at $D$ at a point called $T$. The length $DT$ is the value of $\tan\theta$.
 
-Note that since the coordinates of $S$ are confined to the unit circle, the values of $\sin\theta$ and $\cos\theta$ are confined to the closed interval $[-1, 1]$, i.e. they perforce have values lying  between $-1$ and $1$, both inclusive.
+Note, though, that $\tan\theta$ is a length _outside the unit circle_ and is therefore not  constrained to take on values between $-1$ and $1$. Indeed, as $\theta$ starts increasing in the first quadrant of the unit circle, you will notice that as $OS$ approaches the $y$-axis and as $\theta$ approaches $\frac{\pi}{2}$ (or 90°, if you are still attached to degrees), the line $OS$ is increasingly aligned with $DT$. At $\theta=\frac{\pi}{2}$, $OS$ is parallel to $DT$ and ["never the twain shall meet"](https://en.wikipedia.org/wiki/The_Ballad_of_East_and_West). Loosely speaking, parallel lines are only supposed to "meet at infinity" and that is why $\tan\frac{\pi}{2}$ is said to be "infinite" at that point. I find this geometric explanation---of why $\tan\theta$ does not assume a finite value at $\theta=\frac{\pi}{2}$---most fulfilling.
 
-However, $\tan\theta$ is a length _outside the unit circle_ and is therefore not similarly constrained. Indeed, as $\theta$ starts increasing in the first quadrant of the unit circle, you will notice that as $OS$ approaches the $y$-axis and as $\theta$ approaches $\frac{\pi}{2}$ (or 90°, if you are still attached to degrees), the line $OS$ is increasingly aligned with $DT$. At $\theta=\frac{\pi}{2}$, $OS$ is parallel to $DT$ and ["never the twain shall meet"](https://en.wikipedia.org/wiki/The_Ballad_of_East_and_West). Loosely speaking, parallel lines are only supposed to "meet at infinity" and that is why $\tan\frac{\pi}{2}$ is said to be "infinite" at that point. This is why $\tan\theta$ does not assume a finite value at $\theta=\frac{\pi}{2}$. I find this geometric explanation most fulfilling.
+When $\theta$ is in the third quadrant, for instance, $OS$ extrapolated in the negative direction will not intersect the tangent $DT$ in the negative $y$ direction as they diverge. So, the line $SO$ must be produced in the positive $y$ direction to once more intersect the tangent at $T$. That explains why tangents of angles in the third quadrant are positive.
 
-In triangle $OSC$, note that the hypotenuse $OS$, being the radius, is one unit long. Therefore the length of $OC$ equals $\cos\theta$ and the length of $CS$ equals $\sin\theta$. The point $T$ denotes the intersection of $OS$ produced and the tangent to the circle at $D$. Given that $OD$, being a radius, is also one unit long, the length $DT$ is equal to $\tan\theta$. The fact that $DT$ is a _tangent_ to the circle should explain why this function is called the $\tan$.
+By moving from triangles to the unit circle on coordinate axes, we have enabled $\theta$ to take on any value between 0 and $2\pi$ radians.
 
-The simple device of unit radius helps us understand how the $\cos$ and $\sin$ functions takeo n the are the $x$ and $y$ taken on the signed $x$ and $y$ co-ordinates of $S$.
-
-### The signed trigonometric functions
-
-From @fig:unit, we see that the $(\cos\theta, \sin\theta)$---which represent the coordinates of $S$---take on signed values in accordance with the signs of $x$ and $y$ in the respective quadrants. One could also view the associated _lengths_ as signed values.
-
-For example, when $\theta$ is in the third quadrant, $OS$ extrapolated in the negative direction will not intersect the tangent $DT$ in the negative $y$ direction. So, the line $SO$ must be produced in the positive $y$ direction to once more intersect intersect the tangent at $T$. That explains why tangents of angles in the third quadrant are positive.
-
-<!--![A graph of $\sin\theta$ versus $\theta$ for $0 \geq \theta \leq 2\pi$.]({attach}images/sine.png){#fig:sine width=80% .modal-target}-->
-
-By moving from triangles to the unit circle, we have enabled the trigonometric functions to take on any value between 0 and $2\pi$ radians. Note that when  $\theta = 2\pi$ radians, we cannot really distinguish $\theta$ from $0$ radians. So, one angle may masquerade as another unless we have accounting devices to optionally add $2n\pi$ to angles with the proviso that $n$ is an integer. And this concept is a segue to power series expansions of trigonometric functions, their use in calculus, and later on, in Fourier series.
+Note that when  $\theta = 2\pi$ radians, we cannot really distinguish it from $\theta=0$ radians. So, one angle may masquerade as another unless we have accounting devices to optionally add $2n\pi$ to angles with the proviso that $n$ is an integer. And this concept is a segue to power series expansions of trigonometric functions, their use in calculus, and later on, in Fourier series.
 
 ## Power series for trigonometric functions
 
@@ -141,15 +135,20 @@ Both the statements $\sin(30°)=0.5$ and $\sin(\frac{\pi}{6})=0.5$ are factually
 
 But it is possible to express trigonometric functions in terms of power series in which an argument in degrees would be inadmissible. It is only after we cross this threshold in mathematics that radians truly come into their own, and after which there is "no going back to the old ways".
 
-I will now do a bit of hand-waving and say that others have proved^[Search the web for Taylor Series or Maclaurin series, thinking of it as a treasure hunt and enrich yourself with knowledge!] that:
+I will now do a bit of hand-waving and say that others have proved^[Search the web for Taylor Series or Maclaurin series, thinking of it as a treasure hunt and enrich yourself with that knowledge!] that:
 
 $$
 \sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \frac{\theta^7}{7!} + \cdots
 $${#eq:sineseries}
 
-where the dots at the end of @eq:sineseries tells us to imagine that this series _never ends but goes on forever_ following the pattern shown.
+where the dots at the end of @eq:sineseries tell us to imagine that this series _never ends but goes on forever_ following the pattern shown.
 
-$\sin \theta \approx \theta$ for $\theta$ close to zero. The number on the left hand side is a unitless ratio of lengths or "pure" number. This requires the right hand side to also be expressed in a similar unitless measure, and radians fits the bill.
+When $\theta$ is very close to zero, the higher powers on the right hand side of @eq:sineseries become smaller and smaller. In this case, we may assert that:
+$$
+\sin\theta \approx \theta \text{for} $|\theta| \ll 0.
+$$
+
+The number on the left hand side is a unitless ratio of lengths or "pure" number. This requires the right hand side to also be expressed in a similar unitless measure, and radians fits the bill.
 
 When we deal with trigonometric functions in calculus or when applying Fourier series, we will fully realize the boon conferred by the unitless radians as an angular measure since they will be compatible with the other _pure numbers_ (real or complex) that we will be dealing with.
 
