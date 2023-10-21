@@ -135,7 +135,7 @@ Both the statements $\sin(30°)=0.5$ and $\sin(\frac{\pi}{6})=0.5$ are factually
 
 But it is possible to express trigonometric functions in terms of power series in which an argument in degrees would be inadmissible. It is only after we cross this threshold in mathematics that radians truly come into their own, and after which there is "no going back to the old ways".
 
-I will now do a bit of hand-waving and say that others have proved^[Search the web for Taylor Series or Maclaurin series, thinking of it as a treasure hunt and enrich yourself with that knowledge!] that:
+I will now do a bit of hand-waving and say that it has been proved^[Search the web for Taylor Series or Maclaurin series, thinking of it as a treasure hunt and enrich yourself with that knowledge!] that:
 
 $$
 \sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \frac{\theta^7}{7!} + \cdots
@@ -143,12 +143,28 @@ $${#eq:sineseries}
 
 where the dots at the end of @eq:sineseries tell us to imagine that this series _never ends but goes on forever_ following the pattern shown.
 
-When $\theta$ is very close to zero, the higher powers on the right hand side of @eq:sineseries become smaller and smaller. In this case, we may assert that:
-$$
-\sin\theta \approx \theta \text{for} $|\theta| \ll 0.
-$$
+Recall that if a number is less than one, raising it to a power greater than one makes it smaller than it originally was. So, when $\theta$ is very close to zero, the higher powers on the right hand side of @eq:sineseries become smaller and smaller, and may be ignored without much loss in accuracy. In this case, we may assert that:
 
-The number on the left hand side is a unitless ratio of lengths or "pure" number. This requires the right hand side to also be expressed in a similar unitless measure, and radians fits the bill.
+$$
+\sin\theta\approx\theta \:\text{for}\: \lvert\theta\rvert \to 0.
+$${#eq:sinesmalltheta}
+
+In English this expression means that for vanishingly small values of $\theta$---whether positive or negative---$\sin\theta$ is approximately equal to $\theta$. This may also be seen from FigXXX where the closeness of the curve y = x and y = sin theta near the origin is evident.
+
+From @fig:trig we know that the number on the left hand side of @eq:sinesmalltheta is a unitless ratio of two lengths and thus a "pure" number. This requires the right hand side to also be expressed in a similar unitless measure, and radians fits the bill.
+
+Let us illustrate the reasonableness of @eq:sinesmalltheta. Set $\theta$ to $0.005$ radians, which is a small value close to zero. Then $\sin\theta = \sin(0.005) = 0.004999979167, which demonstrates the validity of @eq:sinesmalltheta. however, if one were to interpret the number 0.005 as degrees rather than radians, we then have $\sin(0.005°) = 0.00008726646249$ which is almost $57$ times smaller than the number 0.005.
+
+The moral of this example is that when we evaluate trigonometric functions in degrees in the context of their power series, we must apply a correction factor of $\frac{\pi}{180}$ to implicitly convert _each term_ to radians. This is a layer of complexity we may easily avoid by using radians on both sides of the equation.
+
+
+<!--https://en.wikipedia.org/wiki/Small-angle_approximation-->
+
+### Euler's equation
+
+Calculus
+
+Integral of x sin x.
 
 When we deal with trigonometric functions in calculus or when applying Fourier series, we will fully realize the boon conferred by the unitless radians as an angular measure since they will be compatible with the other _pure numbers_ (real or complex) that we will be dealing with.
 
