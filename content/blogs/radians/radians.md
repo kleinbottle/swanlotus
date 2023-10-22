@@ -51,7 +51,7 @@ Because the idea of an angle is related to rotation, it seems natural that we sh
 
 It is a fact that the length of a circle, or its _perimeter_, or its _circumference_, $C$, is always related to its radius, $r$, through the formula $C = 2\pi r$.
 
-And $\pi$ is not $\frac{22}{7}$ as we were originally taught, but really a number whose precise expression cannot be predicted or exhausted. The digits simply keep rolling on, without pattern or end. But the beauty is that $\pi$ is nevertheless a unique number, a universal mathematical constant. It seems that Nature has played a game on us by making the simple symmetrical circle have a length that can only be approximated but never entirely known to an unlimited precision^[$\pi$, $e$ the base or natural logarithms, $\phi$ the golden ratio, along with a large pantheon of mathematical constants are irrational, and some are even possibly transcendental. Why Nature has this preference for the irrational is an intriguing question that needs an answer.].
+And $\pi$ is not $\frac{22}{7}$ as we were originally taught, but really a number whose precise expression cannot be predicted or exhausted. The digits simply keep rolling on, without pattern or end. But the beauty is that $\pi$ is nevertheless a unique number, a universal mathematical constant. It seems that Nature has played a game on us by making the simple symmetrical circle have a length that can only be approximated but never entirely known to an unlimited precision.^[$\pi$, $e$ the base or natural logarithms, $\phi$ the golden ratio, along with a large pantheon of mathematical constants are irrational, and some are even possibly transcendental. Why Nature has this preference for the irrational is an intriguing question that needs an answer.]
 
 ### One radian
 
@@ -69,25 +69,31 @@ This is a mathematically non-rigorous digression on congruence and similarity.  
 
 _Similarity_ is less restrictive than congruence and applies to geometric objects that have the same shape but not necessarily the same size. Intuitively, if two objects are similar, one may _zoom in_ or _zoom out_ on one object of the pair---without distortion---to obtain a version that may be superimposed on the other object to demonstrate that they are identical or congruent.
 
-The ratios of the respective lengths of corresponding sides of similar triangles are the same. In like fashion, the ratio of the circumference to the radius of two circles of radii $r_1$ and $r_2$ will be $\frac{2\pi r_1}{r_1} =\frac{2\pi r_2}{r_2} = 2\pi$^[This is also a demonstration that a full circle corresponds to an angle of 360° or $2\pi$ radians.]. This is a consequence of the fact that _all circles are similar to each other_.
+The ratios of the respective lengths of corresponding sides of similar triangles are the same. In like fashion, the ratio of the circumference to the radius of two circles of radii $r_1$ and $r_2$ will be $\frac{2\pi r_1}{r_1} =\frac{2\pi r_2}{r_2} = 2\pi$, demonstrating that a full circle corresponds to an angle of 360° or $2\pi$ radians. This is a consequence of the fact that _all circles are similar to each other_.
 
 What other classes of geometrical objects can you think of that are similar to each other within their class?^[All circles are similar, as are  all equilateral triangles, all squares, and indeed, all regular $n$-gons, and all parabolas. What exactly does similarity mean? It means that the shape remains the same. Imagine a square or a circle. If you zoomed on the figure to enlarge or diminish it without distortion, and you could not see a change of shape, that figure exhibits similarity to every other figure in that class.]
 
 ## Radians as angular measure
 
-We are now ready to define any angle $\theta$ in radians. The ratio of the length of the arc that subtends an angle of $\theta$ at the centre, to its radius, is the value of $\theta$ in radians. Succinctly, with reference to @fig:general, $\theta = \frac{s}{r}$. By dividing by the radius, we have in effect _normalized_ the definition of the radian, and removed any trace of arbitrariness in the definition. And that is why we started out slowly with @fig:radian, which dealt with a circle with unit radius.
+We are now ready to define any angle $\theta$ in radians. The ratio of the length of the arc that subtends an angle of $\theta$ at the centre, to its radius, is the value of $\theta$ in radians. Succinctly, with reference to @fig:general,
+$$
+\theta \triangleq\frac{s}{r}.
+$${#eq:defrad}
+
+By dividing the arc length by the radius, we have in effect _normalized_ radian measure, and removed any trace of arbitrariness in its definition. And that is why we started out with @fig:radian, which dealt with a circle of unit radius.
 
 Note that the value of $\theta$ is a ratio of two lengths and is therefore dimensionless in the sense of Physics. It may be considered a unitless _pure number_ [although the SI units do define the radian as the SI unit of angular measure](https://en.wikipedia.org/wiki/Radian).
 
-With radians, we have the following:
+In summary, with radians, we have the following:
 
-#. Angular measure is directly proportional to arc length on a circle for all angles less than or equal to a full circle.
+#. Angular measure is directly proportional to arc length on the circle.
 #. This measure is independent of the radius of the circle.
 #. The resulting "unit" is really a unitless ratio of two lengths.
+#. Since 360° equals $2\pi$ radians, 1° approximately equals 0.017453292 radians. Likewise, 1 radian equals approximately 57.29577951°.^[These conversion factors must dispel any mystique attached to radians vis-a-vis degrees.]
 
 By defining radians as above, we remove the arbitrariness associated with 360° for a full circle. But the mathematical elegance and rigour conferred by radians comes at a cost. The angle of a full circle is $2\pi$, which is a computationally inconvenient number to say the least.
 
-If you think about it, with radians the size of an angle is expressed as a ratio of two lengths. But we have encountered angles being associated with ratios of lengths elsewhere in mathematics as well. Such ratios are familiar to us from trigonometry where the $\sin$, $\cos$, and $\tan$ functions are expressed as the ratios of lengths in a right-angled triangle. We review this relationship next.
+If you think about it, the size of an angle in radians is expressed as a _ratio of two lengths_. But we have encountered angles being associated with ratios of lengths elsewhere in mathematics as well. Such ratios are familiar to us from _trigonometry_ where the $\sin$, $\cos$, and $\tan$ functions are expressed as the ratios of lengths in a right-angled triangle. We review this relationship next.
 
 ## Trigonometric functions
 
@@ -97,7 +103,7 @@ Trigonometric functions are one of the workhorses of applied mathematics. They a
 
 ## The Circular Functions
 
-The trigonometric functions are also called the _circular_ trigonometric functions, uniting the circle _and_ the triangle as their progenitors. We will briefly review that relationship here, to better understand not only the terminology but also the hidden relationships between the triangle and the circle^[The equilateral triangle is the regular $n$-gon with the smallest number of sides and the circle is the limiting case of an $n$-gon when $n$ tends to infinity. The trigonometric functions are the children of these unlikely parents, at the extreme ends of the $n$-gon spectrum.].
+The trigonometric functions are also called the _circular_ trigonometric functions, uniting the circle _and_ the triangle as their progenitors. We will briefly review that relationship here, to better understand not only the terminology but also the hidden relationships between the triangle and the circle.^[The equilateral triangle is the regular $n$-gon with the smallest number of sides and the circle is the limiting case of an $n$-gon when $n$ tends to infinity. The trigonometric functions are the children of these unlikely parents, at the extreme ends of the $n$-gon spectrum.]
 
 I used to wonder why the word _tangent_ was used for the name of a trigonometric function because a circle was not involved in its definition; a triangle was. But when the three standard trigonometric functions are viewed vis-a-vis a unit circle, the mystery behind the nomenclature is revealed.
 
@@ -133,7 +139,7 @@ Note that when  $\theta = 2\pi$ radians, we cannot really distinguish it from $\
 
 This is where the plot thickens.
 
-Both the statements $\sin(30°)=0.5$ and $\sin(\frac{\pi}{6})=0.5$ are factually correct and perfectly acceptable. We will not be committing any mathematical heresies through either statement^[Note that while it is mandatory to affix the degree sign as a superscript, radians being pure numbers do not require any special identification.].
+Both the statements $\sin(30°)=0.5$ and $\sin(\frac{\pi}{6})=0.5$ are factually correct and perfectly acceptable. We will not be committing any mathematical heresies through either statement.^[Note that while it is mandatory to affix the degree sign as a superscript, radians being pure numbers do not require any special identification.]
 
 But it is possible to express trigonometric functions in terms of power series in which an argument in degrees would be inadmissible. It is only after we cross this threshold in mathematics that radians truly come into their own, and after which there is "no going back to the old ways".
 
