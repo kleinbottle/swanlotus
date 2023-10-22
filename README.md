@@ -203,7 +203,7 @@ In addition, all mathematial expressions are scaled to 91% of the original size 
 
 These configuration options are set in the `/theme/swanlotus/static/js/mathjax-config.js` file. You may modify these settings as needed.
 
-Please note that the site is using a 4.0.0 Beta release of MathJax as the current stable release 3.2.2 does not have font selection capabilities. For more information on font selection please see these [release notes](https://github.com/mathjax/MathJax-src/releases/tag/4.0.0-alpha.1#fonts).
+Please note that the site is using a Beta release of MathJax as the current stable release, 3.2.2 does not have font selection capabilities. For more information on font selection please see these [release notes](https://github.com/mathjax/MathJax-src/releases/tag/4.0.0-alpha.1#fonts).
 
 Once a new stable release of MathJax is available the site will be updated.
 
@@ -216,6 +216,8 @@ To add a Modal box for any image on the website just add the class `modal-target
 ```markdown
 ![<image-caption>]({attach}images/<image-name>.jpg){.modal-target}
 ```
+
+Please note that the Modal box will noot display the caption only and enlarged version of the image.
 
 ### Open Graph Images
 

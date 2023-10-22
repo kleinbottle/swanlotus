@@ -327,22 +327,8 @@ div.csl-indent {
   background-color: #dbdbdb;
 }
 
-/* Caption of Modal Image */
-.modal-caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 1200px;
-  text-align: center;
-  color: white;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: smaller;
-  margin-top: 0.5em;
-}
-
 /* Add Animation */
-.modal-content,
-.modal-caption {
+.modal-content {
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 0.6s;
   animation-name: zoom;
@@ -2653,8 +2639,8 @@ a.box:active {
 }
 .button.is-loading::after {
   position: absolute;
-  left: calc(50% - 1em * 0.5);
-  top: calc(50% - 1em * 0.5);
+  left: calc(50% - (1em * 0.5));
+  top: calc(50% - (1em * 0.5));
   position: absolute !important;
 }
 .button.is-static {
