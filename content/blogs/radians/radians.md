@@ -119,7 +119,7 @@ _$S$ is therefore the point with coordinates $(\cos\theta, \sin\theta)$_.
 
 Note that since the coordinates of $S$ are confined to the unit circle, the values of $\sin\theta$ and $\cos\theta$ are confined to the closed interval $[-1, 1]$, i.e. they perforce have values lying  between $-1$ and $1$, both inclusive. From @fig:unit, we see that $(\cos\theta, \sin\theta)$---which represent the coordinates of $S$---take on signed values in accordance with the signs of $x$ and $y$ in the respective quadrants. One could also view the associated _lengths_ as signed values.
 
-<!--![A graph of $\sin\theta$ versus $\theta$ for $0 \geq \theta \leq 2\pi$.]({attach}images/sine.png){#fig:sine width=80% .modal-target}-->
+
 
 ### The tangent function
 
@@ -131,9 +131,9 @@ Note, though, that $\tan\theta$ is a length _outside the unit circle_ and is the
 
 When $\theta$ is in the third quadrant, for instance, $OS$ extrapolated in the negative direction will not intersect the tangent $DT$ in the negative $y$ direction as they diverge. So, the line $SO$ must be produced in the positive $y$ direction to once more intersect the tangent at $T$. That explains why tangents of angles in the third quadrant are positive.
 
-By moving from triangles to the unit circle on coordinate axes, we have enabled $\theta$ to take on any value between 0 and $2\pi$ radians. The trigonometric functions have been unshackled from the triangle and are can take on _any_ real number as arguments. The graphs of the three standard trigonometric functions are shown in FigureTTTT.
+By moving from triangles to the unit circle on coordinate axes, we have enabled $\theta$ to take on any value between 0 and $2\pi$ radians. The trigonometric functions have been unshackled from the triangle and are can take on _any_ real number as arguments. The graphs of the three standard trigonometric functions are shown in @fig:threegraph.
 
-Figure TTTT.
+![Graphs of the three trigonometric functions. Notice how $\sin$ and $\cos$ are bounded in their values, but $\tan$ is not. There are discontinuities  for $\theta=\frac{2n+1}{2}\pi$.]({attach}images/threegraph.png){#fig:threegraph width=90% .modal-target}
 
 Note that when  $\theta = 2\pi$ radians, we cannot really distinguish it from $\theta=0$ radians. So, one angle may masquerade as another unless we have accounting devices to optionally add $2n\pi$ to angles with the proviso that $n$ is an integer. And this concept is a segue to power series expansions of trigonometric functions, their use in calculus, and later on, in Fourier series.
 
@@ -159,29 +159,37 @@ $$
 \sin\theta\approx\theta \:\text{for}\: \lvert\theta\rvert \to 0.
 $${#eq:sinesmalltheta}
 
-In English this expression means that for vanishingly small values of $\theta$---whether positive or negative---$\sin\theta$ is approximately equal to $\theta$. This may also be seen from FigXXX where the closeness of the curve y = x and y = sin theta near the origin is evident.
+In English this expression means that for vanishingly small values of $\theta$---whether positive or negative---$\sin\theta$ is approximately equal to $\theta$.
 
 From @fig:trig we know that the number on the left hand side of @eq:sinesmalltheta is a unitless ratio of two lengths and thus a "pure" number. This requires the right hand side to also be expressed in a similar unitless measure, and radians fits the bill.
 
-Let us illustrate the reasonableness of @eq:sinesmalltheta. Set $\theta$ to $0.005$ radians, which is a small value close to zero. Then $\sin\theta = \sin(0.005) = 0.004999979167, which demonstrates the validity of @eq:sinesmalltheta. however, if one were to interpret the number 0.005 as degrees rather than radians, we then have $\sin(0.005°) = 0.00008726646249$ which is almost $57$ times smaller than the number 0.005.
+This may also be seen from @fig:xsinx where the closeness of the curve $f(\theta) = \theta$ and $f(\theta) = \sin\theta$ near the origin is evident. Indeed, right up to a value of $\lvert\theta\rvert\approx 0.3$, the two curves track each other closely.
+
+![A graph of $\sin\theta$ versus $\theta$ and $\theta$ versus $\theta$ for $\lvert\theta\rvert\approx 0$.]({attach}images/xsinx.png){#fig:xsinx width=90% .modal-target}
+
+We have seen the graphical demonstration of the validity of @eq:sinesmalltheta. Let us now illustrate the reasonableness of that equation by evaluation. Set $\theta$ to $0.005$ radians, which is a small value close to zero. Then $\sin\theta = \sin(0.005) = 0.004999979167$, which demonstrates the validity of @eq:sinesmalltheta. however, if one were to interpret the number 0.005 as degrees rather than radians, we then have $\sin(0.005°) = 0.00008726646249$ which is almost $57$ times smaller than the number 0.005.
 
 The moral of this example is that when we evaluate trigonometric functions in degrees in the context of their power series, we must apply a correction factor of $\frac{\pi}{180}$ to implicitly convert _each term_ to radians. This is a layer of complexity we may easily avoid by using radians on both sides of the equation.
 
-Diagram of why sin theta approx theta with arc and opposite side of triangle.
+We will close with one more example where radians make mathematical life much easier.
 
+### Euler's formula and identity
 
-<!--https://en.wikipedia.org/wiki/Small-angle_approximation-->
+The prodigiously productive Swiss mathematician, gave us man equations, one of which is known as Euler's formula, shown below:
+$$
+e^{i\theta} = \cos\theta + i\sin\thetaθ
+$${#eq:euler}
+The letter $i$ is called the [imaginary unit](https://en.wikipedia.org/wiki/Imaginary_unit) and its definition is $i^{2} = -1$. It takes us into the [field of complex numbers](https://en.wikipedia.org/wiki/Complex_number). It has been proved that [all non-constant, polynomials with complex coefficients contain at least one complex root](https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra).
 
-### Euler's equation
+When we substitute $\theta=\pi$ into @eq:euler, and transpose terms, we get what is called Euler's identity:
+$$
+\begin{aligned}
+e^{i\pi} &= \cos\pi + i\sin\pi\\
+e^{i\pi} + 1 &= 0\\
+\end{aligned}
+$${#eq:euleridentity}
 
-Calculus
-
-Integral of x sin x.
-
-When we deal with trigonometric functions in calculus or when applying Fourier series, we will fully realize the boon conferred by the unitless radians as an angular measure since they will be compatible with the other _pure numbers_ (real or complex) that we will be dealing with.
-
-
-## Acknowledgements
+@eq:euleridentity has been described as the most poetic equation in all of mathematics as it [unites in one equation the five most fundamental entities in all of mathematics](https://www.livescience.com/51399-eulers-identity.html), $e, i, \pi, 1$ and $0$. And it could not have come about without radians. With that epiphany on beauty, we shall conclude our tale of two measures.
 
 ## Feedback
 

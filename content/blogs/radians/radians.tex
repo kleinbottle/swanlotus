@@ -227,7 +227,7 @@ madness for this change.
 \hypertarget{what-is-an-angle}{%
 \subsection{What is an angle?}\label{what-is-an-angle}}
 
-We first came across the idea of an \emph{angle} when we studied
+For most of us, the idea of an \emph{angle} first arose when we studied
 geometry in elementary or primary school. We then encountered
 \emph{triangles}, which are closed figures with three straight sides and
 three enclosed angles. An \emph{equilateral triangle} is particularly
@@ -238,22 +238,26 @@ symmetric, with three equal sides and three equal angles, as shown in
 \hypertarget{fig:equilateral}{%
 \centering
 \includegraphics[width=0.75\textwidth,height=\textheight]{images/equilateral.png}
-\caption{An equilateral triangle is one in which the three sides are
-equal. The points at which the lines meet to form the triangle are
-called \emph{vertices} (singular \emph{vertex}). By convention, vertices
-are labelled with uppercase letters like \(A\), \(B\), and \(C\). The
-lengths of the sides opposite the vertices are assigned the lowercase
-labels \(a\), \(b\), and \(c\) respectively. The angles are here
-labelled \(\alpha\), \(\beta\), and \(\gamma\). In this triangle,
-\(a = b = c\), by definition, and by symmetry,
-\(\alpha = \beta = \gamma\).}\label{fig:equilateral}
+\caption{An equilateral triangle is one in which the three sides and
+three angles are equal.}\label{fig:equilateral}
 }
 \end{figure}
+
+The point at which a line meets another line is called a \emph{vertex},
+which has the sense of a
+\href{https://www.etymonline.com/search?q=vertex}{``turning point''}. By
+convention, vertices (plural of vertex) are labelled with uppercase
+letters like \(A\), \(B\), and \(C\). The lengths of the sides opposite
+the vertices are assigned the lowercase labels \(a\), \(b\), and \(c\)
+respectively. The angles have been labelled with the Greek letters
+\(\alpha\), \(\beta\), and \(\gamma\). For all equilateral triangles,
+\(a = b = c\), by definition, and by symmetry,
+\(\alpha = \beta = \gamma\).
 
 \hypertarget{degrees}{%
 \subsection{Degrees}\label{degrees}}
 
-When we started on geometry, we would proudly trot out our set of
+On encountering geometry, we very likely proudly trotted out our set of
 mathematical instruments, which would include a pair of compasses, a
 protractor, one or two set squares, and a ruler or straight edge. Of
 these, the protractor---that plastic semi-circle marked out in
@@ -304,10 +308,10 @@ it being very factor-friendly?
 \subsection{From triangles to circles}\label{from-triangles-to-circles}}
 
 What is the root concept behind the idea of an angle? Harking back to
-the equilateral triangle, when one line \emph{changes direction} by
-sixty degrees, we get the second line. These two lines form the angle.
-Change of direction may also be called \emph{turning}. And when
-something turns, we may also say that it \emph{rotates}.
+etymology of the word vertex---and applying it to the equilateral
+triangle---when one line \emph{changes direction} by sixty degrees, we
+get the second line. These two lines form the angle. Change of direction
+may also be called \emph{turning} or \emph{rotation}.
 
 The quintessential two-dimensional geometric figure that is associated
 with rotation is of course the \emph{circle}. It is the most simple and
@@ -334,8 +338,8 @@ compulsion?
 angles}\label{using-circles-to-measure-angles}}
 
 Because the idea of an angle is related to rotation, it seems natural
-that we should define angles using the circle as a basis, rather the
-triangles that we encountered at first.
+that we should define angles using the circle as a basis, rather than
+the triangles that we encountered at first.
 
 It is a fact that the length of a circle, or its \emph{perimeter}, or
 its \emph{circumference}, \(C\), is always related to its radius, \(r\),
@@ -348,11 +352,11 @@ But the beauty is that \(\pi\) is nevertheless a unique number, a
 universal mathematical constant. It seems that Nature has played a game
 on us by making the simple symmetrical circle have a length that can
 only be approximated but never entirely known to an unlimited
-precision\footnote{\(\pi\), \(e\) the base or natural logarithms,
+precision.\footnote{\(\pi\), \(e\) the base or natural logarithms,
   \(\phi\) the golden ratio, along with a large pantheon of mathematical
   constants are irrational, and some are even possibly transcendental.
   Why Nature has this preference for the irrational is an intriguing
-  question that needs an answer.}.
+  question that needs an answer.}
 
 \hypertarget{one-radian}{%
 \subsubsection{One radian}\label{one-radian}}
@@ -407,10 +411,10 @@ demonstrate that they are identical or congruent.
 The ratios of the respective lengths of corresponding sides of similar
 triangles are the same. In like fashion, the ratio of the circumference
 to the radius of two circles of radii \(r_1\) and \(r_2\) will be
-\(\frac{2\pi r_1}{r_1} =\frac{2\pi r_2}{r_2} = 2\pi\)\footnote{This is
-  also a demonstration that a full circle corresponds to an angle of
-  360° or \(2\pi\) radians.}. This is a consequence of the fact that
-\emph{all circles are similar to each other}.
+\(\frac{2\pi r_1}{r_1} =\frac{2\pi r_2}{r_2} = 2\pi\), demonstrating
+that a full circle corresponds to an angle of 360° or \(2\pi\) radians.
+This is a consequence of the fact that \emph{all circles are similar to
+each other}.
 
 What other classes of geometrical objects can you think of that are
 similar to each other within their class?\footnote{All circles are
@@ -429,10 +433,14 @@ We are now ready to define any angle \(\theta\) in radians. The ratio of
 the length of the arc that subtends an angle of \(\theta\) at the
 centre, to its radius, is the value of \(\theta\) in radians.
 Succinctly, with reference to \cref{fig:general},
-\(\theta = \frac{s}{r}\). By dividing by the radius, we have in effect
-\emph{normalized} the definition of the radian, and removed any trace of
-arbitrariness in the definition. And that is why we started out slowly
-with \cref{fig:radian}, which dealt with a circle with unit radius.
+\begin{equation}\protect\hypertarget{eq:defrad}{}{
+\theta \triangleq\frac{s}{r}.
+}\label{eq:defrad}\end{equation}
+
+By dividing the arc length by the radius, we have in effect
+\emph{normalized} radian measure, and removed any trace of arbitrariness
+in its definition. And that is why we started out with
+\cref{fig:radian}, which dealt with a circle of unit radius.
 
 Note that the value of \(\theta\) is a ratio of two lengths and is
 therefore dimensionless in the sense of Physics. It may be considered a
@@ -440,17 +448,21 @@ unitless \emph{pure number}
 \href{https://en.wikipedia.org/wiki/Radian}{although the SI units do
 define the radian as the SI unit of angular measure}.
 
-With radians, we have the following:
+In summary, with radians, we have the following:
 
 \begin{enumerate}
 \tightlist
 \item
-  Angular measure is directly proportional to arc length on a circle for
-  all angles less than or equal to a full circle.
+  Angular measure is directly proportional to arc length on the circle.
 \item
   This measure is independent of the radius of the circle.
 \item
   The resulting ``unit'' is really a unitless ratio of two lengths.
+\item
+  Since 360° equals \(2\pi\) radians, 1° approximately equals
+  0.017453292 radians. Likewise, 1 radian equals approximately
+  57.29577951°.\footnote{These conversion factors must dispel any
+    mystique attached to radians vis-a-vis degrees.}
 \end{enumerate}
 
 By defining radians as above, we remove the arbitrariness associated
@@ -459,12 +471,12 @@ conferred by radians comes at a cost. The angle of a full circle is
 \(2\pi\), which is a computationally inconvenient number to say the
 least.
 
-If you think about it, with radians the size of an angle is expressed as
-a ratio of two lengths. But we have encountered angles being associated
-with ratios of lengths elsewhere in mathematics as well. Such ratios are
-familiar to us from trigonometry where the \(\sin\), \(\cos\), and
-\(\tan\) functions are expressed as the ratios of lengths in a
-right-angled triangle. We review this relationship next.
+If you think about it, the size of an angle in radians is expressed as a
+\emph{ratio of two lengths}. But we have encountered angles being
+associated with ratios of lengths elsewhere in mathematics as well. Such
+ratios are familiar to us from \emph{trigonometry} where the \(\sin\),
+\(\cos\), and \(\tan\) functions are expressed as the ratios of lengths
+in a right-angled triangle. We review this relationship next.
 
 \hypertarget{trigonometric-functions}{%
 \subsection{Trigonometric functions}\label{trigonometric-functions}}
@@ -495,12 +507,12 @@ The trigonometric functions are also called the \emph{circular}
 trigonometric functions, uniting the circle \emph{and} the triangle as
 their progenitors. We will briefly review that relationship here, to
 better understand not only the terminology but also the hidden
-relationships between the triangle and the circle\footnote{The
+relationships between the triangle and the circle.\footnote{The
   equilateral triangle is the regular \(n\)-gon with the smallest number
   of sides and the circle is the limiting case of an \(n\)-gon when
   \(n\) tends to infinity. The trigonometric functions are the children
   of these unlikely parents, at the extreme ends of the \(n\)-gon
-  spectrum.}.
+  spectrum.}
 
 I used to wonder why the word \emph{tangent} was used for the name of a
 trigonometric function because a circle was not involved in its
@@ -539,6 +551,15 @@ to \cref{fig:trig}, we may say \(\cos\theta = \frac{OC}{OS} = OC\) since
 \emph{\(S\) is therefore the point with coordinates
 \((\cos\theta, \sin\theta)\)}.
 
+Note that since the coordinates of \(S\) are confined to the unit
+circle, the values of \(\sin\theta\) and \(\cos\theta\) are confined to
+the closed interval \([-1, 1]\), i.e.~they perforce have values lying
+between \(-1\) and \(1\), both inclusive. From \cref{fig:unit}, we see
+that \((\cos\theta, \sin\theta)\)---which represent the coordinates of
+\(S\)---take on signed values in accordance with the signs of \(x\) and
+\(y\) in the respective quadrants. One could also view the associated
+\emph{lengths} as signed values.
+
 \hypertarget{the-tangent-function}{%
 \subsubsection{The tangent function}\label{the-tangent-function}}
 
@@ -548,102 +569,178 @@ at \(\tan\theta\). Have you ever wondered why the function
 \emph{tangent} function? Take a look at \cref{fig:unit} to see that the
 line \(DT\) is \emph{tangent} to the circle at the point \((1, 0)\),
 which is \(D\). In this case, \(\tan\theta = \frac{DT}{OD} = DT\) since
-\(OD\) is equal to one unit.
+\(OD\) is a radius equal to one unit.
 
-The value of the tangent function for an angle \(\theta\) may be
-determined geometrically by extrapolating the radius \(OS\) until it
+Therefore, the value of the tangent function for an angle \(\theta\) may
+be determined geometrically by extrapolating the radius \(OS\) until it
 intersects the tangent to the circle at \(D\) at a point called \(T\).
 The length \(DT\) is the value of \(\tan\theta\).
 
-Note that since the coordinates of \(S\) are confined to the unit
-circle, the values of \(\sin\theta\) and \(\cos\theta\) are confined to
-the closed interval \([-1, 1]\), i.e.~they perforce have values lying
-between \(-1\) and \(1\), both inclusive.
-
-However, \(\tan\theta\) is a length \emph{outside the unit circle} and
-is therefore not similarly constrained. Indeed, as \(\theta\) starts
-increasing in the first quadrant of the unit circle, you will notice
-that as \(OS\) approaches the \(y\)-axis and as \(\theta\) approaches
-\(\frac{\pi}{2}\) (or 90°, if you are still attached to degrees), the
-line \(OS\) is increasingly aligned with \(DT\). At
-\(\theta=\frac{\pi}{2}\), \(OS\) is parallel to \(DT\) and
+Note, though, that \(\tan\theta\) is a length \emph{outside the unit
+circle} and is therefore not constrained to take on values between
+\(-1\) and \(1\). Indeed, as \(\theta\) starts increasing in the first
+quadrant of the unit circle, you will notice that as \(OS\) approaches
+the \(y\)-axis and as \(\theta\) approaches \(\frac{\pi}{2}\) (or 90°,
+if you are still attached to degrees), the line \(OS\) is increasingly
+aligned with \(DT\). At \(\theta=\frac{\pi}{2}\), \(OS\) is parallel to
+\(DT\) and
 \href{https://en.wikipedia.org/wiki/The_Ballad_of_East_and_West}{``never
 the twain shall meet''}. Loosely speaking, parallel lines are only
 supposed to ``meet at infinity'' and that is why \(\tan\frac{\pi}{2}\)
-is said to be ``infinite'' at that point. This is why \(\tan\theta\)
-does not assume a finite value at \(\theta=\frac{\pi}{2}\). I find this
-geometric explanation most fulfilling.
+is said to be ``infinite'' at that point. I find this geometric
+explanation---of why \(\tan\theta\) does not assume a finite value at
+\(\theta=\frac{\pi}{2}\)---most fulfilling.
 
-In triangle \(OSC\), note that the hypotenuse \(OS\), being the radius,
-is one unit long. Therefore the length of \(OC\) equals \(\cos\theta\)
-and the length of \(CS\) equals \(\sin\theta\). The point \(T\) denotes
-the intersection of \(OS\) produced and the tangent to the circle at
-\(D\). Given that \(OD\), being a radius, is also one unit long, the
-length \(DT\) is equal to \(\tan\theta\). The fact that \(DT\) is a
-\emph{tangent} to the circle should explain why this function is called
-the \(\tan\).
-
-The simple device of unit radius helps us understand how the \(\cos\)
-and \(\sin\) functions takeo n the are the \(x\) and \(y\) taken on the
-signed \(x\) and \(y\) co-ordinates of \(S\).
-
-\hypertarget{the-signed-trigonometric-functions}{%
-\subsubsection{The signed trigonometric
-functions}\label{the-signed-trigonometric-functions}}
-
-From \cref{fig:unit}, we see that the
-\((\cos\theta, \sin\theta)\)---which represent the coordinates of
-\(S\)---take on signed values in accordance with the signs of \(x\) and
-\(y\) in the respective quadrants. One could also view the associated
-\emph{lengths} as signed values.
-
-For example, when \(\theta\) is in the third quadrant, \(OS\)
+When \(\theta\) is in the third quadrant, for instance, \(OS\)
 extrapolated in the negative direction will not intersect the tangent
-\(DT\) in the negative \(y\) direction. So, the line \(SO\) must be
-produced in the positive \(y\) direction to once more intersect
+\(DT\) in the negative \(y\) direction as they diverge. So, the line
+\(SO\) must be produced in the positive \(y\) direction to once more
 intersect the tangent at \(T\). That explains why tangents of angles in
 the third quadrant are positive.
 
-By moving from triangles to the unit circle, we have enabled the
-trigonometric functions to take on any value between 0 and \(2\pi\)
-radians. Note that when \(\theta = 2\pi\) radians, we cannot really
-distinguish \(\theta\) from \(0\) radians. So, one angle may masquerade
-as another unless we have accounting devices to optionally add \(2n\pi\)
-to angles with the proviso that \(n\) is an integer. And this concept is
-a segue to power series expansions of trigonometric functions, their use
-in calculus, and later on, in Fourier series.
+By moving from triangles to the unit circle on coordinate axes, we have
+enabled \(\theta\) to take on any value between 0 and \(2\pi\) radians.
+The trigonometric functions have been unshackled from the triangle and
+are can take on \emph{any} real number as arguments. The graphs of the
+three standard trigonometric functions are shown in
+\cref{fig:threegraph}.
 
-\hypertarget{power-series-expansions-of-trigonometric-functions}{%
-\subsection{Power series expansions of trigonometric
-functions}\label{power-series-expansions-of-trigonometric-functions}}
+\begin{figure}
+\hypertarget{fig:threegraph}{%
+\centering
+\includegraphics[width=0.9\textwidth,height=\textheight]{images/threegraph.png}
+\caption{Graphs of the three trigonometric functions. Notice how
+\(\sin\) and \(\cos\) are bounded in their values, but \(\tan\) is not.
+There are discontinuities for
+\(\theta=\frac{2n+1}{2}\pi\).}\label{fig:threegraph}
+}
+\end{figure}
 
-This is where the plot thickens.
+Note that when \(\theta = 2\pi\) radians, we cannot really distinguish
+it from \(\theta=0\) radians. So, one angle may masquerade as another
+unless we have accounting devices to optionally add \(2n\pi\) to angles
+with the proviso that \(n\) is an integer. And this concept is a segue
+to power series expansions of trigonometric functions, their use in
+calculus, and later on, in Fourier series.
+
+\hypertarget{power-series-for-trigonometric-functions}{%
+\subsection{Power series for trigonometric
+functions}\label{power-series-for-trigonometric-functions}}
+
+This is where the plot really thickens.
 
 Both the statements \(\sin(30°)=0.5\) and \(\sin(\frac{\pi}{6})=0.5\)
 are factually correct and perfectly acceptable. We will not be
-committing any mathematical heresies through either statement.
+committing any mathematical heresies through either
+statement.\footnote{Note that while it is mandatory to affix the degree
+  sign as a superscript, radians being pure numbers do not require any
+  special identification.}
 
-But there are some infinite series expansions or power series expansions
-for the trigonometric functions in which an argument in degrees would be
-inadmissible. It is after we cross this threshold in mathematics that
-radians truly come into their own, and after which there is ``no going
-back to the old ways''.
+But it is possible to express trigonometric functions in terms of power
+series in which an argument in degrees would be inadmissible. It is only
+after we cross this threshold in mathematics that radians truly come
+into their own, and after which there is ``no going back to the old
+ways''.
 
-The Taylor and Maclaurin series for \(\sin\theta\) are given below:
+I will now do a bit of hand-waving and say that it has been
+proved\footnote{Search the web for Taylor Series or Maclaurin series,
+  thinking of it as a treasure hunt and enrich yourself with that
+  knowledge!} that:
 
-\(\sin \theta \approx \theta\) for \(\theta\) close to zero. The number
-on the left hand side is a unitless ratio of lengths or ``pure'' number.
-This requires the right hand side to also be expressed in a similar
-unitless measure, and radians fits the bill.
+\begin{equation}\protect\hypertarget{eq:sineseries}{}{
+\sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \frac{\theta^7}{7!} + \cdots
+}\label{eq:sineseries}\end{equation}
 
-When we deal with trigonometric functions in calculus or when applying
-Fourier series, we will fully realize the boon conferred by the unitless
-radians as an angular measure since they will be compatible with the
-other \emph{pure numbers} (real or complex) that we will be dealing
-with.
+where the dots at the end of \cref{eq:sineseries} tell us to imagine
+that this series \emph{never ends but goes on forever} following the
+pattern shown.
 
-\hypertarget{acknowledgements}{%
-\subsection{Acknowledgements}\label{acknowledgements}}
+Recall that if a number is less than one, raising it to a power greater
+than one makes it smaller than it originally was. So, when \(\theta\) is
+very close to zero, the higher powers on the right hand side of
+\cref{eq:sineseries} become smaller and smaller, and may be ignored
+without much loss in accuracy. In this case, we may assert that:
+
+\begin{equation}\protect\hypertarget{eq:sinesmalltheta}{}{
+\sin\theta\approx\theta \:\text{for}\: \lvert\theta\rvert \to 0.
+}\label{eq:sinesmalltheta}\end{equation}
+
+In English this expression means that for vanishingly small values of
+\(\theta\)---whether positive or negative---\(\sin\theta\) is
+approximately equal to \(\theta\).
+
+From \cref{fig:trig} we know that the number on the left hand side of
+\cref{eq:sinesmalltheta} is a unitless ratio of two lengths and thus a
+``pure'' number. This requires the right hand side to also be expressed
+in a similar unitless measure, and radians fits the bill.
+
+This may also be seen from \cref{fig:xsinx} where the closeness of the
+curve \(f(\theta) = \theta\) and \(f(\theta) = \sin\theta\) near the
+origin is evident. Indeed, right up to a value of
+\(\lvert\theta\rvert\approx 0.3\), the two curves track each other
+closely.
+
+\begin{figure}
+\hypertarget{fig:xsinx}{%
+\centering
+\includegraphics[width=0.9\textwidth,height=\textheight]{images/xsinx.png}
+\caption{A graph of \(\sin\theta\) versus \(\theta\) and \(\theta\)
+versus \(\theta\) for \(\lvert\theta\rvert\approx 0\).}\label{fig:xsinx}
+}
+\end{figure}
+
+We have seen the graphical demonstration of the validity of
+\cref{eq:sinesmalltheta}. Let us now illustrate the reasonableness of
+that equation by evaluation. Set \(\theta\) to \(0.005\) radians, which
+is a small value close to zero. Then
+\(\sin\theta = \sin(0.005) = 0.004999979167\), which demonstrates the
+validity of \cref{eq:sinesmalltheta}. however, if one were to interpret
+the number 0.005 as degrees rather than radians, we then have
+\(\sin(0.005°) = 0.00008726646249\) which is almost \(57\) times smaller
+than the number 0.005.
+
+The moral of this example is that when we evaluate trigonometric
+functions in degrees in the context of their power series, we must apply
+a correction factor of \(\frac{\pi}{180}\) to implicitly convert
+\emph{each term} to radians. This is a layer of complexity we may easily
+avoid by using radians on both sides of the equation.
+
+We will close with one more example where radians make mathematical life
+much easier.
+
+\hypertarget{eulers-formula-and-identity}{%
+\subsubsection{Euler's formula and
+identity}\label{eulers-formula-and-identity}}
+
+The prodigiously productive Swiss mathematician, gave us man equations,
+one of which is known as Euler's formula, shown below:
+\begin{equation}\protect\hypertarget{eq:euler}{}{
+e^{i\theta} = \cos\theta + i\sin\thetaθ
+}\label{eq:euler}\end{equation} The letter \(i\) is called the
+\href{https://en.wikipedia.org/wiki/Imaginary_unit}{imaginary unit} and
+its definition is \(i^{2} = -1\). It takes us into the
+\href{https://en.wikipedia.org/wiki/Complex_number}{field of complex
+numbers}. It has been proved that
+\href{https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra}{all
+non-constant, polynomials with complex coefficients contain at least one
+complex root}.
+
+When we substitute \(\theta=\pi\) into \cref{eq:euler}, and transpose
+terms, we get what is called Euler's identity:
+\begin{equation}\protect\hypertarget{eq:euleridentity}{}{
+\begin{aligned}
+e^{i\pi} &= \cos\pi + i\sin\pi\\
+e^{i\pi} + 1 &= 0\\
+\end{aligned}
+}\label{eq:euleridentity}\end{equation}
+
+\cref{eq:euleridentity} has been described as the most poetic equation
+in all of mathematics as it
+\href{https://www.livescience.com/51399-eulers-identity.html}{unites in
+one equation the five most fundamental entities in all of mathematics},
+\(e, i, \pi, 1\) and \(0\). And it could not have come about without
+radians. With that epiphany on beauty, we shall conclude our tale of two
+measures.
 
 \hypertarget{feedback}{%
 \subsection{Feedback}\label{feedback}}
