@@ -123,7 +123,7 @@ Note that since the coordinates of $S$ are confined to the unit circle, the valu
 
 ### The tangent function
 
-The really insightful revelation from @fig:unit comes from looking at $\tan\theta$. Have you ever wondered why the function $\tan\theta = \frac{\sin\theta}{\cos\theta}$ is called the _tangent_ function? Take a look at @fig:unit to see that the line $DT$ is _tangent_ to the circle at the point $(1, 0)$, which is $D$. In this case, $\tan\theta = \frac{DT}{OD} = DT$ since $OD$ is equal to one unit.
+The really insightful revelation from @fig:unit comes from looking at $\tan\theta$. Have you ever wondered why the function $\tan\theta = \frac{\sin\theta}{\cos\theta}$ is called the _tangent_ function? Take a look at @fig:unit to see that the line $DT$ is _tangent_ to the circle at the point $(1, 0)$, which is $D$. In this case, $\tan\theta = \frac{DT}{OD} = DT$ since $OD$ is a radius equal to one unit.
 
 Therefore, the value of the tangent function for an angle $\theta$ may be determined geometrically by extrapolating the radius $OS$ until it intersects the tangent to the circle at $D$ at a point called $T$. The length $DT$ is the value of $\tan\theta$.
 
@@ -131,13 +131,15 @@ Note, though, that $\tan\theta$ is a length _outside the unit circle_ and is the
 
 When $\theta$ is in the third quadrant, for instance, $OS$ extrapolated in the negative direction will not intersect the tangent $DT$ in the negative $y$ direction as they diverge. So, the line $SO$ must be produced in the positive $y$ direction to once more intersect the tangent at $T$. That explains why tangents of angles in the third quadrant are positive.
 
-By moving from triangles to the unit circle on coordinate axes, we have enabled $\theta$ to take on any value between 0 and $2\pi$ radians.
+By moving from triangles to the unit circle on coordinate axes, we have enabled $\theta$ to take on any value between 0 and $2\pi$ radians. The trigonometric functions have been unshackled from the triangle and are can take on _any_ real number as arguments. The graphs of the three standard trigonometric functions are shown in FigureTTTT.
+
+Figure TTTT.
 
 Note that when  $\theta = 2\pi$ radians, we cannot really distinguish it from $\theta=0$ radians. So, one angle may masquerade as another unless we have accounting devices to optionally add $2n\pi$ to angles with the proviso that $n$ is an integer. And this concept is a segue to power series expansions of trigonometric functions, their use in calculus, and later on, in Fourier series.
 
 ## Power series for trigonometric functions
 
-This is where the plot thickens.
+This is where the plot really thickens.
 
 Both the statements $\sin(30°)=0.5$ and $\sin(\frac{\pi}{6})=0.5$ are factually correct and perfectly acceptable. We will not be committing any mathematical heresies through either statement.^[Note that while it is mandatory to affix the degree sign as a superscript, radians being pure numbers do not require any special identification.]
 
@@ -164,6 +166,8 @@ From @fig:trig we know that the number on the left hand side of @eq:sinesmallthe
 Let us illustrate the reasonableness of @eq:sinesmalltheta. Set $\theta$ to $0.005$ radians, which is a small value close to zero. Then $\sin\theta = \sin(0.005) = 0.004999979167, which demonstrates the validity of @eq:sinesmalltheta. however, if one were to interpret the number 0.005 as degrees rather than radians, we then have $\sin(0.005°) = 0.00008726646249$ which is almost $57$ times smaller than the number 0.005.
 
 The moral of this example is that when we evaluate trigonometric functions in degrees in the context of their power series, we must apply a correction factor of $\frac{\pi}{180}$ to implicitly convert _each term_ to radians. This is a layer of complexity we may easily avoid by using radians on both sides of the equation.
+
+Diagram of why sin theta approx theta with arc and opposite side of triangle.
 
 
 <!--https://en.wikipedia.org/wiki/Small-angle_approximation-->
