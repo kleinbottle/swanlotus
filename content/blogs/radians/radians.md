@@ -177,7 +177,7 @@ We will close with one more example where radians make mathematical life much ea
 
 The prodigiously productive Swiss mathematician, gave us man equations, one of which is known as Euler's formula, shown below:
 $$
-e^{i\theta} = \cos\theta + i\sin\thetaθ
+e^{i\theta} = \cos\theta + i\sin\theta
 $${#eq:euler}
 The letter $i$ is called the [imaginary unit](https://en.wikipedia.org/wiki/Imaginary_unit) and its definition is $i^{2} = -1$. It takes us into the [field of complex numbers](https://en.wikipedia.org/wiki/Complex_number). It has been proved that [all non-constant, polynomials with complex coefficients contain at least one complex root](https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra).
 
