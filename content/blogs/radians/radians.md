@@ -13,13 +13,15 @@ The transition from degrees to radians is often the most traumatic mathematical 
 
 ## What is an angle?
 
-We first came across the idea of an _angle_ when we studied geometry in elementary or primary school. We then encountered _triangles_, which are closed figures with three straight sides and three enclosed angles. An _equilateral triangle_ is particularly symmetric, with three equal sides and three equal angles, as shown in @fig:equilateral.
+For most of us, the idea of an _angle_ first arose when we studied geometry in elementary or primary school. We then encountered _triangles_, which are closed figures with three straight sides and three enclosed angles. An _equilateral triangle_ is particularly symmetric, with three equal sides and three equal angles, as shown in @fig:equilateral.
 
-![An equilateral triangle is one in which the three sides are equal. The points at which the lines meet to form the triangle are called _vertices_ (singular _vertex_). By convention, vertices are labelled with uppercase letters like $A$, $B$, and $C$. The lengths of the sides opposite the vertices are assigned the lowercase labels $a$, $b$, and $c$ respectively. The angles are here labelled $\alpha$, $\beta$, and $\gamma$. In this triangle, $a = b = c$, by definition, and by symmetry, $\alpha = \beta = \gamma$.]({attach}images/equilateral.png){#fig:equilateral width=75% .modal-target}
+![An equilateral triangle is one in which the three sides and three angles are equal. ]({attach}images/equilateral.png){#fig:equilateral width=75% .modal-target}
+
+The point at which a line meets another line is called a _vertex_, which has the sense of a ["turning point"](https://www.etymonline.com/search?q=vertex). By convention, vertices (plural of vertex) are labelled with uppercase letters like $A$, $B$, and $C$. The lengths of the sides opposite the vertices are assigned the lowercase labels $a$, $b$, and $c$ respectively. The angles have been  labelled with the Greek letters $\alpha$, $\beta$, and $\gamma$. For all equilateral triangles, $a = b = c$, by definition, and by symmetry, $\alpha = \beta = \gamma$.
 
 ## Degrees
 
-When we started on geometry, we would proudly trot out our set of mathematical instruments, which would include a pair of compasses, a protractor, one or two set squares, and a ruler or straight edge. Of these, the protractor---that plastic semi-circle marked out in _degrees_---was the proud badge that proclaimed that we had left behind arithmetic and progressed onto geometry.
+On encountering geometry, we very likely proudly trotted out our set of mathematical instruments, which would include a pair of compasses, a protractor, one or two set squares, and a ruler or straight edge. Of these, the protractor---that plastic semi-circle marked out in _degrees_---was the proud badge that proclaimed that we had left behind arithmetic and progressed onto geometry.
 
 After we had learned to construct an equilateral triangle, using only compasses and a straight edge---_without measurement_ by ruler---we would take out the protractor to verify that each angle of an equilateral triangle was indeed 60°. That small circle ° at the top---the superscript---was called the _degree sign_, and we could then jubilantly celebrate our first rite of passage into geometry and mathematical symbols.
 
@@ -35,7 +37,7 @@ But beyond the approximation of a solar year, and the convenience of ready divis
 
 ## From triangles to circles
 
-What is the root concept behind the idea of an angle? Harking back to the equilateral triangle, when one line _changes direction_ by sixty degrees, we get the second line. These two lines form the angle. Change of direction may also be called _turning_. And when something turns, we may also say that it _rotates_.
+What is the root concept behind the idea of an angle? Harking back to etymology of the word vertex---and applying it to the equilateral triangle---when one line _changes direction_ by sixty degrees, we get the second line. These two lines form the angle. Change of direction may also be called _turning_ or _rotation_.
 
 The quintessential two-dimensional geometric figure that is associated with rotation is of course the _circle_. It is the most simple and symmetrical two-dimensional figure we can construct. It is the path or _locus_ traced out by a point that remains the _same_ distance from a fixed point called the _centre_. When a protractor is centred on the centre of a circle, we can measure out degrees on the circumference of the circle. So far so good. But what about that magic number 360? Well, we are about to exorcise it now. \emojifont :wink: \normalfont
 
@@ -45,7 +47,7 @@ One traumatic transition for the student of elementary mathematics is when he or
 
 ### Using circles to measure angles
 
-Because the idea of an angle is related to rotation, it seems natural that we should define angles using the circle as a basis, rather the triangles that we encountered at first.
+Because the idea of an angle is related to rotation, it seems natural that we should define angles using the circle as a basis, rather than the triangles that we encountered at first.
 
 It is a fact that the length of a circle, or its _perimeter_, or its _circumference_, $C$, is always related to its radius, $r$, through the formula $C = 2\pi r$.
 
