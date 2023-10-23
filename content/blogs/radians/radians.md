@@ -173,16 +173,23 @@ The moral of this example is that when we evaluate trigonometric functions in de
 
 ### Fourier series
 
-Periodic waveforms repeat themselves indefinitely. The sinusoids---trigonometric functions like $\sin$ and $\cos$ are one such example.
+Periodic waveforms repeat themselves indefinitely. The sinusoids, which are trigonometric functions like $\sin$ and $\cos$ are one such example. Such waveforms arise frequently in signal analysis and synthesis in electrical engineering. In that context, the independent variable is _time_.
 
-Such waveforms arise frequently in signal analysis and synthesis in electrical engineering. In that context, the independent variable is _time_. Let the original signal be a square waveform denoted by the function $s(t)$ in @fig:squarefourier. Imagine that the single cycle of the square wave is repeated periodically forever.
+A _periodic function_ [with certain properties](https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Signal_Processing_and_Modeling/Signals_and_Systems_(Baraniuk_et_al.)/06%3A_Continuous_Time_Fourier_Series_(CTFS)/6.06%3A_Convergence_of_Fourier_Series) may represented by an infinite sum of sinusoids.
+
+For example, let the original signal be a square waveform denoted by the function $s(t)$ in @fig:squarefourier. Imagine that the single cycle of the square wave is repeated periodically forever.
+
+![A square waveform $s(t)$ and the sequential sums of its first four terms.]({attach}images/squarefourier.png){#fig:squarefourier width=80% .modal-target}
 
 The Fourier series representation of the square wave $s(t)$ is given by:
 $$
-s(t) = 0.5 + \frac{2}{\pi}\left[\sin(t) + \frac{\sin(3t)}{3} + \frac{\sin(5t)}{5} +  \frac{\sin(7t)} {7} + \cdots
-$${#fig:squarefourier}
+s(t) = \frac{2}{\pi}\left[\sin(t) + \frac{\sin(3t)}{3} + \frac{\sin(5t)}{5} +  \frac{\sin(7t)} {7} + \cdots
+$${#eq:squarefourier}
+where again, the dots mean that the pattern repeats forever.
 
+On the surface, @eq:squarefourier seems a remarkable claim. How could a square wave with right angle corners be the result of sums of sine waves which have no corners? The answer is that the series goes on forever, "infinity confers the equality".
 
+Where do radians feature here? As with the power series for the sine function, it is on the right hand side where the variable $t$ should be expressed in radians. Note that while $t$ may have units of time, the fact that radians are unitless does not intrude into the equation as an extraneous factor.
 
 The [Fourier series](https://mathworld.wolfram.com/FourierSeries.html) for such a square waveform is an infinite sum of sinusoids that collectively represent the waveform. This might seem like a tall order but it is nevertheless true.
 
