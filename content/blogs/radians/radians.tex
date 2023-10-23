@@ -201,7 +201,7 @@
 
 \title{A tale of two measures: degrees and radians}
 \author{R (Chandra) Chandrasekhar}
-\date{2023-10-17 | 2023-10-22}
+\date{2023-10-17 | 2023-10-23}
 
 \begin{document}
 \maketitle
@@ -702,8 +702,62 @@ than the number 0.005.
 The moral of this example is that when we evaluate trigonometric
 functions in degrees in the context of their power series, we must apply
 a correction factor of \(\frac{\pi}{180}\) to implicitly convert
-\emph{each term} to radians. This is a layer of complexity we may easily
-avoid by using radians on both sides of the equation.
+\emph{each term} to radians. This is a layer of bookkeeping we may
+easily avoid by using radians on both sides of the equation.
+
+\hypertarget{fourier-series}{%
+\subsubsection{Fourier series}\label{fourier-series}}
+
+Periodic waveforms repeat themselves indefinitely. The sinusoids, which
+are trigonometric functions like \(\sin\) and \(\cos\) are one such
+example. Such waveforms arise frequently in signal analysis and
+synthesis in electrical engineering. In that context, the independent
+variable is \emph{time}.
+
+A \emph{periodic function}
+\href{https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Signal_Processing_and_Modeling/Signals_and_Systems_(Baraniuk_et_al.)/06\%3A_Continuous_Time_Fourier_Series_(CTFS)/6.06\%3A_Convergence_of_Fourier_Series}{with
+certain properties} may represented by an infinite sum of sinusoids.
+
+For example, let the original signal be a square waveform denoted by the
+function \(s(t)\) in \cref{fig:squarefourier}. Imagine that the single
+cycle of the square wave is repeated periodically forever.
+
+\begin{figure}
+\hypertarget{fig:squarefourier}{%
+\centering
+\includegraphics[width=0.8\textwidth,height=\textheight]{images/squarefourier.png}
+\caption{A square waveform \(s(t)\) and the sequential sums of its first
+four terms.}\label{fig:squarefourier}
+}
+\end{figure}
+
+The \href{https://mathworld.wolfram.com/FourierSeries.html}{Fourier
+series} for such a square waveform is an infinite sum of sinusoids that
+collectively represent the waveform. This might seem like a tall order
+but it is nevertheless true. The Fourier series representation of the
+square wave \(s(t)\) is given by:
+\begin{equation}\protect\hypertarget{eq:squarefourier}{}{
+s(t) = \frac{2}{\pi}\left[\sin(t) + \frac{\sin(3t)}{3} + \frac{\sin(5t)}{5} +  \frac{\sin(7t)} {7} + \cdots\right]
+}\label{eq:squarefourier}\end{equation} where again, the dots mean that
+the pattern repeats forever.
+
+The successive partial sums of the right hand side of
+\cref{eq:squarefourier} are denoted as \(s_1(t)\), \(s_2(t)\), etc.,
+denoting the first term, the sum of the first and second term etc. It is
+evident that the more terms we add, the better the match between the
+original signal and its approximation, denoted generically by \(s_*(t)\)
+in the graph..
+
+On the surface, \cref{eq:squarefourier} seems a remarkable claim. How
+could a square wave with right angle corners be the result of sums of
+sine waves which have no corners? The answer is that the series goes on
+forever, ``infinity confers the equality''.
+
+Where do radians feature here? As with the power series for the sine
+function, it is on the right hand side where the variable \(t\) should
+be expressed in radians. Note that while \(t\) may have units of time,
+the fact that radians are unitless does not intrude into the equation as
+an extraneous factor.
 
 We will close with one more example where radians make mathematical life
 much easier.
@@ -712,21 +766,22 @@ much easier.
 \subsubsection{Euler's formula and
 identity}\label{eulers-formula-and-identity}}
 
-The prodigiously productive Swiss mathematician, gave us man equations,
-one of which is known as Euler's formula, shown below:
-\begin{equation}\protect\hypertarget{eq:euler}{}{
+The prodigiously productive Swiss mathematician,
+\href{https://www.britannica.com/biography/Leonhard-Euler}{Leonhard
+Euler}, gave us many equations, one of which is known as \emph{Euler's
+formula}, shown below: \begin{equation}\protect\hypertarget{eq:euler}{}{
 e^{i\theta} = \cos\theta + i\sin\theta
 }\label{eq:euler}\end{equation} The letter \(i\) is called the
 \href{https://en.wikipedia.org/wiki/Imaginary_unit}{imaginary unit} and
 its definition is \(i^{2} = -1\). It takes us into the
 \href{https://en.wikipedia.org/wiki/Complex_number}{field of complex
-numbers}. It has been proved that
-\href{https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra}{all
-non-constant, polynomials with complex coefficients contain at least one
-complex root}.
+numbers}\footnote{\href{https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra}{The
+  Fundamental Theorem of Algebra} states that all non-constant,
+  polynomials with complex coefficients contain at least one complex
+  root, to express which \(i\) is necessary.}.
 
 When we substitute \(\theta=\pi\) into \cref{eq:euler}, and transpose
-terms, we get what is called Euler's identity:
+terms, we get what is called \emph{Euler's identity}:
 \begin{equation}\protect\hypertarget{eq:euleridentity}{}{
 \begin{aligned}
 e^{i\pi} &= \cos\pi + i\sin\pi\\
@@ -737,10 +792,10 @@ e^{i\pi} + 1 &= 0\\
 \cref{eq:euleridentity} has been described as the most poetic equation
 in all of mathematics as it
 \href{https://www.livescience.com/51399-eulers-identity.html}{unites in
-one equation the five most fundamental entities in all of mathematics},
-\(e, i, \pi, 1\) and \(0\). And it could not have come about without
-radians. With that epiphany on beauty, we shall conclude our tale of two
-measures.
+one equation the five most fundamental quantities in all of
+mathematics}, \(e, i, \pi, 1\) and \(0\). And it could not have come
+about without radians. With that epiphany on beauty, we shall conclude
+our tale of two measures.
 
 \hypertarget{feedback}{%
 \subsection{Feedback}\label{feedback}}
