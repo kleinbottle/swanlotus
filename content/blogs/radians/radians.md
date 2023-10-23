@@ -169,13 +169,20 @@ This may also be seen from @fig:xsinx where the closeness of the curve $f(\theta
 
 We have seen the graphical demonstration of the validity of @eq:sinesmalltheta. Let us now illustrate the reasonableness of that equation by evaluation. Set $\theta$ to $0.005$ radians, which is a small value close to zero. Then $\sin\theta = \sin(0.005) = 0.004999979167$, which demonstrates the validity of @eq:sinesmalltheta. however, if one were to interpret the number 0.005 as degrees rather than radians, we then have $\sin(0.005°) = 0.00008726646249$ which is almost $57$ times smaller than the number 0.005.
 
-The moral of this example is that when we evaluate trigonometric functions in degrees in the context of their power series, we must apply a correction factor of $\frac{\pi}{180}$ to implicitly convert _each term_ to radians. This is a layer of complexity we may easily avoid by using radians on both sides of the equation.
-
-
+The moral of this example is that when we evaluate trigonometric functions in degrees in the context of their power series, we must apply a correction factor of $\frac{\pi}{180}$ to implicitly convert _each term_ to radians. This is a layer of bookkeeping we may easily avoid by using radians on both sides of the equation.
 
 ### Fourier series
 
-Periodic waveforms repeat themselves indefinitely. The sinusoids---trigonometric functions like $\sin$ and $\cos$ are one such example. The square wave, illustrated in in @fig:square is another periodic waveform.
+Periodic waveforms repeat themselves indefinitely. The sinusoids---trigonometric functions like $\sin$ and $\cos$ are one such example.
+
+Such waveforms arise frequently in signal analysis and synthesis in electrical engineering. In that context, the independent variable is _time_. Let the original signal be a square waveform denoted by the function $s(t)$ in @fig:squarefourier. Imagine that the single cycle of the square wave is repeated periodically forever.
+
+The Fourier series representation of the square wave $s(t)$ is given by:
+$$
+s(t) = 0.5 + \frac{2}{\pi}\left[\sin(t) + \frac{\sin(3t)}{3} + \frac{\sin(5t)}{5} +  \frac{\sin(7t)} {7} + \cdots
+$${#fig:squarefourier}
+
+
 
 The [Fourier series](https://mathworld.wolfram.com/FourierSeries.html) for such a square waveform is an infinite sum of sinusoids that collectively represent the waveform. This might seem like a tall order but it is nevertheless true.
 
