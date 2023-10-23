@@ -193,7 +193,7 @@ The prodigiously productive Swiss mathematician, [Leonhard Euler](https://www.br
 $$
 e^{i\theta} = \cos\theta + i\sin\theta
 $${#eq:euler}
-The letter $i$ is called the [imaginary unit](https://en.wikipedia.org/wiki/Imaginary_unit) and its definition is $i^{2} = -1$. It takes us into the [field of complex numbers](https://en.wikipedia.org/wiki/Complex_number)^[[The fundamental theorem of algebra] (https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra) states that  all non-constant, polynomials with complex coefficients contain at least one complex root, to express which $i$ is necessary.].
+The letter $i$ is called the [imaginary unit](https://en.wikipedia.org/wiki/Imaginary_unit) and its definition is $i^{2} = -1$. It takes us into the [field of complex numbers](https://en.wikipedia.org/wiki/Complex_number)^[[The Fundamental Theorem of Algebra](https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra) states that  all non-constant, polynomials with complex coefficients contain at least one complex root, to express which $i$ is necessary.].
 
 When we substitute $\theta=\pi$ into @eq:euler, and transpose terms, we get what is called _Euler's identity_:
 $$
