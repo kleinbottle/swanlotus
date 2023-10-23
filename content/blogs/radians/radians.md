@@ -173,33 +173,25 @@ The moral of this example is that when we evaluate trigonometric functions in de
 
 ### Fourier series
 
-Periodic waveforms repeat themselves indefinitely. The sinusoids, which are trigonometric functions like $\sin$ and $\cos$ are one such example. Such waveforms arise frequently in signal analysis and synthesis in electrical engineering. In that context, the independent variable is _time_.
+Periodic waveforms repeat themselves indefinitely. The sinusoids---which are trigonometric functions like $\sin$ and $\cos$---are one such example. Such waveforms arise frequently in signal analysis and synthesis in electrical engineering. In that context, the independent variable is _time_.
 
 A _periodic function_ [with certain properties](https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Signal_Processing_and_Modeling/Signals_and_Systems_(Baraniuk_et_al.)/06%3A_Continuous_Time_Fourier_Series_(CTFS)/6.06%3A_Convergence_of_Fourier_Series) may represented by an infinite sum of sinusoids.
 
 For example, let the original signal be a square waveform denoted by the function $s(t)$ in @fig:squarefourier. Imagine that the single cycle of the square wave is repeated periodically forever.
 
-![A square waveform $s(t)$ and the sequential sums of its first four terms.]({attach}images/squarefourier.png){#fig:squarefourier width=80% .modal-target}
+![A square waveform $s(t)$ and the sequential sums of its first four terms.]({attach}images/squarefourier.png){#fig:squarefourier width=85% .modal-target}
 
 The [Fourier series](https://mathworld.wolfram.com/FourierSeries.html) for such a square waveform is an infinite sum of sinusoids that collectively represent the waveform. This might seem like a tall order but it is nevertheless true. The Fourier series representation of the square wave $s(t)$ is given by:
 $$
 s(t) = \frac{2}{\pi}\left[\sin(t) + \frac{\sin(3t)}{3} + \frac{\sin(5t)}{5} +  \frac{\sin(7t)} {7} + \cdots\right]
 $${#eq:squarefourier}
-where again, the dots mean that the pattern repeats forever.
+where again, the dots mean that the pattern repeats forever. Note that this is no approximation, but an equality.
 
-The successive partial sums of the right hand side of @eq:squarefourier are denoted as $s_1(t)$, $s_2(t)$, etc., denoting the first term, the sum of the first and second term etc. It is evident that the more terms we add, the better the match between the original signal and its approximation, denoted generically by $s_*(t)$ in the graph..
+The successive partial sums of the right hand side of @eq:squarefourier are denoted as $s_1(t)$, $s_2(t)$, etc., denoting the first term, the sum of the first and second term etc. It is evident from @fig:squarefourier that the more terms we add, the better the match between the original signal and its approximation, denoted generically by $s_*(t)$ in the graph.
 
-On the surface, @eq:squarefourier seems a remarkable claim. How could a square wave with right angle corners be the result of sums of sine waves which have no corners? The answer is that the series goes on forever, "infinity confers the equality".
+On the surface, @eq:squarefourier seems a remarkable claim. How could a square wave with right angle corners be the result of sums of sine waves which have no corners? The answer lies in the fact that the series goes on forever and "infinity confers the equality".
 
 Where do radians feature here? As with the power series for the sine function, it is on the right hand side where the variable $t$ should be expressed in radians. Note that while $t$ may have units of time, the fact that radians are unitless does not intrude into the equation as an extraneous factor.
-
-
-
-
-
-
-
-
 
 We will close with one more example where radians make mathematical life much easier.
 
@@ -219,7 +211,13 @@ e^{i\pi} + 1 &= 0\\
 \end{aligned}
 $${#eq:euleridentity}
 
-@eq:euleridentity has been described as the most poetic equation in all of mathematics as it [unites in one equation the five most fundamental quantities in all of mathematics](https://www.livescience.com/51399-eulers-identity.html), $e, i, \pi, 1$ and $0$. And it could not have come about without radians. With that epiphany on beauty, we shall conclude our tale of two measures.
+@eq:euleridentity has been described as the most poetic equation in all of mathematics as it [unites in one equation the five most fundamental quantities in all of mathematics](https://www.livescience.com/51399-eulers-identity.html), $e, i, \pi, 1$ and $0$. And it could not have come about without radians. With that [epiphany](https://www.thefreedictionary.com/epiphany) on beauty, we shall conclude our tale of two measures.
+
+## Acknowledgements
+
+All illustrations in this blog were generated using the [TikZ-PGF]() package under LaTeX. To the authors of that package and of its numerous illustrations on its usage, my humble gratitude.
+
+For #fig:squarefourier, I have especially drawn upon and modified the [example of caverac](https://tex.stackexchange.com/a/429505/1636) at the [TeX StackEexchange](https://tex.stackexchange.com/) forum.
 
 ## Feedback
 

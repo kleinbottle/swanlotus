@@ -708,8 +708,8 @@ easily avoid by using radians on both sides of the equation.
 \hypertarget{fourier-series}{%
 \subsubsection{Fourier series}\label{fourier-series}}
 
-Periodic waveforms repeat themselves indefinitely. The sinusoids, which
-are trigonometric functions like \(\sin\) and \(\cos\) are one such
+Periodic waveforms repeat themselves indefinitely. The sinusoids---which
+are trigonometric functions like \(\sin\) and \(\cos\)---are one such
 example. Such waveforms arise frequently in signal analysis and
 synthesis in electrical engineering. In that context, the independent
 variable is \emph{time}.
@@ -725,7 +725,7 @@ cycle of the square wave is repeated periodically forever.
 \begin{figure}
 \hypertarget{fig:squarefourier}{%
 \centering
-\includegraphics[width=0.8\textwidth,height=\textheight]{images/squarefourier.png}
+\includegraphics[width=0.85\textwidth,height=\textheight]{images/squarefourier.png}
 \caption{A square waveform \(s(t)\) and the sequential sums of its first
 four terms.}\label{fig:squarefourier}
 }
@@ -739,19 +739,20 @@ square wave \(s(t)\) is given by:
 \begin{equation}\protect\hypertarget{eq:squarefourier}{}{
 s(t) = \frac{2}{\pi}\left[\sin(t) + \frac{\sin(3t)}{3} + \frac{\sin(5t)}{5} +  \frac{\sin(7t)} {7} + \cdots\right]
 }\label{eq:squarefourier}\end{equation} where again, the dots mean that
-the pattern repeats forever.
+the pattern repeats forever. Note that this is no approximation, but an
+equality.
 
 The successive partial sums of the right hand side of
 \cref{eq:squarefourier} are denoted as \(s_1(t)\), \(s_2(t)\), etc.,
 denoting the first term, the sum of the first and second term etc. It is
-evident that the more terms we add, the better the match between the
-original signal and its approximation, denoted generically by \(s_*(t)\)
-in the graph..
+evident from \cref{fig:squarefourier} that the more terms we add, the
+better the match between the original signal and its approximation,
+denoted generically by \(s_*(t)\) in the graph.
 
 On the surface, \cref{eq:squarefourier} seems a remarkable claim. How
 could a square wave with right angle corners be the result of sums of
-sine waves which have no corners? The answer is that the series goes on
-forever, ``infinity confers the equality''.
+sine waves which have no corners? The answer lies in the fact that the
+series goes on forever and ``infinity confers the equality''.
 
 Where do radians feature here? As with the power series for the sine
 function, it is on the right hand side where the variable \(t\) should
@@ -794,8 +795,20 @@ in all of mathematics as it
 \href{https://www.livescience.com/51399-eulers-identity.html}{unites in
 one equation the five most fundamental quantities in all of
 mathematics}, \(e, i, \pi, 1\) and \(0\). And it could not have come
-about without radians. With that epiphany on beauty, we shall conclude
-our tale of two measures.
+about without radians. With that
+\href{https://www.thefreedictionary.com/epiphany}{epiphany} on beauty,
+we shall conclude our tale of two measures.
+
+\hypertarget{acknowledgements}{%
+\subsection{Acknowledgements}\label{acknowledgements}}
+
+All illustrations in this blog were generated using the
+\href{}{TikZ-PGF} package under LaTeX. To the authors of that package
+and of its numerous illustrations on its usage, my humble gratitude.
+
+For \#fig:squarefourier, I have especially drawn upon and modified the
+\href{https://tex.stackexchange.com/a/429505/1636}{example of caverac}
+at the \href{https://tex.stackexchange.com/}{TeX StackEexchange} forum.
 
 \hypertarget{feedback}{%
 \subsection{Feedback}\label{feedback}}
