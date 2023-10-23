@@ -2,7 +2,7 @@
 title: "A tale of two measures: degrees and radians"
 author: R (Chandra) Chandrasekhar
 date: 2023-10-17
-modified: 2023-10-22
+modified: 2023-10-23
 category: Mathematics
 tags: Mathematics, Mathematical musings
 summary: 'The transition from degrees to radians is often the most traumatic mathematical change that the student has to endure when moving from elementary to intermediate mathematics. The simplicity of 360° seems so much more welcoming than the equivalent of $2\pi$ radians for a full circle. $\pi$ is forbidding, because it is not [the convenient fractional fiction $\frac{22}{7}$](https://en.wikipedia.org/wiki/Proof_that_22/7_exceeds_%CF%80), but rather a number which is both [transcendental](https://mathworld.wolfram.com/TranscendentalNumber.html) and [irrational](https://en.wikipedia.org/wiki/Irrational_number) and therefore, somewhat "untidy". Surely this tradeoff between simplicity and complexity must have been worth it, or it would not have been so ordained. Here we attempt to fathom the method behind the madness for this change.'
@@ -171,17 +171,31 @@ We have seen the graphical demonstration of the validity of @eq:sinesmalltheta. 
 
 The moral of this example is that when we evaluate trigonometric functions in degrees in the context of their power series, we must apply a correction factor of $\frac{\pi}{180}$ to implicitly convert _each term_ to radians. This is a layer of complexity we may easily avoid by using radians on both sides of the equation.
 
+
+
+### Fourier series
+
+Periodic waveforms repeat themselves indefinitely. The sinusoids---trigonometric functions like $\sin$ and $\cos$ are one such example. The square wave, illustrated in in @fig:square is another periodic waveform.
+
+The [Fourier series](https://mathworld.wolfram.com/FourierSeries.html) for such a square waveform is an infinite sum of sinusoids that collectively represent the waveform. This might seem like a tall order but it is nevertheless true.
+
+
+
+
+
+
+
 We will close with one more example where radians make mathematical life much easier.
 
 ### Euler's formula and identity
 
-The prodigiously productive Swiss mathematician, gave us man equations, one of which is known as Euler's formula, shown below:
+The prodigiously productive Swiss mathematician, [Leonhard Euler](https://www.britannica.com/biography/Leonhard-Euler), gave us many equations, one of which is known as _Euler's formula_, shown below:
 $$
 e^{i\theta} = \cos\theta + i\sin\theta
 $${#eq:euler}
-The letter $i$ is called the [imaginary unit](https://en.wikipedia.org/wiki/Imaginary_unit) and its definition is $i^{2} = -1$. It takes us into the [field of complex numbers](https://en.wikipedia.org/wiki/Complex_number). It has been proved that [all non-constant, polynomials with complex coefficients contain at least one complex root](https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra).
+The letter $i$ is called the [imaginary unit](https://en.wikipedia.org/wiki/Imaginary_unit) and its definition is $i^{2} = -1$. It takes us into the [field of complex numbers](https://en.wikipedia.org/wiki/Complex_number)^[[The fundamental theorem of algebra] (https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra) states that  all non-constant, polynomials with complex coefficients contain at least one complex root, to express which $i$ is necessary.].
 
-When we substitute $\theta=\pi$ into @eq:euler, and transpose terms, we get what is called Euler's identity:
+When we substitute $\theta=\pi$ into @eq:euler, and transpose terms, we get what is called _Euler's identity_:
 $$
 \begin{aligned}
 e^{i\pi} &= \cos\pi + i\sin\pi\\
@@ -189,7 +203,7 @@ e^{i\pi} + 1 &= 0\\
 \end{aligned}
 $${#eq:euleridentity}
 
-@eq:euleridentity has been described as the most poetic equation in all of mathematics as it [unites in one equation the five most fundamental entities in all of mathematics](https://www.livescience.com/51399-eulers-identity.html), $e, i, \pi, 1$ and $0$. And it could not have come about without radians. With that epiphany on beauty, we shall conclude our tale of two measures.
+@eq:euleridentity has been described as the most poetic equation in all of mathematics as it [unites in one equation the five most fundamental quantities in all of mathematics](https://www.livescience.com/51399-eulers-identity.html), $e, i, \pi, 1$ and $0$. And it could not have come about without radians. With that epiphany on beauty, we shall conclude our tale of two measures.
 
 ## Feedback
 
