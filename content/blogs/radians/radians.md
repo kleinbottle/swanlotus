@@ -215,9 +215,9 @@ $${#eq:euleridentity}
 
 ## Acknowledgements
 
-All illustrations in this blog were generated using the [TikZ-PGF]() package under LaTeX. To the authors of that package and of its numerous illustrations on its usage, my humble gratitude.
+All illustrations in this blog were generated using the [TikZ-PGF](https://github.com/pgf-tikz/pgf) package with [LaTeX](https://www.latex-project.org/). To the authors of that package, and to those who posted numerous examples of its usage on the Web, my humble gratitude.
 
-For #fig:squarefourier, I have especially drawn upon and modified the [example of caverac](https://tex.stackexchange.com/a/429505/1636) at the [TeX StackEexchange](https://tex.stackexchange.com/) forum.
+For @fig:squarefourier especially, I have drawn upon and modified the [example of caverac](https://tex.stackexchange.com/a/429505/1636) at the [TeX StackExchange](https://tex.stackexchange.com/) forum.
 
 ## Feedback
 
