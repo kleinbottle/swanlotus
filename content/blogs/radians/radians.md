@@ -181,17 +181,19 @@ For example, let the original signal be a square waveform denoted by the functio
 
 ![A square waveform $s(t)$ and the sequential sums of its first four terms.]({attach}images/squarefourier.png){#fig:squarefourier width=80% .modal-target}
 
-The Fourier series representation of the square wave $s(t)$ is given by:
+The [Fourier series](https://mathworld.wolfram.com/FourierSeries.html) for such a square waveform is an infinite sum of sinusoids that collectively represent the waveform. This might seem like a tall order but it is nevertheless true. The Fourier series representation of the square wave $s(t)$ is given by:
 $$
-s(t) = \frac{2}{\pi}\left[\sin(t) + \frac{\sin(3t)}{3} + \frac{\sin(5t)}{5} +  \frac{\sin(7t)} {7} + \cdots
+s(t) = \frac{2}{\pi}\left[\sin(t) + \frac{\sin(3t)}{3} + \frac{\sin(5t)}{5} +  \frac{\sin(7t)} {7} + \cdots\right]
 $${#eq:squarefourier}
 where again, the dots mean that the pattern repeats forever.
+
+The successive partial sums of the right hand side of @eq:squarefourier are denoted as $s_1(t)$, $s_2(t)$, etc., denoting the first term, the sum of the first and second term etc. It is evident that the more terms we add, the better the match between the original signal and its approximation, denoted generically by $s_*(t)$ in the graph..
 
 On the surface, @eq:squarefourier seems a remarkable claim. How could a square wave with right angle corners be the result of sums of sine waves which have no corners? The answer is that the series goes on forever, "infinity confers the equality".
 
 Where do radians feature here? As with the power series for the sine function, it is on the right hand side where the variable $t$ should be expressed in radians. Note that while $t$ may have units of time, the fact that radians are unitless does not intrude into the equation as an extraneous factor.
 
-The [Fourier series](https://mathworld.wolfram.com/FourierSeries.html) for such a square waveform is an infinite sum of sinusoids that collectively represent the waveform. This might seem like a tall order but it is nevertheless true.
+
 
 
 
