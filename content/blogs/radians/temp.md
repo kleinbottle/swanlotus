@@ -99,7 +99,7 @@ If you think about it, the size of an angle in radians is expressed as a _ratio 
 
 ## Trigonometric functions
 
-Trigonometric functions are one of the workhorses of applied mathematics. They arose from the study of right-angled triangles. The three standard trigonometric functions are the _sine_, _cosine_, and _tangent_. They are represented by the abbreviated functional names $\sin$, $\cos$, and $\tan$ when used in mathematics. @fig:trig shows the pictorial definitions of these three trigonometric functions. Notice particularly how these function values are the unitless _ratios of two lengths_, just as with radians.
+Trigonometric functions are one of the workhorses of applied mathematics. They arose from the study of right-angled triangles. The three standard trigonometric functions are called  _sine_, _cosine_, and _tangent_. They are represented by the abbreviated functional names $\sin$, $\cos$, and $\tan$ when used in mathematics. @fig:trig shows the pictorial definitions of these three trigonometric functions. Notice particularly how these function values are the unitless _ratios of two lengths_, just as with radians.
 
 ![Trigonometric functions defined as ratios of lengths of sides in a right-angled triangle.](images/trig.png){#fig:trig width=90% .modal-target}
 
