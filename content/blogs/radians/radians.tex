@@ -701,8 +701,10 @@ than the number 0.005.
 
 The moral of this example is that when we evaluate trigonometric
 functions in degrees in the context of their power series, we must apply
-a correction factor of \(\frac{\pi}{180}\) to implicitly convert
-\emph{each term} to radians. This is a layer of bookkeeping we may
+a correction factor of \(\frac{\pi}{180}\) to implicitly convert the
+function argument on the LHS from degrees to radians. Otherwise, keeping
+the degree argument, we have to apply a factor of \(\frac{180}{\pi}\) to
+\emph{each term} on the RHS. This is a layer of bookkeeping we may
 easily avoid by using radians on both sides of the equation.
 
 \hypertarget{fourier-series}{%
@@ -716,7 +718,10 @@ variable is \emph{time}.
 
 A \emph{periodic function}
 \href{https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Signal_Processing_and_Modeling/Signals_and_Systems_(Baraniuk_et_al.)/06\%3A_Continuous_Time_Fourier_Series_(CTFS)/6.06\%3A_Convergence_of_Fourier_Series}{with
-certain properties} may represented by an infinite sum of sinusoids.
+certain properties} may be represented by an infinite sum of sinusoids.
+This was the great insight of
+\href{https://en.wikipedia.org/wiki/Joseph_Fourier}{Jean-Baptiste Joseph
+Fourier} from whom Fourier series derive their name.
 
 For example, let the original signal be a square waveform denoted by the
 function \(s(t)\) in \cref{fig:squarefourier}. Imagine that the single
@@ -790,11 +795,11 @@ e^{i\pi} + 1 &= 0\\
 \end{aligned}
 }\label{eq:euleridentity}\end{equation}
 
-\cref{eq:euleridentity} has been described as the most poetic equation
-in all of mathematics as it
+\cref{eq:euleridentity} has been described as the most poetic
+mathematical equation as it
 \href{https://www.livescience.com/51399-eulers-identity.html}{unites in
 one equation the five most fundamental quantities in all of
-mathematics}, \(e, i, \pi, 1\) and \(0\). And it could not have come
+mathematics}: \(e, i, \pi, 1\) and \(0\). And it could not have come
 about without radians. With that
 \href{https://www.thefreedictionary.com/epiphany}{epiphany} on beauty,
 we shall conclude our tale of two measures.

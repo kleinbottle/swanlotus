@@ -169,13 +169,13 @@ This may also be seen from @fig:xsinx where the closeness of the curve $f(\theta
 
 We have seen the graphical demonstration of the validity of @eq:sinesmalltheta. Let us now illustrate the reasonableness of that equation by evaluation. Set $\theta$ to $0.005$ radians, which is a small value close to zero. Then $\sin\theta = \sin(0.005) = 0.004999979167$, which demonstrates the validity of @eq:sinesmalltheta. However, if one were to interpret the number 0.005 as degrees rather than radians, we then have $\sin(0.005°) = 0.00008726646249$ which is almost $57$ times smaller than the number 0.005.
 
-The moral of this example is that when we evaluate trigonometric functions in degrees in the context of their power series, we must apply a correction factor of $\frac{\pi}{180}$ to implicitly convert _each term_ to radians. This is a layer of bookkeeping we may easily avoid by using radians on both sides of the equation.
+The moral of this example is that when we evaluate trigonometric functions in degrees in the context of their power series, we must apply a correction factor of $\frac{\pi}{180}$ to implicitly convert the function argument on the LHS from degrees to radians. Otherwise, keeping the degree argument, we have to apply a factor of $\frac{180}{\pi}$ to _each term_ on the RHS. This is a layer of bookkeeping we may easily avoid by using radians on both sides of the equation.
 
 ### Fourier series
 
 Periodic waveforms repeat themselves indefinitely. The sinusoids---which are trigonometric functions like $\sin$ and $\cos$---are one such example. Such waveforms arise frequently in signal analysis and synthesis in electrical engineering. In that context, the independent variable is _time_.
 
-A _periodic function_ [with certain properties](https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Signal_Processing_and_Modeling/Signals_and_Systems_(Baraniuk_et_al.)/06%3A_Continuous_Time_Fourier_Series_(CTFS)/6.06%3A_Convergence_of_Fourier_Series) may represented by an infinite sum of sinusoids.
+A _periodic function_ [with certain properties](https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Signal_Processing_and_Modeling/Signals_and_Systems_(Baraniuk_et_al.)/06%3A_Continuous_Time_Fourier_Series_(CTFS)/6.06%3A_Convergence_of_Fourier_Series) may be represented by an infinite sum of sinusoids. This was the great insight of [Jean-Baptiste Joseph Fourier](https://en.wikipedia.org/wiki/Joseph_Fourier) from whom Fourier series derive their name.
 
 For example, let the original signal be a square waveform denoted by the function $s(t)$ in @fig:squarefourier. Imagine that the single cycle of the square wave is repeated periodically forever.
 
@@ -211,7 +211,7 @@ e^{i\pi} + 1 &= 0\\
 \end{aligned}
 $${#eq:euleridentity}
 
-@eq:euleridentity has been described as the most poetic equation in all of mathematics as it [unites in one equation the five most fundamental quantities in all of mathematics](https://www.livescience.com/51399-eulers-identity.html), $e, i, \pi, 1$ and $0$. And it could not have come about without radians. With that [epiphany](https://www.thefreedictionary.com/epiphany) on beauty, we shall conclude our tale of two measures.
+@eq:euleridentity has been described as the most poetic mathematical equation as it [unites in one equation the five most fundamental quantities in all of mathematics](https://www.livescience.com/51399-eulers-identity.html): $e, i, \pi, 1$ and $0$. And it could not have come about without radians. With that [epiphany](https://www.thefreedictionary.com/epiphany) on beauty, we shall conclude our tale of two measures.
 
 ## Acknowledgements
 
