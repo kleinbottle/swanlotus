@@ -308,10 +308,10 @@ it being very factor-friendly?
 \subsection{From triangles to circles}\label{from-triangles-to-circles}}
 
 What is the root concept behind the idea of an angle? Harking back to
-etymology of the word vertex---and applying it to the equilateral
+the etymology of the word vertex---and applying it to the equilateral
 triangle---when one line \emph{changes direction} by sixty degrees, we
-get the second line. These two lines form the angle. Change of direction
-may also be called \emph{turning} or \emph{rotation}.
+get the second line. These two lines form the angle. Therefore, a change
+of direction may also be called \emph{turning} or \emph{rotation}.
 
 The quintessential two-dimensional geometric figure that is associated
 with rotation is of course the \emph{circle}. It is the most simple and
@@ -341,22 +341,23 @@ Because the idea of an angle is related to rotation, it seems natural
 that we should define angles using the circle as a basis, rather than
 the triangles that we encountered at first.
 
-It is a fact that the length of a circle, or its \emph{perimeter}, or
-its \emph{circumference}, \(C\), is always related to its radius, \(r\),
-through the formula \(C = 2\pi r\).
-
-And \(\pi\) is not \(\frac{22}{7}\) as we were originally taught, but
-really a number whose precise expression cannot be predicted or
-exhausted. The digits simply keep rolling on, without pattern or end.
-But the beauty is that \(\pi\) is nevertheless a unique number, a
-universal mathematical constant. It seems that Nature has played a game
-on us by making the simple symmetrical circle have a length that can
-only be approximated but never entirely known to an unlimited
-precision.\footnote{\(\pi\), \(e\) the base or natural logarithms,
-  \(\phi\) the golden ratio, along with a large pantheon of mathematical
-  constants are irrational, and some are even possibly transcendental.
-  Why Nature has this preference for the irrational is an intriguing
-  question that needs an answer.}
+It is a fact that the \emph{length} of a circle, or its
+\emph{perimeter}, or its \emph{circumference}, \(C\), is always related
+to its radius, \(r\), through the formula:
+\begin{equation}\protect\hypertarget{eq:2pir}{}{
+C = 2\pi r.
+}\label{eq:2pir}\end{equation} And \(\pi\) is not \(\frac{22}{7}\) as we
+were originally taught, but really a number whose precise expression
+cannot be predicted or exhausted. The digits simply keep rolling on,
+without pattern or end. But the beauty is that \(\pi\) is nevertheless a
+unique number, a universal mathematical constant. It seems that Nature
+has played a game on us by making the simple symmetrical circle have a
+circumference that can only be approximated but never entirely known to
+an unlimited precision.\footnote{\(\pi\), \(e\) the base of natural
+  logarithms, \(\phi\) the golden ratio, along with a large pantheon of
+  mathematical constants are irrational, and some are even possibly
+  transcendental. Why Nature has this preference for the irrational is
+  an intriguing question that needs an answer.}
 
 \hypertarget{one-radian}{%
 \subsubsection{One radian}\label{one-radian}}
@@ -396,7 +397,7 @@ other.}\label{fig:general}
 similarity}\label{congruence-and-similarity}}
 
 This is a mathematically non-rigorous digression on congruence and
-similarity. One two-dimensional geometrical shape is \emph{congruent} to
+similarity. Any two-dimensional geometrical shape is \emph{congruent} to
 another if the two shapes may be rotated and translated, if necessary,
 and superimposed on each other to visually demonstrate that they are
 identical in size and shape and cannot then be told apart.
@@ -419,11 +420,7 @@ each other}.
 What other classes of geometrical objects can you think of that are
 similar to each other within their class?\footnote{All circles are
   similar, as are all equilateral triangles, all squares, and indeed,
-  all regular \(n\)-gons, and all parabolas. What exactly does
-  similarity mean? It means that the shape remains the same. Imagine a
-  square or a circle. If you zoomed on the figure to enlarge or diminish
-  it without distortion, and you could not see a change of shape, that
-  figure exhibits similarity to every other figure in that class.}
+  all regular \(n\)-gons, and all parabolas.}
 
 \hypertarget{radians-as-angular-measure}{%
 \subsection{Radians as angular
@@ -432,28 +429,29 @@ measure}\label{radians-as-angular-measure}}
 We are now ready to define any angle \(\theta\) in radians. The ratio of
 the length of the arc that subtends an angle of \(\theta\) at the
 centre, to its radius, is the value of \(\theta\) in radians.
-Succinctly, with reference to \cref{fig:general},
-\begin{equation}\protect\hypertarget{eq:defrad}{}{
-\theta \triangleq\frac{s}{r}.
+Succinctly, with reference to \cref{fig:general}, an angle in radians is
+\emph{defined} to be: \begin{equation}\protect\hypertarget{eq:defrad}{}{
+\theta \triangleq \frac{\text{arc length}}{\text{radius}} = \frac{s}{r}.
 }\label{eq:defrad}\end{equation}
 
 By dividing the arc length by the radius, we have in effect
 \emph{normalized} radian measure, and removed any trace of arbitrariness
 in its definition. And that is why we started out with
-\cref{fig:radian}, which dealt with a circle of unit radius.
+\cref{fig:radian}, which dealt with a circle of radius one unit.
 
 Note that the value of \(\theta\) is a ratio of two lengths and is
-therefore dimensionless in the sense of Physics. It may be considered a
-unitless \emph{pure number}
-\href{https://en.wikipedia.org/wiki/Radian}{although the SI units do
-define the radian as the SI unit of angular measure}.
+therefore dimensionless in the sense of Physics. Although it may be
+considered a unitless \emph{pure number}
+\href{https://en.wikipedia.org/wiki/Radian}{the SI units do define the
+radian as the SI unit of angular measure}.
 
-In summary, with radians, we have the following:
+In summary, we have the following:
 
 \begin{enumerate}
 \tightlist
 \item
-  Angular measure is directly proportional to arc length on the circle.
+  Radian angular measure is directly proportional to arc length on the
+  circle.
 \item
   This measure is independent of the radius of the circle.
 \item
