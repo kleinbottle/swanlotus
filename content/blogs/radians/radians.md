@@ -167,7 +167,7 @@ This may also be seen from @fig:xsinx where the closeness of the curve $f(\theta
 
 ![Graphs of $f(\theta)= \sin\theta$ and $f(\theta) = \theta$ for $\lvert\theta\rvert\approx 0$.]({attach}images/xsinx.png){#fig:xsinx width=90% .modal-target}
 
-We have seen the graphical demonstration of the validity of @eq:sinesmalltheta. Let us now illustrate the reasonableness of that equation by evaluation. Set $\theta$ to $0.005$ radians, which is a small value close to zero. Then $\sin\theta = \sin(0.005) = 0.004999979167$, which demonstrates the validity of @eq:sinesmalltheta. however, if one were to interpret the number 0.005 as degrees rather than radians, we then have $\sin(0.005°) = 0.00008726646249$ which is almost $57$ times smaller than the number 0.005.
+We have seen the graphical demonstration of the validity of @eq:sinesmalltheta. Let us now illustrate the reasonableness of that equation by evaluation. Set $\theta$ to $0.005$ radians, which is a small value close to zero. Then $\sin\theta = \sin(0.005) = 0.004999979167$, which demonstrates the validity of @eq:sinesmalltheta. However, if one were to interpret the number 0.005 as degrees rather than radians, we then have $\sin(0.005°) = 0.00008726646249$ which is almost $57$ times smaller than the number 0.005.
 
 The moral of this example is that when we evaluate trigonometric functions in degrees in the context of their power series, we must apply a correction factor of $\frac{\pi}{180}$ to implicitly convert _each term_ to radians. This is a layer of bookkeeping we may easily avoid by using radians on both sides of the equation.
 
