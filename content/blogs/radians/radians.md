@@ -119,7 +119,7 @@ The line $OS$ is a radius and therefore one unit in length. The perpendicular fr
 
 _$S$ is therefore the point with coordinates $(\cos\theta, \sin\theta)$_.
 
-Note that since the coordinates of $S$ are confined to the unit circle, the values of $\sin\theta$ and $\cos\theta$ are confined to the closed interval $[-1, 1]$, i.e. they perforce have values lying  between $-1$ and $1$, both inclusive. From @fig:unit, we see that $(\cos\theta, \sin\theta)$---which represent the coordinates of $S$---take on signed values in accordance with the signs of $x$ and $y$ in the respective quadrants. One could also view the associated _lengths_ as signed values.
+Note that since the coordinates of $S$ are confined to the unit circle, the values of $\sin\theta$ and $\cos\theta$ are confined to the closed interval $[-1, 1]$, i.e. they perforce have values lying between $-1$ and $1$, both inclusive. From @fig:unit, we see that $(\cos\theta, \sin\theta)$---which represent the coordinates of $S$---take on signed values in accordance with the signs of $x$ and $y$ in the respective quadrants. One could also view the associated _lengths_ as signed values.
 
 ### The tangent function
 
@@ -143,7 +143,7 @@ This is where the plot really thickens.
 
 Both the statements $\sin(30°)=0.5$ and $\sin(\frac{\pi}{6})=0.5$ are factually correct and perfectly acceptable. We will not be committing any mathematical heresies through either statement.^[Note that while it is mandatory to affix the degree sign as a superscript, radians being pure numbers do not require any special identification.]
 
-But it is possible to express trigonometric functions in terms of power series in which an argument in degrees would be inadmissible. It is only after we cross this threshold in mathematics that radians truly come into their own, and after which there is "no going back to the old ways".
+But it is possible to express trigonometric functions in terms of power series in which an argument in degrees would be inadmissible. It is only after we cross this threshold in mathematics that radians truly come into their own, after which there is "no going back to the old ways".
 
 I will now do a bit of hand-waving and say that it has been proved^[Search the web for Taylor Series or Maclaurin series, thinking of it as a treasure hunt and enrich yourself with that knowledge!] that:
 
@@ -169,7 +169,7 @@ This may also be seen from @fig:xsinx where the closeness of the curve $f(\theta
 
 We have seen the graphical demonstration of the validity of @eq:sinesmalltheta. Let us now illustrate the reasonableness of that equation by evaluation. Set $\theta$ to $0.005$ radians, which is a small value close to zero. Then $\sin\theta = \sin(0.005) = 0.004999979167$, which demonstrates the validity of @eq:sinesmalltheta. However, if one were to interpret the number 0.005 as degrees rather than radians, we then have $\sin(0.005°) = 0.00008726646249$ which is almost $57$ times smaller than the number 0.005.
 
-The moral of this example is that when we evaluate trigonometric functions in degrees in the context of their power series, we must apply a correction factor of $\frac{\pi}{180}$ to implicitly convert the function argument on the LHS from degrees to radians. Otherwise, keeping the degree argument, we have to apply a factor of $\frac{180}{\pi}$ to _each term_ on the RHS. This is a layer of bookkeeping we may easily avoid by using radians on both sides of the equation.
+The moral of this example is that when we evaluate trigonometric functions in degrees in the context of their power series, we must apply a correction factor of $\frac{\pi}{180}$ to implicitly convert the function argument on the LHS (left hand side) from degrees to radians. Otherwise, keeping the degree argument, we have to apply a factor of $\frac{180}{\pi}$ to _each term_ on the RHS (right hand side). This is a layer of bookkeeping we may easily avoid by using radians on both sides of the equation.
 
 ## Fourier series
 
