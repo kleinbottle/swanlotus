@@ -17,7 +17,10 @@ $(document).ready(function () {
             var captionText = document.getElementById("modal-caption");
             modal.style.display = "block";
             modalImg.src = img.src;
-            captionText.innerHTML = img.alt;
+
+            // Caption retrieved from the figcaption element
+            // which is a sibling of the img element
+            captionText.innerHTML = img.nextElementSibling.innerHTML;
         }
     });
 });

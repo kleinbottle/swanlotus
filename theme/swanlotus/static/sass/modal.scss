@@ -46,8 +46,23 @@
     background-color: #dbdbdb;
 }
 
+
+/* Caption of Modal Image */
+.modal-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1200px;
+    text-align: center;
+    color: white;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: smaller;
+    margin-top: 0.5em;
+}
+
 /* Add Animation */
-.modal-content {
+.modal-content,
+.modal-caption {
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
     animation-name: zoom;
