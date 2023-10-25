@@ -129,13 +129,13 @@ Therefore, the value of the tangent function for an angle $\theta$ may be determ
 
 Note, though, that $\tan\theta$ is a length _outside the unit circle_ and is therefore not  constrained to take on values between $-1$ and $1$. Indeed, as $\theta$ starts increasing in the first quadrant of the unit circle, you will notice that as $OS$ approaches the $y$-axis and as $\theta$ approaches $\frac{\pi}{2}$ (or 90°, if you are still attached to degrees), the line $OS$ is increasingly aligned with $DT$. At $\theta=\frac{\pi}{2}$, $OS$ is parallel to $DT$ and ["never the twain shall meet"](https://en.wikipedia.org/wiki/The_Ballad_of_East_and_West). Loosely speaking, parallel lines are only supposed to "meet at infinity" and that is why $\tan\frac{\pi}{2}$ is said to be "infinite" at that point. I find this geometric explanation---of why $\tan\theta$ does not assume a finite value at $\theta=\frac{\pi}{2}$---most fulfilling.
 
-When $\theta$ is in the third quadrant, for instance, $OS$ extrapolated in the negative direction will not intersect the tangent $DT$ in the negative $y$ direction as they diverge. So, the line $SO$ must be produced in the positive $y$ direction to once more intersect the tangent at $T$. That explains why tangents of angles in the third quadrant are positive.
+When $\theta$ is in the third quadrant, for instance, $OS$ extrapolated in the negative $y$ direction will not intersect the tangent $DT$ in the negative $y$ direction as they diverge. So, the line $SO$ must be produced in the positive $y$ direction to once more intersect the tangent at $T$. That explains why tangents of angles in the third quadrant are positive.
 
-By moving from triangles to the unit circle on coordinate axes, we have enabled $\theta$ to take on any value between 0 and $2\pi$ radians. The trigonometric functions have been unshackled from the triangle and are can take on _any_ real number as arguments. The graphs of the three standard trigonometric functions are shown in @fig:threegraph.
+By moving from triangles to the unit circle on coordinate axes, we have enabled $\theta$ to take on any value between 0 and $2\pi$ radians. The trigonometric functions have been unshackled from the triangle and can take on _any_ real number as arguments. The graphs of the three standard trigonometric functions are shown in @fig:threegraph.
 
 ![Graphs of the three trigonometric functions. Notice how $\sin$ and $\cos$ are bounded in their values, but $\tan$ is not. There are discontinuities  for $\theta=\frac{2n+1}{2}\pi$.]({attach}images/threegraph.png){#fig:threegraph width=90% .modal-target}
 
-Note that when  $\theta = 2\pi$ radians, we cannot really distinguish it from $\theta=0$ radians. So, one angle may masquerade as another unless we have accounting devices to optionally add $2n\pi$ to angles with the proviso that $n$ is an integer. And this concept is a segue to power series expansions of trigonometric functions, their use in calculus, and later on, in Fourier series.
+Note that when  $\theta = 2\pi$ radians, we cannot really distinguish it from $\theta=0$ radians. So, one angle may [masquerade](https://www.thefreedictionary.com/masquerade) as another unless we have accounting devices to optionally add $2n\pi$ to angles with the [proviso](https://dictionary.cambridge.org/dictionary/english/proviso) that $n$ is an integer. And this concept is a [segue](https://www.dictionary.com/browse/segue) to power series expansions of trigonometric functions, their use in calculus, and later on, in Fourier series.
 
 ## Power series for trigonometric functions
 
@@ -151,9 +151,9 @@ $$
 \sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \frac{\theta^7}{7!} + \cdots
 $${#eq:sineseries}
 
-where the dots at the end of @eq:sineseries tell us to imagine that this series _never ends but goes on forever_ following the pattern shown.
+where the dots at the end of @eq:sineseries tell us to imagine that this series _never ends but goes on forever_ following the pattern shown. @eq:sineseries demonstrates a paradox: a trigonometric function is not a polynomial; yet a trigonometric function may be expressed as an infinite polynomial. Infinity has this beguiling attribute of "enabling the impossible."
 
-Recall that if a number is less than one, raising it to a power greater than one makes it smaller than it originally was. So, when $\theta$ is very close to zero, the higher powers on the right hand side of @eq:sineseries become smaller and smaller, and may be ignored without much loss in accuracy. In this case, we may assert that:
+Recall that if a number is less than one, raising it to a power greater than one makes it smaller than it originally was. So, when $\theta$ is very close to zero, the higher powers on the right hand side (RHS) of @eq:sineseries become smaller and smaller, and may be ignored without much loss in accuracy. In this case, we may assert that:
 
 $$
 \sin\theta\approx\theta \:\text{for}\: \lvert\theta\rvert \to 0.
@@ -161,15 +161,15 @@ $${#eq:sinesmalltheta}
 
 In English this expression means that for vanishingly small values of $\theta$---whether positive or negative---$\sin\theta$ is approximately equal to $\theta$.
 
-From @fig:trig we know that the number on the left hand side of @eq:sinesmalltheta is a unitless ratio of two lengths and thus a "pure" number. This requires the right hand side to also be expressed in a similar unitless measure, and the radian fits the bill.
+From @fig:trig we know that the number on the left hand side (LHS) of @eq:sinesmalltheta is a unitless ratio of two lengths and thus a "pure" number. This requires the right hand side to be also expressed in a similar unitless measure, and the radian [fits the bill](https://www.collinsdictionary.com/dictionary/english/fit-the-bill).
 
-This may also be seen from @fig:xsinx where the closeness of the curve $f(\theta) = \theta$ and $f(\theta) = \sin\theta$ near the origin is evident. Indeed, right up to a value of $\lvert\theta\rvert\approx 0.3$, the two curves track each other closely.
+The validity of @eq:sinesmalltheta may also be seen from @fig:xsinx where the closeness of the curve $f(\theta) = \theta$ and $f(\theta) = \sin\theta$ near the origin is evident. Indeed, right up to a value of $\lvert\theta\rvert\approx 0.3$, the two curves track each other closely.
 
 ![Graphs of $f(\theta)= \sin\theta$ and $f(\theta) = \theta$ for $\lvert\theta\rvert\approx 0$.]({attach}images/xsinx.png){#fig:xsinx width=90% .modal-target}
 
-We have seen the graphical demonstration of the validity of @eq:sinesmalltheta. Let us now illustrate the reasonableness of that equation by evaluation. Set $\theta$ to $0.005$ radians, which is a small value close to zero. Then $\sin\theta = \sin(0.005) = 0.004999979167$, which demonstrates the validity of @eq:sinesmalltheta. However, if one were to interpret the number 0.005 as degrees rather than radians, we then have $\sin(0.005°) = 0.00008726646249$ which is almost $57$ times smaller than the number 0.005.
+Let us now illustrate the reasonableness of @eq:sinesmalltheta by evaluation. Set $\theta$ to $0.005$ radians, which is a small value close to zero. Then $\sin\theta = \sin(0.005) = 0.004999979167$, which demonstrates the validity of @eq:sinesmalltheta. However, if one were to interpret the number 0.005 as degrees rather than radians, we then have $\sin(0.005°) = 0.00008726646249$ which is almost $57$ times smaller than the number 0.005.
 
-The moral of this example is that when we evaluate trigonometric functions in degrees in the context of their power series, we must apply a correction factor of $\frac{\pi}{180}$ to implicitly convert the function argument on the LHS (left hand side) from degrees to radians. Otherwise, keeping the degree argument, we have to apply a factor of $\frac{180}{\pi}$ to _each term_ on the RHS (right hand side). This is a layer of bookkeeping we may easily avoid by using radians on both sides of the equation.
+The moral of this example is that when we evaluate trigonometric functions in degrees in the context of their power series, we must apply a correction factor of $\frac{\pi}{180}$ to implicitly convert the function argument on the LHS from degrees to radians. Otherwise, keeping the degree argument, we have to apply a factor of $\frac{180}{\pi}$ to _each term_ on the RHS. This is a layer of bookkeeping we may easily avoid by using radians on both sides of the equation.
 
 ## Fourier series
 
@@ -187,7 +187,7 @@ s(t) = \frac{2}{\pi}\left[\sin(t) + \frac{\sin(3t)}{3} + \frac{\sin(5t)}{5} +  \
 $${#eq:squarefourier}
 where again, the dots mean that the pattern repeats forever. Note that this is no approximation, but an equality.
 
-The successive partial sums of the RHS of @eq:squarefourier are denoted as $s_1(t)$, $s_2(t)$, etc., denoting the first term, the sum of the first and second term etc. It is evident from @fig:squarefourier that the more terms we add, the better the match between the original signal and its approximation, denoted generically by $s_*(t)$ in the graph.
+The successive _partial sums_ of the RHS of @eq:squarefourier are termed $s_1(t)$, $s_2(t)$, etc., with $s_1(t)$ denoting the first term, $s_2(t)$, the sum of the first and second term etc. It is evident from @fig:squarefourier that the more terms we add, the better the match between the original signal and its approximation, denoted generically by $s_*(t)$ in the graph.^[This property---where the larger the number of terms in the partial sum, the better the approximation to the original function---is one reason why Fourier series are widely applied.]
 
 On the surface, @eq:squarefourier seems a remarkable claim. How could a square wave with right angle corners be the result of sums of sine waves which have no corners? The answer lies in the fact that the series goes on forever and "infinity confers the equality".
 
@@ -201,7 +201,7 @@ The prodigiously productive Swiss mathematician, [Leonhard Euler](https://www.br
 $$
 e^{i\theta} = \cos\theta + i\sin\theta
 $${#eq:euler}
-The letter $i$ is called the [imaginary unit](https://en.wikipedia.org/wiki/Imaginary_unit) and its definition is $i^{2} = -1$. It takes us into the [field of complex numbers](https://en.wikipedia.org/wiki/Complex_number)^[[The Fundamental Theorem of Algebra](https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra) states that  all non-constant, polynomials with complex coefficients contain at least one complex root, to express which $i$ is necessary.].
+The letter $i$ is called the [imaginary unit](https://en.wikipedia.org/wiki/Imaginary_unit) and its definition as $i^{2} = -1$, takes us into the [field of complex numbers](https://en.wikipedia.org/wiki/Complex_number)^[[The Fundamental Theorem of Algebra](https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra) states that  all non-constant, polynomials with complex coefficients contain at least one complex root, to express which $i$ is necessary.].
 
 When we substitute $\theta=\pi$ into @eq:euler, and transpose terms, we get what is called _Euler's identity_:
 $$
@@ -211,13 +211,11 @@ e^{i\pi} + 1 &= 0\\
 \end{aligned}
 $${#eq:euleridentity}
 
-@eq:euleridentity has been described as the most poetic mathematical equation as it [unites in one equation the five most fundamental quantities in all of mathematics](https://www.livescience.com/51399-eulers-identity.html): $e, i, \pi, 1$ and $0$. And it could not have come about without radians. With that [epiphany](https://www.thefreedictionary.com/epiphany) on beauty, we shall conclude our tale of two measures.
+@eq:euleridentity has been described as the most poetic mathematical equation because it [unites in one equation the five most fundamental quantities in all of mathematics](https://www.livescience.com/51399-eulers-identity.html): $e, i, \pi, 1$ and $0$. And it could not have come about without radians. With that [epiphany](https://www.thefreedictionary.com/epiphany) on beauty, we shall conclude our tale of two measures.
 
 ## Acknowledgements
 
-All illustrations in this blog were generated using the [TikZ-PGF](https://github.com/pgf-tikz/pgf) package with [LaTeX](https://www.latex-project.org/). To the authors of that package, and to those who posted numerous examples of its usage on the Web, my humble gratitude.
-
-For @fig:squarefourier especially, I have drawn upon and modified the [example of caverac](https://tex.stackexchange.com/a/429505/1636) at the [TeX StackExchange](https://tex.stackexchange.com/) forum.
+All illustrations in this blog were generated using the [TikZ-PGF](https://github.com/pgf-tikz/pgf) and [PGFPlots](https://pgfplots.sourceforge.net/) packages with [LaTeX](https://www.latex-project.org/) and [Pandoc](https://pandoc.org/). To the authors of these packages, and to others who posted numerous examples of their usage on the Web, my humble gratitude. For @fig:squarefourier, I have drawn upon and modified the [example of caverac](https://tex.stackexchange.com/a/429505/1636) at the [TeX StackExchange](https://tex.stackexchange.com/) forum.
 
 ## Feedback
 

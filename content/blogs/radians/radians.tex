@@ -590,18 +590,17 @@ explanation---of why \(\tan\theta\) does not assume a finite value at
 \(\theta=\frac{\pi}{2}\)---most fulfilling.
 
 When \(\theta\) is in the third quadrant, for instance, \(OS\)
-extrapolated in the negative direction will not intersect the tangent
-\(DT\) in the negative \(y\) direction as they diverge. So, the line
-\(SO\) must be produced in the positive \(y\) direction to once more
-intersect the tangent at \(T\). That explains why tangents of angles in
-the third quadrant are positive.
+extrapolated in the negative \(y\) direction will not intersect the
+tangent \(DT\) in the negative \(y\) direction as they diverge. So, the
+line \(SO\) must be produced in the positive \(y\) direction to once
+more intersect the tangent at \(T\). That explains why tangents of
+angles in the third quadrant are positive.
 
 By moving from triangles to the unit circle on coordinate axes, we have
 enabled \(\theta\) to take on any value between 0 and \(2\pi\) radians.
 The trigonometric functions have been unshackled from the triangle and
-are can take on \emph{any} real number as arguments. The graphs of the
-three standard trigonometric functions are shown in
-\cref{fig:threegraph}.
+can take on \emph{any} real number as arguments. The graphs of the three
+standard trigonometric functions are shown in \cref{fig:threegraph}.
 
 \begin{figure}
 \hypertarget{fig:threegraph}{%
@@ -615,11 +614,15 @@ There are discontinuities for
 \end{figure}
 
 Note that when \(\theta = 2\pi\) radians, we cannot really distinguish
-it from \(\theta=0\) radians. So, one angle may masquerade as another
-unless we have accounting devices to optionally add \(2n\pi\) to angles
-with the proviso that \(n\) is an integer. And this concept is a segue
-to power series expansions of trigonometric functions, their use in
-calculus, and later on, in Fourier series.
+it from \(\theta=0\) radians. So, one angle may
+\href{https://www.thefreedictionary.com/masquerade}{masquerade} as
+another unless we have accounting devices to optionally add \(2n\pi\) to
+angles with the
+\href{https://dictionary.cambridge.org/dictionary/english/proviso}{proviso}
+that \(n\) is an integer. And this concept is a
+\href{https://www.dictionary.com/browse/segue}{segue} to power series
+expansions of trigonometric functions, their use in calculus, and later
+on, in Fourier series.
 
 \hypertarget{power-series-for-trigonometric-functions}{%
 \subsection{Power series for trigonometric
@@ -650,11 +653,14 @@ proved\footnote{Search the web for Taylor Series or Maclaurin series,
 
 where the dots at the end of \cref{eq:sineseries} tell us to imagine
 that this series \emph{never ends but goes on forever} following the
-pattern shown.
+pattern shown. \cref{eq:sineseries} demonstrates a paradox: a
+trigonometric function is not a polynomial; yet a trigonometric function
+may be expressed as an infinite polynomial. Infinity has this beguiling
+attribute of ``enabling the impossible.''
 
 Recall that if a number is less than one, raising it to a power greater
 than one makes it smaller than it originally was. So, when \(\theta\) is
-very close to zero, the higher powers on the right hand side of
+very close to zero, the higher powers on the right hand side (RHS) of
 \cref{eq:sineseries} become smaller and smaller, and may be ignored
 without much loss in accuracy. In this case, we may assert that:
 
@@ -666,16 +672,18 @@ In English this expression means that for vanishingly small values of
 \(\theta\)---whether positive or negative---\(\sin\theta\) is
 approximately equal to \(\theta\).
 
-From \cref{fig:trig} we know that the number on the left hand side of
-\cref{eq:sinesmalltheta} is a unitless ratio of two lengths and thus a
-``pure'' number. This requires the right hand side to also be expressed
-in a similar unitless measure, and the radian fits the bill.
+From \cref{fig:trig} we know that the number on the left hand side (LHS)
+of \cref{eq:sinesmalltheta} is a unitless ratio of two lengths and thus
+a ``pure'' number. This requires the right hand side to be also
+expressed in a similar unitless measure, and the radian
+\href{https://www.collinsdictionary.com/dictionary/english/fit-the-bill}{fits
+the bill}.
 
-This may also be seen from \cref{fig:xsinx} where the closeness of the
-curve \(f(\theta) = \theta\) and \(f(\theta) = \sin\theta\) near the
-origin is evident. Indeed, right up to a value of
-\(\lvert\theta\rvert\approx 0.3\), the two curves track each other
-closely.
+The validity of \cref{eq:sinesmalltheta} may also be seen from
+\cref{fig:xsinx} where the closeness of the curve \(f(\theta) = \theta\)
+and \(f(\theta) = \sin\theta\) near the origin is evident. Indeed, right
+up to a value of \(\lvert\theta\rvert\approx 0.3\), the two curves track
+each other closely.
 
 \begin{figure}
 \hypertarget{fig:xsinx}{%
@@ -686,24 +694,21 @@ for \(\lvert\theta\rvert\approx 0\).}\label{fig:xsinx}
 }
 \end{figure}
 
-We have seen the graphical demonstration of the validity of
-\cref{eq:sinesmalltheta}. Let us now illustrate the reasonableness of
-that equation by evaluation. Set \(\theta\) to \(0.005\) radians, which
-is a small value close to zero. Then
-\(\sin\theta = \sin(0.005) = 0.004999979167\), which demonstrates the
-validity of \cref{eq:sinesmalltheta}. However, if one were to interpret
-the number 0.005 as degrees rather than radians, we then have
-\(\sin(0.005°) = 0.00008726646249\) which is almost \(57\) times smaller
-than the number 0.005.
+Let us now illustrate the reasonableness of \cref{eq:sinesmalltheta} by
+evaluation. Set \(\theta\) to \(0.005\) radians, which is a small value
+close to zero. Then \(\sin\theta = \sin(0.005) = 0.004999979167\), which
+demonstrates the validity of \cref{eq:sinesmalltheta}. However, if one
+were to interpret the number 0.005 as degrees rather than radians, we
+then have \(\sin(0.005°) = 0.00008726646249\) which is almost \(57\)
+times smaller than the number 0.005.
 
 The moral of this example is that when we evaluate trigonometric
 functions in degrees in the context of their power series, we must apply
 a correction factor of \(\frac{\pi}{180}\) to implicitly convert the
-function argument on the LHS (left hand side) from degrees to radians.
-Otherwise, keeping the degree argument, we have to apply a factor of
-\(\frac{180}{\pi}\) to \emph{each term} on the RHS (right hand side).
-This is a layer of bookkeeping we may easily avoid by using radians on
-both sides of the equation.
+function argument on the LHS from degrees to radians. Otherwise, keeping
+the degree argument, we have to apply a factor of \(\frac{180}{\pi}\) to
+\emph{each term} on the RHS. This is a layer of bookkeeping we may
+easily avoid by using radians on both sides of the equation.
 
 \hypertarget{fourier-series}{%
 \subsection{Fourier series}\label{fourier-series}}
@@ -746,12 +751,15 @@ s(t) = \frac{2}{\pi}\left[\sin(t) + \frac{\sin(3t)}{3} + \frac{\sin(5t)}{5} +  \
 the pattern repeats forever. Note that this is no approximation, but an
 equality.
 
-The successive partial sums of the RHS of \cref{eq:squarefourier} are
-denoted as \(s_1(t)\), \(s_2(t)\), etc., denoting the first term, the
-sum of the first and second term etc. It is evident from
-\cref{fig:squarefourier} that the more terms we add, the better the
-match between the original signal and its approximation, denoted
-generically by \(s_*(t)\) in the graph.
+The successive \emph{partial sums} of the RHS of \cref{eq:squarefourier}
+are termed \(s_1(t)\), \(s_2(t)\), etc., with \(s_1(t)\) denoting the
+first term, \(s_2(t)\), the sum of the first and second term etc. It is
+evident from \cref{fig:squarefourier} that the more terms we add, the
+better the match between the original signal and its approximation,
+denoted generically by \(s_*(t)\) in the graph.\footnote{This
+  property---where the larger the number of terms in the partial sum,
+  the better the approximation to the original function---is one reason
+  why Fourier series are widely applied.}
 
 On the surface, \cref{eq:squarefourier} seems a remarkable claim. How
 could a square wave with right angle corners be the result of sums of
@@ -778,7 +786,7 @@ formula}, shown below: \begin{equation}\protect\hypertarget{eq:euler}{}{
 e^{i\theta} = \cos\theta + i\sin\theta
 }\label{eq:euler}\end{equation} The letter \(i\) is called the
 \href{https://en.wikipedia.org/wiki/Imaginary_unit}{imaginary unit} and
-its definition is \(i^{2} = -1\). It takes us into the
+its definition as \(i^{2} = -1\), takes us into the
 \href{https://en.wikipedia.org/wiki/Complex_number}{field of complex
 numbers}\footnote{\href{https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra}{The
   Fundamental Theorem of Algebra} states that all non-constant,
@@ -795,7 +803,7 @@ e^{i\pi} + 1 &= 0\\
 }\label{eq:euleridentity}\end{equation}
 
 \cref{eq:euleridentity} has been described as the most poetic
-mathematical equation as it
+mathematical equation because it
 \href{https://www.livescience.com/51399-eulers-identity.html}{unites in
 one equation the five most fundamental quantities in all of
 mathematics}: \(e, i, \pi, 1\) and \(0\). And it could not have come
@@ -807,15 +815,15 @@ we shall conclude our tale of two measures.
 \subsection{Acknowledgements}\label{acknowledgements}}
 
 All illustrations in this blog were generated using the
-\href{https://github.com/pgf-tikz/pgf}{TikZ-PGF} package with
-\href{https://www.latex-project.org/}{LaTeX}. To the authors of that
-package, and to those who posted numerous examples of its usage on the
-Web, my humble gratitude.
-
-For \cref{fig:squarefourier} especially, I have drawn upon and modified
-the \href{https://tex.stackexchange.com/a/429505/1636}{example of
-caverac} at the \href{https://tex.stackexchange.com/}{TeX StackExchange}
-forum.
+\href{https://github.com/pgf-tikz/pgf}{TikZ-PGF} and
+\href{https://pgfplots.sourceforge.net/}{PGFPlots} packages with
+\href{https://www.latex-project.org/}{LaTeX} and
+\href{https://pandoc.org/}{Pandoc}. To the authors of these packages,
+and to others who posted numerous examples of their usage on the Web, my
+humble gratitude. For \cref{fig:squarefourier}, I have drawn upon and
+modified the \href{https://tex.stackexchange.com/a/429505/1636}{example
+of caverac} at the \href{https://tex.stackexchange.com/}{TeX
+StackExchange} forum.
 
 \hypertarget{feedback}{%
 \subsection{Feedback}\label{feedback}}
