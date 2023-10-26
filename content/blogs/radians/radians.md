@@ -77,7 +77,7 @@ What other classes of geometrical objects can you think of that are similar to e
 
 ## Radians as angular measure
 
-We are now ready to define any angle $\theta$ in radians. The ratio of the length $s$ of the arc that subtends an angle of $\theta$ at the centre, to its radius $r$, is the value of $\theta$ in radians. Succinctly, with reference to @fig:general, an angle in radians is _defined_ to be:
+We are now ready to define the value of any angle in radians. Consider a circle of radius $r$. Let an arc of length $s$ subtend an angle of $\theta$ at the centre. The angle $\theta$ in radians is _defined_ to be:
 $$
 \theta \triangleq \frac{\text{arc length}}{\text{radius}} = \frac{s}{r}.
 $${#eq:defrad}
