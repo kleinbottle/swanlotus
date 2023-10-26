@@ -201,7 +201,7 @@
 
 \title{A tale of two measures: degrees and radians}
 \author{R (Chandra) Chandrasekhar}
-\date{2023-10-17 | 2023-10-24}
+\date{2023-10-17 | 2023-10-26}
 
 \begin{document}
 \maketitle
@@ -727,9 +727,18 @@ This was the great insight of
 Fourier} from whom Fourier series derive their name.
 
 For example, let the original signal be a square waveform denoted by the
-function \(s(t)\) in \cref{fig:squarefourier}. Imagine that the single
-cycle of the square wave---shown below--- is repeated periodically
-forever.
+function \(s(t)\) in \cref{fig:squarefourier}.\footnote{Strictly
+  speaking, there are \emph{point discontinuities} in \(s(t)\), at
+  \(t=\pi\) and \(t = 2\pi\), where the function changes value. The
+  graph of the waveform is shown as a vertical line at these points
+  because that is what an oscilloscope trace of the waveform will show.
+  This is convenient but inaccurate because a \emph{function} cannot be
+  multi-valued at one point. Nevertheless, the theory behind Fourier
+  series is still applicable to the square wave. The Fourier series will
+  converge at these points to zero---the average value at these
+  discontinuities---which is what the partial sums show.} Imagine that
+the single cycle of the square wave---shown below--- is repeated
+periodically forever.
 
 \begin{figure}
 \hypertarget{fig:squarefourier}{%

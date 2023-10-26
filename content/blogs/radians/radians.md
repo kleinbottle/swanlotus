@@ -2,9 +2,9 @@
 title: "A tale of two measures: degrees and radians"
 author: R (Chandra) Chandrasekhar
 date: 2023-10-17
-modified: 2023-10-24
+modified: 2023-10-26
 category: Mathematics
-tags: Mathematics, Mathematical musings
+tags: Mathematical musings
 summary: 'The transition from degrees to radians is often the most traumatic mathematical change that the student has to endure when moving from elementary to intermediate mathematics. The simplicity of 360° seems so much more welcoming than the equivalent of $2\pi$ radians for a full circle. $\pi$ is forbidding, because it is not [the convenient fractional fiction $\frac{22}{7}$](https://en.wikipedia.org/wiki/Proof_that_22/7_exceeds_%CF%80), but rather a number which is both [transcendental](https://mathworld.wolfram.com/TranscendentalNumber.html) and [irrational](https://en.wikipedia.org/wiki/Irrational_number) and therefore, somewhat "untidy". Surely this tradeoff between simplicity and complexity must have been worth it, or it would not have been so ordained. Here we attempt to fathom the method behind the madness.'
 opengraphimage: one-radian.png
 ---
@@ -177,7 +177,7 @@ Periodic waveforms repeat themselves indefinitely. The sinusoids---which are tri
 
 A _periodic function_ [with certain properties](https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Signal_Processing_and_Modeling/Signals_and_Systems_(Baraniuk_et_al.)/06%3A_Continuous_Time_Fourier_Series_(CTFS)/6.06%3A_Convergence_of_Fourier_Series) may be represented by an infinite sum of sinusoids. This was the great insight of [Jean-Baptiste Joseph Fourier](https://en.wikipedia.org/wiki/Joseph_Fourier) from whom Fourier series derive their name.
 
-For example, let the original signal be a square waveform denoted by the function $s(t)$ in @fig:squarefourier. Imagine that the single cycle of the square wave---shown below--- is repeated periodically forever.
+For example, let the original signal be a square waveform denoted by the function $s(t)$ in @fig:squarefourier.^[Strictly speaking, there are _point discontinuities_ in  $s(t)$, at $t=\pi$ and $t = 2\pi$, where the function changes value. The graph of the waveform is shown as a vertical line at these points because that is what an oscilloscope trace of the waveform will show. This is convenient but inaccurate because a _function_ cannot be multi-valued at one point. Nevertheless, the theory behind Fourier series is still applicable to the square wave. The Fourier series will converge at these points to zero---the average value at these discontinuities---which is what the partial sums show.] Imagine that the single cycle of the square wave---shown below--- is repeated periodically forever.
 
 ![A square waveform $s(t)$ and the sequential sums of its first four terms.]({attach}images/squarefourier.png){#fig:squarefourier width=85% .modal-target}
 
