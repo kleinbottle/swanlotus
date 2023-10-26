@@ -82,7 +82,7 @@ $$
 \theta \triangleq \frac{\text{arc length}}{\text{radius}} = \frac{s}{r}.
 $${#eq:defrad}
 
-By dividing the arc length by the radius, we have in effect _normalized_ radian measure, and removed any trace of arbitrariness in its definition. And that is why we started out with @fig:radian, which dealt with a circle of radius one unit.
+By dividing the arc length by the radius, we have in effect _normalized_ radian measure, and removed any trace of arbitrariness in its definition. And that is why we started out with @fig:radian, which dealt with a circle of radius one unit. We also showed in @fig:general that similarity guarantees that the value $\frac{s}{r}$ is constant for all circles regardless of radius.
 
 Note that the value of $\theta$ is a ratio of two lengths and is therefore dimensionless in the sense of Physics. Although it may be considered a unitless _pure number_ [the SI units do define the _radian_ as the _SI unit of angular measure_](https://en.wikipedia.org/wiki/Radian).
 
