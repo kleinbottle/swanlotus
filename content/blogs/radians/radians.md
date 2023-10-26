@@ -67,7 +67,7 @@ But what happens when our circle has a radius larger or smaller than one unit? T
 
 ### Congruence and similarity
 
-This is a mathematically non-rigorous digression on congruence and similarity.  Any two-dimensional geometrical shape is _congruent_ to another if the two shapes may be rotated and translated, if necessary, and superimposed on each other to visually demonstrate that they are identical in size and shape and cannot then be told apart.
+This is a mathematically non-rigorous digression on congruence and similarity.  Any two-dimensional geometrical shape is _congruent_ to another if the two shapes may be rotated and translated, if necessary, and superimposed on each other to visually demonstrate that they are identical in size and shape and cannot then be [told apart](https://www.merriam-webster.com/dictionary/tell%20apart).
 
 _Similarity_ is less restrictive than congruence and applies to geometric objects that have the same shape but not necessarily the same size. Intuitively, if two objects are similar, one may _zoom in_ or _zoom out_ on one object of the pair---without distortion---to obtain a version that may be superimposed on the other object to demonstrate that they are identical or congruent.
 
@@ -77,14 +77,14 @@ What other classes of geometrical objects can you think of that are similar to e
 
 ## Radians as angular measure
 
-We are now ready to define any angle $\theta$ in radians. The ratio of the length of the arc that subtends an angle of $\theta$ at the centre, to its radius, is the value of $\theta$ in radians. Succinctly, with reference to @fig:general, an angle in radians is _defined_ to be:
+We are now ready to define any angle $\theta$ in radians. The ratio of the length $s$ of the arc that subtends an angle of $\theta$ at the centre, to its radius $r$, is the value of $\theta$ in radians. Succinctly, with reference to @fig:general, an angle in radians is _defined_ to be:
 $$
 \theta \triangleq \frac{\text{arc length}}{\text{radius}} = \frac{s}{r}.
 $${#eq:defrad}
 
 By dividing the arc length by the radius, we have in effect _normalized_ radian measure, and removed any trace of arbitrariness in its definition. And that is why we started out with @fig:radian, which dealt with a circle of radius one unit.
 
-Note that the value of $\theta$ is a ratio of two lengths and is therefore dimensionless in the sense of Physics. Although it may be considered a unitless _pure number_ [the SI units do define the radian as the SI unit of angular measure](https://en.wikipedia.org/wiki/Radian).
+Note that the value of $\theta$ is a ratio of two lengths and is therefore dimensionless in the sense of Physics. Although it may be considered a unitless _pure number_ [the SI units do define the _radian_ as the _SI unit of angular measure_](https://en.wikipedia.org/wiki/Radian).
 
 In summary, we have the following:
 
