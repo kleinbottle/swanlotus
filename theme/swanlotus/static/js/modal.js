@@ -9,7 +9,7 @@ $(document).ready(function () {
         modal.style.display = "none";
     });
 
-    // global handler
+    // Global handler using standard JavaScript
     document.addEventListener('click', function (e) {
         if (e.target.className.indexOf('modal-target') !== -1) {
             var img = e.target;
