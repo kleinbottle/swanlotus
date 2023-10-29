@@ -66,7 +66,7 @@ PhD-release syndrome
 
 Post-partum depression
 
-Sri Ramaksishna
+Sri Ramakrishna
 
 Unfinished symphonies/unfinished business
 
