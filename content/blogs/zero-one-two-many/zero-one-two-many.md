@@ -15,7 +15,7 @@ numbers: zero, one, and however many you please. \
 [Tom Christiansen and Nathan Torkington]{.smallcaps} [@perlcookbook2003]
 :::
 \
-As has been observed above [@perlcookbook2003], in the context of computer programming, there are only three numbers worth being concerned about: zero, one, and many. And if you are into the arcana of ["regular expressions"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions) and ["pattern matching"](https://www.google.com/search?q=pattern+matching)---which is, incidentally, something done [implicitly]() every time you do a Google search, or look for a book at an online bookstore---that is very sage advice. But how serviceable is this dictum in everyday life?
+As has been observed above [@perlcookbook2003], in the context of computer programming, there are only three numbers worth being concerned about: zero, one, and many. And if you are into the arcana of ["regular expressions"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions) and ["pattern matching"](https://www.google.com/search?q=pattern+matching)---which is, incidentally, something done [implicitly]() every time you do a Google search, or look for a book at an online bookstore---that is very [sage](https://www.merriam-webster.com/dictionary/sage) advice. But how serviceable is this [dictum](https://www.dictionary.com/browse/dictum) in everyday life?
 
 ## A real-life scenario
 
@@ -67,9 +67,11 @@ Moreover, not giving these other numbers special distinction is something we hav
 
 Vive la zero, one, two, many!
 
-## Acknowledgements
+## Notes
 
-This blog first appeared on 28 December 2007 as a _Daily Dose_: an essay I circulated on a private email list. I have retrieved and refreshed it to allow its reincarnation as an online blog now.
+This blog first appeared on 28 December 2007 as a _Daily Dose_---an essay I circulated on a private email list. I have retrieved and refreshed it to allow its reincarnation as an online blog now.
+
+
 
 ## Feedback
 
