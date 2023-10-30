@@ -125,7 +125,7 @@ Note that since the coordinates of $S$ are confined to the unit circle, the valu
 
 The really insightful revelation from @fig:unit comes from looking at $\tan\theta$. Have you ever wondered why the ratio $\tan\theta = \frac{\sin\theta}{\cos\theta}$ is called the _tangent_?
 
-From @fig:trig, we know that the tangent is the ratio of the lengths of the opposite side to the adjacent side. In @fig:unit, $\tan\theta = \frac{SC}{OC}$. But the denominator in this case, $OC$, is not $1$ like it was for the other two trigonometric ratios.
+From @fig:trig, we know that the tangent is the ratio of the lengths of the opposite side to the adjacent side, which in @fig:unit translates to $\tan\theta = \frac{SC}{OC}$. But the denominator in this case, $OC$, is not $1$ like it was for the other two trigonometric ratios.
 
 Recall from geometry that a [tangent (line)](https://en.wikipedia.org/wiki/Tangent_lines_to_circles) to a circle is a limiting case of a [chord](https://en.wikipedia.org/wiki/Chord_(geometry)) in which the two points of intersection---of a line with a circle---coincide into one point, called the point of tangency. The radius from the centre to the tangent line makes a right angle at the point of tangency.
 
