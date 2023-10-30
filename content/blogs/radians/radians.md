@@ -129,11 +129,17 @@ From @fig:trig, we know that the tangent is the ratio of the lengths of the oppo
 
 Recall from geometry that a [tangent (line)](https://en.wikipedia.org/wiki/Tangent_lines_to_circles) to a circle is a limiting case of a [chord](https://en.wikipedia.org/wiki/Chord_(geometry)) in which the two points of intersection---of a line with a circle---coincide into one point, called the point of tangency. The radius from the centre to the point of tangency makes a right angle.
 
-With that out of the way, we construct the triangle $ODT$, which is similar to triangle $OCS$, where $D$ is the point $(1, 0)$. We can then assert that the ratios of corresponding sides are equal. Thus,
+With that out of the way, we construct the triangle $ODT$ thus:
+
+a. Produce the line $OC$ to intersect the circle at the point $D$ which is $(0, 1)$. $OD$, being a radius has unit length.
+a. Draw a tangent to the circle at $D$.
+a. Produce the radius $OS$ to intersect the tangent at the point $T$.
+
+The triangle $ODT$ is similar to triangle $OCS$. We can then assert that the ratios of corresponding sides are equal. Thus,
 $$
 \tan\theta = \frac{CS}{OC} = \frac{DT}{OD} = DT
 $${#eq:tangent}
-because $OD$ is also a radius of unit one, like $OS$. We resorted to this construction for the following reasons:
+bearing in mind that, like $OS$, $OD$ is also a radius of unit length. We resorted to this construction for the following reasons:
 
 #. Because $DT$ is tangent to the circle, the angle $ODT$ is a right angle.
 #. The triangles $OCS$ and $ODT$ are therefore similar.
