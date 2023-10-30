@@ -19,13 +19,17 @@ As has been observed above [@perlcookbook2003], in the context of computer progr
 
 ## A real-life scenario
 
-Let us assume that you are living alone but have decided to invite friends for a New Year's Eve party. You had at first assumed that the full cohort of fifty or so friends to whom you sent invitations were all going to turn up, but had later revised that estimate to half that number. You shop and eagerly prepare sufficient food and drink for the festive occasion. Exhausted but elated with anticipation, you finally finish the chores, sit back, heave a sigh of relief, and wait for your friends.
+Let us assume that you are living alone, but have decided to invite friends for a [Halloween](https://www.britannica.com/topic/Halloween) party. You had at first assumed that the full [cohort](https://www.vocabulary.com/dictionary/cohort) of fifty or so friends to whom you sent invitations were all going to turn up, but had later revised that estimate to half that number. You shop and eagerly prepare sufficient food and drink for the festive occasion. Exhausted but elated with anticipation, you finally finish the chores, sit back, heave a sigh of relief, and wait for your friends.
 
-As the clock ticks toward the appointed hour, you watch the door but there are no early birds. You stay patient and say that perhaps they will turn up just on time. The awaited hour comes and goes and still no one has shown up. Meanwhile, you get a series of phone calls and emails from your friends, who all mysteriously claim, that at the last minute some unforeseen circumstance prevents their presence. They convey their apologies for not turning up. A full hour after the scheduled time for dinner, you reluctantly decide that nobody is going to turn up after all.
+As the clock ticks [inexorably](https://www.thefreedictionary.com/inexorably) toward the appointed hour, you watch the door but there are no early birds. You stay patient and console yourself that perhaps they will turn up just on time. The awaited hour comes and goes and still no one has shown up.
+
+Meanwhile, you get a series of emails, text messages, and phone calls from your friends, who all mysteriously claim, that at the last minute some unforeseen circumstance prevented  their presence. They convey their apologies for not turning up. A full hour after the scheduled time for dinner, you reluctantly decide that nobody is going to turn up after all, and decide to [assuage](https://www.merriam-webster.com/dictionary/assuage) your sorrow by [tucking in](https://www.oxfordlearnersdictionaries.com/definition/english/tuck-in).
 
 ## Zero
 
-And there you have it: the number zero. It is catastrophic on occasion, as when you have zero guests turning up, or you have scored zero marks in the examination, or zero goals in the soccer match. A zero bank balance can drive you to drink, or up the wall, or worse. Having zero cavities when you visit the dentist, however, is cause for celebration. So, zero, although it is nothing, is paradoxically, something to be reckoned with. And something very powerful at that.
+And there you have it: the number zero. It precisely equals the number of your expected guests who turned up. It is catastrophic, as on this on occasion, or when you have scored zero marks in the examination, or zero goals in the soccer match. A zero bank balance can drive you up the wall, or worse.
+
+Having zero cavities when you visit the dentist, however, is cause for celebration. So, zero, although it is nothing, is paradoxically, something to be reckoned with. And something very powerful at that. It has been called [The Nothing That Is](https://www.amazon.in/Nothing-That-Natural-History-Zero/dp/0195142373)[@zero2000].
 
 ## One
 
