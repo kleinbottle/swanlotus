@@ -67,11 +67,9 @@ Moreover, not giving these other numbers special distinction is something we hav
 
 Vive la zero, one, two, many!
 
-## Notes
+## Note to the Reader
 
-This blog first appeared on 28 December 2007 as a _Daily Dose_---an essay I circulated on a private email list. I have retrieved and refreshed it to allow its reincarnation as an online blog now.
-
-
+This blog first appeared on 28 December 2007 as a _Daily Dose_---an essay that I circulated on a private email list. I have retrieved and refreshed it to allow its reincarnation as an online blog now. Its purpose is to inform and educate. Accordingly, words that are likely to be unfamiliar to the reader are shown in blue and hyperlinked to entries on the Web that will explain their meaning.
 
 ## Feedback
 
