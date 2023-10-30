@@ -135,7 +135,7 @@ a. Extend^[Extending a line used to be called _producing a line_ but that usage 
 a. Draw a tangent to the circle at $D$.
 a. Extend the radius $OS$ to intersect the tangent at the point $T$.
 
-The triangle $ODT$ is similar to triangle $OCS$. We can then assert that the ratios of corresponding sides are equal. Thus,
+Because the triangle $ODT$ is similar to triangle $OCS$, we can assert that the ratios of corresponding sides are equal. Thus,
 $$
 \tan\theta = \frac{CS}{OC} = \frac{DT}{OD} = DT
 $${#eq:tangent}
