@@ -2,7 +2,7 @@
 title: "A tale of two measures: degrees and radians"
 author: R (Chandra) Chandrasekhar
 date: 2023-10-17
-modified: 2023-10-29
+modified: 2023-10-30
 category: Mathematics
 tags: Mathematical musings
 summary: 'The transition from degrees to radians is often the most traumatic mathematical change that the student has to endure when moving from elementary to intermediate mathematics. The simplicity of 360° seems so much more welcoming than the equivalent of $2\pi$ radians for a full circle. $\pi$ is forbidding, because it is not [the convenient fractional fiction $\frac{22}{7}$](https://en.wikipedia.org/wiki/Proof_that_22/7_exceeds_%CF%80), but rather a number which is both [transcendental](https://mathworld.wolfram.com/TranscendentalNumber.html) and [irrational](https://en.wikipedia.org/wiki/Irrational_number) and therefore, somewhat "untidy". Surely this tradeoff between simplicity and complexity must have been worth it, or it would not have been so ordained. Here we attempt to fathom the method behind the madness.'
@@ -153,11 +153,13 @@ Note, though, that $\tan\theta$ is a length _outside the unit circle_ and is the
 
 When $\theta$ is in the third quadrant, for instance, $OS$ extrapolated in the negative $y$ direction will not intersect the tangent $DT$ in the negative $y$ direction as they diverge. So, the line $SO$ must be produced in the positive $y$ direction to once more intersect the tangent at $T$. That explains why tangents of angles in the third quadrant are positive.
 
+## The trigonometric functions
+
 By moving from triangles to the unit circle on coordinate axes, we have enabled $\theta$ to take on any value between 0 and $2\pi$ radians. The _trigonometric ratios_ have been unshackled from the triangle to become the _trigonometric functions_ which can take on _any_ real number as arguments. The graphs of the three standard trigonometric functions are shown in @fig:threegraph.
 
 ![Graphs of the three trigonometric functions. Notice how $\sin$ and $\cos$ are bounded in their values, but $\tan$ is not. There are discontinuities  for $\theta=\frac{2n+1}{2}\pi$.]({attach}images/threegraph.png){#fig:threegraph width=90% .modal-target}
 
-Note that when  $\theta = 2\pi$ radians, we cannot really distinguish it from $\theta=0$ radians. So, one angle may [masquerade](https://www.thefreedictionary.com/masquerade) as another unless we have accounting devices to optionally add $2n\pi$ to angles with the [proviso](https://dictionary.cambridge.org/dictionary/english/proviso) that $n$ is an integer. And this concept is a [segue](https://www.dictionary.com/browse/segue) to power series expansions of trigonometric functions, their use in calculus, and later on, in Fourier series.
+Note that when  $\theta = 2\pi$ radians, we cannot really distinguish it from $\theta=0$ radians. The trigonometric functions therefore repeat themselves every time the point $S$ in @fig:unit completes a full circle: they are [_periodic_](https://mathworld.wolfram.com/PeriodicFunction.html) with a period of $2\pi$. So, one angle may [masquerade](https://www.thefreedictionary.com/masquerade) as another unless we have accounting devices to optionally add $2n\pi$ to it with the [proviso](https://dictionary.cambridge.org/dictionary/english/proviso) that $n$ is an integer. And this concept is a [segue](https://www.dictionary.com/browse/segue) to power series expansions of trigonometric functions, their use in calculus, and later on, in Fourier series.
 
 ## Power series for trigonometric functions
 
