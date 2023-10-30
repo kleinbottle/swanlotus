@@ -153,7 +153,7 @@ Note, though, that $\tan\theta$ is a length _outside the unit circle_ and is the
 
 When $\theta$ is in the third quadrant, for instance, $OS$ extrapolated in the negative $y$ direction will not intersect the tangent $DT$ in the negative $y$ direction as they diverge. So, the line $SO$ must be produced in the positive $y$ direction to once more intersect the tangent at $T$. That explains why tangents of angles in the third quadrant are positive.
 
-By moving from triangles to the unit circle on coordinate axes, we have enabled $\theta$ to take on any value between 0 and $2\pi$ radians. The trigonometric functions have been unshackled from the triangle and can take on _any_ real number as arguments. The graphs of the three standard trigonometric functions are shown in @fig:threegraph.
+By moving from triangles to the unit circle on coordinate axes, we have enabled $\theta$ to take on any value between 0 and $2\pi$ radians. The _trigonometric ratios_ have been unshackled from the triangle to become the _trigonometric functions_ which can take on _any_ real number as arguments. The graphs of the three standard trigonometric functions are shown in @fig:threegraph.
 
 ![Graphs of the three trigonometric functions. Notice how $\sin$ and $\cos$ are bounded in their values, but $\tan$ is not. There are discontinuities  for $\theta=\frac{2n+1}{2}\pi$.]({attach}images/threegraph.png){#fig:threegraph width=90% .modal-target}
 
