@@ -1,12 +1,12 @@
 ---
-title: Zero, One, Two, And Many
+title: Zero, One, Two, Many
 author: R (Chandra) Chandrasekhar
 date: 2007-12-28
 modified: 2023-10-30
-category: Mathematics
+category: Philosophy
 tags: Butterflies from My Mind
-summary:
-opengraphimage:
+summary: 'As has been observed above [@perlcookbook2003], in the context of computer programming, there are only three numbers worth being concerned about: zero, one, and many. And if you are into the arcana of ["regular expressions"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions) and ["pattern matching"](https://www.google.com/search?q=pattern+matching)---which is, incidentally, something done [implicitly]() every time you do a Google search, or look for a book at an online bookstore---that is very sage advice. But how serviceable is this dictum in everyday life?'
+opengraphimage: 012-600-dpi.png
 ---
 
 ::: {.flushright .xsmall}
@@ -15,7 +15,7 @@ numbers: zero, one, and however many you please. \
 [Tom Christiansen and Nathan Torkington]{.smallcaps} [@perlcookbook2003]
 :::
 \
-As has been observed above [@perlcookbook2003], in the context of computer programming, there are only three numbers worth being concerned about: zero, one, and many. And if you are into the arcana of ["regular expressions"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions) and ["pattern matching"](https://www.google.com/search?q=pattern+matching)---which is, incidentally, something done implicitly every time you do a Google search, or look for a book at an online bookstore---that is very sage advice. But how serviceable is this dictum in everyday life?
+As has been observed above [@perlcookbook2003], in the context of computer programming, there are only three numbers worth being concerned about: zero, one, and many. And if you are into the arcana of ["regular expressions"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions) and ["pattern matching"](https://www.google.com/search?q=pattern+matching)---which is, incidentally, something done [implicitly]() every time you do a Google search, or look for a book at an online bookstore---that is very sage advice. But how serviceable is this dictum in everyday life?
 
 ## A real-life scenario
 
@@ -49,7 +49,7 @@ So, both zero and one are powerful numbers. They hold within themselves the whol
 
 I nominate the number two. The saying, ["It takes two to tango"](https://dictionary.cambridge.org/dictionary/english/it-takes-two-to-tango) takes on a new meaning in the world of chemistry, physics, and biology.
 
-In chemistry, elements react with each other to try to attain configurations in which there are _eight_ electrons or completed octets. And eight is two cubed. This quest to make eight, either by sharing or tearing electrons is what gives elements their reactivity. It is what drives poisonous chlorine and combustible sodium to form physiologically benign sodium chloride or common salt. And even the lightest of the rare gases, helium, tries to attain a stable configuration whereby _two_ helium atoms cohabit to form one helium molecule. Evidence again of the power of two.
+In chemistry, elements react with each other to try to attain configurations in which there are _eight_ electrons or completed octets. And eight is two cubed. This quest to make eight, either by sharing or tearing electrons is what gives elements their reactivity. It is what drives poisonous chlorine and combustible sodium to form physiologically benign sodium chloride or common salt. And even the lightest of the rare gases, helium, has _two_ electrons in its solitary atomic state. Evidence again of the power of two.
 
 Physics relies on repeatable measurements. And all measurements rely on comparisons. When you weigh one kilogram of beans, you are really comparing the weight of the beans with a weight that is known to be one kilogram. If you are using a commercial scale, which relies on spring tension, you are really comparing the tension or compression on the spring produced by the beans with the tension or compression from the known one kilogram weight. And this is as true with time, distance, and anything else you care to measure, as it is with weight. _All measurements are comparisons, and for that we need two_.
 
