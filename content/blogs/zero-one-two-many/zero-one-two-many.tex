@@ -1,0 +1,422 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode,linktoc=all}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  a4paper,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=25mm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{british}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+% $HOME/.pandoc/defaults/latex-header-includes.tex
+% Common header includes for both lualatex and xelatex engines.
+%
+% Preliminaries
+%
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+% \PassOptionsToPackage{main=british}{babel}
+\PassOptionsToPackage{english}{selnolig}
+\AtBeginEnvironment{quote}{\small}
+\AtBeginEnvironment{quotation}{\small}
+\AtBeginEnvironment{longtable}{\centering}
+%
+% Packages that are useful to include
+%
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[inkscapeversion=1]{svg}
+\usepackage[defaultlines=4,all]{nowidow}
+\usepackage{etoolbox}
+\usepackage{fontsize}
+\usepackage{newunicodechar}
+\usepackage{pdflscape}
+\usepackage{fnpct}
+\usepackage{parskip}
+  \setlength{\parindent}{0pt}
+\usepackage[style=american]{csquotes}
+% \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
+%
+\usepackage{esdiff} % for derivative symbols
+\usepackage{amsmath}
+\usepackage{hyperref} % cleveref must come AFTER hyperref
+\usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
+% noto-plus.tex
+% Font-setting header file for use with Pandoc Markdown
+% to generate PDF via LuaLaTeX.
+% The main font is Noto Serif.
+% Other main fonts are also available in appropriately named file.
+\usepackage{fontspec}
+\usepackage{setspace}
+\setstretch{1.3}
+%
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=Node} % at the start always
+%
+% For English
+% See also https://tex.stackexchange.com/questions/574047/lualatex-amsthm-polyglossia-charissil-error
+% We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
+%
+\babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
+%
+\babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
+%
+\babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
+%
+% Sanskrit, Tamil, and Greek fonts
+%
+\babelprovide[import, onchar=ids fonts]{sanskrit}
+\babelprovide[import, onchar=ids fonts]{tamil}
+\babelprovide[import, onchar=ids fonts]{greek}
+%
+\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSerifDevanagari}
+\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSansDevanagari}
+\babelfont[tamil]{rm}[Renderer=HarfBuzz,Script=Tamil]{NotoSerifTamil}
+\babelfont[tamil]{sf}[Renderer=HarfBuzz,Script=Tamil]{NotoSansTamil}
+\babelfont[greek]{rm}[Script=Greek]{GentiumBookPlus}
+%
+% Math font
+%
+\usepackage{unicode-math} % seems not to hurt % fallabck
+\setmathfont[bold-style=TeX]{STIX Two Math}
+%
+%
+% Other fonts
+%
+\newfontfamily{\emojifont}{Symbola}
+%
+
+\usepackage{titling}
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0.2pt}
+    \renewcommand{\footrulewidth}{0.2pt}
+    \fancyhead[LO,RE]{\scshape\thetitle}
+    \fancyfoot[CO,CE]{\footnotesize Copyright © 2006\textendash\the\year, R (Chandra) Chandrasekhar}
+    \fancyfoot[RE,RO]{\thepage}
+\newfontfamily{\regulariconfont}{Font Awesome 6 Free Regular}[Color=Grey]
+\newfontfamily{\solidiconfont}{Font Awesome 6 Free Solid}[Color=Grey]
+\newfontfamily{\brandsiconfont}{Font Awesome 6 Brands}[Color=Grey]
+%
+% Direct input of Unicode code points
+%
+\newcommand{\faEnvelope}{\regulariconfont\ ^^^^f0e0\normalfont}
+\newcommand{\faMobile}{\solidiconfont\ ^^^^f3cd\normalfont}
+\newcommand{\faLinkedin}{\brandsiconfont\ ^^^^f0e1\normalfont}
+\newcommand{\faGithub}{\brandsiconfont\ ^^^^f09b\normalfont}
+\newcommand{\faAtom}{\solidiconfont\ ^^^^f5d2\normalfont}
+\newcommand{\faPaperPlaneRegular}{\regulariconfont\ ^^^^f1d8\normalfont}
+\newcommand{\faPaperPlaneSolid}{\solidiconfont\ ^^^^f1d8\normalfont}
+
+%
+% The block below is commented out because of Tofu glyphs in HTML
+%
+% \newcommand{\faEnvelope}{\regulariconfont\ \normalfont}
+% \newcommand{\faMobile}{\solidiconfont\ \normalfont}
+% \newcommand{\faLinkedin}{\brandsiconfont\ \normalfont}
+% \newcommand{\faGithub}{\brandsiconfont\ \normalfont}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{sf}
+\hypersetup{
+  pdftitle={Zero, One, Two, And Many},
+  pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
+  colorlinks=true,
+  linkcolor={DarkOliveGreen},
+  filecolor={Purple},
+  citecolor={DarkKhaki},
+  urlcolor={Maroon},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Zero, One, Two, And Many}
+\author{R (Chandra) Chandrasekhar}
+\date{2007-12-28 | 2023-10-30}
+
+\begin{document}
+\maketitle
+
+\thispagestyle{empty}
+
+
+\begin{flushright}
+
+\begin{footnotesize}
+
+It's been said that programming has only three nice\\
+numbers: zero, one, and however many you please.\\
+\textsc{Tom Christiansen and Nathan Torkington}
+\protect\hyperlink{ref-perlcookbook2003}{{[}1{]}}
+
+\end{footnotesize}
+
+\end{flushright}
+
+\hfill\break
+As has been observed above
+\protect\hyperlink{ref-perlcookbook2003}{{[}1{]}}, in the context of
+computer programming, there are only three numbers worth being concerned
+about: zero, one, and many. And if you are into the arcana of
+\href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions}{``regular
+expressions''} and
+\href{https://www.google.com/search?q=pattern+matching}{``pattern
+matching''}---which is, incidentally, something done implicitly every
+time you do a Google search, or look for a book at an online
+bookstore---that is very sage advice. But how serviceable is this dictum
+in everyday life?
+
+\hypertarget{a-real-life-scenario}{%
+\subsection{A real-life scenario}\label{a-real-life-scenario}}
+
+Let us assume that you are living alone but have decided to invite
+friends for a New Year's Eve party. You had at first assumed that the
+full cohort of fifty or so friends to whom you sent invitations were all
+going to turn up, but had later revised that estimate to half that
+number. You shop and eagerly prepare sufficient food and drink for the
+festive occasion. Exhausted but elated with anticipation, you finally
+finish the chores, sit back, heave a sigh of relief, and wait for your
+friends.
+
+As the clock ticks toward the appointed hour, you watch the door but
+there are no early birds. You stay patient and say that perhaps they
+will turn up just on time. The awaited hour comes and goes and still no
+one has shown up. Meanwhile, you get a series of phone calls and emails
+from your friends, who all mysteriously claim, that at the last minute
+some unforeseen circumstance prevents their presence. They convey their
+apologies for not turning up. A full hour after the scheduled time for
+dinner, you reluctantly decide that nobody is going to turn up after
+all.
+
+\hypertarget{zero}{%
+\subsection{Zero}\label{zero}}
+
+And there you have it: the number zero. It is catastrophic on occasion,
+as when you have zero guests turning up, or you have scored zero marks
+in the examination, or zero goals in the soccer match. A zero bank
+balance can drive you to drink, or up the wall, or worse. Having zero
+cavities when you visit the dentist, however, is cause for celebration.
+So, zero, although it is nothing, is paradoxically, something to be
+reckoned with. And something very powerful at that.
+
+\hypertarget{one}{%
+\subsection{One}\label{one}}
+
+Think of yourself: the only and lonely consumer of food at your festive
+banquet. Left to sup alone and without the cheer of convivial company,
+you nevertheless count. You, the subject are always there, and
+therefore, the number one has a subjective significance that rivals only
+that of zero. In life, each of has only one body. And even if we had a
+dozen houses spread across five continents, we can occupy only one at
+any one time. The number one imposes some fundamental constraints on our
+lives.
+
+But one has another magical, mathematical property. If you add one to
+one, you get two. If you add one to two, you get three, and so on. So,
+any number that you care to name can be generated by adding one to
+itself that many times but one! If that sounds too complicated for you,
+you can equally say that any number can be generated by adding one to
+zero that number of times. Note, however, that this magic requires the
+number one. Adding zero to itself does us no good in creating new
+numbers. One needs to add one to zero before the brewing begins.
+
+So, both zero and one are powerful numbers. They hold within themselves
+the whole menagerie of numbers. Indeed, our modern civilization, built
+as it is on computers and the binary number system, has the numbers zero
+and one at its technological foundations. But are there any other
+powerful and important numbers besides these two?
+
+\hypertarget{two}{%
+\subsection{Two}\label{two}}
+
+I nominate the number two. The saying, ``It takes two to tango'' takes
+on a new meaning in the world of chemistry, physics, and biology.
+
+In chemistry, elements react with each other to try to attain
+configurations in which there are eight electrons or completed octets.
+And eight is two cubed. This quest to make eight, either by sharing or
+tearing electrons is what gives elements their reactivity. It is what
+drives poisonous chlorine and combustible sodium to form physiologically
+benign sodium chloride or common salt. And even the lightest of the rare
+gases, helium, tries to attain a stable configuration whereby two helium
+atoms cohabit to form one helium molecule. Evidence again of the power
+of two.
+
+Physics relies on repeatable measurements. And all measurements rely on
+comparisons. When you weigh one kilogram of beans, you are really
+comparing the weight of the beans with a weight that is known to be one
+kilogram. If you are using a commercial scale, which relies on spring
+tension, you are really comparing the tension or compression on the
+spring produced by the beans with the tension or compression from the
+known one kilogram weight. And this is as true with time, distance, and
+anything else you care to measure, as it is with weight. All
+measurements are comparisons, and for that we need two.
+
+In biology, there is the famous double helix: DNA or the molecule of
+life is known to be like a spiral staircase or twisted ladder. But why
+two? Why not one? Or zero? Or three? Very likely because Mother Nature
+knew, before us, that all comparisons need two. And if you want to make
+a copy of something, you need to compare the copy with the original.
+Since life is really a process of copying, with elegant and random
+variations thrown in (assuming that you are not totally allergic to the
+Theory of Evolution) then, two rules again.
+
+Another possible reason for life's affinity with two is the insurance
+provided by redundancy. We have two kidneys, two ears, two eyes, etc.,
+primarily because of aesthetics, balance, and design elegance, but
+secondarily because of redundancy. Someone who has lost hearing in one
+ear or sight in one eye can still hear or see. They might have lost the
+ability to localize sound or perceive depth, but the sensory channels
+are still functional.
+
+The number two and its powers are also at the heart of cellular fusion
+during conception where two---sperm and ovum---become one embryo or
+zygote. And with subsequent cellular division, the primary embryonic
+cell becomes two. So life's tango is really two =\textgreater{} one
+=\textgreater{} two, over and over again.
+
+\hypertarget{to-sum-up}{%
+\subsection{To sum up}\label{to-sum-up}}
+
+To sum up, zero and one are mathematically profound. The number two
+comes into its own with matter, measurement, and life. But what about
+the other numbers? What about three, or thirty-seven, or three hundred
+and thirty million? They might each be interesting in their own right
+and have some endearing virtue or peculiarity, but these other numbers
+are not lynchpins. The appellation ``many'' will do for them.
+
+Moreover, not giving these other numbers special distinction is
+something we have done many times already. In the grammars for most
+languages, only two numbers are recognized: singular and plural, one and
+many. The automatic matching of singular nouns with singular verbs, and
+plural nouns with plural verbs, is a chore to automate with reports
+generated by computing languages. And that is because the number one is
+special. Beyond it, we only think of many. But bear in mind that ancient
+languages like Greek and Sanskrit had three numbers in grammar:
+singular, dual, and plural. And that, I think is giving the numbers one
+and two their fair share of distinction. And oh! To speak nothing of
+nothing will not do, so, naught or nought, must be there too!
+
+Vive la zero, one, two, many!
+
+\hypertarget{acknowledgements}{%
+\subsection{Acknowledgements}\label{acknowledgements}}
+
+This blog first appeared on 28 December 2007 as a \emph{Daily Dose}: an
+essay I circulated on a private email list. I have retrieved and
+refreshed it to allow its reincarnation as an online blog now.
+
+\hypertarget{feedback}{%
+\subsection{Feedback}\label{feedback}}
+
+Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
+comments and corrections.
+
+\noindent A PDF version of this article is
+\href{./zero-one-two-many.pdf}{available for download here}:
+
+\begin{small}
+
+\begin{sffamily}
+
+\url{https://swanlotus.netlify.app/blogs/zero-one-two-many.pdf}
+
+\end{sffamily}
+
+\end{small}
+
+\hypertarget{bibliography}{%
+\section*{References}\label{bibliography}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{0}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-perlcookbook2003}{}}%
+\CSLLeftMargin{{[}1{]} }%
+\CSLRightInline{T. Christiansen and N. Torkington, \emph{Perl cookbook},
+2nd ed. Sebastopol, CA, USA: O'Reilly, 2003.}
+
+\end{CSLReferences}
+
+
+
+\end{document}
