@@ -121,19 +121,19 @@ _$S$ is therefore the point with coordinates $(\cos\theta, \sin\theta)$_.
 
 Note that since the coordinates of $S$ are confined to the unit circle, the values of $\sin\theta$ and $\cos\theta$ are confined to the closed interval $[-1, 1]$, i.e. they perforce have values lying between $-1$ and $1$, both inclusive. From @fig:unit, we see that $(\cos\theta, \sin\theta)$---which represent the coordinates of $S$---take on signed values in accordance with the signs of $x$ and $y$ in the respective quadrants. One could also view the associated _lengths_ as signed values.
 
-### The tangent function
+### The tangent
 
-The really insightful revelation from @fig:unit comes from looking at $\tan\theta$. Have you ever wondered why the ratio $\tan\theta = \frac{\sin\theta}{\cos\theta}$ is called the _tangent_ ratio?
+The really insightful revelation from @fig:unit comes from looking at $\tan\theta$. Have you ever wondered why the ratio $\tan\theta = \frac{\sin\theta}{\cos\theta}$ is called the _tangent_?
 
 From @fig:trig, we know that the tangent is the ratio of the lengths of the opposite side to the adjacent side. In @fig:unit, $\tan\theta = \frac{SC}{OC}$. But the denominator in this case, $OC$, is not $1$ like it was for the other two trigonometric ratios.
 
-Recall from geometry that a [tangent (line)](https://en.wikipedia.org/wiki/Tangent_lines_to_circles) to a circle is a limiting case of a [chord](https://en.wikipedia.org/wiki/Chord_(geometry)) in which the two points of intersection---of a line with a circle---coincide into one point, called the point of tangency. The radius from the centre to the point of tangency makes a right angle.
+Recall from geometry that a [tangent (line)](https://en.wikipedia.org/wiki/Tangent_lines_to_circles) to a circle is a limiting case of a [chord](https://en.wikipedia.org/wiki/Chord_(geometry)) in which the two points of intersection---of a line with a circle---coincide into one point, called the point of tangency. The radius from the centre to the tangent line makes a right angle at the point of tangency.
 
 With that out of the way, we construct the triangle $ODT$ thus:
 
-a. Produce the line $OC$ to intersect the circle at the point $D$ which is $(0, 1)$. $OD$, being a radius has unit length.
+a. Extend^[Extending a line used to be called _producing a line_ but that usage has now slipped into relative obscurity.] the line $OC$ to intersect the circle at the point $D$ which is $(0, 1)$. $OD$, being a radius has unit length.
 a. Draw a tangent to the circle at $D$.
-a. Produce the radius $OS$ to intersect the tangent at the point $T$.
+a. Extend the radius $OS$ to intersect the tangent at the point $T$.
 
 The triangle $ODT$ is similar to triangle $OCS$. We can then assert that the ratios of corresponding sides are equal. Thus,
 $$
