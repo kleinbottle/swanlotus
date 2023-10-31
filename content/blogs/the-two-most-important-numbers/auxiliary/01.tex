@@ -1,0 +1,28 @@
+\documentclass[border=5mm,preview]{standalone}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmathfont{STIX Two Math}
+\usepackage[rgbnames,dvipsnames,svgnames]{xcolor}
+\usepackage{amsmath}
+\begin{document}
+\color{Silver}
+\[
+\begin{bmatrix}
+\color{DarkOliveGreen}1 & \color{Maroon}0\\
+\color{Maroon}0 & \color{DarkOliveGreen}1
+\end{bmatrix}
+\]
+\end{document}
+%
+% To crop
+%
+% pdfcrop 01.pdf
+%
+% to get
+%
+% 01-crop.pdf
+%
+% To convert to PNG:
+%
+% pdftocairo -png -r 3600 -singlefile 01-crop.pdf 01-crop-3600-dpi-cairo
+%
