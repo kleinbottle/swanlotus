@@ -23,11 +23,11 @@ Let us assume that you are living alone, but have decided to invite friends for 
 
 As the clock ticks [inexorably](https://www.thefreedictionary.com/inexorably) toward the appointed hour, you watch the door but there are no early birds. You stay patient and console yourself that perhaps they will turn up just on time. The awaited hour comes and goes and still no one has shown up.
 
-Meanwhile, you get a series of emails, text messages, and phone calls from your friends, who all mysteriously claim, that at the last minute some unforeseen circumstance prevented  their presence. They convey their apologies for not turning up. A full hour after the scheduled time for dinner, you reluctantly conclude that nobody is going to turn up after all, and decide to [assuage](https://www.merriam-webster.com/dictionary/assuage) your sorrow by [tucking in](https://www.oxfordlearnersdictionaries.com/definition/english/tuck-in).
+Meanwhile, you get a [flurry](https://dictionary.cambridge.org/dictionary/english/flurry) of emails, text messages, and phone calls from your friends, who all mysteriously claim, that at the last minute some unforeseen circumstance prevented  their presence. They convey their apologies for not turning up. A full hour after the scheduled time for dinner, you reluctantly conclude that nobody is going to turn up after all, and decide to [assuage](https://www.merriam-webster.com/dictionary/assuage) your sorrow by [tucking in](https://www.oxfordlearnersdictionaries.com/definition/english/tuck-in).
 
 ## Zero
 
-And there you have it: the number zero. It precisely equals the number of your expected guests who turned up. It is catastrophic, as on this on occasion, or when you have scored zero marks in the examination, or zero goals in the soccer match. A zero bank balance can drive you up the wall, or worse. Having zero cavities when you visit the dentist, however, is cause for celebration. But is zero really a number?
+And there you have it: the number zero. It precisely equals the number of your expected guests who turned up. It is catastrophic, as on this occasion, or when you have scored zero marks in an examination, or zero goals in a soccer match. A zero bank balance can drive you up the wall, or worse. Having zero cavities when you visit the dentist, however, is cause for celebration. But is zero really a number?
 
 ### Face value and place value
 
