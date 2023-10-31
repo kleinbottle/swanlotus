@@ -1,4 +1,4 @@
-\documentclass[border=5mm,preview]{standalone}
+\documentclass{standalone}
 \usepackage{fontspec}
 \usepackage{unicode-math}
 \setmathfont{STIX Two Math}
@@ -6,12 +6,12 @@
 \usepackage{amsmath}
 \begin{document}
 \color{Silver}
-\[
+$\displaystyle
 \begin{bmatrix}
 \color{DarkOliveGreen}1 & \color{Maroon}0\\
 \color{Maroon}0 & \color{DarkOliveGreen}1
 \end{bmatrix}
-\]
+$
 \end{document}
 %
 % To crop
@@ -24,5 +24,9 @@
 %
 % To convert to PNG:
 %
-% pdftocairo -png -r 3600 -singlefile 01-crop.pdf 01-crop-3600-dpi-cairo
+% pdftocairo -png -r 3600 -singlefile 01-crop.pdf 01-crop-3600-dpi-cairocp 01.tex 02.tex
+
+% See
+% https://tex.stackexchange.com/a/50171/1636
 %
+% https://tex.stackexchange.com/questions/50162/how-to-make-a-standalone-document-with-one-equation
