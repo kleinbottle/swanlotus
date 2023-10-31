@@ -83,7 +83,7 @@ Vive la zero, one, two, many!
 
 ## Note to the Reader
 
-This blog first appeared on 28 December 2007 as a _Daily Dose_---an informal essay that I circulated each day on a private email list. I have retrieved and refreshed it to allow its reincarnation as an online blog now. Its purpose is to inform and educate. Accordingly, _sme_ words that are likely to be unfamiliar to the reader are shown in blue and hyperlinked to entries on the Web that will explain their meaning. The rest are left for the reader to explore. \emojifont :wink: \normalfont
+This blog first appeared on 28 December 2007 as a _Daily Dose_---an informal essay that I circulated each day on a private email list. I have retrieved and refreshed it to allow its reincarnation as an online blog now. Its purpose is to inform and educate. Accordingly, _some_ words that are likely to be unfamiliar to the reader are shown in blue and hyperlinked to entries on the Web that will explain their meaning. The rest are left for the reader to explore. \emojifont :wink: \normalfont
 
 ## Feedback
 
