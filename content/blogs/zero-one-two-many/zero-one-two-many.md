@@ -15,7 +15,7 @@ numbers: zero, one, and however many you please. \
 [Tom Christiansen and Nathan Torkington]{.smallcaps} [@perlcookbook2003]
 :::
 \
-As has been observed above [@perlcookbook2003], in the context of computer programming, there are only three numbers worth being concerned about: zero, one, and many. And if you are into the arcana of ["regular expressions"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions) and ["pattern matching"](https://www.google.com/search?q=pattern+matching)---which is, incidentally, something done [implicitly]() every time you do a Google search, or look for a book at an online bookstore---that is very [sage](https://www.merriam-webster.com/dictionary/sage) advice. But how serviceable is this [dictum](https://www.dictionary.com/browse/dictum) in everyday life?
+In the context of computer programming [@perlcookbook2003], there are only three numbers worth being concerned about: zero, one, and many. And if you are into the [arcana](https://en.wiktionary.org/wiki/arcana) of ["regular expressions"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions) and ["pattern matching"](https://www.google.com/search?q=pattern+matching)---which is something done [implicitly](https://www.dictionary.com/browse/implicitly) every time you do a Google search, or look for a book at an online bookstore---that is very [sage](https://www.merriam-webster.com/dictionary/sage) advice. But how serviceable is this [dictum](https://www.dictionary.com/browse/dictum) in everyday life?
 
 ## A real-life scenario
 
@@ -27,15 +27,15 @@ Meanwhile, you get a series of emails, text messages, and phone calls from your 
 
 ## Zero
 
-And there you have it: the number zero. It precisely equals the number of your expected guests who turned up. It is catastrophic, as on this on occasion, or when you have scored zero marks in the examination, or zero goals in the soccer match. A zero bank balance can drive you up the wall, or worse.Having zero cavities when you visit the dentist, however, is cause for celebration.
+And there you have it: the number zero. It precisely equals the number of your expected guests who turned up. It is catastrophic, as on this on occasion, or when you have scored zero marks in the examination, or zero goals in the soccer match. A zero bank balance can drive you up the wall, or worse. Having zero cavities when you visit the dentist, however, is cause for celebration. But is zero really a number?
 
 ### Face value and place value
 
-The _face value_ of a digit is its single-digit value taken in isolation. In this scheme of things, the digit five is greater in value than the digit zero.
+The _face value_ of a digit is its single-digit value taken in isolation. In this scheme of things, the digit 5 is greater in value than the digit 0.
 
 But the decimal system of numbers also brought with it the notion of _place value_ in which the position of a digit in a number determines its value. For example, in the number 45, the digit 4 represents forty and the digit 5 represents five, giving us an implicit sum of forty plus five, which we call forty five. In this case, the digit 4 has a face value less than 5 but a place value greater than 5.
 
-Likewise, in the number 105, we have one hundred, zero tens and five units. The digits 1 and 0 both have a place value greater than the digit 5.
+Likewise, in the number 105, we have one hundred, zero tens and five units. The digits 1 and 0 both have a place value greater than the digit 5. Ponder on this: would we ever be able to denote the number one hundred and five without the digit 0? People struggled with this problem for ages before the subtle idea of zero gave them a way out.
 
 Without zero as a place holder, we would not be able to perform arithmetic unambiguously and efficiently. We could never write numbers solely using digits if we had not taken recourse to zero and its beguiling fullness in the midst of emptiness. So, zero, although it is nothing, is paradoxically, something to be reckoned with. And something very powerful at that. It has been called [_The Nothing That Is_](https://www.amazon.in/Nothing-That-Natural-History-Zero/dp/0195142373) [@zero2000].
 
@@ -55,7 +55,7 @@ So, both zero and one are powerful numbers. They hold within themselves the whol
 
 ## Two
 
-I nominate the number two. The saying, ["It takes two to tango"](https://dictionary.cambridge.org/dictionary/english/it-takes-two-to-tango) takes on a new meaning in the world of chemistry, physics, and biology.
+I nominate the number two. The saying, ["It takes two to tango"](https://dictionary.cambridge.org/dictionary/english/it-takes-two-to-tango) takes on a new meaning in the worlds of chemistry, physics, and biology.
 
 ### Two in Chemistry
 
@@ -65,13 +65,13 @@ In chemistry, elements react with each other to try to attain configurations in 
 
 Physics relies on repeatable measurements. And all measurements rely on comparisons. When you weigh one kilogram of beans, you are really comparing the weight of the beans with a weight that is known to be one kilogram. If you are using a commercial scale, which relies on spring tension, you are really comparing the tension or compression on the spring produced by the beans with the tension or compression from the known one kilogram weight. And this is as true with time, distance, and anything else you care to measure, as it is with weight. _All measurements are comparisons, and for that we need two_.
 
-### Two in biology
+### Two in Biology
 
 In biology, there is the famous [double helix](https://www.genome.gov/genetics-glossary/Double-Helix)---DNA or the molecule of life is known to be like a spiral staircase or twisted ladder. But why two? Why not one? Or zero? Or three? Very likely because Mother Nature knew, before us, that all comparisons need two. And if you want to make a copy of something, you need to compare the copy with the original. Since life is really a process of copying, with elegant and random variations thrown in (assuming that you are not totally allergic to the [Theory of Evolution](https://www.livescience.com/474-controversy-evolution-works.html)) then, two rules again.
 
 Another possible reason for life's affinity with two is the insurance provided by redundancy. We have two kidneys, two ears, two eyes, etc., primarily because of aesthetics, balance, and design elegance, but secondarily because of redundancy. Someone who has lost hearing in one ear or sight in one eye can still hear or see. They might have lost the ability to localize sound or perceive depth, but the sensory channels are still functional.
 
-The number two and its powers are also at the heart of cellular fusion during conception where two---sperm and ovum---become one embryo or zygote. And with subsequent cellular division, the primary embryonic cell becomes two. So life's tango is really two => one => two, over and over again.
+The number two---and its powers like 4, 8, 16 etc.--- are also at the heart of cellular division. During conception two cells---sperm and ovum---become one embryo or zygote. But in all subsequent cellular proliferation, or mitosis, they divide in two.
 
 ## To sum up
 
@@ -83,7 +83,7 @@ Vive la zero, one, two, many!
 
 ## Note to the Reader
 
-This blog first appeared on 28 December 2007 as a _Daily Dose_---an informal essay that I circulated each day on a private email list. I have retrieved and refreshed it to allow its reincarnation as an online blog now. Its purpose is to inform and educate. Accordingly, words that are likely to be unfamiliar to the reader are shown in blue and hyperlinked to entries on the Web that will explain their meaning.
+This blog first appeared on 28 December 2007 as a _Daily Dose_---an informal essay that I circulated each day on a private email list. I have retrieved and refreshed it to allow its reincarnation as an online blog now. Its purpose is to inform and educate. Accordingly, _sme_ words that are likely to be unfamiliar to the reader are shown in blue and hyperlinked to entries on the Web that will explain their meaning. The rest are left for the reader to explore. \emojifont :wink: \normalfont
 
 ## Feedback
 
