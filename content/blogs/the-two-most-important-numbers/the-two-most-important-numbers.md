@@ -11,10 +11,6 @@ opengraphimage: 01-crop-3600-dpi-cairo.png
 
 The unique properties of the numbers zero and one make them mathematically indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we are enabled to discover how they cement disparate areas of Mathematics.
 
-
-
-
-
 ## The shy one
 
 The number one is often [implicit](https://www.vocabulary.com/dictionary/implicit) in mathematical notation. While we may write $2x$ to denote $2\times x$, or two multiplied by $x$, we _do not_ write $1x$, even if it is literally correct, because of convention. In instances like this, the number one is implicit, and assumed to be understood by those who know. If you happen to be one of those _not_ in the know, here's your chance to join the other side.
