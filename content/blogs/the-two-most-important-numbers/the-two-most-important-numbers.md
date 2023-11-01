@@ -5,11 +5,11 @@ date: 2023-10-31
 modified: 2023-10-31
 category: Mathematics
 tags: Mathematical Musings
-summary: 'The unique properties of the numbers zero make them mathematically indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we are enabled to discover how they cement disparate areas of Mathematics.'
+summary: 'The unique properties of the numbers zero make them mathematically indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers, we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we may discover how they cement disparate areas of Mathematics.'
 opengraphimage: 01-crop-3600-dpi-cairo.png
 ---
 
-The unique properties of the numbers zero and one make them mathematically indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we are enabled to discover how they cement disparate areas of Mathematics.
+The unique properties of the numbers zero and one make them mathematically indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers. we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we may discover how they cement disparate areas of Mathematics.
 
 ## The shy one
 
@@ -85,7 +85,7 @@ c & d
 $${#eq:addidmatrix}
 and $\begin{bmatrix} 0 & 0\\0 & 0 \end{bmatrix}$ is the additive identity for matrix addition.
 
-Do you see how the seed ideas of the additive and multiplicative identities when sown broadcast, germinate into forms that are surprisingly similar to the original seeds. The numbers $0$ and $1$ do indeed rule the roost. Obviously, the identity matrices will change with the matrix sizes, but the principles remain the same.
+Do you see how the seed ideas of the additive and multiplicative identities, sown far and wide, germinate into shoots that are surprisingly similar to the original ones. The numbers $0$ and $1$ do indeed rule the roost. Obviously, the identity matrices will change with the matrix sizes, but the principles remain the same.
 
 
 ## Multiplication
