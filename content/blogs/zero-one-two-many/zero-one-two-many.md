@@ -43,7 +43,7 @@ Without zero as a place holder, we would not be able to perform arithmetic unamb
 
 Think of yourself: the one and only lonely consumer of food at your festive banquet. Left to [sup](https://www.thefreedictionary.com/sup) alone and without the cheer of [convivial](https://www.dictionary.com/browse/convivial) company, _you_ nevertheless count. You---the subject---are always there, and therefore, the number one has a subjective significance that rivals only that of zero. This is why _I_ is called the _first person pronoun_. Without the first person, everything else is vacuous.
 
-Each of has only _one_ body. And even if we had a dozen houses spread across five continents, we can occupy only _one_ at any one time. The number one imposes some fundamental constraints on our lives.
+Each of us has only _one_ body. And even if we had a dozen houses spread across five continents, we can occupy only _one_ at any one time. The number one imposes some fundamental constraints on our lives.
 
 ### The magic of successor numbers
 
@@ -69,9 +69,9 @@ Physics relies on repeatable measurements. And all measurements rely on comparis
 
 In biology, there is the famous [double helix](https://www.genome.gov/genetics-glossary/Double-Helix)---DNA or the molecule of life is known to be like a spiral staircase or twisted ladder. But why two? Why not one? Or zero? Or three? Very likely because Mother Nature knew, before us, that all comparisons need two. And if you want to make a copy of something, you need to compare the copy with the original. Since life is really a process of copying, with elegant and random variations thrown in (assuming that you are not totally allergic to the [Theory of Evolution](https://www.livescience.com/474-controversy-evolution-works.html)) then, two rules again.
 
-Another possible reason for life's affinity with two is the insurance provided by redundancy. We have two kidneys, two ears, two eyes, etc., primarily because of aesthetics, balance, and design elegance, but secondarily because of redundancy. Someone who has lost hearing in one ear or sight in one eye can still hear or see. They might have lost the ability to localize sound or perceive depth, but the sensory channels are still functional.
+Another possible reason for life's affinity with two is the insurance provided by redundancy. We have two kidneys, two ears, two eyes, etc., primarily because of aesthetics, balance, and design elegance, but secondarily as a backup in case one fails. Someone who has lost hearing in one ear or sight in one eye can still hear or see. They might have lost the ability to localize sound or perceive depth, but the sensory channels are still functional.
 
-The number two---and its powers like 4, 8, 16 etc.--- are also at the heart of cellular division. During conception two cells---sperm and ovum---become one embryo or zygote. But in all subsequent cellular proliferation, or mitosis, they divide in two.
+The number two---and its powers like 4, 8, 16 etc.---are also at the heart of [mitosis](https://www.nature.com/scitable/definition/mitosis-cell-division-47/). Apart from  conception where two cells---sperm and ovum---become one embryo or zygote, in all subsequent cellular proliferation, they divide in two.
 
 ## To sum up
 
