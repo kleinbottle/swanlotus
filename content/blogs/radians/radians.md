@@ -2,7 +2,7 @@
 title: "A tale of two measures: degrees and radians"
 author: R (Chandra) Chandrasekhar
 date: 2023-10-17
-modified: 2023-10-30
+modified: 2023-11-02
 category: Mathematics
 tags: Mathematical musings
 summary: 'The transition from degrees to radians is often the most traumatic mathematical change that the student has to endure when moving from elementary to intermediate mathematics. The simplicity of 360° seems so much more welcoming than the equivalent of $2\pi$ radians for a full circle. $\pi$ is forbidding, because it is not [the convenient fractional fiction $\frac{22}{7}$](https://en.wikipedia.org/wiki/Proof_that_22/7_exceeds_%CF%80), but rather a number which is both [transcendental](https://mathworld.wolfram.com/TranscendentalNumber.html) and [irrational](https://en.wikipedia.org/wiki/Irrational_number) and therefore, somewhat "untidy". Surely this tradeoff between simplicity and complexity must have been worth it, or it would not have been so ordained. Here we attempt to fathom the method behind the madness.'
@@ -61,23 +61,35 @@ So, how does one define a radian? If, on the basis of its name, you guessed that
 
 ![One radian is the angle subtended at the centre of a unit circle by an arc of length equal to one unit.]({attach}images/one-radian.png){#fig:radian width=80% .modal-target}
 
-But what happens when our circle has a radius larger or smaller than one unit? The generalized definition of a radian is shown in @fig:general.
-
-![Generalized measure of an angle in radians. The angle in radians is defined as $\theta = \frac{s_1}{r_1} = \frac{s_2}{r_2}$. The equality is valid because all circles are similar to each other.]({attach}images/general-radian.png){#fig:general width=65% .modal-target}
+But what happens when our circle has a radius larger or smaller than one unit? We will take up this case, after a short digression.
 
 ### Congruence and similarity
 
-This is a mathematically non-rigorous digression on congruence and similarity.  Any two-dimensional geometrical shape is _congruent_ to another if the two shapes may be rotated and translated, if necessary, and superimposed on each other to visually demonstrate that they are identical in size and shape and cannot then be [told apart](https://www.merriam-webster.com/dictionary/tell%20apart).
+This is a mathematically non-rigorous exposition on congruence and similarity, both of which are first encountered in school in the context of triangles, as shown in  @fig:similar.
 
-_Similarity_ is less restrictive than congruence and applies to geometric objects that have the same shape but not necessarily the same size. Intuitively, if two objects are similar, one may _zoom in_ or _zoom out_ on one object of the pair---without distortion---to obtain a version that may be superimposed on the other object to demonstrate that they are identical or congruent.
+![Similarity and congruence in the context of triangles. See the text for the explanation.]({attach}images/similar.png){#fig:similar width=70% .modal-target}
 
-The ratios of the respective lengths of corresponding sides of similar triangles are the same. In like fashion, the ratio of the circumference to the radius of two circles of radii $r_1$ and $r_2$ will be $\frac{2\pi r_1}{r_1} =\frac{2\pi r_2}{r_2} = 2\pi$, demonstrating that a full circle corresponds to an angle of 360° or $2\pi$ radians. This is a consequence of the fact that _all circles are similar to each other_.
+Consider the two smaller triangles $XZY$ and $LMN$. Suppose that $XYZ$ is moved in the direction of the line $PQ$ for a distance equal to the length of $PQ$. We would then have the triangle $LMN$.
+
+Triangle $LMN$ being a shifted version of triangle $XYZ$ is identical with it, having identical respective angles and sides. Indeed, if triangle $XYZ$ were laid on top of $LNM$ and we [could not tell them apart](https://www.merriam-webster.com/dictionary/tell%20apart). We say that triangle $XYZ$ is _congruent_ to triangle $LMN$.
+
+Any two-dimensional geometrical shape is congruent to another if the two shapes may be superimposed^[After any necessary translation and rotation.] on each other to visually demonstrate that they indistinguishable.
+
+_Similarity_ is less restrictive than congruence and applies to geometric objects that have the same shape but not necessarily the same size. In @fig:similar, triangle $ABC$ is similar to triangles $XYZ$ and $LMN$.
+
+Intuitively, if two objects are similar, one may _zoom in_ or _zoom out_ on one object of the pair---without distortion---to obtain a version that may be superimposed on the other object to demonstrate that they are identical or congruent. In this case, we may _enlarge_ triangle $LMN$ until it attains the same size as triangle $ABC$. It will then be congruent to $ABC$.
+
+The ratios of the respective lengths of corresponding sides of similar triangles are the same. In like fashion, the ratio of any arc length to the radius of a circle is the same for all arcs subtending the _same_ angle at the centre. For example, the circumference to the radius of two circles of radii $r_1$ and $r_2$ will be $\frac{2\pi r_1}{r_1} =\frac{2\pi r_2}{r_2} = 2\pi$, which is a constant. This also demonstrates that a full circle corresponds to an angle of 360° or $2\pi$ radians. This is a consequence of the fact that _all circles are similar to each other_.
 
 What other classes of geometrical objects can you think of that are similar to each other within their class?^[All circles are similar, as are  all equilateral triangles, all squares, and indeed, all regular $n$-gons, and all parabolas.]
 
 ## Radians as angular measure
 
-We are now ready to define the value of any angle in radians. Consider a circle of radius $r$. Let an arc of length $s$ subtend an angle of $\theta$ at the centre. The angle $\theta$ in radians is _defined_ to be:
+Consider @fig:general in which two circles having different radii are shown.
+
+![Generalized measure of an angle in radians. The arbitrary angle $\theta$ in radians is defined as $\theta = \frac{s_1}{r_1} = \frac{s_2}{r_2}$. The equality is valid because all circles are similar to each other.]({attach}images/general-radian.png){#fig:general width=65% .modal-target}
+
+We are now ready to define the value of any angle in radians. Consider a circle of radius $r$. Let an arc of arbitrary length $s$ subtend an angle of $\theta$ at the centre. The angle $\theta$ in radians is _defined_ to be:
 $$
 \theta \triangleq \frac{\text{arc length}}{\text{radius}} = \frac{s}{r}.
 $${#eq:defrad}
@@ -127,9 +139,15 @@ The really insightful revelation from @fig:unit comes from looking at $\tan\thet
 
 From @fig:trig, we know that the tangent is the ratio of the lengths of the opposite side to the adjacent side, which in @fig:unit translates to $\tan\theta = \frac{SC}{OC}$. But the denominator in this case, $OC$, is not $1$ like it was for the other two trigonometric ratios.
 
-Recall from geometry that a [tangent (line)](https://en.wikipedia.org/wiki/Tangent_lines_to_circles) to a circle is a limiting case of a [chord](https://en.wikipedia.org/wiki/Chord_(geometry)) in which the two points of intersection---of a line with a circle---coincide into one point, called the point of tangency. The radius from the centre to the tangent line makes a right angle at the point of tangency.
+Recall from geometry that a straight line and a circle might lie relative to each other in three different ways as shown in @fig:chord-tangent.
 
-With that out of the way, we construct the triangle $ODT$ thus:
+![The three different ways in which a circle and line may lie relative to each other. See the text for the explanation.]({attach}images/chord-tangent.png){#fig:chord-tangent width=70% .modal-target}
+
+The line $AB$ does not cut or _intersect_ the circle at all. The line $EF$ cuts the circle at _two_ points, $E$ and $F$, and is called a [chord](https://en.wikipedia.org/wiki/Chord_(geometry)). When the line $EF$ moves parallel to itself toward the circumference of the circle, we get the chord $E^\prime F^\prime$. Eventually the points $E^\prime$ and $F^\prime$ will coincide and the line will cut the circle at one point only.
+
+This case is illustrated by the line $CTD$ where the line cuts the circle at only one point, $T$. $CTD$ is called a [tangent (line)](https://en.wikipedia.org/wiki/Tangent_lines_to_circles) to a circle and $T$ is the point of tangency.^[Therefore, the tangent is a limiting case of a chord.] Note that the radius $OT$ is perpendicular to the tangent $CDT$.
+
+With that out of the way, with reference to @fig:unit, we construct the triangle $ODT$ thus:
 
 a. Extend^[Extending a line used to be called _producing a line_ but that usage has now slipped into relative obscurity.] the line $OC$ to intersect the circle at the point $D$ which is $(0, 1)$. $OD$, being a radius, has unit length.
 a. Draw a tangent to the circle at $D$.

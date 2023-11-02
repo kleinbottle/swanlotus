@@ -63,7 +63,7 @@ DIRECT_TEMPLATES = ["index", "categories", "tags", "archives"]
 
 PATH = "content"
 ARTICLE_PATHS = [
-    "blogs/the-two-most-important-numbers"
+    "blogs/radians" # the-two-most-important-numbers"
 ]  # draft value: ["blogs/rust-euler-one"]
 ARTICLE_SAVE_AS = ARTICLE_LANG_SAVE_AS = "blogs/{slug}.html"
 ARTICLE_URL = ARTICLE_LANG_URL = "blogs/{slug}.html"

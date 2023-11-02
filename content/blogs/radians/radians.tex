@@ -201,7 +201,7 @@
 
 \title{A tale of two measures: degrees and radians}
 \author{R (Chandra) Chandrasekhar}
-\date{2023-10-17 | 2023-10-30}
+\date{2023-10-17 | 2023-11-02}
 
 \begin{document}
 \maketitle
@@ -378,46 +378,62 @@ circle by an arc of length equal to one unit.}\label{fig:radian}
 \end{figure}
 
 But what happens when our circle has a radius larger or smaller than one
-unit? The generalized definition of a radian is shown in
-\cref{fig:general}.
-
-\begin{figure}
-\hypertarget{fig:general}{%
-\centering
-\includegraphics[width=0.65\textwidth,height=\textheight]{images/general-radian.png}
-\caption{Generalized measure of an angle in radians. The angle in
-radians is defined as \(\theta = \frac{s_1}{r_1} = \frac{s_2}{r_2}\).
-The equality is valid because all circles are similar to each
-other.}\label{fig:general}
-}
-\end{figure}
+unit? We will take up this case, after a short digression.
 
 \hypertarget{congruence-and-similarity}{%
 \subsubsection{Congruence and
 similarity}\label{congruence-and-similarity}}
 
-This is a mathematically non-rigorous digression on congruence and
-similarity. Any two-dimensional geometrical shape is \emph{congruent} to
-another if the two shapes may be rotated and translated, if necessary,
-and superimposed on each other to visually demonstrate that they are
-identical in size and shape and cannot then be
-\href{https://www.merriam-webster.com/dictionary/tell\%20apart}{told
-apart}.
+This is a mathematically non-rigorous exposition on congruence and
+similarity, both of which are first encountered in school in the context
+of triangles, as shown in \cref{fig:similar}.
+
+\begin{figure}
+\hypertarget{fig:similar}{%
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{images/similar.png}
+\caption{Similarity and congruence in the context of triangles. See the
+text for the explanation.}\label{fig:similar}
+}
+\end{figure}
+
+Consider the two smaller triangles \(XZY\) and \(LMN\). Suppose that
+\(XYZ\) is moved in the direction of the line \(PQ\) for a distance
+equal to the length of \(PQ\). We would then have the triangle \(LMN\).
+
+Triangle \(LMN\) being a shifted version of triangle \(XYZ\) is
+identical with it, having identical respective angles and sides. Indeed,
+if triangle \(XYZ\) were laid on top of \(LNM\) and we
+\href{https://www.merriam-webster.com/dictionary/tell\%20apart}{could
+not tell them apart}. We say that triangle \(XYZ\) is \emph{congruent}
+to triangle \(LMN\).
+
+Any two-dimensional geometrical shape is congruent to another if the two
+shapes may be superimposed\footnote{After any necessary translation and
+  rotation.} on each other to visually demonstrate that they
+indistinguishable.
 
 \emph{Similarity} is less restrictive than congruence and applies to
 geometric objects that have the same shape but not necessarily the same
-size. Intuitively, if two objects are similar, one may \emph{zoom in} or
+size. In \cref{fig:similar}, triangle \(ABC\) is similar to triangles
+\(XYZ\) and \(LMN\).
+
+Intuitively, if two objects are similar, one may \emph{zoom in} or
 \emph{zoom out} on one object of the pair---without distortion---to
 obtain a version that may be superimposed on the other object to
-demonstrate that they are identical or congruent.
+demonstrate that they are identical or congruent. In this case, we may
+\emph{enlarge} triangle \(LMN\) until it attains the same size as
+triangle \(ABC\). It will then be congruent to \(ABC\).
 
 The ratios of the respective lengths of corresponding sides of similar
-triangles are the same. In like fashion, the ratio of the circumference
-to the radius of two circles of radii \(r_1\) and \(r_2\) will be
-\(\frac{2\pi r_1}{r_1} =\frac{2\pi r_2}{r_2} = 2\pi\), demonstrating
-that a full circle corresponds to an angle of 360° or \(2\pi\) radians.
-This is a consequence of the fact that \emph{all circles are similar to
-each other}.
+triangles are the same. In like fashion, the ratio of any arc length to
+the radius of a circle is the same for all arcs subtending the
+\emph{same} angle at the centre. For example, the circumference to the
+radius of two circles of radii \(r_1\) and \(r_2\) will be
+\(\frac{2\pi r_1}{r_1} =\frac{2\pi r_2}{r_2} = 2\pi\), which is a
+constant. This also demonstrates that a full circle corresponds to an
+angle of 360° or \(2\pi\) radians. This is a consequence of the fact
+that \emph{all circles are similar to each other}.
 
 What other classes of geometrical objects can you think of that are
 similar to each other within their class?\footnote{All circles are
@@ -428,9 +444,23 @@ similar to each other within their class?\footnote{All circles are
 \subsection{Radians as angular
 measure}\label{radians-as-angular-measure}}
 
+Consider \cref{fig:general} in which two circles having different radii
+are shown.
+
+\begin{figure}
+\hypertarget{fig:general}{%
+\centering
+\includegraphics[width=0.65\textwidth,height=\textheight]{images/general-radian.png}
+\caption{Generalized measure of an angle in radians. The arbitrary angle
+\(\theta\) in radians is defined as
+\(\theta = \frac{s_1}{r_1} = \frac{s_2}{r_2}\). The equality is valid
+because all circles are similar to each other.}\label{fig:general}
+}
+\end{figure}
+
 We are now ready to define the value of any angle in radians. Consider a
-circle of radius \(r\). Let an arc of length \(s\) subtend an angle of
-\(\theta\) at the centre. The angle \(\theta\) in radians is
+circle of radius \(r\). Let an arc of arbitrary length \(s\) subtend an
+angle of \(\theta\) at the centre. The angle \(\theta\) in radians is
 \emph{defined} to be: \begin{equation}\protect\hypertarget{eq:defrad}{}{
 \theta \triangleq \frac{\text{arc length}}{\text{radius}} = \frac{s}{r}.
 }\label{eq:defrad}\end{equation}
@@ -575,15 +605,38 @@ lengths of the opposite side to the adjacent side, which in
 denominator in this case, \(OC\), is not \(1\) like it was for the other
 two trigonometric ratios.
 
-Recall from geometry that a
-\href{https://en.wikipedia.org/wiki/Tangent_lines_to_circles}{tangent
-(line)} to a circle is a limiting case of a
-\href{https://en.wikipedia.org/wiki/Chord_(geometry)}{chord} in which
-the two points of intersection---of a line with a circle---coincide into
-one point, called the point of tangency. The radius from the centre to
-the tangent line makes a right angle at the point of tangency.
+Recall from geometry that a straight line and a circle might lie
+relative to each other in three different ways as shown in
+\cref{fig:chord-tangent}.
 
-With that out of the way, we construct the triangle \(ODT\) thus:
+\begin{figure}
+\hypertarget{fig:chord-tangent}{%
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{images/chord-tangent.png}
+\caption{The three different ways in which a circle and line may lie
+relative to each other. See the text for the
+explanation.}\label{fig:chord-tangent}
+}
+\end{figure}
+
+The line \(AB\) does not cut or \emph{intersect} the circle at all. The
+line \(EF\) cuts the circle at \emph{two} points, \(E\) and \(F\), and
+is called a
+\href{https://en.wikipedia.org/wiki/Chord_(geometry)}{chord}. When the
+line \(EF\) moves parallel to itself toward the circumference of the
+circle, we get the chord \(E^\prime F^\prime\). Eventually the points
+\(E^\prime\) and \(F^\prime\) will coincide and the line will cut the
+circle at one point only.
+
+This case is illustrated by the line \(CTD\) where the line cuts the
+circle at only one point, \(T\). \(CTD\) is called a
+\href{https://en.wikipedia.org/wiki/Tangent_lines_to_circles}{tangent
+(line)} to a circle and \(T\) is the point of tangency.\footnote{Therefore,
+  the tangent is a limiting case of a chord.} Note that the radius
+\(OT\) is perpendicular to the tangent \(CDT\).
+
+With that out of the way, with reference to \cref{fig:unit}, we
+construct the triangle \(ODT\) thus:
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
