@@ -69,17 +69,17 @@ This is a mathematically non-rigorous exposition on congruence and similarity, b
 
 ![Similarity and congruence in the context of triangles. See the text for the explanation.]({attach}images/similar.png){#fig:similar width=70% .modal-target}
 
-Consider the two smaller triangles $XYZ$ and $LMN$. Suppose that $XYZ$ is moved in the direction of the line $PQ$ for a distance equal to the length of $PQ$. We would then have the triangle $LMN$.
+Consider the triangle $XYZ$, and ignore for a moment triangle $LMN$. Suppose that $XYZ$ is moved in the direction of the line $PQ$ for a distance equal to the length of $PQ$. We would _then_ have the triangle $LMN$.
 
-Triangle $LMN$ being a shifted version of triangle $XYZ$ is identical with it, having identical respective angles and sides. Indeed, if triangle $XYZ$ were laid on top of $LNM$, we [could not tell them apart](https://www.merriam-webster.com/dictionary/tell%20apart). We say that triangle $XYZ$ is _congruent_ to triangle $LMN$.
+Triangle $LMN$, being a shifted version of triangle $XYZ$, is identical with it, having identical respective angles and sides. Indeed, if triangle $XYZ$ were laid on top of $LNM$, we [could not tell them apart](https://www.merriam-webster.com/dictionary/tell%20apart). We say that triangle $XYZ$ is _congruent_ to triangle $LMN$.
 
-Any two-dimensional geometrical shape is congruent to another if the two shapes may be superimposed^[After any necessary translation and rotation.] on each other to visually demonstrate that they indistinguishable.
+Any two-dimensional geometrical shape is congruent to another if the two shapes may be superimposed^[After any necessary translation and rotation.] on each other to visually demonstrate that they are indistinguishable.
 
 _Similarity_ is less restrictive than congruence and applies to geometric objects that have the same shape but not necessarily the same size. In @fig:similar, triangle $ABC$ is similar to triangles $XYZ$ and $LMN$.
 
 Intuitively, if two objects are similar, one may _zoom in_ or _zoom out_ on one object of the pair---without distortion---to obtain a version that may be superimposed on the other object to demonstrate that they are identical or congruent. In this case, we may _enlarge_ triangle $LMN$ until it attains the same size as triangle $ABC$. It will then be congruent to $ABC$.
 
-The ratios of the respective lengths of corresponding sides of similar triangles are the same. In like fashion, the ratio of any arc length to the radius of a circle is the same for all arcs subtending the _same_ angle at the centre. For example, the ratio of the circumference to the radius for two circles of radii $r_1$ and $r_2$ will be $\frac{2\pi r_1}{r_1} =\frac{2\pi r_2}{r_2} = 2\pi$, which is a constant. This also demonstrates that a full circle corresponds to an angle of 360° or $2\pi$ radians. This is a consequence of the fact that _all circles are similar to each other_.
+The ratios of the respective lengths of corresponding sides of similar triangles are the same. In like fashion, the ratio of any arc length to the radius of a circle is the same for all arcs subtending the _same_ angle at the centre. For example, the ratio of the circumference to the radius for two circles of radii $r_1$ and $r_2$ will be $\frac{2\pi r_1}{r_1} =\frac{2\pi r_2}{r_2} = 2\pi$, which is a constant.^[This also demonstrates that a full circle corresponds to an angle of 360° or $2\pi$ radians.] This is a consequence of the fact that _all circles are similar to each other_.
 
 What other classes of geometrical objects can you think of that are similar to each other within their class?^[All circles are similar, as are  all equilateral triangles, all squares, and indeed, all regular $n$-gons, and all parabolas.]
 
