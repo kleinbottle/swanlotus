@@ -61,11 +61,11 @@ So, how does one define a radian? If, on the basis of its name, you guessed that
 
 ![One radian is the angle subtended at the centre of a unit circle by an arc of length equal to one unit.]({attach}images/one-radian.png){#fig:radian width=80% .modal-target}
 
-But what happens when our circle has a radius larger or smaller than one unit? We will take up this case, after a short digression.
+But what happens when our circle has a radius larger or smaller than one unit? We will take up this case, after a short detour.
 
 ### Congruence and similarity
 
-This is a mathematically non-rigorous exposition on congruence and similarity, both of which are first encountered in school in the context of triangles, as shown in  @fig:similar.
+This is a mathematically non-rigorous digression on congruence and similarity, both of which are first encountered in school in the context of triangles, as shown in  @fig:similar.
 
 ![Similarity and congruence in the context of triangles. See the text for the explanation.]({attach}images/similar.png){#fig:similar width=70% .modal-target}
 
