@@ -94,7 +94,7 @@ $$
 \theta \triangleq \frac{\text{arc length}}{\text{radius}} = \frac{s}{r}.
 $${#eq:defrad}
 
-By dividing the arc length by the radius, we have in effect _normalized_ radian measure, and removed any trace of arbitrariness^[Such as dependence on the radius of the circle.] in its definition. And that is why we started out with @fig:radian, which dealt with a circle of radius one unit. We also showed in @fig:general that similarity guarantees that the value $\frac{s}{r}$ is constant for all circles regardless of radius.
+By dividing the arc length by the radius, we have in effect _normalized_ radian measure, and removed any trace of arbitrariness^[Such as dependence on the radius of the circle.] in its definition. And that is why we started out with @fig:radian, which dealt with a circle of radius one unit. We know from @fig:general that similarity guarantees that the value $\frac{s}{r}$ for any given $\theta$ is constant for all circles regardless of  radius.
 
 Note that the value of $\theta$ is a ratio of two lengths and is therefore dimensionless in the sense of Physics. Although it may be considered a unitless _pure number_ [the SI units do define the _radian_ as the _SI unit of angular measure_](https://en.wikipedia.org/wiki/Radian).
 
@@ -137,20 +137,18 @@ Note that since the coordinates of $S$ are confined to the unit circle, the valu
 
 The really insightful revelation from @fig:unit comes from looking at $\tan\theta$. Have you ever wondered why the ratio $\tan\theta = \frac{\sin\theta}{\cos\theta}$ is called the _tangent_?
 
-From @fig:trig, we know that the tangent is the ratio of the lengths of the opposite side to the adjacent side, which in @fig:unit translates to $\tan\theta = \frac{SC}{OC}$. But the denominator in this case, $OC$, is not $1$ like it was for the other two trigonometric ratios.
-
 Recall from geometry that a straight line and a circle might lie relative to each other in three different ways as shown in @fig:chord-tangent.
 
 ![The three different ways in which a circle and line may lie relative to each other. See the text for the explanation.]({attach}images/chord-tangent.png){#fig:chord-tangent width=70% .modal-target}
 
-The line $AB$ does not cut or _intersect_ the circle at all. The line $EF$ cuts the circle at _two_ points, $E$ and $F$, and is called a [chord](https://en.wikipedia.org/wiki/Chord_(geometry)). When the line $EF$ moves parallel to itself toward the circumference of the circle, we get the chord $E^\prime F^\prime$. Eventually the points $E^\prime$ and $F^\prime$ will coincide and the line will cut the circle at one point only.
+The line $AB$ does not cut or _intersect_ the circle at all. The line $EF$ cuts the circle at _two_ points, $E$ and $F$, and is called a [chord](https://en.wikipedia.org/wiki/Chord_(geometry)). When the line $EF$ moves parallel to itself toward the circumference of the circle, we get the chord $E'F'$. Eventually the points $E'$ and $F'$ will coincide and the line will cut the circle at one and only one point.
 
-This case is illustrated by the line $CTD$ where the line cuts the circle at only one point, $T$. $CTD$ is called a [tangent (line)](https://en.wikipedia.org/wiki/Tangent_lines_to_circles) to a circle and $T$ is the point of tangency.^[Therefore, the tangent is a limiting case of a chord.] Note that the radius $OT$ is perpendicular to the tangent $CDT$.
+This case is illustrated by the line $CTD$ which cuts the circle at only one point, $T$. $CTD$ is called a [tangent (line)](https://en.wikipedia.org/wiki/Tangent_lines_to_circles) to a circle and $T$ is the point of tangency.^[Therefore, the tangent is a limiting case of a chord.] Note that the radius $OT$ is perpendicular to the tangent $CDT$.
 
-With that out of the way, with reference to @fig:unit, we construct the triangle $ODT$ thus:
+With that out of the way, we know from @fig:trig, that the tangent is the ratio of the lengths of the opposite side to the adjacent side, which in @fig:unit translates to $\tan\theta = \frac{SC}{OC}$. But the denominator in this case, $OC$, is not $1$ like it was for the other two trigonometric ratios. To work around this, with reference to @fig:unit, we construct the triangle $ODT$ thus:
 
 a. Extend^[Extending a line used to be called _producing a line_ but that usage has now slipped into relative obscurity.] the line $OC$ to intersect the circle at the point $D$ which is $(0, 1)$. $OD$, being a radius, has unit length.
-a. Draw a tangent to the circle at $D$.
+a. Draw a tangent $T'DT$ to the circle at $D$.
 a. Extend the radius $OS$ to intersect the tangent at the point $T$.
 
 Because the triangle $ODT$ is similar to triangle $OCS$, we can assert that the ratios of corresponding sides are equal. Thus,
@@ -159,17 +157,17 @@ $$
 $${#eq:tangent}
 bearing in mind that, like $OS$, $OD$ is also a radius of unit length. We resorted to this construction for the following reasons:
 
-#. Because $DT$ is tangent to the circle, the angle $ODT$ is a right angle.
+#. Because $T'DT$ is tangent to the circle, the angle $ODT$ is a right angle.
 #. The triangles $OCS$ and $ODT$ are therefore similar.
 #. The length of $OC$ is not one unit, but that of $OD$ is one unit.
 
 From @fig:unit the length of the _tangent line_ $DT$ is equal to $\tan\theta$, explaining the nomenclature.
 
-Therefore, the value of the tangent function for an angle $\theta$ may be determined geometrically by extrapolating the radius $OS$ until it intersects the tangent to the circle at $D$ at a point called $T$. The length $DT$ is the value of $\tan\theta$.
+Therefore, the value of the tangent function for an angle $\theta$ may be determined geometrically by extrapolating the radius $OS$ until it intersects the tangent to the circle at $D$ at a point called $T$.^[One could also extraolate in the _opposite_ direction to intersect at, say, the point T'.] The length $DT$ is the value of $\tan\theta$.
 
 Note, though, that $\tan\theta$ is a length _outside the unit circle_ and is therefore not  constrained to take on values between $-1$ and $1$. Indeed, as $\theta$ starts increasing in the first quadrant of the unit circle, you will notice that as $OS$ approaches the $y$-axis and as $\theta$ approaches $\frac{\pi}{2}$ (or 90°, if you are still attached to degrees), the line $OS$ is increasingly aligned with $DT$. At $\theta=\frac{\pi}{2}$, $OS$ is parallel to $DT$ and ["never the twain shall meet"](https://en.wikipedia.org/wiki/The_Ballad_of_East_and_West). Loosely speaking, parallel lines are only supposed to "meet at infinity" and that is why $\tan\frac{\pi}{2}$ is said to be "infinite" at that point. I find this geometric explanation---of why $\tan\theta$ does not assume a finite value at $\theta=\frac{\pi}{2}$---most fulfilling.
 
-When $\theta$ is in the third quadrant, for instance, $OS$ extrapolated in the negative $y$ direction will not intersect the tangent $DT$ in the negative $y$ direction as they diverge. So, the line $SO$ must be produced in the positive $y$ direction to once more intersect the tangent at $T$. That explains why tangents of angles in the third quadrant are positive.
+When $\theta$ is in the third quadrant, for instance, $OS$ extrapolated in the negative $y$ direction will not intersect the tangent $DT'$ in the negative $y$ direction as they diverge. So, the line $SO$ must be produced in the positive $y$ direction to once more intersect the tangent $T'DT$ at $T$. That explains why tangents of angles in the third quadrant are positive.
 
 ## The trigonometric functions
 

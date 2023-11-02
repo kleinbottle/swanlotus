@@ -378,13 +378,13 @@ circle by an arc of length equal to one unit.}\label{fig:radian}
 \end{figure}
 
 But what happens when our circle has a radius larger or smaller than one
-unit? We will take up this case, after a short digression.
+unit? We will take up this case, after a short detour.
 
 \hypertarget{congruence-and-similarity}{%
 \subsubsection{Congruence and
 similarity}\label{congruence-and-similarity}}
 
-This is a mathematically non-rigorous exposition on congruence and
+This is a mathematically non-rigorous digression on congruence and
 similarity, both of which are first encountered in school in the context
 of triangles, as shown in \cref{fig:similar}.
 
@@ -471,9 +471,10 @@ By dividing the arc length by the radius, we have in effect
 \emph{normalized} radian measure, and removed any trace of
 arbitrariness\footnote{Such as dependence on the radius of the circle.}
 in its definition. And that is why we started out with
-\cref{fig:radian}, which dealt with a circle of radius one unit. We also
-showed in \cref{fig:general} that similarity guarantees that the value
-\(\frac{s}{r}\) is constant for all circles regardless of radius.
+\cref{fig:radian}, which dealt with a circle of radius one unit. We know
+from \cref{fig:general} that similarity guarantees that the value
+\(\frac{s}{r}\) for any given \(\theta\) is constant for all circles
+regardless of radius.
 
 Note that the value of \(\theta\) is a ratio of two lengths and is
 therefore dimensionless in the sense of Physics. Although it may be
@@ -602,12 +603,6 @@ at \(\tan\theta\). Have you ever wondered why the ratio
 \(\tan\theta = \frac{\sin\theta}{\cos\theta}\) is called the
 \emph{tangent}?
 
-From \cref{fig:trig}, we know that the tangent is the ratio of the
-lengths of the opposite side to the adjacent side, which in
-\cref{fig:unit} translates to \(\tan\theta = \frac{SC}{OC}\). But the
-denominator in this case, \(OC\), is not \(1\) like it was for the other
-two trigonometric ratios.
-
 Recall from geometry that a straight line and a circle might lie
 relative to each other in three different ways as shown in
 \cref{fig:chord-tangent}.
@@ -627,19 +622,23 @@ line \(EF\) cuts the circle at \emph{two} points, \(E\) and \(F\), and
 is called a
 \href{https://en.wikipedia.org/wiki/Chord_(geometry)}{chord}. When the
 line \(EF\) moves parallel to itself toward the circumference of the
-circle, we get the chord \(E^\prime F^\prime\). Eventually the points
-\(E^\prime\) and \(F^\prime\) will coincide and the line will cut the
-circle at one point only.
+circle, we get the chord \(E'F'\). Eventually the points \(E'\) and
+\(F'\) will coincide and the line will cut the circle at one and only
+one point.
 
-This case is illustrated by the line \(CTD\) where the line cuts the
-circle at only one point, \(T\). \(CTD\) is called a
+This case is illustrated by the line \(CTD\) which cuts the circle at
+only one point, \(T\). \(CTD\) is called a
 \href{https://en.wikipedia.org/wiki/Tangent_lines_to_circles}{tangent
 (line)} to a circle and \(T\) is the point of tangency.\footnote{Therefore,
   the tangent is a limiting case of a chord.} Note that the radius
 \(OT\) is perpendicular to the tangent \(CDT\).
 
-With that out of the way, with reference to \cref{fig:unit}, we
-construct the triangle \(ODT\) thus:
+With that out of the way, we know from \cref{fig:trig}, that the tangent
+is the ratio of the lengths of the opposite side to the adjacent side,
+which in \cref{fig:unit} translates to \(\tan\theta = \frac{SC}{OC}\).
+But the denominator in this case, \(OC\), is not \(1\) like it was for
+the other two trigonometric ratios. To work around this, with reference
+to \cref{fig:unit}, we construct the triangle \(ODT\) thus:
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -650,7 +649,7 @@ construct the triangle \(ODT\) thus:
   line \(OC\) to intersect the circle at the point \(D\) which is
   \((0, 1)\). \(OD\), being a radius, has unit length.
 \item
-  Draw a tangent to the circle at \(D\).
+  Draw a tangent \(T'DT\) to the circle at \(D\).
 \item
   Extend the radius \(OS\) to intersect the tangent at the point \(T\).
 \end{enumerate}
@@ -666,8 +665,8 @@ for the following reasons:
 \begin{enumerate}
 \tightlist
 \item
-  Because \(DT\) is tangent to the circle, the angle \(ODT\) is a right
-  angle.
+  Because \(T'DT\) is tangent to the circle, the angle \(ODT\) is a
+  right angle.
 \item
   The triangles \(OCS\) and \(ODT\) are therefore similar.
 \item
@@ -679,8 +678,10 @@ equal to \(\tan\theta\), explaining the nomenclature.
 
 Therefore, the value of the tangent function for an angle \(\theta\) may
 be determined geometrically by extrapolating the radius \(OS\) until it
-intersects the tangent to the circle at \(D\) at a point called \(T\).
-The length \(DT\) is the value of \(\tan\theta\).
+intersects the tangent to the circle at \(D\) at a point called
+\(T\).\footnote{One could also extraolate in the \emph{opposite}
+  direction to intersect at, say, the point T'.} The length \(DT\) is
+the value of \(\tan\theta\).
 
 Note, though, that \(\tan\theta\) is a length \emph{outside the unit
 circle} and is therefore not constrained to take on values between
@@ -699,10 +700,10 @@ explanation---of why \(\tan\theta\) does not assume a finite value at
 
 When \(\theta\) is in the third quadrant, for instance, \(OS\)
 extrapolated in the negative \(y\) direction will not intersect the
-tangent \(DT\) in the negative \(y\) direction as they diverge. So, the
+tangent \(DT'\) in the negative \(y\) direction as they diverge. So, the
 line \(SO\) must be produced in the positive \(y\) direction to once
-more intersect the tangent at \(T\). That explains why tangents of
-angles in the third quadrant are positive.
+more intersect the tangent \(T'DT\) at \(T\). That explains why tangents
+of angles in the third quadrant are positive.
 
 \hypertarget{the-trigonometric-functions}{%
 \subsection{The trigonometric
