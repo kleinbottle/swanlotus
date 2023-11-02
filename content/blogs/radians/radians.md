@@ -69,7 +69,7 @@ This is a mathematically non-rigorous exposition on congruence and similarity, b
 
 ![Similarity and congruence in the context of triangles. See the text for the explanation.]({attach}images/similar.png){#fig:similar width=70% .modal-target}
 
-Consider the two smaller triangles $XZY$ and $LMN$. Suppose that $XYZ$ is moved in the direction of the line $PQ$ for a distance equal to the length of $PQ$. We would then have the triangle $LMN$.
+Consider the two smaller triangles $XYZ$ and $LMN$. Suppose that $XYZ$ is moved in the direction of the line $PQ$ for a distance equal to the length of $PQ$. We would then have the triangle $LMN$.
 
 Triangle $LMN$ being a shifted version of triangle $XYZ$ is identical with it, having identical respective angles and sides. Indeed, if triangle $XYZ$ were laid on top of $LNM$, we [could not tell them apart](https://www.merriam-webster.com/dictionary/tell%20apart). We say that triangle $XYZ$ is _congruent_ to triangle $LMN$.
 
