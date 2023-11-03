@@ -11,6 +11,62 @@ opengraphimage: 01-crop-3600-dpi-cairo.png
 
 The unique properties of the numbers zero and one make them mathematically indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers. we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we may discover how they cement disparate areas of Mathematics.
 
+## Starting at the beginning
+
+I thought I would skirt around the idea of the well-known sets of numbers, but found that each time I tried, I would have to sneak in furtively a paragraph here or a footnote there as explanation. So, I have decided to start at the beginning and work my way, the natural numbers, the integers, the rationals, etc., again using intuitively obvious justification rather than a purely mathematical approach.
+
+## Counting
+
+Initially, a shepherd with five sheep used to count "one sheep, two sheep, three sheep, four sheep, and five sheep." But wait! Since he did not have the names for numbers---nor indeed the abstract concept of a number---he could have used either of two slightly different methods.
+
+### Naming sheep
+
+He could have given _unique_ names to each of his five sheep and developed enough familiarity with them to identify them by name. Then all he needed to do was to check that all his named sheep were home by sundown.
+
+### One-to-one correspondence
+
+The later, and more likely, alternative was to used a stone to correspond to a sheep. He could have taken a leather bag and dropped a stone in it for each sheep that he owned. He did not need to learn counting. All he needed to do was to establish a [one-to-one correspondence](https://www.encyclopedia.com/science/encyclopedias-almanacs-transcripts-and-maps/one-one-correspondence)^[One-to-one correspondence is a simple but extremely powerful idea which guided [Georg Cantor](https://www.britannica.com/science/one-to-one-correspondence) to develop his radical but consistent ideas about types of infinity.] between sheep and stone. As long as he had the right number of stones in his bag, he could account for each one of his sheep.
+
+The Latin word for _stone_ is [calculus](https://www.etymonline.com/search?q=calculus) and from the stone has come the whole science of _calculation_.
+
+## Measurement
+
+When we _count_, as with sheep, where do we start? We start with one. We do not start with zero, because we cannot point to any sheep or other object and say "zero".
+
+Nevertheless, zero has fundamental importance when we start _measuring_. When the petrol tank in a car is empty, we can fill it up and measure the volume of petrol for which we have to pay.
+
+_When we count, we start with $1$; when we measure, we start with $0$._
+
+## Sets of numbers
+
+Although Mathematics has rigorous foundations, at the very bottom, notions are not defined [explicitly](https://www.vocabulary.com/dictionary/explicitly). One such notion is that of a _set, which is loosely defined as a collection of objects that can either be enumerated or described clearly. The _sets of numbers_ we will deal with have names, symbols, and definitions as shown below.
+
+::: {.xsmall}
+| Name | Symbol | Definition |
+|:---------------------------|:-:|:-------------------------------------------------|
+| Natural numbers | $\mathbb{N}$ | $\{1, 2, 3, 4, ...\}$ |
+| Integers | $\mathbb{Z}$ | $\{... -3, -2, -1, 0, 1, 2, 3, ...\}$ |
+| Rational numbers | $\mathbb{Q}$ | $\{x: x = \frac{p}{q} \mbox{ where } p, q \in \mathbb{Z} \mbox{ and } q \ne 0\}$ |
+| Irrational numbers |  | Numbers which are not rational |
+| Real numbers | $\mathbb{R}$ | The rationals and irrationals |
+| Complex numbers | $\mathbb{C}$ | $\{a+ib: a, b \in \mathbb{R} \mbox{ and } i^2 = -1\}$
+:::
+
+\
+While it is premature to talk about them and their peculiarities just now, it is worth making some points about these sets.
+
+#. There is [no agreement on whether or not to include zero](https://en.wikipedia.org/wiki/Natural_number) as a member of $\mathbb{N}$. I have chosen not to because I consider $\mathbb{N}$ the set of _counting numbers_. <!--XXX Two references here plus one generic link-->
+
+#. Zero is neither positive nor negative. It is itself and, as a set, is often denoted $\{0\}$.
+
+#. The _integers_ are named $\mathbb{Z}$ after the German word _Zahlen_ which stands for integers. The integers include positive and negative whole numbers as well as zero.
+
+#. The _rational numbers_ are so named because they are really _ratios_ of whole numbers with the proviso that the denominator cannot be zero. More about this in a later section. The symbol $\mathbb{Q}$ is used because it denotes _quotient_ the result of _division_.
+
+#. There is no symbol for the irrationals, which are simply defined as numbers which are not rational. In fact, the set of irrationals may shown using set notation only indirectly as $\mathbb{R}\setminus\mathbb{Q}$, which means the set of real numbers, excluding the rational numbers.
+
+#.  The _complex_ numbers
+
 ## The shy one
 
 The number one is often [implicit](https://www.vocabulary.com/dictionary/implicit) in mathematical notation. While we may write $2x$ to denote $2\times x$, or two multiplied by $x$, we _do not_ write $1x$, even if it is literally correct, because of convention. In instances like this, the number one is implicit, and assumed to be understood by those who know. If you happen to be one of those _not_ in the know, here's your chance to join the other side.
