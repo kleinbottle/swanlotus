@@ -69,7 +69,32 @@ While it is premature to talk about these sets and their peculiarities just now,
 
 #. There is no symbol for the irrationals, which are simply defined as numbers which are not rational. In fact, the set of irrationals may shown using set notation only indirectly as $\mathbb{R}\setminus\mathbb{Q}$, which means the set of real numbers, excluding the rational numbers.
 
-#.  The _complex_ numbers incorporate a non-real entity called $i$ the _imaginary unit, which is defined as $i^2 = -1$. Since every real number when squared is greater than or equal to zero, this $i$ is not a real number and therefore demands its own symbol, arithmetic, and set, $\mathbb{C}$.
+#.  The _complex_ numbers incorporate a non-real entity called $i$ the _imaginary unit, which is defined as $i^2 = -1$. Since every real number when squared is greater than or equal to zero, this $i$ is not a real number, and therefore demands its own symbol, arithmetic, and set, $\mathbb{C}$.
+
+## The Four arithmetic operations
+
+Each of the four basic arithmetic operations--addition, multiplication, subtraction, division---are [binary](https://en.wikipedia.org/w/index.php?title=Binary_operation&oldid=1182322931) operations and may only be performed between _two_ numbers. The ability to add multiple numbers---as in determining the total sum to be paid at the checkout counter while shopping---is made possible the [commutativity](https://en.wikipedia.org/wiki/Commutative_property) and [associativity](https://en.wikipedia.org/wiki/Associative_property) of addition.
+
+### Commutativity and Associativity
+
+Let us demystify this. Lets us add three numbers, $2$, $3$, and $5$5. It is common to write this as $2 + 3 + 5 = 10$. The sum $10$ is correct but it is derived from the commutativity and associativity of addition. In commutativity, we have $2 + 3 = 3 + 2$, the order of the _two_ operands does not matter. In associativity, we have three operands, it does not matter which pair we add first: $(2 + 3) + 5 = 2 + (3 + 5)$. Together, these two operations allow us to be casual about how we order the numbers when adding many of them.
+
+### Addition
+
+If we start with zero and add one to it, we get one. If we add one to that we get two. In this fashion, all the natural numbers may be generated successively by adding one. The _next number_ is called the _successor_. Even if we did not start with zero, but started with one, instead, we can still generate the entire set $\mathbb{N}$ by adding one successively.
+
+### Multiplication as repeated addition
+
+
+### Subtraction
+
+
+### Division as repeated subtraction
+
+
+### Why is division by aro not allowed?
+
+
 
 ## Fundamental properties of zero
 
