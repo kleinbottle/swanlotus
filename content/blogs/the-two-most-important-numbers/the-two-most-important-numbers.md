@@ -55,17 +55,38 @@ Although Mathematics has rigorous foundations, at the very bottom, notions are n
 \
 While it is premature to talk about them and their peculiarities just now, it is worth making some points about these sets.
 
+#. The symbols in the second column are called [blackboard bold](https://oeis.org/wiki/Blackboard_bold) letters.
+
 #. There is [no agreement on whether or not to include zero](https://en.wikipedia.org/wiki/Natural_number) as a member of $\mathbb{N}$. I have chosen not to because I consider $\mathbb{N}$ the set of _counting numbers_. <!--XXX Two references here plus one generic link-->
 
 #. Zero is neither positive nor negative. It is itself and, as a set, is often denoted $\{0\}$.
 
-#. The _integers_ are named $\mathbb{Z}$ after the German word _Zahlen_ which stands for integers. The integers include positive and negative whole numbers as well as zero.
+#. The _integers_ are named $\mathbb{Z}$ after the German word _Zahlen_ which stands for "numbers" (singular _Zahl_). The integers include positive and negative whole numbers as well as zero.
 
 #. The _rational numbers_ are so named because they are really _ratios_ of whole numbers with the proviso that the denominator cannot be zero. More about this in a later section. The symbol $\mathbb{Q}$ is used because it denotes _quotient_ the result of _division_.
 
 #. There is no symbol for the irrationals, which are simply defined as numbers which are not rational. In fact, the set of irrationals may shown using set notation only indirectly as $\mathbb{R}\setminus\mathbb{Q}$, which means the set of real numbers, excluding the rational numbers.
 
 #.  The _complex_ numbers
+
+## Fundamental properties of zero
+
+Is not a factor of any number other than itself.
+
+Cannot be the denominator of any rational number.
+
+Is the additive identity.
+
+
+
+## Fundamental properties of ones
+
+Generates successor numbers and therefore the entire sets N and Z.
+
+Multiplicative inverse.
+
+## Binary logic and numbers
+
 
 ## The shy one
 
