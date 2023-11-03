@@ -53,6 +53,29 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
 \else
@@ -309,6 +332,11 @@ now, it is worth making some points about these sets.
 
 \begin{enumerate}
 \item
+  The symbols in the second column are called
+  \href{https://oeis.org/wiki/Blackboard_bold}{blackboard bold} letters.
+\item
+  A set is traditionally enclosed in a pair of \emph{braces}: \(\{\}\).
+\item
   There is \href{https://en.wikipedia.org/wiki/Natural_number}{no
   agreement on whether or not to include zero} as a member of
   \(\mathbb{N}\). I have chosen not to because I consider \(\mathbb{N}\)
@@ -318,8 +346,8 @@ now, it is worth making some points about these sets.
   often denoted \(\{0\}\).
 \item
   The \emph{integers} are named \(\mathbb{Z}\) after the German word
-  \emph{Zahlen} which stands for integers. The integers include positive
-  and negative whole numbers as well as zero.
+  \emph{Zahlen} which stands for ``numbers'' (singular \emph{Zahl}). The
+  integers include positive and negative whole numbers as well as zero.
 \item
   The \emph{rational numbers} are so named because they are really
   \emph{ratios} of whole numbers with the proviso that the denominator
@@ -335,6 +363,54 @@ now, it is worth making some points about these sets.
 \item
   The \emph{complex} numbers
 \end{enumerate}
+
+\hypertarget{fundamental-properties-of-zero}{%
+\subsection{Fundamental properties of
+zero}\label{fundamental-properties-of-zero}}
+
+Is not a factor of any number other than itself.
+
+Cannot be the denominator of any rational number.
+
+Is the additive identity.
+
+Zeroes in control theory
+
+Zeroes of polynomials
+
+Laplace transforms from ODE to polynomials
+
+Galois: polynomial roots
+
+Poles and zeroes
+
+Division by zero functions becoming unbounded at points where division
+by zero is attempted
+
+Renormaliztion theory: Quantum and Relativity: problem oc functions
+``blowing up'' that preclude a conclusive theoer
+
+Stability and the s-plane. The importance of zero. s = sigma + j omega
+exponential and the value
+
+a \^{}0 = 1 etc.
+
+\hypertarget{fundamental-properties-of-ones}{%
+\subsection{Fundamental properties of
+ones}\label{fundamental-properties-of-ones}}
+
+Generates successor numbers and therefore the entire sets N and Z.
+
+Multiplicative inverse.
+
+Control systems and the number (-1, 0)
+
+Radius of convergence and the change in powers of as number GP
+
+Curves of x\^{}n for x \textless{} 1 and n -\textgreater{} infinity
+
+\hypertarget{binary-logic-and-numbers}{%
+\subsection{Binary logic and numbers}\label{binary-logic-and-numbers}}
 
 \hypertarget{the-shy-one}{%
 \subsection{The shy one}\label{the-shy-one}}
@@ -527,6 +603,64 @@ write it so: \begin{equation}\protect\hypertarget{eq:exp}{}{
 and the power \(3\) is called the \emph{exponent}. As noted before,
 \(5^1 = 5\) and the exponent \(1\) is omitted.
 
+The reciprocal of an arbitrary non-zero real number \(a\) is
+\(\frac{1}{a}\). The product of the two is \(1\). Written with an
+exponent, \[
+\frac{1}{a} = a^{-1}.
+\] Continuing with the number \(5\) in our example, its reciprocal is
+\(\frac{1}{5} = 5^{-1}\). What do we get if we multiply \(5\) by its
+reciprocal? We areready know the answer to be \(1\). Let us do the
+multiplication using exponents:
+\begin{equation}\protect\hypertarget{eq:reciprocal}{}{
+5 \times \frac{1}{5} = 1 = 5^{1} \times 5^{-1} = 5^{1+(-1)} = 5^{0}.
+}\label{eq:reciprocal}\end{equation} The astounding conclusion from
+\cref{eq:reciprocal} is that a base raised to the exponent zero is
+\{1\}. \emph{By extension, any integer raised to the to the zeroth power
+equals \(1\)}. This remarkable conclusion applies to any real number as
+well: something that will be understood better after we encounter
+\href{https://www.britannica.com/science/logarithm}{logarithms}. The
+consequence is that the logarithm of \(1\) to any base is \(0\): \[
+log_{n}1 = 0
+\]\{eq:logonezero\} \cref{eq:logonezero} yet another memorable equation
+linking \(1\) and \(0\).
+
+\hypertarget{sequences}{%
+\subsection{Sequences}\label{sequences}}
+
+An ordered procession of numbers is called
+\href{https://en.wikipedia.org/w/index.php?title=Sequence\&oldid=1177801065}{sequence}
+{[}\protect\hyperlink{ref-wikisequence}{1},\protect\hyperlink{ref-wolframsequence}{2}{]}.\footnote{The
+  general definition replaces \emph{numbers} with \emph{mathematical
+  objects} but the former will suffice for our limited purpose here.}
+Repetitions are allowed, but the order matters. The natural numbers form
+the sequence \((1, 2, 3, 4, 5, \ldots)\). Note that the elements of the
+sequence are enclosed in parentheses, \(()\). There is an entire website
+devoted to sequences, called the \href{https://oeis.org/}{The On-Line
+Encyclopedia of Integer Sequences® (OEIS®)}.
+
+Fibonacci sequence
+
+Binomial sequence Pascals triangle
+
+\hypertarget{series}{%
+\subsection{Series}\label{series}}
+
+A \href{https://mathworld.wolfram.com/Series.html}{series} is the
+(progressive) sum of an infinite sequence
+{[}\protect\hyperlink{ref-wikiseries}{3},\protect\hyperlink{ref-wolframseries}{4}{]}.
+
+Pascal's triangle and the Binomial theorem and their origin in the
+number 1.
+
+Arithmetic series (progressions)
+
+Geometric series (progressions)
+
+\hypertarget{primes}{%
+\subsection{Primes}\label{primes}}
+
+Is one the first prime? No!
+
 \hypertarget{acknowledgements}{%
 \subsection{Acknowledgements}\label{acknowledgements}}
 
@@ -549,6 +683,38 @@ here}:
 \end{sffamily}
 
 \end{small}
+
+\hypertarget{bibliography}{%
+\section*{References}\label{bibliography}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{0}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-wikisequence}{}}%
+\CSLLeftMargin{{[}1{]} }%
+\CSLRightInline{Wikipedia contributors. 2023. Sequence ---
+{Wikipedia}{,} the free encyclopedia. Retrieved 3 November 2023 from
+\url{https://en.wikipedia.org/w/index.php?title=Sequence\&oldid=1177801065}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-wolframsequence}{}}%
+\CSLLeftMargin{{[}2{]} }%
+\CSLRightInline{Eric W Weisstein. {Sequence. From MathWorld--A Wolfram
+Web Resource}. Retrieved 3 November 2023 from
+\url{https://mathworld.wolfram.com/Sequence.html}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-wikiseries}{}}%
+\CSLLeftMargin{{[}3{]} }%
+\CSLRightInline{Wikipedia contributors. 2023. {Series (mathematics) ---
+{Wikipedia}{,} The Free Encyclopedia}. Retrieved 3 November 2023 from
+\url{https://en.wikipedia.org/w/index.php?title=Series_(mathematics)\&oldid=1174621451}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-wolframseries}{}}%
+\CSLLeftMargin{{[}4{]} }%
+\CSLRightInline{Eric W. Weisstein. Series. From MathWorld--a wolfram web
+resource. Retrieved 3 November 2023 from
+\url{https://mathworld.wolfram.com/Series.html}}
+
+\end{CSLReferences}
 
 
 

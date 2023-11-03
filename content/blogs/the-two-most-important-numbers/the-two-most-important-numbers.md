@@ -57,6 +57,8 @@ While it is premature to talk about them and their peculiarities just now, it is
 
 #. The symbols in the second column are called [blackboard bold](https://oeis.org/wiki/Blackboard_bold) letters.
 
+#. A set is traditionally enclosed in a pair of _braces_: $\{\}$.
+
 #. There is [no agreement on whether or not to include zero](https://en.wikipedia.org/wiki/Natural_number) as a member of $\mathbb{N}$. I have chosen not to because I consider $\mathbb{N}$ the set of _counting numbers_. <!--XXX Two references here plus one generic link-->
 
 #. Zero is neither positive nor negative. It is itself and, as a set, is often denoted $\{0\}$.
@@ -77,6 +79,24 @@ Cannot be the denominator of any rational number.
 
 Is the additive identity.
 
+Zeroes in control theory
+
+Zeroes of polynomials
+
+Laplace transforms from ODE to polynomials
+
+Galois: polynomial roots
+
+Poles and zeroes
+
+Division by zero functions becoming unbounded at points where division by zero is attempted
+
+Renormaliztion theory: Quantum and Relativity: problem oc functions "blowing up" that preclude a conclusive theoer
+
+Stability and the s-plane. The importance of zero. s = sigma + j omega exponential and the value
+
+a ^0 = 1 etc.
+
 
 
 ## Fundamental properties of ones
@@ -84,6 +104,15 @@ Is the additive identity.
 Generates successor numbers and therefore the entire sets N and Z.
 
 Multiplicative inverse.
+
+Control systems and the number (-1, 0)
+
+Radius of convergence and the change in powers of as number
+GP
+
+Curves of x^n for x < 1 and n -> infinity
+
+
 
 ## Binary logic and numbers
 
@@ -197,6 +226,42 @@ $$
 $${#eq:exp}
 The number $5$ is called the _base_ and the power $3$ is called the _exponent_. As noted before, $5^1 = 5$ and the exponent $1$ is omitted.
 
+The reciprocal of an arbitrary non-zero real number $a$ is $\frac{1}{a}$. The product of the two is $1$. Written with an exponent,
+$$
+\frac{1}{a} = a^{-1}.
+$$
+Continuing with the number $5$ in our example, its reciprocal is $\frac{1}{5} = 5^{-1}$. What do we get if we multiply $5$ by its reciprocal? We areready know the answer to be $1$. Let us do the multiplication using exponents:
+$$
+5 \times \frac{1}{5} = 1 = 5^{1} \times 5^{-1} = 5^{1+(-1)} = 5^{0}.
+$${#eq:reciprocal}
+The astounding conclusion from @eq:reciprocal is that a base raised to the exponent zero is {1}. _By extension, any integer raised to the to the zeroth power equals $1$_. This remarkable conclusion applies to any real number as well: something that will be understood better after we encounter [logarithms](https://www.britannica.com/science/logarithm). The consequence is that the logarithm of $1$ to any base is $0$:
+$$
+log_{n}1 = 0
+$${eq:logonezero}
+@eq:logonezero yet another memorable equation linking $1$ and $0$.
+
+
+## Sequences
+
+An ordered procession of numbers is called [sequence](https://en.wikipedia.org/w/index.php?title=Sequence&oldid=1177801065) [@wikisequence;@wolframsequence].^[The general definition replaces _numbers_ with _mathematical objects_ but the former will suffice for our limited purpose here.] Repetitions are allowed, but the order matters. The natural numbers form the sequence $(1, 2, 3, 4, 5, \ldots)$. Note that the elements of the sequence are enclosed in parentheses, $()$. There is an entire website devoted to sequences, called the [The On-Line Encyclopedia of Integer Sequences® (OEIS®)](https://oeis.org/).
+
+Fibonacci sequence
+
+Binomial sequence Pascals triangle
+
+## Series
+
+A [series](https://mathworld.wolfram.com/Series.html) is the (progressive) sum of an infinite sequence [@wikiseries;@wolframseries].
+
+Pascal's triangle and the Binomial theorem and their origin in the number 1.
+
+Arithmetic series (progressions)
+
+Geometric series (progressions)
+
+## Primes
+
+Is one the first prime? No!
 
 
 ## Acknowledgements
