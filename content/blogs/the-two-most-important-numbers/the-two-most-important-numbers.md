@@ -234,11 +234,11 @@ Continuing with the number $5$ in our example, its reciprocal is $\frac{1}{5} = 
 $$
 5 \times \frac{1}{5} = 1 = 5^{1} \times 5^{-1} = 5^{1+(-1)} = 5^{0}.
 $${#eq:reciprocal}
-The astounding conclusion from @eq:reciprocal is that a base raised to the exponent zero is {1}. _By extension, any integer raised to the to the zeroth power equals $1$_. This remarkable conclusion applies to any real number as well: something that will be understood better after we encounter [logarithms](https://www.britannica.com/science/logarithm). The consequence is that the logarithm of $1$ to any base is $0$:
+The astounding conclusion from @eq:reciprocal is that a base raised to the exponent zero is ${1}$. _By extension, any integer raised to the to the zeroth power equals $1$_. This remarkable conclusion applies to _any real number_ as well: something that will be understood better after we encounter [logarithms](https://www.britannica.com/science/logarithm) in this series of blogs or elsewhere. The consequence is that the logarithm of $1$ to any base $b$ is $0$:
 $$
-log_{n}1 = 0
-$${eq:logonezero}
-@eq:logonezero yet another memorable equation linking $1$ and $0$.
+log_{b}1 = 0.
+$${#eq:logonezero}
+@eq:logonezero is yet another memorable equation linking $1$ and $0$. When the domain of mathematics expands to take on new numbers, new objects, and new notations, the need for consistency with the existing body of mathematics gives us pearls such as equation @eq:logonezero.
 
 
 ## Sequences
