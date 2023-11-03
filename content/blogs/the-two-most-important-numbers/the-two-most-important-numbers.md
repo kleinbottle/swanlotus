@@ -13,7 +13,7 @@ The unique properties of the numbers zero and one make them mathematically indis
 
 ## Starting at the beginning
 
-I thought I would skirt around the idea of the well-known sets of numbers, but found that each time I tried, I would have to sneak in furtively a paragraph here or a footnote there as explanation. So, I have decided to start at the beginning and work my way, the natural numbers, the integers, the rationals, etc., again using intuitively obvious justification rather than a purely mathematical approach.
+I thought I would skirt around the idea of the well-known sets of numbers, but found that each time I tried, I would have to sneak in furtively a paragraph here or a footnote there as explanation. So, I have decided to start at the beginning and work my way through the natural numbers, the integers, the rationals, etc., again using intuitively obvious justification rather than a purely mathematical approach.
 
 ## Counting
 
@@ -53,7 +53,7 @@ Although Mathematics has rigorous foundations, at the very bottom, notions are n
 :::
 
 \
-While it is premature to talk about them and their peculiarities just now, it is worth making some points about these sets.
+While it is premature to talk about these sets and their peculiarities just now, it is worth making some points about them.
 
 #. The symbols in the second column are called [blackboard bold](https://oeis.org/wiki/Blackboard_bold) letters.
 
@@ -69,7 +69,7 @@ While it is premature to talk about them and their peculiarities just now, it is
 
 #. There is no symbol for the irrationals, which are simply defined as numbers which are not rational. In fact, the set of irrationals may shown using set notation only indirectly as $\mathbb{R}\setminus\mathbb{Q}$, which means the set of real numbers, excluding the rational numbers.
 
-#.  The _complex_ numbers
+#.  The _complex_ numbers incorporate a non-real entity called $i$ the _imaginary unit, which is defined as $i^2 = -1$. Since every real number when squared is greater than or equal to zero, this $i$ is not a real number and therefore demands its own symbol, arithmetic, and set, $\mathbb{C}$.
 
 ## Fundamental properties of zero
 
@@ -262,6 +262,12 @@ Geometric series (progressions)
 ## Primes
 
 Is one the first prime? No!
+
+
+
+Stuff
+
+arose out of the solutions to polynomial equations that did not have roots in the real number system. To put it in a picture, the graphs of some polynomials did not intersect the $x$-axis as many times as they should have.
 
 
 ## Acknowledgements
