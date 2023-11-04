@@ -307,6 +307,8 @@ $${#eq:logonezero}
 
 Application of index to polynomials; x is x^1 and 2 is 2 * x^0
 
+## The interval $[0, 1]$
+
 ## Sequences
 
 An ordered procession of numbers is called [sequence](https://en.wikipedia.org/w/index.php?title=Sequence&oldid=1177801065) [@wikisequence;@wolframsequence].^[The general definition replaces _numbers_ with _mathematical objects_ but the former will suffice for our limited purpose here.] Repetitions are allowed, but the order matters. The natural numbers form the sequence $(1, 2, 3, 4, 5, \ldots)$. Note that the elements of the sequence are enclosed in parentheses, $()$. There is an entire website devoted to sequences, called the [The On-Line Encyclopedia of Integer Sequences® (OEIS®)](https://oeis.org/).
