@@ -435,16 +435,15 @@ add first. \[
 the order in which we add several numbers.
 
 Multiplication is repeated addition and it is commutative. Both
-properties are better understood from a geometric demonstration as shown
+properties are easily understood from a geometric demonstration as shown
 in \cref{fig:mult}.
 
 \begin{figure}
 \hypertarget{fig:mult}{%
 \centering
 \includegraphics[width=0.6\textwidth,height=\textheight]{images/four-by-three.png}
-\caption{The products \(4\time3\) and \(3\times4\) yield the same result
-of 12. The stacking also illustrates that multiplication is repeated
-addition.}\label{fig:mult}
+\caption{The products \(4\times3\) and \(3\times4\) amount to repeated
+additions and yield the same result of 12.}\label{fig:mult}
 }
 \end{figure}
 
@@ -462,13 +461,16 @@ that we get two. In this fashion, all the natural numbers may be
 generated successively by adding one. The \emph{next number} is called
 the \emph{successor}. Even if we did not start with zero, but started
 with one, instead, we can still generate the entire set \(\mathbb{N}\)
-by adding one successively.
+by adding one successively. This method shows that there is no largest
+natural number. If there were such a number, say \(p\), we could always
+add one to it and show the assumption to be false. In this sense, one
+helps us to understand infinity (of the countable variety).
 
 Zero is the \emph{additive identity}, meaning that if we add zero to any
-number, the result is the original number again. Henceforth, let us
-denote an arbitrary real number by \(a\), i.e., \(a \in \mathbb{R}\).
-Then, \[
-a + 0 = a.
+number, the result is the original number again. This means that adding
+zero to zero produces zero. Henceforth, let us denote an arbitrary real
+number by \(a\), i.e., \(a \in \mathbb{R}\). Then, \[
+a + 0 = 0 + a = a.
 \]
 
 This is also true of other mathematical objects. The zero of the complex
@@ -478,7 +480,7 @@ also gives us the original complex number.
 A \href{https://mathworld.wolfram.com/Matrix.html}{matrix} is
 mathematical object which I facetiously call \emph{numbers in teabags}.
 They may come in different shapes and sizes. Let us consider a general
-\(2 \times 2\) square matrix like
+\(2\times2\) square matrix like
 \(\begin{bmatrix}a & b\\c & d\end{bmatrix}\) which has two horizontal
 rows and two vertical columns. The additive identity for this matrix is
 a \(2\times2\) square matrix, all of whose entries are zero: \[
@@ -496,19 +498,49 @@ c & d
 a & b\\
 c & d
 \end{bmatrix}
+=
+\begin{bmatrix}
+0 & 0\\
+0 & 0
+\end{bmatrix}
++
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
 \]
 
 \href{https://mathworld.wolfram.com/Polynomial.html}{Polynomials} are
 expressions like \(x^2 + 3x + 1\) where \(x\) is some real variable. The
 zero polynomial is simply the number zero, and adding it to any
-polynomial also gives us the original polynomial.
+polynomial also gives us back the original polynomial.
+
+\hypertarget{subtraction}{%
+\subsection{Subtraction}\label{subtraction}}
+
+Subtracting zero from a number leaves it unchanged. Subtracting a larger
+natural number from a smaller one gives a negative number and is the
+main reason for expanding the set \(\mathbb{N}\) into the set
+\(\mathbb{Z}\).
+
+By convention, when a sign is not prefixed to a number, we assume it to
+be positive. If a negative sign is prefixed to a number, it is a
+negative number. This is indicated it a pair of
+parentheses---surrounding the number and its sign---in expressions. When
+the number is featured alone, these parentheses are dropped.
+
+With signed numbers, we may convert any subtraction into an addition
+like this: \[
+3 - 5 = -2 = 3 + (-5) = (-5) + 3.
+\]\{eq:negnum\} In this way, we could convert subtractions into
+additions, and those additions would still be commutative. This does not
+mean that subtraction has suddenly become commutative; it has not. It
+simply means that subtraction can be morphed into the addition of signed
+numbers.
 
 \hypertarget{multiplication-as-repeated-addition}{%
 \subsubsection{Multiplication as repeated
 addition}\label{multiplication-as-repeated-addition}}
-
-\hypertarget{subtraction}{%
-\subsubsection{Subtraction}\label{subtraction}}
 
 \hypertarget{division-as-repeated-subtraction}{%
 \subsubsection{Division as repeated
