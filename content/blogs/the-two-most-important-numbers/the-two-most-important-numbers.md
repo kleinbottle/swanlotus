@@ -13,15 +13,15 @@ The unique properties of the numbers zero and one make them mathematically inter
 
 ## Starting at the beginning
 
-I first thought I would skirt around the formal sets of numbers, and concepts like commutativity and associativity, and keep this blog very informal. But I found that each time I tried that approach, I would have to furtively sneak in a paragraph here or a footnote there as explanation of these ideas. In the end, I decided to start at the beginning and work my way through the natural numbers, the integers, the rationals, etc.,  and [broach](https://www.thefreedictionary.com/broach) ideas like commutativity and associativity.
+I first thought I would skirt around the formal sets of numbers, and concepts like commutativity and associativity, and keep this blog very informal. But I found that each time I tried that approach, I would have to furtively sneak in a paragraph here or a footnote there as explanation of these ideas. In the end, I decided to start at the beginning, and work my way through the natural numbers, the integers, the rationals, etc.,  and [broach](https://www.thefreedictionary.com/broach) ideas like commutativity and associativity.
 
 ## Counting
 
-Initially, a shepherd with five sheep might have counted, "one sheep, two sheep, three sheep, four sheep, and five sheep." But wait! Since he did not have the names for numbers---nor indeed the abstract concept of a number---he could not have done that. So, what did he do?
+Aeons ago, a shepherd with five sheep might have counted, "one sheep, two sheep, three sheep, four sheep, and five sheep." But wait! Since he did not have the names for numbers---nor indeed the abstract concept of a number---he could not have done that. So, what did he do? Let us speculate.
 
 ### Naming sheep
 
-He could have given _unique_ names to each of his five sheep and developed enough familiarity with them to identify them by name. Then all he needed to do was to check that all his named sheep were home by sundown. But such a method would become cumbersome and error-prone as his flock multiplied.
+He could have given _unique_ names to each of his five sheep and developed enough familiarity with them to identify them by name. Then all he needed to do was to check that all his named sheep were home by sundown. But such a method would have become cumbersome and error-prone as his flock multiplied.
 
 ### One-to-one correspondence
 
@@ -41,7 +41,7 @@ When we measure, we start with $0$.
 
 ## Sets of numbers
 
-Although Mathematics has rigorous foundations, at the very bottom, notions are not defined [explicitly](https://www.vocabulary.com/dictionary/explicitly). One such notion is that of a _set_, which is loosely defined as a collection of objects that can either be enumerated or described clearly. The _sets of numbers_ we will deal with have names, symbols, and definitions as shown below.
+Although Mathematics has rigorous foundations, at the very bottom, its notions are not defined [explicitly](https://www.vocabulary.com/dictionary/explicitly). One such notion is that of a _set_, which is loosely defined as a collection of objects that can either be enumerated or described clearly. The _sets of numbers_ we will deal with have names, symbols, and definitions as shown below.
 
 ::: {.xsmall}
 | Name | Symbol | Definition |
