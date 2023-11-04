@@ -101,6 +101,66 @@ Multiplication is repeated addition and it is commutative. Both properties are e
 
 Talking about commutativity and associativity might seem like overkill for the addition and multiplication of real numbers. But, identifying these properties is a useful insight, as the more sophisticated mathematical objects we will encounter later may not obey either or both properties.
 
+## The additive and multiplicative identities
+
+When mathematicians in the nineteenth century contemplated the then extant mathematical systems, they recognized certain commonalities. Whether it was arithmetic or geometry, or some other branch of mathematics, they were able to distil certain underlying principles behind the common practices of mathematics. By systematizing and classifying what they observed, they were able to _invent_ names for the _classes of objects_ they discerned, along with their properties. Thus was born [abstract algebra](https://en.wikipedia.org/wiki/Abstract_algebra). The ideas of the additive and multiplicative identity were born from this exercise in classification.
+
+The numbers we use for counting, starting from $1$, and never ending, are called the _natural numbers_. The collection or _set_ of these numbers is denoted $\mathbb{N}$. We can add and multiply these numbers.
+
+For example, we have seen that multiplying $5$ by $1$ gives the original number $5$. The number $1$ is called the _multiplicative identity_ because multiplying any natural number by $1$ preserves the original number.
+
+What do you think is the additive equivalent, the _additive identity_? We know that if we add $0$ to any number, we get the original number again. So, $0$ _preserves_ the original number intact after addition. But is $0$ in the set $\mathbb{N}$? Not as we have defined it here.^[Some folks do include $0$ in the set $\mathbb{N}$.] Nevertheless, we may posit that under appropriate conditions, the additive identity is $0$.
+
+Zero and one enjoy their [coign of vantage](https://dictionary.cambridge.org/dictionary/english/coign-of-vantage) because they are the additive and multiplicative identities respectively:
+$$
+\begin{aligned}
+a + 0 = a\\
+a \times 1 = a
+\end{aligned}
+$$
+where $a$ is an arbitrary number, of the sort we are familiar with^[This is an easy-to-read blog; so I will not belabour the reader with the finer points of different types of numbers, but will reserve them for a later blog.].
+
+Mathematics as a discipline tends to generalize and extend simple ideas to increasing levels of complexity, while at the same time maintaining consistency in definition and behaviour across these disparate domains.
+
+It should come as no surprise that some objects called matrices^[I facetiously call them numbers in teabags] (singular matrix) also have their additive and multiplicative identities, _where applicable_. We will consider an arbitrary _square matrix_ $\begin{bmatrix} a & b\\c & d \end{bmatrix}$ having four elements, and called a $2 \times 2$ matrix. Then,
+$$
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}
+= %
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+$${#eq:multidmatrix}
+and $\begin{bmatrix} 1 & 0\\0 & 1 \end{bmatrix}$ is the multiplicative identity for matrix multiplication.^[The rules of matrix multiplication are a little involved and will not detain us here. The interested reader is referred to another blog of mine for details.]
+
+Likewise,
+$$
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
++ %
+\begin{bmatrix}
+0 & 0\\
+0 & 0
+\end{bmatrix}
+= %
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+$${#eq:addidmatrix}
+and $\begin{bmatrix} 0 & 0\\0 & 0 \end{bmatrix}$ is the additive identity for matrix addition.
+
+Do you see how the seed ideas of the additive and multiplicative identities, sown far and wide, germinate into shoots that are surprisingly similar to the original ones. The numbers $0$ and $1$ do indeed rule the roost. Obviously, the identity matrices will change with the matrix sizes, but the principles remain the same.
+
 ## Addition
 
 If we start with zero and add one to it, we get one. If we add one to that we get two. In this fashion, all the natural numbers may be generated successively by adding one. The _next number_ is called the _successor_. Even if we did not start with zero, but started with one, instead, we can still generate the entire set $\mathbb{N}$ by adding one successively. This method shows that there is no largest natural number. If there were such a number, say $p$, we could always add one to it and show the assumption to be false. In this sense, one helps us to understand infinity (of the countable variety).
@@ -146,23 +206,64 @@ $$
 
 Subtracting zero from a number leaves it unchanged. Subtracting a larger natural number from a smaller one gives a negative number and this is the main reason for expanding the set $\mathbb{N}$ into the set $\mathbb{Z}$.
 
-By convention, when a sign is not prefixed to a number, we assume it to be positive. If a negative sign is prefixed to a number, it is a negative number. This is indicated it a pair of parentheses---surrounding the number and its sign---in expressions. When the number is featured alone, these parentheses are dropped.
+By convention, when a sign is not prefixed to a number, we assume it to be positive. If a negative sign is prefixed to a number, it is a negative number. This is indicated by a pair of parentheses---surrounding the number and its sign---in expressions. When the number is featured alone, these parentheses are dropped.
 
 With signed numbers, we may convert any subtraction into an addition like this:
 $$
 3 - 5 = -2 = 3 + (-5) = (-5) + 3.
-$${eq:negnum}
+$${#eq:negnum}
 In this way, we could convert subtractions into additions, and those additions would still be commutative. This does not mean that subtraction has suddenly become commutative; it has not. It simply means that subtraction can be morphed into the addition of signed numbers.
 
+Every real number $a$ has an _additive inverse_, $a'$ such that:
+$$
+a + a' = a' + a = 0.
+$$
+Any guesses as to what $a'$ is? It is the signed number $a$ prefixed with a negative sign and written as $-a$, i.e., $a' = -a$. It is noteworthy, that when we subtract any real number from itself, we get zero, by the property of the additive inverse:
+$$
+a - a = a + (-a) = 0.
+$${#eq:addinv}
 
+## Multiplication
 
+Multiplying any number by zero yields zero: $a \times 0 = 0 \times a = 0$. This might be a little difficult to grasp. To justify this assertion, let us try to multiply $5$ by $0$:
+$$
+5 \times 0 = 5 \times (2 - 2) = 5 \times (2 + (-2)) = 10 - 10 = 0.
+$$
+We could replace the number $2$ by the arbitrary $a \in \mathbb{R}$ and the statement would still be valid.
 
+Zero was already a problematic number that had been introduced into Europe from India. Can imagine the effort that must have gone into understanding and justifying that multiplication of any number by zero yielded zero? Zero, one, and infinity are a daunting triad. Mastering them takes time, practice, and familiarity.
 
+Multiplying a number by $1$ leaves it unchanged. The number $1$ is the _multiplicative identity_ element for the real numbers. So, $5 \times 1 = 1 \times 5 = 5$.
 
-### Multiplication as repeated addition
+Multiplying $a$ by $-1$ yields the additive inverse of $a$, namely $-a$.
 
-
-
+In the context of $2 \times 2$ matrices, there is a matrix that functions as the multiplicative identity as shown in @eq:matmultident.
+$$
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+%
+\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}
+%
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+$${#eq:matmultident}
 
 
 ### Division as repeated subtraction
@@ -234,65 +335,7 @@ Following this logic, we might assert that $5^1 = 5$ and that is perfectly corre
 
 The notation making $1$ implicit in these scenarios reduces clutter and simplifies notation. The absence of the implicit $1$ might trouble the heart of the sincere young mathematician, but familiarity with these conventions will make for comfort in using them.
 
-## The additive and multiplicative identities
 
-When mathematicians in the nineteenth century contemplated the then extant mathematical systems, they recognized certain commonalities. Whether it was arithmetic or geometry, or some other branch of mathematics, they were able to distil certain underlying principles behind the common practices of mathematics. By systematizing and classifying what they observed, they were able to _invent_ names for the _classes of objects_ they discerned, along with their properties. Thus was born [abstract algebra](https://en.wikipedia.org/wiki/Abstract_algebra). The ideas of the additive and multiplicative identity were born from this exercise in classification.
-
-The numbers we use for counting, starting from $1$, and never ending, are called the _natural numbers_. The collection or _set_ of these numbers is denoted $\mathbb{N}$. We can add and multiply these numbers.
-
-For example, we have seen that multiplying $5$ by $1$ gives the original number $5$. The number $1$ is called the _multiplicative identity_ because multiplying any natural number by $1$ preserves the original number.
-
-What do you think is the additive equivalent, the _additive identity_? We know that if we add $0$ to any number, we get the original number again. So, $0$ _preserves_ the original number intact after addition. But is $0$ in the set $\mathbb{N}$? Not as we have defined it here.^[Some folks do include $0$ in the set $\mathbb{N}$.] Nevertheless, we may posit that under appropriate conditions, the additive identity is $0$.
-
-Zero and one enjoy their [coign of vantage](https://dictionary.cambridge.org/dictionary/english/coign-of-vantage) because they are the additive and multiplicative identities respectively:
-$$
-\begin{aligned}
-a + 0 = a\\
-a \times 1 = a
-\end{aligned}
-$$
-where $a$ is an arbitrary number, of the sort we are familiar with^[This is an easy-to-read blog; so I will not belabour the reader with the finer points of different types of numbers, but will reserve them for a later blog.].
-
-Mathematics as a discipline tends to generalize and extend simple ideas to increasing levels of complexity, while at the same time maintaining consistency in definition and behaviour across these disparate domains.
-
-It should come as no surprise that some objects called matrices^[I facetiously call them numbers in teabags] (singular matrix) also have their additive and multiplicative identities, _where applicable_. We will consider an arbitrary _square matrix_ $\begin{bmatrix} a & b\\c & d \end{bmatrix}$ having four elements, and called a $2 \times 2$ matrix. Then,
-$$
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-\begin{bmatrix}
-1 & 0\\
-0 & 1
-\end{bmatrix}
-= %
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-$${#eq:multidmatrix}
-and $\begin{bmatrix} 1 & 0\\0 & 1 \end{bmatrix}$ is the multiplicative identity for matrix multiplication.^[The rules of matrix multiplication are a little involved and will not detain us here. The interested reader is referred to another blog of mine for details.]
-
-Likewise,
-$$
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-+ %
-\begin{bmatrix}
-0 & 0\\
-0 & 0
-\end{bmatrix}
-= %
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-$${#eq:addidmatrix}
-and $\begin{bmatrix} 0 & 0\\0 & 0 \end{bmatrix}$ is the additive identity for matrix addition.
-
-Do you see how the seed ideas of the additive and multiplicative identities, sown far and wide, germinate into shoots that are surprisingly similar to the original ones. The numbers $0$ and $1$ do indeed rule the roost. Obviously, the identity matrices will change with the matrix sizes, but the principles remain the same.
 
 ## Zero, one, and repeated addition
 

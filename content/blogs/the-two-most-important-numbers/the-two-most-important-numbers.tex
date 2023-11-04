@@ -453,6 +453,108 @@ these properties is a useful insight, as the more sophisticated
 mathematical objects we will encounter later may not obey either or both
 properties.
 
+\hypertarget{the-additive-and-multiplicative-identities}{%
+\subsection{The additive and multiplicative
+identities}\label{the-additive-and-multiplicative-identities}}
+
+When mathematicians in the nineteenth century contemplated the then
+extant mathematical systems, they recognized certain commonalities.
+Whether it was arithmetic or geometry, or some other branch of
+mathematics, they were able to distil certain underlying principles
+behind the common practices of mathematics. By systematizing and
+classifying what they observed, they were able to \emph{invent} names
+for the \emph{classes of objects} they discerned, along with their
+properties. Thus was born
+\href{https://en.wikipedia.org/wiki/Abstract_algebra}{abstract algebra}.
+The ideas of the additive and multiplicative identity were born from
+this exercise in classification.
+
+The numbers we use for counting, starting from \(1\), and never ending,
+are called the \emph{natural numbers}. The collection or \emph{set} of
+these numbers is denoted \(\mathbb{N}\). We can add and multiply these
+numbers.
+
+For example, we have seen that multiplying \(5\) by \(1\) gives the
+original number \(5\). The number \(1\) is called the
+\emph{multiplicative identity} because multiplying any natural number by
+\(1\) preserves the original number.
+
+What do you think is the additive equivalent, the \emph{additive
+identity}? We know that if we add \(0\) to any number, we get the
+original number again. So, \(0\) \emph{preserves} the original number
+intact after addition. But is \(0\) in the set \(\mathbb{N}\)? Not as we
+have defined it here.\footnote{Some folks do include \(0\) in the set
+  \(\mathbb{N}\).} Nevertheless, we may posit that under appropriate
+conditions, the additive identity is \(0\).
+
+Zero and one enjoy their
+\href{https://dictionary.cambridge.org/dictionary/english/coign-of-vantage}{coign
+of vantage} because they are the additive and multiplicative identities
+respectively: \[
+\begin{aligned}
+a + 0 = a\\
+a \times 1 = a
+\end{aligned}
+\] where \(a\) is an arbitrary number, of the sort we are familiar
+with\footnote{This is an easy-to-read blog; so I will not belabour the
+  reader with the finer points of different types of numbers, but will
+  reserve them for a later blog.}.
+
+Mathematics as a discipline tends to generalize and extend simple ideas
+to increasing levels of complexity, while at the same time maintaining
+consistency in definition and behaviour across these disparate domains.
+
+It should come as no surprise that some objects called
+matrices\footnote{I facetiously call them numbers in teabags} (singular
+matrix) also have their additive and multiplicative identities,
+\emph{where applicable}. We will consider an arbitrary \emph{square
+matrix} \(\begin{bmatrix} a & b\\c & d \end{bmatrix}\) having four
+elements, and called a \(2 \times 2\) matrix. Then,
+\begin{equation}\protect\hypertarget{eq:multidmatrix}{}{
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}
+= %
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+}\label{eq:multidmatrix}\end{equation} and
+\(\begin{bmatrix} 1 & 0\\0 & 1 \end{bmatrix}\) is the multiplicative
+identity for matrix multiplication.\footnote{The rules of matrix
+  multiplication are a little involved and will not detain us here. The
+  interested reader is referred to another blog of mine for details.}
+
+Likewise, \begin{equation}\protect\hypertarget{eq:addidmatrix}{}{
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
++ %
+\begin{bmatrix}
+0 & 0\\
+0 & 0
+\end{bmatrix}
+= %
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+}\label{eq:addidmatrix}\end{equation} and
+\(\begin{bmatrix} 0 & 0\\0 & 0 \end{bmatrix}\) is the additive identity
+for matrix addition.
+
+Do you see how the seed ideas of the additive and multiplicative
+identities, sown far and wide, germinate into shoots that are
+surprisingly similar to the original ones. The numbers \(0\) and \(1\)
+do indeed rule the roost. Obviously, the identity matrices will change
+with the matrix sizes, but the principles remain the same.
+
 \hypertarget{addition}{%
 \subsection{Addition}\label{addition}}
 
@@ -519,28 +621,89 @@ polynomial also gives us back the original polynomial.
 \subsection{Subtraction}\label{subtraction}}
 
 Subtracting zero from a number leaves it unchanged. Subtracting a larger
-natural number from a smaller one gives a negative number and is the
-main reason for expanding the set \(\mathbb{N}\) into the set
+natural number from a smaller one gives a negative number and this is
+the main reason for expanding the set \(\mathbb{N}\) into the set
 \(\mathbb{Z}\).
 
 By convention, when a sign is not prefixed to a number, we assume it to
 be positive. If a negative sign is prefixed to a number, it is a
-negative number. This is indicated it a pair of
+negative number. This is indicated by a pair of
 parentheses---surrounding the number and its sign---in expressions. When
 the number is featured alone, these parentheses are dropped.
 
 With signed numbers, we may convert any subtraction into an addition
-like this: \[
+like this: \begin{equation}\protect\hypertarget{eq:negnum}{}{
 3 - 5 = -2 = 3 + (-5) = (-5) + 3.
-\]\{eq:negnum\} In this way, we could convert subtractions into
-additions, and those additions would still be commutative. This does not
-mean that subtraction has suddenly become commutative; it has not. It
-simply means that subtraction can be morphed into the addition of signed
-numbers.
+}\label{eq:negnum}\end{equation} In this way, we could convert
+subtractions into additions, and those additions would still be
+commutative. This does not mean that subtraction has suddenly become
+commutative; it has not. It simply means that subtraction can be morphed
+into the addition of signed numbers.
 
-\hypertarget{multiplication-as-repeated-addition}{%
-\subsubsection{Multiplication as repeated
-addition}\label{multiplication-as-repeated-addition}}
+Every real number \(a\) has an \emph{additive inverse}, \(a'\) such
+that: \[
+a + a' = a' + a = 0.
+\] Any guesses as to what \(a'\) is? It is the signed number \(a\)
+prefixed with a negative sign and written as \(-a\), i.e., \(a' = -a\).
+It is noteworthy, that when we subtract any real number from itself, we
+get zero, by the property of the additive inverse:
+\begin{equation}\protect\hypertarget{eq:addinv}{}{
+a - a = a + (-a) = 0.
+}\label{eq:addinv}\end{equation}
+
+\hypertarget{multiplication}{%
+\subsection{Multiplication}\label{multiplication}}
+
+Multiplying any number by zero yields zero:
+\(a \times 0 = 0 \times a = 0\). This might be a little difficult to
+grasp. To justify this assertion, let us try to multiply \(5\) by \(0\):
+\[
+5 \times 0 = 5 \times (2 - 2) = 5 \times (2 + (-2)) = 10 - 10 = 0.
+\] We could replace the number \(2\) by the arbitrary
+\(a \in \mathbb{R}\) and the statement would still be valid.
+
+Zero was already a problematic number that had been introduced into
+Europe from India. Can imagine the effort that must have gone into
+understanding and justifying that multiplication of any number by zero
+yielded zero? Zero, one, and infinity are a daunting triad. Mastering
+them takes time, practice, and familiarity.
+
+Multiplying a number by \(1\) leaves it unchanged. The number \(1\) is
+the \emph{multiplicative identity} element for the real numbers. So,
+\(5 \times 1 = 1 \times 5 = 5\).
+
+Multiplying \(a\) by \(-1\) yields the additive inverse of \(a\), namely
+\(-a\).
+
+In the context of \(2 \times 2\) matrices, there is a matrix that
+functions as the multiplicative identity as shown in
+\cref{eq:matmultident}.
+\begin{equation}\protect\hypertarget{eq:matmultident}{}{
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+%
+\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}
+%
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+}\label{eq:matmultident}\end{equation}
 
 \hypertarget{division-as-repeated-subtraction}{%
 \subsubsection{Division as repeated
@@ -645,108 +808,6 @@ and simplifies notation. The absence of the implicit \(1\) might trouble
 the heart of the sincere young mathematician, but familiarity with these
 conventions will make for comfort in using them.
 
-\hypertarget{the-additive-and-multiplicative-identities}{%
-\subsection{The additive and multiplicative
-identities}\label{the-additive-and-multiplicative-identities}}
-
-When mathematicians in the nineteenth century contemplated the then
-extant mathematical systems, they recognized certain commonalities.
-Whether it was arithmetic or geometry, or some other branch of
-mathematics, they were able to distil certain underlying principles
-behind the common practices of mathematics. By systematizing and
-classifying what they observed, they were able to \emph{invent} names
-for the \emph{classes of objects} they discerned, along with their
-properties. Thus was born
-\href{https://en.wikipedia.org/wiki/Abstract_algebra}{abstract algebra}.
-The ideas of the additive and multiplicative identity were born from
-this exercise in classification.
-
-The numbers we use for counting, starting from \(1\), and never ending,
-are called the \emph{natural numbers}. The collection or \emph{set} of
-these numbers is denoted \(\mathbb{N}\). We can add and multiply these
-numbers.
-
-For example, we have seen that multiplying \(5\) by \(1\) gives the
-original number \(5\). The number \(1\) is called the
-\emph{multiplicative identity} because multiplying any natural number by
-\(1\) preserves the original number.
-
-What do you think is the additive equivalent, the \emph{additive
-identity}? We know that if we add \(0\) to any number, we get the
-original number again. So, \(0\) \emph{preserves} the original number
-intact after addition. But is \(0\) in the set \(\mathbb{N}\)? Not as we
-have defined it here.\footnote{Some folks do include \(0\) in the set
-  \(\mathbb{N}\).} Nevertheless, we may posit that under appropriate
-conditions, the additive identity is \(0\).
-
-Zero and one enjoy their
-\href{https://dictionary.cambridge.org/dictionary/english/coign-of-vantage}{coign
-of vantage} because they are the additive and multiplicative identities
-respectively: \[
-\begin{aligned}
-a + 0 = a\\
-a \times 1 = a
-\end{aligned}
-\] where \(a\) is an arbitrary number, of the sort we are familiar
-with\footnote{This is an easy-to-read blog; so I will not belabour the
-  reader with the finer points of different types of numbers, but will
-  reserve them for a later blog.}.
-
-Mathematics as a discipline tends to generalize and extend simple ideas
-to increasing levels of complexity, while at the same time maintaining
-consistency in definition and behaviour across these disparate domains.
-
-It should come as no surprise that some objects called
-matrices\footnote{I facetiously call them numbers in teabags} (singular
-matrix) also have their additive and multiplicative identities,
-\emph{where applicable}. We will consider an arbitrary \emph{square
-matrix} \(\begin{bmatrix} a & b\\c & d \end{bmatrix}\) having four
-elements, and called a \(2 \times 2\) matrix. Then,
-\begin{equation}\protect\hypertarget{eq:multidmatrix}{}{
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-\begin{bmatrix}
-1 & 0\\
-0 & 1
-\end{bmatrix}
-= %
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-}\label{eq:multidmatrix}\end{equation} and
-\(\begin{bmatrix} 1 & 0\\0 & 1 \end{bmatrix}\) is the multiplicative
-identity for matrix multiplication.\footnote{The rules of matrix
-  multiplication are a little involved and will not detain us here. The
-  interested reader is referred to another blog of mine for details.}
-
-Likewise, \begin{equation}\protect\hypertarget{eq:addidmatrix}{}{
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-+ %
-\begin{bmatrix}
-0 & 0\\
-0 & 0
-\end{bmatrix}
-= %
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-}\label{eq:addidmatrix}\end{equation} and
-\(\begin{bmatrix} 0 & 0\\0 & 0 \end{bmatrix}\) is the additive identity
-for matrix addition.
-
-Do you see how the seed ideas of the additive and multiplicative
-identities, sown far and wide, germinate into shoots that are
-surprisingly similar to the original ones. The numbers \(0\) and \(1\)
-do indeed rule the roost. Obviously, the identity matrices will change
-with the matrix sizes, but the principles remain the same.
-
 \hypertarget{zero-one-and-repeated-addition}{%
 \subsection{Zero, one, and repeated
 addition}\label{zero-one-and-repeated-addition}}
@@ -767,8 +828,8 @@ The \emph{next natural number} is obtained by adding in the sequence is
 generated by adding \(1\) to the current number.\_ By repeating this
 process, we can generate any desired natural number.
 
-\hypertarget{multiplication}{%
-\subsection{Multiplication}\label{multiplication}}
+\hypertarget{multiplication-1}{%
+\subsection{Multiplication}\label{multiplication-1}}
 
 \hypertarget{division}{%
 \subsection{Division}\label{division}}
