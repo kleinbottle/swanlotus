@@ -77,7 +77,8 @@ While it is premature to talk about these sets and their peculiarities in this b
 
 ## The Four arithmetic operations
 
-Each of the four basic arithmetic operations--addition, multiplication, subtraction, division---are [binary](https://en.wikipedia.org/w/index.php?title=Binary_operation&oldid=1182322931) operations and may only be performed between _two_ numbers. The ability to _add_ multiple numbers---as in determining the total sum to be paid at the checkout counter while shopping---is made possible by the [commutativity](https://en.wikipedia.org/wiki/Commutative_property) and [associativity](https://en.wikipedia.org/wiki/Associative_property) of addition, which also applies to multiplication. Subtraction and division are neither commutative nor associative.
+Each of the four basic arithmetic operations--addition, multiplication, subtraction, division---are [binary](https://en.wikipedia.org/w/index.php?title=Binary_operation&oldid=1182322931) operations and may only be performed between _two_ numbers. The ability to _add_ multiple numbers---as in determining the total sum to be paid at the checkout counter while shopping---is made possible by the [commutativity](https://en.wikipedia.org/wiki/Commutative_property) and [associativity](https://en.wikipedia.org/wiki/Associative_property) of addition, which also applies to multiplication. Subtraction and division are neither commutative nor associative.^[For a start, subtraction is not commutative: $3 - 2 = 1 \ne -1 = 2 - 3$.]
+
 
 ### Commutativity and Associativity
 
@@ -92,9 +93,9 @@ In associativity, we have _three operands_. We use parentheses to denote the ope
 $$
 (2 + 3) + 5 = 2 + (3 + 5).
 $$
-Together, commutativity and associativity allow us to be casual about the order in which add several numbers.
+Together, commutativity and associativity allow us to be casual about the order in which  we add several numbers.
 
-Talking about commutativity and associativity might seem like overkill for addition. But, identifying these properties is a useful insight, as the more sophisticated mathematical objects we will encounter later may not obey either or both properties.^[For a start, subtraction is not commutative: $3 - 2 \ne 2 - 3$.]
+Talking about commutativity and associativity might seem like overkill for the addition and multiplication of real numbers. But, identifying these properties is a useful insight, as the more sophisticated mathematical objects we will encounter later may not obey either or both properties.
 
 ## Addition
 
