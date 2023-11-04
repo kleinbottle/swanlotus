@@ -95,7 +95,10 @@ $$
 $$
 Together, commutativity and associativity allow us to be casual about the order in which  we add several numbers.
 
+Commutativity for multiplication may be understood better geometrically.
+
 Talking about commutativity and associativity might seem like overkill for the addition and multiplication of real numbers. But, identifying these properties is a useful insight, as the more sophisticated mathematical objects we will encounter later may not obey either or both properties.
+
 
 ## Addition
 
