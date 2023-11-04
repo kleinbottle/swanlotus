@@ -5,11 +5,11 @@ date: 2023-10-31
 modified: 2023-11-01
 category: Mathematics
 tags: Mathematical Musings
-summary: 'The unique properties of the numbers zero make them mathematically indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers, we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we may discover how they cement disparate areas of Mathematics.'
+summary: 'The unique properties of the numbers zero make them mathematically interesting and indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers, we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we may discover how they cement disparate areas of Mathematics.'
 opengraphimage: 01-crop-3600-dpi-cairo.png
 ---
 
-The unique properties of the numbers zero and one make them mathematically indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers, we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we may discover how they cement disparate areas of Mathematics.
+The unique properties of the numbers zero and one make them mathematically interesting and indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers, we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we may discover how they cement disparate areas of Mathematics.
 
 ## Starting at the beginning
 
@@ -92,9 +92,33 @@ Together, these two operations allow us to be casual about how we order the numb
 
 Talking about commutativity and associativity might seem like overkill for addition. But, identifying these properties is a useful insight, as the more sophisticated mathematical objects we will encounter later may not obey either or both properties.
 
-### Addition
+## Addition
 
 If we start with zero and add one to it, we get one. If we add one to that we get two. In this fashion, all the natural numbers may be generated successively by adding one. The _next number_ is called the _successor_. Even if we did not start with zero, but started with one, instead, we can still generate the entire set $\mathbb{N}$ by adding one successively.
+
+Zero is the _additive identity_, meaning that if we add zero to any number, the result is the original number again. Henceforth, let us denote an arbitrary real number by $a$, i.e., $a \in \mathbb{R}$. Then,
+$$
+a + 0 = a.
+$$
+
+This is also true of other mathematical objects. The zero of the complex numbers is $0 + i(0) = 0$ as well. And adding it to any comlex number also gives us the original complex number.
+A [matrix](https://mathworld.wolfram.com/Matrix.html) is mathematical object that which I facetiously call _numbers in teabags_. They may come in different shapes and sizes. Let us consider a general $2 \times 2$ square matrix like $\begin{bmatirx}a & b\\c & d\end{bmatrix}$. The additive inverse for this matrix is a $2\times2$ square matrix all of whose entries are zero:
+$$
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
++
+\begin{bmatrix}
+0 & 0\\
+0 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+$$
 
 ### Multiplication as repeated addition
 
