@@ -55,7 +55,7 @@ Although Mathematics has rigorous foundations, at the very bottom, its notions a
 :::
 
 \
-While it is premature to talk about these sets and their peculiarities just now, it is worth making some points about them.
+While it is premature to talk about these sets and their peculiarities in this blog, it is worth making some points about them.
 
 #. The symbols in the second column are called [blackboard bold](https://oeis.org/wiki/Blackboard_bold) letters.
 
