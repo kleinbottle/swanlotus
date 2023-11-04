@@ -5,7 +5,7 @@ date: 2023-10-31
 modified: 2023-11-01
 category: Mathematics
 tags: Mathematical Musings
-summary: 'The unique properties of the numbers zero make them mathematically interesting and indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers, we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we may discover how they cement together disparate areas of Mathematics.'
+summary: 'The unique properties of the numbers zero and one make them mathematically interesting and indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers, we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we may discover how they cement together disparate areas of Mathematics.'
 opengraphimage: 01-crop-3600-dpi-cairo.png
 ---
 
@@ -13,7 +13,7 @@ The unique properties of the numbers zero and one make them mathematically inter
 
 ## Starting at the beginning
 
-I first thought I would skirt around the formal sets of numbers, and concepts like commutativity and associativity, and keep this blog very informal. But I found that each time I tried that approach, I would have to furtively sneak in a paragraph here or a footnote there as explanation of these ideas. In the end, I decided to start at the beginning, and work my way through the natural numbers, the integers, the rationals, etc.,  and [broach](https://www.thefreedictionary.com/broach) ideas like commutativity and associativity.
+At first, I thought I would skirt around the formal sets of numbers, and concepts like commutativity and associativity, and keep this blog very informal. But I found that each time I tried that approach, I would have to furtively sneak in a paragraph here, or a footnote there, as explanation of these ideas. In the end, I decided to start at the beginning, and work my way through the natural numbers, the integers, the rationals, etc., and [broach](https://www.thefreedictionary.com/broach) ideas like commutativity and associativity.
 
 ## Counting
 
@@ -49,8 +49,8 @@ Although Mathematics has rigorous foundations, at the very bottom, its notions a
 | Natural numbers | $\mathbb{N}$ | $\{1, 2, 3, 4, ...\}$ |
 | Integers | $\mathbb{Z}$ | $\{... -3, -2, -1, 0, 1, 2, 3, ...\}$ |
 | Rational numbers | $\mathbb{Q}$ | $\{x: x = \frac{p}{q} \mbox{ where } p, q \in \mathbb{Z} \mbox{ and } q \ne 0\}$ |
-| Irrational numbers |  | Numbers which are not rational |
-| Real numbers | $\mathbb{R}$ | The rationals and irrationals |
+| Irrational numbers |  | $\{$The numbers which are not rational$\}$ |
+| Real numbers | $\mathbb{R}$ | $\{$The rationals and the irrationals$\}$ |
 | Complex numbers | $\mathbb{C}$ | $\{a+ib: a, b \in \mathbb{R} \mbox{ and } i^2 = -1\}$
 :::
 
@@ -69,7 +69,9 @@ While it is premature to talk about these sets and their peculiarities in this b
 
 #. The _rational numbers_ are so named because they are really _ratios_ of whole numbers with the proviso that the denominator cannot be zero. More about this in a later section. The symbol $\mathbb{Q}$ is used because it denotes _quotient_ the result of _division_.
 
-#. There is no symbol for the irrationals, which are simply defined as numbers which are not rational. In fact, the set of irrationals may shown using set notation only indirectly as $\mathbb{R}\setminus\mathbb{Q}$, which means the set of real numbers, excluding the rational numbers.
+#. There is no symbol for the irrationals, which are simply defined as numbers which are not rational, which is not entirely satisfactory. In fact, the set of irrationals may shown using set notation only indirectly as $\mathbb{R}\setminus\mathbb{Q}$, which means the set of real numbers, excluding the rational numbers.
+
+#. The _real numbers_, as the union of the rational numbers and the irrational numbers, is also not entirely satisfactory, because there could be a third (or more) type of number that also belongs to the reals.^[This notion was put to rest by [Richard Dedekind](https://en.wikipedia.org/wiki/Richard_Dedekind) and his _Schnitt_ or cut, but that is [a story](https://arpita95b.medium.com/cutting-through-the-confusion-how-dedekind-cuts-build-the-real-numbers-20aeaaec021d) for another day and another blog.]
 
 #.  The _complex_ numbers incorporate a non-real entity called $i$ the _imaginary unit_, which is defined as $i^2 = -1$. Since every real number when squared is greater than or equal to zero, this $i$ is not a real number, and therefore demands its own symbol, arithmetic, and set, $\mathbb{C}$.
 
