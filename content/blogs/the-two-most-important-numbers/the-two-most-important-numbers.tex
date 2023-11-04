@@ -49,6 +49,19 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -420,6 +433,20 @@ add first. \[
 (2 + 3) + 5 = 2 + (3 + 5).
 \] Together, commutativity and associativity allow us to be casual about
 the order in which we add several numbers.
+
+Multiplication is repeated addition and it is commutative. Both
+properties are better understood from a geometric demonstration as shown
+in \cref{fig:mult}.
+
+\begin{figure}
+\hypertarget{fig:mult}{%
+\centering
+\includegraphics[width=0.6\textwidth,height=\textheight]{images/four-by-three.png}
+\caption{The products \(4\time3\) and \(3\times4\) yield the same result
+of 12. The stacking also illustrates that multiplication is repeated
+addition.}\label{fig:mult}
+}
+\end{figure}
 
 Talking about commutativity and associativity might seem like overkill
 for the addition and multiplication of real numbers. But, identifying

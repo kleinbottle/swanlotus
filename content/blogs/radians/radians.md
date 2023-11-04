@@ -147,7 +147,7 @@ This case is illustrated by the line $CTD$ which cuts the circle at only one poi
 
 With that out of the way, we know from @fig:trig, that the tangent is the ratio of the lengths of the opposite side to the adjacent side, which in @fig:unit translates to $\tan\theta = \frac{SC}{OC}$. But the denominator in this case, $OC$, is not $1$ like it was for the other two trigonometric ratios. To work around this, with reference to @fig:unit, we construct the triangle $ODT$ thus:
 
-a. Extend^[Extending a line used to be called _producing a line_ but that usage has now slipped into relative obscurity.] the line $OC$ to intersect the circle at the point $D$ which is $(0, 1)$. $OD$, being a radius, has unit length.
+a. Extend^[Extending a line used to be called _producing a line_ but that usage has now slipped into relative obscurity.] the line $OC$ to intersect the circle at the point $D$ which is $(1, 0)$. $OD$, being a radius, has unit length.
 a. Draw a tangent $T'DT$ to the circle at $D$.
 a. Extend the radius $OS$ to intersect the tangent at the point $T$.
 
