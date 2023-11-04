@@ -25,9 +25,9 @@ He could have given _unique_ names to each of his five sheep and developed enoug
 
 ### One-to-one correspondence
 
-The later, and more likely, alternative was to use one stone to correspond to one sheep. He could have taken a leather bag and dropped a stone in it for each sheep that he owned. He did not need to learn counting. All he needed to do was to establish a [one-to-one correspondence](https://www.encyclopedia.com/science/encyclopedias-almanacs-transcripts-and-maps/one-one-correspondence)^[One-to-one correspondence is a simple but extremely powerful idea which guided [Georg Cantor](https://www.britannica.com/science/one-to-one-correspondence) to develop his radical but consistent ideas about types of infinity.] between sheep and stone. As long as he had the right number of stones in his bag, he could account for each one of his sheep.
+The later, and more likely, alternative was to use stones to correspond to sheep. He could have taken a leather bag and dropped a stone in it--- one for each sheep that he owned. He did not need to learn counting. All he needed to do was to establish a [one-to-one correspondence](https://www.encyclopedia.com/science/encyclopedias-almanacs-transcripts-and-maps/one-one-correspondence)^[One-to-one correspondence is a simple but extremely powerful idea which guided [Georg Cantor](https://www.britannica.com/science/one-to-one-correspondence) to develop his radical but consistent ideas about types of infinity.] between sheep and stone. As long as he had the right number of stones in his bag, he could account for each one of his sheep.
 
-The Latin word for _stone_ is [calculus](https://www.etymonline.com/search?q=calculus) and from the stone has come the whole science of _calculation_.
+The Latin word for _stone_ is [calculus](https://www.etymonline.com/search?q=calculus), and from the stone has come the whole science of _calculation_.
 
 ## Measurement
 
@@ -39,7 +39,7 @@ _When we count, we start with $1$; when we measure, we start with $0$._
 
 ## Sets of numbers
 
-Although Mathematics has rigorous foundations, at the very bottom, notions are not defined [explicitly](https://www.vocabulary.com/dictionary/explicitly). One such notion is that of a _set, which is loosely defined as a collection of objects that can either be enumerated or described clearly. The _sets of numbers_ we will deal with have names, symbols, and definitions as shown below.
+Although Mathematics has rigorous foundations, at the very bottom, notions are not defined [explicitly](https://www.vocabulary.com/dictionary/explicitly). One such notion is that of a _set_, which is loosely defined as a collection of objects that can either be enumerated or described clearly. The _sets of numbers_ we will deal with have names, symbols, and definitions as shown below.
 
 ::: {.xsmall}
 | Name | Symbol | Definition |
@@ -69,15 +69,28 @@ While it is premature to talk about these sets and their peculiarities just now,
 
 #. There is no symbol for the irrationals, which are simply defined as numbers which are not rational. In fact, the set of irrationals may shown using set notation only indirectly as $\mathbb{R}\setminus\mathbb{Q}$, which means the set of real numbers, excluding the rational numbers.
 
-#.  The _complex_ numbers incorporate a non-real entity called $i$ the _imaginary unit, which is defined as $i^2 = -1$. Since every real number when squared is greater than or equal to zero, this $i$ is not a real number, and therefore demands its own symbol, arithmetic, and set, $\mathbb{C}$.
+#.  The _complex_ numbers incorporate a non-real entity called $i$ the _imaginary unit_, which is defined as $i^2 = -1$. Since every real number when squared is greater than or equal to zero, this $i$ is not a real number, and therefore demands its own symbol, arithmetic, and set, $\mathbb{C}$.
 
 ## The Four arithmetic operations
 
-Each of the four basic arithmetic operations--addition, multiplication, subtraction, division---are [binary](https://en.wikipedia.org/w/index.php?title=Binary_operation&oldid=1182322931) operations and may only be performed between _two_ numbers. The ability to add multiple numbers---as in determining the total sum to be paid at the checkout counter while shopping---is made possible the [commutativity](https://en.wikipedia.org/wiki/Commutative_property) and [associativity](https://en.wikipedia.org/wiki/Associative_property) of addition.
+Each of the four basic arithmetic operations--addition, multiplication, subtraction, division---are [binary](https://en.wikipedia.org/w/index.php?title=Binary_operation&oldid=1182322931) operations and may only be performed between _two_ numbers. The ability to add multiple numbers---as in determining the total sum to be paid at the checkout counter while shopping---is made possible by the [commutativity](https://en.wikipedia.org/wiki/Commutative_property) and [associativity](https://en.wikipedia.org/wiki/Associative_property) of addition.
 
 ### Commutativity and Associativity
 
-Let us demystify this. Lets us add three numbers, $2$, $3$, and $5$5. It is common to write this as $2 + 3 + 5 = 10$. The sum $10$ is correct but it is derived from the commutativity and associativity of addition. In commutativity, we have $2 + 3 = 3 + 2$, the order of the _two_ operands does not matter. In associativity, we have three operands, it does not matter which pair we add first: $(2 + 3) + 5 = 2 + (3 + 5)$. Together, these two operations allow us to be casual about how we order the numbers when adding many of them.
+Let us demystify this. Lets us add three numbers, $2$, $3$, and $5$. It is common to write this as $2 + 3 + 5 = 10$. The sum $10$ is correct, but it is derived from the commutativity and associativity of addition.
+
+In commutativity, we have
+$$
+2 + 3 = 3 + 2.
+$$ _The order of the two operands may be interchanged_.
+
+In associativity, we have _three operands_. We use parentheses to denote the operation we perform first. It does not matter which pair we add first.
+$$
+(2 + 3) + 5 = 2 + (3 + 5).
+$$
+Together, these two operations allow us to be casual about how we order the numbers when we add many of them.
+
+Talking about commutativity and associativity might seem like overkill for addition. But, identifying these properties is a useful insight, as the more sophisticated mathematical objects we will encounter later may not obey either or both properties.
 
 ### Addition
 
