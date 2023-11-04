@@ -9,7 +9,7 @@ summary: 'The unique properties of the numbers zero make them mathematically ind
 opengraphimage: 01-crop-3600-dpi-cairo.png
 ---
 
-The unique properties of the numbers zero and one make them mathematically indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers. we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we may discover how they cement disparate areas of Mathematics.
+The unique properties of the numbers zero and one make them mathematically indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers, we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we may discover how they cement disparate areas of Mathematics.
 
 ## Starting at the beginning
 
@@ -25,7 +25,7 @@ He could have given _unique_ names to each of his five sheep and developed enoug
 
 ### One-to-one correspondence
 
-The later, and more likely, alternative was to used a stone to correspond to a sheep. He could have taken a leather bag and dropped a stone in it for each sheep that he owned. He did not need to learn counting. All he needed to do was to establish a [one-to-one correspondence](https://www.encyclopedia.com/science/encyclopedias-almanacs-transcripts-and-maps/one-one-correspondence)^[One-to-one correspondence is a simple but extremely powerful idea which guided [Georg Cantor](https://www.britannica.com/science/one-to-one-correspondence) to develop his radical but consistent ideas about types of infinity.] between sheep and stone. As long as he had the right number of stones in his bag, he could account for each one of his sheep.
+The later, and more likely, alternative was to use one stone to correspond to onr sheep. He could have taken a leather bag and dropped a stone in it for each sheep that he owned. He did not need to learn counting. All he needed to do was to establish a [one-to-one correspondence](https://www.encyclopedia.com/science/encyclopedias-almanacs-transcripts-and-maps/one-one-correspondence)^[One-to-one correspondence is a simple but extremely powerful idea which guided [Georg Cantor](https://www.britannica.com/science/one-to-one-correspondence) to develop his radical but consistent ideas about types of infinity.] between sheep and stone. As long as he had the right number of stones in his bag, he could account for each one of his sheep.
 
 The Latin word for _stone_ is [calculus](https://www.etymonline.com/search?q=calculus) and from the stone has come the whole science of _calculation_.
 
@@ -92,7 +92,7 @@ If we start with zero and add one to it, we get one. If we add one to that we ge
 ### Division as repeated subtraction
 
 
-### Why is division by aro not allowed?
+### Why is division by zero not allowed?
 
 
 
