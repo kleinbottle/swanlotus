@@ -90,7 +90,7 @@ $$
 $$
 Together, these two operations allow us to be casual about how we order the numbers when we add many of them.
 
-Talking about commutativity and associativity might seem like overkill for addition. But, identifying these properties is a useful insight, as the more sophisticated mathematical objects we will encounter later may not obey either or both properties.
+Talking about commutativity and associativity might seem like overkill for addition. But, identifying these properties is a useful insight, as the more sophisticated mathematical objects we will encounter later may not obey either or both properties.^[For a start, subtraction is not commutative: $3 - 2 \ne 2 - 3$.]
 
 ## Addition
 
@@ -101,8 +101,9 @@ $$
 a + 0 = a.
 $$
 
-This is also true of other mathematical objects. The zero of the complex numbers is $0 + i(0) = 0$ as well. And adding it to any comlex number also gives us the original complex number.
-A [matrix](https://mathworld.wolfram.com/Matrix.html) is mathematical object that which I facetiously call _numbers in teabags_. They may come in different shapes and sizes. Let us consider a general $2 \times 2$ square matrix like $\begin{bmatirx}a & b\\c & d\end{bmatrix}$. The additive inverse for this matrix is a $2\times2$ square matrix all of whose entries are zero:
+This is also true of other mathematical objects. The zero of the complex numbers is $0 + i(0) = 0$ as well. And adding it to any complex number also gives us the original complex number.
+
+A [matrix](https://mathworld.wolfram.com/Matrix.html) is mathematical object which I facetiously call _numbers in teabags_. They may come in different shapes and sizes. Let us consider a general $2 \times 2$ square matrix like $\begin{bmatrix}a & b\\c & d\end{bmatrix}$ which has two horizontal rows and two vertical columns. The additive inverse for this matrix is a $2\times2$ square matrix all of whose entries are zero:
 $$
 \begin{bmatrix}
 a & b\\
@@ -119,6 +120,8 @@ a & b\\
 c & d
 \end{bmatrix}
 $$
+
+[Polynomials](https://mathworld.wolfram.com/Polynomial.html) are expressions like $x^2 + 3x + 1$ where $x$ is some real variable. The zero polynomial is simply the number zero, and adding it to any polynomial also gives us a zero.
 
 ### Multiplication as repeated addition
 
@@ -302,6 +305,7 @@ log_{b}1 = 0.
 $${#eq:logonezero}
 @eq:logonezero is yet another memorable equation linking $1$ and $0$. When the domain of mathematics expands to take on new numbers, new objects, and new notations, the need for consistency with the existing body of mathematics gives us pearls such as equation @eq:logonezero.
 
+Application of index to polynomials; x is x^1 and 2 is 2 * x^0
 
 ## Sequences
 
