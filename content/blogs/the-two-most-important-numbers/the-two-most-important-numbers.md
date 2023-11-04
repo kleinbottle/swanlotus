@@ -71,7 +71,7 @@ While it is premature to talk about these sets and their peculiarities in this b
 
 #. There is no symbol for the irrationals, which are simply defined as numbers which are not rational, which is not entirely satisfactory. In fact, the set of irrationals may shown using set notation only indirectly as $\mathbb{R}\setminus\mathbb{Q}$, which means the set of real numbers, excluding the rational numbers.
 
-#. The _real numbers_, as the union of the rational numbers and the irrational numbers, is also not entirely satisfactory, because there could be a third (or more) type of number that also belongs to the reals.^[This notion was put to rest by [Richard Dedekind](https://en.wikipedia.org/wiki/Richard_Dedekind) and his _Schnitt_ or cut, but that is [a story](https://arpita95b.medium.com/cutting-through-the-confusion-how-dedekind-cuts-build-the-real-numbers-20aeaaec021d) for another day and another blog.]
+#. The _real numbers_, as the union of the rational numbers and the irrational numbers, is also not entirely satisfactory, because there could be a third (or more) type of number that also belongs to the reals.^[This notion was put to rest by, inter alia,  [Richard Dedekind](https://en.wikipedia.org/wiki/Richard_Dedekind) with his _Schnitt_ or cut, but that is [a story](https://arpita95b.medium.com/cutting-through-the-confusion-how-dedekind-cuts-build-the-real-numbers-20aeaaec021d) for another day and another blog.]
 
 #.  The _complex_ numbers incorporate a non-real entity called $i$ the _imaginary unit_, which is defined as $i^2 = -1$. Since every real number when squared is greater than or equal to zero, this $i$ is not a real number, and therefore demands its own symbol, arithmetic, and set, $\mathbb{C}$.
 
