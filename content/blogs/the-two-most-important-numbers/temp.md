@@ -92,7 +92,7 @@ In associativity, we have _three operands_. We use parentheses to denote the ope
 $$
 (2 + 3) + 5 = 2 + (3 + 5).
 $$
-Together, these two operations allow us to be casual about how we order the numbers when we add many of them.
+Together, commutativity and associativity allow us to be casual about the order in which add several numbers.
 
 Talking about commutativity and associativity might seem like overkill for addition. But, identifying these properties is a useful insight, as the more sophisticated mathematical objects we will encounter later may not obey either or both properties.^[For a start, subtraction is not commutative: $3 - 2 \ne 2 - 3$.]
 
