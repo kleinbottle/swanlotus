@@ -350,7 +350,7 @@ arose out of the solutions to polynomial equations that did not have roots in th
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here]({attach}./the-two-most-important-numbers.pdf):
+\noindent A PDF version of this article is [available for download here](./the-two-most-important-numbers.pdf):
 
 ::: {.small .sf}
 <https://swanlotus.netlify.app/blogs/the-two-most-important-numbers.pdf>
