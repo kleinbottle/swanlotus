@@ -94,6 +94,12 @@ Difference. The danger of floating around dissociated from personality, family, 
 
 Deadened apathy.
 
+Losing your mojo.
+
+Finding your mojo.
+
+In tune with our zeitgeist.
+
 <https://www.youtube.com/watch?v=Iy99Zhp24LY>
 
 Dissociation is a condition in which your sense of self becomes detached from your bodily sensations. Bruce Greyson _After_

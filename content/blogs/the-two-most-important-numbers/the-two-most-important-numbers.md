@@ -45,7 +45,7 @@ Although Mathematics has rigorous foundations, at the very bottom, its notions a
 
 ::: {.xsmall}
 | Name | Symbol | Definition |
-|:---------------------------|:-:|:-------------------------------------------------|
+|:-------------------------|:-----:|:-------------------------------------------------|
 | Natural numbers | $\mathbb{N}$ | $\{1, 2, 3, 4, ...\}$ |
 | Integers | $\mathbb{Z}$ | $\{... -3, -2, -1, 0, 1, 2, 3, ...\}$ |
 | Rational numbers | $\mathbb{Q}$ | $\{x: x = \frac{p}{q} \mbox{ where } p, q \in \mathbb{Z} \mbox{ and } q \ne 0\}$ |
@@ -104,7 +104,7 @@ Multiplication is repeated addition. It is thus both commutative and associative
 
 Talking about commutativity and associativity might seem like overkill for the addition and multiplication of real numbers. But, identifying these properties is a useful insight, as the more sophisticated mathematical objects we will encounter later may not obey either or both properties.
 
-## The additive and multiplicative identities in $\mathbb{R}$
+## The additive and multiplicative identity elements in $\mathbb{R}$
 
 When zero is added to any real number, $a$, we get the original number $a$ back as the sum:
 $$
@@ -118,11 +118,11 @@ a \times 1 = 1 \times a = a
 $${#eq:multident}
 The number $1$ is called the _multiplicative identity_ in $\mathbb{R}$.
 
-Zero and one enjoy their [coign of vantage](https://dictionary.cambridge.org/dictionary/english/coign-of-vantage) as the additive and multiplicative identities respectively for the real numbers in $\mathbb{R}$. But are their roles generalizable to cover a larger variety of mathematical objects?
+Zero and one enjoy their [coign of vantage](https://dictionary.cambridge.org/dictionary/english/coign-of-vantage) as the _unique_ additive and multiplicative identities respectively for the real numbers in $\mathbb{R}$. But are their roles generalizable to cover a larger variety of mathematical objects?
 
 Mathematics as a discipline tends to generalize and extend simple ideas to increasing levels of complexity, while at the same time maintaining consistency in definition and behaviour across these disparate domains. The additive and multiplicative identities may be so generalized, where applicable.
 
-## Varieties of additive and multiplicative identities
+## Varieties of additive and multiplicative identity elements
 
 The zero of the complex numbers is $0 + i(0) = 0$ as well. And adding it to any complex number returns the original complex number.
 
@@ -182,95 +182,106 @@ c & d
 a & b\\
 c & d
 \end{bmatrix}
-$${#eq:multidmatrix}
+$${#eq:matmultident}
 
 This is a simple example of how the seed ideas of the additive and multiplicative identities, sown far and wide, germinate into shoots that are surprisingly similar to the original ones. The numbers $0$ and $1$ do indeed rule the roost for the simple reason that the original object remains unchanged under the respective operation. Obviously, the identity matrices will change with the matrix sizes, but the principles remain the same.
 
-## The additive and multiplicative inverses in $\mathbb{R}$
+## The additive inverse in $\mathbb{Z}$, $\mathbb{Q}$, and $\mathbb{R}$
 
-The negative integers arose from subtractions like $(3 - 5)$, whose result was not a positive integer, and therefore lay outside the confines of $\mathbb{N}$. $\mathbb{Z}$ and $\mathbb{R}$ both contain negative numbers and can therefore lay claim to an additive inverse. Simply put, the additive inverse of $a$ is the same number prefixed with a minus sign, having a value such that:
-$$
-a + (-a) = 0 = (-a) + a
-$${#eq:addinv}
-If you have heard of [particle and anti-particles annihilating each other in Science Fiction](https://www.symmetrymagazine.org/article/september-2008/antimatters-science-fiction-debut?language_content_entity=und), you can metaphorically think of $a$ and $-a$ as one such pair.
-
-
-## The Arithmetic Four Revisited
-
-## Addition
-
-If we start with zero and add one to it, we get one. If we add one to that we get two. In this fashion, all the natural numbers may be generated successively by adding one. The _next number_ is called the _successor_. Even if we did not start with zero, but started with one, instead, we can still generate the entire set $\mathbb{N}$ by adding one successively. This method shows that there is no largest natural number. If there were such a number, say $p$, we could always add one to it and show the assumption to be false. In this sense, one helps us to understand infinity (of the countable variety).
-
-## Subtraction
-
-Subtracting zero from a number leaves it unchanged. Subtracting a larger natural number from a smaller one gives a negative number and this is the main reason for expanding the set $\mathbb{N}$ into the set $\mathbb{Z}$.
-
-By convention, when a sign is not prefixed to a number, we assume it to be positive. If a negative sign is prefixed to a number, it is a negative number. This is indicated by a pair of parentheses---surrounding the number and its sign---in expressions. When the number is featured alone, these parentheses are dropped.
-
-With signed numbers, we may convert any subtraction into an addition like this:
-$$
-3 - 5 = -2 = 3 + (-5) = (-5) + 3.
-$${#eq:negnum}
-In this way, we could convert subtractions into additions, and those additions would still be commutative. This does not mean that subtraction has suddenly become commutative; it has not. It simply means that subtraction can be morphed into the addition of signed numbers.
-
-Every real number $a$ has an _additive inverse_, $a'$ such that:
+The negative integers arose from subtractions like $(3 - 5)$, whose result was not a positive integer, and therefore lay outside the confines of $\mathbb{N}$. The negative numbers were introduced to rectify this deficit. The sets $\mathbb{Z}$ and $\mathbb{R}$ both contain negative numbers, and can therefore lay claim to an additive inverse. Every integer or real number $a$ has an _additive inverse_, $a'$ such that:
 $$
 a + a' = a' + a = 0.
 $$
-Any guesses as to what $a'$ is? It is the signed number $a$ prefixed with a negative sign and written as $-a$, i.e., $a' = -a$. It is noteworthy, that when we subtract any real number from itself, we get zero, by the property of the additive inverse:
+Any guesses as to what $a'$ is? It is the number $a$ prefixed with a negative sign and written as $-a$, i.e., $a' = -a$. It is noteworthy, that when we subtract any real number from itself, we get zero, by the property of the additive inverse:
 $$
-a - a = a + (-a) = 0.
+a - a = a + (-a) = 0 = (-a) + a.
+$${#eq:addinv}
+If you have heard of [matter and antimatter annihilating each other in real life or Science Fiction](https://www.symmetrymagazine.org/article/september-2008/antimatters-science-fiction-debut?language_content_entity=und) [@antimatter2008], you can metaphorically think of $a$ and $-a$ as one such pair, giving rise not to energy, but to zero.\emojifont :wink: \normalfont
+
+## The multiplicative inverse in $\mathbb{Z}$, $\mathbb{Q}$, and $\mathbb{R}$
+
+Suppose we ask the question, "If we have an arbitrary number $a$, what number should it be multiplied by to get $1$?" Let us denote this number by $a''$. Then, we have:
 $$
-
-## Multiplication
-
-Multiplying any number by zero yields zero: $a \times 0 = 0 \times a = 0$. This might be a little difficult to grasp. To justify this assertion, let us try to multiply $5$ by $0$:
+a \times a'' = a'' \times a = 1
+$${#eq:multinv}
+If you know how to solve simple equations, you would suggest that we divide @eq:multinv by $a$ on _both sides_, like so:
 $$
-5 \times 0 = 5 \times (2 - 2) = 5 \times (2 + (-2)) = 10 - 10 = 0.
+\begin{aligned}
+a \times a'' &= 1; \mbox{ divide both sides by } a\\
+a'' &= \frac{1}{a}.
+\end{aligned}
+$${#eq:solve}
+The number $\frac{1}{a}$ is called the reciprocal of $a$ and it is the multiplicative inverse of $a$. But there is one important restriction: $a \ne 0$. See [Why is division by zero disallowed?]
+
+## The Arithmetic Four Revisited
+
+### Addition
+
+If we start with $0$ and add $1$ to it, we get $1$. If we add $1$ to that we get $2$. In this fashion, all the natural numbers may be generated successively by adding $1$. The _next number_ is called the _successor_. Even if we did not start with $0$, but started with $1$ instead, we can still generate the entire set $\mathbb{N}$ by adding $1$  successively.
+
+This method shows that there is no largest natural number. If there were such a number, say $p$, we could always add one to it and show the assumption to be false, since $(p + 1) > p$. In this sense, the number $1$ helps us to understand [countable infinity](https://mathinsight.org/definition/countably_infinite).
+
+### Subtraction
+
+Subtracting zero from a number leaves it unchanged: $a - 0 = a$.
+
+By convention, when a sign is not prefixed to a number, we assume it to be positive. If a negative sign is prefixed to a number, it is a negative number. This is indicated by a pair of parentheses---surrounding the number and its sign---in expressions. When the number is featured alone, these parentheses are dropped.
+
+With signed numbers, from $\mathbb{Z}$, $\mathbb{Q}$, or $\mathbb{R}$, we may convert any subtraction into an addition thus:
 $$
-We could replace the number $2$ by the arbitrary $a \in \mathbb{R}$ and the statement would still be valid.
+3 - 5 = -2 = 3 + (-5) = (-5) + 3.
+$${#eq:negnum}
+And those additions would still be commutative. This does not mean that subtraction has suddenly become commutative; it has not. It simply means that subtraction can be morphed into the (commutative) addition of signed numbers.
 
-Zero was already a problematic number that had been introduced into Europe from India. Can imagine the effort that must have gone into understanding and justifying that multiplication of any number by zero yielded zero? Zero, one, and infinity are a daunting triad. Mastering them takes time, practice, and familiarity.
+### Multiplication
 
-Multiplying a number by $1$ leaves it unchanged. The number $1$ is the _multiplicative identity_ element for the real numbers. So, $5 \times 1 = 1 \times 5 = 5$.
+Multiplying any number $a$ by zero yields zero: $a \times 0 = 0 \times a = 0$. This might be a little difficult to grasp. To see why this is the case, let us be a little sneaky and write zero as $(p + (-p))$, for some $p \in \mathbb{R}$, because
+$$
+(p + (-p)) = p - p = 0.
+$$
+Then, we may write, for arbitrary $a \in \mathbb{R}$,
+$$
+\begin{aligned}
+a \times 0 &= a \times (p + (-p))\\
+&= a \times p + a\times (-p)\\
+&= ap - ap\\
+&= 0.
+\end{aligned}
+$${#eq:multzero}
+Here, I have invoked the rule that the product of a positive and a negative number is negative.
+
+Zero was a problematic number that had been introduced into Europe from India via the Arabs. Can you imagine the effort that must have gone into understanding and justifying that multiplication of any number by zero yielded zero? Zero, one, and infinity are a daunting triad. Mastering them takes time, practice, and familiarity, and stretches both human logic and imagination.
+
+Multiplying a number by $1$ is comparatively simpler: it leaves the original number unchanged. The number $1$ is the _multiplicative identity_ element for the real numbers. So, $5 \times 1 = 1 \times 5 = 5$.
 
 Multiplying $a$ by $-1$ yields the additive inverse of $a$, namely $-a$.
 
-In the context of $2 \times 2$ matrices, there is a matrix that functions as the multiplicative identity as shown in @eq:matmultident.
-$$
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-%
-\begin{bmatrix}
-1 & 0\\
-0 & 1
-\end{bmatrix}
-=
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-=
-\begin{bmatrix}
-1 & 0\\
-0 & 1
-\end{bmatrix}
-%
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-$${#eq:matmultident}
-
-
 ### Division as repeated subtraction
 
+If multiplication can be thought of as repeated addition, division can equally be thought of a repeated subtraction. Here is a concrete example: $6 \div 2$ = 3 may be understood as "How many times can we subtract $3$ from $6$ before we hit zero?"
+Stated a little more mathematically, $6 \div 2 = 3$, and the steps are:
 
-### Why is division by zero not allowed?
+$$
+\begin{array}{r | l}
+6 - 2 = 4 & \mbox{First lot of two}\\
+4 - 2 = 2 & \mbox{Second lot of two}\\
+2 - 2 = 0 & \mbox{Third lot of two}\\
+\end{array}
+$$
+Now what happens if we divide by zero? To keep matters simple, let us keep the same dividend, namely 6. If we subtract 0 from 6, we end up with 6. Subtracting another 0 from this 6 still leaves us with 6. By now, you should have cottoned on to the fact that we are not making any progress.
+$$
+\begin{array}{r | l}
+6 - 0 = 6 & \mbox{First lot of zero}\\
+6 - 0 = 6 & \mbox{Second lot of zero}\\
+6 - 0 = 6 & \mbox{Third lot of zero}\\
+\cdots & \cdots\\
+\end{array}
+$$
+Each time we subtract zero, we end up where we started. Therefore, this process never ends and therefore cannot be an algorithm, which by definition, must end. Sometimes, this is stated as ``dividing by zero gives infinity,'' which is a mathematically less acceptable but intuitively more friendly way of stating that it is an unending process. This is why division by zero is not permitted.
 
 
+
+### Why is division by zero disallowed?
 
 ## Fundamental properties of zero
 
@@ -358,7 +369,7 @@ The _next natural number_ is obtained by adding in the sequence is generated by 
 
 ## Division
 
-### Why we cannot divide by zero
+
 
 
 ## Exponentiation
@@ -384,6 +395,8 @@ $${#eq:logonezero}
 @eq:logonezero is yet another memorable equation linking $1$ and $0$. When the domain of mathematics expands to take on new numbers, new objects, and new notations, the need for consistency with the existing body of mathematics gives us pearls such as equation @eq:logonezero.
 
 Application of index to polynomials; x is x^1 and 2 is 2 * x^0
+
+Number times reciprocal equals 1 and a^0 is one.
 
 ## The interval $[0, 1]$
 
