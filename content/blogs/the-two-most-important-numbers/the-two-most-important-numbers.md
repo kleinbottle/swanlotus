@@ -21,7 +21,7 @@ Aeons ago, a shepherd with five sheep might have counted, "one sheep, two sheep,
 
 ### Naming sheep
 
-He could have given _unique_ names to each of his five sheep and developed enough familiarity with them to identify them by name. Then all he needed to do was to check that all his named sheep were home by sundown. But such a method would have become cumbersome and error-prone as his flock multiplied.
+He could have given _unique_ names to each of his five sheep and developed enough familiarity with them to identify them by name. Then all he needed to do was to check that his entire flock was home by sundown. But such a method would have become cumbersome and error-prone as his sheep multiplied.
 
 ### One-to-one correspondence
 
@@ -52,8 +52,8 @@ Although Mathematics has rigorous foundations, at the very bottom, its notions a
 | Irrational numbers |  | $\{$The numbers which are not rational$\}$ |
 | Real numbers | $\mathbb{R}$ | $\{$The rationals and the irrationals$\}$ |
 | Complex numbers | $\mathbb{C}$ | $\{a+ib: a, b \in \mathbb{R} \mbox{ and } i^2 = -1\}$
+: Sets of numbers {#tbl:sets}
 :::
-
 \
 While it is premature to talk about these sets and their peculiarities in this blog, it is worth making some points about them.
 
@@ -61,9 +61,9 @@ While it is premature to talk about these sets and their peculiarities in this b
 
 #. A set is traditionally enclosed in a pair of _braces_: $\{\}$.
 
-#. There is [no agreement on whether or not to include zero](https://en.wikipedia.org/wiki/Natural_number) as a member of $\mathbb{N}$. I have chosen not to because I consider $\mathbb{N}$ the set of _counting numbers_. <!--XXX Two references here plus one generic link-->
+#. Zero is neither positive nor negative. It is itself. As a set on its own, zero is often denoted $\{0\}$.
 
-#. Zero is neither positive nor negative. It is itself and, as a set, is often denoted $\{0\}$.
+#. The numbers we use for counting, starting from $1$, and never ending, are---naurally enough---called the _natural numbers_, denoted $\mathbb{N}$. There is [no agreement on whether or not to include zero](https://en.wikipedia.org/wiki/Natural_number) as a member of $\mathbb{N}$. I have chosen not to, because we start counting with one.
 
 #. The _integers_ are named $\mathbb{Z}$ after the German word _Zahlen_ which stands for "numbers" (singular _Zahl_). The integers include positive and negative whole numbers as well as zero.
 
@@ -73,11 +73,15 @@ While it is premature to talk about these sets and their peculiarities in this b
 
 #. The _real numbers_, with symbol $\mathbb{R}$ for real, are glibly described as the union of the rational numbers and the irrational numbers.^[[Richard Dedekind](https://en.wikipedia.org/wiki/Richard_Dedekind) with his _Schnitt_ or cut, showed that the rationals and irrationals comprise $\mathbb{R}$, but that is [a story](https://arpita95b.medium.com/cutting-through-the-confusion-how-dedekind-cuts-build-the-real-numbers-20aeaaec021d) for another day and another blog.]
 
-#.  The _complex_ numbers incorporate a non-real entity called $i$ the _imaginary unit_, which is defined as $i^2 = -1$. Since every real number when squared is greater than or equal to zero, this $i$ is not a real number, and therefore demands its own symbol, arithmetic, and set, $\mathbb{C}$.
+#.  The _complex_ numbers incorporate a non-real entity, called $i$ the _imaginary unit_, which is defined as $i^2 = -1$. Since every real number when squared is greater than or equal to zero, this $i$ is not a real number, and therefore demands its own symbol, arithmetic, and set, $\mathbb{C}$.
 
-## The Four arithmetic operations
+## Abstract Algebra
 
-Each of the four basic arithmetic operations--addition, multiplication, subtraction, division---are [binary](https://en.wikipedia.org/w/index.php?title=Binary_operation&oldid=1182322931) operations and may only be performed between _two_ numbers. The ability to _add_ multiple numbers---as in determining the total sum to be paid at the checkout counter while shopping---is made possible by the [commutativity](https://en.wikipedia.org/wiki/Commutative_property) and [associativity](https://en.wikipedia.org/wiki/Associative_property) of addition, which also applies to multiplication. Subtraction and division are neither commutative nor associative.^[For a start, subtraction is not commutative: $3 - 2 = 1 \ne -1 = 2 - 3$.]
+In the nineteenth century, mathematicians contemplated the then extant mathematical systems and recognized certain commonalities. Whether it was arithmetic or geometry, or some other branch of mathematics, they were able to distil certain underlying principles behind the common practices of mathematics. By systematizing and classifying what they observed, they were able to _invent_ names for the _classes of objects_ they discerned, along with their properties. Thus was born [abstract algebra](https://en.wikipedia.org/wiki/Abstract_algebra). The ideas of commutativity, associativity, the additive and multiplicative identities, and the additive and multiplicative inverses were born from this exercise in classification.
+
+## The Four Arithmetic Operations
+
+Each of the four basic arithmetic operations--addition, multiplication, subtraction, division---are [binary](https://en.wikipedia.org/w/index.php?title=Binary_operation&oldid=1182322931) operations and may _only_ be performed between _two_ numbers. The ability to _add_ multiple numbers---as in determining the total sum to be paid at the checkout counter while shopping---is made possible by the [commutativity](https://en.wikipedia.org/wiki/Commutative_property) and [associativity](https://en.wikipedia.org/wiki/Associative_property) of addition, which also applies to multiplication. Subtraction and division are neither commutative nor associative.^[For a start, subtraction is not commutative: $3 - 2 = 1 \ne -1 = 2 - 3$.]
 
 
 ### Commutativity and Associativity
@@ -95,7 +99,7 @@ $$
 $$
 Together, commutativity and associativity allow us to be casual about the order in which  we add several numbers.
 
-Multiplication is repeated addition and it is commutative. Both properties are easily  understood from a geometric demonstration as shown in @fig:mult.
+Multiplication is repeated addition. It is thus both commutative and associative. @fig:mult gives a geometric perspective of multiplication.
 
 ![The products $4\times3$ and $3\times4$ amount to repeated additions and yield the same result of 12.]({attach}images/four-by-three.png){#fig:mult width=60% .modal-target}
 
@@ -103,22 +107,19 @@ Talking about commutativity and associativity might seem like overkill for the a
 
 ## The additive and multiplicative identities
 
-When mathematicians in the nineteenth century contemplated the then extant mathematical systems, they recognized certain commonalities. Whether it was arithmetic or geometry, or some other branch of mathematics, they were able to distil certain underlying principles behind the common practices of mathematics. By systematizing and classifying what they observed, they were able to _invent_ names for the _classes of objects_ they discerned, along with their properties. Thus was born [abstract algebra](https://en.wikipedia.org/wiki/Abstract_algebra). The ideas of the additive and multiplicative identity were born from this exercise in classification.
-
-The numbers we use for counting, starting from $1$, and never ending, are called the _natural numbers_. The collection or _set_ of these numbers is denoted $\mathbb{N}$. We can add and multiply these numbers.
-
-For example, we have seen that multiplying $5$ by $1$ gives the original number $5$. The number $1$ is called the _multiplicative identity_ because multiplying any natural number by $1$ preserves the original number.
-
-What do you think is the additive equivalent, the _additive identity_? We know that if we add $0$ to any number, we get the original number again. So, $0$ _preserves_ the original number intact after addition. But is $0$ in the set $\mathbb{N}$? Not as we have defined it here.^[Some folks do include $0$ in the set $\mathbb{N}$.] Nevertheless, we may posit that under appropriate conditions, the additive identity is $0$.
-
-Zero and one enjoy their [coign of vantage](https://dictionary.cambridge.org/dictionary/english/coign-of-vantage) because they are the additive and multiplicative identities respectively:
+When zero is added to any real number, $a$, we get the original number back as the sum:
 $$
-\begin{aligned}
-a + 0 = a\\
-a \times 1 = a
-\end{aligned}
+a + 0 = 0 + a = a.
+$${#eq:addident}
+We call zero the _additive identity_.
+
+Likewise, when we multiply $a$ by $1$, the original number is returned as the product:
 $$
-where $a$ is an arbitrary number, of the sort we are familiar with^[This is an easy-to-read blog; so I will not belabour the reader with the finer points of different types of numbers, but will reserve them for a later blog.].
+a \times 1 = 1 \times a = a
+$${#eq:multident}
+The number $1$ is called the _multiplicative identity_.
+
+Zero and one enjoy their [coign of vantage](https://dictionary.cambridge.org/dictionary/english/coign-of-vantage) as the additive and multiplicative identities respectively. But are their roles generalizable to cover a larger variety of mathematical objects than real numbers?
 
 Mathematics as a discipline tends to generalize and extend simple ideas to increasing levels of complexity, while at the same time maintaining consistency in definition and behaviour across these disparate domains.
 
@@ -160,6 +161,8 @@ $${#eq:addidmatrix}
 and $\begin{bmatrix} 0 & 0\\0 & 0 \end{bmatrix}$ is the additive identity for matrix addition.
 
 Do you see how the seed ideas of the additive and multiplicative identities, sown far and wide, germinate into shoots that are surprisingly similar to the original ones. The numbers $0$ and $1$ do indeed rule the roost. Obviously, the identity matrices will change with the matrix sizes, but the principles remain the same.
+
+## The additive and multiplicative inverses
 
 ## Addition
 
@@ -416,6 +419,9 @@ Stuff
 
 arose out of the solutions to polynomial equations that did not have roots in the real number system. To put it in a picture, the graphs of some polynomials did not intersect the $x$-axis as many times as they should have.
 
+https://en.wikipedia.org/wiki/Circle_group
+
+Circle Circle_group
 
 ## Acknowledgements
 
