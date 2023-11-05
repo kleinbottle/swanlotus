@@ -101,7 +101,7 @@ Together, commutativity and associativity allow us to be casual about the order 
 
 Multiplication is repeated addition. It is thus both commutative and associative. @fig:mult gives a geometric perspective of multiplication.
 
-![The products $4\times3$ and $3\times4$ amount to repeated additions and yield the same result of 12.]({attach}images/four-by-three.png){#fig:mult width=60% .modal-target}
+![The products $4\times3$ and $3\times4$ amount to repeated additions and yield the same result of 12.](images/four-by-three.png){#fig:mult width=60% .modal-target}
 
 Talking about commutativity and associativity might seem like overkill for the addition and multiplication of real numbers. But, identifying these properties is a useful insight, as the more sophisticated mathematical objects we will encounter later may not obey either or both properties.
 
@@ -452,7 +452,7 @@ Circle Circle_group
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here]({attach}./the-two-most-important-numbers.pdf):
+\noindent A PDF version of this article is [available for download here](./the-two-most-important-numbers.pdf):
 
 ::: {.small .sf}
 <https://swanlotus.netlify.app/blogs/the-two-most-important-numbers.pdf>
