@@ -63,17 +63,17 @@ While it is premature to talk about these sets and their peculiarities in this b
 
 #. Zero is neither positive nor negative. It is itself. As a set on its own, zero is often denoted $\{0\}$.
 
-#. The numbers we use for counting, starting from $1$, and never ending, are---naurally enough---called the _natural numbers_, denoted $\mathbb{N}$. There is [no agreement on whether or not to include zero](https://en.wikipedia.org/wiki/Natural_number) as a member of $\mathbb{N}$. I have chosen not to, because we start counting with one.
+#. The numbers we use for counting, starting from $1$, and never ending, are---naurally enough---called the [_natural numbers_](https://mathworld.wolfram.com/NaturalNumber.html), denoted $\mathbb{N}$. There is [no agreement on whether or not to include zero](https://en.wikipedia.org/wiki/Natural_number) as a member of $\mathbb{N}$. I have chosen not to, because we start counting with one.
 
-#. The _integers_ are named $\mathbb{Z}$ after the German word _Zahlen_ which stands for "numbers" (singular _Zahl_). The integers include positive and negative whole numbers as well as zero.
+#. The [_integers_](https://en.wikipedia.org/wiki/Integer) are named $\mathbb{Z}$ after the German word _Zahlen_ which stands for "numbers" (singular _Zahl_). The integers include positive and negative whole numbers as well as zero.
 
-#. The _rational numbers_ are so named because they are really _ratios_ of whole numbers with the proviso that the denominator cannot be zero. The symbol $\mathbb{Q}$ is used because it denotes _quotient_ the result of _division_.
+#. The [_rational numbers_](https://mathworld.wolfram.com/RationalNumber.html) are so named because they are really _ratios_ of whole numbers with the proviso that the denominator cannot be zero. The symbol $\mathbb{Q}$ is used because it denotes _quotient_ the result of _division_.
 
-#. There is no symbol for the _irrationals_, which are simply defined as numbers which are _not rational_. In fact, the set of irrationals may shown, using set notation only indirectly as $\mathbb{R}\setminus\mathbb{Q}$, which means the set of real numbers, excluding the rational numbers.
+#. There is no symbol for the [_irrationals_](https://mathworld.wolfram.com/IrrationalNumber.html), which are simply defined as numbers which are _not rational_. In fact, the set of irrationals may shown, using set notation only indirectly as $\mathbb{R}\setminus\mathbb{Q}$, which means the set of real numbers, excluding the rational numbers.
 
-#. The _real numbers_, with symbol $\mathbb{R}$ for real, are glibly described as the union of the rational numbers and the irrational numbers.^[[Richard Dedekind](https://en.wikipedia.org/wiki/Richard_Dedekind) with his _Schnitt_ or cut, showed that the rationals and irrationals comprise $\mathbb{R}$, but that is [a story](https://arpita95b.medium.com/cutting-through-the-confusion-how-dedekind-cuts-build-the-real-numbers-20aeaaec021d) for another day and another blog.]
+#. The [_real numbers_](https://en.wikipedia.org/wiki/Real_number), with symbol $\mathbb{R}$ for real, are glibly described as the union of the rational numbers and the irrational numbers.^[[Richard Dedekind](https://en.wikipedia.org/wiki/Richard_Dedekind) with his _Schnitt_ or cut, showed that the rationals and irrationals comprise $\mathbb{R}$, but that is [a story](https://arpita95b.medium.com/cutting-through-the-confusion-how-dedekind-cuts-build-the-real-numbers-20aeaaec021d) for another day and another blog.]
 
-#.  The _complex_ numbers incorporate a non-real entity, called $i$ the _imaginary unit_, which is defined as $i^2 = -1$. Since every real number when squared is greater than or equal to zero, this $i$ is not a real number, and therefore demands its own symbol, arithmetic, and set, $\mathbb{C}$.
+#.  The [_complex_ numbers](https://en.wikipedia.org/wiki/Complex_number) incorporate a non-real entity, called $i$ the _imaginary unit_, which is defined as $i^2 = -1$. Since every real number when squared is greater than or equal to zero, this $i$ is not a real number, and therefore demands its own symbol, arithmetic, and set, $\mathbb{C}$.
 
 ## Abstract Algebra
 
@@ -82,7 +82,6 @@ In the nineteenth century, mathematicians contemplated the then extant mathemati
 ## The Four Arithmetic Operations
 
 Each of the four basic arithmetic operations--addition, multiplication, subtraction, division---are [binary](https://en.wikipedia.org/w/index.php?title=Binary_operation&oldid=1182322931) operations and may _only_ be performed between _two_ numbers. The ability to _add_ multiple numbers---as in determining the total sum to be paid at the checkout counter while shopping---is made possible by the [commutativity](https://en.wikipedia.org/wiki/Commutative_property) and [associativity](https://en.wikipedia.org/wiki/Associative_property) of addition, which also applies to multiplication. Subtraction and division are neither commutative nor associative.^[For a start, subtraction is not commutative: $3 - 2 = 1 \ne -1 = 2 - 3$.]
-
 
 ### Commutativity and Associativity
 
@@ -105,7 +104,7 @@ Multiplication is repeated addition. It is thus both commutative and associative
 
 Talking about commutativity and associativity might seem like overkill for the addition and multiplication of real numbers. But, identifying these properties is a useful insight, as the more sophisticated mathematical objects we will encounter later may not obey either or both properties.
 
-## The additive identity
+## The additive and multiplicative identities in $\mathbb{R}$
 
 When zero is added to any real number, $a$, we get the original number $a$ back as the sum:
 $$
@@ -113,75 +112,27 @@ a + 0 = 0 + a = a.
 $${#eq:addident}
 We call $0$ the _additive identity_ for $\mathbb{R}$.
 
-The additive identity may also exist for other sets and definitions of addition. The zero of the complex numbers is $0 + i(0) = 0$ as well. And adding it to any complex number also returns the original complex number.
-
-A [matrix](https://mathworld.wolfram.com/Matrix.html) is a rectangular array of numbers, treated as a single unit mathematically. I facetiously call matrices _numbers in teabags_. Operations on matrices follow their own definitions.
-
-Let us consider an arbitrary $2 \times 2$ _square matrix_ like $\begin{bmatrix}a & b\\c & d\end{bmatrix}$. It has two horizontal rows and two vertical columns, and therefore 4 elements. The additive identity for this matrix is a $2 \times2 $ square matrix, all of whose entries are zero:
+Likewise, when we multiply $a$ by $1$, the original number is returned as the product:
 $$
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-+
-\begin{bmatrix}
-0 & 0\\
-0 & 0
-\end{bmatrix}
-=
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-=
-\begin{bmatrix}
-0 & 0\\
-0 & 0
-\end{bmatrix}
-+
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-$$
+a \times 1 = 1 \times a = a
+$${#eq:multident}
+The number $1$ is called the _multiplicative identity_.
 
-[Polynomials](https://mathworld.wolfram.com/Polynomial.html) are expressions like $x^2 + 3x + 1$ where $x$ is some real variable. The zero polynomial is simply the number zero, and adding it to any polynomial also gives us back the original polynomial.
-
-
-
-Zero and one enjoy their [coign of vantage](https://dictionary.cambridge.org/dictionary/english/coign-of-vantage) as the additive and multiplicative identities respectively for the real numbers. But are their roles generalizable to cover a larger variety of mathematical objects?
+Zero and one enjoy their [coign of vantage](https://dictionary.cambridge.org/dictionary/english/coign-of-vantage) as the additive and multiplicative identities respectively for the real numbers in $\mathbb{R}$. But are their roles generalizable to cover a larger variety of mathematical objects?
 
 Mathematics as a discipline tends to generalize and extend simple ideas to increasing levels of complexity, while at the same time maintaining consistency in definition and behaviour across these disparate domains. The additive and multiplicative identities may be so generalized, where applicable.
 
+## Varieties of additive and multiplicative identities
 
+The zero of the complex numbers is $0 + i(0) = 0$ as well. And adding it to any complex number returns the original complex number.
 
-$$
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-\begin{bmatrix}
-1 & 0\\
-0 & 1
-\end{bmatrix}
-= %
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-=
-\begin{bmatrix}
-1 & 0\\
-0 & 1
-\end{bmatrix}
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-$${#eq:multidmatrix}
-The matrix $\begin{bmatrix}1 & 0\\0 & 1\end{bmatrix}$ is the multiplicative identity for matrix multiplication for $2 \times 2$ matrices.^[The rules of matrix multiplication are a little involved and will not detain us here. The interested reader is referred to another blog of mine for details.]
+[Polynomials](https://mathworld.wolfram.com/Polynomial.html) are expressions like $x^2 + 3x + 1$ where $x$ is some real or complex variable. The zero polynomial is simply the constant polynomial $P(x) = 0$, and adding it to any polynomial again gives us back the original polynomial.
 
-Likewise,
+A [matrix](https://mathworld.wolfram.com/Matrix.html) is a rectangular array of numbers, treated as a single unit mathematically. I facetiously call matrices _numbers in teabags_. Operations on matrices follow their own definitions.
+
+The matrix $\begin{bmatrix} 0 & 0\\0 & 0\end{bmatrix}$ is the additive identity for matrix addition for $2 \times 2$ matrices.
+
+Let us consider an arbitrary $2 \times 2$ _square matrix_ like $\begin{bmatrix}a & b\\c & d\end{bmatrix}$. It has two horizontal rows and two vertical columns, and therefore 4 elements. The additive identity for this matrix is a $2 \times 2$ square matrix, all of whose entries are zero:
 $$
 \begin{bmatrix}
 a & b\\
@@ -208,17 +159,45 @@ a & b\\
 c & d
 \end{bmatrix}
 $${#eq:addidmatrix}
-The matrix $\begin{bmatrix} 0 & 0\\0 & 0\end{bmatrix}$ is the additive identity for matrix addition for $2 \times 2$ matrices.
+
+The matrix $\begin{bmatrix}1 & 0\\0 & 1\end{bmatrix}$ is the multiplicative identity for matrix multiplication for $2 \times 2$ matrices.^[The rules of matrix multiplication are a little involved and will not detain us here. The interested reader is referred to another blog of mine for details.] Note that its elements are solely ones and zeroes, with ones on the -principal diagonal from top left to bottom right.
+$$
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}
+= %
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+$${#eq:multidmatrix}
 
 This is a simple example of how the seed ideas of the additive and multiplicative identities, sown far and wide, germinate into shoots that are surprisingly similar to the original ones. The numbers $0$ and $1$ do indeed rule the roost. Obviously, the identity matrices will change with the matrix sizes, but the principles remain the same.
 
-## The multiplicative identity
+## The additive and multiplicative inverses in $\mathbb{R}$
 
-Likewise, when we multiply $a$ by $1$, the original number is returned as the product:
+The negative integers arose from subtractions like $(3 - 5)$, whose result was not a positive integer, and therefore lay outside the confines of $\mathbb{N}$. $\mathbb{Z}$ and $\mathbb{R}$ both contain negative numbers and can therefore lay claim to an additive inverse. Simply put, the additive inverse of $a$ is the same number prefixed with a minus sign, having a value such that:
 $$
-a \times 1 = 1 \times a = a
-$${#eq:multident}
-The number $1$ is called the _multiplicative identity_.
+a + (-a) = 0 = (-a) + a
+$${#eq:addinv}
+If you have heard of [particle and anti-particles annihilating each other in Science Fiction](), you can metaphorically think of $a$ and $-a$ as one such pair.
+
+
+## The Arithmetic Four Revisited
 
 ## Addition
 
