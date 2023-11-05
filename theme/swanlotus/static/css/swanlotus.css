@@ -4794,7 +4794,7 @@ a:hover code {
 .content table caption {
   font-family: "Source Sans Pro", sans-serif;
   font-style: normal;
-  font-size: smaller;
+  font-size: 0.9125em;
 }
 
 .content figure figcaption {
@@ -4803,6 +4803,11 @@ a:hover code {
 
 .content table caption {
   margin-bottom: 0.3em;
+}
+
+.content .xsmall table caption {
+  font-style: normal;
+  font-size: 1em;
 }
 
 .content figure {
