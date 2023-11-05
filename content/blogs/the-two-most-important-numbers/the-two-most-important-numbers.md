@@ -111,7 +111,7 @@ When zero is added to any real number, $a$, we get the original number back as t
 $$
 a + 0 = 0 + a = a.
 $${#eq:addident}
-We call zero the _additive identity_.
+We call $0$ the _additive identity_.
 
 Likewise, when we multiply $a$ by $1$, the original number is returned as the product:
 $$
@@ -119,11 +119,14 @@ a \times 1 = 1 \times a = a
 $${#eq:multident}
 The number $1$ is called the _multiplicative identity_.
 
-Zero and one enjoy their [coign of vantage](https://dictionary.cambridge.org/dictionary/english/coign-of-vantage) as the additive and multiplicative identities respectively. But are their roles generalizable to cover a larger variety of mathematical objects than real numbers?
+Zero and one enjoy their [coign of vantage](https://dictionary.cambridge.org/dictionary/english/coign-of-vantage) as the additive and multiplicative identities respectively for the real numbers. But are their roles generalizable to cover a larger variety of mathematical objects?
 
 Mathematics as a discipline tends to generalize and extend simple ideas to increasing levels of complexity, while at the same time maintaining consistency in definition and behaviour across these disparate domains.
 
-It should come as no surprise that some objects called matrices^[I facetiously call them numbers in teabags] (singular matrix) also have their additive and multiplicative identities, _where applicable_. We will consider an arbitrary _square matrix_ $\begin{bmatrix} a & b\\c & d \end{bmatrix}$ having four elements, and called a $2 \times 2$ matrix. Then,
+A [matrix](https://mathworld.wolfram.com/Matrix.html) is a rectangular array of numbers, treated as a single unit mathematically. I facetiously call matrices _numbers in teabags_. Operations on matrices follow their own definitions.
+
+
+that is treated as a single unit for mathematical operations It should come as no surprise that some objects called matrices^[I facetiously call them numbers in teabags] (singular matrix) also have their additive and multiplicative identities, _where applicable_. We will consider an arbitrary _square matrix_ $\begin{bmatrix} a & b\\c & d \end{bmatrix}$ having four elements, and called a $2 \times 2$ matrix. Then,
 $$
 \begin{bmatrix}
 a & b\\
