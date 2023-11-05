@@ -2653,8 +2653,8 @@ a.box:active {
 }
 .button.is-loading::after {
   position: absolute;
-  left: calc(50% - 1em * 0.5);
-  top: calc(50% - 1em * 0.5);
+  left: calc(50% - (1em * 0.5));
+  top: calc(50% - (1em * 0.5));
   position: absolute !important;
 }
 .button.is-static {
@@ -4791,11 +4791,18 @@ a:hover code {
 }
 
 .content figure figcaption,
-.content .tablenos table caption {
-  margin-top: 0.3em;
+.content table caption {
   font-family: "Source Sans Pro", sans-serif;
   font-style: normal;
   font-size: smaller;
+}
+
+.content figure figcaption {
+  margin-top: 0.3em;
+}
+
+.content table caption {
+  margin-bottom: 0.3em;
 }
 
 .content figure {
