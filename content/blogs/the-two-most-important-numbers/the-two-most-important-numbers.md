@@ -52,8 +52,8 @@ Although Mathematics has rigorous foundations, at the very bottom, its notions a
 | Irrational numbers |  | $\{$The numbers which are not rational$\}$ |
 | Real numbers | $\mathbb{R}$ | $\{$The rationals and the irrationals$\}$ |
 | Complex numbers | $\mathbb{C}$ | $\{a+ib: a, b \in \mathbb{R} \mbox{ and } i^2 = -1\}$
-: Sets of numbers {#tbl:sets}
 :::
+: Sets of numbers {#tbl:sets}
 \
 While it is premature to talk about these sets and their peculiarities in this blog, it is worth making some points about them.
 
@@ -121,12 +121,11 @@ The number $1$ is called the _multiplicative identity_.
 
 Zero and one enjoy their [coign of vantage](https://dictionary.cambridge.org/dictionary/english/coign-of-vantage) as the additive and multiplicative identities respectively for the real numbers. But are their roles generalizable to cover a larger variety of mathematical objects?
 
-Mathematics as a discipline tends to generalize and extend simple ideas to increasing levels of complexity, while at the same time maintaining consistency in definition and behaviour across these disparate domains.
+Mathematics as a discipline tends to generalize and extend simple ideas to increasing levels of complexity, while at the same time maintaining consistency in definition and behaviour across these disparate domains. The additive and multiplicative identities may be so generalized, where applicable.
 
 A [matrix](https://mathworld.wolfram.com/Matrix.html) is a rectangular array of numbers, treated as a single unit mathematically. I facetiously call matrices _numbers in teabags_. Operations on matrices follow their own definitions.
 
-
-that is treated as a single unit for mathematical operations It should come as no surprise that some objects called matrices^[I facetiously call them numbers in teabags] (singular matrix) also have their additive and multiplicative identities, _where applicable_. We will consider an arbitrary _square matrix_ $\begin{bmatrix} a & b\\c & d \end{bmatrix}$ having four elements, and called a $2 \times 2$ matrix. Then,
+We will consider an arbitrary _square matrix_, called a $2 \times 2$ matrix, having four elements: $\begin{bmatrix} a & b\\c & d \end{bmatrix}$. Then,
 $$
 \begin{bmatrix}
 a & b\\
@@ -141,8 +140,17 @@ c & d
 a & b\\
 c & d
 \end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
 $${#eq:multidmatrix}
-and $\begin{bmatrix} 1 & 0\\0 & 1 \end{bmatrix}$ is the multiplicative identity for matrix multiplication.^[The rules of matrix multiplication are a little involved and will not detain us here. The interested reader is referred to another blog of mine for details.]
+The matrix $\begin{bmatrix}1 & 0\\0 & 1\end{bmatrix}$ is the multiplicative identity for matrix multiplication for $2 \times 2$ matrices.^[The rules of matrix multiplication are a little involved and will not detain us here. The interested reader is referred to another blog of mine for details.]
 
 Likewise,
 $$
@@ -150,20 +158,30 @@ $$
 a & b\\
 c & d
 \end{bmatrix}
-+ %
++
 \begin{bmatrix}
 0 & 0\\
 0 & 0
 \end{bmatrix}
-= %
+=
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 0\\
+0 & 0
+\end{bmatrix}
++
 \begin{bmatrix}
 a & b\\
 c & d
 \end{bmatrix}
 $${#eq:addidmatrix}
-and $\begin{bmatrix} 0 & 0\\0 & 0 \end{bmatrix}$ is the additive identity for matrix addition.
+The matrix $\begin{bmatrix} 0 & 0\\0 & 0\end{bmatrix}$ is the additive identity for matrix addition for $2 \times 2$ matrices.
 
-Do you see how the seed ideas of the additive and multiplicative identities, sown far and wide, germinate into shoots that are surprisingly similar to the original ones. The numbers $0$ and $1$ do indeed rule the roost. Obviously, the identity matrices will change with the matrix sizes, but the principles remain the same.
+This is a simple example of how the seed ideas of the additive and multiplicative identities, sown far and wide, germinate into shoots that are surprisingly similar to the original ones. The numbers $0$ and $1$ do indeed rule the roost. Obviously, the identity matrices will change with the matrix sizes, but the principles remain the same.
 
 ## The additive and multiplicative inverses
 
