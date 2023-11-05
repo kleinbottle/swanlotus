@@ -13,7 +13,7 @@ The unique properties of the numbers zero and one make them mathematically inter
 
 ## Starting at the beginning
 
-At first, I thought I would skirt around the formal sets of numbers, and concepts like commutativity and associativity, and keep this blog very informal. But I found that each time I tried that approach, I would have to furtively sneak in a paragraph here, or a footnote there, as explanation of these ideas. In the end, I decided to start at the beginning, and work my way through the natural numbers, the integers, the rationals, etc., and [broach](https://www.thefreedictionary.com/broach) ideas like commutativity and associativity.
+At first, I thought I would skirt around the formal sets of numbers, and concepts like commutativity and associativity, and keep this blog very informal. But I found that each time I tried that approach, I would have to furtively sneak in a paragraph here, or a footnote there, to explain these ideas. In the end, I decided to start at the beginning, and work my way through the natural numbers, the integers, the rationals, etc., and [broach](https://www.thefreedictionary.com/broach) ideas like commutativity and associativity.
 
 ## Counting
 
