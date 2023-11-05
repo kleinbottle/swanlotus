@@ -2,7 +2,7 @@
 title: "The Two Most Important Numbers: Zero and One"
 author: R (Chandra) Chandrasekhar
 date: 2023-10-31
-modified: 2023-11-01
+modified: 2023-11-05
 category: Mathematics
 tags: Mathematical Musings
 summary: 'The unique properties of the numbers zero and one make them mathematically interesting and indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers, we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we may discover how they cement together disparate areas of Mathematics.'
@@ -116,7 +116,7 @@ Likewise, when we multiply $a$ by $1$, the original number is returned as the pr
 $$
 a \times 1 = 1 \times a = a
 $${#eq:multident}
-The number $1$ is called the _multiplicative identity_.
+The number $1$ is called the _multiplicative identity_ in $\mathbb{R}$.
 
 Zero and one enjoy their [coign of vantage](https://dictionary.cambridge.org/dictionary/english/coign-of-vantage) as the additive and multiplicative identities respectively for the real numbers in $\mathbb{R}$. But are their roles generalizable to cover a larger variety of mathematical objects?
 
@@ -128,9 +128,7 @@ The zero of the complex numbers is $0 + i(0) = 0$ as well. And adding it to any 
 
 [Polynomials](https://mathworld.wolfram.com/Polynomial.html) are expressions like $x^2 + 3x + 1$ where $x$ is some real or complex variable. The zero polynomial is simply the constant polynomial $P(x) = 0$, and adding it to any polynomial again gives us back the original polynomial.
 
-A [matrix](https://mathworld.wolfram.com/Matrix.html) is a rectangular array of numbers, treated as a single unit mathematically. I facetiously call matrices _numbers in teabags_. Operations on matrices follow their own definitions.
-
-The matrix $\begin{bmatrix} 0 & 0\\0 & 0\end{bmatrix}$ is the additive identity for matrix addition for $2 \times 2$ matrices.
+A [matrix](https://mathworld.wolfram.com/Matrix.html) is a rectangular array of numbers, treated as a single unit mathematically. I facetiously call matrices _numbers in teabags_. Operations on matrices follow their own rules, but for addition, they are intuitively apparent.
 
 Let us consider an arbitrary $2 \times 2$ _square matrix_ like $\begin{bmatrix}a & b\\c & d\end{bmatrix}$. It has two horizontal rows and two vertical columns, and therefore 4 elements. The additive identity for this matrix is a $2 \times 2$ square matrix, all of whose entries are zero:
 $$
@@ -160,7 +158,7 @@ c & d
 \end{bmatrix}
 $${#eq:addidmatrix}
 
-The matrix $\begin{bmatrix}1 & 0\\0 & 1\end{bmatrix}$ is the multiplicative identity for matrix multiplication for $2 \times 2$ matrices.^[The rules of matrix multiplication are a little involved and will not detain us here. The interested reader is referred to another blog of mine for details.] Note that its elements are solely ones and zeroes, with ones on the -principal diagonal from top left to bottom right.
+The matrix $\begin{bmatrix}1 & 0\\0 & 1\end{bmatrix}$ is the _multiplicative identity_ for matrix multiplication for $2 \times 2$ matrices.^[The rules of matrix multiplication are a little involved and will not detain us here. The interested reader is referred to another blog of mine for details.] Note that its elements are solely ones and zeroes, with ones on the principal-diagonal from top left to bottom right.
 $$
 \begin{bmatrix}
 a & b\\
@@ -186,7 +184,7 @@ c & d
 \end{bmatrix}
 $${#eq:multidmatrix}
 
-This is a simple example of how the seed ideas of the additive and multiplicative identities, sown far and wide, germinate into shoots that are surprisingly similar to the original ones. The numbers $0$ and $1$ do indeed rule the roost. Obviously, the identity matrices will change with the matrix sizes, but the principles remain the same.
+This is a simple example of how the seed ideas of the additive and multiplicative identities, sown far and wide, germinate into shoots that are surprisingly similar to the original ones. The numbers $0$ and $1$ do indeed rule the roost for the simple reason that the original object remains unchanged under the respective operation. Obviously, the identity matrices will change with the matrix sizes, but the principles remain the same.
 
 ## The additive and multiplicative inverses in $\mathbb{R}$
 
