@@ -194,7 +194,7 @@ The negative integers arose from subtractions like $(3 - 5)$, whose result was n
 $$
 a + (-a) = 0 = (-a) + a
 $${#eq:addinv}
-If you have heard of [particle and anti-particles annihilating each other in Science Fiction](), you can metaphorically think of $a$ and $-a$ as one such pair.
+If you have heard of [particle and anti-particles annihilating each other in Science Fiction](https://www.symmetrymagazine.org/article/september-2008/antimatters-science-fiction-debut?language_content_entity=und), you can metaphorically think of $a$ and $-a$ as one such pair.
 
 
 ## The Arithmetic Four Revisited
@@ -202,8 +202,6 @@ If you have heard of [particle and anti-particles annihilating each other in Sci
 ## Addition
 
 If we start with zero and add one to it, we get one. If we add one to that we get two. In this fashion, all the natural numbers may be generated successively by adding one. The _next number_ is called the _successor_. Even if we did not start with zero, but started with one, instead, we can still generate the entire set $\mathbb{N}$ by adding one successively. This method shows that there is no largest natural number. If there were such a number, say $p$, we could always add one to it and show the assumption to be false. In this sense, one helps us to understand infinity (of the countable variety).
-
-
 
 ## Subtraction
 
@@ -224,7 +222,7 @@ $$
 Any guesses as to what $a'$ is? It is the signed number $a$ prefixed with a negative sign and written as $-a$, i.e., $a' = -a$. It is noteworthy, that when we subtract any real number from itself, we get zero, by the property of the additive inverse:
 $$
 a - a = a + (-a) = 0.
-$${#eq:addinv}
+$$
 
 ## Multiplication
 
@@ -268,7 +266,6 @@ c & d
 \end{bmatrix}
 $${#eq:matmultident}
 
-## The additive and multiplicative inverses
 
 ### Division as repeated subtraction
 
@@ -297,7 +294,7 @@ Poles and zeroes
 
 Division by zero functions becoming unbounded at points where division by zero is attempted
 
-Renormaliztion theory: Quantum and Relativity: problem oc functions "blowing up" that preclude a conclusive theoer
+Renormaliztion theory: Quantum and Relativity: problem oc functions "blowing up" that preclude a conclusive theory
 
 Stability and the s-plane. The importance of zero. s = sigma + j omega exponential and the value
 
