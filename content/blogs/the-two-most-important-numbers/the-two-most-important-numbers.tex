@@ -481,22 +481,61 @@ these properties is a useful insight, as the more sophisticated
 mathematical objects we will encounter later may not obey either or both
 properties.
 
-\hypertarget{the-additive-and-multiplicative-identities}{%
-\subsection{The additive and multiplicative
-identities}\label{the-additive-and-multiplicative-identities}}
+\hypertarget{the-additive-identity}{%
+\subsection{The additive identity}\label{the-additive-identity}}
 
 When zero is added to any real number, \(a\), we get the original number
-back as the sum: \begin{equation}\protect\hypertarget{eq:addident}{}{
+\(a\) back as the sum:
+\begin{equation}\protect\hypertarget{eq:addident}{}{
 a + 0 = 0 + a = a.
 }\label{eq:addident}\end{equation} We call \(0\) the \emph{additive
-identity}.
+identity} for \(\mathbb{R}\).
 
-Likewise, when we multiply \(a\) by \(1\), the original number is
-returned as the product:
-\begin{equation}\protect\hypertarget{eq:multident}{}{
-a \times 1 = 1 \times a = a
-}\label{eq:multident}\end{equation} The number \(1\) is called the
-\emph{multiplicative identity}.
+The additive identity may also exist for other sets and definitions of
+addition. The zero of the complex numbers is \(0 + i(0) = 0\) as well.
+And adding it to any complex number also returns the original complex
+number.
+
+A \href{https://mathworld.wolfram.com/Matrix.html}{matrix} is a
+rectangular array of numbers, treated as a single unit mathematically. I
+facetiously call matrices \emph{numbers in teabags}. Operations on
+matrices follow their own definitions.
+
+Let us consider an arbitrary \(2 \times 2\) \emph{square matrix} like
+\(\begin{bmatrix}a & b\\c & d\end{bmatrix}\). It has two horizontal rows
+and two vertical columns, and therefore 4 elements. The additive
+identity for this matrix is a \$2 \times2 \$ square matrix, all of whose
+entries are zero: \[
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
++
+\begin{bmatrix}
+0 & 0\\
+0 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 0\\
+0 & 0
+\end{bmatrix}
++
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+\]
+
+\href{https://mathworld.wolfram.com/Polynomial.html}{Polynomials} are
+expressions like \(x^2 + 3x + 1\) where \(x\) is some real variable. The
+zero polynomial is simply the number zero, and adding it to any
+polynomial also gives us back the original polynomial.
 
 Zero and one enjoy their
 \href{https://dictionary.cambridge.org/dictionary/english/coign-of-vantage}{coign
@@ -510,14 +549,6 @@ consistency in definition and behaviour across these disparate domains.
 The additive and multiplicative identities may be so generalized, where
 applicable.
 
-A \href{https://mathworld.wolfram.com/Matrix.html}{matrix} is a
-rectangular array of numbers, treated as a single unit mathematically. I
-facetiously call matrices \emph{numbers in teabags}. Operations on
-matrices follow their own definitions.
-
-We will consider an arbitrary \emph{square matrix}, called a
-\(2 \times 2\) matrix, having four elements:
-\(\begin{bmatrix} a & b\\c & d \end{bmatrix}\). Then,
 \begin{equation}\protect\hypertarget{eq:multidmatrix}{}{
 \begin{bmatrix}
 a & b\\
@@ -583,6 +614,17 @@ are surprisingly similar to the original ones. The numbers \(0\) and
 \(1\) do indeed rule the roost. Obviously, the identity matrices will
 change with the matrix sizes, but the principles remain the same.
 
+\hypertarget{the-multiplicative-identity}{%
+\subsection{The multiplicative
+identity}\label{the-multiplicative-identity}}
+
+Likewise, when we multiply \(a\) by \(1\), the original number is
+returned as the product:
+\begin{equation}\protect\hypertarget{eq:multident}{}{
+a \times 1 = 1 \times a = a
+}\label{eq:multident}\end{equation} The number \(1\) is called the
+\emph{multiplicative identity}.
+
 \hypertarget{addition}{%
 \subsection{Addition}\label{addition}}
 
@@ -595,55 +637,6 @@ by adding one successively. This method shows that there is no largest
 natural number. If there were such a number, say \(p\), we could always
 add one to it and show the assumption to be false. In this sense, one
 helps us to understand infinity (of the countable variety).
-
-Zero is the \emph{additive identity}, meaning that if we add zero to any
-number, the result is the original number again. This means that adding
-zero to zero produces zero. Henceforth, let us denote an arbitrary real
-number by \(a\), i.e., \(a \in \mathbb{R}\). Then, \[
-a + 0 = 0 + a = a.
-\]
-
-This is also true of other mathematical objects. The zero of the complex
-numbers is \(0 + i(0) = 0\) as well. And adding it to any complex number
-also gives us the original complex number.
-
-A \href{https://mathworld.wolfram.com/Matrix.html}{matrix} is
-mathematical object which I facetiously call \emph{numbers in teabags}.
-They may come in different shapes and sizes. Let us consider a general
-\(2\times2\) square matrix like
-\(\begin{bmatrix}a & b\\c & d\end{bmatrix}\) which has two horizontal
-rows and two vertical columns. The additive identity for this matrix is
-a \(2\times2\) square matrix, all of whose entries are zero: \[
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-+
-\begin{bmatrix}
-0 & 0\\
-0 & 0
-\end{bmatrix}
-=
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-=
-\begin{bmatrix}
-0 & 0\\
-0 & 0
-\end{bmatrix}
-+
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-\]
-
-\href{https://mathworld.wolfram.com/Polynomial.html}{Polynomials} are
-expressions like \(x^2 + 3x + 1\) where \(x\) is some real variable. The
-zero polynomial is simply the number zero, and adding it to any
-polynomial also gives us back the original polynomial.
 
 \hypertarget{subtraction}{%
 \subsection{Subtraction}\label{subtraction}}
