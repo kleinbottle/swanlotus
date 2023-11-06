@@ -211,7 +211,9 @@ a \times a'' &= 1; \mbox{ divide both sides by } a\\
 a'' &= \frac{1}{a}.
 \end{aligned}
 $${#eq:solve}
-The number $\frac{1}{a}$ is called the reciprocal of $a$ and it is the multiplicative inverse of $a$. But there is one important restriction: $a \ne 0$. See [Why is division by zero disallowed?]
+The number $\frac{1}{a}$ is called the _reciprocal_ of $a$ and it is the multiplicative inverse of $a$. But there is one important restriction: $a \ne 0$. See [Why is division by zero disallowed?]
+
+The rational numbers $\mathbb{Q}$ arose to accommodate the results of division. Note the hierarchy $\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}$ where the symbol $\subset$ may be spoken as "is a subset of" or "is contained in".
 
 ## The Arithmetic Four Revisited
 
@@ -256,19 +258,33 @@ Multiplying a number by $1$ is comparatively simpler: it leaves the original num
 
 Multiplying $a$ by $-1$ yields the additive inverse of $a$, namely $-a$.
 
-### Division as repeated subtraction
+### Division
 
-If multiplication can be thought of as repeated addition, division can equally be thought of a repeated subtraction. Here is a concrete example: $6 \div 2$ = 3 may be understood as "How many times can we subtract $3$ from $6$ before we hit zero?"
+If multiplication can be thought of as repeated addition, division can equally be thought of as repeated subtraction. Dividing $6$ by $2$ may be understood as "How many times can we subtract $2$ from $6$ before we hit zero?"
 Stated a little more mathematically, $6 \div 2 = 3$, and the steps are:
-
 $$
 \begin{array}{r | l}
 6 - 2 = 4 & \mbox{First lot of two}\\
 4 - 2 = 2 & \mbox{Second lot of two}\\
 2 - 2 = 0 & \mbox{Third lot of two}\\
 \end{array}
+$$ The result or _quotient_ is $3$ because our subtraction algorithm terminated in $3$ steps with a remainder of $0$. Because division is the inverse of multiplication, we can also understand the result as the number by which we must multiply the _divisor_ $2$ to obtain the _dividend_ $6$. In this case, the _remainder_ is zero, to better illustrate what is happening.
+
+If the division gives rise to a remainder, we stop when we get a remainder that is less than the divisor. For example, with $7 \div 2$, we get:
 $$
-Now what happens if we divide by zero? To keep matters simple, let us keep the same dividend, namely 6. If we subtract 0 from 6, we end up with 6. Subtracting another 0 from this 6 still leaves us with 6. By now, you should have cottoned on to the fact that we are not making any progress.
+\begin{array}{r | l}
+7 - 2 = 5 & \mbox{First lot of two}\\
+5 - 2 = 3 & \mbox{Second lot of two}\\
+3 - 2 = 1 & \mbox{Third lot of two}\\
+\end{array}
+$$
+That last number $1$ is the remainder and the number of steps before stopping is still the quotient, which is again $3$.
+
+Just as subtraction may be thought of as addition of signed numbers, so also, division may be thought of as multiplication by reciprocals. If some real $a$ is divided by another real $b \ne 0$, we may write this as $a \div b$ or equivalently, we may also express it as $a \times \frac{1}{b} = \frac{1}{b} \times a = \frac{a}{b}$.
+
+### Why is division by zero disallowed?
+
+Now, what happens if we divide by zero? To keep matters simple, let us keep the same dividend, namely 6. If we subtract 0 from 6, we end up with 6. Subtracting another 0 from this 6 still leaves us with 6. By now, you should have cottoned on to the fact that we are not making any progress.
 $$
 \begin{array}{r | l}
 6 - 0 = 6 & \mbox{First lot of zero}\\
@@ -277,11 +293,42 @@ $$
 \cdots & \cdots\\
 \end{array}
 $$
-Each time we subtract zero, we end up where we started. Therefore, this process never ends and therefore cannot be an algorithm, which by definition, must end. Sometimes, this is stated as ``dividing by zero gives infinity,'' which is a mathematically less acceptable but intuitively more friendly way of stating that it is an unending process. This is why division by zero is not permitted.
+Each time we subtract zero, the remainder equals the dividend, and we end up where we started. Thus, this process never ends, and therefore cannot be an [algorithm](https://mathworld.wolfram.com/Algorithm.html), which by definition, must terminate in a _finite_ number of steps. Sometimes, this is stated as "dividing by zero gives infinity," which is a mathematically less acceptable, but intuitively more friendly, way of stating that it is an unending process. This is why division by zero is not permitted.
 
+The most basic justification for not permitting division by zero is given here. With increasing mathematical sophistication, increasingly recondite reasoning may be given for why division by zero is not permitted. For example, _any number_ multiplied by zero gives zero. Therefore, dividing by zero will give us _any number_, which is a non-unique answer. Allowing such an operation will destroy the predictability on which mathematical operations are built.
 
+## Exponentiation
 
-### Why is division by zero disallowed?
+Exponentiation may also be called _raising (something) to a power_. It is a short form for repeated multiplication by the _same_ number. For example, if we multiply $5$ by itself three times, we write it so:
+$$
+5\times5\times5 = 5^1\times5^1\times5^1 = 5^{(1+1+1)} = 5^{3} = 125
+$${#eq:exp}
+The number $5$ is called the _base_ and the power $3$ is called the _exponent_. Note that  $5^1 = 5$ and the exponent $1$ is omitted.
+
+The reciprocal of an arbitrary non-zero real number $a$ is $\frac{1}{a}$. The product of the two is $1$. Written with an exponent,
+$$
+\frac{1}{a} = a^{-1}.
+$$
+Continuing with the number $5$ in our example, its reciprocal is $\frac{1}{5} = 5^{-1}$. What do we get if we multiply $5$ by its reciprocal? We already know the answer to be $1$. Let us do the multiplication using exponents:
+$$
+5 \times \frac{1}{5} = 1 = 5^{1} \times 5^{-1} = 5^{1+(-1)} = 5^{0}.
+$${#eq:reciprocal}
+The astounding conclusion from @eq:reciprocal is that $5$ raised to the exponent zero is ${1}$. I will hand-wave here and assert that this will apply to any base $a \in \mathbb{R}$, i.e., $a^0 = 1$ for $a \in \mathbb{R}$: something that will be understood better after we encounter [logarithms](https://www.britannica.com/science/logarithm) in this series of blogs or elsewhere. The consequence is that the logarithm of $1$ to any base $b$ is $0$:
+$$
+log_{b}1 = 0.
+$${#eq:logonezero}
+@eq:logonezero is yet another memorable equation linking $1$ and $0$. When the domain of mathematics expands to take on new numbers, new objects, and new notations, the need for consistency with the existing body of mathematics gives us pearls such as equation @eq:logonezero.
+
+From the foregoing, note that
+$$
+a \times \frac{1}{a} = a \times a^{-1} = a^0 = 1.
+$$
+
+Constants in polynomials may be written using $x^0$ in place of one. Fir example,
+$$
+2x^2 + 3x + 2 = 2x^2 + 3x^1 + 2x^0.
+$${#eq:polyexp}
+@eq:polyexp show how consistently the terms in a polynomial are: they are all powers of $x$ in descending fashion, although by convention, certain terms are understood and therefore implicit. The omission of the index in the term $3x^1$ and the term $x^0$ could cause disquiet in the newcomer to polynomials, and it is better to disperse that right away.
 
 ## Fundamental properties of zero
 
@@ -326,7 +373,7 @@ Curves of x^n for x < 1 and n -> infinity
 
 
 
-## Binary logic and numbers
+
 
 
 ## The shy one
@@ -369,34 +416,10 @@ The _next natural number_ is obtained by adding in the sequence is generated by 
 
 ## Division
 
+## Binary logic and numbers
 
 
 
-## Exponentiation
-
-Exponentiation may also be called _raising (something) to a power_. It is a short form for repeated multiplication by the _same_ number. For example, if we multiply $5$ by itself three times, we write it so:
-$$
-5\times5\times5 = 5^1\times5^1\times5^1 = 5^{(1+1+1)} = 5^{3} = 125
-$${#eq:exp}
-The number $5$ is called the _base_ and the power $3$ is called the _exponent_. As noted before, $5^1 = 5$ and the exponent $1$ is omitted.
-
-The reciprocal of an arbitrary non-zero real number $a$ is $\frac{1}{a}$. The product of the two is $1$. Written with an exponent,
-$$
-\frac{1}{a} = a^{-1}.
-$$
-Continuing with the number $5$ in our example, its reciprocal is $\frac{1}{5} = 5^{-1}$. What do we get if we multiply $5$ by its reciprocal? We areready know the answer to be $1$. Let us do the multiplication using exponents:
-$$
-5 \times \frac{1}{5} = 1 = 5^{1} \times 5^{-1} = 5^{1+(-1)} = 5^{0}.
-$${#eq:reciprocal}
-The astounding conclusion from @eq:reciprocal is that a base raised to the exponent zero is ${1}$. _By extension, any integer raised to the to the zeroth power equals $1$_. This remarkable conclusion applies to _any real number_ as well: something that will be understood better after we encounter [logarithms](https://www.britannica.com/science/logarithm) in this series of blogs or elsewhere. The consequence is that the logarithm of $1$ to any base $b$ is $0$:
-$$
-log_{b}1 = 0.
-$${#eq:logonezero}
-@eq:logonezero is yet another memorable equation linking $1$ and $0$. When the domain of mathematics expands to take on new numbers, new objects, and new notations, the need for consistency with the existing body of mathematics gives us pearls such as equation @eq:logonezero.
-
-Application of index to polynomials; x is x^1 and 2 is 2 * x^0
-
-Number times reciprocal equals 1 and a^0 is one.
 
 ## The interval $[0, 1]$
 
