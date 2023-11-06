@@ -61,7 +61,7 @@ While it is premature to talk about these sets and their peculiarities in this b
 
 #. A set is traditionally enclosed in a pair of _braces_: $\{\}$.
 
-#. Zero is neither positive nor negative. It is itself. As a set on its own, zero is often denoted $\{0\}$.
+#. Zero is neither positive nor negative. It is simply its unique self. As a set on its own, zero is often denoted $\{0\}$.
 
 #. The numbers we use for counting, starting from $1$, and never ending, are---naurally enough---called the [_natural numbers_](https://mathworld.wolfram.com/NaturalNumber.html), denoted $\mathbb{N}$. There is [no agreement on whether or not to include zero](https://en.wikipedia.org/wiki/Natural_number) as a member of $\mathbb{N}$. I have chosen not to, because we start counting with one.
 
@@ -69,7 +69,7 @@ While it is premature to talk about these sets and their peculiarities in this b
 
 #. The [_rational numbers_](https://mathworld.wolfram.com/RationalNumber.html) are so named because they are really _ratios_ of whole numbers with the proviso that the denominator cannot be zero. The symbol $\mathbb{Q}$ is used because it denotes _quotient_ the result of _division_.
 
-#. There is no symbol for the [_irrationals_](https://mathworld.wolfram.com/IrrationalNumber.html), which are simply defined as numbers which are _not rational_. In fact, the set of irrationals may shown, using set notation only indirectly as $\mathbb{R}\setminus\mathbb{Q}$, which means the set of real numbers, excluding the rational numbers.
+#. There is no symbol for the [_irrationals_](https://mathworld.wolfram.com/IrrationalNumber.html), which are simply defined as numbers which are _not rational_. In fact, the set of irrationals may be shown, using set notation only indirectly as $\mathbb{R}\setminus\mathbb{Q}$, which means the set of real numbers, excluding the rational numbers.
 
 #. The [_real numbers_](https://en.wikipedia.org/wiki/Real_number), with symbol $\mathbb{R}$ for real, are glibly described as the union of the rational numbers and the irrational numbers.^[[Richard Dedekind](https://en.wikipedia.org/wiki/Richard_Dedekind) with his _Schnitt_ or cut, showed that the rationals and irrationals comprise $\mathbb{R}$, but that is [a story](https://arpita95b.medium.com/cutting-through-the-confusion-how-dedekind-cuts-build-the-real-numbers-20aeaaec021d) for another day and another blog.]
 
@@ -328,53 +328,9 @@ Constants in polynomials may be written using $x^0$ in place of one. Fir example
 $$
 2x^2 + 3x + 2 = 2x^2 + 3x^1 + 2x^0.
 $${#eq:polyexp}
-@eq:polyexp show how consistently the terms in a polynomial are: they are all powers of $x$ in descending fashion, although by convention, certain terms are understood and therefore implicit. The omission of the index in the term $3x^1$ and the term $x^0$ could cause disquiet in the newcomer to polynomials, and it is better to disperse that right away.
+@eq:polyexp show how consistently the terms in a polynomial are: they are all powers of $x$ in descending fashion, although by convention, certain terms are understood and therefore implicit. The omission of the index in the term $3x^1$ and the term $x^0$ could cause disquiet in the newcomer to polynomials, and it is better to dispel that right away.
 
-## Fundamental properties of zero
-
-Is not a factor of any number other than itself.
-
-Cannot be the denominator of any rational number.
-
-Is the additive identity.
-
-Zeroes in control theory
-
-Zeroes of polynomials
-
-Laplace transforms from ODE to polynomials
-
-Galois: polynomial roots
-
-Poles and zeroes
-
-Division by zero functions becoming unbounded at points where division by zero is attempted
-
-Renormaliztion theory: Quantum and Relativity: problem oc functions "blowing up" that preclude a conclusive theory
-
-Stability and the s-plane. The importance of zero. s = sigma + j omega exponential and the value
-
-a ^0 = 1 etc.
-
-
-
-## Fundamental properties of ones
-
-Generates successor numbers and therefore the entire sets N and Z.
-
-Multiplicative inverse.
-
-Control systems and the number (-1, 0)
-
-Radius of convergence and the change in powers of as number
-GP
-
-Curves of x^n for x < 1 and n -> infinity
-
-
-
-
-
+In the succeeding sections, we take a look a some lesser known aspects of zero and one.
 
 ## The shy one
 
@@ -392,36 +348,53 @@ Following this logic, we might assert that $5^1 = 5$ and that is perfectly corre
 
 The notation making $1$ implicit in these scenarios reduces clutter and simplifies notation. The absence of the implicit $1$ might trouble the heart of the sincere young mathematician, but familiarity with these conventions will make for comfort in using them.
 
+## The interval $[0, 1]$
 
+If the reals are thought of as a line, the segment from $0$ to $1$ can serve as a microcosm of all the real numbers. It is as densely populated with rational and irrational numbers as the entire real number line. This almost holographic property is a consequence of what "infinity" is, and is again a concept that might be difficult to accept, let alone understand.
 
-## Zero, one, and repeated addition
+In any case, our interest in the [closed interval](https://mathworld.wolfram.com/ClosedInterval.html) $[0, 1]$ is for a different purpose now. The numbers in $\mathbb{Q}$ and $\mathbb{R}$ have an interesting property when they lie in the interval $[0, 1]$. If we raise such numbers to integer powers, they become progressively smaller in value. This may easily be seen using the rules of exponentiation, or by successive multiplication.
 
-All natural numbers may be generated by zero, one, and repeated addition:
+Let $a = 0.9$. Then we may tabulate successive integral powers of as tabulated below.
 $$
-\begin{aligned}
-0 + 1 = 1
-\end{aligned}
-$${#eq:success1}
+\begin{array}{l | r | l}
+a & 0.9^1 & 0.9\\
+a^2 & 0.9^2 & 0.81\\
+a^3 & 0.9^3 & 0.729\\
+a^4 & 0.9^4 & 0.6561\\
+a^5 & 0.9^5 & 0.59049\\
+\end{array}
 $$
-\begin{aligned}
-1 + 1 = 2
-\end{aligned}
-$${#eq:success2}
+It is clear that the powers of $a^n$ diminish with increasing $n$ when $a \in [0, 1]$.This is peculiar to the interval $[0, 1]$, because when $a > 1$, the powers of $a^n$ increase with increasing $n$, as tabulated below for $a=1.1$.
+$$
+\begin{array}{l | r | l}
+a & 1.1^1 & 1.1\\
+a^2 & 1.1^2 & 1.21\\
+a^3 & 1.1^3 & 1.331\\
+a^4 & 1.1^4 & 1.4641\\
+a^5 & 1.1^5 & 1.61051\\
+\end{array}
+$$
+The pivot at $a = 1$ is rock steady because $1^n = 1$ for all $n \in \mathbb{N}$. When $a$ is 10\% less, we see a steady decline in $a^n$ as $n$ increases. But when $a$ is 10\% more than $1$, we see a growth in $a^n$ and $n$ increases. This wondrous behaviour contributes to the magic of the number $1$.
 
-The _next natural number_ is obtained by adding in the sequence is generated by adding $1$ to the current number._ By repeating this process, we can generate any desired natural number.
+@fig:x-to-n shows graphs of $x^n$ for $x \in [0, 1]$ and $n = 0, 1, 2, 4, 8, 128, 512$. As $n$ increases and $x$ approaches $1$, the graphs exhibit an almost perpendicular change in direction like a laterally inverted $L$. I find this behavior fascinating.
 
+![Graphs of $y = x^n$ for $x \in [0, 1]$ and $n = 0, 1, 2, 4, 8, 128, 512$. Note that all curves pass through $(1, 1)$.]({attach}images/y-equals-x-to-the-n-in-0-1.png){#fig:x-to-n width=70% .modal-target}
 
+<!--https://www.desmos.com/calculator/iybrvquibc-->
 
-## Multiplication
+## Rotation on the complex plane
 
-## Division
+The two-dimensional plane may be pressed into service in a variety of contexts to serve different ends. One such use is the [Argand diagram](https://mathworld.wolfram.com/ArgandDiagram.html) in which the $x$ axis represents the real part and the $y$ axis the imaginary part of a complex number, $z = x + iy; x, y \in \mathbb{R}; z \in \mathbb{C}$.
+
+Consider the point $P$ with coordinates  $(0, 1)$ which denotes the real number $1$ in $\mathbb{C}. $P$ has no imaginary component. If we multiply it by $i$, we get to $Q$, $(0, 1)$, which is purely imaginary and has no real component.
+
 
 ## Binary logic and numbers
 
 
+Roots of unity.
 
 
-## The interval $[0, 1]$
 
 ## Sequences
 
@@ -441,15 +414,7 @@ Arithmetic series (progressions)
 
 Geometric series (progressions)
 
-## Primes
 
-Is one the first prime? No!
-
-
-
-Stuff
-
-arose out of the solutions to polynomial equations that did not have roots in the real number system. To put it in a picture, the graphs of some polynomials did not intersect the $x$-axis as many times as they should have.
 
 https://en.wikipedia.org/wiki/Circle_group
 
