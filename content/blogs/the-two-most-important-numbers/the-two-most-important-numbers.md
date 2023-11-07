@@ -71,13 +71,13 @@ While it is premature to talk about these sets and their peculiarities in this b
 
 #. There is no symbol for the [_irrationals_](https://mathworld.wolfram.com/IrrationalNumber.html), which are simply defined as numbers which are _not rational_. In fact, the set of irrationals may be shown, using set notation only indirectly as $\mathbb{R}\setminus\mathbb{Q}$, which means the set of real numbers, excluding the rational numbers.
 
-#. The [_real numbers_](https://en.wikipedia.org/wiki/Real_number), with symbol $\mathbb{R}$ for real, are glibly described as the union of the rational numbers and the irrational numbers.^[[Richard Dedekind](https://en.wikipedia.org/wiki/Richard_Dedekind) with his _Schnitt_ or cut, showed that the rationals and irrationals comprise $\mathbb{R}$, but that is [a story](https://arpita95b.medium.com/cutting-through-the-confusion-how-dedekind-cuts-build-the-real-numbers-20aeaaec021d) for another day and another blog.]
+#. The [_real numbers_](https://en.wikipedia.org/wiki/Real_number), with symbol $\mathbb{R}$ for real, are glibly described as the union of the rational numbers and the irrational numbers^[[Richard Dedekind](https://en.wikipedia.org/wiki/Richard_Dedekind) with his _Schnitt_ or cut, showed that the rationals and irrationals comprise $\mathbb{R}$, but that is [a story](https://arpita95b.medium.com/cutting-through-the-confusion-how-dedekind-cuts-build-the-real-numbers-20aeaaec021d) for another day and another blog.] [@arpita2023].
 
 #.  The [_complex_ numbers](https://en.wikipedia.org/wiki/Complex_number) incorporate a non-real entity, called $i$ the _imaginary unit_, which is defined as $i^2 = -1$. Since every real number when squared is greater than or equal to zero, this $i$ is not a real number, and therefore demands its own symbol, arithmetic, and set, $\mathbb{C}$.
 
 ## Abstract Algebra
 
-In the nineteenth century, mathematicians contemplated the then extant mathematical systems and recognized certain commonalities. Whether it was arithmetic or geometry, or some other branch of mathematics, they were able to distil certain underlying principles behind the common practices of mathematics. By systematizing and classifying what they observed, they were able to _invent_ names for the _classes of objects_ they discerned, along with their properties. Thus was born [abstract algebra](https://en.wikipedia.org/wiki/Abstract_algebra). The ideas of commutativity, associativity, the additive and multiplicative identities, and the additive and multiplicative inverses were born from this exercise in classification.
+In the nineteenth century, mathematicians contemplated the then extant mathematical systems and recognized certain commonalities. Whether it was arithmetic or geometry, or some other branch of mathematics, they were able to distil certain underlying principles behind the common practices of mathematics. By systematizing and classifying what they observed, they were able to _invent_ names for the _classes of objects_ they discerned, along with their properties. Thus was born [abstract algebra](https://en.wikipedia.org/wiki/Abstract_algebra). The ideas of commutativity, associativity, the additive and multiplicative identities, and the additive and multiplicative inverses were born from this exercise in classification. If you wish to know more, I strongly recommend this [short video on abstract algebra](https://www.youtube.com/watch?v=IP7nW_hKB7I) to whet your appetite.
 
 ## The Four Arithmetic Operations
 
@@ -315,7 +315,7 @@ $$
 $${#eq:reciprocal}
 The astounding conclusion from @eq:reciprocal is that $5$ raised to the exponent zero is ${1}$. I will hand-wave here and assert that this will apply to any base $a \in \mathbb{R}$, i.e., $a^0 = 1$ for $a \in \mathbb{R}$: something that will be understood better after we encounter [logarithms](https://www.britannica.com/science/logarithm) in this series of blogs or elsewhere. The consequence is that the logarithm of $1$ to any base $b$ is $0$:
 $$
-log_{b}1 = 0.
+\log_{b}1 = 0.
 $${#eq:logonezero}
 @eq:logonezero is yet another memorable equation linking $1$ and $0$. When the domain of mathematics expands to take on new numbers, new objects, and new notations, the need for consistency with the existing body of mathematics gives us pearls such as equation @eq:logonezero.
 
@@ -384,43 +384,83 @@ The pivot at $a = 1$ is rock steady because $1^n = 1$ for all $n \in \mathbb{N}$
 
 ## Rotation on the complex plane
 
-The two-dimensional plane may be pressed into service in a variety of contexts to serve different ends. One such use is the [Argand diagram](https://mathworld.wolfram.com/ArgandDiagram.html) in which the $x$ axis represents the real part and the $y$ axis the imaginary part of a complex number, $z = x + iy; x, y \in \mathbb{R}; z \in \mathbb{C}$.
+The two-dimensional plane may be pressed into service in a variety of contexts to serve different ends. One such use is the [Argand diagram](https://mathworld.wolfram.com/ArgandDiagram.html) in which the $x$ axis represents the real part and the $y$ axis the imaginary part of a complex number, $z = x + iy;\:x, y \in \mathbb{R};\: z \in \mathbb{C}$.
 
-Consider the point $P$ with coordinates  $(0, 1)$ which denotes the real number $1$ in $\mathbb{C}. $P$ has no imaginary component. If we multiply it by $i$, we get to $Q$, $(0, 1)$, which is purely imaginary and has no real component.
+![Successive multiplication by $i$ as a rotation in $\mathbb{C}$. See text for full explanation.]({attach}images/C4.png){#fig:C4 width=80% .modal-target}
 
+Consider the point $P$ in @fig:C4 with coordinates $(1, 0)$ which denotes the real number $1$ in $\mathbb{C}$. $P$ has no imaginary component. If we multiply it by $i$, we get to $Q$, $(0, 1)$, which is purely imaginary and has no real component. Another multiplication by $i$ sends $Q$ to $R$, which is $(-1, 0)$, a purely real number. A third multiplication transforms $R$ into $S$ at (0, -1) which is purely imaginary. A fourth and final multiplication maps $S$ back to $P$.
 
-## Binary logic and numbers
+The upshot of this is that each multiplication by $i$ rotates the point $P$ counterclockwise by $\frac{\pi}{2}$ or 90°. Four consecutive  multiplications restore the rotated point to itself. The multiplicative identity element is therefore
+$$
+i^4 = (i^2)(i^2) = (-1)(-1) = 1
+$$ as would be expected. The multiplicative inverses for the four elements $1, i, -1, -i$ are $1, -i, -1, i$ respectively. Observe that:
 
+#. A multiplication by $i$ corresponds to a $\frac{\pi}{2}$ counterclockwise rotation in $\mathbb{C}$.
+#. Four consecutive rotations restore the point to its original position.
+#. The multiplicative identity element is $i^4 = 1$ as would be expected.
+#. The multiplicative inverse for each of the four elements is also one of the four numbers $1, i, -1, -i$.
+#. The starting point and the results of all rotations are points on the unit circle.
 
-Roots of unity.
+These properties are at the heart of [Group Theory](https://en.wikipedia.org/wiki/Group_(mathematics)) which is the mathematical study of symmetries. The particular group we are looking at is called the $C_4$ group because of its fourfold symmetry.
 
+It is customary to enumerate the transformations in a group by displaying them in a table, called a [Cayley table](https://en.wikipedia.org/wiki/Cayley_table), not unlike a multiplication table. Such a table for the $C_4$ group is shown in @fig:C4 as well as below:
+$$
+\begin{array}{r | r  r  r  r}
+C_{4} & 1  & i & -1 & -i\\
+\hline
+1 & 1 & i & -1 & -i\\
+i & i & -1 & -i  & 1\\
+-1 & -1 & -i & 1 & i\\
+-i & -i & 1  & i & -1\\
+\end{array}
+$$
+Some groups may not be commutative with respect to multiplication. So, the order of multiplication is "the row element multiplied by the column element". The group $C_4$ is a commutative or [Abelian group](https://en.wikipedia.org/wiki/Abelian_group) under multiplication, so the order of multiplication may be swapped. Moreover, because all its elements may be generated from a single element, e.g., $i$, as shown in the second quadrant of @fig:C4, it is also called a [cyclic group](https://en.wikipedia.org/wiki/Cyclic_group).
 
+The four numbers $1, i, -1, -i$ are also known as the [fourth roots of unity](https://mathworld.wolfram.com/RootofUnity.html) [@honner2021]. These numbers satisfy the polynomial equation
+$$
+z^4 = 1.
+$${#eq:z4poly}
+Indeed, the study of groups was motivated by mathematical questions arising from the study of polynomials, the study of integers using [modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic) and the study of geometric symmetries. Group theory has enabled mathematicians to distil similarities from disparate domains and thereby produce an integrated picture of their discipline. [A short but clear introduction to groups is available on this video on Abstract Algebra](https://www.youtube.com/watch?v=IP7nW_hKB7I).
 
-## Sequences
+## Sequences and Series
 
-An ordered procession of numbers is called [sequence](https://en.wikipedia.org/w/index.php?title=Sequence&oldid=1177801065) [@wikisequence;@wolframsequence].^[The general definition replaces _numbers_ with _mathematical objects_ but the former will suffice for our limited purpose here.] Repetitions are allowed, but the order matters. The natural numbers form the sequence $(1, 2, 3, 4, 5, \ldots)$. Note that the elements of the sequence are enclosed in parentheses, $()$. There is an entire website devoted to sequences, called the [The On-Line Encyclopedia of Integer Sequences® (OEIS®)](https://oeis.org/).
+An ordered procession of numbers is called a [sequence](https://en.wikipedia.org/w/index.php?title=Sequence&oldid=1177801065) [@wikisequence;@wolframsequence].^[The general definition replaces _numbers_ with _mathematical objects_ but the former will suffice for our limited purpose here.] Repetitions are allowed, but the order matters. The natural numbers form the sequence $(1, 2, 3, 4, 5, \ldots)$. Note that the elements of the sequence are enclosed in parentheses, $()$. There is an entire website devoted to sequences, called the [The On-Line Encyclopedia of Integer Sequences® (OEIS®)](https://oeis.org/).
 
-Fibonacci sequence
+### Fibonacci sequence
 
-Binomial sequence Pascals triangle
+The [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_sequence) is a simple but profound sequence that is reflected in much of Nature. We start at the beginning with $0$ and $1$. We add them to get the next number, which is $1$ again. Adding that to the previous number, we obtain $2$. The algorithm is to add the two previous numbers to get the current one:
+$$
+\begin{aligned}
+F_{0} &= 0\\
+F_{1} &= 1\\
+F_{2} &= F_{1} + F_{0}\\
+F_{n} &= F_{n-1} + F_{n-2} \mbox{ for } n \in \mathbb{N} \mbox{ and } n \geq 2
+\end{aligned}
+$${#eq:fibonacci}
+Although we have a _recurrence relation_ in @eq:fibonacci, we do not have an explicit formula for the $n^{th}$ term. Nature has made us sweat to find out any particular term of the Fibonacci sequence! And the grist for the sequence mill are the two numbers, $0$ and $1$!
 
-## Series
+[Pascal's triangle](https://www.britannica.com/science/Pascals-triangle) is another sequence that may be built from adjacent sums in a number pattern. It is related to the [binomial coefficients](https://en.wikipedia.org/wiki/Binomial_coefficient) which play a vital role in probability, combinatorics, and calculus. I intend to look at number patterns like the Fibonacci sequence and Pascal's triangle in another blog.
+
+### Series
 
 A [series](https://mathworld.wolfram.com/Series.html) is the (progressive) sum of an infinite sequence [@wikiseries;@wolframseries].
 
-Pascal's triangle and the Binomial theorem and their origin in the number 1.
+The sum of _all_ the natural numbers, starting with $1$ and going on without end, is written as
+$$
+\sum_{n = 1}^{\infty}n = 1 + 2 + 3 + 4 + ...
+$$
+It is tacitly understood that the numbers are integers from $\mathbb{N}$. The sum is unbounded or infinite. However, certain infinite sums converge to a specific number or _limit_, as our next example demonstrates.
 
-Arithmetic series (progressions)
+Consider, for example the sequence that we encounter in [Zeno's Dichotomy paradox](https://en.wikipedia.org/wiki/Zeno%27s_paradoxes): $1, \frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \frac{1}{16}, ...$. Is there a sum to infinity, and if so, what is it? The series we are after is called a _geometric series_ or a _geometric progression_ and the sum to infinity may be written as:
+$$
+\sum_{n = 0}^{\infty}\frac{1}{2^{n}} = 1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} +
+\frac{1}{16} + ...
+$${#eq:dichotomy}
+Mark that the first term is $\frac{1}{2^0} \frac{1}{1} = 1$. Because the successive terms in this series get smaller and smaller, there is hope that it could converge to a finite limit. Using the standard notation for geometric series, we have the first term $a = 1$. The common ratio $r$ is the ratio of the succeeding term divided by the current term. Looking at the first two terms, we have $r = \frac{\frac{1}{2}}{1} = \frac{1}{2}$.
 
-Geometric series (progressions)
-
-
-
-https://en.wikipedia.org/wiki/Circle_group
-
-Circle Circle_group
-
-## Acknowledgements
+If the absolute value of the common ratio $r$ is less than $1$, i.e.,
+$$\lvert{r}\rvert < 1
+$${#eq:commonratio} then the infinite series will converge to a finite limit. If you need to be convinced about @eq:commonratio, take a look at @fig:x-to-n and you will hopefully be persuaded! Again, note the vital place enjoyed by $0$ and $1$ in the game called mathematics.\emojifont :wink: \normalfont
 
 ## Feedback
 
