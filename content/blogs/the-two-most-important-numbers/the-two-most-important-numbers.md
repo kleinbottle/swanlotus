@@ -188,7 +188,7 @@ This is a simple example of how the seed ideas of the additive and multiplicativ
 
 ## The additive inverse in $\mathbb{Z}$, $\mathbb{Q}$, and $\mathbb{R}$
 
-The negative integers arose from subtractions like $(3 - 5)$, whose result was not a positive integer, and therefore lay outside the confines of $\mathbb{N}$. The negative numbers were introduced to rectify this deficit. The sets $\mathbb{Z}$ and $\mathbb{R}$ both contain negative numbers, and can therefore lay claim to an additive inverse. Every integer or real number $a$ has an _additive inverse_, $a'$ such that:
+The negative integers arose from subtractions like $(3 - 5)$, whose result was not a positive integer, and therefore lay outside the confines of $\mathbb{N}$. The negative numbers were introduced to rectify this deficit. The sets $\mathbb{Z}$, $\mathbb{Q}$, and and $\mathbb{R}$ all contain negative numbers, and can therefore lay claim to an additive inverse. Every integer or real number $a$ has an _additive inverse_, $a'$ such that:
 $$
 a + a' = a' + a = 0.
 $$
@@ -305,7 +305,7 @@ $$
 $${#eq:exp}
 The number $5$ is called the _base_ and the power $3$ is called the _exponent_. Note that  $5^1 = 5$ and the exponent $1$ is omitted.
 
-The reciprocal of an arbitrary non-zero real number $a$ is $\frac{1}{a}$. The product of the two is $1$. Written with an exponent,
+The reciprocal of an arbitrary non-zero real number $a$ is $\frac{1}{a}$. The product of the two is $1$. So, $a$ and $\frac{1}{a}$ are multiplicative inverses. Written with an exponent,
 $$
 \frac{1}{a} = a^{-1}.
 $$
@@ -317,18 +317,18 @@ The astounding conclusion from @eq:reciprocal is that $5$ raised to the exponent
 $$
 \log_{b}1 = 0.
 $${#eq:logonezero}
-@eq:logonezero is yet another memorable equation linking $1$ and $0$. When the domain of mathematics expands to take on new numbers, new objects, and new notations, the need for consistency with the existing body of mathematics gives us pearls such as equation @eq:logonezero.
+@eq:logonezero is yet another memorable equation linking $1$ and $0$. When the domain of mathematics expands to take on new numbers, new objects, and new notations, the need for consistency with the existing body of mathematics gives us pearls such as @eq:logonezero.
 
 From the foregoing, note that
 $$
 a \times \frac{1}{a} = a \times a^{-1} = a^0 = 1.
 $$
 
-Constants in polynomials may be written using $x^0$ in place of one. Fir example,
+Constants in polynomials may be written using $x^0$ in place of one. For example,
 $$
 2x^2 + 3x + 2 = 2x^2 + 3x^1 + 2x^0.
 $${#eq:polyexp}
-@eq:polyexp show how consistently the terms in a polynomial are: they are all powers of $x$ in descending fashion, although by convention, certain terms are understood and therefore implicit. The omission of the index in the term $3x^1$ and the term $x^0$ could cause disquiet in the newcomer to polynomials, and it is better to dispel that right away.
+@eq:polyexp show how consistently the terms in a polynomial are: they are all powers of $x$ in descending fashion, although by convention, certain terms are understood and therefore implicit. The omission of the index in the term $3x^1$ and the $x^0$ in the term $2x^0$ could cause disquiet in the newcomer to polynomials. It is better to dispel that right away, by understanding that it is a mere convention that has led to this departure from absolute consistency.
 
 In the succeeding sections, we take a look a some lesser known aspects of zero and one.
 
@@ -338,15 +338,17 @@ The number one is often [implicit](https://www.vocabulary.com/dictionary/implici
 
 When we write a fraction as $\frac{3}{4}$ we mean the decimal $0.75$ and matters are clear. But all whole numbers are also fractions with the denominator being $1$. So, the fraction $\frac{3}{1}$ is rarely written in that form, even if syntactically correct, because usage dictates that whole numbers are written to stand on their own, as $3$, in this case. Again, the $1$ in the denominator is assumed to be unobtrusively present: [out of sight but _not_ out of mind](https://dictionary.cambridge.org/dictionary/english/out-of-sight-out-of-mind).
 
+One consequence of this is that $\mathbb{Z} \subset \mathbb{Q}$ which, in plain English, reads as "the set of integers is a (proper) subset of the set of rationals".
+
 When we write $4^2$, spoken out as "four squared" we mean the number obtained by multiplying $4$ by itself. This nomenclature arose because, if 4 was associated with the _length_ of, say, a piece of string, the number "four squared" was used to denote the _area_ of a square that had a side of length $4$. So, $4^2 = 4\times4 = 16$.
 
 Likewise, the expression $7^3$ or "seven cubed" denoted the volume of a cube of side $7$. Beyond the third dimension, this naming scheme faded out, because we cannot percieve dimensions higher than three.
 
-Therefore, $6^4$ is spoken as "six raised to the fourth (power)" or "six to the four". In such statements, the number $6$ is called the _base_ and the number $4$ is called the _exponent_.
+Therefore, $6^4$ is spoken as "six raised to the fourth (power)" or "six to the four". As we have seen before, in such statements, the number $6$ is called the base and the number $4$ is called the exponent.
 
-Following this logic, we might assert that $5^1 = 5$ and that is perfectly correct. But again, convention intrudes to say that we write it simply as $5$. _Any number raised to the power of $1$ equals itself_.
+We have already seen that $5^1 = 5$ and, while that is perfectly correct, convention intrudes to say that we write it simply as $5$. _Any number raised to the power of $1$ equals itself_.
 
-The notation making $1$ implicit in these scenarios reduces clutter and simplifies notation. The absence of the implicit $1$ might trouble the heart of the sincere young mathematician, but familiarity with these conventions will make for comfort in using them.
+The notation making $1$ implicit in these scenarios reduces clutter and simplifies notation. The absence of the implicit $1$ might trouble the heart of the sincere young mathematician, but familiarity with these conventions will make for comfort and confidence in using them.
 
 ## The interval $[0, 1]$
 
@@ -364,7 +366,7 @@ a^4 & 0.9^4 & 0.6561\\
 a^5 & 0.9^5 & 0.59049\\
 \end{array}
 $$
-It is clear that the powers of $a^n$ diminish with increasing $n$ when $a \in [0, 1]$.This is peculiar to the interval $[0, 1]$, because when $a > 1$, the powers of $a^n$ increase with increasing $n$, as tabulated below for $a=1.1$.
+It is clear that the powers of $a^n$ diminish with increasing $n$ when $a \in [0, 1]$. This is peculiar to the interval $[0, 1]$, because when $a > 1$, the powers of $a^n$ increase with increasing $n$, as tabulated below for $a=1.1$.
 $$
 \begin{array}{l | r | l}
 a & 1.1^1 & 1.1\\
@@ -386,7 +388,7 @@ The pivot at $a = 1$ is rock steady because $1^n = 1$ for all $n \in \mathbb{N}$
 
 The two-dimensional plane may be pressed into service in a variety of contexts to serve different ends. One such use is the [Argand diagram](https://mathworld.wolfram.com/ArgandDiagram.html) in which the $x$ axis represents the real part and the $y$ axis the imaginary part of a complex number, $z = x + iy;\:x, y \in \mathbb{R};\: z \in \mathbb{C}$.
 
-![Successive multiplication by $i$ as a rotation in $\mathbb{C}$. See text for full explanation.]({attach}images/C4.png){#fig:C4 width=80% .modal-target}
+![Successive multiplication by $i$ as a rotation in $\mathbb{C}$. See the text for the full explanation.]({attach}images/C4.png){#fig:C4 width=80% .modal-target}
 
 Consider the point $P$ in @fig:C4 with coordinates $(1, 0)$ which denotes the real number $1$ in $\mathbb{C}$. $P$ has no imaginary component. If we multiply it by $i$, we get to $Q$, $(0, 1)$, which is purely imaginary and has no real component. Another multiplication by $i$ sends $Q$ to $R$, which is $(-1, 0)$, a purely real number. A third multiplication transforms $R$ into $S$ at (0, -1) which is purely imaginary. A fourth and final multiplication maps $S$ back to $P$.
 
@@ -461,6 +463,18 @@ Mark that the first term is $\frac{1}{2^0} = \frac{1}{1} = 1$. Because the succe
 If the absolute value of the common ratio $r$ is less than $1$, i.e.,
 $$\lvert{r}\rvert < 1
 $${#eq:commonratio} then the infinite series will converge to a finite limit. If you need to be convinced about @eq:commonratio, take a look at @fig:x-to-n and you will hopefully be persuaded! Again, note the vital place enjoyed by $0$ and $1$ in the game called mathematics.\emojifont :wink: \normalfont
+
+So, what is the sum to infinity? The time-honoured formula is $\frac{a}{1-r}$, which in our case, works out to:
+$$
+\begin{aligned}
+\sum_{0}^{\infty} \frac{1}{2^n} &= \frac{1}{1-\frac{1}{2}}\\
+&= \frac{1}{\frac{1}{2}}\\
+&= 2.
+\end{aligned}
+$$
+The problem with the paradoxes of old was that they did not know that infinite sums could, on occasion, be finite. And that is a problem that mathematicians have been grappling with ever since the calculus was invented. But that again, is a blog for another day and another occasion.
+
+For now, I hope that the uniqueness and ubiquity of $0$ and $1$ have convinced you of their indispensability in the domain of Mathematics.
 
 ## Feedback
 
