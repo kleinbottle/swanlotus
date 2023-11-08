@@ -2,7 +2,7 @@
 title: "The Two Most Important Numbers: Zero and One"
 author: R (Chandra) Chandrasekhar
 date: 2023-10-31
-modified: 2023-11-05
+modified: 2023-11-08
 category: Mathematics
 tags: Mathematical Musings
 summary: 'The unique properties of the numbers zero and one make them mathematically interesting and indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers, we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we may discover how they cement together disparate areas of Mathematics.'
@@ -45,7 +45,7 @@ Although Mathematics has rigorous foundations, at the very bottom, its notions a
 
 ::: {.xsmall}
 | Name | Symbol | Definition |
-|:-------------------------|:-----:|:-------------------------------------------------|
+|:--------------------------|:-----:|:-------------------------------------------------|
 | Natural numbers | $\mathbb{N}$ | $\{1, 2, 3, 4, ...\}$ |
 | Integers | $\mathbb{Z}$ | $\{... -3, -2, -1, 0, 1, 2, 3, ...\}$ |
 | Rational numbers | $\mathbb{Q}$ | $\{x: x = \frac{p}{q} \mbox{ where } p, q \in \mathbb{Z} \mbox{ and } q \ne 0\}$ |
@@ -67,7 +67,7 @@ While it is premature to talk about these sets and their peculiarities in this b
 
 #. The [_integers_](https://en.wikipedia.org/wiki/Integer) are named $\mathbb{Z}$ after the German word _Zahlen_ which stands for "numbers" (singular _Zahl_). The integers include positive and negative whole numbers as well as zero.
 
-#. The [_rational numbers_](https://mathworld.wolfram.com/RationalNumber.html) are so named because they are really _ratios_ of whole numbers with the proviso that the denominator cannot be zero. The symbol $\mathbb{Q}$ is used because it denotes _quotient_ the result of _division_.
+#. The [_rational numbers_](https://mathworld.wolfram.com/RationalNumber.html) are so named because they are really _ratios_ of whole numbers with the proviso that the denominator cannot be zero. The symbol $\mathbb{Q}$ is used because it denotes _quotient_---the result of _division_.
 
 #. There is no symbol for the [_irrationals_](https://mathworld.wolfram.com/IrrationalNumber.html), which are simply defined as numbers which are _not rational_. In fact, the set of irrationals may be shown, using set notation only indirectly as $\mathbb{R}\setminus\mathbb{Q}$, which means the set of real numbers, excluding the rational numbers.
 
@@ -420,7 +420,7 @@ The four numbers $1, i, -1, -i$ are also known as the [fourth roots of unity](ht
 $$
 z^4 = 1.
 $${#eq:z4poly}
-Indeed, the study of groups was motivated by mathematical questions arising from the study of polynomials, the study of integers using [modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic) and the study of geometric symmetries. Group theory has enabled mathematicians to distil similarities from disparate domains and thereby produce an integrated picture of their discipline. [A short but clear introduction to groups is available on this video on Abstract Algebra](https://www.youtube.com/watch?v=IP7nW_hKB7I).
+Indeed, the study of groups was motivated by mathematical questions arising from the study of polynomials, the study of integers using [modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic) and the study of geometric symmetries. Group theory has enabled mathematicians to distil similarities from disparate domains and thereby produce an integrated picture of their discipline. [Watch this video on cyclic groups](https://www.youtube.com/watch?v=8A84sA1YuPw) to learn more about them.
 
 ## Sequences and Series
 
@@ -456,7 +456,7 @@ $$
 \sum_{n = 0}^{\infty}\frac{1}{2^{n}} = 1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} +
 \frac{1}{16} + ...
 $${#eq:dichotomy}
-Mark that the first term is $\frac{1}{2^0} \frac{1}{1} = 1$. Because the successive terms in this series get smaller and smaller, there is hope that it could converge to a finite limit. Using the standard notation for geometric series, we have the first term $a = 1$. The common ratio $r$ is the ratio of the succeeding term divided by the current term. Looking at the first two terms, we have $r = \frac{\frac{1}{2}}{1} = \frac{1}{2}$.
+Mark that the first term is $\frac{1}{2^0} = \frac{1}{1} = 1$. Because the successive terms in this series get smaller and smaller, there is hope that it could converge to a finite limit. Using the standard notation for geometric series, we have the first term $a = 1$. The common ratio $r$ is the ratio of the succeeding term divided by the current term. Looking at the first two terms, we have $r = \frac{\frac{1}{2}}{1} = \frac{1}{2}$.
 
 If the absolute value of the common ratio $r$ is less than $1$, i.e.,
 $$\lvert{r}\rvert < 1
