@@ -92,7 +92,7 @@ $$
 2 + 3 = 3 + 2.
 $$ _The order of the two operands may be interchanged_.
 
-In associativity, we have _three operands_. We use parentheses to denote the operation we perform first. It does not matter which pair we add first.
+In associativity, we have _three operands_. We use parentheses to denote the operation we perform first. Associativity means that it does not matter which pair we add initially:
 $$
 (2 + 3) + 5 = 2 + (3 + 5).
 $$
@@ -250,7 +250,7 @@ a \times 0 &= a \times (p + (-p))\\
 &= 0.
 \end{aligned}
 $${#eq:multzero}
-Here, I have invoked the rule that the product of a positive and a negative number is negative.
+Here, I have applied the rule that the product of a positive and a negative number is negative. I have also silently invoked [the distributivity of multiplication over addition](http://www.mathematicsdictionary.com/english/vmd/full/d/multiplicationoveraddition.htm).
 
 Zero was a problematic number that had been introduced into Europe from India via the Arabs. Can you imagine the effort that must have gone into understanding and justifying that multiplication of any number by zero yielded zero? Zero, one, and infinity are a daunting triad. Mastering them takes time, practice, and familiarity, and stretches both human logic and imagination.
 
@@ -280,7 +280,7 @@ $$
 $$
 That last number $1$ is the remainder and the number of steps before stopping is still the quotient, which is again $3$.
 
-Just as subtraction may be thought of as addition of signed numbers, so also, division may be thought of as multiplication by reciprocals. If some real $a$ is divided by another real $b \ne 0$, we may write this as $a \div b$ or equivalently, we may also express it as $a \times \frac{1}{b} = \frac{1}{b} \times a = \frac{a}{b}$.
+Just as subtraction may be thought of as the addition of signed numbers, so also may division be thought of as the multiplication by reciprocals. If some real $a$ is divided by another real $b \ne 0$, we may write this as $a \div b$ or equivalently, we may also express it as $a \times \frac{1}{b} = \frac{1}{b} \times a = \frac{a}{b}$.
 
 ### Why is division by zero disallowed?
 
@@ -295,7 +295,7 @@ $$
 $$
 Each time we subtract zero, the remainder equals the dividend, and we end up where we started. Thus, this process never ends, and therefore cannot be an [algorithm](https://mathworld.wolfram.com/Algorithm.html), which by definition, must terminate in a _finite_ number of steps. Sometimes, this is stated as "dividing by zero gives infinity," which is a mathematically less acceptable, but intuitively more friendly, way of stating that it is an unending process. This is why division by zero is not permitted.
 
-The most basic justification for not permitting division by zero is given here. With increasing mathematical sophistication, increasingly recondite reasoning may be given for why division by zero is not permitted. For example, _any number_ multiplied by zero gives zero. Therefore, dividing by zero will give us _any number_, which is a non-unique answer. Allowing such an operation will destroy the predictability on which mathematical operations are built.
+The most basic justification for not permitting division by zero is given here. With increasing mathematical sophistication, increasingly [recondite](https://www.merriam-webster.com/dictionary/recondite) reasoning may be given for why division by zero is not permitted. For example, _any number_ multiplied by zero gives zero. Therefore, dividing by zero will give us _any number_, which is a non-unique answer. Allowing such an operation will destroy the predictability on which mathematical operations are built.
 
 ## Exponentiation
 
@@ -328,7 +328,7 @@ Constants in polynomials may be written using $x^0$ in place of one. For example
 $$
 2x^2 + 3x + 2 = 2x^2 + 3x^1 + 2x^0.
 $${#eq:polyexp}
-@eq:polyexp show how consistently the terms in a polynomial are: they are all powers of $x$ in descending fashion, although by convention, certain terms are understood and therefore implicit. The omission of the index in the term $3x^1$ and the $x^0$ in the term $2x^0$ could cause disquiet in the newcomer to polynomials. It is better to dispel that right away, by understanding that it is a mere convention that has led to this departure from absolute consistency.
+@eq:polyexp shows how consistently the terms in a polynomial are: they are all powers of $x$ in descending fashion, although by convention, certain terms are understood and therefore implicit. The omission of the index in the term $3x^1$ and the $x^0$ in the term $2x^0$ could cause disquiet in the newcomer to polynomials. It is better to dispel that right away, by understanding that it is a mere convention that has led to this departure from absolute consistency.
 
 In the succeeding sections, we take a look a some lesser known aspects of zero and one.
 
@@ -356,9 +356,9 @@ If the reals are thought of as a line, the segment from $0$ to $1$ can serve as 
 
 In any case, our interest in the [closed interval](https://mathworld.wolfram.com/ClosedInterval.html) $[0, 1]$ is for a different purpose now. The numbers in $\mathbb{Q}$ and $\mathbb{R}$ have an interesting property when they lie in the interval $[0, 1]$. If we raise such numbers to integer powers, they become progressively smaller in value. This may easily be seen using the rules of exponentiation, or by successive multiplication.
 
-Let $a = 0.9$. Then we may tabulate successive integral powers of as tabulated below.
+Let $a = 0.9$. Then the successive integral powers of $a$ are as tabulated below:
 $$
-\begin{array}{l | r | l}
+\begin{array}{l  r  l}
 a & 0.9^1 & 0.9\\
 a^2 & 0.9^2 & 0.81\\
 a^3 & 0.9^3 & 0.729\\
@@ -368,7 +368,7 @@ a^5 & 0.9^5 & 0.59049\\
 $$
 It is clear that the powers of $a^n$ diminish with increasing $n$ when $a \in [0, 1]$. This is peculiar to the interval $[0, 1]$, because when $a > 1$, the powers of $a^n$ increase with increasing $n$, as tabulated below for $a=1.1$.
 $$
-\begin{array}{l | r | l}
+\begin{array}{l  r  l}
 a & 1.1^1 & 1.1\\
 a^2 & 1.1^2 & 1.21\\
 a^3 & 1.1^3 & 1.331\\
@@ -462,7 +462,7 @@ Mark that the first term is $\frac{1}{2^0} = \frac{1}{1} = 1$. Because the succe
 
 If the absolute value of the common ratio $r$ is less than $1$, i.e.,
 $$\lvert{r}\rvert < 1
-$${#eq:commonratio} then the infinite series will converge to a finite limit. If you need to be convinced about @eq:commonratio, take a look at @fig:x-to-n and you will hopefully be persuaded! Again, note the vital place enjoyed by $0$ and $1$ in the game called mathematics.\emojifont :wink: \normalfont
+$${#eq:commonratio} then the infinite series will converge to a finite limit. If you need to be convinced about the condition in @eq:commonratio, take a look at @fig:x-to-n and you will hopefully be persuaded! Again, note the vital place enjoyed by $0$ and $1$ in the game called mathematics.\emojifont :wink: \normalfont
 
 So, what is the sum to infinity? The time-honoured formula is $\frac{a}{1-r}$, which in our case, works out to:
 $$
@@ -472,9 +472,9 @@ $$
 &= 2.
 \end{aligned}
 $$
-The problem with the paradoxes of old was that they did not know that infinite sums could, on occasion, be finite. And that is a problem that mathematicians have been grappling with ever since the calculus was invented. But that again, is a blog for another day and another occasion.
+The problem with the paradoxes of old was that they did not allow for the fact that  _infinite sums could sometimes be finite_. And that is a problem that mathematicians have been grappling with ever since the calculus was invented. But that again, is a blog for another day and another occasion.
 
-For now, I hope that the uniqueness and ubiquity of $0$ and $1$ have convinced you of their indispensability in the domain of Mathematics.
+For now, I hope that the uniqueness, utility, and ubiquity of $0$ and $1$ have convinced you of their indispensability in the domain of Mathematics.
 
 ## Feedback
 
