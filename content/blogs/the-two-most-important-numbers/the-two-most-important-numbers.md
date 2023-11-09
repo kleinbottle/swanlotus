@@ -378,9 +378,9 @@ a^5 & 1.1^5 & 1.61051\\
 $$
 The pivot at $a = 1$ is rock steady because $1^n = 1$ for all $n \in \mathbb{N}$. When $a$ is 10\% less, we see a steady decline in $a^n$ as $n$ increases. But when $a$ is 10\% more than $1$, we see a growth in $a^n$ and $n$ increases. This wondrous behaviour contributes to the magic of the number $1$.
 
-@fig:x-to-n shows graphs of $x^n$ for $x \in [0, 1]$ and $n = 0, 1, 2, 4, 8, 128, 512$. As $n$ increases and $x$ approaches $1$, the graphs exhibit an almost perpendicular change in direction like a laterally inverted $L$. I find this behavior fascinating.
+@fig:x-to-n shows graphs of $x^n$ for $x \in [0, 1]$ and $n \in\{0, 1, 2, 4, 8, 16, 32, 64, 128, 512\}$. As $n$ increases and $x$ approaches $1$, the graphs exhibit an almost perpendicular change in direction like a laterally inverted $L$. I find this behavior fascinating, and it explains why geometric series converge when the common ratio $\lvert r \rvert < 1$.
 
-![Graphs of $y = x^n$ for $x \in [0, 1]$ and $n = 0, 1, 2, 4, 8, 128, 512$. Note that all curves pass through $(1, 1)$.]({attach}images/xn.png){#fig:x-to-n width=70% .modal-target}
+![Graphs of $y = x^n$ for $x \in [0, 1]$ and $n \in \{0, 1, 2, 4, 8, 16, 32, 64, 128, 512\}$. Note that all curves pass through $(1, 1)$.]({attach}images/xn.png){#fig:x-to-n width=80% .modal-target}
 
 <!--https://www.desmos.com/calculator/iybrvquibc-->
 
