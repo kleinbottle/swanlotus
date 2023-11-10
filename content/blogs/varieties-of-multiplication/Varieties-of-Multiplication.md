@@ -1,94 +1,89 @@
-% Varieties of Multiplication
-% R (Chandra) Chandrasekhar
-% 14 May 2012
-Welcome to the first of my [_Mathematical Musings_][mm] blogs. :-)
+---
+title: "Varieties of Multiplication"
+author: R (Chandra) Chandrasekhar
+date: 2012-05-14
+modified: 2023-11-10
+category: Mathematics
+tags: Mathematical Musings
+summary: 'I want to look at some of the varieties of multiplication that mathematicians have developed over time. It is a survey that will serve as a pinhole through which we can view how a single, simple mathematical idea has been expanded and elaborated into uses far beyond its historical moorings.'
+opengraphimage:
+---
 
-[mm]: http://swanlotus.org/tag/mathematical-musings/
+> This was my first blog---written in 2012---under the [_Mathemtical Musings_](https://swanlotus.netlify.app/tag/mathematical-musings) tag. The intention was to re-visit topics in mathematics that caused concern or disquiet in the earnest student of the subject. My hope was that ideas that appeared puzzling or forbidding at first sight could be coaxed to become friendly and helpful. Unhurried explanations and a different perspective would underpin the approach. I have retained, substantially unchanged, what I first wrote, to maintain the freshness, flavour, and vintage of the blog.
+
+## Prologue
 
 This blog is experimental in three ways.
 
-First, this is my maiden attempt to display mathematics on a web page. It  might look simple, but believe me, it is no mean task. Thanks to the concerted efforts of many generous people, I am using [MathJax][mathjax] to render the mathematics via [Pandoc.][pandoc] You should be able to view this blog without problems on most browsers. If not, please visit the [Colophon][colophon] page to see if what is there can help you. If all else fails, please send us feedback so that we could try to assist you.
+First, this is my maiden attempt to display mathematics on a web page. It  might look simple, but believe me, it is no mean task. Thanks to the concerted efforts of many generous people, I am using [MathJax](https://www.mathjax.org/) to render the mathematics via [Pandoc](https://pandoc.org/), and its flavour of [Markdown](https://garrettgman.github.io/rmarkdown/authoring_pandoc_markdown.html).
 
-[mathjax]: http://www.mathjax.org/
-[pandoc]: http://johnmacfarlane.net/pandoc/
-[colophon]: http://swanlotus.org/about/colophon
+The second experimental feature is what I have called "slicing the orange of knowledge with a different cut" in my book [_Secrets of Academic Success_](https://swanlotus.netlify.app/sas). The idea of multiplication runs like a thread through much of mathematics, from the most elementary stages of counting to what constitutes cutting edge research. Unfortunately, in the way mathematics is taught at present, multiplication is bundled with each stage of mathematics and viewed separately as an operation in that context.
 
-The second experimental feature is what I have called "slicing the orange of knowledge with a different cut" in my book [_Secrets of Academic Success._][sas] The idea of multiplication runs like a thread through much of mathematics, from the most elementary stages of counting to what constitutes cutting edge research. Unfortunately, in the way mathematics is taught at present, multiplication is bundled with each stage of mathematics and viewed separately as an operation in that context.
+By concentrating on the single unifying *idea* of multiplication, and viewing it across the whole of mathematics, we are indeed "slicing the orange of knowledge with a different cut". Even if you have not encountered some of the varieties of multiplication mentioned here, this exposure will help you grasp those varieties better when you do encounter them. Please [send me feedback](mailto:feedback.swanlotus@gmail.com) on whether this approach works for you.
 
-[sas]: http://swanlotus.org/sas
+Third, this is an _extremely long_ blog. In fact, I call it a [_slog_](https://www.vocabulary.com/dictionary/slog) \emojifont :wink: \normalfont. It took me some weeks to write it. So, take your time reading it. It is unlikely that you will finish it at one reading. _Read it in parts at your own pace_. After having read it once, cast your eyes and mind over the whole to get an overall view of the main ideas.
 
-By concentrating on the single unifying *idea* of multiplication, and viewing it across the whole of mathematics, we are indeed "slicing the orange of knowledge with a different cut". Even if you have not encountered some of the varieties of multiplication mentioned here, this exposure will help you grasp those varieties better when you do encounter them. Please send me feedback on whether this approach works for you.
+I thought of splitting the blog onto three or four manageable parts, but decided against it because I wanted the evolution of multiplication as an idea to be left whole in a single post. [Tell me](mailto:feedback.swanlotus@gmail.com) if it put you to sleep \emojifont :smile: \normalfont.
 
-Third, this blog is *extremely long* for a blog. It took me some weeks to write this blog. So, take your time reading it. It is unlikely that you will finish it at one reading. Read it in parts at your own pace. After having read it once, cast your eyes and mind over the whole to get an overall view of the main ideas.
-
-I thought of splitting the blog onto three or four manageable parts but decided against it because I wanted the evolution of multiplication as an idea to be left whole in a single post. Tell me if it put you to sleep. :-)
-
-With that out of the way, let us begin. I want to look at some of the varieties of multiplication mathematicians have developed over time. It is a survey that will serve as a pinhole through which we can view how a single simple mathematical idea has been expanded and elaborated into uses far beyond its historical moorings.
+With that out of the way, let us begin. I want to look at some of the varieties of multiplication that mathematicians have developed over time. It is a survey that will serve as a pinhole through which we can view how a single, simple mathematical idea has been expanded and elaborated into uses far beyond its historical moorings.
 
 # Multiplication as a binary operation
 
-Consistency is valued more in mathematics than in other disciplines. The idea is not to upset the apple cart but to expand it. Definitions, conventions, rules, facts, and fallacies, once established, are usually above argument and do not vary with time or place. So, let us start by defining some terms.
+Consistency is valued more in mathematics than in other disciplines. _The idea is not to upset the apple cart but to expand it_. Definitions, conventions, rules, facts, and fallacies---once established---are usually above argument, and do not vary with time or place. So, let us start by defining some terms.
 
 Multiplication is a *binary* operation: it is something that we do with *two* mathematical objects, whatever they might be. Usually, the two are *similar* objects or at least *compatible* objects.  The whole numbers are an example. We can and do multiply two whole numbers.
 
 # Multiplication as repeated addition
 
-Practically and historically, multiplication arose as an arithmetic convenience for repeated addition. If we added three lots of the number $4$ we would have $4 + 4 + 4 = 12$. Using the shorthand of multiplication, we write this as $4 \times 3 = 12$. _So, multiplication is a shorthand for repeated addition._
+Practically and historically, multiplication arose as an arithmetic convenience for repeated addition. If we add the number $3$ four times, we have
+$$
+3 + 3 + 3 + 3 = (3 + 3) + (3 + 3) = 6 + 6 = 12
+$$
+The reason for adding $3$ in _pairs_, as shown above, is that addition is a binary operation, just like multiplication. Using the shorthand of multiplication, we write this as $4 \times 3 = 12$. _So, multiplication is a shorthand for repeated addition._
+
+When we see the arithmetic expression $4 \times 3$, we say "four times three" in English.  Or, we could equally well say "four threes", as I was taught at school, which is less ambiguous and much clearer. Think of four lots of three being added together like we have seen above:
+$$
+\begin{array}{c c c l}
+4 &\times &3 &= 3 + 3 + 3 + 3 = (3 + 3) + (3 + 3) = 6 + 6 = 12\\
+\uparrow & & \uparrow & \\
+\mbox{multiplier} & & \mbox{multiplicand} & \\
+\end{array}
+$${#eq:multiplier}
+The number $4$ is the [multiplier](https://www.thefreedictionary.com/multiplier) and the number $3$ is the [multiplicand](https://mathworld.wolfram.com/Multiplicand.html). This is the standard definition.
 
 We say that the "something" which is repeatedly added, is the *multiplicand.* The number of times that "something" is added is the *multiplier.* And the result of this operation is the *product.* Thus far we are in perfect harmony with accepted usage.
 
-# A matter of words
+## Commutativity and multiplication
 
-When we see the expression $4 \times 3$ we say "four times three". What exactly do you understand by the English phrase "four times three"? Do you think of three lots of four being added together as I do?  Or do you think of "four lots of three" as others do?
+Multiplication of numbers is [commutative](), i.e., the multiplier and multiplicand can change roles without affecting the result.
+$$
+4 \times 3 = 3 \times 4 = 12.
+$${#eq:comm}
+Note that at the very left of @eq:comm, $4$ is the multiplier, and $3$ the multiplicand, whereas in the middle of @eq:comm, $3$ is the multiplier and $4$ the multiplicand. To labour the point,
+$$
+\begin{array}{c c c l}
+3 &\times &4 &= 4 + 4 + 4 = (4 +4) + 4 = 4 + (4 + 4) = 12\\
+\uparrow & & \uparrow & \\
+\mbox{multiplier} & & \mbox{multiplicand} & \\
+\end{array}
+$${#eq:multiplicand}
+Although the two numbers have changed their names and roles from @eq:multiplier to  @eq:multiplicand, the result is the same because the multiplication of numbers is commutative.
 
-This semantic imprecision of natural languages has spawned a dichotomy over how we view the operation of multiplication. If $4 \times 3 = 4 + 4 + 4 = 12$, then $4$ is the multiplicand and $3$ the multiplier.
+To accommodate our [zeitgeist](https://www.thefreedictionary.com/zeitgeist), the distinction between multiplier and multiplicand is fading away, in favour of the symmetrical  and neutral term _factor_. The result of multiplying two _factors_ is still the _product_, as before.
 
-But if, au contraire, you view $4 \times 3 = 3 + 3 + 3 + 3 = 12$, then $3$ is the multiplicand and $4$ the multiplier. Reputable reference sites like [Wolfram MathWorld,][mathworld] and [TheFreeDictionary][free] adopt this latter meaning and identify the multiplicand with the number *following* the $\times$ sign without explaining why. This can cause disquiet in your mind if you are serious and methodical student.
-
-[mathworld]: http://mathworld.wolfram.com/Multiplicand.html
-[free]: http://www.thefreedictionary.com/multiplicand
-
-I have [elsewhere said][web] "make the Web your friend" and what is there will help you work through basic confusions, contradictions, and controversies like these. Let us therefore turn to the Web for some clarification.
-
-[web]: http://swanlotus.org/web
-
-The question of which is the multiplicand and which the multiplier is discussed [at the authoritative "Ask Dr Math" at The Math Forum \@ Drexel.] [mathforum] That discussion throws light on the semantic basis for the ambiguity. It concludes that because multiplication is [commutative][commutative] meaning that *the order of the two numbers in a multiplication may be swapped without any change to the result,* i.e., $4 \times 3 = 3 \times 4$, we nowadays call both the multiplicand and multiplier as a *factor.* We thereby dispense with the needless distinction between multiplicand and multiplier, and with it, the confusion that it causes.
-
-[mathforum]: http://mathforum.org/library/drmath/view/58567.html
-
-# Which is the multiplicand anyway?
-
-However, I do not think calling both terms *factor* is the way out. Humour my digression if you will on why I think the multiplicand is the *first term* in a symbolic multiplication, even though it is contrary to what some reference sites aver.
-
-Let us turn away from language and instead view multiplication symbolically in light of the other arithmetic operations. Of the four arithmetic operations, only addition and multiplication are commutative; subtraction and division are not. It is trivial to see that $5 - 3 \neq 3 - 5$ and likewise, $8 \div 2 \neq 2 \div 8$.
-
-## Analogy with division
-
-Consider the division expressed by $8 \div 2$. The first term, $8$, is what we do something to by the operation of division. We break it up into parts. The number of parts is the second term, $2$. The first term is called the *dividend* and the second term is called the *divisor*. And because division is not commutative, we do not have the luxury of swapping around the two terms.
-
-Turn now for a moment to multiplication and consider $8 \times 2$. We can likewise think that the first term $8$ is what we do something to by the operation of multiplication. We add lots of it. The number of lots is the second term, $2$. So, we associate the *first* term with the *multiplicand* and the *second* term with the *multiplier*.
-
-The two operations, division and multiplication, are thus matched symmetrically, symbolically, and  semantically. We also have concordant terminology as shown below.
-
-<!--Insert multiplicand.png here-->
-
-[caption id="attachment_82" align="aligncenter" width="300"]<a href="http://swanlotus.org/wp-content/uploads/multiplicand.png"><img src="http://swanlotus.org/wp-content/uploads/multiplicand-300x60.png" alt="Analogy between multiplication and division to justify correct identification of multiplicand." width="300" height="60" class="img-responsive size-medium wp-image-82" /></a> Analogy between multiplication and division to justify correct identification of multiplicand.[/caption]
-
-Above all, we achieve consistency. I think we ought to unshackle mathematical definitions from the inexactitude of natural languages and adopt a streamlined nomenclature for the meaning of arithmetic operands using their symbols.^[Talking about augend, addend, minuend, and subtrahend will take us too far astray from our main topic for today. So let us leave them for another day. :-)]
-
-# Rectangular numbers and suchlike
+## Rectangular numbers
 
 Historically, stones were used to count. And the stones representing any number may be arranged in geometric shapes, like lines, triangles, rectangles, and so on. This gives us a geometrical or pictorial representation of numbers.
 
-All numbers which are the products of two whole numbers may be expressed as *rectangular numbers.* The symbolic operation $4 \times 3$ may be shown pictorially as a series of $12$ icons arranged  four across and three high. Because we may swap the order of multiplication, we may also show it as $12$ rectangles three across and four high. As we have seen, whole number multiplication is commutative. The image below shows this equivalence.
+All numbers which are the products of two whole numbers, neither of which is one, may be expressed as *rectangular numbers*. The symbolic operation $4 \times 3$ may be shown pictorially as a series of $12$ icons arranged four across and three high. Because we may swap the order of multiplication, we may also show it as $12$ rectangles three across and four high. As we have seen, multiplication of numbers is commutative. The image below shows this equivalence.
 
-<!--Insert four-times-three.png here-->
-
-[caption id="attachment_80" align="aligncenter" width="334"]<a href="http://swanlotus.org/wp-content/uploads/four-times-three.png"><img src="http://swanlotus.org/wp-content/uploads/four-times-three.png" alt="Geometric illustration of commutativity of four times three." width="334" height="164" class="img-responsive size-full wp-image-80" /></a> Geometric illustration of commutativity of four times three.[/caption]
+![The multiplier is the number of rows, and the multiplicand is the number of columns.]({attach}images/four-by-three.png){#fig:four-by-three width=70% .modal-target}
 
 ## Factorization is not unique
 
-There is a subtle point to grasp here. The number $12$ is called a *composite* number and its *factors* in the illustrated representation are $4$ and $3$. _But this factorization is not unique._ We could have equally correctly claimed that $2 \times 6 = 12$ leading to a different factorization. While we may assert that both $4 \times 3$ and $2 \times 6$ lead to the same unique composite number, we cannot reverse the process and claim uniqueness of factors in the opposite direction.
+There is a subtle point to grasp here. The number $12$ is called a *composite* number and its *factors* in the illustrated representation are $4$ and $3$. _But this factorization is not unique._ We could have equally correctly claimed that $2 \times 6 = 12$ leading to a different factorization. While we may assert that both $4 \times 3$ and $2 \times 6$ lead to the same unique composite number, we cannot reverse the process and claim uniqueness of factors for any particular composite number.
+
+![Twelve is a composite number.]({attach}images/six-by-two.png){#fig:six-by-two width =70% .modal-target}
 
 # Square numbers
 
