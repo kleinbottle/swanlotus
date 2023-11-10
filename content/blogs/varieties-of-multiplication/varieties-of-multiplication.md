@@ -9,7 +9,7 @@ summary: 'I want to look at some of the varieties of multiplication that mathema
 opengraphimage:
 ---
 
-> This was my first blog---written in 2012---under the [_Mathemtical Musings_](https://swanlotus.netlify.app/tag/mathematical-musings) tag. The intention was to re-visit topics in mathematics that caused concern or disquiet in the earnest student of the subject. My hope was that ideas that appeared puzzling or forbidding at first sight could be coaxed to become friendly and helpful. Unhurried explanations and a different perspective would underpin the approach. I have retained, substantially unchanged, what I first wrote, to maintain the freshness, flavour, and vintage of the original blog, even if it is a little rough around the edges.
+> This was my first blog---written in 2012---under the [_Mathemtical Musings_](https://swanlotus.netlify.app/tag/mathematical-musings) tag. The intention was to re-visit topics in mathematics that trigger concern or disquiet in the earnest student of the subject. My hope was that ideas that appeared puzzling or forbidding at first sight could be coaxed to become friendly and helpful. Unhurried explanations and a different perspective would underpin the approach. I have retained, substantially unchanged, what I first wrote, to maintain the freshness, flavour, and vintage of the original blog, even if it is a little rough around the edges.
 
 ## Prologue
 
@@ -21,9 +21,9 @@ The second experimental feature is what I have called "slicing the orange of kno
 
 By concentrating on the single unifying *idea* of multiplication, and viewing it across the whole of mathematics, we are indeed "slicing the orange of knowledge with a different cut". Even if you have not encountered some of the varieties of multiplication mentioned here, this exposure will help you grasp those varieties better when you do encounter them. Please [send me feedback](mailto:feedback.swanlotus@gmail.com) on whether this approach works for you.
 
-Third, this is an _extremely long_ blog. In fact, I call it a [_slog_](https://www.vocabulary.com/dictionary/slog) \emojifont :wink: \normalfont. It took me some weeks to write it. So, take your time reading it. It is unlikely that you will finish it at one reading. _Read it in parts at your own pace_. After having read it once, cast your eyes and mind over the whole to get an overall view of the main ideas.
+Third, this is an _extremely long_ blog. In fact, I call it a [_slog_](https://www.vocabulary.com/dictionary/slog) \emojifont :wink: \normalfont. It took me some weeks to write it. So, take your time reading it. It is unlikely that you will finish it at one sitting. _Read it in parts at your own pace_. After having read it once, cast your eyes and mind over the whole to get an overall view of the main ideas.
 
-I thought of splitting the blog onto three or four manageable parts, but decided against it because I wanted the evolution of multiplication as an idea to be left whole in a single post. [Tell me](mailto:feedback.swanlotus@gmail.com) if it put you to sleep \emojifont :smile: \normalfont.
+I thought of splitting the blog into three or four manageable parts, but decided against it because I wanted the evolution of multiplication as an idea to be left whole in a single post. [Tell me](mailto:feedback.swanlotus@gmail.com) if it put you to sleep \emojifont :smile: \normalfont.
 
 With that out of the way, let us begin. I want to look at some of the varieties of multiplication that mathematicians have developed over time. It is a survey that will serve as a pinhole through which we can view how a single, simple mathematical idea has been expanded and elaborated into uses far beyond its historical moorings.
 
@@ -43,10 +43,10 @@ The reason for adding $3$ in _pairs_, as shown above, is that addition is a bina
 
 When we see the arithmetic expression $4 \times 3$, we say "four times three" in English.  Or, we could equally well say "four threes", as I was taught at school, which is less ambiguous and much clearer. Think of four lots of three being added together like we have seen above:
 $$
-\begin{array}{c c c l}
+\begin{array}{c c c r}
 4 &\times &3 &= 3 + 3 + 3 + 3 = (3 + 3) + (3 + 3) = 6 + 6 = 12\\
-\uparrow & & \uparrow & \\
-\mbox{multiplier} & & \mbox{multiplicand} & \\
+\uparrow & & \uparrow & \uparrow\\
+\mbox{multiplier} & & \mbox{multiplicand} & \mbox{product}\\
 \end{array}
 $${#eq:multiplier}
 The number $4$ is the [multiplier](https://www.thefreedictionary.com/multiplier) and the number $3$ is the [multiplicand](https://mathworld.wolfram.com/Multiplicand.html). This is the standard definition.
@@ -61,10 +61,10 @@ $$
 $${#eq:comm}
 Note that at the very left of @eq:comm, $4$ is the multiplier, and $3$ the multiplicand, whereas in the middle of @eq:comm, $3$ is the multiplier and $4$ the multiplicand. To labour the point,
 $$
-\begin{array}{c c c l}
+\begin{array}{c c c r}
 3 &\times &4 &= 4 + 4 + 4 = (4 +4) + 4 = 4 + (4 + 4) = 12\\
-\uparrow & & \uparrow & \\
-\mbox{multiplier} & & \mbox{multiplicand} & \\
+\uparrow & & \uparrow & \uparrow\\
+\mbox{multiplier} & & \mbox{multiplicand} & \mbox{product}\\
 \end{array}
 $${#eq:multiplicand}
 Although the two numbers have changed their names and roles from @eq:multiplier to  @eq:multiplicand, the result is the same because the multiplication of numbers is commutative.
@@ -81,13 +81,13 @@ All numbers which are the products of two whole numbers, neither of which is one
 
 ## Factorization is not unique
 
-There is a subtle but important point to grasp here. The number $12$ is called a *composite* number and its *factors* in the illustrated representation are $4$ and $3$. _But this factorization is not unique._ We could have equally correctly claimed that $2 \times 6 = 12$ leading to a different factorization. While we may assert that both $4 \times 3$ and $2 \times 6$ lead to the same unique composite number, we cannot reverse the process and claim uniqueness of factors for any particular composite number.
+There is a subtle but important point to grasp here. The product $12$ is called a *composite* number and its *factors* in the illustrated representation are $4$ and $3$. _But this factorization is not unique._ We could have equally correctly claimed that $2 \times 6 = 12$ leading to a different factorization. While we may assert that both $4 \times 3$ and $2 \times 6$ lead to the same unique composite number as the product, we cannot reverse the process and claim uniqueness of factors for any particular composite number.
 
-![Twelve is a composite number. It may be factorized as $2 \times 6$ or as $4 \times 3$ among others.]({attach}images/six-by-two.png){#fig:six-by-two width=70% .modal-target}
+![Twelve is a composite number. It may be factorized as $2 \times 6$, $4 \times 3$, or as the trivial $1 \times 12$.]({attach}images/six-by-two.png){#fig:six-by-two width=70% .modal-target}
 
 # Square numbers
 
-A square is a special case of a rectangle whose length and width are equal. When we write $3 \times 3 = 9$, and we arrange the resulting nine squares in a rectangle, we get a *square number* of three squares by three squares. This is why we say that when we multiply a number by itself, we are *squaring* it.
+A square is a special case of a rectangle whose length and width are equal. When we write $3 \times 3 = 9$, and we arrange the resulting nine squares in a rectangle, we get a *square number* of three squares by three squares. This is why we say that we are *squaring* a number when we multiply it by itself.
 
 ![Nine is a square number. Because $3 \times 3 = 9$, it may be so portrayed geometrically.]({attach}images/three-square.png){#fig:three-square width=20% .modal-target}
 
@@ -151,31 +151,25 @@ The symbol for multiplication that we first learn is the rotated cross that look
 
 ## Parentheses
 
-Parentheses, written in pairs as (), have traditionally denoted *precedence* during evaluation of an expression. Division and multiplication are evaluated *before* subtraction and addition. This order may be altered by including terms in brackets, which are accorded highest priority during evaluation. So, $5 \times 4 + 1 = 20 + 1 = 21$, whereas $5 \times (4 + 1) = 5 \times 5 = 25$.
+Parentheses, written in pairs as (), have traditionally denoted *precedence* during evaluation of an expression. Division and multiplication are evaluated *before* subtraction and addition. This order may be altered by including terms in parentheses, which are accorded highest priority during evaluation. So, $5 \times 4 + 1 = 20 + 1 = 21$, whereas $5 \times (4 + 1) = 5 \times 5 = 25$.
 
-When our discourse embraces negative quantities, in order to avoid ambiguity, we need something to enclose both the negative sign $-$ and the number to which it applies. The expression $5 \times -4$ is ambiguous and therefore never written so when we actually mean $5 \times (-4)$. This led to two pairs of parentheses *without any explicit multiplication symbol in between* to denote the multiplication of the two enclosed numbers thus: $(5)(-4) = 5 \times (-4) = -20$.
+When our discourse embraces negative quantities, in order to avoid ambiguity, we need something to enclose both the negative sign, $-$, and the number to which it applies. The expression $5 \times -4$ is ambiguous and therefore never written so when we actually mean $5 \times (-4)$. This notation led to two pairs of parentheses *without any explicit multiplication symbol in between* to denote the multiplication of the two enclosed numbers thus: $(5)(-4) = 5 \times (-4) = -20$.
 
 ## Juxtaposition without any symbol
 
 The archetypal symbol for the unknown in algebra is $x$, which looks a little too much like the multiplication symbol $\times$, especially when handwritten. To avoid confusion, a convention was adopted that when two *algebraic variables,* representing unknown quantities, were written next to each other or *juxtaposed,* it indicated the multiplication of the two quantities.
 
-There is no intervening symbol between the two variables. Thus, $xy = (x)(y) = x \times y$. Note that we cannot use this convention with digits representing numbers because of *place value* in our decimal system. The number $45$ does *not* represent the product of $4$ and $5$.
+There is no intervening symbol between the two variables. Thus, $x \times y = (x)(y) = xy$. Note that this convention is for algebraic variables only. We cannot use this convention with digits representing numbers because of *place value* in our decimal system. The number $45$ does *not* represent the product of $4$ and $5$ but actually means $40 + 5 = 45$.
 
 ## Centred dot
 
-As more exotic objects entered the mathematical collection, yet another symbol was devised to show (at least one form of) multiplication. The dot in the middle $\cdot$ was used to indicate one of the several products of *vectors,* which we shall discuss [later][dotproduct] in this blog. Again, the dot is not useful in the context of digits because it could be confused with a decimal point.
+As more exotic objects entered the mathematical collection, yet another symbol was devised to show (at least one form of) multiplication. The vertically centred dot $\cdot$ was used to indicate one of the several products of *vectors,* which we shall discuss [later](#dot-or-scalar-product) in this blog. Again, the dot is not useful in the context of digits because it could be confused with a decimal point.
 
-[dotproduct]: #dot-or-scalar-product
-
-So, there is both a rationale and a mathematical context for the introduction of each symbol for multiplication, according to time and need.
+So, there is both a rationale and a mathematical context for the introduction of each symbol for multiplication, according to time, need, and circumstance.
 
 ## Asterisk
 
-The latter half of the twentieth century saw the introduction of yet another symbol for multiplication, this time for use in programming languages. Because the [ASCII character set,][ascii] devised during the era of [teleprinters,][teleprinter] did not include the symbol $\times$ for multiplication, another available symbol had to be chosen for multiplication. The winner was the [asterisk,][asterisk] denoted by \*. Note that even with the symbol \*, multiplying $3$ by $-4$ still requires one to type $3 * (-4)$ to avoid ambiguity.
-
-[ascii]: http://tools.ietf.org/html/rfc20
-[teleprinter]: http://en.wikipedia.org/wiki/Teleprinter
-[asterisk]: http://en.wikipedia.org/wiki/Asterisk
+The latter half of the twentieth century saw the introduction of yet another symbol for multiplication, this time for use in programming languages. Because the [ASCII character set,](https://datatracker.ietf.org/doc/html/rfc20) devised during the era of [teleprinters,](https://en.wikipedia.org/wiki/Teleprinter) did not include the symbol $\times$ for multiplication, another available symbol had to be chosen for multiplication. The winner was the [asterisk](https://en.wikipedia.org/wiki/Asterisk), denoted by \*. Note that even with the symbol \*, multiplying $3$ by $-4$ still requires one to type $3 * (-4)$ to avoid ambiguity.
 
 Repeated multiplication---or [exponentiation](#exponentiation)---is usually represented by a double asterisk ** in most computing languages, although a caret ^ assumes this function in some languages.
 
@@ -183,7 +177,7 @@ Repeated multiplication---or [exponentiation](#exponentiation)---is usually repr
 
 Just as multiplication with whole numbers is repeated addition, exponentiation is repeated multiplication. A new notation is used to indicate repeated multiplication. We denote it by a _superscript_ indicating how many times the number is multiplied: $5 \times 5 \times 5 = 5^{3}$, and so on. The number $5$ is called the *base* and $3$ the *exponent*. We call the number $5^{3}$ as "five cubed" for reasons already explained, or as "five (raised) to the (power of) three".
 
-What is the exponent in the number $5?$ The base is $5$ but the exponent is *implicit* or understood but not written. If we take $5 = 5^{1}$, the $5 \times 5 \times 5 = 5^{1} \times 5^{1} \times 5^{1} = 5^{3}$. With exponents, when we multiply numbers with the same base, we can simply add the exponents. And this fact underlies a very powerful computational device---logarithms.
+What is the exponent in the number $5?$ The base is $5$ but the exponent is *implicit* or understood but not written. If we take $5 = 5^{1}$, the $5 \times 5 \times 5 = 5^{1} \times 5^{1} \times 5^{1} = 5^{3}$. When we multiply numbers with the same base, we can simply add the exponents. And this fact underlies a very powerful computational device---logarithms.
 
 # Logarithms: multiplying by adding
 
