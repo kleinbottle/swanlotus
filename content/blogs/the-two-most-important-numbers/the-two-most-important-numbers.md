@@ -328,7 +328,7 @@ Constants in polynomials may be written using $x^0$ in place of one. For example
 $$
 2x^2 + 3x + 2 = 2x^2 + 3x^1 + 2x^0.
 $${#eq:polyexp}
-@eq:polyexp shows how consistent the terms in a polynomial are. They are all powers of $x$ written in descending fashion, although by convention, certain terms are understood and therefore implicit. The omission of the index in the term $3x^1$ and the $x^0$ in the term $2x^0$ could cause disquiet in the newcomer to polynomials. It is better to dispel that unease right away, by understanding that it is a mere convention that has led to this departure from absolute consistency.
+@eq:polyexp shows how consistent the terms in a polynomial are. They are all powers of $x$ written in descending fashion, although by convention, certain terms are understood and therefore implicit. The omission of the index in the term $3x^1$ and the $x^0$ in the term $2x^0$ could cause disquiet in the newcomer to polynomials. It is best to dispel that unease right away, by understanding that it is a mere convention that has led to this departure from absolute consistency.
 
 In the succeeding sections, we take a look a some lesser known aspects of zero and one.
 
