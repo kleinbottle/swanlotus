@@ -9,7 +9,7 @@ summary: 'I want to look at some of the varieties of multiplication that mathema
 opengraphimage:
 ---
 
-> This was my first blog---written in 2012---under the [_Mathemtical Musings_](https://swanlotus.netlify.app/tag/mathematical-musings) tag. The intention was to re-visit topics in mathematics that caused concern or disquiet in the earnest student of the subject. My hope was that ideas that appeared puzzling or forbidding at first sight could be coaxed to become friendly and helpful. Unhurried explanations and a different perspective would underpin the approach. I have retained, substantially unchanged, what I first wrote, to maintain the freshness, flavour, and vintage of the blog.
+> This was my first blog---written in 2012---under the [_Mathemtical Musings_](https://swanlotus.netlify.app/tag/mathematical-musings) tag. The intention was to re-visit topics in mathematics that caused concern or disquiet in the earnest student of the subject. My hope was that ideas that appeared puzzling or forbidding at first sight could be coaxed to become friendly and helpful. Unhurried explanations and a different perspective would underpin the approach. I have retained, substantially unchanged, what I first wrote, to maintain the freshness, flavour, and vintage of the original blog, even if it is a little rough around the edges.
 
 ## Prologue
 
@@ -77,37 +77,35 @@ Historically, stones were used to count. And the stones representing any number 
 
 All numbers which are the products of two whole numbers, neither of which is one, may be expressed as *rectangular numbers*. The symbolic operation $4 \times 3$ may be shown pictorially as a series of $12$ icons arranged four across and three high. Because we may swap the order of multiplication, we may also show it as $12$ rectangles three across and four high. As we have seen, multiplication of numbers is commutative. The image below shows this equivalence.
 
-![The multiplier is the number of rows, and the multiplicand is the number of columns.]({attach}images/four-by-three.png){#fig:four-by-three width=70% .modal-target}
+![The multiplier is the number of rows, and the multiplicand is the number of columns.]({attach}images/four-by-three.png){#fig:four-by-three width=50% .modal-target}
 
 ## Factorization is not unique
 
-There is a subtle point to grasp here. The number $12$ is called a *composite* number and its *factors* in the illustrated representation are $4$ and $3$. _But this factorization is not unique._ We could have equally correctly claimed that $2 \times 6 = 12$ leading to a different factorization. While we may assert that both $4 \times 3$ and $2 \times 6$ lead to the same unique composite number, we cannot reverse the process and claim uniqueness of factors for any particular composite number.
+There is a subtle but important point to grasp here. The number $12$ is called a *composite* number and its *factors* in the illustrated representation are $4$ and $3$. _But this factorization is not unique._ We could have equally correctly claimed that $2 \times 6 = 12$ leading to a different factorization. While we may assert that both $4 \times 3$ and $2 \times 6$ lead to the same unique composite number, we cannot reverse the process and claim uniqueness of factors for any particular composite number.
 
-![Twelve is a composite number.]({attach}images/six-by-two.png){#fig:six-by-two width =70% .modal-target}
+![Twelve is a composite number. It may be factorized as $2 \times 6$ or as $4 \times 3$ among others.]({attach}images/six-by-two.png){#fig:six-by-two width=70% .modal-target}
 
 # Square numbers
 
-<!--Insert three-square.png here.-->
+A square is a special case of a rectangle whose length and width are equal. When we write $3 \times 3 = 9$, and we arrange the resulting nine squares in a rectangle, we get a *square number* of three squares by three squares. This is why we say that when we multiply a number by itself, we are *squaring* it.
 
-[caption id="attachment_85" align="alignright" width="121"]<a href="http://swanlotus.org/wp-content/uploads/three-square.png"><img src="http://swanlotus.org/wp-content/uploads/three-square.png" alt="Why we say three times three is three squared." width="121" height="121" class="img-responsive size-full wp-image-85" /></a> Why we say three times three is three squared.[/caption]
+![Nine is a square number. Because $3 \times 3 = 9$, it may be so portrayed geometrically.]({attach}images/three-square.png){#fig:three-square width=20% .modal-target}
 
-A square is a special case of a rectangle whose length and width are equal. When we write $3 \times 3 = 9$, and we arrange the resulting nine icons in a rectangle, we get a *square number* of three by three icons. This is why we say that when we multiply a number by itself, we are *squaring* it.
-
-One could carry this analogy further and move into three dimensions to represent a number like $3 \times 3 \times 3 = 27$ with icons arranged in a *cube.*^[Try this with toy blocks to convince yourself of its truth.] Again, this is why we say we are *cubing* a number when we multiply it by itself twice.
+One could carry this analogy further and move into three dimensions to represent a number like $3 \times 3 \times 3 = 27$ with small cubes arranged in a large *cube.*^[Try this with toy blocks to convince yourself of its truth.] This is why we say we are *cubing* a number when we multiply it by itself twice.
 
 # Prime numbers
 
-A number which cannot be expressed as the product of two numbers other than one and itself is called a *prime number.* Prime numbers can only be arranged in a line, never in a rectangle. Seven is a prime number as illustrated below.
+A number which cannot be expressed as the product of two numbers other than one and itself is called a *prime number*. Prime numbers can only be arranged in a line, never in a rectangle. Seven is a prime number as illustrated below.
 
-<!--Insert seven.png here-->
-
-[caption id="attachment_84" align="aligncenter" width="383"]<a href="http://swanlotus.org/wp-content/uploads/seven.png"><img src="http://swanlotus.org/wp-content/uploads/seven.png" alt="Seven is a prime number. Its seven icons cannot be re-arranged in a rectangle." width="383" height="43" class="img-responsive size-full wp-image-84" /></a> Seven is a prime number. Its seven icons cannot be re-arranged in a rectangle.[/caption]
+![Seven is a prime number. Its seven icons cannot be re-arranged in a rectangle.]({attach}images/seven.png){#fig:seven width=45% .modal-target}
 
 Try to rearrange the seven icons into a rectangle to convince yourself that it is not possible and that seven is prime. Experimenting like this will help you better understand what testing for primality entails.
 
+Prime numbers are like building blocks that may be used to build larger numbers by multiplication.
+
 ## Prime factorization is unique
 
-Let us look at the number $12$ again, breaking it down this time into its *prime factors* so: $12 = 2 \times 2 \times 3$. There are two instances of the number $2$ and one instance of the number $3$. These numbers cannot be decomposed any further because they are prime. If we disregard the order of arrangement of these prime factors, i.e., we do not distinguish between $2 \times 2 \times 3$ and $2 \times 3 \times 2$ and so on, we may assert that *the prime factors of a composite number are unique.*
+Let us look at the number $12$ again, breaking it down this time into its *prime factors* so: $12 = 2 \times 2 \times 3$. There are two instances of the number $2$ and one instance of the number $3$. These numbers cannot be decomposed any further because they are prime. If we disregard the order of arrangement of these prime factors, i.e., we do not distinguish between $2 \times 2 \times 3$ and $2 \times 3 \times 2$ and so on, we may assert that *the prime factors of a composite number are unique*. This statement is known as the [Fundamental Theorem of Arithmetic](https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic). It is also sometimes called the Prime Factorization Theorem.
 
 # Fractions and negative numbers
 
@@ -115,32 +113,25 @@ Negative numbers arose when loans had to be given and taken. They also find use 
 
 If you have no qualms accepting negative numbers, you might still be confounded by what we could mean by multiplying two negative numbers. The answer, which might startle you, is that _the product of two negative numbers is a positive number._
 
-I have dealt with the arithmetic of fractions and negative numbers in my freely downloadable chapter ["Arithmetic Revisited"][arithmetic] from [_Secrets of Academic Success_.][sas] I urge you to read it if you feel the need. For now, it will suffice if you can accept the fact that $(-1)(-1) = +1 = 1$.
-
-[arithmetic]: http://swanlotus.org/wp-content/uploads/arithmetic-revisited.pdf
+I have dealt with the arithmetic of fractions and negative numbers in my freely downloadable chapter "Arithmetic Revisited" from [_Secrets of Academic Success_](https://swanlotus.netlify.app/sas-manuscript/SAS-partial.pdf). I urge you to read it if you feel the need. For now, it will suffice if you can accept that $(-1)(-1) = +1 = 1$, or better still, [read and understand this justification](https://math.stackexchange.com/a/384866/19098).
 
 # Laws of arithmetic
 
-We now return to the assertion made at the start of this blog that multiplication is a *binary* operation: something that happens with *two* mathematical objects. You might object that we can and do multiply three numbers. For example, $2 \times 3 \times 5 = 30$ and no one would doubt the veracity of that assertion. Why then is multiplication classified as a binary operation and how might it be reconciled with what we know about the multiplication of three or more numbers?
+We now return to the assertion, made at the start of this blog, that multiplication is a *binary* operation: something that happens with *two* mathematical objects. You might object that we can and do multiply three numbers. For example, $2 \times 3 \times 5 = 30$ and no one would doubt the veracity of that assertion. Why then is multiplication classified as a binary operation and how might it be reconciled with what we know about the multiplication of three or more numbers?
 
 Early mathematics was eminently practical, concerned with computing areas and volumes, profit and loss, and so on. In the course of time, mathematicians started to systematize their body of knowledge by introducing logic and rigour into their subject. They wanted to construct an intellectual edifice that was stable and durable.
 
 Classifying all four arithmetic operations as binary and identifying the laws they obeyed was one of these foundational reforms.
 
-The numbers we encounter on a daily basis are called the [real numbers,][real] although this is not their mathematically rigorous definition. :-)
+The numbers we encounter on a daily basis are called the [real numbers](https://en.wikipedia.org/wiki/Real_number), although this is not their mathematically rigorous definition. \emojifont :wink: \normalfont
 
-The multiplication of real numbers obeys certain laws, of which we list only three here:
+The multiplication of real numbers obeys certain laws, of which we list three here:
 
-#.  [Commutativity:][commutativity] $ab = ba$.
+#.  [Commutativity](https://mathworld.wolfram.com/Commutative.html): $ab = ba$.
 
-#.  [Associativity:][associativity] $a(bc) = (ab)c$.
+#.  [Associativity](https://mathworld.wolfram.com/Associative.html): $a(bc) = (ab)c$.
 
-#.  [Distributivity of multiplication over addition:][distributivity] $a(b+c) = ab + ac$ and $(b+c)a = ba + ca$.
-
-[real]: http://mathworld.wolfram.com/RealNumber.html
-[commutativity]: http://mathworld.wolfram.com/Commutative.html
-[associativity]: http://mathworld.wolfram.com/Associative.html
-[distributivity]: http://mathworld.wolfram.com/Distributive.html
+#.  [Distributivity of multiplication over addition](https://mathworld.wolfram.com/Distributive.html): $a(b+c) = ab + ac$ and $(b+c)a = ba + ca$.
 
 Of the three, we have already spoken about commutativity before. Here, we will concentrate on what associativity implies and why we need it.
 
@@ -186,13 +177,11 @@ The latter half of the twentieth century saw the introduction of yet another sym
 [teleprinter]: http://en.wikipedia.org/wiki/Teleprinter
 [asterisk]: http://en.wikipedia.org/wiki/Asterisk
 
-Repeated multiplication---or [*exponentiation*][exp]---is usually represented by a double asterisk ** in most computing languages.
-
-[exp]: #exponentiation
+Repeated multiplication---or [exponentiation](#exponentiation)---is usually represented by a double asterisk ** in most computing languages, although a caret ^ assumes this function in some languages.
 
 # Exponentiation
 
-Just as multiplication is repeated addition, exponentiation is repeated multiplication. A new notation is used to indicate repeated multiplication. We denote it by a superscript indicating how many times the number is multiplied: $5 \times 5 \times 5 = 5^{3}$, and so on. The number $5$ is called the *base* and $3$ the *exponent*. We call the number $5^{3}$ as "five cubed" for reasons already explained, or as "five (raised) to the power of three".
+Just as multiplication with whole numbers is repeated addition, exponentiation is repeated multiplication. A new notation is used to indicate repeated multiplication. We denote it by a _superscript_ indicating how many times the number is multiplied: $5 \times 5 \times 5 = 5^{3}$, and so on. The number $5$ is called the *base* and $3$ the *exponent*. We call the number $5^{3}$ as "five cubed" for reasons already explained, or as "five (raised) to the (power of) three".
 
 What is the exponent in the number $5?$ The base is $5$ but the exponent is *implicit* or understood but not written. If we take $5 = 5^{1}$, the $5 \times 5 \times 5 = 5^{1} \times 5^{1} \times 5^{1} = 5^{3}$. With exponents, when we multiply numbers with the same base, we can simply add the exponents. And this fact underlies a very powerful computational device---logarithms.
 
