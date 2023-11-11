@@ -27,13 +27,13 @@ I thought of splitting the blog into three or four manageable parts, but decided
 
 With that out of the way, let us begin. I want to look at some of the varieties of multiplication that mathematicians have developed over time. It is a survey that will serve as a pinhole through which we can view how a single, simple mathematical idea has been expanded and elaborated into uses far beyond its historical moorings.
 
-# Multiplication as a binary operation
+## Multiplication as a binary operation
 
 Consistency is valued more in mathematics than in other disciplines. _The idea is not to upset the apple cart but to expand it_. Definitions, conventions, rules, facts, and fallacies---once established---are usually above argument, and do not vary with time or place. So, let us start by defining some terms.
 
 Multiplication is a *binary* operation: it is something that we do with *two* mathematical objects, whatever they might be. Usually, the two are *similar* objects or at least *compatible* objects.  The whole numbers are an example. We can and do multiply two whole numbers.
 
-# Multiplication as repeated addition
+## Multiplication as repeated addition
 
 Practically and historically, multiplication arose as an arithmetic convenience for repeated addition. If we add the number $3$ four times, we have
 $$
@@ -85,7 +85,7 @@ There is a subtle but important point to grasp here. The product $12$ is called 
 
 ![Twelve is a composite number. It may be factorized as $2 \times 6$, $4 \times 3$, or as the trivial $1 \times 12$.]({attach}images/six-by-two.png){#fig:six-by-two width=70% .modal-target}
 
-# Square numbers
+## Square numbers
 
 A square is a special case of a rectangle whose length and width are equal. When we write $3 \times 3 = 9$, and we arrange the resulting nine squares in a rectangle, we get a *square number* of three squares by three squares. This is why we say that we are *squaring* a number when we multiply it by itself.
 
@@ -93,7 +93,7 @@ A square is a special case of a rectangle whose length and width are equal. When
 
 One could carry this analogy further and move into three dimensions to represent a number like $3 \times 3 \times 3 = 27$ with small cubes arranged in a large *cube.*^[Try this with toy blocks to convince yourself of its truth.] This is why we say we are *cubing* a number when we multiply it by itself twice.
 
-# Prime numbers
+## Prime numbers
 
 A number which cannot be expressed as the product of two numbers other than one and itself is called a *prime number*. Prime numbers can only be arranged in a line, never in a rectangle. Seven is a prime number as illustrated below.
 
@@ -107,71 +107,155 @@ Prime numbers are like building blocks that may be used to build larger numbers 
 
 Let us look at the number $12$ again, breaking it down this time into its *prime factors* so: $12 = 2 \times 2 \times 3$. There are two instances of the number $2$ and one instance of the number $3$. These numbers cannot be decomposed any further because they are prime. If we disregard the order of arrangement of these prime factors, i.e., we do not distinguish between $2 \times 2 \times 3$ and $2 \times 3 \times 2$ and so on, we may assert that *the prime factors of a composite number are unique*. This statement is known as the [Fundamental Theorem of Arithmetic](https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic). It is also sometimes called the Prime Factorization Theorem.
 
-# Fractions and negative numbers
+## Symbols for multiplication
 
-Negative numbers arose when loans had to be given and taken. They also find use in describing the depth of an ocean trench as being so much *below* sea level. Other applications arise naturally with  temperatures below the freezing point or with electric charges of a negative type, etc.
+If you are sharp-eyed, you might have come across the multiplication of two negative numbers by enclosing each of them in parentheses: (). The same symbols are also used to define associativity and distributivity later in this blog. We now look at the chequered history of how the notation for multiplication has changed with time, need, and context.
 
-If you have no qualms accepting negative numbers, you might still be confounded by what we could mean by multiplying two negative numbers. The answer, which might startle you, is that _the product of two negative numbers is a positive number._
+### Times sign
 
-I have dealt with the arithmetic of fractions and negative numbers in my freely downloadable chapter "Arithmetic Revisited" from [_Secrets of Academic Success_](https://swanlotus.netlify.app/sas-manuscript/SAS-partial.pdf). I urge you to read it if you feel the need. For now, it will suffice if you can accept that $(-1)(-1) = +1 = 1$, or better still, [read and understand this justification](https://math.stackexchange.com/a/384866/19098).
+The symbol for multiplication that we first learn is the rotated plus sign "$+$"  that looks like $\times$. It is called the "multiplication sign" and is usually read as "times", as we have already seen. It serves reasonably well even when we outgrow the whole numbers and move onto fractions.
 
-# Laws of arithmetic
-
-We now return to the assertion, made at the start of this blog, that multiplication is a *binary* operation: something that happens with *two* mathematical objects. You might object that we can and do multiply three numbers. For example, $2 \times 3 \times 5 = 30$ and no one would doubt the veracity of that assertion. Why then is multiplication classified as a binary operation and how might it be reconciled with what we know about the multiplication of three or more numbers?
-
-Early mathematics was eminently practical, concerned with computing areas and volumes, profit and loss, and so on. In the course of time, mathematicians started to systematize their body of knowledge by introducing logic and rigour into their subject. They wanted to construct an intellectual edifice that was stable and durable.
-
-Classifying all four arithmetic operations as binary and identifying the laws they obeyed was one of these foundational reforms.
-
-The numbers we encounter on a daily basis are called the [real numbers](https://en.wikipedia.org/wiki/Real_number), although this is not their mathematically rigorous definition. \emojifont :wink: \normalfont
-
-The multiplication of real numbers obeys certain laws, of which we list three here:
-
-#.  [Commutativity](https://mathworld.wolfram.com/Commutative.html): $ab = ba$.
-
-#.  [Associativity](https://mathworld.wolfram.com/Associative.html): $a(bc) = (ab)c$.
-
-#.  [Distributivity of multiplication over addition](https://mathworld.wolfram.com/Distributive.html): $a(b+c) = ab + ac$ and $(b+c)a = ba + ca$.
-
-Of the three, we have already spoken about commutativity before. Here, we will concentrate on what associativity implies and why we need it.
-
-# Associativity of multiplication
-
-_Because multiplication is binary, we can only multiply two numbers at any one time._ If we need to multiply together three or more numbers, we have to multiply two of them first to get a single product before we can multiply it with next number, and so on.
-
-The associative law simply states that when we multiply three numbers, it does not matter which two of the three we multiply first; the result will always be the same. It is this property that allows us to write something like $2 \times 3 \times 5$ or $abc$ and still make sense---because it denotes something unique---even though we know that multiplication is a binary operation.
-
-# Symbols for multiplication across time and need
-
-If you are sharp-eyed, you might have noticed how we previously denoted the multiplication of two negative numbers by enclosing each of them in parentheses: (). The same symbols were also used to define associativity and distributivity above. We now look at the chequered history of how the symbol for multiplication has changed with time and need.
-
-## Times sign
-
-The symbol for multiplication that we first learn is the rotated cross that looks like $\times$. It is called the "multiplication sign" and is usually read as "times", as we have already seen. It serves reasonably well even when we outgrow the whole numbers and move onto fractions.
-
-## Parentheses
+### Parentheses
 
 Parentheses, written in pairs as (), have traditionally denoted *precedence* during evaluation of an expression. Division and multiplication are evaluated *before* subtraction and addition. This order may be altered by including terms in parentheses, which are accorded highest priority during evaluation. So, $5 \times 4 + 1 = 20 + 1 = 21$, whereas $5 \times (4 + 1) = 5 \times 5 = 25$.
 
 When our discourse embraces negative quantities, in order to avoid ambiguity, we need something to enclose both the negative sign, $-$, and the number to which it applies. The expression $5 \times -4$ is ambiguous and therefore never written so when we actually mean $5 \times (-4)$. This notation led to two pairs of parentheses *without any explicit multiplication symbol in between* to denote the multiplication of the two enclosed numbers thus: $(5)(-4) = 5 \times (-4) = -20$.
 
-## Juxtaposition without any symbol
+### Juxtaposition without any symbol
 
-The archetypal symbol for the unknown in algebra is $x$, which looks a little too much like the multiplication symbol $\times$, especially when handwritten. To avoid confusion, a convention was adopted that when two *algebraic variables,* representing unknown quantities, were written next to each other or *juxtaposed,* it indicated the multiplication of the two quantities.
+The archetypal symbol for the unknown in algebra is $x$, which looks a little too much like the multiplication symbol $\times$, especially when handwritten.
 
-There is no intervening symbol between the two variables. Thus, $x \times y = (x)(y) = xy$. Note that this convention is for algebraic variables only. We cannot use this convention with digits representing numbers because of *place value* in our decimal system. The number $45$ does *not* represent the product of $4$ and $5$ but actually means $40 + 5 = 45$.
+To avoid confusion, a convention was adopted that when two *algebraic variables,* representing unknown quantities, were written next to each other or *juxtaposed,* it indicated the multiplication of the two quantities. There is no intervening symbol between the two variables.
 
-## Centred dot
+Thus, $x \times y = (x)(y) = xy$. Note that this convention is for algebraic variables only. We cannot use this convention with digits representing numbers because of *place value* in our decimal system. The number $45$ does *not* represent the product of $4$ and $5$ but actually means $40 + 5 = 45$.
+
+### Centred dot
 
 As more exotic objects entered the mathematical collection, yet another symbol was devised to show (at least one form of) multiplication. The vertically centred dot $\cdot$ was used to indicate one of the several products of *vectors,* which we shall discuss [later](#dot-or-scalar-product) in this blog. Again, the dot is not useful in the context of digits because it could be confused with a decimal point.
 
 So, there is both a rationale and a mathematical context for the introduction of each symbol for multiplication, according to time, need, and circumstance.
 
-## Asterisk
+### Asterisk
 
 The latter half of the twentieth century saw the introduction of yet another symbol for multiplication, this time for use in programming languages. Because the [ASCII character set,](https://datatracker.ietf.org/doc/html/rfc20) devised during the era of [teleprinters,](https://en.wikipedia.org/wiki/Teleprinter) did not include the symbol $\times$ for multiplication, another available symbol had to be chosen for multiplication. The winner was the [asterisk](https://en.wikipedia.org/wiki/Asterisk), denoted by \*. Note that even with the symbol \*, multiplying $3$ by $-4$ still requires one to type $3 * (-4)$ to avoid ambiguity.
 
 Repeated multiplication---or [exponentiation](#exponentiation)---is usually represented by a double asterisk ** in most computing languages, although a caret ^ assumes this function in some languages.
+
+## Laws of arithmetic
+
+We now return to the assertion, made at the start of this blog, that multiplication is a *binary* operation: something that happens between *two* mathematical objects. You might object that we can and do multiply three numbers. For example, $2 \times 3 \times 5 = 30$ and no one would doubt the veracity of that assertion. Why then is multiplication classified as a binary operation and how might it be reconciled with what we know about the multiplication of three or more numbers?
+
+Early mathematics was eminently practical, concerned with computing areas and volumes, profit and loss, and so on. In the course of time, mathematicians started to systematize their body of knowledge by introducing logic and rigour into their subject. They wanted to move beyond ad hoc methodology and construct an intellectual edifice that was stable, durable, and generalizable.
+
+## The real numbers as a field
+
+Some of the most unpleasant experiences of school mathematics are the sudden and unexpected changes that intrude into the familiar arithmetic of primary school. Division, fractions, negative numbers, multiplication by zero, product of two negatives being positive, etc. are a few examples. When rule upon unanticipated rule is foisted on the young student, with no rhyme or reason, the student gets overwhelmed and develops a distaste for mathematics or even a reflex fear of it. This need not be so.
+
+One way out is a quick but easy introduction to some ideas of abstract algebra which lay the foundation for all subsequent mathematics. This way, all the rules are bunched together as unquestioned assumptions. Then, based on those assumptions, we build a mathematical edifice that is logical, consistent, and extensible. Mathematics will then be changed from a mysterious game with unknown rules into a trustworthy friend who can be depended upon.
+
+The numbers we use every day are drawn from a [set](https://www.cuemath.com/algebra/sets/) called the [real numbers](https://mathworld.wolfram.com/RealNumber.html) denoted by $\mathbb{R}$. Numbers such as $0$, $1$, $-200$, $50004$, $\frac{1}{2}$, $-\frac{3}{4}$, $0.3333\cdots$, $-0.5$, $\sqrt{2}$, $\pi$, and countless others belong to this grab bag set.
+
+The set $\mathbb{R}$ comes bundled with _two_ binary operations: addition, denoted by $+$, and multiplication denoted by $\times$ or by other means as outlined [above](#symbols-for-multiplication-across-time-and-need). One property that makes real numbers so useful is that any addition or multiplication of real numbers results in another real number---called _closure_. In addition, the reals also exhibit other familiar behaviours---with fancy-sounding names---which are tabulated below, using arbitrary real numbers, $a, b, c$.
+
+------------------------------------------------------------------------------
+Property       Addition                 Multiplication
+---------      -----------------        -------------------------
+Associativity  $(a+b)+c=a+(b+c)$        $(ab)c = a(bc)$
+
+Commutativity  $a+b=b+a$                $ab=ba$
+
+Identity       $a+0=a=0+a$              $a·1=a=1·a$
+
+Inverse        $a+(-a)=0=(-a)+a$        $aa^{-1}=1=a^{-1}a$ for $a \ne 0$
+------------------------------------------------------------------------------
+: Algebraic Properties of $\mathbb{R}$
+\
+
+For the record, formal definitions for the above terms are available on the Web from reputable sites whose links are listed below:
+
+#. [Associativity](https://mathworld.wolfram.com/Associative.html).
+
+#. [Commutativity](https://mathworld.wolfram.com/Commutative.html).
+
+#.  [Distributivity](https://en.wikipedia.org/wiki/Distributive_property). Multiplication is distributive over addition. For completeness, we define
+$$
+\begin{array}{l  l}
+\mbox{Left Distributivity} & a(b+c)=ab+ac\\
+\mbox{Right Distributivity} & (a+b)c=ac+bc\\
+\end{array}
+$$
+In our case, both conditions hold, and we may simply say that _multiplication is distributive over addition for the reals_. A mathematical object consisting of a set with two binary operations having the above properties is called a [field](https://en.wikipedia.org/wiki/Field_(mathematics)). We may refer to the field of real numbers.
+
+## Associativity of multiplication
+
+_Because multiplication is binary, we can only multiply two numbers at any one time._ If we need to multiply together three or more numbers, we have to multiply two of them first to get a single product before we can multiply it with next number, and so on.
+
+The associative law simply states that when we multiply three numbers, it does not matter which two of the three we multiply first; the result will always be the same. It is this property that allows us to write something like $2 \times 3 \times 5$ or $abc$ and still make sense---because it denotes something unique---even though we know that multiplication is a binary operation.
+
+## The additive and multiplicative inverses in $\mathbb{R}$
+
+In addition to the three properties of associativity, commutativity, and distributivity, the real numbers we use every day have two other properties:
+
+#.  [Additive inverse](): $a + (-a) = (-a) + a = 0$.
+
+#.  [Multiplicative inverse](): $a \times \frac{1}{a} = \frac{1}{a} \times a = 1 \mbox{ for } a \ne 0$.
+
+If you are wondering where subtraction and division have been hiding, they are hiding in plain sight. Subtracting $b$ from $a$ amounts to adding the additive inverse of $b$ to $a$. So,
+$$
+a - b = a + (-b)
+$$
+Likewise, dividing $a$ by $b \ne 0$ amounts to multiplying $a$ by the multiplicative inverse of $b$ which equals $\frac{1}{b}$:
+$$
+a \div b = a \times \frac{1}{b} = \frac{a}{b} \mbox{ for } b \ne 0.
+$$
+
+### Multiplying with zero always gives zero
+
+When an arbitrary number $a \in \mathbb{R}$ is multiplied by zero, the product is always zero. To understand why this must be so, let us for convenience consider a simple but concrete example: $5 \times 0$. Here $5$ is the multiplier and $0$ the multiplicand. So, we may write:
+$$
+\begin{aligned}
+5 \times 0 &= 0 + 0 + 0 + 0 + 0; & \mbox{ multiplication is repeated addition}\\
+&= (0 + 0) + (0 + 0) + 0; & \mbox{ addition is a binary operation}\\
+&= (0 + 0) + 0; & \mbox{ $0$ is the additive inverse}\\
+&= 0. & \mbox{ $0$ is the additive inverse}\\
+\end{aligned}
+$$
+We have carefully tiptoed our way to justify each step with one of the field axioms. And the choice of a whole number made it easy to see the multiplication as repeated addition. What about $0 \times 5$? Because multiplication is commutative, we may assert that $0 \times 5$ is also $0$, without doing any additional work. I hope you are getting to see mathematics as treasure hunt with clues and short cuts that lead to an exciting finale.
+
+### Product of a positive and a negative number
+
+Negative numbers arose when loans had to be given and taken. They also find use in describing the depth of an ocean trench as being so much *below* sea level. Other applications arise naturally with temperatures below the freezing point or with electric charges of a negative type, etc.
+
+Consider $a > 0, b > 0 \in \mathbb{R}$. Knowing that $a$ is positive and $(-b)$ is negative, what is the sign of the product $(a)(-b)$? To answer this question, let us add $ab$ to $(a)(-b)$.
+$$
+\begin{aligned}
+ab + (a)(-b) &= a(b + (-b)); & \mbox{ distributive law}\\
+&= a(0); & \mbox{ $-b$ is the additive inverse of $b$}\\
+&=0. & \mbox{ zero multiplied by any number is zero}\\
+\end{aligned}
+$$
+Therefore, $ab + (a)(-b) = 0$ which implies that they are themselves additive inverses. So, $(a)(-b) = -(ab)$ which is a negative number. Conversely, a negative number may be split into the product of a positive number and a negative number.
+
+This explanation might seem contrived but it provides guardrails against falling off when future mathematical objects are encountered. And it is a whole lot more satisfying than hand-waving or saying "Just take it on faith."
+
+### Why is the product of two negative numbers positive?
+
+If you have no qualms accepting negative numbers, you might still be confounded by what we could mean by multiplying two negative numbers. The answer, which might startle you, is that _the product of two negative numbers is a positive number._
+
+Let us use the field axioms to navigate our way through this result as well. Let $a > 0, b > 0 \in \mathbb{R}$. Then, both $(-a)$ and $(-b)$ are negative. Note that $ab$ is positive and its additive inverse is $-(ab) = (-a)(b) = (a)(-b)$ which is negative from our previous result.
+
+The scheme we have followed so far is to add something to the object of interest and use the axioms to prove that the sum is zero. The result we are after will then pop out. Let us apply that method again.
+$$
+\begin{aligned}
+-(ab) + (-a)(-b) &= (a)(-b) + (-a)(-b); & \mbox{ result from previous section}\\
+&= (a + (-a))(-b) & \mbox{ distributive law}\\
+&= (0)(-b) & \mbox{ additive inverse}\\
+&= 0. & \mbox{ zero mutiplied by anything is zero}\\
+\end{aligned}
+$$
+The upshot is that we have $-(ab) + (-a)(-b) = 0$ which means that they are additive inverses. Since the additive inverse of $-(ab)$ is $ab$, we conclude that $(-a)(-b) = ab$ implying that the product of two negative numbers is a positive number. With the axioms to guide us, we can move with the sure-footedness of a mountain goat as we scale the heights and depths of each proof.
+
+I have dealt with the arithmetic of fractions and negative numbers in my freely downloadable chapter "Arithmetic Revisited" from [_Secrets of Academic Success_](https://swanlotus.netlify.app/sas-manuscript/SAS-partial.pdf). I urge you to read it if you feel the need.
 
 # Exponentiation
 
@@ -240,6 +324,10 @@ Note that we use $i^2 = -1$ and group like terms, but otherwise proceed as norma
 $$(a + bi)(c + di) = (ac - bd) + (ad + bc)i.$$
 
 <!--TODO: i^4 = 1; rotation; compare with -i^2 = 1-->
+
+## Polar form of complex numbers
+
+$re^{i\theta} = r(\cos\theta + i\sin\theta)$
 
 ## Consistency between real and complex multiplication
 

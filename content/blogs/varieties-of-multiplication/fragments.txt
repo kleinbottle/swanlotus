@@ -1,0 +1,1 @@
+For now, it will suffice if you can accept that $(-1)(-1) = +1 = 1$, or better still, [read and understand this justification](https://math.stackexchange.com/a/384866/19098).
