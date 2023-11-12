@@ -1,8 +1,8 @@
 ---
 title: "Varieties of Multiplication"
 author: R (Chandra) Chandrasekhar
-date: 2012-05-14
-modified: 2023-11-10
+date: "2012-05-14"
+modified: "2023-11-10"
 category: Mathematics
 tags: Mathematical Musings
 summary: 'I want to look at some of the varieties of multiplication that mathematicians have developed over time. It is a survey that will serve as a pinhole through which we can view how a single, simple mathematical idea has been expanded and elaborated into uses far beyond its historical moorings.'

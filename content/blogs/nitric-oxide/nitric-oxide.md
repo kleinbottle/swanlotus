@@ -1,8 +1,8 @@
 ---
 title: "Nitric Oxide: Pollutant or Panacea?"
 author: R (Chandra) Chandrasekhar
-date: 2021-05-17
-modified: 2021-05-17
+date: "2021-05-17"
+modified: "2021-05-17"
 category: Current Affairs
 tags: COVID-19 prophylaxis treatment
 summary: "Nitric oxide is a simple chemical compound that has generated great interest and research effort in the scramble to cope with COVID-19. It promises prophylaxis and possibly therapy against this novel plague."
@@ -29,7 +29,7 @@ It has lain hidden in plain sight for almost two centuries---being thought of as
 The chemical relatives of nitric oxide have often eclipsed it in significance historically, because they have been better studied, better understood, better applied, and better coped with in everyday life.
 
 ### Nitrous oxide, N~2~O
- 
+
 _Nitrous_ oxide, N~2~O, is often confounded with _nitric_ oxide, NO. Because of its propensity to excite mirth when inhaled, [Sir Humphry Davy](https://en.wikipedia.org/wiki/Humphry_Davy) christened nitrous oxide as "laughing gas". It is used as a medical and dental anaesthetic, and as a rocket propellant, among other applications.
 
 ### Nitrogen dioxide, NO~2~
@@ -90,7 +90,7 @@ Why does my friend not hurt me?
 
 The free radical nitric oxide (NO) has emerged in recent years as a fundamental signaling molecule for the maintenance of homeostasis, as well as a potent cytotoxic effector involved in the pathogenesis of a wide range of human diseases. Although this paradoxical fate has generated confusion, separating the biological actions of NO on the basis of its physiologic chemistry provides a conceptual framework which helps to distinguish between the beneficial and toxic consequences of NO, and to envision potential therapeutic strategies for the future. Under normal conditions, NO produced in low concentration acts as a messenger and cytoprotective (antioxidant) factor, via direct interactions with transition metals and other free radicals. Alternatively, when the circumstances allow the formation of substantial amounts of NO and modify the cellular microenvironment (formation of the superoxide radical), the chemistry of NO will turn into indirect effects consecutive to the formation of dinitrogen trioxide and peroxynitrite. These "reactive nitrogen species" will, in turn, mediate both oxidative and nitrosative stresses, which form the basis of the cytotoxicity generally attributed to NO, relevant to the pathophysiology of inflammation, circulatory shock, and ischemia-reperfusion injury. https://pubmed.ncbi.nlm.nih.gov/10807315/
 
-## 
+##
 
 https://www.youtube.com/watch?v=YsZ_vWxI3bQ
 Nobelist on NO.
@@ -114,7 +114,7 @@ Nobelist on NO.
 
 If you remember your high school chemistry, you will recall _redox_ reactions in which a reducing agent and an oxidizing agent battle it out in the chemical flask until a colour change signals a truce. To generalize the concept of oxidation, whether or not oxygen was itself explicitly involved, the definitions given were:
 
-#.  an oxidizing agent is an electron 
+#.  an oxidizing agent is an electron
 
 ## Free radicals and anti-oxidants
 
@@ -130,10 +130,10 @@ https://www.independent.co.uk/news/uk/nitric-oxide-is-molecule-of-the-year-15644
 
 ## Treading the fine line
 
-There is a proverb from yesteryear that runs thus: ["One man's meat is another man's poison."](https://wordhistories.net/2017/05/07/one-mans-meat-is-anothers-poison/) This adage may be adapted for nitric oxide to refer to its twin properties of therapeutics and toxicity. In this day and age of [masking](https://www.cdc.gov/coronavirus/2019-ncov/your-health/effective-masks.html), we have a molecule that wears _two masks_ at the same time: 
+There is a proverb from yesteryear that runs thus: ["One man's meat is another man's poison."](https://wordhistories.net/2017/05/07/one-mans-meat-is-anothers-poison/) This adage may be adapted for nitric oxide to refer to its twin properties of therapeutics and toxicity. In this day and age of [masking](https://www.cdc.gov/coronavirus/2019-ncov/your-health/effective-masks.html), we have a molecule that wears _two masks_ at the same time:
 
 (a) a signalling nanomolecule that relaxes the smooth muscles surrounding blood vessels, leading to vasodilation; and
 
-(b) the little brother of nitrogen dioxide, ever ready to masquerade as its more toxic elder brother. 
+(b) the little brother of nitrogen dioxide, ever ready to masquerade as its more toxic elder brother.
 
 Which masked face we see and how we react requires the nuanced guidance of a medical professional schooled in the art of uncovering masks.

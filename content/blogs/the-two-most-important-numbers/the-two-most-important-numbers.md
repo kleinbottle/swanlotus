@@ -1,8 +1,8 @@
 ---
 title: "The Two Most Important Numbers: Zero and One"
 author: R (Chandra) Chandrasekhar
-date: 2023-10-31
-modified: 2023-11-08
+date: "2023-10-31"
+modified: "2023-11-08"
 category: Mathematics
 tags: Mathematical Musings
 summary: 'The unique properties of the numbers zero and one make them mathematically interesting and indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers, we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we may discover how they cement together disparate areas of Mathematics.'

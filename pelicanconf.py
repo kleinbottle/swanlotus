@@ -60,6 +60,7 @@ MENUITEMS = (
 )
 
 DIRECT_TEMPLATES = ["index", "categories", "tags", "archives"]
+IGNORE_FILES = ["blank-template.bib", "blog-template.md"]
 
 PATH = "content"
 ARTICLE_PATHS = [
@@ -67,6 +68,7 @@ ARTICLE_PATHS = [
 ]  # draft value: ["blogs/rust-euler-one"]
 ARTICLE_SAVE_AS = ARTICLE_LANG_SAVE_AS = "blogs/{slug}.html"
 ARTICLE_URL = ARTICLE_LANG_URL = "blogs/{slug}.html"
+ARTICLE_ORDER_BY = 'reversed-modified'
 DRAFT_SAVE_AS = DRAFT_LANG_SAVE_AS = "drafts/{slug}.html"
 DRAFT_URL = DRAFT_LANG_URL = "drafts/{slug}.html"
 

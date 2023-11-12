@@ -1,8 +1,8 @@
 ---
 title: Image format conversions
 author: R (Chandra) Chandrasekhar
-date: 2021-03-07
-modified: 2021-04-18
+date: "2021-03-07"
+modified: "2021-04-18"
 category: Software
 tags: image formats, PNG, JPEG, PDF, SVG, ImageMagick, Inkscape, cairo, poppler, Linux
 summary: "Although digital images are ubiquitous, one image format does not suit all applications. Printed paper, electronic displays, images on the Web, etc., each call for the same image in a different format. In this tutorial, we explore the different format conversion tools that are currently available. The `ImageMagick` suite, the `cairo` backend, the `poppler` utilities, the `Inkscape` vector graphics editor, and `CairoSVG` are each identified for their individual strengths, that make them the tools of choice for specific image conversion tasks."

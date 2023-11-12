@@ -16,9 +16,13 @@
     <ol id="post-list">
         {% for article in articles_page.object_list %}
             <li><article class="hentry">
-                    <header> <h5 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h5> </header>
+                    <header><h5 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h5></header>
                     <footer class="post-info">
-                        <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
+                        {% if article.modified.strftime('%Y-%m-%d') != article.locale_date %}
+                            <time class="published" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }} | {{ article.modified.strftime('%Y-%m-%d') }}</time>
+                        {% else %}
+                            <time class="published" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+                        {% endif %}
                     </footer><!-- /.post-info -->
                     <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
             </article></li>

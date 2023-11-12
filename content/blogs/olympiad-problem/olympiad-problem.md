@@ -1,8 +1,8 @@
 ---
 title: "Solving a Mathematics Olympiad problem"
 author: R (Chandra) Chandrasekhar
-date: 2023-03-15
-modified: 2023-03-19
+date: "2023-03-15"
+modified: "2023-03-19"
 category: Mathematics
 tags: Mathematics, IMO (International Mathematical Olympiad), equation, graph, number theory
 summary: "During a casual tour of the Web, my attention was drawn to a problem that was stated so simply that it beckoned an attempt at a solution. It was purported to be from a [Mathematical Olympiad](https://www.imo-official.org/), which raised its attractiveness index, as such problems are known to strenuously exercise the grey cells, while still retaining the charm of a sport. Only later did I find out that the problem I had written down had omitted an important constraint that made the problem all the more memorable. This is an account of my escapade into the land of mathematics in search of solution."

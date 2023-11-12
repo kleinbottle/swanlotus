@@ -1,8 +1,8 @@
 ---
 title: Zero, One, Two, Many
 author: R (Chandra) Chandrasekhar
-date: 2007-12-28
-modified: 2023-10-30
+date: "2007-12-28"
+modified: "2023-10-30"
 category: Philosophy
 tags: Butterflies from My Mind
 summary: 'As has been observed above [@perlcookbook2003], in the context of computer programming, there are only three numbers worth being concerned about: zero, one, and many. And if you are into the arcana of ["regular expressions"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions) and ["pattern matching"](https://www.google.com/search?q=pattern+matching)---which is, incidentally, something done [implicitly]() every time you do a Google search, or look for a book at an online bookstore---that is very sage advice. But how serviceable is this dictum in everyday life?'

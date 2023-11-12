@@ -1,8 +1,8 @@
 ---
 title: "A tale of two measures: degrees and radians"
 author: R (Chandra) Chandrasekhar
-date: 2023-10-17
-modified: 2023-11-02
+date: "2023-10-17"
+modified: "2023-11-02"
 category: Mathematics
 tags: Mathematical musings
 summary: 'The transition from degrees to radians is often the most traumatic mathematical change that the student has to endure when moving from elementary to intermediate mathematics. The simplicity of 360° seems so much more welcoming than the equivalent of $2\pi$ radians for a full circle. $\pi$ is forbidding, because it is not [the convenient fractional fiction $\frac{22}{7}$](https://en.wikipedia.org/wiki/Proof_that_22/7_exceeds_%CF%80), but rather a number which is both [transcendental](https://mathworld.wolfram.com/TranscendentalNumber.html) and [irrational](https://en.wikipedia.org/wiki/Irrational_number) and therefore, somewhat "untidy". Surely this tradeoff between simplicity and complexity must have been worth it, or it would not have been so ordained. Here we attempt to fathom [the method in the madness](https://grammarist.com/phrase/a-method-in-ones-madness/).'

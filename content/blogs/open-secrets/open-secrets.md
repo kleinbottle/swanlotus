@@ -1,12 +1,13 @@
 ---
 title: Open Secrets
 author: R (Chandra) Chandrasekhar
-date: 2023-03-21
-modified: 2023-06-28
+date: "2023-03-21"
+modified: "2023-06-28"
 category: Simkin Tales
 tags: pi, e, mathematics, irrational numbers, transcendental numbers, infinite series, decimal representation
 summary:
 opengraphimage:
+status: draft
 ---
 
 ## "I made a wager"

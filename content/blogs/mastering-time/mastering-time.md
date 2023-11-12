@@ -1,8 +1,8 @@
 ---
 title: Mastering Time
 author: R (Chandra) Chandrasekhar
-date: 2023-04-15
-modified: 2023-04-17
+date: "2023-04-15"
+modified: "2023-04-17"
 category: Simkin Tales, Philosophy, Mind, Habits
 tags: time-management, punctuality, procrastination, mindset
 summary: "As Sol wound up his enriching tale, I resolved not to fall into the trap of procrastination ever again. First, I should prime my mind to enjoy the task. Then, I should shed the need for approval from others. Next, I would allocate adequate time to prepare for it, well ahead of the deadline. Then I would do it once, and do it well. And finally when it was done and dusted, I would dismiss it from my mind. 'Whew! What a teaching!' I said solemnly to Sol. He smiled the beaming smile of the cognoscenti."

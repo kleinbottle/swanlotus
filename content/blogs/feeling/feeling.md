@@ -1,8 +1,8 @@
 ---
 title: The Secret Trapdoor to Success
 author: R (Chandra) Chandrasekhar
-date: 2023-01-12
-modified: 2023-01-30
+date: "2023-01-12"
+modified: "2023-01-30"
 category: Mind
 tags: success, mind, manifesting
 summary: "The nursery rhyme tells us that life is but a dream. Imagine, however, if someone told you that your dreams could become your life. Would you be inclined to believe that statement? If you are imbued with the scientific spirit, you would at the very least subject that assertion to experimental validation or refutation. If you are of that mind, read this blog carefully, because it could be the single most important _secret of success_---academic or otherwise---that you might encounter in your entire life."
