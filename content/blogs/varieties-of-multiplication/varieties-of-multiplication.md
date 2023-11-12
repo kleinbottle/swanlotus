@@ -157,20 +157,21 @@ The numbers we use every day are drawn from a [set](https://www.cuemath.com/alge
 
 The set $\mathbb{R}$ comes bundled with _two_ binary operations: addition, denoted by $+$, and multiplication denoted by $\times$ or by other means as outlined [above](#symbols-for-multiplication-across-time-and-need). One property that makes real numbers so useful is that any addition or multiplication of real numbers results in another real number---called _closure_. In addition, the reals also exhibit other familiar behaviours---with fancy-sounding names---which are tabulated below, using arbitrary real numbers, $a, b, c$.
 
+::: {.small}
 ------------------------------------------------------------------------------
-Property       Addition                 Multiplication
----------      -----------------        -------------------------
-Associativity  $(a+b)+c=a+(b+c)$        $(ab)c = a(bc)$
+Property       Addition                  Multiplication
+---------      -----------------------   -------------------------
+Associativity  $(a+b)+c=a+(b+c)$         $(ab)c = a(bc)$
 
-Commutativity  $a+b=b+a$                $ab=ba$
+Commutativity  $a+b=b+a$                 $ab=ba$
 
-Identity       $a+0=a=0+a$              $a·1=a=1·a$
+Identity       $a+0=a=0+a$               $a·1=a=1·a$
 
-Inverse        $a+(-a)=0=(-a)+a$        $aa^{-1}=1=a^{-1}a$ for $a \ne 0$
+Inverse        $a+(-a)=0=(-a)+a$         $aa^{-1}=1=a^{-1}a$ for $a \ne 0$
 ------------------------------------------------------------------------------
-: Algebraic Properties of $\mathbb{R}$ {#tbl:axioms}
+: Axioms for the real numbers {#tbl:axioms}
+:::
 \
-
 For the record, formal definitions for the above terms are available on the Web from reputable sites whose links are listed below:
 
 #. [Associativity](https://mathworld.wolfram.com/Associative.html).
@@ -209,7 +210,7 @@ $$
 a \div b = a \times \frac{1}{b} = \frac{a}{b} \mbox{ for } b \ne 0.
 $$
 
-### Multiplying with zero always gives zero
+### Multiplying any number by zero always gives zero
 
 Recall from @tbl:axioms that $0$ is the unique _additive_ identity. Zero's claim to notoriety is that it does _not_ have a _multiplicative inverse_. And this is because any number _multiplied_ by zero gives zero.
 
@@ -222,7 +223,7 @@ a \cdot 0 &= a \cdot (0 + 0) & \mbox{ $0$ is the identity for addition}\\
 \end{aligned}
 $${#eq:zero-prod-zero}
 
-We have carefully tiptoed our way to justify each step with one of the field axioms. This is the power of the axiomatic approach. There is no redundant axiom. There is no "wasted" axiom. The set of axioms are the minimum necessary for the numbers to rest on a stable foundation. This _minimal sufficiency_ is at the heart of why mathematics is so strong. It is extra fat. There is also no deficiency. It is frugal but sufficient. And any other algebraic structure, like the complex numbers $\mathbb{C}$ that obey the same axioms also have the same property.
+We have carefully tiptoed our way to justify each step with one of the field axioms. This is the power of the axiomatic approach. There is no "wasted" axiom; there is no "missing" axiom. The set of axioms are the minimum necessary for the numbers to rest on a stable foundation. This _minimal sufficiency_ is at the heart of why mathematics is so strong. It has no extra fat. There is also no deficiency. It is frugal but sufficient. And any other algebraic structure, like the complex numbers $\mathbb{C}$ that obey the same axioms also have the same property. If you are interested in pursuing these dieas further, please read [this excellent article online](https://medium.com/swlh/why-a-0-0-and-other-proofs-of-the-obvious-da52dd0caefb) [@chodnicki2020].
 
 If you feel that @eq:zero-prod-zero is too much sleight of hand, and you would like something more concrete, you can always console yourself with the convenient but specific example of $5 \times 0$. Here $5$ is the multiplier and $0$ the multiplicand. So, we may write:
 $$
@@ -235,44 +236,38 @@ $$
 $$
 And the choice of a whole number made it easy to see the multiplication as repeated addition. What about $0 \times 5$? Because multiplication is commutative, we may assert that $0 \times 5$ is also $0$, without doing any additional work. I hope you are getting to see mathematics as treasure hunt with clues and short cuts that lead to an exciting finale.
 
-Instead of a single integer like 5, let us now try to prove that for any $a \in \mathbb{R}, a(0) = 0 = (0)a.$ First, we write $0$ as an arbitrary real $b$ added to its additive inverse, $b + (-b)$.
-$$
-a(0) = a(b + (-b))
-$$
-
-
-Multiplying by zero produces zero
-This is an interesting proposition because 0 has been introduced as an element with properties with regards to addition. The rules for multiplication mention it only insofar as to not guarantee the existence of a multiplicative inverse.
-Proving anything about multiplication with 0 will probably include the distributive law. Let’s rewrite a·0 using the distributive law, and see what happens. Let’s look at a(0+0)
-Turns out the distributive law makes it necessary that multiplication by 0 produces 0. This is also why 0 can’t have a multiplicative inverse. Multiplying that inverse with 0 would be 1 by definition, not 0.
-Suppose for a moment there was some number v such that v·0 = 1. It would be in contradiction to the distributive law, and lead to things such as:
-
-1 = v·0 = v(0+0) = v·0+v·0 = 1+1
-
-Any number multiplied by 0 must be 0 or we have to ditch the distributive law. But we‘re keeping it. It’s good. We just recognize that the multiplicative inverse of 0 does not exist. There is no way to divide by 0 and still be consistent with our axioms. Simple as that. Moving on.
-
-https://medium.com/swlh/why-a-0-0-and-other-proofs-of-the-obvious-da52dd0caefb
-
-
 ### Product of a positive and a negative number
 
 Negative numbers arose when loans had to be given and taken. They also find use in describing the depth of an ocean trench as being so much *below* sea level. Other applications arise naturally with temperatures below the freezing point or with electric charges of a negative type, etc.
 
-Consider $a > 0, b > 0 \in \mathbb{R}$. Knowing that $a$ is positive and $(-b)$ is negative, what is the sign of the product $(a)(-b)$? To answer this question, let us add $ab$ to $(a)(-b)$.
+We first prove that _multiplying a number by an additive inverse gives the additive inverse of their product_, i.e.,
+$$
+a(-b) = -(ab)
+$${#eq:a-minus-b-eq-minus-ab}
+To prove @eq:a-minus-b-eq-minus-ab, we use the fact that zero multiplied by any number is zero, as shown in @eq:zero-prod-zero.
+
 $$
 \begin{aligned}
-ab + (a)(-b) &= a(b + (-b)); & \mbox{ distributive law}\\
-&= a(0); & \mbox{ $-b$ is the additive inverse of $b$}\\
-&=0. & \mbox{ zero multiplied by any number is zero}\\
+a \cdot 0 &= a(b + (-b)) & \mbox{ additive inverse}\\
+0 &= ab + a(-b) & \mbox{ distributive law; add $-(ab)$}\\
+-(ab) &= a(-b) &\\
+\end{aligned}
+$${#eq:minusprod-prodminus}
+
+If we now assume that $a$ and $b$ are both positive, then $ab$ is positive, and $(-b)$ is negative. We have the product of $a$ and $(-b)$ to be the negative number $-(ab)$. So, _the product of a positive and a negative number is a negative number_. Conversely, a negative number may be split into the product of a positive number and a negative number.
+
+One interesting corollary from @eq:minusprod-prodminus is:
+$$
+\begin{aligned}
+(-1)(a) &= -(1 \cdot a).\\
+&= -a\\
 \end{aligned}
 $$
-Therefore, $ab + (a)(-b) = 0$ which implies that they are themselves additive inverses. So, $(a)(-b) = -(ab)$ which is a negative number. Conversely, a negative number may be split into the product of a positive number and a negative number.
+This means that _the additive inverse of a number is obtained by multiplying the original number by $(-1)$_.
 
-This explanation might seem contrived but it provides guardrails against falling off when future mathematical objects are encountered. And it is a whole lot more satisfying than hand-waving or saying "Just take it on faith."
+This explanation might seem contrived, but it provides guardrails against falling off when future mathematical objects are encountered. And it is a whole lot more satisfying than hand-waving or saying "Just take it on faith."
 
 ### Why is the product of two negative numbers positive?
-
-If you have no qualms accepting negative numbers, you might still be confounded by what we could mean by multiplying two negative numbers. The answer, which might startle you, is that _the product of two negative numbers is a positive number._
 
 Let us use the field axioms to navigate our way through this result as well. Let $a > 0, b > 0 \in \mathbb{R}$. Then, both $(-a)$ and $(-b)$ are negative. Note that $ab$ is positive and its additive inverse is $-(ab) = (-a)(b) = (a)(-b)$ which is negative from our previous result.
 

@@ -43,22 +43,25 @@ When we measure, we start with $0$.
 
 Although Mathematics has rigorous foundations, at the very bottom, its notions are not defined [explicitly](https://www.vocabulary.com/dictionary/explicitly). One such notion is that of a _set_, which is loosely defined as a collection of objects that can either be enumerated or described clearly. The _sets of numbers_ we will deal with have names, symbols, and definitions as shown below.
 
+::: {.small}
 ---------------------------------------------------------------------------------------
-Name                Symbol         Definition
------------         --------       -------------
-Natural numbers     $\mathbb{N}$   $\{1, 2, 3, 4, ...\}$
+Name                           Symbol         Definition
+------------------------     --------------   -------------------------------------------
+$\mbox{Natural numbers}$      $\mathbb{N}$      $\{1, 2, 3, 4, ...\}$
 
-Integers            $\mathbb{Z}$   $\{... -3, -2, -1, 0, 1, 2, 3, ...\}$
+$\mbox{Integers}$             $\mathbb{Z}$      $\{..., -3, -2, -1, 0, 1, 2, 3, ...\}$
 
-Rational numbers    $\mathbb{Q}$   $\{x: x = \frac{p}{q} \mbox{ where } p, q \in \mathbb{Z} \mbox{ and } q \ne 0\}$
+$\mbox{Rational numbers}$     $\mathbb{Q}$      $\{x: x = \frac{p}{q}$ \mbox{ where } $p, q \in \mathbb{Z}$ \mbox{ and } $q \ne 0\}$
 
-Irrational numbers  \mbox{}        $\{$The numbers which are not rational$\}$
 
-Real numbers       $\mathbb{R}$    $\{$The rationals and the irrationals$\}$
+$\mbox{Irrational numbers}$     \mbox{}         $\mbox{\{The numbers which are not rational\}}$
 
-Complex numbers    $\mathbb{C}$    $\{a+ib: a, b \in \mathbb{R} \mbox{ and } i^2 = -1\}$
+$\mbox{Real numbers}$         $\mathbb{R}$      $\mbox{\{The rationals and the irrationals\}}$
+
+$\mbox{Complex numbers}$      $\mathbb{C}$      $\{a+ib: a, b \in \mathbb{R} \mbox{ and } i^2 = -1\}$
 ---------------------------------------------------------------------------------------
 : Sets of numbers {#tbl:sets}
+:::
 \
 While it is premature to talk about these sets and their peculiarities in this blog, it is worth making some points about them.
 

@@ -66,6 +66,29 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
 \else
@@ -615,12 +638,14 @@ multiplication of real numbers results in another real number---called
 behaviours---with fancy-sounding names---which are tabulated below,
 using arbitrary real numbers, \(a, b, c\).
 
+\begin{small}
+
+\hypertarget{tbl:axioms}{}
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2083}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3472}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3611}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3611}}@{}}
-\caption{Algebraic Properties of \(\mathbb{R}\)\\
-}\tabularnewline
+\caption{\label{tbl:axioms}Axioms for the real numbers}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Property
@@ -649,6 +674,9 @@ Identity & \(a+0=a=0+a\) & \(a·1=a=1·a\) \\
 Inverse & \(a+(-a)=0=(-a)+a\) & \(aa^{-1}=1=a^{-1}a\) for \(a \ne 0\) \\
 \end{longtable}
 
+\end{small}
+
+\hfill\break
 For the record, formal definitions for the above terms are available on
 the Web from reputable sites whose links are listed below:
 
@@ -714,27 +742,56 @@ by the multiplicative inverse of \(b\) which equals \(\frac{1}{b}\): \[
 a \div b = a \times \frac{1}{b} = \frac{a}{b} \mbox{ for } b \ne 0.
 \]
 
-\hypertarget{multiplying-with-zero-always-gives-zero}{%
-\subsubsection{Multiplying with zero always gives
-zero}\label{multiplying-with-zero-always-gives-zero}}
+\hypertarget{multiplying-any-number-by-zero-always-gives-zero}{%
+\subsubsection{Multiplying any number by zero always gives
+zero}\label{multiplying-any-number-by-zero-always-gives-zero}}
 
-When an arbitrary number \(a \in \mathbb{R}\) is multiplied by zero, the
-product is always zero. To understand why this must be so, let us for
-convenience consider a simple but concrete example: \(5 \times 0\). Here
-\(5\) is the multiplier and \(0\) the multiplicand. So, we may write: \[
+Recall from \cref{tbl:axioms} that \(0\) is the unique \emph{additive}
+identity. Zero's claim to notoriety is that it does \emph{not} have a
+\emph{multiplicative inverse}. And this is because any number
+\emph{multiplied} by zero gives zero.
+
+Consider an arbitrary number \(a \in \mathbb{R}\). Recall also that
+because \(0\) is the additive identity, \(0 + 0 = 0\). We may then claim
+that \begin{equation}\protect\hypertarget{eq:zero-prod-zero}{}{
+\begin{aligned}
+a \cdot 0 &= a \cdot (0 + 0) & \mbox{ $0$ is the identity for addition}\\
+&= a \cdot 0 + a \cdot 0 & \mbox { distributive law; subtract $a \cdot 0$}\\
+0 &= a \cdot 0 &\\
+\end{aligned}
+}\label{eq:zero-prod-zero}\end{equation}
+
+We have carefully tiptoed our way to justify each step with one of the
+field axioms. This is the power of the axiomatic approach. There is no
+``wasted'' axiom; there is no ``missing'' axiom. The set of axioms are
+the minimum necessary for the numbers to rest on a stable foundation.
+This \emph{minimal sufficiency} is at the heart of why mathematics is so
+strong. It has no extra fat. There is also no deficiency. It is frugal
+but sufficient. And any other algebraic structure, like the complex
+numbers \(\mathbb{C}\) that obey the same axioms also have the same
+property. If you are interested in pursuing these dieas further, please
+read
+\href{https://medium.com/swlh/why-a-0-0-and-other-proofs-of-the-obvious-da52dd0caefb}{this
+excellent article online}
+{[}\protect\hyperlink{ref-chodnicki2020}{1}{]}.
+
+If you feel that \cref{eq:zero-prod-zero} is too much sleight of hand,
+and you would like something more concrete, you can always console
+yourself with the convenient but specific example of \(5 \times 0\).
+Here \(5\) is the multiplier and \(0\) the multiplicand. So, we may
+write: \[
 \begin{aligned}
 5 \times 0 &= 0 + 0 + 0 + 0 + 0; & \mbox{ multiplication is repeated addition}\\
 &= (0 + 0) + (0 + 0) + 0; & \mbox{ addition is a binary operation}\\
 &= (0 + 0) + 0; & \mbox{ $0$ is the additive inverse}\\
 &= 0. & \mbox{ $0$ is the additive inverse}\\
 \end{aligned}
-\] We have carefully tiptoed our way to justify each step with one of
-the field axioms. And the choice of a whole number made it easy to see
-the multiplication as repeated addition. What about \(0 \times 5\)?
-Because multiplication is commutative, we may assert that \(0 \times 5\)
-is also \(0\), without doing any additional work. I hope you are getting
-to see mathematics as treasure hunt with clues and short cuts that lead
-to an exciting finale.
+\] And the choice of a whole number made it easy to see the
+multiplication as repeated addition. What about \(0 \times 5\)? Because
+multiplication is commutative, we may assert that \(0 \times 5\) is also
+\(0\), without doing any additional work. I hope you are getting to see
+mathematics as treasure hunt with clues and short cuts that lead to an
+exciting finale.
 
 \hypertarget{product-of-a-positive-and-a-negative-number}{%
 \subsubsection{Product of a positive and a negative
@@ -746,32 +803,45 @@ find use in describing the depth of an ocean trench as being so much
 temperatures below the freezing point or with electric charges of a
 negative type, etc.
 
-Consider \(a > 0, b > 0 \in \mathbb{R}\). Knowing that \(a\) is positive
-and \((-b)\) is negative, what is the sign of the product \((a)(-b)\)?
-To answer this question, let us add \(ab\) to \((a)(-b)\). \[
-\begin{aligned}
-ab + (a)(-b) &= a(b + (-b)); & \mbox{ distributive law}\\
-&= a(0); & \mbox{ $-b$ is the additive inverse of $b$}\\
-&=0. & \mbox{ zero multiplied by any number is zero}\\
-\end{aligned}
-\] Therefore, \(ab + (a)(-b) = 0\) which implies that they are
-themselves additive inverses. So, \((a)(-b) = -(ab)\) which is a
-negative number. Conversely, a negative number may be split into the
-product of a positive number and a negative number.
+We first prove that \emph{multiplying a number by an additive inverse
+gives the additive inverse of their product}, i.e.,
+\begin{equation}\protect\hypertarget{eq:a-minus-b-eq-minus-ab}{}{
+a(-b) = -(ab)
+}\label{eq:a-minus-b-eq-minus-ab}\end{equation} To prove
+\cref{eq:a-minus-b-eq-minus-ab}, we use the fact that zero multiplied by
+any number is zero, as shown in \cref{eq:zero-prod-zero}.
 
-This explanation might seem contrived but it provides guardrails against
-falling off when future mathematical objects are encountered. And it is
-a whole lot more satisfying than hand-waving or saying ``Just take it on
-faith.''
+\begin{equation}\protect\hypertarget{eq:minusprod-prodminus}{}{
+\begin{aligned}
+a \cdot 0 &= a(b + (-b)) & \mbox{ additive inverse}\\
+0 &= ab + a(-b) & \mbox{ distributive law; add $-(ab)$}\\
+-(ab) &= a(-b) &\\
+\end{aligned}
+}\label{eq:minusprod-prodminus}\end{equation}
+
+If we now assume that \(a\) and \(b\) are both positive, then \(ab\) is
+positive, and \((-b)\) is negative. We have the product of \(a\) and
+\((-b)\) to be the negative number \(-(ab)\). So, \emph{the product of a
+positive and a negative number is a negative number}. Conversely, a
+negative number may be split into the product of a positive number and a
+negative number.
+
+One interesting corollary from \cref{eq:minusprod-prodminus} is: \[
+\begin{aligned}
+(-1)(a) &= -(1 \cdot a).\\
+&= -a\\
+\end{aligned}
+\] This means that \emph{the additive inverse of a number is obtained by
+multiplying the original number by \((-1)\)}.
+
+This explanation might seem contrived, but it provides guardrails
+against falling off when future mathematical objects are encountered.
+And it is a whole lot more satisfying than hand-waving or saying ``Just
+take it on faith.''
 
 \hypertarget{why-is-the-product-of-two-negative-numbers-positive}{%
 \subsubsection{Why is the product of two negative numbers
 positive?}\label{why-is-the-product-of-two-negative-numbers-positive}}
-
-If you have no qualms accepting negative numbers, you might still be
-confounded by what we could mean by multiplying two negative numbers.
-The answer, which might startle you, is that \emph{the product of two
-negative numbers is a positive number.}
 
 Let us use the field axioms to navigate our way through this result as
 well. Let \(a > 0, b > 0 \in \mathbb{R}\). Then, both \((-a)\) and
@@ -2217,6 +2287,21 @@ If you wish to read this blog as a single PDF document you may get it
 from the \href{http://swanlotus.org/downloads}{downloads page.}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{bibliography}{%
+\section*{References}\label{bibliography}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{0}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-chodnicki2020}{}}%
+\CSLLeftMargin{{[}1{]} }%
+\CSLRightInline{Slawomir Chodnicki. 2020. Why a·0=0 and other proofs of
+{`the obvious'}. How {`obvious'} becomes {`interesting'} when we go back
+to first principles. Retrieved 12 November 2023 from
+\url{https://medium.com/swlh/why-a-0-0-and-other-proofs-of-the-obvious-da52dd0caefb}}
+
+\end{CSLReferences}
 
 
 
