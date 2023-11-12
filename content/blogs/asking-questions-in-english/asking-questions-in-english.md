@@ -5,7 +5,7 @@ date: "2012-09-15"
 modified: "2022-05-29"
 summary: "This blog is devoted to the art of asking questions in English. This seemingly undemanding task often trips up the aspiring learner of English, especially one who is studying it as a second or third language."
 category: Language
-tags: grammar, usage, questions, word order, verbs, nouns, Tamil, English
+tags: "Butterflies from My Mind"
 opengraphimage: "engtam.jpg"
 ---
 

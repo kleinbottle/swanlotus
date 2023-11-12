@@ -185,7 +185,10 @@ $$
 \mbox{Right Distributivity} & (a+b)c=ac+bc\\
 \end{array}
 $$
-In our case, both conditions hold, and we may simply say that _multiplication is distributive over addition for the reals_. A mathematical object consisting of a set with two binary operations having the above properties is called a [field](https://en.wikipedia.org/wiki/Field_(mathematics)). We may refer to the field of real numbers.
+In our case, both conditions hold, and we may simply say that _multiplication is distributive over addition for the reals_.
+
+A mathematical object consisting of a set with two binary operations having the above properties is called a [field](https://en.wikipedia.org/wiki/Field_(mathematics)). We may refer to the field of real numbers.
+
 
 ## Associativity of multiplication
 
@@ -193,9 +196,9 @@ _Because multiplication is binary, we can only multiply two numbers at any one t
 
 The associative law simply states that when we multiply three numbers, it does not matter which two of the three we multiply first; the result will always be the same. It is this property that allows us to write something like $2 \times 3 \times 5$ or $abc$ and still make sense---because it denotes something unique---even though we know that multiplication is a binary operation.
 
-## The additive and multiplicative inverses in $\mathbb{R}$
+## The additive and multiplicative inverses and identities in $\mathbb{R}$
 
-In addition to the three properties of associativity, commutativity, and distributivity, the real numbers we use every day have two other properties:
+In addition to the three properties of associativity, commutativity, and distributivity, the real numbers we use every day have two other properties shown in @tbl:axioms.
 
 #.  [Additive inverse](): $a + (-a) = (-a) + a = 0$.
 
@@ -218,12 +221,15 @@ Consider an arbitrary number $a \in \mathbb{R}$. Recall also that because $0$ is
 $$
 \begin{aligned}
 a \cdot 0 &= a \cdot (0 + 0) & \mbox{ $0$ is the identity for addition}\\
-&= a \cdot 0 + a \cdot 0 & \mbox { distributive law; subtract $a \cdot 0$}\\
+a \cdot 0 &= a \cdot 0 + a \cdot 0 & \mbox { distributive law; subtract $a \cdot 0$}\\
 0 &= a \cdot 0 &\\
 \end{aligned}
 $${#eq:zero-prod-zero}
+Note that if we take $a = 0$, the product of zero with itself is also zero---something which might be dismissed as trivially obvious, but which could be deceptively difficult to prove.
 
-We have carefully tiptoed our way to justify each step with one of the field axioms. This is the power of the axiomatic approach. There is no "wasted" axiom; there is no "missing" axiom. The set of axioms are the minimum necessary for the numbers to rest on a stable foundation. This _minimal sufficiency_ is at the heart of why mathematics is so strong. It has no extra fat. There is also no deficiency. It is frugal but sufficient. And any other algebraic structure, like the complex numbers $\mathbb{C}$ that obey the same axioms also have the same property. If you are interested in pursuing these dieas further, please read [this excellent article online](https://medium.com/swlh/why-a-0-0-and-other-proofs-of-the-obvious-da52dd0caefb) [@chodnicki2020].
+We have carefully tiptoed our way to justify each step with one of the field axioms. This is the power of the axiomatic approach. There is no "wasted" axiom; there is no "missing" axiom. The set of axioms are the minimum necessary for the numbers to rest on a stable foundation.
+
+This _minimal sufficiency_ is at the heart of why mathematics is so strong. It has no extra fat. There is also no deficiency. It is frugal but sufficient. We will encounter this same idea in the statement that a _basis is a minimal spanning set in a vector space_.^[Whis is the subject for another blog.] Any other algebraic structure, like the complex numbers $\mathbb{C}$ that obey the same axioms as $\mathbb{R}$, also have the same properties.
 
 If you feel that @eq:zero-prod-zero is too much sleight of hand, and you would like something more concrete, you can always console yourself with the convenient but specific example of $5 \times 0$. Here $5$ is the multiplier and $0$ the multiplicand. So, we may write:
 $$
@@ -234,13 +240,14 @@ $$
 &= 0. & \mbox{ $0$ is the additive inverse}\\
 \end{aligned}
 $$
-And the choice of a whole number made it easy to see the multiplication as repeated addition. What about $0 \times 5$? Because multiplication is commutative, we may assert that $0 \times 5$ is also $0$, without doing any additional work. I hope you are getting to see mathematics as treasure hunt with clues and short cuts that lead to an exciting finale.
+And the choice of a whole number made it easy to see the multiplication as repeated addition. What about $0 \times 5$? Because multiplication is commutative, we may assert that $0 \times 5$ is also $0$, without doing any additional work. I hope you are getting to see mathematics as treasure hunt with clues and short cuts that lead to an exciting finale. If you are interested in pursuing these ideas further, please read [this excellent article online](https://medium.com/swlh/why-a-0-0-and-other-proofs-of-the-obvious-da52dd0caefb) [@chodnicki2020].
 
 ### Product of a positive and a negative number
 
 Negative numbers arose when loans had to be given and taken. They also find use in describing the depth of an ocean trench as being so much *below* sea level. Other applications arise naturally with temperatures below the freezing point or with electric charges of a negative type, etc.
 
-We first prove that _multiplying a number by an additive inverse gives the additive inverse of their product_, i.e.,
+The signs of products featuring negative numbers are not intuitively comprehensible. So, we have to rely on the axioms to guide us to consistent results. What is the sign of a positive and negative number?
+To find out, we first prove that _multiplying a number by an additive inverse gives the additive inverse of their product_, i.e.,
 $$
 a(-b) = -(ab)
 $${#eq:a-minus-b-eq-minus-ab}
@@ -254,9 +261,9 @@ a \cdot 0 &= a(b + (-b)) & \mbox{ additive inverse}\\
 \end{aligned}
 $${#eq:minusprod-prodminus}
 
-If we now assume that $a$ and $b$ are both positive, then $ab$ is positive, and $(-b)$ is negative. We have the product of $a$ and $(-b)$ to be the negative number $-(ab)$. So, _the product of a positive and a negative number is a negative number_. Conversely, a negative number may be split into the product of a positive number and a negative number.
+If we now assume that $a$ and $b$ are both positive, then $ab$ is positive, and $(-b)$ is negative. The product of $a$ and $(-b)$ is the negative number $-(ab)$. So, _the product of a positive and a negative number is a negative number_. Conversely, a negative number may be split into the product of a positive number and a negative number.
 
-One interesting corollary from @eq:minusprod-prodminus is:
+One interesting corollary from @eq:a-minus-b-eq-minus-ab and @eq:minusprod-prodminus is:
 $$
 \begin{aligned}
 (-1)(a) &= -(1 \cdot a).\\
@@ -269,7 +276,9 @@ This explanation might seem contrived, but it provides guardrails against fallin
 
 ### Why is the product of two negative numbers positive?
 
-Let us use the field axioms to navigate our way through this result as well. Let $a > 0, b > 0 \in \mathbb{R}$. Then, both $(-a)$ and $(-b)$ are negative. Note that $ab$ is positive and its additive inverse is $-(ab) = (-a)(b) = (a)(-b)$ which is negative from our previous result.
+Let us use the field axioms to navigate our way to this result as well.
+
+Let $a > 0, b > 0 \in \mathbb{R}$. Then, both $(-a)$ and $(-b)$ are negative. Note that $ab$ is positive and its additive inverse is $-(ab) = (-a)(b) = (a)(-b)$ which is negative from our previous result.
 
 The scheme we have followed so far is to add something to the object of interest and use the axioms to prove that the sum is zero. The result we are after will then pop out. Let us apply that method again.
 $$
@@ -309,7 +318,7 @@ Multiplying by adding is simple. Suppose we want to multiply $2$ by $3$. We foll
 
 "Aha!" you might say. "But the answer is not exactly $6$ which is the correct answer." You are right. With logarithms and the limited number of digits of precision, we can at best obtain a very good approximation to a computation.
 
-If you had to compute $23.589 \times 459.1213$ what would you do? You would run to a calculator and punch in the digits to get $10830.212$ with very little effort today. But if you lived in a period without electronic calculators, you would be very glad that logarithms existed, and you would happy to chirp out the answer as $10830.213$ thanks to Napier.
+If you had to compute $23.589 \times 459.1213$ what would you do? You would run to a calculator and punch in the digits to get $10830.212$ with very little effort today. But if you lived in a period without electronic calculators, you would be very glad that logarithms existed, and you would happy to chirp out the answer as $10830$ thanks to Napier.
 
 # Square roots
 
@@ -331,7 +340,10 @@ In the course of time, these pesky numbers---whose square is a negative number--
 
 In the course of time, a sandwich number was invented which was composed of the sum of a real number and an imaginary number. This number was called a *complex number.* It is the first of several mathematical objects we will encounter in this blog that are different from the real numbers of everyday life.
 
-The number $5 + 2i$ is a complex number. Its real part is, of course, $5$ and its imaginary part is $2i$.
+
+DO THIS PROPERLY.
+
+The number $5 + 2i$ is a complex number. An uncommon but equally correct way to write this number would be $5(1) + 2i$, showing that $5$, the real part, is also a coefficient as is Its real part is, of course, $5$ and its imaginary part is $2i$. The coefficients of both parts are drawn from $\mathbb{R}$.
 
 The symbol $i$ is called the *imaginary unit* and is the solution of the equation $i^2 + 1 = 0$.^[Because $i$ is often associated with current, electrical engineers often use the symbol $j$ instead.] Note that this definition of $i$ is not unique because there are two solutions, one positive and one negative. By convention, we take $+i = i$ to be one root and $-i$ to be the other. The notion of positive and negative roots does not have the same significance it did with the real numbers, but we should be aware of the ambiguity in the definition.
 
@@ -340,8 +352,7 @@ The symbol $i$ is called the *imaginary unit* and is the solution of the equatio
 When we multiply complex numbers, we are really performing multiplication on *two pairs* of real numbers with the imaginary unit sandwiched in between. Because of the property $i^2 = -1$, the rules of multiplication with terms involving $i$ must be modified to honour this equation. Let us see how, with a step-by-step example:
 $$
 \begin{aligned}
-(2 + 3i)(4 - 5i) & = 2(4) + 2(-5i)\\
-& \quad + (3i)(4) + (3i)(-5i)\\
+(2 + 3i)(4 - 5i) & = 2(4) + 2(-5i) + (3i)(4) + (3i)(-5i)\\
 & = 8 - 10i + 12i + (-15)(i^2)\\
 & = 8 + 2i + (-15)(-1)\\
 & = 23 + 2i.
