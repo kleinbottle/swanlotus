@@ -614,11 +614,11 @@ need not be so.
 
 One way out is a quick but easy introduction to some ideas of abstract
 algebra which lay the foundation for all subsequent mathematics. This
-way, all the rules are bunched together as unquestioned assumptions.
-Then, based on those assumptions, we build a mathematical edifice that
-is logical, consistent, and extensible. Mathematics will then be changed
-from a mysterious game with unknown rules into a trustworthy friend who
-can be depended upon.
+way, all the rules are bunched together as unquestioned assumptions or
+axioms. Then, based on those assumptions, we build a mathematical
+edifice that is logical, consistent, and extensible. Mathematics will
+then be changed from a mysterious game with ever-changing rules into a
+trustworthy friend who can be relied upon.
 
 The numbers we use every day are drawn from a
 \href{https://www.cuemath.com/algebra/sets/}{set} called the
@@ -633,10 +633,11 @@ addition, denoted by \(+\), and multiplication denoted by \(\times\) or
 by other means as outlined
 \protect\hyperlink{symbols-for-multiplication-across-time-and-need}{above}.
 One property that makes real numbers so useful is that any addition or
-multiplication of real numbers results in another real number---called
-\emph{closure}. In addition, the reals also exhibit other familiar
-behaviours---with fancy-sounding names---which are tabulated below,
-using arbitrary real numbers, \(a, b, c\).
+multiplication of real numbers results in another real number. This is
+called \emph{closure} and is an important aspect of real arithmetic. In
+addition, the reals also exhibit other familiar behaviours---with
+fancy-sounding names---which are tabulated below, using arbitrary real
+numbers, \(a, b, c\).
 
 \begin{small}
 
@@ -694,12 +695,13 @@ the Web from reputable sites whose links are listed below:
   \mbox{Right Distributivity} & (a+b)c=ac+bc\\
   \end{array}
   \] In our case, both conditions hold, and we may simply say that
-  \emph{multiplication is distributive over addition for the reals}. A
-  mathematical object consisting of a set with two binary operations
-  having the above properties is called a
-  \href{https://en.wikipedia.org/wiki/Field_(mathematics)}{field}. We
-  may refer to the field of real numbers.
+  \emph{multiplication is distributive over addition for the reals}.
 \end{enumerate}
+
+A mathematical object consisting of a set with two binary operations
+having the above properties is called a
+\href{https://en.wikipedia.org/wiki/Field_(mathematics)}{field}. The
+real numbers constitute a field.
 
 \hypertarget{associativity-of-multiplication}{%
 \subsection{Associativity of
@@ -717,21 +719,64 @@ something like \(2 \times 3 \times 5\) or \(abc\) and still make
 sense---because it denotes something unique---even though we know that
 multiplication is a binary operation.
 
-\hypertarget{the-additive-and-multiplicative-inverses-in-mathbbr}{%
-\subsection{\texorpdfstring{The additive and multiplicative inverses in
-\(\mathbb{R}\)}{The additive and multiplicative inverses in \textbackslash mathbb\{R\}}}\label{the-additive-and-multiplicative-inverses-in-mathbbr}}
-
 In addition to the three properties of associativity, commutativity, and
-distributivity, the real numbers we use every day have two other
-properties:
+distributivity, the real numbers we use every day have an additive
+identity and inverse in \cref{tbl:axioms}. These are considered next.
+
+\hypertarget{the-additive-identity-and-inverse-in-mathbbr}{%
+\subsection{\texorpdfstring{The additive identity and inverse in
+\(\mathbb{R}\)}{The additive identity and inverse in \textbackslash mathbb\{R\}}}\label{the-additive-identity-and-inverse-in-mathbbr}}
+
+The additive identity in \(\mathbb{R}\) is \(0\). This means that for
+any \(a \in \mathbb{R}\), \(a + 0 = 0 + a = a\). The
+\href{https://en.wikipedia.org/wiki/Additive_inverse}{additive inverse}
+of \(a\) is \((-a)\) and this means \(a + (-a) = (-a) + a = 0\).
+
+\emph{When we add together a number and its inverse, we get the additive
+identity.}
+
+Another way of understanding the additive inverse is to look at it
+geometrically as a reflection in a double-sided mirror placed
+perpendicular to the real line at the position of \(0\). Why at zero?
+\emph{Because zero is its own additive inverse. The reflection of zero
+in the mirror gives us back zero}.
+
+\begin{figure}
+\hypertarget{fig:mirror-at-zero}{%
+\centering
+\includegraphics[width=0.9\textwidth,height=\textheight]{images/mirror-at-zero.png}
+\caption{Geometric interpretation of the additive
+inverse.}\label{fig:mirror-at-zero}
+}
+\end{figure}
+
+With reference to \cref{fig:mirror-at-zero}, the mirror is the silver
+-colored line placed at zero. The irrational number \(a = \sqrt{2}\),
+represented by the red dot, is reflected in the red silvered side of the
+mirror to give the blue dot, which is \(-a = -\sqrt{2}\). A second
+reflection of \(-a = -\sqrt{2}\) on the blue silvered side gives us back
+the original number \(a = \sqrt{2}\). This means that \emph{the additive
+inverse of the additive inverse gives us back the original number}
+
+We show later in \cref{eq:mult-minus-one} that multiplying \(a\) by
+\((-1)\) gives us its additive inverse.
+
+\hypertarget{the-multiplicative-identity-and-inverse-in-mathbbr}{%
+\subsection{\texorpdfstring{The multiplicative identity and inverse in
+\(\mathbb{R}\)}{The multiplicative identity and inverse in \textbackslash mathbb\{R\}}}\label{the-multiplicative-identity-and-inverse-in-mathbbr}}
 
 \begin{enumerate}
+\tightlist
 \item
-  \href{}{Additive inverse}: \(a + (-a) = (-a) + a = 0\).
-\item
-  \href{}{Multiplicative inverse}:
+  \href{https://mathworld.wolfram.com/MultiplicativeInverse.html}{Multiplicative
+  inverse}:
   \(a \times \frac{1}{a} = \frac{1}{a} \times a = 1 \mbox{ for } a \ne 0\).
+  DRAW RECTANGULAR HYPERBOLA.
 \end{enumerate}
+
+\hypertarget{have-subtraction-and-division-disappeared}{%
+\subsection{Have subtraction and division
+disappeared?}\label{have-subtraction-and-division-disappeared}}
 
 If you are wondering where subtraction and division have been hiding,
 they are hiding in plain sight. Subtracting \(b\) from \(a\) amounts to
@@ -756,24 +801,26 @@ because \(0\) is the additive identity, \(0 + 0 = 0\). We may then claim
 that \begin{equation}\protect\hypertarget{eq:zero-prod-zero}{}{
 \begin{aligned}
 a \cdot 0 &= a \cdot (0 + 0) & \mbox{ $0$ is the identity for addition}\\
-&= a \cdot 0 + a \cdot 0 & \mbox { distributive law; subtract $a \cdot 0$}\\
+a \cdot 0 &= a \cdot 0 + a \cdot 0 & \mbox { distributive law; subtract $a \cdot 0$}\\
 0 &= a \cdot 0 &\\
 \end{aligned}
-}\label{eq:zero-prod-zero}\end{equation}
+}\label{eq:zero-prod-zero}\end{equation} Note that if we take \(a = 0\),
+the product of zero with itself is also zero---something which might be
+dismissed as trivially obvious, but which could be deceptively difficult
+to prove.
 
 We have carefully tiptoed our way to justify each step with one of the
 field axioms. This is the power of the axiomatic approach. There is no
 ``wasted'' axiom; there is no ``missing'' axiom. The set of axioms are
 the minimum necessary for the numbers to rest on a stable foundation.
+
 This \emph{minimal sufficiency} is at the heart of why mathematics is so
 strong. It has no extra fat. There is also no deficiency. It is frugal
-but sufficient. And any other algebraic structure, like the complex
-numbers \(\mathbb{C}\) that obey the same axioms also have the same
-property. If you are interested in pursuing these dieas further, please
-read
-\href{https://medium.com/swlh/why-a-0-0-and-other-proofs-of-the-obvious-da52dd0caefb}{this
-excellent article online}
-{[}\protect\hyperlink{ref-chodnicki2020}{1}{]}.
+but sufficient. We will encounter this same idea in the statement that a
+\emph{basis is a minimal spanning set in a vector space}.\footnote{Whis
+  is the subject for another blog.} Any other algebraic structures, like
+the complex numbers \(\mathbb{C}\), that obey the same axioms as
+\(\mathbb{R}\), also have the same properties.
 
 If you feel that \cref{eq:zero-prod-zero} is too much sleight of hand,
 and you would like something more concrete, you can always console
@@ -791,7 +838,11 @@ multiplication as repeated addition. What about \(0 \times 5\)? Because
 multiplication is commutative, we may assert that \(0 \times 5\) is also
 \(0\), without doing any additional work. I hope you are getting to see
 mathematics as treasure hunt with clues and short cuts that lead to an
-exciting finale.
+exciting finale. If you are interested in pursuing these ideas further,
+please read
+\href{https://medium.com/swlh/why-a-0-0-and-other-proofs-of-the-obvious-da52dd0caefb}{this
+excellent article online}
+{[}\protect\hyperlink{ref-chodnicki2020}{1}{]}.
 
 \hypertarget{product-of-a-positive-and-a-negative-number}{%
 \subsubsection{Product of a positive and a negative
@@ -803,8 +854,12 @@ find use in describing the depth of an ocean trench as being so much
 temperatures below the freezing point or with electric charges of a
 negative type, etc.
 
-We first prove that \emph{multiplying a number by an additive inverse
-gives the additive inverse of their product}, i.e.,
+The signs of products featuring negative numbers are not intuitively
+comprehensible. So, we have to rely on the axioms to guide us to
+consistent results. What is the sign of the product of a positive and a
+negative number? To find out, we first prove that \emph{multiplying a
+number by an additive inverse gives the additive inverse of their
+product}, i.e.,
 \begin{equation}\protect\hypertarget{eq:a-minus-b-eq-minus-ab}{}{
 a(-b) = -(ab)
 }\label{eq:a-minus-b-eq-minus-ab}\end{equation} To prove
@@ -820,19 +875,21 @@ a \cdot 0 &= a(b + (-b)) & \mbox{ additive inverse}\\
 }\label{eq:minusprod-prodminus}\end{equation}
 
 If we now assume that \(a\) and \(b\) are both positive, then \(ab\) is
-positive, and \((-b)\) is negative. We have the product of \(a\) and
-\((-b)\) to be the negative number \(-(ab)\). So, \emph{the product of a
-positive and a negative number is a negative number}. Conversely, a
-negative number may be split into the product of a positive number and a
-negative number.
+positive, and \((-b)\) is negative. The product of \(a\) and \((-b)\) is
+the negative number \(-(ab)\). So, \emph{the product of a positive and a
+negative number is a negative number}. Conversely, a negative number may
+be split into the product of a positive number and a negative number.
 
-One interesting corollary from \cref{eq:minusprod-prodminus} is: \[
+One interesting corollary from \cref{eq:a-minus-b-eq-minus-ab} and
+\cref{eq:minusprod-prodminus} is:
+\begin{equation}\protect\hypertarget{eq:mult-minus-one}{}{
 \begin{aligned}
 (-1)(a) &= -(1 \cdot a).\\
 &= -a\\
 \end{aligned}
-\] This means that \emph{the additive inverse of a number is obtained by
-multiplying the original number by \((-1)\)}.
+}\label{eq:mult-minus-one}\end{equation} This means that \emph{the
+additive inverse of a number is obtained by multiplying the original
+number by \((-1)\)}.
 
 This explanation might seem contrived, but it provides guardrails
 against falling off when future mathematical objects are encountered.
@@ -843,11 +900,12 @@ take it on faith.''
 \subsubsection{Why is the product of two negative numbers
 positive?}\label{why-is-the-product-of-two-negative-numbers-positive}}
 
-Let us use the field axioms to navigate our way through this result as
-well. Let \(a > 0, b > 0 \in \mathbb{R}\). Then, both \((-a)\) and
-\((-b)\) are negative. Note that \(ab\) is positive and its additive
-inverse is \(-(ab) = (-a)(b) = (a)(-b)\) which is negative from our
-previous result.
+Let us use the field axioms to navigate our way to this result as well.
+
+Let \(a > 0, b > 0 \in \mathbb{R}\). Then, both \((-a)\) and \((-b)\)
+are negative. Note that \(ab\) is positive and its additive inverse is
+\(-(ab) = (-a)(b) = (a)(-b)\) which is negative from our previous
+result.
 
 The scheme we have followed so far is to add something to the object of
 interest and use the axioms to prove that the sum is zero. The result we
@@ -931,7 +989,7 @@ If you had to compute \(23.589 \times 459.1213\) what would you do? You
 would run to a calculator and punch in the digits to get \(10830.212\)
 with very little effort today. But if you lived in a period without
 electronic calculators, you would be very glad that logarithms existed,
-and you would happy to chirp out the answer as \(10830.213\) thanks to
+and you would happy to chirp out the answer as \(10830\) thanks to
 Napier.
 
 \hypertarget{square-roots}{%
@@ -990,18 +1048,24 @@ called a \emph{complex number.} It is the first of several mathematical
 objects we will encounter in this blog that are different from the real
 numbers of everyday life.
 
-The number \(5 + 2i\) is a complex number. Its real part is, of course,
-\(5\) and its imaginary part is \(2i\).
+The set of complex numbers is denoted by \(\mathbb{C}\) and is defined
+as \[
+\mathbb{C} = \{a+bi: a, b, \in \mathbb{R} \mbox{ and } i^2 = -1\}
+\] In plain English, this means that the set of complex numbers, denoted
+by \(\mathbb{C}\), is defined as all numbers of the form \(a + bi\)
+where \(a\) and \(b\) are real numbers and \(i\), is called the
+\emph{imaginary unit} and is the positive of the two roots of the
+equation \(z^2 + 1 = 0.\)\footnote{Because \(i\) is often associated
+  with current, electrical engineers often use the symbol \(j\) instead.}
 
-The symbol \(i\) is called the \emph{imaginary unit} and is the solution
-of the equation \(i^2 + 1 = 0\).\footnote{Because \(i\) is often
-  associated with current, electrical engineers often use the symbol
-  \(j\) instead.} Note that this definition of \(i\) is not unique
-because there are two solutions, one positive and one negative. By
-convention, we take \(+i = i\) to be one root and \(-i\) to be the
-other. The notion of positive and negative roots does not have the same
-significance it did with the real numbers, but we should be aware of the
-ambiguity in the definition.
+But there is a little asymmetry in the expression \(a + bi\). While
+\(b\) is multiplied by \(i\), the \(a\) stands alone. Or does it? We
+could always write \(a(1) + bi\) to restore symmetry into the
+expression. Then \(1\) is the unit for the real part and \(i\) is the
+unit for the imaginary part. I find this latter way of writing the
+complex number very reassuring because it displays the symmetry that I
+was looking for. In the interests of cutting through the clutter though,
+the \((1)\) is dropped by convention, and we write \(a + bi\).
 
 \hypertarget{multiplication-of-complex-numbers}{%
 \section{Multiplication of complex
@@ -1013,8 +1077,7 @@ unit sandwiched in between. Because of the property \(i^2 = -1\), the
 rules of multiplication with terms involving \(i\) must be modified to
 honour this equation. Let us see how, with a step-by-step example: \[
 \begin{aligned}
-(2 + 3i)(4 - 5i) & = 2(4) + 2(-5i)\\
-& \quad + (3i)(4) + (3i)(-5i)\\
+(2 + 3i)(4 - 5i) & = 2(4) + 2(-5i) + (3i)(4) + (3i)(-5i)\\
 & = 8 - 10i + 12i + (-15)(i^2)\\
 & = 8 + 2i + (-15)(-1)\\
 & = 23 + 2i.
@@ -1023,11 +1086,17 @@ honour this equation. Let us see how, with a step-by-step example: \[
 proceed as normal. If we were to generalize this to a pair of complex
 numbers, we get \[(a + bi)(c + di) = (ac - bd) + (ad + bc)i.\]
 
+Although the rules of multiplication of complex numbers differ from
+those of real numbers, the \emph{field axioms} still hold. This is the
+purpose behind the development of abstract algebra. The principle is DRY
+(Don't Repeat Yourself) or, equivalently, do not re-invent the wheel.
+
 \hypertarget{polar-form-of-complex-numbers}{%
 \subsection{Polar form of complex
 numbers}\label{polar-form-of-complex-numbers}}
 
-\(re^{i\theta} = r(\cos\theta + i\sin\theta)\)
+\(re^{i\theta} = r(\cos\theta + i\sin\theta)\) \$ Argand diagram plus
+explanation.
 
 \hypertarget{consistency-between-real-and-complex-multiplication}{%
 \subsection{Consistency between real and complex

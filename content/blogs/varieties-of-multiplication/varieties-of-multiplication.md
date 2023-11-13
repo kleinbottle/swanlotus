@@ -151,11 +151,11 @@ Early mathematics was eminently practical, concerned with computing areas and vo
 
 Some of the most unpleasant experiences of school mathematics are the sudden and unexpected changes that intrude into the familiar arithmetic of primary school. Division, fractions, negative numbers, multiplication by zero, product of two negatives being positive, etc. are a few examples. When rule upon unanticipated rule is foisted on the young student, with no rhyme or reason, the student gets overwhelmed and develops a distaste for mathematics or even a reflex fear of it. This need not be so.
 
-One way out is a quick but easy introduction to some ideas of abstract algebra which lay the foundation for all subsequent mathematics. This way, all the rules are bunched together as unquestioned assumptions. Then, based on those assumptions, we build a mathematical edifice that is logical, consistent, and extensible. Mathematics will then be changed from a mysterious game with unknown rules into a trustworthy friend who can be depended upon.
+One way out is a quick but easy introduction to some ideas of abstract algebra which lay the foundation for all subsequent mathematics. This way, all the rules are bunched together as unquestioned assumptions or axioms. Then, based on those assumptions, we build a mathematical edifice that is logical, consistent, and extensible. Mathematics will then be changed from a mysterious game with ever-changing rules into a trustworthy friend who can be relied upon.
 
 The numbers we use every day are drawn from a [set](https://www.cuemath.com/algebra/sets/) called the [real numbers](https://mathworld.wolfram.com/RealNumber.html) denoted by $\mathbb{R}$. Numbers such as $0$, $1$, $-200$, $50004$, $\frac{1}{2}$, $-\frac{3}{4}$, $0.3333\cdots$, $-0.5$, $\sqrt{2}$, $\pi$, and countless others belong to this grab bag set.
 
-The set $\mathbb{R}$ comes bundled with _two_ binary operations: addition, denoted by $+$, and multiplication denoted by $\times$ or by other means as outlined [above](#symbols-for-multiplication-across-time-and-need). One property that makes real numbers so useful is that any addition or multiplication of real numbers results in another real number---called _closure_. In addition, the reals also exhibit other familiar behaviours---with fancy-sounding names---which are tabulated below, using arbitrary real numbers, $a, b, c$.
+The set $\mathbb{R}$ comes bundled with _two_ binary operations: addition, denoted by $+$, and multiplication denoted by $\times$ or by other means as outlined [above](#symbols-for-multiplication-across-time-and-need). One property that makes real numbers so useful is that any addition or multiplication of real numbers results in another real number. This is called _closure_ and is an important aspect of real arithmetic. In addition, the reals also exhibit other familiar behaviours---with fancy-sounding names---which are tabulated below, using arbitrary real numbers, $a, b, c$.
 
 ::: {.small}
 ------------------------------------------------------------------------------
@@ -187,7 +187,7 @@ $$
 $$
 In our case, both conditions hold, and we may simply say that _multiplication is distributive over addition for the reals_.
 
-A mathematical object consisting of a set with two binary operations having the above properties is called a [field](https://en.wikipedia.org/wiki/Field_(mathematics)). We may refer to the field of real numbers.
+A mathematical object consisting of a set with two binary operations having the above properties is called a [field](https://en.wikipedia.org/wiki/Field_(mathematics)). The real numbers constitute a field.
 
 
 ## Associativity of multiplication
@@ -196,13 +196,28 @@ _Because multiplication is binary, we can only multiply two numbers at any one t
 
 The associative law simply states that when we multiply three numbers, it does not matter which two of the three we multiply first; the result will always be the same. It is this property that allows us to write something like $2 \times 3 \times 5$ or $abc$ and still make sense---because it denotes something unique---even though we know that multiplication is a binary operation.
 
-## The additive and multiplicative inverses and identities in $\mathbb{R}$
+In addition to the three properties of associativity, commutativity, and distributivity, the real numbers we use every day have an additive identity and inverse in @tbl:axioms. These are considered next.
 
-In addition to the three properties of associativity, commutativity, and distributivity, the real numbers we use every day have two other properties shown in @tbl:axioms.
+## The additive identity and inverse in $\mathbb{R}$
 
-#.  [Additive inverse](): $a + (-a) = (-a) + a = 0$.
+The additive identity in $\mathbb{R}$ is $0$. This means that for any $a \in \mathbb{R}$, $a + 0 = 0 + a = a$. The [additive inverse](https://en.wikipedia.org/wiki/Additive_inverse) of $a$ is $(-a)$ and this means $a + (-a) = (-a) + a = 0$.
 
-#.  [Multiplicative inverse](): $a \times \frac{1}{a} = \frac{1}{a} \times a = 1 \mbox{ for } a \ne 0$.
+_When we add together a number and its inverse, we get the additive identity._
+
+Another way of understanding the additive inverse is to look at it geometrically as a reflection in a double-sided mirror placed perpendicular to the real line at the position of $0$. Why at zero? _Because zero is its own additive inverse. The reflection of zero in the mirror gives us back zero_.
+
+![Geometric interpretation of the additive inverse.]({attach}images/mirror-at-zero.png){#fig:mirror-at-zero width=90% .modal-target}
+
+With reference to @fig:mirror-at-zero, the mirror is the silver -colored line placed at zero. The irrational number $a = \sqrt{2}$, represented by the red dot, is reflected in the red silvered side of the mirror to give the blue dot, which is $-a = -\sqrt{2}$. A second reflection of $-a = -\sqrt{2}$ on the blue silvered side gives us back the original number $a = \sqrt{2}$. This means that _the additive inverse of the additive inverse gives us back the original number_
+
+We show later in @eq:mult-minus-one that multiplying $a$ by $(-1)$ gives us its additive inverse.
+
+## The multiplicative identity and inverse in $\mathbb{R}$
+
+#.  [Multiplicative inverse](https://mathworld.wolfram.com/MultiplicativeInverse.html): $a \times \frac{1}{a} = \frac{1}{a} \times a = 1 \mbox{ for } a \ne 0$. DRAW RECTANGULAR HYPERBOLA.
+
+
+## Have subtraction and division disappeared?
 
 If you are wondering where subtraction and division have been hiding, they are hiding in plain sight. Subtracting $b$ from $a$ amounts to adding the additive inverse of $b$ to $a$. So,
 $$
@@ -269,7 +284,7 @@ $$
 (-1)(a) &= -(1 \cdot a).\\
 &= -a\\
 \end{aligned}
-$$
+$${#eq:mult-minus-one}
 This means that _the additive inverse of a number is obtained by multiplying the original number by $(-1)$_.
 
 This explanation might seem contrived, but it provides guardrails against falling off when future mathematical objects are encountered. And it is a whole lot more satisfying than hand-waving or saying "Just take it on faith."
