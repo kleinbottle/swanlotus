@@ -66,6 +66,12 @@
             <div id="sidebar" class="tile is-child is-3 is-size-6-mobile is-size-5-tablet is-size-4-desktop">
                 {% block sidebar_content %}
                 {% endblock %}
+                <h6><i class="fas fa-envelope"></i>&nbsp;Recent Blogs</h6>
+                <ul class="recent-blogs">
+                    {% for article in articles[:5] %}
+                        <li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+                    {% endfor %}
+                </ul>
                 <ul>
                     <li><a href="{{ SITEURL }}/categories.html"><i
                                 class="fas fa-folder-open fa-fw"></i>&nbsp;Categories</a></li>

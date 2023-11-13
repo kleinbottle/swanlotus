@@ -9,7 +9,7 @@
 
 <dl>
 {% set ns = namespace(article_year="1970") %}
-{% for article in articles_page.object_list|sort(attribute='modified', reverse=true) %}
+{% for article in articles %}
     {% if ns.article_year != article.modified.strftime("%Y") %}
         <dt>{{ article.modified.strftime("%Y") }}</dt>
     {% endif %}

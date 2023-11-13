@@ -4682,6 +4682,20 @@ body {
   font-size: 0.875em;
 }
 
+#sidebar .recent-blogs {
+  font-size: smaller;
+  margin-left: 2.5em;
+  margin-bottom: 1em;
+}
+
+#sidebar .recent-blogs li {
+  list-style-type: circle;
+}
+
+#sidebar .fa-envelope {
+  color: hsl(0, 0%, 100%);
+}
+
 /* Styles for code blocks */
 pre {
   background-color: hsl(0, 0%, 21%);
@@ -4909,6 +4923,11 @@ a:hover code {
   clear: both;
 }
 
+/* Styles for paginator */
+.paginator {
+  padding-bottom: 1em;
+}
+
 /* Font Awesome styles */
 .fa-solid {
   color: maroon;
@@ -4920,10 +4939,6 @@ a:hover code {
 
 .fa-envelope, .fa-mobile-screen-button, .fa-linkedin-in, .fa-github {
   color: #2e8bc0;
-}
-
-.fa-magnifying-glass {
-  color: hsl(0, 0%, 100%);
 }
 
 /*# sourceMappingURL=swanlotus.css.map */

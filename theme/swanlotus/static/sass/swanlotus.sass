@@ -204,6 +204,17 @@ body
     background-color: transparent
     font-size: 0.875em  // Make monospace font slightly smaller to match the sans-serif
 
+#sidebar .recent-blogs
+    font-size: smaller
+    margin-left: 2.5em
+    margin-bottom: 1em
+
+#sidebar .recent-blogs li
+    list-style-type: circle
+
+#sidebar .fa-envelope
+    color: $white
+
 /* Styles for code blocks */
 pre
     background-color: $pre-background
@@ -389,6 +400,10 @@ a:hover code
     padding: $footer-padding
     clear: both
 
+/* Styles for paginator */
+.paginator
+    padding-bottom: 1em
+
 /* Font Awesome styles */
 .fa-solid
     color: maroon
@@ -398,6 +413,3 @@ a:hover code
 
 .fa-envelope, .fa-mobile-screen-button, .fa-linkedin-in, .fa-github
     color: #2e8bc0 /* a blue */
-
-.fa-magnifying-glass
-    color: $navbar-item-color
