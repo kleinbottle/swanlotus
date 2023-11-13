@@ -229,7 +229,7 @@ Note that if we take $a = 0$, the product of zero with itself is also zero---som
 
 We have carefully tiptoed our way to justify each step with one of the field axioms. This is the power of the axiomatic approach. There is no "wasted" axiom; there is no "missing" axiom. The set of axioms are the minimum necessary for the numbers to rest on a stable foundation.
 
-This _minimal sufficiency_ is at the heart of why mathematics is so strong. It has no extra fat. There is also no deficiency. It is frugal but sufficient. We will encounter this same idea in the statement that a _basis is a minimal spanning set in a vector space_.^[Whis is the subject for another blog.] Any other algebraic structure, like the complex numbers $\mathbb{C}$ that obey the same axioms as $\mathbb{R}$, also have the same properties.
+This _minimal sufficiency_ is at the heart of why mathematics is so strong. It has no extra fat. There is also no deficiency. It is frugal but sufficient. We will encounter this same idea in the statement that a _basis is a minimal spanning set in a vector space_.^[Whis is the subject for another blog.] Any other algebraic structures, like the complex numbers $\mathbb{C}$, that obey the same axioms as $\mathbb{R}$, also have the same properties.
 
 If you feel that @eq:zero-prod-zero is too much sleight of hand, and you would like something more concrete, you can always console yourself with the convenient but specific example of $5 \times 0$. Here $5$ is the multiplier and $0$ the multiplicand. So, we may write:
 $$
@@ -246,7 +246,7 @@ And the choice of a whole number made it easy to see the multiplication as repea
 
 Negative numbers arose when loans had to be given and taken. They also find use in describing the depth of an ocean trench as being so much *below* sea level. Other applications arise naturally with temperatures below the freezing point or with electric charges of a negative type, etc.
 
-The signs of products featuring negative numbers are not intuitively comprehensible. So, we have to rely on the axioms to guide us to consistent results. What is the sign of a positive and negative number?
+The signs of products featuring negative numbers are not intuitively comprehensible. So, we have to rely on the axioms to guide us to consistent results. What is the sign of the product of a positive and a negative number?
 To find out, we first prove that _multiplying a number by an additive inverse gives the additive inverse of their product_, i.e.,
 $$
 a(-b) = -(ab)
@@ -340,12 +340,13 @@ In the course of time, these pesky numbers---whose square is a negative number--
 
 In the course of time, a sandwich number was invented which was composed of the sum of a real number and an imaginary number. This number was called a *complex number.* It is the first of several mathematical objects we will encounter in this blog that are different from the real numbers of everyday life.
 
+The set of complex numbers is denoted by $\mathbb{C}$ and is defined as
+$$
+\mathbb{C} = \{a+bi: a, b, \in \mathbb{R} \mbox{ and } i^2 = -1\}
+$$
+In plain English, this means that the set of complex numbers, denoted by $\mathbb{C}$, is defined as all numbers of the form $a + bi$ where $a$ and $b$ are real numbers and $i$, is called the _imaginary unit_ and is the positive of the two roots of the equation $z^2 + 1 = 0.$^[Because $i$ is often associated with current, electrical engineers often use the symbol $j$ instead.]
 
-DO THIS PROPERLY.
-
-The number $5 + 2i$ is a complex number. An uncommon but equally correct way to write this number would be $5(1) + 2i$, showing that $5$, the real part, is also a coefficient as is Its real part is, of course, $5$ and its imaginary part is $2i$. The coefficients of both parts are drawn from $\mathbb{R}$.
-
-The symbol $i$ is called the *imaginary unit* and is the solution of the equation $i^2 + 1 = 0$.^[Because $i$ is often associated with current, electrical engineers often use the symbol $j$ instead.] Note that this definition of $i$ is not unique because there are two solutions, one positive and one negative. By convention, we take $+i = i$ to be one root and $-i$ to be the other. The notion of positive and negative roots does not have the same significance it did with the real numbers, but we should be aware of the ambiguity in the definition.
+But there is a little asymmetry in the expression $a + bi$. While $b$ is multiplied by $i$, the $a$ stands alone. Or does it? We could always write $a(1) + bi$ to restore symmetry into the expression. Then $1$ is the unit for the real part and $i$ is the unit for the imaginary part. I find this latter way of writing the complex number very reassuring because it displays the symmetry that I was looking for. In the interests of cutting through the clutter though, the $(1)$ is dropped by convention, and we write $a + bi$.
 
 # Multiplication of complex numbers
 
@@ -361,11 +362,15 @@ $$
 Note that we use $i^2 = -1$ and group like terms, but otherwise proceed as normal. If we were to generalize this to a pair of complex numbers, we get
 $$(a + bi)(c + di) = (ac - bd) + (ad + bc)i.$$
 
+Although the rules of multiplication of complex numbers differ from those of real numbers, the _field axioms_ still hold. This is the purpose behind the development of abstract algebra. The principle is DRY (Don't Repeat Yourself) or, equivalently, do not re-invent the wheel.
+
 <!--TODO: i^4 = 1; rotation; compare with -i^2 = 1-->
 
 ## Polar form of complex numbers
 
 $re^{i\theta} = r(\cos\theta + i\sin\theta)$
+$
+Argand diagram plus explanation.
 
 ## Consistency between real and complex multiplication
 
