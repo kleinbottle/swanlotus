@@ -8,9 +8,13 @@
 <h1>Archives</h1>
 
 <dl>
-{% for article in dates %}
-    <dt>{{ article.locale_date }}</dt>
+{% set ns = namespace(article_year="1970") %}
+{% for article in articles_page.object_list|sort(attribute='modified', reverse=true) %}
+    {% if ns.article_year != article.modified.strftime("%Y") %}
+        <dt>{{ article.modified.strftime("%Y") }}</dt>
+    {% endif %}
     <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+    {% set ns.article_year = article.modified.strftime("%Y") %}
 {% endfor %}
 </dl>
 {% endblock %}

@@ -92,5 +92,12 @@ SOCIAL = (
 
 DEFAULT_PAGINATION = 10
 
+PAGINATED_TEMPLATES = {
+    'index': None,
+    'tag': 100,
+    'category': 100,
+    'archives': 100
+}
+
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
