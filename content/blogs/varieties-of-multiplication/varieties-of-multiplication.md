@@ -12,8 +12,6 @@ opengraphimage:
 
 > This was my first blog---written in 2012---under the [_Mathemtical Musings_](https://swanlotus.netlify.app/tag/mathematical-musings) tag. The intention was to re-visit topics in mathematics that trigger concern or disquiet in the earnest student of the subject. My hope was that ideas that appeared puzzling or forbidding at first sight could be coaxed to become friendly and helpful. Unhurried explanations and a different perspective would underpin the approach. I have retained, substantially unchanged, what I first wrote, to maintain the freshness, flavour, and vintage of the original blog, even if it is a little rough around the edges.
 
-BUSHIDO
-
 ## Prologue
 
 This blog is experimental in three ways.
@@ -215,7 +213,7 @@ With reference to @fig:mirror-at-zero, the mirror is the silver-colored line pla
 
 ![A graphical construction to obtain the additive inverse.]({attach}images/additive-inverse.svg){#fig:additive-inverse width=70% .modal-target}
 
-At the risk of expounding the obvious, let us take a look at a pictorial representation of how to obtain the additive inverse of a number $x \in \mathbb{R}$. This is illustrated graphically in @fig:additive-inverse. Every ordered pair of coordinates lying on the curve $y = -x$ represents a number and its additive inverse as a pair. So, if $x = a$, $y = -a$, and the ordered pair $(a, -a)$ represents a number and its additive inverse. This view might be helpful for those who think in terms of pictures rather than symbols.
+At the risk of expounding the obvious, let us take another look at a pictorial representation of how to obtain the additive inverse of a number $x \in \mathbb{R}$. This is illustrated graphically in @fig:additive-inverse. Every ordered pair of coordinates lying on the curve $y = -x$ represents a number and its additive inverse as a pair. So, if $x = a$, $y = -a$, and the ordered pair $(a, -a)$ represents a number and its additive inverse. This view might be helpful for those who think in terms of pictures rather than symbols.
 
 An even more concrete algorithm to obtain the additive inverse is now given. Suppose we want the additive inverse of $1.5$. We draw a vertical line from $1.5$ on the $x$-axis to cut the line $y = x$ and then extend the line horizontally until it cuts the $y$-axis at $-1.5$. This last number is the additive inverse. It is clear from @fig:additive-inverse that the _only_ point that is invariant to this operation is $0$ which maps to itself. _The additive inverse of the additive identity is itself_.
 
