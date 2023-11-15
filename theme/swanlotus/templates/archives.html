@@ -9,6 +9,7 @@
 
 <dl>
 {% set ns = namespace(article_year="1970") %}
+{% set articles = articles if not all_articles else all_articles %}
 {% for article in articles %}
     {% if ns.article_year != article.modified.strftime("%Y") %}
         <dt>{{ article.modified.strftime("%Y") }}</dt>
