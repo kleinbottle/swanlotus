@@ -6,6 +6,7 @@ modified: "2023-11-10"
 category: Mathematics
 tags: Mathematical Musings
 summary: 'I want to look at some of the varieties of multiplication that mathematicians have developed over time. It is a survey that will serve as a pinhole through which we can view how a single, simple mathematical idea has been expanded and elaborated into uses far beyond its historical moorings.'
+status: draft
 opengraphimage:
 ---
 
@@ -77,19 +78,19 @@ Historically, stones were used to count. And the stones representing any number 
 
 All numbers which are the products of two whole numbers, neither of which is one, may be expressed as *rectangular numbers*. The symbolic operation $4 \times 3$ may be shown pictorially as a series of $12$ icons arranged four across and three high. Because we may swap the order of multiplication, we may also show it as $12$ rectangles three across and four high. As we have seen, multiplication of numbers is commutative. The image below shows this equivalence.
 
-![The multiplier is the number of rows, and the multiplicand is the number of columns.]({attach}images/four-by-three.png){#fig:four-by-three width=50% .modal-target}
+![The multiplier is the number of rows, and the multiplicand is the number of columns.]({attach}images/four-by-three.svg){#fig:four-by-three width=50% .modal-target}
 
 ## Factorization is not unique
 
 There is a subtle but important point to grasp here. The product $12$ is called a *composite* number and its *factors* in the illustrated representation are $4$ and $3$. _But this factorization is not unique._ We could have equally correctly claimed that $2 \times 6 = 12$ leading to a different factorization. While we may assert that both $4 \times 3$ and $2 \times 6$ lead to the same unique composite number as the product, we cannot reverse the process and claim uniqueness of factors for any particular composite number.
 
-![Twelve is a composite number. It may be factorized as $2 \times 6$, $4 \times 3$, or as the trivial $1 \times 12$.]({attach}images/six-by-two.png){#fig:six-by-two width=70% .modal-target}
+![Twelve is a composite number. It may be factorized as $2 \times 6$, $4 \times 3$, or as the trivial $1 \times 12$.]({attach}images/six-by-two.svg){#fig:six-by-two width=70% .modal-target}
 
 ## Square numbers
 
 A square is a special case of a rectangle whose length and width are equal. When we write $3 \times 3 = 9$, and we arrange the resulting nine squares in a rectangle, we get a *square number* of three squares by three squares. This is why we say that we are *squaring* a number when we multiply it by itself.
 
-![Nine is a square number. Because $3 \times 3 = 9$, it may be so portrayed geometrically.]({attach}images/three-square.png){#fig:three-square width=20% .modal-target}
+![Nine is a square number. Because $3 \times 3 = 9$, it may be so portrayed geometrically.]({attach}images/three-square.svg){#fig:three-square width=20% .modal-target}
 
 One could carry this analogy further and move into three dimensions to represent a number like $3 \times 3 \times 3 = 27$ with small cubes arranged in a large *cube.*^[Try this with toy blocks to convince yourself of its truth.] This is why we say we are *cubing* a number when we multiply it by itself twice.
 
@@ -97,7 +98,7 @@ One could carry this analogy further and move into three dimensions to represent
 
 A number which cannot be expressed as the product of two numbers other than one and itself is called a *prime number*. Prime numbers can only be arranged in a line, never in a rectangle. Seven is a prime number as illustrated below.
 
-![Seven is a prime number. Its seven icons cannot be re-arranged in a rectangle.]({attach}images/seven.png){#fig:seven width=45% .modal-target}
+![Seven is a prime number. Its seven icons cannot be re-arranged in a rectangle.]({attach}images/seven.svg){#fig:seven width=45% .modal-target}
 
 Try to rearrange the seven icons into a rectangle to convince yourself that it is not possible and that seven is prime. Experimenting like this will help you better understand what testing for primality entails.
 
@@ -206,18 +207,41 @@ _When we add together a number and its inverse, we get the additive identity._
 
 Another way of understanding the additive inverse is to look at it geometrically as a reflection in a double-sided mirror placed perpendicular to the real line at the position of $0$. Why at zero? _Because zero is its own additive inverse. The reflection of zero in the mirror gives us back zero_.
 
-![Geometric interpretation of the additive inverse.]({attach}images/mirror-at-zero.png){#fig:mirror-at-zero width=90% .modal-target}
+![Geometric interpretation of the additive inverse.]({attach}images/mirror-at-zero.svg){#fig:mirror-at-zero width=90% .modal-target}
 
-With reference to @fig:mirror-at-zero, the mirror is the silver -colored line placed at zero. The irrational number $a = \sqrt{2}$, represented by the red dot, is reflected in the red silvered side of the mirror to give the blue dot, which is $-a = -\sqrt{2}$. A second reflection of $-a = -\sqrt{2}$ on the blue silvered side gives us back the original number $a = \sqrt{2}$. This means that _the additive inverse of the additive inverse gives us back the original number_
+With reference to @fig:mirror-at-zero, the mirror is the silver-colored line placed at zero. The irrational number $a = \sqrt{2}$, represented by the red dot, is reflected in the red silvered side of the mirror to give the blue dot, which is $-a = -\sqrt{2}$. A second reflection of $-a = -\sqrt{2}$ on the blue silvered side gives us back the original number $a = \sqrt{2}$. This means that _the additive inverse of the additive inverse gives us back the original number_.
+
+![A graphical construction to obtain the additive inverse.]({attach}images/additive-inverse.svg){#fig:additive-inverse width=70% .modal-target}
+
+At the risk of expounding the obvious, let us take a look at a pictorial representation of how to obtain the additive inverse of a number $x \in \mathbb{R}$. This is illustrated graphically in @fig:additive-inverse. Every ordered pair of coordinates lying on the curve $y = -x$ represents a number and its additive inverse as a pair. So, if $x = a$, $y = -a$, and the ordered pair $(a, -a)$ represents a number and its additive inverse. This view might be helpful for those who think in terms of pictures rather than symbols.
+
+An even more concrete algorithm to obtain the additive inverse is now given. Suppose we want the additive inverse of $1.5$. We draw a vertical line from $1.5$ on the $x$-axis to cut the line $y = x$ and then extend the line horizontally until it cuts the $y$-axis at $-1.5$. This last number is the additive inverse. It is clear from @fig:additive-inverse that the _only_ point that is invariant to this operation is $0$ which maps to itself. _The additive inverse of the additive identity is itself_.
 
 We show later in @eq:mult-minus-one that multiplying $a$ by $(-1)$ gives us its additive inverse.
 
 ## The multiplicative identity and inverse in $\mathbb{R}$
 
-#.  [Multiplicative inverse](https://mathworld.wolfram.com/MultiplicativeInverse.html): $a \times \frac{1}{a} = \frac{1}{a} \times a = 1 \mbox{ for } a \ne 0$. DRAW RECTANGULAR HYPERBOLA.
+We next consider the multiplicative identity and inverse in $\mathbb{R}$ which are also shown in @tbl:axioms.
 
+The [multiplicative inverse](https://mathworld.wolfram.com/MultiplicativeInverse.html) for arbitrary $a \in \mathbb{R}$ is defined as $\frac{1}{a} \mbox{ for } a \ne 0$.  Why the exclusion of zero? Let us look for a graphical reason.
 
-## Have subtraction and division disappeared?
+If we plot $x$ against its multiplicative inverse $\frac{1}{x}$,^[We use the familiar $x$ instead of $a$ in the graphical context.] we would get a [rectangular hyperbola](https://en.wikipedia.org/wiki/Hyperbola), as shown in @fig:hyperbola. We have coloured the two "arms" of the hyperbola in the first and third quadrants in blue and red respectively, although they are part of the same curve.
+
+A construction to get the multiplicative inverse of some point $a$ (not equal to zero) is to locate the point with the $x$ coordinate $a$ on the curve and to find out its $y$ coordinate. The ordered pair $(a, \frac{1}{a})$ therefore represents a number and its multiplicative inverse, with the proviso that $a \ne 0$. Indeed, we cannot ever get to $a = 0$ on a graph of the hyperbola.
+
+Note the following insights from @fig:hyperbola:
+
+a. The function becomes unbounded as $x$ approaches $0$. This happens both from the positive and negative sides. Symbolically, $\lim_{x \to 0^{+}}\frac{1}{x}=\infty$ and equally, $\lim_{x \to 0^{-}}\frac{1}{x}=-\infty$.^[There is no limit as $x \to 0$.] This is why $0$ has no multiplicative inverse.
+
+a. The multiplicative inverse has the same sign as the original number, since the hyperbola has two "arms".
+
+a. There are only two values of $x$ for which the multiplicative inverse is also the original number. They are at $x = 1$ and $x = -1$. This is because the line $y = x$ intersects the hyperbola at two points: $(1, 1)$ and $(-1, -1)$.
+
+SHOW CONSTRUCTION AS IN PREVIOUS CASE
+
+![The multiplicative inverse in $\mathbb{R}$ plotted as $y = \frac{1}{x}$.]({attach}images/hyperbola.svg){#fig:hyperbola width=95% .modal-target}
+
+## Where have subtraction and division disappeared?
 
 If you are wondering where subtraction and division have been hiding, they are hiding in plain sight. Subtracting $b$ from $a$ amounts to adding the additive inverse of $b$ to $a$. So,
 $$
