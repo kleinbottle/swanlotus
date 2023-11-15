@@ -12,6 +12,8 @@ opengraphimage:
 
 > This was my first blog---written in 2012---under the [_Mathemtical Musings_](https://swanlotus.netlify.app/tag/mathematical-musings) tag. The intention was to re-visit topics in mathematics that trigger concern or disquiet in the earnest student of the subject. My hope was that ideas that appeared puzzling or forbidding at first sight could be coaxed to become friendly and helpful. Unhurried explanations and a different perspective would underpin the approach. I have retained, substantially unchanged, what I first wrote, to maintain the freshness, flavour, and vintage of the original blog, even if it is a little rough around the edges.
 
+BUSHIDO
+
 ## Prologue
 
 This blog is experimental in three ways.
