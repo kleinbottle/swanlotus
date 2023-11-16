@@ -62,6 +62,7 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+\usepackage{svg}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -277,7 +278,7 @@ me feedback} on whether this approach works for you.
 Third, this is an \emph{extremely long} blog. In fact, I call it a
 \href{https://www.vocabulary.com/dictionary/slog}{\emph{slog}}
 \emojifont {😉} \normalfont. It took me some weeks to write it. So, take
-your time reading it. It is unlikely that you will finish it at one
+your time reading it. It is unlikely that you will finish it in one
 sitting. \emph{Read it in parts at your own pace}. After having read it
 once, cast your eyes and mind over the whole to get an overall view of
 the main ideas.
@@ -301,7 +302,7 @@ operation}\label{multiplication-as-a-binary-operation}}
 Consistency is valued more in mathematics than in other disciplines.
 \emph{The idea is not to upset the apple cart but to expand it}.
 Definitions, conventions, rules, facts, and fallacies---once
-established---are usually above argument, and do not vary with time or
+established---are usually above dispute, and do not vary with time or
 place. So, let us start by defining some terms.
 
 Multiplication is a \emph{binary} operation: it is something that we do
@@ -392,7 +393,7 @@ is commutative. The image below shows this equivalence.
 \begin{figure}
 \hypertarget{fig:four-by-three}{%
 \centering
-\includegraphics[width=0.5\textwidth,height=\textheight]{images/four-by-three.png}
+\includesvg[width=0.5\textwidth,height=\textheight]{images/four-by-three.svg}
 \caption{The multiplier is the number of rows, and the multiplicand is
 the number of columns.}\label{fig:four-by-three}
 }
@@ -414,7 +415,7 @@ and claim uniqueness of factors for any particular composite number.
 \begin{figure}
 \hypertarget{fig:six-by-two}{%
 \centering
-\includegraphics[width=0.7\textwidth,height=\textheight]{images/six-by-two.png}
+\includesvg[width=0.7\textwidth,height=\textheight]{images/six-by-two.svg}
 \caption{Twelve is a composite number. It may be factorized as
 \(2 \times 6\), \(4 \times 3\), or as the trivial
 \(1 \times 12\).}\label{fig:six-by-two}
@@ -433,7 +434,7 @@ a number when we multiply it by itself.
 \begin{figure}
 \hypertarget{fig:three-square}{%
 \centering
-\includegraphics[width=0.2\textwidth,height=\textheight]{images/three-square.png}
+\includesvg[width=0.2\textwidth,height=\textheight]{images/three-square.svg}
 \caption{Nine is a square number. Because \(3 \times 3 = 9\), it may be
 so portrayed geometrically.}\label{fig:three-square}
 }
@@ -456,7 +457,7 @@ number as illustrated below.
 \begin{figure}
 \hypertarget{fig:seven}{%
 \centering
-\includegraphics[width=0.45\textwidth,height=\textheight]{images/seven.png}
+\includesvg[width=0.45\textwidth,height=\textheight]{images/seven.svg}
 \caption{Seven is a prime number. Its seven icons cannot be re-arranged
 in a rectangle.}\label{fig:seven}
 }
@@ -744,41 +745,117 @@ in the mirror gives us back zero}.
 \begin{figure}
 \hypertarget{fig:mirror-at-zero}{%
 \centering
-\includegraphics[width=0.9\textwidth,height=\textheight]{images/mirror-at-zero.png}
+\includesvg[width=0.9\textwidth,height=\textheight]{images/mirror-at-zero.svg}
 \caption{Geometric interpretation of the additive
 inverse.}\label{fig:mirror-at-zero}
 }
 \end{figure}
 
-With reference to \cref{fig:mirror-at-zero}, the mirror is the silver
--colored line placed at zero. The irrational number \(a = \sqrt{2}\),
-represented by the red dot, is reflected in the red silvered side of the
-mirror to give the blue dot, which is \(-a = -\sqrt{2}\). A second
-reflection of \(-a = -\sqrt{2}\) on the blue silvered side gives us back
-the original number \(a = \sqrt{2}\). This means that \emph{the additive
-inverse of the additive inverse gives us back the original number}
+With reference to \cref{fig:mirror-at-zero}, the mirror is the
+silver-colored line placed at zero. The irrational number
+\(a = \sqrt{2}\), represented by the red dot, is reflected in the red
+silvered side of the mirror to give the blue dot, which is
+\(-a = -\sqrt{2}\). A second reflection of \(-a = -\sqrt{2}\) on the
+blue silvered side gives us back the original number \(a = \sqrt{2}\).
+This means that \emph{the additive inverse of the additive inverse gives
+us back the original number}.
+
+\begin{figure}
+\hypertarget{fig:additive-inverse}{%
+\centering
+\includesvg[width=0.7\textwidth,height=\textheight]{images/additive-inverse.svg}
+\caption{A graphical construction to obtain the additive
+inverse.}\label{fig:additive-inverse}
+}
+\end{figure}
+
+At the risk of expounding the obvious, let us take another look at a
+pictorial representation of how to obtain the additive inverse of a
+number \(x \in \mathbb{R}\). This is illustrated graphically in
+\cref{fig:additive-inverse}. Every ordered pair of coordinates lying on
+the straight line \(y = -x\) represents a number and its additive
+inverse. So, if \(x = a\), \(y = -a\), and the ordered pair \((a, -a)\)
+represents a number and its additive inverse. Moreover, the ordered pair
+\((-a, a)\) also lies on this line and again represents a number and its
+additive inverse, this time for \(x = -a\) and \(y = a\). This view
+might be helpful for those who think in terms of pictures rather than
+symbols.
+
+An even more concrete algorithm to obtain the additive inverse is now
+given. Suppose we want the additive inverse of \(1.5\). We draw a
+vertical line from \(1.5\) on the \(x\)-axis to cut the line \(y = x\)
+and then extend the line horizontally until it cuts the \(y\)-axis at
+\(-1.5\). This last number is the additive inverse. It is clear from
+\cref{fig:additive-inverse} that the \emph{only} point that is invariant
+to this operation is \(0\) which maps to itself. \emph{The additive
+inverse of the additive identity is itself}.
 
 We show later in \cref{eq:mult-minus-one} that multiplying \(a\) by
-\((-1)\) gives us its additive inverse.
+\((-1)\) also gives us its additive inverse.
 
 \hypertarget{the-multiplicative-identity-and-inverse-in-mathbbr}{%
 \subsection{\texorpdfstring{The multiplicative identity and inverse in
 \(\mathbb{R}\)}{The multiplicative identity and inverse in \textbackslash mathbb\{R\}}}\label{the-multiplicative-identity-and-inverse-in-mathbbr}}
 
+We next consider the multiplicative identity and inverse in
+\(\mathbb{R}\) which are also shown in \cref{tbl:axioms}.
+
+The
+\href{https://mathworld.wolfram.com/MultiplicativeInverse.html}{multiplicative
+inverse} for arbitrary \(a \in \mathbb{R}\) is defined as
+\(\frac{1}{a} \mbox{ for } a \ne 0\). Why the exclusion of zero? Let us
+look for a graphical reason.
+
+If we plot \(x\) against its multiplicative inverse \(\frac{1}{x}\), we
+would get a \href{https://en.wikipedia.org/wiki/Hyperbola}{rectangular
+hyperbola}, as shown in \cref{fig:hyperbola}.\footnote{We use the
+  familiar \(x\) instead of \(a\) in the graphical context.} We have
+coloured the two ``arms'' of the hyperbola in the first and third
+quadrants in blue and red respectively, although they are part of the
+same curve.
+
+A construction to get the multiplicative inverse of some point \(a\)
+(not equal to zero) is to locate the point with the \(x\) coordinate
+\(a\) on the curve and to find out its \(y\) coordinate. Every ordered
+pair \((a, \frac{1}{a})\) therefore represents a number and its
+multiplicative inverse, with the proviso that \(a \ne 0\). Indeed, we
+cannot ever get to \(a = 0\) on a graph of the hyperbola.
+
+Note the following insights from \cref{fig:hyperbola}:
+
 \begin{enumerate}
-\tightlist
+\def\labelenumi{\alph{enumi}.}
 \item
-  \href{https://mathworld.wolfram.com/MultiplicativeInverse.html}{Multiplicative
-  inverse}:
-  \(a \times \frac{1}{a} = \frac{1}{a} \times a = 1 \mbox{ for } a \ne 0\).
-  DRAW RECTANGULAR HYPERBOLA.
+  The function becomes unbounded as \(x\) approaches \(0\). This happens
+  both from the positive and negative sides. Symbolically,
+  \(\lim_{x \to 0^{+}}\frac{1}{x}=\infty\) and equally,
+  \(\lim_{x \to 0^{-}}\frac{1}{x}=-\infty\).\footnote{There is no limit
+    as \(x \to 0\).} \emph{This is why \(0\) has no multiplicative
+  inverse}.
+\item
+  The multiplicative inverse has the same sign as the original number,
+  since the hyperbola has two ``arms''.
+\item
+  There are only two values of \(x\) for which the multiplicative
+  inverse is also the original number. They are at \(x = 1\) and
+  \(x = -1\). This is because the line \(y = x\) intersects the
+  hyperbola at two points: \((1, 1)\) and \((-1, -1)\).
 \end{enumerate}
 
-\hypertarget{have-subtraction-and-division-disappeared}{%
-\subsection{Have subtraction and division
-disappeared?}\label{have-subtraction-and-division-disappeared}}
+\begin{figure}
+\hypertarget{fig:hyperbola}{%
+\centering
+\includesvg[width=0.95\textwidth,height=\textheight]{images/hyperbola.svg}
+\caption{The multiplicative inverse in \(\mathbb{R}\) plotted as
+\(y = \frac{1}{x}\).}\label{fig:hyperbola}
+}
+\end{figure}
 
-If you are wondering where subtraction and division have been hiding,
+\hypertarget{where-have-subtraction-and-division-disappeared}{%
+\subsection{Where have subtraction and division
+disappeared?}\label{where-have-subtraction-and-division-disappeared}}
+
+If you are wondering where subtraction and division have disappeared,
 they are hiding in plain sight. Subtracting \(b\) from \(a\) amounts to
 adding the additive inverse of \(b\) to \(a\). So, \[
 a - b = a + (-b)
@@ -817,7 +894,7 @@ the minimum necessary for the numbers to rest on a stable foundation.
 This \emph{minimal sufficiency} is at the heart of why mathematics is so
 strong. It has no extra fat. There is also no deficiency. It is frugal
 but sufficient. We will encounter this same idea in the statement that a
-\emph{basis is a minimal spanning set in a vector space}.\footnote{Whis
+\emph{basis is a minimal spanning set in a vector space}.\footnote{Which
   is the subject for another blog.} Any other algebraic structures, like
 the complex numbers \(\mathbb{C}\), that obey the same axioms as
 \(\mathbb{R}\), also have the same properties.
@@ -858,8 +935,8 @@ The signs of products featuring negative numbers are not intuitively
 comprehensible. So, we have to rely on the axioms to guide us to
 consistent results. What is the sign of the product of a positive and a
 negative number? To find out, we first prove that \emph{multiplying a
-number by an additive inverse gives the additive inverse of their
-product}, i.e.,
+number by the additive inverse of another number gives the additive
+inverse of their product}, i.e.,
 \begin{equation}\protect\hypertarget{eq:a-minus-b-eq-minus-ab}{}{
 a(-b) = -(ab)
 }\label{eq:a-minus-b-eq-minus-ab}\end{equation} To prove
@@ -889,12 +966,13 @@ One interesting corollary from \cref{eq:a-minus-b-eq-minus-ab} and
 \end{aligned}
 }\label{eq:mult-minus-one}\end{equation} This means that \emph{the
 additive inverse of a number is obtained by multiplying the original
-number by \((-1)\)}.
+number by \((-1)\)}. This we also already know from
+\cref{fig:additive-inverse}.
 
-This explanation might seem contrived, but it provides guardrails
-against falling off when future mathematical objects are encountered.
-And it is a whole lot more satisfying than hand-waving or saying ``Just
-take it on faith.''
+These slow but careful explanations might seem contrived, but they
+provide guardrails against falling off when future mathematical objects
+are encountered. And it is a whole lot more satisfying than hand-waving
+or saying ``Just take it on faith.''
 
 \hypertarget{why-is-the-product-of-two-negative-numbers-positive}{%
 \subsubsection{Why is the product of two negative numbers
@@ -909,7 +987,8 @@ result.
 
 The scheme we have followed so far is to add something to the object of
 interest and use the axioms to prove that the sum is zero. The result we
-are after will then pop out. Let us apply that method again. \[
+are after will then pop out. Let us apply that method again, using the
+final result fron \cref{eq:minusprod-prodminus}: \[
 \begin{aligned}
 -(ab) + (-a)(-b) &= (a)(-b) + (-a)(-b); & \mbox{ result from previous section}\\
 &= (a + (-a))(-b) & \mbox{ distributive law}\\
@@ -940,9 +1019,9 @@ the \emph{base} and \(3\) the \emph{exponent}. We call the number
 \(5^{3}\) as ``five cubed'' for reasons already explained, or as ``five
 (raised) to the (power of) three''.
 
-What is the exponent in the number \(5?\) The base is \(5\) but the
-exponent is \emph{implicit} or understood but not written. If we take
-\(5 = 5^{1}\), the
+What is the exponent in the number written plainly as \(5?\) The base is
+\(5\) but the exponent is \emph{implicit} or understood but not written.
+If we take \(5 = 5^{1}\), the
 \(5 \times 5 \times 5 = 5^{1} \times 5^{1} \times 5^{1} = 5^{3}\). When
 we multiply numbers with the same base, we can simply add the exponents.
 And this fact underlies a very powerful computational
@@ -952,7 +1031,7 @@ device---logarithms.
 \section{Logarithms: multiplying by
 adding}\label{logarithms-multiplying-by-adding}}
 
-We may reduce multiplication to addition if we focused on the exponent
+We may reduce multiplication to addition if we focused on the exponents
 of a common base. This is exactly what was done by an eccentric Scottish
 laird called
 \href{http://www-history.mcs.st-andrews.ac.uk/Biographies/Napier.html}{John
@@ -989,7 +1068,7 @@ If you had to compute \(23.589 \times 459.1213\) what would you do? You
 would run to a calculator and punch in the digits to get \(10830.212\)
 with very little effort today. But if you lived in a period without
 electronic calculators, you would be very glad that logarithms existed,
-and you would happy to chirp out the answer as \(10830\) thanks to
+and you would happy to chirp out the answer as \(10830\), thanks to
 Napier.
 
 \hypertarget{square-roots}{%
@@ -1008,7 +1087,9 @@ it? We know that in this case, the answer is \(3\) because
 the operation, which when performed on \(9\) gives us \(3\). For
 historical reasons it was called \emph{taking the square root} and the
 symbol \(\surd\) is a stylized letter ``r'' for ``radix'' meaning
-``root'' in Latin. So, we write \(\sqrt{9} = 3\).
+\href{https://math.stackexchange.com/questions/809799/why-the-name-square-root}{``root''}
+in Latin {[}\protect\hyperlink{ref-squareroot}{2}{]}. So, we write
+\(\sqrt{9} = 3\).
 
 But is that the whole story? Recall that the product of two negative
 numbers is positive. So, \((-3)(-3) = 9\) as well. So, which is the
@@ -1095,8 +1176,80 @@ purpose behind the development of abstract algebra. The principle is DRY
 \subsection{Polar form of complex
 numbers}\label{polar-form-of-complex-numbers}}
 
-\(re^{i\theta} = r(\cos\theta + i\sin\theta)\) \$ Argand diagram plus
-explanation.
+We have resorted to the unit circle to unravel the meaning of the
+tangent ratio and function in a
+\href{https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians}{previous
+blog}.
+
+We now take recourse to the same unit circle to better understand the
+multiplication of complex numbers. Let us press the \(xy\) coordinate
+plane to represent complex numbers of the form \(a + ib\) where the real
+part \(a\) is the \(x\) coordinate and the imaginary part \(ib\) is the
+\(y\) coordinate. This use of the coordinate plane is referred to as an
+\href{https://en.wikipedia.org/wiki/Complex_plane\#Argand_diagram}{Argand
+diagram}. The \(x\) axis is labelled \(\Re\) to represent the real axis
+and the \(y\) axis is labelled \(\Im\) to represent the real coefficient
+of the imaginary part, shown in \cref{fig:complex-unit-circle}.
+
+\begin{figure}
+\hypertarget{fig:complex-unit-circle}{%
+\centering
+\includesvg[width=0.85\textwidth,height=\textheight]{images/complex-unit-circle.svg}
+\caption{The complex plane with an arbitrary point \(z = a + ib\),
+represented by the point \((a, ib)\) on the unit circle. The same number
+may also be expressed as \(re^{i\theta}\) where
+\(r=1\).}\label{fig:complex-unit-circle}
+}
+\end{figure}
+
+The formula \begin{equation}\protect\hypertarget{eq:euler}{}{
+e^{i\theta} = \cos\theta + i \sin\theta
+}\label{eq:euler}\end{equation} is called the
+\href{https://en.wikipedia.org/wiki/Euler\%27s_formula}{Euler Formula}.
+This particular equation has been called
+\href{https://www.feynmanlectures.caltech.edu/I_22.html}{``the
+unification of algebra and geometry''} by the legendary physicist,
+Richard Feynman {[}\protect\hyperlink{ref-feynman22}{3}{]}. Do read the
+transcript of his lecture to better appreciate what exactly he means by
+the above quote.
+
+Referring to \cref{fig:complex-unit-circle}, we may say: \[
+\begin{aligned}
+a &= r\cos\theta\\
+ib &= ir\sin\theta\\
+r &= \sqrt{a^2 + b^2} \mbox{ since $\cos^2\theta + \sin^2\theta = 1$ }\\
+\end{aligned}
+\] \(r\) is called the \emph{modulus} and \(\theta\) the \emph{argument}
+form of the complex number. Alternatively, it may be called the
+\emph{polar} representation of the complex number.
+
+What exactly is the advantage of all this jiggery-pokery? It makes
+multiplication easier because exponents are added when the numbers they
+represent are multiplied.
+
+\begin{figure}
+\hypertarget{fig:complex-polar}{%
+\centering
+\includesvg[width=1\textwidth,height=\textheight]{images/complex-polar.svg}
+\caption{The multiplication of two complex numbers is more easily
+performed when they are expressed in polar form. The \(x\) coordinate is
+the real part and the \(y\) coordinate the imaginary
+part.}\label{fig:complex-polar}
+}
+\end{figure}
+
+If we have two complex numbers \(z_{1} = r_{1}e^{i\theta}\) and
+\(z_{2} = r_{2}e^{i\phi}\), the modulus of their product is simply the
+product of their moduli, and the argument is simply the sum of their
+arguments, as illustrated in \cref{fig:polarmult}. This means:
+\begin{equation}\protect\hypertarget{eq:polarmult}{}{
+\begin{aligned}
+z_{1}z_{2} &= r_{1}e^{i\theta} \cdot r_{2}e^{i\phi}\\
+&= r_{3}e^{i\psi} \mbox{ where }\\
+r_{3} &= r_{1}r_{2} \mbox{ and }\\
+\psi &= \theta + \phi.
+\end{aligned}
+}\label{eq:polarmult}\end{equation}
 
 \hypertarget{consistency-between-real-and-complex-multiplication}{%
 \subsection{Consistency between real and complex
@@ -2328,6 +2481,13 @@ If you carry away nothing else from this blog than a few
 
 May the product be with you!
 
+\hypertarget{to-explore-further}{%
+\subsection{To explore further}\label{to-explore-further}}
+
+Nahin's books
+
+Feynman's lectures etc.
+
 \hypertarget{afterword}{%
 \section{Afterword}\label{afterword}}
 
@@ -2369,6 +2529,18 @@ from the \href{http://swanlotus.org/downloads}{downloads page.}
 {`the obvious'}. How {`obvious'} becomes {`interesting'} when we go back
 to first principles. Retrieved 12 November 2023 from
 \url{https://medium.com/swlh/why-a-0-0-and-other-proofs-of-the-obvious-da52dd0caefb}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-squareroot}{}}%
+\CSLLeftMargin{{[}2{]} }%
+\CSLRightInline{Various. 2014. {Why the name "square root"?} Retrieved
+15 November 2023 from
+\url{https://math.stackexchange.com/questions/809799/why-the-name-square-root}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-feynman22}{}}%
+\CSLLeftMargin{{[}3{]} }%
+\CSLRightInline{Richard P Feynman. 1963. The feynman lectures on
+physics, vol. i. Retrieved 16 November 2023 from
+\url{https://www.feynmanlectures.caltech.edu/I_22.html}}
 
 \end{CSLReferences}
 

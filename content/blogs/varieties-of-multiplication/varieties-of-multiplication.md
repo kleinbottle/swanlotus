@@ -22,7 +22,7 @@ The second experimental feature is what I have called "slicing the orange of kno
 
 By concentrating on the single unifying *idea* of multiplication, and viewing it across the whole of mathematics, we are indeed "slicing the orange of knowledge with a different cut". Even if you have not encountered some of the varieties of multiplication mentioned here, this exposure will help you grasp those varieties better when you do encounter them. Please [send me feedback](mailto:feedback.swanlotus@gmail.com) on whether this approach works for you.
 
-Third, this is an _extremely long_ blog. In fact, I call it a [_slog_](https://www.vocabulary.com/dictionary/slog) \emojifont :wink: \normalfont. It took me some weeks to write it. So, take your time reading it. It is unlikely that you will finish it at one sitting. _Read it in parts at your own pace_. After having read it once, cast your eyes and mind over the whole to get an overall view of the main ideas.
+Third, this is an _extremely long_ blog. In fact, I call it a [_slog_](https://www.vocabulary.com/dictionary/slog) \emojifont :wink: \normalfont. It took me some weeks to write it. So, take your time reading it. It is unlikely that you will finish it in one sitting. _Read it in parts at your own pace_. After having read it once, cast your eyes and mind over the whole to get an overall view of the main ideas.
 
 I thought of splitting the blog into three or four manageable parts, but decided against it because I wanted the evolution of multiplication as an idea to be left whole in a single post. [Tell me](mailto:feedback.swanlotus@gmail.com) if it put you to sleep \emojifont :smile: \normalfont.
 
@@ -30,7 +30,7 @@ With that out of the way, let us begin. I want to look at some of the varieties 
 
 ## Multiplication as a binary operation
 
-Consistency is valued more in mathematics than in other disciplines. _The idea is not to upset the apple cart but to expand it_. Definitions, conventions, rules, facts, and fallacies---once established---are usually above argument, and do not vary with time or place. So, let us start by defining some terms.
+Consistency is valued more in mathematics than in other disciplines. _The idea is not to upset the apple cart but to expand it_. Definitions, conventions, rules, facts, and fallacies---once established---are usually above dispute, and do not vary with time or place. So, let us start by defining some terms.
 
 Multiplication is a *binary* operation: it is something that we do with *two* mathematical objects, whatever they might be. Usually, the two are *similar* objects or at least *compatible* objects.  The whole numbers are an example. We can and do multiply two whole numbers.
 
@@ -213,11 +213,11 @@ With reference to @fig:mirror-at-zero, the mirror is the silver-colored line pla
 
 ![A graphical construction to obtain the additive inverse.]({attach}images/additive-inverse.svg){#fig:additive-inverse width=70% .modal-target}
 
-At the risk of expounding the obvious, let us take another look at a pictorial representation of how to obtain the additive inverse of a number $x \in \mathbb{R}$. This is illustrated graphically in @fig:additive-inverse. Every ordered pair of coordinates lying on the curve $y = -x$ represents a number and its additive inverse as a pair. So, if $x = a$, $y = -a$, and the ordered pair $(a, -a)$ represents a number and its additive inverse. This view might be helpful for those who think in terms of pictures rather than symbols.
+At the risk of expounding the obvious, let us take another look at a pictorial representation of how to obtain the additive inverse of a number $x \in \mathbb{R}$. This is illustrated graphically in @fig:additive-inverse. Every ordered pair of coordinates lying on the straight line $y = -x$ represents a number and its additive inverse. So, if $x = a$, $y = -a$, and the ordered pair $(a, -a)$ represents a number and its additive inverse. Moreover, the ordered pair $(-a, a)$ also lies on this line and again represents a number and its additive inverse, this time for $x = -a$ and $y = a$. This view might be helpful for those who think in terms of pictures rather than symbols.
 
 An even more concrete algorithm to obtain the additive inverse is now given. Suppose we want the additive inverse of $1.5$. We draw a vertical line from $1.5$ on the $x$-axis to cut the line $y = x$ and then extend the line horizontally until it cuts the $y$-axis at $-1.5$. This last number is the additive inverse. It is clear from @fig:additive-inverse that the _only_ point that is invariant to this operation is $0$ which maps to itself. _The additive inverse of the additive identity is itself_.
 
-We show later in @eq:mult-minus-one that multiplying $a$ by $(-1)$ gives us its additive inverse.
+We show later in @eq:mult-minus-one that multiplying $a$ by $(-1)$ also gives us its additive inverse.
 
 ## The multiplicative identity and inverse in $\mathbb{R}$
 
@@ -225,25 +225,23 @@ We next consider the multiplicative identity and inverse in $\mathbb{R}$ which a
 
 The [multiplicative inverse](https://mathworld.wolfram.com/MultiplicativeInverse.html) for arbitrary $a \in \mathbb{R}$ is defined as $\frac{1}{a} \mbox{ for } a \ne 0$.  Why the exclusion of zero? Let us look for a graphical reason.
 
-If we plot $x$ against its multiplicative inverse $\frac{1}{x}$,^[We use the familiar $x$ instead of $a$ in the graphical context.] we would get a [rectangular hyperbola](https://en.wikipedia.org/wiki/Hyperbola), as shown in @fig:hyperbola. We have coloured the two "arms" of the hyperbola in the first and third quadrants in blue and red respectively, although they are part of the same curve.
+If we plot $x$ against its multiplicative inverse $\frac{1}{x}$, we would get a [rectangular hyperbola](https://en.wikipedia.org/wiki/Hyperbola), as shown in @fig:hyperbola.^[We use the familiar $x$ instead of $a$ in the graphical context.] We have coloured the two "arms" of the hyperbola in the first and third quadrants in blue and red respectively, although they are part of the same curve.
 
-A construction to get the multiplicative inverse of some point $a$ (not equal to zero) is to locate the point with the $x$ coordinate $a$ on the curve and to find out its $y$ coordinate. The ordered pair $(a, \frac{1}{a})$ therefore represents a number and its multiplicative inverse, with the proviso that $a \ne 0$. Indeed, we cannot ever get to $a = 0$ on a graph of the hyperbola.
+A construction to get the multiplicative inverse of some point $a$ (not equal to zero) is to locate the point with the $x$ coordinate $a$ on the curve and to find out its $y$ coordinate. Every ordered pair $(a, \frac{1}{a})$ therefore represents a number and its multiplicative inverse, with the proviso that $a \ne 0$. Indeed, we cannot ever get to $a = 0$ on a graph of the hyperbola.
 
 Note the following insights from @fig:hyperbola:
 
-a. The function becomes unbounded as $x$ approaches $0$. This happens both from the positive and negative sides. Symbolically, $\lim_{x \to 0^{+}}\frac{1}{x}=\infty$ and equally, $\lim_{x \to 0^{-}}\frac{1}{x}=-\infty$.^[There is no limit as $x \to 0$.] This is why $0$ has no multiplicative inverse.
+a. The function becomes unbounded as $x$ approaches $0$. This happens both from the positive and negative sides. Symbolically, $\lim_{x \to 0^{+}}\frac{1}{x}=\infty$ and equally, $\lim_{x \to 0^{-}}\frac{1}{x}=-\infty$.^[There is no limit as $x \to 0$.] _This is why $0$ has no multiplicative inverse_.
 
 a. The multiplicative inverse has the same sign as the original number, since the hyperbola has two "arms".
 
 a. There are only two values of $x$ for which the multiplicative inverse is also the original number. They are at $x = 1$ and $x = -1$. This is because the line $y = x$ intersects the hyperbola at two points: $(1, 1)$ and $(-1, -1)$.
 
-SHOW CONSTRUCTION AS IN PREVIOUS CASE
-
 ![The multiplicative inverse in $\mathbb{R}$ plotted as $y = \frac{1}{x}$.]({attach}images/hyperbola.svg){#fig:hyperbola width=95% .modal-target}
 
 ## Where have subtraction and division disappeared?
 
-If you are wondering where subtraction and division have been hiding, they are hiding in plain sight. Subtracting $b$ from $a$ amounts to adding the additive inverse of $b$ to $a$. So,
+If you are wondering where subtraction and division have disappeared, they are hiding in plain sight. Subtracting $b$ from $a$ amounts to adding the additive inverse of $b$ to $a$. So,
 $$
 a - b = a + (-b)
 $$
@@ -268,7 +266,7 @@ Note that if we take $a = 0$, the product of zero with itself is also zero---som
 
 We have carefully tiptoed our way to justify each step with one of the field axioms. This is the power of the axiomatic approach. There is no "wasted" axiom; there is no "missing" axiom. The set of axioms are the minimum necessary for the numbers to rest on a stable foundation.
 
-This _minimal sufficiency_ is at the heart of why mathematics is so strong. It has no extra fat. There is also no deficiency. It is frugal but sufficient. We will encounter this same idea in the statement that a _basis is a minimal spanning set in a vector space_.^[Whis is the subject for another blog.] Any other algebraic structures, like the complex numbers $\mathbb{C}$, that obey the same axioms as $\mathbb{R}$, also have the same properties.
+This _minimal sufficiency_ is at the heart of why mathematics is so strong. It has no extra fat. There is also no deficiency. It is frugal but sufficient. We will encounter this same idea in the statement that a _basis is a minimal spanning set in a vector space_.^[Which is the subject for another blog.] Any other algebraic structures, like the complex numbers $\mathbb{C}$, that obey the same axioms as $\mathbb{R}$, also have the same properties.
 
 If you feel that @eq:zero-prod-zero is too much sleight of hand, and you would like something more concrete, you can always console yourself with the convenient but specific example of $5 \times 0$. Here $5$ is the multiplier and $0$ the multiplicand. So, we may write:
 $$
@@ -286,7 +284,7 @@ And the choice of a whole number made it easy to see the multiplication as repea
 Negative numbers arose when loans had to be given and taken. They also find use in describing the depth of an ocean trench as being so much *below* sea level. Other applications arise naturally with temperatures below the freezing point or with electric charges of a negative type, etc.
 
 The signs of products featuring negative numbers are not intuitively comprehensible. So, we have to rely on the axioms to guide us to consistent results. What is the sign of the product of a positive and a negative number?
-To find out, we first prove that _multiplying a number by an additive inverse gives the additive inverse of their product_, i.e.,
+To find out, we first prove that _multiplying a number by the additive inverse of another number gives the additive inverse of their product_, i.e.,
 $$
 a(-b) = -(ab)
 $${#eq:a-minus-b-eq-minus-ab}
@@ -309,9 +307,9 @@ $$
 &= -a\\
 \end{aligned}
 $${#eq:mult-minus-one}
-This means that _the additive inverse of a number is obtained by multiplying the original number by $(-1)$_.
+This means that _the additive inverse of a number is obtained by multiplying the original number by $(-1)$_. This we also already know from @fig:additive-inverse.
 
-This explanation might seem contrived, but it provides guardrails against falling off when future mathematical objects are encountered. And it is a whole lot more satisfying than hand-waving or saying "Just take it on faith."
+These slow but careful explanations might seem contrived, but they provide guardrails against falling off when future mathematical objects are encountered. And it is a whole lot more satisfying than hand-waving or saying "Just take it on faith."
 
 ### Why is the product of two negative numbers positive?
 
@@ -319,7 +317,7 @@ Let us use the field axioms to navigate our way to this result as well.
 
 Let $a > 0, b > 0 \in \mathbb{R}$. Then, both $(-a)$ and $(-b)$ are negative. Note that $ab$ is positive and its additive inverse is $-(ab) = (-a)(b) = (a)(-b)$ which is negative from our previous result.
 
-The scheme we have followed so far is to add something to the object of interest and use the axioms to prove that the sum is zero. The result we are after will then pop out. Let us apply that method again.
+The scheme we have followed so far is to add something to the object of interest and use the axioms to prove that the sum is zero. The result we are after will then pop out. Let us apply that method again, using the final result fron @eq:minusprod-prodminus:
 $$
 \begin{aligned}
 -(ab) + (-a)(-b) &= (a)(-b) + (-a)(-b); & \mbox{ result from previous section}\\
@@ -336,11 +334,11 @@ I have dealt with the arithmetic of fractions and negative numbers in my freely 
 
 Just as multiplication with whole numbers is repeated addition, exponentiation is repeated multiplication. A new notation is used to indicate repeated multiplication. We denote it by a _superscript_ indicating how many times the number is multiplied: $5 \times 5 \times 5 = 5^{3}$, and so on. The number $5$ is called the *base* and $3$ the *exponent*. We call the number $5^{3}$ as "five cubed" for reasons already explained, or as "five (raised) to the (power of) three".
 
-What is the exponent in the number $5?$ The base is $5$ but the exponent is *implicit* or understood but not written. If we take $5 = 5^{1}$, the $5 \times 5 \times 5 = 5^{1} \times 5^{1} \times 5^{1} = 5^{3}$. When we multiply numbers with the same base, we can simply add the exponents. And this fact underlies a very powerful computational device---logarithms.
+What is the exponent in the number written plainly as $5?$ The base is $5$ but the exponent is *implicit* or understood but not written. If we take $5 = 5^{1}$, the $5 \times 5 \times 5 = 5^{1} \times 5^{1} \times 5^{1} = 5^{3}$. When we multiply numbers with the same base, we can simply add the exponents. And this fact underlies a very powerful computational device---logarithms.
 
 # Logarithms: multiplying by adding
 
-We may reduce multiplication to addition if we focused on the exponent of a common base. This is exactly what was done by an eccentric Scottish laird called [John Napier][napier] whose labours have made all our lives much less tedious. The books of logarithmic tables, affectionately called "log books" when I was at school, along with the [slide rule][slide] were the mainstay of physicists and engineers before the advent of the electronic calculator in the mid-1970s. And they all relied on  Napier's scheme of reducing multiplication to addition.
+We may reduce multiplication to addition if we focused on the exponents of a common base. This is exactly what was done by an eccentric Scottish laird called [John Napier][napier] whose labours have made all our lives much less tedious. The books of logarithmic tables, affectionately called "log books" when I was at school, along with the [slide rule][slide] were the mainstay of physicists and engineers before the advent of the electronic calculator in the mid-1970s. And they all relied on  Napier's scheme of reducing multiplication to addition.
 
 [napier]: http://www-history.mcs.st-andrews.ac.uk/Biographies/Napier.html
 [slide]: http://sliderulemuseum.com/
@@ -357,13 +355,13 @@ Multiplying by adding is simple. Suppose we want to multiply $2$ by $3$. We foll
 
 "Aha!" you might say. "But the answer is not exactly $6$ which is the correct answer." You are right. With logarithms and the limited number of digits of precision, we can at best obtain a very good approximation to a computation.
 
-If you had to compute $23.589 \times 459.1213$ what would you do? You would run to a calculator and punch in the digits to get $10830.212$ with very little effort today. But if you lived in a period without electronic calculators, you would be very glad that logarithms existed, and you would happy to chirp out the answer as $10830$ thanks to Napier.
+If you had to compute $23.589 \times 459.1213$ what would you do? You would run to a calculator and punch in the digits to get $10830.212$ with very little effort today. But if you lived in a period without electronic calculators, you would be very glad that logarithms existed, and you would happy to chirp out the answer as $10830$, thanks to Napier.
 
 # Square roots
 
 Taking a square root is a form of *exponentiation*. If I gave you a number like $9$ and asked you to find a number such that when it was *added* to itself, you would get $9$, you would almost instinctively divide $9$ by $2$ to give me $4.5$ and indeed $4.5 + 4.5 = 9$.
 
-If instead, I asked you to find that number, which when *multiplied* by itself gives $9$, how would you go about solving it? We know that in this case, the answer is $3$ because $3 \times 3 = 9$. To approach it systematically, we need a symbol for the operation, which when performed on $9$ gives us $3$. For historical reasons it was called *taking the square root* and the symbol $\surd$ is a stylized letter "r" for "radix" meaning "root" in Latin. So, we write $\sqrt{9} = 3$.
+If instead, I asked you to find that number, which when *multiplied* by itself gives $9$, how would you go about solving it? We know that in this case, the answer is $3$ because $3 \times 3 = 9$. To approach it systematically, we need a symbol for the operation, which when performed on $9$ gives us $3$. For historical reasons it was called *taking the square root* and the symbol $\surd$ is a stylized letter "r" for "radix" meaning ["root"](https://math.stackexchange.com/questions/809799/why-the-name-square-root) in Latin [@squareroot]. So, we write $\sqrt{9} = 3$.
 
 But is that the whole story? Recall that the product of two negative numbers is positive. So, $(-3)(-3) = 9$ as well. So, which is the "true" or "correct" square root? By convention, we associate the positive square root with the symbol $\surd$. So, without any ambiguity, $\sqrt{9} = 3$ and $-\sqrt{9} = -3$.
 
@@ -407,9 +405,41 @@ Although the rules of multiplication of complex numbers differ from those of rea
 
 ## Polar form of complex numbers
 
-$re^{i\theta} = r(\cos\theta + i\sin\theta)$
-$
-Argand diagram plus explanation.
+We have resorted to the unit circle to unravel the meaning of the tangent ratio and function in a [previous blog](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians).
+
+We now take recourse to the same unit circle to better understand the multiplication of complex numbers. Let us press the $xy$ coordinate plane to represent complex numbers of the form $a + ib$ where the real part $a$ is the $x$ coordinate and the imaginary part $ib$ is the $y$ coordinate. This use of the coordinate plane is referred to as an [Argand diagram](https://en.wikipedia.org/wiki/Complex_plane#Argand_diagram). The $x$ axis is labelled $\Re$ to represent the real axis and the $y$ axis is labelled $\Im$ to represent the real coefficient of the imaginary part, shown in @fig:complex-unit-circle.
+
+![The complex plane with an arbitrary point $z = a + ib$, represented by the point $(a, ib)$ on the unit circle. The same number may also be expressed as $re^{i\theta}$ where $r=1$.]({attach}images/complex-unit-circle.svg){#fig:complex-unit-circle width=85% .modal-target}
+
+The formula
+$$
+e^{i\theta} = \cos\theta + i \sin\theta
+$${#eq:euler}
+is called the [Euler Formula](https://en.wikipedia.org/wiki/Euler%27s_formula). This particular equation has been called ["the unification of algebra and geometry"](https://www.feynmanlectures.caltech.edu/I_22.html) by the legendary physicist, Richard Feynman [@feynman22]. Do read the transcript of his lecture to better appreciate what exactly he means by the above quote.
+
+Referring to @fig:complex-unit-circle, we may say:
+$$
+\begin{aligned}
+a &= r\cos\theta\\
+ib &= ir\sin\theta\\
+r &= \sqrt{a^2 + b^2} \mbox{ since $\cos^2\theta + \sin^2\theta = 1$ }\\
+\end{aligned}
+$$
+$r$ is called the _modulus_ and $\theta$ the _argument_ form of the complex number. Alternatively, it may be called the _polar_ representation of the complex number.
+
+What exactly is the advantage of all this jiggery-pokery? It makes multiplication easier because exponents are added when the numbers they represent are multiplied.
+
+![The multiplication of two complex numbers is more easily performed when they are expressed in polar form. The $x$ coordinate is the real part and the $y$ coordinate the imaginary part.]({attach}images/complex-polar.svg){#fig:complex-polar width=100% .modal-target}
+
+If we have two complex numbers $z_{1} = r_{1}e^{i\theta}$ and $z_{2} = r_{2}e^{i\phi}$, the modulus of their product is simply the product of their moduli, and the argument is simply the sum of their arguments, as illustrated in @fig:polarmult. This means:
+$$
+\begin{aligned}
+z_{1}z_{2} &= r_{1}e^{i\theta} \cdot r_{2}e^{i\phi}\\
+&= r_{3}e^{i\psi} \mbox{ where }\\
+r_{3} &= r_{1}r_{2} \mbox{ and }\\
+\psi &= \theta + \phi.
+\end{aligned}
+$${#eq:polarmult}
 
 ## Consistency between real and complex multiplication
 
@@ -1087,6 +1117,13 @@ If you carry away nothing else from this blog than a few *qualitative ideas,* th
 #.  The ideas of zero and one, of symmetry, of commutativity, of consistency of definitions, of projections, and of orthogonality, are worth remembering because they pervade much if not all of mathematics.
 
 May the product be with you!
+
+## To explore further
+
+Nahin's books
+
+Feynman's lectures
+etc.
 
 # Afterword
 
