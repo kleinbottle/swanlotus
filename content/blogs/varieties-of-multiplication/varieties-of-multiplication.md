@@ -471,51 +471,67 @@ $$
 (a, b)\cdot(c, d) = (ac - bd, ad + bc).
 $$
 Note that order matters here: the first number of the ordered pair is the real part of the complex number and the second is the imaginary part. We cannot swap them willy nilly.
+TO REMOVE
+$$
+  \begin{bmatrix}
+  8\\
+  4\\
+  \end{bmatrix}
+  +
+  \begin{bmatrix}
+  2\\
+  6\\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+  10\\
+  10\\
+  \end{bmatrix}
+$$
 
 # Vectors
 
-Ordered pairs lead rather neatly to the idea of [*vectors.*][vector]^[Properly called Euclidean vectors in our context.] Indeed, there is more than a passing resemblance between complex numbers and two-dimensional vectors.
+Ordered pairs lead rather neatly to the idea of [*vectors*.][https://en.wikipedia.org/wiki/Euclidean_vector]^[Properly called Euclidean vectors in our context.] Indeed, there is more than a passing resemblance between complex numbers and two-dimensional vectors.
 
-Both may be represented by ordered pairs of real numbers and the rules for addition and subtraction of these ordered pairs are identical. Moreover, they may both be represented as points on a [Cartesian plane.][cartesian]
+Both may be represented by ordered pairs of real numbers and the rules for addition and subtraction of these ordered pairs are identical. Moreover, they may both be represented as points on a [Cartesian plane](https://en.wikipedia.org/wiki/Cartesian_coordinate_system). Vectors are the second new mathematical object, after complex numbers, that we are meeting in this blog.
 
-Vectors are the second new mathematical object, after complex numbers, that we are meeting in this blog.
+![Two vectors shown as directed line segments with different lengths and directions.]({attach}images/two-vectors.svg){#fig:two-vectors width=25% .modal-target}
 
-[vector]: http://en.wikipedia.org/wiki/Euclidean_vector
-[cartesian]: http://en.wikipedia.org/wiki/Cartesian_coordinate_system
-
-<!--Inset image of two vectors here-->
-
-[caption id="attachment_87" align="alignleft" width="130"]<a href="http://swanlotus.org/wp-content/uploads/two-vectors.png"><img src="http://swanlotus.org/wp-content/uploads/two-vectors.png" alt="Two vectors shown as directed line segments." width="130" height="73" class="img-responsive size-full wp-image-87" /></a> Two vectors shown as directed line segments.[/caption]
-
-A *vector* is traditionally defined as a quantity having two attributes: *magnitude* and *direction.* A simple everyday example is the wind which has both a speed and direction, and may therefore be represented by a vector. Indeed, if you have already encountered vectors, you might think of them exclusively as *directed line segments* or lines of specific lengths with arrow tips as shown.
+A *vector* is traditionally defined as a quantity having two attributes: *magnitude* and *direction.* A simple everyday example is the wind which has both a speed and direction, and may therefore be represented by a vector. Indeed, if you have already encountered vectors, you might think of them exclusively as *directed line segments* or lines of specific lengths with arrow tips as shown in @fig:two-vectors.
 
 ## Addition and subtraction of vectors: geometric viewpoint
 
 How do we add and subtract these geometric entities, let alone multiply and divide them? If you have done physics at high school, you will know that we use something called the *parallelogram law.*
 
-We draw a pair of two-dimensional vectors so that both originate from the same point. We then complete the parallelogram formed by these two vectors by drawing in the other two sides. The *sum* of the two vectors, or their *resultant,* is the diagonal of the parallelogram that starts at the same origin as the two vectors. This is something best grasped from a picture:
+We draw a pair of two-dimensional vectors so that both originate from the same point. We then complete the parallelogram formed by these two vectors by drawing in the other two sides. The *sum* of the two vectors, or their *resultant,* is the diagonal of the parallelogram that starts at the same origin as the two vectors. This is something best grasped from a picture: see @fig:vector-sum.
 
-<!--Insert image of vector-sum-->
-
-[caption id="attachment_88" align="aligncenter" width="351"]<a href="http://swanlotus.org/wp-content/uploads/vector-sum.png"><img src="http://swanlotus.org/wp-content/uploads/vector-sum.png" alt="The parallelogram law for the addition of two vectors." width="351" height="353" class="img-responsive size-full wp-image-88" /></a> The parallelogram law for the addition of two vectors.[/caption]
+![The parallelogram law for the addition of two vectors.]({attach}images/vector-sum.svg){#fig:vector-sum width=70% .modal-terget}
 
 The origin of the Cartesian plane is labelled $O$. We have three named vectors and three ordered pairs indicate the positions of their arrow tips:
 
-#.  $\mathbf{u}$ : the vector from $O$ to the point $(8, 4);$
-#.  $\mathbf{v}$ : the vector from $O$ to the point $(2, 6);$ and
-#.  $\mathbf{w}$ : the vector from $O$ to the point $(10, 10)$.
+#.  $\symbf{u}$ : the vector from $O$ to the point $(8, 4);$
+#.  $\symbf{v}$ : the vector from $O$ to the point $(2, 6);$ and
+#.  $\symbf{w}$ : the vector from $O$ to the point $(10, 10)$.
 
-The dotted grey lines indicate the two sides of the parallelogram that we draw to close the figure. The vector $\mathbf{w}$ is the diagonal that represents the sum of $\mathbf{u}$ and $\mathbf{v}$. This sum is written as
+The dotted grey lines indicate the two sides of the parallelogram that we draw to close the figure. The vector $\symbf{w}$ is the diagonal that represents the sum of $\symbf{u}$ and $\symbf{v}$. This sum is written as
 $$
-\mathbf{u} + \mathbf{v} = \mathbf{w}
+\symbf{u} + \symbf{v} = \symbf{w}
 $$
-If you look at the illustration carefully, you would note that if we added the first co-ordinate of $\mathbf{u}$ and the first co-ordinate of $\mathbf{v}$ we get the first co-ordinate of $\mathbf{w}$. And likewise for the second co-ordinate.
+If you look at the illustration carefully, you would note that if we added the first co-ordinate of $\symbf{u}$ and the first co-ordinate of $\symbf{v}$ we get the first co-ordinate of $\symbf{w}$. And likewise for the second co-ordinate.
 
-So, we may represent the addition of $\mathbf{u}$ and $\mathbf{v}$ as
+So, we may represent the addition of $\symbf{u}$ and $\symbf{v}$ as _row_ vectors, so
 $$
 (8, 4) + (2, 6) = ((8+2), (4+6)) = (10, 10)
 $$
-This is no accident. Nor is it a special case. It works for all parallelograms.^[I leave it to you to convince yourself of this. (Hint: use graph paper, draw the co-ordinate axes, and use algebraic variables for the co-ordinates of $\mathbf{u}$, $\mathbf{v}$, and $\mathbf{w}$.)]
+Likewise, we could treat the vectors as _column_ vectors, and write, equally correctly, as:
+$$
+\begin{bmatrix}8\\4\end{bmatrix}
++
+\begin{bmatrix}2\\6\\\end{bmatrix}
+=
+\begin{bmatrix}10\\10\\\end{bmatrix}
+$$
+This is no accident. Nor is it a special case. It works for all parallelograms.^[I leave it to you to convince yourself of this. (Hint: use graph paper, draw the co-ordinate axes, and use algebraic variables for the co-ordinates of $\symbf{u}$, $\symbf{v}$, and $\symbf{w}$.)]
 
 The parallelogram law is a geometric statement of what happens when we add two ordered pairs the way we would two complex numbers:
 $$
@@ -527,17 +543,21 @@ We may therefore dispense with line segments and arrow tips and abstract vectors
 
 We may identify two-dimensional vectors *uniquely* by an ordered pair representing their co-ordinates on the Cartesian plane. This is the algebraic viewpoint. It is less cumbersome and more powerful as we have already seen from the addition of two vectors.
 
-Subtraction is equally simple. There is no need to reverse vectors and draw another parallelogram. We simply say:
+Subtraction is equally simple. We may add the _additive inverse_ of each component of the vector being subtracted to get:
+$$
+(8, 4) + (-(2), -(6)) = (8, 4) + (-2, -6) = (6, -2)
+$$
+Geometrically, this is tantamount to reversing the second vector and adding it to the first. Of course, plain old  subtraction also works, provided we allow for negative numbers:
 $$
 (8, 4) - (2, 6) = (6, -2)
 $$
-It really cannot get any simpler than that! :-)
+Both results are the same and again underline the consistency that runs through mathematics like a golden thread. \emojifont :smile: \normalfont
 
 ## Vectors as algebraic entities
 
 We have just seen that two-dimensional vectors may be represented by ordered pairs on the Cartesian plane. This representation might be extrapolated to include vectors of dimensions greater than two. Obviously, we would then be moving from ordered pairs to ordered triples, etc.^[An ordered triple, for example, would live in our familiar three-dimensional space.]
 
-To generalize, we may think of vectors as a list of "numbers in a teabag" where their order matters. Formally, an $n$-dimensional vector is an *ordered list* of $n$ numbers written within enclosing parentheses or brackets and treated as a *single entity.* This is also called an [*ordered n-tuple.*][tuple] Each individual number is called a *component* of the vector.
+To generalize, we may think of vectors as a list of "numbers in a slim teabag" where their order matters. Formally, an $n$-dimensional vector is an *ordered list* of $n$ numbers written within enclosing parentheses or brackets and treated as a *single entity.* This is also called an [*ordered n-tuple.*][tuple] Each individual number is called a *component* of the vector.
 
 [tuple]: http://en.wikipedia.org/wiki/Tuple
 
@@ -582,9 +602,9 @@ It is easy to think of the addition or subtraction of vectors, say in the contex
 
 Vector multiplication is a strange, many-headed beast. It is important to know what it is and what it is not. Here is a quick run down:
 
-1.  Vector multiplication is different from real multiplication.
+1.  Vector multiplication is different from real number multiplication.
 
-2.  Vector multiplication is different from complex multiplication.
+2.  Vector multiplication is different from complex number multiplication.
 
 3.  There are several varieties of vector multiplication, some of which give us scalars, others vectors, and still others matrices:^[Ignore any unfamiliar terms for now.]
 
@@ -601,18 +621,18 @@ Vector multiplication is a strange, many-headed beast. It is important to know w
 
 Let us consider each type of multiplication in turn.
 
-# Multiplication by a scalar
+## Multiplication by a scalar
 
 Multiplication of a vector by a scalar is the easiest to understand. In this operation, we see the original arithmetic definition of real multiplication at play. We are magnifying or diminishing the magnitude of the vector by multiplying it with a scalar, while the direction of the vector is either reversed or remains unchanged.
 
-If we have a vector $\mathbf{u}$ and we multiply it by a scalar $k$ the result is the vector $k\mathbf{u}$. This may be easily visualized geometrically. If we associate $\mathbf{u}$ with an arbitrary four-dimensional column vector, we may write
+If we have a vector $\symbf{u}$ and we multiply it by a scalar $k$ the result is the vector $k\symbf{u}$. This may be easily visualized geometrically. If we associate $\symbf{u}$ with an arbitrary four-dimensional column vector, we may write
 $$
-\mathbf{u} = \begin{bmatrix}a\\b\\c\\d\\\end{bmatrix}
+\symbf{u} = \begin{bmatrix}a\\b\\c\\d\\\end{bmatrix}
 $$
 
-Multiplication of $\mathbf{u}$ by a real scalar $k$ gives us
+Multiplication of $\symbf{u}$ by a real scalar $k$ gives us
 $$
-k\mathbf{u} = k\begin{bmatrix}a\\b\\c\\d\\\end{bmatrix} = \begin{bmatrix}ka\\kb\\kc\\kd\\\end{bmatrix}
+k\symbf{u} = k\begin{bmatrix}a\\b\\c\\d\\\end{bmatrix} = \begin{bmatrix}ka\\kb\\kc\\kd\\\end{bmatrix}
 $$
 
 When we multiply a vector by a scalar $k$, each component of the vector is individually multiplied by $k$. The magnitude of the resulting vector takes on a different meanings depending on the value and sign of $k$:
@@ -638,11 +658,11 @@ While this might seem quite a mouthful, it is really quite simple:
 -   value of $k$ that lies between $-1$ and $0$ or between $0$ and $1$ diminishes the magnitude; and
 -   a value of $k$ less than $-1$ or greater than $+1$ increases the magnitude of the vector.
 
-The special cases pertaining to $k = \pm 1$ and $k = 0$ underscore the paramount importance of $0$ and $1$ in the whole of mathematics. They are keystone numbers.
+_The special cases pertaining to $k = \pm 1$ and $k = 0$ underscore the paramount importance of $0$ and $1$ in the whole of mathematics. They are keystone numbers_.
 
 Did you pick up the fact that after uncoupling geometry and vectors, we finally resorted to geometry when talking about the meaning of scalar multiplication? This dual viewpoint runs through much of mathematical thinking.
 
-Scalar division of vectors by $k$ is really multiplication by $\frac{1}{k}$ and is therefore not considered separately.
+Scalar division of vectors by $k \ne 0$ is really multiplication by $\frac{1}{k}$ and is therefore not considered separately.
 
 If we view scalar multiplication as a black box, it takes in one n-tuple and gives out another n-tuple. Like the merchant in _Aladdin and the Wonderful Lamp,_ we are simply exchanging old vectors for new. There is no difference in *kind* between the input and output mathematical objects.
 
@@ -653,7 +673,14 @@ $$
 \begin{bmatrix}0\\0\\0\\0\\\end{bmatrix} \neq 0
 $$
 
-As and when new mathematical objects are invented (or discovered?) new definitions for the equivalents of zero and one for these new objects may also be necessary. The $n$-dimensional zero vector is unique as shown above. But there is no unique n-dimensional unit vector corresponding to the number $1$.
+As and when new mathematical objects are invented (or discovered?) new definitions for the equivalents of zero and one for these new objects may also be necessary. The $n$-dimensional zero vector is unique as shown above.
+
+The four-dimensional column vector with all entries equal to $1$ exists and is, of course, unique:
+$$
+\begin{bmatrix}1\\1\\1\\1\\\end{bmatrix} \ne 1
+$$
+But it is not special enough to merit its own name, as it does not function as the vector analogue to
+the number $1$. But it does have its uses in data analysis and might get its own name in the future!  [@honner2022]
 
 We now turn to other varieties of multiplication that may be applied to vectors.
 
@@ -671,10 +698,10 @@ We cannot afford to be equally lackadaisical with vectors. We have to respect th
 
 ## Example of dot product
 
-It is helpful to begin with a concrete example. Let $\mathbf{u}^{T} = \begin{bmatrix}1&2&3&4\\\end{bmatrix}$ and let $\mathbf{v}^{T} = \begin{bmatrix}5&6&7&8\\\end{bmatrix}$. Their dot product is written as:
+It is helpful to begin with a concrete example. Let $\symbf{u}^{T} = \begin{bmatrix}1&2&3&4\\\end{bmatrix}$ and let $\symbf{v}^{T} = \begin{bmatrix}5&6&7&8\\\end{bmatrix}$. Their dot product is written as:
 $$
 \begin{aligned}
-\mathbf{u}^{T}\cdot\mathbf{v} &= \begin{bmatrix}1&2&3&4\\\end{bmatrix} \cdot \begin{bmatrix} 5\\6\\7\\8\\ \end{bmatrix}\\
+\symbf{u}^{T}\cdot\symbf{v} &= \begin{bmatrix}1&2&3&4\\\end{bmatrix} \cdot \begin{bmatrix} 5\\6\\7\\8\\ \end{bmatrix}\\
 &= (1)(5) + (2)(6) + (3)(7) + (4)(8)\\
 &= 5 + 12 + 21 + 32\\
 &= 70
@@ -683,7 +710,7 @@ $$
 
 If you look at the dot product carefully, you will see the following:
 
-#.  the first component of $\mathbf{u}$ is multiplied by the first component of $\mathbf{v}$ and likewise for the other components;
+#.  the first component of $\symbf{u}$ is multiplied by the first component of $\symbf{v}$ and likewise for the other components;
 
 #. the individual products are then added together; and
 
@@ -693,7 +720,7 @@ It is now clear why the two vectors must have the same dimensions. If not, we wi
 
 The result, being a sum of products, is a single number, or scalar, explaining the name *scalar product* for this operation. We prefer the term dot product to avoid confusion with multiplication by a scalar.
 
-It is easy to verify by direct evaluation that the dot product is [commutative][commutative] and therefore symmetrical. Verify if you please that $\mathbf{u}^{T}\cdot\mathbf{v} = \mathbf{v}^{T}\cdot\mathbf{u}$ for the above case.
+It is easy to verify by direct evaluation that the dot product is [commutative][commutative] and therefore symmetrical. Verify if you please that $\symbf{u}^{T}\cdot\symbf{v} = \symbf{v}^{T}\cdot\symbf{u}$ for the above case.
 
 Why did we need to write the dot product as being between a row vector and a column vector? One reason is that the product of a column vector with a row vector is actually a different type of multiplication which we will meet [later.][circledtimes] Another reason is that the row-column product mirrors [matrix multiplication][matrixmult] as explained later.
 
@@ -702,19 +729,19 @@ Why did we need to write the dot product as being between a row vector and a col
 
 ## General case and formula
 
-These results for the dot product may be generalized by taking $\mathbf{u}$ and $\mathbf{v}$ to be arbitrary $n$-dimensional vectors whose components may be referred to by the *subscripts* $1$ to $n$.
+These results for the dot product may be generalized by taking $\symbf{u}$ and $\symbf{v}$ to be arbitrary $n$-dimensional vectors whose components may be referred to by the *subscripts* $1$ to $n$.
 
-It is conventional to write the vector itself in boldface as $\mathbf{u}$ or with an arrow on top as $\vec{u}$ (or using some other mark of distinction when written by hand or printed) whereas the individual components are always written normally. They are after all scalars.
+It is conventional to write the vector itself in boldface as $\symbf{u}$ or with an arrow on top as $\vec{u}$ (or using some other mark of distinction when written by hand or printed) whereas the individual components are always written normally. They are after all scalars.
 $$
 \begin{aligned}
-\mathbf{u}^{T} &= \begin{bmatrix}u_{1} & u_{2} &  \cdots & u_{n}\\\end{bmatrix}\\
-\mathbf{v} &= \begin{bmatrix}v_{1} \\ v_{2} \\ \vdots \\ v_{n}\\\end{bmatrix}\\
-\mathbf{u}^{T}\cdot\mathbf{v} &= u_{1}v_{1} + u_{2}v_{2} + \cdots + u_{n}v_{n}\\
+\symbf{u}^{T} &= \begin{bmatrix}u_{1} & u_{2} &  \cdots & u_{n}\\\end{bmatrix}\\
+\symbf{v} &= \begin{bmatrix}v_{1} \\ v_{2} \\ \vdots \\ v_{n}\\\end{bmatrix}\\
+\symbf{u}^{T}\cdot\symbf{v} &= u_{1}v_{1} + u_{2}v_{2} + \cdots + u_{n}v_{n}\\
 &= \sum_{i=1}^{n} u_{i}v_{i}
 \end{aligned}
 $$
 
-Observe that the vector $\mathbf{u}^{T}$ is a $1 \times n$ vector whereas $\mathbf{v}$ is an $n \times 1$ vector. Their dot product---between a $1 \times n$ vector and an $n \times 1$ vector---yields a $1 \times 1$ "vector" which is really a scalar. In a manner of speaking, we may "cancel out" the two inner dimensions $n$ to get the dimension of the product as being $1 \times 1$. This mnemonic will prove useful later on as well.
+Observe that the vector $\symbf{u}^{T}$ is a $1 \times n$ vector whereas $\symbf{v}$ is an $n \times 1$ vector. Their dot product---between a $1 \times n$ vector and an $n \times 1$ vector---yields a $1 \times 1$ "vector" which is really a scalar. In a manner of speaking, we may "cancel out" the two inner dimensions $n$ to get the dimension of the product as being $1 \times 1$. This mnemonic will prove useful later on as well.
 
 ## Consistency with real multiplication
 
@@ -728,18 +755,18 @@ What does the dot product mean? What does it signify given that vectors originat
 
 [caption id="attachment_83" align="alignleft" width="227"]<a href="http://swanlotus.org/wp-content/uploads/projection.png"><img src="http://swanlotus.org/wp-content/uploads/projection.png" alt="Vector components as values of projections on orthogonal axes." width="227" height="340" class="img-responsive size-full wp-image-83" /></a> Vector components as values of projections on orthogonal axes.[/caption]
 
-Let us consider a two-dimensional vector $\mathbf{u}$ from the origin $O$ to a point $U$ at $(u_{x}, u_{y})$ on the Cartesian plane. Let $OU$ make an angle $\alpha$ with the positive $x$ axis as shown. Then, we have:
+Let us consider a two-dimensional vector $\symbf{u}$ from the origin $O$ to a point $U$ at $(u_{x}, u_{y})$ on the Cartesian plane. Let $OU$ make an angle $\alpha$ with the positive $x$ axis as shown. Then, we have:
 
-1.  By the Theorem of Pythagoras, the magnitude of the vector $\mathbf{u}$, denoted by $\lVert\mathbf{u}\rVert$, is given by $\sqrt{u_{x}^2 + u_{y}^2}$. The symbol $\lVert\mbox{}\rVert$ denoting a pair of double vertical lines represents the [norm][norm] or magnitude of the vector written within it.
+1.  By the Theorem of Pythagoras, the magnitude of the vector $\symbf{u}$, denoted by $\lVert\symbf{u}\rVert$, is given by $\sqrt{u_{x}^2 + u_{y}^2}$. The symbol $\lVert\mbox{}\rVert$ denoting a pair of double vertical lines represents the [norm][norm] or magnitude of the vector written within it.
 
 [norm]: http://mathworld.wolfram.com/Norm.html
 
-2.  The magnitudes of the [projections][projection] of $\mathbf{u}$ in the directions of the $x$ and $y$ axes are respectively
+2.  The magnitudes of the [projections][projection] of $\symbf{u}$ in the directions of the $x$ and $y$ axes are respectively
     $$
     \begin{aligned}
-    u_{x} &= \lVert\mathbf{u}\rVert\cos\alpha\\
-    u_{y} &= \lVert\mathbf{u}\rVert\sin\alpha\\
-    &= \lVert\mathbf{u}\rVert\cos(90^{\circ}-\alpha)\\
+    u_{x} &= \lVert\symbf{u}\rVert\cos\alpha\\
+    u_{y} &= \lVert\symbf{u}\rVert\sin\alpha\\
+    &= \lVert\symbf{u}\rVert\cos(90^{\circ}-\alpha)\\
     \end{aligned}
     $$
 
@@ -747,16 +774,16 @@ The magnitude of the projection of a vector in a particular direction is equal t
 
 [projection]: http://en.wikipedia.org/wiki/Vector_projection
 
-We could make similar claims for a vector $\mathbf{v}$ at $(v_{x}, v_{y})$ that makes an angle $\beta$ with the positive $x$ axis.
+We could make similar claims for a vector $\symbf{v}$ at $(v_{x}, v_{y})$ that makes an angle $\beta$ with the positive $x$ axis.
 
 Let the angle between the two vectors be denoted by $\alpha - \beta = \theta$. The dot product of the two vectors may then be written as:
 $$
 \begin{aligned}
-\mathbf{u} \cdot \mathbf{v} &= u_{x}v_{x} + u_{y}v_{y}\\
-&= \lVert\mathbf{u}\rVert\cos\alpha\lVert\mathbf{v}\rVert\cos\beta + \lVert\mathbf{u}\rVert\sin\alpha\lVert\mathbf{v}\rVert\sin\beta\\
-&= \lVert\mathbf{u}\rVert\lVert\mathbf{v}\rVert(\cos\alpha\cos\beta + \sin\alpha\sin\beta)\\
-&= \lVert\mathbf{u}\rVert\lVert\mathbf{v}\rVert\cos(\alpha - \beta)\\
-&= \lVert\mathbf{u}\rVert\lVert\mathbf{v}\rVert\cos\theta\\
+\symbf{u} \cdot \symbf{v} &= u_{x}v_{x} + u_{y}v_{y}\\
+&= \lVert\symbf{u}\rVert\cos\alpha\lVert\symbf{v}\rVert\cos\beta + \lVert\symbf{u}\rVert\sin\alpha\lVert\symbf{v}\rVert\sin\beta\\
+&= \lVert\symbf{u}\rVert\lVert\symbf{v}\rVert(\cos\alpha\cos\beta + \sin\alpha\sin\beta)\\
+&= \lVert\symbf{u}\rVert\lVert\symbf{v}\rVert\cos(\alpha - \beta)\\
+&= \lVert\symbf{u}\rVert\lVert\symbf{v}\rVert\cos\theta\\
 \end{aligned}
 $$
 
@@ -772,7 +799,7 @@ Unlike straightforward multiplication of real or complex numbers, the dot produc
 
 The answers to both questions lie in the practical utility of the dot product. Vectors are used to represent forces, displacements, momenta, and a whole host of other abstractions that are the bread and butter of physics. And the dot product neatly dovetails with a recurring pattern of relationships  in physics where two vectors give rise to a scalar in a multiplicative fashion.
 
-For example, [mechanical work][work] $W$ is a scalar defined as the dot product of the vector representing force $\mathbf{F}$ and the vector representing displacement $\mathbf{s}$ through the equation $W = \mathbf{F}\cdot\mathbf{s}$. Alternatively, work is the projection of the force in the direction of the displacement, multiplied by the displacement. Both definitions are equivalent.
+For example, [mechanical work][work] $W$ is a scalar defined as the dot product of the vector representing force $\symbf{F}$ and the vector representing displacement $\symbf{s}$ through the equation $W = \symbf{F}\cdot\symbf{s}$. Alternatively, work is the projection of the force in the direction of the displacement, multiplied by the displacement. Both definitions are equivalent.
 
 The dot product is succinct, precise, notationally crisp, and practically useful. That is why it has been defined and that is why it still exists.
 
@@ -820,7 +847,7 @@ To recapitulate, the cosine of an angle is $1$ at zero degrees and $0$ at ninety
 
 [orthogonal]: http://mathworld.wolfram.com/Orthogonal.html
 
-For example, a force vector $\mathbf{F}$ has no effect perpendicular to the direction in which it acts, and this is because its *component* or [projection][projection] in that direction is $\lVert\mathbf{F}\rVert\cos 90^{\circ} = 0$.
+For example, a force vector $\symbf{F}$ has no effect perpendicular to the direction in which it acts, and this is because its *component* or [projection][projection] in that direction is $\lVert\symbf{F}\rVert\cos 90^{\circ} = 0$.
 
 The dot product therefore measures the *degree of alignment* or *similarity* between two vectors. When the angle between them is zero degrees, this alignment is at its greatest. When the vectors are orthogonal, each vector has no component in the direction of the other; so they are *independent.* When the two vectors make an angle greater than $90^{\circ}$ the sine of their angle is negative. The two vectors act in opposition when they are at an angle of $180^{\circ}$ with each other.
 
@@ -838,15 +865,15 @@ The third type of vector product is the [*cross product*.][cross] Because the do
 
 The cross product is a vector and it does involve the sine of the angle between the two vectors. In addition, just as in the dot product, orthogonality peeps at us again through the cross product.
 
-We will consider three-dimensional vectors. Any pair of three-dimensional vectors $\mathbf{u}$ and $\mathbf{v}$ between them define a two-dimensional plane. Just think of two rulers arranged in any orientation on a flat table to visualize and understand why.
+We will consider three-dimensional vectors. Any pair of three-dimensional vectors $\symbf{u}$ and $\symbf{v}$ between them define a two-dimensional plane. Just think of two rulers arranged in any orientation on a flat table to visualize and understand why.
 
 The result of a cross product is orthogonal to the two vectors giving rise to it. There are *two* directions orthogonal to the plane. Think of the flat table again. An arrow at right angles to the table coming *out* of it and pointing *upwards* is in one direction. Now reverse the direction of the arrow so that it goes *into* the table pointing *downwards.* This is the other orthogonal direction. They both lie along the same straight line but are oriented in opposite directions.
 
 We are now ready to define the cross product as
 $$
 \begin{aligned}
-\mathbf{w} &= \mathbf{u} \times \mathbf{v}\\
-&= (\lVert\mathbf{u}\rVert \lVert\mathbf{v}\rVert \sin \theta) \thinspace \mathbf{n}
+\symbf{w} &= \symbf{u} \times \symbf{v}\\
+&= (\lVert\symbf{u}\rVert \lVert\symbf{v}\rVert \sin \theta) \thinspace \symbf{n}
 \end{aligned}
 $$
 
@@ -854,31 +881,31 @@ $$
 
 [caption id="attachment_78" align="alignright" width="220"]<a href="http://swanlotus.org/wp-content/uploads/cross-product.png"><img src="http://swanlotus.org/wp-content/uploads/cross-product.png" alt="Cross-product of two vectors." width="220" height="195" class="img-responsive size-full wp-image-78" /></a> Cross-product of two vectors.[/caption]
 
-Both the vectors $\mathbf{u}$ and $\mathbf{v}$ point outward from the same origin $O$. The cross product vector $\mathbf{w}$ is perpendicular or orthogonal to *both* $\mathbf{u}$ and $\mathbf{v}$ and again points outward from the same origin $O$.
+Both the vectors $\symbf{u}$ and $\symbf{v}$ point outward from the same origin $O$. The cross product vector $\symbf{w}$ is perpendicular or orthogonal to *both* $\symbf{u}$ and $\symbf{v}$ and again points outward from the same origin $O$.
 
-The expression $(\lVert\mathbf{u}\rVert \lVert\mathbf{v}\rVert \sin \theta)$ is a scalar. $\mathbf{n}$  is a [*unit vector*][unitvector] perpendicular to both $\mathbf{u}$ and $\mathbf{v}$ with a magnitude of one. Its direction can only be one of two as we have seen. To determine which, we use a convention called the [right-hand rule][rhr] or [right hand corkscrew rule.][rhcr]
+The expression $(\lVert\symbf{u}\rVert \lVert\symbf{v}\rVert \sin \theta)$ is a scalar. $\symbf{n}$  is a [*unit vector*][unitvector] perpendicular to both $\symbf{u}$ and $\symbf{v}$ with a magnitude of one. Its direction can only be one of two as we have seen. To determine which, we use a convention called the [right-hand rule][rhr] or [right hand corkscrew rule.][rhcr]
 
 [rhcr]: http://en.wikipedia.org/wiki/Right-hand_rule
 [rhr]: http://mathworld.wolfram.com/Right-HandRule.html
 [unitvector]: http://mathworld.wolfram.com/UnitVector.html
 
-Imagine that you are rotating a corkscrew starting at $\mathbf{u}$ and moving toward $\mathbf{v}$. The direction in which the corkscrew advances is the positive direction for the unit vector $\mathbf{n}$.^[This is a convenient mathematical convention which is also in accord with actual physical situations.]
+Imagine that you are rotating a corkscrew starting at $\symbf{u}$ and moving toward $\symbf{v}$. The direction in which the corkscrew advances is the positive direction for the unit vector $\symbf{n}$.^[This is a convenient mathematical convention which is also in accord with actual physical situations.]
 
-Since the corkscrew would then move *upwards,* that is the direction of both $\mathbf{w}$ and $\mathbf{n}$. The sole purpose of $\mathbf{n}$ is to indicate the direction of $\mathbf{w}$ as determined by the right-hand rule. The letter $\mathbf{n}$ is used to indicate that it is *normal* or *perpendicular* to the plane.
+Since the corkscrew would then move *upwards,* that is the direction of both $\symbf{w}$ and $\symbf{n}$. The sole purpose of $\symbf{n}$ is to indicate the direction of $\symbf{w}$ as determined by the right-hand rule. The letter $\symbf{n}$ is used to indicate that it is *normal* or *perpendicular* to the plane.
 
 In the cross product, we have just met the $\times$ sign for multiplication again, but so far afield from its original use and meaning that it is almost unrecognizable except for form. Many mathematical terms and symbols are reused in different contexts with completely different meanings.
 
 ## Anti-commutativity
 
-If we were to compute $\mathbf{v} \times \mathbf{u}$ we would turn the right-handed corkscrew from $\mathbf{v}$ to $\mathbf{u}$ and the cross-product vector would then point *downwards.* Its magnitude would however be the same as before. We therefore write:
+If we were to compute $\symbf{v} \times \symbf{u}$ we would turn the right-handed corkscrew from $\symbf{v}$ to $\symbf{u}$ and the cross-product vector would then point *downwards.* Its magnitude would however be the same as before. We therefore write:
 $$
-\mathbf{v} \times \mathbf{u} = - (\mathbf{u} \times \mathbf{v})
+\symbf{v} \times \symbf{u} = - (\symbf{u} \times \symbf{v})
 $$
 The cross product is said to be [anti-commutative.][anticommutative] This means that if we reverse the order of the operands, there is a change in the sign of the result. In contrast, the dot product is commutative. So, each variety of vector multiplication has its own well-delineated properties.
 
 ## Applications of the cross product
 
-Like the dot product, the cross product owes its definition and existence to its usefulness in physics. For example, the [torque][torque] vector $\boldsymbol{\tau}$^[Pronounced tau.] is defined by $\boldsymbol{\tau} = \mathbf{r}\times\mathbf{F}$. Torque is what makes the wheels of a car rotate. Visit the [torque hyperlink][torque] to see an animation and explanation of what the term "torque" means.
+Like the dot product, the cross product owes its definition and existence to its usefulness in physics. For example, the [torque][torque] vector $\boldsymbol{\tau}$^[Pronounced tau.] is defined by $\boldsymbol{\tau} = \symbf{r}\times\symbf{F}$. Torque is what makes the wheels of a car rotate. Visit the [torque hyperlink][torque] to see an animation and explanation of what the term "torque" means.
 
 [torque]: http://en.wikipedia.org/wiki/Torque
 
@@ -933,7 +960,7 @@ Each element of the outer product matrix is the product of a pair of real number
 
 ## The outer product is non-commutative
 
-The outer product is not commutative. To see why, consider $\mathbf{u}$ as an $m \times 1$ column vector and $\mathbf{v}^{T}$ as a $1 \times n$ row vector. Then, $\mathbf{u} \otimes \mathbf{v}^{T}$ gives an $m \times n$ matrix. But $\mathbf{v} \otimes \mathbf{u}^{T}$ gives an $n \times m$ matrix. The two are obviously not constrained to be equal.
+The outer product is not commutative. To see why, consider $\symbf{u}$ as an $m \times 1$ column vector and $\symbf{v}^{T}$ as a $1 \times n$ row vector. Then, $\symbf{u} \otimes \symbf{v}^{T}$ gives an $m \times n$ matrix. But $\symbf{v} \otimes \symbf{u}^{T}$ gives an $n \times m$ matrix. The two are obviously not constrained to be equal.
 
 ## Applications of the outer product
 
