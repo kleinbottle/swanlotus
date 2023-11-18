@@ -1,32 +1,29 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns#" lang="{% block html_lang %}{{ DEFAULT_LANG|format_lang }}{% endblock html_lang %}">
-
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="{{ DEFAULT_LANG }}-GB" xml:lang="{{ DEFAULT_LANG }}-GB">
 <head>
     {% block head %}
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-    <meta charset="utf-8">
-    <meta name="generator" content="Pelican">
-    <meta property="og:site_name" content="{{ SITENAME }}">
-    <meta property="og:title" content="{% block ogtitle %}{{ SITENAME }}{% endblock %}">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{% block ogurl %}{{ SITEURL }}{% endblock %}">
-    <meta property="og:image"
-        content="{% block ogimage %}{{ SITEURL }}/images/swanlotus-open-graph-image.jpg{% endblock %}">
-    <meta property="og:image:secure_url"
-        content="{% block ogimagesecure %}{{ SITEURL }}/images/swanlotus-open-graph-image.jpg{% endblock %}">
+    <meta charset="utf-8" />
+    <meta name="generator" content="Pelican" />
+    <meta property="og:site_name" content="{{ SITENAME }}" />
+    <meta property="og:title" content="{% block ogtitle %}{{ SITENAME }}{% endblock %}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{% block ogurl %}{{ SITEURL }}{% endblock %}" />
+    <meta property="og:image" content="{% block ogimage %}{{ SITEURL }}/images/swanlotus-open-graph-image.jpg{% endblock %}" />
+    <meta property="og:image:secure_url" content="{% block ogimagesecure %}{{ SITEURL }}/images/swanlotus-open-graph-image.jpg{% endblock %}" />
 
     <!--Required for site to be responsive-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!--Speeds up loading of Google Fonts-->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
 
     <!--Stylesheet-->
-    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
 
     <!--Favicon-->
-    <link rel="shortcut icon" href="{{ SITEURL }}/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ SITEURL }}/images/favicon.ico" type="image/x-icon" />
 
     <!--Font Awesome 6-->
     <script src="https://kit.fontawesome.com/602f92f586.js" crossorigin="anonymous" defer></script>

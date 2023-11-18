@@ -66,7 +66,7 @@
     <span aria-hidden="true"></span>
   </a>
   <div id="table-of-contents-small-screens" class="is-hidden">
-    {{ article.toc }}
+    {{ article.toc|replace('id="toc-', 'id="mobile-toc-') }}
   </div>
 </div>
 {% endif %}

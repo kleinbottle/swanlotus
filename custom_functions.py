@@ -2,18 +2,12 @@
 import os
 
 
-def format_lang(language_setting):
-    """Uppercase country code in DEFAULT_LANG setting in template."""
-    lang_code, country_code = language_setting.split("-")
-    language_setting = "-".join([lang_code, country_code.upper()])
-    return language_setting
-
-
 def get_image_dirs():
     """Return a list of image directories."""
-    # Default directory for images has to be added to the
-    # list manually as we are overriding the default setting
+    # Add Pelican's default image directory
     image_dirs = ["images"]
+
+    # Add all other blog or page specific imagedirectries
     blogs_dir = "content/blogs"
     for item in os.listdir(blogs_dir):
         if os.path.isdir(os.path.join(blogs_dir, item)):
@@ -24,10 +18,12 @@ def get_image_dirs():
 
 def get_image_destination_paths():
     """Map image directories to their final destination in outputs and return it."""
-    extra_metadata_paths = {}
+    # This has been donw so that opengraph images are avaiable even if they are not
+    # used in the article or page.
+    extra_path_metadata = {}
     for image_path in get_image_dirs():
         # Filter out the global images directory as the destination
         # for this directory is different and is handled by Pelican
         if image_path != "images":
-            extra_metadata_paths[image_path] = {"path": "blogs/images"}
-    return extra_metadata_paths
+            extra_path_metadata[image_path] = {"path": "blogs/images"}
+    return extra_path_metadata
