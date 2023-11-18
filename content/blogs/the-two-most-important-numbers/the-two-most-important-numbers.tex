@@ -62,6 +62,7 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+\usepackage{svg}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -126,8 +127,6 @@
 \usepackage[style=american]{csquotes}
 % \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
 %
-\usepackage{esdiff} % for derivative symbols
-\usepackage{amsmath}
 \usepackage{hyperref} % cleveref must come AFTER hyperref
 \usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
 % noto-plus.tex
@@ -167,6 +166,8 @@
 %
 \usepackage{unicode-math} % seems not to hurt % fallabck
 \setmathfont[bold-style=TeX]{STIX Two Math}
+\usepackage{amsmath}
+\usepackage{esdiff} % for derivative symbols
 %
 %
 % Other fonts
@@ -315,13 +316,13 @@ collection of objects that can either be enumerated or described
 clearly. The \emph{sets of numbers} we will deal with have names,
 symbols, and definitions as shown below.
 
-\begin{footnotesize}
+\begin{small}
 
 \hypertarget{tbl:sets}{}
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3214}}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0833}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5952}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3222}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1889}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4889}}@{}}
 \caption{\label{tbl:sets}Sets of numbers}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
@@ -345,18 +346,20 @@ Definition
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Natural numbers & \(\mathbb{N}\) & \(\{1, 2, 3, 4, ...\}\) \\
-Integers & \(\mathbb{Z}\) & \(\{... -3, -2, -1, 0, 1, 2, 3, ...\}\) \\
-Rational numbers & \(\mathbb{Q}\) &
-\(\{x: x = \frac{p}{q} \mbox{ where } p, q \in \mathbb{Z} \mbox{ and } q \ne 0\}\) \\
-Irrational numbers & & \(\{\)The numbers which are not rational\(\}\) \\
-Real numbers & \(\mathbb{R}\) & \(\{\)The rationals and the
-irrationals\(\}\) \\
-Complex numbers & \(\mathbb{C}\) &
+\(\mbox{Natural numbers}\) & \(\mathbb{N}\) & \(\{1, 2, 3, 4, ...\}\) \\
+\(\mbox{Integers}\) & \(\mathbb{Z}\) &
+\(\{..., -3, -2, -1, 0, 1, 2, 3, ...\}\) \\
+\(\mbox{Rational numbers}\) & \(\mathbb{Q}\) & \(\{x: x = \frac{p}{q}\)
+\mbox{ where } \(p, q \in \mathbb{Z}\) \mbox{ and } \(q \ne 0\}\) \\
+\(\mbox{Irrational numbers}\) & \mbox{} &
+\(\mbox{\{The numbers which are not rational\}}\) \\
+\(\mbox{Real numbers}\) & \(\mathbb{R}\) &
+\(\mbox{\{The rationals and the irrationals\}}\) \\
+\(\mbox{Complex numbers}\) & \(\mathbb{C}\) &
 \(\{a+ib: a, b \in \mathbb{R} \mbox{ and } i^2 = -1\}\) \\
 \end{longtable}
 
-\end{footnotesize}
+\end{small}
 
 \hfill\break
 While it is premature to talk about these sets and their peculiarities
@@ -441,7 +444,7 @@ Operations}\label{the-four-arithmetic-operations}}
 
 Each of the four basic arithmetic operations--addition, multiplication,
 subtraction, division---are
-\href{https://en.wikipedia.org/w/index.php?title=Binary_operation\&oldid=1182322931}{binary}
+\href{https://en.wikipedia.org/w/index.php?title=Binary_operation&oldid=1182322931}{binary}
 operations and may \emph{only} be performed between \emph{two} numbers.
 The ability to \emph{add} multiple numbers---as in determining the total
 sum to be paid at the checkout counter while shopping---is made possible
@@ -480,7 +483,7 @@ multiplication.
 \begin{figure}
 \hypertarget{fig:mult}{%
 \centering
-\includegraphics[width=0.6\textwidth,height=\textheight]{images/four-by-three.png}
+\includesvg[width=0.6\textwidth,height=\textheight]{images/four-by-three.svg}
 \caption{The products \(4\times3\) and \(3\times4\) amount to repeated
 additions and yield the same result of 12.}\label{fig:mult}
 }
@@ -983,7 +986,7 @@ the common ratio \(\lvert r \rvert < 1\).
 \begin{figure}
 \hypertarget{fig:x-to-n}{%
 \centering
-\includegraphics[width=0.8\textwidth,height=\textheight]{images/xn.png}
+\includesvg[width=0.8\textwidth,height=\textheight]{images/xn.svg}
 \caption{Graphs of \(y = x^n\) for \(x \in [0, 1]\) and
 \(n \in \{0, 1, 2, 4, 8, 16, 32, 64, 128, 512\}\). Note that all curves
 pass through \((1, 1)\).}\label{fig:x-to-n}
@@ -1004,7 +1007,7 @@ imaginary part of a complex number,
 \begin{figure}
 \hypertarget{fig:C4}{%
 \centering
-\includegraphics[width=0.8\textwidth,height=\textheight]{images/C4.png}
+\includesvg[width=0.8\textwidth,height=\textheight]{images/C4.svg}
 \caption{Successive multiplication by \(i\) as a rotation in
 \(\mathbb{C}\). See the text for the full explanation.}\label{fig:C4}
 }
@@ -1095,7 +1098,7 @@ cyclic groups} to learn more about them.
 \subsection{Sequences and Series}\label{sequences-and-series}}
 
 An ordered procession of numbers is called a
-\href{https://en.wikipedia.org/w/index.php?title=Sequence\&oldid=1177801065}{sequence}
+\href{https://en.wikipedia.org/w/index.php?title=Sequence&oldid=1177801065}{sequence}
 {[}\protect\hyperlink{ref-wikisequence}{4},\protect\hyperlink{ref-wolframsequence}{5}{]}.\footnote{The
   general definition replaces \emph{numbers} with \emph{mathematical
   objects} but the former will suffice for our limited purpose here.}
@@ -1245,7 +1248,7 @@ November 2023 from
 \CSLLeftMargin{{[}4{]} }%
 \CSLRightInline{Wikipedia contributors. 2023. {Sequence---{Wikipedia}{,}
 The Free Encyclopedia}. Retrieved 3 November 2023 from
-\url{https://en.wikipedia.org/w/index.php?title=Sequence\&oldid=1177801065}}
+\url{https://en.wikipedia.org/w/index.php?title=Sequence&oldid=1177801065}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-wolframsequence}{}}%
 \CSLLeftMargin{{[}5{]} }%
@@ -1258,7 +1261,7 @@ Web Resource}. Retrieved 3 November 2023 from
 \CSLRightInline{Wikipedia contributors. 2023. {Series
 (mathematics)---{Wikipedia}{,} The Free Encyclopedia}. Retrieved 3
 November 2023 from
-\url{https://en.wikipedia.org/w/index.php?title=Series_(mathematics)\&oldid=1174621451}}
+\url{https://en.wikipedia.org/w/index.php?title=Series_(mathematics)&oldid=1174621451}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-wolframseries}{}}%
 \CSLLeftMargin{{[}7{]} }%

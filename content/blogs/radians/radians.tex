@@ -62,6 +62,7 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+\usepackage{svg}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -103,8 +104,6 @@
 \usepackage[style=american]{csquotes}
 % \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
 %
-\usepackage{esdiff} % for derivative symbols
-\usepackage{amsmath}
 \usepackage{hyperref} % cleveref must come AFTER hyperref
 \usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
 % noto-plus.tex
@@ -144,6 +143,8 @@
 %
 \usepackage{unicode-math} % seems not to hurt % fallabck
 \setmathfont[bold-style=TeX]{STIX Two Math}
+\usepackage{amsmath}
+\usepackage{esdiff} % for derivative symbols
 %
 %
 % Other fonts
@@ -238,7 +239,7 @@ symmetric, with three equal sides and three equal angles, as shown in
 \begin{figure}
 \hypertarget{fig:equilateral}{%
 \centering
-\includegraphics[width=0.75\textwidth,height=\textheight]{images/equilateral.png}
+\includesvg[width=0.75\textwidth,height=\textheight]{images/equilateral.svg}
 \caption{An equilateral triangle is one in which the three sides and
 three angles are equal.}\label{fig:equilateral}
 }
@@ -372,7 +373,7 @@ unit long}. This is illustrated in \cref{fig:radian}.
 \begin{figure}
 \hypertarget{fig:radian}{%
 \centering
-\includegraphics[width=0.8\textwidth,height=\textheight]{images/one-radian.png}
+\includesvg[width=0.8\textwidth,height=\textheight]{images/one-radian.svg}
 \caption{One radian is the angle subtended at the centre of a unit
 circle by an arc of length equal to one unit.}\label{fig:radian}
 }
@@ -392,7 +393,7 @@ of triangles, as shown in \cref{fig:similar}.
 \begin{figure}
 \hypertarget{fig:similar}{%
 \centering
-\includegraphics[width=0.7\textwidth,height=\textheight]{images/similar.png}
+\includesvg[width=0.7\textwidth,height=\textheight]{images/similar.svg}
 \caption{Similarity and congruence in the context of triangles. See the
 text for the explanation.}\label{fig:similar}
 }
@@ -453,7 +454,7 @@ are shown.
 \begin{figure}
 \hypertarget{fig:general}{%
 \centering
-\includegraphics[width=0.65\textwidth,height=\textheight]{images/general-radian.png}
+\includesvg[width=0.65\textwidth,height=\textheight]{images/general-radian.svg}
 \caption{Generalized measure of an angle in radians. The arbitrary angle
 \(\theta\) in radians is defined as
 \(\theta = \frac{s_1}{r_1} = \frac{s_2}{r_2}\). The equality is valid
@@ -529,7 +530,7 @@ unitless \emph{ratios of two lengths}, just as with radians.
 \begin{figure}
 \hypertarget{fig:trig}{%
 \centering
-\includegraphics[width=0.9\textwidth,height=\textheight]{images/trig.png}
+\includesvg[width=0.9\textwidth,height=\textheight]{images/trig.svg}
 \caption{Trigonometric ratios defined as quotients of lengths of sides
 in a right-angled triangle.}\label{fig:trig}
 }
@@ -563,7 +564,7 @@ the trigonometric functions, as illustrated in \cref{fig:unit} below.
 \begin{figure}
 \hypertarget{fig:unit}{%
 \centering
-\includegraphics[width=0.85\textwidth,height=\textheight]{images/unit-circle.png}
+\includesvg[width=0.85\textwidth,height=\textheight]{images/unit-circle.svg}
 \caption{A pictorial representation of the unit circle, the three
 standard trigonometric functions, and their inter-relationships. See the
 text for a full explanation.}\label{fig:unit}
@@ -611,7 +612,7 @@ relative to each other in three different ways as shown in
 \begin{figure}
 \hypertarget{fig:chord-tangent}{%
 \centering
-\includegraphics[width=0.7\textwidth,height=\textheight]{images/chord-tangent.png}
+\includesvg[width=0.7\textwidth,height=\textheight]{images/chord-tangent.svg}
 \caption{The three different ways in which a circle and line may lie
 relative to each other. See the text for the
 explanation.}\label{fig:chord-tangent}
@@ -720,7 +721,7 @@ trigonometric functions are shown in \cref{fig:threegraph}.
 \begin{figure}
 \hypertarget{fig:threegraph}{%
 \centering
-\includegraphics[width=0.9\textwidth,height=\textheight]{images/threegraph.png}
+\includesvg[width=0.9\textwidth,height=\textheight]{images/threegraph.svg}
 \caption{Graphs of the three trigonometric functions. Notice how
 \(\sin\) and \(\cos\) are bounded in their values, but \(\tan\) is not.
 There are discontinuities for
@@ -807,7 +808,7 @@ each other closely.
 \begin{figure}
 \hypertarget{fig:xsinx}{%
 \centering
-\includegraphics[width=0.9\textwidth,height=\textheight]{images/xsinx.png}
+\includesvg[width=0.9\textwidth,height=\textheight]{images/xsinx.svg}
 \caption{Graphs of \(f(\theta)= \sin\theta\) and \(f(\theta) = \theta\)
 for \(\lvert\theta\rvert\approx 0\).}\label{fig:xsinx}
 }
@@ -862,7 +863,7 @@ periodically forever.
 \begin{figure}
 \hypertarget{fig:squarefourier}{%
 \centering
-\includegraphics[width=0.85\textwidth,height=\textheight]{images/squarefourier.png}
+\includesvg[width=0.85\textwidth,height=\textheight]{images/squarefourier.svg}
 \caption{A square waveform \(s(t)\) and the sequential sums of its first
 four terms.}\label{fig:squarefourier}
 }

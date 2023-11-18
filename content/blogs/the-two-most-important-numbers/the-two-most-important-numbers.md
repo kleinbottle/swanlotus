@@ -6,7 +6,7 @@ modified: "2023-11-08"
 category: Mathematics
 tags: Mathematical Musings
 summary: 'The unique properties of the numbers zero and one make them mathematically interesting and indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers, we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we may discover how they cement together disparate areas of Mathematics.'
-opengraphimage: 01-crop-3600-dpi-cairo.png
+opengraphimage: 01-crop-3600-dpi-cairo.svg
 ---
 
 The unique properties of the numbers zero and one make them mathematically interesting and indispensable. In this slow-paced stroll though the ideas streaming out of these two numbers, we uncover well-known as well as relatively obscure facts about them. It is hoped that in the process we may discover how they cement together disparate areas of Mathematics.
@@ -108,7 +108,7 @@ Together, commutativity and associativity allow us to be casual about the order 
 
 Multiplication is repeated addition. It is thus both commutative and associative. @fig:mult gives a geometric perspective of multiplication.
 
-![The products $4\times3$ and $3\times4$ amount to repeated additions and yield the same result of 12.]({attach}images/four-by-three.png){#fig:mult width=60% .modal-target}
+![The products $4\times3$ and $3\times4$ amount to repeated additions and yield the same result of 12.]({attach}images/four-by-three.svg){#fig:mult width=60% .modal-target}
 
 Talking about commutativity and associativity might seem like overkill for the addition and multiplication of real numbers. But, identifying these properties is a useful insight, as the more sophisticated mathematical objects we will encounter later may not obey either or both properties.
 
@@ -388,7 +388,7 @@ The pivot at $a = 1$ is rock steady because $1^n = 1$ for all $n \in \mathbb{N}$
 
 @fig:x-to-n shows graphs of $x^n$ for $x \in [0, 1]$ and $n \in\{0, 1, 2, 4, 8, 16, 32, 64, 128, 512\}$. As $n$ increases and $x$ approaches $1$, the graphs exhibit an almost perpendicular change in direction like a laterally inverted $L$. I find this behavior fascinating, and it explains why geometric series converge when the common ratio $\lvert r \rvert < 1$.
 
-![Graphs of $y = x^n$ for $x \in [0, 1]$ and $n \in \{0, 1, 2, 4, 8, 16, 32, 64, 128, 512\}$. Note that all curves pass through $(1, 1)$.]({attach}images/xn.png){#fig:x-to-n width=80% .modal-target}
+![Graphs of $y = x^n$ for $x \in [0, 1]$ and $n \in \{0, 1, 2, 4, 8, 16, 32, 64, 128, 512\}$. Note that all curves pass through $(1, 1)$.]({attach}images/xn.svg){#fig:x-to-n width=80% .modal-target}
 
 <!--https://www.desmos.com/calculator/iybrvquibc-->
 
@@ -396,7 +396,7 @@ The pivot at $a = 1$ is rock steady because $1^n = 1$ for all $n \in \mathbb{N}$
 
 The two-dimensional plane may be pressed into service in a variety of contexts to serve different ends. One such use is the [Argand diagram](https://mathworld.wolfram.com/ArgandDiagram.html) in which the $x$ axis represents the real part and the $y$ axis the imaginary part of a complex number, $z = x + iy;\:x, y \in \mathbb{R};\: z \in \mathbb{C}$.
 
-![Successive multiplication by $i$ as a rotation in $\mathbb{C}$. See the text for the full explanation.]({attach}images/C4.png){#fig:C4 width=80% .modal-target}
+![Successive multiplication by $i$ as a rotation in $\mathbb{C}$. See the text for the full explanation.]({attach}images/C4.svg){#fig:C4 width=80% .modal-target}
 
 Consider the point $P$ in @fig:C4 with coordinates $(1, 0)$ which denotes the real number $1$ in $\mathbb{C}$. $P$ has no imaginary component. If we multiply it by $i$, we get to $Q$, $(0, 1)$, which is purely imaginary and has no real component. Another multiplication by $i$ sends $Q$ to $R$, which is $(-1, 0)$, a purely real number. A third multiplication transforms $R$ into $S$ at (0, -1) which is purely imaginary. A fourth and final multiplication maps $S$ back to $P$.
 

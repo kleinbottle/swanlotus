@@ -6,7 +6,7 @@ modified: "2023-11-02"
 category: Mathematics
 tags: Mathematical musings
 summary: 'The transition from degrees to radians is often the most traumatic mathematical change that the student has to endure when moving from elementary to intermediate mathematics. The simplicity of 360° seems so much more welcoming than the equivalent of $2\pi$ radians for a full circle. $\pi$ is forbidding, because it is not [the convenient fractional fiction $\frac{22}{7}$](https://en.wikipedia.org/wiki/Proof_that_22/7_exceeds_%CF%80), but rather a number which is both [transcendental](https://mathworld.wolfram.com/TranscendentalNumber.html) and [irrational](https://en.wikipedia.org/wiki/Irrational_number) and therefore, somewhat "untidy". Surely this tradeoff between simplicity and complexity must have been worth it, or it would not have been so ordained. Here we attempt to fathom [the method in the madness](https://grammarist.com/phrase/a-method-in-ones-madness/).'
-opengraphimage: one-radian.png
+opengraphimage: one-radian.svg
 ---
 
 The transition from degrees to radians is often the most traumatic mathematical change that the student has to endure when moving from elementary to intermediate mathematics. The simplicity of 360° seems so much more welcoming than the equivalent of $2\pi$ radians for a full circle. $\pi$ is forbidding, because it is not [the convenient fractional fiction $\frac{22}{7}$](https://en.wikipedia.org/wiki/Proof_that_22/7_exceeds_%CF%80), but rather a number which is both [transcendental](https://mathworld.wolfram.com/TranscendentalNumber.html) and [irrational](https://en.wikipedia.org/wiki/Irrational_number), and therefore somewhat "untidy". Surely this tradeoff between simplicity and complexity must have been worth it, or it would not have been so ordained. Here we attempt to fathom [the method in the madness](https://grammarist.com/phrase/a-method-in-ones-madness/).
@@ -15,7 +15,7 @@ The transition from degrees to radians is often the most traumatic mathematical 
 
 For most of us, the idea of an _angle_ first arose when we studied geometry in elementary or primary school. We then encountered _triangles_, which are closed figures with three straight sides and three enclosed angles. An _equilateral triangle_ is particularly symmetric, with three equal sides and three equal angles, as shown in @fig:equilateral.
 
-![An equilateral triangle is one in which the three sides and three angles are equal. ]({attach}images/equilateral.png){#fig:equilateral width=75% .modal-target}
+![An equilateral triangle is one in which the three sides and three angles are equal. ]({attach}images/equilateral.svg){#fig:equilateral width=75% .modal-target}
 
 The point at which a line meets another line is called a _vertex_, which means a ["turning point"](https://www.etymonline.com/search?q=vertex). By convention, vertices (plural of vertex) are labelled with uppercase letters like $A$, $B$, and $C$. The lengths of the sides opposite the vertices are assigned the lowercase labels $a$, $b$, and $c$ respectively. The angles have been  labelled with the Greek letters $\alpha$, $\beta$, and $\gamma$. For all equilateral triangles, $a = b = c$, by definition, and by symmetry, $\alpha = \beta = \gamma$.
 
@@ -59,7 +59,7 @@ And $\pi$ is not $\frac{22}{7}$ as we were originally taught, but really a numbe
 
 So, how does one define a radian? If, on the basis of its name, you guessed that it very likely involves the radius of a circle, your suspicion is well-founded. _One radian is the angle subtended at the centre of a circle of radius one unit by an arc that is also one unit long_. This is illustrated in @fig:radian.
 
-![One radian is the angle subtended at the centre of a unit circle by an arc of length equal to one unit.]({attach}images/one-radian.png){#fig:radian width=80% .modal-target}
+![One radian is the angle subtended at the centre of a unit circle by an arc of length equal to one unit.]({attach}images/one-radian.svg){#fig:radian width=80% .modal-target}
 
 But what happens when our circle has a radius larger or smaller than one unit? We will take up this case, after a short detour.
 
@@ -67,7 +67,7 @@ But what happens when our circle has a radius larger or smaller than one unit? W
 
 This is a mathematically non-rigorous digression on congruence and similarity, both of which are first encountered in school in the context of triangles, as shown in  @fig:similar.
 
-![Similarity and congruence in the context of triangles. See the text for the explanation.]({attach}images/similar.png){#fig:similar width=70% .modal-target}
+![Similarity and congruence in the context of triangles. See the text for the explanation.]({attach}images/similar.svg){#fig:similar width=70% .modal-target}
 
 Consider the triangle $XYZ$, and ignore for a moment triangle $LMN$. Suppose that $XYZ$ is moved in the direction of the line $PQ$ for a distance equal to the length of $PQ$. We would _then_ have the triangle $LMN$.
 
@@ -87,7 +87,7 @@ What other classes of geometrical objects can you think of that are similar to e
 
 Consider @fig:general in which two circles having different radii are shown.
 
-![Generalized measure of an angle in radians. The arbitrary angle $\theta$ in radians is defined as $\theta = \frac{s_1}{r_1} = \frac{s_2}{r_2}$. The equality is valid because all circles are similar to each other.]({attach}images/general-radian.png){#fig:general width=65% .modal-target}
+![Generalized measure of an angle in radians. The arbitrary angle $\theta$ in radians is defined as $\theta = \frac{s_1}{r_1} = \frac{s_2}{r_2}$. The equality is valid because all circles are similar to each other.]({attach}images/general-radian.svg){#fig:general width=65% .modal-target}
 
 We are now ready to define the value of any angle in radians. Consider a circle of radius $r$. Let an arc of arbitrary length $s$ subtend an angle of $\theta$ at the centre. The angle $\theta$ in radians is _defined_ to be:
 $$
@@ -113,7 +113,7 @@ If you think about it, the size of an angle in radians is expressed as a _ratio 
 
 Trigonometric ratios are one of the workhorses of applied mathematics. They arose from the study of right-angled triangles. The three standard trigonometric ratios are called  _sine_, _cosine_, and _tangent_. They are represented by the abbreviated functional names $\sin$, $\cos$, and $\tan$ when used in mathematics. @fig:trig shows the pictorial definitions of these three trigonometric ratios. Notice particularly how these expressions are the unitless _ratios of two lengths_, just as with radians.
 
-![Trigonometric ratios defined as quotients of lengths of sides in a right-angled triangle.]({attach}images/trig.png){#fig:trig width=90% .modal-target}
+![Trigonometric ratios defined as quotients of lengths of sides in a right-angled triangle.]({attach}images/trig.svg){#fig:trig width=90% .modal-target}
 
 ## The Circular Functions
 
@@ -123,7 +123,7 @@ I used to wonder why the word _tangent_ was used for the name of a trigonometric
 
 The radian was introduced here using a _unit circle_. The same helpful unit circle will serve to relate the triangle and the circle to the trigonometric functions, as illustrated in @fig:unit below.
 
-![A pictorial representation of the unit circle, the three standard trigonometric functions, and their inter-relationships. See the text for a full explanation.]({attach}images/unit-circle.png){#fig:unit width=85% .modal-target}
+![A pictorial representation of the unit circle, the three standard trigonometric functions, and their inter-relationships. See the text for a full explanation.]({attach}images/unit-circle.svg){#fig:unit width=85% .modal-target}
 
 @fig:unit shows a unit circle drawn on the two-dimensional coordinate plane with $x$ and $y$ axes and grid markings. The centre of the circle is $O$ and $S$ is a variable point on the circumference of the circle, that makes a counter-clockwise angle $\theta$ with the positive $x$-axis. As $\theta$ varies, so does the position of $S$ on the circle.
 
@@ -139,7 +139,7 @@ The really insightful revelation from @fig:unit comes from looking at $\tan\thet
 
 Recall from geometry that a straight line and a circle might lie relative to each other in three different ways as shown in @fig:chord-tangent.
 
-![The three different ways in which a circle and line may lie relative to each other. See the text for the explanation.]({attach}images/chord-tangent.png){#fig:chord-tangent width=70% .modal-target}
+![The three different ways in which a circle and line may lie relative to each other. See the text for the explanation.]({attach}images/chord-tangent.svg){#fig:chord-tangent width=70% .modal-target}
 
 The line $AB$ does not cut or _intersect_ the circle at all. The line $EF$ cuts the circle at _two_ points, $E$ and $F$, and is called a [chord](https://en.wikipedia.org/wiki/Chord_(geometry)). When the line $EF$ moves parallel to itself toward the circumference of the circle, we get the chord $E'F'$. Eventually the points $E'$ and $F'$ will coincide and the line will cut the circle at one and only one point.
 
@@ -173,7 +173,7 @@ When $\theta$ is in the third quadrant, for instance, $OS$ extrapolated in the n
 
 By moving from triangles to the unit circle on coordinate axes, we have enabled $\theta$ to take on any value between 0 and $2\pi$ radians. The _trigonometric ratios_ have been unshackled from the triangle to become the _trigonometric functions_ which can take on _any_ real number as arguments. The graphs of the three standard trigonometric functions are shown in @fig:threegraph.
 
-![Graphs of the three trigonometric functions. Notice how $\sin$ and $\cos$ are bounded in their values, but $\tan$ is not. There are discontinuities  for $\theta=\frac{2n+1}{2}\pi$.]({attach}images/threegraph.png){#fig:threegraph width=90% .modal-target}
+![Graphs of the three trigonometric functions. Notice how $\sin$ and $\cos$ are bounded in their values, but $\tan$ is not. There are discontinuities  for $\theta=\frac{2n+1}{2}\pi$.]({attach}images/threegraph.svg){#fig:threegraph width=90% .modal-target}
 
 Note that when  $\theta = 2\pi$ radians, we cannot really distinguish it from $\theta=0$ radians. The trigonometric functions therefore repeat themselves every time the point $S$ in @fig:unit completes a full circle: they are [_periodic_](https://mathworld.wolfram.com/PeriodicFunction.html) with a period of $2\pi$. So, one angle may [masquerade](https://www.thefreedictionary.com/masquerade) as another unless we have accounting devices to optionally add $2n\pi$ to it with the [proviso](https://dictionary.cambridge.org/dictionary/english/proviso) that $n$ is an integer. And this concept is a [segue](https://www.dictionary.com/browse/segue) to power series expansions of trigonometric functions, their use in calculus, and later on, in Fourier series.
 
@@ -205,7 +205,7 @@ From @fig:trig we know that the number on the left hand side (LHS) of @eq:sinesm
 
 The validity of @eq:sinesmalltheta may also be seen from @fig:xsinx where the closeness of the curve $f(\theta) = \theta$ and $f(\theta) = \sin\theta$ near the origin is evident. Indeed, right up to a value of $\lvert\theta\rvert\approx 0.3$, the two curves track each other closely.
 
-![Graphs of $f(\theta)= \sin\theta$ and $f(\theta) = \theta$ for $\lvert\theta\rvert\approx 0$.]({attach}images/xsinx.png){#fig:xsinx width=90% .modal-target}
+![Graphs of $f(\theta)= \sin\theta$ and $f(\theta) = \theta$ for $\lvert\theta\rvert\approx 0$.]({attach}images/xsinx.svg){#fig:xsinx width=90% .modal-target}
 
 Let us now illustrate the reasonableness of @eq:sinesmalltheta by evaluation. Set $\theta$ to $0.005$ radians, which is a small value close to zero. Then $\sin\theta = \sin(0.005) = 0.004999979167$, which demonstrates the validity of @eq:sinesmalltheta. However, if one were to interpret the number 0.005 as degrees rather than radians, we then have $\sin(0.005°) = 0.00008726646249$ which is almost $57$ times smaller than the number 0.005.
 
@@ -219,7 +219,7 @@ A _periodic function_ [with certain properties](https://eng.libretexts.org/Books
 
 For example, let the original signal be a square waveform denoted by the function $s(t)$ in @fig:squarefourier.^[Strictly speaking, there are _point discontinuities_ in  $s(t)$, at $t=\pi$ and $t = 2\pi$, where the function changes value. The graph of the waveform is shown as a vertical line at these points because that is what an oscilloscope trace of the waveform will show. This is convenient but inaccurate because a _function_ cannot be multi-valued at one point. Nevertheless, the theory behind Fourier series is still applicable to the square wave. The Fourier series will converge at these points to zero---the average value at these discontinuities---which is what the partial sums show.] Imagine that the single cycle of the square wave---shown below--- is repeated periodically forever.
 
-![A square waveform $s(t)$ and the sequential sums of its first four terms.]({attach}images/squarefourier.png){#fig:squarefourier width=85% .modal-target}
+![A square waveform $s(t)$ and the sequential sums of its first four terms.]({attach}images/squarefourier.svg){#fig:squarefourier width=85% .modal-target}
 
 The [Fourier series](https://mathworld.wolfram.com/FourierSeries.html) for such a square waveform is an infinite sum of sinusoids that collectively represent the waveform. This might seem like a tall order but it is nevertheless true. The Fourier series representation of the square wave $s(t)$ is given by:
 $$
