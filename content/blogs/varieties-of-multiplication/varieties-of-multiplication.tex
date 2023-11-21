@@ -1461,7 +1461,7 @@ teabag'' where their order matters. Formally, an \(n\)-dimensional
 vector is an \emph{ordered list} of \(n\) numbers written within
 enclosing parentheses or brackets and treated as a \emph{single entity.}
 This is also called an
-\href{http://en.wikipedia.org/wiki/Tuple}{\emph{ordered n-tuple.}} Each
+\href{https://en.wikipedia.org/wiki/Tuple}{\emph{ordered n-tuple}}. Each
 individual number is called a \emph{component} of the vector.
 
 The components of a vector may be written within parentheses or
@@ -1494,7 +1494,7 @@ vector.}
 By definition, a vector must have at least one dimension equal to \(1\).
 When \emph{both} dimensions are equal to one, the vector degenerates
 into a single component which, in the context of vectors, is called a
-\href{http://en.wikipedia.org/wiki/Scalar_\%28mathematics\%29}{\emph{scalar}}
+\href{https://en.wikipedia.org/wiki/Scalar_\%28mathematics\%29}{\emph{scalar}}
 to distinguish it from a vector.
 
 \hypertarget{addition-and-subtraction-of-vectors}{%
@@ -1549,8 +1549,8 @@ to know what it is and what it is not. Here is a quick run down:
     \href{http://mathworld.wolfram.com/DotProduct.html}{dot product} or
     scalar product or inner product of two vectors to yield a scalar
   \item
-    \href{http://mathworld.wolfram.com/CrossProduct.html}{cross product}
-    of two vectors to yield a third vector orthogonal to the other two
+    {[}cross product{]}{[}cross{]} of two vectors to yield a third
+    vector orthogonal to the other two
   \item
     \href{http://en.wikipedia.org/wiki/Tensor_product}{tensor product}
     or \href{http://en.wikipedia.org/wiki/Outer_product}{outer product}
@@ -1684,12 +1684,12 @@ We now turn to other varieties of multiplication that may be applied to
 vectors.
 
 \hypertarget{dot-or-scalar-product}{%
-\section{Dot or scalar product}\label{dot-or-scalar-product}}
+\subsection{Dot or scalar product}\label{dot-or-scalar-product}}
 
 The centred dot \(\cdot\) as a symbol for multiplication makes its
 appearance here. The first departure from conventional multiplication
 was with complex numbers. The
-\href{http://en.wikipedia.org/wiki/Dot_product}{\emph{dot product,}}
+\href{https://en.wikipedia.org/wiki/Dot_product}{\emph{dot product,}}
 also called the \emph{scalar product,} or \emph{inner
 product}\footnote{An inner product is something more general, of which
   the dot product is a special case.} is the next variety of
@@ -1739,7 +1739,7 @@ If you look at the dot product carefully, you will see the following:
 \end{enumerate}
 
 It is now clear why the two vectors must have the same dimensions. If
-not, we will run out of either multiplicand or multiplier for pairwise
+not, we will run out of either multiplier or multiplicand for pairwise
 multiplication.
 
 The result, being a sum of products, is a single number, or scalar,
@@ -1747,21 +1747,23 @@ explaining the name \emph{scalar product} for this operation. We prefer
 the term dot product to avoid confusion with multiplication by a scalar.
 
 It is easy to verify by direct evaluation that the dot product is
-\href{http://mathworld.wolfram.com/Commutative.html}{commutative} and
-therefore symmetrical. Verify if you please that
+{[}commutative{]}{[}commutative{]} and therefore symmetrical. Verify if
+you please that
 \(\symbf{u}^{T}\cdot\symbf{v} = \symbf{v}^{T}\cdot\symbf{u}\) for the
 above case.
 
 Why did we need to write the dot product as being between a row vector
 and a column vector? One reason is that the product of a column vector
 with a row vector is actually a different type of multiplication which
-we will meet \protect\hyperlink{outer-product-of-two-vectors}{later.}
+we will meet
+\protect\hyperlink{outer-product-of-two-vectorscircledtimes}{later}.
 Another reason is that the row-column product mirrors
 \protect\hyperlink{example-of-matrix-multiplication}{matrix
 multiplication} as explained later.
 
 \hypertarget{general-case-and-formula}{%
-\subsection{General case and formula}\label{general-case-and-formula}}
+\subsubsection{General case and
+formula}\label{general-case-and-formula}}
 
 These results for the dot product may be generalized by taking
 \(\symbf{u}\) and \(\symbf{v}\) to be arbitrary \(n\)-dimensional
@@ -1790,17 +1792,17 @@ a manner of speaking, we may ``cancel out'' the two inner dimensions
 mnemonic will prove useful later on as well.
 
 \hypertarget{consistency-with-real-multiplication}{%
-\subsection{Consistency with real
+\subsubsection{Consistency with real
 multiplication}\label{consistency-with-real-multiplication}}
 
 What happens if our two vectors degenerate into scalars having single
 components \(u_{1}\) and \(v_{1}\)? The dot product then collapses into
 plain multiplication between two numbers and equals \(u_{1}v_{1}\),
-entirely consistent with the product of two numbers. Consistency rules
+entirely concordant with the product of two numbers. Consistency rules
 once again!
 
 \hypertarget{geometric-viewpoint}{%
-\subsection{Geometric viewpoint}\label{geometric-viewpoint}}
+\subsubsection{Geometric viewpoint}\label{geometric-viewpoint}}
 
 What does the dot product mean? What does it signify given that vectors
 originated as physical abstractions? We need to put on our ``geometric
@@ -1808,9 +1810,15 @@ glasses'' and view the dot product geometrically. We will need a little
 bit of trigonometry on the way.\footnote{Which you might have to take on
   trust if it is unfamiliar or forgotten.}
 
-{[}caption id=``attachment\_83'' align=``alignleft'' width=``227''{]}
-Vector components as values of projections on orthogonal
-axes.{[}/caption{]}
+\begin{figure}
+\hypertarget{fig:projection}{%
+\centering
+\includesvg[width=0.6\textwidth,height=\textheight]{images/projection.svg}
+\caption{Vector components as values of projections on the orthogonal
+axes \(x\) and \(y\) for a two-dimensional vector
+\(\symbf{u}\).}\label{fig:projection}
+}
+\end{figure}
 
 Let us consider a two-dimensional vector \(\symbf{u}\) from the origin
 \(O\) to a point \(U\) at \((u_{x}, u_{y})\) on the Cartesian plane. Let
@@ -1819,36 +1827,30 @@ Then, we have:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   By the Theorem of Pythagoras, the magnitude of the vector
   \(\symbf{u}\), denoted by \(\lVert\symbf{u}\rVert\), is given by
   \(\sqrt{u_{x}^2 + u_{y}^2}\). The symbol \(\lVert\mbox{}\rVert\)
   denoting a pair of double vertical lines represents the
-  \href{http://mathworld.wolfram.com/Norm.html}{norm} or magnitude of
+  \href{https://mathworld.wolfram.com/Norm.html}{norm} or magnitude of
   the vector written within it.
-\end{enumerate}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
 \item
   The magnitudes of the
-  \href{http://en.wikipedia.org/wiki/Vector_projection}{projections} of
+  \href{https://en.wikipedia.org/wiki/Vector_projection}{projections} of
   \(\symbf{u}\) in the directions of the \(x\) and \(y\) axes are
   respectively \[
   \begin{aligned}
   u_{x} &= \lVert\symbf{u}\rVert\cos\alpha\\
   u_{y} &= \lVert\symbf{u}\rVert\sin\alpha\\
-  &= \lVert\symbf{u}\rVert\cos(90^{\circ}-\alpha)\\
+  &= \lVert\symbf{u}\rVert\cos(90°-\alpha)\\
   \end{aligned}
   \]
 \end{enumerate}
 
-The magnitude of the projection of a vector in a particular direction is
-equal the magnitude of the vector multiplied by the \emph{cosine} of the
-angle made by the vector with that direction.
+The magnitude of the projection of a vector in a \emph{particular}
+direction is equal the magnitude of the vector multiplied by the
+\emph{cosine} of the angle made by the vector with \emph{that}
+direction.
 
 We could make similar claims for a vector \(\symbf{v}\) at
 \((v_{x}, v_{y})\) that makes an angle \(\beta\) with the positive \(x\)
@@ -1866,14 +1868,20 @@ be written as: \[
 \end{aligned}
 \]
 
-{[}caption id=``attachment\_79'' align=``alignright'' width=``230''{]}
-Dot product of two vectors.{[}/caption{]}
+\begin{figure}
+\hypertarget{fig:dot-product}{%
+\centering
+\includesvg[width=0.65\textwidth,height=\textheight]{images/dot-product.svg}
+\caption{Dot product of two vectors, \(\symbf{u}\) and
+\(\symbf{v}\).}\label{fig:dot-product}
+}
+\end{figure}
 
 The dot product of two vectors is equal to the product of their
 magnitudes and the cosine of the angle between them. It is a scalar.
 
 \hypertarget{applications-of-the-dot-product}{%
-\subsection{Applications of the dot
+\subsubsection{Applications of the dot
 product}\label{applications-of-the-dot-product}}
 
 Unlike straightforward multiplication of real or complex numbers, the
@@ -1888,7 +1896,7 @@ of relationships in physics where two vectors give rise to a scalar in a
 multiplicative fashion.
 
 For example,
-\href{http://en.wikipedia.org/wiki/Work_\%28physics\%29}{mechanical
+\href{https://en.wikipedia.org/wiki/Work_\%28physics\%29}{mechanical
 work} \(W\) is a scalar defined as the dot product of the vector
 representing force \(\symbf{F}\) and the vector representing
 displacement \(\symbf{s}\) through the equation
@@ -1901,82 +1909,92 @@ practically useful. That is why it has been defined and that is why it
 still exists.
 
 \hypertarget{the-cosine-and-sine-functions}{%
-\subsection{The cosine and sine
+\subsubsection{The cosine and sine
 functions}\label{the-cosine-and-sine-functions}}
 
 The cosine and sine of an angle are
-\href{http://en.wikipedia.org/wiki/Trigonometric_Ratios}{trigonometric
+\href{https://en.wikipedia.org/wiki/Trigonometric_Ratios}{trigonometric
 ratios} from right-angled triangles that were later expanded in scope to
 become
-\href{http://mathworld.wolfram.com/Trigonometry.html}{mathematical
-functions.} Graphs of \(\cos x\) and \(\sin x\) against \(x\) in degrees
-are shown below.\footnote{These functions are usually plotted against
-  \(x\) in the ``unitless unit''
-  \href{http://en.wikipedia.org/wiki/Radian}{radians.} I am using
-  degrees here because the reader might be unfamiliar with radians.} If
-these are concepts new to you, you might want to look them up as
-suggested in the sidebar.
+\href{https://mathworld.wolfram.com/Trigonometry.html}{mathematical
+functions}. Graphs of \(\cos x\) and \(\sin x\) against \(x\), in the
+``unitless unit'' called
+\href{https://en.wikipedia.org/wiki/Radian}{radians}, are shown
+below.\footnote{See my blog
+  \href{https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians}{\emph{A
+  tale of two measures: degrees and radians}} if you are unfamiliar with
+  radians.}
 
-For now, we only need to focus on these facts:
+For now, we only need to focus on these facts, bearing in mind that
+\(x\) is in radians:\footnote{If radians bother you, keep in mind that
+  \(0°\) equals \(0\) radians and that \(\frac{\pi}{2}\) radians equals
+  \(90°\).}
 
 \begin{enumerate}
 \item
   The values of \(\cos x\) and \(\sin x\) lie only between \(-1\) and
   \(1\).
 \item
-  \(\cos 0^{\circ} = 1\) and~\(\cos 90^{\circ} =0\).
+  \(\cos 0 = 1\) and \(\cos(\frac{\pi}{2}) = 0\).
 \item
-  \(\sin 0^{\circ} = 0\) and~\(\sin 90^{\circ} =1\).
+  \(\sin 0 = 0\) and \(\sin(\frac{\pi}{2}) = 1\).
 \item
-  \(\sin x = \cos (90^{\circ} - x)\).
+  \(\sin x = \cos(\frac{\pi}{2} - x)\).
 \item
-  \(\cos x = \sin (90^{\circ} - x)\).
+  \(\cos x = \sin (\frac{\pi}{2} - x)\).
 \end{enumerate}
 
-{[}caption id=``attachment\_86'' align=``aligncenter'' width=``482''{]}
-Graphs of cos x and sin x.{[}/caption{]}
+\begin{figure}
+\hypertarget{fig:cosx-sinx}{%
+\centering
+\includesvg[width=0.9\textwidth,height=\textheight]{images/cosx-sinx.svg}
+\caption{Graphs of \(\cos x\) and \(\sin x\) for the domain
+\([-\pi, \pi]\) in radians or \([-180, 180]\) in degrees. The \(x\) axis
+is labelled in radians.}\label{fig:cosx-sinx}
+}
+\end{figure}
 
 \hypertarget{oddness-and-evenness}{%
-\subsection{Oddness and evenness}\label{oddness-and-evenness}}
+\subsubsection{Oddness and evenness}\label{oddness-and-evenness}}
 
 Observe from these graphs that \(\cos x\) is an
-\href{http://mathworld.wolfram.com/EvenFunction.html}{even function}
+\href{https://mathworld.wolfram.com/EvenFunction.html}{even function}
 that is symmetrical about the \(y\) axis whereas \(\sin x\) is an
-\href{http://mathworld.wolfram.com/OddFunction.html}{odd
+\href{https://mathworld.wolfram.com/OddFunction.html}{odd
 function}.\footnote{These properties make the dot product a
-  \href{http://mathworld.wolfram.com/Commutative.html}{commutative}
+  \href{https://mathworld.wolfram.com/Commutative.html}{commutative}
   operation and the cross product an
-  \href{http://mathworld.wolfram.com/Anticommutative.html}{anti-commutative}
+  \href{https://mathworld.wolfram.com/Anticommutative.html}{anti-commutative}
   operation.}
 
 Although not apparent from the graphs, both the cosine and sine
 functions are
-\href{http://mathworld.wolfram.com/PeriodicFunction.html}{periodic} and
-repeat themselves every \(360^{\circ}\) for all values of the
-independent variable.
+\href{https://mathworld.wolfram.com/PeriodicFunction.html}{periodic} and
+repeat themselves every \(360°\) or \(2\pi\) radians for all values of
+the independent variable.
 
 \hypertarget{orthogonality}{%
-\subsection{Orthogonality}\label{orthogonality}}
+\subsubsection{Orthogonality}\label{orthogonality}}
 
 To recapitulate, the cosine of an angle is \(1\) at zero degrees and
 \(0\) at ninety degrees. Therefore if two vectors are
-\href{http://mathworld.wolfram.com/Orthogonal.html}{orthogonal}---or
-perpendicular or at ninety degrees---to each other, their dot product is
-zero.
+\href{https://mathworld.wolfram.com/Orthogonal.html}{orthogonal}---or
+perpendicular, or at ninety degrees---to each other, their dot product
+is zero.
 
 For example, a force vector \(\symbf{F}\) has no effect perpendicular to
 the direction in which it acts, and this is because its \emph{component}
-or \href{http://en.wikipedia.org/wiki/Vector_projection}{projection} in
-that direction is \(\lVert\symbf{F}\rVert\cos 90^{\circ} = 0\).
+or \href{https://en.wikipedia.org/wiki/Vector_projection}{projection} in
+that direction is \(\lVert\symbf{F}\rVert\cos 90° = 0\).
 
 The dot product therefore measures the \emph{degree of alignment} or
 \emph{similarity} between two vectors. When the angle between them is
 zero degrees, this alignment is at its greatest. When the vectors are
 orthogonal, each vector has no component in the direction of the other;
 so they are \emph{independent.} When the two vectors make an angle
-greater than \(90^{\circ}\) the sine of their angle is negative. The two
-vectors act in opposition when they are at an angle of \(180^{\circ}\)
-with each other.
+greater than \(90°\) the sine of their angle is negative. The two
+vectors act in opposition when they are at an angle of \(180°\) with
+each other.
 
 Orthogonality---and the independence of vectors it implies---is a very
 powerful property that finds application daily whenever we talk over the
@@ -1990,15 +2008,15 @@ mind.
 We now move on to the next type of vector product.
 
 \hypertarget{cross-product}{%
-\section{Cross product}\label{cross-product}}
+\subsection{Cross product}\label{cross-product}}
 
 The third type of vector product is the
-\href{http://mathworld.wolfram.com/CrossProduct.html}{\emph{cross
+\href{https://mathworld.wolfram.com/CrossProduct.html}{\emph{cross
 product}.} Because the dot product gave a \emph{scalar} result that
 involved the \emph{cosine} function, you might ask tongue in cheek,
 whether the cross product produces a \emph{vector} result that involves
 the \emph{sine} function in its definition. And facetious or not, you
-are actually right. :-)
+are actually right. \emojifont {😄} \normalfont
 
 The cross product is a vector and it does involve the sine of the angle
 between the two vectors. In addition, just as in the dot product,
@@ -2021,12 +2039,21 @@ directions.
 We are now ready to define the cross product as \[
 \begin{aligned}
 \symbf{w} &= \symbf{u} \times \symbf{v}\\
-&= (\lVert\symbf{u}\rVert \lVert\symbf{v}\rVert \sin \theta) \thinspace \symbf{n}
+&\triangleq (\lVert\symbf{u}\rVert \lVert\symbf{v}\rVert \sin \theta) \thinspace \symbf{n}
 \end{aligned}
 \]
 
-{[}caption id=``attachment\_78'' align=``alignright'' width=``220''{]}
-Cross-product of two vectors.{[}/caption{]}
+\begin{figure}
+\hypertarget{fig:cross-product}{%
+\centering
+\includesvg[width=0.65\textwidth,height=\textheight]{images/cross-product.svg}
+\caption{The cross product of two vectors, \(\symbf{u}\) and
+\(\symbf{v}\) is given by \(\symbf{w}\). The direction of the angle
+\(\theta\) is from \(\symbf{u}\) to \(\symbf{v}\). By the right-hand
+rule, \(\symbf{w}\) is positive in the direction of its
+arrow.}\label{fig:cross-product}
+}
+\end{figure}
 
 Both the vectors \(\symbf{u}\) and \(\symbf{v}\) point outward from the
 same origin \(O\). The cross product vector \(\symbf{w}\) is
@@ -2055,6 +2082,9 @@ direction of both \(\symbf{w}\) and \(\symbf{n}\). The sole purpose of
 \(\symbf{n}\) is to indicate the direction of \(\symbf{w}\) as
 determined by the right-hand rule. The letter \(\symbf{n}\) is used to
 indicate that it is \emph{normal} or \emph{perpendicular} to the plane.
+The only purpose of \(\symbf{n}\) is to denote the \emph{direction} of
+\(\symbf{w}\). Being a \emph{unit vector}, the magnitude of
+\(\symbf{n}\) is \(\lVert\symbf n\rVert = 1\).
 
 In the cross product, we have just met the \(\times\) sign for
 multiplication again, but so far afield from its original use and
@@ -2071,7 +2101,7 @@ cross-product vector would then point \emph{downwards.} Its magnitude
 would however be the same as before. We therefore write: \[
 \symbf{v} \times \symbf{u} = - (\symbf{u} \times \symbf{v})
 \] The cross product is said to be
-\href{http://mathworld.wolfram.com/Anticommutative.html}{anti-commutative.}
+\href{https://mathworld.wolfram.com/Anticommutative.html}{anti-commutative}.
 This means that if we reverse the order of the operands, there is a
 change in the sign of the result. In contrast, the dot product is
 commutative. So, each variety of vector multiplication has its own
@@ -2081,14 +2111,16 @@ well-delineated properties.
 \subsection{Applications of the cross
 product}\label{applications-of-the-cross-product}}
 
-Like the dot product, the cross product owes its definition and
-existence to its usefulness in physics. For example, the
-\href{http://en.wikipedia.org/wiki/Torque}{torque} vector
+Like the dot product, the cross product owes its ubiquity to its
+usefulness in physics. For example, the
+\href{https://en.wikipedia.org/wiki/Torque}{torque} vector
 \(\symbf{\tau}\)\footnote{Pronounced tau.} is defined by
 \(\symbf{\tau} = \symbf{r}\times\symbf{F}\). Torque is what makes the
-wheels of a car rotate. Visit the
-\href{http://en.wikipedia.org/wiki/Torque}{torque hyperlink} to see an
-animation and explanation of what the term ``torque'' means.
+wheels of a car rotate. Visit
+\href{https://en.wikipedia.org/wiki/Torque}{this page} to see an
+animation and explanation of what the term ``torque'' means. The cross
+product also simplifies the mathematical description of the laws of
+electromagnetism.
 
 \hypertarget{outer-product-of-two-vectors}{%
 \section{Outer product of two
@@ -2193,7 +2225,7 @@ The outer product of two vectors leads to matrices and the
 multiplication. It is the last we will consider in this blog.
 
 \hypertarget{matrices}{%
-\section{Matrices}\label{matrices}}
+\subsection{Matrices}\label{matrices}}
 
 We have already seen that a matrix consists of a lot more ``numbers in a
 teabag'' in which order is respected. An \(m \times n\) matrix is an
@@ -2272,8 +2304,16 @@ constraints often apply to operations on them.
 \subsection{Example of matrix
 multiplication}\label{example-of-matrix-multiplication}}
 
-{[}caption id=``attachment\_81'' align=``alignleft'' width=``298''{]}
-How the product of two matrices is computed.{[}/caption{]}
+\begin{figure}
+\hypertarget{fig:matrixmult}{%
+\centering
+\includesvg[width=0.6\textwidth,height=\textheight]{images/matrixmult.svg}
+\caption{How the product of two matrices is computed. Like coloured
+elements are multiplied together, and those products summed, to give the
+single result shown in black. The algorithm is repeated until
+exhaustion.}\label{fig:matrixmult}
+}
+\end{figure}
 
 Here is an example of matrix multiplication. We group a whole row on the
 left matrix and multiply it element-wise with a whole column on the
@@ -2549,7 +2589,8 @@ and the whole blog.
 Mathematics is like a pastry puff: only the layers never seem to end and
 neither does the puff! I needed to cap the well at some point, and
 matrices seemed as good a place to stop as any. The pleasures of many
-other types of multiplication await your future explorations! :-)
+other types of multiplication await your future explorations!
+\emojifont {😄} \normalfont
 
 As an independent scholar, I work in isolation without the benefits of a
 university environment or consultation with peers. So, an error of fact

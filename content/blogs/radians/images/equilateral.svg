@@ -43,7 +43,6 @@
 <path clip-rule="nonzero" d="M 89 77 L 128 77 L 128 119.441406 L 89 119.441406 Z M 89 77 "/>
 </clipPath>
 </defs>
-<path fill-rule="nonzero" fill="rgb(98.999023%, 98.999023%, 98.999023%)" fill-opacity="1" d="M 11.636719 109.515625 L 67.929688 12.011719 L 124.222656 109.515625 Z M 11.636719 109.515625 "/>
 <g clip-path="url(#clip-0)">
 <path fill="none" stroke-width="0.99628" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0%, 0%, 0%)" stroke-opacity="1" stroke-miterlimit="10" d="M -0.00130237 -0.00103091 L 56.693079 98.198154 L 113.387461 -0.00103091 Z M -0.00130237 -0.00103091 " transform="matrix(0.99292, 0, 0, -0.99292, 11.638012, 109.514601)"/>
 </g>

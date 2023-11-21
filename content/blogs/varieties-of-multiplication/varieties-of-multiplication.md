@@ -557,9 +557,7 @@ Both results are the same and again underline the consistency that runs through 
 
 We have just seen that two-dimensional vectors may be represented by ordered pairs on the Cartesian plane. This representation might be extrapolated to include vectors of dimensions greater than two. Obviously, we would then be moving from ordered pairs to ordered triples, etc.^[An ordered triple, for example, would live in our familiar three-dimensional space.]
 
-To generalize, we may think of vectors as a list of "numbers in a slim teabag" where their order matters. Formally, an $n$-dimensional vector is an *ordered list* of $n$ numbers written within enclosing parentheses or brackets and treated as a *single entity.* This is also called an [*ordered n-tuple.*][tuple] Each individual number is called a *component* of the vector.
-
-[tuple]: http://en.wikipedia.org/wiki/Tuple
+To generalize, we may think of vectors as a list of "numbers in a slim teabag" where their order matters. Formally, an $n$-dimensional vector is an *ordered list* of $n$ numbers written within enclosing parentheses or brackets and treated as a *single entity.* This is also called an [*ordered n-tuple*](https://en.wikipedia.org/wiki/Tuple). Each individual number is called a *component* of the vector.
 
 The components of a vector may be written within parentheses or brackets. They may be arranged vertically as a *column vector* of a single column and $n$ rows or horizontally as a *row vector* of a single row and $n$ columns. A column vector may be *transposed* into a row vector. Transposition is indicated by the superscript $T$. For example, with $n = 4$
 $$
@@ -576,9 +574,7 @@ It is conventional to assume that an arbitrary vector is a column vector. Row ve
 
 The size of a vector is denoted by writing down the number of rows followed by a $\times$ sign followed by the number of columns. Thus a column vector with four rows is a *$4 \times 1$ column vector* while a row vector with four columns is a *$1 \times 4$ row vector.*
 
-By definition, a vector must have at least one dimension equal to $1$. When *both* dimensions are equal to one, the vector degenerates into a single component which, in the context of vectors, is called a [*scalar*][scalar] to distinguish it from a vector.
-
-[scalar]: http://en.wikipedia.org/wiki/Scalar_%28mathematics%29
+By definition, a vector must have at least one dimension equal to $1$. When *both* dimensions are equal to one, the vector degenerates into a single component which, in the context of vectors, is called a [*scalar*](https://en.wikipedia.org/wiki/Scalar_%28mathematics%29) to distinguish it from a vector.
 
 ## Addition and subtraction of vectors
 
@@ -684,11 +680,9 @@ the number $1$. But it does have its uses in data analysis and might get its own
 
 We now turn to other varieties of multiplication that may be applied to vectors.
 
-# Dot or scalar product
+## Dot or scalar product
 
-The centred dot $\cdot$ as a symbol for multiplication makes its appearance here. The first departure from conventional multiplication was with complex numbers. The [*dot product,*][dot] also called the *scalar product,* or *inner product*^[An inner product is something more general, of which the dot product is a special case.] is the next variety of unconventional multiplication.
-
-[dot]: http://en.wikipedia.org/wiki/Dot_product
+The centred dot $\cdot$ as a symbol for multiplication makes its appearance here. The first departure from conventional multiplication was with complex numbers. The [*dot product,*](https://en.wikipedia.org/wiki/Dot_product) also called the *scalar product,* or *inner product*^[An inner product is something more general, of which the dot product is a special case.] is the next variety of unconventional multiplication.
 
 ## Existence of the dot product
 
@@ -716,18 +710,15 @@ If you look at the dot product carefully, you will see the following:
 
 #. the sum is the dot or scalar product.
 
-It is now clear why the two vectors must have the same dimensions. If not, we will run out of either multiplicand or multiplier for pairwise multiplication.
+It is now clear why the two vectors must have the same dimensions. If not, we will run out of either multiplier or multiplicand for pairwise multiplication.
 
 The result, being a sum of products, is a single number, or scalar, explaining the name *scalar product* for this operation. We prefer the term dot product to avoid confusion with multiplication by a scalar.
 
 It is easy to verify by direct evaluation that the dot product is [commutative][commutative] and therefore symmetrical. Verify if you please that $\symbf{u}^{T}\cdot\symbf{v} = \symbf{v}^{T}\cdot\symbf{u}$ for the above case.
 
-Why did we need to write the dot product as being between a row vector and a column vector? One reason is that the product of a column vector with a row vector is actually a different type of multiplication which we will meet [later.][circledtimes] Another reason is that the row-column product mirrors [matrix multiplication][matrixmult] as explained later.
+Why did we need to write the dot product as being between a row vector and a column vector? One reason is that the product of a column vector with a row vector is actually a different type of multiplication which we will meet [later](#outer-product-of-two-vectorscircledtimes). Another reason is that the row-column product mirrors [matrix multiplication](#example-of-matrix-multiplication) as explained later.
 
-[circledtimes]: #outer-product-of-two-vectors
-[matrixmult]: #example-of-matrix-multiplication
-
-## General case and formula
+### General case and formula
 
 These results for the dot product may be generalized by taking $\symbf{u}$ and $\symbf{v}$ to be arbitrary $n$-dimensional vectors whose components may be referred to by the *subscripts* $1$ to $n$.
 
@@ -743,36 +734,30 @@ $$
 
 Observe that the vector $\symbf{u}^{T}$ is a $1 \times n$ vector whereas $\symbf{v}$ is an $n \times 1$ vector. Their dot product---between a $1 \times n$ vector and an $n \times 1$ vector---yields a $1 \times 1$ "vector" which is really a scalar. In a manner of speaking, we may "cancel out" the two inner dimensions $n$ to get the dimension of the product as being $1 \times 1$. This mnemonic will prove useful later on as well.
 
-## Consistency with real multiplication
+### Consistency with real multiplication
 
-What happens if our two vectors degenerate into scalars having single components $u_{1}$ and $v_{1}$? The dot product then collapses into plain multiplication between two numbers and equals $u_{1}v_{1}$, entirely consistent with the product of two numbers. Consistency rules once again!
+What happens if our two vectors degenerate into scalars having single components $u_{1}$ and $v_{1}$? The dot product then collapses into plain multiplication between two numbers and equals $u_{1}v_{1}$, entirely concordant with the product of two numbers. Consistency rules once again!
 
-## Geometric viewpoint
+### Geometric viewpoint
 
 What does the dot product mean? What does it signify given that vectors originated as physical abstractions? We need to put on our "geometric glasses" and view the dot product geometrically. We will need a little bit of trigonometry on the way.^[Which you might have to take on trust if it is unfamiliar or forgotten.]
 
-<!--Vector projections-->
-
-[caption id="attachment_83" align="alignleft" width="227"]<a href="http://swanlotus.org/wp-content/uploads/projection.png"><img src="http://swanlotus.org/wp-content/uploads/projection.png" alt="Vector components as values of projections on orthogonal axes." width="227" height="340" class="img-responsive size-full wp-image-83" /></a> Vector components as values of projections on orthogonal axes.[/caption]
+![Vector components as values of projections on the orthogonal axes $x$ and $y$ for a two-dimensional vector $\symbf{u}$.]({attach}images/projection.svg){#fig:projection width=60% .modal-target}
 
 Let us consider a two-dimensional vector $\symbf{u}$ from the origin $O$ to a point $U$ at $(u_{x}, u_{y})$ on the Cartesian plane. Let $OU$ make an angle $\alpha$ with the positive $x$ axis as shown. Then, we have:
 
-1.  By the Theorem of Pythagoras, the magnitude of the vector $\symbf{u}$, denoted by $\lVert\symbf{u}\rVert$, is given by $\sqrt{u_{x}^2 + u_{y}^2}$. The symbol $\lVert\mbox{}\rVert$ denoting a pair of double vertical lines represents the [norm][norm] or magnitude of the vector written within it.
+1.  By the Theorem of Pythagoras, the magnitude of the vector $\symbf{u}$, denoted by $\lVert\symbf{u}\rVert$, is given by $\sqrt{u_{x}^2 + u_{y}^2}$. The symbol $\lVert\mbox{}\rVert$ denoting a pair of double vertical lines represents the [norm](https://mathworld.wolfram.com/Norm.html) or magnitude of the vector written within it.
 
-[norm]: http://mathworld.wolfram.com/Norm.html
+2.  The magnitudes of the [projections](https://en.wikipedia.org/wiki/Vector_projection) of $\symbf{u}$ in the directions of the $x$ and $y$ axes are respectively
+$$
+\begin{aligned}
+u_{x} &= \lVert\symbf{u}\rVert\cos\alpha\\
+u_{y} &= \lVert\symbf{u}\rVert\sin\alpha\\
+&= \lVert\symbf{u}\rVert\cos(90°-\alpha)\\
+\end{aligned}
+$$
 
-2.  The magnitudes of the [projections][projection] of $\symbf{u}$ in the directions of the $x$ and $y$ axes are respectively
-    $$
-    \begin{aligned}
-    u_{x} &= \lVert\symbf{u}\rVert\cos\alpha\\
-    u_{y} &= \lVert\symbf{u}\rVert\sin\alpha\\
-    &= \lVert\symbf{u}\rVert\cos(90^{\circ}-\alpha)\\
-    \end{aligned}
-    $$
-
-The magnitude of the projection of a vector in a particular direction is equal the magnitude of the vector multiplied by the *cosine* of the angle made by the vector with that direction.
-
-[projection]: http://en.wikipedia.org/wiki/Vector_projection
+The magnitude of the projection of a vector in a _particular_ direction is equal the magnitude of the vector multiplied by the *cosine* of the angle made by the vector with _that_ direction.
 
 We could make similar claims for a vector $\symbf{v}$ at $(v_{x}, v_{y})$ that makes an angle $\beta$ with the positive $x$ axis.
 
@@ -787,69 +772,53 @@ $$
 \end{aligned}
 $$
 
-<!--Diagram of dot product-->
-
-[caption id="attachment_79" align="alignright" width="230"]<a href="http://swanlotus.org/wp-content/uploads/dot-product.png"><img src="http://swanlotus.org/wp-content/uploads/dot-product.png" alt="Dot product of two vectors." width="230" height="147" class="img-responsive size-full wp-image-79" /></a> Dot product of two vectors.[/caption]
+![Dot product of two vectors, $\symbf{u}$ and $\symbf{v}$.]({attach}images/dot-product.svg){#fig:dot-product width=65% .modal-target}
 
 The dot product of two vectors is equal to the product of their magnitudes and the cosine of the angle between them. It is a scalar.
 
-## Applications of the dot product
+### Applications of the dot product
 
 Unlike straightforward multiplication of real or complex numbers, the dot product seems a little contrived. Why is it so defined? And is it useful?
 
 The answers to both questions lie in the practical utility of the dot product. Vectors are used to represent forces, displacements, momenta, and a whole host of other abstractions that are the bread and butter of physics. And the dot product neatly dovetails with a recurring pattern of relationships  in physics where two vectors give rise to a scalar in a multiplicative fashion.
 
-For example, [mechanical work][work] $W$ is a scalar defined as the dot product of the vector representing force $\symbf{F}$ and the vector representing displacement $\symbf{s}$ through the equation $W = \symbf{F}\cdot\symbf{s}$. Alternatively, work is the projection of the force in the direction of the displacement, multiplied by the displacement. Both definitions are equivalent.
+For example, [mechanical work](https://en.wikipedia.org/wiki/Work_%28physics%29) $W$ is a scalar defined as the dot product of the vector representing force $\symbf{F}$ and the vector representing displacement $\symbf{s}$ through the equation $W = \symbf{F}\cdot\symbf{s}$. Alternatively, work is the projection of the force in the direction of the displacement, multiplied by the displacement. Both definitions are equivalent.
 
 The dot product is succinct, precise, notationally crisp, and practically useful. That is why it has been defined and that is why it still exists.
 
-[work]: http://en.wikipedia.org/wiki/Work_%28physics%29
+### The cosine and sine functions
 
-## The cosine and sine functions
+The cosine and sine of an angle are [trigonometric ratios](https://en.wikipedia.org/wiki/Trigonometric_Ratios) from right-angled triangles that were later expanded in scope to become [mathematical functions](https://mathworld.wolfram.com/Trigonometry.html). Graphs of $\cos x$ and $\sin x$ against $x$, in the "unitless unit" called [radians](https://en.wikipedia.org/wiki/Radian), are shown below.^[See my blog [_A tale of two measures: degrees and radians_](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians) if you are unfamiliar with radians.]
 
-The cosine and sine of an angle are [trigonometric ratios][trig] from right-angled triangles that were later expanded in scope to become [mathematical functions.][functions] Graphs of $\cos x$ and $\sin x$ against $x$ in degrees are shown below.^[These functions are usually plotted against $x$ in the "unitless unit" [radians.][radians] I am using degrees here because the reader might be unfamiliar with radians.] If these are concepts new to you, you might want to look them up as suggested in the sidebar.
+<!--If these are concepts new to you, you might want to look them up as suggested in the sidebar.-->
 
-[trig]: http://en.wikipedia.org/wiki/Trigonometric_Ratios
-[functions]: http://mathworld.wolfram.com/Trigonometry.html
-[radians]: http://en.wikipedia.org/wiki/Radian
-
-For now, we only need to focus on these facts:
+For now, we only need to focus on these facts, bearing in mind that $x$ is in radians:^[If radians bother you, keep in mind that $0°$ equals $0$ radians and that $\frac{\pi}{2}$ radians equals $90°$.]
 
 #.  The values of $\cos x$ and $\sin x$ lie only between $-1$ and $1$.
 
-#.  $\cos 0^{\circ} = 1$ and\ $\cos 90^{\circ} =0$.
+#.  $\cos 0 = 1$ and $\cos(\frac{\pi}{2}) = 0$.
 
-#.  $\sin 0^{\circ} = 0$ and\ $\sin 90^{\circ} =1$.
+#.  $\sin 0 = 0$ and $\sin(\frac{\pi}{2}) = 1$.
 
-#.  $\sin x = \cos (90^{\circ} - x)$.
+#.  $\sin x = \cos(\frac{\pi}{2} - x)$.
 
-#.  $\cos x = \sin (90^{\circ} - x)$.
+#.  $\cos x = \sin (\frac{\pi}{2} - x)$.
 
-<!--Insert graphs of cos x and sin x here-->
+![Graphs of $\cos x$ and $\sin x$ for the domain $[-\pi, \pi]$ in radians or $[-180, 180]$ in degrees. The $x$ axis is labelled in radians.]({attach}images/cosx-sinx.svg){#fig:cosx-sinx width=90% .modal-target}
 
-[caption id="attachment_86" align="aligncenter" width="482"]<a href="http://swanlotus.org/wp-content/uploads/trig.png"><img src="http://swanlotus.org/wp-content/uploads/trig.png" alt="Graphs of cos x and sin x." width="482" height="285" class="img-responsive size-full wp-image-86" /></a> Graphs of cos x and sin x.[/caption]
+### Oddness and evenness
 
-## Oddness and evenness
+Observe from these graphs that $\cos x$ is an [even function](https://mathworld.wolfram.com/EvenFunction.html) that is symmetrical about the $y$ axis whereas $\sin x$ is an [odd function](https://mathworld.wolfram.com/OddFunction.html).^[These properties make the dot product a [commutative](https://mathworld.wolfram.com/Commutative.html) operation and the cross product an [anti-commutative](https://mathworld.wolfram.com/Anticommutative.html) operation.]
 
-Observe from these graphs that $\cos x$ is an [even function][even] that is symmetrical about the $y$ axis whereas $\sin x$ is an [odd function][odd].^[These properties make the dot product a [commutative][commutative] operation and the cross product an [anti-commutative][anticommutative] operation.]
+Although not apparent from the graphs, both the cosine and sine functions are [periodic](https://mathworld.wolfram.com/PeriodicFunction.html) and repeat themselves every $360°$ or $2\pi$ radians for all values of the independent variable.
 
-Although not apparent from the graphs, both the cosine and sine functions are [periodic][periodic] and repeat themselves every $360^{\circ}$ for all values of the independent variable.
+### Orthogonality
 
-[even]: http://mathworld.wolfram.com/EvenFunction.html
-[odd]: http://mathworld.wolfram.com/OddFunction.html
-[commutative]: http://mathworld.wolfram.com/Commutative.html
-[anticommutative]: http://mathworld.wolfram.com/Anticommutative.html
-[periodic]: http://mathworld.wolfram.com/PeriodicFunction.html
+To recapitulate, the cosine of an angle is $1$ at zero degrees and $0$ at ninety degrees. Therefore if two vectors are [orthogonal](https://mathworld.wolfram.com/Orthogonal.html)---or perpendicular, or at ninety degrees---to each other, their dot product is zero.
 
-## Orthogonality
+For example, a force vector $\symbf{F}$ has no effect perpendicular to the direction in which it acts, and this is because its *component* or [projection](https://en.wikipedia.org/wiki/Vector_projection) in that direction is $\lVert\symbf{F}\rVert\cos 90° = 0$.
 
-To recapitulate, the cosine of an angle is $1$ at zero degrees and $0$ at ninety degrees. Therefore if two vectors are [orthogonal][orthogonal]---or perpendicular or at ninety degrees---to each other, their dot product is zero.
-
-[orthogonal]: http://mathworld.wolfram.com/Orthogonal.html
-
-For example, a force vector $\symbf{F}$ has no effect perpendicular to the direction in which it acts, and this is because its *component* or [projection][projection] in that direction is $\lVert\symbf{F}\rVert\cos 90^{\circ} = 0$.
-
-The dot product therefore measures the *degree of alignment* or *similarity* between two vectors. When the angle between them is zero degrees, this alignment is at its greatest. When the vectors are orthogonal, each vector has no component in the direction of the other; so they are *independent.* When the two vectors make an angle greater than $90^{\circ}$ the sine of their angle is negative. The two vectors act in opposition when they are at an angle of $180^{\circ}$ with each other.
+The dot product therefore measures the *degree of alignment* or *similarity* between two vectors. When the angle between them is zero degrees, this alignment is at its greatest. When the vectors are orthogonal, each vector has no component in the direction of the other; so they are *independent.* When the two vectors make an angle greater than $90°$ the sine of their angle is negative. The two vectors act in opposition when they are at an angle of $180°$ with each other.
 
 Orthogonality---and the independence of vectors it implies---is a very powerful property that finds application daily whenever we talk over the telephone or download a compressed image from the Web.
 
@@ -857,11 +826,9 @@ The idea of projecting some mathematical object onto another and the idea of one
 
 We now move on to the next type of vector product.
 
-# Cross product
+## Cross product
 
-The third type of vector product is the [*cross product*.][cross] Because the dot product gave a *scalar* result that involved the *cosine* function, you might ask tongue in cheek, whether the cross product produces a *vector* result that involves the *sine* function in its definition. And facetious or not, you are actually right. :-)
-
-[cross]: http://mathworld.wolfram.com/CrossProduct.html
+The third type of vector product is the [*cross product*.](https://mathworld.wolfram.com/CrossProduct.html) Because the dot product gave a *scalar* result that involved the *cosine* function, you might ask tongue in cheek, whether the cross product produces a *vector* result that involves the *sine* function in its definition. And facetious or not, you are actually right. \emojifont :smile: \normalfont
 
 The cross product is a vector and it does involve the sine of the angle between the two vectors. In addition, just as in the dot product, orthogonality peeps at us again through the cross product.
 
@@ -873,13 +840,11 @@ We are now ready to define the cross product as
 $$
 \begin{aligned}
 \symbf{w} &= \symbf{u} \times \symbf{v}\\
-&= (\lVert\symbf{u}\rVert \lVert\symbf{v}\rVert \sin \theta) \thinspace \symbf{n}
+&\triangleq (\lVert\symbf{u}\rVert \lVert\symbf{v}\rVert \sin \theta) \thinspace \symbf{n}
 \end{aligned}
 $$
 
-<!--Diagram of cross product-->
-
-[caption id="attachment_78" align="alignright" width="220"]<a href="http://swanlotus.org/wp-content/uploads/cross-product.png"><img src="http://swanlotus.org/wp-content/uploads/cross-product.png" alt="Cross-product of two vectors." width="220" height="195" class="img-responsive size-full wp-image-78" /></a> Cross-product of two vectors.[/caption]
+![The cross product of two vectors, $\symbf{u}$ and $\symbf{v}$ is given by $\symbf{w}$. The direction of the angle $\theta$ is from $\symbf{u}$ to $\symbf{v}$. By the right-hand rule, $\symbf{w}$ is positive in the direction of its arrow.]({attach}images/cross-product.svg){#fig:cross-product width=65% .modal-target}
 
 Both the vectors $\symbf{u}$ and $\symbf{v}$ point outward from the same origin $O$. The cross product vector $\symbf{w}$ is perpendicular or orthogonal to *both* $\symbf{u}$ and $\symbf{v}$ and again points outward from the same origin $O$.
 
@@ -891,7 +856,7 @@ The expression $(\lVert\symbf{u}\rVert \lVert\symbf{v}\rVert \sin \theta)$ is a 
 
 Imagine that you are rotating a corkscrew starting at $\symbf{u}$ and moving toward $\symbf{v}$. The direction in which the corkscrew advances is the positive direction for the unit vector $\symbf{n}$.^[This is a convenient mathematical convention which is also in accord with actual physical situations.]
 
-Since the corkscrew would then move *upwards,* that is the direction of both $\symbf{w}$ and $\symbf{n}$. The sole purpose of $\symbf{n}$ is to indicate the direction of $\symbf{w}$ as determined by the right-hand rule. The letter $\symbf{n}$ is used to indicate that it is *normal* or *perpendicular* to the plane.
+Since the corkscrew would then move *upwards,* that is the direction of both $\symbf{w}$ and $\symbf{n}$. The sole purpose of $\symbf{n}$ is to indicate the direction of $\symbf{w}$ as determined by the right-hand rule. The letter $\symbf{n}$ is used to indicate that it is *normal* or *perpendicular* to the plane. The only purpose of $\symbf{n}$ is to denote the _direction_ of $\symbf{w}$. Being a _unit vector_, the magnitude of $\symbf{n}$ is $\lVert\symbf n\rVert = 1$.
 
 In the cross product, we have just met the $\times$ sign for multiplication again, but so far afield from its original use and meaning that it is almost unrecognizable except for form. Many mathematical terms and symbols are reused in different contexts with completely different meanings.
 
@@ -901,13 +866,11 @@ If we were to compute $\symbf{v} \times \symbf{u}$ we would turn the right-hande
 $$
 \symbf{v} \times \symbf{u} = - (\symbf{u} \times \symbf{v})
 $$
-The cross product is said to be [anti-commutative.][anticommutative] This means that if we reverse the order of the operands, there is a change in the sign of the result. In contrast, the dot product is commutative. So, each variety of vector multiplication has its own well-delineated properties.
+The cross product is said to be [anti-commutative](https://mathworld.wolfram.com/Anticommutative.html). This means that if we reverse the order of the operands, there is a change in the sign of the result. In contrast, the dot product is commutative. So, each variety of vector multiplication has its own well-delineated properties.
 
 ## Applications of the cross product
 
-Like the dot product, the cross product owes its definition and existence to its usefulness in physics. For example, the [torque][torque] vector $\boldsymbol{\tau}$^[Pronounced tau.] is defined by $\boldsymbol{\tau} = \symbf{r}\times\symbf{F}$. Torque is what makes the wheels of a car rotate. Visit the [torque hyperlink][torque] to see an animation and explanation of what the term "torque" means.
-
-[torque]: http://en.wikipedia.org/wiki/Torque
+Like the dot product, the cross product owes its ubiquity to its usefulness in physics. For example, the [torque](https://en.wikipedia.org/wiki/Torque) vector $\boldsymbol{\tau}$^[Pronounced tau.] is defined by $\boldsymbol{\tau} = \symbf{r}\times\symbf{F}$. Torque is what makes the wheels of a car rotate. Visit [this page](https://en.wikipedia.org/wiki/Torque) to see an animation and explanation of what the term "torque" means. The cross product also simplifies the mathematical description of the laws of electromagnetism.
 
 # Outer product of two vectors
 
@@ -968,7 +931,7 @@ The outer product finds application in fields like physics, electrical engineeri
 
 The outer product of two vectors leads to matrices and the *multiplication of matrices* is yet another variety of multiplication. It is the last we will consider in this blog.
 
-# Matrices
+## Matrices
 
 We have already seen that a matrix consists of a lot more "numbers in a teabag" in which order is respected. An $m \times n$ matrix is an array of $m$ rows and $n$ columns of numbers. A row vector is just a [degenerate][degenerate] matrix with one row, i.e., $m = 1$, whereas a column vector is a degenerate matrix with a single column, i.e., $n = 1$. The plural of *matrix* is *matrices.*
 
@@ -1009,9 +972,7 @@ Any two real numbers may be multiplied together, but the product of any two matr
 
 ## Example of matrix multiplication
 
-<!--Insert example of matrix multiplication left-aligned here.-->
-
-[caption id="attachment_81" align="alignleft" width="298"]<a href="http://swanlotus.org/wp-content/uploads/matrixmult.png"><img src="http://swanlotus.org/wp-content/uploads/matrixmult.png" alt="How the product of two matrices is computed." width="298" height="101" class="img-responsive size-full wp-image-81" /></a> How the product of two matrices is computed.[/caption]
+![How the product of two matrices is computed. Like coloured elements are multiplied together, and those  products summed, to give the single result shown in black. The algorithm is repeated until exhaustion.]({attach}images/matrixmult.svg){#fig:matrixmult width=60% .modal-target}
 
 Here is an example of matrix multiplication. We group a whole row on the left matrix and multiply it element-wise with a whole column on the right matrix and add all the products. In this case, we compute $(1)(7) + (2)(9) + (3)(1) = 7 + 18 + 3 = 28$.
 
@@ -1158,7 +1119,7 @@ This blog started off as something that promised to be short and fizzy, tangy an
 
 The thought crossed my mind that I could split this blog into several sub-blogs. But I soon gave up that idea because the connectedness of the thread will be lost in the segmentation. So, here you have the whole hog and the whole blog.
 
-Mathematics is like a pastry puff: only the layers never seem to end and neither does the puff! I needed to cap the well at some point, and matrices seemed as good a place to stop as any. The pleasures of many other types of multiplication await your future explorations! :-)
+Mathematics is like a pastry puff: only the layers never seem to end and neither does the puff! I needed to cap the well at some point, and matrices seemed as good a place to stop as any. The pleasures of many other types of multiplication await your future explorations! \emojifont :smile: \normalfont
 
 As an independent scholar, I work in isolation without the benefits of a university environment or consultation with peers. So, an error of fact or fancy is all the more likely in what I write. If you are mathematically inclined, and have spotted any mistakes here, please let me know.
 

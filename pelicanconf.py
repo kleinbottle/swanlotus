@@ -55,8 +55,7 @@ IGNORE_FILES = ["blank-template.bib", "blog-template.md"]
 PATH = "content"
 
 ARTICLE_PATHS = [
-    "blogs/varieties-of-multiplication",
-    "blogs/the-two-most-important-numbers"
+    "blogs/varieties-of-multiplication"
 ]  # draft value: ["blogs/rust-euler-one"]
 
 ARTICLE_SAVE_AS = ARTICLE_LANG_SAVE_AS = "blogs/{slug}.html"
