@@ -6,7 +6,6 @@ modified: "2023-11-22"
 category: Mathematics
 tags: Mathematical Musings
 summary: 'I want to look at some of the varieties of multiplication that mathematicians have developed over time. It is a survey that will serve as a pinhole through which we can view how a single, simple mathematical idea has been expanded and elaborated into uses far beyond its historical moorings.'
-status: draft
 opengraphimage:
 ---
 
