@@ -145,9 +145,7 @@
 % We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
 %
 \babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
-%
 \babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
-%
 \babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
 %
 % Sanskrit, Tamil, and Greek fonts
@@ -225,7 +223,7 @@
 
 \title{Varieties of Multiplication}
 \author{R (Chandra) Chandrasekhar}
-\date{2012-05-14 | 2023-11-10}
+\date{2012-05-14 | 2023-11-22}
 
 \begin{document}
 \maketitle
@@ -1552,9 +1550,8 @@ to know what it is and what it is not. Here is a quick run down:
     {[}cross product{]}{[}cross{]} of two vectors to yield a third
     vector orthogonal to the other two
   \item
-    \href{http://en.wikipedia.org/wiki/Tensor_product}{tensor product}
-    or \href{http://en.wikipedia.org/wiki/Outer_product}{outer product}
-    of two vectors to yield a matrix
+    {[}tensor product{]}{[}tensorproduct{]} or {[}outer
+    product{]}{[}outer{]} of two vectors to yield a matrix
   \end{enumerate}
 \end{enumerate}
 
@@ -2141,23 +2138,23 @@ get an \(n \times n\) ``vector'' of some sort?
 
 Indeed we do. And the resulting product is a different mathematical
 object called a
-\href{http://en.wikipedia.org/wiki/Matrix_\%28mathematics\%29}{matrix.}
+\href{https://en.wikipedia.org/wiki/Matrix_\%28mathematics\%29}{matri}.
 This is an example of a mathematical operation involving two known
 mathematical objects whose result gives rise to a new kind of
 mathematical object which then acquires a life and personality of its
 own.
 
 This type of multiplication is called an
-\href{http://en.wikipedia.org/wiki/Outer_product}{outer product,} in
+\href{https://en.wikipedia.org/wiki/Outer_product}{outer product}, in
 contrast to the dot product which is a type of
-\href{http://planetmath.org/encyclopedia/InnerProduct.html}{inner
-product.} It is also sometimes called a
-\href{http://en.wikipedia.org/wiki/Tensor_product}{tensor product} in
+\href{https://planetmath.org/InnerProduct}{inner product}. It is also
+sometimes called a
+\href{https://en.wikipedia.org/wiki/Tensor_product}{tensor product} in
 honour of the fact that we are ascending a hierarchy in
-\href{http://en.wikipedia.org/wiki/Linear_algebra}{linear algebra} that
+\href{https://en.wikipedia.org/wiki/Linear_algebra}{linear algebra} that
 starts with scalars and moves on to vectors and then to matrices and on
 to
-\href{http://en.wikipedia.org/wiki/Tensor_\%28intrinsic_definition\%29}{tensors}
+\href{https://en.wikipedia.org/wiki/Tensor_\%28intrinsic_definition\%29}{tensors}
 with progressive generalizations at each step.
 
 \hypertarget{outer-product-symbol-and-example}{%
@@ -2230,7 +2227,7 @@ multiplication. It is the last we will consider in this blog.
 We have already seen that a matrix consists of a lot more ``numbers in a
 teabag'' in which order is respected. An \(m \times n\) matrix is an
 array of \(m\) rows and \(n\) columns of numbers. A row vector is just a
-\href{http://en.wikipedia.org/wiki/Degenerate_\%28mathematics\%29}{degenerate}
+\href{https://en.wikipedia.org/wiki/Degenerate_\%28mathematics\%29}{degenerate}
 matrix with one row, i.e., \(m = 1\), whereas a column vector is a
 degenerate matrix with a single column, i.e., \(n = 1\). The plural of
 \emph{matrix} is \emph{matrices.}
@@ -2268,7 +2265,7 @@ A = \left[
 \subsection{Applications of matrices}\label{applications-of-matrices}}
 
 Matrices arose naturally from the study and solution of
-\href{http://mathworld.wolfram.com/LinearSystemofEquations.html}{systems
+\href{ttps://mathworld.wolfram.com/LinearSystemofEquations.html}{systems
 of linear equations.} They are also useful in succinctly embodying
 geometric transformations of points in the two-dimensional Cartesian
 plane. They are profoundly useful in electrical engineering, physics,
@@ -2290,7 +2287,7 @@ them \emph{in that order,} we first need to ensure that the ``inner
 dimensions,'' \(n\) and \(p\) in this case, are indeed equal. If
 \(n = p\) the two matrices \(A\) and \(B\) can be multiplied together to
 yield the \(m \times q\) matrix \(AB\), and the two matrices are said to
-be \href{http://en.wikipedia.org/wiki/Conformable_matrix}{conformable.}
+be \href{https://en.wikipedia.org/wiki/Conformable_matrix}{conformable.}
 Otherwise, the product \(AB\) does not exist. Conversely, if
 \(n \neq p\) but \(q = m\), the matrix product \(BA\) exists and the
 result is a \(p \times n\) matrix.
@@ -2400,7 +2397,7 @@ a\\b\\
 -a\\b\\
 \end{bmatrix}
 \] Because \(a\) and \(b\) are arbitrary, we may associate a
-\href{http://planetmath.org/encyclopedia/DerivationOf2DReflectionMatrix.html}{reflection}
+\href{https://planetmath.org/derivationof2dreflectionmatrix}{reflection}
 across the \(y\) axis with the above matrix. Likewise, it may be shown
 that a counter-clockwise rotation about the origin \(O\) through an
 angle \(\theta\) with the positive \(x\)-axis is associated with the
@@ -2410,7 +2407,7 @@ matrix \[
 \sin\theta & \cos\theta\\
 \end{bmatrix}
 \] We can then chain together such
-\href{http://en.wikipedia.org/wiki/Transformation_matrix}{transformations}
+\href{https://en.wikipedia.org/wiki/Transformation_matrix}{transformations}
 by multiplying the relevant matrices in the correct order. Those who
 author video games use concepts such as these to program their games.
 
@@ -2569,9 +2566,62 @@ May the product be with you!
 \hypertarget{to-explore-further}{%
 \subsection{To explore further}\label{to-explore-further}}
 
-Nahin's books
+We have covered a fair bit of ground in this blog, and not all of it at
+the same depth. For those who seek a greater acquaintance with abstract
+algebra, I would recommend three books that are kinder, gentler
+introductions to the subject, written by professional mathematicians:
 
-Feynman's lectures etc.
+W W Sawyer's \emph{A concrete approach to abstract algebra}
+{[}\protect\hyperlink{ref-sawyer1959}{5}{]} was first published in 1959,
+but it has retained its vigour and directness intact through more than
+six decades. Read it as a first introduction to the subject.
+
+Bergen's more recent book, \emph{A Concrete Approach to Abstract
+Algebra} is a modern successor to Sawyer, sharing the same book title.
+It will be a good companion to Sawyer.
+
+The third book, by Goodman, entitled \emph{Algebra: Abstract and
+Concrete} is
+\href{http://homepage.divms.uiowa.edu/~goodman/algebrabook.dir/book.2.6.pdf}{available
+at no charge online} {[}\protect\hyperlink{ref-goodman2012}{6}{]}. It is
+very readable and concentrates a fair bit on symmetry. You could read it
+along with the other two or use it to complement your understanding of
+symmetry.
+
+The prolific engineer-author Paul Nahin has written
+\href{https://www.amazon.in/stores/Paul-J.-Nahin/author/B001HCS1XI/allbooks}{a
+whole series} of engaging popular mathematics and physics books. Two of
+them are relevant to the subject of this blog. The first is aptly
+entitled \emph{An Imaginary Tale: The Story of \(\sqrt{-1}\)}
+{[}\protect\hyperlink{ref-nahin-imaginary}{7}{]}. Its sequel is
+\emph{Dr.~Euler's Fabulous Formula: Cures Many Mathematical Ills}
+{[}\protect\hyperlink{ref-nahin-euler}{8}{]}. Budding electrical
+engineers would benefit from reading them as might budding physicists.
+
+Patrick Honner has written an
+\href{https://www.quantamagazine.org/the-imaginary-numbers-at-the-edge-of-reality-20181025/}{engaging
+and easy-to-read article on imaginary numbers} in \emph{Quanta Magazine}
+that should be accessible to high school students
+{[}\protect\hyperlink{ref-honner2018}{9}{]}.
+
+I have made reference to Feynman's lecture
+{[}\protect\hyperlink{ref-feynman22}{3}{]} in which he says, ``So we
+have created two new functions in a purely algebraic manner, the cosine
+and the sine, which belong to algebra, and only to algebra.'' This
+remarkable unification of algebra and geometry, I have not seen
+elsewhere. There are three volumes of the \emph{Feynman Lectures on
+Physics} and they are a treat to read and a treasure to
+\href{https://www.amazon.in/Feynman-Lectures-Physics-Vol-Bundle/dp/9332580952}{own}
+{[}\protect\hyperlink{ref-feynman123}{10}{]}.
+
+Ivan Savov has written a series of irreverently named books on
+mathematics and physics. Of these, the one entitled \emph{No Bullshit
+Guide To Linear Algebra} {[}\protect\hyperlink{ref-savov2020}{11}{]} is
+most relevant to this blog. His style is distinct from other texts, and
+his fascinating and painstakingly drawn diagrams that relate different
+branches of mathematics will help students integrate their
+knowledge---acquired piecemeal over the years---into the unitary whole
+that it really is.
 
 \hypertarget{afterword}{%
 \section{Afterword}\label{afterword}}
@@ -2579,7 +2629,8 @@ Feynman's lectures etc.
 This blog started off as something that promised to be short and fizzy,
 tangy and piquant. But it soon became a little like hot treacle: too hot
 to swallow and too sticky to spit out. It transmogrified into a
-jumboblog. If you have stuck with me this far, I applaud and thank you.
+jumboblog or \emph{slog}. If you have stuck with me this far, I applaud
+and thank you.
 
 The thought crossed my mind that I could split this blog into several
 sub-blogs. But I soon gave up that idea because the connectedness of the
@@ -2598,10 +2649,24 @@ or fancy is all the more likely in what I write. If you are
 mathematically inclined, and have spotted any mistakes here, please let
 me know.
 
-If you wish to read this blog as a single PDF document you may get it
-from the \href{http://swanlotus.org/downloads}{downloads page.}
+\hypertarget{feedback}{%
+\subsection{Feedback}\label{feedback}}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
+comments and corrections.
+
+\noindent A PDF version of this article is
+\href{./varieties-of-multiplication.pdf}{available for download here}:
+
+\begin{small}
+
+\begin{sffamily}
+
+\url{https://swanlotus.netlify.app/blogs/varieties-of-multiplication.pdf}
+
+\end{sffamily}
+
+\end{small}
 
 \hypertarget{bibliography}{%
 \section*{References}\label{bibliography}}
@@ -2632,6 +2697,44 @@ back to first principles}. Retrieved 12 November 2023 from
 \CSLRightInline{Patrick Honner aka MrHonner. 2022. {The All 1s Vector}.
 Retrieved 18 November 2023 from
 \url{https://mrhonner.com/archives/21303}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-sawyer1959}{}}%
+\CSLLeftMargin{{[}5{]} }%
+\CSLRightInline{Walter Warwick Sawyer. 1959. \emph{A concrete approach
+to abstract algebra}. W H Freeman.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-goodman2012}{}}%
+\CSLLeftMargin{{[}6{]} }%
+\CSLRightInline{Frederick M Goodman. 2012. \emph{Algebra: Abstract and
+concrete} (2.6 ed.). SemiSimple Press. Retrieved 22 November 2023 from
+\url{http://homepage.divms.uiowa.edu/~goodman/algebrabook.dir/book.2.6.pdf}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-nahin-imaginary}{}}%
+\CSLLeftMargin{{[}7{]} }%
+\CSLRightInline{Paul Nahin. 2010. \emph{{An Imaginary Tale: The Story of
+\(\sqrt{-1}\)}}. Princeton University Press.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-nahin-euler}{}}%
+\CSLLeftMargin{{[}8{]} }%
+\CSLRightInline{Paul Nahin. 2011. \emph{{Dr. Euler's Fabulous Formula:
+Cures Many Mathematical Ills}}. Princeton University Press.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-honner2018}{}}%
+\CSLLeftMargin{{[}9{]} }%
+\CSLRightInline{Patrick Honner. 2018. {The (Imaginary) Numbers at the
+Edge of Reality}. Retrieved 22 November 2021 from
+\url{https://www.quantamagazine.org/the-imaginary-numbers-at-the-edge-of-reality-20181025}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-feynman123}{}}%
+\CSLLeftMargin{{[}10{]} }%
+\CSLRightInline{Richard P Feynman, Robert B Leighton, and Matthew Sands.
+2012. \emph{{The Feynman Lectures on Physics - Vol. I, II \& III
+Bundle}} (The Millenium Combo Edition ed.). Pearson Education.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-savov2020}{}}%
+\CSLLeftMargin{{[}11{]} }%
+\CSLRightInline{Ivan Savov. 2020. \emph{{No Bullshit Guide to Linear
+Algebra}} (2.2 ed.). Minireference Publishing.}
 
 \end{CSLReferences}
 

@@ -2,7 +2,7 @@
 title: "Varieties of Multiplication"
 author: R (Chandra) Chandrasekhar
 date: "2012-05-14"
-modified: "2023-11-10"
+modified: "2023-11-22"
 category: Mathematics
 tags: Mathematical Musings
 summary: 'I want to look at some of the varieties of multiplication that mathematicians have developed over time. It is a survey that will serve as a pinhole through which we can view how a single, simple mathematical idea has been expanded and elaborated into uses far beyond its historical moorings.'
@@ -880,19 +880,9 @@ Recall that the dot product is defined as the scalar resulting from the multipli
 
 What happens if we swap the order and start multiplying an $n \times 1$ column vector with a $1\times n$ row vector? Would the two "inner dimensions," both equal to $1$, cancel out? And would we get an $n \times n$ "vector" of some sort?
 
-Indeed we do. And the resulting product is a different mathematical object called a [matrix.][matrix] This is an example of a mathematical operation involving two known mathematical objects whose result gives rise to a new kind of mathematical object which then acquires a life and personality of its own.
+Indeed we do. And the resulting product is a different mathematical object called a [matri](https://en.wikipedia.org/wiki/Matrix_%28mathematics%29). This is an example of a mathematical operation involving two known mathematical objects whose result gives rise to a new kind of mathematical object which then acquires a life and personality of its own.
 
-[matrix]: http://en.wikipedia.org/wiki/Matrix_%28mathematics%29
-
-This type of multiplication is called an [outer product,][outer] in contrast to the dot product which is a type of [inner product.][inner] It is also sometimes called a [tensor product][tensorproduct] in honour of the fact that we are ascending a hierarchy in [linear algebra][linalg] that starts with scalars and moves on to vectors and then to matrices and on to [tensors][tensor] with progressive generalizations at each step.
-
-[outer]: http://en.wikipedia.org/wiki/Outer_product
-[inner]: http://planetmath.org/encyclopedia/InnerProduct.html
-[tensorproduct]: http://en.wikipedia.org/wiki/Tensor_product
-[linalg]: http://en.wikipedia.org/wiki/Linear_algebra
-[tensor]: http://en.wikipedia.org/wiki/Tensor_%28intrinsic_definition%29
-
-<!-- Symbol ⊗ -->
+This type of multiplication is called an [outer product](https://en.wikipedia.org/wiki/Outer_product), in contrast to the dot product which is a type of [inner product](https://planetmath.org/InnerProduct). It is also sometimes called a [tensor product](https://en.wikipedia.org/wiki/Tensor_product) in honour of the fact that we are ascending a hierarchy in [linear algebra](https://en.wikipedia.org/wiki/Linear_algebra) that starts with scalars and moves on to vectors and then to matrices and on to [tensors](https://en.wikipedia.org/wiki/Tensor_%28intrinsic_definition%29) with progressive generalizations at each step.
 
 ## Outer product: symbol and example
 
@@ -933,9 +923,7 @@ The outer product of two vectors leads to matrices and the *multiplication of ma
 
 ## Matrices
 
-We have already seen that a matrix consists of a lot more "numbers in a teabag" in which order is respected. An $m \times n$ matrix is an array of $m$ rows and $n$ columns of numbers. A row vector is just a [degenerate][degenerate] matrix with one row, i.e., $m = 1$, whereas a column vector is a degenerate matrix with a single column, i.e., $n = 1$. The plural of *matrix* is *matrices.*
-
-[degenerate]: http://en.wikipedia.org/wiki/Degenerate_%28mathematics%29
+We have already seen that a matrix consists of a lot more "numbers in a teabag" in which order is respected. An $m \times n$ matrix is an array of $m$ rows and $n$ columns of numbers. A row vector is just a [degenerate](https://en.wikipedia.org/wiki/Degenerate_%28mathematics%29) matrix with one row, i.e., $m = 1$, whereas a column vector is a degenerate matrix with a single column, i.e., $n = 1$. The plural of *matrix* is *matrices.*
 
 Hark back to complex numbers and remember how the real numbers are merely complex numbers whose imaginary parts are zero. We hear a similar refrain with matrices, vectors, and scalars. Vectors are matrices with one column or one row. A matrix with a single column and row is a scalar.
 
@@ -956,17 +944,13 @@ where we have $a_{12} = 3$ and $a_{21} = 2.$
 
 ## Applications of matrices
 
-Matrices arose naturally from the study and solution of [systems of linear equations.][linear] They are also useful in succinctly embodying geometric transformations of points in the two-dimensional Cartesian plane. They are profoundly useful in electrical engineering, physics, economics, and many other fields.
+Matrices arose naturally from the study and solution of [systems of linear equations.](ttps://mathworld.wolfram.com/LinearSystemofEquations.html) They are also useful in succinctly embodying geometric transformations of points in the two-dimensional Cartesian plane. They are profoundly useful in electrical engineering, physics, economics, and many other fields.
 
 Indeed, if one considers matrices as a class of mathematical object, what we do with them and the meanings we assign to these actions are largely limited only by our imagination and the mathematical consistency of the results. This is how new mathematics is built up from the old, and constantly expanded in scope, variety, and application.
 
-[linear]: http://mathworld.wolfram.com/LinearSystemofEquations.html
-
 # Matrix multiplication
 
-The product of matrix $A$ with matrix $B$ is denoted by $AB$ with no intervening symbol. If matrix $A$ has dimensions $m \times n$, and matrix $B$ has dimensions $p \times q$, and we wish to multiply them *in that order,* we first need to ensure that the "inner dimensions," $n$ and $p$ in this case, are indeed equal. If $n = p$ the two matrices $A$ and $B$ can be multiplied together to yield the $m \times q$ matrix $AB$, and the two matrices are said to be [conformable.][conformable] Otherwise, the product $AB$ does not exist. Conversely, if $n \neq p$ but $q = m$, the matrix product $BA$ exists and the result is a $p \times n$ matrix.
-
-[conformable]: http://en.wikipedia.org/wiki/Conformable_matrix
+The product of matrix $A$ with matrix $B$ is denoted by $AB$ with no intervening symbol. If matrix $A$ has dimensions $m \times n$, and matrix $B$ has dimensions $p \times q$, and we wish to multiply them *in that order,* we first need to ensure that the "inner dimensions," $n$ and $p$ in this case, are indeed equal. If $n = p$ the two matrices $A$ and $B$ can be multiplied together to yield the $m \times q$ matrix $AB$, and the two matrices are said to be [conformable.](https://en.wikipedia.org/wiki/Conformable_matrix) Otherwise, the product $AB$ does not exist. Conversely, if $n \neq p$ but $q = m$, the matrix product $BA$ exists and the result is a $p \times n$ matrix.
 
 Any two real numbers may be multiplied together, but the product of any two matrices need not necessarily be defined. As the mathematical objects that we deal with become increasingly complex, additional constraints often apply to operations on them.
 
@@ -1036,17 +1020,14 @@ a\\b\\
 -a\\b\\
 \end{bmatrix}
 $$
-Because $a$ and $b$ are arbitrary, we may associate a [reflection][reflection] across the $y$ axis with the above matrix. Likewise, it may be shown that a counter-clockwise rotation about the origin $O$ through an angle $\theta$ with the positive $x$-axis is associated with the matrix
+Because $a$ and $b$ are arbitrary, we may associate a [reflection](https://planetmath.org/derivationof2dreflectionmatrix) across the $y$ axis with the above matrix. Likewise, it may be shown that a counter-clockwise rotation about the origin $O$ through an angle $\theta$ with the positive $x$-axis is associated with the matrix
 $$
 \begin{bmatrix}
 \cos\theta & -\sin\theta\\
 \sin\theta & \cos\theta\\
 \end{bmatrix}
 $$
-We can then chain together such [transformations][transformations] by multiplying the relevant matrices in the correct order. Those who author video games use concepts such as these to program their games.
-
-[reflection]: http://planetmath.org/encyclopedia/DerivationOf2DReflectionMatrix.html
-[transformations]: http://en.wikipedia.org/wiki/Transformation_matrix
+We can then chain together such [transformations](https://en.wikipedia.org/wiki/Transformation_matrix) by multiplying the relevant matrices in the correct order. Those who author video games use concepts such as these to program their games.
 
 Pay attention to the interplay between the symbolic and the pictorial, between the algebraic and the geometric aspects of the one operation. If you develop the ability to maintain this "dual vision" as you study mathematics, it will be helpful for your own unfolding understanding. A strange algebraic object correctly used might work geometric miracles right under your nose, and vice versa.
 
@@ -1108,14 +1089,25 @@ May the product be with you!
 
 ## To explore further
 
-Nahin's books
+We have covered a fair bit of ground in this blog, and not all of it at the same depth. For those who seek a greater acquaintance with abstract algebra, I would recommend three books that are kinder, gentler introductions to the subject, written by professional mathematicians:
 
-Feynman's lectures
-etc.
+W W Sawyer's _A concrete approach to abstract algebra_ [@sawyer1959] was first published in 1959, but it has retained its vigour and directness intact through more than six decades. Read it as a first introduction to the subject.
+
+Bergen's more recent book, _A Concrete Approach to Abstract Algebra_ is a modern successor to Sawyer, sharing the same book title. It will be a good companion to Sawyer.
+
+The third book, by Goodman, entitled _Algebra: Abstract and Concrete_ is [available at no charge online](http://homepage.divms.uiowa.edu/~goodman/algebrabook.dir/book.2.6.pdf) [@goodman2012]. It is very readable and concentrates a fair bit on symmetry. You could read it along with the other two or use it to complement your understanding of symmetry.
+
+The prolific engineer-author Paul Nahin has written [a whole series](https://www.amazon.in/stores/Paul-J.-Nahin/author/B001HCS1XI/allbooks) of engaging popular mathematics and physics books. Two of them are relevant to the subject of this blog. The first is aptly entitled _An Imaginary Tale: The Story of $\sqrt{-1}$_ [@nahin-imaginary]. Its sequel is _Dr. Euler's Fabulous Formula: Cures Many Mathematical Ills_ [@nahin-euler]. Budding electrical engineers would benefit from reading them as might budding physicists.
+
+Patrick Honner has written an [engaging and easy-to-read article on imaginary numbers](https://www.quantamagazine.org/the-imaginary-numbers-at-the-edge-of-reality-20181025/) in _Quanta Magazine_ that should be accessible to high school students [@honner2018].
+
+I have made reference to Feynman's lecture [@feynman22] in which he says, "So we have created two new functions in a purely algebraic manner, the cosine and the sine, which belong to algebra, and only to algebra." This remarkable unification of algebra and geometry, I have not seen elsewhere. There are three volumes of the _Feynman Lectures on Physics_ and they are a treat to read and a treasure to [own](https://www.amazon.in/Feynman-Lectures-Physics-Vol-Bundle/dp/9332580952) [@feynman123].
+
+Ivan Savov has written a series of irreverently named books on mathematics and physics. Of these, the one entitled _No Bullshit Guide To Linear Algebra_ [@savov2020] is most relevant to this blog. His style is distinct from other texts, and his fascinating and painstakingly drawn diagrams that relate different branches of mathematics will help students integrate their knowledge---acquired piecemeal over the years---into the unitary whole that it really is.
 
 # Afterword
 
-This blog started off as something that promised to be short and fizzy, tangy and piquant. But it soon became a little like hot treacle: too hot to swallow and too sticky to spit out. It transmogrified into a jumboblog. If you have stuck with me this far, I applaud and thank you.
+This blog started off as something that promised to be short and fizzy, tangy and piquant. But it soon became a little like hot treacle: too hot to swallow and too sticky to spit out. It transmogrified into a jumboblog or _slog_. If you have stuck with me this far, I applaud and thank you.
 
 The thought crossed my mind that I could split this blog into several sub-blogs. But I soon gave up that idea because the connectedness of the thread will be lost in the segmentation. So, here you have the whole hog and the whole blog.
 
@@ -1123,11 +1115,13 @@ Mathematics is like a pastry puff: only the layers never seem to end and neither
 
 As an independent scholar, I work in isolation without the benefits of a university environment or consultation with peers. So, an error of fact or fancy is all the more likely in what I write. If you are mathematically inclined, and have spotted any mistakes here, please let me know.
 
-If you wish to read this blog as a single PDF document you may get it from the [downloads page.][downloads]
+## Feedback
 
-[downloads]: http://swanlotus.org/downloads
+Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
+corrections.
 
-----------------------
+\noindent A PDF version of this article is [available for download here]({attach}./varieties-of-multiplication.pdf):
 
-
-
+::: {.small .sf}
+<https://swanlotus.netlify.app/blogs/varieties-of-multiplication.pdf>
+:::
