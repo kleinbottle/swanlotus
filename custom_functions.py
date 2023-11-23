@@ -7,7 +7,7 @@ def get_image_dirs():
     # Add Pelican's default image directory
     image_dirs = ["images"]
 
-    # Add all other blog or page specific imagedirectries
+    # Add all other blog or page specific image directories
     blogs_dir = "content/blogs"
     for item in os.listdir(blogs_dir):
         if os.path.isdir(os.path.join(blogs_dir, item)):
@@ -18,7 +18,7 @@ def get_image_dirs():
 
 def get_image_destination_paths():
     """Map image directories to their final destination in outputs and return it."""
-    # This has been donw so that opengraph images are avaiable even if they are not
+    # This has been done so that open graph images are available even if they are not
     # used in the article or page.
     extra_path_metadata = {}
     for image_path in get_image_dirs():
