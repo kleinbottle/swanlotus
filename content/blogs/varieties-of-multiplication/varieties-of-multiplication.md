@@ -1096,7 +1096,7 @@ Bergen's more recent book, _A Concrete Approach to Abstract Algebra_ is a modern
 
 The third book, by Goodman, entitled _Algebra: Abstract and Concrete_ is [available at no charge online](http://homepage.divms.uiowa.edu/~goodman/algebrabook.dir/book.2.6.pdf) [@goodman2012]. It is very readable and concentrates a fair bit on symmetry. You could read it along with the other two or use it to complement your understanding of symmetry.
 
-The prolific engineer-author Paul Nahin has written [a whole series](https://www.amazon.in/stores/Paul-J.-Nahin/author/B001HCS1XI/allbooks) of engaging popular mathematics and physics books. Two of them are relevant to the subject of this blog. The first is aptly entitled _An Imaginary Tale: The Story of $\sqrt{-1}$_ [@nahin-imaginary]. Its sequel is _Dr. Euler's Fabulous Formula: Cures Many Mathematical Ills_ [@nahin-euler]. Budding electrical engineers would benefit from reading them as might budding physicists.
+The prolific engineer-author Paul Nahin has written [a whole series](https://www.amazon.in/stores/Paul-J.-Nahin/author/B001HCS1XI/allbooks) of engaging popular mathematics and physics books. Two of them are relevant to the subject of this blog. The first is aptly entitled _An Imaginary Tale: The Story of $\symit{\sqrt{-1}}$_ [@nahin-imaginary]. Its sequel is _Dr. Euler's Fabulous Formula: Cures Many Mathematical Ills_ [@nahin-euler]. Budding electrical engineers would benefit from reading them as might budding physicists.
 
 Patrick Honner has written an [engaging and easy-to-read article on imaginary numbers](https://www.quantamagazine.org/the-imaginary-numbers-at-the-edge-of-reality-20181025/) in _Quanta Magazine_ that should be accessible to high school students [@honner2018].
 
