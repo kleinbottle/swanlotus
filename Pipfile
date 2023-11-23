@@ -23,6 +23,7 @@ MarkupSafe = "*"
 Pygments = "*"
 Unidecode = "*"
 typing-extensions = "*"
+"backports.zoneinfo" = "*"
 
 [dev-packages]
 black = "*"
@@ -31,4 +32,4 @@ pylint = "*"
 flake8 = "*"
 
 [requires]
-python_version = "3"
+python_version = "3.8.18"
