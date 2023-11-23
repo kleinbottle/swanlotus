@@ -10,11 +10,11 @@ Before setting up your development environment please ensure that you have the l
 
 Then follow the steps below to set up your development environment:
 
-1. Install [Pandoc](https://pandoc.org/MANUAL.html), [Git](https://git-scm.com/) [pipenv](https://pipenv.pypa.io/en/latest/) and [Sass](https://sass-lang.com/).
+1. Install [Sass](https://sass-lang.com/), [Git](https://git-scm.com/), [Pandoc](https://pandoc.org/MANUAL.html), [pipenv](https://pipenv.pypa.io/en/latest/) and [pyenv](https://github.com/pyenv/pyenv).
 
     ```bash
     sudo pacman -Syyu
-    sudo pacman -S git pandoc python-pipenv dart-sass
+    sudo pacman -S dart-sass git pandoc python-pipenv pyenv
     ```
 
 1. Clone the swanlotus repository:
@@ -59,6 +59,21 @@ Then follow the steps below to set up your development environment:
     ```bash
     pipenv install --dev
     ```
+
+    You may be asked to install version 3.8.10 of Python by pyenv, answer with `y` at the prompt to install it.
+
+    **Note: Python version 3.8.10 is the latest available on Netlify as of November 2023 so we are setting our development environment to the same version.**
+
+    When Netlify updates their version of Python we would have to update the version in the `.python-version` file and the `python_version` setting in `Pipfile` so that our settings match Netlify.
+
+    Then we would need to destory the existing virtual environment and recreate it:
+
+    ```bash
+    pipenv --rm
+    pipenv install --dev
+    ```
+
+    Again you may be asked to install a version of Python, answer with `y` at the prompt.
 
 ## Updating your local repository
 
