@@ -242,6 +242,13 @@
             "markers": "python_version < '4.0' and python_full_version >= '3.8.1'",
             "version": "==2.1.0"
         },
+        "pyenv": {
+            "hashes": [
+                "sha256:4c29f881b26772ada6bc5a945f1f71f7cc33c0420bb7eb1e144d8b1f2134fedb"
+            ],
+            "index": "pypi",
+            "version": "==0.0.1"
+        },
         "pygments": {
             "hashes": [
                 "sha256:b27c2826c47d0f3219f29554824c30c5e8945175d888647acd804ddd04af846c",
