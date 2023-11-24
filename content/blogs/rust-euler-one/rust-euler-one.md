@@ -2,7 +2,7 @@
 title: "A Foray into Rust: Euler One"
 author: "R (Chandra) Chandrasekhar"
 date: "2021-07-31"
-modified: "2021-07-31"
+modified: "2023-11-25"
 category: Programming
 tags: Rust, Euler Project, Mathematics
 summary: "Rust is _the_ emerging programming language. To learn Rust, I decided to start by solving  Euler Project One using Rust. This is a chronicle of my first efforts, including false starts, errors, generalizations, etc."
