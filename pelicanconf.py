@@ -6,7 +6,7 @@ import sys
 
 # Append current directory to the path so that custom_functions is found
 sys.path.append(os.curdir)
-from custom_functions import get_image_destination_paths, get_image_dirs
+from custom_functions import get_source_image_paths, get_destination_image_paths
 
 AUTHOR = "R (Chandra) Chandrasekhar"
 SITENAME = "SwanLotus"
@@ -31,8 +31,8 @@ THEME = "theme/swanlotus"
 THEME_STATIC_PATHS = ["static"]
 THEME_STATIC_DIR = "theme"
 CSS_FILE = "swanlotus.css"
-STATIC_PATHS = get_image_dirs()
-EXTRA_PATH_METADATA = get_image_destination_paths()
+STATIC_PATHS = ["images"] + get_source_image_paths()
+EXTRA_PATH_METADATA = get_destination_image_paths()
 
 INDEX_SAVE_AS = "blogs.html"
 
@@ -53,7 +53,6 @@ DIRECT_TEMPLATES = ["index", "categories", "tags", "archives"]
 IGNORE_FILES = ["blank-template.bib", "blog-template.md"]
 
 PATH = "content"
-
 ARTICLE_PATHS = [
     "blogs/rust-euler-one", "blogs/varieties-of-multiplication"
 ]  # draft value: ["blogs/rust-euler-one"]
