@@ -504,7 +504,7 @@ How do we add and subtract these geometric entities, let alone multiply and divi
 
 We draw a pair of two-dimensional vectors so that both originate from the same point. We then complete the parallelogram formed by these two vectors by drawing in the other two sides. The *sum* of the two vectors, or their *resultant,* is the diagonal of the parallelogram that starts at the same origin as the two vectors. This is something best grasped from a picture: see @fig:vector-sum.
 
-![The parallelogram law for the addition of two vectors.]({attach}images/vector-sum.svg){#fig:vector-sum width=70% .modal-terget}
+![The parallelogram law for the addition of two vectors.]({attach}images/vector-sum.svg){#fig:vector-sum width=70% .modal-target}
 
 The origin of the Cartesian plane is labelled $O$. We have three named vectors and three ordered pairs indicate the positions of their arrow tips:
 
