@@ -6,6 +6,7 @@ modified: "2023-11-25"
 category: Programming
 tags: Rust, Euler Project, Mathematics
 summary: "Rust is _the_ emerging programming language. To learn Rust, I decided to start by solving  Euler Project One using Rust. This is a chronicle of my first efforts, including false starts, errors, generalizations, etc."
+status: draft
 ---
 
 As a programmer, I am long in the tooth. I started out with [FORTRAN](https://fortran-lang.org/), went on to [Forth](https://www.forth.com/), and settled with [C](https://www.iso.org/standard/74528.html) through three decades or more. Later, it was [MATLAB](https://www.mathworks.com/) and [Octave](https://www.gnu.org/software/octave/index) for high level computing. For scripting, I used [Perl](https://www.perl.org/) or [bash](https://www.gnu.org/software/bash/). [Python](https://www.python.org/), the current darling of programmers, is an [unknown bourne](http://www.finedictionary.com/bourn.html) to me.
@@ -34,7 +35,7 @@ The algorithm for problem solving is [@sas]:
 #.  Understand the question correctly.
 #.  Answer the question precisely.
 
-The problem asks for _all_ the multiples of $3$ and $5$ _below_ $1000$. I have emphasized the word _below_, both when quoting the question, and just now. Care at this stage of acquaintance with the problem staves off many a careless mistake by nipping it in the bud.
+The problem asks for _all_ the multiples of $3$ and all the multiples of $5$ _below_ $1000$. I have emphasized the word _below_, both when quoting the question, and just now. Care at this stage of acquaintance with the problem staves off many a careless mistake by nipping it in the bud.
 
 ## Initial thoughts
 
@@ -190,10 +191,10 @@ sum([3:3:999]) + sum([5:5:995])
 
 and it gave me the answer
 
-```ovtave
+```octave
 ans = 266333
 ```
-
+ 233168
 O dear! this is not what we got with `Rust`. I must also say that, though laconic, `Octave` got the job done with very little fuss or fanfare. Vectorized code is both more powerful and simpler to understand and maintain.
 
 ## The Gold Standard
