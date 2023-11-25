@@ -368,14 +368,15 @@ other two.
 
 The phrase ``multiples of 3 \emph{or} 5'' may be interpreted in two
 ways. If we think of it as an \emph{inclusive or}, then it means
-``multiples of \$3, multiples of \(5\), and multiples of both \(3\) and
-\(5\)''.
+``multiples of \(3\), multiples of \(5\), and multiples of both \(3\)
+and \(5\)''.
 
 If we think of it as an \emph{exclusive or}, then it means ``multiples
-of \$3, multiples of \(5\), but not multiples of both \(3\) and \(5\)''.
+of \(3\), multiples of \(5\), but not multiples of both \(3\) and
+\(5\)''.
 
-Sine the qualification of ``but not both'' is absent from the rubric, we
-will assume an inclusive or, i.e., the first interpretation.
+Since the qualification of ``but not both'' is absent from the rubric,
+we will assume an inclusive or, i.e., the first interpretation.
 
 \hypertarget{the-word-below}{%
 \subsubsection{The word ``below''}\label{the-word-below}}
@@ -400,7 +401,7 @@ of zero when divided by \(5\) are multiples of \(5\). This implies
 \emph{declare} the type of numbers we are using. Floating point division
 will never do for our problem. But anyway, division is problematic;
 witness the caveat that the divisor may not be zero in the field of
-integers, \(\mathbb{Z}\).
+rational numbers, \(\mathbb{Q}\).
 
 In terms of division, the \texttt{\%} operator from other programming
 languages suggests itself. But is division the most natural way to
@@ -425,7 +426,7 @@ largest multiple of \(3\) less than \(1000\) is therefore,
 will be dealing with is thus \(333\).
 
 Likewise, \(1000 \div 5 = 200\) with a remainder of \(0\). Since
-\(1,000\) is a multiple of \(5\), we need the \emph{next lower} multiple
+\(1000\) is a multiple of \(5\), we need the \emph{next lower} multiple
 of \(5\) below \(1000\). That number is \(199 \times 5 = 995\), and so,
 \(n_{5} = 199\).
 
@@ -504,7 +505,7 @@ pseudocode could read:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{s = s3 = s5 = 0 \# initialize variables}
+\NormalTok{s3 = s5 = s15 = 0 \# initialize variables}
 
 \NormalTok{for n in [1:333]}
 \NormalTok{do}
@@ -521,7 +522,7 @@ pseudocode could read:
 \NormalTok{  s15 = s15 + 15*n}
 \NormalTok{done}
 
-\NormalTok{print (s3 + s5 {-}s15)}
+\NormalTok{print (s3 + s5 {-} s15)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -588,23 +589,24 @@ My second attempt at the program is now:
 \begin{Highlighting}[]
  \CommentTok{// Attempt Number 2}
 \KeywordTok{fn}\NormalTok{ main() }\OperatorTok{\{}
-  \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s3 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
-  \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s5 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
-  \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s15 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+    \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s3 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+    \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s5 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+    \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s15 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
 
-  \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{333} \OperatorTok{\{}
-\NormalTok{    s3 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{3}\OperatorTok{;}
-  \OperatorTok{\}}
+    \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{333} \OperatorTok{\{}
+\NormalTok{        s3 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{3}\OperatorTok{;}
+    \OperatorTok{\}}
 
-  \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{199} \OperatorTok{\{}
-\NormalTok{    s5 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{5}\OperatorTok{;}
-  \OperatorTok{\}}
+    \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{199} \OperatorTok{\{}
+\NormalTok{        s5 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{5}\OperatorTok{;}
+    \OperatorTok{\}}
 
-  \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{66} \OperatorTok{\{}
-\NormalTok{    s15 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{15}\OperatorTok{;}
-  \OperatorTok{\}}
-  \PreprocessorTok{println!}\NormalTok{(}\StringTok{"\{\}"}\OperatorTok{,}\NormalTok{ s3 }\OperatorTok{+}\NormalTok{ s5 }\OperatorTok{{-}}\NormalTok{ s15)}\OperatorTok{;}
-  \OperatorTok{\}}
+    \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{66} \OperatorTok{\{}
+\NormalTok{        s15 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{15}\OperatorTok{;}
+    \OperatorTok{\}}
+
+    \PreprocessorTok{println!}\NormalTok{(}\StringTok{"\{\}"}\OperatorTok{,}\NormalTok{ s3 }\OperatorTok{+}\NormalTok{ s5 }\OperatorTok{{-}}\NormalTok{ s15)}\OperatorTok{;}
+\OperatorTok{\}}
 \end{Highlighting}
 \end{Shaded}
 
@@ -672,15 +674,15 @@ One would have thought that common sense would impel language designers
 to adopt uniform conventions on these two issues. Unfortunately the
 authors of programming languages have rather fiercely held philosophical
 notions, and a divide persists. Thus each foray into a new language must
-be cautiously done with these two factors in mind. In our case, we need
-to hark back to the
+be cautiously done with these two factors in mind.
+
+In our case, we need to hark back to the
 \href{https://doc.rust-lang.org/reference/expressions/range-expr.html}{definition
 of the \texttt{..} range} operator in \texttt{Rust}. The expression
 \texttt{start..end} means that the index variable \texttt{i} lies in a
-semi-closed interval:
-\texttt{start\ \textless{}=\ i\ \textless{}\ end}.The \texttt{end}
-parameters in each case need to be increased by one. Our third attempt
-is shown below:
+semi-closed interval: \texttt{start\ \textless{}=\ i\ \textless{}\ end}.
+The \texttt{end} parameters in each case need to be increased by one.
+Our third attempt is shown below:
 
 \hypertarget{third-attempt}{%
 \subsection{Third attempt}\label{third-attempt}}
@@ -689,23 +691,24 @@ is shown below:
 \begin{Highlighting}[]
  \CommentTok{// Attempt Number 3}
 \KeywordTok{fn}\NormalTok{ main() }\OperatorTok{\{}
-  \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s3 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
-  \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s5 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
-  \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s15 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+    \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s3 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+    \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s5 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+    \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s15 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
 
-  \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{334} \OperatorTok{\{}
-\NormalTok{    s3 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{3}\OperatorTok{;}
-  \OperatorTok{\}}
+    \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{334} \OperatorTok{\{}
+\NormalTok{        s3 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{3}\OperatorTok{;}
+    \OperatorTok{\}}
 
-  \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{200} \OperatorTok{\{}
-\NormalTok{    s5 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{5}\OperatorTok{;}
-  \OperatorTok{\}}
+    \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{200} \OperatorTok{\{}
+\NormalTok{        s5 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{5}\OperatorTok{;}
+    \OperatorTok{\}}
 
-  \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{67} \OperatorTok{\{}
-\NormalTok{    s15 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{15}\OperatorTok{;}
-  \OperatorTok{\}}
-  \PreprocessorTok{println!}\NormalTok{(}\StringTok{"\{\}"}\OperatorTok{,}\NormalTok{ s3 }\OperatorTok{+}\NormalTok{ s5 }\OperatorTok{{-}}\NormalTok{ s15)}\OperatorTok{;}
-  \OperatorTok{\}}
+    \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{67} \OperatorTok{\{}
+\NormalTok{        s15 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{15}\OperatorTok{;}
+    \OperatorTok{\}}
+
+    \PreprocessorTok{println!}\NormalTok{(}\StringTok{"\{\}"}\OperatorTok{,}\NormalTok{ s3 }\OperatorTok{+}\NormalTok{ s5 }\OperatorTok{{-}}\NormalTok{ s15)}\OperatorTok{;}
+\OperatorTok{\}}
 \end{Highlighting}
 \end{Shaded}
 
@@ -732,19 +735,20 @@ s_3 = \frac{333}{2}\left( 3 + 999\right) = 166833.
 \] Likewise, for the multiples of \(5\), we have \(a = 5\), \(n = 199\)
 and \(a_n = 995\), yielding \[
 s_5 = \frac{199}{2}\left( 5 + 995\right) = 99500.
-\] Finally, the sum of multiples of \(15\) is given by \$\$ s\_\{15\} =
-\frac{66}{2}\left( 15 + 990\right) = 33165.
+\] Finally, the sum of multiples of \(15\) is given by \[
+s_{15} = \frac{66}{2}\left( 15 + 990\right) = 33165.
+\]
 
-The required sum, \(s\) is therefore
-\(s= s_3 + s_5 - s_{15} = 166833 + 99500 -33165 = 233168.\) So, we have
-indeed got the correct result!
+The required sum, \(s\) is therefore \[
+s= s_3 + s_5 - s_{15} = 166833 + 99500 -33165 = 233168.
+\] So, we have indeed got the correct result!
 
 \hypertarget{vectorizing}{%
 \subsection{Vectorizing}\label{vectorizing}}
 
 The single-line \texttt{Octave} program made the solution seem laughably
 easy. Why? Because the standard data structure in \texttt{Octave} is a
-vector or a matrix. In the context pf \texttt{Rust}, we may pose these
+vector or a matrix. In the context of \texttt{Rust}, we may pose these
 questions:
 
 \begin{enumerate}
@@ -781,8 +785,7 @@ may set an upper limit as \(n < 1000\).{]}
 \end{quote}
 
 This is a favourite coding-interview problem because it is simple enough
-to reveal the thought processes of the candidate that went into the
-program.
+to reveal the thought processes of the candidate who wrote the program.
 
 Vectors and set intersections are the easiest way to achieve this, but
 \texttt{Rust} presents a steep climb in knowledge acquisition before
@@ -823,21 +826,29 @@ displayed here to avoid clutter.
 To learn \texttt{Rust} requires fortitude of mind and heart. It is not
 for the timid. It is no swimming-pool language; it plumbs the ocean
 deeps. Its power must lie in its apparent versatility. I do not feel any
-heart-tug to learn it when \texttt{Ocatve}, like Alladin's Lamp is there
-to fulfil my programming wishes. But for those who are professional
-programmers, I think that missing \texttt{Rust} might be like missing
-the main course.
+heart-tug to learn it when \texttt{Ocatve}, like Aladdin's Lamp, is
+there to fulfil my programming wishes. But for those who are
+professional programmers, I think that missing \texttt{Rust} might be
+like missing the main course in a meal.
 
 \hypertarget{afterword}{%
 \subsection{Afterword}\label{afterword}}
 
 After I had written this blog, I came across a
 \href{https://iambryanhaney.medium.com/another-unreasonable-deep-dive-into-project-euler-problem-1-51a3a841ad67\#:~:text=The\%20Problem,0\%20modulo\%203\%20or\%205}{fascinating
-blog on Euler One} {[}\protect\hyperlink{ref-haney2020}{6}{]}. I urge
-you to read it to stretch your mental muscles while at the same time
-developing an appreciation of the beauty of mathematics. Try your own
-hand at analyzing the seemingly simple Euler One problem and see whether
-it gives you insight you did not have before.
+blog on Euler One} {[}\protect\hyperlink{ref-haney2020}{6}{]}.
+
+He has made the very valid point that whenever we are faced with sums of
+the products of the first \(n\) numbers and a constant \(k\), we may use
+the formula for the sum of the first \(n\) numbers in closed form to
+give us the required product as \(k\frac{n(n + 1)}{2}\). In this way, we
+only do one multiplication rather than \(n\) multiplications. That is
+the power of the distributive law.
+
+I urge you to read it to stretch your mental muscles while at the same
+time developing an appreciation of the beauty of mathematics. Try your
+own hand at analyzing the seemingly simple Euler One problem and see
+whether it gives you insight that you did not have before.
 
 \hypertarget{feedback}{%
 \subsection{Feedback}\label{feedback}}
@@ -846,7 +857,17 @@ Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
 
 \noindent A PDF version of this article is
-\href{./rust-euler-one.pdf}{available for download here.}
+\href{./rust-euler-one.pdf}{available for download here}:
+
+\begin{small}
+
+\begin{sffamily}
+
+\url{https://swanlotus.netlify.app/blogs/vrust-euler-one.pdf}
+
+\end{sffamily}
+
+\end{small}
 
 \hypertarget{bibliography}{%
 \section*{References}\label{bibliography}}
