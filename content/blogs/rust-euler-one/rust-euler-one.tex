@@ -263,7 +263,7 @@
 
 \title{A Foray into Rust: Euler One}
 \author{R (Chandra) Chandrasekhar}
-\date{2021-07-31 | 2023-11-25}
+\date{2021-07-31 | 2023-11-26}
 
 \begin{document}
 \maketitle
@@ -383,11 +383,11 @@ we will assume an inclusive or, i.e., the first interpretation.
 
 The word ``below'' introduces the mathematical relation \(<\) as opposed
 to \(\leq\). This means all multiples of three or five that are less
-than \(1000\), but excluding \(1000\).
+than \(1000\), excluding \(1000\).
 
 The time spent in looking at the question through a magnifying glass is
-time well spent, because it forces us to assume the mind set of the
-author who carefully drafted the question. We thereby become acquainted
+time well spent, because it forces us to assume the mindset of the
+author who carefully crafted the question. We thereby become acquainted
 with the possibilities for pitfalls and potholes that could otherwise
 \href{https://www.powerthesaurus.org/upend/synonyms}{upend} our efforts.
 
@@ -403,10 +403,10 @@ will never do for our problem. But anyway, division is problematic;
 witness the caveat that the divisor may not be zero in the field of
 rational numbers, \(\mathbb{Q}\).
 
-In terms of division, the \texttt{\%} operator from other programming
-languages suggests itself. But is division the most natural way to
-identify the multiples of a number? Should it not be multiplication
-instead? It is time to start thinking with a
+In terms of division, the \texttt{\%} operator for integer division from
+other programming languages suggests itself. But is division the most
+natural way to identify the multiples of a number? Should it not be
+multiplication instead? It is time to start thinking with a
 \href{https://en.wikipedia.org/wiki/Shoshin}{beginner's mind}.
 
 We also need a structure like an \emph{array} or \emph{list} where
@@ -427,8 +427,8 @@ will be dealing with is thus \(333\).
 
 Likewise, \(1000 \div 5 = 200\) with a remainder of \(0\). Since
 \(1000\) is a multiple of \(5\), we need the \emph{next lower} multiple
-of \(5\) below \(1000\). That number is \(199 \times 5 = 995\), and so,
-\(n_{5} = 199\).
+of \(5\) below \(1000\), which is \$1000 - 5 = \(995\). Now,
+\(995 \div 5 = 199\); so \(n_{5} = 199\).
 
 With \(15\), we have \(1000 \div 15 = 66\) with a remainder of \(10\).
 So, \(66 \times 15 = 990\) is the upper bound, and the number of
@@ -441,13 +441,13 @@ ensure that we do not add its multiples \emph{twice} in our summations.
 \subsubsection{Venn diagram
 representation}\label{venn-diagram-representation}}
 
-I find that viewing a problem pictorially often helps us to grasp it
-better. In this case, it is not a graph but a
+Viewing a problem pictorially often helps us to grasp it better. In this
+case, it is not a graph but a
 \href{https://www.lucidchart.com/pages/tutorial/venn-diagram}{Venn
 diagram} that helps. In \cref{fig:venn}, we use circles A and B to
-represent multiples of \(3\) and \(5\) respectively. The two circles
-overlap because there exist numbers that are multiples of both \(3\) and
-\(5\): these are the multiples of \(15\).
+represent the sets of multiples of \(3\) and \(5\) respectively. The two
+circles overlap because there exist numbers that are multiples of both
+\(3\) and \(5\): these are the multiples of \(15\).
 
 \begin{figure}
 \hypertarget{fig:venn}{%
@@ -469,8 +469,8 @@ denotes the number of (unique) elements in the set \(A\). \cref{eq:venn}
 gives us a convenient way of counting the multiples of \(3\) or \(5\),
 \emph{without double counting the multiples of \(15\)}.
 
-\hypertarget{algorithm-and-pseudocode}{%
-\subsection{Algorithm and Pseudocode}\label{algorithm-and-pseudocode}}
+\hypertarget{algorithm}{%
+\subsection{Algorithm}\label{algorithm}}
 
 The most direct algorithm to solve the problem in
 \href{https://en.wikipedia.org/wiki/Pseudocode}{pseudocode} is:
@@ -500,6 +500,9 @@ The most direct algorithm to solve the problem in
   result. See \cref{eq:venn} for an explanation.
 \end{enumerate}
 
+\hypertarget{pseudocode}{%
+\subsection{Pseudocode}\label{pseudocode}}
+
 I envisage three independent \texttt{for} loops to achieve this. The
 pseudocode could read:
 
@@ -527,14 +530,15 @@ pseudocode could read:
 \end{Shaded}
 
 We have implicitly assumed that the \texttt{for} loop increment is
-\(1\). The mathematics convention for a closed interval is used above to
-denote that \emph{both} the upper and lower limits are \emph{inclusive}.
+\(1\). The mathematical convention for a closed interval is used above
+to denote that \emph{both} the upper and lower limits are
+\emph{inclusive}.
 
 \hypertarget{first-attempt}{%
 \subsection{First attempt}\label{first-attempt}}
 
-Let us set to using the syntax of \texttt{Rust} and see how the above
-pseudo code fleshes out. It turns out that
+Let us barge ahead using the syntax of \texttt{Rust} and see how the
+above pseudo code fleshes out. It turns out that
 \href{https://doc.rust-lang.org/reference/expressions/loop-expr.html}{\texttt{Rust}
 supports five types of loop} and we need the one with the \texttt{for}
 flavour, called the iterator loop.
@@ -549,41 +553,42 @@ purposes:
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{// Attempt Number 1}
-  \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s3 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
-  \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s5 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
-  \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s15 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+    \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s3 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+    \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s5 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+    \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s15 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
 
-  \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{333} \OperatorTok{\{}
-\NormalTok{    s3 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{3}\OperatorTok{;}
-  \OperatorTok{\}}
+    \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{333} \OperatorTok{\{}
+\NormalTok{      s3 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{3}\OperatorTok{;}
+    \OperatorTok{\}}
 
-  \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{199} \OperatorTok{\{}
-\NormalTok{    s5 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{5}\OperatorTok{;}
-  \OperatorTok{\}}
+    \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{199} \OperatorTok{\{}
+\NormalTok{      s5 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{5}\OperatorTok{;}
+    \OperatorTok{\}}
 
-  \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{66} \OperatorTok{\{}
-\NormalTok{    s15 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{15}\OperatorTok{;}
-  \OperatorTok{\}}
+    \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{66} \OperatorTok{\{}
+\NormalTok{      s15 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{15}\OperatorTok{;}
+    \OperatorTok{\}}
 
-\NormalTok{  println (s3 }\OperatorTok{+}\NormalTok{ s5 }\OperatorTok{{-}}\NormalTok{ s15)}\OperatorTok{;}
+\NormalTok{    println(s3 }\OperatorTok{+}\NormalTok{ s5 }\OperatorTok{{-}}\NormalTok{ s15)}\OperatorTok{;}
 \end{Highlighting}
 \end{Shaded}
 
-The above fragment contains numerous errors. So, I needed to backtrack
-to see an example of the archetypal ``Hello World!'' program to get the
+Not surprisingly, the above fragment contains numerous errors and would
+not compile. So, I needed to backtrack to see an example of the
+archetypal ``Hello World!'' program to get the
 \href{https://doc.rust-lang.org/book/ch01-02-hello-world.html}{proper
 invocatory syntax}. Languages like \texttt{C} and \texttt{Java} come
-with some baggage that needs to be wrapped around the functional code so
-that it may be rendered into an executable program. \texttt{Rust} seems
-to have borrowed this characteristic from them. Note the use of
+with some baggage that needs to be wrapped around the core code so that
+it may be rendered into an executable program. \texttt{Rust} seems to
+have borrowed this characteristic from them. Note the use of
 \texttt{s3\ +=\ n*3;} which is shorthand for \texttt{s3\ =\ s3\ +\ n*3}.
-The \texttt{+=} operator is available in \texttt{Rust} but not always in
-other languages.
+The \texttt{+=} operator is available in \texttt{Rust}, but not always
+in other languages.
 
 \hypertarget{second-attempt}{%
 \subsection{Second attempt}\label{second-attempt}}
 
-My second attempt at the program is now:
+My second attempt at the program, with proper indentation, is now:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -617,7 +622,7 @@ has already disheartened me a bit because something too much like
 \texttt{C} or \texttt{Java}---with a lot of clunky statements for simple
 actions---is a step in the \emph{wrong} direction for an easier-to-use
 programming language. Let us hope it does not rain pickaxes and shovels
-when we run the code!
+when we compile the code!
 
 This time, the code was compiled without a murmur. Upon execution, the
 answer was \(232164\). Is it correct? Or have we tripped somewhere?
@@ -628,11 +633,12 @@ answer was \(232164\). Is it correct? Or have we tripped somewhere?
 
 The easiest and laziest way to check the result was to use a naturally
 vector-based language to verify the above result. I chose
-\texttt{Octave} as it is freely available. Because the natural data
-structure in \texttt{Octave} is a vector or a matrix, I could type out
-the whole sequence using the syntax \texttt{{[}start:step:end{]}} and
-sum it up to get the three sums of multiples. The code was so easy, I
-could write it without reference to paper:
+\texttt{Octave} as it is freely available, and I know it somewhat.
+Because the natural data structure in \texttt{Octave} is a vector or a
+matrix, I could type out the whole sequence using the syntax
+\texttt{{[}start:step:end{]}} and sum it up to get the three sums of
+multiples. The code was so easy, that I could write it without reference
+to paper:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -681,8 +687,8 @@ In our case, we need to hark back to the
 of the \texttt{..} range} operator in \texttt{Rust}. The expression
 \texttt{start..end} means that the index variable \texttt{i} lies in a
 semi-closed interval: \texttt{start\ \textless{}=\ i\ \textless{}\ end}.
-The \texttt{end} parameters in each case need to be increased by one.
-Our third attempt is shown below:
+The \texttt{end} parameters in each case need to be increased by one in
+our program. Our third attempt is shown below:
 
 \hypertarget{third-attempt}{%
 \subsection{Third attempt}\label{third-attempt}}
@@ -721,7 +727,7 @@ mathematics. What does it say?
 \subsection{The Gold Standard}\label{the-gold-standard}}
 
 We are fortunate that in this case, the mathematics is both simple and
-well known. We are dealing with sums of three
+well known. We are dealing with the sums of three
 \href{https://en.wikipedia.org/wiki/Arithmetic_progression\#Sum}{arithmetic
 progressions (AP)}. The \emph{first term} in an AP is usually denoted
 \(a\) and the \emph{common difference} is denoted by \(d\). The number
@@ -756,8 +762,8 @@ questions:
   Does \texttt{Rust} have a ready implementation of vectors that may be
   called upon?
 \item
-  Would such an implementation be faster? Less or more error prone?
-  Easier to visualize and troubleshoot?
+  Would such an implementation be faster? Less error prone? Easier to
+  visualize and troubleshoot?
 \end{enumerate}
 
 I had a little peep at the possibilities with \texttt{Rust} and realized
@@ -774,18 +780,20 @@ vectors in \texttt{Rust} for another day.
 \subsection{FizzBuzz}\label{fizzbuzz}}
 
 The \href{https://leetcode.com/problems/fizz-buzz/}{FizzBuzz coding
-problem} is a natural successor to EulerOne. The problem, used in
-pre-school, is stated below:
+problem} is a natural successor to EulerOne. The original problem, used
+in early school to teach multiplication, is stated for coding below:
 
 \begin{quote}
-For any integer from \(1\) to \(n\), print \emph{Fizz} if it is
+For every integer from \(1\) to \(n\), print \emph{Fizz} if it is
 divisible by \(3\), \emph{Buzz} if it is divisible by \(5\), and
-\emph{FizzBuzz} if it is divisible by \(15\). {[}For our purposes, we
-may set an upper limit as \(n < 1000\).{]}
+\emph{FizzBuzz} if it is divisible by \(15\). Otherwise, do nothing.
+{[}For our purposes, we may set an upper limit as \(n < 1000\).{]}
 \end{quote}
 
 This is a favourite coding-interview problem because it is simple enough
 to reveal the thought processes of the candidate who wrote the program.
+Note that we are asked to \emph{sort} the numbers into \emph{four}
+groups.
 
 Vectors and set intersections are the easiest way to achieve this, but
 \texttt{Rust} presents a steep climb in knowledge acquisition before
@@ -805,8 +813,11 @@ simple. The availability of the
 difference} as an operation gives us a ready-made solution as shown
 below. Of course, I have not printed the output, but the vectors named
 \texttt{fizz}, \texttt{buzz} and \texttt{fizzbuzz} contain the numbers
-whose elements are associated with these responses. They are not
-displayed here to avoid clutter.
+whose elements are associated with these responses.\footnote{If a
+  particular number does not reside in any of these three vectors, there
+  is no response.} This is more a ``proof-of-concept'' demonstration,
+rather than a proper solution, because the logic associating the
+response with the number is missing.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -828,8 +839,8 @@ for the timid. It is no swimming-pool language; it plumbs the ocean
 deeps. Its power must lie in its apparent versatility. I do not feel any
 heart-tug to learn it when \texttt{Ocatve}, like Aladdin's Lamp, is
 there to fulfil my programming wishes. But for those who are
-professional programmers, I think that missing \texttt{Rust} might be
-like missing the main course in a meal.
+professional programmers, I think that missing out on \texttt{Rust}
+might be like missing out on the main course in a meal.
 
 \hypertarget{afterword}{%
 \subsection{Afterword}\label{afterword}}
@@ -838,17 +849,17 @@ After I had written this blog, I came across a
 \href{https://iambryanhaney.medium.com/another-unreasonable-deep-dive-into-project-euler-problem-1-51a3a841ad67\#:~:text=The\%20Problem,0\%20modulo\%203\%20or\%205}{fascinating
 blog on Euler One} {[}\protect\hyperlink{ref-haney2020}{6}{]}.
 
-He has made the very valid point that whenever we are faced with sums of
-the products of the first \(n\) numbers and a constant \(k\), we may use
-the formula for the sum of the first \(n\) numbers in closed form to
-give us the required product as \(k\frac{n(n + 1)}{2}\). In this way, we
-only do one multiplication rather than \(n\) multiplications. That is
-the power of the distributive law.
+He has made the very valid point that whenever we are faced with
+products of a constant \(k\) with sums of the first \(n\) numbers, we
+may use the formula for the sum of the first \(n\) numbers in closed
+form to give us the required product frugally as
+\(k\frac{n(n + 1)}{2}\). In this way, we multiply only twice instead of
+\(n\) times.\footnote{That is the power of the distributive law.}
 
-I urge you to read it to stretch your mental muscles while at the same
-time developing an appreciation of the beauty of mathematics. Try your
-own hand at analyzing the seemingly simple Euler One problem and see
-whether it gives you insight that you did not have before.
+I urge you to read the blog to stretch your mental muscles, while at the
+same time developing an appreciation for the beauty of mathematics. Try
+your own hand at analyzing the seemingly simple Euler One problem and
+see whether it gives you insights that you did not have before.
 
 \hypertarget{feedback}{%
 \subsection{Feedback}\label{feedback}}
@@ -863,7 +874,7 @@ comments and corrections.
 
 \begin{sffamily}
 
-\url{https://swanlotus.netlify.app/blogs/vrust-euler-one.pdf}
+\url{https://swanlotus.netlify.app/blogs/rust-euler-one.pdf}
 
 \end{sffamily}
 

@@ -2,11 +2,10 @@
 title: "A Foray into Rust: Euler One"
 author: "R (Chandra) Chandrasekhar"
 date: "2021-07-31"
-modified: "2023-11-25"
+modified: "2023-11-26"
 category: Programming
 tags: Rust, Euler Project, Mathematics
 summary: "Rust is _the_ emerging programming language. I decided to start learning `Rust` by solving  Euler Project One. This is a chronicle of my first efforts, including false starts, errors, backtracks, etc."
-status: draft
 opengraphimage: venn.png
 ---
 
@@ -52,15 +51,15 @@ Since the qualification of "but not both" is absent from the rubric, we will ass
 
 ### The word "below"
 
-The word "below" introduces the mathematical relation $<$ as opposed to $\leq$. This means all multiples of three or five that are less than $1000$, but excluding $1000$.
+The word "below" introduces the mathematical relation $<$ as opposed to $\leq$. This means all multiples of three or five that are less than $1000$, excluding $1000$.
 
-The time spent in looking at the question through a magnifying glass is time well spent, because it forces us to assume the mind set of the author who carefully drafted the question. We thereby become acquainted with the possibilities for pitfalls and potholes that could otherwise [upend](https://www.powerthesaurus.org/upend/synonyms) our efforts.
+The time spent in looking at the question through a magnifying glass is time well spent, because it forces us to assume the mindset of the author who carefully crafted the question. We thereby become acquainted with the possibilities for pitfalls and potholes that could otherwise [upend](https://www.powerthesaurus.org/upend/synonyms) our efforts.
 
 ## Initial thoughts
 
 The multiples of $3$ are those numbers, which when divided by $3$, leave a remainder of zero. Likewise the numbers which leave a remainder of zero when divided by $5$ are multiples of $5$. This implies _integer arithmetic_, and that in turn, could mean we have to _declare_ the type of numbers we are using. Floating point division will never do for our problem. But anyway, division is problematic; witness the caveat that the divisor may not be zero in the field of rational numbers, $\mathbb{Q}$.
 
-In terms of division, the `%` operator from other programming languages suggests itself. But is division the most natural way to identify the multiples of a number? Should it not be multiplication instead? It is time to start thinking with a [beginner's mind](https://en.wikipedia.org/wiki/Shoshin).
+In terms of division, the `%` operator for integer division from other programming languages suggests itself. But is division the most natural way to identify the multiples of a number? Should it not be multiplication instead? It is time to start thinking with a [beginner's mind](https://en.wikipedia.org/wiki/Shoshin).
 
 We also need a structure like an _array_ or _list_ where numbers may be appended or inserted until the stopping condition is reached. If we keep a running total, though, we do not need anything else except three receptacles: one for the sum of multiples of three, $s_3$, another for the sum of multiples of five, $s_5$, and one more for the sum of multiples of $15$, $s_{15}$. Let us try the latter option first, and leave arrays for a later refinement.
 
@@ -68,7 +67,7 @@ We also need a structure like an _array_ or _list_ where numbers may be appended
 
 We know that $1000 \div 3 = 333$ with a remainder of $1$. The largest multiple of $3$ less than $1000$ is therefore, $333 \times 3 = 999$. The number of multiples of $3$, $n_{3}$, we will be dealing with is thus  $333$.
 
-Likewise, $1000 \div 5 = 200$ with a remainder of $0$. Since $1000$ is a multiple of $5$, we need the _next lower_ multiple of $5$ below $1000$. That number is $199 \times 5 = 995$, and so,  $n_{5} = 199$.
+Likewise, $1000 \div 5 = 200$ with a remainder of $0$. Since $1000$ is a multiple of $5$, we need the _next lower_ multiple of $5$ below $1000$, which is $1000 - 5 = $995$. Now, $995 \div 5 = 199$; so  $n_{5} = 199$.
 
 With $15$, we have $1000 \div 15 = 66$ with a remainder of $10$. So, $66 \times 15 = 990$ is the upper bound, and the number of multiples $n_{15}$ is $66$.
 
@@ -76,7 +75,7 @@ Because $15$ is a multiple of _both_ $3$ and $5$, we need to ensure that we do n
 
 ### Venn diagram representation
 
-I find that viewing a problem pictorially often helps us to grasp it better. In this case, it is not a graph but a [Venn diagram](https://www.lucidchart.com/pages/tutorial/venn-diagram) that helps. In @fig:venn, we use circles A and B to represent multiples of $3$ and $5$ respectively. The two circles overlap because there exist numbers that are multiples of both $3$ and $5$: these are the multiples of $15$.
+Viewing a problem pictorially often helps us to grasp it better. In this case, it is not a graph but a [Venn diagram](https://www.lucidchart.com/pages/tutorial/venn-diagram) that helps. In @fig:venn, we use circles A and B to represent the sets of multiples of $3$ and $5$ respectively. The two circles overlap because there exist numbers that are multiples of both $3$ and $5$: these are the multiples of $15$.
 
 ![Venn diagram relating multiples of $3$, shown as set $A$, multiples of $5$ as set $B$, and multiples of $15$ as their intersection $A\cap B$.]({attach}images/venn.svg){#fig:venn width=70% .modal-target}
 
@@ -86,7 +85,7 @@ n(A \cup B) = n(A) + n(B) - n(A\cap B).
 $${#eq:venn}
 The expression $n(A)$, for example, denotes the number of (unique) elements in the set $A$. @eq:venn gives us a convenient way of counting the multiples of $3$ or $5$, _without double counting the multiples of $15$_.
 
-## Algorithm and Pseudocode
+## Algorithm
 
 The most direct algorithm to solve the problem in [pseudocode](https://en.wikipedia.org/wiki/Pseudocode) is:
 
@@ -103,6 +102,8 @@ The most direct algorithm to solve the problem in [pseudocode](https://en.wikipe
 #. Loop through the natural numbers $\mathbb{N}$ from $1$ to $66$, compute the multiples of $15$, one at a time, and add it to $s_{15}$.
 
 #. Evaluate $(s_3 + s_5 - s_{15})$ and present it as the desired result. See @eq:venn for an explanation.
+
+## Pseudocode
 
 I envisage three independent `for` loops to achieve this. The pseudocode could read:
 
@@ -127,40 +128,40 @@ done
 print (s3 + s5 - s15)
 ```
 
-We have implicitly assumed that the `for` loop increment is $1$. The mathematics convention for a closed interval is used above to denote that _both_ the upper and lower limits are _inclusive_.
+We have implicitly assumed that the `for` loop increment is $1$. The mathematical convention for a closed interval is used above to denote that _both_ the upper and lower limits are _inclusive_.
 
 ## First attempt
 
-Let us set to using the syntax of `Rust` and see how the above pseudo code fleshes out. It turns out that [`Rust` supports five types of loop](https://doc.rust-lang.org/reference/expressions/loop-expr.html) and we need the one with the `for` flavour, called the iterator loop.
+Let us barge ahead using the syntax of `Rust` and see how the above pseudo code fleshes out. It turns out that [`Rust` supports five types of loop](https://doc.rust-lang.org/reference/expressions/loop-expr.html) and we need the one with the `for` flavour, called the iterator loop.
 
 There is also an example on that web page that is similar to our problem. It uses a `for` loop, but the variable holding the sum is initialized using the [`mut` keyword](https://doc.rust-lang.org/std/keyword.mut.html). Let us copy the code fragment and change it to suit our purposes:
 
 ```rust
 // Attempt Number 1
-  let mut s3 = 0;
-  let mut s5 = 0;
-  let mut s15 = 0;
+    let mut s3 = 0;
+    let mut s5 = 0;
+    let mut s15 = 0;
 
-  for n in 1..333 {
-    s3 += n*3;
-  }
+    for n in 1..333 {
+      s3 += n*3;
+    }
 
-  for n in 1..199 {
-    s5 += n*5;
-  }
+    for n in 1..199 {
+      s5 += n*5;
+    }
 
-  for n in 1..66 {
-    s15 += n*15;
-  }
+    for n in 1..66 {
+      s15 += n*15;
+    }
 
-  println (s3 + s5 - s15);
+    println(s3 + s5 - s15);
 ```
 
-The above fragment contains numerous errors. So, I needed to backtrack to see an example of the archetypal "Hello World!" program to get the [proper invocatory syntax](https://doc.rust-lang.org/book/ch01-02-hello-world.html). Languages like `C` and `Java` come with some baggage that needs to be wrapped around the functional code so that it may be rendered into an executable program. `Rust` seems to have borrowed this characteristic from them. Note the use of `s3 += n*3;` which is shorthand for `s3 = s3 + n*3`. The `+=` operator is available in `Rust` but not always in other languages.
+Not surprisingly, the above fragment contains numerous errors and would not compile. So, I needed to backtrack to see an example of the archetypal "Hello World!" program to get the [proper invocatory syntax](https://doc.rust-lang.org/book/ch01-02-hello-world.html). Languages like `C` and `Java` come with some baggage that needs to be wrapped around the core code so that it may be rendered into an executable program. `Rust` seems to have borrowed this characteristic from them. Note the use of `s3 += n*3;` which is shorthand for `s3 = s3 + n*3`. The `+=` operator is available in `Rust`, but not always in other languages.
 
 ## Second attempt
 
-My second attempt at the program is now:
+My second attempt at the program, with proper indentation, is now:
 
 ```rust
  // Attempt Number 2
@@ -185,13 +186,13 @@ fn main() {
 }
 ```
 
-I have wrapped the whole code fragment with a `main()` function just as in `C`. Moreover, I have learned that `println!` is a macro rather than a function and that it is invoked as shown. This has already disheartened me a bit because something too much like `C` or `Java`---with a lot of clunky statements for simple actions---is a step in the _wrong_ direction for an easier-to-use programming language. Let us hope it does not rain pickaxes and shovels when we run the code!
+I have wrapped the whole code fragment with a `main()` function just as in `C`. Moreover, I have learned that `println!` is a macro rather than a function and that it is invoked as shown. This has already disheartened me a bit because something too much like `C` or `Java`---with a lot of clunky statements for simple actions---is a step in the _wrong_ direction for an easier-to-use programming language. Let us hope it does not rain pickaxes and shovels when we compile the code!
 
 This time, the code was compiled without a murmur. Upon execution, the answer was $232164$. Is it correct? Or have we tripped somewhere?
 
 ## Result with `Octave`
 
-The easiest and laziest way to check the result was to use a naturally vector-based language to verify the above result. I chose `Octave` as it is freely available. Because the natural data structure in `Octave` is a vector or a matrix, I could type out the whole sequence using the syntax `[start:step:end]` and sum it up to get the three sums of multiples. The code was so easy, I could write it without reference to paper:
+The easiest and laziest way to check the result was to use a naturally vector-based language to verify the above result. I chose `Octave` as it is freely available, and I know it somewhat. Because the natural data structure in `Octave` is a vector or a matrix, I could type out the whole sequence using the syntax `[start:step:end]` and sum it up to get the three sums of multiples. The code was so easy, that I could write it without reference to paper:
 
 ```octave
 sum([3:3:999]) + sum([5:5:995]) - sum([15:15:990])
@@ -212,7 +213,7 @@ a. Whether their index ranges are on closed intervals $[a, b]$, or semi-closed i
 
 One would have thought that common sense would impel language designers to adopt uniform conventions on these two issues. Unfortunately the authors of programming languages have rather fiercely held philosophical notions, and a divide persists. Thus each foray into a new language must be cautiously done with these two factors in mind.
 
-In our case, we need to hark back to the [definition of the `..` range](https://doc.rust-lang.org/reference/expressions/range-expr.html) operator in `Rust`. The expression `start..end` means that the index variable `i` lies in a semi-closed interval: `start <= i < end`. The `end` parameters in each case need to be increased by one. Our third attempt is shown below:
+In our case, we need to hark back to the [definition of the `..` range](https://doc.rust-lang.org/reference/expressions/range-expr.html) operator in `Rust`. The expression `start..end` means that the index variable `i` lies in a semi-closed interval: `start <= i < end`. The `end` parameters in each case need to be increased by one in our program. Our third attempt is shown below:
 
 ## Third attempt
 
@@ -243,7 +244,7 @@ This again complied incident-free and the result that popped out was $233168$. B
 
 ## The Gold Standard
 
-We are fortunate that in this case, the mathematics is both simple and well known. We are dealing with sums of three [arithmetic progressions (AP)](https://en.wikipedia.org/wiki/Arithmetic_progression#Sum). The _first term_ in an AP is usually denoted $a$ and the _common difference_ is denoted by $d$. The number of terms is usually $n$. The _last term_ is $a_n = a + (n - 1)d$, and the sum to $n$ terms is
+We are fortunate that in this case, the mathematics is both simple and well known. We are dealing with the sums of three [arithmetic progressions (AP)](https://en.wikipedia.org/wiki/Arithmetic_progression#Sum). The _first term_ in an AP is usually denoted $a$ and the _common difference_ is denoted by $d$. The number of terms is usually $n$. The _last term_ is $a_n = a + (n - 1)d$, and the sum to $n$ terms is
 $$
 a + a + d + a + 2d + a + 3d + \cdots + a + (n - 1)d = \frac{n}{2}\left( a + a_n \right)
 $${#eq:apsum}
@@ -272,25 +273,25 @@ The single-line `Octave` program made the solution seem laughably easy. Why? Bec
 
 #. Does `Rust` have a ready implementation of vectors that may be called upon?
 
-#. Would such an implementation be faster? Less or more error prone? Easier to visualize and troubleshoot?
+#. Would such an implementation be faster? Less error prone? Easier to visualize and troubleshoot?
 
 I had a little peep at the possibilities with `Rust` and realized that being a [multi-paradigm language](https://en.wikipedia.org/wiki/Comparison_of_multi-paradigm_programming_languages), `Rust` provides many possibilities to accomplish the same task. And the choices available will overwhelm a Rust-neophyte like me. Moreover, once the simplicity of scalars is left behind, the knowledge curve with vectors is rather steep. So, vectorizing must promise returns commensurate with the learning effort. I will leave vectors in `Rust` for another day.
 
 ## FizzBuzz
 
-The [FizzBuzz coding problem](https://leetcode.com/problems/fizz-buzz/) is a natural successor to  EulerOne. The problem, used in pre-school, is stated below:
+The [FizzBuzz coding problem](https://leetcode.com/problems/fizz-buzz/) is a natural successor to  EulerOne. The original problem, used in  early school to teach multiplication, is stated for coding below:
 
->For any integer from $1$ to $n$, print _Fizz_ if it is divisible by $3$, _Buzz_ if it is divisible by $5$, and _FizzBuzz_ if it is divisible by $15$. [For our purposes, we may set an upper limit as $n < 1000$.]
+>For every integer from $1$ to $n$, print _Fizz_ if it is divisible by $3$, _Buzz_ if it is divisible by $5$, and _FizzBuzz_ if it is divisible by $15$. Otherwise, do nothing. [For our purposes, we may set an upper limit as $n < 1000$.]
 
-This is a favourite coding-interview problem because it is simple enough to reveal the thought processes of the candidate who wrote the program.
+This is a favourite coding-interview problem because it is simple enough to reveal the thought processes of the candidate who wrote the program. Note that we are asked to _sort_ the numbers into _four_ groups.
 
 Vectors and set intersections are the easiest way to achieve this, but `Rust` presents a steep climb in knowledge acquisition before even meagre results start trickling in.
 
 With Euler One, we have already computed the sums of multiples of $3$, $5$, and $15$, which are less than $1000$. But we did not retain the multiples themselves as separate entities.
 
-### Octave implementation of FizzBuzz
+### `Octave` implementation of `FizzBuzz`
 
-In `Octave`, the implementation of `FizzBuzz` is starkly simple. The availability of the [set difference](https://en.wikipedia.org/wiki/Complement_(set_theory)#Relative_complement) as an operation gives us a ready-made solution as shown below. Of course, I have not printed the output, but the vectors named `fizz`, `buzz` and `fizzbuzz` contain the numbers whose elements are associated with these responses. They are not displayed here to avoid clutter.
+In `Octave`, the implementation of `FizzBuzz` is starkly simple. The availability of the [set difference](https://en.wikipedia.org/wiki/Complement_(set_theory)#Relative_complement) as an operation gives us a ready-made solution as shown below. Of course, I have not printed the output, but the vectors named `fizz`, `buzz` and `fizzbuzz` contain the numbers whose elements are associated with these responses.^[If a particular number does not reside in any of these three vectors, there is no response.] This is more a "proof-of-concept" demonstration, rather than a proper solution, because the logic associating the response with the number is missing.
 
 ```octave
 % FizzBuzz
@@ -304,15 +305,15 @@ fizzbuzz = fifteens;
 
 ## Closing thoughts
 
-To learn `Rust` requires fortitude of mind and heart. It is not for the timid. It is no swimming-pool language; it plumbs the ocean deeps. Its power must lie in its apparent versatility. I do not feel any heart-tug to learn it when `Ocatve`, like Aladdin's Lamp, is there to fulfil my programming wishes. But for those who are professional programmers, I think that missing `Rust` might be like missing the main course in a meal.
+To learn `Rust` requires fortitude of mind and heart. It is not for the timid. It is no swimming-pool language; it plumbs the ocean deeps. Its power must lie in its apparent versatility. I do not feel any heart-tug to learn it when `Ocatve`, like Aladdin's Lamp, is there to fulfil my programming wishes. But for those who are professional programmers, I think that missing out on `Rust` might be like missing out on the main course in a meal.
 
 ## Afterword
 
 After I had written this blog, I came across a [fascinating blog on Euler One](https://iambryanhaney.medium.com/another-unreasonable-deep-dive-into-project-euler-problem-1-51a3a841ad67#:~:text=The%20Problem,0%20modulo%203%20or%205) [@haney2020].
 
-He has made the very valid point that whenever we are faced with sums of the products of the first $n$ numbers and a constant $k$, we may use the formula for the sum of the first $n$ numbers in closed form to give us the required product as $k\frac{n(n + 1)}{2}$. In this way, we only do only two multiplications rather than $n$ multiplications. That is the power of the distributive law.
+He has made the very valid point that whenever we are faced with products of a constant $k$ with sums of the first $n$ numbers, we may use the formula for the sum of the first $n$ numbers in closed form to give us the required product frugally as $k\frac{n(n + 1)}{2}$. In this way, we multiply only twice instead of $n$ times.^[That is the power of the distributive law.]
 
-I urge you to read it to stretch your mental muscles while at the same time developing an appreciation of the beauty of mathematics. Try your own hand at analyzing the seemingly simple Euler One problem and see whether it gives you insight that you did not have before.
+I urge you to read the blog to stretch your mental muscles, while at the same time developing an appreciation for the beauty of mathematics. Try your own hand at analyzing the seemingly simple Euler One problem and see whether it gives you insights that you did not have before.
 
 ## Feedback
 
