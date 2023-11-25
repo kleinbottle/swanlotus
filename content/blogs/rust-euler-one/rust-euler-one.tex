@@ -39,6 +39,46 @@
 \makeatother
 \usepackage{xcolor}
 \usepackage[margin=25mm]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{48,48,48}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.81,0.69}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.50,0.62,0.50}{\textbf{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.80,0.80,0.80}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.86,0.64,0.64}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.80,0.80,0.80}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.86,0.64,0.64}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.50,0.62,0.50}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.50,0.62,0.50}{\textbf{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.86,0.64,0.64}{\textbf{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.94,0.87,0.69}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.87,0.87,0.75}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.86,0.86,0.80}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.50,0.62,0.50}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.76,0.75,0.62}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.80,0.80,0.80}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.75,0.75,0.82}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.94,0.94,0.56}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.80,0.80,0.80}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.50,0.62,0.50}{\textbf{#1}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.94,0.87,0.69}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.80,0.80,0.80}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.94,0.94,0.82}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.94,0.94,0.56}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{1.00,0.81,0.69}{\textbf{#1}}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.80,0.80,0.80}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.86,0.64,0.64}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.80,0.58,0.58}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.80,0.58,0.58}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.80,0.80,0.80}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.80,0.58,0.58}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.50,0.62,0.50}{\textbf{#1}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -49,6 +89,20 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage{svg}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -113,8 +167,6 @@
 \usepackage[style=american]{csquotes}
 % \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
 %
-\usepackage{esdiff} % for derivative symbols
-\usepackage{amsmath}
 \usepackage{hyperref} % cleveref must come AFTER hyperref
 \usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
 % noto-plus.tex
@@ -133,9 +185,7 @@
 % We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
 %
 \babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
-%
 \babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
-%
 \babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
 %
 % Sanskrit, Tamil, and Greek fonts
@@ -154,6 +204,8 @@
 %
 \usepackage{unicode-math} % seems not to hurt % fallabck
 \setmathfont[bold-style=TeX]{STIX Two Math}
+\usepackage{amsmath}
+\usepackage{esdiff} % for derivative symbols
 %
 %
 % Other fonts
@@ -211,7 +263,7 @@
 
 \title{A Foray into Rust: Euler One}
 \author{R (Chandra) Chandrasekhar}
-\date{2021-07-31 | 2021-07-31}
+\date{2021-07-31 | 2023-11-25}
 
 \begin{document}
 \maketitle
@@ -220,44 +272,50 @@
 
 
 As a programmer, I am long in the tooth. I started out with
-\href{https://fortran-lang.org/}{FORTRAN}, went on to
-\href{https://www.forth.com/}{Forth}, and settled with
-\href{https://www.iso.org/standard/74528.html}{C} through three decades
-or more. Later, it was \href{https://www.mathworks.com/}{MATLAB} and
-\href{https://www.gnu.org/software/octave/index}{Octave} for high level
-computing. For scripting, I used \href{https://www.perl.org/}{Perl} or
-\href{https://www.gnu.org/software/bash/}{bash}.
-\href{https://www.python.org/}{Python}, the current darling of
+\href{https://fortran-lang.org/}{\texttt{FORTRAN}}, went on to
+\href{https://www.forth.com/}{\texttt{Forth}}, and settled with
+\href{https://www.iso.org/standard/74528.html}{\texttt{C}} through three
+decades or more. Later, it was
+\href{https://www.mathworks.com/}{\texttt{MATLAB}} and
+\href{https://www.gnu.org/software/octave/index}{\texttt{Octave}} for
+high level computing. For scripting, I used
+\href{https://www.perl.org/}{\texttt{Perl}} or
+\href{https://www.gnu.org/software/bash/}{\texttt{bash}}.
+\href{https://www.python.org/}{\texttt{Python}}, the current darling of
 programmers, is an
 \href{http://www.finedictionary.com/bourn.html}{unknown bourne} to me.
 
-So why did I choose \href{https://www.rust-lang.org/}{Rust} as the new
-programming language to learn? Rust is \emph{the} emerging programming
-language, developed at
+So why did I choose \href{https://www.rust-lang.org/}{\texttt{Rust}} as
+the new programming language to learn? Rust is \emph{the} emerging
+programming language, developed at
 \href{https://research.mozilla.org/rust/}{Mozilla}
-\protect\hyperlink{ref-rust}{{[}1{]}}. It has been consistently voted
-\href{https://insights.stackoverflow.com/survey/2020\#most-loved-dreaded-and-wanted}{\emph{the
-most loved}} programming language in Stack Overflow Developer Surveys
-\protect\hyperlink{ref-goulding2020}{{[}2{]}}. End-users, such as
+{[}\protect\hyperlink{ref-rust}{1}{]}. It has been consistently voted
+\href{https://insights.stackoverflow.com/survey/2020\#most-loved-dreaded-and-wanted}{the
+most loved} programming language in Stack Overflow Developer Surveys
+{[}\protect\hyperlink{ref-goulding2020}{2}{]}. End-users, such as
 \href{https://www.nature.com/articles/d41586-020-03382-2}{scientists},
 are turning to Rust when Python has proven inadequate for some reason
-\protect\hyperlink{ref-perkel2020}{{[}3{]}}. And
+{[}\protect\hyperlink{ref-perkel2020}{3}{]}. And
 \href{https://serokell.io/blog/rust-companies}{corporate users} include
-Dropbox, Mozilla, Microsoft, npm, etc.
-\protect\hyperlink{ref-dreimanis2020}{{[}4{]}}.
+\href{https://www.dropbox.com/}{Dropbox}, Mozilla,
+\href{https://www.youtube.com/watch?v=NQBVUjdkLAA}{Microsoft},
+\href{https://www.npmjs.com/}{npm}, etc.
+{[}\protect\hyperlink{ref-dreimanis2020}{4}{]}.
 
 But there are other, more personal, reasons as well. My previous bet on
-the future was on \href{https://www.haskell.org/}{Haskell}. I have tried
-many times to learn it, almost always giving up in despair, because I
-was put off by the unfamiliar notation, and its corpus of arcana, like
+the future was on \href{https://www.haskell.org/}{\texttt{Haskell}}. I
+have tried many times to learn it, almost always giving up in despair,
+because I was put off by the unfamiliar notation, and its corpus of
+arcana, like
 \href{en.wikipedia.org/wiki/Monad_(functional_programming)}{monads},
 touted by the cognoscenti, as the way to tell the men from the boys.
 Enough about the why. Now for the how.
 
-To learn the language, I decided to start by solving
-\href{https://projecteuler.net/problem=1}{Project Euler Problem One},
-henceforth called \emph{the problem}, using Rust. This is a chronicle of
-my first efforts.
+I decided to start learning \texttt{Rust} by solving
+\href{https://projecteuler.net/problem=1}{Project Euler Problem
+One}---henceforth called \emph{Euler One}, \emph{the problem}, or
+\emph{the question}---using Rust. This is a chronicle of my first
+efforts, including false starts, errors, backtracks, etc.
 
 \hypertarget{project-euler-problem-one}{%
 \subsection{Project Euler Problem One}\label{project-euler-problem-one}}
@@ -271,8 +329,515 @@ is simple and pellucid:
 If we list all the natural numbers below 10 that are multiples of 3 or
 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 
-Find the sum of all the multiples of 3 or 5 below 1000.
+Find the sum of all the multiples of 3 \emph{or} 5 \emph{below} 1000.
+{[}\emph{Emphasis} is mine{]}
 \end{quote}
+
+\hypertarget{algorithm-for-problem-solving}{%
+\subsection{Algorithm for problem
+solving}\label{algorithm-for-problem-solving}}
+
+The algorithm for problem solving is
+{[}\protect\hyperlink{ref-sas}{5}{]}:
+
+\begin{enumerate}
+\tightlist
+\item
+  Read the question carefully.
+\item
+  Understand the question correctly.
+\item
+  Answer the question precisely.
+\end{enumerate}
+
+The problem asks for \emph{all} the multiples of \(3\) \emph{or} \(5\)
+\emph{below} \(1000\). I have \emph{emphasized} the words that require
+careful understanding and thought. Care at this stage of acquaintance
+with the problem staves off many a careless mistake by nipping it in the
+bud.
+
+\hypertarget{parsing-the-question}{%
+\subsection{Parsing the question}\label{parsing-the-question}}
+
+\hypertarget{the-word-or}{%
+\subsubsection{The word ``or''}\label{the-word-or}}
+
+I have emphasized three words in the problem definition: \emph{all},
+\emph{or}, and \emph{below}. The first is obvious. Let us look at the
+other two.
+
+The phrase ``multiples of 3 \emph{or} 5'' may be interpreted in two
+ways. If we think of it as an \emph{inclusive or}, then it means
+``multiples of \$3, multiples of \(5\), and multiples of both \(3\) and
+\(5\)''.
+
+If we think of it as an \emph{exclusive or}, then it means ``multiples
+of \$3, multiples of \(5\), but not multiples of both \(3\) and \(5\)''.
+
+Sine the qualification of ``but not both'' is absent from the rubric, we
+will assume an inclusive or, i.e., the first interpretation.
+
+\hypertarget{the-word-below}{%
+\subsubsection{The word ``below''}\label{the-word-below}}
+
+The word ``below'' introduces the mathematical relation \(<\) as opposed
+to \(\leq\). This means all multiples of three or five that are less
+than \(1000\), but excluding \(1000\).
+
+The time spent in looking at the question through a magnifying glass is
+time well spent, because it forces us to assume the mind set of the
+author who carefully drafted the question. We thereby become acquainted
+with the possibilities for pitfalls and potholes that could otherwise
+\href{https://www.powerthesaurus.org/upend/synonyms}{upend} our efforts.
+
+\hypertarget{initial-thoughts}{%
+\subsection{Initial thoughts}\label{initial-thoughts}}
+
+The multiples of \(3\) are those numbers, which when divided by \(3\),
+leave a remainder of zero. Likewise the numbers which leave a remainder
+of zero when divided by \(5\) are multiples of \(5\). This implies
+\emph{integer arithmetic}, and that in turn, could mean we have to
+\emph{declare} the type of numbers we are using. Floating point division
+will never do for our problem. But anyway, division is problematic;
+witness the caveat that the divisor may not be zero in the field of
+integers, \(\mathbb{Z}\).
+
+In terms of division, the \texttt{\%} operator from other programming
+languages suggests itself. But is division the most natural way to
+identify the multiples of a number? Should it not be multiplication
+instead? It is time to start thinking with a
+\href{https://en.wikipedia.org/wiki/Shoshin}{beginner's mind}.
+
+We also need a structure like an \emph{array} or \emph{list} where
+numbers may be appended or inserted until the stopping condition is
+reached. If we keep a running total, though, we do not need anything
+else except three receptacles: one for the sum of multiples of three,
+\(s_3\), another for the sum of multiples of five, \(s_5\), and one more
+for the sum of multiples of \(15\), \(s_{15}\). Let us try the latter
+option first, and leave arrays for a later refinement.
+
+\hypertarget{setting-the-bounds}{%
+\subsection{Setting the bounds}\label{setting-the-bounds}}
+
+We know that \(1000 \div 3 = 333\) with a remainder of \(1\). The
+largest multiple of \(3\) less than \(1000\) is therefore,
+\(333 \times 3 = 999\). The number of multiples of \(3\), \(n_{3}\), we
+will be dealing with is thus \(333\).
+
+Likewise, \(1000 \div 5 = 200\) with a remainder of \(0\). Since
+\(1,000\) is a multiple of \(5\), we need the \emph{next lower} multiple
+of \(5\) below \(1000\). That number is \(199 \times 5 = 995\), and so,
+\(n_{5} = 199\).
+
+With \(15\), we have \(1000 \div 15 = 66\) with a remainder of \(10\).
+So, \(66 \times 15 = 990\) is the upper bound, and the number of
+multiples \(n_{15}\) is \(66\).
+
+Because \(15\) is a multiple of \emph{both} \(3\) and \(5\), we need to
+ensure that we do not add its multiples \emph{twice} in our summations.
+
+\hypertarget{venn-diagram-representation}{%
+\subsubsection{Venn diagram
+representation}\label{venn-diagram-representation}}
+
+I find that viewing a problem pictorially often helps us to grasp it
+better. In this case, it is not a graph but a
+\href{https://www.lucidchart.com/pages/tutorial/venn-diagram}{Venn
+diagram} that helps. In \cref{fig:venn}, we use circles A and B to
+represent multiples of \(3\) and \(5\) respectively. The two circles
+overlap because there exist numbers that are multiples of both \(3\) and
+\(5\): these are the multiples of \(15\).
+
+\begin{figure}
+\hypertarget{fig:venn}{%
+\centering
+\includesvg[width=0.7\textwidth,height=\textheight]{images/venn.svg}
+\caption{Venn diagram relating multiples of \(3\), shown as set \(A\),
+multiples of \(5\) as set \(B\), and multiples of \(15\) as their
+intersection \(A\cap B\).}\label{fig:venn}
+}
+\end{figure}
+
+We know from \href{https://en.wikipedia.org/wiki/Set_theory}{set theory}
+that what we are after is \(A \cup B\) or the union of the sets \(A\)
+and \(B\). Also, the number of elements in the sets are related by
+\begin{equation}\protect\hypertarget{eq:venn}{}{
+n(A \cup B) = n(A) + n(B) - n(A\cap B).
+}\label{eq:venn}\end{equation} The expression \(n(A)\), for example,
+denotes the number of (unique) elements in the set \(A\). \cref{eq:venn}
+gives us a convenient way of counting the multiples of \(3\) or \(5\),
+\emph{without double counting the multiples of \(15\)}.
+
+\hypertarget{algorithm-and-pseudocode}{%
+\subsection{Algorithm and Pseudocode}\label{algorithm-and-pseudocode}}
+
+The most direct algorithm to solve the problem in
+\href{https://en.wikipedia.org/wiki/Pseudocode}{pseudocode} is:
+
+\begin{enumerate}
+\item
+  Define \(s_3\) as the cumulative sum of the multiples of \(3\), and
+  initialize it to \(0\).
+\item
+  Define \(s_5\) as the cumulative sum of the multiples of \(5\), and
+  initialize it to \(0\).
+\item
+  Define \(s_{15}\) as the cumulative sum of multiples of \(15\), and
+  initialize it to \(0\).
+\item
+  Loop through the natural numbers \(\mathbb{N}\) from \(1\) to \(333\),
+  compute the multiples of \(3\), one at a time, and add it to \(s_3\).
+\item
+  Loop through the natural numbers \(\mathbb{N}\) from \(1\) to \(199\),
+  compute the multiples of \(5\), one at a time, and add it to \(s_5\).
+\item
+  Loop through the natural numbers \(\mathbb{N}\) from \(1\) to \(66\),
+  compute the multiples of \(15\), one at a time, and add it to
+  \(s_{15}\).
+\item
+  Evaluate \((s_3 + s_5 - s_{15})\) and present it as the desired
+  result. See \cref{eq:venn} for an explanation.
+\end{enumerate}
+
+I envisage three independent \texttt{for} loops to achieve this. The
+pseudocode could read:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{s = s3 = s5 = 0 \# initialize variables}
+
+\NormalTok{for n in [1:333]}
+\NormalTok{do}
+\NormalTok{  s3 = s3 + 3*n}
+\NormalTok{done}
+
+\NormalTok{for n i [1:199]}
+\NormalTok{do}
+\NormalTok{  s5 = s5 + 5*n}
+\NormalTok{done}
+
+\NormalTok{for n i [1:66]}
+\NormalTok{do}
+\NormalTok{  s15 = s15 + 15*n}
+\NormalTok{done}
+
+\NormalTok{print (s3 + s5 {-}s15)}
+\end{Highlighting}
+\end{Shaded}
+
+We have implicitly assumed that the \texttt{for} loop increment is
+\(1\). The mathematics convention for a closed interval is used above to
+denote that \emph{both} the upper and lower limits are \emph{inclusive}.
+
+\hypertarget{first-attempt}{%
+\subsection{First attempt}\label{first-attempt}}
+
+Let us set to using the syntax of \texttt{Rust} and see how the above
+pseudo code fleshes out. It turns out that
+\href{https://doc.rust-lang.org/reference/expressions/loop-expr.html}{\texttt{Rust}
+supports five types of loop} and we need the one with the \texttt{for}
+flavour, called the iterator loop.
+
+There is also an example on that web page that is similar to our
+problem. It uses a \texttt{for} loop, but the variable holding the sum
+is initialized using the
+\href{https://doc.rust-lang.org/std/keyword.mut.html}{\texttt{mut}
+keyword}. Let us copy the code fragment and change it to suit our
+purposes:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{// Attempt Number 1}
+  \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s3 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+  \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s5 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+  \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s15 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+
+  \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{333} \OperatorTok{\{}
+\NormalTok{    s3 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{3}\OperatorTok{;}
+  \OperatorTok{\}}
+
+  \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{199} \OperatorTok{\{}
+\NormalTok{    s5 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{5}\OperatorTok{;}
+  \OperatorTok{\}}
+
+  \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{66} \OperatorTok{\{}
+\NormalTok{    s15 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{15}\OperatorTok{;}
+  \OperatorTok{\}}
+
+\NormalTok{  println (s3 }\OperatorTok{+}\NormalTok{ s5 }\OperatorTok{{-}}\NormalTok{ s15)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+The above fragment contains numerous errors. So, I needed to backtrack
+to see an example of the archetypal ``Hello World!'' program to get the
+\href{https://doc.rust-lang.org/book/ch01-02-hello-world.html}{proper
+invocatory syntax}. Languages like \texttt{C} and \texttt{Java} come
+with some baggage that needs to be wrapped around the functional code so
+that it may be rendered into an executable program. \texttt{Rust} seems
+to have borrowed this characteristic from them. Note the use of
+\texttt{s3\ +=\ n*3;} which is shorthand for \texttt{s3\ =\ s3\ +\ n*3}.
+The \texttt{+=} operator is available in \texttt{Rust} but not always in
+other languages.
+
+\hypertarget{second-attempt}{%
+\subsection{Second attempt}\label{second-attempt}}
+
+My second attempt at the program is now:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+ \CommentTok{// Attempt Number 2}
+\KeywordTok{fn}\NormalTok{ main() }\OperatorTok{\{}
+  \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s3 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+  \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s5 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+  \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s15 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+
+  \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{333} \OperatorTok{\{}
+\NormalTok{    s3 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{3}\OperatorTok{;}
+  \OperatorTok{\}}
+
+  \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{199} \OperatorTok{\{}
+\NormalTok{    s5 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{5}\OperatorTok{;}
+  \OperatorTok{\}}
+
+  \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{66} \OperatorTok{\{}
+\NormalTok{    s15 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{15}\OperatorTok{;}
+  \OperatorTok{\}}
+  \PreprocessorTok{println!}\NormalTok{(}\StringTok{"\{\}"}\OperatorTok{,}\NormalTok{ s3 }\OperatorTok{+}\NormalTok{ s5 }\OperatorTok{{-}}\NormalTok{ s15)}\OperatorTok{;}
+  \OperatorTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+I have wrapped the whole code fragment with a \texttt{main()} function
+just as in \texttt{C}. Moreover, I have learned that \texttt{println!}
+is a macro rather than a function and that it is invoked as shown. This
+has already disheartened me a bit because something too much like
+\texttt{C} or \texttt{Java}---with a lot of clunky statements for simple
+actions---is a step in the \emph{wrong} direction for an easier-to-use
+programming language. Let us hope it does not rain pickaxes and shovels
+when we run the code!
+
+This time, the code was compiled without a murmur. Upon execution, the
+answer was \(232164\). Is it correct? Or have we tripped somewhere?
+
+\hypertarget{result-with-octave}{%
+\subsection{\texorpdfstring{Result with
+\texttt{Octave}}{Result with Octave}}\label{result-with-octave}}
+
+The easiest and laziest way to check the result was to use a naturally
+vector-based language to verify the above result. I chose
+\texttt{Octave} as it is freely available. Because the natural data
+structure in \texttt{Octave} is a vector or a matrix, I could type out
+the whole sequence using the syntax \texttt{{[}start:step:end{]}} and
+sum it up to get the three sums of multiples. The code was so easy, I
+could write it without reference to paper:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{([}\FloatTok{3}\OperatorTok{:}\FloatTok{3}\OperatorTok{:}\FloatTok{999}\NormalTok{]) }\OperatorTok{+} \FunctionTok{sum}\NormalTok{([}\FloatTok{5}\OperatorTok{:}\FloatTok{5}\OperatorTok{:}\FloatTok{995}\NormalTok{]) }\OperatorTok{{-}} \FunctionTok{sum}\NormalTok{([}\FloatTok{15}\OperatorTok{:}\FloatTok{15}\OperatorTok{:}\FloatTok{990}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+and this gave a result of \(233168\). Ouch! it differs from the result
+using \texttt{Rust}. I must also say that, though laconic,
+\texttt{Octave} got the job done with very little fuss or fanfare.
+Vectorized code is both more powerful and simpler to understand and
+maintain. The best language for someone working with vectors is one that
+supports them natively.
+
+We must now make a third, ``repair and maintenance'' attempt with the
+\texttt{rust} code.
+
+\hypertarget{troubleshooting}{%
+\subsection{Troubleshooting}\label{troubleshooting}}
+
+The \texttt{rust} program is so simple that the most likely error must
+lie with the limits in the \texttt{for} loop. Indeed, an experienced
+programmer would have seen it at once.
+
+Programming languages are notoriously inconsistent on two fronts:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Whether they start their indexing with \(0\) or with \(1\); and
+\item
+  Whether their index ranges are on closed intervals \([a, b]\), or
+  semi-closed intervals \([a, b)\), or \((a, b]\), or open intervals
+  \((a, b).\)
+\end{enumerate}
+
+One would have thought that common sense would impel language designers
+to adopt uniform conventions on these two issues. Unfortunately the
+authors of programming languages have rather fiercely held philosophical
+notions, and a divide persists. Thus each foray into a new language must
+be cautiously done with these two factors in mind. In our case, we need
+to hark back to the
+\href{https://doc.rust-lang.org/reference/expressions/range-expr.html}{definition
+of the \texttt{..} range} operator in \texttt{Rust}. The expression
+\texttt{start..end} means that the index variable \texttt{i} lies in a
+semi-closed interval:
+\texttt{start\ \textless{}=\ i\ \textless{}\ end}.The \texttt{end}
+parameters in each case need to be increased by one. Our third attempt
+is shown below:
+
+\hypertarget{third-attempt}{%
+\subsection{Third attempt}\label{third-attempt}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+ \CommentTok{// Attempt Number 3}
+\KeywordTok{fn}\NormalTok{ main() }\OperatorTok{\{}
+  \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s3 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+  \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s5 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+  \KeywordTok{let} \KeywordTok{mut}\NormalTok{ s15 }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+
+  \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{334} \OperatorTok{\{}
+\NormalTok{    s3 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{3}\OperatorTok{;}
+  \OperatorTok{\}}
+
+  \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{200} \OperatorTok{\{}
+\NormalTok{    s5 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{5}\OperatorTok{;}
+  \OperatorTok{\}}
+
+  \ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \DecValTok{1}\OperatorTok{..}\DecValTok{67} \OperatorTok{\{}
+\NormalTok{    s15 }\OperatorTok{+=}\NormalTok{ n}\OperatorTok{*}\DecValTok{15}\OperatorTok{;}
+  \OperatorTok{\}}
+  \PreprocessorTok{println!}\NormalTok{(}\StringTok{"\{\}"}\OperatorTok{,}\NormalTok{ s3 }\OperatorTok{+}\NormalTok{ s5 }\OperatorTok{{-}}\NormalTok{ s15)}\OperatorTok{;}
+  \OperatorTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+This again complied incident-free and the result that popped out was
+\(233168\). Bingo! It is the same as what \texttt{Octave} gave us. That
+is a reassuring feeling. The real arbiter of truth, though, is
+mathematics. What does it say?
+
+\hypertarget{the-gold-standard}{%
+\subsection{The Gold Standard}\label{the-gold-standard}}
+
+We are fortunate that in this case, the mathematics is both simple and
+well known. We are dealing with sums of three
+\href{https://en.wikipedia.org/wiki/Arithmetic_progression\#Sum}{arithmetic
+progressions (AP)}. The \emph{first term} in an AP is usually denoted
+\(a\) and the \emph{common difference} is denoted by \(d\). The number
+of terms is usually \(n\). The \emph{last term} is
+\(a_n = a + (n - 1)d\), and the sum to \(n\) terms is
+\begin{equation}\protect\hypertarget{eq:apsum}{}{
+a + a + d + a + 2d + a + 3d + \cdots + a + (n - 1)d = \frac{n}{2}\left( a + a_n \right)
+}\label{eq:apsum}\end{equation} Using this formula, for the multiples of
+\(3\), we have \(a = 3\), \(n = 333\) and \(a_n=999\), giving us \[
+s_3 = \frac{333}{2}\left( 3 + 999\right) = 166833.
+\] Likewise, for the multiples of \(5\), we have \(a = 5\), \(n = 199\)
+and \(a_n = 995\), yielding \[
+s_5 = \frac{199}{2}\left( 5 + 995\right) = 99500.
+\] Finally, the sum of multiples of \(15\) is given by \$\$ s\_\{15\} =
+\frac{66}{2}\left( 15 + 990\right) = 33165.
+
+The required sum, \(s\) is therefore
+\(s= s_3 + s_5 - s_{15} = 166833 + 99500 -33165 = 233168.\) So, we have
+indeed got the correct result!
+
+\hypertarget{vectorizing}{%
+\subsection{Vectorizing}\label{vectorizing}}
+
+The single-line \texttt{Octave} program made the solution seem laughably
+easy. Why? Because the standard data structure in \texttt{Octave} is a
+vector or a matrix. In the context pf \texttt{Rust}, we may pose these
+questions:
+
+\begin{enumerate}
+\item
+  Does \texttt{Rust} have a ready implementation of vectors that may be
+  called upon?
+\item
+  Would such an implementation be faster? Less or more error prone?
+  Easier to visualize and troubleshoot?
+\end{enumerate}
+
+I had a little peep at the possibilities with \texttt{Rust} and realized
+that being a
+\href{https://en.wikipedia.org/wiki/Comparison_of_multi-paradigm_programming_languages}{multi-paradigm
+language}, \texttt{Rust} provides many possibilities to accomplish the
+same task. And the choices available will overwhelm a Rust-neophyte like
+me. Moreover, once the simplicity of scalars is left behind, the
+knowledge curve with vectors is rather steep. So, vectorizing must
+promise returns commensurate with the learning effort. I will leave
+vectors in \texttt{Rust} for another day.
+
+\hypertarget{fizzbuzz}{%
+\subsection{FizzBuzz}\label{fizzbuzz}}
+
+The \href{https://leetcode.com/problems/fizz-buzz/}{FizzBuzz coding
+problem} is a natural successor to EulerOne. The problem, used in
+pre-school, is stated below:
+
+\begin{quote}
+For any integer from \(1\) to \(n\), print \emph{Fizz} if it is
+divisible by \(3\), \emph{Buzz} if it is divisible by \(5\), and
+\emph{FizzBuzz} if it is divisible by \(15\). {[}For our purposes, we
+may set an upper limit as \(n < 1000\).{]}
+\end{quote}
+
+This is a favourite coding-interview problem because it is simple enough
+to reveal the thought processes of the candidate that went into the
+program.
+
+Vectors and set intersections are the easiest way to achieve this, but
+\texttt{Rust} presents a steep climb in knowledge acquisition before
+even meagre results start trickling in.
+
+With Euler One, we have already computed the sums of multiples of \(3\),
+\(5\), and \(15\), which are less than \(1000\). But we did not retain
+the multiples themselves as separate entities.
+
+\hypertarget{octave-implementation-of-fizzbuzz}{%
+\subsubsection{Octave implementation of
+FizzBuzz}\label{octave-implementation-of-fizzbuzz}}
+
+In \texttt{Octave}, the implementation of \texttt{FizzBuzz} is starkly
+simple. The availability of the
+\href{https://en.wikipedia.org/wiki/Complement_(set_theory)\#Relative_complement}{set
+difference} as an operation gives us a ready-made solution as shown
+below. Of course, I have not printed the output, but the vectors named
+\texttt{fizz}, \texttt{buzz} and \texttt{fizzbuzz} contain the numbers
+whose elements are associated with these responses. They are not
+displayed here to avoid clutter.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\% FizzBuzz}
+\NormalTok{threes }\OperatorTok{=}\NormalTok{ [}\FloatTok{3}\OperatorTok{:}\FloatTok{3}\OperatorTok{:}\FloatTok{999}\NormalTok{]}\OperatorTok{;}
+\NormalTok{fives }\OperatorTok{=}\NormalTok{ [}\FloatTok{5}\OperatorTok{:}\FloatTok{5}\OperatorTok{:}\FloatTok{995}\NormalTok{]}\OperatorTok{;}
+\NormalTok{fifteens }\OperatorTok{=}\NormalTok{ [}\FloatTok{15}\OperatorTok{:}\FloatTok{15}\OperatorTok{:}\FloatTok{990}\NormalTok{]}\OperatorTok{;}
+\NormalTok{fizz }\OperatorTok{=} \FunctionTok{setdiff}\NormalTok{ (threes}\OperatorTok{,}\NormalTok{ fifteens)}\OperatorTok{;}
+\NormalTok{buzz }\OperatorTok{=} \FunctionTok{setdiff}\NormalTok{ (fives}\OperatorTok{,}\NormalTok{ fifteens)}\OperatorTok{;}
+\NormalTok{fizzbuzz }\OperatorTok{=}\NormalTok{ fifteens}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{closing-thoughts}{%
+\subsection{Closing thoughts}\label{closing-thoughts}}
+
+To learn \texttt{Rust} requires fortitude of mind and heart. It is not
+for the timid. It is no swimming-pool language; it plumbs the ocean
+deeps. Its power must lie in its apparent versatility. I do not feel any
+heart-tug to learn it when \texttt{Ocatve}, like Alladin's Lamp is there
+to fulfil my programming wishes. But for those who are professional
+programmers, I think that missing \texttt{Rust} might be like missing
+the main course.
+
+\hypertarget{afterword}{%
+\subsection{Afterword}\label{afterword}}
+
+After I had written this blog, I came across a
+\href{https://iambryanhaney.medium.com/another-unreasonable-deep-dive-into-project-euler-problem-1-51a3a841ad67\#:~:text=The\%20Problem,0\%20modulo\%203\%20or\%205}{fascinating
+blog on Euler One} {[}\protect\hyperlink{ref-haney2020}{6}{]}. I urge
+you to read it to stretch your mental muscles while at the same time
+developing an appreciation of the beauty of mathematics. Try your own
+hand at analyzing the seemingly simple Euler One problem and see whether
+it gives you insight you did not have before.
 
 \hypertarget{feedback}{%
 \subsection{Feedback}\label{feedback}}
@@ -291,30 +856,40 @@ comments and corrections.
 \begin{CSLReferences}{0}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-rust}{}}%
 \CSLLeftMargin{{[}1{]} }%
-\CSLRightInline{---, {`Rust'}. Available:
-\url{https://research.mozilla.org/rust/}. {[}Accessed: Aug. 01, 2021{]}}
+\CSLRightInline{---. {Rust}. Retrieved 1 August 2021 from
+\url{https://research.mozilla.org/rust/}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-goulding2020}{}}%
 \CSLLeftMargin{{[}2{]} }%
-\CSLRightInline{Jake Goulding, {`What is rust and why is it so
-popular?'}, Jan. 20, 2020. Available:
-\url{https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/}.
-{[}Accessed: Aug. 01, 2021{]}}
+\CSLRightInline{Jake Goulding. 2020. {What is Rust and why is it so
+popular?} Retrieved 1 August 2021 from
+\url{https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-perkel2020}{}}%
 \CSLLeftMargin{{[}3{]} }%
-\CSLRightInline{Jeffrey M Perkel, {`Why scientists are turning to rust.
-Despite having a steep learning curve, the programming language offers
-speed and safety.'}, Dec. 01, 2020. Available:
-\url{https://www.nature.com/articles/d41586-020-03382-2}. {[}Accessed:
-Aug. 01, 2021{]}}
+\CSLRightInline{Jeffrey M Perkel. 2020. {Why scientists are turning to
+Rust}. Despite having a steep learning curve, the programming language
+offers speed and safety. Retrieved 1 August 2021 from
+\url{https://www.nature.com/articles/d41586-020-03382-2}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-dreimanis2020}{}}%
 \CSLLeftMargin{{[}4{]} }%
-\CSLRightInline{Gints Dreimanis, {`9 companies that use rust in
-production'}, Nov. 08, 2020. Available:
-\url{https://serokell.io/blog/rust-companies}. {[}Accessed: Aug. 01,
-2021{]}}
+\CSLRightInline{Gints Dreimanis. 2020. {9 Companies That Use Rust in
+Production}. Retrieved 1 August 2021 from
+\url{https://serokell.io/blog/rust-companies}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-sas}{}}%
+\CSLLeftMargin{{[}5{]} }%
+\CSLRightInline{R (Chandra) Chandrasekhar. 2023. {Secrets of Academic
+Success}. {Timeless Principles for Lifelong Learning}. Retrieved 24
+November 2023 from
+\url{https://swanlotus.netlify.app/sas-manuscript/SAS-partial.pdf}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-haney2020}{}}%
+\CSLLeftMargin{{[}6{]} }%
+\CSLRightInline{Bryan Haney. 2020. {Another Unreasonably Deep Dive into
+Project Euler Problem 1}. Retrieved 25 November 2023 from
+\url{https://iambryanhaney.medium.com/another-unreasonable-deep-dive-into-project-euler-problem-1-51a3a841ad67\#:~:text=The\%20Problem,0\%20modulo\%203\%20or\%205}}
 
 \end{CSLReferences}
 
