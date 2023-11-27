@@ -44,7 +44,7 @@ The book is divided into ten parts, each of which addresses one aspect of learni
 
 I am making this book freely available as a no-charge, [soft copy download]({static}../sas-manuscript/SAS-partial.pdf), in the PDF electronic format, so that it may benefit the largest number of sincere students worldwide.
 
-This book is protected by copyright as shown below. Please honour it.
+This book is protected by copyright as shown below. Please honour it. The book and its PDF file may not be redistributed or altered. To refer others to it, please send them the link to this page. Any commercial use is strictly prohibited.
 
 ```text
 Copyright © 2007–2022 R (Chandra) Chandrasekhar.

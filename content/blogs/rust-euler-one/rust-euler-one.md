@@ -4,7 +4,7 @@ author: "R (Chandra) Chandrasekhar"
 date: "2021-07-31"
 modified: "2023-11-26"
 category: Programming
-tags: Rust, Euler Project, Mathematics
+tags: Rust, Euler Project, A Bit Here a Byte There
 summary: "Rust is _the_ emerging programming language. I decided to start learning `Rust` by solving  Euler Project One. This is a chronicle of my first efforts, including false starts, errors, backtracks, etc."
 opengraphimage: venn.png
 ---
