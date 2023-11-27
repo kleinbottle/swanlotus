@@ -5,7 +5,9 @@ date: "2023-07-14"
 modified: "2023-11-25"
 category: Simkin Tales
 tags:
-summary: ""
+summary: 'My [redoubtable](https://www.thefreedictionary.com/redoubtable) friend Solus "Sol" Simkin wandered into my office late one afternoon and asked me, "What is the most scary experience for a human being?
+
+I thought but for an instant as I replied, almost reflexively, "Death. What else? Or a close shave with death."'
 opengraphimage: camel.jpg
 ---
 
