@@ -1092,7 +1092,7 @@ We have covered a fair bit of ground in this blog, and not all of it at the same
 
 W W Sawyer's _A concrete approach to abstract algebra_ [@sawyer1959] was first published in 1959, but it has retained its vigour and directness intact through more than six decades. Read it as a first introduction to the subject.
 
-Bergen's more recent book, _A Concrete Approach to Abstract Algebra_ is a modern successor to Sawyer, sharing the same book title. It will be a good companion to Sawyer.
+Bergen's more recent book, _A Concrete Approach to Abstract Algebra_[@bergen2010] is a modern successor to Sawyer, sharing the same book title. It will be a good companion to Sawyer.
 
 The third book, by Goodman, entitled _Algebra: Abstract and Concrete_ is [available at no charge online](http://homepage.divms.uiowa.edu/~goodman/algebrabook.dir/book.2.6.pdf) [@goodman2012]. It is very readable and concentrates a fair bit on symmetry. You could read it along with the other two or use it to complement your understanding of symmetry.
 
