@@ -145,9 +145,7 @@
 % We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
 %
 \babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
-%
 \babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
-%
 \babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
 %
 % Sanskrit, Tamil, and Greek fonts
@@ -1113,22 +1111,24 @@ Encyclopedia of Integer Sequences® (OEIS®)}.
 
 The \href{https://en.wikipedia.org/wiki/Fibonacci_sequence}{Fibonacci
 sequence} is a simple but profound sequence that is reflected in much of
-Nature. We start at the beginning with \(0\) and \(1\). We add them to
-get the next number, which is \(1\) again. Adding that to the previous
-number, we obtain \(2\). The algorithm is to add the two previous
-numbers to get the current one:
+Nature. We start at the beginning with \(0\) and \(1\): \[
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, \ldots
+\] We add them to get the next number, which is \(1\) again. Adding that
+to the previous number, we obtain \(2\). The algorithm is to add the two
+previous numbers to get the current one:
 \begin{equation}\protect\hypertarget{eq:fibonacci}{}{
 \begin{aligned}
-F_{0} &= 0\\
-F_{1} &= 1\\
-F_{2} &= F_{1} + F_{0}\\
-F_{n} &= F_{n-1} + F_{n-2} \mbox{ for } n \in \mathbb{N} \mbox{ and } n \geq 2
+F_{1} &= 0\\
+F_{2} &= 1\\
+F_{3} &= F_{2} + F_{1} = 1\\
+F_{4} &= F_{3} + F_{2} = 1 + 1 = 2\\
+F_{n} &= F_{n-1} + F_{n-2} \mbox{ for } n \in \mathbb{N} \mbox{ and } n > 2
 \end{aligned}
 }\label{eq:fibonacci}\end{equation} Although we have a \emph{recurrence
 relation} in \cref{eq:fibonacci}, we do not have an explicit formula for
-the \(n^{th}\) term. Nature has made us sweat to find out any particular
-term of the Fibonacci sequence! And the grist for the sequence mill are
-the two numbers, \(0\) and \(1\)!
+the \(n\)\textsuperscript{th} term. Nature has made us sweat to find out
+any particular term of the Fibonacci sequence! And the grist for the
+sequence mill are the two numbers, \(0\) and \(1\)!
 
 \href{https://www.britannica.com/science/Pascals-triangle}{Pascal's
 triangle} is another sequence that may be built from adjacent sums in a

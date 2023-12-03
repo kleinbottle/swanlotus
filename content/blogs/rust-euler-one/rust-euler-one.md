@@ -315,6 +315,10 @@ He has made the very valid point that whenever we are faced with products of a c
 
 I urge you to read the blog to stretch your mental muscles, while at the same time developing an appreciation for the beauty of mathematics. Try your own hand at analyzing the seemingly simple Euler One problem and see whether it gives you insights that you did not have before.
 
+### Caveat Lector! or Reader Beware! or Disclaimer
+
+I am learning `Rust`. What I have written here represents my efforts at learning. _The code here is not mature, idiomatic `Rust` code and should not be construed as such. Do not take it as an example of how to code in `Rust`._ Experienced "Rustaceans" who find errors are requested to [email me](mailto:feedback.swanlotus@gmail.com) with their corrections. \emojifont :neutral_face:\normalfont
+
 ## Feedback
 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and

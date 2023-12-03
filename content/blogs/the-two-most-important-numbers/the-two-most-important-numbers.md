@@ -438,16 +438,21 @@ An ordered procession of numbers is called a [sequence](https://en.wikipedia.org
 
 ### Fibonacci sequence
 
-The [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_sequence) is a simple but profound sequence that is reflected in much of Nature. We start at the beginning with $0$ and $1$. We add them to get the next number, which is $1$ again. Adding that to the previous number, we obtain $2$. The algorithm is to add the two previous numbers to get the current one:
+The [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_sequence) is a simple but profound sequence that is reflected in much of Nature. We start at the beginning with $0$ and $1$:
+$$
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, \ldots
+$$
+We add them to get the next number, which is $1$ again. Adding that to the previous number, we obtain $2$. The algorithm is to add the two previous numbers to get the current one:
 $$
 \begin{aligned}
-F_{0} &= 0\\
-F_{1} &= 1\\
-F_{2} &= F_{1} + F_{0}\\
-F_{n} &= F_{n-1} + F_{n-2} \mbox{ for } n \in \mathbb{N} \mbox{ and } n \geq 2
+F_{1} &= 0\\
+F_{2} &= 1\\
+F_{3} &= F_{2} + F_{1} = 1\\
+F_{4} &= F_{3} + F_{2} = 1 + 1 = 2\\
+F_{n} &= F_{n-1} + F_{n-2} \mbox{ for } n \in \mathbb{N} \mbox{ and } n > 2
 \end{aligned}
 $${#eq:fibonacci}
-Although we have a _recurrence relation_ in @eq:fibonacci, we do not have an explicit formula for the $n^{th}$ term. Nature has made us sweat to find out any particular term of the Fibonacci sequence! And the grist for the sequence mill are the two numbers, $0$ and $1$!
+Although we have a _recurrence relation_ in @eq:fibonacci, we do not have an explicit formula for the $n$^th^ term. Nature has made us sweat to find out any particular term of the Fibonacci sequence! And the grist for the sequence mill are the two numbers, $0$ and $1$!
 
 [Pascal's triangle](https://www.britannica.com/science/Pascals-triangle) is another sequence that may be built from adjacent sums in a number pattern. It is related to the [binomial coefficients](https://en.wikipedia.org/wiki/Binomial_coefficient) which play a vital role in probability, combinatorics, and calculus. I intend to look at number patterns like the Fibonacci sequence and Pascal's triangle in another blog.
 

@@ -1,0 +1,898 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode,linktoc=all}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  a4paper,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=25mm]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{48,48,48}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.81,0.69}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.50,0.62,0.50}{\textbf{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.80,0.80,0.80}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.86,0.64,0.64}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.80,0.80,0.80}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.86,0.64,0.64}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.50,0.62,0.50}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.50,0.62,0.50}{\textbf{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.86,0.64,0.64}{\textbf{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.94,0.87,0.69}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.87,0.87,0.75}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.86,0.86,0.80}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.50,0.62,0.50}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.76,0.75,0.62}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.80,0.80,0.80}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.75,0.75,0.82}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.94,0.94,0.56}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.80,0.80,0.80}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.50,0.62,0.50}{\textbf{#1}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.94,0.87,0.69}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.80,0.80,0.80}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.94,0.94,0.82}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.94,0.94,0.56}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{1.00,0.81,0.69}{\textbf{#1}}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.80,0.80,0.80}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.86,0.64,0.64}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.80,0.58,0.58}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.80,0.58,0.58}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.80,0.80,0.80}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.80,0.58,0.58}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.50,0.62,0.50}{\textbf{#1}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{british}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+% $HOME/.pandoc/defaults/latex-header-includes.tex
+% Common header includes for both lualatex and xelatex engines.
+%
+% Preliminaries
+%
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+% \PassOptionsToPackage{main=british}{babel}
+\PassOptionsToPackage{english}{selnolig}
+\AtBeginEnvironment{quote}{\small}
+\AtBeginEnvironment{quotation}{\small}
+\AtBeginEnvironment{longtable}{\centering}
+%
+% Packages that are useful to include
+%
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[inkscapeversion=1]{svg}
+\usepackage[defaultlines=4,all]{nowidow}
+\usepackage{etoolbox}
+\usepackage{fontsize}
+\usepackage{newunicodechar}
+\usepackage{pdflscape}
+\usepackage{fnpct}
+\usepackage{parskip}
+  \setlength{\parindent}{0pt}
+\usepackage[style=american]{csquotes}
+% \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
+%
+\usepackage{hyperref} % cleveref must come AFTER hyperref
+\usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
+% noto-plus.tex
+% Font-setting header file for use with Pandoc Markdown
+% to generate PDF via LuaLaTeX.
+% The main font is Noto Serif.
+% Other main fonts are also available in appropriately named file.
+\usepackage{fontspec}
+\usepackage{setspace}
+\setstretch{1.3}
+%
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=Node} % at the start always
+%
+% For English
+% See also https://tex.stackexchange.com/questions/574047/lualatex-amsthm-polyglossia-charissil-error
+% We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
+%
+\babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
+\babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
+\babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
+%
+% Sanskrit, Tamil, and Greek fonts
+%
+\babelprovide[import, onchar=ids fonts]{sanskrit}
+\babelprovide[import, onchar=ids fonts]{tamil}
+\babelprovide[import, onchar=ids fonts]{greek}
+%
+\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSerifDevanagari}
+\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSansDevanagari}
+\babelfont[tamil]{rm}[Renderer=HarfBuzz,Script=Tamil]{NotoSerifTamil}
+\babelfont[tamil]{sf}[Renderer=HarfBuzz,Script=Tamil]{NotoSansTamil}
+\babelfont[greek]{rm}[Script=Greek]{GentiumBookPlus}
+%
+% Math font
+%
+\usepackage{unicode-math} % seems not to hurt % fallabck
+\setmathfont[bold-style=TeX]{STIX Two Math}
+\usepackage{amsmath}
+\usepackage{esdiff} % for derivative symbols
+%
+%
+% Other fonts
+%
+\newfontfamily{\emojifont}{Symbola}
+%
+
+\usepackage{titling}
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0.2pt}
+    \renewcommand{\footrulewidth}{0.2pt}
+    \fancyhead[LO,RE]{\scshape\thetitle}
+    \fancyfoot[CO,CE]{\footnotesize Copyright © 2006\textendash\the\year, R (Chandra) Chandrasekhar}
+    \fancyfoot[RE,RO]{\thepage}
+\newfontfamily{\regulariconfont}{Font Awesome 6 Free Regular}[Color=Grey]
+\newfontfamily{\solidiconfont}{Font Awesome 6 Free Solid}[Color=Grey]
+\newfontfamily{\brandsiconfont}{Font Awesome 6 Brands}[Color=Grey]
+%
+% Direct input of Unicode code points
+%
+\newcommand{\faEnvelope}{\regulariconfont\ ^^^^f0e0\normalfont}
+\newcommand{\faMobile}{\solidiconfont\ ^^^^f3cd\normalfont}
+\newcommand{\faLinkedin}{\brandsiconfont\ ^^^^f0e1\normalfont}
+\newcommand{\faGithub}{\brandsiconfont\ ^^^^f09b\normalfont}
+\newcommand{\faAtom}{\solidiconfont\ ^^^^f5d2\normalfont}
+\newcommand{\faPaperPlaneRegular}{\regulariconfont\ ^^^^f1d8\normalfont}
+\newcommand{\faPaperPlaneSolid}{\solidiconfont\ ^^^^f1d8\normalfont}
+
+%
+% The block below is commented out because of Tofu glyphs in HTML
+%
+% \newcommand{\faEnvelope}{\regulariconfont\ \normalfont}
+% \newcommand{\faMobile}{\solidiconfont\ \normalfont}
+% \newcommand{\faLinkedin}{\brandsiconfont\ \normalfont}
+% \newcommand{\faGithub}{\brandsiconfont\ \normalfont}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{sf}
+\hypersetup{
+  pdftitle={Euler Two with Julia},
+  pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
+  colorlinks=true,
+  linkcolor={DarkOliveGreen},
+  filecolor={Purple},
+  citecolor={DarkKhaki},
+  urlcolor={Maroon},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Euler Two with Julia}
+\author{R (Chandra) Chandrasekhar}
+\date{2023-11-27 | 2023-12-02}
+
+\begin{document}
+\maketitle
+
+\thispagestyle{empty}
+
+
+In a
+\href{https://swanlotus.netlify.app/blogs/a-foray-into-rust-euler-one}{recent
+blog} I chronicled my efforts at solving the
+\href{https://projecteuler.net/problem=1}{Project Euler Problem 1} using
+the programming language \texttt{Rust}. At the conclusion of the blog, I
+was less enthusiastic about \texttt{Rust} than I was at the start.
+
+Was there another relatively new programming language that was better
+suited to my temperament and that held promise to become mainstream? I
+thought of \href{https://julialang.org/}{\texttt{Julia}} which has an
+impressive pedigree of academics from reputed institutions behind its
+invention.
+
+I also happened to watch recently
+\href{https://www.youtube.com/watch?v=rgcwvrGGFww}{a talk} by an
+academic from India,
+\href{https://www.cmi.ac.in/people/fac-profile.php?id=sourish}{Professor
+Sourish Das}, belonging to \href{https://www.cmi.ac.in/}{the reputed
+Chennai Mathematical Institute}, in which he pitched for Julia as
+\emph{the} programming language of the future for the field of
+\href{https://en.wikipedia.org/wiki/Data_science}{Data Science}. The
+good professor compared Julia with current mainstream languages used in
+Data Science, and explained with convincing facts why he was batting for
+\texttt{Julia} to be the leader in a few years.
+
+\hypertarget{solving-project-euler-problem-one}{%
+\subsection{Solving Project Euler Problem
+One}\label{solving-project-euler-problem-one}}
+
+To compare apples with apples, I thought I would first try to solve
+Euler Problem 1 using \texttt{Julia}.
+
+The first thing I looked for was vectorization and the use of the simple
+\texttt{start:step:end} syntax that was familiar to me from
+\href{https://octave.org/}{Octave}. I searched for vectors and ranges
+and landed up
+\href{https://docs.juliahub.com/CalculusWithJulia/AZHbv/0.0.5/precalc/ranges.html}{here}.
+
+From there, it was almost trivial to solve Euler One with this one-liner
+in \texttt{Julia}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(}\FloatTok{3}\OperatorTok{:}\FloatTok{3}\OperatorTok{:}\FloatTok{999}\NormalTok{) }\OperatorTok{+} \FunctionTok{sum}\NormalTok{(}\FloatTok{5}\OperatorTok{:}\FloatTok{5}\OperatorTok{:}\FloatTok{999}\NormalTok{) }\OperatorTok{{-}} \FunctionTok{sum}\NormalTok{(}\FloatTok{15}\OperatorTok{:}\FloatTok{15}\OperatorTok{:}\FloatTok{999}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Note that we have the same \texttt{end} value for the three vectors
+because of the words \texttt{below\ 1000} in the problem. We did not
+need to separately compute the number of terms in each case. And the
+fact that ranges in vectors are inclusive at both ends, all make for a
+simple and succinct solution. The answer, of course, is \texttt{233168}
+as before.
+
+With Euler One out of the way, we are now free to analyze and solve
+Euler Two using \texttt{Julia}.
+
+\hypertarget{statement-of-problem-euler-two}{%
+\subsection{Statement of problem: Euler
+Two}\label{statement-of-problem-euler-two}}
+
+The \href{https://projecteuler.net/problem=2}{Euler Project Problem 2}
+is stated as follows:
+
+\begin{quote}
+Each new term in the Fibonacci sequence is generated by adding the
+previous two terms. By starting with and \(1\) and \(2\), the first
+\(10\) terms will be:
+\end{quote}
+
+\begin{quote}
+\(1, 2, 3, 5, 8, 13, 21, 34, 55, 89, \ldots\)
+\end{quote}
+
+\begin{quote}
+By considering the terms in the Fibonacci sequence whose values do not
+exceed four million, find the sum of the even-valued terms.
+\end{quote}
+
+\hypertarget{parsing-the-problem}{%
+\subsubsection{Parsing the problem}\label{parsing-the-problem}}
+
+The problem states ``By starting with and 1 and 2,'' indicating that the
+starting point is not universally accepted as \(1\) and \(2\).
+
+Indeed, the \href{https://oeis.org/A000045}{Fibonacci sequence} at
+\href{https://oeis.org/wiki/Main_Page}{OEIS} starts off like this:
+\begin{equation}\protect\hypertarget{eq:fibonacci}{}{
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, \ldots
+}\label{eq:fibonacci}\end{equation} I prefer this latter sequence for
+aesthetic reasons and will use it in this problem.
+
+The second important phrase asks for the sum of the ``even-valued
+terms''. The \emph{even-numbered} terms are those occupying even
+\emph{positions} in the sequence. The \emph{even-valued} terms are those
+whose \emph{values} are even. The two need not be the same, and are not
+the same in this case.
+
+The third important phrase is ``whose values do not exceed four
+million''. A number less than \(x\) does not exceed \(x\). Equally, a
+number that equals \(x\) also does not exceed \(x\). So, the
+mathematical condition is ``\(\leq 4,000,000\)''. Moreover, the stopping
+condition refers to the \emph{whole Fibonacci sequence.} Let this upper
+bound be called: \begin{equation}\protect\hypertarget{eq:stopping}{}{
+F_{m} = F_{\max} \leq 4,000,000.
+}\label{eq:stopping}\end{equation} We do not know the value of either
+\(m\) or \(F_{\max}\) at present.
+
+\hypertarget{recurrence-relation-for-the-fibonacci-sequence}{%
+\subsection{Recurrence relation for the Fibonacci
+sequence}\label{recurrence-relation-for-the-fibonacci-sequence}}
+
+The recurrence relation for the Fibonacci sequence is:
+\begin{equation}\protect\hypertarget{eq:recurrence}{}{
+\begin{aligned}
+F_{1} &= 0\\
+F_{2} &= 1\\
+F_{3} &= F_{2} + F_{1} = 1\\
+F_{4} &= F_{3} + F_{2} = 1 + 1 = 2\\
+F_{n} &= F_{n-1} + F_{n-2} \mbox{ for } n \in \mathbb{N} \mbox{ and } n > 2
+\end{aligned}
+}\label{eq:recurrence}\end{equation}
+
+While there \emph{is} an explicit formula for the
+\(n\)\textsuperscript{th} Fibonacci number, called
+\href{https://artofproblemsolving.com/wiki/index.php/Binet\%27s_Formula}{Binet's
+formula}, its use involves the irrational, algebraic number \(\sqrt5\),
+and programs using it will suffer from
+\href{https://www.cs.drexel.edu/~popyack/Courses/CSP/Fa17/extras/Rounding/index.html}{rounding
+errors}. However, this does not preclude methods based on Binet's
+formula, provided they are used knowledgeably.
+
+\hypertarget{the-even-valued-fibonacci-subsequence}{%
+\subsection{The even-valued Fibonacci
+subsequence}\label{the-even-valued-fibonacci-subsequence}}
+
+If we look at \cref{eq:fibonacci}, we will notice that, assuming zero is
+even, the even terms are: \[
+0, 2, 8, 34, 144, \ldots
+\] and their position in the sequence is \[
+1, 4, 7, 10, 13, \ldots
+\] spaced at every \emph{three} terms apart. Note that the indices of
+the even-valued Fibonacci subsequence actually form an arithmetic
+sequence with \(a = 1\) and \(d = 3\) and \(n\)\textsuperscript{th} term
+\(3n - 3\). If we use this sequence to filter out the Fibonacci sequence
+and sum it, we will be done. This is one approach. We will explore other
+approaches later.
+
+So, the sum we are after, assuming that \cref{eq:recurrence} holds, is
+\begin{equation}\protect\hypertarget{eq:even-sum}{}{
+\sum_{k=1}^{m}F_{3k-2}.
+}\label{eq:even-sum}\end{equation} where \(m\) is the index of the
+largest even-valued Fibonacci number that does not exceed 4,000,000. Let
+us call this term \(F_{\max}\). We will consider this subsequence in its
+own right \protect\hyperlink{a-second-look-at-the-problem}{toward the
+end of this blog}.
+
+\hypertarget{small-steps-toward-the-solution}{%
+\subsection{Small steps toward the
+solution}\label{small-steps-toward-the-solution}}
+
+Because the syntax of \texttt{Julia} is new to me, I will start with
+trivial scripts that almost single-step toward the solution.
+
+\hypertarget{append-the-third-fibonacci-number-to-the-array}{%
+\subsubsection{Append the third Fibonacci number to the
+array}\label{append-the-third-fibonacci-number-to-the-array}}
+
+Let us concatenate the third Fibonacci number to the first two.
+Obviously, we need a one-dimensional array , or vector, \texttt{F} to
+hold the Fibonacci numbers.
+
+The first two elements of \texttt{F} are pre-defined. So, only the third
+element must be defined by the recurrence relation \cref{eq:recurrence},
+and added to the \emph{end} of the array, or \emph{appended} to it. The
+\href{first-three.jl}{code to do this} is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Append the third Fibonacci number to the Fibonacci array}
+\NormalTok{F }\OperatorTok{=}\NormalTok{ [}\FloatTok{0}\NormalTok{, }\FloatTok{1}\NormalTok{];}
+\FunctionTok{push!}\NormalTok{(F, F[}\FloatTok{1}\NormalTok{] }\OperatorTok{+}\NormalTok{ F[}\FloatTok{2}\NormalTok{]);}
+\FunctionTok{println}\NormalTok{(F);}
+\end{Highlighting}
+\end{Shaded}
+
+It works and gives us \texttt{{[}0,\ 1,\ 1{]}}. So far so good.
+
+\hypertarget{first-twenty-elements-of-the-fibonacci-sequence}{%
+\subsubsection{First twenty elements of the Fibonacci
+Sequence}\label{first-twenty-elements-of-the-fibonacci-sequence}}
+
+Because we know that there are twenty elements, our task is easier and
+may be \href{auxiliary/first-twenty.jl}{accomplished by a \texttt{for}
+loop}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Generate the first twenty Fibonacci numbers}
+\NormalTok{F }\OperatorTok{=}\NormalTok{ [}\FloatTok{0}\NormalTok{, }\FloatTok{1}\NormalTok{];}
+\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in}\NormalTok{ (}\FloatTok{3}\OperatorTok{:}\FloatTok{20}\NormalTok{)}
+  \FunctionTok{push!}\NormalTok{(F, F[i}\OperatorTok{{-}}\FloatTok{1}\NormalTok{] }\OperatorTok{+}\NormalTok{ F[i}\OperatorTok{{-}}\FloatTok{2}\NormalTok{]); }\CommentTok{\# append to array}
+\ControlFlowTok{end}
+\FunctionTok{println}\NormalTok{(F);}
+\end{Highlighting}
+\end{Shaded}
+
+This gives the first twenty Fibonacci numbers as
+\texttt{{[}0,\ 1,\ 1,\ 2,\ 3,\ 5,\ 8,\ 13,\ 21,\ 34,\ 55,\ 89,\ 144,\ 233,\ 377,\ 610,\ 987,\ 1597,\ 2584,\ 4181{]}}.
+Array indices in \texttt{Julia} begin with \(1\), and the \texttt{{[}}
+and the \texttt{{]}} represent the array delimiters. You can download
+the script \href{auxiliary/\%7Dfirst-twenty.jl}{here}.
+
+So, we are good. Notice that we did not even need to define
+\texttt{F{[}i{]}\ =\ F{[}i-1{]}\ +\ F{[}i-2{]}} but could simply invoke
+the RHS (right hand side) of the recurrence relation and append it. Thus
+far, syntax in \texttt{Julia} has tracked the mathematical expression
+very closely.
+
+\hypertarget{how-to-stop-when-we-need-to}{%
+\subsubsection{How to stop when we need
+to?}\label{how-to-stop-when-we-need-to}}
+
+The difficulty is that while we know from \cref{eq:stopping} the upper
+bound that should not be exceeded, we know neither the value of the
+largest Fibonacci number, \(F_{\max}\), at which we must stop, nor its
+index \(m\). We therefore need to allocate an array whose dimensions are
+not known in advance. This also precludes the use of the \texttt{for}
+iterator for the same reason.
+
+\texttt{Julia} also offers a \texttt{while} loop. As with \texttt{while}
+loops in all languages, it must be used with care, because of the
+following possible undesirable outcomes, if used erroneously:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  It does not execute even once.
+\item
+  It stops at one more than the expected condition.
+\item
+  It stops at one less than the expected condition.
+\item
+  It loops infinitely.
+\end{enumerate}
+
+From what I know so far, the program should preferably use a
+\texttt{while} loop that goes on forever and is forcibly terminated when
+a known stopping condition is encountered within its body.
+
+Following this approach, here is \href{auxiliary/until-4m.jl}{my
+program} to output all the Fibonacci terms which do not exceed
+\(4,000,000\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Generate the Fibonacci numbers which do not exceed 4 million}
+\KeywordTok{const}\NormalTok{ MAX }\OperatorTok{=} \FloatTok{4000000}\NormalTok{;}
+\NormalTok{F }\OperatorTok{=}\NormalTok{ [}\FloatTok{0}\NormalTok{, }\FloatTok{1}\NormalTok{, }\ConstantTok{undef}\NormalTok{]}
+\NormalTok{i }\OperatorTok{=} \FloatTok{3} \CommentTok{\# Array already has three elements}
+\CommentTok{\#}
+\ControlFlowTok{while} \ConstantTok{true}
+  \KeywordTok{global}\NormalTok{ i}
+\NormalTok{  F[i] }\OperatorTok{=}\NormalTok{ F[i}\OperatorTok{{-}}\FloatTok{1}\NormalTok{] }\OperatorTok{+}\NormalTok{ F[i}\OperatorTok{{-}}\FloatTok{2}\NormalTok{]}
+  \CommentTok{\# println("$(i)" , " ", "$(F[i])") \# for troubleshooting}
+\NormalTok{  (F[i] }\OperatorTok{+}\NormalTok{ F[i}\OperatorTok{{-}}\FloatTok{1}\NormalTok{]) }\OperatorTok{\textless{}=}\NormalTok{ MAX }\OperatorTok{||} \ControlFlowTok{break}
+  \FunctionTok{push!}\NormalTok{(F, F[i]) }\CommentTok{\# append to array}
+\NormalTok{  i }\OperatorTok{+=} \FloatTok{1}
+\ControlFlowTok{end}
+\CommentTok{\#}
+\FunctionTok{println}\NormalTok{(i)}
+\FunctionTok{println}\NormalTok{(F)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{commentary-on-the-program}{%
+\subsubsection{Commentary on the
+program}\label{commentary-on-the-program}}
+
+This program was written with very little knowledge of \texttt{Julia}.
+\emph{It uses the wrong approach, but gives the right answer. It should
+not be used as an example to write code in \texttt{Julia}.}
+
+Nevertheless, I will go through the above program one line at a time. We
+first define the constant \(4,000,000\) using an uppercase name, as is
+prevalent in \texttt{C} as well. Note that we may terminate a line with
+a semi-colon, or leave it out, as we please.
+
+The array \texttt{F} is of \texttt{type} \texttt{Any} because we have
+not assigned a type to it. While type assignment might matter in other
+situations, not assigning it now is simpler for our purposes.
+
+We are within our rights in allocating values to the first two elements
+of \texttt{F} because the sequence cannot fire up otherwise.
+
+Note that the third element of \texttt{F} is \texttt{undef} , i.e, it is
+left undefined. We need to \emph{reserve a place} for the third element
+because will be evaluating it at the top of the \texttt{while} loop, and
+we could run into an \texttt{out\ of\ bounds} error otherwise.
+
+Array indices start at \texttt{1} in \texttt{Julia} and we need
+\texttt{i} to be \texttt{3} at the start of the \texttt{while} loop. The
+value of \texttt{i} cannot, however, be passed to the \texttt{while}
+loop unless we declare it global. I later found out
+\href{https://discourse.julialang.org/t/help-with-project-euler-2-undef-inits-printing-multiplication-by-juxtaposition-and-more/106930}{from
+the user-community} that declaring variables \texttt{global} is a strict
+no-no.
+
+We then progress to the code that actually embodies the recurrence
+relation in \cref{eq:recurrence}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{F[i] }\OperatorTok{=}\NormalTok{ F[i}\OperatorTok{{-}}\FloatTok{1}\NormalTok{] }\OperatorTok{+}\NormalTok{ F[i}\OperatorTok{{-}}\FloatTok{2}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+The line after this was used for troubleshooting and may uncommented for
+that purpose if desired.
+
+The statement
+\texttt{(F{[}i{]}\ +\ F{[}i-1{]})\ \textless{}=\ MAX\ \textbar{}\textbar{}\ break}
+is the condition that operates the \texttt{while}. To see why it takes
+this form, assume that we have the second largest Fibonacci number to be
+\(2.5\) million and the next number to be \(3.5\) million. The next
+Fibonacci number will therefore be \(6\) million. The loop will surely
+stop when it encounters \(6\) million. But will it stop at \(3.5\)
+million which is still within the stipulated bound?
+
+Therefore, we need to \emph{evaluate the next Fibonacci number} and test
+it against the stopping condition. If it is within bounds, we append it
+to the array with \texttt{push!(F,\ F{[}i{]})} and then increment the
+array index \texttt{i}. Otherwise, we will abruptly \texttt{break} and
+exit the program.
+
+At the end, we print out the last \texttt{i} value, which is \texttt{34}
+and the complete Fibonacci sequence whose values do not exceed
+\(4,000,000\). The largest permissible Fibonacci number, obeying this
+condition, is \texttt{35245781}. The full sequence is:
+
+\texttt{{[}0,\ 1,\ 1,\ 2,\ 3,\ 5,\ 8,\ 13,\ 21,\ 34,\ 55,\ 89,\ 144,\ 233,\ 377,\ 610,\ 987,\ 1597,\ 2584,\ 4181,\ 6765,\ 10946,\ 17711,\ 28657,\ 46368,\ 75025,\ 121393,\ 196418,\ 317811,\ 514229,\ 832040,\ 1346269,\ 2178309,\ 3524578{]}}.
+It appears prefixed by the word \texttt{Any} which is an artifact of the
+language and should be ignored.
+
+We may now append a second script to sum the even numbers in this
+sequence.
+
+\hypertarget{sum-of-even-valued-fibonacci-numbers-not-exceeding-4-million}{%
+\subsubsection{\texorpdfstring{Sum of even-valued Fibonacci numbers not
+exceeding \(4\)
+million}{Sum of even-valued Fibonacci numbers not exceeding 4 million}}\label{sum-of-even-valued-fibonacci-numbers-not-exceeding-4-million}}
+
+We are a stone's throw away from solving the set problem. All we need do
+is to sum the even numbers in the array \texttt{F}. The indices of these
+are \(1, 4, 7,\) etc. So we \emph{slice} \texttt{F} as shown below to
+get the even sequence \texttt{E}. The sum of \texttt{E} is our desired
+result.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#}
+\CommentTok{\# Sum of even Fibonacci numbers in F}
+\CommentTok{\#}
+\NormalTok{E }\OperatorTok{=}\NormalTok{ F[}\FloatTok{1}\OperatorTok{:}\FloatTok{3}\OperatorTok{:}\KeywordTok{end}\NormalTok{]}
+\FunctionTok{println}\NormalTok{(E)}
+\FunctionTok{println}\NormalTok{(}\FunctionTok{sum}\NormalTok{(E)) }\CommentTok{\# This is what we want}
+\end{Highlighting}
+\end{Shaded}
+
+The answer to the problem is \texttt{4613732}. For completeness the full
+program may be \href{auxiliary/even-sum.jl}{downloaded here}.
+
+\hypertarget{things-i-got-wrong-with-the-above-script}{%
+\subsection{Things I got wrong with the above
+script}\label{things-i-got-wrong-with-the-above-script}}
+
+Since I am just learning \texttt{Julia}, and had some doubts, I posted a
+\href{https://discourse.julialang.org/t/is-it-possible-to-suppres-the-printing-of-any-before-an-array-is-printed/106930}{question}
+at the community forum where experienced \texttt{Julia} programmers
+respond to queries. Their replies were very definite on what to do and
+what not to do, and also revealed a diversity of approaches to solve the
+problem.
+
+The experts were in one voice saying that \texttt{global} variables
+\emph{should not} be used. They advised me to define a function and use
+it instead. Indeed, they even gave me examples of code to solve Euler
+Two.
+
+I have slightly modified one of the solutions I received, and list it
+below. It uses functions to circumvent the need for \texttt{global}
+variables. Please treat my previous solution as a mistake, and consider
+the code fragment below as one of many proper solutions.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{function} \FunctionTok{myfib}\NormalTok{(maxval)}
+\NormalTok{    val }\OperatorTok{=} \FloatTok{1}
+\NormalTok{    F }\OperatorTok{=}\NormalTok{ [}\FloatTok{0}\NormalTok{, val] }\CommentTok{\# assign values to the first two Fibonacci terms}
+    \ControlFlowTok{while}\NormalTok{ val }\OperatorTok{\textless{}=}\NormalTok{ maxval}
+        \FunctionTok{push!}\NormalTok{(F, val) }\CommentTok{\# the third term is also 1}
+\NormalTok{        val }\OperatorTok{=}\NormalTok{ F[}\KeywordTok{end}\NormalTok{] }\OperatorTok{+}\NormalTok{ F[}\KeywordTok{end}\OperatorTok{{-}}\FloatTok{1}\NormalTok{] }\CommentTok{\# the recurrence relation; same as v += F[end{-}1]}
+    \ControlFlowTok{end}
+    \ControlFlowTok{return}\NormalTok{ F }\CommentTok{\# return the whole array}
+\KeywordTok{end}
+
+\CommentTok{\#}
+\CommentTok{\# Obtain the Fibonacci sequence for all values not exceeding 4 million}
+\CommentTok{\#}
+\NormalTok{A }\OperatorTok{=} \FunctionTok{myfib}\NormalTok{(}\FloatTok{4000000}\NormalTok{)}
+\FunctionTok{println}\NormalTok{(A, }\StringTok{" "}\NormalTok{, }\FunctionTok{length}\NormalTok{(A)) }\CommentTok{\# The length gives the index of the largest admissible Fibonacci number}
+
+\CommentTok{\#}
+\CommentTok{\# Extract and sum the even{-}valued terms}
+\CommentTok{\#}
+\NormalTok{E }\OperatorTok{=}\NormalTok{ A[}\FloatTok{1}\OperatorTok{:}\FloatTok{3}\OperatorTok{:}\KeywordTok{end}\NormalTok{]}
+\FunctionTok{println}\NormalTok{(}\FunctionTok{sum}\NormalTok{(E))}
+\end{Highlighting}
+\end{Shaded}
+
+The sum of the even-valued terms in the Fibonacci sequence not exceeding
+four million is \texttt{4613732}. This file may be accessed
+\href{auxiliary/even-f-sum.jl}{here}.
+
+\hypertarget{a-second-look-at-the-problem}{%
+\subsection{A second look at the
+problem}\label{a-second-look-at-the-problem}}
+
+In our first pass, we stuck very closely to the Fibonacci sequence,
+evaluated it in full until the prescribed limit, and then obtained the
+even-valued sum. From a programming point 0f view, this may be deemed
+``naive'' and ``wasteful'' in a way because:
+
+\begin{enumerate}
+\item
+  We evaluate the \emph{entire} sequence and throw away more than half
+  the terms. It would be more efficient to obtain a \emph{recurrence
+  relation for the even-valued subsequence} and use that instead.
+\item
+  After assembling the array, we sum it to get a \emph{single} number.
+  We are aggregating a vector into a scalar. Would it not be better to
+  \emph{sum as we go along} and keep accumulating the result in a single
+  scalar, rather than maintaining a vector that we sum at the end?
+\end{enumerate}
+
+These observations are generic keys to efficient programming, and could
+result in more frugal programs in terms of memory and execution times.
+This ``philosophy'' will help us write better programs. The rest of this
+blog explores this approach.
+
+\hypertarget{the-even-valued-fibonacci-subsequence-1}{%
+\subsubsection{The even-valued Fibonacci
+subsequence}\label{the-even-valued-fibonacci-subsequence-1}}
+
+Let us call the \emph{even-valued subsequence of the Fibonacci sequence}
+the \emph{even sequence} for short, remembering that it is not the
+\emph{even terms} but the \emph{even values} that we are after.
+
+Two important factors will guide our efforts at getting a recurrence
+relation for the even sequence:
+
+\begin{enumerate}
+\item
+  The original recurrence relation applies to the Fibonacci sequence.
+\item
+  The even sequence is predictably distributed in the Fibonacci
+  sequence, with even values every three places.
+\end{enumerate}
+
+This means that we should be able to get a recurrence relation by
+writing the relationships in terms of the even sequence alone, starting
+from the full Fibonacci sequence. The even-valued terms are three
+positions apart. So, we span seven terms from index \(k\) to index
+\((k+6)\) to get the recurrence relation:
+\begin{equation}\protect\hypertarget{eq:even-fibonacci-recurrence}{}{
+\begin{aligned}
+F_{k+6} &= F_{k+5} + F_{k+4} \mbox{ (expand RHS solely in terms of $F_{k+3}$ and $F_{k}$)}\\
+&= F_{k+4} + F_{k+3} + F_{k+3} + F_{k+2}\\
+&= F_{k+3} + F_{k+2} + F_{k+3} + F_{k+3} + F_{k+2} \mbox{ (expand $F_{k+2} = F_{k+1} + F_{k}$)}\\
+&= 3F_{k+3} + F_{k+2} + F_{k+1} + F_{k} \mbox{ (since $F_{k+3} = F_{k+2} + F_{k+1}$)}\\
+&= 3F_{k+3} + F_{k+3} + F_{k}\\
+&= 4F_{k+3} + F_{k}\\
+\end{aligned}
+}\label{eq:even-fibonacci-recurrence}\end{equation} If we write
+\cref{eq:even-fibonacci-recurrence} in terms of the even sequence,
+\(E_{n}\), noting that indices \(k\), \((k+3)\), and \((k+6)\) represent
+its successive terms, which we shall call \(n\), \((n+1)\), and
+\((n+2)\), we get from \cref{eq:even-fibonacci-recurrence},
+\begin{equation}\protect\hypertarget{eq:even-recurrence}{}{
+E_{n+2} = 4E_{n+1} +E_{n}
+}\label{eq:even-recurrence}\end{equation} We need to initialize
+\(E_{1} = 0\) and \(E_{2} = 2\). Thenceforth, we may generate the whole
+even sequence. Let us write this using \texttt{Julia} syntax.
+
+\hypertarget{summing-the-even-valued-sequence-in-julia}{%
+\subsubsection{\texorpdfstring{Summing the even-valued sequence in
+\texttt{Julia}}{Summing the even-valued sequence in Julia}}\label{summing-the-even-valued-sequence-in-julia}}
+
+Three variables are used in the recurrence relation. A fourth is needed
+for the sum. So, with four variables and some judicious code, we should
+be able to solve the problem directly, efficiently, and fast.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{function} \FunctionTok{fibonacci\_even\_sum}\NormalTok{(maxval)}
+\NormalTok{  current, previous }\OperatorTok{=} \FloatTok{2}\NormalTok{, }\FloatTok{0}
+\NormalTok{  sum }\OperatorTok{=}\NormalTok{ current }\OperatorTok{+}\NormalTok{ previous}
+\NormalTok{  next }\OperatorTok{=} \FloatTok{4}\NormalTok{current }\OperatorTok{+}\NormalTok{ previous }\CommentTok{\# recurrence relation for even{-}valued Fibonacci numbers}
+  \ControlFlowTok{while}\NormalTok{ (next }\OperatorTok{\textless{}=}\NormalTok{ maxval)}
+\NormalTok{    sum }\OperatorTok{+=}\NormalTok{ next}
+\NormalTok{    current, previous }\OperatorTok{=}\NormalTok{ next, current}
+\NormalTok{    next }\OperatorTok{=} \FloatTok{4}\NormalTok{current }\OperatorTok{+}\NormalTok{ previous }\CommentTok{\# recurrence relation for even{-}valued Fibonacci numbers}
+  \ControlFlowTok{end}
+  \ControlFlowTok{return}\NormalTok{ sum}
+\KeywordTok{end}
+\end{Highlighting}
+\end{Shaded}
+
+Observe the following:
+
+\begin{enumerate}
+\item
+  The assignment \texttt{current,\ previous\ =\ 2,\ 0} is idiom for
+  \texttt{(current,\ previous)\ =\ (2,\ 0)} and is the syntax for
+  \href{https://discourse.julialang.org/t/correct-way-to-do-multiple-variable-assignments/30242}{\texttt{tuples}}
+  assignment in \texttt{Julia}. One could either use the parentheses or
+  leave them out altogether.
+\item
+  The expression \texttt{4current} is
+  \href{https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/\#man-numeric-literal-coefficients}{shorthand}
+  for \texttt{4*current} and is yet another aspect of the language that
+  makes its syntax mathematics-friendly and nimble.
+\item
+  The \texttt{while} condition need not have parentheses, although I
+  have shown it here with them.
+\item
+  Lines need not end with a \texttt{;} and the return value need not be
+  wrapped in parentheses. Code written without syntactic clutter like
+  this is easier on the eye and also simpler to decode to reveal the
+  underlying algorithm.
+\end{enumerate}
+
+The function must be called separately from its definition and the value
+of the sum should be printed out. If, therefore, we append the following
+two lines to the above function, we would get our final result:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{evensum }\OperatorTok{=} \FunctionTok{fibonacci\_even\_sum}\NormalTok{(}\FloatTok{4000000}\NormalTok{)}
+\FunctionTok{println}\NormalTok{(evensum)}
+\end{Highlighting}
+\end{Shaded}
+
+which gives \texttt{4613732} as before, and all is well.
+
+\hypertarget{final-assessment}{%
+\subsection{Final assessment}\label{final-assessment}}
+
+The \texttt{Julia} programming language is refreshingly original in its
+syntax and allows the programmer to solve the problem in very many ways.
+
+In the case of Euler Project Problem 2, I found out that I ran into
+trouble, mostly because I was running foul of doing things the ``right
+way''. The language gently nudges one to think again before coding. It
+coaxes rather than coerces the programmer to adopt efficient and safe
+coding practices.
+
+The existence of a knowledgeable user-community who were ready to help,
+and who could illuminate the problem from different angles, made
+learning \texttt{Julia} enjoyable, educational, and enriching. It is a
+language that I will spend time learning properly, and use in the
+future.
+
+\hypertarget{caveat-lector-or-reader-beware-or-disclaimer}{%
+\subsubsection{Caveat Lector! or Reader Beware! or
+Disclaimer}\label{caveat-lector-or-reader-beware-or-disclaimer}}
+
+I am new to \texttt{Julia}. What I have written here represents my
+efforts at learning, errors and all. Experienced ``Julians''\footnote{\texttt{Rust}
+  pogrammers call themselves ``Rustaceans''. \texttt{Python} programmers
+  call themselves ``Pythonistas''. I propose that \texttt{Julia}
+  programmers call themselves ``Julians''.} who find errors are
+requested to \href{mailto:feedback.swanlotus@gmail.com}{email me} with
+their corrections. \emojifont {☹️} \normalfont
+
+\hypertarget{acknowledgements}{%
+\subsection{Acknowledgements}\label{acknowledgements}}
+
+The \texttt{Julia}-user community is knowledgeable, courteous, and
+helpful, and they are very enthusiastic about their programming
+language. The website to ask for help is
+\href{https://discourse.julialang.org/}{Julia Programming Language - A
+forum for users and developers}.
+
+When I encountered difficulties with my code, I sought the community's
+help in
+\href{https://discourse.julialang.org/t/help-with-project-euler-2-undef-inits-printing-multiplication-by-juxtaposition-and-more/106930}{this
+thread} {[}\protect\hyperlink{ref-julia-help}{1}{]}. The wealth of
+information given there is enough to keep one busy for quite a while,
+learning different ways to \emph{solve} the same problem and also
+different ways to \emph{think} about problems in general.
+
+\hypertarget{feedback}{%
+\subsection{Feedback}\label{feedback}}
+
+Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
+comments and corrections.
+
+\noindent A PDF version of this article is
+\href{auxiliary/euler-two-with-julia.pdf}{available for download here}:
+
+\begin{small}
+
+\begin{sffamily}
+
+\url{https://swanlotus.netlify.app/blogs/euler-two-with-julia.pdf}
+
+\end{sffamily}
+
+\end{small}
+
+\hypertarget{bibliography}{%
+\section*{References}\label{bibliography}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{0}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-julia-help}{}}%
+\CSLLeftMargin{{[}1{]} }%
+\CSLRightInline{Various. 2023. {Help with Project Euler \#2\: undef
+inits, printing, multiplication by juxtaposition, and more}. Retrieved 2
+December 2023 from
+\url{https://discourse.julialang.org/t/help-with-project-euler-2-undef-inits-printing-multiplication-by-juxtaposition-and-more/106930}}
+
+\end{CSLReferences}
+
+
+
+\end{document}
