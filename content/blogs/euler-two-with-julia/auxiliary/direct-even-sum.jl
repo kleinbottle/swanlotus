@@ -25,7 +25,7 @@ function fibonacci_even_sum(maxval)
   current, previous = 2, 0
   sum = current + previous
   next = 4current + previous # recurrence relation for even-valued Fibonacci numbers
-  while (next <= maxval)
+    while (next <= maxval)
     sum += next
     current, previous = next, current
     next = 4current + previous # recurrence relation for even-valued Fibonacci numbers
@@ -33,5 +33,5 @@ function fibonacci_even_sum(maxval)
   return sum
 end
 
-evensum = fibonacci_even_sum(4000000)
+evensum = fibonacci_even_sum(4e6) # 4 million
 println(evensum)
