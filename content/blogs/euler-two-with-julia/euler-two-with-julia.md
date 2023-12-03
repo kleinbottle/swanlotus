@@ -1,8 +1,8 @@
 ---
-title: "Euler Two with Julia"
+title: "Euler Two with `Julia`"
 author: R (Chandra) Chandrasekhar
 date: 2023-11-27
-modified: 2023-12-02
+modified: 2023-12-03
 category: Programming
 tags: Julia, "Project Euler"
 summary: 'The `Julia` programming language is refreshingly original in its syntax and allows the programmer to solve the problem in very many ways. In the case or Euler Project Problem 2, I found out that I ran into trouble, mostly because I was running foul of doing things the "right way". The language gently nudges one to think again before coding. It coaxes rather than coerces the programmer to adopt efficient and safe coding practices. The existence of a knowledgeable user-community who were ready to help, and who could illuminate the problem from different facets, made learning `Julia` enjoyable, educational, and enriching. It is a language that I will spend time learning properly, and use in the future.'

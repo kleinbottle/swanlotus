@@ -1,5 +1,5 @@
 ---
-title: "A Foray into Rust: Euler One"
+title: "A Foray into `Rust`: Euler One"
 author: "R (Chandra) Chandrasekhar"
 date: "2021-07-31"
 modified: "2023-11-26"
