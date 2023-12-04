@@ -2653,8 +2653,8 @@ a.box:active {
 }
 .button.is-loading::after {
   position: absolute;
-  left: calc(50% - (1em * 0.5));
-  top: calc(50% - (1em * 0.5));
+  left: calc(50% - 1em * 0.5);
+  top: calc(50% - 1em * 0.5);
   position: absolute !important;
 }
 .button.is-static {
@@ -4672,12 +4672,12 @@ body {
   margin-left: 1.6em;
 }
 
-#sidebar nav code,
+#sidebar code,
 #sidebar a {
   color: hsl(0, 0%, 100%);
 }
 
-#sidebar nav code {
+#sidebar code {
   background-color: transparent;
   font-size: 0.875em;
 }
