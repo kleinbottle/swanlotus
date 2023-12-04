@@ -5,15 +5,15 @@ date: 2023-11-27
 modified: 2023-12-03
 category: Programming
 tags: Julia, "Project Euler"
-summary: 'The `Julia` programming language is refreshingly original in its syntax and allows the programmer to solve the problem in very many ways. In the case or Euler Project Problem 2, I found out that I ran into trouble, mostly because I was running foul of doing things the "right way". The language gently nudges one to think again before coding. It coaxes rather than coerces the programmer to adopt efficient and safe coding practices. The existence of a knowledgeable user-community who were ready to help, and who could illuminate the problem from different facets, made learning `Julia` enjoyable, educational, and enriching. It is a language that I will spend time learning properly, and use in the future.'
+summary: 'The `Julia` programming language is refreshingly adaptive in its syntax and allows the programmer to solve a problem in very many ways. In the case of Euler Project Problem 2, I got into trouble, mostly because I was running foul of doing things the "right way". The language gently nudges one to think again before coding. It coaxes rather than coerces the programmer to adopt efficient and safe coding practices. The existence of a knowledgeable user-community who were ready to help, and who could illuminate the problem from different angles, made learning `Julia` enjoyable, educational, and enriching. It is a language that I will spend time learning properly, and use in the future.'
 opengraphimage: code.png
 ---
 
 In a [recent blog](https://swanlotus.netlify.app/blogs/a-foray-into-rust-euler-one) I chronicled my efforts at solving the [Project Euler Problem 1](https://projecteuler.net/problem=1) using the programming language `Rust`. At the conclusion of the blog, I was less enthusiastic about `Rust` than I was at the start.
 
-Was there another relatively new programming language that was better suited to my temperament and that held promise to become mainstream? I thought of [`Julia`](https://julialang.org/) which has an impressive pedigree of academics from reputed institutions behind its invention.
+Was there another relatively new programming language that was better suited to my temperament and that held promise to become mainstream? I thought of [`Julia`](https://julialang.org/), which is reputed to be both high-level and fast.
 
-I also happened to watch recently [a talk](https://www.youtube.com/watch?v=rgcwvrGGFww) by an academic from India, [Professor Sourish Das](https://www.cmi.ac.in/people/fac-profile.php?id=sourish), belonging to [the reputed Chennai Mathematical Institute](https://www.cmi.ac.in/), in which he pitched for Julia as _the_ programming language of the future for the field of [Data Science](https://en.wikipedia.org/wiki/Data_science). The good professor compared Julia with current mainstream languages used in Data Science, and explained with convincing facts why he was batting for `Julia` to be the leader in a few years.
+I also happened to watch recently [a talk](https://www.youtube.com/watch?v=rgcwvrGGFww) by an academic from India, [Professor Sourish Das](https://www.cmi.ac.in/people/fac-profile.php?id=sourish), belonging to [the specialist Chennai Mathematical Institute](https://www.cmi.ac.in/), in which he pitched for Julia as _the_ programming language of the future for the field of [Data Science](https://en.wikipedia.org/wiki/Data_science). The good professor compared Julia with current mainstream languages used in Data Science, and explained with convincing facts why he was batting for `Julia` to be the leader in a few years.
 
 ## Solving Project Euler Problem One
 
@@ -41,7 +41,7 @@ The [Euler Project Problem 2](https://projecteuler.net/problem=2) is stated as f
 
 >By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-### Parsing the problem
+### Dissecting the problem
 
 The problem states "By starting with 1 and 2," indicating that the starting point is not universally accepted as $1$ and $2$.
 
@@ -49,11 +49,11 @@ Indeed, the [Fibonacci sequence](https://oeis.org/A000045) at [OEIS](https://oei
 $$
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, \ldots
 $${#eq:fibonacci}
-I prefer this latter sequence for aesthetic reasons and will use it in this problem.
+I prefer the sequence of @eq:fibonacci for aesthetic reasons and will use it in this problem, despite instructions to the contrary.
 
 The second important phrase asks for the sum of the "even-valued terms". It is important to understand the meaning of "even" here. The _even-numbered_ terms are those occupying even _positions_ in the sequence. The _even-valued_ terms are those whose _values_ are even. The two need not be the same, and are not the same in this case.
 
-The third important phrase is "whose values do not exceed four million". A number less than $x$ does not exceed $x$. Equally, a number that equals $x$ also does not exceed $x$. So, the mathematical condition is "$\leq 4,000,000$". Moreover, the stopping condition refers to the _whole Fibonacci sequence._ Let this upper bound be called:
+The third important phrase is "whose values do not exceed four million". A number less than $x$ does not exceed $x$. So also, a number that equals $x$ also does not exceed $x$. Thus, the mathematical condition is "$\leq 4,000,000$". Moreover, the stopping condition refers to the _whole Fibonacci sequence._ Let this upper bound be called:
 $$
 F_{m} = F_{\max} \leq 4,000,000.
 $${#eq:stopping}
@@ -68,11 +68,11 @@ F_{1} &= 0\\
 F_{2} &= 1\\
 F_{3} &= F_{2} + F_{1} = 1\\
 F_{4} &= F_{3} + F_{2} = 1 + 1 = 2\\
-F_{n} &= F_{n-1} + F_{n-2} \mbox{ for } n \in \mathbb{N} \mbox{ and } n > 2
+F_{n} &= F_{n-1} + F_{n-2} \text{ for } n \in \mathbb{N} \text{ and } n > 2
 \end{aligned}
 $${#eq:recurrence}
 
-While there _is_ an explicit formula for the $n$^th^ Fibonacci number, called [Binet's formula](https://artofproblemsolving.com/wiki/index.php/Binet%27s_Formula), its use involves the irrational, algebraic number $\sqrt5$, and programs using it will suffer from [rounding errors](https://www.cs.drexel.edu/~popyack/Courses/CSP/Fa17/extras/Rounding/index.html). However, this does not preclude methods based on Binet's formula, provided they are used knowledgeably.
+While there _is_ an explicit formula for the $n$^th^ Fibonacci number, called [Binet's formula](https://artofproblemsolving.com/wiki/index.php/Binet%27s_Formula), its use involves the irrational, algebraic number $\sqrt5$, and programs using it will suffer from [rounding errors](https://www.cs.drexel.edu/~popyack/Courses/CSP/Fa17/extras/Rounding/index.html). However, this does not preclude methods based on Binet's formula, provided they are used knowledgeably [@julia-help].
 
 ## The even-valued Fibonacci subsequence
 
@@ -90,7 +90,7 @@ So, the sum we are after, assuming that @eq:recurrence holds, is
 $$
 \sum_{k=1}^{m}F_{3k-2}.
 $${#eq:even-sum}
-where $m$ is the index of the largest even-valued Fibonacci number that does not exceed 4,000,000. Let us call this term $F_{\max}$. We will consider this subsequence in its own right [toward the end of this blog](#a-second-look-at-the-problem).
+where $m$ is the index of the largest even-valued Fibonacci number that does not exceed 4,000,000, which is $F_{\max}$. We will consider this subsequence in its own right [toward the end of this blog](#a-second-look-at-the-problem).
 
 ## Small steps toward the solution
 
@@ -125,18 +125,20 @@ println(F);
 
 This gives the first twenty Fibonacci numbers as `[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181]`. Array indices in `Julia` begin with $1$, and the `[` and the `]` represent the array delimiters. You can download the script [here]({attach}auxiliary/}first-twenty.jl).
 
-So, we are good. Notice that we did not even need to define `F[i] = F[i-1] + F[i-2]` but could simply invoke the right hand side (RHS) of the recurrence relation and append it. Thus far, syntax in `Julia` has tracked the mathematical expression very closely.
+So, we are good. Notice that we did not even need to define `F[i] = F[i-1] + F[i-2]` but could simply invoke the right hand side (RHS) of the recurrence relation and append it to the array. Thus far, the syntax in `Julia` has tracked the mathematical expression very closely.
 
 ### How to stop when we need to?
 
-The difficulty is that while we know from @eq:stopping the upper bound that should not be exceeded, we know neither the value of the largest Fibonacci number, $F_{\max}$, at which we must stop, nor its index $m$.  We therefore need to allocate an array whose dimensions are not known in advance. This also precludes the use of the `for` iterator for the same reason.
+The difficulty is that, while we know from @eq:stopping the upper bound that should not be exceeded, we know neither the value of the largest Fibonacci number, $F_{\max}$, at which we must stop, nor its index $m$.
 
-`Julia` also offers a `while` loop. As with `while` loops in all languages, it must be used with care, because of the following possible undesirable outcomes, if used erroneously:
+We therefore need to allocate an array whose dimension is not known in advance. We have worked around this constraint by using `push!` so far. But the `for` iterator needs an `end` value which we do not know in advance. So, we need another loop construct.
+
+`Julia` also offers a `while` loop. As with `while` loops in all languages, it must be used with care, because of the following possible undesirable outcomes, if used carelessly:
 
 a. It does not execute even once.
 a. It stops at one more than the expected condition.
 a. It stops at one less than the expected condition.
-a. It loops infinitely.
+a. It loops indefinitely.
 
 From what I know so far, the program should preferably use a `while` loop that goes on forever and is forcibly terminated when a known stopping condition is encountered within its body.
 
@@ -177,7 +179,7 @@ Array indices start at `1` in `Julia` and we need `i` to be `3` at the start of 
 
 We then progress to the code that actually embodies the recurrence relation in @eq:recurrence: `F[i] = F[i-1] + F[i-2]`. The line after this was used for troubleshooting and may be uncommented for that purpose if desired.
 
-The statement `(F[i] + F[i-1]) <= MAX || break` is the condition that operates the `while`. To see why it takes this form, assume that we have the second largest Fibonacci number to be $2.5$ million and the next number to be $3.5$ million. The next Fibonacci number will therefore be $6$ million. The loop will surely stop when it encounters $6$ million. But will it stop at $3.5$ million which is still within the stipulated bound?
+The statement `(F[i] + F[i-1]) <= MAX || break` is the condition that terminates the `while`. To see why it is  positioned as it is in the code, imagine that we have the second largest Fibonacci number to be $2.5$ million and the next number to be $3.5$ million. The succeeding Fibonacci number will therefore be $6$ million. The loop will surely stop when it encounters $6$ million. But will it stop at $3.5$ million which is still within the stipulated bound?
 
 Therefore, we need to _evaluate the next Fibonacci number_ and test it against the stopping condition. If it is within bounds, we append it to the array with `push!(F, F[i])` and then increment the array index `i`. Otherwise, we will abruptly `break` and exit the program.
 
@@ -201,7 +203,7 @@ println(sum(E)) # This is what we want
 
 ```
 
-The answer to the problem is `4613732`. For completeness the full program may be [downloaded here]({attach}auxiliary/even-sum.jl).
+The answer to the problem is `4613732`. I am deliberately not including a download link for this script as it does not embody best practice in `Julia`.<!-- For completeness the full program may be [downloaded here]({attach}auxiliary/even-sum.jl).-->
 
 ## Things I got wrong with the above script
 
@@ -212,7 +214,7 @@ The experts were in one voice saying that `global` variables _should not_ be use
 I have slightly modified one of the solutions I received, and list it below. It uses functions to circumvent the need for `global` variables. Please treat my previous solution as a mistake, and consider the code fragment below as one of many proper solutions.
 
 ```julia
-function myfib(maxval)
+function fibo(maxval)
     val = 1
     F = [0, val] # assign values to the first two Fibonacci terms
     while val <= maxval
@@ -225,7 +227,7 @@ end
 #
 # Obtain the Fibonacci sequence for all values not exceeding 4 million
 #
-A = myfib(4000000)
+A = fibo(4000000)
 println(A, " ", length(A)) # The length gives the index of the largest admissible Fibonacci number
 
 #
@@ -235,11 +237,11 @@ E = A[1:3:end]
 println(sum(E))
 ```
 
-The sum of the even-valued terms in the Fibonacci sequence not exceeding four million is `4613732`. This file may be accessed [here]({attach}auxiliary/even-f-sum.jl).
+The sum of the even-valued terms in the Fibonacci sequence not exceeding four million is `4613732`. This file may be accessed [here]({attach}auxiliary/better-even-sum.jl).
 
 ## A second look at the problem
 
-In our first pass, we stuck very closely to the Fibonacci sequence, evaluated it in full until the prescribed limit, and then obtained the even-valued sum. From a programming point 0f view, this may be deemed "naive" and "wasteful" in a way because:
+In our first pass, we stuck very closely to the Fibonacci sequence, evaluated it in full until the prescribed limit, and then obtained the even-valued sum. From a programming point of view, this may be deemed "naive" and "wasteful" in a way because:
 
 #. We evaluate the _entire_ sequence and throw away more than half the terms. It would be more efficient to obtain a _recurrence relation for the even-valued subsequence_ and use that instead.
 
@@ -260,19 +262,19 @@ Two important factors will guide our efforts at getting a recurrence relation fo
 This means that we should be able to get a recurrence relation by writing the relationships in terms of the even sequence alone, starting from the full Fibonacci sequence. The even-valued terms are three positions apart. So, we span seven terms from index $k$ to index $(k+6)$ to get the recurrence relation:
 $$
 \begin{aligned}
-F_{k+6} &= F_{k+5} + F_{k+4} \mbox{ (expand RHS solely in terms of $F_{k+3}$ and $F_{k}$)}\\
+F_{k+6} &= F_{k+5} + F_{k+4} \text{ (expand RHS solely in terms of $F_{k+3}$ and $F_{k}$)}\\
 &= F_{k+4} + F_{k+3} + F_{k+3} + F_{k+2}\\
-&= F_{k+3} + F_{k+2} + F_{k+3} + F_{k+3} + F_{k+2} \mbox{ (expand $F_{k+2} = F_{k+1} + F_{k}$)}\\
-&= 3F_{k+3} + F_{k+2} + F_{k+1} + F_{k} \mbox{ (since $F_{k+3} = F_{k+2} + F_{k+1}$)}\\
+&= F_{k+3} + F_{k+2} + F_{k+3} + F_{k+3} + F_{k+2} \text{ (expand $F_{k+2} = F_{k+1} + F_{k}$)}\\
+&= 3F_{k+3} + F_{k+2} + F_{k+1} + F_{k} \text{ (since $F_{k+3} = F_{k+2} + F_{k+1}$)}\\
 &= 3F_{k+3} + F_{k+3} + F_{k}\\
 &= 4F_{k+3} + F_{k}\\
 \end{aligned}
 $${#eq:even-fibonacci-recurrence}
-If we write @eq:even-fibonacci-recurrence in terms of the even sequence, $E_{n}$, noting that indices $k$, $(k+3)$, and $(k+6)$ represent its successive terms, which we shall call $n$, $(n+1)$, and $(n+2)$, we get from @eq:even-fibonacci-recurrence,
+If we write @eq:even-fibonacci-recurrence in terms of the even sequence, $E_{n}$, noting that indices $k$, $(k+3)$, and $(k+6)$ represent its successive terms, which we shall call $n$, $(n+1)$, and $(n+2)$, we get:
 $$
 E_{n+2} = 4E_{n+1} +E_{n}
 $${#eq:even-recurrence}
-We need to initialize $E_{1} = 0$ and $E_{2} = 2$. Thenceforth, we may generate the whole even sequence. Let us write this using `Julia` syntax.
+We need to initialize $E_{1} = 0$ and $E_{2} = 2$. Thence, we may generate the whole even sequence. Let us write this using `Julia` syntax.
 
 ### Summing the even-valued sequence in `Julia`
 
@@ -308,13 +310,13 @@ The function must be called separately from its definition and the value of the 
 evensum = fibonacci_even_sum(4e6) # 4 million
 println(evensum)
 ```
-which gives `4613732` as before, and all is well.
+which gives `4613732` as before, and all is well. This script is available [here]({attach}auxiliary/direct-even-sum.jl).
 
 ## Final assessment
 
-The `Julia` programming language is refreshingly original in its syntax and allows the programmer to solve the problem in very many ways.
+The `Julia` programming language is refreshingly adaptive in its syntax and allows the programmer to solve a problem in very many ways.
 
-In the case of Euler Project Problem 2, I found out that I ran into trouble, mostly because I was running foul of doing things the "right way". The language gently nudges one to think again before coding. It coaxes rather than coerces the programmer to adopt efficient and safe coding practices.
+In the case of Euler Project Problem 2, I found out that I got into trouble, mostly because I was running foul of doing things the "right way". The language gently nudges one to think again before coding. It coaxes rather than coerces the programmer to adopt efficient and safe coding practices.
 
 The existence of a knowledgeable user-community who were ready to help, and who could illuminate the problem from different angles, made learning `Julia` enjoyable, educational, and enriching. It is a language that I will spend time learning properly, and use in the future.
 

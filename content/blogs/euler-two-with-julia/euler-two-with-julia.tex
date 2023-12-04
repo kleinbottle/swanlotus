@@ -266,15 +266,14 @@ was less enthusiastic about \texttt{Rust} than I was at the start.
 
 Was there another relatively new programming language that was better
 suited to my temperament and that held promise to become mainstream? I
-thought of \href{https://julialang.org/}{\texttt{Julia}} which has an
-impressive pedigree of academics from reputed institutions behind its
-invention.
+thought of \href{https://julialang.org/}{\texttt{Julia}}, which is
+reputed to be both high-level and fast.
 
 I also happened to watch recently
 \href{https://www.youtube.com/watch?v=rgcwvrGGFww}{a talk} by an
 academic from India,
 \href{https://www.cmi.ac.in/people/fac-profile.php?id=sourish}{Professor
-Sourish Das}, belonging to \href{https://www.cmi.ac.in/}{the reputed
+Sourish Das}, belonging to \href{https://www.cmi.ac.in/}{the specialist
 Chennai Mathematical Institute}, in which he pitched for Julia as
 \emph{the} programming language of the future for the field of
 \href{https://en.wikipedia.org/wiki/Data_science}{Data Science}. The
@@ -336,8 +335,8 @@ By considering the terms in the Fibonacci sequence whose values do not
 exceed four million, find the sum of the even-valued terms.
 \end{quote}
 
-\hypertarget{parsing-the-problem}{%
-\subsubsection{Parsing the problem}\label{parsing-the-problem}}
+\hypertarget{dissecting-the-problem}{%
+\subsubsection{Dissecting the problem}\label{dissecting-the-problem}}
 
 The problem states ``By starting with 1 and 2,'' indicating that the
 starting point is not universally accepted as \(1\) and \(2\).
@@ -346,8 +345,9 @@ Indeed, the \href{https://oeis.org/A000045}{Fibonacci sequence} at
 \href{https://oeis.org/wiki/Main_Page}{OEIS} starts off like this:
 \begin{equation}\protect\hypertarget{eq:fibonacci}{}{
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, \ldots
-}\label{eq:fibonacci}\end{equation} I prefer this latter sequence for
-aesthetic reasons and will use it in this problem.
+}\label{eq:fibonacci}\end{equation} I prefer the sequence of
+\cref{eq:fibonacci} for aesthetic reasons and will use it in this
+problem, despite instructions to the contrary.
 
 The second important phrase asks for the sum of the ``even-valued
 terms''. It is important to understand the meaning of ``even'' here. The
@@ -357,8 +357,8 @@ are even. The two need not be the same, and are not the same in this
 case.
 
 The third important phrase is ``whose values do not exceed four
-million''. A number less than \(x\) does not exceed \(x\). Equally, a
-number that equals \(x\) also does not exceed \(x\). So, the
+million''. A number less than \(x\) does not exceed \(x\). So also, a
+number that equals \(x\) also does not exceed \(x\). Thus, the
 mathematical condition is ``\(\leq 4,000,000\)''. Moreover, the stopping
 condition refers to the \emph{whole Fibonacci sequence.} Let this upper
 bound be called: \begin{equation}\protect\hypertarget{eq:stopping}{}{
@@ -377,7 +377,7 @@ F_{1} &= 0\\
 F_{2} &= 1\\
 F_{3} &= F_{2} + F_{1} = 1\\
 F_{4} &= F_{3} + F_{2} = 1 + 1 = 2\\
-F_{n} &= F_{n-1} + F_{n-2} \mbox{ for } n \in \mathbb{N} \mbox{ and } n > 2
+F_{n} &= F_{n-1} + F_{n-2} \text{ for } n \in \mathbb{N} \text{ and } n > 2
 \end{aligned}
 }\label{eq:recurrence}\end{equation}
 
@@ -388,7 +388,8 @@ formula}, its use involves the irrational, algebraic number \(\sqrt5\),
 and programs using it will suffer from
 \href{https://www.cs.drexel.edu/~popyack/Courses/CSP/Fa17/extras/Rounding/index.html}{rounding
 errors}. However, this does not preclude methods based on Binet's
-formula, provided they are used knowledgeably.
+formula, provided they are used knowledgeably
+{[}\protect\hyperlink{ref-julia-help}{1}{]}.
 
 \hypertarget{the-even-valued-fibonacci-subsequence}{%
 \subsection{The even-valued Fibonacci
@@ -410,10 +411,10 @@ So, the sum we are after, assuming that \cref{eq:recurrence} holds, is
 \begin{equation}\protect\hypertarget{eq:even-sum}{}{
 \sum_{k=1}^{m}F_{3k-2}.
 }\label{eq:even-sum}\end{equation} where \(m\) is the index of the
-largest even-valued Fibonacci number that does not exceed 4,000,000. Let
-us call this term \(F_{\max}\). We will consider this subsequence in its
-own right \protect\hyperlink{a-second-look-at-the-problem}{toward the
-end of this blog}.
+largest even-valued Fibonacci number that does not exceed 4,000,000,
+which is \(F_{\max}\). We will consider this subsequence in its own
+right \protect\hyperlink{a-second-look-at-the-problem}{toward the end of
+this blog}.
 
 \hypertarget{small-steps-toward-the-solution}{%
 \subsection{Small steps toward the
@@ -473,24 +474,27 @@ the script \href{auxiliary/\%7Dfirst-twenty.jl}{here}.
 
 So, we are good. Notice that we did not even need to define
 \texttt{F{[}i{]}\ =\ F{[}i-1{]}\ +\ F{[}i-2{]}} but could simply invoke
-the right hand side (RHS) of the recurrence relation and append it. Thus
-far, syntax in \texttt{Julia} has tracked the mathematical expression
-very closely.
+the right hand side (RHS) of the recurrence relation and append it to
+the array. Thus far, the syntax in \texttt{Julia} has tracked the
+mathematical expression very closely.
 
 \hypertarget{how-to-stop-when-we-need-to}{%
 \subsubsection{How to stop when we need
 to?}\label{how-to-stop-when-we-need-to}}
 
-The difficulty is that while we know from \cref{eq:stopping} the upper
+The difficulty is that, while we know from \cref{eq:stopping} the upper
 bound that should not be exceeded, we know neither the value of the
 largest Fibonacci number, \(F_{\max}\), at which we must stop, nor its
-index \(m\). We therefore need to allocate an array whose dimensions are
-not known in advance. This also precludes the use of the \texttt{for}
-iterator for the same reason.
+index \(m\).
+
+We therefore need to allocate an array whose dimension is not known in
+advance. We have worked around this constraint by using \texttt{push!}
+so far. But the \texttt{for} iterator needs an \texttt{end} value which
+we do not know in advance. So, we need another loop construct.
 
 \texttt{Julia} also offers a \texttt{while} loop. As with \texttt{while}
 loops in all languages, it must be used with care, because of the
-following possible undesirable outcomes, if used erroneously:
+following possible undesirable outcomes, if used carelessly:
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -502,7 +506,7 @@ following possible undesirable outcomes, if used erroneously:
 \item
   It stops at one less than the expected condition.
 \item
-  It loops infinitely.
+  It loops indefinitely.
 \end{enumerate}
 
 From what I know so far, the program should preferably use a
@@ -575,12 +579,13 @@ desired.
 
 The statement
 \texttt{(F{[}i{]}\ +\ F{[}i-1{]})\ \textless{}=\ MAX\ \textbar{}\textbar{}\ break}
-is the condition that operates the \texttt{while}. To see why it takes
-this form, assume that we have the second largest Fibonacci number to be
-\(2.5\) million and the next number to be \(3.5\) million. The next
-Fibonacci number will therefore be \(6\) million. The loop will surely
-stop when it encounters \(6\) million. But will it stop at \(3.5\)
-million which is still within the stipulated bound?
+is the condition that terminates the \texttt{while}. To see why it is
+positioned as it is in the code, imagine that we have the second largest
+Fibonacci number to be \(2.5\) million and the next number to be \(3.5\)
+million. The succeeding Fibonacci number will therefore be \(6\)
+million. The loop will surely stop when it encounters \(6\) million. But
+will it stop at \(3.5\) million which is still within the stipulated
+bound?
 
 Therefore, we need to \emph{evaluate the next Fibonacci number} and test
 it against the stopping condition. If it is within bounds, we append it
@@ -622,8 +627,9 @@ result.
 \end{Highlighting}
 \end{Shaded}
 
-The answer to the problem is \texttt{4613732}. For completeness the full
-program may be \href{auxiliary/even-sum.jl}{downloaded here}.
+The answer to the problem is \texttt{4613732}. I am deliberately not
+including a download link for this script as it does not embody best
+practice in \texttt{Julia}.
 
 \hypertarget{things-i-got-wrong-with-the-above-script}{%
 \subsection{Things I got wrong with the above
@@ -648,7 +654,7 @@ the code fragment below as one of many proper solutions.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{function} \FunctionTok{myfib}\NormalTok{(maxval)}
+\KeywordTok{function} \FunctionTok{fibo}\NormalTok{(maxval)}
 \NormalTok{    val }\OperatorTok{=} \FloatTok{1}
 \NormalTok{    F }\OperatorTok{=}\NormalTok{ [}\FloatTok{0}\NormalTok{, val] }\CommentTok{\# assign values to the first two Fibonacci terms}
     \ControlFlowTok{while}\NormalTok{ val }\OperatorTok{\textless{}=}\NormalTok{ maxval}
@@ -661,7 +667,7 @@ the code fragment below as one of many proper solutions.
 \CommentTok{\#}
 \CommentTok{\# Obtain the Fibonacci sequence for all values not exceeding 4 million}
 \CommentTok{\#}
-\NormalTok{A }\OperatorTok{=} \FunctionTok{myfib}\NormalTok{(}\FloatTok{4000000}\NormalTok{)}
+\NormalTok{A }\OperatorTok{=} \FunctionTok{fibo}\NormalTok{(}\FloatTok{4000000}\NormalTok{)}
 \FunctionTok{println}\NormalTok{(A, }\StringTok{" "}\NormalTok{, }\FunctionTok{length}\NormalTok{(A)) }\CommentTok{\# The length gives the index of the largest admissible Fibonacci number}
 
 \CommentTok{\#}
@@ -674,7 +680,7 @@ the code fragment below as one of many proper solutions.
 
 The sum of the even-valued terms in the Fibonacci sequence not exceeding
 four million is \texttt{4613732}. This file may be accessed
-\href{auxiliary/even-f-sum.jl}{here}.
+\href{auxiliary/better-even-sum.jl}{here}.
 
 \hypertarget{a-second-look-at-the-problem}{%
 \subsection{A second look at the
@@ -682,7 +688,7 @@ problem}\label{a-second-look-at-the-problem}}
 
 In our first pass, we stuck very closely to the Fibonacci sequence,
 evaluated it in full until the prescribed limit, and then obtained the
-even-valued sum. From a programming point 0f view, this may be deemed
+even-valued sum. From a programming point of view, this may be deemed
 ``naive'' and ``wasteful'' in a way because:
 
 \begin{enumerate}
@@ -728,10 +734,10 @@ positions apart. So, we span seven terms from index \(k\) to index
 \((k+6)\) to get the recurrence relation:
 \begin{equation}\protect\hypertarget{eq:even-fibonacci-recurrence}{}{
 \begin{aligned}
-F_{k+6} &= F_{k+5} + F_{k+4} \mbox{ (expand RHS solely in terms of $F_{k+3}$ and $F_{k}$)}\\
+F_{k+6} &= F_{k+5} + F_{k+4} \text{ (expand RHS solely in terms of $F_{k+3}$ and $F_{k}$)}\\
 &= F_{k+4} + F_{k+3} + F_{k+3} + F_{k+2}\\
-&= F_{k+3} + F_{k+2} + F_{k+3} + F_{k+3} + F_{k+2} \mbox{ (expand $F_{k+2} = F_{k+1} + F_{k}$)}\\
-&= 3F_{k+3} + F_{k+2} + F_{k+1} + F_{k} \mbox{ (since $F_{k+3} = F_{k+2} + F_{k+1}$)}\\
+&= F_{k+3} + F_{k+2} + F_{k+3} + F_{k+3} + F_{k+2} \text{ (expand $F_{k+2} = F_{k+1} + F_{k}$)}\\
+&= 3F_{k+3} + F_{k+2} + F_{k+1} + F_{k} \text{ (since $F_{k+3} = F_{k+2} + F_{k+1}$)}\\
 &= 3F_{k+3} + F_{k+3} + F_{k}\\
 &= 4F_{k+3} + F_{k}\\
 \end{aligned}
@@ -739,12 +745,12 @@ F_{k+6} &= F_{k+5} + F_{k+4} \mbox{ (expand RHS solely in terms of $F_{k+3}$ and
 \cref{eq:even-fibonacci-recurrence} in terms of the even sequence,
 \(E_{n}\), noting that indices \(k\), \((k+3)\), and \((k+6)\) represent
 its successive terms, which we shall call \(n\), \((n+1)\), and
-\((n+2)\), we get from \cref{eq:even-fibonacci-recurrence},
+\((n+2)\), we get:
 \begin{equation}\protect\hypertarget{eq:even-recurrence}{}{
 E_{n+2} = 4E_{n+1} +E_{n}
 }\label{eq:even-recurrence}\end{equation} We need to initialize
-\(E_{1} = 0\) and \(E_{2} = 2\). Thenceforth, we may generate the whole
-even sequence. Let us write this using \texttt{Julia} syntax.
+\(E_{1} = 0\) and \(E_{2} = 2\). Thence, we may generate the whole even
+sequence. Let us write this using \texttt{Julia} syntax.
 
 \hypertarget{summing-the-even-valued-sequence-in-julia}{%
 \subsubsection{\texorpdfstring{Summing the even-valued sequence in
@@ -805,15 +811,16 @@ two lines to the above function, we would get our final result:
 \end{Highlighting}
 \end{Shaded}
 
-which gives \texttt{4613732} as before, and all is well.
+which gives \texttt{4613732} as before, and all is well. This script is
+available \href{auxiliary/direct-even-sum.jl}{here}.
 
 \hypertarget{final-assessment}{%
 \subsection{Final assessment}\label{final-assessment}}
 
-The \texttt{Julia} programming language is refreshingly original in its
-syntax and allows the programmer to solve the problem in very many ways.
+The \texttt{Julia} programming language is refreshingly adaptive in its
+syntax and allows the programmer to solve a problem in very many ways.
 
-In the case of Euler Project Problem 2, I found out that I ran into
+In the case of Euler Project Problem 2, I found out that I got into
 trouble, mostly because I was running foul of doing things the ``right
 way''. The language gently nudges one to think again before coding. It
 coaxes rather than coerces the programmer to adopt efficient and safe

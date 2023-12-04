@@ -46,7 +46,7 @@ $$
 \begin{array}{c c c r}
 4 &\times &3 &= 3 + 3 + 3 + 3 = (3 + 3) + (3 + 3) = 6 + 6 = 12\\
 \uparrow & & \uparrow & \uparrow\\
-\mbox{multiplier} & & \mbox{multiplicand} & \mbox{product}\\
+\text{multiplier} & & \text{multiplicand} & \text{product}\\
 \end{array}
 $${#eq:multiplier}
 The number $4$ is the [multiplier](https://www.thefreedictionary.com/multiplier) and the number $3$ is the [multiplicand](https://mathworld.wolfram.com/Multiplicand.html). This is the standard definition.
@@ -64,7 +64,7 @@ $$
 \begin{array}{c c c r}
 3 &\times &4 &= 4 + 4 + 4 = (4 +4) + 4 = 4 + (4 + 4) = 12\\
 \uparrow & & \uparrow & \uparrow\\
-\mbox{multiplier} & & \mbox{multiplicand} & \mbox{product}\\
+\text{multiplier} & & \text{multiplicand} & \text{product}\\
 \end{array}
 $${#eq:multiplicand}
 Although the two numbers have changed their names and roles from @eq:multiplier to  @eq:multiplicand, the result is the same because the multiplication of numbers is commutative.
@@ -181,8 +181,8 @@ For the record, formal definitions for the above terms are available on the Web 
 #.  [Distributivity](https://en.wikipedia.org/wiki/Distributive_property). Multiplication is distributive over addition. For completeness, we define
 $$
 \begin{array}{l  l}
-\mbox{Left Distributivity} & a(b+c)=ab+ac\\
-\mbox{Right Distributivity} & (a+b)c=ac+bc\\
+\text{Left Distributivity} & a(b+c)=ab+ac\\
+\text{Right Distributivity} & (a+b)c=ac+bc\\
 \end{array}
 $$
 In our case, both conditions hold, and we may simply say that _multiplication is distributive over addition for the reals_.
@@ -222,7 +222,7 @@ We show later in @eq:mult-minus-one that multiplying $a$ by $(-1)$ also gives us
 
 We next consider the multiplicative identity and inverse in $\mathbb{R}$ which are also shown in @tbl:axioms.
 
-The [multiplicative inverse](https://mathworld.wolfram.com/MultiplicativeInverse.html) for arbitrary $a \in \mathbb{R}$ is defined as $\frac{1}{a} \mbox{ for } a \ne 0$.  Why the exclusion of zero? Let us look for a graphical reason.
+The [multiplicative inverse](https://mathworld.wolfram.com/MultiplicativeInverse.html) for arbitrary $a \in \mathbb{R}$ is defined as $\frac{1}{a} \text{ for } a \ne 0$.  Why the exclusion of zero? Let us look for a graphical reason.
 
 If we plot $x$ against its multiplicative inverse $\frac{1}{x}$, we would get a [rectangular hyperbola](https://en.wikipedia.org/wiki/Hyperbola), as shown in @fig:hyperbola.^[We use the familiar $x$ instead of $a$ in the graphical context.] We have coloured the two "arms" of the hyperbola in the first and third quadrants in blue and red respectively, although they are part of the same curve.
 
@@ -246,7 +246,7 @@ a - b = a + (-b)
 $$
 Likewise, dividing $a$ by $b \ne 0$ amounts to multiplying $a$ by the multiplicative inverse of $b$ which equals $\frac{1}{b}$:
 $$
-a \div b = a \times \frac{1}{b} = \frac{a}{b} \mbox{ for } b \ne 0.
+a \div b = a \times \frac{1}{b} = \frac{a}{b} \text{ for } b \ne 0.
 $$
 
 ### Multiplying any number by zero always gives zero
@@ -256,8 +256,8 @@ Recall from @tbl:axioms that $0$ is the unique _additive_ identity. Zero's claim
 Consider an arbitrary number $a \in \mathbb{R}$. Recall also that because $0$ is the  additive identity, $0 + 0 = 0$. We may then claim that
 $$
 \begin{aligned}
-a \cdot 0 &= a \cdot (0 + 0) & \mbox{ $0$ is the identity for addition}\\
-a \cdot 0 &= a \cdot 0 + a \cdot 0 & \mbox { distributive law; subtract $a \cdot 0$}\\
+a \cdot 0 &= a \cdot (0 + 0) & \text{ $0$ is the identity for addition}\\
+a \cdot 0 &= a \cdot 0 + a \cdot 0 & \text { distributive law; subtract $a \cdot 0$}\\
 0 &= a \cdot 0 &\\
 \end{aligned}
 $${#eq:zero-prod-zero}
@@ -270,10 +270,10 @@ This _minimal sufficiency_ is at the heart of why mathematics is so strong. It h
 If you feel that @eq:zero-prod-zero is too much sleight of hand, and you would like something more concrete, you can always console yourself with the convenient but specific example of $5 \times 0$. Here $5$ is the multiplier and $0$ the multiplicand. So, we may write:
 $$
 \begin{aligned}
-5 \times 0 &= 0 + 0 + 0 + 0 + 0; & \mbox{ multiplication is repeated addition}\\
-&= (0 + 0) + (0 + 0) + 0; & \mbox{ addition is a binary operation}\\
-&= (0 + 0) + 0; & \mbox{ $0$ is the additive inverse}\\
-&= 0. & \mbox{ $0$ is the additive inverse}\\
+5 \times 0 &= 0 + 0 + 0 + 0 + 0; & \text{ multiplication is repeated addition}\\
+&= (0 + 0) + (0 + 0) + 0; & \text{ addition is a binary operation}\\
+&= (0 + 0) + 0; & \text{ $0$ is the additive inverse}\\
+&= 0. & \text{ $0$ is the additive inverse}\\
 \end{aligned}
 $$
 And the choice of a whole number made it easy to see the multiplication as repeated addition. What about $0 \times 5$? Because multiplication is commutative, we may assert that $0 \times 5$ is also $0$, without doing any additional work. I hope you are getting to see mathematics as treasure hunt with clues and short cuts that lead to an exciting finale. If you are interested in pursuing these ideas further, please read [this excellent article online](https://medium.com/swlh/why-a-0-0-and-other-proofs-of-the-obvious-da52dd0caefb) [@chodnicki2020].
@@ -291,8 +291,8 @@ To prove @eq:a-minus-b-eq-minus-ab, we use the fact that zero multiplied by any 
 
 $$
 \begin{aligned}
-a \cdot 0 &= a(b + (-b)) & \mbox{ additive inverse}\\
-0 &= ab + a(-b) & \mbox{ distributive law; add $-(ab)$}\\
+a \cdot 0 &= a(b + (-b)) & \text{ additive inverse}\\
+0 &= ab + a(-b) & \text{ distributive law; add $-(ab)$}\\
 -(ab) &= a(-b) &\\
 \end{aligned}
 $${#eq:minusprod-prodminus}
@@ -319,10 +319,10 @@ Let $a > 0, b > 0 \in \mathbb{R}$. Then, both $(-a)$ and $(-b)$ are negative. No
 The scheme we have followed so far is to add something to the object of interest and use the axioms to prove that the sum is zero. The result we are after will then pop out. Let us apply that method again, using the final result fron @eq:minusprod-prodminus:
 $$
 \begin{aligned}
--(ab) + (-a)(-b) &= (a)(-b) + (-a)(-b); & \mbox{ result from previous section}\\
-&= (a + (-a))(-b) & \mbox{ distributive law}\\
-&= (0)(-b) & \mbox{ additive inverse}\\
-&= 0. & \mbox{ zero mutiplied by anything is zero}\\
+-(ab) + (-a)(-b) &= (a)(-b) + (-a)(-b); & \text{ result from previous section}\\
+&= (a + (-a))(-b) & \text{ distributive law}\\
+&= (0)(-b) & \text{ additive inverse}\\
+&= 0. & \text{ zero mutiplied by anything is zero}\\
 \end{aligned}
 $$
 The upshot is that we have $-(ab) + (-a)(-b) = 0$ which means that they are additive inverses. Since the additive inverse of $-(ab)$ is $ab$, we conclude that $(-a)(-b) = ab$ implying that the product of two negative numbers is a positive number. With the axioms to guide us, we can move with the sure-footedness of a mountain goat as we scale the heights and depths of each proof.
@@ -378,7 +378,7 @@ In the course of time, a sandwich number was invented which was composed of the 
 
 The set of complex numbers is denoted by $\mathbb{C}$ and is defined as
 $$
-\mathbb{C} = \{a+bi: a, b, \in \mathbb{R} \mbox{ and } i^2 = -1\}
+\mathbb{C} = \{a+bi: a, b, \in \mathbb{R} \text{ and } i^2 = -1\}
 $$
 In plain English, this means that the set of complex numbers, denoted by $\mathbb{C}$, is defined as all numbers of the form $a + bi$ where $a$ and $b$ are real numbers and $i$, is called the _imaginary unit_ and is the positive of the two roots of the equation $z^2 + 1 = 0.$^[Because $i$ is often associated with current, electrical engineers often use the symbol $j$ instead.]
 
@@ -421,7 +421,7 @@ $$
 \begin{aligned}
 a &= r\cos\theta\\
 ib &= ir\sin\theta\\
-r &= \sqrt{a^2 + b^2} \mbox{ since $\cos^2\theta + \sin^2\theta = 1$ }\\
+r &= \sqrt{a^2 + b^2} \text{ since $\cos^2\theta + \sin^2\theta = 1$ }\\
 \end{aligned}
 $$
 $r$ is called the _modulus_ and $\theta$ the _argument_ form of the complex number. Alternatively, it may be called the _polar_ representation of the complex number.
@@ -434,8 +434,8 @@ If we have two complex numbers $z_{1} = r_{1}e^{i\theta}$ and $z_{2} = r_{2}e^{i
 $$
 \begin{aligned}
 z_{1}z_{2} &= r_{1}e^{i\theta} \cdot r_{2}e^{i\phi}\\
-&= r_{3}e^{i\psi} \mbox{ where }\\
-r_{3} &= r_{1}r_{2} \mbox{ and }\\
+&= r_{3}e^{i\psi} \text{ where }\\
+r_{3} &= r_{1}r_{2} \text{ and }\\
 \psi &= \theta + \phi.
 \end{aligned}
 $${#eq:polarmult}
@@ -745,7 +745,7 @@ What does the dot product mean? What does it signify given that vectors originat
 
 Let us consider a two-dimensional vector $\symbf{u}$ from the origin $O$ to a point $U$ at $(u_{x}, u_{y})$ on the Cartesian plane. Let $OU$ make an angle $\alpha$ with the positive $x$ axis as shown. Then, we have:
 
-1.  By the Theorem of Pythagoras, the magnitude of the vector $\symbf{u}$, denoted by $\lVert\symbf{u}\rVert$, is given by $\sqrt{u_{x}^2 + u_{y}^2}$. The symbol $\lVert\mbox{}\rVert$ denoting a pair of double vertical lines represents the [norm](https://mathworld.wolfram.com/Norm.html) or magnitude of the vector written within it.
+1.  By the Theorem of Pythagoras, the magnitude of the vector $\symbf{u}$, denoted by $\lVert\symbf{u}\rVert$, is given by $\sqrt{u_{x}^2 + u_{y}^2}$. The symbol $\lVert\text{}\rVert$ denoting a pair of double vertical lines represents the [norm](https://mathworld.wolfram.com/Norm.html) or magnitude of the vector written within it.
 
 2.  The magnitudes of the [projections](https://en.wikipedia.org/wiki/Vector_projection) of $\symbf{u}$ in the directions of the $x$ and $y$ axes are respectively
 $$

@@ -11,7 +11,7 @@
 # It has been modified slightly to make the code more closely match the recurrence relation.
 #
 
-function myfib(maxval)
+function fibo(maxval)
     val = 1
     F = [0, val] # assign values to the first two Fibonacci terms
     while val <= maxval
@@ -24,7 +24,7 @@ end
 #
 # Obtain the Fibonacci sequence for all values not exceeding 4 million
 #
-A = myfib(4000000)
+A = fibo(4000000)
 println(A, " ", length(A)) # The length gives the index of the largest admissible Fibonacci number
 
 #
