@@ -98,7 +98,7 @@ Because the syntax of `Julia` is new to me, I will start with trivial scripts th
 
 Let us concatenate the third Fibonacci number to the first two. Obviously, we need a one-dimensional array, or vector, `F` to hold the Fibonacci numbers.
 
-The first two elements of `F` are pre-defined. So, only the third element must be defined by the recurrence relation @eq:recurrence, and added to the _end_ of the array, or _appended_ to it. The [code to do this]({attach}first-three.jl) is:
+The first two elements of `F` are pre-defined. So, only the third element must be defined by the recurrence relation @eq:recurrence, and added to the _end_ of the array, or _appended_ to it. The [code to do this]({attach}auxiliary/first-three.jl) is:
 
 ```julia
 # Append the third Fibonacci number to the Fibonacci array
