@@ -725,15 +725,16 @@ This means that we should be able to get a recurrence relation by
 writing the relationships in terms of the even sequence alone, starting
 from the full Fibonacci sequence. The even-valued terms are three
 positions apart. So, we span seven terms from index \(k\) to index
-\((k+6)\) to get the recurrence relation:
+\((k+6)\) to get the recurrence relation, which has been colour-coded to
+reveal how terms have been expanded and grouped:
 \begin{equation}\protect\hypertarget{eq:even-fibonacci-recurrence}{}{
 \begin{aligned}
 F_{k+6} &= \textcolor{FireBrick}{F_{k+5}} + \textcolor{Teal}{F_{k+4}} \text{ (expand RHS solely in terms of $F_{k+3}$ and $F_{k}$)}\\
 &= \textcolor{FireBrick}{F_{k+4} + F_{k+3}} + \textcolor{Teal}{F_{k+3} + F_{k+2}}\\
-&= \textcolor{FireBrick}{F_{k+3} + F_{k+2}} + F_{k+3} + F_{k+3} + \textcolor{DarkOliveGreen}{F_{k+2}} \text{ (expand $F_{k+2} = F_{k+1} + F_{k}$)}\\
-&= 3F_{k+3} + F_{k+2} + \textcolor[HTML]{946c00}{F_{k+1} + F_{k}}\\
-&= 3F_{k+3} + F_{k+2} + F_{k+1} + F_{k} \text{ (since $F_{k+3} = F_{k+2} + F_{k+1}$)}\\
-&= 3F_{k+3} + F_{k+3} + F_{k}\\
+&= \textcolor{FireBrick}{F_{k+3} + F_{k+2}} + F_{k+3} + F_{k+3} + \textcolor[RGB]{148,108,0}{F_{k+2}} \text{ (expand $F_{k+2} = F_{k+1} + F_{k}$)}\\
+&= 3F_{k+3} + F_{k+2} + \textcolor[RGB]{148,108,0}{F_{k+1} + F_{k}}\\
+&= 3F_{k+3} + \textcolor{Green}{F_{k+2} + F_{k+1}} + F_{k} \text{ (since $F_{k+3} = F_{k+2} + F_{k+1}$)}\\
+&= 3F_{k+3} + \textcolor{Green}{F_{k+3}} + F_{k}\\
 &= 4F_{k+3} + F_{k}\\
 \end{aligned}
 }\label{eq:even-fibonacci-recurrence}\end{equation} If we write
@@ -783,8 +784,8 @@ Observe the following:
 \item
   The expression \texttt{4current} is a
   \href{https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/\#man-numeric-literal-coefficients}{shorthand}
-  for \texttt{4*current} and is yet another aspect of the language that
-  makes its syntax mathematics-friendly and nimble.
+  for \texttt{4\ *\ current} and is yet another aspect of the language
+  that makes its syntax mathematics-friendly and nimble.
 \item
   The \texttt{while} condition need not have parentheses, although I
   have shown it here with them.
