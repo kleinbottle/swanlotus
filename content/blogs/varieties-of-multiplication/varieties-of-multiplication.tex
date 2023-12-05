@@ -166,6 +166,7 @@
 \setmathfont[bold-style=TeX]{STIX Two Math}
 \usepackage{amsmath}
 \usepackage{esdiff} % for derivative symbols
+% \renewcommand{\mathbf}{\symbf}
 %
 %
 % Other fonts
@@ -330,7 +331,7 @@ above: \begin{equation}\protect\hypertarget{eq:multiplier}{}{
 \begin{array}{c c c r}
 4 &\times &3 &= 3 + 3 + 3 + 3 = (3 + 3) + (3 + 3) = 6 + 6 = 12\\
 \uparrow & & \uparrow & \uparrow\\
-\mbox{multiplier} & & \mbox{multiplicand} & \mbox{product}\\
+\text{multiplier} & & \text{multiplicand} & \text{product}\\
 \end{array}
 }\label{eq:multiplier}\end{equation} The number \(4\) is the
 \href{https://www.thefreedictionary.com/multiplier}{multiplier} and the
@@ -359,7 +360,7 @@ whereas in the middle of \cref{eq:comm}, \(3\) is the multiplier and
 \begin{array}{c c c r}
 3 &\times &4 &= 4 + 4 + 4 = (4 +4) + 4 = 4 + (4 + 4) = 12\\
 \uparrow & & \uparrow & \uparrow\\
-\mbox{multiplier} & & \mbox{multiplicand} & \mbox{product}\\
+\text{multiplier} & & \text{multiplicand} & \text{product}\\
 \end{array}
 }\label{eq:multiplicand}\end{equation} Although the two numbers have
 changed their names and roles from \cref{eq:multiplier} to
@@ -690,8 +691,8 @@ the Web from reputable sites whose links are listed below:
   Multiplication is distributive over addition. For completeness, we
   define \[
   \begin{array}{l  l}
-  \mbox{Left Distributivity} & a(b+c)=ab+ac\\
-  \mbox{Right Distributivity} & (a+b)c=ac+bc\\
+  \text{Left Distributivity} & a(b+c)=ab+ac\\
+  \text{Right Distributivity} & (a+b)c=ac+bc\\
   \end{array}
   \] In our case, both conditions hold, and we may simply say that
   \emph{multiplication is distributive over addition for the reals}.
@@ -801,7 +802,7 @@ We next consider the multiplicative identity and inverse in
 The
 \href{https://mathworld.wolfram.com/MultiplicativeInverse.html}{multiplicative
 inverse} for arbitrary \(a \in \mathbb{R}\) is defined as
-\(\frac{1}{a} \mbox{ for } a \ne 0\). Why the exclusion of zero? Let us
+\(\frac{1}{a} \text{ for } a \ne 0\). Why the exclusion of zero? Let us
 look for a graphical reason.
 
 If we plot \(x\) against its multiplicative inverse \(\frac{1}{x}\), we
@@ -859,7 +860,7 @@ adding the additive inverse of \(b\) to \(a\). So, \[
 a - b = a + (-b)
 \] Likewise, dividing \(a\) by \(b \ne 0\) amounts to multiplying \(a\)
 by the multiplicative inverse of \(b\) which equals \(\frac{1}{b}\): \[
-a \div b = a \times \frac{1}{b} = \frac{a}{b} \mbox{ for } b \ne 0.
+a \div b = a \times \frac{1}{b} = \frac{a}{b} \text{ for } b \ne 0.
 \]
 
 \hypertarget{multiplying-any-number-by-zero-always-gives-zero}{%
@@ -875,8 +876,8 @@ Consider an arbitrary number \(a \in \mathbb{R}\). Recall also that
 because \(0\) is the additive identity, \(0 + 0 = 0\). We may then claim
 that \begin{equation}\protect\hypertarget{eq:zero-prod-zero}{}{
 \begin{aligned}
-a \cdot 0 &= a \cdot (0 + 0) & \mbox{ $0$ is the identity for addition}\\
-a \cdot 0 &= a \cdot 0 + a \cdot 0 & \mbox { distributive law; subtract $a \cdot 0$}\\
+a \cdot 0 &= a \cdot (0 + 0) & \text{ $0$ is the identity for addition}\\
+a \cdot 0 &= a \cdot 0 + a \cdot 0 & \text { distributive law; subtract $a \cdot 0$}\\
 0 &= a \cdot 0 &\\
 \end{aligned}
 }\label{eq:zero-prod-zero}\end{equation} Note that if we take \(a = 0\),
@@ -903,10 +904,10 @@ yourself with the convenient but specific example of \(5 \times 0\).
 Here \(5\) is the multiplier and \(0\) the multiplicand. So, we may
 write: \[
 \begin{aligned}
-5 \times 0 &= 0 + 0 + 0 + 0 + 0; & \mbox{ multiplication is repeated addition}\\
-&= (0 + 0) + (0 + 0) + 0; & \mbox{ addition is a binary operation}\\
-&= (0 + 0) + 0; & \mbox{ $0$ is the additive inverse}\\
-&= 0. & \mbox{ $0$ is the additive inverse}\\
+5 \times 0 &= 0 + 0 + 0 + 0 + 0; & \text{ multiplication is repeated addition}\\
+&= (0 + 0) + (0 + 0) + 0; & \text{ addition is a binary operation}\\
+&= (0 + 0) + 0; & \text{ $0$ is the additive inverse}\\
+&= 0. & \text{ $0$ is the additive inverse}\\
 \end{aligned}
 \] And the choice of a whole number made it easy to see the
 multiplication as repeated addition. What about \(0 \times 5\)? Because
@@ -943,8 +944,8 @@ any number is zero, as shown in \cref{eq:zero-prod-zero}.
 
 \begin{equation}\protect\hypertarget{eq:minusprod-prodminus}{}{
 \begin{aligned}
-a \cdot 0 &= a(b + (-b)) & \mbox{ additive inverse}\\
-0 &= ab + a(-b) & \mbox{ distributive law; add $-(ab)$}\\
+a \cdot 0 &= a(b + (-b)) & \text{ additive inverse}\\
+0 &= ab + a(-b) & \text{ distributive law; add $-(ab)$}\\
 -(ab) &= a(-b) &\\
 \end{aligned}
 }\label{eq:minusprod-prodminus}\end{equation}
@@ -988,10 +989,10 @@ interest and use the axioms to prove that the sum is zero. The result we
 are after will then pop out. Let us apply that method again, using the
 final result fron \cref{eq:minusprod-prodminus}: \[
 \begin{aligned}
--(ab) + (-a)(-b) &= (a)(-b) + (-a)(-b); & \mbox{ result from previous section}\\
-&= (a + (-a))(-b) & \mbox{ distributive law}\\
-&= (0)(-b) & \mbox{ additive inverse}\\
-&= 0. & \mbox{ zero mutiplied by anything is zero}\\
+-(ab) + (-a)(-b) &= (a)(-b) + (-a)(-b); & \text{ result from previous section}\\
+&= (a + (-a))(-b) & \text{ distributive law}\\
+&= (0)(-b) & \text{ additive inverse}\\
+&= 0. & \text{ zero mutiplied by anything is zero}\\
 \end{aligned}
 \] The upshot is that we have \(-(ab) + (-a)(-b) = 0\) which means that
 they are additive inverses. Since the additive inverse of \(-(ab)\) is
@@ -1129,7 +1130,7 @@ numbers of everyday life.
 
 The set of complex numbers is denoted by \(\mathbb{C}\) and is defined
 as \[
-\mathbb{C} = \{a+bi: a, b, \in \mathbb{R} \mbox{ and } i^2 = -1\}
+\mathbb{C} = \{a+bi: a, b, \in \mathbb{R} \text{ and } i^2 = -1\}
 \] In plain English, this means that the set of complex numbers, denoted
 by \(\mathbb{C}\), is defined as all numbers of the form \(a + bi\)
 where \(a\) and \(b\) are real numbers and \(i\), is called the
@@ -1215,7 +1216,7 @@ Referring to \cref{fig:complex-unit-circle}, we may say: \[
 \begin{aligned}
 a &= r\cos\theta\\
 ib &= ir\sin\theta\\
-r &= \sqrt{a^2 + b^2} \mbox{ since $\cos^2\theta + \sin^2\theta = 1$ }\\
+r &= \sqrt{a^2 + b^2} \text{ since $\cos^2\theta + \sin^2\theta = 1$ }\\
 \end{aligned}
 \] \(r\) is called the \emph{modulus} and \(\theta\) the \emph{argument}
 form of the complex number. Alternatively, it may be called the
@@ -1243,8 +1244,8 @@ arguments, as illustrated in \cref{fig:polarmult}. This means:
 \begin{equation}\protect\hypertarget{eq:polarmult}{}{
 \begin{aligned}
 z_{1}z_{2} &= r_{1}e^{i\theta} \cdot r_{2}e^{i\phi}\\
-&= r_{3}e^{i\psi} \mbox{ where }\\
-r_{3} &= r_{1}r_{2} \mbox{ and }\\
+&= r_{3}e^{i\psi} \text{ where }\\
+r_{3} &= r_{1}r_{2} \text{ and }\\
 \psi &= \theta + \phi.
 \end{aligned}
 }\label{eq:polarmult}\end{equation}
@@ -1383,25 +1384,25 @@ tips:
 \begin{enumerate}
 \tightlist
 \item
-  \(\symbf{u}\) : the vector from \(O\) to the point \((8, 4);\)
+  \(\mathbf{u}\) : the vector from \(O\) to the point \((8, 4);\)
 \item
-  \(\symbf{v}\) : the vector from \(O\) to the point \((2, 6);\) and
+  \(\mathbf{v}\) : the vector from \(O\) to the point \((2, 6);\) and
 \item
-  \(\symbf{w}\) : the vector from \(O\) to the point \((10, 10)\).
+  \(\mathbf{w}\) : the vector from \(O\) to the point \((10, 10)\).
 \end{enumerate}
 
 The dotted grey lines indicate the two sides of the parallelogram that
-we draw to close the figure. The vector \(\symbf{w}\) is the diagonal
-that represents the sum of \(\symbf{u}\) and \(\symbf{v}\). This sum is
-written as \[
-\symbf{u} + \symbf{v} = \symbf{w}
+we draw to close the figure. The vector \(\mathbf{w}\) is the diagonal
+that represents the sum of \(\mathbf{u}\) and \(\mathbf{v}\). This sum
+is written as \[
+\mathbf{u} + \mathbf{v} = \mathbf{w}
 \] If you look at the illustration carefully, you would note that if we
-added the first co-ordinate of \(\symbf{u}\) and the first co-ordinate
-of \(\symbf{v}\) we get the first co-ordinate of \(\symbf{w}\). And
+added the first co-ordinate of \(\mathbf{u}\) and the first co-ordinate
+of \(\mathbf{v}\) we get the first co-ordinate of \(\mathbf{w}\). And
 likewise for the second co-ordinate.
 
-So, we may represent the addition of \(\symbf{u}\) and \(\symbf{v}\) as
-\emph{row} vectors, so \[
+So, we may represent the addition of \(\mathbf{u}\) and \(\mathbf{v}\)
+as \emph{row} vectors, so \[
 (8, 4) + (2, 6) = ((8+2), (4+6)) = (10, 10)
 \] Likewise, we could treat the vectors as \emph{column} vectors, and
 write, equally correctly, as: \[
@@ -1413,8 +1414,8 @@ write, equally correctly, as: \[
 \] This is no accident. Nor is it a special case. It works for all
 parallelograms.\footnote{I leave it to you to convince yourself of this.
   (Hint: use graph paper, draw the co-ordinate axes, and use algebraic
-  variables for the co-ordinates of \(\symbf{u}\), \(\symbf{v}\), and
-  \(\symbf{w}\).)}
+  variables for the co-ordinates of \(\mathbf{u}\), \(\mathbf{v}\), and
+  \(\mathbf{w}\).)}
 
 The parallelogram law is a geometric statement of what happens when we
 add two ordered pairs the way we would two complex numbers: \[
@@ -1579,15 +1580,15 @@ multiplication at play. We are magnifying or diminishing the magnitude
 of the vector by multiplying it with a scalar, while the direction of
 the vector is either reversed or remains unchanged.
 
-If we have a vector \(\symbf{u}\) and we multiply it by a scalar \(k\)
-the result is the vector \(k\symbf{u}\). This may be easily visualized
-geometrically. If we associate \(\symbf{u}\) with an arbitrary
+If we have a vector \(\mathbf{u}\) and we multiply it by a scalar \(k\)
+the result is the vector \(k\mathbf{u}\). This may be easily visualized
+geometrically. If we associate \(\mathbf{u}\) with an arbitrary
 four-dimensional column vector, we may write \[
-\symbf{u} = \begin{bmatrix}a\\b\\c\\d\\\end{bmatrix}
+\mathbf{u} = \begin{bmatrix}a\\b\\c\\d\\\end{bmatrix}
 \]
 
-Multiplication of \(\symbf{u}\) by a real scalar \(k\) gives us \[
-k\symbf{u} = k\begin{bmatrix}a\\b\\c\\d\\\end{bmatrix} = \begin{bmatrix}ka\\kb\\kc\\kd\\\end{bmatrix}
+Multiplication of \(\mathbf{u}\) by a real scalar \(k\) gives us \[
+k\mathbf{u} = k\begin{bmatrix}a\\b\\c\\d\\\end{bmatrix} = \begin{bmatrix}ka\\kb\\kc\\kd\\\end{bmatrix}
 \]
 
 When we multiply a vector by a scalar \(k\), each component of the
@@ -1712,11 +1713,11 @@ any two arbitrary vectors.
 \subsection{Example of dot product}\label{example-of-dot-product}}
 
 It is helpful to begin with a concrete example. Let
-\(\symbf{u}^{T} = \begin{bmatrix}1&2&3&4\\\end{bmatrix}\) and let
-\(\symbf{v}^{T} = \begin{bmatrix}5&6&7&8\\\end{bmatrix}\). Their dot
+\(\mathbf{u}^{T} = \begin{bmatrix}1&2&3&4\\\end{bmatrix}\) and let
+\(\mathbf{v}^{T} = \begin{bmatrix}5&6&7&8\\\end{bmatrix}\). Their dot
 product is written as: \[
 \begin{aligned}
-\symbf{u}^{T}\cdot\symbf{v} &= \begin{bmatrix}1&2&3&4\\\end{bmatrix} \cdot \begin{bmatrix} 5\\6\\7\\8\\ \end{bmatrix}\\
+\mathbf{u}^{T}\cdot\mathbf{v} &= \begin{bmatrix}1&2&3&4\\\end{bmatrix} \cdot \begin{bmatrix} 5\\6\\7\\8\\ \end{bmatrix}\\
 &= (1)(5) + (2)(6) + (3)(7) + (4)(8)\\
 &= 5 + 12 + 21 + 32\\
 &= 70
@@ -1727,8 +1728,8 @@ If you look at the dot product carefully, you will see the following:
 
 \begin{enumerate}
 \item
-  the first component of \(\symbf{u}\) is multiplied by the first
-  component of \(\symbf{v}\) and likewise for the other components;
+  the first component of \(\mathbf{u}\) is multiplied by the first
+  component of \(\mathbf{v}\) and likewise for the other components;
 \item
   the individual products are then added together; and
 \item
@@ -1746,8 +1747,8 @@ the term dot product to avoid confusion with multiplication by a scalar.
 It is easy to verify by direct evaluation that the dot product is
 {[}commutative{]}{[}commutative{]} and therefore symmetrical. Verify if
 you please that
-\(\symbf{u}^{T}\cdot\symbf{v} = \symbf{v}^{T}\cdot\symbf{u}\) for the
-above case.
+\(\mathbf{u}^{T}\cdot\mathbf{v} = \mathbf{v}^{T}\cdot\mathbf{u}\) for
+the above case.
 
 Why did we need to write the dot product as being between a row vector
 and a column vector? One reason is that the product of a column vector
@@ -1763,25 +1764,25 @@ multiplication} as explained later.
 formula}\label{general-case-and-formula}}
 
 These results for the dot product may be generalized by taking
-\(\symbf{u}\) and \(\symbf{v}\) to be arbitrary \(n\)-dimensional
+\(\mathbf{u}\) and \(\mathbf{v}\) to be arbitrary \(n\)-dimensional
 vectors whose components may be referred to by the \emph{subscripts}
 \(1\) to \(n\).
 
 It is conventional to write the vector itself in boldface as
-\(\symbf{u}\) or with an arrow on top as \(\vec{u}\) (or using some
+\(\mathbf{u}\) or with an arrow on top as \(\vec{u}\) (or using some
 other mark of distinction when written by hand or printed) whereas the
 individual components are always written normally. They are after all
 scalars. \[
 \begin{aligned}
-\symbf{u}^{T} &= \begin{bmatrix}u_{1} & u_{2} &  \cdots & u_{n}\\\end{bmatrix}\\
-\symbf{v} &= \begin{bmatrix}v_{1} \\ v_{2} \\ \vdots \\ v_{n}\\\end{bmatrix}\\
-\symbf{u}^{T}\cdot\symbf{v} &= u_{1}v_{1} + u_{2}v_{2} + \cdots + u_{n}v_{n}\\
+\mathbf{u}^{T} &= \begin{bmatrix}u_{1} & u_{2} &  \cdots & u_{n}\\\end{bmatrix}\\
+\mathbf{v} &= \begin{bmatrix}v_{1} \\ v_{2} \\ \vdots \\ v_{n}\\\end{bmatrix}\\
+\mathbf{u}^{T}\cdot\mathbf{v} &= u_{1}v_{1} + u_{2}v_{2} + \cdots + u_{n}v_{n}\\
 &= \sum_{i=1}^{n} u_{i}v_{i}
 \end{aligned}
 \]
 
-Observe that the vector \(\symbf{u}^{T}\) is a \(1 \times n\) vector
-whereas \(\symbf{v}\) is an \(n \times 1\) vector. Their dot
+Observe that the vector \(\mathbf{u}^{T}\) is a \(1 \times n\) vector
+whereas \(\mathbf{v}\) is an \(n \times 1\) vector. Their dot
 product---between a \(1 \times n\) vector and an \(n \times 1\)
 vector---yields a \(1 \times 1\) ``vector'' which is really a scalar. In
 a manner of speaking, we may ``cancel out'' the two inner dimensions
@@ -1813,11 +1814,11 @@ bit of trigonometry on the way.\footnote{Which you might have to take on
 \includesvg[width=0.6\textwidth,height=\textheight]{images/projection.svg}
 \caption{Vector components as values of projections on the orthogonal
 axes \(x\) and \(y\) for a two-dimensional vector
-\(\symbf{u}\).}\label{fig:projection}
+\(\mathbf{u}\).}\label{fig:projection}
 }
 \end{figure}
 
-Let us consider a two-dimensional vector \(\symbf{u}\) from the origin
+Let us consider a two-dimensional vector \(\mathbf{u}\) from the origin
 \(O\) to a point \(U\) at \((u_{x}, u_{y})\) on the Cartesian plane. Let
 \(OU\) make an angle \(\alpha\) with the positive \(x\) axis as shown.
 Then, we have:
@@ -1826,20 +1827,20 @@ Then, we have:
 \def\labelenumi{\arabic{enumi}.}
 \item
   By the Theorem of Pythagoras, the magnitude of the vector
-  \(\symbf{u}\), denoted by \(\lVert\symbf{u}\rVert\), is given by
-  \(\sqrt{u_{x}^2 + u_{y}^2}\). The symbol \(\lVert\mbox{}\rVert\)
+  \(\mathbf{u}\), denoted by \(\lVert\mathbf{u}\rVert\), is given by
+  \(\sqrt{u_{x}^2 + u_{y}^2}\). The symbol \(\lVert\text{}\rVert\)
   denoting a pair of double vertical lines represents the
   \href{https://mathworld.wolfram.com/Norm.html}{norm} or magnitude of
   the vector written within it.
 \item
   The magnitudes of the
   \href{https://en.wikipedia.org/wiki/Vector_projection}{projections} of
-  \(\symbf{u}\) in the directions of the \(x\) and \(y\) axes are
+  \(\mathbf{u}\) in the directions of the \(x\) and \(y\) axes are
   respectively \[
   \begin{aligned}
-  u_{x} &= \lVert\symbf{u}\rVert\cos\alpha\\
-  u_{y} &= \lVert\symbf{u}\rVert\sin\alpha\\
-  &= \lVert\symbf{u}\rVert\cos(90°-\alpha)\\
+  u_{x} &= \lVert\mathbf{u}\rVert\cos\alpha\\
+  u_{y} &= \lVert\mathbf{u}\rVert\sin\alpha\\
+  &= \lVert\mathbf{u}\rVert\cos(90°-\alpha)\\
   \end{aligned}
   \]
 \end{enumerate}
@@ -1849,7 +1850,7 @@ direction is equal the magnitude of the vector multiplied by the
 \emph{cosine} of the angle made by the vector with \emph{that}
 direction.
 
-We could make similar claims for a vector \(\symbf{v}\) at
+We could make similar claims for a vector \(\mathbf{v}\) at
 \((v_{x}, v_{y})\) that makes an angle \(\beta\) with the positive \(x\)
 axis.
 
@@ -1857,11 +1858,11 @@ Let the angle between the two vectors be denoted by
 \(\alpha - \beta = \theta\). The dot product of the two vectors may then
 be written as: \[
 \begin{aligned}
-\symbf{u} \cdot \symbf{v} &= u_{x}v_{x} + u_{y}v_{y}\\
-&= \lVert\symbf{u}\rVert\cos\alpha\lVert\symbf{v}\rVert\cos\beta + \lVert\symbf{u}\rVert\sin\alpha\lVert\symbf{v}\rVert\sin\beta\\
-&= \lVert\symbf{u}\rVert\lVert\symbf{v}\rVert(\cos\alpha\cos\beta + \sin\alpha\sin\beta)\\
-&= \lVert\symbf{u}\rVert\lVert\symbf{v}\rVert\cos(\alpha - \beta)\\
-&= \lVert\symbf{u}\rVert\lVert\symbf{v}\rVert\cos\theta\\
+\mathbf{u} \cdot \mathbf{v} &= u_{x}v_{x} + u_{y}v_{y}\\
+&= \lVert\mathbf{u}\rVert\cos\alpha\lVert\mathbf{v}\rVert\cos\beta + \lVert\mathbf{u}\rVert\sin\alpha\lVert\mathbf{v}\rVert\sin\beta\\
+&= \lVert\mathbf{u}\rVert\lVert\mathbf{v}\rVert(\cos\alpha\cos\beta + \sin\alpha\sin\beta)\\
+&= \lVert\mathbf{u}\rVert\lVert\mathbf{v}\rVert\cos(\alpha - \beta)\\
+&= \lVert\mathbf{u}\rVert\lVert\mathbf{v}\rVert\cos\theta\\
 \end{aligned}
 \]
 
@@ -1869,8 +1870,8 @@ be written as: \[
 \hypertarget{fig:dot-product}{%
 \centering
 \includesvg[width=0.65\textwidth,height=\textheight]{images/dot-product.svg}
-\caption{Dot product of two vectors, \(\symbf{u}\) and
-\(\symbf{v}\).}\label{fig:dot-product}
+\caption{Dot product of two vectors, \(\mathbf{u}\) and
+\(\mathbf{v}\).}\label{fig:dot-product}
 }
 \end{figure}
 
@@ -1895,9 +1896,9 @@ multiplicative fashion.
 For example,
 \href{https://en.wikipedia.org/wiki/Work_\%28physics\%29}{mechanical
 work} \(W\) is a scalar defined as the dot product of the vector
-representing force \(\symbf{F}\) and the vector representing
-displacement \(\symbf{s}\) through the equation
-\(W = \symbf{F}\cdot\symbf{s}\). Alternatively, work is the projection
+representing force \(\mathbf{F}\) and the vector representing
+displacement \(\mathbf{s}\) through the equation
+\(W = \mathbf{F}\cdot\mathbf{s}\). Alternatively, work is the projection
 of the force in the direction of the displacement, multiplied by the
 displacement. Both definitions are equivalent.
 
@@ -1979,10 +1980,11 @@ To recapitulate, the cosine of an angle is \(1\) at zero degrees and
 perpendicular, or at ninety degrees---to each other, their dot product
 is zero.
 
-For example, a force vector \(\symbf{F}\) has no effect perpendicular to
-the direction in which it acts, and this is because its \emph{component}
-or \href{https://en.wikipedia.org/wiki/Vector_projection}{projection} in
-that direction is \(\lVert\symbf{F}\rVert\cos 90° = 0\).
+For example, a force vector \(\mathbf{F}\) has no effect perpendicular
+to the direction in which it acts, and this is because its
+\emph{component} or
+\href{https://en.wikipedia.org/wiki/Vector_projection}{projection} in
+that direction is \(\lVert\mathbf{F}\rVert\cos 90° = 0\).
 
 The dot product therefore measures the \emph{degree of alignment} or
 \emph{similarity} between two vectors. When the angle between them is
@@ -2020,7 +2022,7 @@ between the two vectors. In addition, just as in the dot product,
 orthogonality peeps at us again through the cross product.
 
 We will consider three-dimensional vectors. Any pair of
-three-dimensional vectors \(\symbf{u}\) and \(\symbf{v}\) between them
+three-dimensional vectors \(\mathbf{u}\) and \(\mathbf{v}\) between them
 define a two-dimensional plane. Just think of two rulers arranged in any
 orientation on a flat table to visualize and understand why.
 
@@ -2035,8 +2037,8 @@ directions.
 
 We are now ready to define the cross product as \[
 \begin{aligned}
-\symbf{w} &= \symbf{u} \times \symbf{v}\\
-&\triangleq (\lVert\symbf{u}\rVert \lVert\symbf{v}\rVert \sin \theta) \thinspace \symbf{n}
+\mathbf{w} &= \mathbf{u} \times \mathbf{v}\\
+&\triangleq (\lVert\mathbf{u}\rVert \lVert\mathbf{v}\rVert \sin \theta) \thinspace \mathbf{n}
 \end{aligned}
 \]
 
@@ -2044,44 +2046,44 @@ We are now ready to define the cross product as \[
 \hypertarget{fig:cross-product}{%
 \centering
 \includesvg[width=0.65\textwidth,height=\textheight]{images/cross-product.svg}
-\caption{The cross product of two vectors, \(\symbf{u}\) and
-\(\symbf{v}\) is given by \(\symbf{w}\). The direction of the angle
-\(\theta\) is from \(\symbf{u}\) to \(\symbf{v}\). By the right-hand
-rule, \(\symbf{w}\) is positive in the direction of its
+\caption{The cross product of two vectors, \(\mathbf{u}\) and
+\(\mathbf{v}\) is given by \(\mathbf{w}\). The direction of the angle
+\(\theta\) is from \(\mathbf{u}\) to \(\mathbf{v}\). By the right-hand
+rule, \(\mathbf{w}\) is positive in the direction of its
 arrow.}\label{fig:cross-product}
 }
 \end{figure}
 
-Both the vectors \(\symbf{u}\) and \(\symbf{v}\) point outward from the
-same origin \(O\). The cross product vector \(\symbf{w}\) is
-perpendicular or orthogonal to \emph{both} \(\symbf{u}\) and
-\(\symbf{v}\) and again points outward from the same origin \(O\).
+Both the vectors \(\mathbf{u}\) and \(\mathbf{v}\) point outward from
+the same origin \(O\). The cross product vector \(\mathbf{w}\) is
+perpendicular or orthogonal to \emph{both} \(\mathbf{u}\) and
+\(\mathbf{v}\) and again points outward from the same origin \(O\).
 
 The expression
-\((\lVert\symbf{u}\rVert \lVert\symbf{v}\rVert \sin \theta)\) is a
-scalar. \(\symbf{n}\) is a
+\((\lVert\mathbf{u}\rVert \lVert\mathbf{v}\rVert \sin \theta)\) is a
+scalar. \(\mathbf{n}\) is a
 \href{http://mathworld.wolfram.com/UnitVector.html}{\emph{unit vector}}
-perpendicular to both \(\symbf{u}\) and \(\symbf{v}\) with a magnitude
+perpendicular to both \(\mathbf{u}\) and \(\mathbf{v}\) with a magnitude
 of one. Its direction can only be one of two as we have seen. To
 determine which, we use a convention called the
 \href{http://mathworld.wolfram.com/Right-HandRule.html}{right-hand rule}
 or \href{http://en.wikipedia.org/wiki/Right-hand_rule}{right hand
 corkscrew rule.}
 
-Imagine that you are rotating a corkscrew starting at \(\symbf{u}\) and
-moving toward \(\symbf{v}\). The direction in which the corkscrew
+Imagine that you are rotating a corkscrew starting at \(\mathbf{u}\) and
+moving toward \(\mathbf{v}\). The direction in which the corkscrew
 advances is the positive direction for the unit vector
-\(\symbf{n}\).\footnote{This is a convenient mathematical convention
+\(\mathbf{n}\).\footnote{This is a convenient mathematical convention
   which is also in accord with actual physical situations.}
 
 Since the corkscrew would then move \emph{upwards,} that is the
-direction of both \(\symbf{w}\) and \(\symbf{n}\). The sole purpose of
-\(\symbf{n}\) is to indicate the direction of \(\symbf{w}\) as
-determined by the right-hand rule. The letter \(\symbf{n}\) is used to
+direction of both \(\mathbf{w}\) and \(\mathbf{n}\). The sole purpose of
+\(\mathbf{n}\) is to indicate the direction of \(\mathbf{w}\) as
+determined by the right-hand rule. The letter \(\mathbf{n}\) is used to
 indicate that it is \emph{normal} or \emph{perpendicular} to the plane.
-The only purpose of \(\symbf{n}\) is to denote the \emph{direction} of
-\(\symbf{w}\). Being a \emph{unit vector}, the magnitude of
-\(\symbf{n}\) is \(\lVert\symbf n\rVert = 1\).
+The only purpose of \(\mathbf{n}\) is to denote the \emph{direction} of
+\(\mathbf{w}\). Being a \emph{unit vector}, the magnitude of
+\(\mathbf{n}\) is \(\lVert\mathbf n\rVert = 1\).
 
 In the cross product, we have just met the \(\times\) sign for
 multiplication again, but so far afield from its original use and
@@ -2092,11 +2094,11 @@ completely different meanings.
 \hypertarget{anti-commutativity}{%
 \subsection{Anti-commutativity}\label{anti-commutativity}}
 
-If we were to compute \(\symbf{v} \times \symbf{u}\) we would turn the
-right-handed corkscrew from \(\symbf{v}\) to \(\symbf{u}\) and the
+If we were to compute \(\mathbf{v} \times \mathbf{u}\) we would turn the
+right-handed corkscrew from \(\mathbf{v}\) to \(\mathbf{u}\) and the
 cross-product vector would then point \emph{downwards.} Its magnitude
 would however be the same as before. We therefore write: \[
-\symbf{v} \times \symbf{u} = - (\symbf{u} \times \symbf{v})
+\mathbf{v} \times \mathbf{u} = - (\mathbf{u} \times \mathbf{v})
 \] The cross product is said to be
 \href{https://mathworld.wolfram.com/Anticommutative.html}{anti-commutative}.
 This means that if we reverse the order of the operands, there is a
@@ -2112,7 +2114,7 @@ Like the dot product, the cross product owes its ubiquity to its
 usefulness in physics. For example, the
 \href{https://en.wikipedia.org/wiki/Torque}{torque} vector
 \(\symbf{\tau}\)\footnote{Pronounced tau.} is defined by
-\(\symbf{\tau} = \symbf{r}\times\symbf{F}\). Torque is what makes the
+\(\symbf{\tau} = \mathbf{r}\times\mathbf{F}\). Torque is what makes the
 wheels of a car rotate. Visit
 \href{https://en.wikipedia.org/wiki/Torque}{this page} to see an
 animation and explanation of what the term ``torque'' means. The cross
@@ -2200,12 +2202,12 @@ and their meaning in this context.
 \subsection{The outer product is
 non-commutative}\label{the-outer-product-is-non-commutative}}
 
-The outer product is not commutative. To see why, consider \(\symbf{u}\)
-as an \(m \times 1\) column vector and \(\symbf{v}^{T}\) as a
-\(1 \times n\) row vector. Then, \(\symbf{u} \otimes \symbf{v}^{T}\)
-gives an \(m \times n\) matrix. But \(\symbf{v} \otimes \symbf{u}^{T}\)
-gives an \(n \times m\) matrix. The two are obviously not constrained to
-be equal.
+The outer product is not commutative. To see why, consider
+\(\mathbf{u}\) as an \(m \times 1\) column vector and \(\mathbf{v}^{T}\)
+as a \(1 \times n\) row vector. Then,
+\(\mathbf{u} \otimes \mathbf{v}^{T}\) gives an \(m \times n\) matrix.
+But \(\mathbf{v} \otimes \mathbf{u}^{T}\) gives an \(n \times m\)
+matrix. The two are obviously not constrained to be equal.
 
 \hypertarget{applications-of-the-outer-product}{%
 \subsection{Applications of the outer

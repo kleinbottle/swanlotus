@@ -262,8 +262,8 @@ $$
 \begin{aligned}
 F_{k+6} &= \textcolor{FireBrick}{F_{k+5}} + \textcolor{Teal}{F_{k+4}} \text{ (expand RHS solely in terms of $F_{k+3}$ and $F_{k}$)}\\
 &= \textcolor{FireBrick}{F_{k+4} + F_{k+3}} + \textcolor{Teal}{F_{k+3} + F_{k+2}}\\
-&= \textcolor{FireBrick}{F_{k+3} + F_{k+2}} + F_{k+3} + F_{k+3} + \textcolor[RGB]{148,108,0}{F_{k+2}} \text{ (expand $F_{k+2} = F_{k+1} + F_{k}$)}\\
-&= 3F_{k+3} + F_{k+2} + \textcolor[RGB]{148,108,0}{F_{k+1} + F_{k}}\\
+&= \textcolor{FireBrick}{F_{k+3} + F_{k+2}} + F_{k+3} + F_{k+3} + \textcolor{Sienna}{F_{k+2}} \text{ (expand $F_{k+2} = F_{k+1} + F_{k}$)}\\
+&= 3F_{k+3} + F_{k+2} + \textcolor{Sienna}{F_{k+1} + F_{k}}\\
 &= 3F_{k+3} + \textcolor{Green}{F_{k+2} + F_{k+1}} + F_{k} \text{ (since $F_{k+3} = F_{k+2} + F_{k+1}$)}\\
 &= 3F_{k+3} + \textcolor{Green}{F_{k+3}} + F_{k}\\
 &= 4F_{k+3} + F_{k}\\
