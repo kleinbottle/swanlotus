@@ -128,6 +128,7 @@
 %
 \usepackage{hyperref} % cleveref must come AFTER hyperref
 \usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
+% \usepackage{longdivision}
 % noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
@@ -165,6 +166,7 @@
 \setmathfont[bold-style=TeX]{STIX Two Math}
 \usepackage{amsmath}
 \usepackage{esdiff} % for derivative symbols
+% \renewcommand{\mathbf}{\symbf}
 %
 %
 % Other fonts
@@ -182,6 +184,9 @@
     \fancyhead[LO,RE]{\scshape\thetitle}
     \fancyfoot[CO,CE]{\footnotesize Copyright © 2006\textendash\the\year, R (Chandra) Chandrasekhar}
     \fancyfoot[RE,RO]{\thepage}
+%
+\usepackage{newunicodechar}
+\newunicodechar{√}{\textsf{√}}
 \newfontfamily{\regulariconfont}{Font Awesome 6 Free Regular}[Color=Grey]
 \newfontfamily{\solidiconfont}{Font Awesome 6 Free Solid}[Color=Grey]
 \newfontfamily{\brandsiconfont}{Font Awesome 6 Brands}[Color=Grey]
@@ -528,7 +533,7 @@ disappeared, leaving me only with my self-made ripples.
 
 I thought of each swimmer metaphorically as a thought, and when I was
 alone in the pool, I represented the last thought. The extinguishing of
-that last thought in \_nirvana\_or \emph{samadhi} would be a fearful
+that last thought in \emph{nirvana} or \emph{samadhi} would be a fearful
 experience because it would shake the very foundations of the self we
 are. We would be swallowed up by the immensity of the Void, or the pool
 in this case.

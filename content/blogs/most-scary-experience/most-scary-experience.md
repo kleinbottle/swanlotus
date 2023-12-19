@@ -102,7 +102,7 @@ I thought of my own experience at a swimming pool late one night. It was half an
 
 It was comforting to be in the pool when others were also swimming because they churned the water enough to make those mesmerizing ripples of light on the pool floor. But when I was swimming solo in the pool, I felt a cold wave of fear. The friendly ubiquitous patterns of light had disappeared, leaving me only with my self-made ripples.
 
-I thought of each swimmer metaphorically as a thought, and when I was alone in the pool, I represented the last thought. The extinguishing of that last thought in _nirvana_or _samadhi_ would be a fearful experience because it would shake the very foundations of the self we are. We would be swallowed up by the immensity of the Void, or the pool in this case.
+I thought of each swimmer metaphorically as a thought, and when I was alone in the pool, I represented the last thought. The extinguishing of that last thought in _nirvana_ or _samadhi_ would be a fearful experience because it would shake the very foundations of the self we are. We would be swallowed up by the immensity of the Void, or the pool in this case.
 
 I determined that I would bring up the Void when I next met Sol to resume our discussion on the most scary experience.
 

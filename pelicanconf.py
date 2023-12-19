@@ -54,7 +54,7 @@ IGNORE_FILES = ["blank-template.bib", "blog-template.md"]
 
 PATH = "content"
 ARTICLE_PATHS = [
-    "blogs/"
+    "blogs/open-secrets"
 ]
 
 ARTICLE_SAVE_AS = ARTICLE_LANG_SAVE_AS = "blogs/{slug}.html"

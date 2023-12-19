@@ -1,4 +1,4 @@
-// MathJax configiuration options
+// MathJax configuration options
 window.MathJax = {
     chtml: {
         scale: 0.91 // Hand-tweaked for Noto Serif and STIX2
