@@ -301,3 +301,15 @@ Are the numerator and the denominator of a convergent of a continued fraction al
 https://math.stackexchange.com/questions/1493902/are-the-numerator-and-the-denominator-of-a-convergent-of-a-continued-fraction-al
 
 https://math.stackexchange.com/questions/1493902/are-the-numerator-and-the-denominator-of-a-convergent-of-a-continued-fraction-al
+
+https://math.stackexchange.com/questions/4112417/continued-fraction-representation-of-quadratic-irrationals
+
+https://r-knott.surrey.ac.uk/Fibonacci/cfINTRO.html
+
+https://math.stackexchange.com/questions/265690/continued-fraction-of-a-square-root
+
+Lists of pi and e expansions
+
+https://mathworld.wolfram.com/PiFormulas.html
+
+https://en.wikipedia.org/wiki/List_of_representations_of_e
