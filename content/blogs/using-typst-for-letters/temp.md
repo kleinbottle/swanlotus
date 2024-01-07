@@ -59,11 +59,11 @@ Before wetting our feet on the beach of Typst with a letter, I want to showcase 
 
 Suppose we wanted the motto "Dharma protects those who protect it" in English, Sanskrit (संस्कृतम्), and Tamil (தமிழ்), within a coloured box with a border, we could do it so:
 
-![Source code in `Typst` for mottoes in three languages.]({attach}images/dharma-source.png){#fig:dharma-source width=90% .modal-target}
+![Source code in `Typst` for mottoes in three languages.](images/dharma-source.png){#fig:dharma-source width=90% .modal-target}
 
-I think that you would agree with me that the file to accomplish this multi-lingual, graphically enhanced text is about as concise as it can be, in order to be complete and self-contained. Moreover, the purpose of the text in the source file is easily comprehended, even by those unfamiliar with Typst. The result is shown in @fig:dharma. If you are incredulous enough to want to compile the source file for yourself, to get the PDF, here are the links for [source ]({attach}auxiliary/dharma-blog.typ) and [PDF]({attach}auxiliary/dharma-blog.pdf).^[Of course, you need the invoked fonts for successful compilation. If you are interested in other languages, whose fonts you do have, you could substitute texts in those languages and compile. To find out which fonts are seen by Typst, do `typst fonts`. I think you will agree that things could not get much simpler.]
+I think that you would agree with me that the file to accomplish this multi-lingual, graphically enhanced text is about as concise as it can be, in order to be complete and self-contained. Moreover, the purpose of the text in the source file is easily comprehended, even by those unfamiliar with Typst. The result is shown in @fig:dharma. If you are incredulous enough to want to compile the source file for yourself, to get the PDF, here are the links for [source ](auxiliary/dharma-blog.typ) and [PDF](auxiliary/dharma-blog.pdf).^[Of course, you need the invoked fonts for successful compilation. If you are interested in other languages, whose fonts you do have, you could substitute texts in those languages and compile. To find out which fonts are seen by Typst, do `typst fonts`. I think you will agree that things could not get much simpler.]
 
-![Output from the file `dharma-blog.typ` after compilation into a PDF.]({attach}images/dharma.png){#fig:dharma width=70% .modal-target}
+![Output from the file `dharma-blog.typ` after compilation into a PDF.](images/dharma.png){#fig:dharma width=70% .modal-target}
 
 ### Available letter templates in Typst
 
@@ -89,7 +89,7 @@ If the appearance of any element is amiss in the PDF, we can correct it at once 
 
 The text below is the beginning of the template and embodies the document structure of a letter:
 
-![Top of letter template showing the structure of the letter as fields.]({attach}images/letter-template-top.png){#fig:template width=50% .modal-target}
+![Top of letter template showing the structure of the letter as fields.](images/letter-template-top.png){#fig:template width=50% .modal-target}
 
 It has the same sequential spatial structure as a letter, starting at the top and moving to the bottom. All the defined fields have self-explanatory names. The content of the fields are set to `none` because this is a template rather than an instance of a letter. Fields with `()` are functions that will be invoked with arguments as the letter is fleshed out. The actual values will be set in the specific letter we choose to write. The document template is therefore a _mapping_ or set of key-value pairs in which the value is initialized to `none`. If we want the template to assume default values for unchanging fields like `from_name`, `from_address`, etc., we may set those in the template itself.
 
@@ -99,11 +99,11 @@ Note that at this stage, nothing has been said about page size, text alignment, 
 
 When the fields in the template are filled in with content or data, we have the letter materializing out of the template.
 
-![Top of actual letter with content filled in.]({attach}images/letter-content-top.png){#fig:letter width=98% .modal-target}
+![Top of actual letter with content filled in.](images/letter-content-top.png){#fig:letter width=98% .modal-target}
 
 The markup, such as alignment, comes later in the template in the form of code that explains the markup associated with each element, as shown in @fig:align:
 
-![Code for aligning the `from_name` and `from_address` to the right, and the `to_name` and `to_address` to the left.]({attach}images/align-right-left.png){#fig:align width=40% .modal-target}
+![Code for aligning the `from_name` and `from_address` to the right, and the `to_name` and `to_address` to the left.](images/align-right-left.png){#fig:align width=40% .modal-target}
 
 Note that content appears as strings within double quotes, `"...",` or within brackets. `[...]`. Because a typst file  accommodates both a programming language and some content in the same file, we need to adhere to an unambiguous syntax to discriminate between code and content.
 
@@ -111,13 +111,13 @@ The completed letter is then passed through Typst with the simple command `typst
 
 There are other features in the template that require a little more explanation, but we will skip them for now, because we are after a proof of concept that a PDF letter produced by Typst is both of high quality and also easy to typeset. The three example files we have used are:
 
-#.  [`letter-template.typ`]({attach}auxiliary/letter-template.typ): template file
+#.  [`letter-template.typ`](auxiliary/letter-template.typ): template file
 
-#.  [`letter.typ`]({attach}auxiliary/letter.typ): actual letter file
+#.  [`letter.typ`](auxiliary/letter.typ): actual letter file
 
-#.  [`letter.pdf`]({attach}auxiliary/letter.pdf): PDF output of letter
+#.  [`letter.pdf`](auxiliary/letter.pdf): PDF output of letter
 
-Do view the end result, [`letter.pdf`]({attach}auxiliary/letter.pdf), in web browser or PDF reader.
+Do view the end result, [`letter.pdf`](auxiliary/letter.pdf), in web browser or PDF reader.
 
 Feel free to modify and use these files to meet your requirements.
 
@@ -160,7 +160,7 @@ I also need to explain that the contents for the sample letter are entirely the 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here]({attach}./using-typst-for-letters.pdf):
+\noindent A PDF version of this article is [available for download here](./using-typst-for-letters.pdf):
 
 ::: {.small .sf}
 <https://swanlotus.netlify.app/blogs/using-typst-for-letters.pdf>
