@@ -247,7 +247,7 @@
 
 \title{Using \texttt{Typst} for Letters}
 \author{R (Chandra) Chandrasekhar}
-\date{2024-01-01 | 2024-01-01}
+\date{2024-01-01 | 2024-01-07}
 
 \begin{document}
 \maketitle
@@ -258,29 +258,31 @@
 Each of of us has had to write a letter to someone at some time in our
 lives. In the days of
 \href{https://www.merriam-webster.com/dictionary/snail\%20mail}{snail
-mail} we used to write by hand, using lightweight paper, specially made
+mail} we used to write by hand, using lightweight paper---specially made
 for conveying the maximum information for the least weight of paper plus
-envelope. Those days are well and truly behind us now, to the extent
-that many of us rarely lift a pencil or put pen to paper, except to sign
-our names or perform some perfunctory calculation.
+envelope---to minimize postage charges. Those days are well and truly
+behind us now, to the extent that many of us rarely lift a pencil or put
+pen to paper, except to sign our names or make some perfunctory
+calculation.
 
 After the dedicated but computationally wasteful
 \href{https://www.webopedia.com/definitions/word-processor/}{word
 processor} was replaced by the general purpose personal computer, it was
-but a short hop, step, and jump for the PC to simulate a word processor
+but a short hop, step, and jump for the PC to simulate a word processor,
 among its innumerable masquerades, to satisfy our need to be connected.
 
 The advent of the \href{https://www.latex-project.org/}{LaTeX}
 typesetting system was yet another boon for those of us who laboured,
-with scissors and typed manuscripts, to publish papers in learned
-journals, especially in fields requiring mathematics for the exposition.
+with scissors, typed manuscripts, and pasted photographs, to publish
+papers in learned journals, especially in fields requiring mathematics,
+like science and engineering.
 
 Nevertheless, I have always been dismayed by how cumbersome it has been
 to typeset a simple letter using LaTeX. One has to jump deftly through
 numerous hoops to get a decent-looking letter, even with the formidable
 resources of LaTeX.
 
-So, I was with eager anticipation when I first stumbled upon mention of
+So, I was eager with anticipation when I first stumbled upon mention of
 \href{https://typst.app/}{\texttt{Typst}}
 {[}\protect\hyperlink{ref-typst01}{1},\protect\hyperlink{ref-typst02}{2}{]}
 which exhorted ``Compose papers/theses faster''. The
@@ -366,9 +368,9 @@ selling points (USPs)}.
 I think of Typst as a domain-specific language, tuned to its purpose of
 typesetting documents, while remaining human-friendly. And because it is
 brash and young---even though it is a bit rough at the edges, regarding
-line breaks, paragraph breaks, and hyphenation---Typst will be sculpted
-to perfection in time, rather than be venerated as a sacred but
-untouchable relic, the way LaTeX now is. So, let us
+line breaks, paragraph breaks, hyphenation, and some mathematics---Typst
+will be sculpted to perfection in time, rather than be venerated as a
+sacred---but untouchable---relic the way TeX now is. So, let us
 \href{https://www.collinsdictionary.com/us/dictionary/english/heave-ho}{heave
 ho}!
 
@@ -378,32 +380,26 @@ ho}!
 Before wetting our feet on the beach of Typst with a letter, I want to
 showcase a small piece of boxed text that would have taken some time and
 effort to write in LaTeX, but which is a self-contained, compilable
-script in Typst.
+script in Typst. It was produced with help from the
+\href{https://typst.app/docs/reference/}{Typst online reference}
+{[}\protect\hyperlink{ref-typstref}{4}{]}. There is also a
+fast-responding user community that unselfishly gives help, especially
+to novices, at the
+\href{https://discord.com/channels/1054443721975922748/1088372909111783525}{Discord
+Typst channel}.
 
 Suppose we wanted the motto ``Dharma protects those who protect it'' in
 English, Sanskrit (संस्कृतम्), and Tamil (தமிழ்), within a coloured box with
 a border, we could do it so:
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{// dharma{-}blog.typ}
-\CommentTok{// Compile with \textasciigrave{}typst compile dharma{-}blog.typ\textasciigrave{} to get PDF.}
-
-\NormalTok{\#rect(fill}\OperatorTok{:}\NormalTok{ silver}\OperatorTok{,}\NormalTok{ stroke}\OperatorTok{:}\NormalTok{ maroon}\OperatorTok{,}
-\NormalTok{text(fill}\OperatorTok{:}\NormalTok{ navy}\OperatorTok{,}\NormalTok{ size}\OperatorTok{:} \DecValTok{1}\NormalTok{2pt}\OperatorTok{,}\NormalTok{ font}\OperatorTok{:} \StringTok{"Noto Serif"}\OperatorTok{,}
-\StringTok{"Dharma protects those who protect it."}\NormalTok{))}
-
-\NormalTok{\#rect(fill}\OperatorTok{:}\NormalTok{ silver}\OperatorTok{,}\NormalTok{ stroke}\OperatorTok{:}\NormalTok{ maroon}\OperatorTok{,}
-\NormalTok{text(fill}\OperatorTok{:}\NormalTok{ navy}\OperatorTok{,}\NormalTok{ size}\OperatorTok{:} \DecValTok{1}\NormalTok{4pt}\OperatorTok{,}\NormalTok{ font}\OperatorTok{:} \StringTok{"Noto Serif Devanagari"}\OperatorTok{,}
-\StringTok{"धर्मो रक्षति रक्षितः"}\NormalTok{))}
-
-\NormalTok{\#rect(fill}\OperatorTok{:}\NormalTok{ silver}\OperatorTok{,}\NormalTok{ stroke}\OperatorTok{:}\NormalTok{ maroon}\OperatorTok{,}
-\NormalTok{text(fill}\OperatorTok{:}\NormalTok{ navy}\OperatorTok{,}\NormalTok{ size}\OperatorTok{:} \DecValTok{11.5}\NormalTok{pt}\OperatorTok{,}\NormalTok{ font}\OperatorTok{:} \StringTok{"Noto Serif Tamil"}\OperatorTok{,}
-\StringTok{"தர்மம் தலை காக்கும்"}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-``தர்மம் தலை காக்கும்''
+\begin{figure}
+\hypertarget{fig:dharma-source}{%
+\centering
+\includegraphics[width=0.9\textwidth,height=\textheight]{images/dharma-source.png}
+\caption{Source code in \texttt{Typst} for mottoes in three
+languages.}\label{fig:dharma-source}
+}
+\end{figure}
 
 I think that you would agree with me that the file to accomplish this
 multi-lingual, graphically enhanced text is about as concise as it can
@@ -485,8 +481,8 @@ letter into a PDF document and view the end result.
 
 If the appearance of any element is amiss in the PDF, we can correct it
 at once in the source document and view the result once more. Because
-compilation is very fast, we can work interactively in the manner to get
-decent results in a short time.
+compilation is very fast, we can work interactively in this manner to
+get decent results in a short time.
 
 \hypertarget{template-reflects-structure}{%
 \subsection{Template reflects
@@ -508,12 +504,13 @@ It has the same sequential spatial structure as a letter, starting at
 the top and moving to the bottom. All the defined fields have
 self-explanatory names. The content of the fields are set to
 \texttt{none} because this is a template rather than an instance of a
-letter. The actual values will be set in the specific letter we choose
-to write. The document template is therefore a \emph{mapping} or set of
-key-value pairs in which the value is initialized to \texttt{none}. If
-we want the template to assume default values for unchanging fields like
-\texttt{from\_name}, \texttt{from\_address}, etc., we may set those in
-the template itself.
+letter. Fields with \texttt{()} are functions that will be invoked with
+arguments as the letter is fleshed out. The actual values will be set in
+the specific letter we choose to write. The document template is
+therefore a \emph{mapping} or set of key-value pairs in which the value
+is initialized to \texttt{none}. If we want the template to assume
+default values for unchanging fields like \texttt{from\_name},
+\texttt{from\_address}, etc., we may set those in the template itself.
 
 Note that at this stage, nothing has been said about page size, text
 alignment, font name, etc. All that follows \emph{after} this structure
@@ -524,11 +521,7 @@ has been laid out.
 content}\label{filling-the-template-with-content}}
 
 When the fields in the template are filled in with content or data, we
-have the letter materializing out of the template. The markup,
-alignment, etc., are managed by the template. The completed letter is
-then passed through Typst with the simple command
-\texttt{typst\ compile\ \textless{}filename.typ\textgreater{}} we get as
-output the PDF of the letter we desire.
+have the letter materializing out of the template.
 
 \begin{figure}
 \hypertarget{fig:letter}{%
@@ -545,30 +538,87 @@ in \cref{fig:align}:
 \begin{figure}
 \hypertarget{fig:align}{%
 \centering
-\includegraphics[width=0.7\textwidth,height=\textheight]{images/align-right-left.png}
+\includegraphics[width=0.4\textwidth,height=\textheight]{images/align-right-left.png}
 \caption{Code for aligning the \texttt{from\_name} and
-from\_address\texttt{to\ the\ right\ and\ the}to\_name\texttt{and}to\_addressee`
-to the left.}\label{fig:align}
+\texttt{from\_address} to the right, and the \texttt{to\_name} and
+\texttt{to\_address} to the left.}\label{fig:align}
 }
 \end{figure}
 
-Note that content appears as strings within double quotes, or within
-(square) brackets. Because a typst file accommodates both a programming
-language and some content in the same file, we need to adhere to an
-unambiguous syntax to discriminate between code and content. The latter
-is shown within bracket delimiters \texttt{{[}...{]}} or within double
-quotes \texttt{"..."}.
+Note that content appears as strings within double quotes,
+\texttt{"...",} or within brackets. \texttt{{[}...{]}}. Because a typst
+file accommodates both a programming language and some content in the
+same file, we need to adhere to an unambiguous syntax to discriminate
+between code and content.
 
-Three files are available:
+The completed letter is then passed through Typst with the simple
+command \texttt{typst\ compile\ \textless{}basename.typ\textgreater{}}.
+We then get as output the PDF of the letter we desire.
+
+There are other features in the template that require a little more
+explanation, but we will skip them for now, because we are after a proof
+of concept that a PDF letter produced by Typst is both of high quality
+and also easy to typeset. The three example files we have used are:
 
 \begin{enumerate}
-\tightlist
 \item
-  `{[}
+  \href{auxiliary/letter-template.typ}{\texttt{letter-template.typ}}:
+  template file
+\item
+  \href{auxiliary/letter.typ}{\texttt{letter.typ}}: actual letter file
+\item
+  \href{auxiliary/letter.pdf}{\texttt{letter.pdf}}: PDF output of letter
 \end{enumerate}
 
-\href{https://pixabay.com/photos/storm-damage-oak-tree-break-597217/}{Storm-damaged
-oak tree. Thanks to user 127071 at Pixabay.}
+Feel free to modify and use them to meet your requirements.
+
+\hypertarget{afterthoughts-on-typst}{%
+\subsection{Afterthoughts on Typst}\label{afterthoughts-on-typst}}
+
+If you could view the PDF letter produced with Typst, I hope you were
+suitably impressed both by the professional quality of output, as well
+as the simplicity of generating it.
+
+The following embellishments on a normal ``vanilla-flavoured'' letter
+are shown in the template:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Redaction of content by a simple command.
+\item
+  Multiple signatories, neatly arrayed at the bottom of the letter.
+\item
+  A footer with contact hyperlinks that gives the letter a more
+  business-like tone.
+\item
+  Addition of fields for cc (carbon copy) and encl (enclosures).
+\item
+  Ability to seamlessly integrate a captioned image as an enclosure.
+\end{enumerate}
+
+Above all, the letter template and letter have demonstrated that a
+newcomer to \texttt{Typst} can generate a serviceable template and
+produce a PDF letter, within a few hours of encountering Typst.
+
+I have two suggestions for Typst:
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi}.}
+\item
+  The name \texttt{Typst} seems rather infelicitous to pronounce. At the
+  very least there should be an explanation on how to pronounce it. If
+  it were possible, I myself would vote for a name change, though.
+  \emojifont {😉} \normalfont
+\item
+  If \texttt{Typst} could be harnessed to produce HTML output, either on
+  its own, or through \texttt{Pandoc}, we would be on the cusp of a
+  typesetting revolution, because ePub would also then be possible with
+  a few tweaks, from a single source document.
+\end{enumerate}
+
+Count me a recent and enthusiastic convert to Typst! Long may it
+flourish!
 
 \hypertarget{acknowledgements}{%
 \subsection{Acknowledgements}\label{acknowledgements}}
@@ -576,6 +626,15 @@ oak tree. Thanks to user 127071 at Pixabay.}
 I am deeply grateful to my son, Nandakumar Chandrasekhar, for
 constructing a generalized letter template in Typst at short notice,
 even though he did not have prior familiarity with the language.
+
+I thank user 127071 at
+\href{https://pixabay.com/photos/storm-damage-oak-tree-break-597217/}{Pixabay}
+for generously permitting use of the image in the example letter.
+
+I also need to explain that the contents for the sample letter are
+entirely the result of my flights of fancy and bear no resemblance to
+any person, organization, or location. I was having fun imagining
+things, plain and simple. \emojifont {😉} \normalfont
 
 \hypertarget{feedback}{%
 \subsection{Feedback}\label{feedback}}
@@ -596,8 +655,6 @@ comments and corrections.
 
 \end{small}
 
-https://www.alanshawn.com/tech/2020/10/04/latex3-tutorial.html
-
 \hypertarget{bibliography}{%
 \section*{References}\label{bibliography}}
 \addcontentsline{toc}{section}{References}
@@ -613,14 +670,22 @@ system, is now open source}. Retrieved 1 January 2024 from
 \leavevmode\vadjust pre{\hypertarget{ref-typst02}{}}%
 \CSLLeftMargin{{[}2{]} }%
 \CSLRightInline{desperado339. 2023. {Check out Typst, a modern LaTeX
-alternative written in Rust}. Retrieved 1 January 2024 from
-\url{https://www.reddit.com/r/rust/comments/18001dr/check_out_typst_a_modern_latex_alternative/}}
+alternative written in Rust}. Retrieved 1 January 2024
+from\href{\%0A\%20\%20\%20\%20\%20\%20\%20\%20\%20\%20\%20https://www.reddit.com/r/rust/comments/18001dr/check_out_typst_a_modern_latex_alternative/\%0A\%20\%20\%20\%20\%20\%20\%20\%20\%20\%20\%20}{
+https://www.reddit.com/r/rust/comments/18001dr/check\_out\_typst\_a\_modern\_latex\_alternative/
+}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-xiang2020}{}}%
 \CSLLeftMargin{{[}3{]} }%
 \CSLRightInline{Alan Xiang. 2020. {LaTeX3: Programming in LaTeX with
 Ease}. Retrieved 1 January 2024 from
 \url{https://www.alanshawn.com/tech/2020/10/04/latex3-tutorial.html}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-typstref}{}}%
+\CSLLeftMargin{{[}4{]} }%
+\CSLRightInline{Martin Haug and Laurenz Mädje. 2023. {typst
+Documentation: Reference}. Retrieved 7 January 2024 from
+\url{https://typst.app/docs/reference/}}
 
 \end{CSLReferences}
 
