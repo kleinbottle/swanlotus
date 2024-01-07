@@ -102,6 +102,7 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+\usepackage{svg}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -553,7 +554,16 @@ between code and content.
 
 The completed letter is then passed through Typst with the simple
 command \texttt{typst\ compile\ \textless{}basename.typ\textgreater{}}.
-We then get as output the PDF of the letter we desire.
+We then get as output the PDF of the letter we desire. SVG images,
+produced by converting the PDF, are shown below, albeit with a
+transparent background, which highlights the scanned signatures:
+
+\begin{center}
+
+\includesvg[width=0.47\textwidth,height=\textheight]{images/letter-1.svg}
+\includesvg[width=0.47\textwidth,height=\textheight]{images/letter-2.svg}
+
+\end{center}
 
 There are other features in the template that require a little more
 explanation, but we will skip them for now, because we are after a proof
@@ -580,8 +590,8 @@ Feel free to modify and use these files to meet your requirements.
 \subsection{Afterthoughts on Typst}\label{afterthoughts-on-typst}}
 
 If you could view the PDF letter produced with Typst, I hope you were
-suitably impressed both by the professional quality of output, as well
-as the simplicity of generating it.
+suitably impressed both by the professional quality of the output, as
+well as the simplicity of generating it.
 
 The following embellishments on a normal ``vanilla-flavoured'' letter
 are shown in the template:

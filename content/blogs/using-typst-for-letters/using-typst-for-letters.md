@@ -107,7 +107,11 @@ The markup, such as alignment, comes later in the template in the form of code t
 
 Note that content appears as strings within double quotes, `"...",` or within brackets. `[...]`. Because a typst file  accommodates both a programming language and some content in the same file, we need to adhere to an unambiguous syntax to discriminate between code and content.
 
-The completed letter is then passed through Typst with the simple command `typst compile <basename.typ>`. We then get as output the PDF of the letter we desire.
+The completed letter is then passed through Typst with the simple command `typst compile <basename.typ>`. We then get as output the PDF of the letter we desire. SVG images, produced by converting the PDF, are shown below, albeit with a transparent background, which highlights the scanned signatures:
+
+:::{.center}
+![]({attach}images/letter-1.svg){width=47% .modal-target} ![]({attach}images/letter-2.svg){width=47% .modal-target}
+:::
 
 There are other features in the template that require a little more explanation, but we will skip them for now, because we are after a proof of concept that a PDF letter produced by Typst is both of high quality and also easy to typeset. The three example files we have used are:
 
