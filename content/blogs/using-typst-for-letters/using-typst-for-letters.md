@@ -9,7 +9,7 @@ summary: 'So, I was eager with anticipation when I first stumbled upon mention o
 opengraphimage: dharma-blog.png
 ---
 
-Each of of us has had to write a letter to someone at some time in our lives. In the days of [snail mail](https://www.merriam-webster.com/dictionary/snail%20mail) we used to write by hand, using lightweight paper---specially made for conveying the maximum information for the least weight of paper plus envelope---to minimize postage charges. Those days are well and truly behind us now, to the extent that many of us rarely lift a pencil or put pen to paper, except to sign our names or make some perfunctory calculation.
+Despite the ubiquity of emails, each of of us has had to write a letter to someone at some time in our lives. In the days of [snail mail](https://www.merriam-webster.com/dictionary/snail%20mail) we used to write by hand, using lightweight paper---specially made for conveying the maximum information for the least weight of paper plus envelope---to minimize postage charges. Those days are well and truly behind us now, to the extent that many of us rarely lift a pencil or put pen to paper, except to sign our names or make some perfunctory calculation.
 
 After the dedicated but computationally wasteful [word processor](https://www.webopedia.com/definitions/word-processor/) was replaced by the general purpose personal computer, it was but a short hop, step, and jump for the PC to simulate a word processor, among its innumerable masquerades, to satisfy our need to be connected.
 
@@ -17,7 +17,7 @@ The advent of the [LaTeX](https://www.latex-project.org/) typesetting system was
 
 Nevertheless, I have always been dismayed by how cumbersome it has been to typeset a simple letter using LaTeX. One has to jump deftly through numerous hoops to get a decent-looking letter, even with the formidable resources of LaTeX.
 
-So, I was eager with anticipation when I first stumbled upon mention of [`Typst`](https://typst.app/) [@typst01;@typst02] which exhorted "Compose papers/theses faster". The [Typst home page](https://github.com/typst/typst) claims it is a "A new markup-based typesetting system that is powerful and easy to learn." Piqued by these promising assertions, I decided to take the plunge with Typst for the specific but express purpose of writing letters. I have chronicled my experiences here.
+So, I was eager with anticipation when I first stumbled upon [`Typst`](https://typst.app/) [@typst01;@typst02] which exhorted one to "Compose papers/theses faster". The [Typst home page](https://github.com/typst/typst) claims it is a "A new markup-based typesetting system that is powerful and easy to learn." Piqued by these promising assertions, I decided to take the plunge with Typst for the specific but express purpose of writing letters. I have chronicled my experiences here.
 
 ## The road to Typst
 
@@ -25,7 +25,7 @@ So, I was eager with anticipation when I first stumbled upon mention of [`Typst`
 
 I have been using LaTeX to write papers, theses, and books for well nigh thirty years. Thus, I am a beneficiary of LaTeX, and can vouch that the results from it are superior to those from a widely used proprietary "word processing" program which shall remain unnamed.
 
-Despite that, I was somewhat aghast when I saw how the new, experimental LaTeX3 "dialect" or "macro language", or whatever it is called, looked like. It is the successor to the "LaTeX2ɛ" we use now, and while it might not impact end users much, it will certainly impinge upon customizability. The code fragment below below is taken from a blog entitled "LaTeX3: Programming in LaTeX with Ease" [@xiang2020], and boy, did it make me uneasy, even to gaze upon it, let alone attempt to understand it:
+Despite that, I was somewhat aghast when I saw how the new, experimental LaTeX3 "dialect" or "macro language", or whatever it is called, looked like. It is the successor to the "LaTeX2ɛ" we use now, and while it might not impact end users much, it will certainly impinge upon customizability. The code fragment below is taken from a blog entitled "LaTeX3: Programming in LaTeX with Ease" [@xiang2020], and boy, did it make me uneasy, even to gaze upon it, let alone attempt to understand it:
 
 ```latex
 \ExplSyntaxOn
@@ -61,7 +61,7 @@ Suppose we wanted the motto "Dharma protects those who protect it" in English, S
 
 ![Source code in `Typst` for mottoes in three languages.]({attach}images/dharma-source.png){#fig:dharma-source width=90% .modal-target}
 
-I think that you would agree with me that the file to accomplish this multi-lingual, graphically enhanced text is about as concise as it can be, in order to be complete and self-contained. Moreover, the purpose of the text in the source file is easily comprehended, even by those unfamiliar with Typst. The result is shown in @fig:dharma. If you are incredulous enough to want to compile the source file for yourself, to get the PDF, here are the links for [source ]({attach}auxiliary/dharma-blog.typ) and [PDF]({attach}auxiliary/dharma-blog.pdf).^[Of course, you need the invoked fonts for successful compilation. If you are interested in other languages, whose fonts you do have, you could substitute texts in those languages and compile. To find out which fonts are seen by Typst, do `typst fonts`. I think you will agree that things could not get much simpler.]
+I think that you would agree with me that the file to accomplish this multi-lingual, graphically enhanced text is about as concise as it can be, in order to be complete and self-contained. Moreover, the purpose of the text in the source file is easily comprehended, even by those unfamiliar with Typst. The result is shown in @fig:dharma. If you are incredulous enough to want to compile the source file for yourself, to get the PDF, here are the links for [source ]({attach}auxiliary/dharma-blog.typ) and [PDF]({attach}auxiliary/dharma-blog.pdf).^[Of course, you need the invoked fonts for successful compilation. If you are interested in other languages, whose fonts you do have, you could substitute texts in those languages and compile. To find out which fonts are seen by Typst, execute `typst fonts` in a terminal. I think you will agree that things could not get much simpler.]
 
 ![Output from the file `dharma-blog.typ` after compilation into a PDF.]({attach}images/dharma.png){#fig:dharma width=70% .modal-target}
 
@@ -71,9 +71,11 @@ Let us now return to the main task of writing a letter using Typst. First, there
 
 ### Sender's address at the top right
 
-It is customary, when writing letters in English, to align the sender's address and the date to the top right of the page and for the recipient's address to be left-aligned, below that. Just these two text alignments used to take time and effort to achieve in LaTeX. And if you had a dual-signatory letter, things got even more entangled.
+It is customary, when writing letters in English, to align the sender's address and the date to the top right of the page and for the recipient's address to be left-aligned, below that.
 
-Let us see how Typst overcomes these hurdles and, in the process, appears almost too good to be true!
+Just these two text alignments used to take time and effort to achieve in LaTeX. And if you had a dual-signatory letter, things got even more entangled.
+
+Let us see how Typst overcomes these hurdles.
 
 ## Toward a letter template in Typst
 
@@ -91,7 +93,7 @@ The text below is the beginning of the template and embodies the document struct
 
 ![Top of letter template showing the structure of the letter as fields.]({attach}images/letter-template-top.png){#fig:template width=50% .modal-target}
 
-It has the same sequential spatial structure as a letter, starting at the top and moving to the bottom. All the defined fields have self-explanatory names. The content of the fields are set to `none` because this is a template rather than an instance of a letter. Fields with `()` are functions that will be invoked with arguments as the letter is fleshed out. The actual values will be set in the specific letter we choose to write. The document template is therefore a _mapping_ or set of key-value pairs in which the value is initialized to `none`. If we want the template to assume default values for unchanging fields like `from_name`, `from_address`, etc., we may set those in the template itself.
+It has the same sequential spatial structure as a letter, starting at the top and moving to the bottom. All the defined fields have self-explanatory names. The content of the fields are set to `none` because this is a template rather than an instance of a letter. Fields with `()` are arrays that will be filled as the letter is fleshed out. The actual values will be set in the specific letter we choose to write. The document template is therefore a _mapping_ or set of key-value pairs in which the value is initialized to `none`. If we want the template to assume default values for unchanging fields like `from_name`, `from_address`, etc., we may set those in the template itself.
 
 Note that at this stage, nothing has been said about page size, text alignment, font name, etc. All that follows _after_ this structure has been laid out.
 
@@ -101,7 +103,7 @@ When the fields in the template are filled in with content or data, we have the 
 
 ![Top of actual letter with content filled in.]({attach}images/letter-content-top.png){#fig:letter width=98% .modal-target}
 
-The markup, such as alignment, comes later in the template in the form of code that explains the markup associated with each element, as shown in @fig:align:
+The markup, such as alignment, etc., comes later in the template in the form of code associated with each element, as shown in @fig:align:
 
 ![Code for aligning the `from_name` and `from_address` to the right, and the `to_name` and `to_address` to the left.]({attach}images/align-right-left.png){#fig:align width=40% .modal-target}
 
@@ -121,7 +123,7 @@ There are other features in the template that require a little more explanation,
 
 #.  [`letter.pdf`]({attach}auxiliary/letter.pdf): PDF output of letter
 
-Do view the end result, [`letter.pdf`]({attach}auxiliary/letter.pdf), in web browser or PDF reader.
+Do view the end result, [`letter.pdf`]({attach}auxiliary/letter.pdf), in a web browser or PDF reader.
 
 Feel free to modify and use these files to meet your requirements.
 
