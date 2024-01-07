@@ -1,6 +1,6 @@
 ---
 title:
-author: R (Chandra) Chandrasekhar
+author: "R (Chandra) Chandrasekhar"
 date:
 modified:
 category:

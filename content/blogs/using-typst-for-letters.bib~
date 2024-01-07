@@ -1,0 +1,15 @@
+@online{typst01,
+    url = {https://news.ycombinator.com/item?id=35250210},
+    title = {{Typst, a new markup-based typesetting system, is now open source}},
+    author = {{reknih}},
+    date = {2023-03-21},
+    urldate = {2024-01-01},
+}
+
+@online{typst02,
+url = {https://www.reddit.com/r/rust/comments/18001dr/check_out_typst_a_modern_latex_alternative/},
+title = {{Check out Typst, a modern LaTeX alternative written in Rust}},
+author = {{desperado339}},
+date = {2023-11-21},
+urldate = {2024-01-01},
+}

@@ -2,7 +2,7 @@
 title: 'Open Secrets: √2, π, e'
 author: R (Chandra) Chandrasekhar
 date: "2023-03-21"
-modified: "2023-12-09"
+modified: "2023-12-27"
 category: Mathematics
 tags: pi, e, mathematics, irrational numbers, transcendental numbers, infinite, "Simkin Tales", "Mathematical Musings",  series, decimal representation
 summary:
