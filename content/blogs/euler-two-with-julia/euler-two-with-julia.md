@@ -334,7 +334,7 @@ When I encountered difficulties with my code, I sought the community's help in [
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here]({attach}/euler-two-with-julia.pdf):
+\noindent A PDF version of this article is [available for download here]({attach}./euler-two-with-julia.pdf):
 
 ::: {.small .sf}
 <https://swanlotus.netlify.app/blogs/euler-two-with-julia.pdf>
