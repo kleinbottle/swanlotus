@@ -2,14 +2,16 @@
 title: "Using `Typst` for Letters"
 author: "R (Chandra) Chandrasekhar"
 date: 2024-01-01
-modified: 2024-01-07
+modified: 2024-01-08
 category: Software
-tags: A Bit Here, A Byte There, Typesetting, PDF, Academic
+tags: A Bit Here, A Byte There, Typesetting, PDF, Academic, LaTeX, Pandoc, Markdown, Letter
 summary: 'So, I was eager with anticipation when I first stumbled upon mention of [`Typst`](https://typst.app/) [@typst01;@typst02] which exhorted "Compose papers/theses faster". The [Typst home page](https://github.com/typst/typst) claims it is a "A new markup-based typesetting system that is powerful and easy to learn." Piqued by these promising assertions, I decided to take the plunge with Typst for the specific but express purpose of writing letters. I have chronicled my experiences here.'
 opengraphimage: dharma-blog.png
 ---
 
-Despite the ubiquity of emails, each of of us has had to write a letter to someone at some time in our lives. In the days of [snail mail](https://www.merriam-webster.com/dictionary/snail%20mail) we used to write by hand, using lightweight paper---specially made for conveying the maximum information for the least weight of paper plus envelope---to minimize postage charges. Those days are well and truly behind us now, to the extent that many of us rarely lift a pencil or put pen to paper, except to sign our names or make some perfunctory calculation.
+## The road from LaTeX to Typst
+
+Despite the ubiquity of emails, each of us has had to write a letter to someone at some time in our lives. In the days of [snail mail](https://www.merriam-webster.com/dictionary/snail%20mail), we used to write by hand, using lightweight paper---specially made for conveying the maximum information for the least weight of paper plus envelope---to minimize postage charges. Those days are well and truly behind us now, to the extent that many of us rarely lift a pencil or put pen to paper, except to sign our names or make some perfunctory calculation.
 
 After the dedicated but computationally wasteful [word processor](https://www.webopedia.com/definitions/word-processor/) was replaced by the general purpose personal computer, it was but a short hop, step, and jump for the PC to simulate a word processor, among its innumerable masquerades, to satisfy our need to be connected.
 
@@ -17,13 +19,11 @@ The advent of the [LaTeX](https://www.latex-project.org/) typesetting system was
 
 Nevertheless, I have always been dismayed by how cumbersome it has been to typeset a simple letter using LaTeX. One has to jump deftly through numerous hoops to get a decent-looking letter, even with the formidable resources of LaTeX.
 
-So, I was eager with anticipation when I first stumbled upon [`Typst`](https://typst.app/) [@typst01;@typst02] which exhorted one to "Compose papers/theses faster". The [Typst home page](https://github.com/typst/typst) claims it is a "A new markup-based typesetting system that is powerful and easy to learn." Piqued by these promising assertions, I decided to take the plunge with Typst for the specific but express purpose of writing letters. I have chronicled my experiences here.
+So, I was eager with anticipation when I first stumbled upon [`Typst`](https://typst.app/) [@typst01;@typst02], which exhorted one to "Compose papers/theses faster". The [Typst home page](https://github.com/typst/typst) claims it is a "A new markup-based typesetting system that is powerful and easy to learn." Piqued by these promising assertions, I decided to take the plunge with Typst, for the specific but express purpose of writing letters. I have chronicled my experiences here.
 
-## The road to Typst
+## A glancing encounter with LaTeX3
 
-### A glancing encounter with LaTeX3
-
-I have been using LaTeX to write papers, theses, and books for well nigh thirty years. Thus, I am a beneficiary of LaTeX, and can vouch that the results from it are superior to those from a widely used proprietary "word processing" program which shall remain unnamed.
+I have been using LaTeX to write papers, theses, and books for well nigh thirty years. Thus, I am a beneficiary of the LaTeX ecosystem, and can vouch that the results from it are superior to those from a widely used proprietary "word processing" program which shall remain unnamed.
 
 Despite that, I was somewhat aghast when I saw how the new, experimental LaTeX3 "dialect" or "macro language", or whatever it is called, looked like. It is the successor to the "LaTeX2ɛ" we use now, and while it might not impact end users much, it will certainly impinge upon customizability. The code fragment below is taken from a blog entitled "LaTeX3: Programming in LaTeX with Ease" [@xiang2020], and boy, did it make me uneasy, even to gaze upon it, let alone attempt to understand it:
 
@@ -41,7 +41,7 @@ Despite that, I was somewhat aghast when I saw how the new, experimental LaTeX3 
 
 If you are as put off as I was by the code above, we are already on the same page. If you are a diehard LaTeX [bhakt](https://www.collinsdictionary.com/dictionary/hindi-english/%E0%A4%AD%E0%A4%95%E0%A5%8D%E0%A4%A4), you are unlikely to be swayed by what I have to say, and might as well stop reading now. If you are a fence-sitter, read along and make up your mind at the end.
 
-### The Pandoc-Markdown duo
+## The Pandoc-Markdown duo
 
 By the time these blogs were written, I had already started using [Pandoc](https://pandoc.org/) and its extended [Markdown](https://pandoc.org/chunkedhtml-demo/8-pandocs-markdown.html) in much of what I wrote. They are an efficient duo, and with the help of LaTeX, I have been able to produce a PDF document that bears more than a passing similarity to the HTML5 blog originally generated from Markdown using Pandoc.
 
@@ -51,7 +51,7 @@ So, all was smooth sailing, until I needed to write letters, and was that experi
 
 Like LaTeX, Typst is a markup-based programmable typesetting system. But it is fast and easy to use. Typst provides easy customizability because the programming syntax used in scripting is human-readable. Sensibly, it acts on objects that have meaning in the context of a document. It affects both the structure and content of a document. Like LaTeX, it produces PDF, which is bound to paper sizes. Should Typst also provide HTML output, it would have a killer-advantage over LaTeX, in addition to its current [unique selling points (USPs)](https://www.techtarget.com/whatis/definition/unique-selling-point-USP).
 
-I think of Typst as a domain-specific language, tuned to its purpose of typesetting documents, while remaining human-friendly. And because it is brash and young---even though it is a bit rough at the edges, regarding line breaks, paragraph breaks, hyphenation, and some mathematics---Typst will be sculpted to perfection in time, rather than be venerated as a sacred---but untouchable---relic the way TeX now is. So, let us [heave ho](https://www.collinsdictionary.com/us/dictionary/english/heave-ho)!
+I think of Typst as a domain-specific language, tuned to its purpose of typesetting documents, while remaining human-friendly. And because it is brash and young---even though it is a bit rough at the edges, regarding line breaks, paragraph breaks, hyphenation, footnotes, and some mathematics---Typst will be sculpted to perfection in time, rather than be venerated as a sacred---but untouchable---relic the way TeX now is. So, let us [heave ho](https://www.collinsdictionary.com/us/dictionary/english/heave-ho)!
 
 ### A short detour
 
@@ -117,7 +117,7 @@ The completed letter is then passed through Typst with the simple command `typst
 
 There are other features in the template that require a little more explanation, but we will skip them for now, because we are after a proof of concept that a PDF letter produced by Typst is both of high quality and also easy to typeset. The three example files we have used are:
 
-#.  [`letter-template.typ`]({attach}auxiliary/letter-template.typ): template file
+#.  [`letter-template.typ`]({attach}auxiliary/letter-template.typ): fully commented template file
 
 #.  [`letter.typ`]({attach}auxiliary/letter.typ): actual letter file
 
@@ -147,19 +147,21 @@ Above all, the letter template and letter have demonstrated that a newcomer to `
 
 I have two suggestions for Typst:
 
-i.  The name `Typst` seems rather infelicitous to pronounce. At the very least there should be an explanation on how to pronounce it. If it were possible, I myself would vote for a name change, though. \emojifont :wink: \normalfont
+i.  The name `Typst` seems rather infelicitous to pronounce. At the very least there should be an explanation on how to pronounce it. If it were possible, I myself would vote for a more pronounceable name change, though. \emojifont :wink: \normalfont
 
 ii. If `Typst` could be harnessed to produce HTML output, either on its own, or through `Pandoc`, we would be on the cusp of a typesetting revolution, because ePub would also then be possible with a few tweaks, from a single source document.
 
-Count me a recent and enthusiastic convert to Typst! Long may it flourish!
+My overall experience using Typst has been very positive. The fact that I now have a template for letters means that my future letter-writing tasks will be lightened considerably. Count me in as a recent and enthusiastic convert to Typst! Long may it flourish!
 
 ## Acknowledgements
 
-I am deeply grateful to my son, Nandakumar Chandrasekhar, for constructing a generalized letter template in Typst at short notice, even though he did not have prior familiarity with the language.
+As a beneficiary of Typst, I thank its creators, Martin Haug and Laurenz Mädje, for producing a gem of a programmable typesetting system.
+
+I am deeply grateful to my son, Nandakumar Chandrasekhar, for constructing a generalized letter template in Typst at very short notice. He found the task pleasantly rewarding, even though he did not have prior familiarity with the language.
 
 I thank user 127071 at [Pixabay](https://pixabay.com/photos/storm-damage-oak-tree-break-597217/) for generously permitting use of the image in the example letter.
 
-I also need to explain that the contents for the sample letter are entirely the result of my flights of fancy and bear no resemblance to any person, organization, or location. I was having fun imagining things, plain and simple. \emojifont :wink: \normalfont
+May I also clarify that the contents of the sample letter, [`letter.pdf`]({attach}auxiliary/letter.pdf), are entirely the result of my flights of fancy, and bear no resemblance to any person, organization, or location. I was having fun imagining things, plain and simple! \emojifont :wink: \normalfont
 
 ## Feedback
 

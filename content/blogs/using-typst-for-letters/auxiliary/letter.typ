@@ -2,15 +2,15 @@
 #show: my_letter => letter_template(
   from_name: "The Dimbleby Family",
   from_address: "The Lodge
-    Cheswick Village
-    Middle Upton
-    Bristol BS16 1GU",
+Cheswick Village
+Middle Upton
+Bristol BS16 1GU",
   date: "31 December 2023",  // Date will be displayed as is.
   to_name: "Evergreen Tree Surgeons",
   to_address: "Midtown Lane
-    Cheswick Village
-    Stoke Gifford
-    Bristol BS16 1GU",
+Cheswick Village
+Stoke Gifford
+Bristol BS16 1GU",
   salutation: "Gentlemen,",
   subject: "Pruning of Heritage Oak Trees in the Dimbleby Estate",
   content: my_letter,
@@ -32,14 +32,14 @@
     )
   ),
   enclosures: (
-    // Keep the comma so that the entire string is taken as list item
+    // Keep the comma so that the entire string is taken as a list item
     "Photograph of storm damage to an oak tree.",
   ),
   cc: "Mr Jethro Tull",
   figures: (
     (
       image: "storm-damage-597217_1280.jpg",
-      caption: [Storm Damaged Oak Tree. Image by courtesy of user 127071 at #link("https://pixabay.com/photos/storm-damage-oak-tree-break-597217/")[Pixabay].],
+      caption: [Storm Damaged Oak Tree. Image courtesy of user 127071 at #link("https://pixabay.com/photos/storm-damage-oak-tree-break-597217/")[Pixabay].],
     ),
   ),
   // Type is one of string, email or link
@@ -68,5 +68,3 @@ Since this estate is jointly owned by the Dimbleby family, the signatures of all
 Kindly contact our Head Groundsman, Mr Jethro Tull, on #box(fill:black, stroke:black, [0117-12345678.]) to fix an appointment to view the trees and give a quotation for the contemplated work.
 
 Thank you kindly.
-
-// #link(https://pixabay.com/photos/storm-damage-oak-tree-break-597217/)[Pixabay].]

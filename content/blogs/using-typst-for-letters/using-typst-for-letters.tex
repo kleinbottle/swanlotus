@@ -248,7 +248,7 @@
 
 \title{Using \texttt{Typst} for Letters}
 \author{R (Chandra) Chandrasekhar}
-\date{2024-01-01 | 2024-01-07}
+\date{2024-01-01 | 2024-01-08}
 
 \begin{document}
 \maketitle
@@ -256,14 +256,18 @@
 \thispagestyle{empty}
 
 
-Despite the ubiquity of emails, each of of us has had to write a letter
-to someone at some time in our lives. In the days of
+\hypertarget{the-road-from-latex-to-typst}{%
+\subsection{The road from LaTeX to
+Typst}\label{the-road-from-latex-to-typst}}
+
+Despite the ubiquity of emails, each of us has had to write a letter to
+someone at some time in our lives. In the days of
 \href{https://www.merriam-webster.com/dictionary/snail\%20mail}{snail
-mail} we used to write by hand, using lightweight paper---specially made
-for conveying the maximum information for the least weight of paper plus
-envelope---to minimize postage charges. Those days are well and truly
-behind us now, to the extent that many of us rarely lift a pencil or put
-pen to paper, except to sign our names or make some perfunctory
+mail}, we used to write by hand, using lightweight paper---specially
+made for conveying the maximum information for the least weight of paper
+plus envelope---to minimize postage charges. Those days are well and
+truly behind us now, to the extent that many of us rarely lift a pencil
+or put pen to paper, except to sign our names or make some perfunctory
 calculation.
 
 After the dedicated but computationally wasteful
@@ -285,25 +289,22 @@ resources of LaTeX.
 
 So, I was eager with anticipation when I first stumbled upon
 \href{https://typst.app/}{\texttt{Typst}}
-{[}\protect\hyperlink{ref-typst01}{1},\protect\hyperlink{ref-typst02}{2}{]}
+{[}\protect\hyperlink{ref-typst01}{1},\protect\hyperlink{ref-typst02}{2}{]},
 which exhorted one to ``Compose papers/theses faster''. The
 \href{https://github.com/typst/typst}{Typst home page} claims it is a
 ``A new markup-based typesetting system that is powerful and easy to
 learn.'' Piqued by these promising assertions, I decided to take the
-plunge with Typst for the specific but express purpose of writing
+plunge with Typst, for the specific but express purpose of writing
 letters. I have chronicled my experiences here.
 
-\hypertarget{the-road-to-typst}{%
-\subsection{The road to Typst}\label{the-road-to-typst}}
-
 \hypertarget{a-glancing-encounter-with-latex3}{%
-\subsubsection{A glancing encounter with
+\subsection{A glancing encounter with
 LaTeX3}\label{a-glancing-encounter-with-latex3}}
 
 I have been using LaTeX to write papers, theses, and books for well nigh
-thirty years. Thus, I am a beneficiary of LaTeX, and can vouch that the
-results from it are superior to those from a widely used proprietary
-``word processing'' program which shall remain unnamed.
+thirty years. Thus, I am a beneficiary of the LaTeX ecosystem, and can
+vouch that the results from it are superior to those from a widely used
+proprietary ``word processing'' program which shall remain unnamed.
 
 Despite that, I was somewhat aghast when I saw how the new, experimental
 LaTeX3 ``dialect'' or ``macro language'', or whatever it is called,
@@ -336,7 +337,7 @@ stop reading now. If you are a fence-sitter, read along and make up your
 mind at the end.
 
 \hypertarget{the-pandoc-markdown-duo}{%
-\subsubsection{The Pandoc-Markdown duo}\label{the-pandoc-markdown-duo}}
+\subsection{The Pandoc-Markdown duo}\label{the-pandoc-markdown-duo}}
 
 By the time these blogs were written, I had already started using
 \href{https://pandoc.org/}{Pandoc} and its extended
@@ -369,9 +370,10 @@ selling points (USPs)}.
 I think of Typst as a domain-specific language, tuned to its purpose of
 typesetting documents, while remaining human-friendly. And because it is
 brash and young---even though it is a bit rough at the edges, regarding
-line breaks, paragraph breaks, hyphenation, and some mathematics---Typst
-will be sculpted to perfection in time, rather than be venerated as a
-sacred---but untouchable---relic the way TeX now is. So, let us
+line breaks, paragraph breaks, hyphenation, footnotes, and some
+mathematics---Typst will be sculpted to perfection in time, rather than
+be venerated as a sacred---but untouchable---relic the way TeX now is.
+So, let us
 \href{https://www.collinsdictionary.com/us/dictionary/english/heave-ho}{heave
 ho}!
 
@@ -573,7 +575,7 @@ and also easy to typeset. The three example files we have used are:
 \begin{enumerate}
 \item
   \href{auxiliary/letter-template.typ}{\texttt{letter-template.typ}}:
-  template file
+  fully commented template file
 \item
   \href{auxiliary/letter.typ}{\texttt{letter.typ}}: actual letter file
 \item
@@ -622,8 +624,8 @@ I have two suggestions for Typst:
 \item
   The name \texttt{Typst} seems rather infelicitous to pronounce. At the
   very least there should be an explanation on how to pronounce it. If
-  it were possible, I myself would vote for a name change, though.
-  \emojifont {😉} \normalfont
+  it were possible, I myself would vote for a more pronounceable name
+  change, though. \emojifont {😉} \normalfont
 \item
   If \texttt{Typst} could be harnessed to produce HTML output, either on
   its own, or through \texttt{Pandoc}, we would be on the cusp of a
@@ -631,24 +633,31 @@ I have two suggestions for Typst:
   a few tweaks, from a single source document.
 \end{enumerate}
 
-Count me a recent and enthusiastic convert to Typst! Long may it
-flourish!
+My overall experience using Typst has been very positive. The fact that
+I now have a template for letters means that my future letter-writing
+tasks will be lightened considerably. Count me in as a recent and
+enthusiastic convert to Typst! Long may it flourish!
 
 \hypertarget{acknowledgements}{%
 \subsection{Acknowledgements}\label{acknowledgements}}
 
+As a beneficiary of Typst, I thank its creators, Martin Haug and Laurenz
+Mädje, for producing a gem of a programmable typesetting system.
+
 I am deeply grateful to my son, Nandakumar Chandrasekhar, for
-constructing a generalized letter template in Typst at short notice,
-even though he did not have prior familiarity with the language.
+constructing a generalized letter template in Typst at very short
+notice. He found the task pleasantly rewarding, even though he did not
+have prior familiarity with the language.
 
 I thank user 127071 at
 \href{https://pixabay.com/photos/storm-damage-oak-tree-break-597217/}{Pixabay}
 for generously permitting use of the image in the example letter.
 
-I also need to explain that the contents for the sample letter are
-entirely the result of my flights of fancy and bear no resemblance to
-any person, organization, or location. I was having fun imagining
-things, plain and simple. \emojifont {😉} \normalfont
+May I also clarify that the contents of the sample letter,
+\href{auxiliary/letter.pdf}{\texttt{letter.pdf}}, are entirely the
+result of my flights of fancy, and bear no resemblance to any person,
+organization, or location. I was having fun imagining things, plain and
+simple! \emojifont {😉} \normalfont
 
 \hypertarget{feedback}{%
 \subsection{Feedback}\label{feedback}}
