@@ -121,7 +121,7 @@ end
 println(F);
 ```
 
-This gives the first twenty Fibonacci numbers as `[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181]`. Array indices in `Julia` begin with $1$, and the `[` and the `]` represent the array delimiters. You can download the script [here]({attach}auxiliary/}first-twenty.jl).
+This gives the first twenty Fibonacci numbers as `[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181]`. Array indices in `Julia` begin with $1$, and the `[` and the `]` represent the array delimiters. You can download the script [here]({attach}auxiliary/first-twenty.jl).
 
 So, we are good. Notice that we did not even need to define `F[i] = F[i-1] + F[i-2]` but could simply invoke the right hand side (RHS) of the recurrence relation and append it to the array. Thus far, the syntax in `Julia` has tracked the mathematical expression very closely.
 
@@ -334,7 +334,7 @@ When I encountered difficulties with my code, I sought the community's help in [
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here]({attach}auxiliary/euler-two-with-julia.pdf):
+\noindent A PDF version of this article is [available for download here]({attach}/euler-two-with-julia.pdf):
 
 ::: {.small .sf}
 <https://swanlotus.netlify.app/blogs/euler-two-with-julia.pdf>
