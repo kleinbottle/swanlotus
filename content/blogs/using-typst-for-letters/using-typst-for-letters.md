@@ -157,7 +157,7 @@ My overall experience using Typst has been very positive. The fact that I now ha
 
 As a beneficiary of Typst, I thank its creators, Martin Haug and Laurenz Mädje, for producing a gem of a programmable typesetting system.
 
-I am deeply grateful to my son, Nandakumar Chandrasekhar, for constructing a generalized letter template in Typst at very short notice. He found the task pleasantly rewarding, even though he did not have prior familiarity with the language.
+I am deeply grateful to my son, Nandakumar Chandrasekhar, for constructing a generalized letter template in Typst at very short notice. He found the task pleasantly rewarding, even though he did not have any prior familiarity with the language.
 
 I thank user 127071 at [Pixabay](https://pixabay.com/photos/storm-damage-oak-tree-break-597217/) for generously permitting use of the image in the example letter.
 
