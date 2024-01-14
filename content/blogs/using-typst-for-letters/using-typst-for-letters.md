@@ -9,8 +9,7 @@ summary: 'So, I was eager with anticipation when I first stumbled upon mention o
 opengraphimage: dharma.png
 ---
 
-
-TL;DR Open this [PDF letter]({attach}auxiliary/letter.pdf) in a browser and view it. Then see the [file that generated it in Typst]({attach}auxiliary/letter.typ). If you are impressed, read on. Otherwise, give this blog a miss.
+[TL;DR](https://dictionary.cambridge.org/dictionary/english/tldr) Open this [PDF letter]({attach}auxiliary/letter.pdf) in a browser and view it. Then see the [file that generated it in Typst]({attach}auxiliary/letter.typ). If you are impressed, read on. Otherwise, give this blog a miss.
 
 ## The road from LaTeX to Typst
 
