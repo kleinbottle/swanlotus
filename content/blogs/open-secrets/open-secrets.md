@@ -22,7 +22,7 @@ status: draft
 
 "I mentioned this to Seven, but he laughed it off. A little miffed, I told Seven that I would convince him that Kronecker was wrong, and was prepared to bet on it. There are many open secrets of mathematics all around us. All of them cry out that he was wrong."
 
-Seven---never one to withdraw from an engagement with probability---said, "You are on. I _know_ that [encryption of secrets](https://cloud.google.com/learn/what-is-encryption) is grounded in the integers. Integers guard our secrets. So, you are bound to lose."
+Seven---never one to withdraw from an engagement with probability---said, "You are on. I _know_ that [encryption of secrets](https://cloud.google.com/learn/what-is-encryption) is grounded in the integers. Integers guard our very secrets. So, you are bound to lose."
 
 "And so began a discussion on the open secrets of mathematics that took us into the realms of the integers, the rationals, the irrationals, $\pi$, $e$, $\phi$, etc.," continued Sol.
 
@@ -32,23 +32,23 @@ Sol told me that he started off with the integers that Kronecker had so exalted.
 
 ## The square and the circle
 
-Sol had told Seven that the square is _the_ four-sided regular polygon. If we take a side length equal to one unit, by the theorem of Pythagoras, we know that its diagonal has a length equal to $\sqrt{1^2 + 1^2} = \sqrt{2}$ units. And there are proofs aplenty on the Web that this number is in no way an integer. Indeed, it is not even the ratio of two integers. How could something as basic as the diagonal of a square cause the first chink in Kronecker's armour?
+Sol had told Seven that the square is _the_ four-sided regular polygon. If we consider a square with a side length equal to one unit, by the theorem of Pythagoras, we know that its diagonal has a length equal to $\sqrt{1^2 + 1^2} = \sqrt{2}$ units. And there are proofs aplenty on the Web that this number is in no way an integer. Indeed, it is not even the ratio of two integers. How could something as basic as the diagonal of a square cause the first chink in Kronecker's armour?
 
-Moving from the finite to the infinite, the circle may be viewed as the limiting case of a regular polygon of $n$ sides as $n \to \infty$. And if we tried to find out how many radii would fit into the circumference of a circle, we do not get an integer, or even an exact fraction, but rather a number that sits between $6$ and $7$, having decimal places without end, namely, $2\pi \approx 6.283185307$. And that number is not an integer by a country mile.
+Moving from the finite to the infinite, the circle may be viewed as the limiting case of a regular polygon of $n$ sides as $n \to \infty$. And if we tried to find out how many diameters would fit into the circumference of a circle, we do not get an integer, or even an exact fraction, but rather a number that sits between $3$ and $4$, having decimal places without end, namely, $pi \approx 3.141592654$. And that number is not an integer by a country mile.
 
-"The natural numbers, the integers, and the rationals---all of these come under Kronecker's integers, but where do we stash $\sqrt{2}$ and $2\pi$ amongst them?" Sol asked Seven.
+"The natural numbers, the integers, and the rationals---all of these come under Kronecker's integers, but where do we stash $\sqrt{2}$ and $2\pi$ amongst them?" Sol had asked Seven.
 
 He was met with bemused silence.
 
 ## How about the number $e$?
 
-Encouraged that he had stupefied Seven right at the start, Sol mounted his next hobby horse, and expounded on $e$.
+Encouraged that he had stupefied Seven right at the start, Sol had mounted his next hobby horse, and expounded on $e$.
 
 "The number $e$ is probably _the_ most important number after $0$ and $1$. And do you know what it is? It is both [irrational](https://mathworld.wolfram.com/IrrationalNumber.html) and [transcendental](https://en.wikipedia.org/wiki/Transcendental_number). If you differentiate or integrate, you will find that the exponential function $\exp(x) = e^x$ is an eigenfunction of each operation. If you look into Nature, $e$ holds the pride of place in the [normal distribution](https://www.khanacademy.org/math/statistics-probability/modeling-distributions-of-data/normal-distributions-library/a/normal-distributions-review). If you are into [linear system theory](https://www.cns.nyu.edu/~david/handouts/linear-systems/linear-systems.html) you cannot escape $e$.
 
-But what exactly is the value of $e$? Again it cannot be confined like an integer: $e \approx 2.718281828$ again in a never ending decimal sequence. This number pervades all of Nature and yet it cannot be bottled into a finite number of digits! Where are the legions of integers to duel with this puny expeditionary force of three  numbers? _It appears that Nature prefers the non-integers!_"
+But what exactly is the value of $e$? Again it cannot be confined like an integer: $e \approx 2.718281828$ again in a never ending decimal sequence. This number pervades all of Nature and yet it cannot be bottled into a finite number of digits! Where are the legions of integers to duel with this puny expeditionary force of three numbers? _It appears that Nature prefers the non-integers!_"
 
-"Very poetic and ably said," I nodded in appreciation.
+"Very poetic and ably put," I nodded in appreciation.
 
 ## Open secrets
 
@@ -62,29 +62,45 @@ The rest of Sol's dialogue with Seven was intricately mathematical. I have recor
 
 ## The square root of two
 
-Of the triad we first consider, $\sqrt{2}$. It is the most within our grasp. It embodies a number, rather than a symbol, in its expression. It is the diagonal of a unit square. And we know that its square root must lie between $1$ and $1.5$, whose square is $2.25$. It may be evaluated painstakingly using algorithms from the age-before-calculators. So, let us look at that first.
+Of the triad---$\sqrt{2}$, $\pi$, and $e$---we first consider $\sqrt{2}$. It is the most within our everyday grasp. It evokes geometry rather than number for its precise expression. It is the diagonal of a unit square. And we know that its square root must lie between $1$ and $1.5$, as the latter squared is $2.25$. It may be evaluated painstakingly using algorithms from the age-before-calculators. So, let us look at one of those first.
 
 ### Manual extraction of √2
 
-The manual extraction of square roots is a form of longdivision that is both tedious and error-prone. The algorithm uses that fact that the factor $2$ figures in any square, witness: $(x + a) = x^2 + 2x +a^2$. So, this particular long division makes use of this fact at each step in the "longdivision" that is done. To see the end result and the working, please see [this](https://www.cuemath.com/algebra/square-root-of-2/) [@cuemathsqrt]. For a deeper explanation, [read this blog](https://www.cantorsparadise.com/the-square-root-algorithm-f97ab5c29d6d) [@ujjwalsingh2021].
+The manual extraction of square roots is analogous to long division. The process is both tedious and error-prone. The algorithm uses the fact that the factor $2$ figures in any square, witness: $(x + a) = x^2 + 2x +a^2$. So, this particular method makes use of this fact at each step in the "long division" that is done. To see the end result and the working, please see [this](https://www.cuemath.com/algebra/square-root-of-2/) [@cuemathsqrt]. For a deeper explanation, [read this blog](https://www.cantorsparadise.com/the-square-root-algorithm-f97ab5c29d6d) [@ujjwalsingh2021]. "I consider this form of working, with pencil and paper, a sophisticated form of torture. Euler of Gauss might have revelled in such pursuits, but count me out!" Sol added as a snide aside.
 
-## Continued Fractions
+## Two ways of expressing the same number
 
-There are basically two ways of representing real numbers: decimals, and continued fractions [@olds1963;@niven1991; @davenport2008;@simoson2019]. The latter representation is fascinating as it reveals patterns that are absent in the
+"I came perilously close to losing the bet to Seven," Sol continued. "You see, I had forgotten that the decimal system was not the only way to represent irrationals and transcendentals in never-ending glory. And I don't mean a change of base. Can you guess what I had forgotten?" Sol asked me during our conversation.
 
-Practically, every irrational, when pressed to computational use, is really a rational approximation to the irrational, to an accuracy that serves the purpose. In that sense, Kronecker was not far from the truth. But the full glory of $\sqrt{2}$, or $\pi$, or $e$ can only be encapsulated by the symbols we use for them. Every other, rational expression is but a costumed appearance, not the true persona.
+"Nothing from me to egg you on," I said in a sleepy tone. The time, place, and weather had lulled me into a restful somnolence that was ill-suited to mathematical head-scratching.
 
-I would like to demonstrate here another method of evaluating $\sqrt{2}$, using [continued fractions](https://en.wikipedia.org/wiki/Continued_fraction). The method might seem like sleight of hand, but it is well-founded, and it is also and example of how integers are used to tame the irrationals.
+"It is something that we learn at high school, more as a curiosity than as useful mathematics," Sol continued by way of enticing me with a clue. "Can you guess what it is?"
 
-Continued fraction are curious mathematical entities that have surprising properties. They are an alternative representation rational number representation of real numbers. No finite continued fraction can equate to an irrational number. But a never-ending continued fraction expansion can indeed represent an irrational number.
+When I shook my head with a dazed stare, Sol said, "Come on. One last clue. It has to do with fractions."
 
-Rational numbers may be represented as continued fractions in _two_ ways []. But irrational numbers may
+When I refused to be drawn into guessing what it was, Sol exclaimed, "[Continued Fractions](https://en.wikipedia.org/wiki/Continued_fraction)!" [@olds1963;@niven1991; @davenport2008;@simoson2019: @loya2017] rousing  me into full wakefulness with his thunderous voice.
 
+"Apart from a change of base, there are basically _two_ ways of representing real numbers: decimals, and continued fractions. Patterns not discernible in the decimal representation suddenly pop out with pellucid clarity when the same number is expressed as a continued fraction. The advent of computers and 64-bit computation has diverted our  attention away from experiencing the periodic beauty of a [quadratic irrational](https://en.wikipedia.org/wiki/Quadratic_irrational_number), expressed as a continued fraction," Sol went on, lyrically.
 
+"Practically, every irrational, when pressed to computational use, is really a rational approximation to the irrational, to an accuracy that serves the purpose. In that sense, Kronecker was not far from the truth. But the full glory of $\sqrt{2}$, or $\pi$, or $e$ can only be encapsulated by the symbols we use for them. Every other, rational expression is but a costumed appearance, not the true persona." Sol was in his element as he expounded.
 
+## The charm of continued fractions
 
+Sol then went on to demonstrate his preferred method of evaluating $\sqrt{2}$, using continued fractions. The method seemed like sleight of hand, but it is well-founded, and is also an example of how integers are used to tame the irrationals.
 
+Continued fractions are curious mathematical entities that have surprising properties. They are an alternative rational number representation of real numbers. No finite continued fraction can equate to an irrational number. But a never-ending continued fraction can indeed represent an irrational number. "this is why I say that the rationals and the irrationals meet at infinity," Sol said with panache.
 
+### Continued fraction expansion of a rational number
+
+"Let us start modestly and try to expand a _rational_ number using continued fractions," said Sol. "Give me a scary or hairy rational number, preferably larger than one," he said.
+
+"What about $\frac{3257}{106}$?" I answered, choosing the two numbers that randomly came to mind.
+
+"Taken," replied Sol. "Here is a little program that I have written to do it for me. I will then explain the algorithm. We start off by doing plain long division to get:"
+$$
+\frac{3257}{106} = 30 + \frac{77}{106} = 30 + \frac{1}{\frac{106}{77}}\\
+$$
+"Why do we write it like this? we want to get whole number quotients and whole number remainders and the trick is to always divide the larger number by the smaller, by inverting the remainder fraction," Sol said. "If you keep in mind that our goal is an improper fraction, you are good to go."
 
 ### Continued fraction expansion of √2
 
@@ -313,3 +329,6 @@ Lists of pi and e expansions
 https://mathworld.wolfram.com/PiFormulas.html
 
 https://en.wikipedia.org/wiki/List_of_representations_of_e
+
+https://math.stackexchange.com/questions/2205168/how-to-show-every-rational-number-can-be-expressed-as-two-different-continued-fr
+
