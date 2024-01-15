@@ -9,8 +9,6 @@ summary: 'So, I was eager with anticipation when I first stumbled upon mention o
 opengraphimage: dharma.png
 ---
 
-[TL;DR](https://dictionary.cambridge.org/dictionary/english/tldr) Open this [PDF letter]({attach}auxiliary/letter.pdf) in a browser and view it. Then see the [file that generated it in Typst]({attach}auxiliary/letter.typ). If you are impressed, read on. Otherwise, give this blog a miss.
-
 ## The road from LaTeX to Typst
 
 Despite the ubiquity of emails, each of us has had to write a letter to someone at some time in our lives. In the days of [snail mail](https://www.merriam-webster.com/dictionary/snail%20mail), we used to write by hand, using lightweight paper---specially made for conveying the maximum information for the least weight of paper plus envelope---to minimize postage charges. Those days are well and truly behind us now, to the extent that many of us rarely lift a pencil or put pen to paper, except to sign our names or make some perfunctory calculation.
