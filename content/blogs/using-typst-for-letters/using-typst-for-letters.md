@@ -147,9 +147,9 @@ Above all, the letter template and letter have demonstrated that a newcomer to `
 
 I have two suggestions for Typst:
 
-i.  The name `Typst` seems rather infelicitous to pronounce. At the very least there should be an explanation on how to pronounce it. If it were possible, I myself would vote for a more pronounceable name change, though. \emojifont :wink: \normalfont
+i.  The name `Typst` seems rather infelicitous to pronounce. At the very least there should be an explanation on how to pronounce it.^[After finishing this blog, I came across [this explanation on how to pronounce `Typst`](https://github.com/typst/typst#pronunciation-and-spelling).] If it were possible, I myself would vote for a visually less daunting name change, though. \emojifont :wink: \normalfont
 
-ii. If `Typst` could be harnessed to produce HTML output, either on its own, or through `Pandoc`, we would be on the cusp of a typesetting revolution, because ePub would also then be possible with a few tweaks, from a single source document.
+ii. If `Typst` could be harnessed to produce HTML output, either on its own, or through `Pandoc`, we would be on the cusp of a typesetting revolution, because ePub would also then be possible with a few tweaks, from a single source document.^[After I had concluded this blog, I came stumbled upon [this discussion on GitHub](https://github.com/typst/typst/issues/721) in which HTML export is planned natively from `Typst` source. Hurrah!]
 
 My overall experience using Typst has been very positive. The fact that I now have a template for letters means that my future letter-writing tasks will be lightened considerably. Count me in as a recent and enthusiastic convert to Typst! Long may it flourish!
 
