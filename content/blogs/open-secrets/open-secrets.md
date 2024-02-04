@@ -10,6 +10,8 @@ opengraphimage:
 status: draft
 ---
 
+<!-- https://www.youtube.com/watch?v=kNjkBeQ-OAw -->
+
 ## "I made a wager"
 
 "I made a wager", my friend Solus "Sol" Simkin opened up the other day. We were enjoying the warmth of a spring afternoon, with just the right balance of light and shade, just the right balance of heat and cold, and a humidity that could have descended from Heaven. I might have slipped into the delicious oblivion of sleep, were it not for the fact that I cherished hearing Sol, even more than I desired sleep. So, I was all agog to hear him regale yet another tale from his intellectual adventures.
@@ -34,7 +36,7 @@ Sol told me that he started off with the integers that Kronecker had so exalted.
 
 Sol had told Seven that the square is _the_ four-sided regular polygon. If we consider a square with a side length equal to one unit, by the theorem of Pythagoras, we know that its diagonal has a length equal to $\sqrt{1^2 + 1^2} = \sqrt{2}$ units. And there are proofs aplenty on the Web that this number is in no way an integer. Indeed, it is not even the ratio of two integers. How could something as basic as the diagonal of a square cause the first chink in Kronecker's armour?
 
-Moving from the finite to the infinite, the circle may be viewed as the limiting case of a regular polygon of $n$ sides as $n \to \infty$. And if we tried to find out how many diameters would fit into the circumference of a circle, we do not get an integer, or even an exact fraction, but rather a number that sits between $3$ and $4$, having decimal places without end, namely, $pi \approx 3.141592654$. And that number is not an integer by a country mile.
+Moving from the finite to the infinite, the circle may be viewed as the limiting case of a regular polygon of $n$ sides as $n \to \infty$. And if we tried to find out how many diameters would fit into the circumference of a circle, we do not get an integer, or even an exact fraction, but rather a number that sits between $3$ and $4$, having decimal places without end, namely, $\pi \approx 3.141592654$. And that number is not an integer by a country mile.
 
 "The natural numbers, the integers, and the rationals---all of these come under Kronecker's integers, but where do we stash $\sqrt{2}$ and $2\pi$ amongst them?" Sol had asked Seven.
 
