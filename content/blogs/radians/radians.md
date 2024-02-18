@@ -143,7 +143,7 @@ Recall from geometry that a straight line and a circle might lie relative to eac
 
 The line $AB$ does not cut or _intersect_ the circle at all. The line $EF$ cuts the circle at _two_ points, $E$ and $F$, and is called a [chord](https://en.wikipedia.org/wiki/Chord_(geometry)). When the line $EF$ moves parallel to itself toward the circumference of the circle, we get the chord $E'F'$. Eventually the points $E'$ and $F'$ will coincide and the line will cut the circle at one and only one point.
 
-This case is illustrated by the line $CTD$ which cuts the circle at only one point, $T$. $CTD$ is called a [tangent (line)](https://en.wikipedia.org/wiki/Tangent_lines_to_circles) to a circle and $T$ is the point of tangency.^[Therefore, the tangent is a limiting case of a chord.] Note that the radius $OT$ is perpendicular to the tangent $CDT$.
+This case is illustrated by the line $CTD$ which cuts the circle at only one point, $T$. $CTD$ is called a [tangent (line)](https://en.wikipedia.org/wiki/Tangent_lines_to_circles) to a circle and $T$ is the point of tangency.^[Therefore, the tangent is a limiting case of a chord.] Note that the radius $OT$ is perpendicular to the tangent $CTD$.
 
 With that out of the way, we know from @fig:trig, that the tangent is the ratio of the lengths of the opposite side to the adjacent side, which in @fig:unit translates to $\tan\theta = \frac{SC}{OC}$. But the denominator in this case, $OC$, is not $1$ like it was for the other two trigonometric ratios. To work around this, with reference to @fig:unit, we construct the triangle $ODT$ thus:
 
