@@ -1,0 +1,400 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode,linktoc=all}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  a4paper,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=25mm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{british}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+% $HOME/.pandoc/defaults/latex-header-includes.tex
+% Common header includes for both lualatex and xelatex engines.
+%
+% Preliminaries
+%
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+% \PassOptionsToPackage{main=british}{babel}
+\PassOptionsToPackage{english}{selnolig}
+\AtBeginEnvironment{quote}{\small}
+\AtBeginEnvironment{quotation}{\small}
+\AtBeginEnvironment{longtable}{\centering}
+%
+% Packages that are useful to include
+%
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[inkscapeversion=1]{svg}
+\usepackage[defaultlines=4,all]{nowidow}
+\usepackage{etoolbox}
+\usepackage{fontsize}
+\usepackage{newunicodechar}
+\usepackage{pdflscape}
+\usepackage{fnpct}
+\usepackage{parskip}
+  \setlength{\parindent}{0pt}
+\usepackage[style=american]{csquotes}
+% \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
+%
+\usepackage{hyperref} % cleveref must come AFTER hyperref
+\usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
+\let\longdivision\relax
+\usepackage{longdivision}
+% noto-plus.tex
+% Font-setting header file for use with Pandoc Markdown
+% to generate PDF via LuaLaTeX.
+% The main font is Noto Serif.
+% Other main fonts are also available in appropriately named file.
+\usepackage{fontspec}
+\usepackage{setspace}
+\setstretch{1.3}
+%
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=Node} % at the start always
+%
+% For English
+% See also https://tex.stackexchange.com/questions/574047/lualatex-amsthm-polyglossia-charissil-error
+% We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
+%
+\babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
+\babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
+\babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
+%
+% Sanskrit, Tamil, and Greek fonts
+%
+\babelprovide[import, onchar=ids fonts]{sanskrit}
+\babelprovide[import, onchar=ids fonts]{tamil}
+\babelprovide[import, onchar=ids fonts]{greek}
+%
+\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSerifDevanagari}
+\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSansDevanagari}
+\babelfont[tamil]{rm}[Renderer=HarfBuzz,Script=Tamil]{NotoSerifTamil}
+\babelfont[tamil]{sf}[Renderer=HarfBuzz,Script=Tamil]{NotoSansTamil}
+\babelfont[greek]{rm}[Script=Greek]{GentiumBookPlus}
+%
+% Math font
+%
+\usepackage{unicode-math} % seems not to hurt % fallabck
+\setmathfont[bold-style=TeX]{STIX Two Math}
+\usepackage{amsmath}
+\usepackage{esdiff} % for derivative symbols
+% \renewcommand{\mathbf}{\symbf}
+%
+%
+% Other fonts
+%
+\newfontfamily{\emojifont}{Symbola}
+%
+
+\usepackage{titling}
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0.2pt}
+    \renewcommand{\footrulewidth}{0.2pt}
+    \fancyhead[LO,RE]{\scshape\thetitle}
+    \fancyfoot[CO,CE]{\footnotesize Copyright © 2006\textendash\the\year, R (Chandra) Chandrasekhar}
+    \fancyfoot[RE,RO]{\thepage}
+%
+\usepackage{newunicodechar}
+\newunicodechar{√}{\textsf{√}}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{sf}
+\hypersetup{
+  pdftitle={From Calculus to Analysis},
+  pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
+  colorlinks=true,
+  linkcolor={DarkOliveGreen},
+  filecolor={Purple},
+  citecolor={DarkKhaki},
+  urlcolor={Maroon},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{From Calculus to Analysis}
+\author{R (Chandra) Chandrasekhar}
+\date{2024-03-24 | 2024-03-24}
+
+\begin{document}
+\maketitle
+
+\thispagestyle{empty}
+
+
+\subsection{A Baffling Transition}\label{a-baffling-transition}
+
+The transition from calculus in high school to analysis at university is
+often baffling to the student. The comfort of simple---if
+ill-understood---rules that magically give the correct answer to a
+calculus problem, is replaced with some symbolic mumbo jumbo involving
+\emph{inequalities} and Greek letters like epsilon and delta, which
+serve to obfuscate rather than clarify. Proofs supplant computation,
+upsetting many students. A good number of them lose marks, and often
+also hope, and veer away from mathematics because the change from
+calculus to analysis seems uncomfortable, unfriendly, and even uncalled
+for.\footnote{Why fix it if it ain't broke?}
+
+The calculus of Newton and Leibnitz that is taught in schools today is
+about three and a half centuries old. But the attempt to change the
+innocent calculus that \href{}{just worked} into the sophisticated,
+convoluted beast called analysis was itself two hundred years in the
+making.
+
+It was a painful and painstaking transformation whose history is replete
+with ideas that were challenged, thrown out or recast, refined, tested,
+validated, and finally accepted. So, if you are shellshocked by the
+transition from calculus to analysis, you are in good company. Even
+today, it is claimed that many who use the logic and tools of analysis
+routinely may be \emph{familiar} with them even if they lack a deep,
+foundational understanding of them. {[}citation{]}
+
+\subsection{My own trek through
+Numberland}\label{my-own-trek-through-numberland}
+
+I lay no claim to expertise in analysis. As an engineer, I was able to
+live my professional life without deep searching for the foundations of
+mathematical truth. But as I started writing about numbers, I was
+troubled by the succession of types of numbers that were successively
+added.
+
+If we start out with the natural numbers and progress to include zero
+and the negatives numbers, and then onto the rational numbers or
+fraction, to irrationals, to complex numbers, I had doubts about the
+numbers being really done and dusted.
+
+The number line with integers alone had huge gaps in it; let us call
+them \emph{holes}. Those holes could be filled somewhat with the
+fractions or rational numbers. But the number line still \emph{leaked},
+i.e., it had holes. Then, the irrationals filled some more holes.
+\emph{Was the number line completely filled, or does it still leak?}
+This was the doubt that assailed me.
+
+It was then that I became aware of how the numbers we use everyday are
+in fact all rational numbers of mixed fractions. The irrational numbers
+were really a class of numbers that filled out the number menagerie
+philosophically and mathematically, but were not pressed into use in
+everyday life. If you look at the nigh sky, you see stars: these are the
+rationals. But you do not see the black holes: these are the
+irrationals. But both are needed for a complete astronomical picture.
+So, too, are the irrationals needed for a complete number line.
+
+But what if there was a \emph{third} type of number as yet undiscovered?
+Or, heaven forbid, and fourth and further types of number? My escapade
+through the mathematics of the late 1800s led me to the ides of a
+\href{https://en.wikipedia.org/wiki/Dedekind_cut}{Dedekind cut}
+{[}\citeproc{ref-dedekind}{1}{]} and thanks to his insight, we do not
+have further types of numbers on the real number line.
+
+\subsection{Intuition, geometry, paradoxes, and
+imprecision}\label{intuition-geometry-paradoxes-and-imprecision}
+
+Gradient Geometry Arithmetize it as both geometry and algebra seemed to
+grow varieties. Area of a rectangle with zero with is zero. What is
+close to but not zero? Approaches means what?
+
+\subsection{Limits and such}\label{limits-and-such}
+
+The idea of \emph{limits} are not fully appreciated until the real
+number line is comprehended, at least somewhat. And then, we can begin
+understanding and resolving paradoxes, such as
+\href{https://en.wikipedia.org/wiki/Zeno's_paradoxes}{Zeno's paradox of
+Achilles and the Tortoise}.
+
+Let us agree to cast aside for another day a deeper examination of the
+real number system, start with sequences, series, and functions, and how
+their encounters with vanishingly small quantities, the
+\emph{infinitesimals}, and of the unbounded \emph{infinite} quantities
+require taming by the idea of limits so that they may be coralled into
+the \emph{paddock of precision} in the real number system.
+
+\subsection{The Differential Calculus}\label{the-differential-calculus}
+
+The \href{}{differential calculus} taught in high school allows us to
+compute rates of change, like finding the instantaneous speed of a
+moving object, using a sleight of hand called \emph{taking limits} in
+which an \emph{average} speed over a finite time is allowed to
+\emph{approach} the \emph{instantaneous} speed by reducing the time
+interval so that it becomes \emph{inifinitesimal}, i.e., a value that is
+zero to all intents and purposes. But, \emph{we cannot divide by zero
+when dealing with real numbers}.
+
+\subsection{The Integral Calculus}\label{the-integral-calculus}
+
+Likewise, the \href{}{integral calculus} allows us to compute
+arbitrarily shaped areas under curves by using the formula for the area
+of a rectangle and allowing the with of the rectangle to slowly reduce
+until the number of rectangles becomes \emph{infinite}, in which case we
+get the area under the curve.
+
+\subsection{Are epsilon and delta really
+necessary?}\label{are-epsilon-and-delta-really-necessary}
+
+But these are sleights of hand that upend the apple cart of logic. The
+area of a \emph{vanishingly thin} rectangle must perforce equal zero and
+the addition of arrays of such rectangles cannot give us a finite
+non-zero area. And yet the magic of calculus allows us to compute finite
+non-zero areas. And there is no logical road to these magical results.
+
+This is the principal motivation for the progression from calculus to
+analysis and those pesky \(\epsilon\) and \(\delta\) definitions that
+feel strange, and sound like mumbo jumbo. Analysis sounds so arcane that
+it seems that calculus is common sense and that analysis is the real
+magic. No wonder mathematics at high school judiciously avoids analysis
+whose innards seem like black hole when compared with the sunny meadows
+of calculus.
+
+\textless!--What is a limit?
+
+Why is it important?
+
+How does one find a limit?
+
+Is a limit unique?
+
+How does intuition fail with limits
+
+What happens with six/x at x = 0?
+
+What happens at point-discontinuities?
+
+If a function is re-defined as sinx/x = 5 at x = 0, what happens to the
+limit? To continuity?
+
+Why do we start with epsilon rather than delta when defining a limit
+rigorously?
+
+What is a limit in Calculus?
+
+What is a limit in Analysis?
+
+Why did it take 200 years from the time of Leibnitz to the time of
+Weierstrass to formalize a limit rigorously, i.e., Calculus to Analysis?
+
+What are some examples of pathological functions and their limits?
+
+Critique of texts on limits: no pictures; Moarsh is an exception
+
+``From Calculus to Analysis'' books seldom live up to the promise of
+their titles
+
+Start with sequences so that why epsilon before delta becomes clear:
+Hight's book.
+
+``When the successively attributed values of the same variable
+indefinitely approach a fixed value, so that finally they differ from it
+by as little as desired, the last is called the limit of all the
+others.''9 Cauchy in Grabiner.
+
+``For those ultimate ratios with which quantities vanish are not truly
+the ratios of ultimate quantities, but limits toward which the ratios of
+quantities decreasing without limit do always converge.'' Newrton in
+Grabiner. ``approach nearer than by any given difference, but never go
+beyond, nor in effect attain to, till the quantities are diminished in
+infinitum.''16
+
+\section*{References}\label{bibliography}
+\addcontentsline{toc}{section}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{0}{0}
+\bibitem[\citeproctext]{ref-dedekind}
+\CSLLeftMargin{{[}1{]} }%
+\CSLRightInline{Richard Dedekind. 1963. \emph{{Essays on the Theory of
+Numbers}}. Dover Publications.}
+
+\end{CSLReferences}
+
+
+
+\end{document}

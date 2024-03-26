@@ -1,0 +1,97 @@
+---
+title: From Calculus to Analysis
+author: "R (Chandra) Chandrasekhar"
+date: 2024-03-24
+modified: 2024-03-24
+category: Mathematics
+tags: calculus, analysis, limit, precision
+summary: To be continued
+opengraphimage:
+status: draft
+---
+
+## A Baffling Transition
+
+The transition from calculus in high school to analysis at university is often baffling to the student. The comfort of simple---if ill-understood---rules that magically give the correct answer to a calculus problem, is replaced with some symbolic mumbo jumbo involving _inequalities_ and Greek letters like epsilon and delta, which serve to obfuscate rather than clarify. Proofs supplant computation, upsetting many students. A good number of them lose marks, and often also hope, and veer away from mathematics because the change from calculus to analysis seems uncomfortable, unfriendly, and even uncalled for.^[Why fix it if it ain't broke?]
+
+The calculus of Newton and Leibnitz that is taught in schools today is about three and a half centuries old. But the attempt to change the innocent calculus that [just worked]() into the sophisticated, convoluted beast called analysis was itself two hundred years in the making.
+
+It was a painful and painstaking transformation whose history is replete with ideas that were challenged, thrown out or recast, refined, tested, validated, and finally accepted. So, if you are shellshocked by the transition from calculus to analysis, you are in good company. Even today, it is claimed that many who use the logic and tools of analysis routinely may be _familiar_ with them even if they lack a deep, foundational understanding of them. [citation]
+
+## My own trek through Numberland
+
+I lay no claim to expertise in analysis. As an engineer, I was able to live my professional life without deep searching for the foundations of mathematical truth. But as I started writing about numbers, I was troubled by the procession of types of numbers that were successively added over time.
+
+If we start out with the natural numbers, and progress to include zero and the negative numbers, and then onto the rational numbers or fractions, to the irrationals, to complex numbers, I had doubts about all possible numbers being truly done and dusted with these.
+
+The number line with integers alone had huge gaps in it; let us call them _holes_. Those holes could be filled somewhat with the fractions or rational numbers. But the number line still _leaked_, i.e., it had holes. Then, the irrationals filled some more holes. _Was the number line now completely filled, or does it still leak?_ This was the doubt that assailed me.
+
+It was then that I became aware of how the numbers we use everyday are in fact _all_ rational numbers or mixed fractions. The irrational numbers were really a class of numbers that filled out the number menagerie philosophically and mathematically, but were not pressed into use in everyday life. If you look at the nigh sky, you see points of light: these are the rationals. But you do not see the black holes: these are the irrationals. But both are needed for a complete astronomical picture. So, too, are the rationals and irrationals needed for a complete number line.
+
+But what if there was a _third_ type of number as yet undiscovered? Or, heaven forbid, and fourth and further types of number? My escapade through the mathematics of the late 1800s led me to the idea of a [Dedekind cut](https://en.wikipedia.org/wiki/Dedekind_cut) [@dedekind] and thanks to his insight, we may rest assured that we do not have further types of numbers on the real number line.
+
+## Intuition, geometry, paradoxes, and imprecision
+
+Gradient Geometry Arithmetize it as both geometry and algebra seemed to grow varieties. Area of a rectangle with zero with is zero. What is close to but not zero? Approaches means what?
+
+## Limits and such
+
+The idea of _limits_ are not fully appreciated until the real number line is comprehended, at least somewhat. And then, we can begin understanding and resolving paradoxes, such as [Zeno's paradox of Achilles and the Tortoise](https://en.wikipedia.org/wiki/Zeno's_paradoxes).
+
+Let us agree to cast aside for another day a deeper examination of the real number system, start with sequences, series, and functions, and how their encounters with vanishingly small quantities, the _infinitesimals_, and of the unbounded _infinite_ quantities require taming by the idea of limits so that they may be coralled into the _paddock of precision_ in the real number system.
+
+## The Differential Calculus
+
+The [differential calculus]() taught in high school allows us to compute rates of change, like finding the instantaneous speed of a moving object, using a sleight of hand called _taking limits_ in which an _average_ speed over a finite time is allowed to _approach_ the _instantaneous_ speed by reducing the time interval so that it becomes _inifinitesimal_, i.e., a value that is zero to all intents and purposes. But, _we cannot divide by zero when dealing with real numbers_.
+
+<!--Figure here.-->
+
+## The Integral Calculus
+
+Likewise, the [integral calculus]() allows us to compute arbitrarily shaped areas under curves by using the formula for the area of a rectangle and allowing the with of the rectangle to slowly reduce until the number of rectangles becomes _infinite_, in which case we get the area under the curve.
+
+<!--Figure here.-->
+
+## Are epsilon and delta really necessary?
+
+But these are sleights of hand that upend the apple cart of logic. The area of a _vanishingly thin_ rectangle must perforce equal zero and the addition of arrays of such rectangles cannot give us a finite non-zero area. And yet the magic of calculus allows us to compute finite non-zero areas. And there is no logical road to these magical results.
+
+This is the principal motivation for the progression from calculus to analysis and those pesky $\epsilon$ and $\delta$ definitions that feel strange, and sound like mumbo jumbo. Analysis sounds so arcane that it seems that calculus is common sense and that analysis is the real magic. No wonder mathematics at high school judiciously avoids analysis whose innards seem like black hole when compared with the sunny meadows of calculus.
+
+<!--What is a limit?
+
+Why is it important?
+
+How does one find a limit?
+
+Is a limit unique?
+
+How does intuition fail with limits
+
+What happens with six/x at x = 0?
+
+What happens at point-discontinuities?
+
+If a function is re-defined as sinx/x = 5 at x = 0, what happens to the limit? To continuity?
+
+Why do we start with epsilon rather than delta when defining a limit rigorously?
+
+What is a limit in Calculus?
+
+What is a limit in Analysis?
+
+Why did it take 200 years from the time of Leibnitz to the time of Weierstrass to formalize a limit rigorously, i.e., Calculus to Analysis?
+
+What are some examples of pathological functions and their limits?
+
+Critique of texts on limits: no pictures; Moarsh is an exception
+
+"From Calculus to Analysis" books seldom live up to the promise of their titles
+
+Start with sequences so that why epsilon before delta becomes clear: Hight's book.
+
+ "When the successively attributed values of the same variable indefinitely approach a fixed value, so that finally they differ from it by as little as desired, the last is called the limit of all the others."9 Cauchy in Grabiner.
+
+
+"For those ultimate ratios with which quantities vanish are not truly the ratios of ultimate quantities, but limits toward which the ratios of quantities decreasing without limit do always converge." Newrton in Grabiner.
+"approach nearer than by any given difference, but never go beyond, nor in effect attain to, till the quantities are diminished in infinitum."16
