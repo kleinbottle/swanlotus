@@ -10,6 +10,32 @@ opengraphimage:
 status: draft
 ---
 
+## Ideas
+
+#.  Real numbers: holes in the number line
+#.  Infinite Processes and Infinities
+#.  No geometry
+#.  No algebra
+#.  But arithmetic
+#.  Squeezing something from below and above: Archimedes
+#.  Archimedean Field
+#.  Epsilon-Delta matchbox to confine the Limit spider
+#.  Continuity
+#.  Differentiability
+#.  But most books: no pictures
+#.  Pathological functions
+#.  Fourier Series: how can a curvy function produce a square wave?
+#.  My selection of books
+#.  Extract from chapter
+#.  Order in the field of real numbers; Is the Complex field ordered?
+#.  Modulus function to define length
+#.  Approximation rather than Computation
+#.  Why Differentiation need s to be re-defined
+#.  Why Integration needs to be redefined
+#.  What happens at Infinity? Is the equals sign really valid?
+#.
+
+
 ## A Baffling Transition
 
 The transition from calculus in high school to analysis at university is often baffling to the student. The comfort of simple---if ill-understood---rules that magically give the correct answer to a calculus problem, is replaced with some symbolic mumbo jumbo involving _inequalities_ and Greek letters like epsilon and delta, which serve to obfuscate rather than clarify. Proofs supplant computation, upsetting many students. A good number of them lose marks, and often also hope, and veer away from mathematics because the change from calculus to analysis seems uncomfortable, unfriendly, and even uncalled for.^[Why fix it if it ain't broke?]
@@ -95,3 +121,6 @@ Start with sequences so that why epsilon before delta becomes clear: Hight's boo
 
 "For those ultimate ratios with which quantities vanish are not truly the ratios of ultimate quantities, but limits toward which the ratios of quantities decreasing without limit do always converge." Newrton in Grabiner.
 "approach nearer than by any given difference, but never go beyond, nor in effect attain to, till the quantities are diminished in infinitum."16
+
+analysis is
+based on uncountable sets and the struggle to understand this fact: Stillwell The Real Numbers

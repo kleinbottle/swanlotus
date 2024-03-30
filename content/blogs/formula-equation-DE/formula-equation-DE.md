@@ -7,6 +7,7 @@ category:
 tags:
 summary:
 opengraphimage:
+status: draft
 ---
 
 An academic friend of mine casually asked me if I would write a blog demystifying the meanings and uses of three mathematical terms: formula, equation, and differential equation. I thought that this was spoken in jest, and let his request lie in a dusty corner of my mind, as a memento to his humour. Imagine my surprise when my friend accosted me again after a month and asked if I had put pen to paper to explain mathematical formulae etc.
