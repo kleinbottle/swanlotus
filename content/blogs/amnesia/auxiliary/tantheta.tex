@@ -1,0 +1,95 @@
+% tan-theta.tex
+% Ilustration for blog "Doron's Mathematical Amnesia"
+%
+% R (Chandra) Chandrasekhar
+% lnesqrt1cos0@gmail.com | chyavana@gmail.com
+% 
+% First written: 2024-04-09
+% Last revised : 2024-04-09
+%
+\PassOptionsToPackage{rgb,dvipsnames,svgnames,dvipsnames,hyperref}{xcolor}
+\documentclass[border={0mm},tikz]{standalone}
+\input{TikZ-Preamble}
+%
+\begin{document}
+%
+\tikzset{every picture/.style = {line width = 1.5pt, line cap = round, line join = round}}
+%
+\begin{tikzpicture}[scale=4]
+%
+% Set up unobtrusive grid and label axes
+%
+\draw[line width = 0.5pt, step=1 cm, color=Silver] (-1.4, -1.2) grid (1.4, 1.4);
+\draw[color=Silver, -{latex}](-1.4, 0) -- (1.4, 0);
+\draw[color=Silver, -{latex}](0, -1.2) -- (0, 1.4);
+\node [color=Silver] at (1.3, 0) [below]{$x$};
+\node [color=Silver] at (0, 1.3) [right]{$y$};
+%
+% Draw unit circle at origin
+% 
+\coordinate (O) at (0, 0);
+\node at (O) [below] {$O$};
+\draw (O) circle [radius = 1];
+%
+% Identify and label the cardinal coordinates
+% 
+\coordinate (Q) at (-1, 0);
+\node at (Q) [above, xshift = -0.5cm]{$(-1, 0)$};
+\node at (Q) [below, xshift = -0.15cm]{$Q$};
+\node at (1, 0) [above, xshift = 0.5cm] {$(1, 0)$};
+\node at (0, 1) [above] {$(0, 1)$};
+\node at (0, -1) [below] {$(0, -1)$};
+% 
+% Identify R, draw OR, and label it
+% 
+\coordinate (R) at (60:1);
+\draw [color=SteelBlue] (O) -- (R);
+\node at (R) [yshift = 0.25cm, xshift = 0.25cm]{$R(x, y)$};
+% 
+% Identify P as perpendicular from R to QR
+% Draw PR and label it
+% 
+\coordinate (P) at ($(Q)!(R)!(O)$);
+\draw [color=Sienna] (P) -- (R);
+\node at (P) [below] {$P$};
+% 
+% Draw OP
+% 
+\draw [color=DarkOliveGreen] (O) -- (P);
+%
+% Mark and label the lengths x and y
+% 
+\draw [line width = 1pt, color=DarkOliveGreen, |-|, yshift = -0.12cm] ([yshift = -0.12cm]O) -- node [midway, below]{$x$} ([yshift = -0.12cm] P);
+%
+\draw [line width = 1pt, color=Sienna, |-|] ([xshift = 0.1cm] R) -- node [midway, right,]{$y$} ([xshift = 0.1cm] P);
+%
+% Draw the angle POR with an arrow
+% No spaces between letters in angle = P--O--R
+% 
+\pic (theta) [draw, angle radius = 0.8cm, line width = 1pt, BrickRed, -{latex}, "$\theta$"] {angle = P--O--R};
+%
+% Draw a righ angle symbol for angle RPO
+% 
+\pic [draw, angle radius = 0.25cm, line width = 1pt] {right angle = R--P--O};
+% 
+% Get S as the intersection of QR and the y-axis
+% 
+\draw [color = Maroon, name path = qr] (Q) -- (R);
+\path [name path = yaxis] (O) -- (0, 1);
+\path [name intersections = {of = qr and yaxis, by = S}];
+\node at (S) [left] {$S (0, t)$};
+% 
+% Name the base angles of the isosceles triangle as \alpha
+% and show that it is \theta/2
+% 
+\pic (alpha1) [draw, angle radius = 1.2cm, line width = 1pt, DarkOrchid, "$\alpha$"] {angle = O--Q--R};
+%
+\pic (alpha2) [draw, angle radius = 1.2cm, line width = 1pt, DarkOrchid, "$\alpha$"] {angle = Q--R--O};
+% 
+% Relate \alpha and \theta and t
+% 
+\node [text=DarkSlateGray] at (-0.5, -0.2) {$\theta = 2\alpha$};
+\node [text=DarkSlateGray] at (-0.5, -0.4) {$\tan\alpha = \dfrac{t}{1} =t$};
+% 
+\end{tikzpicture}
+\end{document}

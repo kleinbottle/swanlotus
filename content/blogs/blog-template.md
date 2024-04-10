@@ -1,13 +1,13 @@
 ---
-title:
+title: 
 author: "R (Chandra) Chandrasekhar"
-date:
-modified:
-category:
-tags:
-summary:
-status:
-opengraphimage:
+date: 
+modified: 
+category: 
+tags: 
+summary: 
+status: 
+opengraphimage: 
 ---
 
 ## Acknowledgements
