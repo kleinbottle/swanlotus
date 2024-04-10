@@ -4,9 +4,9 @@ author: R (Chandra) Chandrasekhar
 date: 2024-04-08
 modified: 2024-04-10
 category: Simkin Tales
-tags: mathematics
+tags: mathematics geometry algebra trigonometry
 summary: "Poor Doron has suffered a strange cognitive deficit. His language and speech skills have survived intact, but he has developed 'selective mathematical amnesia'. He has forgotten much of high school mathematics---which for a person with a Master's degree in engineering---is a rather tragic state of affairs. In fact, his knowledge of mathematics now resembles [Emmental cheese](https://en.wikipedia.org/wiki/Emmental_cheese)---full of holes."
-opengraphimage:
+opengraphimage: emmental-cheese.jpg
 status: published
 ---
 
