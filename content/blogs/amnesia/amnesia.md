@@ -86,7 +86,7 @@ Doron stared vacantly again. I decided to let him rest his injured brain, and re
 
 When we resumed two days later, Doron struggled to say a word. He started out "ext, ext, ext" but could not go further. It was then that I realized how important are the _names_ we attach to concepts and things. The very basis of all knowledge is to able to name new objects. Only then can we progress to know about them. In his heroic struggle, Doron had reached the doorstep of the correct name, but could not open the door.
 
-"How about exterior angle, Doron?" I asked. I was rewarded with a "Yes, yes, yes, yes." With a little more nudging, we got to the point where Doron remembered that [the exterior angle of a triangle equalled its two interior angles](https://www.storyofmathematics.com/exterior-angle-theorem/).
+"How about exterior angle, Doron?" I asked. I was rewarded with a "Yes, yes, yes, yes." With a little more nudging, we got to the point where Doron remembered that [the exterior angle of a triangle equalled the sum of its two interior angles](https://www.storyofmathematics.com/exterior-angle-theorem/).
 
 I slowly coaxed Doron along until he could utter "Alpha is half theta". That I considered a major breakthrough, for indeed, 
 $$
@@ -101,7 +101,7 @@ $$
 \tan\alpha = \tan\frac{\theta}{2} = \frac{OS}{OQ} = \frac{t}{1} = t.
 $$ {#eq:halftheta}
 
-We were now close to the denouement, but I did not wish to test my luck. I suggested to Doron that we should treat ourselves to ice-creams after this heroic effort. We met again three days later.
+Doron immediately called out @eq:halftheta in words. We were now close to the denouement, but I did not wish to test my luck. I suggested to him that we should treat ourselves to ice-creams after this heroic effort. We met again three days later.
 
 ## The coordinates of $R$ in terms of $t$
 
@@ -111,11 +111,11 @@ This was the only part of the question that needed imagination and effort to pro
 
 ## Equality as a pervasive idea in mathematics
 
-At the heart of almost all mathematics is the idea of equality. An equation says that two things related by the $=$ sign are indeed the same. It was a bit like calling "Richard", "Dick" or "Rick", or some such moniker, when there was no room for confusion. I was hoping against hope that this fundamental  principle of equality would somehow surface from the mental depths of Doron'a brain.
+At the heart of almost all mathematics is the idea of equality. An equation says that two things related by the $=$ sign are indeed the same. It was a bit like calling "Richard", "Dick" or "Rick", or some such moniker, when there was no room for confusion. I was hoping against hope that this fundamental  principle of equality would somehow surface from the mental depths of Doron's brain.
 
 The day he could spontaneously display facility with the mathematical game of aliases, he would recover, and never look back again---so I felt. Was $3 + 2$ not an alias for $5$? It was a suggestion like that which got me started again with Doron when we next met.
 
-And he returned my serve very unexpectedly. He said, "$R$ is on the straight line $QSR$ and it is also on the unit circle. If we find out where the straight line and circle meet, we will get descriptions of $R$ that are aliases. Will that not do?"
+And he returned my serve expertly and very unexpectedly. He said, "$R$ is on the straight line $QSR$ and it is also on the unit circle. If we find out where the straight line and circle meet, we will get descriptions of $R$ that are aliases. Will that not do?"
 
 I heartily congratulated Doron, when he said this, little knowing how to hide my emotional exhilaration at his progress. He was indeed coming out of the dungeon of mathematical amnesia, and I knew intuitively that he would bask thereafter in the sunshine of newfound old mathematical knowledge.
 
@@ -173,9 +173,11 @@ y &= t(x + 1)\\
 \end{aligned} 
 $${#eq:fory}
 
+And thus we could claim [QED](https://en.wikipedia.org/wiki/Q.E.D.).
+
 ## Looking back
 
-Finally, Doron and I had mastered the monster, although to some it would seem a titmouse!. Step by single step, like a CPU in a computer, we had waded high school geometry, algebra, and trigonometry to finally derive the enigmatic relation we were after.
+Finally, Doron and I had mastered the monster, although to some it would seem a titmouse! Step by single step, like a CPU in a computer, we had waded through high school geometry, algebra, and trigonometry to finally derive the relation we were after.
 
 I asked Doron what he thought of the whole experience. With uncanny sagacity, he said that he had learned to recognize symmetry, manipulate symbols algebraically, and to perceive equality to force an insight.
 
@@ -183,7 +185,7 @@ Stunned at this level of maturity---which could only come from a seasoned mathem
 
 Doron said, "Imagination vivifies not only geometry, but all of mathematics. If one cannot imagine, one cannot see the beauty of mathematics that exists, nor be able to invent newer mathematics with yet more beauty."
 
-On that high note, Sol concluded his heartwarming tale of Doron's mathematical amnesia, and his eventual complete rehabilitation. 
+On that high note, Sol concluded his heartwarming tale of Doron's mathematical amnesia, and his eventual complete rehabilitation. So engrossed had I been by his tale, it took me a while to realize that were still at the _Orchard Valley Coffeeshop_ and dusk was gently darkening the day.
 
 ## Acknowledgements
 
@@ -193,7 +195,7 @@ On that high note, Sol concluded his heartwarming tale of Doron's mathematical a
 - [`pythagoras.tex`]({attach}auxiliary/pythagoras.tex)
 - [`tantheta.tex`]({attach}auxiliary/tantheta.tex)
 
-These packages are immensely powerful but the learning curve is not gentle. Once proficiency and familiarity are gained, the results are impressive.
+These packages are immensely powerful but the learning curve is not gentle. Once proficiency and familiarity are gained, the results are impressive and easy.
 
 PDF output was converted to SVG graphics like so:
 
