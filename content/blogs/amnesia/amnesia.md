@@ -146,9 +146,7 @@ $$
 (x + 1)(x + p) &= x^2 + (p + 1)x + p \\
 &= x^2 + \frac{2t^2}{t^2 + 1}x + \frac{t^2 - 1}{t^2 +1}.
 \end{aligned}
-$$
-So, 
-$$
+$$ So, $$
 \begin{aligned}
 p + 1 &= \frac{2t^2}{t^2 + 1} \mbox{ giving us}\\
 p &= \frac{2t^2}{t^2 + 1} - 1\\
@@ -156,9 +154,7 @@ p &= \frac{2t^2 - (t^2 + 1)}{t^2 + 1}\\
 p &= \frac{2t^2 - t^2 - 1}{t^2 + 1}\\
 p &= \frac{t^2 - 1}{t^2 + 1}\\
 \end{aligned}
-$$
-If $(x + p)$ is a factor, $x = -p$ which means 
-$$
+$$ If $(x + p)$ is a factor, $x = -p$ which means $$
 x = \frac{1 - t^2}{1 + t^2}.
 $${#eq:forx}
 
@@ -181,7 +177,7 @@ Finally, Doron and I had mastered the monster, although to some it would seem th
 
 I asked Doron what he thought of the whole experience. With uncanny sagacity, he said that he had learned to recognize symmetry, manipulate symbols algebraically, and to perceive equality to force an insight.
 
-Stunned at this level of maturity---which could only come from a seasoned mathematician who was used to abstractions---I asked him what was needed beside proficiency in algebraic manipulation. 
+Stunned by this level of maturity---which could only come from a seasoned mathematician who was used to abstractions---I asked him what was needed beside proficiency in algebraic manipulation. 
 
 Doron said, "Imagination vivifies not only geometry, but all of mathematics. If one cannot imagine, one cannot see the beauty of mathematics that exists, nor will one be able to invent newer mathematics with yet more beauty."
 
