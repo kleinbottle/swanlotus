@@ -16,9 +16,7 @@ status: published
 
 "Poor Doron has suffered a strange cognitive deficit. His language and speech skills have survived intact, but he has developed 'selective mathematical amnesia'. He has forgotten much of high school mathematics---which for a person with a Master's degree in engineering---is a rather tragic state of affairs. In fact, his knowledge of mathematics now resembles [Emmental cheese](https://en.wikipedia.org/wiki/Emmental_cheese)---full of holes."
 
-![Emmental cheese is full of holes.]({attach}images/emmental-cheese.jpg){#fig:cheese width=70% .modal-target}
-
-<!--![Emmental cheese is full of holes.^[Attribution: Coyau / [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page) / [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)]]({attach}images/emmental-cheese.jpg){#fig:cheese width=70% .modal-target}-->
+![Emmental cheese is full of holes.^[Attribution: [Manuel2](https://commons.wikimedia.org/wiki/File:Emmentaler_Premier_Cru.jpg), [CC BY-SA 2.0 DE](https://creativecommons.org/licenses/by-sa/2.0/de/deed.en) via Wikimedia Commons]]({attach}images/Emmentaler_Premier_Cru.jpg){#fig:cheese width=80% .modal-target}
 
 "Indeed," I replied. "Is there any way out?"
 
