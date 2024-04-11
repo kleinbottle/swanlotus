@@ -47,7 +47,7 @@ $$
 \sin\theta = \frac{2t}{1 + t^2}
 $${#eq:sintheta}
 
-I asked Doron to attempt this rather ancient problem, but he greeted me with glazed eyes of incomprehension. I felt really sorry for the poor sod, and determined that I would handhold him for at least this problem.
+I asked Doron to attempt this rather ancient problem, but he greeted me with eyes glazed by  incomprehension. I felt really sorry for the poor sod, and determined that I would handhold him for at least this problem.
 
 ## Starting with the unit circle
 
@@ -177,13 +177,13 @@ And thus we could claim [QED](https://en.wikipedia.org/wiki/Q.E.D.).
 
 ## Looking back
 
-Finally, Doron and I had mastered the monster, although to some it would seem a titmouse! Step by single step, like a CPU in a computer, we had waded through high school geometry, algebra, and trigonometry to finally derive the relation we were after.
+Finally, Doron and I had mastered the monster, although to some it would seem that we had only tamed a titmouse! Step by single step, like a CPU in a computer, we had waded through high school geometry, algebra, and trigonometry to finally derive the relation we were after.
 
 I asked Doron what he thought of the whole experience. With uncanny sagacity, he said that he had learned to recognize symmetry, manipulate symbols algebraically, and to perceive equality to force an insight.
 
 Stunned at this level of maturity---which could only come from a seasoned mathematician who was used to abstractions---I asked him what was needed beside proficiency in algebraic manipulation. 
 
-Doron said, "Imagination vivifies not only geometry, but all of mathematics. If one cannot imagine, one cannot see the beauty of mathematics that exists, nor be able to invent newer mathematics with yet more beauty."
+Doron said, "Imagination vivifies not only geometry, but all of mathematics. If one cannot imagine, one cannot see the beauty of mathematics that exists, nor will one be able to invent newer mathematics with yet more beauty."
 
 On that high note, Sol concluded his heartwarming tale of Doron's mathematical amnesia, and his eventual complete rehabilitation. So engrossed had I been by his tale, it took me a while to realize that were still at the _Orchard Valley Coffeeshop_ and dusk was gently darkening the day.
 
