@@ -76,7 +76,7 @@ Suppressing my doubts as to whether it was worthwhile to proceed further, I batt
 
 We now draw a line from $Q$ to $R$, which intersects the $y$ axis at $S(0, t)$. Looking at triangle $OQR$, it is clear that that its two legs, $OQ$ and $OR$, are equal since they are both radii of the unit circle.
 
-I now believed that I had Doron's attention, and decided to pounce on the kill. I asked Doron if he could tell me something about [isosceles triangles](https://en.wikipedia.org/wiki/Isosceles_triangle) in which the two legs were equal. Startlingly, he said "same base angles". I was incredibly encouraged.
+I now believed that I had Doron's attention, and decided to pounce for the kill. I asked Doron if he could tell me something about [isosceles triangles](https://en.wikipedia.org/wiki/Isosceles_triangle) in which the two legs were equal. Startlingly, he said "same base angles". I was incredibly encouraged.
 
 Let us call these equal angles $\alpha$ as marked on @fig:tantheta. "How are the values $\alpha$ and $\theta$ related?" I ventured next. "Think about the properties of triangles in elementary school. What is a property common to _all triangles_, not only isosceles ones?"
 
