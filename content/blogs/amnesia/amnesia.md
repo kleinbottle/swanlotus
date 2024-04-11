@@ -16,7 +16,9 @@ status: published
 
 "Poor Doron has suffered a strange cognitive deficit. His language and speech skills have survived intact, but he has developed 'selective mathematical amnesia'. He has forgotten much of high school mathematics---which for a person with a Master's degree in engineering---is a rather tragic state of affairs. In fact, his knowledge of mathematics now resembles [Emmental cheese](https://en.wikipedia.org/wiki/Emmental_cheese)---full of holes."
 
-![Emmental cheese is full of holes.^[Attribution: Coyau / [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page) / [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)]]({attach}images/emmental-cheese.jpg){#fig:cheese width=70% .modal-target}
+![Emmental cheese is full of holes.]({attach}images/emmental-cheese.jpg){#fig:cheese width=70% .modal-target}
+
+<!--![Emmental cheese is full of holes.^[Attribution: Coyau / [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page) / [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)]]({attach}images/emmental-cheese.jpg){#fig:cheese width=70% .modal-target}-->
 
 "Indeed," I replied. "Is there any way out?"
 
@@ -138,7 +140,7 @@ x^2(t^2 + 1) + 2t^2x + t^2 - 1 &= 0 \mbox{ ; divide through by $(t^2 + 1)$}\\
 x^2 + \frac{2t^2}{t^2 + 1}x + \frac{t^2 - 1}{t^2 +1} &= 0
 \end{aligned}
 $${#eq:quadratic}
-If we bear in mind that $x = -1$ is a solution as the line $QSR$ passes through $Q$, we can assert that $(x + 1)$ is a factor of this quadratic. Therefore, the equation may be factorized into _two linear_ factors, like so: $(x + 1)(x + p)$.
+If we bear in mind that $x = -1$ is a solution as the line $QSR$ passes through $Q$, we can assert that $(x + 1)$ is a factor of this quadratic, by virtue of the [polynomial remainder theorem](https://en.wikipedia.org/wiki/Polynomial_remainder_theorem) and the [factor theorem](https://en.wikipedia.org/wiki/Factor_theorem). Therefore, the equation may be factorized into _two linear_ factors, like so: $(x + 1)(x + p)$.
 
 #. Equating coefficients, we have from @eq:quadratic, 
 $$
