@@ -177,7 +177,7 @@ Finally, Doron and I had mastered the monster, although to some it would seem th
 
 I asked Doron what he thought of the whole experience. With uncanny sagacity, he said that he had learned to recognize symmetry, manipulate symbols algebraically, and to perceive equality to force an insight.
 
-Stunned by this level of maturity---which could only come from a seasoned mathematician who was used to abstractions---I asked him what was needed beside proficiency in algebraic manipulation. 
+Stunned by this level of maturity---which could only come from a seasoned mathematician who was used to abstractions---I asked him what was needed besides proficiency in algebraic manipulation. 
 
 Doron said, "Imagination vivifies not only geometry, but all of mathematics. If one cannot imagine, one cannot see the beauty of mathematics that exists, nor will one be able to invent newer mathematics with yet more beauty."
 
