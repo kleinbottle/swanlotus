@@ -175,7 +175,7 @@ And thus we could claim [QED](https://en.wikipedia.org/wiki/Q.E.D.).
 
 Finally, Doron and I had mastered the monster, although to some it would seem that we had only tamed a titmouse! Step by single step, like a CPU in a computer, we had waded through high school geometry, algebra, and trigonometry to finally derive the relation we were after.
 
-I asked Doron what he thought of the whole experience. With uncanny sagacity, he said that he had learned to recognize symmetry, manipulate symbols algebraically, and to perceive equality to force an insight.
+A year later, I asked Doron what he thought of his first experience of solving problems after his mishap. With uncanny sagacity, he said that he had learned to recognize symmetry, manipulate symbols algebraically, and to perceive equality to force an insight.
 
 Stunned by this level of maturity---which could only come from a seasoned mathematician who was used to abstractions---I asked him what was needed besides proficiency in algebraic manipulation. 
 
