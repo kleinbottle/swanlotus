@@ -20,7 +20,7 @@
 %
 % Set up unobtrusive grid and label axes
 %
-\draw[line width = 0.5pt, step=0.5 cm, color=Silver] (-1.4, -1.2) grid (1.4, 1.4);
+\draw[line width = 0.5pt, step = 1 cm, color = Silver] (-1.4, -1.2) grid (1.4, 1.4);
 \draw[color=Silver, -{latex}](-1.4, 0) -- (1.4, 0);
 \draw[color=Silver, -{latex}](0, -1.2) -- (0, 1.4);
 \node [color=Silver] at (1.3, 0) [below]{$x$};
@@ -76,11 +76,11 @@
 % Populate equations in the second and third quadrants
 % to make the figure self-contained
 % 
-\node [fill=white, text=DarkSlateGray] at (-0.4, 0.25) {$x^2 + y^2 = 1$};
+\node [text=DarkSlateGray] at (-0.4, 0.25) {$x^2 + y^2 = 1$};
 %
-\node [fill=white, text=DarkSlateGray] at (-0.4, -0.2) {$\cos\theta = \frac{x}{1} = x$};
-\node [fill=white, text=DarkSlateGray] at (-0.4, -0.4) {$\sin\theta = \frac{y}{1} = y$};
-\node [fill=white, text=DarkSlateGray] at (-0.4, -0.6) {$\tan\theta = \frac{\sin\theta}{\cos\theta} = \frac{y}{x}$};
+\node [text=DarkSlateGray] at (-0.4, -0.2) {$\cos\theta = \frac{x}{1} = x$};
+\node [text=DarkSlateGray] at (-0.4, -0.4) {$\sin\theta = \frac{y}{1} = y$};
+\node [text=DarkSlateGray] at (-0.4, -0.6) {$\tan\theta = \frac{\sin\theta}{\cos\theta} = \frac{y}{x}$};
 %
 \end{tikzpicture}
 \end{document}

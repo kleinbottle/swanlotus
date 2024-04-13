@@ -2,7 +2,7 @@
 title: Doron's Mathematical Amnesia
 author: R (Chandra) Chandrasekhar
 date: 2024-04-08
-modified: 2024-04-10
+modified: 2024-04-13
 category: Simkin Tales
 tags: mathematics geometry algebra trigonometry
 summary: "Poor Doron has suffered a strange cognitive deficit. His language and speech skills have survived intact, but he has developed 'selective mathematical amnesia'. He has forgotten much of high school mathematics---which for a person with a Master's degree in engineering---is a rather tragic state of affairs. In fact, his knowledge of mathematics now resembles [Emmental cheese](https://en.wikipedia.org/wiki/Emmental_cheese)---full of holes."
@@ -179,7 +179,7 @@ I asked Doron what he thought of the whole experience. With uncanny sagacity, he
 
 Stunned by this level of maturity---which could only come from a seasoned mathematician who was used to abstractions---I asked him what was needed besides proficiency in algebraic manipulation. 
 
-Doron said, "Imagination vivifies not only geometry, but all of mathematics. If one cannot imagine, one cannot see the beauty of mathematics that exists, nor will one be able to invent newer mathematics with yet more beauty."
+Doron said, "Imagination vivifies not only geometry, but all of mathematics. If one cannot imagine, one cannot see the beauty of the mathematics that exists, nor will one be able to invent newer mathematics with yet more beauty."
 
 On that high note, Sol concluded his heartwarming tale of Doron's mathematical amnesia, and his eventual complete rehabilitation. So engrossed had I been by his tale, it took me a while to realize that were still at the _Orchard Valley Coffeeshop_ and dusk was gently darkening the day.
 
