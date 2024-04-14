@@ -24,7 +24,7 @@ status: published
 
 "I thought it a good idea to see if I could help repair and restore Doron's recollection of mathematics, and have embarked on an effort  to that end. Who knows, many school leavers could also find the programme useful."
 
-"Tell me more," I quipped, and settled down to yet another [_Simkin Tale_](https://swanlotus.netlify.app/tag/the-simkin-tales) as Sol recounted his adventure with Doron. The rest of this blog is the verbatim first person account of Sol.
+"Tell me more," I quipped, and settled down to yet another [_Simkin Tale_](https://swanlotus.netlify.app/tag/simkin-tales) as Sol recounted his adventure with Doron. The rest of this blog is the verbatim first person account of Sol.
 
 ## To heal amnesia, start with history
 
