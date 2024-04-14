@@ -107,28 +107,38 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -167,10 +177,10 @@
 \usepackage[style=american]{csquotes}
 % \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
 %
-\usepackage{esdiff} % for derivative symbols
-\usepackage{amsmath}
 \usepackage{hyperref} % cleveref must come AFTER hyperref
 \usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
+\let\longdivision\relax
+\usepackage{longdivision}
 % noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
@@ -187,9 +197,7 @@
 % We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
 %
 \babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
-%
 \babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
-%
 \babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
 %
 % Sanskrit, Tamil, and Greek fonts
@@ -208,6 +216,9 @@
 %
 \usepackage{unicode-math} % seems not to hurt % fallabck
 \setmathfont[bold-style=TeX]{STIX Two Math}
+\usepackage{amsmath}
+\usepackage{esdiff} % for derivative symbols
+% \renewcommand{\mathbf}{\symbf}
 %
 %
 % Other fonts
@@ -225,31 +236,13 @@
     \fancyhead[LO,RE]{\scshape\thetitle}
     \fancyfoot[CO,CE]{\footnotesize Copyright © 2006\textendash\the\year, R (Chandra) Chandrasekhar}
     \fancyfoot[RE,RO]{\thepage}
-\newfontfamily{\regulariconfont}{Font Awesome 6 Free Regular}[Color=Grey]
-\newfontfamily{\solidiconfont}{Font Awesome 6 Free Solid}[Color=Grey]
-\newfontfamily{\brandsiconfont}{Font Awesome 6 Brands}[Color=Grey]
 %
-% Direct input of Unicode code points
-%
-\newcommand{\faEnvelope}{\regulariconfont\ ^^^^f0e0\normalfont}
-\newcommand{\faMobile}{\solidiconfont\ ^^^^f3cd\normalfont}
-\newcommand{\faLinkedin}{\brandsiconfont\ ^^^^f0e1\normalfont}
-\newcommand{\faGithub}{\brandsiconfont\ ^^^^f09b\normalfont}
-\newcommand{\faAtom}{\solidiconfont\ ^^^^f5d2\normalfont}
-\newcommand{\faPaperPlaneRegular}{\regulariconfont\ ^^^^f1d8\normalfont}
-\newcommand{\faPaperPlaneSolid}{\solidiconfont\ ^^^^f1d8\normalfont}
-
-%
-% The block below is commented out because of Tofu glyphs in HTML
-%
-% \newcommand{\faEnvelope}{\regulariconfont\ \normalfont}
-% \newcommand{\faMobile}{\solidiconfont\ \normalfont}
-% \newcommand{\faLinkedin}{\brandsiconfont\ \normalfont}
-% \newcommand{\faGithub}{\brandsiconfont\ \normalfont}
+\usepackage{newunicodechar}
+\newunicodechar{√}{\textsf{√}}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{sf}
 \hypersetup{
@@ -273,8 +266,7 @@
 \thispagestyle{empty}
 
 
-\hypertarget{the-request}{%
-\subsection{The request}\label{the-request}}
+\subsection{The request}\label{the-request}
 
 My friend Solus ``Sol'' Simkin has a well-earned reputation as a
 \href{https://www.thefreedictionary.com/renaissance+man}{Renaissance
@@ -291,16 +283,14 @@ observing that they did not want their personal biases to colour their
 logo (pun intended). Image, icon, shield, or plain text: the choice of
 logo was his.
 
-\hypertarget{the-quest}{%
-\subsection{The quest}\label{the-quest}}
+\subsection{The quest}\label{the-quest}
 
 This unusual request sent the cogwheels in Sol's brain whirring
 furiously as he imagined the logo from different design standpoints. He
 swept through, in fast motion in his mind, a myriad of options, only
 some of which I have chronicled here.
 
-\hypertarget{socrates-and-diotima}{%
-\subsubsection{Socrates and Diotima}\label{socrates-and-diotima}}
+\subsubsection{Socrates and Diotima}\label{socrates-and-diotima}
 
 He first thought of the philosophers
 \href{https://en.wikipedia.org/wiki/Socrates}{Socrates} and
@@ -341,8 +331,7 @@ which came and went faster than the famed fruitfly,
 melanogaster}. Why, most people would not even recognize their own
 national flags nowadays, let alone intellectual icons from the past.
 
-\hypertarget{a-syllogism-in-symbols}{%
-\subsubsection{A syllogism in symbols}\label{a-syllogism-in-symbols}}
+\subsubsection{A syllogism in symbols}\label{a-syllogism-in-symbols}
 
 Mathematics and philosophy are the two excursions of the human mind that
 naturally run closest to each other. Why not then a
@@ -359,8 +348,7 @@ elementary school, and forever forsworn thereafter. No, an expression of
 mathematical logic was not a good idea: it would either evoke painful
 memories, or be passed over in utter incomprehension.
 
-\hypertarget{knots-and-braids}{%
-\subsubsection{Knots and Braids}\label{knots-and-braids}}
+\subsubsection{Knots and Braids}\label{knots-and-braids}
 
 Mathematics and philosophy share another quality. Two related branches
 of mathematics, \href{https://en.wikipedia.org/wiki/Knot_theory}{Knot
@@ -409,9 +397,8 @@ logo of a Society of
 \href{https://www.britannica.com/topic/Druid}{Druids}? Too many ifs and
 buts obfuscated what had initially seemed an inspired choice.
 
-\hypertarget{popper-and-falsifiability}{%
 \subsubsection{Popper and
-falsifiability}\label{popper-and-falsifiability}}
+falsifiability}\label{popper-and-falsifiability}
 
 Sol then turned his attention to science.
 \href{https://en.wikipedia.org/wiki/Karl_Popper}{Karl Popper}, who was
@@ -452,10 +439,10 @@ question by
 which is a relative newcomer to theoretical physics, but one that has
 captured the common imagination, judging by the popular explanations
 that abound on the Web
-\protect\hyperlink{ref-mann2019}{{[}1{]}}--\protect\hyperlink{ref-jones2020}{{[}3{]}}.
-And whether string theory is or is not science, Popper notwithstanding,
-is an issue that is still up for debate
-\protect\hyperlink{ref-siegel2015}{{[}4{]}}--\protect\hyperlink{ref-francis2019}{{[}7{]}}.
+{[}\citeproc{ref-mann2019}{1}--\citeproc{ref-jones2020}{3}{]}. And
+whether string theory is or is not science, Popper notwithstanding, is
+an issue that is still up for debate
+{[}\citeproc{ref-siegel2015}{4}--\citeproc{ref-francis2019}{7}{]}.
 
 But, coming back to the task at hand, how would such an abstract idea as
 falsifiability find expression in a logo? Perhaps the correct medium for
@@ -463,9 +450,7 @@ it would be a
 \href{https://www.explainxkcd.com/wiki/index.php/2078:_Popper}{comic
 strip}, but alas, comics do not a logo make.
 
-\hypertarget{kuhn-and-paradigm-shifts}{%
-\subsubsection{Kuhn and paradigm
-shifts}\label{kuhn-and-paradigm-shifts}}
+\subsubsection{Kuhn and paradigm shifts}\label{kuhn-and-paradigm-shifts}
 
 Sol racked his brain for more ideas when he suddenly stumbled upon the
 half-remembered phrase
@@ -474,19 +459,17 @@ coined by \href{https://en.wikipedia.org/wiki/Thomas_Kuhn}{Thomas
 Kuhn}---another celebrated philosopher of science---and popularized in
 his enduring tome,
 \href{https://www.amazon.com/Structure-Scientific-Revolutions-50th-Anniversary/dp/0226458121/}{\emph{The
-Structure of Scientific Revolutions}}
-\protect\hyperlink{ref-kuhn2012}{{[}8{]}}. Kuhn held that science did
-not evolve smoothly, but every so often experienced seismic corrections
-or radical changes of perspective that led to new theories that
-predicted the world much better than before. But how in heaven was he to
-squeeze all that into a logo? And wouldn't that narrow it to the
-philosophy of science rather than to all of philosophy? Sol rued that he
-had entered another
+Structure of Scientific Revolutions}} {[}\citeproc{ref-kuhn2012}{8}{]}.
+Kuhn held that science did not evolve smoothly, but every so often
+experienced seismic corrections or radical changes of perspective that
+led to new theories that predicted the world much better than before.
+But how in heaven was he to squeeze all that into a logo? And wouldn't
+that narrow it to the philosophy of science rather than to all of
+philosophy? Sol rued that he had entered another
 \href{https://www.merriam-webster.com/dictionary/cul-de-sac}{cul-de-sac}
 on the road to a viable design.
 
-\hypertarget{the-dream}{%
-\subsubsection{The dream}\label{the-dream}}
+\subsubsection{The dream}\label{the-dream}
 
 It was now two weeks since he had been commissioned to work on the logo,
 and Sol did not have even a single draft design to show for that time.
@@ -513,8 +496,7 @@ decided to let the matter rest. He was on an earnest quest, conducted at
 his own pace, relaxed and without panic, but not so relaxed that the
 image faded from his mind's eye. \emojifont🙂\normalfont
 
-\hypertarget{the-search-for-a-face}{%
-\subsubsection{The search for a face}\label{the-search-for-a-face}}
+\subsubsection{The search for a face}\label{the-search-for-a-face}
 
 While he was working on an unrelated task, the thought suddenly flashed
 in Sol's mind that he should harness the Web to see if there was any
@@ -541,7 +523,7 @@ invented \footnote{Such meandering, away from the straight and narrow of
   intellectual sheen, but took its toll on timeliness.}. It was probably
 the greatest scientific advance of its time. And priority for its
 discovery was an ugly bone of contention between Leibniz and Newton
-\protect\hyperlink{ref-bardi2007}{{[}9{]}}.
+{[}\citeproc{ref-bardi2007}{9}{]}.
 
 And then it hit him like a ton of bricks. \emph{Calculus could not have
 been invented without coordinate geometry---that extraordinary offspring
@@ -563,21 +545,20 @@ And bingo! he had a \href{https://tinyurl.com/y57nykjd}{gallery full of
 faces} that were remarkably similar to the image of his reverie, with
 eyes that were piercing and dreamy at the same time.
 
-\hypertarget{renuxe9-descartes}{%
-\subsection{René Descartes}\label{renuxe9-descartes}}
+\subsection{René Descartes}\label{renuxe9-descartes}
 
 Relieved that at last he was on the scent, Sol relaxed for a couple of
 days, which he spent reading about the
 \href{https://www.britannica.com/biography/Rene-Descartes}{life of
-Descartes} \protect\hyperlink{ref-watson2020}{{[}10{]}}. He chuckled
-when he read that ``the 22-year-old {[}Queen{]} Christina {[}of
-Sweden{]} perversely made the 53-year-old Descartes rise before 5:00 am
-to give her philosophy lessons, even though she knew of his habit of
-lying in bed until 11 o'clock in the morning.''
-\protect\hyperlink{ref-watson2020}{{[}10{]}}. He read with chagrin that
-Descartes tragically died in Sweden from pneumonia, presumably caused by
-the Scandinavian winter and the duress of having to rise early in the
-morning to keep his appointment with his royal student.
+Descartes} {[}\citeproc{ref-watson2020}{10}{]}. He chuckled when he read
+that ``the 22-year-old {[}Queen{]} Christina {[}of Sweden{]} perversely
+made the 53-year-old Descartes rise before 5:00 am to give her
+philosophy lessons, even though she knew of his habit of lying in bed
+until 11 o'clock in the morning.'' {[}\citeproc{ref-watson2020}{10}{]}.
+He read with chagrin that Descartes tragically died in Sweden from
+pneumonia, presumably caused by the Scandinavian winter and the duress
+of having to rise early in the morning to keep his appointment with his
+royal student.
 
 Sol foraged for anything that could throw light---like Newton's falling
 apple---on how Descartes got his primary insight of superimposing an
@@ -586,8 +567,7 @@ not unearth much and decided to pursue that query for when he did not
 have a deadline to meet. For now, he needed ideas for a logo, and time
 was fast racing past.
 
-\hypertarget{the-epiphany}{%
-\subsection{The epiphany}\label{the-epiphany}}
+\subsection{The epiphany}\label{the-epiphany}
 
 Sol pondered the tragic death of Descartes, and whether \emph{it} held
 the clue to the deep philosophical truth that he was after. And then the
@@ -602,15 +582,13 @@ ergo sum}: ``I think, therefore I am''. And there he had it: the muted
 words of his dream, and the nucleus of the logo he had been asked to
 design.
 
-\hypertarget{the-means}{%
-\subsection{The means}\label{the-means}}
+\subsection{The means}\label{the-means}
 
 The thrill of the quest was now over. It was time to sit down and flesh
 out a logo from a dream. Sol was no stranger to ardour. He hunkered down
 and sifted through his options.
 
-\hypertarget{hand-crafting-the-logo}{%
-\subsubsection{Hand-crafting the logo}\label{hand-crafting-the-logo}}
+\subsubsection{Hand-crafting the logo}\label{hand-crafting-the-logo}
 
 He could hand-paint the logo electronically, giving it unique
 individuality. But Sol was no natural artist and looked askance at
@@ -625,8 +603,7 @@ enough to attract and engage afresh. A hand-painted logo would be
 difficult to morph over time to retain its essence while renewing its
 expression. Logo-maintenance precluded a hand-drawn logo.
 
-\hypertarget{interactive-graphics}{%
-\subsubsection{Interactive graphics}\label{interactive-graphics}}
+\subsubsection{Interactive graphics}\label{interactive-graphics}
 
 Having settled for a formal font-based logo, Sol still had a choice of
 rendering it using software that allowed one to work on a canvas, just
@@ -646,8 +623,7 @@ mathematically defined. One could manually tweak the control points on a
 aesthetic sense was fully satisfied. But, being hand-drawn, they could
 not be repeated except through a \texttt{copy} function in the software.
 
-\hypertarget{programmatic-generation}{%
-\subsubsection{Programmatic generation}\label{programmatic-generation}}
+\subsubsection{Programmatic generation}\label{programmatic-generation}
 
 Generating digital graphics by programming was a slower, more tedious
 process that called for ample patience. Only those conversant with
@@ -663,8 +639,7 @@ Changing colours was a cinch. In keeping with the accomplishments of
 Descartes, it was the perfect marriage of art and science, of philosophy
 and mathematics.
 
-\hypertarget{making-a-choice}{%
-\subsubsection{Making a choice}\label{making-a-choice}}
+\subsubsection{Making a choice}\label{making-a-choice}
 
 The dichotomy of choice between interactive and programmatic generation
 of graphics was easily resolved though. Sol only had to think of giving
@@ -688,23 +663,20 @@ that would not degrade with resizing of the output medium, whether paper
 or screen. With these choices made, he rolled up his sleeves for a spot
 of work.
 
-\hypertarget{the-ideation}{%
-\subsection{The ideation}\label{the-ideation}}
+\subsection{The ideation}\label{the-ideation}
 
 With all the preliminaries in place, Sol settled down to work. He used
 his prodigious powers of visualization to create the logo out of thin
 air using the magic cells in his brain.
 
-\hypertarget{shape}{%
-\subsubsection{Shape}\label{shape}}
+\subsubsection{Shape}\label{shape}
 
 He first thought of shape and decided on a rectangle to house the words.
 It would feature a small definitive border that emphasized the inside
 and framed the work. Although it takes us ahead of ourselves in this
 account, he later fell for the symmetry of a circle as his prime choice.
 
-\hypertarget{font}{%
-\subsubsection{Font}\label{font}}
+\subsubsection{Font}\label{font}
 
 Sol had a preference for
 \href{https://en.wikipedia.org/wiki/Sans-serif}{sans serif} fonts as
@@ -731,8 +703,7 @@ their Latin-ness than with serifs? So, he chose a font with serifs.
 Which font in particular would be decided later.\footnote{His choice was
   usurped again, this time by a sans serif font, as we shall see later.}
 
-\hypertarget{symmetry}{%
-\subsubsection{Symmetry}\label{symmetry}}
+\subsubsection{Symmetry}\label{symmetry}
 
 The sense of fine balance that so perfectly characterized Sol's designs
 urged him to split the words into three levels, representing the ground,
@@ -743,8 +714,7 @@ capitalizing each word. It only remained to see where the symmetry would
 be broken and by which word. He decided he would cross that bridge when
 he came to it.
 
-\hypertarget{colour}{%
-\subsubsection{Colour}\label{colour}}
+\subsubsection{Colour}\label{colour}
 
 Colour is linked to emotion. Indeed one is red with rage and green with
 envy because of this connection. Sol did not have any colour scheme to
@@ -752,8 +722,7 @@ persuade his clients to accept; he decided instead to show them a decent
 set of harmonized palettes and let them decide. The colours would talk,
 emphasize, and sell. But the colours would be chosen by his clients.
 
-\hypertarget{the-execution}{%
-\subsection{The execution}\label{the-execution}}
+\subsection{The execution}\label{the-execution}
 
 At last, Sol had reached the tedious portion of his work. Gone was the
 thrill of the chase. Gone the freedom to meander into byways of
@@ -763,8 +732,7 @@ reduced to three words in Latin: ``Cogito, ergo sum'', literally, ``I
 think, therefore, I am''. All that remained was to typeset them
 memorably and with precision.
 
-\hypertarget{the-first-cut}{%
-\subsubsection{The first cut}\label{the-first-cut}}
+\subsubsection{The first cut}\label{the-first-cut}
 
 Sol's first cut had its operative code in this fragment which I
 reproduce below without explanation, simply to convey the flavour of the
@@ -802,9 +770,8 @@ gave birth to this image:
 \caption{Logo: the first cut}
 \end{figure}
 
-\hypertarget{the-second-and-third-cuts}{%
 \subsubsection{The second and third
-cuts}\label{the-second-and-third-cuts}}
+cuts}\label{the-second-and-third-cuts}
 
 The word \emph{Ergo} appeared on top of \emph{Cogito} and that was well
 and good. But \emph{Sum} overwrote \emph{Ergo} and that seemed a bit
@@ -835,8 +802,7 @@ like a pall of smoke. He wanted to go back and start from scratch again,
 but his deadline was fast looming. He could make small changes, but
 could never hope to start over.
 
-\hypertarget{the-interlude}{%
-\subsubsection{The Interlude}\label{the-interlude}}
+\subsubsection{The Interlude}\label{the-interlude}
 
 He sat down with a sigh and relaxed into a particularly worn out but
 comfy beanbag. It had been his muse when he sought inspiration. His
@@ -863,9 +829,8 @@ rumination. By Jove, perfect symmetry in the plane comes with the
 circle. A logo on a circle with the colours leading one to the other.
 That would be a logo worthy of philosophers.
 
-\hypertarget{the-penultimate-and-final-cuts}{%
 \subsubsection{The penultimate and final
-cuts}\label{the-penultimate-and-final-cuts}}
+cuts}\label{the-penultimate-and-final-cuts}
 
 Sol first tried to place the three words \emph{on} the circumference of
 a circle to follow its even curvature. But the number of letters in each
@@ -942,8 +907,7 @@ capitalization, appeared thus:
 \caption{Logo: the final cut}
 \end{figure}
 
-\hypertarget{finale}{%
-\subsubsection{Finale}\label{finale}}
+\subsubsection{Finale}\label{finale}
 
 As he gazed upon his latest effort, Sol experienced the exultation and
 closure felt at the end of a long and challenging quest. Yes, he had
@@ -953,8 +917,7 @@ appointment with them. But one thing was certain: he was not going to
 change any colours. He would let \emph{their} biases colour their logo!
 And with that, he heaved a huge sigh of relief.
 
-\hypertarget{illustrations}{%
-\subsubsection{Illustrations}\label{illustrations}}
+\subsubsection{Illustrations}\label{illustrations}
 
 The statues of Socrates and Diotima shown in this blog are exhibited
 outside the
@@ -968,8 +931,7 @@ using XeLaTeX and applicable
 is freely available on the Web was accessed for guidance on typesetting
 these illustrations.
 
-\hypertarget{feedback}{%
-\subsection{Feedback}\label{feedback}}
+\subsection{Feedback}\label{feedback}
 
 Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
@@ -987,81 +949,74 @@ comments and corrections.
 
 \end{small}
 
-\hypertarget{bibliography}{%
-\section*{References}\label{bibliography}}
+\section*{References}\label{bibliography}
 \addcontentsline{toc}{section}{References}
 
-\hypertarget{refs}{}
+\phantomsection\label{refs}
 \begin{CSLReferences}{0}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-mann2019}{}}%
+\bibitem[\citeproctext]{ref-mann2019}
 \CSLLeftMargin{{[}1{]} }%
-\CSLRightInline{Adam Mann, {`{What Is String Theory?}'}, Mar. 20, 2019.
-Available:
-\url{https://www.livescience.com/65033-what-is-string-theory.html}.
-{[}Accessed: Nov. 12, 2020{]}}
+\CSLRightInline{Adam Mann. 2019. {What Is String Theory?} Retrieved 12
+November 2020 from
+\url{https://www.livescience.com/65033-what-is-string-theory.html}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-wood2019}{}}%
+\bibitem[\citeproctext]{ref-wood2019}
 \CSLLeftMargin{{[}2{]} }%
-\CSLRightInline{Charlie Wood, {`{What Is String Theory?}: Reference
-article: A simplified explanation and brief history of string theory'},
-Jul. 11, 2019. Available:
-\url{https://www.space.com/17594-string-theory.html}. {[}Accessed: Nov.
-12, 2020{]}}
+\CSLRightInline{Charlie Wood. 2019. {What Is String Theory?}: Reference
+article: A simplified explanation and brief history of string theory.
+Retrieved 12 November 2020 from
+\url{https://www.space.com/17594-string-theory.html}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-jones2020}{}}%
+\bibitem[\citeproctext]{ref-jones2020}
 \CSLLeftMargin{{[}3{]} }%
-\CSLRightInline{Andrew Zimmerman Jones, {`{The Basics of String
-Theory}'}, Mar. 02, 2019. Available:
-\url{https://www.thoughtco.com/what-is-string-theory-2699363}.
-{[}Accessed: Nov. 12, 2020{]}}
+\CSLRightInline{Andrew Zimmerman Jones. 2019. {The Basics of String
+Theory}. Retrieved 12 November 2020 from
+\url{https://www.thoughtco.com/what-is-string-theory-2699363}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-siegel2015}{}}%
+\bibitem[\citeproctext]{ref-siegel2015}
 \CSLLeftMargin{{[}4{]} }%
-\CSLRightInline{Ethan Siegel, {`{Why String Theory Is Not A Scientific
-Theory}'}, Dec. 23, 2015. Available:
-\url{https://www.forbes.com/sites/startswithabang/2015/12/23/why-string-theory-is-not-science/}.
-{[}Accessed: Nov. 12, 2020{]}}
+\CSLRightInline{Ethan Siegel. 2015. {Why String Theory Is Not A
+Scientific Theory}. Retrieved 12 November 2020 from
+\url{https://www.forbes.com/sites/startswithabang/2015/12/23/why-string-theory-is-not-science/}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-castelvecchi2016}{}}%
+\bibitem[\citeproctext]{ref-castelvecchi2016}
 \CSLLeftMargin{{[}5{]} }%
-\CSLRightInline{Davide Castelvecchi, {`{Feuding physicists turn to
+\CSLRightInline{Davide Castelvecchi. 2016. {Feuding physicists turn to
 philosophy for help}: String theory is at the heart of a debate over the
-integrity of the scientific method itself'}, Jan. 05, 2016. Available:
-\url{https://www.nature.com/news/feuding-physicists-turn-to-philosophy-for-help-1.19076}.
-{[}Accessed: Nov. 12, 2020{]}}
+integrity of the scientific method itself. Retrieved 12 November 2020
+from
+\url{https://www.nature.com/news/feuding-physicists-turn-to-philosophy-for-help-1.19076}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-alves2017}{}}%
+\bibitem[\citeproctext]{ref-alves2017}
 \CSLLeftMargin{{[}6{]} }%
-\CSLRightInline{Rafael Alves Batista and Joel Primack, {`{Is String
-theory falsifiable?}: Can a theory that isn't completely testable still
-be useful to physics?'} Available:
-\url{https://metafact.io/factchecks/30-is-string-theory-falsifiable}.
-{[}Accessed: Nov. 12, 2020{]}}
+\CSLRightInline{Rafael Alves Batista and Joel Primack. {Is String theory
+falsifiable?}: Can a theory that isn't completely testable still be
+useful to physics? Retrieved 12 November 2020 from
+\url{https://metafact.io/factchecks/30-is-string-theory-falsifiable}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-francis2019}{}}%
+\bibitem[\citeproctext]{ref-francis2019}
 \CSLLeftMargin{{[}7{]} }%
-\CSLRightInline{Matthew R Francis, {`{Falsifiability and physics}: Can a
-theory that isn't completely testable still be useful to physics?'},
-Apr. 23, 2019. Available:
-\url{https://www.scientificamerican.com/article/is-string-theory-science/}.
-{[}Accessed: Nov. 12, 2020{]}}
+\CSLRightInline{Matthew R Francis. 2019. {Falsifiability and physics}:
+Can a theory that isn't completely testable still be useful to physics?
+Retrieved 12 November 2020 from
+\url{https://www.scientificamerican.com/article/is-string-theory-science/}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-kuhn2012}{}}%
+\bibitem[\citeproctext]{ref-kuhn2012}
 \CSLLeftMargin{{[}8{]} }%
-\CSLRightInline{Thomas S Kuhn, \emph{{The Structure of Scientific
-Revolutions}}, 50th Anniversary. University of Chicago Press, 2012.}
+\CSLRightInline{Thomas S Kuhn. 2012. \emph{{The Structure of Scientific
+Revolutions}} (50th Anniversary ed.). University of Chicago Press.}
 
-\leavevmode\vadjust pre{\hypertarget{ref-bardi2007}{}}%
+\bibitem[\citeproctext]{ref-bardi2007}
 \CSLLeftMargin{{[}9{]} }%
-\CSLRightInline{Jason Socrates Bardi, \emph{{The Calculus Wars: Newton,
-Leibniz, and the Greatest Mathematical Clash of All}}, Illustrated.
-Basic Books, 2007.}
+\CSLRightInline{Jason Socrates Bardi. 2007. \emph{{The Calculus Wars:
+Newton, Leibniz, and the Greatest Mathematical Clash of All}}
+(Illustrated ed.). Basic Books.}
 
-\leavevmode\vadjust pre{\hypertarget{ref-watson2020}{}}%
+\bibitem[\citeproctext]{ref-watson2020}
 \CSLLeftMargin{{[}10{]} }%
-\CSLRightInline{Richard A Watson, {`{René Descartes}'}, Apr. 10, 2020.
-Available: \url{https://www.britannica.com/biography/Rene-Descartes}.
-{[}Accessed: Nov. 12, 2020{]}}
+\CSLRightInline{Richard A Watson. 2020. {René Descartes}. Retrieved 12
+November 2020 from
+\url{https://www.britannica.com/biography/Rene-Descartes}}
 
 \end{CSLReferences}
 
