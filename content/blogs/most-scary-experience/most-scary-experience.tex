@@ -66,28 +66,38 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -128,7 +138,8 @@
 %
 \usepackage{hyperref} % cleveref must come AFTER hyperref
 \usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
-% \usepackage{longdivision}
+\let\longdivision\relax
+\usepackage{longdivision}
 % noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
@@ -187,31 +198,10 @@
 %
 \usepackage{newunicodechar}
 \newunicodechar{√}{\textsf{√}}
-\newfontfamily{\regulariconfont}{Font Awesome 6 Free Regular}[Color=Grey]
-\newfontfamily{\solidiconfont}{Font Awesome 6 Free Solid}[Color=Grey]
-\newfontfamily{\brandsiconfont}{Font Awesome 6 Brands}[Color=Grey]
-%
-% Direct input of Unicode code points
-%
-\newcommand{\faEnvelope}{\regulariconfont\ ^^^^f0e0\normalfont}
-\newcommand{\faMobile}{\solidiconfont\ ^^^^f3cd\normalfont}
-\newcommand{\faLinkedin}{\brandsiconfont\ ^^^^f0e1\normalfont}
-\newcommand{\faGithub}{\brandsiconfont\ ^^^^f09b\normalfont}
-\newcommand{\faAtom}{\solidiconfont\ ^^^^f5d2\normalfont}
-\newcommand{\faPaperPlaneRegular}{\regulariconfont\ ^^^^f1d8\normalfont}
-\newcommand{\faPaperPlaneSolid}{\solidiconfont\ ^^^^f1d8\normalfont}
-
-%
-% The block below is commented out because of Tofu glyphs in HTML
-%
-% \newcommand{\faEnvelope}{\regulariconfont\ \normalfont}
-% \newcommand{\faMobile}{\solidiconfont\ \normalfont}
-% \newcommand{\faLinkedin}{\brandsiconfont\ \normalfont}
-% \newcommand{\faGithub}{\brandsiconfont\ \normalfont}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{sf}
 \hypersetup{
@@ -235,8 +225,7 @@
 \thispagestyle{empty}
 
 
-\hypertarget{probing-fear}{%
-\subsection{Probing fear}\label{probing-fear}}
+\subsection{Probing fear}\label{probing-fear}
 
 My \href{https://www.thefreedictionary.com/redoubtable}{redoubtable}
 friend Solus ``Sol'' Simkin wandered into my office late one afternoon
@@ -260,8 +249,7 @@ fear that chills the spine and shakes one's very core.
 ``Sol,'' I said. What you are asking me to probe calls for long, deep,
 and hard thought. I need more time, for sure.''
 
-\hypertarget{homework}{%
-\subsection{Homework}\label{homework}}
+\subsection{Homework}\label{homework}
 
 ``Take your time, and wend your way slowly through the labyrinth of your
 own memories and pluck for me that single, shiny nugget of fear that
@@ -276,9 +264,8 @@ Mind you, be prepared for many sessions before the
 \href{https://www.thefreedictionary.com/denouement}{denouement} takes
 place!''
 
-\hypertarget{the-genre-of-horror-fiction}{%
 \subsection{The genre of horror
-fiction}\label{the-genre-of-horror-fiction}}
+fiction}\label{the-genre-of-horror-fiction}
 
 Vicarious experiences are always easier to draw upon, and for the
 category of fear, there is the ready-made genre of horror fiction.
@@ -335,8 +322,7 @@ but scratched the surface. The immensity of the iceberg of fear is
 largely hidden. Let us meet again to chat. I find our exchanges
 insightful.''
 
-\hypertarget{juvenile-tales}{%
-\subsection{Juvenile tales}\label{juvenile-tales}}
+\subsection{Juvenile tales}\label{juvenile-tales}
 
 After my foray into the literature of horror and terror, I decided to
 review the fondly remembered stories of early childhood, in case they
@@ -370,8 +356,7 @@ nail-biting adventures, and twists and turns of plot abounded in that
 beloved childhood book, nothing so dark as irredeemable fear ever
 stalked its pages.
 
-\hypertarget{the-miracle-of-hope}{%
-\subsection{The miracle of hope}\label{the-miracle-of-hope}}
+\subsection{The miracle of hope}\label{the-miracle-of-hope}
 
 A few days later, I heard the unspoken word `hope' insistently
 clamouring for my attention. Thinking that `hope' might become
@@ -387,7 +372,7 @@ library was long gone and the best I could do to recollect the name of
 the book was to search the Web. The book, long out-of-print, was still
 incarnate in digital form at the archive named after
 \href{https://www.newworldencyclopedia.org/entry/Johannes_Gutenberg}{Gutenberg},
-God bless his soul! {[}\protect\hyperlink{ref-boyle1939}{1}{]}
+God bless his soul! {[}\citeproc{ref-boyle1939}{1}{]}
 
 It was called \emph{The Youngest Camel} and was written by Kay Boyle,
 illustrated by Fritz Kredel, and published in 1939 by `Little, Brown,
@@ -398,11 +383,9 @@ could almost feel the ribbed texture of the fabric cover against my
 fingers, after all these years.
 
 \begin{figure}
-\hypertarget{fig:camel}{%
 \centering
 \includegraphics[width=0.4\textwidth,height=\textheight]{images/camel.jpg}
 \caption{The book cover of \emph{The Youngest Camel}.}\label{fig:camel}
-}
 \end{figure}
 
 But what did this treasure from my childhood have to do with `hope'? The
@@ -448,12 +431,11 @@ Eternal Power. And people devoid of hope are literally \emph{hopeless}.
 They do not live; they just waste away. That was the message from the
 book of my childhood to my adult self.
 
-\hypertarget{hopelessness-and-pows}{%
-\subsection{Hopelessness and POWs}\label{hopelessness-and-pows}}
+\subsection{Hopelessness and POWs}\label{hopelessness-and-pows}
 
 That brought to mind a poignant article that I had chanced upon one day,
 entitled, ``The Prison of Hopelessness'' by an American Air Force
-Chaplain {[}\protect\hyperlink{ref-wilson2006}{2}{]}. It was a sobering,
+Chaplain {[}\citeproc{ref-wilson2006}{2}{]}. It was a sobering,
 thought-provoking article. While we all need food, water, sunshine, and
 clean air to be healthy, the emotions that populate our minutes and days
 are equally potent factors affecting our well-being. A quick web search
@@ -468,8 +450,7 @@ and tragedy. From the sunny story of \emph{The Youngest Camel} to the
 dark depths of depression, it was hope that lit the way, and its absence
 that fed fear and pessimism.
 
-\hypertarget{with-sol-again}{%
-\subsection{With Sol again}\label{with-sol-again}}
+\subsection{With Sol again}\label{with-sol-again}
 
 At my next meeting with Sol, I poured out my newfound knowledge with the
 panache of an honours student defending his thesis. Sol flattered me
@@ -495,8 +476,7 @@ and some special cakes to lift our spirits. Having spent a good two
 hours exchanging rarefied philosophical thoughts we bid each other
 \emph{au revoir}.
 
-\hypertarget{the-void}{%
-\subsection{The Void}\label{the-void}}
+\subsection{The Void}\label{the-void}
 
 When the Lord Buddha sat under the tree, pondering life's sorrows and
 their causes, he identified desire as the chieftain of all miseries. But
@@ -514,13 +494,11 @@ alone in the pool, when the whistle was blown to notify us that the
 swimming pool would be closing in ten minutes.
 
 \begin{figure}
-\hypertarget{fig:water-caustic}{%
 \centering
 \includegraphics[width=0.75\textwidth,height=\textheight]{images/water-caustic.jpg}
 \caption[Picture of water caustics at the bottom of a swimming
 pool.]{Picture of water caustics at the bottom of a swimming
 pool.\footnotemark{}}\label{fig:water-caustic}
-}
 \end{figure}
 \footnotetext{Image courtesy of Ha4ipuri. Original is
   \href{https://photodune.net/item/blue-swimming-pool-underwater-with-bright-sun-light-reflections-or-caustics-background-or-texture/46148405}{here}.}
@@ -541,8 +519,7 @@ in this case.
 I determined that I would bring up the Void when I next met Sol to
 resume our discussion on the most scary experience.
 
-\hypertarget{the-most-scary-experience}{%
-\subsection{The most scary experience}\label{the-most-scary-experience}}
+\subsection{The most scary experience}\label{the-most-scary-experience}
 
 Our next meeting at our favourite haunt was on a public holiday, and
 started at the mellow hour of ten in the morning. Eagerly, I told Sol
@@ -604,8 +581,7 @@ be more in tune with the topic we are discussing.''
 
 And so we left abruptly to enjoy the sunny outdoors.
 
-\hypertarget{the-denouement}{%
-\subsection{The denouement}\label{the-denouement}}
+\subsection{The denouement}\label{the-denouement}
 
 The Saturday next week was cold and gloomy---a perfect backdrop to a
 discussion of the most scary experience. I met Sol at our cafe and each
@@ -733,8 +709,7 @@ Our discussion had fathomed unplumbed depths and both of us felt that we
 were done for the day. The denouement felt more like an anti-climax,
 though.
 
-\hypertarget{epilogue}{%
-\subsection{Epilogue}\label{epilogue}}
+\subsection{Epilogue}\label{epilogue}
 
 And that is how we concluded one of the most intricate but rewarding
 philosophical discussions on what it means to be \emph{really scared}.
@@ -746,18 +721,17 @@ stocked `New Age' books.
 
 ``Hmm. Nothing really,'' Sol mumbled. ``But I came upon this book called
 \emph{The Disappearance of the Universe}
-{[}\protect\hyperlink{ref-renard2004}{3}{]} by a fellow who claims he
-has been visited by his \emph{more evolved future self}. What if, during
-the eight days I spent in bed, I had somehow travelled in time to meet
-my more evolved self? And returned after he convinced me that, in
-essence, I had no unfinished business on earth. The residue of that
-encounter might have given me my most scary experience.''
+{[}\citeproc{ref-renard2004}{3}{]} by a fellow who claims he has been
+visited by his \emph{more evolved future self}. What if, during the
+eight days I spent in bed, I had somehow travelled in time to meet my
+more evolved self? And returned after he convinced me that, in essence,
+I had no unfinished business on earth. The residue of that encounter
+might have given me my most scary experience.''
 
 ``Time alone will tell, Sol,'' I added with a wink in my eye. ``Care for
 a coffee at Orchard Valley?''
 
-\hypertarget{feedback}{%
-\subsection{Feedback}\label{feedback}}
+\subsection{Feedback}\label{feedback}
 
 Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
@@ -775,24 +749,23 @@ comments and corrections.
 
 \end{small}
 
-\hypertarget{bibliography}{%
-\section*{References}\label{bibliography}}
+\section*{References}\label{bibliography}
 \addcontentsline{toc}{section}{References}
 
-\hypertarget{refs}{}
+\phantomsection\label{refs}
 \begin{CSLReferences}{0}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-boyle1939}{}}%
+\bibitem[\citeproctext]{ref-boyle1939}
 \CSLLeftMargin{{[}1{]} }%
 \CSLRightInline{Kay Boyle. {The Youngest Camel}. Retrieved 29 July 2023
 from \url{https://www.gutenberg.org/files/64988/64988-h/64988-h.htm}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-wilson2006}{}}%
+\bibitem[\citeproctext]{ref-wilson2006}
 \CSLLeftMargin{{[}2{]} }%
 \CSLRightInline{Chaplain (Capt.) Tim Wilson. 2006. {The Prison of
 Hopelessness}. Retrieved 26 November 2023 from
 \url{https://www.302aw.afrc.af.mil/News/Commentaries/Display/Article/191174/the-prison-of-hopelessness/}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-renard2004}{}}%
+\bibitem[\citeproctext]{ref-renard2004}
 \CSLLeftMargin{{[}3{]} }%
 \CSLRightInline{Gary R Renard. 2004. \emph{{The Disappearance of the
 Universe}. {Straight Talk about Illusions, Past Lives, Religion, Sex,

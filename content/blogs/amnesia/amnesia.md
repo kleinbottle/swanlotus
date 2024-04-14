@@ -3,8 +3,8 @@ title: Doron's Mathematical Amnesia
 author: R (Chandra) Chandrasekhar
 date: 2024-04-08
 modified: 2024-04-13
-category: Simkin Tales
-tags: mathematics geometry algebra trigonometry
+category: Mathematics
+tags: Simkin Tales, geometry, algebra, trigonometry, history
 summary: "Poor Doron has suffered a strange cognitive deficit. His language and speech skills have survived intact, but he has developed 'selective mathematical amnesia'. He has forgotten much of high school mathematics---which for a person with a Master's degree in engineering---is a rather tragic state of affairs. In fact, his knowledge of mathematics now resembles [Emmental cheese](https://en.wikipedia.org/wiki/Emmental_cheese)---full of holes."
 opengraphimage: Emmentaler_Premier_Cru.jpg
 status: published
@@ -24,7 +24,7 @@ status: published
 
 "I thought it a good idea to see if I could help repair and restore Doron's recollection of mathematics, and have embarked on an effort  to that end. Who knows, many school leavers could also find the programme useful."
 
-"Tell me more," I quipped, and settled down to yet another Simkin Tale as Sol recounted his adventure with Doron. The rest of this blog is the verbatim first person account of Sol.
+"Tell me more," I quipped, and settled down to yet another [_Simkin Tale_]() as Sol recounted his adventure with Doron. The rest of this blog is the verbatim first person account of Sol.
 
 ## To heal amnesia, start with history
 

@@ -3,8 +3,8 @@ title: "The Most Scary Experience"
 author: R (Chandra) Chandrasekhar
 date: "2023-07-14"
 modified: "2023-11-27"
-category: Simkin Tales
-tags:
+category: Philosophy
+tags: Simkin Tales, fear
 summary: 'My [redoubtable](https://www.thefreedictionary.com/redoubtable) friend Solus "Sol" Simkin wandered into my office late one afternoon and asked me, "What is the most scary experience for a human being?
 
 I thought but for an instant as I replied, almost reflexively, "Death. What else? Or a close shave with death."'

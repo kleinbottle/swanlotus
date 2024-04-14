@@ -7,16 +7,19 @@
   a4paper,
 ]{article}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -35,19 +38,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={Mastering Time},
-  pdfauthor={R (Chandra) Chandrasekhar},
-  pdflang={en-GB},
-  colorlinks=true,
-  linkcolor={DarkOliveGreen},
-  filecolor={Purple},
-  citecolor={DarkKhaki},
-  urlcolor={Maroon},
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=25mm]{geometry}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
@@ -90,7 +80,6 @@
 \usepackage{subcaption}
 \usepackage[inkscapeversion=1]{svg}
 \usepackage[defaultlines=4,all]{nowidow}
-\usepackage[capitalize,noabbrev]{cleveref}
 \usepackage{etoolbox}
 \usepackage{fontsize}
 \usepackage{newunicodechar}
@@ -101,8 +90,10 @@
 \usepackage[style=american]{csquotes}
 % \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
 %
-\usepackage{esdiff} % for derivative symbols
-\usepackage{amsmath}
+\usepackage{hyperref} % cleveref must come AFTER hyperref
+\usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
+\let\longdivision\relax
+\usepackage{longdivision}
 % noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
@@ -119,9 +110,7 @@
 % We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
 %
 \babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
-%
 \babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
-%
 \babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
 %
 % Sanskrit, Tamil, and Greek fonts
@@ -140,6 +129,9 @@
 %
 \usepackage{unicode-math} % seems not to hurt % fallabck
 \setmathfont[bold-style=TeX]{STIX Two Math}
+\usepackage{amsmath}
+\usepackage{esdiff} % for derivative symbols
+% \renewcommand{\mathbf}{\symbf}
 %
 %
 % Other fonts
@@ -157,30 +149,25 @@
     \fancyhead[LO,RE]{\scshape\thetitle}
     \fancyfoot[CO,CE]{\footnotesize Copyright © 2006\textendash\the\year, R (Chandra) Chandrasekhar}
     \fancyfoot[RE,RO]{\thepage}
-\newfontfamily{\regulariconfont}{Font Awesome 6 Free Regular}[Color=Grey]
-\newfontfamily{\solidiconfont}{Font Awesome 6 Free Solid}[Color=Grey]
-\newfontfamily{\brandsiconfont}{Font Awesome 6 Brands}[Color=Grey]
 %
-% Direct input of Unicode code points
-%
-\newcommand{\faEnvelope}{\regulariconfont\ ^^^^f0e0\normalfont}
-\newcommand{\faMobile}{\solidiconfont\ ^^^^f3cd\normalfont}
-\newcommand{\faLinkedin}{\brandsiconfont\ ^^^^f0e1\normalfont}
-\newcommand{\faGithub}{\brandsiconfont\ ^^^^f09b\normalfont}
-\newcommand{\faAtom}{\solidiconfont\ ^^^^f5d2\normalfont}
-\newcommand{\faPaperPlaneRegular}{\regulariconfont\ ^^^^f1d8\normalfont}
-\newcommand{\faPaperPlaneSolid}{\solidiconfont\ ^^^^f1d8\normalfont}
-
-%
-% The block below is commented out because of Tofu glyphs in HTML
-%
-% \newcommand{\faEnvelope}{\regulariconfont\ \normalfont}
-% \newcommand{\faMobile}{\solidiconfont\ \normalfont}
-% \newcommand{\faLinkedin}{\brandsiconfont\ \normalfont}
-% \newcommand{\faGithub}{\brandsiconfont\ \normalfont}
+\usepackage{newunicodechar}
+\newunicodechar{√}{\textsf{√}}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{sf}
+\hypersetup{
+  pdftitle={Mastering Time},
+  pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
+  colorlinks=true,
+  linkcolor={DarkOliveGreen},
+  filecolor={Purple},
+  citecolor={DarkKhaki},
+  urlcolor={Maroon},
+  pdfcreator={LaTeX via pandoc}}
 
 \title{Mastering Time}
 \author{R (Chandra) Chandrasekhar}
@@ -192,9 +179,8 @@
 \thispagestyle{empty}
 
 
-\hypertarget{the-oppression-of-heat-and-time}{%
 \subsection{The oppression of heat and
-time}\label{the-oppression-of-heat-and-time}}
+time}\label{the-oppression-of-heat-and-time}
 
 It was a
 \href{https://dictionary.cambridge.org/dictionary/english/sweltering}{sweltering}\footnote{Coloured
@@ -257,9 +243,8 @@ and distract me from the sweaty humidity of this afternoon, was most
 welcome. Thus began my rehabilitation from the ``Land of the
 Procrastinators'', into the fair realm of ``Punctuality''.
 
-\hypertarget{develop-kinship-with-your-tasks}{%
 \subsection{Develop kinship with your
-tasks}\label{develop-kinship-with-your-tasks}}
+tasks}\label{develop-kinship-with-your-tasks}
 
 ``I worked closely with Professor Karavitis for six years, first as a
 doctoral candidate, and later as a researcher,'' continued Sol. ``The
@@ -277,9 +262,8 @@ shepherding sheep, if that was what gave me the greatest joy and
 exhilaration. It is a cliched phrase, but \emph{`Do what you love, and
 love what you do'}, works like magic.
 
-\hypertarget{shed-the-need-for-approval}{%
 \subsection{Shed the need for
-approval}\label{shed-the-need-for-approval}}
+approval}\label{shed-the-need-for-approval}
 
 Professor Karavitis added poignantly, ``Others do not care who you are,
 what you are, what you do, or how you fare. You wrongly think---like the
@@ -299,9 +283,8 @@ what you cherish. There is no other way to success, even as
 \href{https://idioms.thefreedictionary.com/royal+road+to}{there is no
 royal road to Geometry}. \emph{Shed the need for approval}.''
 
-\hypertarget{start-early-and-start-well}{%
 \subsection{Start early and start
-well}\label{start-early-and-start-well}}
+well}\label{start-early-and-start-well}
 
 Having metaphorically yeasted the dough of my mind, Professor
 Karavitis---he actually insisted that I should call him Stavros---said
@@ -312,8 +295,7 @@ half-baked cake. So, bake your cake well. Start early, start well,
 secure in your own inner, sublime reassurance that you are going to do a
 fine job. And hang on to that redeeming thought until you finish.''
 
-\hypertarget{do-it-once-and-do-it-well}{%
-\subsection{Do it once and do it well}\label{do-it-once-and-do-it-well}}
+\subsection{Do it once and do it well}\label{do-it-once-and-do-it-well}
 
 Stavros said that anything worth doing should be done well.
 Re-engineering a poor design was for feeble minds. The masterminds
@@ -326,9 +308,8 @@ do it well,''} was his mantra\footnote{This means doing it so well that
   ``once'' here includes this checking or revision as well. Quality has
   to be assured. \emojifont {😉} \normalfont}.
 
-\hypertarget{done-and-dusted-out-of-mind}{%
 \subsection{Done and dusted: out of
-mind}\label{done-and-dusted-out-of-mind}}
+mind}\label{done-and-dusted-out-of-mind}
 
 ``Professor Karavitis was unsentimental about his own accomplishments,
 which were staggering, given that when he became a full professor, he
@@ -355,8 +336,7 @@ and dusted:}}
 \href{https://www.merriam-webster.com/dictionary/out\%20of\%20mind}{\emph{out
 of mind}}. That is the way to work and live.''
 
-\hypertarget{sols-personal-experience}{%
-\subsection{Sol's personal experience}\label{sols-personal-experience}}
+\subsection{Sol's personal experience}\label{sols-personal-experience}
 
 Sol continued, ``Do not for a moment think that this concentrated wisdom
 was all delivered to me in a single enlightening dose. No chance of
@@ -421,8 +401,7 @@ again. Professor Karavitis was indeed one who practised what he
 preached. A mentor for the ages, whom we can all beneficially emulate,''
 concluded Sol.
 
-\hypertarget{closing-thoughts}{%
-\subsection{Closing thoughts}\label{closing-thoughts}}
+\subsection{Closing thoughts}\label{closing-thoughts}
 
 As Sol wound up his enriching tale, I resolved not to fall into the trap
 of procrastination ever again.
@@ -447,8 +426,7 @@ of procrastination ever again.
 smile of the
 \href{https://www.dictionary.com/browse/cognoscenti}{cognoscenti}.
 
-\hypertarget{feedback}{%
-\subsection{Feedback}\label{feedback}}
+\subsection{Feedback}\label{feedback}
 
 Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.

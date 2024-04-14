@@ -119,7 +119,7 @@ Start with sequences so that why epsilon before delta becomes clear: Hight's boo
  "When the successively attributed values of the same variable indefinitely approach a fixed value, so that finally they differ from it by as little as desired, the last is called the limit of all the others."9 Cauchy in Grabiner.
 
 
-"For those ultimate ratios with which quantities vanish are not truly the ratios of ultimate quantities, but limits toward which the ratios of quantities decreasing without limit do always converge." Newrton in Grabiner.
+"For those ultimate ratios with which quantities vanish are not truly the ratios of ultimate quantities, but limits toward which the ratios of quantities decreasing without limit do always converge." Newton in Grabiner.
 "approach nearer than by any given difference, but never go beyond, nor in effect attain to, till the quantities are diminished in infinitum."16
 
 analysis is
