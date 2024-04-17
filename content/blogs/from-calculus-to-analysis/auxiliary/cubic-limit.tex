@@ -1,0 +1,41 @@
+% tan-theta.tex
+% Ilustration for blog "Doron's Mathematical Amnesia"
+%
+% R (Chandra) Chandrasekhar
+% lnesqrt1cos0@gmail.com | chyavana@gmail.com
+% 
+% First written: 2024-04-09
+% Last revised : 2024-04-09
+%
+\PassOptionsToPackage{rgb,dvipsnames,svgnames,dvipsnames,hyperref}{xcolor}
+\documentclass[border={0mm},tikz]{standalone}
+\input{TikZ-Preamble}
+%
+\usepackage{pgfplots}
+%
+\begin{document}
+\tikzset{every picture/.style = {line width = 1.5pt, line cap = round, line join = round}}
+%
+\def\FunctionF(#1){(#1)^3 + 2*(#1)^2 + (#1) + 1}%
+%
+\begin{tikzpicture}[scale=4]
+%
+\begin{axis}[
+        axis y line=center,
+        axis x line=middle, 
+        axis on top=true,
+        xmin=-6,
+        xmax=6,
+        ymin=-8,
+        ymax=8,
+        height=12.0cm,
+        width=12.0cm,
+        grid,
+        xtick={-6,...,6},
+        ytick={-8, -6,..., 8},
+    ]
+    \addplot [domain=-2.5:1.5, samples=100, mark=none, Maroon] {\FunctionF(x)};
+    \node [left, Maroon] at (axis cs: 3.6,42) {$x^3 + 2x^2 + x + 1$};
+\end{axis}
+\end{tikzpicture}
+\end{document}

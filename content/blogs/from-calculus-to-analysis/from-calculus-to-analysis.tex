@@ -1,0 +1,605 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode,linktoc=all}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  a4paper,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=25mm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{british}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+% $HOME/.pandoc/defaults/latex-header-includes.tex
+% Common header includes for both lualatex and xelatex engines.
+%
+% Preliminaries
+%
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+% \PassOptionsToPackage{main=british}{babel}
+\PassOptionsToPackage{english}{selnolig}
+\AtBeginEnvironment{quote}{\small}
+\AtBeginEnvironment{quotation}{\small}
+\AtBeginEnvironment{longtable}{\centering}
+%
+% Packages that are useful to include
+%
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[inkscapeversion=1]{svg}
+\usepackage[defaultlines=4,all]{nowidow}
+\usepackage{etoolbox}
+\usepackage{fontsize}
+\usepackage{newunicodechar}
+\usepackage{pdflscape}
+\usepackage{fnpct}
+\usepackage{parskip}
+  \setlength{\parindent}{0pt}
+\usepackage[style=american]{csquotes}
+% \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
+%
+\usepackage{hyperref} % cleveref must come AFTER hyperref
+\usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
+\let\longdivision\relax
+\usepackage{longdivision}
+% noto-plus.tex
+% Font-setting header file for use with Pandoc Markdown
+% to generate PDF via LuaLaTeX.
+% The main font is Noto Serif.
+% Other main fonts are also available in appropriately named file.
+\usepackage{fontspec}
+\usepackage{setspace}
+\setstretch{1.3}
+%
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=Node} % at the start always
+%
+% For English
+% See also https://tex.stackexchange.com/questions/574047/lualatex-amsthm-polyglossia-charissil-error
+% We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
+%
+\babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
+\babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
+\babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
+%
+% Sanskrit, Tamil, and Greek fonts
+%
+\babelprovide[import, onchar=ids fonts]{sanskrit}
+\babelprovide[import, onchar=ids fonts]{tamil}
+\babelprovide[import, onchar=ids fonts]{greek}
+%
+\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSerifDevanagari}
+\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSansDevanagari}
+\babelfont[tamil]{rm}[Renderer=HarfBuzz,Script=Tamil]{NotoSerifTamil}
+\babelfont[tamil]{sf}[Renderer=HarfBuzz,Script=Tamil]{NotoSansTamil}
+\babelfont[greek]{rm}[Script=Greek]{GentiumBookPlus}
+%
+% Math font
+%
+\usepackage{unicode-math} % seems not to hurt % fallabck
+\setmathfont[bold-style=TeX]{STIX Two Math}
+\usepackage{amsmath}
+\usepackage{esdiff} % for derivative symbols
+% \renewcommand{\mathbf}{\symbf}
+%
+%
+% Other fonts
+%
+\newfontfamily{\emojifont}{Symbola}
+%
+
+\usepackage{titling}
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0.2pt}
+    \renewcommand{\footrulewidth}{0.2pt}
+    \fancyhead[LO,RE]{\scshape\thetitle}
+    \fancyfoot[CO,CE]{\footnotesize Copyright © 2006\textendash\the\year, R (Chandra) Chandrasekhar}
+    \fancyfoot[RE,RO]{\thepage}
+%
+\usepackage{newunicodechar}
+\newunicodechar{√}{\textsf{√}}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{sf}
+\hypersetup{
+  pdftitle={From Calculus to Analysis},
+  pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
+  colorlinks=true,
+  linkcolor={DarkOliveGreen},
+  filecolor={Purple},
+  citecolor={DarkKhaki},
+  urlcolor={Maroon},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{From Calculus to Analysis}
+\author{R (Chandra) Chandrasekhar}
+\date{2024-03-24 | 2024-05-15}
+
+\begin{document}
+\maketitle
+
+\thispagestyle{empty}
+
+
+\begin{quote}
+Portions of this blog have been taken from the chapter entitled
+``Mathematics at University'' from my book,
+\href{https://swanlotus.netlify.app/sas}{\emph{Secrets of Academic
+Success}}, which is
+\href{https://swanlotus.netlify.app/sas-manuscript/SAS-partial.pdf}{available
+as a free PDF download}. Since that chapter was written, I have gained
+greater understanding on why calculus at high school needed to morph
+into analysis at university. Accordingly, the material has been
+augmented, but kept simple enough to be accessible to a high school
+student just entering university.
+
+I am not a professional mathematician, and make no claim to rigour in
+this blog. Rather, I hope to demystify analysis from the grip of symbols
+by explaining its
+\href{https://www.thefreedictionary.com/raison+d+etre}{\emph{raison
+d'être}} in plain English. In the process, I hope analysis appears less
+forbidding and more friendly.
+\end{quote}
+
+\subsection{The transition from high school to
+university}\label{the-transition-from-high-school-to-university}
+
+At high school you were taught how to integrate and differentiate. You
+were exposed to all sorts of tricks and special techniques to compute
+specific integrals, especially those involving inverse trigonometric
+functions, and so on. If you revelled in mastering and applying such
+techniques, you might find that what succeeds high school
+\emph{calculus}, is a horse of an entirely different colour, called
+\emph{analysis}, at university.
+
+You might even be alarmed that rather than have to solve routine
+problems for the value of some quantity, or simply to work through and
+demonstrate a fact in a straightforward fashion, you are now required to
+prove theorems: something that requires a different mindset and skill
+set.
+
+\subsection{Why the change?}\label{why-the-change}
+
+High school calculus appeals to intuition and the visual sense, through
+\emph{geometric} ideas like slopes and areas. Words like ``approaches'',
+``tends to'', etc., signify motion and resonate with our sense of space
+and time.
+
+Analysis, on the other hand, is logically precise and uses
+\emph{arithmetic} as the basis for deriving results. Intuition has given
+way to logical precision, and pictures have yielded to symbols. The
+implicit scaffolding of familiar ideas like space and time---borrowed
+from our everyday experience---has been replaced with the clinical
+precision of inequalities and universal and existential quantifiers.
+
+The logically indefensible infinitesimals of calculus have given way to
+the rigorously justifiable limits and infinite sums of analysis. Numbers
+alone provide the foundation, and this required the idea of a number
+itself to be strengthened as an abstraction beyond question or doubt.
+
+All this takes some getting used to. We have moved from an innocent
+nature-hewn cave to a fabricated apartment block that reaches for the
+sky. Questions such as, ``Is this change really necessary?'' and ``If it
+ain't broke, why fix it?'' arise in consequence.
+
+But the sober truth is that high school calculus \emph{is} ``broke''. It
+is fun-filled, but nevertheless, a convenient fiction by mathematical
+standards. Two centuries passed between the discovery of the calculus as
+a magical computing machine and the recognition of the need to fix it so
+that it would work robustly in all circumstances.
+
+In this sense, the progression from calculus to analysis is similar to
+the accretion of zero and the negative numbers to the natural numbers,
+or the introduction of imaginary numbers to account for roots of certain
+polynomials. All such changes were resisted at first, just like a new
+pair of shoes that initially pinch, but time and usage have borne
+testament to the wisdom behind the change. The somewhat painful
+transition from calculus to analysis will prove to be the same.
+
+\subsection{Geometry's fall from
+favour}\label{geometrys-fall-from-favour}
+
+Mathematics texts at high school level are generously and often
+colorfully illustrated, especially when dealing with geometry. But, if
+you look at any university-level analysis textbook, colour would have
+taken heel, and pictures will be the exception rather than the norm. For
+those who think in pictures, this will come as a letdown, accompanied by
+the puzzling question, ``Why?''
+
+Geometric intuition, upon which Greek mathematics rested securely for
+well nigh two centuries, was not infallible. The development of new
+\href{https://en.wikipedia.org/wiki/Non-Euclidean_geometry}{non-Euclidean
+geometries} in the nineteenth century robbed mathematics of its innocent
+certitude in geometric foundations. And the resulting revolution, called
+the \href{https://en.wikipedia.org/wiki/Erlangen_program}{Erlangen
+program}, made algebra the basis of classifying geometry itself.
+
+Our everyday experience is rooted in our sense of space and time. So, I
+will attempt to illustrate the ideas of analysis using pictures wherever
+I can, so that the alien syntax and symbology of analysis is buttressed
+by the reassuring presence of equivalent pictures. Unfortunately, many
+introductory analysis books do not generously make this student-friendly
+concession, if at all.
+
+\subsection{Holes in the real number line: irrational
+numbers}\label{holes-in-the-real-number-line-irrational-numbers}
+
+What do irrational numbers have to do with analysis? Quite a lot,
+really.
+
+Real analysis lives on the real number line. From the time of the
+Pythagoreans, the irrational numbers have caused mathematicians' hearts
+to skip a beat. ``Are irrational numbers really numbers? If so, where do
+they live?''
+
+The Greeks circumvented this by limiting the irrational numbers to
+geometric contexts. The ratio of the circumference of a unit circle to
+its diameter is \(\pi\). The diagonal of a unit square is \(\sqrt{2}\).
+``Let them live geometrically as \emph{lengths}, but let us remain
+silent about their existence elsewhere.'' It was a dichotomy between
+\emph{counting} and \emph{measurement} or between the \emph{discrete}
+and the \emph{continuous}.
+
+Even today, the sets for the \emph{natural numbers}, the
+\emph{integers}, the \emph{rational numbers} all have their own symbols,
+\(\mathbb{N}\), \(\mathbb{Z}\), \(\mathbb{Q}\), respectively, but not
+the irrational numbers. That should be clue enough to indicate that the
+irrationals were more than a handful for mathematicians to contend with,
+especially if they were unsure where they rightfully belonged.
+
+The rational numbers, when expressed as decimals, either have a finite
+decimal representation, like \(\frac{1}{2} = 0.5\)\footnote{To muddy
+  matters even more, \(\frac{1}{2} = 0.4999\dots\) is an equally a valid
+  representation!}, or an infinitely recurring decimal representation
+like \(\frac{1}{3} = 0.333\dots\).
+
+The irrational number \(\sqrt{2}\)---when expressed as a
+decimal---neither terminates nor recurs without end. It simply goes on
+and on and on. So, where exactly does it sit on the real line? This
+troubling question went unanswered until
+\href{https://plato.stanford.edu/entries/dedekind-foundations/}{Richard
+Dedekind} skilfully introduced the
+\href{https://www.britannica.com/science/Dedekind-cut}{Dedekind cut} to
+legitimately accommodate the irrationals as first-class citizens of the
+real number line, fully capable of undergoing all the arithmetic
+operations of the rational numbers.
+
+The inclusion of the irrational numbers into the fold of real numbers
+along with the rational numbers \(\mathbb{Q}\),
+\href{https://en.wikipedia.org/wiki/Completeness_of_the_real_numbers}{completes}
+the set of real numbers, \(\mathbb{R}\), and helps lay the foundation
+for rigour in analysis.
+
+\subsection{Ordered Archimedean field}\label{ordered-archimedean-field}
+
+Two properties of real numbers are highlighted as being essential for
+real analysis:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  The \href{https://en.wikipedia.org/wiki/Law_of_trichotomy}{trichotomy}
+  of the real numbers, which states that every real number is either
+  positive, zero, or negative. Given any two real numbers, \(x\) and
+  \(y\), \emph{only one} of the following three statements is true:
+  \(x < y\), or \(x = y\), or \(x > y\).
+\item
+  The \href{https://planetmath.org/archimedeanproperty}{Archimedean
+  property} which forbids infinities and infinitesimals from being real
+  numbers. It states that:
+
+  \begin{enumerate}
+  \def\labelenumii{(\roman{enumii})}
+  \tightlist
+  \item
+    For \emph{any} real number \(x\), there is a natural number \(n\)
+    such that \(n > x\).\footnote{\(\forall x \in \mathbb{R}, \exists n \in \mathbb{N} \text{ such that } n > x.\)}
+  \item
+    For \emph{any positive} real number \(y\), there is a natural number
+    \(n\) such that \(\frac{1}{n} < y\).\footnote{\(\forall y \in \mathbb{R}, y > 0, \exists n \in \mathbb{N} \text{ such that } \frac{1}{n} < y\).}
+  \end{enumerate}
+\end{enumerate}
+
+\subsection{Inequalities and
+distances}\label{inequalities-and-distances}
+
+Calculus problems are generally concerned with \emph{evaluating} some
+quantity and are therefore centred around \emph{equalities}.
+
+Analysis, on the other hand, relies heavily on logical statements about
+quantities whose exact values may not be known, but about whom
+statements of \emph{relative size} need to be made. This is where
+\emph{inequalities} enter the discourse.\footnote{You would have already
+  seen from above how inequalities are used to define an Archimedean
+  field.}
+
+This change in emphasis can be disconcerting. Students seeking to
+familiarize themselves with manipulations of inequalities should consult
+entry-level texts dealing with this subject
+{[}\citeproc{ref-kazarinoff-1961}{1}--\citeproc{ref-alsina-nelsen-2009}{3}{]}.
+
+When the derivative was defined geometrically as the value of the slope
+of a tangent to the graph of the function at a particular point, the
+geometrical relationship alone sufficed to encapsulate the definition
+and to help compute the value. XXX FIG
+
+However, when the derivative is defined as a
+\href{https://en.wikipedia.org/wiki/Limit_(mathematics)}{\emph{limit}},
+using arithmetic instead of geometry, we do not have \emph{intuitive}
+markers to guide us. And such markers are serviceable, but not
+infallible. Therefore, we need some symbols and operations to contend
+with ideas like the ``closeness'' of two points, etc.
+
+This is where we encounter two mathematical devices quintessential to
+analysis and much of modern mathematics:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Inequalities: by understanding and manipulating the symbols \(>\) and
+  \(<\), we can work toward watertight definitions that serve to
+  constrain what we are talking about. See \href{}{Spider in a matchbox}
+  later on.
+\item
+  Distance: by using a sensible definition of the distance between two
+  points, we may measure their ``closeness''. Geometry and intuition
+  have been replaced by arithmetic and precision.
+
+  If there are two \emph{distinct} real numbers \(x\) and \(y\),
+  \(|x - y|\) defines the positive number that quantifies their
+  separation or distance. Since we are on the real line, the
+  \href{https://mathworld.wolfram.com/AbsoluteValue.html}{\emph{absolute
+  value function}} is used for this purpose. XXX FIG
+\end{enumerate}
+
+\subsection{Limits: conceptually and
+rigorously}\label{limits-conceptually-and-rigorously}
+
+One interesting feature of limits for functions is that \emph{a limit at
+a point may exist even if the function is not defined at that particular
+point}. The definition of a limit therefore requires closeness to the
+point but \emph{not equality} to the point. This ``arbitrarily close''
+condition is couched thus:
+
+\begin{quote}
+``For arbitrary \(\varepsilon > 0\) and \(| x - y | < \varepsilon\)''.
+\end{quote}
+
+This incantation will become so familiar that it will become
+unremarkable when you devote time and practice to analysis. And notice
+the usefulness of inequalities here.
+
+\subsection{\texorpdfstring{Approximations to \(\sqrt{2}\) as a Cauchy
+sequence}{Approximations to \textbackslash sqrt\{2\} as a Cauchy sequence}}\label{approximations-to-sqrt2-as-a-cauchy-sequence}
+
+\href{https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin
+Cauchy}
+
+\subsection{Irrational numbers as
+reals}\label{irrational-numbers-as-reals}
+
+Irrationals were never properly integrated into the real numbers until
+That is not a story we will visit today, except to say that
+strengthening the foundations of the real numbers was a necessary
+prerequisite that laid the foundations of analysis. Numbers such as
+\(\pi\) and \(\sqrt{2}\) arising from the simplest plane geometry can
+now be accommodated legitimately as first-class citizens of the real
+number line.
+
+\subsection{The reals as an ordered Archimedean
+field}\label{the-reals-as-an-ordered-archimedean-field}
+
+\subsection{Nested sequences in the real line and Matrioshka
+dolls}\label{nested-sequences-in-the-real-line-and-matrioshka-dolls}
+
+\subsection{Spider in a matchbox}\label{spider-in-a-matchbox}
+
+\subsection{Why epsilon before delta}\label{why-epsilon-before-delta}
+
+\subsection{Examples of non-limits:
+1/x}\label{examples-of-non-limits-1x}
+
+\subsection{Limit, continuity, smoothness,
+differentiability}\label{limit-continuity-smoothness-differentiability}
+
+\subsection{Nested intervals and Matrioshka dolls: {[}also
+wavelets{]}}\label{nested-intervals-and-matrioshka-dolls-also-wavelets}
+
+\subsection{Infinite processes and
+infinities}\label{infinite-processes-and-infinities}
+
+\subsection{\texorpdfstring{The idea of \emph{closeness} in arithmetic
+terms:
+\(| a_n - a_m | < \varepsilon\)}{The idea of closeness in arithmetic terms: \textbar{} a\_n - a\_m \textbar{} \textless{} \textbackslash varepsilon}}\label{the-idea-of-closeness-in-arithmetic-terms-a_n---a_m-varepsilon}
+
+\begin{enumerate}
+\tightlist
+\item
+  Real numbers: holes in the number line
+\item
+  Infinite Processes and Infinities
+\item
+  No geometry
+\item
+  No algebra
+\item
+  But arithmetic
+\item
+  Squeezing something from below and above: Archimedes
+\item
+  Archimedean Field
+\item
+  Epsilon-Delta matchbox to confine the Limit spider
+\item
+  Continuity
+\item
+  Differentiability
+\item
+  But most books: no pictures
+\item
+  Pathological functions
+\item
+  Fourier Series: how can a curvy function produce a square wave?
+\item
+  My selection of books
+\item
+  Extract from chapter
+\item
+  Order in the field of real numbers; Is the Complex field ordered?
+\item
+  Modulus function to define length
+\item
+  Approximation rather than Computation
+\item
+  Why Differentiation need s to be re-defined
+\item
+  Why Integration needs to be redefined
+\item
+  What happens at Infinity? Is the equals sign really valid?
+\end{enumerate}
+
+\subsection{Acknowledgements}\label{acknowledgements}
+
+\subsection{Feedback}\label{feedback}
+
+Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
+comments and corrections.
+
+\noindent A PDF version of this article is
+\href{./from-calculus-to-analysis.pdf}{available for download here}:
+
+\begin{small}
+
+\begin{sffamily}
+
+\url{https://swanlotus.netlify.app/blogs/from-calculus-to-analysi.pdf}
+
+\end{sffamily}
+
+\end{small}
+
+https://mercedesbernard.com/blog/recursion-and-nesting-dolls/
+
+https://www.studysmarter.co.uk/explanations/math/pure-maths/cauchy-sequence/
+
+https://math.libretexts.org/Bookshelves/Analysis/Mathematical\_Analysis\_(Zakon)/03:\_Vector\_Spaces\_and\_Metric\_Spaces/3.13:\_Cauchy\_Sequences.\_Completeness
+
+https://math.stackexchange.com/questions/471615/archimedean-property-concept
+
+\section*{References}\label{bibliography}
+\addcontentsline{toc}{section}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{0}{0}
+\bibitem[\citeproctext]{ref-kazarinoff-1961}
+\CSLLeftMargin{{[}1{]} }%
+\CSLRightInline{Nicholas D Kazarinoff. 1961. \emph{Geometric
+inequalities}. The Mathematical Association of America.}
+
+\bibitem[\citeproctext]{ref-beckenbach-bellman-1962}
+\CSLLeftMargin{{[}2{]} }%
+\CSLRightInline{Edwin Beckenbach and Richard Bellman. 1962. \emph{An
+introduction to inequalities}. The Mathematical Association of America.}
+
+\bibitem[\citeproctext]{ref-alsina-nelsen-2009}
+\CSLLeftMargin{{[}3{]} }%
+\CSLRightInline{Claudi Alsina and Roger B Nelsen. 2009. \emph{When less
+is more: Visualizing basic inequalities}. The Mathematical Association
+of America.}
+
+\end{CSLReferences}
+
+
+
+\end{document}
