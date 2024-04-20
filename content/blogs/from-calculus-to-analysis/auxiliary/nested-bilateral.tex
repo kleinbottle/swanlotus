@@ -1,0 +1,44 @@
+% nested-bilateral.tex
+% Ilustration for blog "From Calculus to Analysis".
+%
+% R (Chandra) Chandrasekhar
+% lnesqrt1cos0@gmail.com | chyavana@gmail.com
+% 
+% First written: 2024-04-19
+% Last revised : 2024-04-19
+%
+\PassOptionsToPackage{rgb,dvipsnames,svgnames,dvipsnames,hyperref}{xcolor}
+\documentclass[border={0mm},tikz]{standalone}
+\input{TikZ-Preamble}
+%
+\begin{document}
+%
+\tikzset{every picture/.style = {line width = 0.5pt, line cap = round, line join = round}}
+%
+\begin{tikzpicture}[scale = 9]
+% Set up a real line in SlateGray
+% Mark and label intervals as |-|
+% Demonstrte nesting
+% Limit is contained in _all_ interbals
+%
+\draw [SlateGray, line width = 1pt] (0.9, 0) -- (2.0, 0);%
+\coordinate (A1) at (1.00, 0.1);
+\coordinate (B1) at (1.90, 0.1);
+\draw [color = SteelBlue, |-|] (A1) node [above] {$a_1$} -- (B1) node at (B1) [above]{$b_1$};
+%
+\coordinate (A2) at (1.30, -0.12);
+\coordinate (B2) at (1.80, -0.12);
+\draw [color = DarkOrchid, |-|] (A2) node [above] {$a_2$} -- (B2) node at (B2) [above]{$b_2$};
+%
+\coordinate (A3) at (1.50, 0.05);
+\coordinate (B3) at (1.75, 0.05);
+\draw [color = DarkGreen, |-|] (A3) node [above] {$a_3$} -- (B3) node at (B3) [above]{$b_3$};
+%
+\coordinate (A4) at (1.55, -0.07);
+\coordinate (B4) at (1.60, -0.07);
+\draw [color = Maroon, |-|] (A4) node [above] {$a_4$} -- (B4) node at (B4) [above]{$b_4$};
+%
+\coordinate (L) at (1.58, 0);
+\draw [color = Teal] (1.58, 0.01) -- (1.58, -0.01) node [text = Teal] at (L) [above] {$L$};
+\end{tikzpicture}
+\end{document}

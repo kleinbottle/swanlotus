@@ -4,21 +4,7 @@
 
 [@tao-one-2022; @tao-two-2022; @courant-john-one; @courant-john-two].
 
-\subsection{Recommended texts}
 
-Several texts have been written to highlight the differences between calculus and analysis and to ease the transition from the one to the other. \citeauthor*{gardiner1982}'s book \citetitle*{gardiner1982} \cite{gardiner1982} gives an eminently readable account of the rationale for analysis that is accessible to someone familiar with calculus. This book has been slightly expanded, given a new title, and reprinted in an inexpensive edition \cite{gardiner2002}: read it if you can.
-
-Another very readable and fascinating recountal of the reasons why analysis \textit{had to arise} is given in \citeauthor*{bressoud2007}'s text \citetitle*{bressoud2007} \cite{bressoud2007}. The time spent reading it will be well rewarded with a quantum jump in your mathematical understanding and maturity.
-
-\citeauthor*{abbott2001}'s lucid \citetitle*{abbott2001} \cite{abbott2001} is another text which gives clear, comprehensible motivations and explanations without losing rigour.
-
-Other, more recent books that bridge the calculus-analysis divide include the texts by \citeauthor{ghorpadelimaye2006} \cite{ghorpadelimaye2006}, \citeauthor{brannan2006} \cite{brannan2006}, \citeauthor{beyer2010} \cite{beyer2010} and \citeauthor{schinazi2012} \cite{schinazi2012}.
-
-My favourite text on introductory analysis is \citeauthor*{rosenlicht1986}'s \citetitle*{rosenlicht1986} \cite{rosenlicht1986}. It is a marvel of clarity that is not too expensive to own. Read and work through it if you can.
-
-\subsection{Clarifying doubts}
-
-If you have a specific but recalcitrant doubt, you might need to consult more than one book before the \enquote{eureka moment} or epiphany occurs. Often it is the earlier texts with their careful expositions and more leisurely pace that facilitate such understanding. Let me illustrate with an example.
 
 \begin{SASexample}
 The logically rigorous\textemdash but intuitively far from obvious\textemdash \textit{epsilon-delta definition of a limit} is often considered one of the most difficult-to-grasp concepts that the beginning undergraduate has to contend with. It goes like this:

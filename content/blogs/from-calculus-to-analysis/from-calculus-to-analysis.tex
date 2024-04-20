@@ -49,6 +49,20 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage{svg}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -204,13 +218,27 @@
 
 \title{From Calculus to Analysis}
 \author{R (Chandra) Chandrasekhar}
-\date{2024-03-24 | 2024-05-15}
+\date{2024-03-24 | 2024-05-20}
 
 \begin{document}
 \maketitle
 
 \thispagestyle{empty}
 
+
+\begin{flushright}
+
+\begin{footnotesize}
+
+The fundamental concept on which the whole of mathematical\\
+analysis ultimately rests is that of the limit of an infinite sequence
+\(a_{n}\).\\
+\textsc{Richard Courant and Fritz John}~ \emph{Introduction to Calculus
+and Analysis}, Volume I, p 60.
+
+\end{footnotesize}
+
+\end{flushright}
 
 \begin{quote}
 Portions of this blog have been taken from the chapter entitled
@@ -309,8 +337,7 @@ Our everyday experience is rooted in our sense of space and time. So, I
 will attempt to illustrate the ideas of analysis using pictures wherever
 I can, so that the alien syntax and symbology of analysis is buttressed
 by the reassuring presence of equivalent pictures. Unfortunately, many
-introductory analysis books do not generously make this student-friendly
-concession, if at all.
+introductory analysis books are illustrated scantily if at all.
 
 \subsection{Holes in the real number line: irrational
 numbers}\label{holes-in-the-real-number-line-irrational-numbers}
@@ -345,9 +372,9 @@ decimal representation, like \(\frac{1}{2} = 0.5\)\footnote{To muddy
 like \(\frac{1}{3} = 0.333\dots\).
 
 The irrational number \(\sqrt{2}\)---when expressed as a
-decimal---neither terminates nor recurs without end. It simply goes on
-and on and on. So, where exactly does it sit on the real line? This
-troubling question went unanswered until
+decimal---neither terminates nor recurs without end. Its unpredictable
+digits go on and on and on. So, where exactly does it sit on the real
+line? This troubling question went unanswered until
 \href{https://plato.stanford.edu/entries/dedekind-foundations/}{Richard
 Dedekind} skilfully introduced the
 \href{https://www.britannica.com/science/Dedekind-cut}{Dedekind cut} to
@@ -360,6 +387,71 @@ along with the rational numbers \(\mathbb{Q}\),
 \href{https://en.wikipedia.org/wiki/Completeness_of_the_real_numbers}{completes}
 the set of real numbers, \(\mathbb{R}\), and helps lay the foundation
 for rigour in analysis.
+
+\subsection{Approximation of an
+irrational}\label{approximation-of-an-irrational}
+
+When we use a calculator to key in \(\sqrt{2}\), we see a sequence of
+digits on the display. But that sequence is an \emph{approximation}.
+\emph{The exact decimal representation of an irrational number does not
+exist}. So, when we calculate or compute with irrationals, we are using
+\emph{rational approximations} in their stead. And for real world
+purposes, that approximation suffices.
+
+A real sequence \(S(n)\), also written as \(S_{n}\), is a function from
+the set of natural numbers to the set of real numbers. Symbolically,
+this is stated as \(S: \mathbb{N} \to \mathbb{R}\).
+
+My calculator gives me the following approximation for \(\sqrt{2}\):
+\(1.414213562\dots\). Suppose we form the sequence \[
+S = (s_n) = 1, 1.4, 1.41, 1.414, 1.4142, 1.41421, 1.414213, 1.4142135, 1.41421356, 1.414213562 \dots
+\] obtained by truncating the decimal representation, with
+\(s_{1} = 1\), \(s_{2} = 1.4\), until \(s_{9} = 1.41421356\). The
+successive terms in the sequence are successive approximations to the
+value \(\sqrt{2}\)---each more accurate than the previous one---but with
+the proviso that there is no decimal representation for the \emph{exact}
+value of \(\sqrt{2}\) except via the symbol itself.
+
+Note the following points:
+
+\begin{enumerate}
+\item
+  The sequence \(S\) goes on without end.
+\item
+  The sequence \(S\) has been constructed, one digit at a time, to
+  approximate the value of \(\sqrt{2}\). Its terms therefore represent
+  \emph{rational approximations} to \(\sqrt{2}\).
+\item
+  We may assert---by virtue of the construction of \(S\)---that a later
+  term in the sequence is a more accurate approximation to \(\sqrt{2}\)
+  than an earlier term. The sequence
+  \href{https://en.wikipedia.org/wiki/Convergent_series}{converges} to
+  \(\sqrt{2}\).
+\item
+  \(s_{n}\) \emph{tends to} the value \(\sqrt{2}\), as we keep on adding
+  successive terms of the sequence.
+\item
+  Because \(s_{n}\) can never equal \(\sqrt{2}\), we \emph{cannot
+  equate} \(s_{n}\) to \(\sqrt{2}\) for any \emph{finite}
+  \(n \in \mathbb{N}\).
+\item
+  The \href{https://en.wikipedia.org/wiki/Limit_(mathematics)}{limit} in
+  this case, \(\sqrt{2}\), is therefore not a member of the sequence.
+\end{enumerate}
+
+In symbols, we write
+\(s_{n} \to \sqrt{2} \text{ as } n \to \infty\).\footnote{Infinity is
+  not a natural number.} Alternatively, we may write
+\[\lim_{n \to \infty}s_{n} = \sqrt{2}.
+\] But the equality sign here pertains to an \emph{infinite process} and
+cannot be treated in the same cavalier way as we would the garden
+variety equality sign in \(2 + 3 = 5\).
+
+But this is imprecise because we are handwaving with the words ``tends
+to'' indicated by \(\to\). We will re-visit the issue of how to make
+precise and watertight the idea of a limit when we shed intuitive
+notions like ``tends to'' and replace it with a strict arithmetical
+criterion.
 
 \subsection{Ordered Archimedean field}\label{ordered-archimedean-field}
 
@@ -376,8 +468,10 @@ real analysis:
   \(x < y\), or \(x = y\), or \(x > y\).
 \item
   The \href{https://planetmath.org/archimedeanproperty}{Archimedean
-  property} which forbids infinities and infinitesimals from being real
-  numbers. It states that:
+  property} which forbids
+  \href{https://en.wikipedia.org/wiki/Infinity}{infinities} and
+  \href{https://en.wikipedia.org/wiki/Infinitesimal}{infinitesimals}
+  from being real numbers. It states that:
 
   \begin{enumerate}
   \def\labelenumii{(\roman{enumii})}
@@ -441,7 +535,227 @@ analysis and much of modern mathematics:
   separation or distance. Since we are on the real line, the
   \href{https://mathworld.wolfram.com/AbsoluteValue.html}{\emph{absolute
   value function}} is used for this purpose. XXX FIG
+
+  The ``arbitrarily close'' condition of calculus is couched more
+  precisely thus:
+
+  \begin{quote}
+  ``For arbitrary \(\varepsilon > 0\) and \(| x - y | < \varepsilon\)''.
+  \end{quote}
 \end{enumerate}
+
+This incantation will become so familiar that it will become
+unremarkable when you devote time and practice to analysis. And notice
+the usefulness of inequalities here.
+
+\subsection{\texorpdfstring{Approximation for \(\sqrt{2}\)
+revisited}{Approximation for \textbackslash sqrt\{2\} revisited}}\label{approximation-for-sqrt2-revisited}
+
+We now have a quantitative description for a measure of closeness. Let
+us put it to use in the example from
+\hyperref[approximation-of-an-irrational]{Approximation of an
+irrational} above. We know that our approximation becomes better as
+\(n\) increases.
+
+Let us \emph{fix the admissible error} to be some positive real number
+\(\varepsilon\). This means that the error is never zero: which is as
+should be. We may then say that as long as \(n\) is larger than some
+number, say \(m\), the error or difference between between \(s_{n}\) and
+\(\sqrt{2}\) will be less than \(\varepsilon\).
+
+To express this with few words and many symbols, we take recourse to two
+ideas from logic:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  The
+  \href{https://en.wikipedia.org/wiki/Universal_quantification}{universal
+  quantifier}, \(\forall\), which is spoken as ``for all'', ``for any'',
+  or ``given any''.
+\item
+  The
+  \href{https://en.wikipedia.org/wiki/Existential_quantification}{existential
+  quantifier}, \(\exists\), which is spoken, as ``there exists'',
+  ``there is at least one'', or ``for some''.
+\end{enumerate}
+
+Strangely, these symbols generalize rather than particularize. So, how
+do they tighten up and make more precise statements whose truth we wish
+to establish? Along with inequalities, how do they help make precise the
+notions that were handwaved away in calculus?
+
+We may now precisely state:
+
+\begin{equation}\phantomsection\label{eq:epsilon}{
+\forall \varepsilon \in \mathbb{R}, \varepsilon > 0, \exists m \in \mathbb{N} \text{ such that } n > m \implies |S_{m} - \sqrt{2}| < \varepsilon.
+}\end{equation}
+
+This definition of a limit starts out with the error variable
+\(\varepsilon\) rather than with the index \(m\), above which the error
+is not exceeded. This may appear counter-intuitive, but if you think of
+it like a shepherd does, you would want to corral your flock before
+counting it.
+
+The following points are noteworthy:
+
+\begin{enumerate}
+\item
+  Apart from the limit, which in our case is \(\sqrt{2}\), there is no
+  other specific value used in the definition.
+\item
+  We use an inequality in \(|s_{n} - \sqrt{2}| < \varepsilon\) because
+  no term of \(S_{n}\) actually equals \(\sqrt{2}\).
+\item
+  By being silent on the value of \(\varepsilon\), except to require it
+  to be positive, we may squeeze the error to as small as we want, and
+  still not run afoul of any constraints regarding non-equality of any
+  \(s_{n}\) with \(\sqrt{2}\). This formulation neatly encapsulates the
+  notion of ``tends to'', or ``approaches'', ``but does not equal'',
+  with a distance measure that may be made arbitrarily small, but not
+  equal zero.\footnote{In hindsight, analysis started off as tidying up
+    the loose ends of calculus, but ended up strengthening the whole
+    edifice of mathematics, as its very foundations were impacted.}
+\item
+  The need for \(\mathbb{R}\) to be an
+  \hyperref[ordered-archimedean-field]{Ordered Archimedean field} is
+  apparent here. We have arbitrarily small numbers, but no
+  infinitesimals, and there is no upper bound on the natural numbers.
+\end{enumerate}
+
+A pictorial illustration is given in \cref{fig:nested} of what is
+happening on the real number line as we progressively approximate
+\(\sqrt{2}\). The
+
+\begin{figure}
+\centering
+\includesvg[width=0.9\textwidth,height=\textheight]{images/nested-intervals.svg}
+\caption{Nested sequences \([a_i, L]\) vis-a-vis the limit \(L\), which
+represents \(\sqrt{2}\) in this case.}\label{fig:nested}
+\end{figure}
+
+Note that this figure is not to scale and is not of the actual values
+given in \hyperref[approximation-of-an-irrational]{Approximation of an
+irrational} but is rather an illustration of what happens as successive
+approximations become progressively closer to the limit\footnote{This is
+  purely didactic; otherwise, the later ticks would be overwitten and
+  the later labels would obscure each other.}.
+
+We know the the limit is \(\sqrt{2}\) because we constructed the
+sequence so. Moreover, we are not approaching the limit from
+\emph{above} but rather only from \emph{below} by using the successive
+digits that the calculator spewed out.
+
+The following observations apply to the
+\href{https://mathworld.wolfram.com/ClosedInterval.html}{closed
+intervals}, \([a_1, L]\), \([a_2, L]\), \([a_3, L]\), \([a_4, L]\):
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(L\), representing \(\sqrt{2}\), is the \emph{upper bound} of all the
+  intervals. We do not exceed \(L\) as we are approaching it from below.
+  Note also that we may include \(\sqrt{2}\) as the end point of a
+  closed interval in the real line, like \([a_1, \sqrt{2}]\), because
+  the irrationals are first-class citizens of the real line.
+\item
+  As we move from \(a_1\) to \(a_4\), the intervals \([a_i, L]\), keep
+  getting smaller.
+\item
+  The intervals are
+  \href{https://en.wikipedia.org/wiki/Nested_intervals}{nested}:
+  \([a_1, L] \supset [a_2, L] \supset [a_3, L] \supset [a_4, L]\).
+\end{enumerate}
+
+\subsection{Nested sequences}\label{nested-sequences}
+
+When a limit is approached from above as well as below, the inclusion of
+successive intervals, one in the other is more apparent. The limit \(L\)
+would then be contained in the interval that is the \emph{set
+intersection} of all the intervals.
+
+We start with the outermost closed interval \([a_1, b_1]\), and progress
+through \([a_2, b_2]\), \([a_3, b_3]\), and \([a_4, b_4]\), as
+illustrated in \cref{fig:nested-bilateral}.
+
+\begin{figure}
+\centering
+\includesvg[width=0.9\textwidth,height=\textheight]{images/nested-bilateral.svg}
+\caption{Nested intervals where the limit \(L\) lies in the innermost
+interval.}\label{fig:nested-bilateral}
+\end{figure}
+
+For those seeking a concrete metaphor for this abstract ``intervals on
+the real line'' image,
+\href{https://en.wikipedia.org/wiki/Matryoshka_doll}{Matryoshka dolls,
+or Russian dolls}, are a very serviceable, accurate, and unforgettable
+metaphor, as shown in \cref{fig:matryoshka}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth,height=\textheight]{images/matryoshka-open.jpg}
+\caption[Nested matryoshka dolls, or Russian dolls, serve as a memorable
+metaphor for nested intervals.]{Nested matryoshka dolls, or Russian
+dolls, serve as a memorable metaphor for nested
+intervals.\footnotemark{}}\label{fig:matryoshka}
+\end{figure}
+\footnotetext{From
+  \href{https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Russian-Matroshka_no_bg.jpg/1024px-Russian-Matroshka_no_bg.jpg}{Wikimedia}
+  by user
+  \href{https://commons.wikimedia.org/wiki/User:Fanghong}{Fanghong}
+  GFDL.}
+
+\subsection{Cauchy sequence}\label{cauchy-sequence}
+
+A \href{https://en.wikipedia.org/wiki/Cauchy_sequence}{Cauchy sequence}
+is a sequence of numbers whose terms are spaced apart more and more
+closely as the sequence progresses. In symbols, if the sequence is
+denoted by \(S = (a_n)\), then \[
+\forall \varepsilon > 0, \exists N \in \mathbb{N} \text{ such that } n > N \text{ and } m > N \implies |a_n - a_m| < \varepsilon.
+\] This ``bunching'' property of later terms in the sequence is
+intuitively reassuring, as it is what we would expect when a sequence
+converges. It is also a necessary and sufficient condition for a
+sequence to converge to a limit.
+
+\subsection{In Retrospect}\label{in-retrospect}
+
+There has been a fair bit of huffing and puffing to get to this point.
+Has it been worth it?
+
+We have laid a strong foundation for the real numbers by including the
+irrationals, circumventing infinitesimals, and defining a limit without
+using ideas from time and space, but rather using measures of distance,
+and inequalities to denote vanishingly small quantities that,
+nevertheless, do not ever equal zero. If you think that this is all
+\href{https://www.powerthesaurus.org/much_ado_about_nothing/synonyms}{much
+ado about nothing} then, you are unlikely to appreciate analysis any
+further.
+\href{https://www.spanishdict.com/translate/adios\%20amigo}{Adios
+Amigo!}
+
+But if you think that the view from the top was worth the slog of the
+climb, you will be better placed to appreciate how differentiation,
+integration, and Fourier analysis benefited from the thorough renovation
+of the foundations of mathematics that led to analysis. These will be
+the subjects of future blogs.
+
+two sided limits and matryoshka dolls
+
+Cauchy sequences
+
+Achilles and the tortoise
+
+Examples of limits
+
+Others lleft for another day.
+
+\subsection{Cauchy sequences}\label{cauchy-sequences}
+
+\subsection{Derivative: comparison of two
+approaches}\label{derivative-comparison-of-two-approaches}
+
+\subsection{Integrals: comparison of two
+approaches}\label{integrals-comparison-of-two-approaches}
 
 \subsection{Limits: conceptually and
 rigorously}\label{limits-conceptually-and-rigorously}
@@ -449,22 +763,59 @@ rigorously}\label{limits-conceptually-and-rigorously}
 One interesting feature of limits for functions is that \emph{a limit at
 a point may exist even if the function is not defined at that particular
 point}. The definition of a limit therefore requires closeness to the
-point but \emph{not equality} to the point. This ``arbitrarily close''
-condition is couched thus:
+point but \emph{not equality} to the point.
 
-\begin{quote}
-``For arbitrary \(\varepsilon > 0\) and \(| x - y | < \varepsilon\)''.
-\end{quote}
+\subsection{Nested intervals leading to
+√2}\label{nested-intervals-leading-to-2}
 
-This incantation will become so familiar that it will become
-unremarkable when you devote time and practice to analysis. And notice
-the usefulness of inequalities here.
+\href{https://en.wikipedia.org/wiki/Nested_intervals}{Nested sequences}
+https://www.google.com/imgres?q=diagram+of+nested+intervals\&imgurl=https\%3A\%2F\%2Fupload.wikimedia.org\%2Fwikipedia\%2Fcommons\%2F4\%2F48\%2FIllustration\_nested\_intervals.svg\&imgrefurl=https\%3A\%2F\%2Fen.wikiversity.org\%2Fwiki\%2FReal\_numbers\%2FCompleteness\%2FNested\_intervals\%2FRoots\%2FSection\&docid=TlBa4PxurDlF5M\&tbnid=vVCgBnHPmb70JM\&w=522\&h=191\&hcb=2
 
-\subsection{\texorpdfstring{Approximations to \(\sqrt{2}\) as a Cauchy
-sequence}{Approximations to \textbackslash sqrt\{2\} as a Cauchy sequence}}\label{approximations-to-sqrt2-as-a-cauchy-sequence}
+\subsection{Cauchy sequences}\label{cauchy-sequences-1}
 
 \href{https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin
 Cauchy}
+
+\subsection{Convergence}\label{convergence}
+
+\subsection{Recommended core texts on
+analysis}\label{recommended-core-texts-on-analysis}
+
+I am aware of three classic two-volume texts that are held in high
+esteem by the mathematical community. The authors of these texts have
+taken pains to make the material accessible to students commencing
+analysis courses. The texts are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Richard Courant and Fritz John: \emph{Introduction to Calculus and
+  Analysis, Volumes I and II}, 1989. This is a classic from a different
+  vintage that has stood the test of time. It is more generously
+  illustrated than most analysis texts
+  {[}\citeproc{ref-courant-john-one}{4},\citeproc{ref-courant-john-two}{5}{]}.
+\item
+  Terence Tao: \emph{Analysis I} and \emph{Analysis II}, 2022. This
+  text, especially the first volume, was especially written to ease
+  students into analysis. It could have as well been called ``Analysis
+  from Scratch''. It is a well-paced, student-friendly text, where the
+  author has taken pains to explain issues, as if talking to a beginner
+  student.
+  {[}\citeproc{ref-tao-one-2022}{6},\citeproc{ref-tao-two-2022}{7}{]}.
+\item
+  Vladimir A Zorich: \emph{Analysis I} and \emph{Analysis II}, 2015 and
+  2016. These are translations of the original texts in Russian. Besides
+  rigour, these texts are grounded in actual applications of analysis,
+  and should appeal to physicists and engineers
+  {[}\citeproc{ref-zorich-one-2015}{8},\citeproc{ref-zorich-two-2016}{9}{]}.
+\end{enumerate}
+
+You, the student must find out which author's writing resonates best
+with you, and use that text as your anchor text. For instance, I used
+Maxwell Rosenlicht's \emph{Introduction to Analysis}
+{[}\citeproc{ref-rosenlicht1986}{10}{]} when I encountered analysis for
+the first time, because I found it easier to follow than the recommended
+text. Choose whatever book serves you best to achieve your goals.
 
 \subsection{Irrational numbers as
 reals}\label{irrational-numbers-as-reals}
@@ -549,6 +900,11 @@ terms:
   What happens at Infinity? Is the equals sign really valid?
 \end{enumerate}
 
+Tao I: Quote Since differential and integral calculus is also intimately
+tied up with geometry---think of slopes of tangents, or areas under a
+curve---calculus also requires the real number system in order to
+function properly.
+
 \subsection{Acknowledgements}\label{acknowledgements}
 
 \subsection{Feedback}\label{feedback}
@@ -563,7 +919,7 @@ comments and corrections.
 
 \begin{sffamily}
 
-\url{https://swanlotus.netlify.app/blogs/from-calculus-to-analysi.pdf}
+\url{https://swanlotus.netlify.app/blogs/from-calculus-to-analysis.pdf}
 
 \end{sffamily}
 
@@ -576,6 +932,8 @@ https://www.studysmarter.co.uk/explanations/math/pure-maths/cauchy-sequence/
 https://math.libretexts.org/Bookshelves/Analysis/Mathematical\_Analysis\_(Zakon)/03:\_Vector\_Spaces\_and\_Metric\_Spaces/3.13:\_Cauchy\_Sequences.\_Completeness
 
 https://math.stackexchange.com/questions/471615/archimedean-property-concept
+
+https://www.britannica.com/science/limit-mathematics
 
 \section*{References}\label{bibliography}
 \addcontentsline{toc}{section}{References}
@@ -597,6 +955,43 @@ introduction to inequalities}. The Mathematical Association of America.}
 \CSLRightInline{Claudi Alsina and Roger B Nelsen. 2009. \emph{When less
 is more: Visualizing basic inequalities}. The Mathematical Association
 of America.}
+
+\bibitem[\citeproctext]{ref-courant-john-one}
+\CSLLeftMargin{{[}4{]} }%
+\CSLRightInline{Richard Courant and Fritz John. 1989.
+\emph{{Introduction to Calculus and Analysis, Volume I}}.
+Springer-Verlag.}
+
+\bibitem[\citeproctext]{ref-courant-john-two}
+\CSLLeftMargin{{[}5{]} }%
+\CSLRightInline{Richard Courant and Fritz John. 1989.
+\emph{{Introduction to Calculus and Analysis, Volume II}}.
+Springer-Verlag.}
+
+\bibitem[\citeproctext]{ref-tao-one-2022}
+\CSLLeftMargin{{[}6{]} }%
+\CSLRightInline{Terence Tao. 2022. \emph{{Analysis I}} (4th ed.).
+Springer; Hindustan Book Agency.}
+
+\bibitem[\citeproctext]{ref-tao-two-2022}
+\CSLLeftMargin{{[}7{]} }%
+\CSLRightInline{Terence Tao. 2022. \emph{{Analysis II}} (4th ed.).
+Springer; Hindustan Book Agency.}
+
+\bibitem[\citeproctext]{ref-zorich-one-2015}
+\CSLLeftMargin{{[}8{]} }%
+\CSLRightInline{Vladimir A Zorich. 2015. \emph{{Mathematical Analysis
+I}} (2nd ed.). Springer.}
+
+\bibitem[\citeproctext]{ref-zorich-two-2016}
+\CSLLeftMargin{{[}9{]} }%
+\CSLRightInline{Vladimir A Zorich. 2016. \emph{{Mathematical Analysis
+II}} (2nd ed.). Springer.}
+
+\bibitem[\citeproctext]{ref-rosenlicht1986}
+\CSLLeftMargin{{[}10{]} }%
+\CSLRightInline{Maxwell Rosenlicht. 1986. \emph{{Introduction to
+Analysis}}. Dover Publications.}
 
 \end{CSLReferences}
 

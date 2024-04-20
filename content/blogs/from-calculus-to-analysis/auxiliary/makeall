@@ -1,0 +1,11 @@
+#! /bin/bash
+
+declare -a myimages=("nested-intervals" "nested-bilateral")
+blogname="from-calculus-to-analysis"
+
+for filename in "${myimages[@]}"
+do
+  lualatex "$filename.tex"
+  pdftocairo -svg "$filename.pdf" "$filename.svg"
+  cp "$filename.svg" "$HOME/swanlotus/content/blogs/$blogname/images"
+done

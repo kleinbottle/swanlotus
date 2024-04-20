@@ -1,0 +1,27 @@
+% nested-intervals.tex
+% Ilustration for blog "From Calculus to Analysis".
+%
+% R (Chandra) Chandrasekhar
+% lnesqrt1cos0@gmail.com | chyavana@gmail.com
+% 
+% First written: 2024-04-19
+% Last revised : 2024-04-19
+%
+\PassOptionsToPackage{rgb,dvipsnames,svgnames,dvipsnames,hyperref}{xcolor}
+\documentclass[border={0mm},tikz]{standalone}
+\input{TikZ-Preamble}
+%
+\begin{document}
+%
+\tikzset{every picture/.style = {line width = 1pt, line cap = round, line join = round}}
+%
+\begin{tikzpicture}[scale = 15]
+% Set up a real line in Silver with tick marks 
+% in color pairs to illustrate nested intervals
+%
+\draw [Silver] (0.95, 0) -- (1.6, 0);
+\foreach \x/\y/\z in {1.0/SteelBlue/1, 1.3/SlateGray/2, 1.5/DarkOrchid/3, 1.55/Maroon/4}
+  \draw [color = \y] (\x, 0.005) -- (\x, -0.005) node at (\x, 0) [above] {${a_\z}$};
+\draw [color = Teal] (1.558, 0.005) -- (1.558, -0.005) node at (1.558, 0) [yshift=-7pt] {$L$};
+\end{tikzpicture}
+\end{document}
