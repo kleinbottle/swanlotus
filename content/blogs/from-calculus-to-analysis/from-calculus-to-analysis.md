@@ -26,7 +26,7 @@ opengraphimage: matryoshka-open.jpg
 
 ## The transition from high school to university
 
-At high school you were taught how to integrate and differentiate. You were exposed to all sorts of tricks and special techniques---such as the chain rule for differentiation, and integration by parts for integration. If you revelled in mastering and applying such techniques, you might find that what succeeds high school _calculus_, is a horse of an entirely different colour, called _analysis_, at university.
+At high school you were taught how to integrate and differentiate. You were exposed to all sorts of tricks and special techniques---such as the chain rule for differentiation, and integration by parts for integration. If you revelled in mastering and applying such techniques, you might find that what succeeds high school _calculus_, is a [horse of an entirely different colour](https://www.dictionary.com/browse/a-horse-of-a-different-color), called _analysis_, at university.
 
 You might even be alarmed that rather than having to solve routine problems for the value of some quantity, or simply to work through and demonstrate a fact in a straightforward fashion, you are now required to _prove_ theorems: something that requires a different mindset and skill set.
 
