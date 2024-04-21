@@ -1,5 +1,5 @@
 
-
+See [Spider in a matchbox]() later on
 
 
 [@tao-one-2022; @tao-two-2022; @courant-john-one; @courant-john-two].
@@ -134,4 +134,118 @@ Start with sequences so that why epsilon before delta becomes clear: Hight's boo
 
 analysis is
 based on uncountable sets and the struggle to understand this fact: Stillwell The Real Numbers
+USE THIS AS EPIGRAPH
 
+++++++++++++++++++++++++++++++
+Need to consolidate everything below this and tidy up
+==============================
+
+two sided limits and matryoshka dolls
+
+Cauchy sequences
+
+Achilles and the tortoise
+
+Examples of limits
+
+Others lleft for another day.
+
+## Cauchy sequences
+
+
+
+## Derivative: comparison of two approaches
+
+## Integrals: comparison of two approaches
+
+## Limits of functions: conceptually and rigorously
+
+One interesting feature of limits for functions is that _a limit at a point may exist even if the function is not defined at that particular point_. The definition of a limit therefore requires closeness to the point but _not equality_ to the point. 
+
+## Nested intervals leading to √2
+
+[Nested sequences](https://en.wikipedia.org/wiki/Nested_intervals)
+https://www.google.com/imgres?q=diagram+of+nested+intervals&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F4%2F48%2FIllustration_nested_intervals.svg&imgrefurl=https%3A%2F%2Fen.wikiversity.org%2Fwiki%2FReal_numbers%2FCompleteness%2FNested_intervals%2FRoots%2FSection&docid=TlBa4PxurDlF5M&tbnid=vVCgBnHPmb70JM&w=522&h=191&hcb=2
+
+## Cauchy sequences
+
+[Augustin Cauchy]()
+
+
+
+## Convergence
+
+
+
+
+
+ Irrationals were never properly integrated into the real numbers until  That is not a story we will visit today, except to say that strengthening the foundations of the real numbers was a necessary prerequisite that laid the foundations of analysis. Numbers such as $\pi$ and $\sqrt{2}$ arising from the simplest plane geometry can now be accommodated legitimately as first-class citizens of the real number line.
+
+\subsection{Recommended texts}
+
+
+
+
+
+\subsection{Clarifying doubts}
+
+If you have a specific but recalcitrant doubt, you might need to consult more than one book before the \enquote{eureka moment} or epiphany occurs. Often it is the earlier texts with their careful expositions and more leisurely pace that facilitate such understanding. Let me illustrate with an example.
+
+
+## Nested sequences in the real line and Matrioshka dolls
+
+
+## Spider in a matchbox
+
+## Why epsilon before delta
+
+## Examples of non-limits: 1/x
+
+## Limit, continuity, smoothness, differentiability
+
+## Nested intervals and Matrioshka dolls: [also wavelets]
+
+## Infinite processes and infinities
+
+## The idea of _closeness_ in arithmetic terms: $| a_n - a_m | < \varepsilon$
+
+
+
+
+#.  Real numbers: holes in the number line
+#.  Infinite Processes and Infinities
+#.  No geometry
+#.  No algebra
+#.  But arithmetic
+#.  Squeezing something from below and above: Archimedes: method of exhaustion
+#.  Archimedean Field
+#.  Epsilon-Delta matchbox to confine the Limit spider
+#.  Continuity
+#.  Differentiability
+#.  But most books: no pictures
+#.  Pathological functions
+#.  Fourier Series: how can a curvy function produce a square wave?
+#.  My selection of books
+#.  Extract from chapter
+#.  Order in the field of real numbers; Is the Complex field ordered?
+#.  Modulus function to define length
+#.  Approximation rather than Computation
+#.  Why Differentiation need s to be re-defined
+#.  Why Integration needs to be redefined
+#.  What happens at Infinity? Is the equals sign really valid?
+
+Tao I: Quote
+Since differential
+and integral calculus is also intimately tied up with geometry—think of slopes of
+tangents, or areas under a curve—calculus also requires the real number system in
+order to function properly.
+
+https://mercedesbernard.com/blog/recursion-and-nesting-dolls/
+
+https://www.studysmarter.co.uk/explanations/math/pure-maths/cauchy-sequence/
+
+https://math.libretexts.org/Bookshelves/Analysis/Mathematical_Analysis_(Zakon)/03:_Vector_Spaces_and_Metric_Spaces/3.13:_Cauchy_Sequences._Completeness
+
+https://math.stackexchange.com/questions/471615/archimedean-property-concept
+
+https://www.britannica.com/science/limit-mathematics

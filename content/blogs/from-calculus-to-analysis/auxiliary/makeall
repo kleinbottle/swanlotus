@@ -1,6 +1,6 @@
 #! /bin/bash
 
-declare -a myimages=("nested-intervals" "nested-bilateral")
+declare -a myimages=("nested-intervals" "nested-bilateral" "absolute-value")
 blogname="from-calculus-to-analysis"
 
 for filename in "${myimages[@]}"

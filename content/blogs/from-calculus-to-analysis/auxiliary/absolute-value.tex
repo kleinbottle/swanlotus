@@ -1,0 +1,28 @@
+% absolute-value.tex
+% Ilustration for blog ""From Calculus to Analysis: Limits"
+%
+% R (Chandra) Chandrasekhar
+% lnesqrt1cos0@gmail.com | chyavana@gmail.com
+% 
+% First written: 2024-04-09
+% Last revised : 2024-04-20
+%
+\PassOptionsToPackage{rgb,dvipsnames,svgnames,dvipsnames,hyperref}{xcolor}
+\documentclass[border={0mm},tikz]{standalone}
+\input{TikZ-Preamble}
+%
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+%
+\begin{document}
+\tikzset{every picture/.style = {line width = 1.0pt, line cap = round, line join = round}}
+%
+\begin{tikzpicture}[scale=1]
+%
+\begin{axis} [color = SlateGray, xlabel = $x$, ylabel = $y$, axis lines = middle, axis equal, axis line style={-{latex}}]
+\addplot [DarkOrchid, domain = -4.0:4.0, samples = 500, smooth, line width = 1pt] {abs(x)};
+\node [color = MidnightBlue] at (1.2, 3) {$y = |x|$};
+\end{axis}
+%
+\end{tikzpicture}
+\end{document}
