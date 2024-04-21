@@ -108,7 +108,7 @@ But this symbology is imprecise because we are handwaving with the words "tends 
 
 Two properties of real numbers are highlighted as being essential for real analysis:
 
-a. The [trichotomy](https://en.wikipedia.org/wiki/Law_of_trichotomy) of the real numbers, which states that every real number is either positive, zero, or negative. Given any two real numbers, $x$ and $y$, _only one_ of the following three statements is true: $x < y$, or $x = y$, or $x > y$.
+a. The [trichotomy](https://en.wikipedia.org/wiki/Law_of_trichotomy) of the real numbers, which states that every real number is either positive, zero, or negative. Given any two real numbers, $x$ and $y$, _one and only one_ of the following three statements is true: $x < y$, or $x = y$, or $x > y$.
 
 a. The [Archimedean property](https://planetmath.org/archimedeanproperty) which forbids [infinities](https://en.wikipedia.org/wiki/Infinity)^[Which may be colloquially stated as there is no largest natural number.] and [infinitesimals](https://en.wikipedia.org/wiki/Infinitesimal) from being real numbers. It states that:
     (i) For _any_ real number $x$, there is a natural number $n$ such that $n > x$.^[$\forall x \in \mathbb{R}, \exists n \in \mathbb{N} \text{ such that } n > x.$]
