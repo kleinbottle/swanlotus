@@ -1,32 +1,43 @@
 ---
-title: 'Open Secrets: √2, π, e'
+title: 'How Are Numbers Made?'
 author: R (Chandra) Chandrasekhar
 date: "2023-03-21"
-modified: "2023-12-27"
+modified: "2023-04-21"
 category: Mathematics
 tags: pi, e, mathematics, irrational numbers, transcendental numbers, infinite, "Simkin Tales", "Mathematical Musings",  series, decimal representation
 summary:
-opengraphimage:
+opengraphimage: 
 status: draft
 ---
 
-<!-- https://www.youtube.com/watch?v=kNjkBeQ-OAw -->
+"Is mathematics part of nature?" This was the question that my polymath friend Solus "Sol" Smkin asked me when we met at the opening of a Music School.
 
-## "I made a wager"
+"Sol, have a sense of occasion, of time and place, please! This is a social occasion at a Music School, not the Agora of Athens! Your question is too profound to be discussed here and now. We are planning to go on a tour of Santorini in one month's time. Let our thoughts mingle with those of the profound, ancient Greeks. Until then, I will take a raincheck on your question," I remonstrated.
 
-"I made a wager", my friend Solus "Sol" Simkin opened up the other day. We were enjoying the warmth of a spring afternoon, with just the right balance of light and shade, just the right balance of heat and cold, and a humidity that could have descended from Heaven. I might have slipped into the delicious oblivion of sleep, were it not for the fact that I cherished hearing Sol, even more than I desired sleep. So, I was all agog to hear him regale yet another tale from his intellectual adventures.
+And so it was that Sol next resumed this conversational thread while we gazed upon the azure sea, from under the shade olive trees, atop a hillock on Santorini.
 
-"Tell me about your wager," I responded.
+## How would you build a universe?
 
-"I think you know of my paternal cousin, once removed, Hieronymus Septimus Simkin, whom I affectionately call Seven. Well, he is an expert in matters Microsoft, and is no mean programmer himself. Seven and I were holidaying once at [Loch Lomond](https://www.nationalparks.uk/park/loch-lomond-the-trossachs/) in Scotland.
+"If were given the power to build a world, how would you do it?" Sol fired away, without any segue.
 
-"We were drinking in the beauty of scenic Nature when a thought struck me like a thunderbolt. Nature was varied and variegated in a way that defied monotony. Perhaps, you will remember that [Leopold Kronecker](https://en.wikipedia.org/wiki/Leopold_Kronecker) was reputed to have said _'Die ganzen Zahlen hat der liebe Gott gemacht, alles andere ist Menschenwerk'_, meaning that 'God made the integers, all else is the work of man' [@kronecker]. That instant, I was convinced that Kronecker was as wrong as wrong could be.
+"Why so outlandish a question? Enjoy the sun and the breeze, and the bleats of sheep," I replied.
 
-"I mentioned this to Seven, but he laughed it off. A little miffed, I told Seven that I would convince him that Kronecker was wrong, and was prepared to bet on it. There are many open secrets of mathematics all around us. All of them cry out that he was wrong."
+"Have you heard of the [Worldbuilding Stackexchange](https://worldbuilding.stackexchange.com/)? It 'is a question and answer site for writers/artists using science, geography and culture to construct imaginary worlds and settings'. 
 
-Seven---never one to withdraw from an engagement with probability---said, "You are on. I _know_ that [encryption of secrets](https://cloud.google.com/learn/what-is-encryption) is grounded in the integers. Integers guard our very secrets. So, you are bound to lose."
+"No," I said.
 
-"And so began a discussion on the open secrets of mathematics that took us into the realms of the integers, the rationals, the irrationals, $\pi$, $e$, $\phi$, etc.," continued Sol.
+"It is a serious place on the Web where imaginary worlds with negative gravity and entropy may be conceived, discussed, and constructed. My question is not a flippant one."
+
+"I stand educated. But what has mathematics to do with those flights of fancy?" I queried.
+
+Sol said, "Everything". One cannot build a universe without the laws of physics or the laws of mind. Or the laws of cause and effect. As long as structure, consistence, repeatability, and durability are concerned, one cannot do without numbers. More than atoms, numbers are the building blocks of the world."
+
+We had at last launched into the ocean of discussion proper. And what a majestic premise: that the world is built upon numbers before it could be built upon atoms. I asked Sol to fire away with his canons of unassailable argument, waiting passively to be informed and entertained.
+
+## Lessons from observing life
+
+"You must have heard of my paternal cousin, once removed, Hieronymus Septimus Simkin, whom I affectionately call Seven. He it was who opened my eyes first to the unguarded secrets staring at us from Nature. He introduced me to books like D'Arcy Wentworth Thompsons classic _On Growth and Form_ [@thompson-1992] and the interestingly titled _The Parsimonious Universe_ [@parsimonious-1996]. These books postulate, with incontrovertible evidence, that the [Book of Nature]() derives its intelligence from adaptation, powered by mathematics. 
+
 
 ## The integers have their place
 
