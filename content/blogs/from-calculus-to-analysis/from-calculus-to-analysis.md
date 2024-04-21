@@ -5,7 +5,7 @@ date: 2024-03-24
 modified: 2024-05-21
 category: Mathematics
 tags: calculus, analysis, limits, real numbers,
-summary: "At high school you were taught how to integrate and differentiate. You were exposed to all sorts of tricks and special techniques---such as the chain rule for differentiation, and integration by parts for integration. If you revelled in mastering and applying such techniques, you might find that what succeeds high school _calculus_, is a horse of an entirely different colour, called _analysis_, at university."
+summary: "At high school you were taught how to integrate and differentiate. You were exposed to all sorts of tricks and special techniques---such as the chain rule for differentiation, and integration by parts for integration. If you revelled in mastering and applying such techniques, you might find that what succeeds high school _calculus_, is a [horse of an entirely different colour](https://www.dictionary.com/browse/a-horse-of-a-different-color), called _analysis_, at university."
 status: published
 opengraphimage: matryoshka-open.jpg
 ---
