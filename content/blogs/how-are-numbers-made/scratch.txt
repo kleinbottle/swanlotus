@@ -8,7 +8,7 @@
 
 "I think you know of my paternal cousin, once removed, Hieronymus Septimus Simkin, whom I affectionately call Seven. Well, he is an expert in matters Microsoft, and is no mean programmer himself. Seven and I were holidaying once at [Loch Lomond](https://www.nationalparks.uk/park/loch-lomond-the-trossachs/) in Scotland.
 
-"We were drinking in the beauty of scenic Nature when a thought struck me like a thunderbolt. Nature was varied and variegated in a way that defied monotony. Perhaps, you will remember that [Leopold Kronecker](https://en.wikipedia.org/wiki/Leopold_Kronecker) was reputed to have said _'Die ganzen Zahlen hat der liebe Gott gemacht, alles andere ist Menschenwerk'_, meaning that 'God made the integers, all else is the work of man' [@kronecker]. That instant, I was convinced that Kronecker was as wrong as wrong could be.
+"We were drinking in the beauty of scenic Nature when a thought struck me like a thunderbolt.  That instant, I was convinced that Kronecker was as wrong as wrong could be.
 
 "I mentioned this to Seven, but he laughed it off. A little miffed, I told Seven that I would convince him that Kronecker was wrong, and was prepared to bet on it. There are many open secrets of mathematics all around us. All of them cry out that he was wrong."
 

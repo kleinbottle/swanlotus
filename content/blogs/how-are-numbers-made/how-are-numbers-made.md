@@ -4,40 +4,45 @@ author: R (Chandra) Chandrasekhar
 date: "2023-03-21"
 modified: "2023-04-21"
 category: Mathematics
-tags: pi, e, mathematics, irrational numbers, transcendental numbers, infinite, "Simkin Tales", "Mathematical Musings",  series, decimal representation
-summary:
+tags: philosophy, irrational numbers, transcendental numbers, infinite series, "Simkin Tales", "Mathematical Musings", decimal representation, continued fractions
+summary: 
 opengraphimage: 
 status: draft
 ---
 
-"Is mathematics part of nature?" This was the question that my polymath friend Solus "Sol" Smkin asked me when we met at the opening of a Music School.
+"Is mathematics part of nature?" This was the question that my polymath friend Solus "Sol" Simkin asked me when we met at an opening ceremony.
 
-"Sol, have a sense of occasion, of time and place, please! This is a social occasion at a Music School, not the Agora of Athens! Your question is too profound to be discussed here and now. We are planning to go on a tour of Santorini in one month's time. Let our thoughts mingle with those of the profound, ancient Greeks. Until then, I will take a raincheck on your question," I remonstrated.
+"Sol, have a sense of occasion, of time and place, please! This is a social event at a Music School, not the Agora of Athens! Your question is too profound to be discussed here and now. We are planning to go on a tour of Santorini in one month's time. Let our thoughts mingle with those of the profound, ancient Greeks. Until then, I will take a raincheck on your question," I remonstrated.
 
-And so it was that Sol next resumed this conversational thread while we gazed upon the azure sea, from under the shade olive trees, atop a hillock on Santorini.
+And so it was that Sol next resumed this conversational thread while we gazed upon the azure sea, from under the shade of an [olive grove](http://wedding.beleon.com/media/15172-beleontoursgreeceweddingsantoriniolivegrove.jpg), atop a hillock on [Santorini](https://en.wikipedia.org/wiki/Santorini).
 
 ## How would you build a universe?
 
-"If were given the power to build a world, how would you do it?" Sol fired away, without any segue.
+"If were given the power to build a world, how would you do it?" Sol fired away, without any warning.
 
-"Why so outlandish a question? Enjoy the sun and the breeze, and the bleats of sheep," I replied.
+"Why so outlandish a question? Enjoy the sun and the breeze, and the bleats of the sheep," I replied.
 
 "Have you heard of the [Worldbuilding Stackexchange](https://worldbuilding.stackexchange.com/)? It 'is a question and answer site for writers/artists using science, geography and culture to construct imaginary worlds and settings'. 
 
 "No," I said.
 
-"It is a serious place on the Web where imaginary worlds with negative gravity and entropy may be conceived, discussed, and constructed. My question is not a flippant one."
+"It is a serious site on the Web where imaginary worlds with negative gravity and entropy may be conceived, discussed, and constructed. My question is not a flippant one."
 
 "I stand educated. But what has mathematics to do with those flights of fancy?" I queried.
 
-Sol said, "Everything". One cannot build a universe without the laws of physics or the laws of mind. Or the laws of cause and effect. As long as structure, consistence, repeatability, and durability are concerned, one cannot do without numbers. More than atoms, numbers are the building blocks of the world."
+Sol said, "Everything". One cannot build a universe without the laws of physics, or the laws of mind. Or the laws of cause and effect. As long as structure, consistency, repeatability, and durability are concerned, one cannot do without numbers. More than atoms, numbers are the building blocks of the world."
 
-We had at last launched into the ocean of discussion proper. And what a majestic premise: that the world is built upon numbers before it could be built upon atoms. I asked Sol to fire away with his canons of unassailable argument, waiting passively to be informed and entertained.
+We had launched at last into the ocean of discussion proper. And what a majestic premise: that the world is built upon numbers before it could be built upon atoms. I asked Sol to let his canons of unassailable argument boom, waiting passively to be informed and entertained.
 
 ## Lessons from observing life
 
-"You must have heard of my paternal cousin, once removed, Hieronymus Septimus Simkin, whom I affectionately call Seven. He it was who opened my eyes first to the unguarded secrets staring at us from Nature. He introduced me to books like D'Arcy Wentworth Thompsons classic _On Growth and Form_ [@thompson-1992] and the interestingly titled _The Parsimonious Universe_ [@parsimonious-1996]. These books postulate, with incontrovertible evidence, that the [Book of Nature]() derives its intelligence from adaptation, powered by mathematics. 
+"You must have heard of my paternal cousin, once removed, Hieronymus Septimus Simkin, whom I affectionately call Seven. He it was who opened my eyes first to the unguarded secrets staring at us from Nature. He introduced me to books like D'Arcy Wentworth Thompson's classic _On Growth and Form_ [@thompson-1992] and the interestingly titled _The Parsimonious Universe_ [@parsimonious-1996]. These books postulate, with incontrovertible evidence, that the [Book of Nature](https://en.wikipedia.org/wiki/Book_of_Nature) derives its intelligence from adaptation, powered by mathematics. 
 
+"If Nature is constructed from, or using, mathematics, who constructed mathematics? Are numbers some self-evident [LEGO®](https://www.lego.com/en-in?age-gate=grown_up) blocks kindly provided by the Creator of the Universe for human beings to amuse themselves with, or were numbers themselves the very first creation of a colossal intelligence? Numbers. Before light, before atoms, before cause and effect?
+
+"Nature is varied and variegated in a way that defies monotony. There is pattern but also variation. [Fractals](https://www.treehugger.com/amazing-fractals-found-in-nature-4868776) typify what I am trying to convey. Perhaps, you will remember that [Leopold Kronecker](https://en.wikipedia.org/wiki/Leopold_Kronecker) was reputed to have said _'Die ganzen Zahlen hat der liebe Gott gemacht, alles andere ist Menschenwerk'_, meaning that 'God made the integers, all else is the work of man' [@kronecker].
+
+Sol waited for his exposition to sink in. Given our idyllic surroundings, it was hard not to day dream and slip silently into slumber. He ordered two glasses of [Frappé](https://en.wikipedia.org/wiki/Frapp%C3%A9_coffee) to keep me from slipping into somnolence.
 
 ## The integers have their place
 
