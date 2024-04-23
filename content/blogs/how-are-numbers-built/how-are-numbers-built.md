@@ -1,8 +1,8 @@
 ---
 title: 'How Are Numbers Built?'
 author: R (Chandra) Chandrasekhar
-date: "2023-03-21"
-modified: "2023-04-21"
+date: "2024-03-21"
+modified: "2024-04-21"
 category: Mathematics
 tags: philosophy, irrational numbers, transcendental numbers, infinite series, "Simkin Tales", "Mathematical Musings", decimal representation, continued fractions
 summary: Decimals and continued fractions represent two different ways to rperesent numbers succinstly with complementary strengths.
