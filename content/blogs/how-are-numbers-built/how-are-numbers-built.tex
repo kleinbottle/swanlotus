@@ -339,9 +339,9 @@ liebe Gott gemacht, alles andere ist Menschenwerk'}, meaning that `God
 made the integers, all else is the work of man'
 {[}\citeproc{ref-kronecker}{3}{]},'' Sol thundered on.
 
-Sol waited for his exposition to sink in. Given our idyllic
-surroundings, it was hard not to day dream and slip silently into
-slumber. He ordered two glasses of
+He waited for his exposition to sink in. Given our idyllic surroundings,
+it was hard not to day dream and slip silently into slumber. He ordered
+two glasses of
 \href{https://en.wikipedia.org/wiki/Frapp\%C3\%A9_coffee}{Frappé} to
 keep me from descending into somnolence.
 
@@ -503,12 +503,12 @@ may rightfully claim \(5.0 = 4.9999\dots\),
 waters a little more. So, how would the Creator have defined our triad
 of numbers in the most succinct way?
 
-The decimal representation comes from dividing a quantity by the powers
-of ten. And if the decimal is never ending, the division process does
-not terminate. Recall that the
-\hyperref[manual-extraction-of-root-two]{Manual extraction of root two}
-also relied on division of sorts. \emph{So, does division hold the key
-to how numbers are built?}
+The decimal representation comes from expressing a number as the sum of
+fractions whose denominators are powers of ten. And if the decimal is
+never ending, the process of division and summation does not terminate.
+Recall that the \hyperref[manual-extraction-of-root-two]{Manual
+extraction of root two} also relied on division of sorts. \emph{So, does
+division hold the key to how numbers are built?}
 
 Sol then confessed, ``I had forgotten that the decimal system is not the
 only way to represent irrationals and transcendentals in never-ending
@@ -581,11 +581,11 @@ get: \begin{equation}\phantomsection\label{eq:part}{
 \tfrac{3257}{106} &= 30 + \tfrac{77}{106}\\
 &= 30 + \frac{1}{\frac{106}{77}}\\
 \end{aligned}
-}\end{equation} Why do we write it like this? we want to get whole
-number quotients and whole number remainders and the trick is to always
-divide the larger number by the smaller, by inverting the remainder
-fraction. If you keep in mind that our goal always is an improper
-fraction, you are good to go.
+}\end{equation} Why do we write it like this? We want to get whole
+number quotients and whole number remainders. The trick is to always
+divide the larger number by the smaller, by \emph{inverting} the
+remainder fraction. If you keep in mind that our goal always is an
+improper fraction, you are good to go.
 
 ``Because \(\frac{3257}{106}\) is a rational number, the continued
 fraction terminates. The full expansion is shown in \cref{eq:full}
@@ -603,10 +603,11 @@ typed---is a little cumbersome. So, the convention for writing a
 continued fraction is to enclose the quotients and remainders in square
 brackets and express it as \([30; 1, 2, 1, 1, 1, 9]\), with a semi-colon
 after the integer part, and commas separating the other digits. Note
-that we have exact equality:
-\(\frac{3257}{106} = [30; 1, 2, 1, 1, 1, 9]\). We conclude that---apart
-from a decimal representation---a number may be expressed, by the terms
-of a continued fraction. We assert equally validly in all cases that: \[
+that we have exact equality: \[
+\tfrac{3257}{106} = [30; 1, 2, 1, 1, 1, 9].
+\] We conclude that---in addition to a decimal representation---a number
+may be expressed as a continued fraction. We assert the equality below:
+\[
 \tfrac{3257}{106} = 30 \tfrac{77}{106} = 30.\overline{72641509433962} = [30; 1, 2, 1, 1, 1, 9].
 \] Note that the decimal expansion is recurring with a period
 {[}\citeproc{ref-period}{12}{]} of \(13\) digits, whereas, the continued
@@ -624,12 +625,13 @@ continued fraction expansion. Consider:
 &= 1 + \frac{(\sqrt{2} - 1)(\sqrt{2} + 1)}{\sqrt{2} + 1} &\text{ (difference of two squares)}\\
 &= 1 + \frac{1}{1 + \textcolor{Maroon}{\sqrt{2}}}.
 \end{aligned}
-}\end{equation} This is a recursion embodying \(\sqrt{2}\). Since the
-LHS\footnote{RHS and LHS stand for Right Hand Side and Left Hand Side
-  resectively.} in \cref{eq:sqrt2} is \(\sqrt{2}\), we may substitute
-the entire RHS in place of the term \(\textcolor{Maroon}{\sqrt{2}}\) on
-the RHS. So doing, we get the following descending staircase of
-continued fractions:
+}\end{equation} This is a
+\href{https://en.wikipedia.org/wiki/Recursion_(computer_science)}{recursion}
+embodying \(\sqrt{2}\). Since the LHS\footnote{RHS and LHS stand for
+  Right Hand Side and Left Hand Side resectively.} in \cref{eq:sqrt2} is
+\(\sqrt{2}\), we may substitute the entire RHS in place of the term
+\(\textcolor{Maroon}{\sqrt{2}}\) on the RHS. So doing, we get the
+following infinite descending staircase of continued fractions:
 \begin{equation}\phantomsection\label{eq:sqrt2cfinfty}{
 \begin{aligned}
 \sqrt{2} &= 1 + \frac{1}{1 + \textcolor{Maroon}{\sqrt{2}}}\\
@@ -641,8 +643,9 @@ continued fractions:
 &\hskip 100pt\ddots\\ % Care!
 \end{aligned}
 }\end{equation} Because the continued fraction repeats itself, we may
-write \(\sqrt{2} = [1; \overline{2}]\). This is an \emph{exact,
-succinct, and elegant} representation.
+write: \[
+\sqrt{2} = [1; 2, 2, 2, 2\dots] = [1; \overline{2}].
+\] This is an \emph{exact, succinct, and elegant} representation.
 
 \subsection{Congruents}\label{congruents}
 
@@ -652,9 +655,10 @@ approximations} to the irrational number---\(\sqrt{2}\) in our
 case---that we seek to represent. Unfurling the continued fractions into
 partial sums is a tricky exercise. There are also recurrence relations
 for them {[}\citeproc{ref-olds1963}{7}--\citeproc{ref-loya2017}{11}{]}.
-In our particular case, we ignore the \(\frac{1}{1 + \sqrt{2}}\) terms
-that occur in the \emph{denominator} of \cref{eq:sqrt2cfinfty} but count
-the numerator terms to get a sequence of fractions.
+In our particular case, we ignore the terminal
+\(\frac{1}{1 + \sqrt{2}}\) terms that occur in the \emph{denominator} of
+\cref{eq:sqrt2cfinfty} but count the numerator terms to get a sequence
+of fractions.
 
 In this way, we start off with \(1\), followed by
 \(1 + \frac{1}{2} = \frac{3}{2}\). Working our way down, we encounter
@@ -742,37 +746,38 @@ two different numbers---one rational and the other irrational---that are
 
 ``This leads me to think that there might be other ways in which the
 important numbers in Nature may be expressed using only integers. We
-know only of decimals and continued fractions,'' Sol mused.
+know only of decimals and continued fractions,'' Sol mused. ``But there
+must be other \emph{identities} as yet undiscovered.''
 
-``What about infinite series amd such for \(\pi\) and \(e\)?'' I
+``What about infinite series and such for \(\pi\) and \(e\)?'' I
 ventured.
 
 ``Spot on,'' said Sol. ``It is my belief that the Creator built each
-number that plays a major role in Creation using some elegant and
-succinct representation. If the act of Creation were not efficient or
+number that plays a major role in Nature using some elegant and succinct
+representation. If the act of Creation were not efficient or
 parsimonious, I do not think we will have the diversity we experience
-today. Let us talk about \(\pi\) and \(e\) and \(\varphi\) some other
+today. Let us talk about \(\pi\) and \(e\) and \(\phi\) some other
 time.''
 
 ``My only quibble is with \emph{prime numbers}. They cannot be built
 from anything except by adding \(1\) to their predecessors. The day we
 solve the mystery of how the primes are built, we would have understood
-a major mystery of Creation.''
+a major mystery of Creation, and learned to think like the Creator!''
 
-And on that final note, Sol and I wrapped op our discussion on how
-numbers are built while enjoying the idyllic environment of Santorini.
+And on that final note, Sol and I wrapped up our discussion on how
+numbers are built, while enjoying the idyllic environment of Santorini.
 
 \subsection{Program link}\label{program-link}
 
 A simple \texttt{Julia} program providing functions related to continued
 fractions is provided, with no claims to correctness, as
-\href{auxiliary/ContFrac.jl}{ContFrac.jl}. Take a look if you wisk.
+\href{auxiliary/ContFrac.jl}{ContFrac.jl}. Take a look if you wish.
 
 \subsection{Acknowledgements}\label{acknowledgements}
 
-The \href{https://www.wolframalpha.com}{Wolfram Alpha} website was a
-valuable resource. I am unsure if its resources will gradually furl up
-behind a paywall, with the march of time.
+The free \href{https://www.wolframalpha.com}{Wolfram Alpha} website was
+a valuable resource. I am unsure, though, if its resources will
+gradually furl up behind a paywall, with the march of time.
 
 \subsection{Feedback}\label{feedback}
 

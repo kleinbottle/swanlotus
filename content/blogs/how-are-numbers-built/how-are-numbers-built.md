@@ -46,7 +46,7 @@ But, Sol did not stop there.
 
 "Nature is varied and variegated in a way that defies monotony. There is pattern but also variation. [Fractals](https://www.treehugger.com/amazing-fractals-found-in-nature-4868776) typify what I am trying to convey. Perhaps, you will remember that [Leopold Kronecker](https://en.wikipedia.org/wiki/Leopold_Kronecker) was reputed to have said _'Die ganzen Zahlen hat der liebe Gott gemacht, alles andere ist Menschenwerk'_, meaning that 'God made the integers, all else is the work of man' [@kronecker]," Sol thundered on.
 
-Sol waited for his exposition to sink in. Given our idyllic surroundings, it was hard not to day dream and slip silently into slumber. He ordered two glasses of [Frappé](https://en.wikipedia.org/wiki/Frapp%C3%A9_coffee) to keep me from descending into somnolence.
+He waited for his exposition to sink in. Given our idyllic surroundings, it was hard not to day dream and slip silently into slumber. He ordered two glasses of [Frappé](https://en.wikipedia.org/wiki/Frapp%C3%A9_coffee) to keep me from descending into somnolence.
 
 ## The integers have their place, but ...
 
@@ -102,7 +102,7 @@ The manual extraction of square roots is analogous to long division. The process
 
 The decimal representation of a number is not the only way to express it. For example, the integer $5$ may be expressed as: $5 = \frac{5}{1} = 5.0 = 101_2$^[Binary for 5.], but being prime, it cannot be decomposed into factors. And even with decimals, we may rightfully claim $5.0 = 4.9999\dots$, [@courant-robbins-1996], which only muddies the waters a little more. So, how would the Creator have defined our triad of numbers in the most succinct way?
 
-The decimal representation comes from dividing a quantity by the powers of ten. And if the decimal is never ending, the division process does not terminate. Recall that the [Manual extraction of root two](#manual-extraction-of-root-two) also relied on division of sorts. _So, does division hold the key to how numbers are built?_
+The decimal representation comes from expressing a number as the sum of fractions whose denominators are powers of ten. And if the decimal is never ending, the process of division and summation does not terminate. Recall that the [Manual extraction of root two](#manual-extraction-of-root-two) also relied on division of sorts. _So, does division hold the key to how numbers are built?_
 
 Sol then confessed, "I had forgotten that the decimal system is not the only way to represent irrationals and transcendentals in never-ending glory. And I don't mean a change of base. Can you guess what I had forgotten?"
 
@@ -137,7 +137,7 @@ $$
 &= 30 + \frac{1}{\frac{106}{77}}\\
 \end{aligned}
 $${#eq:part}
-Why do we write it like this? we want to get whole number quotients and whole number remainders and the trick is to always divide the larger number by the smaller, by inverting the remainder fraction. If you keep in mind that our goal always is an improper fraction, you are good to go.
+Why do we write it like this? We want to get whole number quotients and whole number remainders. The trick is to always divide the larger number by the smaller, by _inverting_ the remainder fraction. If you keep in mind that our goal always is an improper fraction, you are good to go.
 
 "Because $\frac{3257}{106}$ is a rational number, the continued fraction terminates. The full expansion 
 is shown in @eq:full below:
@@ -150,7 +150,10 @@ $$
 \end{aligned}
 $${#eq:full}
 
-You will agree that this form---more easily written by hand than typed---is a little cumbersome. So, the convention for writing a continued fraction is to enclose the quotients and remainders in square brackets and express it as $[30; 1, 2, 1, 1, 1, 9]$, with a semi-colon after the integer part, and commas separating the other digits. Note that we have exact equality: $\frac{3257}{106} = [30; 1, 2, 1, 1, 1, 9]$. We conclude that---apart from a decimal representation---a number may be expressed, by the terms of a continued fraction. We assert equally validly in all cases that:
+You will agree that this form---more easily written by hand than typed---is a little cumbersome. So, the convention for writing a continued fraction is to enclose the quotients and remainders in square brackets and express it as $[30; 1, 2, 1, 1, 1, 9]$, with a semi-colon after the integer part, and commas separating the other digits. Note that we have exact equality: 
+$$
+\tfrac{3257}{106} = [30; 1, 2, 1, 1, 1, 9].
+$$ We conclude that---in addition to a decimal representation---a number may be expressed as a continued fraction. We assert the equality below:
 $$
 \tfrac{3257}{106} = 30 \tfrac{77}{106} = 30.\overline{72641509433962} = [30; 1, 2, 1, 1, 1, 9].
 $$ Note that the decimal expansion is recurring with a period [@period] of $13$ digits, whereas, the continued fraction expansion terminates.
@@ -166,7 +169,7 @@ $$
 &= 1 + \frac{1}{1 + \textcolor{Maroon}{\sqrt{2}}}.
 \end{aligned}
 $${#eq:sqrt2}
-This is a recursion embodying $\sqrt{2}$. Since the LHS^[RHS and LHS stand for Right Hand Side and Left Hand Side resectively.] in @eq:sqrt2 is $\sqrt{2}$, we may substitute the entire RHS in place of the term $\textcolor{Maroon}{\sqrt{2}}$ on the RHS. So doing, we get the following descending staircase of continued fractions:
+This is a [recursion](https://en.wikipedia.org/wiki/Recursion_(computer_science)) embodying $\sqrt{2}$. Since the LHS^[RHS and LHS stand for Right Hand Side and Left Hand Side resectively.] in @eq:sqrt2 is $\sqrt{2}$, we may substitute the entire RHS in place of the term $\textcolor{Maroon}{\sqrt{2}}$ on the RHS. So doing, we get the following infinite descending staircase of continued fractions:
 $$
 \begin{aligned}
 \sqrt{2} &= 1 + \frac{1}{1 + \textcolor{Maroon}{\sqrt{2}}}\\
@@ -178,11 +181,14 @@ $$
 &\hskip 100pt\ddots\\ % Care!
 \end{aligned}
 $${#eq:sqrt2cfinfty}
-Because the continued fraction repeats itself, we may write $\sqrt{2} = [1; \overline{2}]$. This is an _exact, succinct, and elegant_ representation.
+Because the continued fraction repeats itself, we may write:
+$$
+\sqrt{2} = [1; 2, 2, 2, 2\dots] = [1; \overline{2}].
+$$ This is an _exact, succinct, and elegant_ representation.
 
 ## Congruents
 
-The _congruents_ or _approximants_ from a continued fraction are partial sums that we may accumulate as _successive rational approximations_ to the irrational number---$\sqrt{2}$ in our case---that we seek to represent. Unfurling the continued fractions into partial sums is a tricky exercise. There are also recurrence relations for them [@olds1963; @niven1991; @davenport2008; @simoson2019; @loya2017]. In our particular case, we ignore the $\frac{1}{1 + \sqrt{2}}$ terms that occur in the _denominator_ of @eq:sqrt2cfinfty but count the numerator terms to get a sequence of fractions.
+The _congruents_ or _approximants_ from a continued fraction are partial sums that we may accumulate as _successive rational approximations_ to the irrational number---$\sqrt{2}$ in our case---that we seek to represent. Unfurling the continued fractions into partial sums is a tricky exercise. There are also recurrence relations for them [@olds1963; @niven1991; @davenport2008; @simoson2019; @loya2017]. In our particular case, we ignore the terminal $\frac{1}{1 + \sqrt{2}}$ terms that occur in the _denominator_ of @eq:sqrt2cfinfty but count the numerator terms to get a sequence of fractions.
 
 In this way, we start off with $1$, followed by $1 + \frac{1}{2} = \frac{3}{2}$. Working our way down, we encounter $1 + \frac{1}{2 + \frac{1}{2}} = 1+\frac{1}{\frac{5}{2}} = 1 + \frac{2}{5} = \frac{7}{5}$. The next convergent after this, when simplified, is $1 + \frac{1}{2+\frac{2}{5}} = 1 + \frac{5}{12} = \frac{17}{12}$.
 
@@ -226,23 +232,23 @@ Sold said, "It is clear that $\tfrac{1}{3} = 0.\overline{3}$ is an elegant repre
 
 "Two different approaches have led to two different representations of two different numbers---one rational and the other irrational---that are _both elegant_. I consider that a marvel.
 
-"This leads me to think that there might be other ways in which the important numbers in Nature may be expressed using only integers. We know only of decimals and continued fractions," Sol mused.
+"This leads me to think that there might be other ways in which the important numbers in Nature may be expressed using only integers. We know only of decimals and continued fractions," Sol mused. "But there must be other _identities_ as yet undiscovered."
 
-"What about infinite series amd such for $\pi$ and $e$?" I ventured.
+"What about infinite series and such for $\pi$ and $e$?" I ventured.
 
-"Spot on," said Sol. "It is my belief that the Creator built each number that plays a major role in Creation using some elegant and succinct representation. If the act of Creation were not efficient or parsimonious, I do not think we will have the diversity we experience today. Let us talk about $\pi$ and $e$ and $\varphi$ some other time."
+"Spot on," said Sol. "It is my belief that the Creator built each number that plays a major role in Nature using some elegant and succinct representation. If the act of Creation were not efficient or parsimonious, I do not think we will have the diversity we experience today. Let us talk about $\pi$ and $e$ and $\phi$ some other time."
 
-"My only quibble is with _prime numbers_. They cannot be built from anything except by adding $1$ to their predecessors.  The day we solve the mystery of how the primes are built, we would have understood  a major mystery of Creation."
+"My only quibble is with _prime numbers_. They cannot be built from anything except by adding $1$ to their predecessors.  The day we solve the mystery of how the primes are built, we would have understood  a major mystery of Creation, and learned to think like the Creator!"
 
-And on that final note, Sol and I wrapped op our discussion on how numbers are built while enjoying the idyllic environment of Santorini.
+And on that final note, Sol and I wrapped up our discussion on how numbers are built, while enjoying the idyllic environment of Santorini.
 
 ## Program link
 
-A simple `Julia` program providing functions related to continued fractions is provided, with no claims to correctness, as [ContFrac.jl]({attach}auxiliary/ContFrac.jl). Take a look if you wisk.
+A simple `Julia` program providing functions related to continued fractions is provided, with no claims to correctness, as [ContFrac.jl]({attach}auxiliary/ContFrac.jl). Take a look if you wish.
 
 ## Acknowledgements
 
-The [Wolfram Alpha](https://www.wolframalpha.com) website was a valuable resource. I am unsure if its resources will gradually furl up behind a paywall, with the march of time.
+The free [Wolfram Alpha](https://www.wolframalpha.com) website was a valuable resource. I am unsure, though, if its resources will gradually furl up behind a paywall, with the march of time.
 
 ## Feedback
 
