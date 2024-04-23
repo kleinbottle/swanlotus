@@ -1,0 +1,214 @@
+<!-- https://www.youtube.com/watch?v=kNjkBeQ-OAw -->
+
+## "I made a wager"
+
+"I made a wager", my friend Solus "Sol" Simkin opened up the other day. We were enjoying the warmth of a spring afternoon, with just the right balance of light and shade, just the right balance of heat and cold, and a humidity that could have descended from Heaven. I might have slipped into the delicious oblivion of sleep, were it not for the fact that I cherished hearing Sol, even more than I desired sleep. So, I was all agog to hear him regale yet another tale from his intellectual adventures.
+
+"Tell me about your wager," I responded.
+
+"I think you know of my paternal cousin, once removed, Hieronymus Septimus Simkin, whom I affectionately call Seven. Well, he is an expert in matters Microsoft, and is no mean programmer himself. Seven and I were holidaying once at [Loch Lomond](https://www.nationalparks.uk/park/loch-lomond-the-trossachs/) in Scotland.
+
+"We were drinking in the beauty of scenic Nature when a thought struck me like a thunderbolt.  That instant, I was convinced that Kronecker was as wrong as wrong could be.
+
+"I mentioned this to Seven, but he laughed it off. A little miffed, I told Seven that I would convince him that Kronecker was wrong, and was prepared to bet on it. There are many open secrets of mathematics all around us. All of them cry out that he was wrong."
+
+Seven---never one to withdraw from an engagement with probability---said, "You are on. I _know_ that [encryption of secrets](https://cloud.google.com/learn/what-is-encryption) is grounded in the integers. Integers guard our very secrets. So, you are bound to lose."
+
+"And so began a discussion on the open secrets of mathematics that took us into the realms of the integers, the rationals, the irrationals, $\pi$, $e$, $\phi$, etc.," continued Sol.
+
+| Convergent | Decimal Value | Period |
+|:---------:|:-------------|---------------------:|
+|    $\frac{1}{1}$  | $1.0$ | $0$ |
+|    $\frac{3}{2}$  | $1.5$ | $0$ |
+|    $\frac{7}{5}$  | $1.4$ | $0$ |
+|   $\frac{17}{12}$  | $1.41\overline{6}$ | $1$ |
+| $\frac{41}{29}$  | $1.\overline{4137931034482758620689655172}$ | $28$ |
+|   $\frac{99}{70}$  | $1.4\overline{142857}$ | $6$ |
+|  $\frac{239}{169}$ | $1.\overline{414201183431952662721893491124260355029585798816568047337278106508875739644970}$ | $78$ |
+|  $\frac{577}{408}$  | $1.414\overline{2156862745098039}$ | $16$ |
+| $\frac{1393}{985}$ | $1.41421319796954314...$ | $98$ |
+| $\frac{3363}{2378}$ | $1.4142136248948696$ | $140$ |
+|   $\frac{8119}{5741}$ | $1.414213551646054778387906480929814279079437255859375...$ | $5740$ |
+|  $\frac{19601}{13860}$ | $1.41\overline{421356}$ | $6$ |
+|  $\frac{47321}{33461}$ | $1.414213562057320405784821559791453182697296142578125...$ | $4780$ |
+| $\frac{114243}{80782}$ | $1.4142135624272734024906538585328414745859226065212547349657101829...$ | $546$ |
+|$\frac{275807}{195025}$ | $1.4142135623637994701340403480571694672107696533203125...$ | $1876$ |
+
+
+As it turns out, he was able to get a sequence of the first eight successive convergents from the `Julia` code below:
+
+1, 3//2, 7//5, 17//12, 41//29, 99//70, 239//169, 577//408, 1393//985, 3363//2378, 8119//5741, 19601//13860, 47321//33461, 114243//80782, 275807//195025, 665857//470832, 1607521//1136689]
+
+------------------
+
+
+
+
+
+```julia
+using Pkg
+Pkg.add("RealContinuedFractions")
+#
+# Use the above only for the first time.
+#
+using RealContinuedFractions
+convergents(contfrac(sqrt(2), 15))
+```
+which gave the following results:
+
+```julia
+15-element Vector{Rational{Int64}}:
+      1//1
+      3//2
+      7//5
+     17//12
+     41//29
+     99//70
+    239//169
+    577//408
+   1393//985
+   3363//2378
+   8119//5741
+  19601//13860
+  47321//33461
+ 114243//80782
+ 275807//195025
+ ```
+The results are tabulated for comparison with the decimal value of $\sqrt{2}$ which, to 15 decimal places, is $1.414213562373095$.
+$1.4142135623730951454746218587388284504413604736328125$ Julia
+$1.41421356237309504880168872420969807856967187537694807317667973799073247846210$ Julia Big Int
+$1.414213562373095048801688724209698078569671875376948073176679737990732478462102 Julia Big Int
+$1.4142135623730950488016887242096980785696718753769480731766797379907324784621070388503875343276415727350138462309122970249248360... Wolfram Alpha
+$1.4142135623730951454746218587388284504413604736328125
+
+## Where the rationals and the irrationals meet
+
+"Infinity is where the rationals and irrationals meet," Sol had continues in his discussion with Seven. "And as far as I know, infinity s not an integer. What it is, I do not precisely know." Take
+$$
+$$
+https://r-knott.surrey.ac.uk/Fibonacci/cfINTRO.html#section3.1
+https://xlinux.nist.gov/dads/HTML/squareRoot.html
+https://math.stackexchange.com/questions/2916718/calculating-the-square-root-of-2
+https://medium.com/not-zero/how-to-calculate-square-roots-by-hand-21a78b6da9ae
+https://www.cantorsparadise.com/the-square-root-algorithm-f97ab5c29d6d
+https://nebusresearch.wordpress.com/2014/10/17/how-richard-feynman-got-from-the-square-root-of-2-to-e/
+https://medium.com/i-math/how-to-find-square-roots-by-hand-f3f7cadf94bb
+https://en.wikipedia.org/wiki/List_of_formulae_involving_%CF%80
+
+https://mathworld.wolfram.com/PiFormulas.html
+
+https://math.stackexchange.com/questions/2153619/where-do-mathematicians-get-inspiration-for-pi-formulas
+
+Synesthtetic people can see grayness blurring a beautiful landscape if there is wrong digit in the digit in the decimal expression for pi.
+
+
+## Where the rationals and the irrationals meet
+
+## What is the next digit?
+
+## Fibonacci has closed form but …
+
+## Continues fractions pi
+
+## How to construct a rational from two irrationals
+
+https://math.stackexchange.com/questions/586008/is-a-decimal-with-a-predictable-pattern-a-rational-number
+
+
+https://math.stackexchange.com/questions/61937/how-can-i-prove-that-all-rational-numbers-are-either-terminating-decimal-or-repe
+
+https://math.stackexchange.com/questions/1759007/which-real-numbers-have-2-possible-decimal-representations
+
+https://en.wikipedia.org/wiki/Champernowne_constant
+
+https://math.stackexchange.com/questions/1259073/rational-irrational-numbers
+
+
+https://en.wikipedia.org/wiki/Liouville_number
+
+
+https://en.wikipedia.org/wiki/Transcendental_number
+
+
+https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:irrational-numbers/x2f8bb11595b61c86:sums-and-products-of-rational-and-irrational-numbers/v/sums-and-products-of-irrational-numbers
+
+https://www.google.com/search?q=example+of+a+%2B+b+%3D+r+where+a+is+irratioonal%2C+b+is+irrational+and+r+is+rational
+
+
+https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:irrational-numbers/x2f8bb11595b61c86:sums-and-products-of-rational-and-irrational-numbers/v/sums-and-products-of-irrational-numbers
+
+https://www.youtube.com/watch?v=RpDWHlFKHy4
+
+
+https://www.numberempire.com/3363
+
+https://math.stackexchange.com/questions/730349/convergents-of-square-root-of-2
+
+
+https://www.youtube.com/watch?v=E4b-k_Dug_E
+
+
+https://www.youtube.com/watch?v=CaasbfdJdJg
+
+https://www.youtube.com/watch?v=zCFF1l7NzVQ
+
+https://math.stackexchange.com/questions/716944/how-to-find-continued-fraction-of-pi
+
+https://perl.plover.com/classes/cftalk/INFO/gosper.html
+
+https://tex.stackexchange.com/questions/334917/box-around-continued-fraction
+
+https://www.quora.com/Why-can-some-irrational-numbers-be-expressed-as-continued-infinite-fractions
+
+https://www.quora.com/What-is-the-difference-between-using-continued-fractions-to-represent-rationals-and-irrationals-Is-continued-fraction-unique
+
+
+Euler and Lagrange proved that periodic continued fractions represent quadratic irrational numbers.
+https://qr.ae/pKUeyc
+
+https://www.quora.com/What-is-the-difference-between-using-continued-fractions-to-represent-rationals-and-irrationals-Is-continued-fraction-unique
+
+https://math.stackexchange.com/questions/1349073/how-to-find-out-the-number-of-repeating-digits-of-a-rational-number-in-decimal-f
+
+https://math.stackexchange.com/questions/140583/compute-the-period-of-a-decimal-number-a-priori
+
+https://proofwiki.org/wiki/Continued_Fraction_Expansion_of_Irrational_Square_Root/Examples/2
+Compute the period of a decimal number a priori
+
+Are the numerator and the denominator of a convergent of a continued fraction always coprime?
+https://math.stackexchange.com/questions/1493902/are-the-numerator-and-the-denominator-of-a-convergent-of-a-continued-fraction-al
+
+https://math.stackexchange.com/questions/1493902/are-the-numerator-and-the-denominator-of-a-convergent-of-a-continued-fraction-al
+
+https://math.stackexchange.com/questions/4112417/continued-fraction-representation-of-quadratic-irrationals
+
+https://r-knott.surrey.ac.uk/Fibonacci/cfINTRO.html
+
+https://math.stackexchange.com/questions/265690/continued-fraction-of-a-square-root
+
+Lists of pi and e expansions
+
+https://mathworld.wolfram.com/PiFormulas.html
+
+https://en.wikipedia.org/wiki/List_of_representations_of_e
+
+https://math.stackexchange.com/questions/2205168/how-to-show-every-rational-number-can-be-expressed-as-two-different-continued-fr
+
+https://tex.stackexchange.com/questions/346398/continued-fractions
+
+<!--For e
+\documentclass{article}
+\usepackage{amsmath} % for "\cfrac" macro
+\begin{document}
+\[
+\mathrm{e}=
+2+\cfrac{1}{1+\cfrac{1}{2+\cfrac{1}{1+\cfrac{1}{1+
+  \cfrac{1}{4+\cfrac{1}{1+\cfrac{1}{1+\cfrac{1}{6+
+  \cdots\vphantom{\cfrac{1}{1}} }}}}}}}}
+\]
+
+\end{document}-->
+
+https://tex.stackexchange.com/questions/43402/how-to-lower-last-term-in-a-continued-fraction-after-a-diagonal-row-of-dots/43412#43412
+
+https://tex.stackexchange.com/questions/374465/finite-continued-fraction-in-latex
