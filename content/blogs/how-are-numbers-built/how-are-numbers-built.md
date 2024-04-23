@@ -6,7 +6,7 @@ modified: "2023-04-21"
 category: Mathematics
 tags: philosophy, irrational numbers, transcendental numbers, infinite series, "Simkin Tales", "Mathematical Musings", decimal representation, continued fractions
 summary: Decimals and continued fractions represent two different ways to rperesent numbers succinstly with complementary strengths.
-opengraphimage: 
+opengraphimage: CF-sqrt2.png
 status: published
 ---
 
