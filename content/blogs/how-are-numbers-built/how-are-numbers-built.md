@@ -12,7 +12,7 @@ status: published
 
 "How are numbers built?" This was the simple but profound question that my polymath friend Solus "Sol" Simkin asked me when we met unexpectedly at an evening function.
 
-"Sol, have a sense of occasion, of time and place, please! This is a social event at a Music School, not the Agora of Athens! Your question is too deep to be discussed here and now. We are planning to go on a tour of Santorini in a month's time. Let our thoughts mingle with those of the ancient, philosophical Greeks. Until then, I will take a raincheck on your question," I remonstrated.
+"Sol, have a sense of occasion, of time and place, please! This is a social event at a Music School, not the Agora of Athens! Your question is too deep to be discussed here and now. We are planning to go on a tour of Santorini in a month's time. Let our thoughts mingle with those of the ancient, philosophical Greeks. Until then, I will take a [raincheck](https://dictionary.cambridge.org/dictionary/english/raincheck) on your question," I remonstrated.
 
 And so it was that Sol next resumed this conversational thread while we gazed upon the azure sea, from under the shade of an [olive grove](http://wedding.beleon.com/media/15172-beleontoursgreeceweddingsantoriniolivegrove.jpg), atop a hillock on [Santorini](https://en.wikipedia.org/wiki/Santorini).
 
@@ -22,7 +22,7 @@ And so it was that Sol next resumed this conversational thread while we gazed up
 
 "Why so [outlandish](https://dictionary.cambridge.org/dictionary/english/outlandish) a question? Enjoy the sun and the breeze, and the bleats of the sheep," I replied.
 
-"Have you heard of the [Worldbuilding Stackexchange](https://worldbuilding.stackexchange.com/)? It 'is a question and answer site for writers/artists using science, geography and culture to construct imaginary worlds and settings'. 
+"Have you heard of the [Worldbuilding Stackexchange](https://worldbuilding.stackexchange.com/)? It 'is a question and answer site for writers/artists using science, geography and culture to construct imaginary worlds and settings'." 
 
 "No," I said.
 
@@ -50,7 +50,7 @@ He waited for his exposition to sink in. Given our idyllic surroundings, it was 
 
 ## The integers have their place, but ...
 
-Sol started off with the integers that Kronecker had so exalted. "The integers are fundamental because all mathematics begins with counting. The quantitative fields are all founded on the natural numbers we count with. And [zero and one are the two most important integers](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one)---that I grant you. But can we stop with the integers, and exclude everything else?"
+"The integers are fundamental because all mathematics begins with counting. The quantitative fields are all founded on the natural numbers we count with. And [zero and one are the two most important integers](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one)---that I grant you. But can we stop with the integers, and exclude everything else?" asked Sol.
 
 "Are you trying to play Devil's advocate, Sol?" I asked somewhat confused by the change in tenor of his argument.
 
@@ -74,7 +74,7 @@ Never one to leave a thread of thought half-fleshed out, Sol  mounted his next h
 
 "But what exactly is the value of $e$? It cannot be confined like an integer: $e \approx 2.718281828\dots$, again in a never ending decimal sequence. This number pervades all of Nature and yet it cannot be bottled into a finite number of digits! Were the legions of integers to duel with  this puny expeditionary force of three numbers, $\sqrt{2}$, $\pi$, and $e$, which group would you expect to win?
 
-It appears that Nature has inserted into the foundations of Creation, non-integers like $\sqrt{2}$, $\pi$, and $e$. _But how are these numbers built?_ If you had to create a universe, what method would you use to _exactly construct_ these three convoluted numbers at the bedrock of Creation?
+"It appears that Nature has inserted into the foundations of Creation, non-integers like $\sqrt{2}$, $\pi$, and $e$. _But how are these numbers built?_ If you had to create a universe, what method would you use to _exactly construct_ these three convoluted numbers at the bedrock of Creation?"
 
 "Very penetrating," I nodded in appreciation.
 
@@ -192,7 +192,7 @@ The _congruents_ or _approximants_ from a continued fraction are partial sums th
 
 In this way, we start off with $1$, followed by $1 + \frac{1}{2} = \frac{3}{2}$. Working our way down, we encounter $1 + \frac{1}{2 + \frac{1}{2}} = 1+\frac{1}{\frac{5}{2}} = 1 + \frac{2}{5} = \frac{7}{5}$. The next convergent after this, when simplified, is $1 + \frac{1}{2+\frac{2}{5}} = 1 + \frac{5}{12} = \frac{17}{12}$.
 
-The first fifteen convergents are tabulated in @tbl:sqrt2convergents. Note that these values oscillate about the true value as consecutive congruents successively overestimate and underestimate the irrational number. Some of the congruents have large numerators and denominators. In may cases, the decimal representations have recurring decimals that could have _very_ long periods, as indicated in the third column of the table.
+The first fifteen convergents are tabulated in @tbl:sqrt2convergents. Note that these values oscillate about the true value as consecutive congruents successively overestimate and underestimate the irrational number. Some of the congruents have large numerators and denominators. In many cases, the decimal representations have recurring decimals that could have _very_ long periods, as indicated in the third column of the table.
 
 | Convergent | Decimal Value | Period |
 |:---------:|:------|---:|
