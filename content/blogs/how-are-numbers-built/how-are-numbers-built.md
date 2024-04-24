@@ -217,7 +217,7 @@ The first fifteen convergents are tabulated in @tbl:sqrt2convergents. Note that 
 ----------------------------------------------------------
 Sol said that working out the fractions in @tbl:sqrt2convergents could be a form of torture, unless you are particularly fond of, or adept at computing them by hand. He himself did not relish such hand computations, but preferred to program to get a solution. The link to a program is given toward the end of this blog.
 
-The rational fractions above are tabulated with their decimal versions to provide an idea of how the convergents do indeed converge to the "benchmark" decimal value of $\sqrt{2}$ as available on a `Julia` [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop), which is shown below. There is agreement at best to about ten decimaal places.
+The rational fractions above are tabulated with their decimal versions to provide an idea of how the convergents do indeed converge to the "benchmark" decimal value of $\sqrt{2}$ as available on a `Julia` [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop), which is shown below. There is agreement at best to about ten decimal places.
 
  ```julia
 sqrt(big(2))
