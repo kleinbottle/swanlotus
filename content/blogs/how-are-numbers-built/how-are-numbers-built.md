@@ -10,9 +10,9 @@ opengraphimage: CF-sqrt2.png
 status: published
 ---
 
-"How are numbers built?" This was the simple but profound question that my polymath friend Solus "Sol" Simkin asked me when we met unexpectedly at an evening function.
+"How are numbers built?" This was the simple but profound question that my [polymath](https://www.vocabulary.com/dictionary/polymath) friend Solus "Sol" Simkin asked me when we met unexpectedly at an evening function.
 
-"Sol, have a sense of occasion, of time and place, please! This is a social event at a Music School, not the Agora of Athens! Your question is too deep to be discussed here and now. We are planning to go on a tour of Santorini in a month's time. Let our thoughts mingle with those of the ancient, philosophical Greeks. Until then, I will take a [raincheck](https://dictionary.cambridge.org/dictionary/english/raincheck) on your question," I remonstrated.
+"Sol, have a [sense of occasion](https://www.collinsdictionary.com/dictionary/english/sense-of-occasion), of time and place, please! This is a social event at a Music School, not the [Agora of Athens](https://en.wikipedia.org/wiki/Ancient_Agora_of_Athens)! Your question is too deep to be discussed here and now. We are planning to go on a tour of Santorini in a month's time. Let our thoughts mingle with those of the ancient, philosophical Greeks. Until then, I will take a [raincheck](https://dictionary.cambridge.org/dictionary/english/raincheck) on your question," I remonstrated.
 
 And so it was that Sol next resumed this conversational thread while we gazed upon the azure sea, from under the shade of an [olive grove](http://wedding.beleon.com/media/15172-beleontoursgreeceweddingsantoriniolivegrove.jpg), atop a hillock on [Santorini](https://en.wikipedia.org/wiki/Santorini).
 
