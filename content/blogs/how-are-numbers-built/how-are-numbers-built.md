@@ -88,7 +88,7 @@ Never one to leave a thread of thought half-fleshed out, Sol  mounted his next h
 
 "Do you know why they are open secrets? They are public, staring at us from every square, circle, and electrical signal, and yet, their full form is never revealed. They cannot be contained except in infinity. To know the next decimal place of $\sqrt{2}$, or $\pi$, or $e$, one needs to _compute it_ using some formula. Or one could look up a table. But there is no _knowing_ that sought after next decimal place, as we know $\frac{1}{2} = 0.5$, with as many zeros stacked at the end as we wish. That sort of closed form is not baked into nature. She prefers the indescribable exactitude of numbers without end, like $e$." Sol [set forth](https://www.thefreedictionary.com/set+forth).
 
-The rest of Sol's dialogue was intricately mathematical. I have recorded it here, not as a dialogue, but as a logical exposition---complete with references---for the benefit of the casual reader.
+The rest of Sol's dialogue was intricately mathematical. I have recorded it here, substantially as a logical exposition---complete with references---for the benefit of the casual reader, with bits of direct speech thrown in.
 
 ## The square root of two
 
