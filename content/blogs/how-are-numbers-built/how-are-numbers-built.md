@@ -44,7 +44,7 @@ But, Sol did not stop there.
 
 ## "God made the integers"
 
-"Nature is varied and variegated in a way that defies monotony. There is pattern but also variation. [Fractals](https://www.treehugger.com/amazing-fractals-found-in-nature-4868776) typify what I am trying to convey. Perhaps, you will remember that [Leopold Kronecker](https://en.wikipedia.org/wiki/Leopold_Kronecker) was reputed to have said _'Die ganzen Zahlen hat der liebe Gott gemacht, alles andere ist Menschenwerk'_, meaning that 'God made the integers, all else is the work of man' [@kronecker]," Sol thundered on.
+"Nature is varied and variegated in a way that defies monotony. There is pattern but also variation. [Fractals](https://www.treehugger.com/amazing-fractals-found-in-nature-4868776) typify what I am trying to convey. Perhaps, you will remember that [Leopold Kronecker](https://en.wikipedia.org/wiki/Leopold_Kronecker) was reputed to have said _'Die ganzen Zahlen hat der liebe Gott gemacht, alles andere ist Menschenwerk'_, meaning '(The Dear) God made the integers, all else is the work of man' [@kronecker]," Sol thundered on.
 
 He waited for his exposition to sink in. Given our idyllic surroundings, it was hard not to day dream and slip silently into slumber. He ordered two glasses of [Frappé](https://en.wikipedia.org/wiki/Frapp%C3%A9_coffee) to keep me from descending into somnolence.
 
