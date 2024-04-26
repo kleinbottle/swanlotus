@@ -60,7 +60,7 @@ Real analysis lives on the real number line. From the time of the Pythagoreans, 
 
 The Greeks circumvented this by limiting the irrational numbers to geometric contexts. The ratio of the circumference of a unit circle to its diameter is $\pi$. The diagonal of a unit square is $\sqrt{2}$. "Let them live geometrically as _lengths_, but let us remain silent about their existence elsewhere." It was a dichotomy between _counting_ and _measurement_ or between the _discrete_ and the _continuous_. 
 
-Even today, the sets for the _natural numbers_, the _integers_, the _rational numbers_ all have their own symbols---$\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$, respectively, but not the irrational numbers. That should be clue enough to indicate that the irrationals were more than a handful for mathematicians to contend with, especially if they were doubts about where they rightfully belonged.
+Even today, the sets for the _natural numbers_, the _integers_, the _rational numbers_ all have their own symbols---$\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$, respectively, but not the irrational numbers. That should be clue enough to indicate that the irrationals were more than a handful for mathematicians to contend with, especially if there were doubts about where they rightfully belonged.
 
 The rational numbers, when expressed as decimals, either have a _finite_ decimal representation, like $\frac{1}{2} = 0.5$^[To muddy matters even more, $\frac{1}{2} = 0.4999\dots$ is an equally a valid representation!], or an _infinitely recurring_ decimal representation like $\frac{1}{3} = 0.333\dots$.
 
@@ -138,7 +138,7 @@ b. Distance: by using a sensible definition of the distance between two points, 
 
     The "arbitrarily close" condition of calculus may then be couched more precisely thus:
 
-    For arbitrary $\varepsilon > 0 \dots | p - q | < \varepsilon$^[The arbitrariness is still there via $\varepsilon$ but the closeness has been strictly quantified by the distance function and the enquality.].
+    For arbitrary $\varepsilon > 0 \dots | p - q | < \varepsilon$^[The arbitrariness is still there via $\varepsilon$ but the closeness has been strictly quantified by the distance function and the inequality.].
 
 This incantation will become so familiar that it will become unremarkable when you devote time and practice to analysis. And notice the usefulness of inequalities here.
 
@@ -206,7 +206,7 @@ For those seeking a concrete image for this abstract "nested intervals on the re
 A [Cauchy sequence](https://en.wikipedia.org/wiki/Cauchy_sequence) is a sequence of numbers whose successive terms are spaced apart more and more closely as the sequence progresses. In symbols, if the sequence is denoted by $S = (a_n)$, then for a Cauchy sequence, 
 $$
 \forall \varepsilon > 0, \exists N \in \mathbb{N} \text{ such that } n > N \text{ and } m > N \implies |a_n - a_m| < \varepsilon.
-$$ This "bunching" property of later terms in the sequence is intuitively reassuring, as it is what we would expect when a sequence converges. It is also a necessary and sufficient condition for a sequence to converge to a limit.
+$$ The symbol $\implies$ stands for the word "implies". This "bunching" property of later terms in the sequence is intuitively reassuring, as it is what we would expect when a sequence converges. It is also a necessary and sufficient condition for a sequence to converge to a limit.
 
 ## Core texts on analysis
 

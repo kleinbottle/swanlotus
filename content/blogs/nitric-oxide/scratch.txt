@@ -128,16 +128,6 @@ https://athensscienceobserver.com/2018/09/10/miracle-molecule-of-1992/
 
 https://www.independent.co.uk/news/uk/nitric-oxide-is-molecule-of-the-year-1564427.html
 
-https://www.ncbi.nlm.nih.gov/books/NBK138707/
-
-https://www.apis.ac.uk/overview/pollutants/overview_nox.htm
-
-https://www.aeroqual.com/blog/meet-the-nitrogen-oxide-family
-
-https://scied.ucar.edu/learning-zone/air-quality/nitrogen-oxides
-
-https://en.wikipedia.org/wiki/NOx
-
 ## Treading the fine line
 
 There is a proverb from yesteryear that runs thus: ["One man's meat is another man's poison."](https://wordhistories.net/2017/05/07/one-mans-meat-is-anothers-poison/) This adage may be adapted for nitric oxide to refer to its twin properties of therapeutics and toxicity. In this day and age of [masking](https://www.cdc.gov/coronavirus/2019-ncov/your-health/effective-masks.html), we have a molecule that wears _two masks_ at the same time:
@@ -147,7 +137,3 @@ There is a proverb from yesteryear that runs thus: ["One man's meat is another m
 (b) the little brother of nitrogen dioxide, ever ready to masquerade as its more toxic elder brother.
 
 Which masked face we see and how we react requires the nuanced guidance of a medical professional schooled in the art of uncovering masks.
-
-
-"Nitric oxide should not be confused with nitrogen dioxide (NO2), a brown gas and major air pollutant, or with nitrous oxide (N2O), an anesthetic gas." Wikipedia on N)
-https://en.wikipedia.org/wiki/Nitric_oxide
