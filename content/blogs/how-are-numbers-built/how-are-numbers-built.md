@@ -244,11 +244,11 @@ And on that final note, Sol and I wrapped up our discussion on how numbers are b
 
 ## Program link
 
-A simple `Julia` program providing functions related to continued fractions is provided, with no claims to correctness, as [ContFrac.jl]({attach}auxiliary/ContFrac.jl). Take a look if you wish.
+A simple `Julia` program, [ContFrac.jl]({attach}auxiliary/ContFrac.jl), is available. It provides functions related to continued fractions, but no claims are made as to its absolute correctness. \emojifont :wink: \normalfont Take a look if you wish.
 
 ## Acknowledgements
 
-The free [Wolfram Alpha](https://www.wolframalpha.com) website was a valuable resource. I am unsure, though, if its resources will gradually furl up behind a paywall, with the march of time.
+The free [Wolfram Alpha](https://www.wolframalpha.com) website is a valuable resource. I am unsure, though if---with the march of time---its multitudinous functions will be gradually furled up behind a paywall.
 
 ## Feedback
 
