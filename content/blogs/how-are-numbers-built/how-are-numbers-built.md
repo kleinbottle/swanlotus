@@ -226,7 +226,7 @@ sqrt(big(2))
 
 ## Elegant and inelegant representations
 
-Sold said, "It is clear that $\tfrac{1}{3} = 0.\overline{3}$ is an elegant representation for the rational number $\tfrac{1}{3}$. The recurring decimals are not an issue; it is whether the digits may be _predicted_ beforehand."
+Sol said, "It is clear that $\tfrac{1}{3} = 0.\overline{3}$ is an elegant representation for the rational number $\tfrac{1}{3}$. The recurring decimals are not an issue; it is whether the digits may be _predicted_ beforehand."
 
 "Likewise, $\sqrt{2} = [1, \overline{2}]$ is an elegant representation for the irrational number $\sqrt{2}$.
 
