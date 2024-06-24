@@ -67,28 +67,38 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -129,6 +139,8 @@
 %
 \usepackage{hyperref} % cleveref must come AFTER hyperref
 \usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
+\let\longdivision\relax
+\usepackage{longdivision}
 % noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
@@ -166,6 +178,7 @@
 \setmathfont[bold-style=TeX]{STIX Two Math}
 \usepackage{amsmath}
 \usepackage{esdiff} % for derivative symbols
+% \renewcommand{\mathbf}{\symbf}
 %
 %
 % Other fonts
@@ -183,31 +196,13 @@
     \fancyhead[LO,RE]{\scshape\thetitle}
     \fancyfoot[CO,CE]{\footnotesize Copyright © 2006\textendash\the\year, R (Chandra) Chandrasekhar}
     \fancyfoot[RE,RO]{\thepage}
-\newfontfamily{\regulariconfont}{Font Awesome 6 Free Regular}[Color=Grey]
-\newfontfamily{\solidiconfont}{Font Awesome 6 Free Solid}[Color=Grey]
-\newfontfamily{\brandsiconfont}{Font Awesome 6 Brands}[Color=Grey]
 %
-% Direct input of Unicode code points
-%
-\newcommand{\faEnvelope}{\regulariconfont\ ^^^^f0e0\normalfont}
-\newcommand{\faMobile}{\solidiconfont\ ^^^^f3cd\normalfont}
-\newcommand{\faLinkedin}{\brandsiconfont\ ^^^^f0e1\normalfont}
-\newcommand{\faGithub}{\brandsiconfont\ ^^^^f09b\normalfont}
-\newcommand{\faAtom}{\solidiconfont\ ^^^^f5d2\normalfont}
-\newcommand{\faPaperPlaneRegular}{\regulariconfont\ ^^^^f1d8\normalfont}
-\newcommand{\faPaperPlaneSolid}{\solidiconfont\ ^^^^f1d8\normalfont}
-
-%
-% The block below is commented out because of Tofu glyphs in HTML
-%
-% \newcommand{\faEnvelope}{\regulariconfont\ \normalfont}
-% \newcommand{\faMobile}{\solidiconfont\ \normalfont}
-% \newcommand{\faLinkedin}{\brandsiconfont\ \normalfont}
-% \newcommand{\faGithub}{\brandsiconfont\ \normalfont}
+\usepackage{newunicodechar}
+\newunicodechar{√}{\textsf{√}}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{sf}
 \hypersetup{
@@ -238,8 +233,7 @@ well-known as well as relatively obscure facts about them. It is hoped
 that in the process we may discover how they cement together disparate
 areas of Mathematics.
 
-\hypertarget{starting-at-the-beginning}{%
-\subsection{Starting at the beginning}\label{starting-at-the-beginning}}
+\subsection{Starting at the beginning}\label{starting-at-the-beginning}
 
 At first, I thought I would skirt around the formal sets of numbers, and
 concepts like commutativity and associativity, and keep this blog very
@@ -250,8 +244,7 @@ my way through the natural numbers, the integers, the rationals, etc.,
 and \href{https://www.thefreedictionary.com/broach}{broach} ideas like
 commutativity and associativity.
 
-\hypertarget{counting}{%
-\subsection{Counting}\label{counting}}
+\subsection{Counting}\label{counting}
 
 Aeons ago, a shepherd with five sheep might have counted, ``one sheep,
 two sheep, three sheep, four sheep, and five sheep.'' But wait! Since he
@@ -259,8 +252,7 @@ did not have the names for numbers---nor indeed the abstract concept of
 a number---he could not have done that. So, what did he do? Let us
 speculate.
 
-\hypertarget{naming-sheep}{%
-\subsubsection{Naming sheep}\label{naming-sheep}}
+\subsubsection{Naming sheep}\label{naming-sheep}
 
 He could have given \emph{unique} names to each of his five sheep and
 developed enough familiarity with them to identify them by name. Then
@@ -268,9 +260,8 @@ all he needed to do was to check that his entire flock was home by
 sundown. But such a method would have become cumbersome and error-prone
 as his sheep multiplied.
 
-\hypertarget{one-to-one-correspondence}{%
 \subsubsection{One-to-one
-correspondence}\label{one-to-one-correspondence}}
+correspondence}\label{one-to-one-correspondence}
 
 The later, and more likely, alternative was to use stones to correspond
 to sheep. He could have taken a leather bag and dropped a stone in
@@ -288,8 +279,7 @@ The Latin word for \emph{stone} is
 \href{https://www.etymonline.com/search?q=calculus}{calculus}, and from
 the stone has come the whole science of \emph{calculation}.
 
-\hypertarget{measurement}{%
-\subsection{Measurement}\label{measurement}}
+\subsection{Measurement}\label{measurement}
 
 When we \emph{count}, as with sheep, where do we start? We start with
 one. We do not start with zero, because we cannot point to any sheep or
@@ -303,8 +293,7 @@ When we count, we start with \(1\).
 
 When we measure, we start with \(0\).
 
-\hypertarget{sets-of-numbers}{%
-\subsection{Sets of numbers}\label{sets-of-numbers}}
+\subsection{Sets of numbers}\label{sets-of-numbers}
 
 Although Mathematics has rigorous foundations, at the very bottom, its
 notions are not defined
@@ -316,7 +305,6 @@ symbols, and definitions as shown below.
 
 \begin{small}
 
-\hypertarget{tbl:sets}{}
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3222}}
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1889}}
@@ -408,7 +396,7 @@ in this blog, it is worth making some points about them.
     and irrationals comprise \(\mathbb{R}\), but that is
     \href{https://arpita95b.medium.com/cutting-through-the-confusion-how-dedekind-cuts-build-the-real-numbers-20aeaaec021d}{a
     story} for another day and another blog.}
-  {[}\protect\hyperlink{ref-arpita2023}{1}{]}.
+  {[}\citeproc{ref-arpita2023}{1}{]}.
 \item
   The \href{https://en.wikipedia.org/wiki/Complex_number}{\emph{complex}
   numbers} incorporate a non-real entity, called \(i\) the
@@ -418,8 +406,7 @@ in this blog, it is worth making some points about them.
   arithmetic, and set, \(\mathbb{C}\).
 \end{enumerate}
 
-\hypertarget{abstract-algebra}{%
-\subsection{Abstract Algebra}\label{abstract-algebra}}
+\subsection{Abstract Algebra}\label{abstract-algebra}
 
 In the nineteenth century, mathematicians contemplated the then extant
 mathematical systems and recognized certain commonalities. Whether it
@@ -436,9 +423,8 @@ more, I strongly recommend this
 \href{https://www.youtube.com/watch?v=IP7nW_hKB7I}{short video on
 abstract algebra} to whet your appetite.
 
-\hypertarget{the-four-arithmetic-operations}{%
 \subsection{The Four Arithmetic
-Operations}\label{the-four-arithmetic-operations}}
+Operations}\label{the-four-arithmetic-operations}
 
 Each of the four basic arithmetic operations--addition, multiplication,
 subtraction, division---are
@@ -454,9 +440,8 @@ of addition, which also applies to multiplication. Subtraction and
 division are neither commutative nor associative.\footnote{For a start,
   subtraction is not commutative: \(3 - 2 = 1 \ne -1 = 2 - 3\).}
 
-\hypertarget{commutativity-and-associativity}{%
 \subsubsection{Commutativity and
-Associativity}\label{commutativity-and-associativity}}
+Associativity}\label{commutativity-and-associativity}
 
 Let us add three numbers, \(2\), \(3\), and \(5\). It is common to write
 this as \(2 + 3 + 5 = 10\). The sum \(10\) is correct, but its
@@ -479,12 +464,10 @@ associative. \cref{fig:mult} gives a geometric perspective of
 multiplication.
 
 \begin{figure}
-\hypertarget{fig:mult}{%
 \centering
 \includesvg[width=0.6\textwidth,height=\textheight]{images/four-by-three.svg}
 \caption{The products \(4\times3\) and \(3\times4\) amount to repeated
 additions and yield the same result of 12.}\label{fig:mult}
-}
 \end{figure}
 
 Talking about commutativity and associativity might seem like overkill
@@ -493,24 +476,23 @@ these properties is a useful insight, as the more sophisticated
 mathematical objects we will encounter later may not obey either or both
 properties.
 
-\hypertarget{the-additive-and-multiplicative-identity-elements-in-mathbbr}{%
 \subsection{\texorpdfstring{The additive and multiplicative identity
 elements in
-\(\mathbb{R}\)}{The additive and multiplicative identity elements in \textbackslash mathbb\{R\}}}\label{the-additive-and-multiplicative-identity-elements-in-mathbbr}}
+\(\mathbb{R}\)}{The additive and multiplicative identity elements in \textbackslash mathbb\{R\}}}\label{the-additive-and-multiplicative-identity-elements-in-mathbbr}
 
 When zero is added to any real number, \(a\), we get the original number
 \(a\) back as the sum:
-\begin{equation}\protect\hypertarget{eq:addident}{}{
+\begin{equation}\phantomsection\label{eq:addident}{
 a + 0 = 0 + a = a.
-}\label{eq:addident}\end{equation} We call \(0\) the \emph{additive
-identity} for \(\mathbb{R}\).
+}\end{equation} We call \(0\) the \emph{additive identity} for
+\(\mathbb{R}\).
 
 Likewise, when we multiply \(a\) by \(1\), the original number is
 returned as the product:
-\begin{equation}\protect\hypertarget{eq:multident}{}{
+\begin{equation}\phantomsection\label{eq:multident}{
 a \times 1 = 1 \times a = a
-}\label{eq:multident}\end{equation} The number \(1\) is called the
-\emph{multiplicative identity} in \(\mathbb{R}\).
+}\end{equation} The number \(1\) is called the \emph{multiplicative
+identity} in \(\mathbb{R}\).
 
 Zero and one enjoy their
 \href{https://dictionary.cambridge.org/dictionary/english/coign-of-vantage}{coign
@@ -524,9 +506,8 @@ consistency in definition and behaviour across these disparate domains.
 The additive and multiplicative identities may be so generalized, where
 applicable.
 
-\hypertarget{varieties-of-additive-and-multiplicative-identity-elements}{%
 \subsection{Varieties of additive and multiplicative identity
-elements}\label{varieties-of-additive-and-multiplicative-identity-elements}}
+elements}\label{varieties-of-additive-and-multiplicative-identity-elements}
 
 The zero of the complex numbers is \(0 + i(0) = 0\) as well. And adding
 it to any complex number returns the original complex number.
@@ -547,8 +528,7 @@ Let us consider an arbitrary \(2 \times 2\) \emph{square matrix} like
 \(\begin{bmatrix}a & b\\c & d\end{bmatrix}\). It has two horizontal rows
 and two vertical columns, and therefore 4 elements. The additive
 identity for this matrix is a \(2 \times 2\) square matrix, all of whose
-entries are zero:
-\begin{equation}\protect\hypertarget{eq:addidmatrix}{}{
+entries are zero: \begin{equation}\phantomsection\label{eq:addidmatrix}{
 \begin{bmatrix}
 a & b\\
 c & d
@@ -573,7 +553,7 @@ c & d
 a & b\\
 c & d
 \end{bmatrix}
-}\label{eq:addidmatrix}\end{equation}
+}\end{equation}
 
 The matrix \(\begin{bmatrix}1 & 0\\0 & 1\end{bmatrix}\) is the
 \emph{multiplicative identity} for matrix multiplication for
@@ -582,7 +562,7 @@ The matrix \(\begin{bmatrix}1 & 0\\0 & 1\end{bmatrix}\) is the
   is referred to another blog of mine for details.} Note that its
 elements are solely ones and zeroes, with ones on the principal-diagonal
 from top left to bottom right.
-\begin{equation}\protect\hypertarget{eq:matmultident}{}{
+\begin{equation}\phantomsection\label{eq:matmultident}{
 \begin{bmatrix}
 a & b\\
 c & d
@@ -605,7 +585,7 @@ c & d
 a & b\\
 c & d
 \end{bmatrix}
-}\label{eq:matmultident}\end{equation}
+}\end{equation}
 
 This is a simple example of how the seed ideas of the additive and
 multiplicative identities, sown far and wide, germinate into shoots that
@@ -615,10 +595,9 @@ object remains unchanged under the respective operation. Obviously, the
 identity matrices will change with the matrix sizes, but the principles
 remain the same.
 
-\hypertarget{the-additive-inverse-in-mathbbz-mathbbq-and-mathbbr}{%
 \subsection{\texorpdfstring{The additive inverse in \(\mathbb{Z}\),
 \(\mathbb{Q}\), and
-\(\mathbb{R}\)}{The additive inverse in \textbackslash mathbb\{Z\}, \textbackslash mathbb\{Q\}, and \textbackslash mathbb\{R\}}}\label{the-additive-inverse-in-mathbbz-mathbbq-and-mathbbr}}
+\(\mathbb{R}\)}{The additive inverse in \textbackslash mathbb\{Z\}, \textbackslash mathbb\{Q\}, and \textbackslash mathbb\{R\}}}\label{the-additive-inverse-in-mathbbz-mathbbq-and-mathbbr}
 
 The negative integers arose from subtractions like \((3 - 5)\), whose
 result was not a positive integer, and therefore lay outside the
@@ -632,38 +611,36 @@ a + a' = a' + a = 0.
 with a negative sign and written as \(-a\), i.e., \(a' = -a\). It is
 noteworthy, that when we subtract any real number from itself, we get
 zero, by the property of the additive inverse:
-\begin{equation}\protect\hypertarget{eq:addinv}{}{
+\begin{equation}\phantomsection\label{eq:addinv}{
 a - a = a + (-a) = 0 = (-a) + a.
-}\label{eq:addinv}\end{equation} If you have heard of
+}\end{equation} If you have heard of
 \href{https://www.symmetrymagazine.org/article/september-2008/antimatters-science-fiction-debut?language_content_entity=und}{matter
 and antimatter annihilating each other in real life or Science Fiction}
-{[}\protect\hyperlink{ref-antimatter2008}{2}{]}, you can metaphorically
-think of \(a\) and \(-a\) as one such pair, giving rise not to energy,
-but to zero.\emojifont {😉} \normalfont
+{[}\citeproc{ref-antimatter2008}{2}{]}, you can metaphorically think of
+\(a\) and \(-a\) as one such pair, giving rise not to energy, but to
+zero.\emojifont {😉} \normalfont
 
-\hypertarget{the-multiplicative-inverse-in-mathbbz-mathbbq-and-mathbbr}{%
 \subsection{\texorpdfstring{The multiplicative inverse in
 \(\mathbb{Z}\), \(\mathbb{Q}\), and
-\(\mathbb{R}\)}{The multiplicative inverse in \textbackslash mathbb\{Z\}, \textbackslash mathbb\{Q\}, and \textbackslash mathbb\{R\}}}\label{the-multiplicative-inverse-in-mathbbz-mathbbq-and-mathbbr}}
+\(\mathbb{R}\)}{The multiplicative inverse in \textbackslash mathbb\{Z\}, \textbackslash mathbb\{Q\}, and \textbackslash mathbb\{R\}}}\label{the-multiplicative-inverse-in-mathbbz-mathbbq-and-mathbbr}
 
 Suppose we ask the question, ``If we have an arbitrary number \(a\),
 what number should it be multiplied by to get \(1\)?'' Let us denote
 this number by \(a''\). Then, we have:
-\begin{equation}\protect\hypertarget{eq:multinv}{}{
+\begin{equation}\phantomsection\label{eq:multinv}{
 a \times a'' = a'' \times a = 1
-}\label{eq:multinv}\end{equation} If you know how to solve simple
-equations, you would suggest that we divide \cref{eq:multinv} by \(a\)
-on \emph{both sides}, like so:
-\begin{equation}\protect\hypertarget{eq:solve}{}{
+}\end{equation} If you know how to solve simple equations, you would
+suggest that we divide \cref{eq:multinv} by \(a\) on \emph{both sides},
+like so: \begin{equation}\phantomsection\label{eq:solve}{
 \begin{aligned}
 a \times a'' &= 1; \mbox{ divide both sides by } a\\
 a'' &= \frac{1}{a}.
 \end{aligned}
-}\label{eq:solve}\end{equation} The number \(\frac{1}{a}\) is called the
+}\end{equation} The number \(\frac{1}{a}\) is called the
 \emph{reciprocal} of \(a\) and it is the multiplicative inverse of
 \(a\). But there is one important restriction: \(a \ne 0\). See
-\protect\hyperlink{why-is-division-by-zero-disallowed}{Why is division
-by zero disallowed?}
+\hyperref[why-is-division-by-zero-disallowed]{Why is division by zero
+disallowed?}
 
 The rational numbers \(\mathbb{Q}\) arose to accommodate the results of
 division. Note the hierarchy
@@ -671,12 +648,10 @@ division. Note the hierarchy
 where the symbol \(\subset\) may be spoken as ``is a subset of'' or ``is
 contained in''.
 
-\hypertarget{the-arithmetic-four-revisited}{%
 \subsection{The Arithmetic Four
-Revisited}\label{the-arithmetic-four-revisited}}
+Revisited}\label{the-arithmetic-four-revisited}
 
-\hypertarget{addition}{%
-\subsubsection{Addition}\label{addition}}
+\subsubsection{Addition}\label{addition}
 
 If we start with \(0\) and add \(1\) to it, we get \(1\). If we add
 \(1\) to that we get \(2\). In this fashion, all the natural numbers may
@@ -692,8 +667,7 @@ assumption to be false, since \((p + 1) > p\). In this sense, the number
 \href{https://mathinsight.org/definition/countably_infinite}{countable
 infinity}.
 
-\hypertarget{subtraction}{%
-\subsubsection{Subtraction}\label{subtraction}}
+\subsubsection{Subtraction}\label{subtraction}
 
 Subtracting zero from a number leaves it unchanged: \(a - 0 = a\).
 
@@ -705,15 +679,14 @@ the number is featured alone, these parentheses are dropped.
 
 With signed numbers, from \(\mathbb{Z}\), \(\mathbb{Q}\), or
 \(\mathbb{R}\), we may convert any subtraction into an addition thus:
-\begin{equation}\protect\hypertarget{eq:negnum}{}{
+\begin{equation}\phantomsection\label{eq:negnum}{
 3 - 5 = -2 = 3 + (-5) = (-5) + 3.
-}\label{eq:negnum}\end{equation} And those additions would still be
-commutative. This does not mean that subtraction has suddenly become
-commutative; it has not. It simply means that subtraction can be morphed
-into the (commutative) addition of signed numbers.
+}\end{equation} And those additions would still be commutative. This
+does not mean that subtraction has suddenly become commutative; it has
+not. It simply means that subtraction can be morphed into the
+(commutative) addition of signed numbers.
 
-\hypertarget{multiplication}{%
-\subsubsection{Multiplication}\label{multiplication}}
+\subsubsection{Multiplication}\label{multiplication}
 
 Multiplying any number \(a\) by zero yields zero:
 \(a \times 0 = 0 \times a = 0\). This might be a little difficult to
@@ -721,16 +694,15 @@ grasp. To see why this is the case, let us be a little sneaky and write
 zero as \((p + (-p))\), for some \(p \in \mathbb{R}\), because \[
 (p + (-p)) = p - p = 0.
 \] Then, we may write, for arbitrary \(a \in \mathbb{R}\),
-\begin{equation}\protect\hypertarget{eq:multzero}{}{
+\begin{equation}\phantomsection\label{eq:multzero}{
 \begin{aligned}
 a \times 0 &= a \times (p + (-p))\\
 &= a \times p + a\times (-p)\\
 &= ap - ap\\
 &= 0.
 \end{aligned}
-}\label{eq:multzero}\end{equation} Here, I have applied the rule that
-the product of a positive and a negative number is negative. I have also
-silently invoked
+}\end{equation} Here, I have applied the rule that the product of a
+positive and a negative number is negative. I have also silently invoked
 \href{http://www.mathematicsdictionary.com/english/vmd/full/d/multiplicationoveraddition.htm}{the
 distributivity of multiplication over addition}.
 
@@ -749,8 +721,7 @@ identity} element for the real numbers. So,
 Multiplying \(a\) by \(-1\) yields the additive inverse of \(a\), namely
 \(-a\).
 
-\hypertarget{division}{%
-\subsubsection{Division}\label{division}}
+\subsubsection{Division}\label{division}
 
 If multiplication can be thought of as repeated addition, division can
 equally be thought of as repeated subtraction. Dividing \(6\) by \(2\)
@@ -786,9 +757,8 @@ If some real \(a\) is divided by another real \(b \ne 0\), we may write
 this as \(a \div b\) or equivalently, we may also express it as
 \(a \times \frac{1}{b} = \frac{1}{b} \times a = \frac{a}{b}\).
 
-\hypertarget{why-is-division-by-zero-disallowed}{%
 \subsubsection{Why is division by zero
-disallowed?}\label{why-is-division-by-zero-disallowed}}
+disallowed?}\label{why-is-division-by-zero-disallowed}
 
 Now, what happens if we divide by zero? To keep matters simple, let us
 keep the same dividend, namely 6. If we subtract 0 from 6, we end up
@@ -820,17 +790,16 @@ dividing by zero will give us \emph{any number}, which is a non-unique
 answer. Allowing such an operation will destroy the predictability on
 which mathematical operations are built.
 
-\hypertarget{exponentiation}{%
-\subsection{Exponentiation}\label{exponentiation}}
+\subsection{Exponentiation}\label{exponentiation}
 
 Exponentiation may also be called \emph{raising (something) to a power}.
 It is a short form for repeated multiplication by the \emph{same}
 number. For example, if we multiply \(5\) by itself three times, we
-write it so: \begin{equation}\protect\hypertarget{eq:exp}{}{
+write it so: \begin{equation}\phantomsection\label{eq:exp}{
 5\times5\times5 = 5^1\times5^1\times5^1 = 5^{(1+1+1)} = 5^{3} = 125
-}\label{eq:exp}\end{equation} The number \(5\) is called the \emph{base}
-and the power \(3\) is called the \emph{exponent}. Note that \(5^1 = 5\)
-and the exponent \(1\) is omitted.
+}\end{equation} The number \(5\) is called the \emph{base} and the power
+\(3\) is called the \emph{exponent}. Note that \(5^1 = 5\) and the
+exponent \(1\) is omitted.
 
 The reciprocal of an arbitrary non-zero real number \(a\) is
 \(\frac{1}{a}\). The product of the two is \(1\). So, \(a\) and
@@ -841,45 +810,44 @@ The reciprocal of an arbitrary non-zero real number \(a\) is
 \(\frac{1}{5} = 5^{-1}\). What do we get if we multiply \(5\) by its
 reciprocal? We already know the answer to be \(1\). Let us do the
 multiplication using exponents:
-\begin{equation}\protect\hypertarget{eq:reciprocal}{}{
+\begin{equation}\phantomsection\label{eq:reciprocal}{
 5 \times \frac{1}{5} = 1 = 5^{1} \times 5^{-1} = 5^{1+(-1)} = 5^{0}.
-}\label{eq:reciprocal}\end{equation} The astounding conclusion from
-\cref{eq:reciprocal} is that \(5\) raised to the exponent zero is
-\({1}\). I will hand-wave here and assert that this will apply to any
-base \(a \in \mathbb{R}\), i.e., \(a^0 = 1\) for \(a \in \mathbb{R}\):
-something that will be understood better after we encounter
+}\end{equation} The astounding conclusion from \cref{eq:reciprocal} is
+that \(5\) raised to the exponent zero is \({1}\). I will hand-wave here
+and assert that this will apply to any base \(a \in \mathbb{R}\), i.e.,
+\(a^0 = 1\) for \(a \in \mathbb{R}\): something that will be understood
+better after we encounter
 \href{https://www.britannica.com/science/logarithm}{logarithms} in this
 series of blogs or elsewhere. The consequence is that the logarithm of
 \(1\) to any base \(b\) is \(0\):
-\begin{equation}\protect\hypertarget{eq:logonezero}{}{
+\begin{equation}\phantomsection\label{eq:logonezero}{
 \log_{b}1 = 0.
-}\label{eq:logonezero}\end{equation} \cref{eq:logonezero} is yet another
-memorable equation linking \(1\) and \(0\). When the domain of
-mathematics expands to take on new numbers, new objects, and new
-notations, the need for consistency with the existing body of
-mathematics gives us pearls such as \cref{eq:logonezero}.
+}\end{equation} \cref{eq:logonezero} is yet another memorable equation
+linking \(1\) and \(0\). When the domain of mathematics expands to take
+on new numbers, new objects, and new notations, the need for consistency
+with the existing body of mathematics gives us pearls such as
+\cref{eq:logonezero}.
 
 From the foregoing, note that \[
 a \times \frac{1}{a} = a \times a^{-1} = a^0 = 1.
 \]
 
 Constants in polynomials may be written using \(x^0\) in place of one.
-For example, \begin{equation}\protect\hypertarget{eq:polyexp}{}{
+For example, \begin{equation}\phantomsection\label{eq:polyexp}{
 2x^2 + 3x + 2 = 2x^2 + 3x^1 + 2x^0.
-}\label{eq:polyexp}\end{equation} \cref{eq:polyexp} shows how consistent
-the terms in a polynomial are. They are all powers of \(x\) written in
-descending fashion, although by convention, certain terms are understood
-and therefore implicit. The omission of the index in the term \(3x^1\)
-and the \(x^0\) in the term \(2x^0\) could cause disquiet in the
-newcomer to polynomials. It is best to dispel that unease right away, by
+}\end{equation} \cref{eq:polyexp} shows how consistent the terms in a
+polynomial are. They are all powers of \(x\) written in descending
+fashion, although by convention, certain terms are understood and
+therefore implicit. The omission of the index in the term \(3x^1\) and
+the \(x^0\) in the term \(2x^0\) could cause disquiet in the newcomer to
+polynomials. It is best to dispel that unease right away, by
 understanding that it is a mere convention that has led to this
 departure from absolute consistency.
 
 In the succeeding sections, we take a look a some lesser known aspects
 of zero and one.
 
-\hypertarget{the-shy-one}{%
-\subsection{The shy one}\label{the-shy-one}}
+\subsection{The shy one}\label{the-shy-one}
 
 The number one is often
 \href{https://www.vocabulary.com/dictionary/implicit}{implicit} in
@@ -929,9 +897,8 @@ and simplifies notation. The absence of the implicit \(1\) might trouble
 the heart of the sincere young mathematician, but familiarity with these
 conventions will make for comfort and confidence in using them.
 
-\hypertarget{the-interval-0-1}{%
 \subsection{\texorpdfstring{The interval
-\([0, 1]\)}{The interval {[}0, 1{]}}}\label{the-interval-0-1}}
+\([0, 1]\)}{The interval {[}0, 1{]}}}\label{the-interval-0-1}
 
 If the reals are thought of as a line, the segment from \(0\) to \(1\)
 can serve as a microcosm of all the real numbers. It is as densely
@@ -982,18 +949,15 @@ behavior fascinating, and it explains why geometric series converge when
 the common ratio \(\lvert r \rvert < 1\).
 
 \begin{figure}
-\hypertarget{fig:x-to-n}{%
 \centering
 \includesvg[width=0.8\textwidth,height=\textheight]{images/xn.svg}
 \caption{Graphs of \(y = x^n\) for \(x \in [0, 1]\) and
 \(n \in \{0, 1, 2, 4, 8, 16, 32, 64, 128, 512\}\). Note that all curves
 pass through \((1, 1)\).}\label{fig:x-to-n}
-}
 \end{figure}
 
-\hypertarget{rotation-on-the-complex-plane}{%
 \subsection{Rotation on the complex
-plane}\label{rotation-on-the-complex-plane}}
+plane}\label{rotation-on-the-complex-plane}
 
 The two-dimensional plane may be pressed into service in a variety of
 contexts to serve different ends. One such use is the
@@ -1003,12 +967,10 @@ imaginary part of a complex number,
 \(z = x + iy;\:x, y \in \mathbb{R};\: z \in \mathbb{C}\).
 
 \begin{figure}
-\hypertarget{fig:C4}{%
 \centering
 \includesvg[width=0.8\textwidth,height=\textheight]{images/C4.svg}
 \caption{Successive multiplication by \(i\) as a rotation in
 \(\mathbb{C}\). See the text for the full explanation.}\label{fig:C4}
-}
 \end{figure}
 
 Consider the point \(P\) in \cref{fig:C4} with coordinates \((1, 0)\)
@@ -1078,13 +1040,12 @@ group}.
 
 The four numbers \(1, i, -1, -i\) are also known as the
 \href{https://mathworld.wolfram.com/RootofUnity.html}{fourth roots of
-unity} {[}\protect\hyperlink{ref-honner2021}{3}{]}. These numbers
-satisfy the polynomial equation
-\begin{equation}\protect\hypertarget{eq:z4poly}{}{
+unity} {[}\citeproc{ref-honner2021}{3}{]}. These numbers satisfy the
+polynomial equation \begin{equation}\phantomsection\label{eq:z4poly}{
 z^4 = 1.
-}\label{eq:z4poly}\end{equation} Indeed, the study of groups was
-motivated by mathematical questions arising from the study of
-polynomials, the study of integers using
+}\end{equation} Indeed, the study of groups was motivated by
+mathematical questions arising from the study of polynomials, the study
+of integers using
 \href{https://en.wikipedia.org/wiki/Modular_arithmetic}{modular
 arithmetic} and the study of geometric symmetries. Group theory has
 enabled mathematicians to distil similarities from disparate domains and
@@ -1092,12 +1053,11 @@ thereby produce an integrated picture of their discipline.
 \href{https://www.youtube.com/watch?v=8A84sA1YuPw}{Watch this video on
 cyclic groups} to learn more about them.
 
-\hypertarget{sequences-and-series}{%
-\subsection{Sequences and Series}\label{sequences-and-series}}
+\subsection{Sequences and Series}\label{sequences-and-series}
 
 An ordered procession of numbers is called a
 \href{https://en.wikipedia.org/w/index.php?title=Sequence&oldid=1177801065}{sequence}
-{[}\protect\hyperlink{ref-wikisequence}{4},\protect\hyperlink{ref-wolframsequence}{5}{]}.\footnote{The
+{[}\citeproc{ref-wikisequence}{4},\citeproc{ref-wolframsequence}{5}{]}.\footnote{The
   general definition replaces \emph{numbers} with \emph{mathematical
   objects} but the former will suffice for our limited purpose here.}
 Repetitions are allowed, but the order matters. The natural numbers form
@@ -1106,8 +1066,7 @@ sequence are enclosed in parentheses, \(()\). There is an entire website
 devoted to sequences, called the \href{https://oeis.org/}{The On-Line
 Encyclopedia of Integer Sequences® (OEIS®)}.
 
-\hypertarget{fibonacci-sequence}{%
-\subsubsection{Fibonacci sequence}\label{fibonacci-sequence}}
+\subsubsection{Fibonacci sequence}\label{fibonacci-sequence}
 
 The \href{https://en.wikipedia.org/wiki/Fibonacci_sequence}{Fibonacci
 sequence} is a simple but profound sequence that is reflected in much of
@@ -1116,7 +1075,7 @@ Nature. We start at the beginning with \(0\) and \(1\): \[
 \] We add them to get the next number, which is \(1\) again. Adding that
 to the previous number, we obtain \(2\). The algorithm is to add the two
 previous numbers to get the current one:
-\begin{equation}\protect\hypertarget{eq:fibonacci}{}{
+\begin{equation}\phantomsection\label{eq:fibonacci}{
 \begin{aligned}
 F_{1} &= 0\\
 F_{2} &= 1\\
@@ -1124,11 +1083,13 @@ F_{3} &= F_{2} + F_{1} = 1\\
 F_{4} &= F_{3} + F_{2} = 1 + 1 = 2\\
 F_{n} &= F_{n-1} + F_{n-2} \mbox{ for } n \in \mathbb{N} \mbox{ and } n > 2
 \end{aligned}
-}\label{eq:fibonacci}\end{equation} Although we have a \emph{recurrence
-relation} in \cref{eq:fibonacci}, we do not have an explicit formula for
-the \(n\)\textsuperscript{th} term. Nature has made us sweat to find out
-any particular term of the Fibonacci sequence! And the grist for the
-sequence mill are the two numbers, \(0\) and \(1\)!
+}\end{equation} We have a \emph{recurrence relation} in
+\cref{eq:fibonacci} for the \(n\)\textsuperscript{th} Fibonacci
+term\footnote{The \(n\)\textsuperscript{th} Fibonacci term may be
+  expressed in closed form without recursion using
+  \href{https://artofproblemsolving.com/wiki/index.php/Binet's_Formula}{Binet's
+  Formula} but we will not go into that here}. And the grist for the
+Fibonacci sequence mill are the two numbers, \(0\) and \(1\)!
 
 \href{https://www.britannica.com/science/Pascals-triangle}{Pascal's
 triangle} is another sequence that may be built from adjacent sums in a
@@ -1138,12 +1099,11 @@ coefficients} which play a vital role in probability, combinatorics, and
 calculus. I intend to look at number patterns like the Fibonacci
 sequence and Pascal's triangle in another blog.
 
-\hypertarget{series}{%
-\subsubsection{Series}\label{series}}
+\subsubsection{Series}\label{series}
 
 A \href{https://mathworld.wolfram.com/Series.html}{series} is the
 (progressive) sum of an infinite sequence
-{[}\protect\hyperlink{ref-wikiseries}{6},\protect\hyperlink{ref-wolframseries}{7}{]}.
+{[}\citeproc{ref-wikiseries}{6},\citeproc{ref-wolframseries}{7}{]}.
 
 The sum of \emph{all} the natural numbers, starting with \(1\) and going
 on without end, is written as \[
@@ -1160,10 +1120,10 @@ Dichotomy paradox}:
 there a sum to infinity, and if so, what is it? The series we are after
 is called a \emph{geometric series} or a \emph{geometric progression}
 and the sum to infinity may be written as:
-\begin{equation}\protect\hypertarget{eq:dichotomy}{}{
+\begin{equation}\phantomsection\label{eq:dichotomy}{
 \sum_{n = 0}^{\infty}\frac{1}{2^{n}} = 1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} +
 \frac{1}{16} + ...
-}\label{eq:dichotomy}\end{equation} Mark that the first term is
+}\end{equation} Mark that the first term is
 \(\frac{1}{2^0} = \frac{1}{1} = 1\). Because the successive terms in
 this series get smaller and smaller, there is hope that it could
 converge to a finite limit. Using the standard notation for geometric
@@ -1173,13 +1133,12 @@ first two terms, we have \(r = \frac{\frac{1}{2}}{1} = \frac{1}{2}\).
 
 If the absolute value of the common ratio \(r\) is less than \(1\),
 i.e.,
-\begin{equation}\protect\hypertarget{eq:commonratio}{}{\lvert{r}\rvert < 1
-}\label{eq:commonratio}\end{equation} then the infinite series will
-converge to a finite limit. If you need to be convinced about the
-condition in \cref{eq:commonratio}, take a look at \cref{fig:x-to-n} and
-you will hopefully be persuaded! Again, note the vital place enjoyed by
-\(0\) and \(1\) in the game called mathematics.\emojifont {😉}
-\normalfont
+\begin{equation}\phantomsection\label{eq:commonratio}{\lvert{r}\rvert < 1
+}\end{equation} then the infinite series will converge to a finite
+limit. If you need to be convinced about the condition in
+\cref{eq:commonratio}, take a look at \cref{fig:x-to-n} and you will
+hopefully be persuaded! Again, note the vital place enjoyed by \(0\) and
+\(1\) in the game called mathematics.\emojifont {😉} \normalfont
 
 So, what is the sum to infinity? The time-honoured formula is
 \(\frac{a}{1-r}\), which in our case, works out to: \[
@@ -1198,8 +1157,7 @@ For now, I hope that the uniqueness, utility, and ubiquity of \(0\) and
 \(1\) have convinced you of their indispensability in the domain of
 Mathematics.
 
-\hypertarget{feedback}{%
-\subsection{Feedback}\label{feedback}}
+\subsection{Feedback}\label{feedback}
 
 Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
@@ -1218,52 +1176,51 @@ here}:
 
 \end{small}
 
-\hypertarget{bibliography}{%
-\section*{References}\label{bibliography}}
+\section*{References}\label{bibliography}
 \addcontentsline{toc}{section}{References}
 
-\hypertarget{refs}{}
+\phantomsection\label{refs}
 \begin{CSLReferences}{0}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-arpita2023}{}}%
+\bibitem[\citeproctext]{ref-arpita2023}
 \CSLLeftMargin{{[}1{]} }%
 \CSLRightInline{Arpita Bhattacharya. 2023. {Cutting Through the
 Confusion: How Dedekind Cuts Build the Real Numbers}. Retrieved 7
 November 2023 from
 \url{https://arpita95b.medium.com/cutting-through-the-confusion-how-dedekind-cuts-build-the-real-numbers-20aeaaec021d}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-antimatter2008}{}}%
+\bibitem[\citeproctext]{ref-antimatter2008}
 \CSLLeftMargin{{[}2{]} }%
 \CSLRightInline{William S Higgins. 2008. {Antimatter's science fiction
 debut}. Retrieved 5 November 2023 from
 \url{https://www.symmetrymagazine.org/article/september-2008/antimatters-science-fiction-debut?language_content_entity=und}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-honner2021}{}}%
+\bibitem[\citeproctext]{ref-honner2021}
 \CSLLeftMargin{{[}3{]} }%
 \CSLRightInline{Patrick Honner. 2021. {The Simple Math Behind the Mighty
 Roots of Unity}. \emph{Quanta Magazine} (September 2021). Retrieved 7
 November 2023 from
 \url{https://www.quantamagazine.org/the-simple-math-behind-the-mighty-roots-of-unity-20210923/\#}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-wikisequence}{}}%
+\bibitem[\citeproctext]{ref-wikisequence}
 \CSLLeftMargin{{[}4{]} }%
 \CSLRightInline{Wikipedia contributors. 2023. {Sequence---{Wikipedia}{,}
 The Free Encyclopedia}. Retrieved 3 November 2023 from
 \url{https://en.wikipedia.org/w/index.php?title=Sequence&oldid=1177801065}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-wolframsequence}{}}%
+\bibitem[\citeproctext]{ref-wolframsequence}
 \CSLLeftMargin{{[}5{]} }%
 \CSLRightInline{Eric W Weisstein. {Sequence. From MathWorld---A Wolfram
 Web Resource}. Retrieved 3 November 2023 from
 \url{https://mathworld.wolfram.com/Sequence.html}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-wikiseries}{}}%
+\bibitem[\citeproctext]{ref-wikiseries}
 \CSLLeftMargin{{[}6{]} }%
 \CSLRightInline{Wikipedia contributors. 2023. {Series
 (mathematics)---{Wikipedia}{,} The Free Encyclopedia}. Retrieved 3
 November 2023 from
 \url{https://en.wikipedia.org/w/index.php?title=Series_(mathematics)&oldid=1174621451}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-wolframseries}{}}%
+\bibitem[\citeproctext]{ref-wolframseries}
 \CSLLeftMargin{{[}7{]} }%
 \CSLRightInline{Eric W. Weisstein. {Series. From MathWorld---A Wolfram
 Web Resource}. Retrieved 3 November 2023 from
