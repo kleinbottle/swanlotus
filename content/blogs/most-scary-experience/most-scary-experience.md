@@ -43,7 +43,7 @@ The [Orchard Valley Coffee House](http://www.orchardvalleycoffee.net/) was our c
 
 After my foray into the literature of horror and terror, I decided to review the fondly remembered  stories of early childhood, in case they held the key to the most scary experience. Was there anything in the corpus of juvenile literature that evoked the bogeyman? Had I ever been terrified by a tale from my past?
 
-As I mulled over the stories of my childhood, I realized that, save for a dozen or so tales, most were misty recollections that became amorphous when pursued. So, I tried to remember the memorable stories--- those that remained with me decades after I had read them, because they illumined some aspect of life with a golden glow. But could the warmth of fond memories unearth the fear of the century?
+As I mulled over the stories of my childhood, I realized that, save for a dozen or so tales, most were misty recollections that became amorphous when pursued. So, I tried to remember the memorable stories---those that remained with me decades after I had read them, because they illumined some aspect of life with a golden glow. But could the warmth of fond memories unearth the fear of the century?
 
 I fell into a short but vivid reverie, or was it what in German is called [_Halbschlaf_](https://de.pons.com/%C3%BCbersetzung/deutsch-englisch/Halbschlaf)---that delicious state between wakefulness and sleep, that hypnagogic heaven, where reality and dreams are fused indistinguishably. When I woke up again after a half hour, I felt that I had ridden a camel in the searing Arabian desert, and later enjoyed the hospitality of the [Bedouin](https://www.newworldencyclopedia.org/entry/Bedouin).
 
