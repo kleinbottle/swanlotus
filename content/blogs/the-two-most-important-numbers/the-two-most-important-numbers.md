@@ -452,7 +452,7 @@ F_{4} &= F_{3} + F_{2} = 1 + 1 = 2\\
 F_{n} &= F_{n-1} + F_{n-2} \mbox{ for } n \in \mathbb{N} \mbox{ and } n > 2
 \end{aligned}
 $${#eq:fibonacci}
-We have a _recurrence relation_ in @eq:fibonacci for the $n$^th^ Fibonacci term^[The $n$^th^ Fibonacci term may be expressed in closed form without recursion using [Binet's Formula](https://artofproblemsolving.com/wiki/index.php/Binet's_Formula) but we will not go into that here]. And the grist for the Fibonacci sequence mill are the two numbers, $0$ and $1$!
+We have a _recurrence relation_ in @eq:fibonacci for the $n$^th^ Fibonacci term.^[The $n$^th^ Fibonacci term may be expressed in closed form without recursion using [Binet's Formula](https://artofproblemsolving.com/wiki/index.php/Binet's_Formula) but we will not go into that here] And the grist for the Fibonacci sequence mill are the two numbers, $0$ and $1$!
 
 [Pascal's triangle](https://www.britannica.com/science/Pascals-triangle) is another sequence that may be built from adjacent sums in a number pattern. It is related to the [binomial coefficients](https://en.wikipedia.org/wiki/Binomial_coefficient) which play a vital role in probability, combinatorics, and calculus. I intend to look at number patterns like the Fibonacci sequence and Pascal's triangle in another blog.
 
