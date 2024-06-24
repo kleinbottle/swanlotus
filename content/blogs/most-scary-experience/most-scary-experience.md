@@ -51,7 +51,7 @@ I racked my brain trying to remember a book from my childhood, about camels and 
 
 ## The miracle of hope
 
-A few days later, I heard the unspoken word 'hope' insistently clamouring for my attention. Thinking that 'hope' might become "hopeless" in my quest for the most scary experience, I diverted myself to other, more pressing matters. The drumbeat 'hope' became the silent heartthrob 'hope' in my inner ear. But it refused to go away, try what I might.
+A few days later, I heard the unspoken word 'hope' insistently clamouring for my attention. Thinking that 'hope' might become 'hopeless' in my quest for the most scary experience, I diverted myself to other, more pressing matters. The drumbeat 'hope' became the silent heartthrob 'hope' in my inner ear. But it refused to go away, try what I might.
 
 After three days of 'hope', I remembered in a flash a gentle story of my [tween](https://www.thefreedictionary.com/tween) years. I had borrowed a book from the local library and it was about a camel. That library was long gone and the best I could do to recollect the name of the book was to search the Web. The book, long out-of-print, was still incarnate in digital form at the archive named after [Gutenberg](https://www.newworldencyclopedia.org/entry/Johannes_Gutenberg), God bless his soul! [@boyle1939]
 
@@ -102,7 +102,7 @@ I thought of my own experience at a swimming pool late one night. It was half an
 
 It was comforting to be in the pool when others were also swimming because they churned the water enough to make those mesmerizing ripples of light on the pool floor. But when I was swimming solo in the pool, I felt a cold wave of fear. The friendly ubiquitous patterns of light had disappeared, leaving me only with my self-made ripples.
 
-I thought of each swimmer metaphorically as a thought, and when I was alone in the pool, I represented the last thought. The extinguishing of that last thought in _nirvana_ or _samadhi_ would be a fearful experience because it would shake the very foundations of the self we are. We would be swallowed up by the immensity of the Void, or the pool in this case.
+Each swimmer metaphorically represented a thought, and when I was alone in the pool, I myself represented the last thought. The extinguishing of that last thought in _nirvana_ or _samadhi_ would be a fearful experience because it would shake the very foundations of the self we are. We would be swallowed up by the immensity of the Void, or the pool in this case.
 
 I determined that I would bring up the Void when I next met Sol to resume our discussion on the most scary experience.
 
@@ -116,7 +116,7 @@ I answered that obviously I had, adding that I was forced to get out of the pool
 
 "Were you so scared that you had to be helped out of the pool?"
 
-"No,"  I answered truthfully. "I got out without difficulty, but was a little unnerved. That is all."
+"No,"  I answered truthfully. "I got out without difficulty, but was badly unnerved. That is all."
 
 "Would you go into a pool to swim again after this?"
 
@@ -146,7 +146,7 @@ Sol began, saying, "Did I ever tell you how I felt about finishing my PhD? Every
 
 "And did you get over it?" I asked.
 
-"I got used to it," he said. "Like the mist that lifts gradually with the morning sun, I became gradually accustomed to life without the burden of a PhD thesis. And after a while, I did not miss it any more. Out of sight, out of mind."
+"I got used to it," he said. "Like the mist that lifts gradually with the morning sun, I became gradually accustomed to life without the burden of an unfinished PhD thesis. And after a while, I did not miss it any more. Out of sight, out of mind."
 
 "So what is your definitive take on the most scary experience---more scary than everything we have discussed so far? And we have covered quite a bit," I said.
 
@@ -158,9 +158,9 @@ I was taken aback by the utter finality of what he said. "Did some event in your
 
 "Let me explain the context," he said after a few moments. "It was a good six months ago. I was laid up in bed for eight days with influenza. I was isolated in my room so as not to spread the virus to others. Those eight days were restful but when I recall them now, they feel like a blur. I cannot recall individual days or daily experiences. But on the day I became well enough to leave my isolation, I got up from bed and felt that I had _nothing more to accomplish in the world_. It was not a result of thought but what I may call _pure knowing_."
 
-"So, it was a more extreme form of your PhD-thesis-withdrawal syndrome?" I asked.
+"So, it was a more extreme form of your unfinished-PhD-thesis-withdrawal syndrome?" I asked.
 
-Sol nodded. "What was strange was that this 'no unfinished business' feeling was not triggered by any event, although it coincided with my recovery from influenza. It was then, and then alone, that I came to realize that we are all cosily bound to our earthly existence by the demands of our unfulfilled tasks, like we are bound to the earth by gravity. One who has no unfinished tasks on earth is ready to be whisked away, not by his or her own volition, but by frugal Dame Nature herself. Why keep a person on earth, who has fulfilled every earthly purpose?"
+Sol nodded. "What was strange was that this 'no unfinished business' feeling was not triggered by any event, although it coincided with my recovery from influenza. It was then, and then alone, that I came to realize that _we are all cosily bound to our earthly existence by the demands of our unfulfilled tasks, like we are bound to the earth by gravity_. One who has no unfinished tasks on earth is ready to be whisked away, not by his or her own volition, but by frugal Dame Nature herself. Why keep a person on earth, who has fulfilled every earthly purpose?"
 
 "It seems that unfulfilled tasks are like the desires that the Lord Buddha talked about," I interjected.
 
