@@ -66,28 +66,38 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -126,10 +136,10 @@
 \usepackage[style=american]{csquotes}
 % \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
 %
-\usepackage{esdiff} % for derivative symbols
-\usepackage{amsmath}
 \usepackage{hyperref} % cleveref must come AFTER hyperref
 \usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
+\let\longdivision\relax
+\usepackage{longdivision}
 % noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
@@ -146,9 +156,7 @@
 % We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
 %
 \babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
-%
 \babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
-%
 \babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
 %
 % Sanskrit, Tamil, and Greek fonts
@@ -167,6 +175,9 @@
 %
 \usepackage{unicode-math} % seems not to hurt % fallabck
 \setmathfont[bold-style=TeX]{STIX Two Math}
+\usepackage{amsmath}
+\usepackage{esdiff} % for derivative symbols
+% \renewcommand{\mathbf}{\symbf}
 %
 %
 % Other fonts
@@ -184,31 +195,13 @@
     \fancyhead[LO,RE]{\scshape\thetitle}
     \fancyfoot[CO,CE]{\footnotesize Copyright © 2006\textendash\the\year, R (Chandra) Chandrasekhar}
     \fancyfoot[RE,RO]{\thepage}
-\newfontfamily{\regulariconfont}{Font Awesome 6 Free Regular}[Color=Grey]
-\newfontfamily{\solidiconfont}{Font Awesome 6 Free Solid}[Color=Grey]
-\newfontfamily{\brandsiconfont}{Font Awesome 6 Brands}[Color=Grey]
 %
-% Direct input of Unicode code points
-%
-\newcommand{\faEnvelope}{\regulariconfont\ ^^^^f0e0\normalfont}
-\newcommand{\faMobile}{\solidiconfont\ ^^^^f3cd\normalfont}
-\newcommand{\faLinkedin}{\brandsiconfont\ ^^^^f0e1\normalfont}
-\newcommand{\faGithub}{\brandsiconfont\ ^^^^f09b\normalfont}
-\newcommand{\faAtom}{\solidiconfont\ ^^^^f5d2\normalfont}
-\newcommand{\faPaperPlaneRegular}{\regulariconfont\ ^^^^f1d8\normalfont}
-\newcommand{\faPaperPlaneSolid}{\solidiconfont\ ^^^^f1d8\normalfont}
-
-%
-% The block below is commented out because of Tofu glyphs in HTML
-%
-% \newcommand{\faEnvelope}{\regulariconfont\ \normalfont}
-% \newcommand{\faMobile}{\solidiconfont\ \normalfont}
-% \newcommand{\faLinkedin}{\brandsiconfont\ \normalfont}
-% \newcommand{\faGithub}{\brandsiconfont\ \normalfont}
+\usepackage{newunicodechar}
+\newunicodechar{√}{\textsf{√}}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{sf}
 \hypersetup{
@@ -232,8 +225,7 @@
 \thispagestyle{empty}
 
 
-\hypertarget{a-problem-that-beckoned}{%
-\subsection{A problem that beckoned}\label{a-problem-that-beckoned}}
+\subsection{A problem that beckoned}\label{a-problem-that-beckoned}
 
 During a casual tour of the Web, my attention was drawn to a problem
 that was stated so simply that it beckoned an attempt at a solution. It
@@ -246,27 +238,25 @@ had omitted an important constraint that made the problem all the more
 memorable. This is an account of my escapade into the land of
 mathematics in search of a solution to an intriguing problem.
 
-\hypertarget{the-problem}{%
-\subsection{The problem}\label{the-problem}}
+\subsection{The problem}\label{the-problem}
 
 The problem, as I first came across it, was posed thus.
-\begin{equation}\protect\hypertarget{eq:problem}{}{
+\begin{equation}\phantomsection\label{eq:problem}{
 \text{If}\quad
 x + xy + y = 54
-}\label{eq:problem}\end{equation} what is \(x + y\)?
+}\end{equation} what is \(x + y\)?
 
 If you are good at mathematics, or relish a challenge, do not read
 further until you have given this problem your very best shot. After
 that, do read on.
 
-\hypertarget{first-thoughts}{%
-\subsection{First thoughts}\label{first-thoughts}}
+\subsection{First thoughts}\label{first-thoughts}
 
 At first, I thought that this problem was too easy to be featured in a
-Mathematics Olympiad\footnote{I have not checked the if, the which, the
+Mathematics Olympiad.\footnote{I have not checked the if, the which, the
   when, and the level of the Olympiad, but simply took on the problem in
-  good faith.}. After all, the problem statement would be intelligible
-to anyone who has gone through mathematics up to middle (or secondary)
+  good faith.} After all, the problem statement would be intelligible to
+anyone who has gone through mathematics up to middle (or secondary)
 school level. But after a short while, I realized that it posed some
 definite challenges.
 
@@ -277,8 +267,7 @@ aspects, as they suggested themselves to me. I also hope that, by so
 doing, I stimulate mathematical thinking in my readers, and give them an
 experience of the mathematical adventure, if nothing else.
 
-\hypertarget{a-pictorial-approach}{%
-\subsection{A pictorial approach}\label{a-pictorial-approach}}
+\subsection{A pictorial approach}\label{a-pictorial-approach}
 
 Mathematics may be approached through pictures, or through words, or
 through a combination of both. Here, I am going to try pictures first.
@@ -303,11 +292,9 @@ to be a pair of curves for a rectangular hyperbola of the form
 \(xy = k\) where \(k\) is some constant (or number).
 
 \begin{figure}
-\hypertarget{fig:one}{%
 \centering
 \includegraphics[width=0.75\textwidth,height=\textheight]{images/olympiad-one.png}
 \caption{A graph of the curve \(x + xy + y = 54\).}\label{fig:one}
-}
 \end{figure}
 
 From \cref{fig:one}, we can deduce the following:
@@ -320,10 +307,10 @@ From \cref{fig:one}, we can deduce the following:
 \item
   If we re-write \cref{eq:problem} to have only \(y\) on the left hand
   side (LHS), we get:
-  \begin{equation}\protect\hypertarget{eq:hyperbola}{}{
+  \begin{equation}\phantomsection\label{eq:hyperbola}{
   y = \frac{54-x}{x+1} = \frac{54}{x+1} -\frac{x}{x+1} \approx \frac{54}{x} - 1 \approx -1 \; \mbox{for large $x$}
-  }\label{eq:hyperbola}\end{equation} Wonder no more why the curve
-  resembles a rectangular hyperbola. Its horizontal (and vertical)
+  }\end{equation} Wonder no more why the curve resembles a rectangular
+  hyperbola. Its horizontal (and vertical)
   \href{https://en.wikipedia.org/wiki/Asymptote}{asymptotes} equal
   \(-1\). That is why it lies \emph{largely} in the first and third
   quadrants.
@@ -338,13 +325,12 @@ From \cref{fig:one}, we can deduce the following:
   \emph{family of curves} \(x + y = k\) where \(k\) is some real
   constant. This is done in \cref{fig:two}. The two straight lines that
   are tangent can be derived from calculation, as shown in the
-  \protect\hyperlink{appendix}{Appendix} at the end. They represent
-  limiting cases of the values of \(k\) within which a solution
-  \emph{cannot} lie.
+  \hyperref[appendix]{Appendix} at the end. They represent limiting
+  cases of the values of \(k\) within which a solution \emph{cannot}
+  lie.
 \end{enumerate}
 
 \begin{figure}
-\hypertarget{fig:two}{%
 \centering
 \includegraphics[width=0.75\textwidth,height=\textheight]{images/olympiad-two.png}
 \caption{The \emph{family of curves} \(x + y = k\) is plotted for three
@@ -354,7 +340,6 @@ solution \emph{cannot} lie within the purple region, bounded by the
 latter two lines because no intersection with the nonlinear red curve is
 possible there. The purple lines are shown broken because the purple
 region does not include these two lines themselves.}\label{fig:two}
-}
 \end{figure}
 
 To look for possible solutions, we need to plot straight lines like
@@ -362,20 +347,17 @@ To look for possible solutions, we need to plot straight lines like
 as shown in \cref{fig:three}.
 
 \begin{figure}
-\hypertarget{fig:three}{%
 \centering
 \includegraphics[width=0.75\textwidth,height=\textheight]{images/olympiad-three.png}
 \caption{Two straight lines that intersect the curve
 \(x + xy + y = 54\). The respective solutions are \(x + y = 20\) and
 \(x + y = -30\).}\label{fig:three}
-}
 \end{figure}
 
 It should be clear that there is nothing special about the numbers
 \(20\) or \(-30\). So, there is an infinity of possible solutions for
 \(x + y = k\) in two disjoint sets: \(x + y \geq 12.832\) and
-\(x + y \leq -16.832\), as shown in the
-\protect\hyperlink{appendix}{Appendix}.
+\(x + y \leq -16.832\), as shown in the \hyperref[appendix]{Appendix}.
 
 Although we have reached the end of the prescribed quest, there is a
 sense of hollowness, because there is no \emph{unique} solution (set),
@@ -386,9 +368,8 @@ It is appropriate now to take a breather and re-examine all assumptions.
 Perhaps, it is the time to ruminate philosophically about mathematical
 problems.
 
-\hypertarget{mathematics-problems-and-detective-novels}{%
 \subsection{Mathematics problems and detective
-novels}\label{mathematics-problems-and-detective-novels}}
+novels}\label{mathematics-problems-and-detective-novels}
 
 Mathematics problems function like detective novels. The author of a
 detective novel enters into an implicit understanding with the reader,
@@ -408,9 +389,8 @@ breach of faith if either of these two conditions held.
 It is unlikely that an Olympiad problem in mathematics will indulge in
 such antics. What was the \emph{exact wording} of the problem?
 
-\hypertarget{the-all-important-constraint}{%
 \subsection{The all-important
-constraint}\label{the-all-important-constraint}}
+constraint}\label{the-all-important-constraint}
 
 A more careful sweep of the Web unearthed a more precise statement of
 the problem, which included a constraint. For completeness, the problem
@@ -450,12 +430,11 @@ miss operation rather than a dignified mathematical solution. So, let us
 switch from the pictorial to the verbal. Let algebra bring to bear its
 considerable prowess on this problem.
 
-\hypertarget{algebra-to-the-rescue}{%
-\subsection{Algebra to the rescue}\label{algebra-to-the-rescue}}
+\subsection{Algebra to the rescue}\label{algebra-to-the-rescue}
 
 Let us shuffle the components of \cref{eq:problem} in an effort to
 introduce even more symmetry, and gain a deeper insight:
-\begin{equation}\protect\hypertarget{eq:three}{}{
+\begin{equation}\phantomsection\label{eq:three}{
 \begin{aligned}
 x + xy + y &= 54\\
 x(1 + y) + y &= 54\; ; \mbox{add one to each side} \\
@@ -463,10 +442,9 @@ x(1 + y) + y + 1 &= 55\\
 x(y + 1) + (y + 1) &= 55\\
 (y + 1)(x + 1) &= 55\\
 \end{aligned}
-}\label{eq:three}\end{equation}
+}\end{equation}
 
-\hypertarget{why-products-over-sums}{%
-\subsubsection{Why products over sums?}\label{why-products-over-sums}}
+\subsubsection{Why products over sums?}\label{why-products-over-sums}
 
 Take a look at \cref{eq:three}. Given that we are asked to evaluate
 \(x + y\), why did we try to express the number 55 as a \emph{product}
@@ -478,7 +456,7 @@ partitioning}}, and is represented by the function \(p(n)\), while
 decomposing a number into a product of numbers is called
 \href{https://mathworld.wolfram.com/UnorderedFactorization.html}{\emph{multiplicative
 partitioning} or \emph{unordered factorization}} and is represented by
-the expression \(f(n)\) \protect\hyperlink{ref-brown-2017}{{[}1{]}}.
+the expression \(f(n)\) {[}\citeproc{ref-brown-2017}{1}{]}.
 
 Consider the number \(6\). We may express it as a sum, using the numbers
 from \(1\) to \(6\), in eleven different ways, i.e., \(p(6) = 11\). But
@@ -490,17 +468,15 @@ It is tempting to speculate that for any positive integer \(n\),
 \(p(n) \geq f(n)\), but I have not seen any proof of this statement. For
 our purposes though, it is patently reasonable\footnote{Surprisingly,
   research into the multiplicative partition of a positive integer seems
-  to be a relatively recent endeavour
-  \protect\hyperlink{ref-dodd-1987}{{[}2{]}}. So, I am hand-waving here.}
-to claim that the number of ways in which the number \(55\) may be
-decomposed as a product is far fewer than the number of ways in which it
-can be decomposed as a sum, i.e., \(f(n) < p(n)\). And that is why we
-sought to write the LHS of the last line of \cref{eq:three} as a product
-rather than as a sum.
+  to be a relatively recent endeavour {[}\citeproc{ref-dodd-1987}{2}{]}.
+  So, I am hand-waving here.} to claim that the number of ways in which
+the number \(55\) may be decomposed as a product is far fewer than the
+number of ways in which it can be decomposed as a sum, i.e.,
+\(f(n) < p(n)\). And that is why we sought to write the LHS of the last
+line of \cref{eq:three} as a product rather than as a sum.
 
-\hypertarget{multiplicative-partitions-of-55}{%
 \subsubsection{\texorpdfstring{Multiplicative partitions of
-\(55\)}{Multiplicative partitions of 55}}\label{multiplicative-partitions-of-55}}
+\(55\)}{Multiplicative partitions of 55}}\label{multiplicative-partitions-of-55}
 
 The number 55 may be decomposed into these four \emph{unique}
 factors---meaning that order does not matter: \(1, 5, 11,\) and
@@ -518,23 +494,21 @@ cannot be zero or negative. \emph{So, the factor-pair \(1\) and \(55\)
 is not valid}.
 
 We may now write \cref{eq:three} as:
-\begin{equation}\protect\hypertarget{eq:solution}{}{
+\begin{equation}\phantomsection\label{eq:solution}{
 (x+1)(y+1) = 55 = 5\times 11
-}\label{eq:solution}\end{equation} If we set \(x + 1 = 5\), we get
-\(x = 4\). Likewise, setting \(y + 1 = 11\) gives \(y = 10\). Therefore,
+}\end{equation} If we set \(x + 1 = 5\), we get \(x = 4\). Likewise,
+setting \(y + 1 = 11\) gives \(y = 10\). Therefore,
 \(x + y = 4 + 10 = 14\). It should be abundantly clear that \(x\) and
 \(y\) could interchange their values but their sum will still be the
 same. So, the solution to the problem is \(x + y = 14\), and we are home
 and dry.
 
-\hypertarget{the-final-picture}{%
-\subsection{The final picture}\label{the-final-picture}}
+\subsection{The final picture}\label{the-final-picture}
 
 To get a sense of finality, let us see the graphical representation of
 our algebraic result in \cref{fig:four} below.
 
 \begin{figure}
-\hypertarget{fig:four}{%
 \centering
 \includegraphics[width=0.75\textwidth,height=\textheight]{images/olympiad-four.png}
 \caption{The line \(x + y = 14\) intersects the curve \(x + xy +y = 54\)
@@ -542,11 +516,9 @@ at \emph{two} points: \((10, 4)\) and \((4, 10)\). Thus although
 \(x + y = 14\) is a \emph{single} line---and the required solution---if
 we had been asked for the points of intersection, we would have to
 enumerate \emph{both} points.}\label{fig:four}
-}
 \end{figure}
 
-\hypertarget{appendix}{%
-\subsection{Appendix}\label{appendix}}
+\subsection{Appendix}\label{appendix}
 
 The somewhat magic numbers \(12.832\) and \(-16.832\) in \cref{fig:two}
 were not drawn out of thin air, but are the result of simple
@@ -558,9 +530,9 @@ contact, or
 \href{https://en.wikipedia.org/wiki/Osculating_curve}{osculation}.
 
 Rewriting the given equation as
-\begin{equation}\protect\hypertarget{eq:diff}{}{
+\begin{equation}\phantomsection\label{eq:diff}{
 y = \frac{54-x}{x+1}
-}\label{eq:diff}\end{equation} we want the derivative
+}\end{equation} we want the derivative
 \(\frac{\mathrm{d}y}{\mathrm{d}x}\). This is accomplished with little
 effort or thinking, by going to
 \href{https://www.wolframalpha.com}{Wolfram Alpha}, and asking the
@@ -589,8 +561,7 @@ Therefore all lines with \(x + y \geq 12.832\) and
 of intersection will constitute the solution set for the problem, as
 originally stated.
 
-\hypertarget{acknowledgements}{%
-\subsection{Acknowledgements}\label{acknowledgements}}
+\subsection{Acknowledgements}\label{acknowledgements}
 
 The \href{https://www.desmos.com/}{Desmos webiste} is a boon to both
 teachers and students of mathematics, not to mention digital artists.
@@ -602,8 +573,7 @@ I would also like to express my appreciation to
 computational facilities they have made available at no charge. Much
 tedium may be avoided, and many insights gained therefrom.
 
-\hypertarget{feedback}{%
-\subsection{Feedback}\label{feedback}}
+\subsection{Feedback}\label{feedback}
 
 Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
@@ -621,24 +591,22 @@ comments and corrections.
 
 \end{small}
 
-\hypertarget{bibliography}{%
-\section*{References}\label{bibliography}}
+\section*{References}\label{bibliography}
 \addcontentsline{toc}{section}{References}
 
-\hypertarget{refs}{}
+\phantomsection\label{refs}
 \begin{CSLReferences}{0}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-brown-2017}{}}%
+\bibitem[\citeproctext]{ref-brown-2017}
 \CSLLeftMargin{{[}1{]} }%
-\CSLRightInline{Kevin Brown, {`Additive and multiplicative partitions'},
-Dec. 02, 2017. Available:
-\url{https://www.mathpages.com/home/kmath091.htm}. {[}Accessed: Mar. 19,
-2023{]}}
+\CSLRightInline{Kevin Brown. 2017. Additive and multiplicative
+partitions. Retrieved 19 March 2023 from
+\url{https://www.mathpages.com/home/kmath091.htm}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-dodd-1987}{}}%
+\bibitem[\citeproctext]{ref-dodd-1987}
 \CSLLeftMargin{{[}2{]} }%
-\CSLRightInline{F W Dodd and L E Mattics, {`Estimating the number of
-multiplicative partitions'}, \emph{Rocky Mountain Journal of
-Mathematics}, vol. 17, no. 4, pp. 797--813, 1987.}
+\CSLRightInline{F W Dodd and L E Mattics. 1987. Estimating the number of
+multiplicative partitions. \emph{Rocky Mountain Journal of Mathematics}
+17, 4 (1987), 797--813.}
 
 \end{CSLReferences}
 

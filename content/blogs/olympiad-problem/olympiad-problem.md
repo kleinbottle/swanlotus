@@ -26,7 +26,7 @@ If you are good at mathematics, or relish a challenge, do not read further until
 
 ## First thoughts
 
-At first, I thought that this problem was too easy to be featured in a Mathematics Olympiad[^1]. After all, the problem statement would be intelligible to anyone who has gone through mathematics up to middle (or secondary) school level. But after a short while, I realized that it posed some definite challenges.
+At first, I thought that this problem was too easy to be featured in a Mathematics Olympiad.[^1] After all, the problem statement would be intelligible to anyone who has gone through mathematics up to middle (or secondary) school level. But after a short while, I realized that it posed some definite challenges.
 
 In this blog, I am not setting out to expound a blazingly fast method of solution, nor am I attempting mathematical terseness. I will be discursive because I want to _savour_ the problem in all its aspects, as they suggested themselves to me. I also hope that, by so doing, I stimulate mathematical thinking in my readers, and give them an experience of the mathematical adventure, if nothing else.
 
