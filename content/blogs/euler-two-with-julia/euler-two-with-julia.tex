@@ -93,28 +93,38 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -218,7 +228,7 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{sf}
 \hypersetup{
@@ -266,9 +276,8 @@ good professor compared Julia with current mainstream languages used in
 Data Science, and explained with convincing facts why he was batting for
 \texttt{Julia}.
 
-\hypertarget{prequel-solving-project-euler-problem-one}{%
 \subsection{Prequel: Solving Project Euler Problem
-One}\label{prequel-solving-project-euler-problem-one}}
+One}\label{prequel-solving-project-euler-problem-one}
 
 To compare apples with apples, I thought I would first try to solve
 Euler Problem 1 using \texttt{Julia}.
@@ -296,9 +305,8 @@ simple and succinct solution. The answer, of course, is \texttt{233168}
 as before. With Euler One out of the way, we are now free to analyze and
 solve Euler Two using \texttt{Julia}.
 
-\hypertarget{statement-of-problem-euler-two}{%
 \subsection{Statement of problem: Euler
-Two}\label{statement-of-problem-euler-two}}
+Two}\label{statement-of-problem-euler-two}
 
 The \href{https://projecteuler.net/problem=2}{Euler Project Problem 2}
 is stated as follows:
@@ -314,19 +322,18 @@ By considering the terms in the Fibonacci sequence whose values do not
 exceed four million, find the sum of the even-valued terms.
 \end{quote}
 
-\hypertarget{dissecting-the-problem}{%
-\subsubsection{Dissecting the problem}\label{dissecting-the-problem}}
+\subsubsection{Dissecting the problem}\label{dissecting-the-problem}
 
 The problem states ``By starting with 1 and 2,'' indicating that the
 starting point is not universally accepted as \(1\) and \(2\).
 
 Indeed, the \href{https://oeis.org/A000045}{Fibonacci sequence} at
 \href{https://oeis.org/wiki/Main_Page}{OEIS} starts off like this:
-\begin{equation}\protect\hypertarget{eq:fibonacci}{}{
+\begin{equation}\phantomsection\label{eq:fibonacci}{
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, \ldots
-}\label{eq:fibonacci}\end{equation} I prefer the sequence of
-\cref{eq:fibonacci} for aesthetic reasons and will use it in this
-problem, despite instructions to the contrary.
+}\end{equation} I prefer the sequence of \cref{eq:fibonacci} for
+aesthetic reasons and will use it in this problem, despite instructions
+to the contrary.
 
 The second important phrase asks for the sum of the ``even-valued
 terms''. It is important to understand the meaning of ``even'' here. The
@@ -340,17 +347,16 @@ million''. A number less than or equal to \(x\) does not exceed \(x\).
 Thus, the mathematical condition is ``\(\leq 4,000,000\)''. Moreover,
 the stopping condition refers to the \emph{whole Fibonacci sequence.}
 Let this upper bound be called:
-\begin{equation}\protect\hypertarget{eq:stopping}{}{
+\begin{equation}\phantomsection\label{eq:stopping}{
 F_{m} = F_{\max} \leq 4,000,000.
-}\label{eq:stopping}\end{equation} We do not know the value of either
-\(m\) or \(F_{\max}\) at present.
+}\end{equation} We do not know the value of either \(m\) or \(F_{\max}\)
+at present.
 
-\hypertarget{recurrence-relation-for-the-fibonacci-sequence}{%
 \subsection{Recurrence relation for the Fibonacci
-sequence}\label{recurrence-relation-for-the-fibonacci-sequence}}
+sequence}\label{recurrence-relation-for-the-fibonacci-sequence}
 
 The recurrence relation for the Fibonacci sequence is:
-\begin{equation}\protect\hypertarget{eq:recurrence}{}{
+\begin{equation}\phantomsection\label{eq:recurrence}{
 \begin{aligned}
 F_{1} &= 0\\
 F_{2} &= 1\\
@@ -358,7 +364,7 @@ F_{3} &= F_{2} + F_{1} = 1\\
 F_{4} &= F_{3} + F_{2} = 1 + 1 = 2\\
 F_{n} &= F_{n-1} + F_{n-2} \text{ for } n \in \mathbb{N} \text{ and } n > 2
 \end{aligned}
-}\label{eq:recurrence}\end{equation}
+}\end{equation}
 
 While there \emph{is} an explicit formula for the
 \(n\)\textsuperscript{th} Fibonacci number, called
@@ -368,43 +374,39 @@ and programs using it will suffer from
 \href{https://www.cs.drexel.edu/~popyack/Courses/CSP/Fa17/extras/Rounding/index.html}{rounding
 errors}. However, this does not preclude methods based on Binet's
 formula, provided they are used knowledgeably
-{[}\protect\hyperlink{ref-julia-help}{1}{]}.
+{[}\citeproc{ref-julia-help}{1}{]}.
 
-\hypertarget{the-even-valued-fibonacci-subsequence}{%
 \subsection{The even-valued Fibonacci
-subsequence}\label{the-even-valued-fibonacci-subsequence}}
+subsequence}\label{the-even-valued-fibonacci-subsequence}
 
 If we look at \cref{eq:fibonacci}, we will notice that, assuming zero is
 even, the even terms are: \[
 0, 2, 8, 34, 144, \ldots
 \] and their position in the sequence is \[
 1, 4, 7, 10, 13, \ldots
-\] spaced at every \emph{three} terms apart. Note that the indices of
-the even-valued Fibonacci subsequence actually form an arithmetic
-sequence with \(a = 1\) and \(d = 3\) and \(n\)\textsuperscript{th} term
-\(1 + (n - 1)3 = 3n - 2\). If we use this sequence to filter the
-Fibonacci sequence, and sum it, we will be done. This is one approach.
-We will explore other approaches later.
+\] spaced at every \emph{three} terms apart. Note that the
+\emph{indices} of the even-valued Fibonacci subsequence actually form an
+arithmetic sequence with \(a = 1\) and \(d = 3\) and
+\(n\)\textsuperscript{th} term \(1 + (n - 1)3 = 3n - 2\). If we use this
+sequence to filter the Fibonacci sequence, and sum it, we will be done.
+This is one approach. We will explore other approaches later.
 
 So, the sum we are after, assuming that \cref{eq:recurrence} holds, is
-\begin{equation}\protect\hypertarget{eq:even-sum}{}{
+\begin{equation}\phantomsection\label{eq:even-sum}{
 \sum_{k=1}^{m}F_{3k-2}.
-}\label{eq:even-sum}\end{equation} where \(m\) is the index of the
-largest even-valued Fibonacci number that does not exceed 4,000,000,
-which is \(F_{\max}\). We will consider this subsequence in its own
-right \protect\hyperlink{a-second-look-at-the-problem}{toward the end of
-this blog}.
+}\end{equation} where \(m\) is the index of the largest even-valued
+Fibonacci number that does not exceed 4,000,000, which is \(F_{\max}\).
+We will consider this subsequence in its own right
+\hyperref[a-second-look-at-the-problem]{toward the end of this blog}.
 
-\hypertarget{small-steps-toward-the-solution}{%
 \subsection{Small steps toward the
-solution}\label{small-steps-toward-the-solution}}
+solution}\label{small-steps-toward-the-solution}
 
 Because the syntax of \texttt{Julia} is new to me, I will start with
 trivial scripts that almost single-step toward the solution.
 
-\hypertarget{append-the-third-fibonacci-number-to-the-array}{%
 \subsubsection{Append the third Fibonacci number to the
-array}\label{append-the-third-fibonacci-number-to-the-array}}
+array}\label{append-the-third-fibonacci-number-to-the-array}
 
 Let us concatenate the third Fibonacci number to the first two.
 Obviously, we need a one-dimensional array, or vector, \texttt{F} to
@@ -426,9 +428,8 @@ and added to the \emph{end} of the array, or \emph{appended} to it. The
 
 It works and gives us \texttt{{[}0,\ 1,\ 1{]}}. So far so good.
 
-\hypertarget{first-twenty-elements-of-the-fibonacci-sequence}{%
 \subsubsection{First twenty elements of the Fibonacci
-Sequence}\label{first-twenty-elements-of-the-fibonacci-sequence}}
+Sequence}\label{first-twenty-elements-of-the-fibonacci-sequence}
 
 Because we know that there are twenty elements beforehand, our task is
 easier and may be \href{auxiliary/first-twenty.jl}{accomplished by a
@@ -457,9 +458,8 @@ the right hand side (RHS) of the recurrence relation and append it to
 the array. Thus far, the syntax in \texttt{Julia} has tracked the
 mathematical expression very closely.
 
-\hypertarget{how-to-stop-when-we-need-to}{%
 \subsubsection{How to stop when we need
-to?}\label{how-to-stop-when-we-need-to}}
+to?}\label{how-to-stop-when-we-need-to}
 
 The difficulty is that, while we know from \cref{eq:stopping} the upper
 bound that should not be exceeded, we know neither the value of the
@@ -517,9 +517,8 @@ program} to output all the Fibonacci terms which do not exceed
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{commentary-on-the-program}{%
 \subsubsection{Commentary on the
-program}\label{commentary-on-the-program}}
+program}\label{commentary-on-the-program}
 
 This program was written with very little knowledge of \texttt{Julia}.
 \emph{It uses the wrong approach, but gives the right answer. It should
@@ -537,7 +536,7 @@ situations, not assigning it now is simpler for our purposes.
 We are within our rights in allocating values to the first two elements
 of \texttt{F} because the sequence cannot fire up otherwise.
 
-Note that the third element of \texttt{F} is \texttt{undef}, i.e, it is
+Note that the third element of \texttt{F} is \texttt{undef}, i.e., it is
 left undefined. We need to \emph{reserve a place} for the third element
 because we will be evaluating it at the top of the \texttt{while} loop,
 and we could run into an \texttt{out\ of\ bounds} error otherwise.
@@ -584,10 +583,9 @@ language and should be ignored.
 We may now append a second script to sum the even numbers in this
 sequence.
 
-\hypertarget{sum-of-even-valued-fibonacci-numbers-not-exceeding-4-million}{%
 \subsubsection{\texorpdfstring{Sum of even-valued Fibonacci numbers not
 exceeding \(4\)
-million}{Sum of even-valued Fibonacci numbers not exceeding 4 million}}\label{sum-of-even-valued-fibonacci-numbers-not-exceeding-4-million}}
+million}{Sum of even-valued Fibonacci numbers not exceeding 4 million}}\label{sum-of-even-valued-fibonacci-numbers-not-exceeding-4-million}
 
 We are a stone's throw away from solving the set problem. All we need do
 is to sum the even numbers in the array \texttt{F}. The indices of these
@@ -610,9 +608,8 @@ The answer to the problem is \texttt{4613732}. I am deliberately not
 including a download link for this script as it does not embody best
 practice in \texttt{Julia}.
 
-\hypertarget{things-i-got-wrong-with-the-above-script}{%
 \subsection{Things I got wrong with the above
-script}\label{things-i-got-wrong-with-the-above-script}}
+script}\label{things-i-got-wrong-with-the-above-script}
 
 Since I am just learning \texttt{Julia}, and had some doubts, I posted a
 \href{https://discourse.julialang.org/t/is-it-possible-to-suppres-the-printing-of-any-before-an-array-is-printed/106930}{question}
@@ -661,9 +658,8 @@ The sum of the even-valued terms in the Fibonacci sequence not exceeding
 four million is \texttt{4613732}. This file may be accessed
 \href{auxiliary/better-even-sum.jl}{here}.
 
-\hypertarget{a-second-look-at-the-problem}{%
 \subsection{A second look at the
-problem}\label{a-second-look-at-the-problem}}
+problem}\label{a-second-look-at-the-problem}
 
 In our first pass, we stuck very closely to the Fibonacci sequence,
 evaluated it in full until the prescribed limit, and then obtained the
@@ -687,9 +683,8 @@ result in more frugal programs in terms of memory and execution times.
 This ``philosophy'' will help us write better programs. The rest of this
 blog explores this approach.
 
-\hypertarget{the-even-valued-fibonacci-subsequence-1}{%
 \subsubsection{The even-valued Fibonacci
-subsequence}\label{the-even-valued-fibonacci-subsequence-1}}
+subsequence}\label{the-even-valued-fibonacci-subsequence-1}
 
 Let us call the \emph{even-valued subsequence of the Fibonacci sequence}
 the \emph{even sequence} for short, remembering that it is not the
@@ -712,7 +707,7 @@ from the full Fibonacci sequence. The even-valued terms are three
 positions apart. So, we span seven terms from index \(k\) to index
 \((k+6)\) to get the recurrence relation, which has been colour-coded to
 reveal how terms have been expanded and grouped:
-\begin{equation}\protect\hypertarget{eq:even-fibonacci-recurrence}{}{
+\begin{equation}\phantomsection\label{eq:even-fibonacci-recurrence}{
 \begin{aligned}
 F_{k+6} &= \textcolor{FireBrick}{F_{k+5}} + \textcolor{Teal}{F_{k+4}} \text{ (expand RHS solely in terms of $F_{k+3}$ and $F_{k}$)}\\
 &= \textcolor{FireBrick}{F_{k+4} + F_{k+3}} + \textcolor{Teal}{F_{k+3} + F_{k+2}}\\
@@ -722,20 +717,18 @@ F_{k+6} &= \textcolor{FireBrick}{F_{k+5}} + \textcolor{Teal}{F_{k+4}} \text{ (ex
 &= 3F_{k+3} + \textcolor{Green}{F_{k+3}} + F_{k}\\
 &= 4F_{k+3} + F_{k}\\
 \end{aligned}
-}\label{eq:even-fibonacci-recurrence}\end{equation} If we write
-\cref{eq:even-fibonacci-recurrence} in terms of the even sequence,
-\(E_{n}\), noting that indices \(k\), \((k+3)\), and \((k+6)\) represent
-its successive terms, which we shall call \(n\), \((n+1)\), and
-\((n+2)\), we get:
-\begin{equation}\protect\hypertarget{eq:even-recurrence}{}{
+}\end{equation} If we write \cref{eq:even-fibonacci-recurrence} in terms
+of the even sequence, \(E_{n}\), noting that indices \(k\), \((k+3)\),
+and \((k+6)\) represent its successive terms, which we shall call \(n\),
+\((n+1)\), and \((n+2)\), we get:
+\begin{equation}\phantomsection\label{eq:even-recurrence}{
 E_{n+2} = 4E_{n+1} +E_{n}
-}\label{eq:even-recurrence}\end{equation} We need to initialize
-\(E_{1} = 0\) and \(E_{2} = 2\). Thence, we may generate the whole even
-sequence. Let us write this using \texttt{Julia} syntax.
+}\end{equation} We need to initialize \(E_{1} = 0\) and \(E_{2} = 2\).
+Thence, we may generate the whole even sequence. Let us write this using
+\texttt{Julia} syntax.
 
-\hypertarget{summing-the-even-valued-sequence-in-julia}{%
 \subsubsection{\texorpdfstring{Summing the even-valued sequence in
-\texttt{Julia}}{Summing the even-valued sequence in Julia}}\label{summing-the-even-valued-sequence-in-julia}}
+\texttt{Julia}}{Summing the even-valued sequence in Julia}}\label{summing-the-even-valued-sequence-in-julia}
 
 Three variables are used in the recurrence relation. A fourth is needed
 for the sum. So, with four variables and some judicious code, we should
@@ -795,8 +788,7 @@ two lines to the above function, we would get our final result:
 which gives \texttt{4613732} as before, and all is well. This script is
 available \href{auxiliary/direct-even-sum.jl}{here}.
 
-\hypertarget{final-assessment}{%
-\subsection{Final assessment}\label{final-assessment}}
+\subsection{Final assessment}\label{final-assessment}
 
 The \texttt{Julia} programming language is refreshingly adaptive in its
 syntax and allows the programmer to solve a problem in very many ways.
@@ -813,9 +805,8 @@ learning \texttt{Julia} enjoyable, educational, and enriching. It is a
 language that I will spend time learning properly, and use in the
 future.
 
-\hypertarget{caveat-lector-or-reader-beware-or-disclaimer}{%
 \subsubsection{Caveat Lector! or Reader Beware! or
-Disclaimer}\label{caveat-lector-or-reader-beware-or-disclaimer}}
+Disclaimer}\label{caveat-lector-or-reader-beware-or-disclaimer}
 
 I am new to \texttt{Julia}, and what I have written here represents my
 efforts at learning---errors and all. Experienced ``Julians''\footnote{\texttt{Rust}
@@ -825,8 +816,7 @@ efforts at learning---errors and all. Experienced ``Julians''\footnote{\texttt{R
 requested to \href{mailto:feedback.swanlotus@gmail.com}{email me} with
 their corrections. \emojifont {☹️} \normalfont
 
-\hypertarget{acknowledgements}{%
-\subsection{Acknowledgements}\label{acknowledgements}}
+\subsection{Acknowledgements}\label{acknowledgements}
 
 The \texttt{Julia}-user community is knowledgeable, courteous, and
 helpful, and they are very enthusiastic about their programming
@@ -837,19 +827,18 @@ forum for users and developers}.
 When I encountered difficulties with my code, I sought the community's
 help in
 \href{https://discourse.julialang.org/t/help-with-project-euler-2-undef-inits-printing-multiplication-by-juxtaposition-and-more/106930}{this
-thread} {[}\protect\hyperlink{ref-julia-help}{1}{]}. The wealth of
-information given there is enough to keep one busy for quite a while,
-learning different ways to \emph{solve} the same problem and also
-different ways to \emph{think} about problems in general.
+thread} {[}\citeproc{ref-julia-help}{1}{]}. The wealth of information
+given there is enough to keep one busy for quite a while, learning
+different ways to \emph{solve} the same problem and also different ways
+to \emph{think} about problems in general.
 
-\hypertarget{feedback}{%
-\subsection{Feedback}\label{feedback}}
+\subsection{Feedback}\label{feedback}
 
 Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
 
 \noindent A PDF version of this article is
-\href{/euler-two-with-julia.pdf}{available for download here}:
+\href{./euler-two-with-julia.pdf}{available for download here}:
 
 \begin{small}
 
@@ -861,13 +850,12 @@ comments and corrections.
 
 \end{small}
 
-\hypertarget{bibliography}{%
-\section*{References}\label{bibliography}}
+\section*{References}\label{bibliography}
 \addcontentsline{toc}{section}{References}
 
-\hypertarget{refs}{}
+\phantomsection\label{refs}
 \begin{CSLReferences}{0}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-julia-help}{}}%
+\bibitem[\citeproctext]{ref-julia-help}
 \CSLLeftMargin{{[}1{]} }%
 \CSLRightInline{Various. 2023. {Help with Project Euler \#2\: undef
 inits, printing, multiplication by juxtaposition, and more}. Retrieved 2

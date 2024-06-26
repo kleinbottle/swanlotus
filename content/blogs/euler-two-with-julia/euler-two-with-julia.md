@@ -82,7 +82,7 @@ and their position in the sequence is
 $$
 1, 4, 7, 10, 13, \ldots
 $$
-spaced at every _three_ terms apart. Note that the indices of the even-valued Fibonacci subsequence actually form an arithmetic sequence with $a = 1$ and $d = 3$ and $n$^th^ term $1 + (n - 1)3 = 3n - 2$. If we use this sequence to filter the Fibonacci sequence, and sum it, we will be done. This is one approach. We will explore other approaches later.
+spaced at every _three_ terms apart. Note that the _indices_ of the even-valued Fibonacci subsequence actually form an arithmetic sequence with $a = 1$ and $d = 3$ and $n$^th^ term $1 + (n - 1)3 = 3n - 2$. If we use this sequence to filter the Fibonacci sequence, and sum it, we will be done. This is one approach. We will explore other approaches later.
 
 So, the sum we are after, assuming that @eq:recurrence holds, is
 $$
@@ -171,7 +171,7 @@ The array `F` is of `type` `Any` because we have not assigned a type to it. Whil
 
 We are within our rights in allocating values to the first two elements of `F` because the sequence cannot fire up otherwise.
 
-Note that the third element of `F` is `undef`, i.e, it is left undefined. We need to _reserve a place_ for the third element because we will be evaluating it at the top of the `while` loop, and we could run into an `out of bounds` error otherwise.
+Note that the third element of `F` is `undef`, i.e., it is left undefined. We need to _reserve a place_ for the third element because we will be evaluating it at the top of the `while` loop, and we could run into an `out of bounds` error otherwise.
 
 Array indices start at `1` in `Julia` and we need `i` to be `3` at the start of the `while` loop. The value of `i` cannot, however, be passed to the `while` loop unless we declare it global. I later found out [from the user-community](https://discourse.julialang.org/t/help-with-project-euler-2-undef-inits-printing-multiplication-by-juxtaposition-and-more/106930) that declaring variables `global` is a strict no-no.
 
