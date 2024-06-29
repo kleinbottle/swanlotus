@@ -107,28 +107,38 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -232,7 +242,7 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{sf}
 \hypersetup{
@@ -256,9 +266,8 @@
 \thispagestyle{empty}
 
 
-\hypertarget{the-road-from-latex-to-typst}{%
 \subsection{The road from LaTeX to
-Typst}\label{the-road-from-latex-to-typst}}
+Typst}\label{the-road-from-latex-to-typst}
 
 Despite the ubiquity of emails, each of us has had to write a letter to
 someone at some time in our lives. In the days of
@@ -289,17 +298,16 @@ resources of LaTeX.
 
 So, I was eager with anticipation when I first stumbled upon
 \href{https://typst.app/}{\texttt{Typst}}
-{[}\protect\hyperlink{ref-typst01}{1},\protect\hyperlink{ref-typst02}{2}{]},
-which exhorted one to ``Compose papers/theses faster''. The
+{[}\citeproc{ref-typst01}{1},\citeproc{ref-typst02}{2}{]}, which
+exhorted one to ``Compose papers/theses faster''. The
 \href{https://github.com/typst/typst}{Typst home page} claims it is a
 ``A new markup-based typesetting system that is powerful and easy to
 learn.'' Piqued by these promising assertions, I decided to take the
 plunge with Typst, for the specific but express purpose of writing
 letters. I have chronicled my experiences here.
 
-\hypertarget{a-glancing-encounter-with-latex3}{%
 \subsection{A glancing encounter with
-LaTeX3}\label{a-glancing-encounter-with-latex3}}
+LaTeX3}\label{a-glancing-encounter-with-latex3}
 
 I have been using LaTeX to write papers, theses, and books for well nigh
 thirty years. Thus, I am a beneficiary of the LaTeX ecosystem, and can
@@ -312,8 +320,8 @@ looked like. It is the successor to the ``LaTeX2ɛ'' we use now, and
 while it might not impact end users much, it will certainly impinge upon
 customizability. The code fragment below is taken from a blog entitled
 ``LaTeX3: Programming in LaTeX with Ease''
-{[}\protect\hyperlink{ref-xiang2020}{3}{]}, and boy, did it make me
-uneasy, even to gaze upon it, let alone attempt to understand it:
+{[}\citeproc{ref-xiang2020}{3}{]}, and boy, did it make me uneasy, even
+to gaze upon it, let alone attempt to understand it:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -336,8 +344,7 @@ you are unlikely to be swayed by what I have to say, and might as well
 stop reading now. If you are a fence-sitter, read along and make up your
 mind at the end.
 
-\hypertarget{the-pandoc-markdown-duo}{%
-\subsection{The Pandoc-Markdown duo}\label{the-pandoc-markdown-duo}}
+\subsection{The Pandoc-Markdown duo}\label{the-pandoc-markdown-duo}
 
 By the time these blogs were written, I had already started using
 \href{https://pandoc.org/}{Pandoc} and its extended
@@ -353,8 +360,7 @@ the minds of most document typesetting designers when they
 \href{https://www.thefreedictionary.com/ideated}{ideated} their
 creations.
 
-\hypertarget{the-attractions-of-typst}{%
-\subsection{The attractions of Typst}\label{the-attractions-of-typst}}
+\subsection{The attractions of Typst}\label{the-attractions-of-typst}
 
 Like LaTeX, Typst is a markup-based programmable typesetting system. But
 it is fast and easy to use. Typst provides easy customizability because
@@ -377,17 +383,15 @@ So, let us
 \href{https://www.collinsdictionary.com/us/dictionary/english/heave-ho}{heave
 ho}!
 
-\hypertarget{a-short-detour}{%
-\subsubsection{A short detour}\label{a-short-detour}}
+\subsubsection{A short detour}\label{a-short-detour}
 
 Before wetting our feet on the beach of Typst with a letter, I want to
 showcase a small piece of boxed text that would have taken some time and
 effort to write in LaTeX, but which is a self-contained, compilable
 script in Typst. It was produced with help from the
 \href{https://typst.app/docs/reference/}{Typst online reference}
-{[}\protect\hyperlink{ref-typstref}{4}{]}. There is also a
-fast-responding user community that unselfishly gives help, especially
-to novices, at the
+{[}\citeproc{ref-typstref}{4}{]}. There is also a fast-responding user
+community that unselfishly gives help, especially to novices, at the
 \href{https://discord.com/channels/1054443721975922748/1088372909111783525}{Discord
 Typst channel}.
 
@@ -396,12 +400,10 @@ English, Sanskrit (संस्कृतम्), and Tamil (தமிழ்), wi
 a border, we could do it so:
 
 \begin{figure}
-\hypertarget{fig:dharma-source}{%
 \centering
 \includegraphics[width=0.9\textwidth,height=\textheight]{images/dharma-source.png}
 \caption{Source code in \texttt{Typst} for mottoes in three
 languages.}\label{fig:dharma-source}
-}
 \end{figure}
 
 I think that you would agree with me that the file to accomplish this
@@ -420,17 +422,14 @@ to get the PDF, here are the links for
   agree that things could not get much simpler.}
 
 \begin{figure}
-\hypertarget{fig:dharma}{%
 \centering
 \includegraphics[width=0.7\textwidth,height=\textheight]{images/dharma.png}
 \caption{Output from the file \texttt{dharma-blog.typ} after compilation
 into a PDF.}\label{fig:dharma}
-}
 \end{figure}
 
-\hypertarget{available-letter-templates-in-typst}{%
 \subsubsection{Available letter templates in
-Typst}\label{available-letter-templates-in-typst}}
+Typst}\label{available-letter-templates-in-typst}
 
 Let us now return to the main task of writing a letter using Typst.
 First, there are
@@ -443,9 +442,8 @@ casual letter. Moreover, developing a letter-template from scratch would
 reveal how simple or complicated a scripting language Typst is. That is
 the route taken here.
 
-\hypertarget{senders-address-at-the-top-right}{%
 \subsubsection{Sender's address at the top
-right}\label{senders-address-at-the-top-right}}
+right}\label{senders-address-at-the-top-right}
 
 It is customary, when writing letters in English, to align the sender's
 address and the date to the top right of the page and for the
@@ -457,9 +455,8 @@ entangled.
 
 Let us see how Typst overcomes these hurdles.
 
-\hypertarget{toward-a-letter-template-in-typst}{%
 \subsection{Toward a letter template in
-Typst}\label{toward-a-letter-template-in-typst}}
+Typst}\label{toward-a-letter-template-in-typst}
 
 In LaTeX, we usually depend on packages written by others to do the
 medium-level lifting for our specific purposes, with simple option-like
@@ -488,20 +485,17 @@ at once in the source document and view the result once more. Because
 compilation is very fast, we can work interactively in this manner to
 get decent results in a short time.
 
-\hypertarget{template-reflects-structure}{%
 \subsection{Template reflects
-structure}\label{template-reflects-structure}}
+structure}\label{template-reflects-structure}
 
 The text below is the beginning of the template and embodies the
 document structure of a letter:
 
 \begin{figure}
-\hypertarget{fig:template}{%
 \centering
 \includegraphics[width=0.5\textwidth,height=\textheight]{images/letter-template-top.png}
 \caption{Top of letter template showing the structure of the letter as
 fields.}\label{fig:template}
-}
 \end{figure}
 
 It has the same sequential spatial structure as a letter, starting at
@@ -520,32 +514,27 @@ Note that at this stage, nothing has been said about page size, text
 alignment, font name, etc. All that follows \emph{after} this structure
 has been laid out.
 
-\hypertarget{filling-the-template-with-content}{%
 \subsection{Filling the template with
-content}\label{filling-the-template-with-content}}
+content}\label{filling-the-template-with-content}
 
 When the fields in the template are filled in with content or data, we
 have the letter materializing out of the template.
 
 \begin{figure}
-\hypertarget{fig:letter}{%
 \centering
 \includegraphics[width=0.98\textwidth,height=\textheight]{images/letter-content-top.png}
 \caption{Top of actual letter with content filled in.}\label{fig:letter}
-}
 \end{figure}
 
 The markup, such as alignment, etc., comes later in the template in the
 form of code associated with each element, as shown in \cref{fig:align}:
 
 \begin{figure}
-\hypertarget{fig:align}{%
 \centering
 \includegraphics[width=0.4\textwidth,height=\textheight]{images/align-right-left.png}
 \caption{Code for aligning the \texttt{from\_name} and
 \texttt{from\_address} to the right, and the \texttt{to\_name} and
 \texttt{to\_address} to the left.}\label{fig:align}
-}
 \end{figure}
 
 Note that content appears as strings within double quotes,
@@ -588,8 +577,7 @@ PDF reader.
 
 Feel free to modify and use these files to meet your requirements.
 
-\hypertarget{afterthoughts-on-typst}{%
-\subsection{Afterthoughts on Typst}\label{afterthoughts-on-typst}}
+\subsection{Afterthoughts on Typst}\label{afterthoughts-on-typst}
 
 If you could view the PDF letter produced with Typst, I hope you were
 suitably impressed both by the professional quality of the output, as
@@ -645,8 +633,7 @@ I now have a template for letters means that my future letter-writing
 tasks will be lightened considerably. Count me in as a recent and
 enthusiastic convert to Typst! Long may it flourish!
 
-\hypertarget{acknowledgements}{%
-\subsection{Acknowledgements}\label{acknowledgements}}
+\subsection{Acknowledgements}\label{acknowledgements}
 
 As a beneficiary of Typst, I thank its creators, Martin Haug and Laurenz
 Mädje, for producing a gem of a programmable typesetting system.
@@ -666,8 +653,7 @@ result of my flights of fancy, and bear no resemblance to any person,
 organization, or location. I was having fun imagining things, plain and
 simple! \emojifont {😉} \normalfont
 
-\hypertarget{feedback}{%
-\subsection{Feedback}\label{feedback}}
+\subsection{Feedback}\label{feedback}
 
 Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
@@ -685,31 +671,30 @@ comments and corrections.
 
 \end{small}
 
-\hypertarget{bibliography}{%
-\section*{References}\label{bibliography}}
+\section*{References}\label{bibliography}
 \addcontentsline{toc}{section}{References}
 
-\hypertarget{refs}{}
+\phantomsection\label{refs}
 \begin{CSLReferences}{0}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-typst01}{}}%
+\bibitem[\citeproctext]{ref-typst01}
 \CSLLeftMargin{{[}1{]} }%
 \CSLRightInline{reknih. 2023. {Typst, a new markup-based typesetting
 system, is now open source}. Retrieved 1 January 2024 from
 \url{https://news.ycombinator.com/item?id=35250210}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-typst02}{}}%
+\bibitem[\citeproctext]{ref-typst02}
 \CSLLeftMargin{{[}2{]} }%
 \CSLRightInline{desperado339. 2023. {Check out Typst, a modern LaTeX
 alternative written in Rust}. Retrieved 1 January 2024 from
 \url{https://www.reddit.com/r/rust/comments/18001dr/check_out_typst_a_modern_latex_alternative}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-xiang2020}{}}%
+\bibitem[\citeproctext]{ref-xiang2020}
 \CSLLeftMargin{{[}3{]} }%
 \CSLRightInline{Alan Xiang. 2020. {LaTeX3: Programming in LaTeX with
 Ease}. Retrieved 1 January 2024 from
 \url{https://www.alanshawn.com/tech/2020/10/04/latex3-tutorial.html}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-typstref}{}}%
+\bibitem[\citeproctext]{ref-typstref}
 \CSLLeftMargin{{[}4{]} }%
 \CSLRightInline{Martin Haug and Laurenz Mädje. 2023. {typst
 Documentation: Reference}. Retrieved 7 January 2024 from

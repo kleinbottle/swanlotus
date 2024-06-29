@@ -4,7 +4,7 @@ author: "R (Chandra) Chandrasekhar"
 date: 2024-01-01
 modified: 2024-01-08
 category: Software
-tags: A Bit Here, A Byte There, Typesetting, PDF, Academic, LaTeX, Pandoc, Markdown, Letter
+tags: A Bit Here A Byte There, Typesetting, PDF, Academic, LaTeX, Pandoc, Markdown, Letter
 summary: 'So, I was eager with anticipation when I first stumbled upon mention of [`Typst`](https://typst.app/) [@typst01;@typst02] which exhorted "Compose papers/theses faster". The [Typst home page](https://github.com/typst/typst) claims it is a "A new markup-based typesetting system that is powerful and easy to learn." Piqued by these promising assertions, I decided to take the plunge with Typst for the specific but express purpose of writing letters. I have chronicled my experiences here.'
 opengraphimage: dharma.png
 ---
