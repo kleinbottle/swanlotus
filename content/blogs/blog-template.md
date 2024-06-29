@@ -6,7 +6,7 @@ modified:
 category: 
 tags: 
 summary: 
-status: 
+status: draft
 opengraphimage: 
 ---
 
@@ -17,8 +17,8 @@ opengraphimage:
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here]({attach}./blogfilename.pdf):
+\noindent A PDF version of this article is [available for download here]({attach}./blognamei.pdf):
 
 ::: {.small .sf}
-<https://swanlotus.netlify.app/blogs/blogfilename.pdf>
+<https://swanlotus.netlify.app/blogs/blogname.pdf>
 :::
