@@ -34,12 +34,29 @@ C = \pi d = 2\pi r \approx 2\left[\frac{22}{7}\right]r \approx 6.28r.
 $${#eq:two-pi-r}
 Note, however, that $\pi$ is _not exactly equal_ to $\frac{22}{7}$. This value is a convenient _rational fraction approximation_ for $\pi$ that serves well in elementary contexts.^[See ["A tale of two measures: degrees and radians"](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians).]
 
-You might reasonably wonder whether the ratio of the circumference to the diameter of _any_ circle is _always_ $\pi$. The answer is "Yes", because _all circles are similar_. The ratios of corresponding lengths of similar figures are equal. This idea is also covered in my blog ["A tale of two measures: degrees and radians"](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians). 
+You might reasonably wonder whether the ratio of the circumference to the diameter of _any_ circle is _always_ $\pi$. The answer is "Yes", because _all circles are similar_. The ratios of corresponding lengths of similar figures are equal. This idea is also covered in my blog ["A tale of two measures: degrees and radians"](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians).
+
+The symbol [$\pi$](https://en.wikipedia.org/wiki/Pi) is the lowercase version of the sixteenth letter of the Greek alphabet. For the history of its use in mathematics, see [adoption of the symbol π in Wikipedia](https://en.wikipedia.org/wiki/Pi#Adoption_of_the_symbol_%CF%80).
 
 ![The ratio of the circumference to the diameter of _any_ circle is $\pi$.]({attach}images/C-over-d.svg){#fig:pi-circle width=70% .modal-target}
 
-@fig:pi-circle shows the relationships in @eq:pi-Cd and @eq:two-pi-r pictorially. The circumference of a circle is about 6.28 times its radius. Why this should be so is a mystery of Nature.
+@fig:pi-circle shows the relationships in @eq:pi-Cd and @eq:two-pi-r pictorially. The circumference of a circle is about 6.28 times its radius. Why this should be so is a secret, a mystery of Nature.
 
+## A closer look at π
+
+Pi is both an [irrational](https://en.wikipedia.org/wiki/Irrational_number) and a [transcendental](https://en.wikipedia.org/wiki/Transcendental_number) number. Let us see what each of these [appelations](https://www.merriam-webster.com/dictionary/appellation) mean.
+
+## How did we arrive at π = 22/7?
+
+22/7 = 3.142857 142857 142857 (recurring decimal)
+
+## Approximation by Archimedes
+
+## Formulae involving π
+
+## Quest for the endless digits of π
+
+## Buffon's Needle
 
 ## Acknowledgements
 
