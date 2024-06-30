@@ -49,6 +49,20 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage{svg}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -217,7 +231,23 @@ more properly called its
 \(C\), by the diameter, \(d\), we get the enigmatic number \(\pi\):
 \begin{equation}\phantomsection\label{eq:pidef}{
 \frac{C}{d} = \pi.
-}\end{equation} \cref{fig:circle} shows this relationship pictorially.
+}\end{equation} \cref{fig:C-over-d} shows this relationship pictorially.
+
+\begin{figure}
+\centering
+\includesvg[width=0.7\textwidth,height=\textheight]{images/C-over-d.svg}
+\caption{The ratio of the circumference to the diameter of \emph{any}
+circle is \(\pi\).}\label{fig:C-over-d}
+\end{figure}
+
+\subsubsection{All circles are similar}\label{all-circles-are-similar}
+
+You might wonder why the ratio of the circumference to the diameter of
+\emph{any} circle is \emph{always} \(\pi\). This is because \emph{all
+circles are similar}. The ratios of corresponding lengths of similar
+figures are equal. This idea is treated at greater length in my blog
+\href{https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians}{A
+tale of two measures: degrees and radians}.
 
 \subsection{Acknowledgements}\label{acknowledgements}
 

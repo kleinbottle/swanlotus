@@ -28,9 +28,13 @@ The straight line and circle are arguably among the simplest of geometrical obje
 $$
 \frac{C}{d} = \pi.
 $${#eq:pidef}
-@fig:circle shows this relationship pictorially.
+@fig:C-over-d shows this relationship pictorially.
 
+![The ratio of the circumference to the diameter of _any_ circle is $\pi$.]({attach}images/C-over-d.svg){#fig:C-over-d width=70% .modal-target}
 
+### All circles are similar
+
+You might wonder why the ratio of the circumference to the diameter of _any_ circle is _always_ $\pi$. This is because _all circles are similar_. The ratios of corresponding lengths of similar figures are equal. This idea is treated at greater length in my blog [A tale of two measures: degrees and radians](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians).
 
 ## Acknowledgements
 
