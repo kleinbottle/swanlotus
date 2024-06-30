@@ -5,36 +5,41 @@ date: 2004-01-14
 modified: 2024-06-29
 category: Mathematics
 tags: Numbers, Irrational, Transcendental
-summary: "This blog began life more than two decades ago as part of a series of lectures I delivered to very bright first-year engineering students at an Australian university.
+summary: "This blog began life more than two decades ago, as part of a series of lectures I delivered to very bright first-year engineering students at an Australian university.
 
-The number π (pronounced like 'pie') has been recognized from time immemorial because its physical significance can be grasped easily: it is the ratio of the circumference of a circle to its diameter. But who would have thought that such an innocent ratio would exercise such endless fascination because of the complexities enfolded into it?
+The number π (pronounced 'pie') has been recognized from time immemorial because its physical significance can be grasped easily: it is the ratio of the circumference of a circle to its diameter. But who would have thought that such an innocent ratio would exercise such endless fascination because of the complexities enfolded into it?
 
 Not surprisingly, some students I met recently wanted to know more about π. Accordingly, I have refreshed and revised my original presentation to better accord with the form and substance of a blog. The online references have also been updated to keep up with a rapidly changing Web."
 status: published
 opengraphimage: 
 ---
 
->This blog began life more than two decades ago as part of a series of lectures I delivered to very bright first-year engineering students at an Australian university.
+>This blog began life more than two decades ago, as part of a series of lectures I delivered to very bright first-year engineering students at an Australian university.
 >
->The number $\pi$ (pronounced like "pie") has been recognized from time immemorial because its physical significance can be grasped easily: it is the ratio of the circumference of a circle to its diameter. But who would have thought that such an innocent ratio would exercise such endless fascination because of the complexities enfolded into it?
+>The number $\pi$ (pronounced "pie") has been recognized from time immemorial because its physical significance can be grasped easily: it is the ratio of the circumference of a circle to its diameter. But who would have thought that such an innocent ratio would exercise such endless fascination because of the complexities enfolded into it?
 >
 >Not surprisingly, some students I met recently wanted to know more about $\pi$. Accordingly, I have refreshed and revised my original presentation to better accord with the form and substance of a blog. The online references have also been updated to keep up with a rapidly changing Web.
 >
 >If there are any errors or omissions, please [email](mailto:feedback.swanlotus@gmail.com) me your feedback.
 
-## Circumference, diamater and pi
+## Circumference, diameter and π
 
-The straight line and circle are arguably among the simplest of geometrical objects. The circle is the most [symmetrical](https://mathworld.wolfram.com/Symmetry.html) figure on the two-dimensional plane while the straight line is the shortest distance between any two points on it. The [diameter](https://en.wikipedia.org/wiki/Diameter) is both the straight line passing through the centre of the circle, intersecting it at two points, and its length. Yet, when we divide the [perimeter](https://en.wikipedia.org/wiki/Perimeter) of circle, more properly called its [circumference](https://en.wikipedia.org/wiki/Circumference), $C$, by the diameter, $d$, we get the enigmatic number $\pi$: 
+The straight line or [geodesic](https://mathworld.wolfram.com/Geodesic.html) is the shortest distance between any two points on a plane, sphere, or other space. The circle is the [locus](https://en.wikipedia.org/wiki/Locus_(mathematics)) traversed by a moving point that is [equidistant](https://en.wikipedia.org/wiki/Equidistant) from another fixed point on a two-dimensional plane. It is the most [symmetrical](https://mathworld.wolfram.com/Symmetry.html) figure on the plane. The [diameter](https://en.wikipedia.org/wiki/Diameter) is the name given both to any straight line passing through the centre of the circle---intersecting it at two points---as well as to its length. When we divide the [perimeter](https://en.wikipedia.org/wiki/Perimeter) of circle, more properly called its [circumference](https://en.wikipedia.org/wiki/Circumference), $C$, by its diameter, $d$, we get the enigmatic constant  $\pi$, which has a value between $3.141$ and $3.142$: 
 $$
 \frac{C}{d} = \pi.
-$${#eq:pidef}
-@fig:C-over-d shows this relationship pictorially.
+$${#eq:pi-Cd}
+The diameter $d$ is twice the radius $r$, and substituting for $d$ into @eq:pi-Cd, we get the well-known school formula:
+$$
+C = \pi d = 2\pi r \approx 2\left[\frac{22}{7}\right]r \approx 6.28r.
+$${#eq:two-pi-r}
+Note, however, that $\pi$ is _not exactly equal_ to $\frac{22}{7}$. This value is a convenient _rational fraction approximation_ for $\pi$ that serves well in elementary contexts.^[See ["A tale of two measures: degrees and radians"](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians).]
 
-![The ratio of the circumference to the diameter of _any_ circle is $\pi$.]({attach}images/C-over-d.svg){#fig:C-over-d width=70% .modal-target}
+You might reasonably wonder whether the ratio of the circumference to the diameter of _any_ circle is _always_ $\pi$. The answer is "Yes", because _all circles are similar_. The ratios of corresponding lengths of similar figures are equal. This idea is also covered in my blog ["A tale of two measures: degrees and radians"](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians). 
 
-### All circles are similar
+![The ratio of the circumference to the diameter of _any_ circle is $\pi$.]({attach}images/C-over-d.svg){#fig:pi-circle width=70% .modal-target}
 
-You might wonder why the ratio of the circumference to the diameter of _any_ circle is _always_ $\pi$. This is because _all circles are similar_. The ratios of corresponding lengths of similar figures are equal. This idea is treated at greater length in my blog [A tale of two measures: degrees and radians](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians).
+@fig:pi-circle shows the relationships in @eq:pi-Cd and @eq:two-pi-r pictorially. The circumference of a circle is about 6.28 times its radius. Why this should be so is a mystery of Nature.
+
 
 ## Acknowledgements
 

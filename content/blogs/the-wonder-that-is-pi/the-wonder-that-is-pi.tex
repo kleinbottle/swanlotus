@@ -194,14 +194,14 @@
 
 
 \begin{quote}
-This blog began life more than two decades ago as part of a series of
+This blog began life more than two decades ago, as part of a series of
 lectures I delivered to very bright first-year engineering students at
 an Australian university.
 
-The number \(\pi\) (pronounced like ``pie'') has been recognized from
-time immemorial because its physical significance can be grasped easily:
-it is the ratio of the circumference of a circle to its diameter. But
-who would have thought that such an innocent ratio would exercise such
+The number \(\pi\) (pronounced ``pie'') has been recognized from time
+immemorial because its physical significance can be grasped easily: it
+is the ratio of the circumference of a circle to its diameter. But who
+would have thought that such an innocent ratio would exercise such
 endless fascination because of the complexities enfolded into it?
 
 Not surprisingly, some students I met recently wanted to know more about
@@ -214,40 +214,58 @@ If there are any errors or omissions, please
 \href{mailto:feedback.swanlotus@gmail.com}{email} me your feedback.
 \end{quote}
 
-\subsection{Circumference, diamater and
-pi}\label{circumference-diamater-and-pi}
+\subsection{Circumference, diameter and
+π}\label{circumference-diameter-and-ux3c0}
 
-The straight line and circle are arguably among the simplest of
-geometrical objects. The circle is the most
+The straight line or
+\href{https://mathworld.wolfram.com/Geodesic.html}{geodesic} is the
+shortest distance between any two points on a plane, sphere, or other
+space. The circle is the
+\href{https://en.wikipedia.org/wiki/Locus_(mathematics)}{locus}
+traversed by a moving point that is
+\href{https://en.wikipedia.org/wiki/Equidistant}{equidistant} from
+another fixed point on a two-dimensional plane. It is the most
 \href{https://mathworld.wolfram.com/Symmetry.html}{symmetrical} figure
-on the two-dimensional plane while the straight line is the shortest
-distance between any two points on it. The
-\href{https://en.wikipedia.org/wiki/Diameter}{diameter} is both the
-straight line passing through the centre of the circle, intersecting it
-at two points, and its length. Yet, when we divide the
-\href{https://en.wikipedia.org/wiki/Perimeter}{perimeter} of circle,
-more properly called its
+on the plane. The
+\href{https://en.wikipedia.org/wiki/Diameter}{diameter} is the name
+given both to any straight line passing through the centre of the
+circle---intersecting it at two points---as well as to its length. When
+we divide the \href{https://en.wikipedia.org/wiki/Perimeter}{perimeter}
+of circle, more properly called its
 \href{https://en.wikipedia.org/wiki/Circumference}{circumference},
-\(C\), by the diameter, \(d\), we get the enigmatic number \(\pi\):
-\begin{equation}\phantomsection\label{eq:pidef}{
+\(C\), by its diameter, \(d\), we get the enigmatic constant \(\pi\),
+which has a value between \(3.141\) and \(3.142\):
+\begin{equation}\phantomsection\label{eq:pi-Cd}{
 \frac{C}{d} = \pi.
-}\end{equation} \cref{fig:C-over-d} shows this relationship pictorially.
+}\end{equation} The diameter \(d\) is twice the radius \(r\), and
+substituting for \(d\) into \cref{eq:pi-Cd}, we get the well-known
+school formula: \begin{equation}\phantomsection\label{eq:two-pi-r}{
+C = \pi d = 2\pi r \approx 2\left[\frac{22}{7}\right]r \approx 6.28r.
+}\end{equation} Note, however, that \(\pi\) is \emph{not exactly equal}
+to \(\frac{22}{7}\). This value is a convenient \emph{rational fraction
+approximation} for \(\pi\) that serves well in elementary
+contexts.\footnote{See
+  \href{https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians}{``A
+  tale of two measures: degrees and radians''}.}
+
+You might reasonably wonder whether the ratio of the circumference to
+the diameter of \emph{any} circle is \emph{always} \(\pi\). The answer
+is ``Yes'', because \emph{all circles are similar}. The ratios of
+corresponding lengths of similar figures are equal. This idea is also
+covered in my blog
+\href{https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians}{``A
+tale of two measures: degrees and radians''}.
 
 \begin{figure}
 \centering
 \includesvg[width=0.7\textwidth,height=\textheight]{images/C-over-d.svg}
 \caption{The ratio of the circumference to the diameter of \emph{any}
-circle is \(\pi\).}\label{fig:C-over-d}
+circle is \(\pi\).}\label{fig:pi-circle}
 \end{figure}
 
-\subsubsection{All circles are similar}\label{all-circles-are-similar}
-
-You might wonder why the ratio of the circumference to the diameter of
-\emph{any} circle is \emph{always} \(\pi\). This is because \emph{all
-circles are similar}. The ratios of corresponding lengths of similar
-figures are equal. This idea is treated at greater length in my blog
-\href{https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians}{A
-tale of two measures: degrees and radians}.
+\cref{fig:pi-circle} shows the relationships in \cref{eq:pi-Cd} and
+\cref{eq:two-pi-r} pictorially. The circumference of a circle is about
+6.28 times its radius. Why this should be so is a mystery of Nature.
 
 \subsection{Acknowledgements}\label{acknowledgements}
 
