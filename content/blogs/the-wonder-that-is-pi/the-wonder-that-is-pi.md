@@ -9,7 +9,7 @@ summary: "This blog began life more than two decades ago, as part of a series of
 
 The number π (pronounced 'pie') has been recognized from time immemorial because its physical significance can be grasped easily: it is the ratio of the circumference of a circle to its diameter. But who would have thought that such an innocent ratio would exercise such endless fascination because of the complexities enfolded into it?
 
-Not surprisingly, some students I met recently wanted to know more about π. Accordingly, I have refreshed and revised my original presentation to better accord with the form and substance of a blog. The online references have also been updated to keep up with a rapidly changing Web."
+Not surprisingly, some students I met recently wanted to know more about π. Accordingly, I have substantially recast and refreshed my original presentation to better accord with the form and substance of a blog. The online references have also been updated to keep up with a rapidly changing Web."
 status: published
 opengraphimage: 
 ---
@@ -18,11 +18,11 @@ opengraphimage:
 >
 >The number $\pi$ (pronounced "pie") has been recognized from time immemorial because its physical significance can be grasped easily: it is the ratio of the circumference of a circle to its diameter. But who would have thought that such an innocent ratio would exercise such endless fascination because of the complexities enfolded into it?
 >
->Not surprisingly, some students I met recently wanted to know more about $\pi$. Accordingly, I have refreshed and revised my original presentation to better accord with the form and substance of a blog. The online references have also been updated to keep up with a rapidly changing Web.
+>Not surprisingly, some students I met recently wanted to know more about $\pi$. Accordingly, I have substantially recast and refreshed my original presentation to better accord with the form and substance of a blog. The online references have also been updated to keep up with a rapidly changing Web.
 >
 >If there are any errors or omissions, please [email](mailto:feedback.swanlotus@gmail.com) me your feedback.
 
-## Circumference, diameter and π
+## Circumference, diameter, and π
 
 The straight line or [geodesic](https://mathworld.wolfram.com/Geodesic.html) is the shortest distance between any two points on a plane, sphere, or other space. The circle is the [locus](https://en.wikipedia.org/wiki/Locus_(mathematics)) traversed by a moving point that is [equidistant](https://en.wikipedia.org/wiki/Equidistant) from another fixed point on a two-dimensional plane. It is the most [symmetrical](https://mathworld.wolfram.com/Symmetry.html) figure on the plane. The [diameter](https://en.wikipedia.org/wiki/Diameter) is the name given both to any straight line passing through the centre of the circle---intersecting it at two points---as well as to its length. When we divide the [perimeter](https://en.wikipedia.org/wiki/Perimeter) of circle, more properly called its [circumference](https://en.wikipedia.org/wiki/Circumference), $C$, by its diameter, $d$, we get the enigmatic constant  $\pi$, which has a value between $3.141$ and $3.142$: 
 $$
@@ -42,15 +42,97 @@ The symbol [$\pi$](https://en.wikipedia.org/wiki/Pi) is the lowercase version of
 
 @fig:pi-circle shows the relationships in @eq:pi-Cd and @eq:two-pi-r pictorially. The circumference of a circle is about 6.28 times its radius. Why this should be so is a secret, a mystery of Nature.
 
+## Is π really equal to 22/7?
+
+Is $\pi$ really equal to $\frac{22}{7}$, as it has been drummed into our heads at school? A wonderfully revealing story lies behind this mysterious relationship, and it is due to the [labours](https://www.collinsdictionary.com/dictionary/english/labours) of one man, in the days when calculators could not be dreamed of, and when neither the decimal system of numbers nor trigonometry were known. That is the story we look at next.
+
+## Archimedes of Syracuse
+
+[Archimedes of Syracuse](https://en.wikipedia.org/wiki/Archimedes) (Ἀρχιμήδης, 287--212 BCE) was a [polymath](https://www.vocabulary.com/dictionary/polymath#:~:text=Definitions%20of%20polymath,of%20great%20and%20varied%20learning) and genius of the ancient world. He was one of the greatest mathematicians the world has ever known. By today's standards, he would be called a mathematician, physicist, engineer, and astronomer, [all rolled into one](https://www.ldoceonline.com/dictionary/all-rolled-into-one). He is perhaps most famous for running out of his bathtub naked exclaiming ["Eureka"](https://www.dictionary.com/browse/eureka) (Greek for "I have found it") oblivious of those around him. The principle that he had then discovered---that the upthrust on a body submerged in a fluid is equal to the weight of fluid displaced---is known as [Archimedes' Principle](https://www.britannica.com/science/Archimedes-principle).
+
+![Archimedes of Syracuse.]({attach}images/Domenico-Fetti_Archimedes_1620.jpg){#fig:archimedes width=70% .modal-target}
+
+Among the many accomplishments of Archimedes is his method for estimating $\pi$, which was the best approximation for almost 1900 years. What is even more remarkable is that Archimedes made his discovery without the benefit of either trigonometry or decimal (positional) notation. His method is also an excellent geometrical illustration of the idea of a limit, with which he was doubtless familiar. It is known that Archimedes was familiar with what we now know as integral calculus, and it is possible that he may have anticipated differential calculus as well.
+
+### The algorithm as a foundation
+
+The method that Archimedes used is instructive because it is a synthesis of several principles by which the greatest human minds have furthered scientific progress over time. The abstract principles that Archimedes used were these:
+
+#. Start with the known and progress to the unknown;
+
+#. Devise a method of increasing the accuracy of the estimate and iterate over it;
+
+#. Stop when the desired accuracy is reached.
+
+These three principles constitute what is known as an [algorithm](https://www.merriam-webster.com/dictionary/algorithm). Once such a systematic framework has been put in place, it can be applied in many research domains to aid rapid scientific progress.
+
+### Of polygons and circles
+
+Archimedes realized that when a circle is inscribed by a regular polygon with $n$ sides and circumscribed by a regular polygon with the same $n$ sides, the circumference of the circle must lie between the perimeter of the inscribed polygon (limit from below) and the circumscribed polygon (limit from above).
+
+![The length of the circle is bounded from below by the inscribed heagon in maroon and bounded from above by the inscribed hexagon in midnight blue. The circumference of the circle must lie bween the perimeters of these two hexagons.]({attach}images/two-limits.svg){#fig:bounds width=70% .modal-target}
+
+This visually obvious fact is the first instance of "starting with the known."
+
+The second application of the same principle was his decision to initiate his algorithm using a regular hexagon, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right angled triangles with angles of thirty and sixty degrees, as shown in @fig:thirty-sixty.
+
+![This right-angled, obtained by bisecting an equilateral triangle, must be familiar to all school students. These lengths---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=70% .modal-target}
+
+Archimedes started with regular hexagons and successively doubled the number of sides until he had the circle sandwiched between two 96-gons. The principle of the method is clearly seen in Figure~\ref{fig:archi}.
+
+
+He devised an ingenious method for estimating the circumference of a circle. It was not based on using a length of string, superimposing it on a circle, and getting an estimate. He used a sophisticated algorithm that allowed him to obtain successively more accurate values for the circumference of a circle, and therefore of $\pi$.
+
+A well-written, accessible article on how Archimedes estimated that $\pi$ is approximately $\frac{22}{7}$ is available online: ["How Archimedes showed that pi is approximately 22 by 7"](https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf). I urge you to read it.^[This article is all the more remarkable because its first author is a Grade 8 student: proof that deep mathematics is not beyond the school student.] You will then appreciate for yourselves how arduous the process must have been in an age without the benefit of:
+#. Trigonometry; he used the theorem of pythagors instead;
+#. Algebra; he used geometry and the ratios of the lengths of well-known triangles;
+#. Decimal numbers for division; he used fractions instead;
+
+
+
+https://www.pbs.org/wgbh/nova/physics/approximating-pi.html
+
+https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/
+John Tucker "Archimedes' Approximation of Pi"
+http://demonstrations.wolfram.com/ArchimedesApproximationOfPi/
+Wolfram Demonstrations Project
+Published: March 5 2009
+
+https://math.stackexchange.com/questions/4851929/archimedes-method-to-estimate-pi
+
+http://arxiv.org/pdf/2008.07995
+
+https://mathsciencehistory.com/2019/10/01/archimedes-and-his-pi-the-great-numerical-hope/
+
+In the series @fig:six to @fig:forty-eight below, which illustrate the approach Archimedes took to estimate $\pi$, we see very clearly that the perimeter of the _inscribed polygon_ $c_n$ and the perimeter of the _circumscribed polygon_ $C_n$ represent respectively the _lower bound_ and _upper bound_ of the estimated value of $\pi$. As the number of sides, $n$, of the polygon increases, the estimates become increasingly accurate.
+
+
+![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/six-gon.svg){#fig:six width=70% .modal-target}
+
+![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/twelve-gon.svg){#fig:twelve width=70% .modal-target}
+
+![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/twenty-four-gon.svg){#fig:twenty-four width=70% .modal-target}
+
+![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/forty-eight-gon.svg){#fig:forty-eight width=70% .modal-target}
+
+![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/ninety-six-gon.svg){#fig:ninety-six width=70% .modal-target}
+
+https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf
+
+https://azimpremjiuniversity.edu.in/at-right-angles
+
+### How did Archimedes arrive at π = 22/7?
+
+22/7 = 3.142857 142857 142857 (recurring decimal)
+
 ## A closer look at π
 
 Pi is both an [irrational](https://en.wikipedia.org/wiki/Irrational_number) and a [transcendental](https://en.wikipedia.org/wiki/Transcendental_number) number. Let us see what each of these [appelations](https://www.merriam-webster.com/dictionary/appellation) mean.
 
-## How did we arrive at π = 22/7?
 
-22/7 = 3.142857 142857 142857 (recurring decimal)
+## Rational, Irrational, Algebraic, and zTranscedental Numbers
 
-## Approximation by Archimedes
+Recurring decimals.
 
 ## Formulae involving π
 
@@ -58,7 +140,15 @@ Pi is both an [irrational](https://en.wikipedia.org/wiki/Irrational_number) and 
 
 ## Buffon's Needle
 
-## Acknowledgements
+## π Trivia
+
+## Book References
+
+## Web resources
+
+## Appendix: Circumscribed and inscribed polygons of  circle
+
+Archimedes devised his ingenious _squeeze_ method for computing the upper and lower bounds of the perimeter of a circle by computing instead the perimeters of the polygons that inscribe and circumscribe the circle. The approximations become more accurate as the number of sides, $n$, of the polygon is increased. [This YouTube presentation](https://www.youtube.com/watch?v=_qdnyw5Eb_Y) might help you understand the algorithm of Archimedes better, but remember that he did not have trigonometry to sid hm.
 
 ## Feedback
 

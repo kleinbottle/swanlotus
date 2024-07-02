@@ -169,7 +169,7 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\usepackage{bookmark}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{sf}
 \hypersetup{
@@ -205,16 +205,16 @@ would have thought that such an innocent ratio would exercise such
 endless fascination because of the complexities enfolded into it?
 
 Not surprisingly, some students I met recently wanted to know more about
-\(\pi\). Accordingly, I have refreshed and revised my original
-presentation to better accord with the form and substance of a blog. The
-online references have also been updated to keep up with a rapidly
-changing Web.
+\(\pi\). Accordingly, I have substantially recast and refreshed my
+original presentation to better accord with the form and substance of a
+blog. The online references have also been updated to keep up with a
+rapidly changing Web.
 
 If there are any errors or omissions, please
 \href{mailto:feedback.swanlotus@gmail.com}{email} me your feedback.
 \end{quote}
 
-\subsection{Circumference, diameter and
+\subsection{Circumference, diameter, and
 π}\label{circumference-diameter-and-ux3c0}
 
 The straight line or
@@ -274,6 +274,199 @@ circle is \(\pi\).}\label{fig:pi-circle}
 6.28 times its radius. Why this should be so is a secret, a mystery of
 Nature.
 
+\subsection{Is π really equal to
+22/7?}\label{is-ux3c0-really-equal-to-227}
+
+Is \(\pi\) really equal to \(\frac{22}{7}\), as it has been drummed into
+our heads at school? A wonderfully revealing story lies behind this
+mysterious relationship, and it is due to the
+\href{https://www.collinsdictionary.com/dictionary/english/labours}{labours}
+of one man, in the days when calculators could not be dreamed of, and
+when neither the decimal system of numbers nor trigonometry were known.
+That is the story we look at next.
+
+\subsection{Archimedes of Syracuse}\label{archimedes-of-syracuse}
+
+\href{https://en.wikipedia.org/wiki/Archimedes}{Archimedes of Syracuse}
+(Ἀρχιμήδης, 287--212 BCE) was a
+\href{https://www.vocabulary.com/dictionary/polymath\#:~:text=Definitions\%20of\%20polymath,of\%20great\%20and\%20varied\%20learning}{polymath}
+and genius of the ancient world. He was one of the greatest
+mathematicians the world has ever known. By today's standards, he would
+be called a mathematician, physicist, engineer, and astronomer,
+\href{https://www.ldoceonline.com/dictionary/all-rolled-into-one}{all
+rolled into one}. He is perhaps most famous for running out of his
+bathtub naked exclaiming
+\href{https://www.dictionary.com/browse/eureka}{``Eureka''} (Greek for
+``I have found it'') oblivious of those around him. The principle that
+he had then discovered---that the upthrust on a body submerged in a
+fluid is equal to the weight of fluid displaced---is known as
+\href{https://www.britannica.com/science/Archimedes-principle}{Archimedes'
+Principle}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{images/Domenico-Fetti_Archimedes_1620.jpg}
+\caption{Archimedes of Syracuse.}\label{fig:archimedes}
+\end{figure}
+
+Among the many accomplishments of Archimedes is his method for
+estimating \(\pi\), which was the best approximation for almost 1900
+years. What is even more remarkable is that Archimedes made his
+discovery without the benefit of either trigonometry or decimal
+(positional) notation. His method is also an excellent geometrical
+illustration of the idea of a limit, with which he was doubtless
+familiar. It is known that Archimedes was familiar with what we now know
+as integral calculus, and it is possible that he may have anticipated
+differential calculus as well.
+
+\subsubsection{The algorithm as a
+foundation}\label{the-algorithm-as-a-foundation}
+
+The method that Archimedes used is instructive because it is a synthesis
+of several principles by which the greatest human minds have furthered
+scientific progress over time. The abstract principles that Archimedes
+used were these:
+
+\begin{enumerate}
+\item
+  Start with the known and progress to the unknown;
+\item
+  Devise a method of increasing the accuracy of the estimate and iterate
+  over it;
+\item
+  Stop when the desired accuracy is reached.
+\end{enumerate}
+
+These three principles constitute what is known as an
+\href{https://www.merriam-webster.com/dictionary/algorithm}{algorithm}.
+Once such a systematic framework has been put in place, it can be
+applied in many research domains to aid rapid scientific progress.
+
+\subsubsection{Of polygons and circles}\label{of-polygons-and-circles}
+
+Archimedes realized that when a circle is inscribed by a regular polygon
+with \(n\) sides and circumscribed by a regular polygon with the same
+\(n\) sides, the circumference of the circle must lie between the
+perimeter of the inscribed polygon (limit from below) and the
+circumscribed polygon (limit from above).
+
+\begin{figure}
+\centering
+\includesvg[width=0.7\textwidth,height=\textheight]{images/two-limits.svg}
+\caption{The length of the circle is bounded from below by the inscribed
+heagon in maroon and bounded from above by the inscribed hexagon in
+midnight blue. The circumference of the circle must lie bween the
+perimeters of these two hexagons.}\label{fig:bounds}
+\end{figure}
+
+This visually obvious fact is the first instance of ``starting with the
+known.''
+
+The second application of the same principle was his decision to
+initiate his algorithm using a regular hexagon, which is a mosaic of six
+juxtaposed equilateral triangles. We know from symmetry that each angle
+of an equilateral triangle is \(60°\). When an equilateral triangle is
+bisected, we get two right angled triangles with angles of thirty and
+sixty degrees, as shown in \cref{fig:thirty-sixty}.
+
+\begin{figure}
+\centering
+\includesvg[width=0.7\textwidth,height=\textheight]{images/thirty-sixty.svg}
+\caption{This right-angled, obtained by bisecting an equilateral
+triangle, must be familiar to all school students. These
+lengths---obtainable from symmetry and the theorem of
+Pythagoras---allowed Archimedes to start off his process for estimating
+\(\pi\).}\label{fig:thirty-sixty}
+\end{figure}
+
+Archimedes started with regular hexagons and successively doubled the
+number of sides until he had the circle sandwiched between two 96-gons.
+The principle of the method is clearly seen in
+Figure\textasciitilde{}\ref{fig:archi}.
+
+He devised an ingenious method for estimating the circumference of a
+circle. It was not based on using a length of string, superimposing it
+on a circle, and getting an estimate. He used a sophisticated algorithm
+that allowed him to obtain successively more accurate values for the
+circumference of a circle, and therefore of \(\pi\).
+
+A well-written, accessible article on how Archimedes estimated that
+\(\pi\) is approximately \(\frac{22}{7}\) is available online:
+\href{https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf}{``How
+Archimedes showed that pi is approximately 22 by 7''}. I urge you to
+read it.\footnote{This article is all the more remarkable because its
+  first author is a Grade 8 student: proof that deep mathematics is not
+  beyond the school student.} You will then appreciate for yourselves
+how arduous the process must have been in an age without the benefit of:
+\#. Trigonometry; he used the theorem of pythagors instead; \#. Algebra;
+he used geometry and the ratios of the lengths of well-known triangles;
+\#. Decimal numbers for division; he used fractions instead;
+
+https://www.pbs.org/wgbh/nova/physics/approximating-pi.html
+
+https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/ John
+Tucker ``Archimedes' Approximation of Pi''
+http://demonstrations.wolfram.com/ArchimedesApproximationOfPi/ Wolfram
+Demonstrations Project Published: March 5 2009
+
+https://math.stackexchange.com/questions/4851929/archimedes-method-to-estimate-pi
+
+http://arxiv.org/pdf/2008.07995
+
+https://mathsciencehistory.com/2019/10/01/archimedes-and-his-pi-the-great-numerical-hope/
+
+In the series \cref{fig:six} to \cref{fig:forty-eight} below, which
+illustrate the approach Archimedes took to estimate \(\pi\), we see very
+clearly that the perimeter of the \emph{inscribed polygon} \(c_n\) and
+the perimeter of the \emph{circumscribed polygon} \(C_n\) represent
+respectively the \emph{lower bound} and \emph{upper bound} of the
+estimated value of \(\pi\). As the number of sides, \(n\), of the
+polygon increases, the estimates become increasingly accurate.
+
+\begin{figure}
+\centering
+\includesvg[width=0.7\textwidth,height=\textheight]{images/six-gon.svg}
+\caption{The estimate for \(\pi\) lies between
+\(C_i = 3.000 < \pi C_c < = 3.4641\).}\label{fig:six}
+\end{figure}
+
+\begin{figure}
+\centering
+\includesvg[width=0.7\textwidth,height=\textheight]{images/twelve-gon.svg}
+\caption{The estimate for \(\pi\) lies between
+\(C_i = 3.000 < \pi C_c < = 3.4641\).}\label{fig:twelve}
+\end{figure}
+
+\begin{figure}
+\centering
+\includesvg[width=0.7\textwidth,height=\textheight]{images/twenty-four-gon.svg}
+\caption{The estimate for \(\pi\) lies between
+\(C_i = 3.000 < \pi C_c < = 3.4641\).}\label{fig:twenty-four}
+\end{figure}
+
+\begin{figure}
+\centering
+\includesvg[width=0.7\textwidth,height=\textheight]{images/forty-eight-gon.svg}
+\caption{The estimate for \(\pi\) lies between
+\(C_i = 3.000 < \pi C_c < = 3.4641\).}\label{fig:forty-eight}
+\end{figure}
+
+\begin{figure}
+\centering
+\includesvg[width=0.7\textwidth,height=\textheight]{images/ninety-six-gon.svg}
+\caption{The estimate for \(\pi\) lies between
+\(C_i = 3.000 < \pi C_c < = 3.4641\).}\label{fig:ninety-six}
+\end{figure}
+
+https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek\_PiIs22By7\_Final.pdf
+
+https://azimpremjiuniversity.edu.in/at-right-angles
+
+\subsubsection{How did Archimedes arrive at π =
+22/7?}\label{how-did-archimedes-arrive-at-ux3c0-227}
+
+22/7 = 3.142857 142857 142857 (recurring decimal)
+
 \subsection{A closer look at π}\label{a-closer-look-at-ux3c0}
 
 Pi is both an
@@ -283,10 +476,35 @@ number. Let us see what each of these
 \href{https://www.merriam-webster.com/dictionary/appellation}{appelations}
 mean.
 
-\subsection{How did we arrive at π =
-22/7?}\label{how-did-we-arrive-at-ux3c0-227}
+\subsection{Rational, Irrational, Algebraic, and zTranscedental
+Numbers}\label{rational-irrational-algebraic-and-ztranscedental-numbers}
 
-\subsection{Acknowledgements}\label{acknowledgements}
+Recurring decimals.
+
+\subsection{Formulae involving π}\label{formulae-involving-ux3c0}
+
+\subsection{Quest for the endless digits of
+π}\label{quest-for-the-endless-digits-of-ux3c0}
+
+\subsection{Buffon's Needle}\label{buffons-needle}
+
+\subsection{π Trivia}\label{ux3c0-trivia}
+
+\subsection{Book References}\label{book-references}
+
+\subsection{Web resources}\label{web-resources}
+
+\subsection{Appendix: Circumscribed and inscribed polygons of
+circle}\label{appendix-circumscribed-and-inscribed-polygons-of-circle}
+
+Archimedes devised his ingenious \emph{squeeze} method for computing the
+upper and lower bounds of the perimeter of a circle by computing instead
+the perimeters of the polygons that inscribe and circumscribe the
+circle. The approximations become more accurate as the number of sides,
+\(n\), of the polygon is increased.
+\href{https://www.youtube.com/watch?v=_qdnyw5Eb_Y}{This YouTube
+presentation} might help you understand the algorithm of Archimedes
+better, but remember that he did not have trigonometry to sid hm.
 
 \subsection{Feedback}\label{feedback}
 
