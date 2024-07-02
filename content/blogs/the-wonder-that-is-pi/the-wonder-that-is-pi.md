@@ -68,15 +68,18 @@ These three principles constitute what is known as an [algorithm](https://www.me
 
 ### Of polygons and circles
 
-Archimedes realized that when a circle is inscribed by a regular polygon with $n$ sides and circumscribed by a regular polygon with the same $n$ sides, the circumference of the circle must lie between the perimeter of the inscribed polygon (limit from below) and the circumscribed polygon (limit from above).
+Archimedes realized that when a circle is inscribed by a regular polygon with $n$ sides and circumscribed by a regular polygon with the same $n$ sides, the circumference of the circle must lie between the perimeter of the inscribed polygon (limit from below) and the circumscribed polygon (limit from above). This visually obvious fact, illustrated in @fig:bounds, is the first instance of "starting with the known."
 
 ![The length of the circle is bounded from below by the inscribed heagon in maroon and bounded from above by the inscribed hexagon in midnight blue. The circumference of the circle must lie bween the perimeters of these two hexagons.]({attach}images/two-limits.svg){#fig:bounds width=70% .modal-target}
-
-This visually obvious fact is the first instance of "starting with the known."
 
 The second application of the same principle was his decision to initiate his algorithm using a regular hexagon, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right angled triangles with angles of thirty and sixty degrees, as shown in @fig:thirty-sixty.
 
 ![This right-angled, obtained by bisecting an equilateral triangle, must be familiar to all school students. These lengths---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=50% .modal-target}
+
+The inscribed hexagon, within a circle of radius one unit, also has a side of one unit. Thus, the hypotenuse of the circle $OAP$ in @fig:thirty-sixty has unit length. Moreover, the base $OP$, resulting from a bisected side, has a length of half a unit. By applying the theorem of Pythagoras, the third side, $AP$ is 
+$$
+\sqrt{1^2 - \left(\frac{1}{2}\right)^2} = \sqrt{\frac{3}{2}}.
+$$
 
 Archimedes started with regular hexagons and successively doubled the number of sides until he had the circle sandwiched between two 96-gons. The principle of the method is clearly seen in Figure~\ref{fig:archi}.
 
