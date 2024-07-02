@@ -76,7 +76,7 @@ This visually obvious fact is the first instance of "starting with the known."
 
 The second application of the same principle was his decision to initiate his algorithm using a regular hexagon, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right angled triangles with angles of thirty and sixty degrees, as shown in @fig:thirty-sixty.
 
-![This right-angled, obtained by bisecting an equilateral triangle, must be familiar to all school students. These lengths---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=70% .modal-target}
+![This right-angled, obtained by bisecting an equilateral triangle, must be familiar to all school students. These lengths---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=50% .modal-target}
 
 Archimedes started with regular hexagons and successively doubled the number of sides until he had the circle sandwiched between two 96-gons. The principle of the method is clearly seen in Figure~\ref{fig:archi}.
 
