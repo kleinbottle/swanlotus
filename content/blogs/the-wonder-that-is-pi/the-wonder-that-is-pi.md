@@ -54,23 +54,35 @@ Is $\pi$ really equal to $\frac{22}{7}$, as it has been drummed into our heads a
 
 Among the many accomplishments of Archimedes is his method for estimating $\pi$, which was the best approximation for almost 1900 years. What is even more remarkable is that Archimedes made his discovery without the benefit of either trigonometry, decimal (positional) notation, or calculators. He extracted square roots laboriously by hand. His method is also an excellent geometrical illustration of the idea of a limit, with which he was doubtless familiar. It is known that Archimedes was familiar with what we now know as integral calculus, and it is possible that he may have anticipated differential calculus as well.
 
-### The algorithm as the foundation
+### Principles used by Archimedes
 
-The method that Archimedes used is instructive because it is a synthesis of several principles by which the greatest human minds have furthered scientific progress over time. The abstract principles that Archimedes used were these:
+The method that Archimedes devised is instructive because it is a synthesis of several principles by which the greatest human minds have furthered scientific progress over time. The abstract principles that Archimedes used to estimate $\pi$ were these:
 
 #. Start with the known and progress to the unknown;
 
-#. Devise a method of increasing the accuracy of the estimate and iterate over it;
+#. Initialize variables;
+
+#. Devise a method of increasing the accuracy of the estimate by recursion or iteration;
 
 #. Stop when the desired accuracy is reached.
 
-These three principles constitute what is known as an [algorithm](https://www.merriam-webster.com/dictionary/algorithm). Once such a systematic framework has been put in place, it can be applied in many research domains to aid rapid scientific progress.
+These principles constitute what is known as an [algorithm](https://www.merriam-webster.com/dictionary/algorithm). Once such a systematic framework has been put in place, it can be applied in many research domains to aid rapid scientific progress.
 
 ### Of polygons and circles
 
-Archimedes realized that when a circle is inscribed by a regular polygon with $n$ sides and circumscribed by a regular polygon with the same $n$ sides, the circumference of the circle must lie between the perimeter of the inscribed polygon (limit from below) and the circumscribed polygon (limit from above). This visually obvious fact, illustrated in @fig:bounds, is the first instance of "starting with the known."
+Archimedes considered a circle with an [inscribed](https://mathworld.wolfram.com/Inscribed.html) by a regular polygon with $n$ sides along with a [circumscribed](https://mathworld.wolfram.com/Circumscribed.html) regular polygon with the same $n$ sides. @fig:two-limits illustrates this for the case $n = 6$, i.e., with a regular hexagon.
 
-![The length of the circle is bounded from below by the inscribed heagon in maroon and bounded from above by the inscribed hexagon in midnight blue. The circumference of the circle must lie bween the perimeters of these two hexagons.]({attach}images/two-limits.svg){#fig:bounds width=70% .modal-target}
+It is obvious that the _area_ of the inscribed hexagon is smaller than the _area_ of the circle, while the _area_ of the circumscribed hexagon exceeds that of the circle. In symbols, with $A_i$ representing the area of the inscribed hexagon, $A$ representing the area of the circle, and $A_c$ representing the area of the circumscribed hexagon, we may say:
+$$
+A_i < A < A_c.
+$${#eq:area-inequality}
+
+But can we say the same thing about the _perimeters_ of these three objects? This is where the choice of _regular_ hexagons makes matters more tractable. A regular hexagon is composed of six equilateral triangles, where the length of each side equals the radius. And each triangle has an area that is the product of half its base multiplied by its height. But the base equals the radius. Therefore the area of one triangle $A_{\Delta} = \frac{1}{2}rh$. Now six such triangles sum up to $\frac{1}{2}6rh$. But $6r$ is the perimeter of the hexagon. _Therefore, the area of the hexagon is $\frac{1}{2}Ph$ where $P$ is the perimeter of the hexagon_.^[This statement is true of any _regular inscribed polygon_ as well.]
+
+Since the area is proportional to the perimeter, we are justified in claiming that the magnitudes of the perimeters accord with the magnitudes of the areas. Therefore, 
+the circumference of the circle must lie between the perimeter of the inscribed polygon (limit from below) and the circumscribed polygon (limit from above). This visually obvious fact, illustrated in @fig:two-limits, is an example of "starting with the known."
+
+![The length of the circle is bounded from below by the inscribed hexagon in maroon and bounded from above by the inscribed hexagon in midnight blue. The circumference of the circle must lie bween the perimeters of these two hexagons.]({attach}images/two-limits.svg){#fig:two-limits width=70% .modal-target}
 
 The second application of the same principle was his decision to initiate his algorithm using a regular hexagon, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right angled triangles with angles of thirty and sixty degrees, as shown in @fig:thirty-sixty.
 
@@ -80,6 +92,8 @@ The inscribed hexagon, within a circle of radius one unit, also has a side of on
 $$
 \sqrt{1^2 - \left(\frac{1}{2}\right)^2} = \sqrt{\frac{3}{2}}.
 $$
+
+
 
 Archimedes started with regular hexagons and successively doubled the number of sides until he had the circle sandwiched between two 96-gons. He repeatedly calculated rational approximations to $\pi$ until he was satisfied with the accuracy. The principle of the method is clearly seen in @fig:six-gon to @fig:ninety-six-gon.
 
@@ -93,7 +107,7 @@ Archimedes started with regular hexagons and successively doubled the number of 
 
 ![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/ninety-six-gon.svg){#fig:ninety-six width=70% .modal-target}
 
-√3\approx 265/153
+$√3\approx 265/153$
 
 He devised an ingenious method for estimating the circumference of a circle. It was not based on using a length of string, superimposing it on a circle, and getting an estimate. He used a sophisticated algorithm that allowed him to obtain successively more accurate values for the circumference of a circle, and therefore of $\pi$.
 

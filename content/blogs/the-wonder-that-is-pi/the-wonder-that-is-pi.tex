@@ -320,46 +320,77 @@ familiar. It is known that Archimedes was familiar with what we now know
 as integral calculus, and it is possible that he may have anticipated
 differential calculus as well.
 
-\subsubsection{The algorithm as the
-foundation}\label{the-algorithm-as-the-foundation}
+\subsubsection{Principles used by
+Archimedes}\label{principles-used-by-archimedes}
 
-The method that Archimedes used is instructive because it is a synthesis
-of several principles by which the greatest human minds have furthered
-scientific progress over time. The abstract principles that Archimedes
-used were these:
+The method that Archimedes devised is instructive because it is a
+synthesis of several principles by which the greatest human minds have
+furthered scientific progress over time. The abstract principles that
+Archimedes used to estimate \(\pi\) were these:
 
 \begin{enumerate}
 \item
   Start with the known and progress to the unknown;
 \item
-  Devise a method of increasing the accuracy of the estimate and iterate
-  over it;
+  Initialize variables;
+\item
+  Devise a method of increasing the accuracy of the estimate by
+  recursion or iteration;
 \item
   Stop when the desired accuracy is reached.
 \end{enumerate}
 
-These three principles constitute what is known as an
+These principles constitute what is known as an
 \href{https://www.merriam-webster.com/dictionary/algorithm}{algorithm}.
 Once such a systematic framework has been put in place, it can be
 applied in many research domains to aid rapid scientific progress.
 
 \subsubsection{Of polygons and circles}\label{of-polygons-and-circles}
 
-Archimedes realized that when a circle is inscribed by a regular polygon
-with \(n\) sides and circumscribed by a regular polygon with the same
-\(n\) sides, the circumference of the circle must lie between the
-perimeter of the inscribed polygon (limit from below) and the
-circumscribed polygon (limit from above). This visually obvious fact,
-illustrated in \cref{fig:bounds}, is the first instance of ``starting
+Archimedes considered a circle with an
+\href{https://mathworld.wolfram.com/Inscribed.html}{inscribed} by a
+regular polygon with \(n\) sides along with a
+\href{https://mathworld.wolfram.com/Circumscribed.html}{circumscribed}
+regular polygon with the same \(n\) sides. \cref{fig:two-limits}
+illustrates this for the case \(n = 6\), i.e., with a regular hexagon.
+
+It is obvious that the \emph{area} of the inscribed hexagon is smaller
+than the \emph{area} of the circle, while the \emph{area} of the
+circumscribed hexagon exceeds that of the circle. In symbols, with
+\(A_i\) representing the area of the inscribed hexagon, \(A\)
+representing the area of the circle, and \(A_c\) representing the area
+of the circumscribed hexagon, we may say:
+\begin{equation}\phantomsection\label{eq:area-inequality}{
+A_i < A < A_c.
+}\end{equation}
+
+But can we say the same thing about the \emph{perimeters} of these three
+objects? This is where the choice of \emph{regular} hexagons makes
+matters more tractable. A regular hexagon is composed of six equilateral
+triangles, where the length of each side equals the radius. And each
+triangle has an area that is the product of half its base multiplied by
+its height. But the base equals the radius. Therefore the area of one
+triangle \(A_{\Delta} = \frac{1}{2}rh\). Now six such triangles sum up
+to \(\frac{1}{2}6rh\). But \(6r\) is the perimeter of the hexagon.
+\emph{Therefore, the area of the hexagon is \(\frac{1}{2}Ph\) where
+\(P\) is the perimeter of the hexagon}.\footnote{This statement is true
+  of any \emph{inscribed polygon} as well.}
+
+Since the area is proportional to the perimeter, we are justified in
+claiming that the magnitudes of the perimeters accord with the
+magnitudes of the areas. Therefore, the circumference of the circle must
+lie between the perimeter of the inscribed polygon (limit from below)
+and the circumscribed polygon (limit from above). This visually obvious
+fact, illustrated in \cref{fig:two-limits}, is an example of ``starting
 with the known.''
 
 \begin{figure}
 \centering
 \includesvg[width=0.7\textwidth,height=\textheight]{images/two-limits.svg}
 \caption{The length of the circle is bounded from below by the inscribed
-heagon in maroon and bounded from above by the inscribed hexagon in
+hexagon in maroon and bounded from above by the inscribed hexagon in
 midnight blue. The circumference of the circle must lie bween the
-perimeters of these two hexagons.}\label{fig:bounds}
+perimeters of these two hexagons.}\label{fig:two-limits}
 \end{figure}
 
 The second application of the same principle was his decision to
@@ -428,6 +459,8 @@ in \cref{fig:six-gon} to \cref{fig:ninety-six-gon}.
 \(C_i = 3.000 < \pi C_c < = 3.4641\).}\label{fig:ninety-six}
 \end{figure}
 
+\(√3\approx 265/153\)
+
 He devised an ingenious method for estimating the circumference of a
 circle. It was not based on using a length of string, superimposing it
 on a circle, and getting an estimate. He used a sophisticated algorithm
@@ -444,7 +477,9 @@ read it.\footnote{This article is all the more remarkable because its
 how arduous the process must have been in an age without the benefit of:
 \#. Trigonometry; he used the theorem of pythagors instead; \#. Algebra;
 he used geometry and the ratios of the lengths of well-known triangles;
-\#. Decimal numbers for division; he used fractions instead;
+\#. Decimal numbers for division; he used fractions instead; square
+roots by hand; similar and congruent figures; bisection theorems;
+exhaustion methods
 
 \subsection{Iteration, recursion, bisection, squeeze,
 etc.}\label{iteration-recursion-bisection-squeeze-etc.}
