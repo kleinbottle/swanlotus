@@ -296,8 +296,8 @@ be called a mathematician, physicist, engineer, and astronomer,
 \href{https://www.ldoceonline.com/dictionary/all-rolled-into-one}{all
 rolled into one}. He is perhaps most famous for running out of his
 bathtub naked exclaiming
-\href{https://www.dictionary.com/browse/eureka}{``Eureka''} (Greek for
-``I have found it'') oblivious of those around him. The principle that
+\href{https://www.dictionary.com/browse/eureka}{``Eureka''}---Greek for
+``I have found it''---oblivious of those around him. The principle that
 he had then discovered---that the upthrust on a body submerged in a
 fluid is equal to the weight of fluid displaced---is known as
 \href{https://www.britannica.com/science/Archimedes-principle}{Archimedes'
@@ -312,15 +312,16 @@ Principle}.
 Among the many accomplishments of Archimedes is his method for
 estimating \(\pi\), which was the best approximation for almost 1900
 years. What is even more remarkable is that Archimedes made his
-discovery without the benefit of either trigonometry or decimal
-(positional) notation. His method is also an excellent geometrical
+discovery without the benefit of either trigonometry, decimal
+(positional) notation, or calculators. He extracted square roots
+laboriously by hand. His method is also an excellent geometrical
 illustration of the idea of a limit, with which he was doubtless
 familiar. It is known that Archimedes was familiar with what we now know
 as integral calculus, and it is possible that he may have anticipated
 differential calculus as well.
 
-\subsubsection{The algorithm as a
-foundation}\label{the-algorithm-as-a-foundation}
+\subsubsection{The algorithm as the
+foundation}\label{the-algorithm-as-the-foundation}
 
 The method that Archimedes used is instructive because it is a synthesis
 of several principles by which the greatest human minds have furthered
@@ -370,7 +371,7 @@ sixty degrees, as shown in \cref{fig:thirty-sixty}.
 
 \begin{figure}
 \centering
-\includesvg[width=0.5\textwidth,height=\textheight]{images/thirty-sixty.svg}
+\includesvg[width=0.4\textwidth,height=\textheight]{images/thirty-sixty.svg}
 \caption{This right-angled, obtained by bisecting an equilateral
 triangle, must be familiar to all school students. These
 lengths---obtainable from symmetry and the theorem of
@@ -388,47 +389,9 @@ the theorem of Pythagoras, the third side, \(AP\) is \[
 
 Archimedes started with regular hexagons and successively doubled the
 number of sides until he had the circle sandwiched between two 96-gons.
-The principle of the method is clearly seen in
-Figure\textasciitilde{}\ref{fig:archi}.
-
-He devised an ingenious method for estimating the circumference of a
-circle. It was not based on using a length of string, superimposing it
-on a circle, and getting an estimate. He used a sophisticated algorithm
-that allowed him to obtain successively more accurate values for the
-circumference of a circle, and therefore of \(\pi\).
-
-A well-written, accessible article on how Archimedes estimated that
-\(\pi\) is approximately \(\frac{22}{7}\) is available online:
-\href{https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf}{``How
-Archimedes showed that pi is approximately 22 by 7''}. I urge you to
-read it.\footnote{This article is all the more remarkable because its
-  first author is a Grade 8 student: proof that deep mathematics is not
-  beyond the school student.} You will then appreciate for yourselves
-how arduous the process must have been in an age without the benefit of:
-\#. Trigonometry; he used the theorem of pythagors instead; \#. Algebra;
-he used geometry and the ratios of the lengths of well-known triangles;
-\#. Decimal numbers for division; he used fractions instead;
-
-https://www.pbs.org/wgbh/nova/physics/approximating-pi.html
-
-https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/ John
-Tucker ``Archimedes' Approximation of Pi''
-http://demonstrations.wolfram.com/ArchimedesApproximationOfPi/ Wolfram
-Demonstrations Project Published: March 5 2009
-
-https://math.stackexchange.com/questions/4851929/archimedes-method-to-estimate-pi
-
-http://arxiv.org/pdf/2008.07995
-
-https://mathsciencehistory.com/2019/10/01/archimedes-and-his-pi-the-great-numerical-hope/
-
-In the series \cref{fig:six} to \cref{fig:forty-eight} below, which
-illustrate the approach Archimedes took to estimate \(\pi\), we see very
-clearly that the perimeter of the \emph{inscribed polygon} \(c_n\) and
-the perimeter of the \emph{circumscribed polygon} \(C_n\) represent
-respectively the \emph{lower bound} and \emph{upper bound} of the
-estimated value of \(\pi\). As the number of sides, \(n\), of the
-polygon increases, the estimates become increasingly accurate.
+He repeatedly calculated rational approximations to \(\pi\) until he was
+satisfied with the accuracy. The principle of the method is clearly seen
+in \cref{fig:six-gon} to \cref{fig:ninety-six-gon}.
 
 \begin{figure}
 \centering
@@ -465,6 +428,56 @@ polygon increases, the estimates become increasingly accurate.
 \(C_i = 3.000 < \pi C_c < = 3.4641\).}\label{fig:ninety-six}
 \end{figure}
 
+He devised an ingenious method for estimating the circumference of a
+circle. It was not based on using a length of string, superimposing it
+on a circle, and getting an estimate. He used a sophisticated algorithm
+that allowed him to obtain successively more accurate values for the
+circumference of a circle, and therefore of \(\pi\).
+
+A well-written, accessible article on how Archimedes estimated that
+\(\pi\) is approximately \(\frac{22}{7}\) is available online:
+\href{https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf}{``How
+Archimedes showed that pi is approximately 22 by 7''}. I urge you to
+read it.\footnote{This article is all the more remarkable because its
+  first author is a Grade 8 student: proof that deep mathematics is not
+  beyond the school student.} You will then appreciate for yourselves
+how arduous the process must have been in an age without the benefit of:
+\#. Trigonometry; he used the theorem of pythagors instead; \#. Algebra;
+he used geometry and the ratios of the lengths of well-known triangles;
+\#. Decimal numbers for division; he used fractions instead;
+
+\subsection{Iteration, recursion, bisection, squeeze,
+etc.}\label{iteration-recursion-bisection-squeeze-etc.}
+
+https://www.pbs.org/wgbh/nova/physics/approximating-pi.html
+
+https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/ John
+Tucker ``Archimedes' Approximation of Pi''
+http://demonstrations.wolfram.com/ArchimedesApproximationOfPi/ Wolfram
+Demonstrations Project Published: March 5 2009
+
+https://math.stackexchange.com/questions/4851929/archimedes-method-to-estimate-pi
+
+http://arxiv.org/pdf/2008.07995
+
+https://mathsciencehistory.com/2019/10/01/archimedes-and-his-pi-the-great-numerical-hope/
+
+https://carmamaths.org/resources/jon/pi-culture.pdf
+
+https://nonagon.org/ExLibris/archimedes-pi
+
+https://www.exploratorium.edu/pi/history-of-pi
+
+https://en.wikipedia.org/wiki/Approximations\_of\_\%CF\%80
+
+In the series \cref{fig:six} to \cref{fig:forty-eight} below, which
+illustrate the approach Archimedes took to estimate \(\pi\), we see very
+clearly that the perimeter of the \emph{inscribed polygon} \(c_n\) and
+the perimeter of the \emph{circumscribed polygon} \(C_n\) represent
+respectively the \emph{lower bound} and \emph{upper bound} of the
+estimated value of \(\pi\). As the number of sides, \(n\), of the
+polygon increases, the estimates become increasingly accurate.
+
 https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek\_PiIs22By7\_Final.pdf
 
 https://azimpremjiuniversity.edu.in/at-right-angles
@@ -483,8 +496,8 @@ number. Let us see what each of these
 \href{https://www.merriam-webster.com/dictionary/appellation}{appelations}
 mean.
 
-\subsection{Rational, Irrational, Algebraic, and zTranscedental
-Numbers}\label{rational-irrational-algebraic-and-ztranscedental-numbers}
+\subsection{Rational, Irrational, Algebraic, and Transcedental
+Numbers}\label{rational-irrational-algebraic-and-transcedental-numbers}
 
 Recurring decimals.
 

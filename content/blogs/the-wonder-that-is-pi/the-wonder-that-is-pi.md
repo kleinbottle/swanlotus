@@ -48,13 +48,13 @@ Is $\pi$ really equal to $\frac{22}{7}$, as it has been drummed into our heads a
 
 ## Archimedes of Syracuse
 
-[Archimedes of Syracuse](https://en.wikipedia.org/wiki/Archimedes) (Ἀρχιμήδης, 287--212 BCE) was a [polymath](https://www.vocabulary.com/dictionary/polymath#:~:text=Definitions%20of%20polymath,of%20great%20and%20varied%20learning) and genius of the ancient world. He was one of the greatest mathematicians the world has ever known. By today's standards, he would be called a mathematician, physicist, engineer, and astronomer, [all rolled into one](https://www.ldoceonline.com/dictionary/all-rolled-into-one). He is perhaps most famous for running out of his bathtub naked exclaiming ["Eureka"](https://www.dictionary.com/browse/eureka) (Greek for "I have found it") oblivious of those around him. The principle that he had then discovered---that the upthrust on a body submerged in a fluid is equal to the weight of fluid displaced---is known as [Archimedes' Principle](https://www.britannica.com/science/Archimedes-principle).
+[Archimedes of Syracuse](https://en.wikipedia.org/wiki/Archimedes) (Ἀρχιμήδης, 287--212 BCE) was a [polymath](https://www.vocabulary.com/dictionary/polymath#:~:text=Definitions%20of%20polymath,of%20great%20and%20varied%20learning) and genius of the ancient world. He was one of the greatest mathematicians the world has ever known. By today's standards, he would be called a mathematician, physicist, engineer, and astronomer, [all rolled into one](https://www.ldoceonline.com/dictionary/all-rolled-into-one). He is perhaps most famous for running out of his bathtub naked exclaiming ["Eureka"](https://www.dictionary.com/browse/eureka)---Greek for "I have found it"---oblivious of those around him. The principle that he had then discovered---that the upthrust on a body submerged in a fluid is equal to the weight of fluid displaced---is known as [Archimedes' Principle](https://www.britannica.com/science/Archimedes-principle).
 
 ![Archimedes of Syracuse.]({attach}images/Domenico-Fetti_Archimedes_1620.jpg){#fig:archimedes width=70% .modal-target}
 
-Among the many accomplishments of Archimedes is his method for estimating $\pi$, which was the best approximation for almost 1900 years. What is even more remarkable is that Archimedes made his discovery without the benefit of either trigonometry or decimal (positional) notation. His method is also an excellent geometrical illustration of the idea of a limit, with which he was doubtless familiar. It is known that Archimedes was familiar with what we now know as integral calculus, and it is possible that he may have anticipated differential calculus as well.
+Among the many accomplishments of Archimedes is his method for estimating $\pi$, which was the best approximation for almost 1900 years. What is even more remarkable is that Archimedes made his discovery without the benefit of either trigonometry, decimal (positional) notation, or calculators. He extracted square roots laboriously by hand. His method is also an excellent geometrical illustration of the idea of a limit, with which he was doubtless familiar. It is known that Archimedes was familiar with what we now know as integral calculus, and it is possible that he may have anticipated differential calculus as well.
 
-### The algorithm as a foundation
+### The algorithm as the foundation
 
 The method that Archimedes used is instructive because it is a synthesis of several principles by which the greatest human minds have furthered scientific progress over time. The abstract principles that Archimedes used were these:
 
@@ -74,15 +74,26 @@ Archimedes realized that when a circle is inscribed by a regular polygon with $n
 
 The second application of the same principle was his decision to initiate his algorithm using a regular hexagon, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right angled triangles with angles of thirty and sixty degrees, as shown in @fig:thirty-sixty.
 
-![This right-angled, obtained by bisecting an equilateral triangle, must be familiar to all school students. These lengths---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=50% .modal-target}
+![This right-angled, obtained by bisecting an equilateral triangle, must be familiar to all school students. These lengths---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=40% .modal-target}
 
 The inscribed hexagon, within a circle of radius one unit, also has a side of one unit. Thus, the hypotenuse of the circle $OAP$ in @fig:thirty-sixty has unit length. Moreover, the base $OP$, resulting from a bisected side, has a length of half a unit. By applying the theorem of Pythagoras, the third side, $AP$ is 
 $$
 \sqrt{1^2 - \left(\frac{1}{2}\right)^2} = \sqrt{\frac{3}{2}}.
 $$
 
-Archimedes started with regular hexagons and successively doubled the number of sides until he had the circle sandwiched between two 96-gons. The principle of the method is clearly seen in Figure~\ref{fig:archi}.
+Archimedes started with regular hexagons and successively doubled the number of sides until he had the circle sandwiched between two 96-gons. He repeatedly calculated rational approximations to $\pi$ until he was satisfied with the accuracy. The principle of the method is clearly seen in @fig:six-gon to @fig:ninety-six-gon.
 
+![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/six-gon.svg){#fig:six width=70% .modal-target}
+
+![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/twelve-gon.svg){#fig:twelve width=70% .modal-target}
+
+![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/twenty-four-gon.svg){#fig:twenty-four width=70% .modal-target}
+
+![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/forty-eight-gon.svg){#fig:forty-eight width=70% .modal-target}
+
+![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/ninety-six-gon.svg){#fig:ninety-six width=70% .modal-target}
+
+√3\approx 265/153
 
 He devised an ingenious method for estimating the circumference of a circle. It was not based on using a length of string, superimposing it on a circle, and getting an estimate. He used a sophisticated algorithm that allowed him to obtain successively more accurate values for the circumference of a circle, and therefore of $\pi$.
 
@@ -90,8 +101,9 @@ A well-written, accessible article on how Archimedes estimated that $\pi$ is app
 #. Trigonometry; he used the theorem of pythagors instead;
 #. Algebra; he used geometry and the ratios of the lengths of well-known triangles;
 #. Decimal numbers for division; he used fractions instead;
+square roots by hand; similar and congruent figures; bisection theorems; exhaustion methods
 
-
+## Iteration, recursion, bisection, squeeze, etc.
 
 https://www.pbs.org/wgbh/nova/physics/approximating-pi.html
 
@@ -107,18 +119,17 @@ http://arxiv.org/pdf/2008.07995
 
 https://mathsciencehistory.com/2019/10/01/archimedes-and-his-pi-the-great-numerical-hope/
 
+https://carmamaths.org/resources/jon/pi-culture.pdf
+
+https://nonagon.org/ExLibris/archimedes-pi
+
+https://www.exploratorium.edu/pi/history-of-pi
+
+https://en.wikipedia.org/wiki/Approximations_of_%CF%80
+
 In the series @fig:six to @fig:forty-eight below, which illustrate the approach Archimedes took to estimate $\pi$, we see very clearly that the perimeter of the _inscribed polygon_ $c_n$ and the perimeter of the _circumscribed polygon_ $C_n$ represent respectively the _lower bound_ and _upper bound_ of the estimated value of $\pi$. As the number of sides, $n$, of the polygon increases, the estimates become increasingly accurate.
 
 
-![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/six-gon.svg){#fig:six width=70% .modal-target}
-
-![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/twelve-gon.svg){#fig:twelve width=70% .modal-target}
-
-![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/twenty-four-gon.svg){#fig:twenty-four width=70% .modal-target}
-
-![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/forty-eight-gon.svg){#fig:forty-eight width=70% .modal-target}
-
-![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/ninety-six-gon.svg){#fig:ninety-six width=70% .modal-target}
 
 https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf
 
@@ -133,7 +144,7 @@ https://azimpremjiuniversity.edu.in/at-right-angles
 Pi is both an [irrational](https://en.wikipedia.org/wiki/Irrational_number) and a [transcendental](https://en.wikipedia.org/wiki/Transcendental_number) number. Let us see what each of these [appelations](https://www.merriam-webster.com/dictionary/appellation) mean.
 
 
-## Rational, Irrational, Algebraic, and zTranscedental Numbers
+## Rational, Irrational, Algebraic, and Transcedental Numbers
 
 Recurring decimals.
 
