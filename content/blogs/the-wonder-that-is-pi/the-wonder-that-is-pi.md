@@ -50,9 +50,11 @@ Is $\pi$ really equal to $\frac{22}{7}$, as it has been drummed into our heads a
 
 [Archimedes of Syracuse](https://en.wikipedia.org/wiki/Archimedes) (Ἀρχιμήδης, 287--212 BCE) was a [polymath](https://www.vocabulary.com/dictionary/polymath#:~:text=Definitions%20of%20polymath,of%20great%20and%20varied%20learning) and genius of the ancient world. He was one of the greatest mathematicians the world has ever known. By today's standards, he would be called a mathematician, physicist, engineer, and astronomer, [all rolled into one](https://www.ldoceonline.com/dictionary/all-rolled-into-one). He is perhaps most famous for running out of his bathtub naked exclaiming ["Eureka"](https://www.dictionary.com/browse/eureka)---Greek for "I have found it"---oblivious of those around him. The principle that he had then discovered---that the upthrust on a body submerged in a fluid is equal to the weight of fluid displaced---is known as [Archimedes' Principle](https://www.britannica.com/science/Archimedes-principle).
 
-![Archimedes of Syracuse.]({attach}images/Domenico-Fetti_Archimedes_1620.jpg){#fig:archimedes width=70% .modal-target}
+![Archimedes of Syracuse.^[Domenico Fetti's 1620 painting entitled _Archimedes Thoughtful_. Public domain.]]({attach}images/Domenico-Fetti_Archimedes_1620.jpg){#fig:archimedes width=70% .modal-target}
 
-Among the many accomplishments of Archimedes is his method for estimating $\pi$, which was the best approximation for almost 1900 years. What is even more remarkable is that Archimedes made his discovery without the benefit of either trigonometry, decimal (positional) notation, or calculators. He extracted square roots laboriously by hand. His method is also an excellent geometrical illustration of the idea of a limit, with which he was doubtless familiar. It is known that Archimedes was familiar with what we now know as integral calculus, and it is possible that he may have anticipated differential calculus as well.
+Among the many accomplishments of Archimedes is his method for estimating $\pi$, which was the best approximation for almost 1900 years. And it was not based on using a length of string, superimposing it on a circle, and getting an estimate! What is even more remarkable is that Archimedes made his discovery without the benefit of either trigonometry, decimal (positional) notation, or calculators. Instead he applied the theorem of Pythagoras and extracted square roots laboriously by hand. His method is also an excellent geometrical illustration of the idea of a limit, with which he was doubtless familiar. It is known that Archimedes was familiar with what we now know as integral calculus, and it is possible that he may have anticipated differential calculus as well.
+
+He devised an ingenious method for estimating the circumference of a circle. He used a sophisticated algorithm that allowed him to obtain successively more accurate values for the circumference of a circle, and therefore of $\pi$.
 
 ### Principles used by Archimedes
 
@@ -70,46 +72,60 @@ These principles constitute what is known as an [algorithm](https://www.merriam-
 
 ### Of polygons and circles
 
-Archimedes considered a circle with an [inscribed](https://mathworld.wolfram.com/Inscribed.html) by a regular polygon with $n$ sides along with a [circumscribed](https://mathworld.wolfram.com/Circumscribed.html) regular polygon with the same $n$ sides. @fig:two-limits illustrates this for the case $n = 6$, i.e., with a regular hexagon.
+Archimedes considered a circle with an [inscribed](https://mathworld.wolfram.com/Inscribed.html) by a regular polygon with $n$ sides along with a [circumscribed](https://mathworld.wolfram.com/Circumscribed.html) regular polygon with the same $n$ sides. @fig:two-limits illustrates this for the case $n = 6$, i.e., with a regular [hexagon](https://www.britannica.com/science/hexagon).
 
 It is obvious that the _area_ of the inscribed hexagon is smaller than the _area_ of the circle, while the _area_ of the circumscribed hexagon exceeds that of the circle. In symbols, with $A_i$ representing the area of the inscribed hexagon, $A$ representing the area of the circle, and $A_c$ representing the area of the circumscribed hexagon, we may say:
 $$
 A_i < A < A_c.
 $${#eq:area-inequality}
 
-But can we say the same thing about the _perimeters_ of these three objects? This is where the choice of _regular_ hexagons makes matters more tractable. A regular hexagon is composed of six equilateral triangles, where the length of each side equals the radius. And each triangle has an area that is the product of half its base multiplied by its height. But the base equals the radius. Therefore the area of one triangle $A_{\Delta} = \frac{1}{2}rh$. Now six such triangles sum up to $\frac{1}{2}6rh$. But $6r$ is the perimeter of the hexagon. _Therefore, the area of the hexagon is $\frac{1}{2}Ph$ where $P$ is the perimeter of the hexagon_.^[This statement is true of any _regular inscribed polygon_ as well.]
+But can we say the same thing about the _perimeters_ of these three objects? This is where the choice of _regular_ hexagons makes matters more tractable. A regular hexagon is composed of six equilateral triangles, where the length of each side equals the radius. And each triangle has an area that is the product of half its base multiplied by its height. But the base equals the radius $r$ and the height, called the [apothem](https://www.mathopenref.com/apothem.html) is $h$. Therefore the area of one triangle $A_{\Delta} = \frac{1}{2}rh$. Now six such triangles sum up to $\frac{1}{2}6rh$. But $6r$ is the perimeter of the hexagon. _Therefore, the area of the regular hexagon is $\frac{1}{2}Ph$ where $P$ is the perimeter of the hexagon, and $h$ its apothem_.^[This statement is true of any _regular polygon as well.]
 
 Since the area is proportional to the perimeter, we are justified in claiming that the magnitudes of the perimeters accord with the magnitudes of the areas. Therefore, 
-the circumference of the circle must lie between the perimeter of the inscribed polygon (limit from below) and the circumscribed polygon (limit from above). This visually obvious fact, illustrated in @fig:two-limits, is an example of "starting with the known."
+the circumference of the circle, $C$, must lie between the perimeter of the inscribed polygon, $P_i$, (limit from below) and the perimeter of the circumscribed polygon, $P_c$, (limit from above):
+$$
+P_i < C < P_c.
+$${#eq:perimeter-inequality} Remember this equation because it helps us to estimate lower and upper bounds for the value of the circumference. Archimedes's application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in @fig:two-limits and later figures.
 
-![The length of the circle is bounded from below by the inscribed hexagon in maroon and bounded from above by the inscribed hexagon in midnight blue. The circumference of the circle must lie bween the perimeters of these two hexagons.]({attach}images/two-limits.svg){#fig:two-limits width=70% .modal-target}
+![The circumference of the circle in darkolivegreen is bounded from below by the perimeter of the inscribed hexagon in maroon and bounded from above by the perimeter of the circumscribed hexagon in midnightblue. The circumference of the circle must lie between the perimeters of these two hexagons.]({attach}images/two-limits.svg){#fig:two-limits width=70% .modal-target}
 
-The second application of the same principle was his decision to initiate his algorithm using a regular hexagon, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right angled triangles with angles of thirty and sixty degrees, as shown in @fig:thirty-sixty.
+### The thirty, sixty, ninety right triangle
+
+Archimedes applied the same principle "of starting from the known" to initiate his algorithm using a regular hexagon, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right angled triangles with angles of thirty and sixty degrees, as shown in @fig:thirty-sixty.
 
 ![This right-angled, obtained by bisecting an equilateral triangle, must be familiar to all school students. These lengths---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=40% .modal-target}
 
 The inscribed hexagon, within a circle of radius one unit, also has a side of one unit. Thus, the hypotenuse of the circle $OAP$ in @fig:thirty-sixty has unit length. Moreover, the base $OP$, resulting from a bisected side, has a length of half a unit. By applying the theorem of Pythagoras, the third side, $AP$ is 
 $$
-\sqrt{1^2 - \left(\frac{1}{2}\right)^2} = \sqrt{\frac{3}{2}}.
+\sqrt{1^2 - \left(\frac{1}{2}\right)^2} = \frac{\sqrt{3}}{2}.
 $$
 
+### Extracting square roots by hand
+
+Archimedes knew how to extract square roots by hand, and the value of $\sqrt{3}$ was one whose value he knew as a rational fraction. Perhaps, he used one of the methods described in my blog ["How Are Numbers Built?"](https://swanlotus.netlify.app/blogs/how-are-numbers-built). With remarkable accuracy, he stated that 
+$$\sqrt{3} \approx \frac{265}{153} \approx 1.732.
+$${#eq:sqrt3}
+
+### Recursion and Iteration
+
+Archimedes started with regular hexagons and successively doubled the number of sides, until he had the circle sandwiched between two 96-gons. Successively doubling or halving is a fast-converging technique used in numerical estimation when mathematics is applied to solving a variety of problems. That Archimedes was aware of it shows how far ahead of his time his thinking was.
+
+He repeatedly calculated rational approximations to $\pi$ until he was satisfied with the accuracy. The principle of the method is clearly seen in @fig:six-gon to @fig:ninety-six-gon.
+
+![The estimate for $\pi$ lies between $C_i = 3.0000 < \pi C_c < = 3.4641$.]({attach}images/six-gon.svg){#fig:six-gon width=70% .modal-target}
+
+![The estimate for $\pi$ lies between $C_i = 3.1058 < \pi C_c < = 3.2153$.]({attach}images/twelve-gon.svg){#fig:twelve-gon width=70% .modal-target}
+
+![The estimate for $\pi$ lies between $C_i = 3.1326 < \pi C_c < = 3.1596$.]({attach}images/twenty-four-gon.svg){#fig:twenty-four-gon width=70% .modal-target}
+
+![The estimate for $\pi$ lies between $C_i = 3.1393 < \pi C_c < = 3.1460$.]({attach}images/forty-eight-gon.svg){#fig:forty-eight-gon width=70% .modal-target}
+
+![The estimate for $\pi$ lies between $C_i = 3.1410 < \pi C_c < = 3.1427$. Notice in this sequence of images how the circumference of the circle approaches the perimeter of the inscribed and circumscribed heaxgons to the point of being indistinguishable from them.The final estimate of Archimedes was $\frac{223}{71} < \pi < \frac{22}{7}$.]({attach}images/ninety-six-gon.svg){#fig:ninety-six-gon width=70% .modal-target}
 
 
-Archimedes started with regular hexagons and successively doubled the number of sides until he had the circle sandwiched between two 96-gons. He repeatedly calculated rational approximations to $\pi$ until he was satisfied with the accuracy. The principle of the method is clearly seen in @fig:six-gon to @fig:ninety-six-gon.
 
-![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/six-gon.svg){#fig:six width=70% .modal-target}
 
-![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/twelve-gon.svg){#fig:twelve width=70% .modal-target}
 
-![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/twenty-four-gon.svg){#fig:twenty-four width=70% .modal-target}
-
-![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/forty-eight-gon.svg){#fig:forty-eight width=70% .modal-target}
-
-![The estimate for $\pi$ lies between $C_i = 3.000 < \pi C_c < = 3.4641$.]({attach}images/ninety-six-gon.svg){#fig:ninety-six width=70% .modal-target}
-
-$√3\approx 265/153$
-
-He devised an ingenious method for estimating the circumference of a circle. It was not based on using a length of string, superimposing it on a circle, and getting an estimate. He used a sophisticated algorithm that allowed him to obtain successively more accurate values for the circumference of a circle, and therefore of $\pi$.
 
 A well-written, accessible article on how Archimedes estimated that $\pi$ is approximately $\frac{22}{7}$ is available online: ["How Archimedes showed that pi is approximately 22 by 7"](https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf). I urge you to read it.^[This article is all the more remarkable because its first author is a Grade 8 student: proof that deep mathematics is not beyond the school student.] You will then appreciate for yourselves how arduous the process must have been in an age without the benefit of:
 #. Trigonometry; he used the theorem of pythagors instead;
@@ -174,9 +190,11 @@ Recurring decimals.
 
 ## Web resources
 
+## Teaser: are of circle half radius multiplied by circumference. How?
+
 ## Appendix: Circumscribed and inscribed polygons of  circle
 
-Archimedes devised his ingenious _squeeze_ method for computing the upper and lower bounds of the perimeter of a circle by computing instead the perimeters of the polygons that inscribe and circumscribe the circle. The approximations become more accurate as the number of sides, $n$, of the polygon is increased. [This YouTube presentation](https://www.youtube.com/watch?v=_qdnyw5Eb_Y) might help you understand the algorithm of Archimedes better, but remember that he did not have trigonometry to sid hm.
+Archimedes devised his ingenious _squeeze_ method for computing the upper and lower bounds of the perimeter of a circle by computing instead the perimeters of the polygons that inscribe and circumscribe the circle. The approximations become more accurate as the number of sides, $n$, of the polygon is increased. [This YouTube presentation](https://www.youtube.com/watch?v=_qdnyw5Eb_Y) might help you understand the algorithm of Archimedes better, but remember that he did not have trigonometry to aid hm.
 
 ## Feedback
 
