@@ -1,5 +1,5 @@
 ---
-title: "The Wonder That Is Pi"
+title: "The Wonder That Is Pi: Part One"
 author: "R (Chandra) Chandrasekhar"
 date: 2004-01-14
 modified: 2024-06-29
@@ -8,6 +8,8 @@ tags: Numbers, Irrational, Transcendental
 summary: "This blog began life more than two decades ago, as part of a series of lectures I delivered to very bright first-year engineering students at an Australian university.
 
 The number π (pronounced 'pie') has been recognized from time immemorial because its physical significance can be grasped easily: it is the ratio of the circumference of a circle to its diameter. But who would have thought that such an innocent ratio would exercise such endless fascination because of the complexities enfolded into it?
+
+My original intention was to write a single blog on π. But because I did not want it to become another overly long _slog_, I have decided to divide it into two parts.
 
 Not surprisingly, some students I met recently wanted to know more about π. Accordingly, I have substantially recast and refreshed my original presentation to better accord with the form and substance of a blog. The online references have also been updated to keep up with a rapidly changing Web."
 status: published
@@ -19,6 +21,8 @@ opengraphimage:
 >The number $\pi$ (pronounced "pie") has been recognized from time immemorial because its physical significance can be grasped easily: it is the ratio of the circumference of a circle to its diameter. But who would have thought that such an innocent ratio would exercise such endless fascination because of the complexities enfolded into it?
 >
 >Not surprisingly, some students I met recently wanted to know more about $\pi$. Accordingly, I have substantially recast and refreshed my original presentation to better accord with the form and substance of a blog. The online references have also been updated to keep up with a rapidly changing Web.
+>
+>My original intention was to write a single blog on $\pi$. But because I did not want it to become another overly long _slog_, I have decided to divide it into two parts.
 >
 >If there are any errors or omissions, please [email](mailto:feedback.swanlotus@gmail.com) me your feedback.
 
@@ -82,12 +86,20 @@ $${#eq:area-inequality}
 But can we say the same thing about the _perimeters_ of these three objects? This is where the choice of _regular_ hexagons makes matters more tractable. A regular hexagon is composed of six equilateral triangles, where the length of each side equals the radius. And each triangle has an area that is the product of half its base multiplied by its height. But the base equals the radius $r$ and the height, called the [apothem](https://www.mathopenref.com/apothem.html) is $h$. Therefore the area of one triangle $A_{\Delta} = \frac{1}{2}rh$. Now six such triangles sum up to $\frac{1}{2}6rh$. But $6r$ is the perimeter of the hexagon. _Therefore, the area of the regular hexagon is $\frac{1}{2}Ph$ where $P$ is the perimeter of the hexagon, and $h$ its apothem_.^[This statement is true of any _regular polygon as well.]
 
 Since the area is proportional to the perimeter, we are justified in claiming that the magnitudes of the perimeters accord with the magnitudes of the areas. Therefore, 
-the circumference of the circle, $C$, must lie between the perimeter of the inscribed polygon, $P_i$, (limit from below) and the perimeter of the circumscribed polygon, $P_c$, (limit from above):
+the circumference of the circle, $C$, must lie between the perimeter of the inscribed polygon, $C_i$, (limit from below) and the perimeter of the circumscribed polygon, $C_c$, (limit from above):
 $$
-P_i < C < P_c.
+C_i < C < C_c.
 $${#eq:perimeter-inequality} Remember this equation because it helps us to estimate lower and upper bounds for the value of the circumference. Archimedes's application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in @fig:two-limits and later figures.
 
 ![The circumference of the circle in darkolivegreen is bounded from below by the perimeter of the inscribed hexagon in maroon and bounded from above by the perimeter of the circumscribed hexagon in midnightblue. The circumference of the circle must lie between the perimeters of these two hexagons.]({attach}images/two-limits.svg){#fig:two-limits width=70% .modal-target}
+
+### Sides of inscribed and circmscribed polygons
+
+@fig:sin-theta-tan-theta shows the relationship between the sides of the inscribed and circumscribed polygons.
+
+![The relationship between the lengths of the incsribed and circumscribed regular polygons used in the algrithm of Archimedes to estimate $\pi$.]({attach}images/sin-theta-tan-theta.svg){#fig:sin-theta-tan-theta width=70% .modal-target}
+
+
 
 ### The thirty, sixty, ninety right triangle
 
@@ -102,7 +114,7 @@ $$
 
 ### Extracting square roots by hand
 
-Archimedes knew how to extract square roots by hand, and the value of $\sqrt{3}$ was one whose value he knew as a rational fraction. Perhaps, he used one of the methods described in my blog ["How Are Numbers Built?"](https://swanlotus.netlify.app/blogs/how-are-numbers-built). With remarkable accuracy, he stated that 
+Archimedes must have known how to extract square roots by hand, and the value of $\sqrt{3}$ was one whose value he knew as a rational fraction. Perhaps, he used one of the methods described in my blog ["How Are Numbers Built?"](https://swanlotus.netlify.app/blogs/how-are-numbers-built). With remarkable accuracy, he stated that 
 $$\sqrt{3} \approx \frac{265}{153} \approx 1.732.
 $${#eq:sqrt3}
 
@@ -112,28 +124,61 @@ Archimedes started with regular hexagons and successively doubled the number of 
 
 He repeatedly calculated rational approximations to $\pi$ until he was satisfied with the accuracy. The principle of the method is clearly seen in @fig:six-gon to @fig:ninety-six-gon.
 
-![The estimate for $\pi$ lies between $C_i = 3.0000 < \pi C_c < = 3.4641$.]({attach}images/six-gon.svg){#fig:six-gon width=70% .modal-target}
+![The estimate for $\pi$ lies between $C_i = 3.0000 < \pi < C_c = 3.4641$.]({attach}images/six-gon.svg){#fig:six-gon width=70% .modal-target}
 
-![The estimate for $\pi$ lies between $C_i = 3.1058 < \pi C_c < = 3.2153$.]({attach}images/twelve-gon.svg){#fig:twelve-gon width=70% .modal-target}
+![The estimate for $\pi$ lies between $C_i = 3.1058 < \pi < C_c = 3.2153$.]({attach}images/twelve-gon.svg){#fig:twelve-gon width=70% .modal-target}
 
-![The estimate for $\pi$ lies between $C_i = 3.1326 < \pi C_c < = 3.1596$.]({attach}images/twenty-four-gon.svg){#fig:twenty-four-gon width=70% .modal-target}
+![The estimate for $\pi$ lies between $C_i = 3.1326 < \pi < C_c = 3.1596$.]({attach}images/twenty-four-gon.svg){#fig:twenty-four-gon width=70% .modal-target}
 
-![The estimate for $\pi$ lies between $C_i = 3.1393 < \pi C_c < = 3.1460$.]({attach}images/forty-eight-gon.svg){#fig:forty-eight-gon width=70% .modal-target}
+![The estimate for $\pi$ lies between $C_i = 3.1393 < \pi < C_c = 3.1460$.]({attach}images/forty-eight-gon.svg){#fig:forty-eight-gon width=70% .modal-target}
 
-![The estimate for $\pi$ lies between $C_i = 3.1410 < \pi C_c < = 3.1427$. Notice in this sequence of images how the circumference of the circle approaches the perimeter of the inscribed and circumscribed heaxgons to the point of being indistinguishable from them.The final estimate of Archimedes was $\frac{223}{71} < \pi < \frac{22}{7}$.]({attach}images/ninety-six-gon.svg){#fig:ninety-six-gon width=70% .modal-target}
+![The estimate for $\pi$ lies between $C_i = 3.1410 < \pi < C_c = 3.1427$. Notice in this sequence of images how the circumference of the circle approaches the perimeter of the inscribed and circumscribed heaxgons to the point of being indistinguishable from them.*The final estimate of Archimedes was $\frac{223}{71} < \pi < \frac{22}{7}$.*]({attach}images/ninety-six-gon.svg){#fig:ninety-six-gon width=70% .modal-target}
+
+## Lessons from this derivation
+
+Iteration, recursion, bisection, squeeze, etc.
 
 
+## A closer look at π
 
+Pi is both an [irrational](https://en.wikipedia.org/wiki/Irrational_number) and a [transcendental](https://en.wikipedia.org/wiki/Transcendental_number) number. Let us see what each of these [appelations](https://www.merriam-webster.com/dictionary/appellation) mean.
 
+Recurring decimals.
 
-
+## To explore further
 A well-written, accessible article on how Archimedes estimated that $\pi$ is approximately $\frac{22}{7}$ is available online: ["How Archimedes showed that pi is approximately 22 by 7"](https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf). I urge you to read it.^[This article is all the more remarkable because its first author is a Grade 8 student: proof that deep mathematics is not beyond the school student.] You will then appreciate for yourselves how arduous the process must have been in an age without the benefit of:
 #. Trigonometry; he used the theorem of pythagors instead;
 #. Algebra; he used geometry and the ratios of the lengths of well-known triangles;
 #. Decimal numbers for division; he used fractions instead;
 square roots by hand; similar and congruent figures; bisection theorems; exhaustion methods
 
-## Iteration, recursion, bisection, squeeze, etc.
+
+
+
+
+In the series @fig:six to @fig:forty-eight below, which illustrate the approach Archimedes took to estimate $\pi$, we see very clearly that the perimeter of the _inscribed polygon_ $c_n$ and the perimeter of the _circumscribed polygon_ $C_n$ represent respectively the _lower bound_ and _upper bound_ of the estimated value of $\pi$. As the number of sides, $n$, of the polygon increases, the estimates become increasingly accurate.
+
+
+
+https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf
+
+https://azimpremjiuniversity.edu.in/at-right-angles
+
+### How did Archimedes arrive at π = 22/7?
+
+22/7 = 3.142857 142857 142857 (recurring decimal)
+
+
+
+## Formulae involving π
+
+## Quest for the endless digits of π
+
+## Buffon's Needle
+
+## π Trivia
+
+## Web links
 
 https://www.pbs.org/wgbh/nova/physics/approximating-pi.html
 
@@ -156,35 +201,6 @@ https://nonagon.org/ExLibris/archimedes-pi
 https://www.exploratorium.edu/pi/history-of-pi
 
 https://en.wikipedia.org/wiki/Approximations_of_%CF%80
-
-In the series @fig:six to @fig:forty-eight below, which illustrate the approach Archimedes took to estimate $\pi$, we see very clearly that the perimeter of the _inscribed polygon_ $c_n$ and the perimeter of the _circumscribed polygon_ $C_n$ represent respectively the _lower bound_ and _upper bound_ of the estimated value of $\pi$. As the number of sides, $n$, of the polygon increases, the estimates become increasingly accurate.
-
-
-
-https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf
-
-https://azimpremjiuniversity.edu.in/at-right-angles
-
-### How did Archimedes arrive at π = 22/7?
-
-22/7 = 3.142857 142857 142857 (recurring decimal)
-
-## A closer look at π
-
-Pi is both an [irrational](https://en.wikipedia.org/wiki/Irrational_number) and a [transcendental](https://en.wikipedia.org/wiki/Transcendental_number) number. Let us see what each of these [appelations](https://www.merriam-webster.com/dictionary/appellation) mean.
-
-
-## Rational, Irrational, Algebraic, and Transcedental Numbers
-
-Recurring decimals.
-
-## Formulae involving π
-
-## Quest for the endless digits of π
-
-## Buffon's Needle
-
-## π Trivia
 
 ## Book References
 

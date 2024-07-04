@@ -173,7 +173,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{sf}
 \hypersetup{
-  pdftitle={The Wonder That Is Pi},
+  pdftitle={The Wonder That Is Pi: Part One},
   pdfauthor={R (Chandra) Chandrasekhar},
   pdflang={en-GB},
   colorlinks=true,
@@ -183,7 +183,7 @@
   urlcolor={Maroon},
   pdfcreator={LaTeX via pandoc}}
 
-\title{The Wonder That Is Pi}
+\title{The Wonder That Is Pi: Part One}
 \author{R (Chandra) Chandrasekhar}
 \date{2004-01-14 | 2024-06-29}
 
@@ -209,6 +209,10 @@ Not surprisingly, some students I met recently wanted to know more about
 original presentation to better accord with the form and substance of a
 blog. The online references have also been updated to keep up with a
 rapidly changing Web.
+
+My original intention was to write a single blog on \(\pi\). But because
+I did not want it to become another overly long \emph{slog}, I have
+decided to divide it into two parts.
 
 If there are any errors or omissions, please
 \href{mailto:feedback.swanlotus@gmail.com}{email} me your feedback.
@@ -392,11 +396,11 @@ hexagon, and \(h\) its apothem}.\footnote{This statement is true of any
 Since the area is proportional to the perimeter, we are justified in
 claiming that the magnitudes of the perimeters accord with the
 magnitudes of the areas. Therefore, the circumference of the circle,
-\(C\), must lie between the perimeter of the inscribed polygon, \(P_i\),
+\(C\), must lie between the perimeter of the inscribed polygon, \(C_i\),
 (limit from below) and the perimeter of the circumscribed polygon,
-\(P_c\), (limit from above):
+\(C_c\), (limit from above):
 \begin{equation}\phantomsection\label{eq:perimeter-inequality}{
-P_i < C < P_c.
+C_i < C < C_c.
 }\end{equation} Remember this equation because it helps us to estimate
 lower and upper bounds for the value of the circumference. Archimedes's
 application of the
@@ -412,6 +416,20 @@ from below by the perimeter of the inscribed hexagon in maroon and
 bounded from above by the perimeter of the circumscribed hexagon in
 midnightblue. The circumference of the circle must lie between the
 perimeters of these two hexagons.}\label{fig:two-limits}
+\end{figure}
+
+\subsubsection{Sides of inscribed and circmscribed
+polygons}\label{sides-of-inscribed-and-circmscribed-polygons}
+
+\cref{fig:sin-theta-tan-theta} shows the relationship between the sides
+of the inscribed and circumscribed polygons.
+
+\begin{figure}
+\centering
+\includesvg[width=0.7\textwidth,height=\textheight]{images/sin-theta-tan-theta.svg}
+\caption{The relationship between the lengths of the incsribed and
+circumscribed regular polygons used in the algrithm of Archimedes to
+estimate \(\pi\).}\label{fig:sin-theta-tan-theta}
 \end{figure}
 
 \subsubsection{The thirty, sixty, ninety right
@@ -445,9 +463,9 @@ the theorem of Pythagoras, the third side, \(AP\) is \[
 \subsubsection{Extracting square roots by
 hand}\label{extracting-square-roots-by-hand}
 
-Archimedes knew how to extract square roots by hand, and the value of
-\(\sqrt{3}\) was one whose value he knew as a rational fraction.
-Perhaps, he used one of the methods described in my blog
+Archimedes must have known how to extract square roots by hand, and the
+value of \(\sqrt{3}\) was one whose value he knew as a rational
+fraction. Perhaps, he used one of the methods described in my blog
 \href{https://swanlotus.netlify.app/blogs/how-are-numbers-built}{``How
 Are Numbers Built?''}. With remarkable accuracy, he stated that
 \begin{equation}\phantomsection\label{eq:sqrt3}{\sqrt{3} \approx \frac{265}{153} \approx 1.732.
@@ -470,40 +488,58 @@ in \cref{fig:six-gon} to \cref{fig:ninety-six-gon}.
 \centering
 \includesvg[width=0.7\textwidth,height=\textheight]{images/six-gon.svg}
 \caption{The estimate for \(\pi\) lies between
-\(C_i = 3.0000 < \pi C_c < = 3.4641\).}\label{fig:six-gon}
+\(C_i = 3.0000 < \pi < C_c = 3.4641\).}\label{fig:six-gon}
 \end{figure}
 
 \begin{figure}
 \centering
 \includesvg[width=0.7\textwidth,height=\textheight]{images/twelve-gon.svg}
 \caption{The estimate for \(\pi\) lies between
-\(C_i = 3.1058 < \pi C_c < = 3.2153\).}\label{fig:twelve-gon}
+\(C_i = 3.1058 < \pi < C_c = 3.2153\).}\label{fig:twelve-gon}
 \end{figure}
 
 \begin{figure}
 \centering
 \includesvg[width=0.7\textwidth,height=\textheight]{images/twenty-four-gon.svg}
 \caption{The estimate for \(\pi\) lies between
-\(C_i = 3.1326 < \pi C_c < = 3.1596\).}\label{fig:twenty-four-gon}
+\(C_i = 3.1326 < \pi < C_c = 3.1596\).}\label{fig:twenty-four-gon}
 \end{figure}
 
 \begin{figure}
 \centering
 \includesvg[width=0.7\textwidth,height=\textheight]{images/forty-eight-gon.svg}
 \caption{The estimate for \(\pi\) lies between
-\(C_i = 3.1393 < \pi C_c < = 3.1460\).}\label{fig:forty-eight-gon}
+\(C_i = 3.1393 < \pi < C_c = 3.1460\).}\label{fig:forty-eight-gon}
 \end{figure}
 
 \begin{figure}
 \centering
 \includesvg[width=0.7\textwidth,height=\textheight]{images/ninety-six-gon.svg}
 \caption{The estimate for \(\pi\) lies between
-\(C_i = 3.1410 < \pi C_c < = 3.1427\). Notice in this sequence of images
+\(C_i = 3.1410 < \pi < C_c = 3.1427\). Notice in this sequence of images
 how the circumference of the circle approaches the perimeter of the
 inscribed and circumscribed heaxgons to the point of being
-indistinguishable from them.The final estimate of Archimedes was
-\(\frac{223}{71} < \pi < \frac{22}{7}\).}\label{fig:ninety-six-gon}
+indistinguishable from them.\emph{The final estimate of Archimedes was
+\(\frac{223}{71} < \pi < \frac{22}{7}\).}}\label{fig:ninety-six-gon}
 \end{figure}
+
+\subsection{Lessons from this
+derivation}\label{lessons-from-this-derivation}
+
+Iteration, recursion, bisection, squeeze, etc.
+
+\subsection{A closer look at π}\label{a-closer-look-at-ux3c0}
+
+Pi is both an
+\href{https://en.wikipedia.org/wiki/Irrational_number}{irrational} and a
+\href{https://en.wikipedia.org/wiki/Transcendental_number}{transcendental}
+number. Let us see what each of these
+\href{https://www.merriam-webster.com/dictionary/appellation}{appelations}
+mean.
+
+Recurring decimals.
+
+\subsection{To explore further}\label{to-explore-further}
 
 A well-written, accessible article on how Archimedes estimated that
 \(\pi\) is approximately \(\frac{22}{7}\) is available online:
@@ -519,8 +555,33 @@ he used geometry and the ratios of the lengths of well-known triangles;
 roots by hand; similar and congruent figures; bisection theorems;
 exhaustion methods
 
-\subsection{Iteration, recursion, bisection, squeeze,
-etc.}\label{iteration-recursion-bisection-squeeze-etc.}
+In the series \cref{fig:six} to \cref{fig:forty-eight} below, which
+illustrate the approach Archimedes took to estimate \(\pi\), we see very
+clearly that the perimeter of the \emph{inscribed polygon} \(c_n\) and
+the perimeter of the \emph{circumscribed polygon} \(C_n\) represent
+respectively the \emph{lower bound} and \emph{upper bound} of the
+estimated value of \(\pi\). As the number of sides, \(n\), of the
+polygon increases, the estimates become increasingly accurate.
+
+https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek\_PiIs22By7\_Final.pdf
+
+https://azimpremjiuniversity.edu.in/at-right-angles
+
+\subsubsection{How did Archimedes arrive at π =
+22/7?}\label{how-did-archimedes-arrive-at-ux3c0-227}
+
+22/7 = 3.142857 142857 142857 (recurring decimal)
+
+\subsection{Formulae involving π}\label{formulae-involving-ux3c0}
+
+\subsection{Quest for the endless digits of
+π}\label{quest-for-the-endless-digits-of-ux3c0}
+
+\subsection{Buffon's Needle}\label{buffons-needle}
+
+\subsection{π Trivia}\label{ux3c0-trivia}
+
+\subsection{Web links}\label{web-links}
 
 https://www.pbs.org/wgbh/nova/physics/approximating-pi.html
 
@@ -542,46 +603,6 @@ https://nonagon.org/ExLibris/archimedes-pi
 https://www.exploratorium.edu/pi/history-of-pi
 
 https://en.wikipedia.org/wiki/Approximations\_of\_\%CF\%80
-
-In the series \cref{fig:six} to \cref{fig:forty-eight} below, which
-illustrate the approach Archimedes took to estimate \(\pi\), we see very
-clearly that the perimeter of the \emph{inscribed polygon} \(c_n\) and
-the perimeter of the \emph{circumscribed polygon} \(C_n\) represent
-respectively the \emph{lower bound} and \emph{upper bound} of the
-estimated value of \(\pi\). As the number of sides, \(n\), of the
-polygon increases, the estimates become increasingly accurate.
-
-https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek\_PiIs22By7\_Final.pdf
-
-https://azimpremjiuniversity.edu.in/at-right-angles
-
-\subsubsection{How did Archimedes arrive at π =
-22/7?}\label{how-did-archimedes-arrive-at-ux3c0-227}
-
-22/7 = 3.142857 142857 142857 (recurring decimal)
-
-\subsection{A closer look at π}\label{a-closer-look-at-ux3c0}
-
-Pi is both an
-\href{https://en.wikipedia.org/wiki/Irrational_number}{irrational} and a
-\href{https://en.wikipedia.org/wiki/Transcendental_number}{transcendental}
-number. Let us see what each of these
-\href{https://www.merriam-webster.com/dictionary/appellation}{appelations}
-mean.
-
-\subsection{Rational, Irrational, Algebraic, and Transcedental
-Numbers}\label{rational-irrational-algebraic-and-transcedental-numbers}
-
-Recurring decimals.
-
-\subsection{Formulae involving π}\label{formulae-involving-ux3c0}
-
-\subsection{Quest for the endless digits of
-π}\label{quest-for-the-endless-digits-of-ux3c0}
-
-\subsection{Buffon's Needle}\label{buffons-needle}
-
-\subsection{π Trivia}\label{ux3c0-trivia}
 
 \subsection{Book References}\label{book-references}
 
