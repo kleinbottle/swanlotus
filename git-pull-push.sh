@@ -25,6 +25,7 @@ function git_push {
     get_changed_files
     if [[ $CHANGED_FILES != "" ]]; then
         git add .
+        git status
 
         if [[ $2 == "" ]]; then
             local commit_message="Updated website content"
