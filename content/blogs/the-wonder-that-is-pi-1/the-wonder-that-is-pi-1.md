@@ -46,7 +46,7 @@ The symbol [$\pi$](https://en.wikipedia.org/wiki/Pi) is the lowercase version of
 
 @fig:pi-circle shows the relationships in @eq:pi-Cd and @eq:two-pi-r pictorially. The circumference of a circle is about 6.28 times its radius. Why this should be so is a secret, a mystery of Nature.
 
-## Is π really equal to 22/7?
+## Is π = 22/7 an exact value?
 
 Is $\pi$ really equal to $\frac{22}{7}$, as it has been drummed into our heads at school? A wonderfully revealing story lies behind this mysterious relationship, and it is due to the [labours](https://www.collinsdictionary.com/dictionary/english/labours) of one man, in the days when calculators could not be dreamed of, and when neither the decimal system of numbers nor trigonometry were known. That is the story we look at next.
 
@@ -90,7 +90,7 @@ These principles constitute what is known as an [algorithm](https://www.merriam-
 
 Archimedes considered a circle, containing an [inscribed](https://mathworld.wolfram.com/Inscribed.html) regular polygon with $n$ sides, and [circumscribed](https://mathworld.wolfram.com/Circumscribed.html) by a regular polygon with the same $n$ sides. @fig:two-limits illustrates this for the case $n = 6$, i.e., with a regular [hexagon](https://www.britannica.com/science/hexagon).
 
-![The circumference of the circle in darkolivegreen is bounded from below by the perimeter of the inscribed regular hexagon in maroon and bounded from above by the perimeter of the circumscribed regular hexagon in midnightblue. The circumference of the circle must lie between the perimeters of these two hexagons. The value $r$ is the radius of the circle and the height $h$---from the centre to the mid-point of a side---is called the apothem.]({attach}images/two-limits.svg){#fig:two-limits width=70% .modal-target}
+![The circumference of the circle in darkolivegreen is bounded from below by the perimeter of the inscribed regular hexagon in maroon and bounded from above by the perimeter of the circumscribed regular hexagon in midnightblue. The circumference of the circle must lie between the perimeters of these two hexagons. The value $r$ is the radius of the circle and the height $h$---from the centre to the mid-point of a side---is called the [apothem](https://en.wikipedia.org/wiki/Apothem).]({attach}images/two-limits.svg){#fig:two-limits width=70% .modal-target}
 
 Let us tabulate below some variables and their values for this geometric configuration. These values will be better understood when viewed in conjunction with @fig:sin-theta-tan-theta.
 
@@ -106,7 +106,7 @@ Let us tabulate below some variables and their values for this geometric configu
 
 ![The relationship between the circle and its inscribed and circumscribed regular polygons. The symbol $h$ is used for the apothem in both cases. Note that $OD = h = r\cos\theta$ for the inscribed polygon, whereas $OC = h = r$ for the circumscribed polygon.]({attach}images/sin-theta-tan-theta.svg){#fig:sin-theta-tan-theta width=70% .modal-target}
 
-Imagine the mathematical fortitude of Archimedes to plough on without trigonometry or algebra to establish the value of $\pi$.
+Imagine the mathematical fortitude of Archimedes to [plough on](https://www.collinsdictionary.com/dictionary/english/plough-on)---without algebra or trigonometry or the decimal number system---to establish the value of $\pi$.
 
 Also, note that @tbl:variables and @fig:sin-theta-tan-theta give us these inequalities for regular $n$-gons where $\theta = \frac{180}{n}$ degrees or $\theta = \frac{\pi}{n}$ radians.
 $$
@@ -116,36 +116,22 @@ C_i < C < C_c &\implies n\sin\theta < \pi < n\tan\theta
 \end{aligned}
 $${#eq:squeeze}
 
-In the case of regular hexagons, we have this triple of equations:
-$$
-C_i = 2(6)r\sin{30°} = 12(1)(0.5) = 6.\\
-C = 2\pi r = 2\pi = 2(1)\pi = 6.2381.\\
-C_c = 2(6)r\tan{30°} = 12(1)(\frac{\sqrt{3}}{3}) \approx 6.9282.
-$${eq:triple-6}
 
-As n the three values approach one another. With $n =96$, we have $\theta = \frac{180}{n}= 1.875°$, we get:
-$$
-C_i = 2(96)r\sin{1.875°} \approx 192(1)(0.0327) = 6.2820\\
-C = 2\pi r = 2\pi = 2(1)\pi = 6.2381.\\
-C_c = 2(96)r\tan{1.875°} \approx 192(1)(0.0327) = 6.2854.\\
-$${eq:triple-96}
 
-Note that in the case of 96 sides, we have a very small angle $\theta$ whose $\sin$ and $\tan$ are almost equal. This is what gives us tight bounds on the estimate of $\pi$.
-
-Remember this equation because it helps us to estimate lower and upper bounds for the value of the circumference. Archimedes's application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in @fig:two-limits and later figures.
-
-[Sanity check](https://en.wiktionary.org/wiki/sanity_check): Does $2\pi = 6.283$, from a calculator, lie within the bounds of @eq:in and @eq:circ? Yes, indeed, and we are [home and dry](https://dictionary.cambridge.org/dictionary/english/be-home-and-dry).
+Before we consider numerical results, there are two aspects of the problem and the approach taken by Archimedes that I wish to discuss.
 
 ### The thirty, sixty, ninety right triangle
 
-Archimedes applied the same principle "of starting from the known" to initiate his algorithm using a regular hexagon, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right angled triangles with angles of thirty and sixty degrees, as shown in @fig:thirty-sixty.
+Archimedes applied the same principle "of starting from the known" to initiate his algorithm using a _regular hexagon_, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right angled triangles with angles of thirty and sixty degrees, as shown in @fig:thirty-sixty.
 
 ![This right-angled, obtained by bisecting an equilateral triangle, must be familiar to all school students. These lengths---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=40% .modal-target}
 
 The inscribed hexagon, within a circle of radius one unit, also has a side of one unit. Thus, the hypotenuse of the circle $OAP$ in @fig:thirty-sixty has unit length. Moreover, the base $OP$, resulting from a bisected side, has a length of half a unit. By applying the theorem of Pythagoras, the third side, $AP$ is 
 $$
 \sqrt{1^2 - \left(\frac{1}{2}\right)^2} = \frac{\sqrt{3}}{2}.
-$$
+$${#eq:triangle}
+
+The next thing Archimedes needed and knew how to do was to compute $\sqrt{3}$ which figures in @eq:triangle. Finding square roots is a tedious process, not unlike long division, and prone to human error. The patience and doggedness of Archimedes that must have gone into the process is astounding.
 
 ### Extracting square roots by hand
 
@@ -153,9 +139,35 @@ Archimedes must have known how to extract square roots by hand. Perhaps, he used
 $$\sqrt{3} \approx \frac{265}{153} \approx 1.732.
 $${#eq:sqrt3}
 
+### Numerical results
+
+Evaluating the bounds given in @tbl:variables and @eq:squeeze by setting $r = 1$, $n = 6$, and $\theta = \frac{180}{n} = 30°$ gives us these values:
+$$
+\begin{aligned}
+C_i &= 2n\sin\theta r = 12(\sin 30°) = 12(0.5) &= 6.0000.\\
+C &= 2\pi r &= 6.2381.\\
+C_c &= 2n\tan\theta r = 12(\tan 30°) = 12\left(\tfrac{\sqrt{3}}{3}\right) = 4\sqrt{3} &\approx 6.9282.\\
+\end{aligned}
+$${#eq:triple-6}
+
+Archimedes doubled $n$ four times to compute values for regular polygons with $12$, $24$, $48$, and $96$ sides. For his last calculation with $n = 96$ and $\theta = \tfrac{180}{96}° \approx 1.875°$, we have:
+$$
+\begin{aligned}
+C_i &= 2n\sin\theta r = 2(96)\sin{1.875°} \approx 192(0.0327) &\approx 6.2820.\\
+C &= 2\pi r &= 6.2381.\\
+C_c &= 2n\tan\theta r = 2(96)\tan{1.875°} \approx 192(0.0327) &\approx 6.2854.\\
+\end{aligned}
+$${#eq:triple-96}
+
+Note that in the case of 96 sides, we have a _very small angle_ $\theta$ whose $\sin$ and $\tan$ are almost equal. This is what gives us tight bounds on the estimate of $\pi$. If you know the power series for $\sin\theta$ and $\tan\theta$, you will appreciate even better how the value of $\pi$ is trapped and squeezed between these two rather close limits.
+
+Remember @eq:triple-96 because it helps us to estimate lower and upper bounds for the value of the circumference. Archimedes's application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in the series of figures, @fig:six-gon to @fig:ninety-six-gon.
+
+[Sanity check](https://en.wiktionary.org/wiki/sanity_check): Does $2\pi = 6.2820$, from a calculator, lie within the bounds of @eq:triple-96@e? Yes, indeed, and we are [home and dry](https://dictionary.cambridge.org/dictionary/english/be-home-and-dry).
+
 ### Recursion and Iteration
 
-Archimedes started with regular hexagons and successively doubled the number of sides, until he had the circle closely sandwiched between two 96-gons. Successively doubling or halving is a fast-converging technique used in numerical estimation when mathematics is applied to solving a variety of problems. That Archimedes was aware of it shows how far ahead of his time his thinking was.
+Archimedes started with regular hexagons and successively _doubled_ the number of sides, until he had the circle closely sandwiched between two 96-gons---one circumscribe; the other inscribed. Successively doubling or halving is a fast-converging technique used in numerical estimation, called the [bisection method](https://en.wikipedia.org/wiki/Bisection_method), that is applied to solving a variety of problems. That Archimedes was aware of it shows how far ahead of his time his thinking was.
 
 He repeatedly calculated rational approximations to $\pi$ until he was satisfied with the accuracy. The principle of the method is clearly seen in @fig:six-gon to @fig:ninety-six-gon.
 
@@ -168,6 +180,14 @@ He repeatedly calculated rational approximations to $\pi$ until he was satisfied
 ![The estimate for $\pi$ lies between $C_i = 3.1393 < \pi < C_c = 3.1460$.]({attach}images/forty-eight-gon.svg){#fig:forty-eight-gon width=70% .modal-target}
 
 ![The estimate for $\pi$ lies between $C_i = 3.1410 < \pi < C_c = 3.1427$. Notice in this sequence of images how the circumference of the circle approaches the perimeter of the inscribed and circumscribed heaxgons to the point of being indistinguishable from them.*The final estimate of Archimedes was $\frac{223}{71} < \pi < \frac{22}{7}$.*]({attach}images/ninety-six-gon.svg){#fig:ninety-six-gon width=70% .modal-target}
+
+
+
+
+
+
+
+
 
 ## Lessons from this derivation
 
