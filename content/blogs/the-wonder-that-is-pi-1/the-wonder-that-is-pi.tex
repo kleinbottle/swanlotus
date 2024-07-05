@@ -291,8 +291,9 @@ That is the story we look at next.
 
 \subsection{Archimedes of Syracuse}\label{archimedes-of-syracuse}
 
-\href{https://en.wikipedia.org/wiki/Archimedes}{Archimedes of Syracuse}
-(Ἀρχιμήδης, 287--212 BCE) was a
+\href{https://en.wikipedia.org/wiki/Archimedes}{Archimedes of
+Syracuse}\footnote{His very name, Archimedes, means ``master thinker''
+  in Greek.} (Ἀρχιμήδης, 287--212 BCE) was a
 \href{https://www.vocabulary.com/dictionary/polymath\#:~:text=Definitions\%20of\%20polymath,of\%20great\%20and\%20varied\%20learning}{polymath}
 and genius of the ancient world. He was one of the greatest
 mathematicians the world has ever known. By today's standards, he would
@@ -319,20 +320,35 @@ Syracuse.\footnotemark{}}\label{fig:archimedes}
 Among the many accomplishments of Archimedes is his method for
 estimating \(\pi\), which was the best approximation for almost 1900
 years. And it was not based on using a length of string, superimposing
-it on a circle, and getting an estimate! What is even more remarkable is
-that Archimedes made his discovery without the benefit of either
-trigonometry, decimal (positional) notation, or calculators. Instead he
-applied the theorem of Pythagoras and extracted square roots laboriously
-by hand. His method is also an excellent geometrical illustration of the
-idea of a limit, with which he was doubtless familiar. It is known that
-Archimedes was familiar with what we now know as integral calculus, and
-it is possible that he may have anticipated differential calculus as
-well.
+it on a circle, and getting an estimate! \emojifont {😉}\normalfont 
 
-He devised an ingenious method for estimating the circumference of a
-circle. He used a sophisticated algorithm that allowed him to obtain
-successively more accurate values for the circumference of a circle, and
-therefore of \(\pi\).
+What is even more remarkable is that Archimedes made his discovery
+\emph{without} the benefit of:
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  algebra;
+\item
+  trigonometry;
+\item
+  decimal (positional) notation; and
+\item
+  calculators.
+\end{enumerate}
+
+Instead he applied the theorem of Pythagoras and extracted square roots
+laboriously by hand. His method is also an excellent geometrical
+illustration of the idea of a
+\href{https://www.britannica.com/science/limit-mathematics}{\emph{limit}},
+with which he was doubtless familiar. It is known that Archimedes was
+familiar with what we now know as integral calculus, and it is possible
+that he may have anticipated differential calculus as well.
+
+Archimedes devised an ingenious method for estimating the circumference
+of a circle. He used a sophisticated algorithm that allowed him to
+obtain successively more accurate values for the circumference of a
+circle, and therefore of \(\pi\).
 
 \subsubsection{Principles used by
 Archimedes}\label{principles-used-by-archimedes}
@@ -349,7 +365,8 @@ Archimedes used to estimate \(\pi\) were these:
   Initialize variables;
 \item
   Devise a method of increasing the accuracy of the estimate by
-  recursion or iteration;
+  \href{https://mathworld.wolfram.com/Recursion.html}{recursion} or
+  \href{https://www.vocabulary.com/dictionary/iteration}{iteration};
 \item
   Stop when the desired accuracy is reached.
 \end{enumerate}
@@ -357,80 +374,136 @@ Archimedes used to estimate \(\pi\) were these:
 These principles constitute what is known as an
 \href{https://www.merriam-webster.com/dictionary/algorithm}{algorithm}.
 Once such a systematic framework has been put in place, it can be
-applied in many research domains to aid rapid scientific progress.
+applied in many research domains to aid rapid scientific progress. The
+algorithm is the basis of modern computing.
 
 \subsubsection{Of polygons and circles}\label{of-polygons-and-circles}
 
-Archimedes considered a circle with an
-\href{https://mathworld.wolfram.com/Inscribed.html}{inscribed} by a
-regular polygon with \(n\) sides along with a
+Archimedes considered a circle, containing an
+\href{https://mathworld.wolfram.com/Inscribed.html}{inscribed} regular
+polygon with \(n\) sides, and
 \href{https://mathworld.wolfram.com/Circumscribed.html}{circumscribed}
-regular polygon with the same \(n\) sides. \cref{fig:two-limits}
+by a regular polygon with the same \(n\) sides. \cref{fig:two-limits}
 illustrates this for the case \(n = 6\), i.e., with a regular
 \href{https://www.britannica.com/science/hexagon}{hexagon}.
-
-It is obvious that the \emph{area} of the inscribed hexagon is smaller
-than the \emph{area} of the circle, while the \emph{area} of the
-circumscribed hexagon exceeds that of the circle. In symbols, with
-\(A_i\) representing the area of the inscribed hexagon, \(A\)
-representing the area of the circle, and \(A_c\) representing the area
-of the circumscribed hexagon, we may say:
-\begin{equation}\phantomsection\label{eq:area-inequality}{
-A_i < A < A_c.
-}\end{equation}
-
-But can we say the same thing about the \emph{perimeters} of these three
-objects? This is where the choice of \emph{regular} hexagons makes
-matters more tractable. A regular hexagon is composed of six equilateral
-triangles, where the length of each side equals the radius. And each
-triangle has an area that is the product of half its base multiplied by
-its height. But the base equals the radius \(r\) and the height, called
-the \href{https://www.mathopenref.com/apothem.html}{apothem} is \(h\).
-Therefore the area of one triangle \(A_{\Delta} = \frac{1}{2}rh\). Now
-six such triangles sum up to \(\frac{1}{2}6rh\). But \(6r\) is the
-perimeter of the hexagon. \emph{Therefore, the area of the regular
-hexagon is \(\frac{1}{2}Ph\) where \(P\) is the perimeter of the
-hexagon, and \(h\) its apothem}.\footnote{This statement is true of any
-  \_regular polygon as well.}
-
-Since the area is proportional to the perimeter, we are justified in
-claiming that the magnitudes of the perimeters accord with the
-magnitudes of the areas. Therefore, the circumference of the circle,
-\(C\), must lie between the perimeter of the inscribed polygon, \(C_i\),
-(limit from below) and the perimeter of the circumscribed polygon,
-\(C_c\), (limit from above):
-\begin{equation}\phantomsection\label{eq:perimeter-inequality}{
-C_i < C < C_c.
-}\end{equation} Remember this equation because it helps us to estimate
-lower and upper bounds for the value of the circumference. Archimedes's
-application of the
-\href{https://en.wikipedia.org/wiki/Squeeze_theorem}{squeeze theorem}
-nineteen centuries before the calculus was invented is illustrated in
-\cref{fig:two-limits} and later figures.
 
 \begin{figure}
 \centering
 \includesvg[width=0.7\textwidth,height=\textheight]{images/two-limits.svg}
 \caption{The circumference of the circle in darkolivegreen is bounded
-from below by the perimeter of the inscribed hexagon in maroon and
-bounded from above by the perimeter of the circumscribed hexagon in
-midnightblue. The circumference of the circle must lie between the
-perimeters of these two hexagons.}\label{fig:two-limits}
+from below by the perimeter of the inscribed regular hexagon in maroon
+and bounded from above by the perimeter of the circumscribed regular
+hexagon in midnightblue. The circumference of the circle must lie
+between the perimeters of these two hexagons. The value \(r\) is the
+radius of the circle and the height \(h\)---from the centre to the
+mid-point of a side---is called the apothem.}\label{fig:two-limits}
 \end{figure}
 
-\subsubsection{Sides of inscribed and circmscribed
-polygons}\label{sides-of-inscribed-and-circmscribed-polygons}
+Let us tabulate below some variables and their values for this geometric
+configuration. These values will be better understood when viewed in
+conjunction with \cref{fig:sin-theta-tan-theta}.
 
-\cref{fig:sin-theta-tan-theta} shows the relationship between the sides
-of the inscribed and circumscribed polygons.
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1618}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1176}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0588}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2794}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0441}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.3382}}@{}}
+\caption{\label{tbl:variables}Circle, inscribed, and circumscribed
+regular polygons (\(n\)-gons).}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Parameter
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Circle
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Inscribed Polygon
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Circumscribed Polygon
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Parameter
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Circle
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Inscribed Polygon
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Circumscribed Polygon
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Radius & \(r\) & & & & \\
+Side & & & \(2r\sin\theta\) & & \(2r\tan\theta\) \\
+Angle & & & \(\theta = \frac{\pi}{n} = \frac{180°}{n}\) & &
+\(\theta = \frac{\pi}{n}=\frac{180°}{n}\) \\
+Apothem & & & \(h = r\cos\theta\) & & \(h = r\) \\
+Area & \(A = \pi r^2\) & & \(A_i = n\sin\theta\cos\theta r^2\) & &
+\(A_c = n\tan\theta r^2\) \\
+Perimeter & \(C = 2\pi r\) & & \(C_i = 2n\sin\theta r\) & &
+\(C_c = 2n\tan\theta r\) \\
+\end{longtable}
 
 \begin{figure}
 \centering
 \includesvg[width=0.7\textwidth,height=\textheight]{images/sin-theta-tan-theta.svg}
-\caption{The relationship between the lengths of the incsribed and
-circumscribed regular polygons used in the algrithm of Archimedes to
-estimate \(\pi\).}\label{fig:sin-theta-tan-theta}
+\caption{The relationship between the circle and its inscribed and
+circumscribed regular polygons. The symbol \(h\) is used for the apothem
+in both cases. Note that \(OD = h = r\cos\theta\) for the inscribed
+polygon, whereas \(OC = h = r\) for the circumscribed
+polygon.}\label{fig:sin-theta-tan-theta}
 \end{figure}
+
+Imagine the mathematical fortitude of Archimedes to plough on without
+trigonometry or algebra to establish the value of \(\pi\).
+
+Also, note that \cref{tbl:variables} and \cref{fig:sin-theta-tan-theta}
+give us these inequalities for regular \(n\)-gons where
+\(\theta = \frac{180}{n}\) degrees or \(\theta = \frac{\pi}{n}\)
+radians. \begin{equation}\phantomsection\label{eq:squeeze}{
+\begin{aligned}
+A_i < A < A_c &\implies n\sin\theta\cos\theta < \pi < n\tan\theta\\
+C_i < C < C_c &\implies n\sin\theta < \pi < n\tan\theta
+\end{aligned}
+}\end{equation}
+
+In the case of regular hexagons, we have this triple of equations: \[
+C_i = 2(6)r\sin{30°} = 12(1)(0.5) = 6.\\
+C = 2\pi r = 2\pi = 2(1)\pi = 6.2381.\\
+C_c = 2(6)r\tan{30°} = 12(1)(\frac{\sqrt{3}}{3}) \approx 6.9282.
+\]\{eq:triple-6\}
+
+As n the three values approach one another. With \(n =96\), we have
+\(\theta = \frac{180}{n}= 1.875°\), we get: \[
+C_i = 2(96)r\sin{1.875°} \approx 192(1)(0.0327) = 6.2820\\
+C = 2\pi r = 2\pi = 2(1)\pi = 6.2381.\\
+C_c = 2(96)r\tan{1.875°} \approx 192(1)(0.0327) = 6.2854.\\
+\]\{eq:triple-96\}
+
+Note that in the case of 96 sides, we have a very small angle \(\theta\)
+whose \(\sin\) and \(\tan\) are almost equal. This is what gives us
+tight bounds on the estimate of \(\pi\).
+
+Remember this equation because it helps us to estimate lower and upper
+bounds for the value of the circumference. Archimedes's application of
+the \href{https://en.wikipedia.org/wiki/Squeeze_theorem}{squeeze
+theorem} nineteen centuries before the calculus was invented is
+illustrated in \cref{fig:two-limits} and later figures.
+
+\href{https://en.wiktionary.org/wiki/sanity_check}{Sanity check}: Does
+\(2\pi = 6.283\), from a calculator, lie within the bounds of
+\cref{eq:in} and \cref{eq:circ}? Yes, indeed, and we are
+\href{https://dictionary.cambridge.org/dictionary/english/be-home-and-dry}{home
+and dry}.
 
 \subsubsection{The thirty, sixty, ninety right
 triangle}\label{the-thirty-sixty-ninety-right-triangle}
@@ -463,22 +536,22 @@ the theorem of Pythagoras, the third side, \(AP\) is \[
 \subsubsection{Extracting square roots by
 hand}\label{extracting-square-roots-by-hand}
 
-Archimedes must have known how to extract square roots by hand, and the
-value of \(\sqrt{3}\) was one whose value he knew as a rational
-fraction. Perhaps, he used one of the methods described in my blog
+Archimedes must have known how to extract square roots by hand. Perhaps,
+he used one of the methods described in my blog
 \href{https://swanlotus.netlify.app/blogs/how-are-numbers-built}{``How
-Are Numbers Built?''}. With remarkable accuracy, he stated that
+Are Numbers Built?''}. He should have known the value of \(\sqrt{3}\) as
+a rational fraction. With remarkable accuracy, he stated that:
 \begin{equation}\phantomsection\label{eq:sqrt3}{\sqrt{3} \approx \frac{265}{153} \approx 1.732.
 }\end{equation}
 
 \subsubsection{Recursion and Iteration}\label{recursion-and-iteration}
 
 Archimedes started with regular hexagons and successively doubled the
-number of sides, until he had the circle sandwiched between two 96-gons.
-Successively doubling or halving is a fast-converging technique used in
-numerical estimation when mathematics is applied to solving a variety of
-problems. That Archimedes was aware of it shows how far ahead of his
-time his thinking was.
+number of sides, until he had the circle closely sandwiched between two
+96-gons. Successively doubling or halving is a fast-converging technique
+used in numerical estimation when mathematics is applied to solving a
+variety of problems. That Archimedes was aware of it shows how far ahead
+of his time his thinking was.
 
 He repeatedly calculated rational approximations to \(\pi\) until he was
 satisfied with the accuracy. The principle of the method is clearly seen

@@ -52,13 +52,25 @@ Is $\pi$ really equal to $\frac{22}{7}$, as it has been drummed into our heads a
 
 ## Archimedes of Syracuse
 
-[Archimedes of Syracuse](https://en.wikipedia.org/wiki/Archimedes) (Ἀρχιμήδης, 287--212 BCE) was a [polymath](https://www.vocabulary.com/dictionary/polymath#:~:text=Definitions%20of%20polymath,of%20great%20and%20varied%20learning) and genius of the ancient world. He was one of the greatest mathematicians the world has ever known. By today's standards, he would be called a mathematician, physicist, engineer, and astronomer, [all rolled into one](https://www.ldoceonline.com/dictionary/all-rolled-into-one). He is perhaps most famous for running out of his bathtub naked exclaiming ["Eureka"](https://www.dictionary.com/browse/eureka)---Greek for "I have found it"---oblivious of those around him. The principle that he had then discovered---that the upthrust on a body submerged in a fluid is equal to the weight of fluid displaced---is known as [Archimedes' Principle](https://www.britannica.com/science/Archimedes-principle).
+[Archimedes of Syracuse](https://en.wikipedia.org/wiki/Archimedes)^[His very name, Archimedes, means "master thinker" in Greek.] (Ἀρχιμήδης, 287--212 BCE) was a [polymath](https://www.vocabulary.com/dictionary/polymath#:~:text=Definitions%20of%20polymath,of%20great%20and%20varied%20learning) and genius of the ancient world. He was one of the greatest mathematicians the world has ever known. By today's standards, he would be called a mathematician, physicist, engineer, and astronomer, [all rolled into one](https://www.ldoceonline.com/dictionary/all-rolled-into-one). He is perhaps most famous for running out of his bathtub naked exclaiming ["Eureka"](https://www.dictionary.com/browse/eureka)---Greek for "I have found it"---oblivious of those around him. The principle that he had then discovered---that the upthrust on a body submerged in a fluid is equal to the weight of fluid displaced---is known as [Archimedes' Principle](https://www.britannica.com/science/Archimedes-principle).
 
 ![Archimedes of Syracuse.^[Domenico Fetti's 1620 painting entitled _Archimedes Thoughtful_. Public domain.]]({attach}images/Domenico-Fetti_Archimedes_1620.jpg){#fig:archimedes width=70% .modal-target}
 
-Among the many accomplishments of Archimedes is his method for estimating $\pi$, which was the best approximation for almost 1900 years. And it was not based on using a length of string, superimposing it on a circle, and getting an estimate! What is even more remarkable is that Archimedes made his discovery without the benefit of either trigonometry, decimal (positional) notation, or calculators. Instead he applied the theorem of Pythagoras and extracted square roots laboriously by hand. His method is also an excellent geometrical illustration of the idea of a limit, with which he was doubtless familiar. It is known that Archimedes was familiar with what we now know as integral calculus, and it is possible that he may have anticipated differential calculus as well.
+Among the many accomplishments of Archimedes is his method for estimating $\pi$, which was the best approximation for almost 1900 years. And it was not based on using a length of string, superimposing it on a circle, and getting an estimate! \emojifont :wink:\normalfont 
 
-He devised an ingenious method for estimating the circumference of a circle. He used a sophisticated algorithm that allowed him to obtain successively more accurate values for the circumference of a circle, and therefore of $\pi$.
+What is even more remarkable is that Archimedes made his discovery _without_ the benefit of:
+
+(a) algebra; 
+
+(b) trigonometry;
+
+(c) decimal (positional) notation; and
+
+(d) calculators. 
+
+Instead he applied the theorem of Pythagoras and extracted square roots laboriously by hand. His method is also an excellent geometrical illustration of the idea of a [_limit_](https://www.britannica.com/science/limit-mathematics), with which he was doubtless familiar. It is known that Archimedes was familiar with what we now know as integral calculus, and it is possible that he may have anticipated differential calculus as well.
+
+Archimedes devised an ingenious method for estimating the circumference of a circle. He used a sophisticated algorithm that allowed him to obtain successively more accurate values for the circumference of a circle, and therefore of $\pi$.
 
 ### Principles used by Archimedes
 
@@ -68,38 +80,61 @@ The method that Archimedes devised is instructive because it is a synthesis of s
 
 #. Initialize variables;
 
-#. Devise a method of increasing the accuracy of the estimate by recursion or iteration;
+#. Devise a method of increasing the accuracy of the estimate by [recursion](https://mathworld.wolfram.com/Recursion.html) or [iteration](https://www.vocabulary.com/dictionary/iteration);
 
 #. Stop when the desired accuracy is reached.
 
-These principles constitute what is known as an [algorithm](https://www.merriam-webster.com/dictionary/algorithm). Once such a systematic framework has been put in place, it can be applied in many research domains to aid rapid scientific progress.
+These principles constitute what is known as an [algorithm](https://www.merriam-webster.com/dictionary/algorithm). Once such a systematic framework has been put in place, it can be applied in many research domains to aid rapid scientific progress. The algorithm is the basis of modern computing.
 
 ### Of polygons and circles
 
-Archimedes considered a circle with an [inscribed](https://mathworld.wolfram.com/Inscribed.html) by a regular polygon with $n$ sides along with a [circumscribed](https://mathworld.wolfram.com/Circumscribed.html) regular polygon with the same $n$ sides. @fig:two-limits illustrates this for the case $n = 6$, i.e., with a regular [hexagon](https://www.britannica.com/science/hexagon).
+Archimedes considered a circle, containing an [inscribed](https://mathworld.wolfram.com/Inscribed.html) regular polygon with $n$ sides, and [circumscribed](https://mathworld.wolfram.com/Circumscribed.html) by a regular polygon with the same $n$ sides. @fig:two-limits illustrates this for the case $n = 6$, i.e., with a regular [hexagon](https://www.britannica.com/science/hexagon).
 
-It is obvious that the _area_ of the inscribed hexagon is smaller than the _area_ of the circle, while the _area_ of the circumscribed hexagon exceeds that of the circle. In symbols, with $A_i$ representing the area of the inscribed hexagon, $A$ representing the area of the circle, and $A_c$ representing the area of the circumscribed hexagon, we may say:
+![The circumference of the circle in darkolivegreen is bounded from below by the perimeter of the inscribed regular hexagon in maroon and bounded from above by the perimeter of the circumscribed regular hexagon in midnightblue. The circumference of the circle must lie between the perimeters of these two hexagons. The value $r$ is the radius of the circle and the height $h$---from the centre to the mid-point of a side---is called the apothem.]({attach}images/two-limits.svg){#fig:two-limits width=70% .modal-target}
+
+Let us tabulate below some variables and their values for this geometric configuration. These values will be better understood when viewed in conjunction with @fig:sin-theta-tan-theta.
+
+| Parameter | Circle |    | Inscribed Polygon |   | Circumscribed Polygon |
+|:----------|:-------|:--:|:------------------|:-:|:----------------------|
+| Radius | $r$ |  |  |  | 
+| Side |  |  | $2r\sin\theta$ | | $2r\tan\theta$ | 
+| Angle |  |  | $\theta = \frac{\pi}{n} = \frac{180°}{n}$ | | $\theta = \frac{\pi}{n}=\frac{180°}{n}$ |
+| Apothem |  |  | $h = r\cos\theta$ | | $h = r$ |
+| Area | $A = \pi r^2$ |  | $A_i = n\sin\theta\cos\theta r^2$ | | $A_c = n\tan\theta r^2$ |
+| Perimeter | $C = 2\pi r$ |  | $C_i = 2n\sin\theta r$ | | $C_c = 2n\tan\theta r$ |
+: Circle, inscribed, and circumscribed regular polygons ($n$-gons). {#tbl:variables}
+
+![The relationship between the circle and its inscribed and circumscribed regular polygons. The symbol $h$ is used for the apothem in both cases. Note that $OD = h = r\cos\theta$ for the inscribed polygon, whereas $OC = h = r$ for the circumscribed polygon.]({attach}images/sin-theta-tan-theta.svg){#fig:sin-theta-tan-theta width=70% .modal-target}
+
+Imagine the mathematical fortitude of Archimedes to plough on without trigonometry or algebra to establish the value of $\pi$.
+
+Also, note that @tbl:variables and @fig:sin-theta-tan-theta give us these inequalities for regular $n$-gons where $\theta = \frac{180}{n}$ degrees or $\theta = \frac{\pi}{n}$ radians.
 $$
-A_i < A < A_c.
-$${#eq:area-inequality}
+\begin{aligned}
+A_i < A < A_c &\implies n\sin\theta\cos\theta < \pi < n\tan\theta\\
+C_i < C < C_c &\implies n\sin\theta < \pi < n\tan\theta
+\end{aligned}
+$${#eq:squeeze}
 
-But can we say the same thing about the _perimeters_ of these three objects? This is where the choice of _regular_ hexagons makes matters more tractable. A regular hexagon is composed of six equilateral triangles, where the length of each side equals the radius. And each triangle has an area that is the product of half its base multiplied by its height. But the base equals the radius $r$ and the height, called the [apothem](https://www.mathopenref.com/apothem.html) is $h$. Therefore the area of one triangle $A_{\Delta} = \frac{1}{2}rh$. Now six such triangles sum up to $\frac{1}{2}6rh$. But $6r$ is the perimeter of the hexagon. _Therefore, the area of the regular hexagon is $\frac{1}{2}Ph$ where $P$ is the perimeter of the hexagon, and $h$ its apothem_.^[This statement is true of any _regular polygon as well.]
-
-Since the area is proportional to the perimeter, we are justified in claiming that the magnitudes of the perimeters accord with the magnitudes of the areas. Therefore, 
-the circumference of the circle, $C$, must lie between the perimeter of the inscribed polygon, $C_i$, (limit from below) and the perimeter of the circumscribed polygon, $C_c$, (limit from above):
+In the case of regular hexagons, we have this triple of equations:
 $$
-C_i < C < C_c.
-$${#eq:perimeter-inequality} Remember this equation because it helps us to estimate lower and upper bounds for the value of the circumference. Archimedes's application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in @fig:two-limits and later figures.
+C_i = 2(6)r\sin{30°} = 12(1)(0.5) = 6.\\
+C = 2\pi r = 2\pi = 2(1)\pi = 6.2381.\\
+C_c = 2(6)r\tan{30°} = 12(1)(\frac{\sqrt{3}}{3}) \approx 6.9282.
+$${eq:triple-6}
 
-![The circumference of the circle in darkolivegreen is bounded from below by the perimeter of the inscribed hexagon in maroon and bounded from above by the perimeter of the circumscribed hexagon in midnightblue. The circumference of the circle must lie between the perimeters of these two hexagons.]({attach}images/two-limits.svg){#fig:two-limits width=70% .modal-target}
+As n the three values approach one another. With $n =96$, we have $\theta = \frac{180}{n}= 1.875°$, we get:
+$$
+C_i = 2(96)r\sin{1.875°} \approx 192(1)(0.0327) = 6.2820\\
+C = 2\pi r = 2\pi = 2(1)\pi = 6.2381.\\
+C_c = 2(96)r\tan{1.875°} \approx 192(1)(0.0327) = 6.2854.\\
+$${eq:triple-96}
 
-### Sides of inscribed and circmscribed polygons
+Note that in the case of 96 sides, we have a very small angle $\theta$ whose $\sin$ and $\tan$ are almost equal. This is what gives us tight bounds on the estimate of $\pi$.
 
-@fig:sin-theta-tan-theta shows the relationship between the sides of the inscribed and circumscribed polygons.
+Remember this equation because it helps us to estimate lower and upper bounds for the value of the circumference. Archimedes's application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in @fig:two-limits and later figures.
 
-![The relationship between the lengths of the incsribed and circumscribed regular polygons used in the algrithm of Archimedes to estimate $\pi$.]({attach}images/sin-theta-tan-theta.svg){#fig:sin-theta-tan-theta width=70% .modal-target}
-
-
+[Sanity check](https://en.wiktionary.org/wiki/sanity_check): Does $2\pi = 6.283$, from a calculator, lie within the bounds of @eq:in and @eq:circ? Yes, indeed, and we are [home and dry](https://dictionary.cambridge.org/dictionary/english/be-home-and-dry).
 
 ### The thirty, sixty, ninety right triangle
 
@@ -114,13 +149,13 @@ $$
 
 ### Extracting square roots by hand
 
-Archimedes must have known how to extract square roots by hand, and the value of $\sqrt{3}$ was one whose value he knew as a rational fraction. Perhaps, he used one of the methods described in my blog ["How Are Numbers Built?"](https://swanlotus.netlify.app/blogs/how-are-numbers-built). With remarkable accuracy, he stated that 
+Archimedes must have known how to extract square roots by hand. Perhaps, he used one of the methods described in my blog ["How Are Numbers Built?"](https://swanlotus.netlify.app/blogs/how-are-numbers-built). He should have known the value of $\sqrt{3}$ as a rational fraction.  With remarkable accuracy, he stated that:
 $$\sqrt{3} \approx \frac{265}{153} \approx 1.732.
 $${#eq:sqrt3}
 
 ### Recursion and Iteration
 
-Archimedes started with regular hexagons and successively doubled the number of sides, until he had the circle sandwiched between two 96-gons. Successively doubling or halving is a fast-converging technique used in numerical estimation when mathematics is applied to solving a variety of problems. That Archimedes was aware of it shows how far ahead of his time his thinking was.
+Archimedes started with regular hexagons and successively doubled the number of sides, until he had the circle closely sandwiched between two 96-gons. Successively doubling or halving is a fast-converging technique used in numerical estimation when mathematics is applied to solving a variety of problems. That Archimedes was aware of it shows how far ahead of his time his thinking was.
 
 He repeatedly calculated rational approximations to $\pi$ until he was satisfied with the accuracy. The principle of the method is clearly seen in @fig:six-gon to @fig:ninety-six-gon.
 
@@ -217,8 +252,8 @@ Archimedes devised his ingenious _squeeze_ method for computing the upper and lo
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here]({attach}./the-wonder-that-is-pi.pdf):
+\noindent A PDF version of this article is [available for download here]({attach}./the-wonder-that-is-pi-1.pdf):
 
 ::: {.small .sf}
-<https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi.pdf>
+<https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi-1.pdf>
 :::
