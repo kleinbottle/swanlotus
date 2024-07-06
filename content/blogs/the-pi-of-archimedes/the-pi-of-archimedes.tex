@@ -67,6 +67,39 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
 \else
@@ -173,7 +206,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{sf}
 \hypersetup{
-  pdftitle={The Wonder That Is Pi: Part One},
+  pdftitle={The Pi of Archimedes},
   pdfauthor={R (Chandra) Chandrasekhar},
   pdflang={en-GB},
   colorlinks=true,
@@ -183,9 +216,9 @@
   urlcolor={Maroon},
   pdfcreator={LaTeX via pandoc}}
 
-\title{The Wonder That Is Pi: Part One}
+\title{The Pi of Archimedes}
 \author{R (Chandra) Chandrasekhar}
-\date{2004-01-14 | 2024-06-29}
+\date{2004-01-14 | 2024-01-06}
 
 \begin{document}
 \maketitle
@@ -278,8 +311,8 @@ circle is \(\pi\).}\label{fig:pi-circle}
 6.28 times its radius. Why this should be so is a secret, a mystery of
 Nature.
 
-\subsection{Is π really equal to
-22/7?}\label{is-ux3c0-really-equal-to-227}
+\subsection{Is π = 22/7 an exact
+value?}\label{is-ux3c0-227-an-exact-value}
 
 Is \(\pi\) really equal to \(\frac{22}{7}\), as it has been drummed into
 our heads at school? A wonderfully revealing story lies behind this
@@ -310,7 +343,7 @@ Principle}.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth,height=\textheight]{images/Domenico-Fetti_Archimedes_1620.jpg}
+\includegraphics[width=0.5\textwidth,height=\textheight]{images/Domenico-Fetti_Archimedes_1620.jpg}
 \caption[Archimedes of Syracuse.]{Archimedes of
 Syracuse.\footnotemark{}}\label{fig:archimedes}
 \end{figure}
@@ -328,6 +361,8 @@ What is even more remarkable is that Archimedes made his discovery
 \begin{enumerate}
 \def\labelenumi{(\alph{enumi})}
 \item
+  the real numbers;
+\item
   algebra;
 \item
   trigonometry;
@@ -337,9 +372,9 @@ What is even more remarkable is that Archimedes made his discovery
   calculators.
 \end{enumerate}
 
-Instead he applied the theorem of Pythagoras and extracted square roots
-laboriously by hand. His method is also an excellent geometrical
-illustration of the idea of a
+Instead he applied the theorem of Pythagoras and extracted rational
+values for square roots laboriously by hand. His method is also an
+excellent geometrical illustration of the idea of a
 \href{https://www.britannica.com/science/limit-mathematics}{\emph{limit}},
 with which he was doubtless familiar. It is known that Archimedes was
 familiar with what we now know as integral calculus, and it is possible
@@ -396,7 +431,8 @@ and bounded from above by the perimeter of the circumscribed regular
 hexagon in midnightblue. The circumference of the circle must lie
 between the perimeters of these two hexagons. The value \(r\) is the
 radius of the circle and the height \(h\)---from the centre to the
-mid-point of a side---is called the apothem.}\label{fig:two-limits}
+mid-point of a side---is called the
+\href{https://en.wikipedia.org/wiki/Apothem}{apothem}.}\label{fig:two-limits}
 \end{figure}
 
 Let us tabulate below some variables and their values for this geometric
@@ -463,8 +499,10 @@ polygon, whereas \(OC = h = r\) for the circumscribed
 polygon.}\label{fig:sin-theta-tan-theta}
 \end{figure}
 
-Imagine the mathematical fortitude of Archimedes to plough on without
-trigonometry or algebra to establish the value of \(\pi\).
+Imagine the mathematical fortitude of Archimedes to
+\href{https://www.collinsdictionary.com/dictionary/english/plough-on}{plough
+on}---without algebra or trigonometry or the decimal number system---to
+establish the value of \(\pi\).
 
 Also, note that \cref{tbl:variables} and \cref{fig:sin-theta-tan-theta}
 give us these inequalities for regular \(n\)-gons where
@@ -476,44 +514,18 @@ C_i < C < C_c &\implies n\sin\theta < \pi < n\tan\theta
 \end{aligned}
 }\end{equation}
 
-In the case of regular hexagons, we have this triple of equations: \[
-C_i = 2(6)r\sin{30°} = 12(1)(0.5) = 6.\\
-C = 2\pi r = 2\pi = 2(1)\pi = 6.2381.\\
-C_c = 2(6)r\tan{30°} = 12(1)(\frac{\sqrt{3}}{3}) \approx 6.9282.
-\]\{eq:triple-6\}
-
-As n the three values approach one another. With \(n =96\), we have
-\(\theta = \frac{180}{n}= 1.875°\), we get: \[
-C_i = 2(96)r\sin{1.875°} \approx 192(1)(0.0327) = 6.2820\\
-C = 2\pi r = 2\pi = 2(1)\pi = 6.2381.\\
-C_c = 2(96)r\tan{1.875°} \approx 192(1)(0.0327) = 6.2854.\\
-\]\{eq:triple-96\}
-
-Note that in the case of 96 sides, we have a very small angle \(\theta\)
-whose \(\sin\) and \(\tan\) are almost equal. This is what gives us
-tight bounds on the estimate of \(\pi\).
-
-Remember this equation because it helps us to estimate lower and upper
-bounds for the value of the circumference. Archimedes's application of
-the \href{https://en.wikipedia.org/wiki/Squeeze_theorem}{squeeze
-theorem} nineteen centuries before the calculus was invented is
-illustrated in \cref{fig:two-limits} and later figures.
-
-\href{https://en.wiktionary.org/wiki/sanity_check}{Sanity check}: Does
-\(2\pi = 6.283\), from a calculator, lie within the bounds of
-\cref{eq:in} and \cref{eq:circ}? Yes, indeed, and we are
-\href{https://dictionary.cambridge.org/dictionary/english/be-home-and-dry}{home
-and dry}.
+Before we consider numerical results, there are two aspects of the
+problem and the approach taken by Archimedes that I wish to discuss.
 
 \subsubsection{The thirty, sixty, ninety right
 triangle}\label{the-thirty-sixty-ninety-right-triangle}
 
 Archimedes applied the same principle ``of starting from the known'' to
-initiate his algorithm using a regular hexagon, which is a mosaic of six
-juxtaposed equilateral triangles. We know from symmetry that each angle
-of an equilateral triangle is \(60°\). When an equilateral triangle is
-bisected, we get two right angled triangles with angles of thirty and
-sixty degrees, as shown in \cref{fig:thirty-sixty}.
+initiate his algorithm using a \emph{regular hexagon}, which is a mosaic
+of six juxtaposed equilateral triangles. We know from symmetry that each
+angle of an equilateral triangle is \(60°\). When an equilateral
+triangle is bisected, we get two right angled triangles with angles of
+thirty and sixty degrees, as shown in \cref{fig:thirty-sixty}.
 
 \begin{figure}
 \centering
@@ -529,9 +541,36 @@ The inscribed hexagon, within a circle of radius one unit, also has a
 side of one unit. Thus, the hypotenuse of the circle \(OAP\) in
 \cref{fig:thirty-sixty} has unit length. Moreover, the base \(OP\),
 resulting from a bisected side, has a length of half a unit. By applying
-the theorem of Pythagoras, the third side, \(AP\) is \[
+the theorem of Pythagoras, the third side, \(AP\) is
+\begin{equation}\phantomsection\label{eq:triangle}{
 \sqrt{1^2 - \left(\frac{1}{2}\right)^2} = \frac{\sqrt{3}}{2}.
-\]
+}\end{equation}
+
+The next thing Archimedes needed and knew how to do was to compute
+\(\sqrt{3}\) which figures in \cref{eq:triangle}. Finding square roots
+is a tedious process, not unlike long division, and prone to human
+error. The patience and doggedness of Archimedes that must have gone
+into the process is astounding.
+
+\subsubsection{The angle bisection
+theorem}\label{the-angle-bisection-theorem}
+
+Two diagrams please: one generic one right-angled.
+
+Without using the
+\href{https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas}{half-angle
+formulae} of trigonometry, how can we successively obtain expressions
+for the values of \(C_i\) and \(C_C\) as we halve the angles and double
+the sides each time. We have to rely on something called the
+\href{https://en.wikipedia.org/wiki/Angle_bisector_theorem}{angle
+bisector theorem} from geometry.
+
+This derivation might seem tedious but it is closer to what Archimedes
+did in order to establish the recurrence relation that tied the current
+value to the previous value.
+
+\subsubsection{The trigonometric half-angle
+formulae}\label{the-trigonometric-half-angle-formulae}
 
 \subsubsection{Extracting square roots by
 hand}\label{extracting-square-roots-by-hand}
@@ -544,14 +583,87 @@ a rational fraction. With remarkable accuracy, he stated that:
 \begin{equation}\phantomsection\label{eq:sqrt3}{\sqrt{3} \approx \frac{265}{153} \approx 1.732.
 }\end{equation}
 
+\subsubsection{Numerical results}\label{numerical-results}
+
+Evaluating the bounds given in \cref{tbl:variables} and
+\cref{eq:squeeze} by setting \(r = 1\), \(n = 6\), and
+\(\theta = \frac{180}{n} = 30°\)\footnote{Rather than use radians with
+  \(\pi\) entering the proceedings, I decided to stick with degrees as
+  units to avoid confusion. If one uses power series to probe further,
+  of course, radians are called for.} gives us these values:
+\begin{equation}\phantomsection\label{eq:triple-6}{
+\begin{aligned}
+C_i &= 2n\sin\theta r = 12(\sin 30°) = 12(0.5) &= 6.0000.\\
+C &= 2\pi r &= 6.2381.\\
+C_c &= 2n\tan\theta r = 12(\tan 30°) = 12\left(\tfrac{\sqrt{3}}{3}\right) = 4\sqrt{3} &\approx 6.9282.\\
+\end{aligned}
+}\end{equation}
+
+Archimedes doubled \(n\) four times to compute values for regular
+polygons with \(12\), \(24\), \(48\), and \(96\) sides. For his last
+calculation with \(n = 96\) and
+\(\theta = \tfrac{180}{96}° \approx 1.875°\), we have:
+\begin{equation}\phantomsection\label{eq:triple-96}{
+\begin{aligned}
+C_i &= 2n\sin\theta r = 2(96)\sin{1.875°} \approx 192(0.0327) &\approx 6.2820.\\
+C &= 2\pi r &= 6.2381.\\
+C_c &= 2n\tan\theta r = 2(96)\tan{1.875°} \approx 192(0.0327) &\approx 6.2854.\\
+\end{aligned}
+}\end{equation}
+
+Note that in the case of 96 sides, we have a \emph{very small angle}
+\(\theta\) whose \(\sin\) and \(\tan\) are almost equal. This is what
+gives us tight bounds on the estimate of \(\pi\). If you know the power
+series for \(\sin\theta\) and \(\tan\theta\), you will appreciate even
+better how the value of \(\pi\) is trapped and squeezed between these
+two rather close limits.
+
+Remember \cref{eq:triple-96} because it helps us to estimate lower and
+upper bounds for the value of the circumference. Archimedes's
+application of the
+\href{https://en.wikipedia.org/wiki/Squeeze_theorem}{squeeze theorem}
+nineteen centuries before the calculus was invented is illustrated in
+the series of figures, \cref{fig:six-gon} to \cref{fig:ninety-six-gon}.
+
+\href{https://en.wiktionary.org/wiki/sanity_check}{Sanity check}: Does
+\(2\pi = 6.2820\), from a calculator, lie within the bounds of
+\cref{eq:triple-96}? Yes, indeed, and we are
+\href{https://dictionary.cambridge.org/dictionary/english/be-home-and-dry}{home
+and dry}.
+
+Second sanity check: When \(n\) is very large, we expect
+\(n\sin\frac{180°}{n}\) to be closer and closer to the true value.
+Setting \(n = 10^6\) and evaluating on a calculator we get
+\(10^6\sin\frac{180°}{10^6} = 3.14159\) which is reassuring. This deep
+connection between the circle and the trigonometric functions also
+explains why they are sometimes called the \emph{circular functions}.
+Indeed, the values \(n\sin\frac{\pi}{n}\) and \(n\sin\tan{\pi}{n}\) both
+converge to \(\pi\) for very large \(n\). The interested reader should
+plot these two curves.
+
 \subsubsection{Recursion and Iteration}\label{recursion-and-iteration}
 
-Archimedes started with regular hexagons and successively doubled the
-number of sides, until he had the circle closely sandwiched between two
-96-gons. Successively doubling or halving is a fast-converging technique
-used in numerical estimation when mathematics is applied to solving a
-variety of problems. That Archimedes was aware of it shows how far ahead
-of his time his thinking was.
+Archimedes started with regular hexagons and successively \emph{doubled}
+the number of sides, until he had the circle closely sandwiched between
+two 96-gons---one circumscribe; the other inscribed. Successively
+doubling or halving is a fast-converging technique used in numerical
+estimation, called the
+\href{https://en.wikipedia.org/wiki/Bisection_method}{bisection method},
+that is applied to solving a variety of problems. That Archimedes was
+aware of it shows how far ahead of his time his thinking was.
+
+When he moved from \(n=6\) to \(n = 12\) sides, how did Archimedes
+estimate the respective perimeters without the aid of trigonometry? He
+used geometry and the Pythagorean theorem,
+\href{https://nonagon.org/ExLibris/archimedes-pi}{as described here
+online} {[}\citeproc{ref-bertrand2014}{1}{]} to obtain
+\href{https://en.wikipedia.org/wiki/Recurrence_relation}{recurrence
+relations} that gave the current result from the previous one.
+
+For an English translation of the book \emph{Measurement of a Circle} by
+Archimedes \href{auxiliary/Archimedes-Circle.pdf}{click on this link}.
+It is the original source material from the man himself, and will give
+you a sense of completeness in your understanding of his method.
 
 He repeatedly calculated rational approximations to \(\pi\) until he was
 satisfied with the accuracy. The principle of the method is clearly seen
@@ -592,16 +704,21 @@ in \cref{fig:six-gon} to \cref{fig:ninety-six-gon}.
 \(C_i = 3.1410 < \pi < C_c = 3.1427\). Notice in this sequence of images
 how the circumference of the circle approaches the perimeter of the
 inscribed and circumscribed heaxgons to the point of being
-indistinguishable from them.\emph{The final estimate of Archimedes was
+indistinguishable from them. \emph{The final estimate of Archimedes was
 \(\frac{223}{71} < \pi < \frac{22}{7}\).}}\label{fig:ninety-six-gon}
 \end{figure}
 
-\subsection{Lessons from this
-derivation}\label{lessons-from-this-derivation}
+\subsection{Is π really 22/7?}\label{is-ux3c0-really-227}
 
-Iteration, recursion, bisection, squeeze, etc.
+The answer is a qualified ``Yes and no''. Because \(\pi\) is irrational,
+it cannot be expressed precisely in a finite number of digits.
+Consequently, we use rational approximations, or a decimal
+representation at the desired accuracy for \(\pi\). Thanks to
+Archimedes, \(\frac{22}{7}\) is a serviceable overestimate for \(\pi\)
+that has survived for centuries.
 
-\subsection{A closer look at π}\label{a-closer-look-at-ux3c0}
+\subsection{A closer look at π as a
+number}\label{a-closer-look-at-ux3c0-as-a-number}
 
 Pi is both an
 \href{https://en.wikipedia.org/wiki/Irrational_number}{irrational} and a
@@ -677,6 +794,8 @@ https://www.exploratorium.edu/pi/history-of-pi
 
 https://en.wikipedia.org/wiki/Approximations\_of\_\%CF\%80
 
+https://www.joyofpi.com/
+
 \subsection{Book References}\label{book-references}
 
 \subsection{Web resources}\label{web-resources}
@@ -703,17 +822,30 @@ Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
 
 \noindent A PDF version of this article is
-\href{./the-wonder-that-is-pi.pdf}{available for download here}:
+\href{./the-wonder-that-is-pi-1.pdf}{available for download here}:
 
 \begin{small}
 
 \begin{sffamily}
 
-\url{https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi.pdf}
+\url{https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi-1.pdf}
 
 \end{sffamily}
 
 \end{small}
+
+\section*{References}\label{bibliography}
+\addcontentsline{toc}{section}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{0}{0}
+\bibitem[\citeproctext]{ref-bertrand2014}
+\CSLLeftMargin{{[}1{]} }%
+\CSLRightInline{Mike Bertrand. 2014. {Archimedes and Pi}. Ex libris.
+Retrieved 5 July 2024 from
+\url{https://nonagon.org/ExLibris/archimedes-pi}}
+
+\end{CSLReferences}
 
 
 

@@ -1,8 +1,8 @@
 ---
-title: "The Wonder That Is Pi: Part One"
+title: "The Pi of Archimedes"
 author: "R (Chandra) Chandrasekhar"
 date: 2004-01-14
-modified: 2024-06-29
+modified: 2024-01-06
 category: Mathematics
 tags: Numbers, Irrational, Transcendental
 summary: "This blog began life more than two decades ago, as part of a series of lectures I delivered to very bright first-year engineering students at an Australian university.
@@ -54,21 +54,23 @@ Is $\pi$ really equal to $\frac{22}{7}$, as it has been drummed into our heads a
 
 [Archimedes of Syracuse](https://en.wikipedia.org/wiki/Archimedes)^[His very name, Archimedes, means "master thinker" in Greek.] (Ἀρχιμήδης, 287--212 BCE) was a [polymath](https://www.vocabulary.com/dictionary/polymath#:~:text=Definitions%20of%20polymath,of%20great%20and%20varied%20learning) and genius of the ancient world. He was one of the greatest mathematicians the world has ever known. By today's standards, he would be called a mathematician, physicist, engineer, and astronomer, [all rolled into one](https://www.ldoceonline.com/dictionary/all-rolled-into-one). He is perhaps most famous for running out of his bathtub naked exclaiming ["Eureka"](https://www.dictionary.com/browse/eureka)---Greek for "I have found it"---oblivious of those around him. The principle that he had then discovered---that the upthrust on a body submerged in a fluid is equal to the weight of fluid displaced---is known as [Archimedes' Principle](https://www.britannica.com/science/Archimedes-principle).
 
-![Archimedes of Syracuse.^[Domenico Fetti's 1620 painting entitled _Archimedes Thoughtful_. Public domain.]]({attach}images/Domenico-Fetti_Archimedes_1620.jpg){#fig:archimedes width=70% .modal-target}
+![Archimedes of Syracuse.^[Domenico Fetti's 1620 painting entitled _Archimedes Thoughtful_. Public domain.]]({attach}images/Domenico-Fetti_Archimedes_1620.jpg){#fig:archimedes width=50% .modal-target}
 
 Among the many accomplishments of Archimedes is his method for estimating $\pi$, which was the best approximation for almost 1900 years. And it was not based on using a length of string, superimposing it on a circle, and getting an estimate! \emojifont :wink:\normalfont 
 
 What is even more remarkable is that Archimedes made his discovery _without_ the benefit of:
 
-(a) algebra; 
+(a) the real numbers;
 
-(b) trigonometry;
+(b) algebra; 
 
-(c) decimal (positional) notation; and
+(c) trigonometry;
 
-(d) calculators. 
+(d) decimal (positional) notation; and
 
-Instead he applied the theorem of Pythagoras and extracted square roots laboriously by hand. His method is also an excellent geometrical illustration of the idea of a [_limit_](https://www.britannica.com/science/limit-mathematics), with which he was doubtless familiar. It is known that Archimedes was familiar with what we now know as integral calculus, and it is possible that he may have anticipated differential calculus as well.
+(e) calculators. 
+
+Instead he applied the theorem of Pythagoras and extracted rational values for square roots laboriously by hand. His method is also an excellent geometrical illustration of the idea of a [_limit_](https://www.britannica.com/science/limit-mathematics), with which he was doubtless familiar. It is known that Archimedes was familiar with what we now know as integral calculus, and it is possible that he may have anticipated differential calculus as well.
 
 Archimedes devised an ingenious method for estimating the circumference of a circle. He used a sophisticated algorithm that allowed him to obtain successively more accurate values for the circumference of a circle, and therefore of $\pi$.
 
@@ -133,6 +135,19 @@ $${#eq:triangle}
 
 The next thing Archimedes needed and knew how to do was to compute $\sqrt{3}$ which figures in @eq:triangle. Finding square roots is a tedious process, not unlike long division, and prone to human error. The patience and doggedness of Archimedes that must have gone into the process is astounding.
 
+### The angle bisection theorem
+
+Two diagrams please: one generic one right-angled.
+
+Without using the [half-angle formulae](https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas) of trigonometry, how can we successively obtain expressions for the values of $C_i$ and $C_C$ as we halve the angles and double the sides each time. We have to rely on something called the [angle bisector theorem](https://en.wikipedia.org/wiki/Angle_bisector_theorem) from geometry.
+
+This derivation might seem tedious but it is closer to what Archimedes did in order to establish the recurrence relation that tied the current value to the previous value.
+
+### The trigonometric half-angle formulae
+
+
+
+
 ### Extracting square roots by hand
 
 Archimedes must have known how to extract square roots by hand. Perhaps, he used one of the methods described in my blog ["How Are Numbers Built?"](https://swanlotus.netlify.app/blogs/how-are-numbers-built). He should have known the value of $\sqrt{3}$ as a rational fraction.  With remarkable accuracy, he stated that:
@@ -141,7 +156,7 @@ $${#eq:sqrt3}
 
 ### Numerical results
 
-Evaluating the bounds given in @tbl:variables and @eq:squeeze by setting $r = 1$, $n = 6$, and $\theta = \frac{180}{n} = 30°$ gives us these values:
+Evaluating the bounds given in @tbl:variables and @eq:squeeze by setting $r = 1$, $n = 6$, and $\theta = \frac{180}{n} = 30°$^[Rather than use radians with $\pi$ entering the proceedings, I decided to stick with degrees as units to avoid confusion. If one uses power series to probe further, of course, radians are called for.] gives us these values:
 $$
 \begin{aligned}
 C_i &= 2n\sin\theta r = 12(\sin 30°) = 12(0.5) &= 6.0000.\\
@@ -163,11 +178,17 @@ Note that in the case of 96 sides, we have a _very small angle_ $\theta$ whose $
 
 Remember @eq:triple-96 because it helps us to estimate lower and upper bounds for the value of the circumference. Archimedes's application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in the series of figures, @fig:six-gon to @fig:ninety-six-gon.
 
-[Sanity check](https://en.wiktionary.org/wiki/sanity_check): Does $2\pi = 6.2820$, from a calculator, lie within the bounds of @eq:triple-96@e? Yes, indeed, and we are [home and dry](https://dictionary.cambridge.org/dictionary/english/be-home-and-dry).
+[Sanity check](https://en.wiktionary.org/wiki/sanity_check): Does $2\pi = 6.2820$, from a calculator, lie within the bounds of @eq:triple-96? Yes, indeed, and we are [home and dry](https://dictionary.cambridge.org/dictionary/english/be-home-and-dry).
+
+Second sanity check: When $n$ is very large, we expect $n\sin\frac{180°}{n}$ to be closer and closer to the true value. Setting $n = 10^6$ and evaluating on a calculator we get $10^6\sin\frac{180°}{10^6} = 3.14159$ which is reassuring. This deep connection between the circle and the trigonometric functions also explains why they are sometimes called the _circular functions_. Indeed, the values $n\sin\frac{\pi}{n}$ and $n\sin\tan{\pi}{n}$ both converge to $\pi$ for very large $n$. The interested reader should plot these two curves.
 
 ### Recursion and Iteration
 
 Archimedes started with regular hexagons and successively _doubled_ the number of sides, until he had the circle closely sandwiched between two 96-gons---one circumscribe; the other inscribed. Successively doubling or halving is a fast-converging technique used in numerical estimation, called the [bisection method](https://en.wikipedia.org/wiki/Bisection_method), that is applied to solving a variety of problems. That Archimedes was aware of it shows how far ahead of his time his thinking was.
+
+When he moved from $n=6$ to $n = 12$ sides, how did Archimedes estimate the respective perimeters without the aid of trigonometry? He used geometry and the Pythagorean theorem, [as described here online](https://nonagon.org/ExLibris/archimedes-pi) [@bertrand2014] to obtain [recurrence relations](https://en.wikipedia.org/wiki/Recurrence_relation) that gave the current result from the previous one.
+
+For an English translation of the book _Measurement of a Circle_ by Archimedes [click on this link]({attach}auxiliary/Archimedes-Circle.pdf). It is the original source material from the man himself, and will give you a sense of completeness in your understanding of his method.
 
 He repeatedly calculated rational approximations to $\pi$ until he was satisfied with the accuracy. The principle of the method is clearly seen in @fig:six-gon to @fig:ninety-six-gon.
 
@@ -179,28 +200,22 @@ He repeatedly calculated rational approximations to $\pi$ until he was satisfied
 
 ![The estimate for $\pi$ lies between $C_i = 3.1393 < \pi < C_c = 3.1460$.]({attach}images/forty-eight-gon.svg){#fig:forty-eight-gon width=70% .modal-target}
 
-![The estimate for $\pi$ lies between $C_i = 3.1410 < \pi < C_c = 3.1427$. Notice in this sequence of images how the circumference of the circle approaches the perimeter of the inscribed and circumscribed heaxgons to the point of being indistinguishable from them.*The final estimate of Archimedes was $\frac{223}{71} < \pi < \frac{22}{7}$.*]({attach}images/ninety-six-gon.svg){#fig:ninety-six-gon width=70% .modal-target}
+![The estimate for $\pi$ lies between $C_i = 3.1410 < \pi < C_c = 3.1427$. Notice in this sequence of images how the circumference of the circle approaches the perimeter of the inscribed and circumscribed heaxgons to the point of being indistinguishable from them. _The final estimate of Archimedes was $\frac{223}{71} < \pi < \frac{22}{7}$._]({attach}images/ninety-six-gon.svg){#fig:ninety-six-gon width=70% .modal-target}
 
+## Is π really 22/7?
 
+The answer is a qualified "Yes and no". Because $\pi$ is irrational, it cannot be expressed precisely in a finite number of digits. Consequently, we use rational approximations, or a decimal representation at the desired accuracy for $\pi$. Thanks to Archimedes, $\frac{22}{7}$ is a serviceable overestimate for $\pi$ that has survived for centuries.
 
-
-
-
-
-
-
-## Lessons from this derivation
-
-Iteration, recursion, bisection, squeeze, etc.
-
-
-## A closer look at π
+## A closer look at π as a number
 
 Pi is both an [irrational](https://en.wikipedia.org/wiki/Irrational_number) and a [transcendental](https://en.wikipedia.org/wiki/Transcendental_number) number. Let us see what each of these [appelations](https://www.merriam-webster.com/dictionary/appellation) mean.
+
+
 
 Recurring decimals.
 
 ## To explore further
+
 A well-written, accessible article on how Archimedes estimated that $\pi$ is approximately $\frac{22}{7}$ is available online: ["How Archimedes showed that pi is approximately 22 by 7"](https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf). I urge you to read it.^[This article is all the more remarkable because its first author is a Grade 8 student: proof that deep mathematics is not beyond the school student.] You will then appreciate for yourselves how arduous the process must have been in an age without the benefit of:
 #. Trigonometry; he used the theorem of pythagors instead;
 #. Algebra; he used geometry and the ratios of the lengths of well-known triangles;
@@ -256,6 +271,8 @@ https://nonagon.org/ExLibris/archimedes-pi
 https://www.exploratorium.edu/pi/history-of-pi
 
 https://en.wikipedia.org/wiki/Approximations_of_%CF%80
+
+https://www.joyofpi.com/
 
 ## Book References
 
