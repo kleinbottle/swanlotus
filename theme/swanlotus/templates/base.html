@@ -64,8 +64,8 @@
                 {% endblock %}
                 <h6><i class="fas fa-envelope"></i>&nbsp;Recent Blogs</h6>
                 <ul class="recent-blogs">
-                    {% set recent_articles = articles if not all_articles else all_articles %}
-                    {% for recent_article in recent_articles[:5] %}
+                    {% set articles = articles if not all_articles else all_articles %}
+                    {% for recent_article in articles[:5] %}
                         <li><a href="{{ SITEURL }}/{{ recent_article.url }}">{{ recent_article.title }}</a></li>
                     {% endfor %}
                 </ul>
