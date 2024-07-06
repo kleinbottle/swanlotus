@@ -2,7 +2,7 @@
 title: "The Pi of Archimedes"
 author: "R (Chandra) Chandrasekhar"
 date: 2004-01-14
-modified: 2024-01-06
+modified: 2024-06-30
 category: Mathematics
 tags: Numbers, Irrational, Transcendental
 summary: "This blog began life more than two decades ago, as part of a series of lectures I delivered to very bright first-year engineering students at an Australian university.
@@ -135,9 +135,9 @@ $${#eq:triangle}
 
 The next thing Archimedes needed and knew how to do was to compute $\sqrt{3}$ which figures in @eq:triangle. Finding square roots is a tedious process, not unlike long division, and prone to human error. The patience and doggedness of Archimedes that must have gone into the process is astounding.
 
-### The angle bisection theorem
+### The angle bisector theorem
 
-Two diagrams please: one generic one right-angled.
+![The angle bisector theorem. The relative lengths of the two segments that a triangle's side is divided into by a line that bisects the opposite angle equals the relative lengths of the other two sides of the triangle, as shown on the diagram.]({attach}images/angle-bisection.svg){#fig:angle-bisect width=70% .modal-target}
 
 Without using the [half-angle formulae](https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas) of trigonometry, how can we successively obtain expressions for the values of $C_i$ and $C_C$ as we halve the angles and double the sides each time. We have to rely on something called the [angle bisector theorem](https://en.wikipedia.org/wiki/Angle_bisector_theorem) from geometry.
 
@@ -145,7 +145,7 @@ This derivation might seem tedious but it is closer to what Archimedes did in or
 
 ### The trigonometric half-angle formulae
 
-
+Two diagrams please: one generic one right-angled.
 
 
 ### Extracting square roots by hand
@@ -289,8 +289,9 @@ Archimedes devised his ingenious _squeeze_ method for computing the upper and lo
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here]({attach}./the-wonder-that-is-pi-1.pdf):
+\noindent A PDF version of this article is [available for download here]({attach}./the-pi-of-archimedes.pdf):
 
 ::: {.small .sf}
-<https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi-1.pdf>
+<https://swanlotus.netlify.app/blogs/the-pi-of-archimedespdf-blog
+.pdf>
 :::
