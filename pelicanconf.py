@@ -6,7 +6,7 @@ import sys
 
 # Append current directory to the path so that custom_functions is found
 sys.path.append(os.curdir)
-from custom_functions import get_source_image_paths, get_destination_image_paths
+from custom_functions import get_blog_images, get_page_images, get_destination_images
 
 AUTHOR = "R (Chandra) Chandrasekhar"
 SITENAME = "SwanLotus"
@@ -31,8 +31,8 @@ THEME = "theme/swanlotus"
 THEME_STATIC_PATHS = ["static"]
 THEME_STATIC_DIR = "theme"
 CSS_FILE = "swanlotus.css"
-STATIC_PATHS = ["images"] + get_source_image_paths()
-EXTRA_PATH_METADATA = get_destination_image_paths()
+STATIC_PATHS = ["images"] + get_blog_images() + get_page_images()
+EXTRA_PATH_METADATA = get_destination_images()
 
 INDEX_SAVE_AS = "blogs.html"
 
