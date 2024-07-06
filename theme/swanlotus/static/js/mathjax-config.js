@@ -15,7 +15,7 @@ window.MathJax = {
         var script = document.createElement("script");
 
         // Using Beta version of MathJax 4.0.0 until stable version is available
-        script.src = "https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.6/tex-mml-chtml.js";
+        script.src = "https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.4/tex-mml-chtml.min.js";
         script.async = true;
         document.head.appendChild(script);
     }
