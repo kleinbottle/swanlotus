@@ -13,7 +13,7 @@ My original intention was to write a single blog on π. But because I did not wa
 
 Not surprisingly, some students I met recently wanted to know more about π. Accordingly, I have substantially recast and refreshed my original presentation to better accord with the form and substance of a blog. The online references have also been updated to keep up with a rapidly changing Web."
 status: published
-opengraphimage: 
+opengraphimage: Domenico-Fetti_Archimedes_1620.jpg
 ---
 
 >This blog began life more than two decades ago, as part of a series of lectures I delivered to very bright first-year engineering students at an Australian university.
