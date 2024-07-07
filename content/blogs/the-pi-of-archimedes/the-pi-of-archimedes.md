@@ -96,33 +96,82 @@ Archimedes considered a circle, containing an [inscribed](https://mathworld.wolf
 
 ![The circumference of the circle in darkolivegreen is bounded from below by the perimeter of the inscribed regular hexagon in maroon and bounded from above by the perimeter of the circumscribed regular hexagon in midnightblue. The circumference of the circle must lie between the perimeters of these two hexagons. The value $r$ is the radius of the circle and the height $h$---from the centre to the mid-point of a side---is called the [apothem](https://en.wikipedia.org/wiki/Apothem).]({attach}images/two-limits.svg){#fig:two-limits width=70% .modal-target}
 
-Let us tabulate below some variables and their values for this geometric configuration. These values will be better understood when viewed in conjunction with @fig:sin-theta-tan-theta.
+![The relationship between the circle and its inscribed and circumscribed regular polygons. The symbol $h$ is used for the apothem in both cases. Note that $OD = h = r\cos\theta$ for the inscribed polygon, whereas $OC = h = r$ for the circumscribed polygon.]({attach}images/sin-theta-tan-theta.svg){#fig:sin-theta-tan-theta width=70% .modal-target}
+
+Let us tabulate below the variables arising from @fig:two-limits and @fig:sin-theta-tan-theta.
 
 | Parameter | Circle |    | Inscribed Polygon |   | Circumscribed Polygon |
 |:----------|:-------|:--:|:------------------|:-:|:----------------------|
-| Radius | $r$ |  |  |  | 
-| Side |  |  | $2r\sin\theta$ | | $2r\tan\theta$ | 
+| Radius | $r$ |  |  |  |
+| Number of sides |  |  | $n$ | | $n$ |
+| Length of side |  |  | $2r\sin\theta$ | | $2r\tan\theta$ | 
 | Angle |  |  | $\theta = \frac{\pi}{n} = \frac{180°}{n}$ | | $\theta = \frac{\pi}{n}=\frac{180°}{n}$ |
 | Apothem |  |  | $h = r\cos\theta$ | | $h = r$ |
-| Area | $A = \pi r^2$ |  | $A_i = n\sin\theta\cos\theta r^2$ | | $A_c = n\tan\theta r^2$ |
-| Perimeter | $C = 2\pi r$ |  | $C_i = 2n\sin\theta r$ | | $C_c = 2n\tan\theta r$ |
+| Area | $A = \pi r^2$ |  | $a_n = n\sin\theta\cos\theta r^2$ | | $A_n = n\tan\theta r^2$ |
+| Perimeter | $C = 2\pi r$ |  | $p_n = 2n\sin\theta r$ | | $P_n = 2n\tan\theta r$ |
 : Circle, inscribed, and circumscribed regular polygons ($n$-gons). {#tbl:variables}
 
-![The relationship between the circle and its inscribed and circumscribed regular polygons. The symbol $h$ is used for the apothem in both cases. Note that $OD = h = r\cos\theta$ for the inscribed polygon, whereas $OC = h = r$ for the circumscribed polygon.]({attach}images/sin-theta-tan-theta.svg){#fig:sin-theta-tan-theta width=70% .modal-target}
+
 
 Imagine the mathematical fortitude of Archimedes to [plough on](https://www.collinsdictionary.com/dictionary/english/plough-on)---without algebra or trigonometry or the decimal number system---to establish the value of $\pi$.
 
 Also, note that @tbl:variables and @fig:sin-theta-tan-theta give us these inequalities for regular $n$-gons where $\theta = \frac{180}{n}$ degrees or $\theta = \frac{\pi}{n}$ radians.
 $$
 \begin{aligned}
-A_i < A < A_c &\implies n\sin\theta\cos\theta < \pi < n\tan\theta\\
-C_i < C < C_c &\implies n\sin\theta < \pi < n\tan\theta
+a_n < A < A_n &\implies n\sin\theta\cos\theta < \pi < n\tan\theta\\
+c_n < C < C_n &\implies n\sin\theta < \pi < n\tan\theta
 \end{aligned}
 $${#eq:squeeze}
 
-
+WHERE SHOULD THIS GO?
 
 Before we consider numerical results, there are two aspects of the problem and the approach taken by Archimedes that I wish to discuss.
+
+### Trigonometry and half angles
+
+
+
+Referring to @eq:squeeze, if $C_{i_n}$ is the perimeter of the inscribed polygon with $n$ sides, after side doubling, we want to express $C_{i_{2n}}$ in terms of $C_{i_n}$. This chaining of relationships, relating the current to the previous, is called [recursion](https://www.geeksforgeeks.org/introduction-to-recursion-2/) and is vital in developing efficient algorithms.
+
+The half-angle $\theta$ subtended at the centre by a regular $n$-gon is given by $\frac{180°}{n}$ as is apparent from @fig:sin-theta-tan-theta. When $n$ is doubled, this angle is halved. The trigonometry of [half angles in terms of the full angle]( https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas) helps establish the values of the new lengths in terms of the old lengths,
+
+To see how, let us examine the perimeter of the regular polygon of initially of $n$ sides---inscribed in a circle of unit radius---with successive doubling after each iteration. If, at the start, with $n$ sides, the angle as shown in @fig:sin-theta-tan-theta, is $\theta = \frac{\pi}{n}$, then, after $k$ doublings, the angle is $\frac{\theta}{2^k}$.
+
+The half-angle formulae below allow us to relate $C_{i_{2^{k}n}}$ to $C_{i_{2^{k-1}n}}$.
+$$\begin{aligned}
+\sin\frac{\theta}{2^k} = %
+\left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
+%
+\cos\frac{\theta}{2^k} = %
+\left[\frac{1+\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
+%
+\tan\frac{\theta}{2^k} = %
+\left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta}{2^{k-1}}\right]}\right]^{\frac{1}{2}}\\
+\end{aligned}
+$$
+
+With $r=1$, the equations connecting $C_{i_2^{k-1}n}$ and $_{i_2^{k}n}$ may be written so:
+$$
+
+$$
+
+We state below the two equations for $C_i$ with $n$ sides and $n(2^k)$ sides:
+
+$$
+\begin{aligned}
+2n\sin\theta r < C_{i_{n}} < 2n\tan\theta r \\
+C_{i{_2n}} =  \\
+\end{aligned}
+$$
+
+### The angle bisector theorem
+
+![The angle bisector theorem. The relative lengths of the two segments that a triangle's side is divided into by a line that bisects the opposite angle equals the relative lengths of the other two sides of the triangle, as shown on the diagram.]({attach}images/angle-bisection.svg){#fig:angle-bisect width=70% .modal-target}
+
+Without using the [half-angle formulae](https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas) of trigonometry, how can we successively obtain expressions for the values of $C_i$ and $C_C$ as we halve the angles and double the sides each time. We have to rely on something called the [angle bisector theorem](https://en.wikipedia.org/wiki/Angle_bisector_theorem) from geometry.
+
+This derivation might seem tedious but it is closer to what Archimedes did in order to establish the recurrence relation that tied the current value to the previous value.
+
 
 ### The thirty, sixty, ninety right triangle
 
@@ -136,19 +185,6 @@ $$
 $${#eq:triangle}
 
 The next thing Archimedes needed and knew how to do was to compute $\sqrt{3}$ which figures in @eq:triangle. Finding square roots is a tedious process, not unlike long division, and prone to human error. The patience and doggedness of Archimedes that must have gone into the process is astounding.
-
-### The angle bisector theorem
-
-![The angle bisector theorem. The relative lengths of the two segments that a triangle's side is divided into by a line that bisects the opposite angle equals the relative lengths of the other two sides of the triangle, as shown on the diagram.]({attach}images/angle-bisection.svg){#fig:angle-bisect width=70% .modal-target}
-
-Without using the [half-angle formulae](https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas) of trigonometry, how can we successively obtain expressions for the values of $C_i$ and $C_C$ as we halve the angles and double the sides each time. We have to rely on something called the [angle bisector theorem](https://en.wikipedia.org/wiki/Angle_bisector_theorem) from geometry.
-
-This derivation might seem tedious but it is closer to what Archimedes did in order to establish the recurrence relation that tied the current value to the previous value.
-
-### The trigonometric half-angle formulae
-
-Two diagrams please: one generic one right-angled.
-
 
 ### Extracting square roots by hand
 
