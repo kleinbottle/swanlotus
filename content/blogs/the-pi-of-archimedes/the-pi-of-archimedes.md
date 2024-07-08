@@ -32,7 +32,7 @@ The straight line or [geodesic](https://mathworld.wolfram.com/Geodesic.html) is 
 $$
 \frac{C}{d} = \pi.
 $${#eq:pi-Cd}
-The diameter $d$ is twice the radius $r$, and substituting for $d$ into @eq:pi-Cd, we get the well-known school formula:
+The diameter $d$ is twice the radius $r$, and substituting for $d$ into [@eq:pi-Cd], we get the well-known school formula:
 $$
 C = \pi d = 2\pi r \approx 2\left[\frac{22}{7}\right]r \approx 6.28r.
 $${#eq:two-pi-r}
@@ -44,7 +44,7 @@ The symbol [$\pi$](https://en.wikipedia.org/wiki/Pi) is the lowercase version of
 
 ![The ratio of the circumference to the diameter of _any_ circle is $\pi$.]({attach}images/C-over-d.svg){#fig:pi-circle width=70% .modal-target}
 
-@fig:pi-circle shows the relationships in @eq:pi-Cd and @eq:two-pi-r pictorially. The circumference of a circle is about 6.28 times its radius. Why this should be so is a secret, a mystery of Nature.
+@fig:pi-circle shows the relationships in [@eq:pi-Cd] and [@eq:two-pi-r] pictorially. The circumference of a circle is about 6.28 times its radius. Why this should be so is a secret, a mystery of Nature.
 
 ## Is π = 22/7 an exact value?
 
@@ -92,99 +92,143 @@ These principles constitute what is known as an [algorithm](https://www.merriam-
 
 ### Of polygons and circles
 
-Archimedes considered a circle, containing an [inscribed](https://mathworld.wolfram.com/Inscribed.html) regular polygon with $n$ sides, and [circumscribed](https://mathworld.wolfram.com/Circumscribed.html) by a regular polygon with the same $n$ sides. @fig:two-limits illustrates this for the case $n = 6$, i.e., with a regular [hexagon](https://www.britannica.com/science/hexagon).
+Archimedes considered a circle, containing an [inscribed](https://mathworld.wolfram.com/Inscribed.html) regular polygon with $n$ sides, and [circumscribed](https://mathworld.wolfram.com/Circumscribed.html) by a regular polygon with the same $n$ sides. [@fig:two-limits] illustrates this for the case $n = 6$, i.e., with a regular [hexagon](https://www.britannica.com/science/hexagon).
 
 ![The circumference of the circle in darkolivegreen is bounded from below by the perimeter of the inscribed regular hexagon in maroon and bounded from above by the perimeter of the circumscribed regular hexagon in midnightblue. The circumference of the circle must lie between the perimeters of these two hexagons. The value $r$ is the radius of the circle and the height $h$---from the centre to the mid-point of a side---is called the [apothem](https://en.wikipedia.org/wiki/Apothem).]({attach}images/two-limits.svg){#fig:two-limits width=70% .modal-target}
 
 ![The relationship between the circle and its inscribed and circumscribed regular polygons. The symbol $h$ is used for the apothem in both cases. Note that $OD = h = r\cos\theta$ for the inscribed polygon, whereas $OC = h = r$ for the circumscribed polygon.]({attach}images/sin-theta-tan-theta.svg){#fig:sin-theta-tan-theta width=70% .modal-target}
 
-Let us tabulate below the variables arising from @fig:two-limits and @fig:sin-theta-tan-theta.
+Let us tabulate below the variables arising from [@fig:two-limits;@fig:sin-theta-tan-theta].
 
-| Parameter | Circle |    | Inscribed Polygon |   | Circumscribed Polygon |
-|:----------|:-------|:--:|:------------------|:-:|:----------------------|
+| Parameter | Circle |    | Inscribed |   | Circumscribed |
+|:----------|:-----|:-|:----------|:----:|:-----------------|
 | Radius | $r$ |  |  |  |
-| Number of sides |  |  | $n$ | | $n$ |
-| Length of side |  |  | $2r\sin\theta$ | | $2r\tan\theta$ | 
-| Angle |  |  | $\theta = \frac{\pi}{n} = \frac{180°}{n}$ | | $\theta = \frac{\pi}{n}=\frac{180°}{n}$ |
-| Apothem |  |  | $h = r\cos\theta$ | | $h = r$ |
-| Area | $A = \pi r^2$ |  | $a_n = n\sin\theta\cos\theta r^2$ | | $A_n = n\tan\theta r^2$ |
-| Perimeter | $C = 2\pi r$ |  | $p_n = 2n\sin\theta r$ | | $P_n = 2n\tan\theta r$ |
+| Sides |  |  | $n$ |  | $n$ |
+|Length |  |  | $2r\sin\theta$ |  | $2r\tan\theta$ | 
+| Angle |  |  | $\theta(n) = \frac{\pi}{n} = \frac{180°}{n}$ |  | $\theta(n) = \frac{\pi}{n}=\frac{180°}{n}$ |
+| Apothem |  |  | $h = r\cos\theta$ |  | $h = r$ |
+| Area | $A = \pi r^2$ |  | $a(n) = n\sin\theta\cos\theta r^2$ |  | $A(n) = n\tan\theta r^2$ |
+| Perimeter | $C = 2\pi r$ |  | $c(n) = 2n\sin\theta r$ |  | $C(n) = 2n\tan\theta r$ |
 : Circle, inscribed, and circumscribed regular polygons ($n$-gons). {#tbl:variables}
 
+When $n$ varies, so do the values of $\theta$ and the areas and perimeters; they are therefore shown as functions of $n$ in [@tbl:variables].
 
+### Lower and upper bounds for π
 
-Imagine the mathematical fortitude of Archimedes to [plough on](https://www.collinsdictionary.com/dictionary/english/plough-on)---without algebra or trigonometry or the decimal number system---to establish the value of $\pi$.
-
-Also, note that @tbl:variables and @fig:sin-theta-tan-theta give us these inequalities for regular $n$-gons where $\theta = \frac{180}{n}$ degrees or $\theta = \frac{\pi}{n}$ radians.
+We assume that $r = 1$ without loss of generality. [@tbl:variables] and [@fig:sin-theta-tan-theta] together give us these inequalities for regular $n$-gons where $\theta = \frac{180}{n}$ degrees or $\theta = \frac{\pi}{n}$ radians.
 $$
 \begin{aligned}
-a_n < A < A_n &\implies n\sin\theta\cos\theta < \pi < n\tan\theta\\
-c_n < C < C_n &\implies n\sin\theta < \pi < n\tan\theta
+a(n) < A < A(n) &\implies n\sin\theta\cos\theta < \pi < n\tan\theta\\
+c(n) < C < C(n) &\implies n\sin\theta < \pi < n\tan\theta
 \end{aligned}
 $${#eq:squeeze}
 
-WHERE SHOULD THIS GO?
+From the right hand side of [@eq:squeeze], using the inequalities for perimeters, we have
+$$
+n\sin\tfrac{180°}{n} = n\sin\tfrac{\pi}{n}, \thinspace \mbox{for the lower bound}.
+$$ {#eq:lower-bound}
+$$
+n\tan\tfrac{180°}{n} = n\tan\tfrac{\pi}{n}, \thinspace \mbox{for the lower bound}.
+$$ {#eq:upper-bound}
 
-Before we consider numerical results, there are two aspects of the problem and the approach taken by Archimedes that I wish to discuss.
+[@eq:lower-bound; @eq:upper-bound] represent respectively the lower and upper bounds on the value of $\pi$ obtained through the method of Archimedes.
+
+Obviously, the circle may be viewed as a regular polygon whose number of sides, $n$ has become exceedingly large, or _infinite_. So, as $n$ is increased, we should expect the two bounds to converge to the limiting value of $\pi$.
+
+| $n$ | $n\sin\frac{\pi}{n}$ | $n\tan\frac{\pi}{n}$ |
+|:----|:-----------------|:--------------------|
+| $6$ | $3.0000000000$ | $3.4641016151$ |
+| $12$ | $3.1058285412$ | $3.2153903092$ |
+| $24$ | $3.1326286133$ | $3.1596599421$ |
+| $48$ | $3.1393502030$ | $3.1460862151$ |
+| $96$ | $3.1410319509$ | $3.1427145996$ |
+| $100$ | $3.1410759078$ | $3.1426266043$ |
+| $1000$ | $3.1415874859$ | $3.1416029891$ |
+| $10000$ | $3.1415926019$ | $3.1415927569$ |
+| $100000$ | $3.1415926531$ | $3.1415926546$ |
+| $1000000$ | $3.1415926536$ | $3.1415926536$ |
+: The values of $n\sin\frac{\pi}{n}$ and $n\tan\frac{\pi}{n}$ as $n$ increases. {#tbl:large-n-pi}
+\
+ 
+The upper and lower bounds are equal up to ten decimal digits when $n = 10^{6}$, and we might declare the problem of estimating pi solved. But in the time of Archimedes, trigonometry was not known; only geometry was. Moreover, the decimal system and calculators were also in the future. We now have to backtrack and attempt to retrace the steps Archimedes used to estimate $\pi$.
 
 ### Trigonometry and half angles
 
+But before we leave trigonometry altogether, let us explore how a recurrence relation may be established among successive estimates of $c(n)$ and $C(n)$ when $n$ is doubled.
+
+Once we have calculated, say, $c(6)$, ideally we would like to calculate $c(12)$ using the estimate of $c(6)$. This process of chaining successive results is called [recursion](https://www.geeksforgeeks.org/introduction-to-recursion-2/) and is vital in developing efficient algorithms.
+
+The trigonometry of [half angles in terms of the full angle]( https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas) [@half-angle] helps relate the successive values of $\theta$.
 
 
-Referring to @eq:squeeze, if $C_{i_n}$ is the perimeter of the inscribed polygon with $n$ sides, after side doubling, we want to express $C_{i_{2n}}$ in terms of $C_{i_n}$. This chaining of relationships, relating the current to the previous, is called [recursion](https://www.geeksforgeeks.org/introduction-to-recursion-2/) and is vital in developing efficient algorithms.
-
-The half-angle $\theta$ subtended at the centre by a regular $n$-gon is given by $\frac{180°}{n}$ as is apparent from @fig:sin-theta-tan-theta. When $n$ is doubled, this angle is halved. The trigonometry of [half angles in terms of the full angle]( https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas) helps establish the values of the new lengths in terms of the old lengths,
-
-To see how, let us examine the perimeter of the regular polygon of initially of $n$ sides---inscribed in a circle of unit radius---with successive doubling after each iteration. If, at the start, with $n$ sides, the angle as shown in @fig:sin-theta-tan-theta, is $\theta = \frac{\pi}{n}$, then, after $k$ doublings, the angle is $\frac{\theta}{2^k}$.
-
-The half-angle formulae below allow us to relate $C_{i_{2^{k}n}}$ to $C_{i_{2^{k-1}n}}$.
-$$\begin{aligned}
-\sin\frac{\theta}{2^k} = %
-\left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
-%
-\cos\frac{\theta}{2^k} = %
-\left[\frac{1+\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
-%
-\tan\frac{\theta}{2^k} = %
-\left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta}{2^{k-1}}\right]}\right]^{\frac{1}{2}}\\
-\end{aligned}
-$$
-
-With $r=1$, the equations connecting $C_{i_2^{k-1}n}$ and $_{i_2^{k}n}$ may be written so:
-$$
-
-$$
-
-We state below the two equations for $C_i$ with $n$ sides and $n(2^k)$ sides:
-
+We now introduce a slight change in notation. Since our focus is on side doubling and angle halving, we introduce a subscript $k$ to denote the number of doublings/halvings. We start with $k = 0$ denoting no doubling, which is the base case, with $n = n_{0} = 6$. After that, $k$ doublings are denoted by $2^{k}$.
 $$
 \begin{aligned}
-2n\sin\theta r < C_{i_{n}} < 2n\tan\theta r \\
-C_{i{_2n}} =  \\
+k &= 0\\
+n &= n_{0}\\
+\theta_{0} &= \tfrac{\pi}{n_{0}}\\
+n_{k} &= 2^{k}n_{0}\\
+\theta_{k} &= \theta(n_{k})\\
+&= \theta(2^{k}n_{0})\\
+&= \tfrac{\pi}{2^{k}n_{0}}\\ 
+&= \tfrac{\theta_{0}}{2^k}.\\
 \end{aligned}
+$$ {#eq:base-case}
+
+The half-angle formulae are:
+$$\begin{aligned}
+\sin\tfrac{\theta}{2^k} &= %
+\left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
+%
+\cos\tfrac{\theta}{2^k} &= %
+\left[\frac{1+\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
+%
+\tan\tfrac{\theta}{2^k} &= %
+\left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta}{2^{k-1}}\right]}\right]^{\frac{1}{2}}\\
+\end{aligned}
+$$ {#eq:trig-half-angle}
+
+Once we have the base case for the regular hexagon, we can relate successive angles and their sines via [@eq:trig-half-angle] and descend that binary staircase, according to [@eq:base-case; @eq:trig-half-angle; @eq:staircase]:
 $$
+\begin{aligned}
+n_{k}\sin\theta_{k} &= 2^{k}n_{0}\sin\frac{\theta_{0}}{2^{k}}\\
+&= 2^{k}n_{0}\left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
+\end{aligned}
+$$ {#eq:staircase}
+The recurrence relation has now been established.
+
+This has been a digression because its techniques were not available to Archimedes in his day. We now return to the main theme of how Archimedes used geometry to relate current values to previous values.
 
 ### The angle bisector theorem
 
-![The angle bisector theorem. The relative lengths of the two segments that a triangle's side is divided into by a line that bisects the opposite angle equals the relative lengths of the other two sides of the triangle, as shown on the diagram.]({attach}images/angle-bisection.svg){#fig:angle-bisect width=70% .modal-target}
+Without using the half-angle formulae of trigonometry, how can we successively obtain expressions for the values of $c(n)$ and $C(n)$ as we halve the angles and double the sides each time? We have to rely on something called the [angle bisector theorem](https://en.wikipedia.org/wiki/Angle_bisector_theorem) from geometry. This was something Archimedes already knew.
 
-Without using the [half-angle formulae](https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas) of trigonometry, how can we successively obtain expressions for the values of $C_i$ and $C_C$ as we halve the angles and double the sides each time. We have to rely on something called the [angle bisector theorem](https://en.wikipedia.org/wiki/Angle_bisector_theorem) from geometry.
+This derivation might seem tedious, but it is closer to what Archimedes did in order to establish the recurrence relation that tied the current value to the previous value.
 
-This derivation might seem tedious but it is closer to what Archimedes did in order to establish the recurrence relation that tied the current value to the previous value.
+![The angle bisector theorem. The relative lengths of the two segments that a triangle's side is divided into by a line that bisects the opposite angle equals the relative lengths of the other two sides of the triangle, as shown on the diagram.]({attach}images/angle-bisector.svg){#fig:angle-bisector width=70% .modal-target}
 
+Referring to [@fig:angle-bisector], if the line $OC$ bisects the angle $BOA$, then the base $AB$ is divided in the same ratio as the corresponding sides. This means
+$$
+\begin{aligned}
+\frac{AO}{OB} &= \frac{AC}{CB} \mbox{ which in turn means that }\\
+\frac{a}{b} &= \frac{p}{q}\\
+\end{aligned}
+$$ {#eq:angle-bisector}
+
+Before we can apply this to the regular hexagons we need to become aware of what I call the thirty, sixty, ninety triangle, which is considered next.
 
 ### The thirty, sixty, ninety right triangle
 
-Archimedes applied the same principle "of starting from the known" to initiate his algorithm using a _regular hexagon_, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right angled triangles with angles of thirty and sixty degrees, as shown in @fig:thirty-sixty.
+Archimedes applied the same principle "of starting from the known" to initiate his algorithm using a _regular hexagon_, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right-angled triangles with angles of thirty and sixty degrees, as shown in [@fig:thirty-sixty].
 
 ![This right-angled, obtained by bisecting an equilateral triangle, must be familiar to all school students. These lengths---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=40% .modal-target}
 
-The inscribed hexagon, within a circle of radius one unit, also has a side of one unit. Thus, the hypotenuse of the circle $OAP$ in @fig:thirty-sixty has unit length. Moreover, the base $OP$, resulting from a bisected side, has a length of half a unit. By applying the theorem of Pythagoras, the third side, $AP$ is 
+The inscribed hexagon, within a circle of radius one unit, also has a side of one unit. Thus, the hypotenuse of the circle $OAP$ in [@fig:thirty-sixty] has unit length. Moreover, the base $OP$, resulting from a bisected side, has a length of half a unit. By applying the theorem of Pythagoras, the third side, $AP$ is 
 $$
 \sqrt{1^2 - \left(\frac{1}{2}\right)^2} = \frac{\sqrt{3}}{2}.
 $${#eq:triangle}
 
-The next thing Archimedes needed and knew how to do was to compute $\sqrt{3}$ which figures in @eq:triangle. Finding square roots is a tedious process, not unlike long division, and prone to human error. The patience and doggedness of Archimedes that must have gone into the process is astounding.
+The next thing Archimedes needed and knew how to do was to compute $\sqrt{3}$ which figures in [@eq:triangle]. Finding square roots is a tedious process, not unlike long division, and prone to human error. The patience and doggedness of Archimedes that must have gone into the process is astounding.
 
 ### Extracting square roots by hand
 
@@ -194,7 +238,7 @@ $${#eq:sqrt3}
 
 ### Numerical results
 
-Evaluating the bounds given in @tbl:variables and @eq:squeeze by setting $r = 1$, $n = 6$, and $\theta = \frac{180}{n} = 30°$^[Rather than use radians with $\pi$ entering the proceedings, I decided to stick with degrees as units to avoid confusion. If one uses power series to probe further, of course, radians are called for.] gives us these values:
+Evaluating the bounds given in [@tbl:variables] and [@eq:squeeze] by setting $r = 1$, $n = 6$, and $\theta = \frac{180}{n} = 30°$^[Rather than use radians with $\pi$ entering the proceedings, I decided to stick with degrees as units to avoid confusion. If one uses power series to probe further, of course, radians are called for.] gives us these values:
 $$
 \begin{aligned}
 C_i &= 2n\sin\theta r = 12(\sin 30°) = 12(0.5) &= 6.0000.\\
@@ -214,11 +258,17 @@ $${#eq:triple-96}
 
 Note that in the case of 96 sides, we have a _very small angle_ $\theta$ whose $\sin$ and $\tan$ are almost equal. This is what gives us tight bounds on the estimate of $\pi$. If you know the power series for $\sin\theta$ and $\tan\theta$, you will appreciate even better how the value of $\pi$ is trapped and squeezed between these two rather close limits.
 
-Remember @eq:triple-96 because it helps us to estimate lower and upper bounds for the value of the circumference. Archimedes's application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in the series of figures, @fig:six-gon to @fig:ninety-six-gon.
+Remember [@eq:triple-96] because it helps us to estimate lower and upper bounds for the value of the circumference. Archimedes's application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in the series of figures, [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon].
 
-[Sanity check](https://en.wiktionary.org/wiki/sanity_check): Does $2\pi = 6.2820$, from a calculator, lie within the bounds of @eq:triple-96? Yes, indeed, and we are [home and dry](https://dictionary.cambridge.org/dictionary/english/be-home-and-dry).
+[Sanity check](https://en.wiktionary.org/wiki/sanity_check): Does $2\pi = 6.2820$, from a calculator, lie within the bounds of [@eq:triple-96]? Yes, indeed, and we are [home and dry](https://dictionary.cambridge.org/dictionary/english/be-home-and-dry).
 
 Second sanity check: When $n$ is very large, we expect $n\sin\frac{180°}{n}$ to be closer and closer to the true value. Setting $n = 10^6$ and evaluating on a calculator we get $10^6\sin\frac{180°}{10^6} = 3.14159$ which is reassuring. This deep connection between the circle and the trigonometric functions also explains why they are sometimes called the _circular functions_. Indeed, the values $n\sin\frac{\pi}{n}$ and $n\sin\tan{\pi}{n}$ both converge to $\pi$ for very large $n$. The interested reader should plot these two curves.
+
+WHERE SHOULD THIS GO?
+
+Imagine the mathematical [fortitude](https://www.merriam-webster.com/word-of-the-day/fortitude-2019-11-21) of Archimedes to [plough on](https://www.collinsdictionary.com/dictionary/english/plough-on)---without algebra or trigonometry or the decimal number system---to establish the value of $\pi$.
+
+Before we consider numerical results, there are two aspects of the problem and the approach taken by Archimedes that I wish to discuss.
 
 ### Recursion and Iteration
 
@@ -228,7 +278,7 @@ When he moved from $n=6$ to $n = 12$ sides, how did Archimedes estimate the resp
 
 For an English translation of the book _Measurement of a Circle_ by Archimedes [click on this link]({attach}auxiliary/Archimedes-Circle.pdf). It is the original source material from the man himself, and will give you a sense of completeness in your understanding of his method.
 
-He repeatedly calculated rational approximations to $\pi$ until he was satisfied with the accuracy. The principle of the method is clearly seen in @fig:six-gon to @fig:ninety-six-gon.
+He repeatedly calculated rational approximations to $\pi$ until he was satisfied with the accuracy. The principle of the method is clearly seen in [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon].
 
 ![The estimate for $\pi$ lies between $C_i = 3.0000 < \pi < C_c = 3.4641$.]({attach}images/six-gon.svg){#fig:six-gon width=70% .modal-target}
 
@@ -264,7 +314,7 @@ square roots by hand; similar and congruent figures; bisection theorems; exhaust
 
 
 
-In the series @fig:six to @fig:forty-eight below, which illustrate the approach Archimedes took to estimate $\pi$, we see very clearly that the perimeter of the _inscribed polygon_ $c_n$ and the perimeter of the _circumscribed polygon_ $C_n$ represent respectively the _lower bound_ and _upper bound_ of the estimated value of $\pi$. As the number of sides, $n$, of the polygon increases, the estimates become increasingly accurate.
+In [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon] below, which illustrate the approach Archimedes took to estimate $\pi$, we see very clearly that the perimeter of the _inscribed polygon_ $c_n$ and the perimeter of the _circumscribed polygon_ $C_n$ represent respectively the _lower bound_ and _upper bound_ of the estimated value of $\pi$. As the number of sides, $n$, of the polygon increases, the estimates become increasingly accurate.
 
 
 

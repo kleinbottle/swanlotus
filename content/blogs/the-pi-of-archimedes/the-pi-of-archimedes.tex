@@ -456,15 +456,15 @@ polygon.}\label{fig:sin-theta-tan-theta}
 \end{figure}
 
 Let us tabulate below the variables arising from
-\cref{fig:sin-theta-tan-theta}.
+\cref{fig:two-limits,fig:sin-theta-tan-theta}.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1618}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1176}}
-  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0588}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2794}}
-  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0441}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.3382}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2037}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0370}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2037}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.3333}}@{}}
 \caption{\label{tbl:variables}Circle, inscribed, and circumscribed
 regular polygons (\(n\)-gons).}\tabularnewline
 \toprule\noalign{}
@@ -472,12 +472,12 @@ regular polygons (\(n\)-gons).}\tabularnewline
 Parameter
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Circle
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Inscribed
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Inscribed Polygon
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Circumscribed Polygon
+Circumscribed
 \end{minipage} \\
 \midrule\noalign{}
 \endfirsthead
@@ -486,125 +486,198 @@ Circumscribed Polygon
 Parameter
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Circle
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Inscribed
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Inscribed Polygon
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Circumscribed Polygon
+Circumscribed
 \end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
 Radius & \(r\) & & & & \\
-Number of sides & & & \(n\) & & \(n\) \\
-Length of side & & & \(2r\sin\theta\) & & \(2r\tan\theta\) \\
-Angle & & & \(\theta = \frac{\pi}{n} = \frac{180°}{n}\) & &
-\(\theta = \frac{\pi}{n}=\frac{180°}{n}\) \\
+Sides & & & \(n\) & & \(n\) \\
+Length & & & \(2r\sin\theta\) & & \(2r\tan\theta\) \\
+Angle & & & \(\theta(n) = \frac{\pi}{n} = \frac{180°}{n}\) & &
+\(\theta(n) = \frac{\pi}{n}=\frac{180°}{n}\) \\
 Apothem & & & \(h = r\cos\theta\) & & \(h = r\) \\
-Area & \(A = \pi r^2\) & & \(a_n = n\sin\theta\cos\theta r^2\) & &
-\(A_n = n\tan\theta r^2\) \\
-Perimeter & \(C = 2\pi r\) & & \(p_n = 2n\sin\theta r\) & &
-\(P_n = 2n\tan\theta r\) \\
+Area & \(A = \pi r^2\) & & \(a(n) = n\sin\theta\cos\theta r^2\) & &
+\(A(n) = n\tan\theta r^2\) \\
+Perimeter & \(C = 2\pi r\) & & \(c(n) = 2n\sin\theta r\) & &
+\(C(n) = 2n\tan\theta r\) \\
 \end{longtable}
 
-Imagine the mathematical fortitude of Archimedes to
-\href{https://www.collinsdictionary.com/dictionary/english/plough-on}{plough
-on}---without algebra or trigonometry or the decimal number system---to
-establish the value of \(\pi\).
+When \(n\) varies, so do the values of \(\theta\) and the areas and
+perimeters; they are therefore shown as functions of \(n\) in
+\cref{tbl:variables}.
 
-Also, note that \cref{tbl:variables} and \cref{fig:sin-theta-tan-theta}
-give us these inequalities for regular \(n\)-gons where
+\subsubsection{Lower and upper bounds for
+π}\label{lower-and-upper-bounds-for-ux3c0}
+
+We assume that \(r = 1\) without loss of generality.
+\cref{tbl:variables} and \cref{fig:sin-theta-tan-theta} together give us
+these inequalities for regular \(n\)-gons where
 \(\theta = \frac{180}{n}\) degrees or \(\theta = \frac{\pi}{n}\)
 radians. \begin{equation}\phantomsection\label{eq:squeeze}{
 \begin{aligned}
-a_n < A < A_n &\implies n\sin\theta\cos\theta < \pi < n\tan\theta\\
-c_n < C < C_n &\implies n\sin\theta < \pi < n\tan\theta
+a(n) < A < A(n) &\implies n\sin\theta\cos\theta < \pi < n\tan\theta\\
+c(n) < C < C(n) &\implies n\sin\theta < \pi < n\tan\theta
 \end{aligned}
 }\end{equation}
 
-WHERE SHOULD THIS GO?
+From the right hand side of \cref{eq:squeeze}, using the inequalities
+for perimeters, we have
+\begin{equation}\phantomsection\label{eq:lower-bound}{
+n\sin\tfrac{180°}{n} = n\sin\tfrac{\pi}{n}, \thinspace \mbox{for the lower bound}.
+}\end{equation} \begin{equation}\phantomsection\label{eq:upper-bound}{
+n\tan\tfrac{180°}{n} = n\tan\tfrac{\pi}{n}, \thinspace \mbox{for the lower bound}.
+}\end{equation}
 
-Before we consider numerical results, there are two aspects of the
-problem and the approach taken by Archimedes that I wish to discuss.
+\cref{eq:lower-bound,eq:upper-bound} represent respectively the lower
+and upper bounds on the value of \(\pi\) obtained through the method of
+Archimedes.
+
+Obviously, the circle may be viewed as a regular polygon whose number of
+sides, \(n\) has become exceedingly large, or \emph{infinite}. So, as
+\(n\) is increased, we should expect the two bounds to converge to the
+limiting value of \(\pi\).
+
+\begin{longtable}[]{@{}lll@{}}
+\caption{The values of \(n\sin\frac{\pi}{n}\) and \(n\tan\frac{\pi}{n}\)
+as \(n\) increases. \{\#tbl:large-n-pi\}\\
+}\tabularnewline
+\toprule\noalign{}
+\(n\) & \(n\sin\frac{\pi}{n}\) & \(n\tan\frac{\pi}{n}\) \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\(n\) & \(n\sin\frac{\pi}{n}\) & \(n\tan\frac{\pi}{n}\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(6\) & \(3.0000000000\) & \(3.4641016151\) \\
+\(12\) & \(3.1058285412\) & \(3.2153903092\) \\
+\(24\) & \(3.1326286133\) & \(3.1596599421\) \\
+\(48\) & \(3.1393502030\) & \(3.1460862151\) \\
+\(96\) & \(3.1410319509\) & \(3.1427145996\) \\
+\(100\) & \(3.1410759078\) & \(3.1426266043\) \\
+\(1000\) & \(3.1415874859\) & \(3.1416029891\) \\
+\(10000\) & \(3.1415926019\) & \(3.1415927569\) \\
+\(100000\) & \(3.1415926531\) & \(3.1415926546\) \\
+\(1000000\) & \(3.1415926536\) & \(3.1415926536\) \\
+\end{longtable}
+
+The upper and lower bounds are equal up to ten decimal digits when
+\(n = 10^{6}\), and we might declare the problem of estimating pi
+solved. But in the time of Archimedes, trigonometry was not known; only
+geometry was. Moreover, the decimal system and calculators were also in
+the future. We now have to backtrack and attempt to retrace the steps
+Archimedes used to estimate \(\pi\).
 
 \subsubsection{Trigonometry and half
 angles}\label{trigonometry-and-half-angles}
 
-Referring to \cref{eq:squeeze}, if \(C_{i_n}\) is the perimeter of the
-inscribed polygon with \(n\) sides, after side doubling, we want to
-express \(C_{i_{2n}}\) in terms of \(C_{i_n}\). This chaining of
-relationships, relating the current to the previous, is called
+But before we leave trigonometry altogether, let us explore how a
+recurrence relation may be established among successive estimates of
+\(c(n)\) and \(C(n)\) when \(n\) is doubled.
+
+Once we have calculated, say, \(c(6)\), ideally we would like to
+calculate \(c(12)\) using the estimate of \(c(6)\). This process of
+chaining successive results is called
 \href{https://www.geeksforgeeks.org/introduction-to-recursion-2/}{recursion}
 and is vital in developing efficient algorithms.
 
-The half-angle \(\theta\) subtended at the centre by a regular \(n\)-gon
-is given by \(\frac{180°}{n}\) as is apparent from
-\cref{fig:sin-theta-tan-theta}. When \(n\) is doubled, this angle is
-halved. The trigonometry of
+The trigonometry of
 \href{https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas}{half
-angles in terms of the full angle} helps establish the values of the new
-lengths in terms of the old lengths,
+angles in terms of the full angle} {[}\citeproc{ref-half-angle}{1}{]}
+helps relate the successive values of \(\theta\).
 
-To see how, let us examine the perimeter of the regular polygon of
-initially of \(n\) sides---inscribed in a circle of unit radius---with
-successive doubling after each iteration. If, at the start, with \(n\)
-sides, the angle as shown in \cref{fig:sin-theta-tan-theta}, is
-\(\theta = \frac{\pi}{n}\), then, after \(k\) doublings, the angle is
-\(\frac{\theta}{2^k}\).
+We now introduce a slight change in notation. Since our focus is on side
+doubling and angle halving, we introduce a subscript \(k\) to denote the
+number of doublings/halvings. We start with \(k = 0\) denoting no
+doubling, which is the base case, with \(n = n_{0} = 6\). After that,
+\(k\) doublings are denoted by \(2^{k}\).
+\begin{equation}\phantomsection\label{eq:base-case}{
+\begin{aligned}
+k &= 0\\
+n &= n_{0}\\
+\theta_{0} &= \tfrac{\pi}{n_{0}}\\
+n_{k} &= 2^{k}n_{0}\\
+\theta_{k} &= \theta(n_{k})\\
+&= \theta(2^{k}n_{0})\\
+&= \tfrac{\pi}{2^{k}n_{0}}\\ 
+&= \tfrac{\theta_{0}}{2^k}.\\
+\end{aligned}
+}\end{equation}
 
-The half-angle formulae below allow us to relate \(C_{i_{2^{k}n}}\) to
-\(C_{i_{2^{k-1}n}}\). \[\begin{aligned}
-\sin\frac{\theta}{2^k} = %
+The half-angle formulae are:
+\begin{equation}\phantomsection\label{eq:trig-half-angle}{\begin{aligned}
+\sin\tfrac{\theta}{2^k} &= %
 \left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
 %
-\cos\frac{\theta}{2^k} = %
+\cos\tfrac{\theta}{2^k} &= %
 \left[\frac{1+\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
 %
-\tan\frac{\theta}{2^k} = %
+\tan\tfrac{\theta}{2^k} &= %
 \left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta}{2^{k-1}}\right]}\right]^{\frac{1}{2}}\\
 \end{aligned}
-\]
+}\end{equation}
 
-With \(r=1\), the equations connecting \(C_{i_2^{k-1}n}\) and
-\(_{i_2^{k}n}\) may be written so: \$\$
-
-\$\$
-
-We state below the two equations for \(C_i\) with \(n\) sides and
-\(n(2^k)\) sides:
-
-\[
+Once we have the base case for the regular hexagon, we can relate
+successive angles and their sines via \cref{eq:trig-half-angle} and
+descend that binary staircase, according to
+\cref{eq:base-case,eq:trig-half-angle,eq:staircase}:
+\begin{equation}\phantomsection\label{eq:staircase}{
 \begin{aligned}
-2n\sin\theta r < C_{i_{n}} < 2n\tan\theta r \\
-C_{i{_2n}} =  \\
+n_{k}\sin\theta_{k} &= 2^{k}n_{0}\sin\frac{\theta_{0}}{2^{k}}\\
+&= 2^{k}n_{0}\left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
 \end{aligned}
-\]
+}\end{equation} The recurrence relation has now been established.
+
+This has been a digression because its techniques were not available to
+Archimedes in his day. We now return to the main theme of how Archimedes
+used geometry to relate current values to previous values.
 
 \subsubsection{The angle bisector
 theorem}\label{the-angle-bisector-theorem}
 
+Without using the half-angle formulae of trigonometry, how can we
+successively obtain expressions for the values of \(c(n)\) and \(C(n)\)
+as we halve the angles and double the sides each time? We have to rely
+on something called the
+\href{https://en.wikipedia.org/wiki/Angle_bisector_theorem}{angle
+bisector theorem} from geometry. This was something Archimedes already
+knew.
+
+This derivation might seem tedious, but it is closer to what Archimedes
+did in order to establish the recurrence relation that tied the current
+value to the previous value.
+
 \begin{figure}
 \centering
-\includesvg[width=0.7\textwidth,height=\textheight]{images/angle-bisection.svg}
+\includesvg[width=0.7\textwidth,height=\textheight]{images/angle-bisector.svg}
 \caption{The angle bisector theorem. The relative lengths of the two
 segments that a triangle's side is divided into by a line that bisects
 the opposite angle equals the relative lengths of the other two sides of
-the triangle, as shown on the diagram.}\label{fig:angle-bisect}
+the triangle, as shown on the diagram.}\label{fig:angle-bisector}
 \end{figure}
 
-Without using the
-\href{https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas}{half-angle
-formulae} of trigonometry, how can we successively obtain expressions
-for the values of \(C_i\) and \(C_C\) as we halve the angles and double
-the sides each time. We have to rely on something called the
-\href{https://en.wikipedia.org/wiki/Angle_bisector_theorem}{angle
-bisector theorem} from geometry.
+Referring to \cref{fig:angle-bisector}, if the line \(OC\) bisects the
+angle \(BOA\), then the base \(AB\) is divided in the same ratio as the
+corresponding sides. This means
+\begin{equation}\phantomsection\label{eq:angle-bisector}{
+\begin{aligned}
+\frac{AO}{OB} &= \frac{AC}{CB} \mbox{ which in turn means that }\\
+\frac{a}{b} &= \frac{p}{q}\\
+\end{aligned}
+}\end{equation}
 
-This derivation might seem tedious but it is closer to what Archimedes
-did in order to establish the recurrence relation that tied the current
-value to the previous value.
+Before we can apply this to the regular hexagons we need to become aware
+of what I call the thirty, sixty, ninety triangle, which is considered
+next.
 
 \subsubsection{The thirty, sixty, ninety right
 triangle}\label{the-thirty-sixty-ninety-right-triangle}
@@ -613,7 +686,7 @@ Archimedes applied the same principle ``of starting from the known'' to
 initiate his algorithm using a \emph{regular hexagon}, which is a mosaic
 of six juxtaposed equilateral triangles. We know from symmetry that each
 angle of an equilateral triangle is \(60°\). When an equilateral
-triangle is bisected, we get two right angled triangles with angles of
+triangle is bisected, we get two right-angled triangles with angles of
 thirty and sixty degrees, as shown in \cref{fig:thirty-sixty}.
 
 \begin{figure}
@@ -692,7 +765,8 @@ upper bounds for the value of the circumference. Archimedes's
 application of the
 \href{https://en.wikipedia.org/wiki/Squeeze_theorem}{squeeze theorem}
 nineteen centuries before the calculus was invented is illustrated in
-the series of figures, \cref{fig:six-gon} to \cref{fig:ninety-six-gon}.
+the series of figures,
+\cref{fig:six-gon,fig:twelve-gon,fig:twenty-four-gon,fig:forty-eight-gon,fig:ninety-six-gon}.
 
 \href{https://en.wiktionary.org/wiki/sanity_check}{Sanity check}: Does
 \(2\pi = 6.2820\), from a calculator, lie within the bounds of
@@ -710,6 +784,18 @@ Indeed, the values \(n\sin\frac{\pi}{n}\) and \(n\sin\tan{\pi}{n}\) both
 converge to \(\pi\) for very large \(n\). The interested reader should
 plot these two curves.
 
+WHERE SHOULD THIS GO?
+
+Imagine the mathematical
+\href{https://www.merriam-webster.com/word-of-the-day/fortitude-2019-11-21}{fortitude}
+of Archimedes to
+\href{https://www.collinsdictionary.com/dictionary/english/plough-on}{plough
+on}---without algebra or trigonometry or the decimal number system---to
+establish the value of \(\pi\).
+
+Before we consider numerical results, there are two aspects of the
+problem and the approach taken by Archimedes that I wish to discuss.
+
 \subsubsection{Recursion and Iteration}\label{recursion-and-iteration}
 
 Archimedes started with regular hexagons and successively \emph{doubled}
@@ -725,7 +811,7 @@ When he moved from \(n=6\) to \(n = 12\) sides, how did Archimedes
 estimate the respective perimeters without the aid of trigonometry? He
 used geometry and the Pythagorean theorem,
 \href{https://nonagon.org/ExLibris/archimedes-pi}{as described here
-online} {[}\citeproc{ref-bertrand2014}{1}{]} to obtain
+online} {[}\citeproc{ref-bertrand2014}{2}{]} to obtain
 \href{https://en.wikipedia.org/wiki/Recurrence_relation}{recurrence
 relations} that gave the current result from the previous one.
 
@@ -736,7 +822,8 @@ you a sense of completeness in your understanding of his method.
 
 He repeatedly calculated rational approximations to \(\pi\) until he was
 satisfied with the accuracy. The principle of the method is clearly seen
-in \cref{fig:six-gon} to \cref{fig:ninety-six-gon}.
+in
+\cref{fig:six-gon,fig:twelve-gon,fig:twenty-four-gon,fig:forty-eight-gon,fig:ninety-six-gon}.
 
 \begin{figure}
 \centering
@@ -814,13 +901,14 @@ he used geometry and the ratios of the lengths of well-known triangles;
 roots by hand; similar and congruent figures; bisection theorems;
 exhaustion methods
 
-In the series \cref{fig:six} to \cref{fig:forty-eight} below, which
-illustrate the approach Archimedes took to estimate \(\pi\), we see very
-clearly that the perimeter of the \emph{inscribed polygon} \(c_n\) and
-the perimeter of the \emph{circumscribed polygon} \(C_n\) represent
-respectively the \emph{lower bound} and \emph{upper bound} of the
-estimated value of \(\pi\). As the number of sides, \(n\), of the
-polygon increases, the estimates become increasingly accurate.
+In
+\cref{fig:six-gon,fig:twelve-gon,fig:twenty-four-gon,fig:forty-eight-gon,fig:ninety-six-gon}
+below, which illustrate the approach Archimedes took to estimate
+\(\pi\), we see very clearly that the perimeter of the \emph{inscribed
+polygon} \(c_n\) and the perimeter of the \emph{circumscribed polygon}
+\(C_n\) represent respectively the \emph{lower bound} and \emph{upper
+bound} of the estimated value of \(\pi\). As the number of sides, \(n\),
+of the polygon increases, the estimates become increasingly accurate.
 
 https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek\_PiIs22By7\_Final.pdf
 
@@ -909,8 +997,14 @@ comments and corrections.
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{0}{0}
-\bibitem[\citeproctext]{ref-bertrand2014}
+\bibitem[\citeproctext]{ref-half-angle}
 \CSLLeftMargin{{[}1{]} }%
+\CSLRightInline{OpenStax. {Algebra and Trigonometry}. {Double-Angle,
+Half-Angle, and Reduction Formulas}. Retrieved 6 July 2024 from
+\url{https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas}}
+
+\bibitem[\citeproctext]{ref-bertrand2014}
+\CSLLeftMargin{{[}2{]} }%
 \CSLRightInline{Mike Bertrand. 2014. {Archimedes and Pi}. Ex libris.
 Retrieved 5 July 2024 from
 \url{https://nonagon.org/ExLibris/archimedes-pi}}
