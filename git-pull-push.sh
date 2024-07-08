@@ -2,8 +2,10 @@
 
 # Check if there any changed files
 function get_changed_files {
-    CHANGED_FILES=$({ git diff --name-only; git diff --name-only --staged; } | uniq)
+    git add .
+    CHANGED_FILES=$(git diff --cached --name-only | uniq)
     export CHANGED_FILES
+    git reset
 }
 
 # Pull in changes from remote repository
