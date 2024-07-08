@@ -4,31 +4,36 @@ using Printf
 using Pkg
 
 # Install the PrettyTables package
-Pkg.add("PrettyTables")
+Pkg.add("PrettyTables", io=devnull)
 using PrettyTables
 
+# Number of sides of the polygon inscribing and circumscribing the circle
 const NUM_SIDES = [6, 12, 24, 48, 96, 100, 1000, 10000, 100000, 1000000]
 
 function main()
+    # Approximate π using an inscribed and circumscribed n-sided polygon
+
     # Initialize a Float Matrix with unlimited rows and 3 columns
-    data = Array{Float64}(undef, 0, 3)
+    pi_approximations = Array{Float64}(undef, 0, 3)
 
     for n in NUM_SIDES
-        # Calculate the approximation for π using sine
+        # Calculate the approximation for π using the inscribed circle
         sin_approximation = round(n * sin(pi / n), sigdigits=11)
 
-        # Calculate the approximation for π using sine
+        # Calculate the approximation for π using the circumscribed circle
         tan_approximation = round(n * tan(pi / n), sigdigits=11)
 
         # Append a vector containing the number of sides (n)
         # and the sine and tan approximations
-        data = vcat(data, reshape([n, sin_approximation, tan_approximation], 1, 3))
+        pi_approximations = vcat(
+            pi_approximations, reshape([n, sin_approximation, tan_approximation], 1, 3)
+        )
     end
 
-    print_table(data)
+    print_table(pi_approximations)
 end
 
-function print_table(data)
+function print_table(pi_approximations)
     # Highlight the side column
     hl_side_col = Highlighter(
         f=(data, i, j) -> j == 1,
@@ -49,12 +54,13 @@ function print_table(data)
 
     # Print a table containing the approximations for π
     pretty_table(
-        data;
+        pi_approximations;
         formatters=(ft_printf("%d", 1), ft_printf("%11.10f", 2:3)), # Format specifiers
         header=["n", "n sin π/n", "n tan π/n"],
         highlighters=(hl_side_col, hl_sin_col, hl_tan_col), # Column value color
         header_crayon=Crayon(foreground=:yellow, bold=:true), # Header row color
-        crop=:none # Stop pretty_table from truncating rows
+        crop=:none, # Stop pretty_table from truncating rows
+        tf=tf_markdown
     )
 end
 

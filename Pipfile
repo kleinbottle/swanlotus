@@ -6,7 +6,6 @@ name = "pypi"
 [packages]
 beautifulsoup4 = "*"
 blinker = "*"
-colorama = "*"
 commonmark = "*"
 docutils = "*"
 feedgenerator = "*"
@@ -24,6 +23,7 @@ Pygments = "*"
 Unidecode = "*"
 typing-extensions = "*"
 "backports.zoneinfo" = "*"
+texttable = "*"
 
 [dev-packages]
 black = "*"

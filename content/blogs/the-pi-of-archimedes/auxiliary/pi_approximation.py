@@ -2,44 +2,47 @@
 """Approximate π."""
 import math
 
+from texttable import Texttable
+
+# Number of sides of the polygon inscribing and circumscribing the circle
 NUM_SIDES = [6, 12, 24, 48, 96, 100, 1000, 10000, 100000, 1000000]
 
 
 def main():
-    """Approximate π by increasing the number of sides on a polygon."""
-    approximations = [["n", "n sin π/n", "n tan π/n"]]
+    """Approximate π using an inscribed and circumscribed n-sided polygon."""
+    pi_approximations = [["n", "n sin π/n", "n tan π/n"]]
     for n in NUM_SIDES:
+        # Calculate the approximation for π using the inscribed circle
         sin_approximation = round(n * math.sin(math.pi / n), 10)
+
+        # Calculate the approximation for π using the circumscribed circle
         tan_approximation = round(n * math.tan(math.pi / n), 10)
-        approximations.append(
+
+        # Append a list containing containing the number of sides (n)
+        # and the sine and tan approximations to a list
+        pi_approximations.append(
             [
                 f"{n}",
                 f"{sin_approximation:1.10f}",
                 f"{tan_approximation:1.10f}",
             ]
         )
-    print_table(approximations)
+
+    print_table(pi_approximations)
 
 
-def print_table(data):
-    """Print a table containing the given data."""
-    # Find the maximum width of each column
-    col_widths = [max(len(str(item)) for item in col) for col in zip(*data)]
+def print_table(pi_approximations):
+    """Print a text table containing the approximations."""
+    table = Texttable()
 
-    # Create a format string for each row
-    format_str = " | ".join(f"{{:{width}}}" for width in col_widths)
+    table.set_cols_align(["r", "r", "r"])
+    table.set_header_align(["r", "r", "r"])
+    table.set_cols_valign(["b", "b", "b"])
+    table.set_cols_dtype(["i", "f", "f"])
+    table.set_precision(10)  # Prevent truncation of floats
+    table.add_rows(pi_approximations)
 
-    # Print each row
-    row_str = None
-    for i, row in enumerate(data):
-        row_str = "|" + format_str.format(*row) + "|"
-        print(row_str)
-        if i == 0:
-            # Print a separator after the header row
-            print("|" + "-" * (len(row_str) - 2) + "|")
-
-    # Print a line after at the end of the table
-    print("-" * len(row_str))
+    print(table.draw())
 
 
 if __name__ == "__main__":
