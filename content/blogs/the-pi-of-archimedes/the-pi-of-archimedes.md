@@ -193,11 +193,13 @@ $$
 \begin{aligned}
 n_{k}\sin\theta_{k} &= 2^{k}n_{0}\sin\frac{\theta_{0}}{2^{k}}\\
 &= 2^{k}n_{0}\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
+n_{k}\tan\theta_{k} &= 2^{k}n_{0}\tan\frac{\theta_{0}}{2^{k}}\\
+&= \left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}\right]^{\frac{1}{2}}
 \end{aligned}
 $$ {#eq:staircase}
-The recurrence relation linking $sin \theta_{k}$ to $\cos \theta_{k-1}$ has now been established.
+The recurrence relation linking $\theta_{k}$ to $\theta_{k-1}$ has now been established.
 
-This has been a digression because its techniques were not available to Archimedes in his day. I have added it for completeness, and to demonstrate the use of recurrence relations with the trigonometric approach [@damini-dhar-2020].
+This has been a digression because these techniques were not available to Archimedes in his day. I have added it for completeness, and to demonstrate the use of recurrence relations with the trigonometric approach [@damini-dhar-2020].
 
 We now return to the main theme of how Archimedes used geometry to relate current values to previous values.
 
@@ -221,7 +223,7 @@ Before we can apply this to the regular hexagons we need to become aware of what
 
 ### The thirty, sixty, ninety right triangle
 
-Archimedes applied the same principle "of starting from the known" to initiate his algorithm using a _regular hexagon_, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right-angled triangles with angles of thirty and sixty degrees, as shown in [@fig:thirty-sixty].
+Archimedes applied the principle "of starting from the known" to initiate his algorithm using a _regular hexagon_, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right-angled triangles with angles of thirty and sixty degrees, as shown in [@fig:thirty-sixty].
 
 ![This right-angled, obtained by bisecting an equilateral triangle, must be familiar to all school students. These lengths---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=40% .modal-target}
 

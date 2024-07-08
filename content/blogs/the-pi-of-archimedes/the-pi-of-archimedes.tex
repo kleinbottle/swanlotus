@@ -634,12 +634,14 @@ descend that binary staircase, according to
 \begin{aligned}
 n_{k}\sin\theta_{k} &= 2^{k}n_{0}\sin\frac{\theta_{0}}{2^{k}}\\
 &= 2^{k}n_{0}\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
+n_{k}\tan\theta_{k} &= 2^{k}n_{0}\tan\frac{\theta_{0}}{2^{k}}\\
+&= \left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}\right]^{\frac{1}{2}}
 \end{aligned}
-}\end{equation} The recurrence relation linking \(sin \theta_{k}\) to
-\(\cos \theta_{k-1}\) has now been established.
+}\end{equation} The recurrence relation linking \(\theta_{k}\) to
+\(\theta_{k-1}\) has now been established.
 
-This has been a digression because its techniques were not available to
-Archimedes in his day. I have added it for completeness, and to
+This has been a digression because these techniques were not available
+to Archimedes in his day. I have added it for completeness, and to
 demonstrate the use of recurrence relations with the trigonometric
 approach {[}\citeproc{ref-damini-dhar-2020}{2}{]}.
 
@@ -687,7 +689,7 @@ next.
 \subsubsection{The thirty, sixty, ninety right
 triangle}\label{the-thirty-sixty-ninety-right-triangle}
 
-Archimedes applied the same principle ``of starting from the known'' to
+Archimedes applied the principle ``of starting from the known'' to
 initiate his algorithm using a \emph{regular hexagon}, which is a mosaic
 of six juxtaposed equilateral triangles. We know from symmetry that each
 angle of an equilateral triangle is \(60°\). When an equilateral
