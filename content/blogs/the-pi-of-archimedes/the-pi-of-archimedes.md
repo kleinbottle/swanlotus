@@ -192,12 +192,14 @@ Once we have the base case for the regular hexagon, we can relate successive ang
 $$
 \begin{aligned}
 n_{k}\sin\theta_{k} &= 2^{k}n_{0}\sin\frac{\theta_{0}}{2^{k}}\\
-&= 2^{k}n_{0}\left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
+&= 2^{k}n_{0}\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
 \end{aligned}
 $$ {#eq:staircase}
-The recurrence relation has now been established.
+The recurrence relation linking $sin \theta_{k}$ to $\cos \theta_{k-1}$ has now been established.
 
-This has been a digression because its techniques were not available to Archimedes in his day. We now return to the main theme of how Archimedes used geometry to relate current values to previous values.
+This has been a digression because its techniques were not available to Archimedes in his day. I have added it for completeness, and to demonstrate the use of recurrence relations with the trigonometric approach [@damini-dhar-2020].
+
+We now return to the main theme of how Archimedes used geometry to relate current values to previous values.
 
 ### The angle bisector theorem
 
@@ -237,6 +239,8 @@ $$\sqrt{3} \approx \frac{265}{153} \approx 1.732.
 $${#eq:sqrt3}
 
 ### Numerical results
+
+WHERE TO PUT THIS?
 
 Evaluating the bounds given in [@tbl:variables] and [@eq:squeeze] by setting $r = 1$, $n = 6$, and $\theta = \frac{180}{n} = 30°$^[Rather than use radians with $\pi$ entering the proceedings, I decided to stick with degrees as units to avoid confusion. If one uses power series to probe further, of course, radians are called for.] gives us these values:
 $$

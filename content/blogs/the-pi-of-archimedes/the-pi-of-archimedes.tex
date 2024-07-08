@@ -633,13 +633,18 @@ descend that binary staircase, according to
 \begin{equation}\phantomsection\label{eq:staircase}{
 \begin{aligned}
 n_{k}\sin\theta_{k} &= 2^{k}n_{0}\sin\frac{\theta_{0}}{2^{k}}\\
-&= 2^{k}n_{0}\left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
+&= 2^{k}n_{0}\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
 \end{aligned}
-}\end{equation} The recurrence relation has now been established.
+}\end{equation} The recurrence relation linking \(sin \theta_{k}\) to
+\(\cos \theta_{k-1}\) has now been established.
 
 This has been a digression because its techniques were not available to
-Archimedes in his day. We now return to the main theme of how Archimedes
-used geometry to relate current values to previous values.
+Archimedes in his day. I have added it for completeness, and to
+demonstrate the use of recurrence relations with the trigonometric
+approach {[}\citeproc{ref-damini-dhar-2020}{2}{]}.
+
+We now return to the main theme of how Archimedes used geometry to
+relate current values to previous values.
 
 \subsubsection{The angle bisector
 theorem}\label{the-angle-bisector-theorem}
@@ -727,6 +732,8 @@ a rational fraction. With remarkable accuracy, he stated that:
 
 \subsubsection{Numerical results}\label{numerical-results}
 
+WHERE TO PUT THIS?
+
 Evaluating the bounds given in \cref{tbl:variables} and
 \cref{eq:squeeze} by setting \(r = 1\), \(n = 6\), and
 \(\theta = \frac{180}{n} = 30°\)\footnote{Rather than use radians with
@@ -811,7 +818,7 @@ When he moved from \(n=6\) to \(n = 12\) sides, how did Archimedes
 estimate the respective perimeters without the aid of trigonometry? He
 used geometry and the Pythagorean theorem,
 \href{https://nonagon.org/ExLibris/archimedes-pi}{as described here
-online} {[}\citeproc{ref-bertrand2014}{2}{]} to obtain
+online} {[}\citeproc{ref-bertrand2014}{3}{]} to obtain
 \href{https://en.wikipedia.org/wiki/Recurrence_relation}{recurrence
 relations} that gave the current result from the previous one.
 
@@ -1003,8 +1010,15 @@ comments and corrections.
 Half-Angle, and Reduction Formulas}. Retrieved 6 July 2024 from
 \url{https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas}}
 
-\bibitem[\citeproctext]{ref-bertrand2014}
+\bibitem[\citeproctext]{ref-damini-dhar-2020}
 \CSLLeftMargin{{[}2{]} }%
+\CSLRightInline{Damini D B and Abhishek Dhar. 2022. How archimedes
+showed that pi is approximately 22 by 7. \emph{{Azim Premji University
+At Right Angles}}. Retrieved 2 July 2024 from
+\url{https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf}}
+
+\bibitem[\citeproctext]{ref-bertrand2014}
+\CSLLeftMargin{{[}3{]} }%
 \CSLRightInline{Mike Bertrand. 2014. {Archimedes and Pi}. Ex libris.
 Retrieved 5 July 2024 from
 \url{https://nonagon.org/ExLibris/archimedes-pi}}
