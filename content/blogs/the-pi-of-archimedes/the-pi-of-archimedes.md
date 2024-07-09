@@ -110,6 +110,7 @@ Let us tabulate below the variables arising from [@fig:two-limits;@fig:sin-theta
 | Area | $A = \pi r^2$ |  | $a(n) = n\sin\theta\cos\theta r^2$ |  | $A(n) = n\tan\theta r^2$ |
 | Perimeter | $C = 2\pi r$ |  | $c(n) = 2n\sin\theta r$ |  | $C(n) = 2n\tan\theta r$ |
 : Circle, inscribed, and circumscribed regular polygons ($n$-gons). {#tbl:variables}
+\ 
 
 When $n$ varies, so do the values of $\theta$ and the areas and perimeters; they are therefore shown as functions of $n$ in [@tbl:variables].
 
@@ -175,20 +176,23 @@ n_{k} &= 2^{k}n_{0}\\
 \end{aligned}
 $$ {#eq:base-case}
 
-The half-angle formulae are:
+In our case, for $k\geq 1$, the half-angle formulae are:
 $$\begin{aligned}
-\sin\tfrac{\theta}{2^k} &= %
-\left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
+\sin\tfrac{\theta_{0}}{2^{k}} %
+&= \sqrt{\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]} %
+&= \left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
 %
-\cos\tfrac{\theta}{2^k} &= %
-\left[\frac{1+\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
+\cos\tfrac{\theta_{0}}{2^{k}} %
+&= \sqrt{\left[\frac{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]} %
+&= \left[\frac{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
 %
-\tan\tfrac{\theta}{2^k} &= %
-\left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta}{2^{k-1}}\right]}\right]^{\frac{1}{2}}\\
+\tan\tfrac{\theta_{0}}{2^{k}} %
+&= \sqrt{\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}\right]} %
+&= \left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}\right]^{\frac{1}{2}}\\
 \end{aligned}
 $$ {#eq:trig-half-angle}
 
-Once we have the base case for the regular hexagon, we can relate successive angles and their sines via [@eq:trig-half-angle] and descend that binary staircase, according to [@eq:base-case; @eq:trig-half-angle; @eq:staircase]:
+Once we have the base case for the regular hexagon, we can relate successive angles and their sines and tans via [@eq:trig-half-angle] and descend that binary staircase, according to [@eq:base-case; @eq:trig-half-angle; @eq:staircase]:
 $$
 \begin{aligned}
 n_{k}\sin\theta_{k} &= 2^{k}n_{0}\sin\frac{\theta_{0}}{2^{k}}\\
@@ -197,7 +201,18 @@ n_{k}\tan\theta_{k} &= 2^{k}n_{0}\tan\frac{\theta_{0}}{2^{k}}\\
 &= \left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}\right]^{\frac{1}{2}}
 \end{aligned}
 $$ {#eq:staircase}
-The recurrence relation linking $\theta_{k}$ to $\theta_{k-1}$ has now been established.
+The recurrence relation linking $\theta_{k}$ to $\theta_{k-1}$ has now been established. We tabulate below the values for $n_{0} = 6$ and $\theta = \theta_{0} = \frac{180°}{6} = 30°$ derived from the half-angle formulae:
+
+| $k$ | $2^k$ | $n=2^kn_{0}$ | $\theta=\frac{\theta_{0}}{2^{k}}$ | $n\sin\theta$ | $n\tan\theta$ |
+|:----|:------|:---------|:-----------------|:--------------------|------------------|
+| 0 | 1 | 6 | 30° |  |  |
+| 1 | 2 | 12 | 15° |  |  |
+| 2 | 4 | 24 | 7.5° |  |  |
+| 3 | 8 | 48 | 3.75° |  |  |
+| 4 | 16 | 96 | 1.875° |  |  |
+: Polygon perimeters estimages using half-angle formulae. {#tbl-half-angle}
+
+\ 
 
 This has been a digression because these techniques were not available to Archimedes in his day. I have added it for completeness, and to demonstrate the use of recurrence relations with the trigonometric approach [@damini-dhar-2020].
 

@@ -199,6 +199,8 @@
 %
 \usepackage{newunicodechar}
 \newunicodechar{√}{\textsf{√}}
+\usepackage {caption}
+    \captionsetup{font={sf,stretch=1.4}}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -465,8 +467,8 @@ Let us tabulate below the variables arising from
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2037}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.3333}}@{}}
-\caption{\label{tbl:variables}Circle, inscribed, and circumscribed
-regular polygons (\(n\)-gons).}\tabularnewline
+\caption{Circle, inscribed, and circumscribed regular polygons
+(\(n\)-gons). \{\#tbl:variables\} ~}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Parameter
@@ -613,22 +615,25 @@ n_{k} &= 2^{k}n_{0}\\
 \end{aligned}
 }\end{equation}
 
-The half-angle formulae are:
+In our case, for \(k\geq 1\), the half-angle formulae are:
 \begin{equation}\phantomsection\label{eq:trig-half-angle}{\begin{aligned}
-\sin\tfrac{\theta}{2^k} &= %
-\left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
+\sin\tfrac{\theta_{0}}{2^{k}} %
+&= \sqrt{\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]} %
+&= \left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
 %
-\cos\tfrac{\theta}{2^k} &= %
-\left[\frac{1+\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
+\cos\tfrac{\theta_{0}}{2^{k}} %
+&= \sqrt{\left[\frac{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]} %
+&= \left[\frac{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
 %
-\tan\tfrac{\theta}{2^k} &= %
-\left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta}{2^{k-1}}\right]}\right]^{\frac{1}{2}}\\
+\tan\tfrac{\theta_{0}}{2^{k}} %
+&= \sqrt{\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}\right]} %
+&= \left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}\right]^{\frac{1}{2}}\\
 \end{aligned}
 }\end{equation}
 
 Once we have the base case for the regular hexagon, we can relate
-successive angles and their sines via \cref{eq:trig-half-angle} and
-descend that binary staircase, according to
+successive angles and their sines and tans via \cref{eq:trig-half-angle}
+and descend that binary staircase, according to
 \cref{eq:base-case,eq:trig-half-angle,eq:staircase}:
 \begin{equation}\phantomsection\label{eq:staircase}{
 \begin{aligned}
@@ -638,7 +643,61 @@ n_{k}\tan\theta_{k} &= 2^{k}n_{0}\tan\frac{\theta_{0}}{2^{k}}\\
 &= \left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}\right]^{\frac{1}{2}}
 \end{aligned}
 }\end{equation} The recurrence relation linking \(\theta_{k}\) to
-\(\theta_{k-1}\) has now been established.
+\(\theta_{k-1}\) has now been established. We tabulate below the values
+for \(n_{0} = 6\) and \(\theta = \theta_{0} = \frac{180°}{6} = 30°\)
+derived from the half-angle formulae:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0633}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0886}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1266}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2278}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2658}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2278}}@{}}
+\caption{Polygon perimeters estimages using half-angle formulae.
+\{\#tbl-half-angle\}}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\(k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(2^k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(n=2^kn_{0}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\theta=\frac{\theta_{0}}{2^{k}}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(n\sin\theta\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(n\tan\theta\)
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\(k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(2^k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(n=2^kn_{0}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\theta=\frac{\theta_{0}}{2^{k}}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(n\sin\theta\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(n\tan\theta\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & 1 & 6 & 30° & & \\
+1 & 2 & 12 & 15° & & \\
+2 & 4 & 24 & 7.5° & & \\
+3 & 8 & 48 & 3.75° & & \\
+4 & 16 & 96 & 1.875° & & \\
+\end{longtable}
+
+~
 
 This has been a digression because these techniques were not available
 to Archimedes in his day. I have added it for completeness, and to
