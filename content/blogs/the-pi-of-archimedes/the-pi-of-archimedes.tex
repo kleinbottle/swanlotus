@@ -397,7 +397,7 @@ portraits of Archimedes are flights of fancy rather than true
 likenesses.}\label{fig:Archimedes-AI}
 \end{figure}
 
-\subsubsection{Principles used by
+\subsection{Principles used by
 Archimedes}\label{principles-used-by-archimedes}
 
 The method that Archimedes devised is instructive because it is a
@@ -424,7 +424,7 @@ Once such a systematic framework has been put in place, it can be
 applied in many research domains to aid rapid scientific progress. The
 algorithm is the basis of modern computing.
 
-\subsubsection{Of polygons and circles}\label{of-polygons-and-circles}
+\subsection{Of polygons and circles}\label{of-polygons-and-circles}
 
 Archimedes considered a circle, containing an
 \href{https://mathworld.wolfram.com/Inscribed.html}{inscribed} regular
@@ -461,23 +461,19 @@ Let us tabulate below the variables arising from
 \cref{fig:two-limits,fig:sin-theta-tan-theta}.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2037}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0370}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2037}}
-  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.3333}}@{}}
-\caption{Circle, inscribed, and circumscribed regular polygons
-(\(n\)-gons). \{\#tbl:variables\} ~}\tabularnewline
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1270}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1746}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4127}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2857}}@{}}
+\caption{\label{tbl:variables}Circle, inscribed, and circumscribed
+regular polygons (\(n\)-gons).}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Parameter
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Circle
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Inscribed
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Circumscribed
 \end{minipage} \\
@@ -489,9 +485,7 @@ Parameter
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Circle
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Inscribed
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Circumscribed
 \end{minipage} \\
@@ -499,23 +493,25 @@ Circumscribed
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Radius & \(r\) & & & & \\
-Sides & & & \(n\) & & \(n\) \\
-Length & & & \(2r\sin\theta\) & & \(2r\tan\theta\) \\
-Angle & & & \(\theta(n) = \frac{\pi}{n} = \frac{180°}{n}\) & &
+Radius & \(r\) & & \\
+Sides & & \(n\) & \(n\) \\
+Length & & \(2r\sin\theta\) & \(2r\tan\theta\) \\
+Angle & & \(\theta(n) = \frac{\pi}{n} = \frac{180°}{n}\) &
 \(\theta(n) = \frac{\pi}{n}=\frac{180°}{n}\) \\
-Apothem & & & \(h = r\cos\theta\) & & \(h = r\) \\
-Area & \(A = \pi r^2\) & & \(a(n) = n\sin\theta\cos\theta r^2\) & &
+Apothem & & \(h = r\cos\theta\) & \(h = r\) \\
+Area & \(A = \pi r^2\) & \(a(n) = n\sin\theta\cos\theta r^2\) &
 \(A(n) = n\tan\theta r^2\) \\
-Perimeter & \(C = 2\pi r\) & & \(c(n) = 2n\sin\theta r\) & &
+Perimeter & \(C = 2\pi r\) & \(c(n) = 2n\sin\theta r\) &
 \(C(n) = 2n\tan\theta r\) \\
 \end{longtable}
+
+~
 
 When \(n\) varies, so do the values of \(\theta\) and the areas and
 perimeters; they are therefore shown as functions of \(n\) in
 \cref{tbl:variables}.
 
-\subsubsection{Lower and upper bounds for
+\subsection{Lower and upper bounds for
 π}\label{lower-and-upper-bounds-for-ux3c0}
 
 We assume that \(r = 1\) without loss of generality.
@@ -547,9 +543,8 @@ sides, \(n\) has become exceedingly large, or \emph{infinite}. So, as
 limiting value of \(\pi\).
 
 \begin{longtable}[]{@{}lll@{}}
-\caption{The values of \(n\sin\frac{\pi}{n}\) and \(n\tan\frac{\pi}{n}\)
-as \(n\) increases. \{\#tbl:large-n-pi\}\\
-}\tabularnewline
+\caption{\label{tbl:large-n-pi}The values of \(n\sin\frac{\pi}{n}\) and
+\(n\tan\frac{\pi}{n}\) as \(n\) increases.}\tabularnewline
 \toprule\noalign{}
 \(n\) & \(n\sin\frac{\pi}{n}\) & \(n\tan\frac{\pi}{n}\) \\
 \midrule\noalign{}
@@ -572,178 +567,14 @@ as \(n\) increases. \{\#tbl:large-n-pi\}\\
 \(1000000\) & \(3.1415926536\) & \(3.1415926536\) \\
 \end{longtable}
 
+~
+
 The upper and lower bounds are equal up to ten decimal digits when
 \(n = 10^{6}\), and we might declare the problem of estimating pi
 solved. But in the time of Archimedes, trigonometry was not known; only
 geometry was. Moreover, the decimal system and calculators were also in
 the future. We now have to backtrack and attempt to retrace the steps
 Archimedes used to estimate \(\pi\).
-
-\subsubsection{Trigonometry and half
-angles}\label{trigonometry-and-half-angles}
-
-But before we leave trigonometry altogether, let us explore how a
-recurrence relation may be established among successive estimates of
-\(c(n)\) and \(C(n)\) when \(n\) is doubled.
-
-Once we have calculated, say, \(c(6)\), ideally we would like to
-calculate \(c(12)\) using the estimate of \(c(6)\). This process of
-chaining successive results is called
-\href{https://www.geeksforgeeks.org/introduction-to-recursion-2/}{recursion}
-and is vital in developing efficient algorithms.
-
-The trigonometry of
-\href{https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas}{half
-angles in terms of the full angle} {[}\citeproc{ref-half-angle}{1}{]}
-helps relate the successive values of \(\theta\).
-
-We now introduce a slight change in notation. Since our focus is on side
-doubling and angle halving, we introduce a subscript \(k\) to denote the
-number of doublings/halvings. We start with \(k = 0\) denoting no
-doubling, which is the base case, with \(n = n_{0} = 6\). After that,
-\(k\) doublings are denoted by \(2^{k}\).
-\begin{equation}\phantomsection\label{eq:base-case}{
-\begin{aligned}
-k &= 0\\
-n &= n_{0}\\
-\theta_{0} &= \tfrac{\pi}{n_{0}}\\
-n_{k} &= 2^{k}n_{0}\\
-\theta_{k} &= \theta(n_{k})\\
-&= \theta(2^{k}n_{0})\\
-&= \tfrac{\pi}{2^{k}n_{0}}\\ 
-&= \tfrac{\theta_{0}}{2^k}.\\
-\end{aligned}
-}\end{equation}
-
-In our case, for \(k\geq 1\), the half-angle formulae are:
-\begin{equation}\phantomsection\label{eq:trig-half-angle}{\begin{aligned}
-\sin\tfrac{\theta_{0}}{2^{k}} %
-&= \sqrt{\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]} %
-&= \left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
-%
-\cos\tfrac{\theta_{0}}{2^{k}} %
-&= \sqrt{\left[\frac{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]} %
-&= \left[\frac{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
-%
-\tan\tfrac{\theta_{0}}{2^{k}} %
-&= \sqrt{\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}\right]} %
-&= \left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}\right]^{\frac{1}{2}}\\
-\end{aligned}
-}\end{equation}
-
-Once we have the base case for the regular hexagon, we can relate
-successive angles and their sines and tans via \cref{eq:trig-half-angle}
-and descend that binary staircase, according to
-\cref{eq:base-case,eq:trig-half-angle,eq:staircase}:
-\begin{equation}\phantomsection\label{eq:staircase}{
-\begin{aligned}
-n_{k}\sin\theta_{k} &= 2^{k}n_{0}\sin\frac{\theta_{0}}{2^{k}}\\
-&= 2^{k}n_{0}\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
-n_{k}\tan\theta_{k} &= 2^{k}n_{0}\tan\frac{\theta_{0}}{2^{k}}\\
-&= \left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}\right]^{\frac{1}{2}}
-\end{aligned}
-}\end{equation} The recurrence relation linking \(\theta_{k}\) to
-\(\theta_{k-1}\) has now been established. We tabulate below the values
-for \(n_{0} = 6\) and \(\theta = \theta_{0} = \frac{180°}{6} = 30°\)
-derived from the half-angle formulae:
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0633}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0886}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1266}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2278}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2658}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2278}}@{}}
-\caption{Polygon perimeters estimages using half-angle formulae.
-\{\#tbl-half-angle\}}\tabularnewline
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\(k\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(2^k\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(n=2^kn_{0}\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(\theta=\frac{\theta_{0}}{2^{k}}\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(n\sin\theta\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(n\tan\theta\)
-\end{minipage} \\
-\midrule\noalign{}
-\endfirsthead
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\(k\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(2^k\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(n=2^kn_{0}\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(\theta=\frac{\theta_{0}}{2^{k}}\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(n\sin\theta\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(n\tan\theta\)
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-0 & 1 & 6 & 30° & & \\
-1 & 2 & 12 & 15° & & \\
-2 & 4 & 24 & 7.5° & & \\
-3 & 8 & 48 & 3.75° & & \\
-4 & 16 & 96 & 1.875° & & \\
-\end{longtable}
-
-~
-
-This has been a digression because these techniques were not available
-to Archimedes in his day. I have added it for completeness, and to
-demonstrate the use of recurrence relations with the trigonometric
-approach {[}\citeproc{ref-damini-dhar-2020}{2}{]}.
-
-We now return to the main theme of how Archimedes used geometry to
-relate current values to previous values.
-
-\subsubsection{The angle bisector
-theorem}\label{the-angle-bisector-theorem}
-
-Without using the half-angle formulae of trigonometry, how can we
-successively obtain expressions for the values of \(c(n)\) and \(C(n)\)
-as we halve the angles and double the sides each time? We have to rely
-on something called the
-\href{https://en.wikipedia.org/wiki/Angle_bisector_theorem}{angle
-bisector theorem} from geometry. This was something Archimedes already
-knew.
-
-This derivation might seem tedious, but it is closer to what Archimedes
-did in order to establish the recurrence relation that tied the current
-value to the previous value.
-
-\begin{figure}
-\centering
-\includesvg[width=0.7\textwidth,height=\textheight]{images/angle-bisector.svg}
-\caption{The angle bisector theorem. The relative lengths of the two
-segments that a triangle's side is divided into by a line that bisects
-the opposite angle equals the relative lengths of the other two sides of
-the triangle, as shown on the diagram.}\label{fig:angle-bisector}
-\end{figure}
-
-Referring to \cref{fig:angle-bisector}, if the line \(OC\) bisects the
-angle \(BOA\), then the base \(AB\) is divided in the same ratio as the
-corresponding sides. This means
-\begin{equation}\phantomsection\label{eq:angle-bisector}{
-\begin{aligned}
-\frac{AO}{OB} &= \frac{AC}{CB} \mbox{ which in turn means that }\\
-\frac{a}{b} &= \frac{p}{q}\\
-\end{aligned}
-}\end{equation}
-
-Before we can apply this to the regular hexagons we need to become aware
-of what I call the thirty, sixty, ninety triangle, which is considered
-next.
 
 \subsubsection{The thirty, sixty, ninety right
 triangle}\label{the-thirty-sixty-ninety-right-triangle}
@@ -790,6 +621,301 @@ Are Numbers Built?''}. He should have known the value of \(\sqrt{3}\) as
 a rational fraction. With remarkable accuracy, he stated that:
 \begin{equation}\phantomsection\label{eq:sqrt3}{\sqrt{3} \approx \frac{265}{153} \approx 1.732.
 }\end{equation}
+
+\subsection{Trigonometry and half
+angles}\label{trigonometry-and-half-angles}
+
+Archimedes had no trigonometric tables to aid him. But he did know the
+square root of three, and the geometric properties of triangles whose
+angles were repeatedly bisected. He used a previous result to feed
+values into the next result as he doubled the sides of the regular
+hexagon. We will look at his method a little later, but for now, we will
+try to simulate what he did using trigonometry. In the process we will
+encounter an important ides called
+\href{(https://www.geeksforgeeks.org/introduction-to-recursion-2/)}{recursion}
+which is a bit like a snake eating its own tail.
+
+From \cref{fig:thirty-sixty}, we know:
+\begin{equation}\phantomsection\label{eq:three-six-nine}{
+\begin{aligned}
+\sin 30° &= \tfrac{1}{2}\\
+\cos 30° &= \tfrac{\sqrt{3}}{2}\\
+\tan 30° &= \tfrac{\sqrt{3}}{3}\\
+\end{aligned}
+}\end{equation}
+
+\subsection{The half-angle formulae and
+recursion}\label{the-half-angle-formulae-and-recursion}
+
+The whole trick to this recursion is to
+
+\begin{enumerate}
+\item
+  move from one estimate to the next, more accurate estimate of \(\pi\);
+  and
+\item
+  use one known value of a trigonometric function to estimate the next
+  unknown value in the chain.
+\end{enumerate}
+
+The trigonometry of
+\href{https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas}{half
+angles in terms of the full angle} {[}\citeproc{ref-half-angle}{1}{]}
+helps relate the successive values of \(\theta\):\footnote{All angles
+  are in the first quadrant.} \[
+\begin{aligned}
+\sin\frac{\theta}{2} = \sqrt{\frac{1 - \cos\theta}{2}}\\
+\cos\frac{\theta}{2} = \sqrt{\frac{1 + \cos\theta}{2}}\\
+\end{aligned}
+\]
+
+Let us step through the recursion:
+
+\begin{enumerate}
+\item
+  We know from \cref{fig:thirty-sixty} that \(\sin 30° = \frac{1}{2}\)
+  and \(\cos 30° = \frac{\sqrt{3}}{2}\).
+\item
+  We calculate \(\sin 15°\) from \(\cos 30°\) using the half-angle
+  formula: \[
+  \begin{aligned}
+  \sin 15° &= \sqrt{\frac{1 - \frac{\sqrt{3}}{2}}{2}}\\
+  &= \sqrt{\frac{2 - \sqrt{3}}{4}}\\
+  &= \frac{1}{2}\sqrt{2 - \sqrt{3}}\\
+  \cos 15° &= \sqrt{\frac{1 + \frac{\sqrt{3}}{2}}{2}}\\
+  &= \sqrt{\frac{2 + \sqrt{3}}{4}}\\
+  &= \frac{1}{2}\sqrt{2 + \sqrt{3}}\\
+  \end{aligned}
+  \]
+\item
+  Using the value of \(\cos 15°\), for \(7.5°\) we get \[
+  \begin{aligned}
+  \sin 7.5° = \sqrt{\frac{1 - \frac{1}{2}\sqrt{2 + \sqrt{3}}}{2}}\\
+  \end{aligned}
+  \]
+\end{enumerate}
+
+We now introduce a slight change in notation. Since our focus is on side
+doubling and angle halving, we introduce a subscript \(k\) to denote the
+number of doublings/halvings. We start with \(k = 0\) denoting no
+doubling, which is the base case, with \(n = n_{0} = 6\). After that,
+\(k\) doublings are denoted by \(2^{k}\).
+\begin{equation}\phantomsection\label{eq:base-case}{
+\begin{aligned}
+k &= 0\\
+n &= n_{0}\\
+\theta_{0} &= \tfrac{\pi}{n_{0}}\\
+n_{k} &= 2^{k}n_{0}\\
+\theta_{k} &= \theta(n_{k})\\
+&= \theta(2^{k}n_{0})\\
+&= \tfrac{\pi}{2^{k}n_{0}}\\ 
+&= \tfrac{\theta_{0}}{2^k}.\\
+\end{aligned}
+}\end{equation}
+
+In our case, for \(k\geq 1\), the half-angle formulae are:
+\begin{equation}\phantomsection\label{eq:trig-half-angle}{\begin{aligned}
+\sin\tfrac{\theta_{0}}{2^{k}} %
+&= \sqrt{\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]} %
+&= \left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
+%
+\cos\tfrac{\theta_{0}}{2^{k}} %
+&= \sqrt{\left[\frac{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]} %
+&= \left[\frac{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
+%
+\tan\tfrac{\theta_{0}}{2^{k}} %
+&= \sqrt{\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}\right]} %
+&= \left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}\right]^{\frac{1}{2}}\\
+\end{aligned}
+}\end{equation}
+
+Once we have the base case for the regular hexagon, we can relate
+successive angles and their sines and tans via \cref{eq:trig-half-angle}
+and descend that binary staircase, according to
+\cref{eq:base-case,eq:trig-half-angle,eq:staircase}:
+\begin{equation}\phantomsection\label{eq:staircase}{
+\begin{aligned}
+n_{k}\sin\theta_{k} &= 2^{k}n_{0}\sin\frac{\theta_{0}}{2^{k}}\\
+&= 2^{k}n_{0}\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
+n_{k}\tan\theta_{k} &= 2^{k}n_{0}\tan\frac{\theta_{0}}{2^{k}}\\
+&= 2^{k}n_{0}\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}\right]^{\frac{1}{2}}
+\end{aligned}
+}\end{equation}
+
+=++++++++++++++++++++++++++++++++++++++++=
+
+In this exercise, you will estimate \(\pi\), using the method of
+Archimedes as the basis, but employing trigonometric identities to
+simplify the work. This is an iterative exercise which you may try out
+with paper and pencil, or with a calculator, or using \maple, the last
+of which is recommended.\textbackslash{}
+
+Let \(n\) be the number of sides of the regular polygons that inscribe
+and circumscribe a circle. Also, let \(\theta = \frac{\pi}{n}\) be the
+half-angle subtended at the centre by one side. We have already shown
+that after \(k\) doublings of the original number of sides,
+
+\[
+\begin{equation*}
+2^{k}n\sin\frac{\theta}{2^{k}} < \pi < 2^{k}n\tan\frac{\theta}{2^{k}}
+\end{equation*}
+\]
+
+\begin{enumerate}
+\item
+  Set \(n = 6\), \(\theta = \frac{\pi}{6}\), and \(k = 0\). Note that
+  \(\sin\theta = \frac{1}{2}\), \(\cos\theta = \frac{\sqrt 3}{2}\), and
+  \(\tan\theta = \frac{\sqrt 3}{3}\) from Pythagoras' Theorem.
+\item
+  Increment \(k\) by one. \{\#ref:increment\}
+\item
+  Use the half-angle formulae \{\#ref:compute\} \[
+  \begin{equation*}
+  \sin\frac{\theta}{2^k} = %
+  \left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^%
+  {\frac{1}{2}}
+  \end{equation*}
+  \] \begin{equation*}
+  \cos\frac{\theta}{2^k} = %
+  \left[\frac{1+\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^%
+  {\frac{1}{2}}
+  \end{equation*}
+\end{enumerate}
+
+\begin{equation*}
+\tan\frac{\theta}{2^k} = %
+\left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}%
+{1+\cos\left[\frac{\theta}{2^{k-1}}\right]}\right]^{\frac{1}{2}}
+\end{equation*} \$\$ to compute the values of
+\(\sin\frac{\theta}{2^k}\), \(\cos\frac{\theta}{2^k}\), and
+\(\tan\frac{\theta}{2^k}\) from the value of
+\(\cos\frac{\theta}{2^{k-1}}\).
+
+\begin{enumerate}
+\item
+  If \(k = 4\) stop; otherwise repeat steps
+  {[}\citeproc{ref-ref:increment}{\textbf{ref:increment?}}{]} to
+  {[}\citeproc{ref-ref:compute}{\textbf{ref:compute?}}{]}.
+\item
+  Tabulate your results showing the values of \(k\),
+  \(2^{k}n\sin\frac{\theta}{2^{k}}\),
+  \(2^{k}n\tan\frac{\theta}{2^{k}}\).
+\end{enumerate}
+
+=++++++++++++++++++++++++++++++++++++++++=
+
+To better understand what is happening, let us concentrate on the term
+\(n\sin\theta\) and understand how the recursion works:
+
+\begin{enumerate}
+\tightlist
+\item
+  Evaluate the base case directly:
+\end{enumerate}
+
+The recurrence relation linking \(\theta_{k}\) to \(\theta_{k-1}\) has
+now been established. We tabulate below the values for \(k = 0\),
+\(n = n_{0} = 6\), and
+\(\theta = \theta_{0} = \frac{180°}{n_{0}} = \frac{180°}{6} = 30°\)
+derived from the half-angle formulae:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0602}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0843}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1687}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2169}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2530}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2169}}@{}}
+\caption{Polygon perimeter estimates using the half-angle formulae.
+\{\#tbl-half-angle\}}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\(k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(2^k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(n=2^kn_{0}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\$\theta=\frac{\theta_{0}}{2^{k}}\$2\textsuperscript{\{k\}n\_\{0\}\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]}\{\frac{1}{2}\}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(n\tan\theta\)
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\(k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(2^k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(n=2^kn_{0}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\$\theta=\frac{\theta_{0}}{2^{k}}\$2\textsuperscript{\{k\}n\_\{0\}\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]}\{\frac{1}{2}\}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(n\tan\theta\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & 1 & 6 & 30° & & \\
+1 & 2 & 12 & 15° & & \\
+2 & 4 & 24 & 7.5° & & \\
+3 & 8 & 48 & 3.75° & & \\
+4 & 16 & 96 & 1.875° & & \\
+\end{longtable}
+
+~
+
+This has been a digression, because these techniques were not available
+to Archimedes in his day. I have added it for completeness, and to
+demonstrate the use of recurrence relations with the trigonometric
+approach {[}\citeproc{ref-damini-dhar-2020}{2}{]}.
+
+We now return to the main theme of how Archimedes used geometry to
+relate current values to previous values.
+
+\subsubsection{The angle bisector
+theorem}\label{the-angle-bisector-theorem}
+
+Without using the half-angle formulae of trigonometry, how can we
+successively obtain expressions for the values of \(c(n)\) and \(C(n)\)
+as we halve the angles and double the sides each time? We have to rely
+on something called the
+\href{https://en.wikipedia.org/wiki/Angle_bisector_theorem}{angle
+bisector theorem} from geometry. This was something Archimedes already
+knew.
+
+This derivation might seem tedious, but it is closer to what Archimedes
+did in order to establish the recurrence relation that tied the current
+value to the previous value.
+
+\begin{figure}
+\centering
+\includesvg[width=0.7\textwidth,height=\textheight]{images/angle-bisector.svg}
+\caption{The angle bisector theorem. The relative lengths of the two
+segments that a triangle's side is divided into by a line that bisects
+the opposite angle equals the relative lengths of the other two sides of
+the triangle, as shown on the diagram.}\label{fig:angle-bisector}
+\end{figure}
+
+Referring to \cref{fig:angle-bisector}, if the line \(OC\) bisects the
+angle \(BOA\), then the base \(AB\) is divided in the same ratio as the
+corresponding sides. This means
+\begin{equation}\phantomsection\label{eq:angle-bisector}{
+\begin{aligned}
+\frac{AO}{OB} &= \frac{AC}{CB} \mbox{ which in turn means that }\\
+\frac{a}{b} &= \frac{p}{q}\\
+\end{aligned}
+}\end{equation}
+
+Before we can apply this to the regular hexagons we need to become aware
+of what I call the thirty, sixty, ninety triangle, which is considered
+next.
 
 \subsubsection{Numerical results}\label{numerical-results}
 
@@ -1039,7 +1165,14 @@ circle. The approximations become more accurate as the number of sides,
 \(n\), of the polygon is increased.
 \href{https://www.youtube.com/watch?v=_qdnyw5Eb_Y}{This YouTube
 presentation} might help you understand the algorithm of Archimedes
-better, but remember that he did not have trigonometry to aid hm.
+better, but remember that he did not have trigonometry to aid him.
+
+\subsection{Acknowledgements}\label{acknowledgements}
+
+The computations for this blog were performed using programs written by
+\href{}{Nandakumar Chandrasekhar} in the
+\href{https://julialang.org/}{Julia programming Language}. The source
+code is available here:
 
 \subsection{Feedback}\label{feedback}
 
