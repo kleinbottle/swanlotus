@@ -28,7 +28,7 @@ opengraphimage: Domenico-Fetti_Archimedes_1620.jpg
 
 ## Circumference, diameter, and π
 
-The straight line or [geodesic](https://mathworld.wolfram.com/Geodesic.html) is the shortest distance between any two points on a plane, sphere, or other space. The circle is the [locus](https://en.wikipedia.org/wiki/Locus_(mathematics)) traversed by a moving point that is [equidistant](https://en.wikipedia.org/wiki/Equidistant) from another fixed point on a two-dimensional plane. It is the most [symmetrical](https://mathworld.wolfram.com/Symmetry.html) figure on the plane. The [diameter](https://en.wikipedia.org/wiki/Diameter) is the name given both to any straight line passing through the centre of the circle---intersecting it at two points---as well as to its length. When we divide the [perimeter](https://en.wikipedia.org/wiki/Perimeter) of circle, more properly called its [circumference](https://en.wikipedia.org/wiki/Circumference), $C$, by its diameter, $d$, we get the enigmatic constant  $\pi$, which has a value between $3.141$ and $3.142$: 
+The straight line or [geodesic](https://mathworld.wolfram.com/Geodesic.html) is the shortest distance between any two points on a plane, sphere, or other space. The circle is the [locus](https://en.wikipedia.org/wiki/Locus_(mathematics)) traversed by a moving point that is [equidistant](https://en.wikipedia.org/wiki/Equidistant) from another fixed point on a two-dimensional plane. It is the most [symmetrical](https://mathworld.wolfram.com/Symmetry.html) figure on the plane. The [diameter](https://en.wikipedia.org/wiki/Diameter) is the name given both to any straight line passing through the centre of the circle---intersecting it at two points---as well as to its length. When we divide the [perimeter](https://en.wikipedia.org/wiki/Perimeter) of a circle, more properly called its [circumference](https://en.wikipedia.org/wiki/Circumference), $C$, by its diameter, $d$, we get the enigmatic constant  $\pi$, which has a value between $3.141$ and $3.142$: 
 $$
 \frac{C}{d} = \pi.
 $${#eq:pi-Cd}
@@ -149,18 +149,17 @@ Obviously, the circle may be viewed as a regular polygon whose number of sides, 
 | $10000$ | $3.1415926019$ | $3.1415927569$ |
 | $100000$ | $3.1415926531$ | $3.1415926546$ |
 | $1000000$ | $3.1415926536$ | $3.1415926536$ |
-: The values of $n\sin\frac{\pi}{n}$ and $n\tan\frac{\pi}{n}$ as $n$ increases. {#tbl:large-n-pi}
+: The values of $n\sin\frac{\pi}{n}$ and $n\tan\frac{\pi}{n}$. As $n$ larger and larger, the values in both the second and third columns become closer and closer to $\pi$. {#tbl:large-n-pi}
 
 \ 
  
 The upper and lower bounds are equal up to ten decimal digits when $n = 10^{6}$, and we might declare the problem of estimating pi solved. But in the time of Archimedes, trigonometry was not known; only geometry was. Moreover, the decimal system and calculators were also in the future. We now have to backtrack and attempt to retrace the steps Archimedes used to estimate $\pi$.
 
-
 ### The thirty, sixty, ninety right triangle
 
 Archimedes applied the principle "of starting from the known" to initiate his algorithm using a _regular hexagon_, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right-angled triangles with angles of thirty and sixty degrees, as shown in [@fig:thirty-sixty].
 
-![This right-angled, obtained by bisecting an equilateral triangle, must be familiar to all school students. These lengths---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=40% .modal-target}
+![This right-angled, obtained by bisecting an equilateral triangle, must be familiar to all school students. These lengths---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=70% .modal-target}
 
 The inscribed hexagon, within a circle of radius one unit, also has a side of one unit. Thus, the hypotenuse of the circle $OAP$ in [@fig:thirty-sixty] has unit length. Moreover, the base $OP$, resulting from a bisected side, has a length of half a unit. By applying the theorem of Pythagoras, the third side, $AP$ is 
 $$
@@ -208,7 +207,7 @@ Let us step through the recursion:
 
 #. We know from [@fig:thirty-sixty] that $\sin 30° = \frac{1}{2}$ and $\cos 30° = \frac{\sqrt{3}}{2}$.
 
-#. We calculate $\sin 15°$ from $\cos 30°$ using the half-angle formula:
+#. We calculate $\sin 15°$ etc., from $\cos 30°$ using the half-angle formula:
 $$
 \begin{aligned}
 \sin 15° &= \sqrt{\frac{1 - \frac{\sqrt{3}}{2}}{2}}\\
@@ -217,134 +216,53 @@ $$
 \cos 15° &= \sqrt{\frac{1 + \frac{\sqrt{3}}{2}}{2}}\\
 &= \sqrt{\frac{2 + \sqrt{3}}{4}}\\
 &= \frac{1}{2}\sqrt{2 + \sqrt{3}}\\
+\tan 15° &= \frac{\sqrt{2 - \sqrt{3}}}{\sqrt{2 + \sqrt{3}}}\\
 \end{aligned}
 $$
 
 #.  Using the value of $\cos 15°$, for $7.5°$ we get 
 $$
 \begin{aligned}
-\sin 7.5° = \sqrt{\frac{1 - \frac{1}{2}\sqrt{2 + \sqrt{3}}}{2}}\\
+\sin 7.5° &= \sqrt{\frac{1 - \frac{1}{2}\sqrt{2 + \sqrt{3}}}{2}}\\
+&= \frac{1}{2}\sqrt{2 - \sqrt{2 + \sqrt{3}}}\\
+\cos 7.5° &= \sqrt{\frac{1 + \frac{1}{2}\sqrt{2 + \sqrt{3}}}{2}}\\
+&= \frac{1}{2}\sqrt{2 + \sqrt{2 + \sqrt{3}}}\\ 
 \end{aligned}
 $$
 
-
-
-We now introduce a slight change in notation. Since our focus is on side doubling and angle halving, we introduce a subscript $k$ to denote the number of doublings/halvings. We start with $k = 0$ denoting no doubling, which is the base case, with $n = n_{0} = 6$. After that, $k$ doublings are denoted by $2^{k}$.
+#. Using the value of $\cos 7.5°$, for $3.75°$ we get:
 $$
 \begin{aligned}
-k &= 0\\
-n &= n_{0}\\
-\theta_{0} &= \tfrac{\pi}{n_{0}}\\
-n_{k} &= 2^{k}n_{0}\\
-\theta_{k} &= \theta(n_{k})\\
-&= \theta(2^{k}n_{0})\\
-&= \tfrac{\pi}{2^{k}n_{0}}\\ 
-&= \tfrac{\theta_{0}}{2^k}.\\
+\sin 3.75° &= \sqrt{\frac{1 - \frac{1}{2}\sqrt{2 + \sqrt{2 + \sqrt{3}}}}{2}}\\
+&= \frac{1}{2}\sqrt{2 - \sqrt{2 + \sqrt{2 + \sqrt{3}}}}\\
+\cos 3.75° &= \frac{1}{2}\sqrt{2 + \sqrt{2 + \sqrt{2 + \sqrt{3}}}}\\
 \end{aligned}
-$$ {#eq:base-case}
+$$
 
-In our case, for $k\geq 1$, the half-angle formulae are:
-$$\begin{aligned}
-\sin\tfrac{\theta_{0}}{2^{k}} %
-&= \sqrt{\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]} %
-&= \left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
-%
-\cos\tfrac{\theta_{0}}{2^{k}} %
-&= \sqrt{\left[\frac{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]} %
-&= \left[\frac{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
-%
-\tan\tfrac{\theta_{0}}{2^{k}} %
-&= \sqrt{\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}\right]} %
-&= \left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}\right]^{\frac{1}{2}}\\
-\end{aligned}
-$$ {#eq:trig-half-angle}
-
-Once we have the base case for the regular hexagon, we can relate successive angles and their sines and tans via [@eq:trig-half-angle] and descend that binary staircase, according to [@eq:base-case; @eq:trig-half-angle; @eq:staircase]:
+#. We can see a pattern emerge and we _guess_ that the values for $\theta = 1.875°$ corresponding to $n=96$ _should_ be:
 $$
 \begin{aligned}
-n_{k}\sin\theta_{k} &= 2^{k}n_{0}\sin\frac{\theta_{0}}{2^{k}}\\
-&= 2^{k}n_{0}\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}}\\
-n_{k}\tan\theta_{k} &= 2^{k}n_{0}\tan\frac{\theta_{0}}{2^{k}}\\
-&= 2^{k}n_{0}\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{1+\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}\right]^{\frac{1}{2}}
+\sin 1.875° &= \frac{1}{2}\sqrt{2 - \sqrt{2 + \sqrt{2 + \sqrt{2 + \sqrt{3}}}}}\\
+\cos 1.875° &= \frac{1}{2}\sqrt{2 + \sqrt{2 + \sqrt{2 + \sqrt{2 + \sqrt{3}}}}}\\
 \end{aligned}
-$$ {#eq:staircase}
-
-=++++++++++++++++++++++++++++++++++++++++=
-
-In this exercise, you will estimate $\pi$, using the method of
-Archimedes as the basis, but employing trigonometric identities to
-simplify the work.  This is an iterative exercise which you may try out
-with paper and pencil, or with a calculator, or using \maple, the last
-of which is recommended.\\
-
-Let $n$ be the number of sides of the regular polygons that inscribe
-and circumscribe a circle.  Also, let $\theta = \frac{\pi}{n}$ be the
-half-angle subtended at the centre by one side.  We have already shown
-that after $k$ doublings of the original number of sides,
-
 $$
-\begin{equation*}
-2^{k}n\sin\frac{\theta}{2^{k}} < \pi < 2^{k}n\tan\frac{\theta}{2^{k}}
-\end{equation*}
-$$
+Because we guessed, we checked the value we obtained above---expressed as a decimal---with a calculator, and it checked out.
 
-#. Set $n = 6$, $\theta = \frac{\pi}{6}$, and $k = 0$.  Note that $\sin\theta = \frac{1}{2}$, $\cos\theta = \frac{\sqrt 3}{2}$, and $\tan\theta = \frac{\sqrt 3}{3}$ from Pythagoras' Theorem.
+We went through this somewhat painful process for the reasons outlined below because we wanted to simulate the steps Archimedes took [@damini-dhar-2020; bertrand2014]. It is a proof of concept where  we have only evaluated the sine and cosine values and not estimated the two perimeters. 
 
-#.  Increment $k$ by one. {#ref:increment}
+(a) Archimedes knew the sine of 30° and had to work out all other values by hand, without using decimals. That was why we started with a regular hexagon and retained [surds](), along with their awkward algebraic manipulation.
 
-#.  Use the half-angle formulae {#ref:compute}
-$$
-\begin{equation*}
-\sin\frac{\theta}{2^k} = %
-\left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^%
-{\frac{1}{2}}
-\end{equation*}
-$$
-\begin{equation*}
-\cos\frac{\theta}{2^k} = %
-\left[\frac{1+\cos\left[\frac{\theta}{2^{k-1}}\right]}{2}\right]^%
-{\frac{1}{2}}
-\end{equation*}
+(a) Archimedes only knew [rational numbers]() of the form $\frac{a}{b}$ where $a$ and $b$ are integers and $b \neq 0$. So, his approximations for $\sqrt{2}$ and $\sqrt{3}$ were expressed as improper fractions that approximated those numbers.
 
-\begin{equation*}
-\tan\frac{\theta}{2^k} = %
-\left[\frac{1-\cos\left[\frac{\theta}{2^{k-1}}\right]}%
-{1+\cos\left[\frac{\theta}{2^{k-1}}\right]}\right]^{\frac{1}{2}}
-\end{equation*}
-$$
-to compute the values of $\sin\frac{\theta}{2^k}$, $\cos\frac{\theta}{2^k}$, and $\tan\frac{\theta}{2^k}$ from the value of $\cos\frac{\theta}{2^{k-1}}$.
+(a) Archimedes did not have positional notation for his calculations and he had to rely on an arithmetical system that we would find forbidding.
 
-#.  If $k = 4$ stop; otherwise repeat steps [@ref:increment] to [@ref:compute].
+(a) We have demonstrated how Archimedes used recursion in his estimate of $\pi$.
 
-#.  Tabulate your results showing the values of $k$, $2^{k}n\sin\frac{\theta}{2^{k}}$,  $2^{k}n\tan\frac{\theta}{2^{k}}$.
-
-=++++++++++++++++++++++++++++++++++++++++=
-
-To better understand what is happening, let us concentrate on the term $n\sin\theta$ and understand how the recursion works:
-
-#.  Evaluate the base case directly:  
-
-
-The recurrence relation linking $\theta_{k}$ to $\theta_{k-1}$ has now been established. We tabulate below the values for $k = 0$, $n = n_{0} = 6$, and $\theta = \theta_{0} = \frac{180°}{n_{0}} = \frac{180°}{6} = 30°$ derived from the half-angle formulae:
-
-| $k$ | $2^k$ | $n=2^kn_{0}$   | $\theta=\frac{\theta_{0}}{2^{k}}$2^{k}n_{0}\left[\frac{1-\cos\left[\frac{\theta_{0}}{2^{k-1}}\right]}{2}\right]^{\frac{1}{2}} | $n$ | $n\tan\theta$ |
-|:----|:------|:-------------|:-----------------|:--------------------|------------------|
-| 0 | 1 | 6 | 30° |  |  |
-| 1 | 2 | 12 | 15° |  |  |
-| 2 | 4 | 24 | 7.5° |  |  |
-| 3 | 8 | 48 | 3.75° |  |  |
-| 4 | 16 | 96 | 1.875° |  |  |
-: Polygon perimeter estimates using the half-angle formulae. {#tbl-half-angle}
-
-\ 
-
-This has been a digression, because these techniques were not available to Archimedes in his day. I have added it for completeness, and to demonstrate the use of recurrence relations with the trigonometric approach [@damini-dhar-2020].
-
-We now return to the main theme of how Archimedes used geometry to relate current values to previous values.
+(a) We cheated when we used trigonometric half-angle formulae. Archimedes did not have those but he  used triangles in a semi-circle and leveraged his knowledge of similar triangles and Pythagoras's theorem because the angle in a semi-circle is a right angle. We use a slightly different approach, considered next, to get the results he did, without using trigonometry.
 
 ### The angle bisector theorem
 
-Without using the half-angle formulae of trigonometry, how can we successively obtain expressions for the values of $c(n)$ and $C(n)$ as we halve the angles and double the sides each time? We have to rely on something called the [angle bisector theorem](https://en.wikipedia.org/wiki/Angle_bisector_theorem) from geometry. This was something Archimedes already knew.
+Without using the half-angle formulae of trigonometry, how can we successively obtain expressions for the values of $c(n)$ and $C(n)$ as we halve the angles and double the sides each time? We have to rely on something called the [angle bisector theorem](https://en.wikipedia.org/wiki/Angle_bisector_theorem) from geometry.
 
 This derivation might seem tedious, but it is closer to what Archimedes did in order to establish the recurrence relation that tied the current value to the previous value.
 
@@ -358,7 +276,10 @@ $$
 \end{aligned}
 $$ {#eq:angle-bisector}
 
-Before we can apply this to the regular hexagons we need to become aware of what I call the thirty, sixty, ninety triangle, which is considered next.
+Applying the theorem to a thirty-sixty-ninety right-angled triangle, we get [@fig:bisect-thirty] shown below.
+
+![The angle bisector theorem applied to a thirty-sixty-ninety right triangle. The ratio of $a$ to $b$ is that same as the ratio of $2$ to $\sqrt{3}$.]({attach}images/bisect-thirty.svg){#fig:bisect-thirty width=70% .modal-target}
+
 
 
 
