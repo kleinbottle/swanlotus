@@ -2,27 +2,27 @@
 title: "The Pi of Archimedes"
 author: "R (Chandra) Chandrasekhar"
 date: 2004-01-14
-modified: 2024-06-30
+modified: 2024-07-10
 category: Mathematics
 tags: Numbers, Irrational, Transcendental
 summary: "This blog began life more than two decades ago, as part of a series of lectures I delivered to very bright first-year engineering students at an Australian university.
 
-The number π (pronounced 'pie') has been recognized from time immemorial because its physical significance can be grasped easily: it is the ratio of the circumference of a circle to its diameter. But who would have thought that such an innocent ratio would exercise such endless fascination because of the complexities enfolded into it?
+The number π (pronounced 'pie') has been recognized from time immemorial because its physical significance can be grasped easily: it is the ratio of the circumference of a circle to its diameter. But who would have thought that such an innocent ratio would exercise such endless fascination because of the complexities it enfolds?
 
-My original intention was to write a single blog on π. But because I did not want it to become another overly long _slog_, I have decided to divide it into two parts.
+Not surprisingly, some high school students I met recently wanted to know more about π. Accordingly, I have substantially recast and refreshed my original presentation to better accord with the form and substance of a blog. The online references have also been updated to keep up with a rapidly changing Web.
 
-Not surprisingly, some students I met recently wanted to know more about π. Accordingly, I have substantially recast and refreshed my original presentation to better accord with the form and substance of a blog. The online references have also been updated to keep up with a rapidly changing Web."
+My original intention was to write a single blog on π. But because I did not want it to become yet another overly long _slog_, I have decided to divide the material into two parts."
 status: published
 opengraphimage: Domenico-Fetti_Archimedes_1620.jpg
 ---
 
 >This blog began life more than two decades ago, as part of a series of lectures I delivered to very bright first-year engineering students at an Australian university.
 >
->The number $\pi$ (pronounced "pie") has been recognized from time immemorial because its physical significance can be grasped easily: it is the ratio of the circumference of a circle to its diameter. But who would have thought that such an innocent ratio would exercise such endless fascination because of the complexities enfolded into it?
+>The number $\pi$ (pronounced "pie") has been recognized from time immemorial because its physical significance can be grasped easily: it is the ratio of the circumference of a circle to its diameter. But who would have thought that such an innocent ratio would exercise such endless fascination because of the complexities it enfolds?
 >
->Not surprisingly, some students I met recently wanted to know more about $\pi$. Accordingly, I have substantially recast and refreshed my original presentation to better accord with the form and substance of a blog. The online references have also been updated to keep up with a rapidly changing Web.
+>Not surprisingly, some high students I met recently wanted to know more about $\pi$. Accordingly, I have substantially recast and refreshed my original presentation to better accord with the form and substance of a blog. The online references have also been updated to keep up with a rapidly changing Web.
 >
->My original intention was to write a single blog on $\pi$. But because I did not want it to become another overly long _slog_, I have decided to divide it into two parts.
+>My original intention was to write a single blog on $\pi$. But because I did not want it to become yet another overly long _slog_, I have decided to divide the material into two parts.
 >
 >If there are any errors or omissions, please [email](mailto:feedback.swanlotus@gmail.com) me your feedback.
 
@@ -44,11 +44,9 @@ The symbol [$\pi$](https://en.wikipedia.org/wiki/Pi) is the lowercase version of
 
 ![The ratio of the circumference to the diameter of _any_ circle is $\pi$.]({attach}images/C-over-d.svg){#fig:pi-circle width=70% .modal-target}
 
-@fig:pi-circle shows the relationships in [@eq:pi-Cd] and [@eq:two-pi-r] pictorially. The circumference of a circle is about 6.28 times its radius. Why this should be so is a secret, a mystery of Nature.
+[@fig:pi-circle] shows the relationships in [@eq:pi-Cd; @eq:two-pi-r] pictorially. The circumference of a circle is about 6.28 times its radius. Why this should be so is a secret of Nature, a mystery of the space we inhabit.
 
-## Is π = 22/7 an exact value?
-
-Is $\pi$ really equal to $\frac{22}{7}$, as it has been drummed into our heads at school? A wonderfully revealing story lies behind this mysterious relationship, and it is due to the [labours](https://www.collinsdictionary.com/dictionary/english/labours) of one man, in the days when calculators could not be dreamed of, and when neither the decimal system of numbers nor trigonometry were known. That is the story we look at next.
+A wonderfully revealing story lies behind this mysterious relationship, and it is due to the [labours](https://www.collinsdictionary.com/dictionary/english/labours) of one man, in the days when calculators could not be dreamed of, and when neither the decimal system of numbers, nor trigonometry were known. That is the story we look at next.
 
 ## Archimedes of Syracuse
 
@@ -66,13 +64,13 @@ What is even more remarkable is that Archimedes made his discovery _without_ the
 
 (c) trigonometry;
 
-(d) decimal (positional) notation; and
+(d) decimal notation; and
 
-(e) calculators. 
+(e) devices like logarithm tables, slide rules, calculators, or computers. 
 
-Instead he applied the theorem of Pythagoras and extracted rational values for square roots laboriously by hand. His method is also an excellent geometrical illustration of the idea of a [_limit_](https://www.britannica.com/science/limit-mathematics), with which he was doubtless familiar. It is known that Archimedes was familiar with what we now know as integral calculus, and it is possible that he may have anticipated differential calculus as well.
+Instead he applied geometry---including the theorem of Pythagoras---and extracted rational values for square roots, laboriously by hand. His method is also an excellent geometrical illustration of the idea of a [_limit_](https://www.britannica.com/science/limit-mathematics), with which he was doubtless familiar. It is known that Archimedes was familiar with what we now know as integral calculus, and it is possible that he may have anticipated differential calculus as well.
 
-Archimedes devised an ingenious method for estimating the circumference of a circle. He used a sophisticated algorithm that allowed him to obtain successively more accurate values for the circumference of a circle, and therefore of $\pi$.
+Archimedes devised an ingenious method for estimating the circumference of a circle. He used a simple yet sophisticated algorithm that allowed him to obtain successively more accurate values for the circumference of a circle, and therefore of $\pi$.
 
 ![Portrait of Archimedes generated by AI and available at the Craiyon website [here](https://www.craiyon.com/image/JEmP4rPCRW25xyCULOeMSw). All portraits of Archimedes are flights of fancy rather than true likenesses.]({attach}images/Archimedes-AI-generated-portrait.png){#fig:Archimedes-AI width=70% .modal-target}
 
@@ -115,13 +113,33 @@ Let us tabulate below the variables arising from [@fig:two-limits;@fig:sin-theta
 
 When $n$ varies, so do the values of $\theta$ and the areas and perimeters; they are therefore shown as functions of $n$ in [@tbl:variables].
 
+## Recursion and Iteration
+
+Archimedes started with regular hexagons and successively _doubled_ the number of sides, until he had the circle closely sandwiched between two 96-gons---one circumscribed; the other inscribed. Successively doubling or halving is a fast-converging technique used in numerical estimation, called the [bisection method](https://en.wikipedia.org/wiki/Bisection_method), that is applied to solving a variety of problems. That Archimedes was aware of it shows how far ahead of his time his thinking was.
+
+When he moved from $n=6$ to $n = 12$ sides, how did Archimedes estimate the respective perimeters without the aid of trigonometry? He used geometry and the Pythagorean theorem, [as described online here](https://nonagon.org/ExLibris/archimedes-pi) [@bertrand2014] [and here](https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf) [@damini-dhar-2020] to obtain [recurrence relations](https://en.wikipedia.org/wiki/Recurrence_relation) that gave the current estimate from the previous one.
+
+For an English translation of the book _Measurement of a Circle_ by Archimedes [click on this link]({attach}auxiliary/Archimedes-Circle.pdf). It is the original source material from the man himself, and will give you a sense of completeness in your understanding of his method.
+
+He repeatedly calculated _rational approximations_ to $\pi$ until he was satisfied with the accuracy. The principle of the method is clearly seen in [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon].
+
+![The estimate for $\pi$ lies between $c(6) = 3.0000 < \pi < C(6) = 3.4641$.]({attach}images/six-gon.svg){#fig:six-gon width=70% .modal-target}
+
+![The estimate for $\pi$ lies between $c(12) = 3.1058 < \pi < C(12) = 3.2153$.]({attach}images/twelve-gon.svg){#fig:twelve-gon width=70% .modal-target}
+
+![The estimate for $\pi$ lies between $c(24) = 3.1326 < \pi < C(24) = 3.1596$.]({attach}images/twenty-four-gon.svg){#fig:twenty-four-gon width=70% .modal-target}
+
+![The estimate for $\pi$ lies between $c(48) = 3.1393 < \pi < C(48) = 3.1460$.]({attach}images/forty-eight-gon.svg){#fig:forty-eight-gon width=70% .modal-target}
+
+![The estimate for $\pi$ lies between $c(96) = 3.1410 < \pi < C(96) = 3.1427$. Notice in this sequence of images how the circumference of the circle approaches the perimeter of the inscribed and circumscribed heaxgons to the point of being indistinguishable from either of them. _The final estimate of Archimedes was $\frac{223}{71} < \pi < \frac{22}{7}$._]({attach}images/ninety-six-gon.svg){#fig:ninety-six-gon width=70% .modal-target}
+
 ## Lower and upper bounds for π
 
-We assume that $r = 1$ without loss of generality. [@tbl:variables] and [@fig:sin-theta-tan-theta] together give us these inequalities for regular $n$-gons where $\theta = \frac{180}{n}$ degrees or $\theta = \frac{\pi}{n}$ radians.
+We assume that $r = 1$ without loss of generality. [@tbl:variables] and [@fig:sin-theta-tan-theta] together give us these inequalities for regular $n$-gons where $\theta = \frac{180}{n}$ degrees or $\theta = \frac{\pi}{n}$ radians.^[Recall that the area of a triangle is half the product of its base and perpendicular height]
 $$
 \begin{aligned}
 a(n) < A < A(n) &\implies n\sin\theta\cos\theta < \pi < n\tan\theta\\
-c(n) < C < C(n) &\implies n\sin\theta < \pi < n\tan\theta
+c(n) < C < C(n) &\implies n\sin\theta < \pi < n\tan\theta\\
 \end{aligned}
 $${#eq:squeeze}
 
@@ -129,6 +147,7 @@ From the right hand side of [@eq:squeeze], using the inequalities for perimeters
 $$
 n\sin\tfrac{180°}{n} = n\sin\tfrac{\pi}{n}, \thinspace \mbox{for the lower bound}.
 $$ {#eq:lower-bound}
+and
 $$
 n\tan\tfrac{180°}{n} = n\tan\tfrac{\pi}{n}, \thinspace \mbox{for the lower bound}.
 $$ {#eq:upper-bound}
@@ -278,7 +297,7 @@ $$ {#eq:angle-bisector}
 
 Applying the theorem to a thirty-sixty-ninety right-angled triangle, we get [@fig:bisect-thirty] shown below.
 
-![The angle bisector theorem applied to a thirty-sixty-ninety right triangle. The ratio of $a$ to $b$ is that same as the ratio of $2$ to $\sqrt{3}$.]({attach}images/bisect-thirty.svg){#fig:bisect-thirty width=70% .modal-target}
+![The angle bisector theorem applied to a thirty-sixty-ninety right triangle. The ratio of $a$ to $b$ is that same as the ratio of $2$ to $\sqrt{3}$.]({attach}images/bisect-thirty.svg){#fig:bisect-thirty width=45% .modal-target}
 
 
 
@@ -321,27 +340,12 @@ Imagine the mathematical [fortitude](https://www.merriam-webster.com/word-of-the
 
 Before we consider numerical results, there are two aspects of the problem and the approach taken by Archimedes that I wish to discuss.
 
-### Recursion and Iteration
-
-Archimedes started with regular hexagons and successively _doubled_ the number of sides, until he had the circle closely sandwiched between two 96-gons---one circumscribe; the other inscribed. Successively doubling or halving is a fast-converging technique used in numerical estimation, called the [bisection method](https://en.wikipedia.org/wiki/Bisection_method), that is applied to solving a variety of problems. That Archimedes was aware of it shows how far ahead of his time his thinking was.
-
-When he moved from $n=6$ to $n = 12$ sides, how did Archimedes estimate the respective perimeters without the aid of trigonometry? He used geometry and the Pythagorean theorem, [as described here online](https://nonagon.org/ExLibris/archimedes-pi) [@bertrand2014] to obtain [recurrence relations](https://en.wikipedia.org/wiki/Recurrence_relation) that gave the current result from the previous one.
-
-For an English translation of the book _Measurement of a Circle_ by Archimedes [click on this link]({attach}auxiliary/Archimedes-Circle.pdf). It is the original source material from the man himself, and will give you a sense of completeness in your understanding of his method.
-
-He repeatedly calculated rational approximations to $\pi$ until he was satisfied with the accuracy. The principle of the method is clearly seen in [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon].
-
-![The estimate for $\pi$ lies between $C_i = 3.0000 < \pi < C_c = 3.4641$.]({attach}images/six-gon.svg){#fig:six-gon width=70% .modal-target}
-
-![The estimate for $\pi$ lies between $C_i = 3.1058 < \pi < C_c = 3.2153$.]({attach}images/twelve-gon.svg){#fig:twelve-gon width=70% .modal-target}
-
-![The estimate for $\pi$ lies between $C_i = 3.1326 < \pi < C_c = 3.1596$.]({attach}images/twenty-four-gon.svg){#fig:twenty-four-gon width=70% .modal-target}
-
-![The estimate for $\pi$ lies between $C_i = 3.1393 < \pi < C_c = 3.1460$.]({attach}images/forty-eight-gon.svg){#fig:forty-eight-gon width=70% .modal-target}
-
-![The estimate for $\pi$ lies between $C_i = 3.1410 < \pi < C_c = 3.1427$. Notice in this sequence of images how the circumference of the circle approaches the perimeter of the inscribed and circumscribed heaxgons to the point of being indistinguishable from them. _The final estimate of Archimedes was $\frac{223}{71} < \pi < \frac{22}{7}$._]({attach}images/ninety-six-gon.svg){#fig:ninety-six-gon width=70% .modal-target}
+#
 
 ## Is π really 22/7?
+
+Is $\pi$ really equal to $\frac{22}{7}$, as it has been drummed into our heads at school? We will answer that question later in this blog.
+
 
 The answer is a qualified "Yes and no". Because $\pi$ is irrational, it cannot be expressed precisely in a finite number of digits. Consequently, we use rational approximations, or a decimal representation at the desired accuracy for $\pi$. Thanks to Archimedes, $\frac{22}{7}$ is a serviceable overestimate for $\pi$ that has survived for centuries.
 
