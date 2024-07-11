@@ -521,12 +521,12 @@ aware of it shows how far ahead of his time his thinking was.
 When he moved from \(n=6\) to \(n = 12\) sides, how did Archimedes
 estimate the respective perimeters without the aid of trigonometry? He
 used geometry and the Pythagorean theorem,
-\href{https://nonagon.org/ExLibris/archimedes-pi}{as described here
-online} {[}\citeproc{ref-bertrand2014}{1}{]}
+\href{https://nonagon.org/ExLibris/archimedes-pi}{as described online
+here} {[}\citeproc{ref-bertrand2014}{1}{]}
 \href{https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf}{and
-here} {[}\citeproc{ref-damini-dhar-2020}{2}{]}to obtain
+here} {[}\citeproc{ref-damini-dhar-2020}{2}{]} to obtain
 \href{https://en.wikipedia.org/wiki/Recurrence_relation}{recurrence
-relations} that gave the current result from the previous one.
+relations} that gave the current estimate from the previous one.
 
 For an English translation of the book \emph{Measurement of a Circle} by
 Archimedes \href{auxiliary/Archimedes-Circle.pdf}{click on this link}.
@@ -542,38 +542,39 @@ clearly seen in
 \centering
 \includesvg[width=0.7\textwidth,height=\textheight]{images/six-gon.svg}
 \caption{The estimate for \(\pi\) lies between
-\(C_i = 3.0000 < \pi < C_c = 3.4641\).}\label{fig:six-gon}
+\(c(6) = 3.0000 < \pi < C(6) = 3.4641\).}\label{fig:six-gon}
 \end{figure}
 
 \begin{figure}
 \centering
 \includesvg[width=0.7\textwidth,height=\textheight]{images/twelve-gon.svg}
 \caption{The estimate for \(\pi\) lies between
-\(C_i = 3.1058 < \pi < C_c = 3.2153\).}\label{fig:twelve-gon}
+\(c(12) = 3.1058 < \pi < C(12) = 3.2153\).}\label{fig:twelve-gon}
 \end{figure}
 
 \begin{figure}
 \centering
 \includesvg[width=0.7\textwidth,height=\textheight]{images/twenty-four-gon.svg}
 \caption{The estimate for \(\pi\) lies between
-\(C_i = 3.1326 < \pi < C_c = 3.1596\).}\label{fig:twenty-four-gon}
+\(c(24) = 3.1326 < \pi < C(24) = 3.1596\).}\label{fig:twenty-four-gon}
 \end{figure}
 
 \begin{figure}
 \centering
 \includesvg[width=0.7\textwidth,height=\textheight]{images/forty-eight-gon.svg}
 \caption{The estimate for \(\pi\) lies between
-\(C_i = 3.1393 < \pi < C_c = 3.1460\).}\label{fig:forty-eight-gon}
+\(c(48) = 3.1393 < \pi < C(48) = 3.1460\).}\label{fig:forty-eight-gon}
 \end{figure}
 
 \begin{figure}
 \centering
 \includesvg[width=0.7\textwidth,height=\textheight]{images/ninety-six-gon.svg}
 \caption{The estimate for \(\pi\) lies between
-\(C_i = 3.1410 < \pi < C_c = 3.1427\). Notice in this sequence of images
-how the circumference of the circle approaches the perimeter of the
-inscribed and circumscribed heaxgons to the point of being
-indistinguishable from them. \emph{The final estimate of Archimedes was
+\(c(96) = 3.1410 < \pi < C(96) = 3.1427\). Notice in this sequence of
+images how the circumference of the circle approaches the perimeter of
+the inscribed and circumscribed heaxgons to the point of being
+indistinguishable from either of them. \emph{The final estimate of
+Archimedes was
 \(\frac{223}{71} < \pi < \frac{22}{7}\).}}\label{fig:ninety-six-gon}
 \end{figure}
 
@@ -584,10 +585,12 @@ We assume that \(r = 1\) without loss of generality.
 \cref{tbl:variables} and \cref{fig:sin-theta-tan-theta} together give us
 these inequalities for regular \(n\)-gons where
 \(\theta = \frac{180}{n}\) degrees or \(\theta = \frac{\pi}{n}\)
-radians. \begin{equation}\phantomsection\label{eq:squeeze}{
+radians.\footnote{Recall that the area of a triangle is half the product
+  of its base and perpendicular height}
+\begin{equation}\phantomsection\label{eq:squeeze}{
 \begin{aligned}
 a(n) < A < A(n) &\implies n\sin\theta\cos\theta < \pi < n\tan\theta\\
-c(n) < C < C(n) &\implies n\sin\theta < \pi < n\tan\theta
+c(n) < C < C(n) &\implies n\sin\theta < \pi < n\tan\theta\\
 \end{aligned}
 }\end{equation}
 
@@ -595,7 +598,8 @@ From the right hand side of \cref{eq:squeeze}, using the inequalities
 for perimeters, we have
 \begin{equation}\phantomsection\label{eq:lower-bound}{
 n\sin\tfrac{180°}{n} = n\sin\tfrac{\pi}{n}, \thinspace \mbox{for the lower bound}.
-}\end{equation} \begin{equation}\phantomsection\label{eq:upper-bound}{
+}\end{equation} and
+\begin{equation}\phantomsection\label{eq:upper-bound}{
 n\tan\tfrac{180°}{n} = n\tan\tfrac{\pi}{n}, \thinspace \mbox{for the lower bound}.
 }\end{equation}
 
@@ -608,11 +612,11 @@ sides, \(n\) has become exceedingly large, or \emph{infinite}. So, as
 \(n\) is increased, we should expect the two bounds to converge to the
 limiting value of \(\pi\).
 
-\begin{longtable}[]{@{}lll@{}}
+\begin{longtable}[]{@{}rrr@{}}
 \caption{\label{tbl:large-n-pi}The values of \(n\sin\frac{\pi}{n}\) and
-\(n\tan\frac{\pi}{n}\). As \(n\) larger and larger, the values in both
-the second and third columns become closer and closer to
-\(\pi\).}\tabularnewline
+\(n\tan\frac{\pi}{n}\). As \(n\) increases without bound, the values in
+the second and third columns both approach the true value of \(\pi\)
+with increasing accuracy.}\tabularnewline
 \toprule\noalign{}
 \(n\) & \(n\sin\frac{\pi}{n}\) & \(n\tan\frac{\pi}{n}\) \\
 \midrule\noalign{}
@@ -638,11 +642,12 @@ the second and third columns become closer and closer to
 ~
 
 The upper and lower bounds are equal up to ten decimal digits when
-\(n = 10^{6}\), and we might declare the problem of estimating pi
-solved. But in the time of Archimedes, trigonometry was not known; only
-geometry was. Moreover, the decimal system and calculators were also in
-the future. We now have to backtrack and attempt to retrace the steps
-Archimedes used to estimate \(\pi\).
+\(n = 10^{6}\), and we might as well declare the problem of estimating
+\(\pi\) solved. But in the time of Archimedes, trigonometry was not
+known; only geometry was. Moreover, the decimal system and calculators
+were also in the future. We now have to backtrack and attempt to retrace
+the steps Archimedes used to estimate \(\pi\) to better appreciate his
+heroic efforts.
 
 \subsubsection{The thirty, sixty, ninety right
 triangle}\label{the-thirty-sixty-ninety-right-triangle}
@@ -656,25 +661,25 @@ thirty and sixty degrees, as shown in \cref{fig:thirty-sixty}.
 
 \begin{figure}
 \centering
-\includesvg[width=0.7\textwidth,height=\textheight]{images/thirty-sixty.svg}
-\caption{This right-angled, obtained by bisecting an equilateral
-triangle, must be familiar to all school students. These
-lengths---obtainable from symmetry and the theorem of
+\includesvg[width=0.8\textwidth,height=\textheight]{images/thirty-sixty.svg}
+\caption{This right-angled triangle, obtained by bisecting an
+equilateral triangle, must be familiar to all school students. The
+lengths shown---obtainable from symmetry and the theorem of
 Pythagoras---allowed Archimedes to start off his process for estimating
 \(\pi\).}\label{fig:thirty-sixty}
 \end{figure}
 
-The inscribed hexagon, within a circle of radius one unit, also has a
-side of one unit. Thus, the hypotenuse of the circle \(OAP\) in
-\cref{fig:thirty-sixty} has unit length. Moreover, the base \(OP\),
-resulting from a bisected side, has a length of half a unit. By applying
-the theorem of Pythagoras, the third side, \(AP\) is
+The inscribed hexagon, within a circle of \emph{radius} one unit, also
+has a side of one unit. Thus, the hypotenuse of the circle \(OAP\) in
+\cref{fig:thirty-sixty} has a length of 2 units. Moreover, the base
+\(OP\), resulting from a bisected side, has a length of one a unit. By
+applying the theorem of Pythagoras, the third side, \(AP\) is
 \begin{equation}\phantomsection\label{eq:triangle}{
-\sqrt{1^2 - \left(\frac{1}{2}\right)^2} = \frac{\sqrt{3}}{2}.
+\sqrt{2^2 - 1^2} = \sqrt{3}.
 }\end{equation}
 
-The next thing Archimedes needed and knew how to do was to compute
-\(\sqrt{3}\) which figures in \cref{eq:triangle}. Finding square roots
+The next thing Archimedes needed---and knew how to do---was to compute
+\(\sqrt{3}\), which figures in \cref{eq:triangle}. Finding square roots
 is a tedious process, not unlike long division, and prone to human
 error. The patience and doggedness of Archimedes that must have gone
 into the process is astounding.
@@ -699,8 +704,8 @@ angles were repeatedly bisected. He used a previous result to feed
 values into the next result as he doubled the sides of the regular
 hexagon. We will look at his method a little later, but for now, we will
 try to simulate what he did using trigonometry. In the process we will
-encounter an important ides called
-\href{(https://www.geeksforgeeks.org/introduction-to-recursion-2/)}{recursion}
+encounter an important idea called
+\href{(https://www.geeksforgeeks.org/introduction-to-recursion-2/)}{recursion},
 which is a bit like a snake eating its own tail.
 
 From \cref{fig:thirty-sixty}, we know:
@@ -708,7 +713,7 @@ From \cref{fig:thirty-sixty}, we know:
 \begin{aligned}
 \sin 30° &= \tfrac{1}{2}\\
 \cos 30° &= \tfrac{\sqrt{3}}{2}\\
-\tan 30° &= \tfrac{\sqrt{3}}{3}\\
+\tan 30° &= \tfrac{1}{\sqrt{3}} = \tfrac{\sqrt{3}}{3}\\
 \end{aligned}
 }\end{equation}
 
@@ -723,7 +728,8 @@ The whole trick to this recursion is to
   and
 \item
   use one known value of a trigonometric function to estimate the next
-  unknown value in the chain.
+  unknown value in the chain, \emph{without} resorting to tables of
+  values, or calculators.
 \end{enumerate}
 
 The trigonometry of
@@ -741,8 +747,8 @@ Let us step through the recursion:
 
 \begin{enumerate}
 \item
-  We know from \cref{fig:thirty-sixty} that \(\sin 30° = \frac{1}{2}\)
-  and \(\cos 30° = \frac{\sqrt{3}}{2}\).
+  We know from \cref{fig:thirty-sixty} and \cref{eq:three-six-nine} that
+  \(\sin 30° = \frac{1}{2}\) and \(\cos 30° = \frac{\sqrt{3}}{2}\).
 \item
   We calculate \(\sin 15°\) etc., from \(\cos 30°\) using the half-angle
   formula: \[
@@ -755,9 +761,12 @@ Let us step through the recursion:
   &= \frac{1}{2}\sqrt{2 + \sqrt{3}}\\
   \tan 15° &= \frac{\sqrt{2 - \sqrt{3}}}{\sqrt{2 + \sqrt{3}}}\\
   \end{aligned}
-  \]
+  \] For comparison with another method we will use later on---in
+  \hyperref[the-angle-bisector-theorem]{The angle bisector
+  theorem}---the value of \(\sin 15°\) we get from the equation above is
+  0.2588190451025208.
 \item
-  Using the value of \(\cos 15°\), for \(7.5°\) we get \[
+  Using the value of \(\cos 15°\), we get, for \(7.5°\) \[
   \begin{aligned}
   \sin 7.5° &= \sqrt{\frac{1 - \frac{1}{2}\sqrt{2 + \sqrt{3}}}{2}}\\
   &= \frac{1}{2}\sqrt{2 - \sqrt{2 + \sqrt{3}}}\\
@@ -787,36 +796,42 @@ Let us step through the recursion:
 
 We went through this somewhat painful process for the reasons outlined
 below because we wanted to simulate the steps Archimedes took
-{[}{[}\citeproc{ref-damini-dhar-2020}{2}{]}; bertrand2014{]}. It is a
-proof of concept where we have only evaluated the sine and cosine values
-and not estimated the two perimeters.
+{[}\citeproc{ref-bertrand2014}{1},\citeproc{ref-damini-dhar-2020}{2}{]}.
+It is a proof of concept---where we have only evaluated the sine and
+cosine values, and not estimated the two perimeters. The following
+points bear noting:
 
 \begin{enumerate}
 \def\labelenumi{(\alph{enumi})}
 \item
   Archimedes knew the sine of 30° and had to work out all other values
   by hand, without using decimals. That was why we started with a
-  regular hexagon and retained \href{}{surds}, along with their awkward
-  algebraic manipulation.
+  regular hexagon, and retained
+  \href{https://www.thefreedictionary.com/surds}{surds}, along with
+  their awkward algebraic manipulation.
 \item
-  Archimedes only knew \href{}{rational numbers} of the form
-  \(\frac{a}{b}\) where \(a\) and \(b\) are integers and \(b \neq 0\).
-  So, his approximations for \(\sqrt{2}\) and \(\sqrt{3}\) were
-  expressed as improper fractions that approximated those numbers.
+  Archimedes only knew
+  \href{https://www.britannica.com/science/rational-number}{rational
+  numbers} of the form \(\frac{a}{b}\) where \(a\) and \(b\) are
+  integers and \(b \neq 0\). So, his approximations for \(\sqrt{2}\) and
+  \(\sqrt{3}\) were expressed as improper fractions that approximated
+  those numbers.
 \item
   Archimedes did not have positional notation for his calculations and
   he had to rely on an arithmetical system that we would find
   forbidding.
 \item
   We have demonstrated how Archimedes used recursion in his estimate of
-  \(\pi\).
+  \(\pi\). In recursion, we usually \emph{stop} at the \emph{base case}.
+  In our example, we have \emph{started} with the regular hexagon, which
+  is the base case. And we have stopped computing once \(n\) reached
+  \(96\).
 \item
   We cheated when we used trigonometric half-angle formulae. Archimedes
-  did not have those but he used triangles in a semi-circle and
-  leveraged his knowledge of similar triangles and Pythagoras's theorem
-  because the angle in a semi-circle is a right angle. We use a slightly
-  different approach, considered next, to get the results he did,
-  without using trigonometry.
+  did not have them, but he used right-angled triangles in a semi-circle
+  and leveraged his knowledge of similar triangles and Pythagoras'
+  theorem. We use a slightly different approach, considered next, to get
+  the results he did, without using trigonometry.
 \end{enumerate}
 
 \subsubsection{The angle bisector
@@ -863,16 +878,117 @@ right triangle. The ratio of \(a\) to \(b\) is that same as the ratio of
 \(2\) to \(\sqrt{3}\).}\label{fig:bisect-thirty}
 \end{figure}
 
-\subsubsection{Numerical results}\label{numerical-results}
+Since \(OQ\) is one unit,
+\begin{equation}\phantomsection\label{eq:bisect1}{
+a+b = 1.
+}\end{equation} Also, \begin{equation}\phantomsection\label{eq:bisect2}{
+\begin{aligned}
+\frac{a}{b} &= \frac{2}{\sqrt{3}}\\
+a &= \frac{2}{\sqrt{3}}b\\
+&= \frac{2\sqrt{3}}{3}b\\
+\end{aligned}
+}\end{equation} Substituting for \(a\) from \cref{eq:bisect2} into
+\cref{eq:bisect1} gives us
+\begin{equation}\phantomsection\label{eq:bisect3}{
+\begin{aligned}
+\frac{2\sqrt{3}}{3}b + b &= 1\\ 
+\left[\frac{2\sqrt{3}}{3} + 1\right] b &= 1\\
+\left[\frac{2\sqrt{3} + 3}{3}\right] b &= 1\\
+b &= 2\sqrt{3} - 3\\
+\end{aligned}
+}\end{equation}
 
-WHERE TO PUT THIS?
+Pythagoras' theorem, applied to right triangle \(PQS\), gives us
+\begin{equation}\phantomsection\label{eq:bisect4}{
+\begin{aligned}
+PS^2 &= SQ^2 + QP^2\\
+r^2 &= b^2 + \sqrt{3}^2\\
+&= b^2 +3 \implies r = \sqrt{b^2 + 3}\\
+\end{aligned}
+}\end{equation} Now, \begin{equation}\phantomsection\label{eq:bisect5}{
+\begin{aligned}
+b^2 + 3 &= \left[{2\sqrt{3} - 3}\right]^2 + 3\\
+&= {12 - 12\sqrt{3} + 9 + 3} \\
+&= 12(2 - \sqrt{3})
+\end{aligned}
+}\end{equation} Therefore,
+\begin{equation}\phantomsection\label{eq:bisect6}{
+\begin{aligned}
+r &= \sqrt{b^2 + 3}\\
+&= \sqrt{12(2 - \sqrt{3})}\\
+&=2\sqrt{6 - 3\sqrt{3}}\\
+\end{aligned}
+}\end{equation}
+
+Putting together \cref{eq:bisect3,eq:bisect5}, we get \[
+\begin{aligned}
+\sin 15° &= \frac{b}{r}\\
+&= \frac{1}{2}\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\\[1em]
+&\approx 0.2588190451025207\\
+\end{aligned}
+\] And we are done! I do not intend to pursue this tedious process any
+more. I have pressed on thus far only because I wanted to convey to you
+an appreciation of the travails that Archimedes must have undergone
+without any of the modern mathematical conveniences we enjoy, like
+calculators and computers. \emph{Gauging by the heroic effort he put in
+to estimate \(\pi\), Archimedes must have loved mathematics very
+dearly}.
+
+The fact that we have obtained the same value of \(\sin 15°\) by using
+two different
+approaches---\hyperref[the-half-angle-formulae-and-recursion]{one using
+trigonometry}, and the other using pure geometry--- illustrates the
+richness that lies ahead, waiting to be explored by some intrepid
+student of mathematics.
+
+\subsubsection{Digression: Denesting
+Surds}\label{digression-denesting-surds}
+
+But wait a minute. How do we simplify expressions containing square
+roots within square roots? Such expressions are called
+\href{https://undergroundmathematics.org/thinking-about-algebra/nested-surds/solution}{nested
+surds}. Is there an easy way to confirm---without using
+calculators---that the two results we got are indeed the same number?
+How do we unpack surds within surds? Because calculators have finite
+precision, how do we know that the two exact expressions involving
+surds, on either side of the equality sign below, are indeed equal? \[
+\begin{aligned}
+\frac{1}{2}\sqrt{2 - \sqrt{3}} &= \frac{1}{2}\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\mbox{ or more simply that}\\
+\sqrt{2 - \sqrt{3}}&= \left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\\
+\end{aligned}
+\]
+
+Fortunately, there are many resources on the Web, from book chapters, to
+dedicated web pages, to video presentations, that deal with this
+interesting, but seldom discussed topic---\emph{denesting surds}
+{[}\citeproc{ref-ds-underground}{4}--\citeproc{ref-ds-yt-method}{7}{]}.
+Choose any one, or even all, references to learn from, and then tackle
+the above problem.
+
+For starters, I will outline how to denest \(\sqrt{6-3\sqrt{3}}\). Let
+\(\sqrt{6-3\sqrt{3}} = \sqrt{a} - \sqrt{b}\) where \(0 \leq b \leq a\).
+We square both sides and obtain expressions for \(a + b\) and \(ab\).
+This will result in a quadratic equation with two solutions. We choose
+the larger value for \(a\). The two solutions in this case are
+\(a = \frac{9}{2}\) and \(b = \frac{3}{2}\) leading to \[
+\sqrt{6-3\sqrt{3}} = \frac{3 - \sqrt{3}}{\sqrt{2}} = \frac{3\sqrt{2} - \sqrt{6}}{2}.
+\] Note that there are no nested square roots on the right hand side
+(RHS). The salient point is that, since we are dealing with surds, we
+should get identical, closed form, expressions for both
+\(\sqrt{2 - \sqrt{3}}\) and
+\(\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\)
+\emph{without} using decimals. And that takes some effort, using paper
+and pencil, or software like \href{https://www.geogebra.org/}{Geogebra}.
+
+\subsection{Understanding the results}\label{understanding-the-results}
 
 Evaluating the bounds given in \cref{tbl:variables} and
 \cref{eq:squeeze} by setting \(r = 1\), \(n = 6\), and
 \(\theta = \frac{180}{n} = 30°\)\footnote{Rather than use radians with
   \(\pi\) entering the proceedings, I decided to stick with degrees as
   units to avoid confusion. If one uses power series to probe further,
-  of course, radians are called for.} gives us these values:
+  of course, radians are called for.} gives us these values, as
+extracted from \cref{tbl:large-n-pi}:
 \begin{equation}\phantomsection\label{eq:triple-6}{
 \begin{aligned}
 C_i &= 2n\sin\theta r = 12(\sin 30°) = 12(0.5) &= 6.0000.\\
@@ -895,18 +1011,27 @@ C_c &= 2n\tan\theta r = 2(96)\tan{1.875°} \approx 192(0.0327) &\approx 6.2854.\
 
 Note that in the case of 96 sides, we have a \emph{very small angle}
 \(\theta\) whose \(\sin\) and \(\tan\) are almost equal. This is what
-gives us tight bounds on the estimate of \(\pi\). If you know the power
-series for \(\sin\theta\) and \(\tan\theta\), you will appreciate even
-better how the value of \(\pi\) is trapped and squeezed between these
-two rather close limits.
+gives us tight bounds on the estimate of \(\pi\). If you know
+\href{https://math.libretexts.org/Bookshelves/Differential_Equations/A_First_Course_in_Differential_Equations_for_Scientists_and_Engineers_(Herman)/08:_Appendix_Calculus_Review/8.07:_Power_Series}{the
+power series for \(\sin\theta\) and \(\tan\theta\)}, you will appreciate
+even better how the value of \(\pi\) is trapped and squeezed between
+these two rather close limits.
 
 Remember \cref{eq:triple-96} because it helps us to estimate lower and
 upper bounds for the value of the circumference. Archimedes's
 application of the
 \href{https://en.wikipedia.org/wiki/Squeeze_theorem}{squeeze theorem}
 nineteen centuries before the calculus was invented is illustrated in
-the series of figures,
+the series of
 \cref{fig:six-gon,fig:twelve-gon,fig:twenty-four-gon,fig:forty-eight-gon,fig:ninety-six-gon}.
+
+If you study the calculus or analysis later on, and encounter the
+\href{https://en.wikipedia.org/wiki/Limit_of_a_function}{epsilon-delta
+(\(\epsilon-\delta\)) definition of a limit} hark back to this example
+of Archimedes for a graphic an concrete example of how a value may be
+bounded from below and above and how it may be
+\href{https://demonstrations.wolfram.com/SqueezeTheorem/}{squeezed} into
+the limit.
 
 \href{https://en.wiktionary.org/wiki/sanity_check}{Sanity check}: Does
 \(2\pi = 6.2820\), from a calculator, lie within the bounds of
@@ -923,6 +1048,15 @@ explains why they are sometimes called the \emph{circular functions}.
 Indeed, the values \(n\sin\frac{\pi}{n}\) and \(n\sin\tan{\pi}{n}\) both
 converge to \(\pi\) for very large \(n\). The interested reader should
 plot these two curves.
+
+\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\& PLOT of
+n sin x/n as n becomes very large: asymptotes to pi?
+\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&
+
+\subsection{Sanity checks}\label{sanity-checks}
+
+\subsection{Graph of n sin pi/n as n becomes extremely
+large}\label{graph-of-n-sin-pin-as-n-becomes-extremely-large}
 
 WHERE SHOULD THIS GO?
 
@@ -1030,6 +1164,10 @@ https://en.wikipedia.org/wiki/Approximations\_of\_\%CF\%80
 
 https://www.joyofpi.com/
 
+https://math.stackexchange.com/questions/2758418/deriving-the-power-series-for-cosine-using-basic-geometry
+
+https://www.youtube.com/watch?v=K5W0DMMukZQ
+
 \subsection{Book References}\label{book-references}
 
 \subsection{Web resources}\label{web-resources}
@@ -1052,7 +1190,7 @@ better, but remember that he did not have trigonometry to aid him.
 
 \subsection{Acknowledgements}\label{acknowledgements}
 
-The computations for this blog were performed using programs written by
+Some computations for this blog were performed using programs written by
 \href{}{Nandakumar Chandrasekhar} in the
 \href{https://julialang.org/}{Julia programming Language}. The source
 code is available here:
@@ -1099,6 +1237,33 @@ At Right Angles}}. Retrieved 2 July 2024 from
 \CSLRightInline{OpenStax. {Algebra and Trigonometry}. {Double-Angle,
 Half-Angle, and Reduction Formulas}. Retrieved 6 July 2024 from
 \url{https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas}}
+
+\bibitem[\citeproctext]{ref-ds-underground}
+\CSLLeftMargin{{[}4{]} }%
+\CSLRightInline{Underground Mathematics. 2016. {Solution \textbar{}
+Nested surds \textbar{} Thinking about Algebra \textbar{} Underground
+Mathematics}. Rich resources for teaching a level mathematics. Retrieved
+11 July 2024 from
+\url{https://undergroundmathematics.org/thinking-about-algebra/nested-surds/solution}}
+
+\bibitem[\citeproctext]{ref-ds-brown}
+\CSLLeftMargin{{[}5{]} }%
+\CSLRightInline{Stan Brown. 2023. {Denesting Radicals (or Unnesting
+Radicals)}. Retrieved 11 July 2024 from
+\url{https://brownmath.com/alge/nestrad.htm}}
+
+\bibitem[\citeproctext]{ref-ds-jeffrey-rich}
+\CSLLeftMargin{{[}6{]} }%
+\CSLRightInline{David J Jeffrey and Albert D Rich. 2003. Simplifying
+square roots of square roots by denesting. {From Computer Algebra
+Systems: A Practical Guide, M J Wester, Ed., Wiley 1999}. Retrieved 11
+July 2024 from \url{https://cybertester.com/data/denest.pdf}}
+
+\bibitem[\citeproctext]{ref-ds-yt-method}
+\CSLLeftMargin{{[}7{]} }%
+\CSLRightInline{2022. A universal method to solve nested radicals
+(nested square root). Retrieved 11 July 2024 from
+\url{https://www.youtube.com/watch?v=K5W0DMMukZQ}}
 
 \end{CSLReferences}
 

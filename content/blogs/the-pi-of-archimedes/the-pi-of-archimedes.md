@@ -157,7 +157,7 @@ $$ {#eq:upper-bound}
 Obviously, the circle may be viewed as a regular polygon whose number of sides, $n$ has become exceedingly large, or _infinite_. So, as $n$ is increased, we should expect the two bounds to converge to the limiting value of $\pi$.
 
 | $n$ | $n\sin\frac{\pi}{n}$ | $n\tan\frac{\pi}{n}$ |
-|:----|:-----------------|:--------------------|
+|------:|-------------:|-------------:|
 | $6$ | $3.0000000000$ | $3.4641016151$ |
 | $12$ | $3.1058285412$ | $3.2153903092$ |
 | $24$ | $3.1326286133$ | $3.1596599421$ |
@@ -168,24 +168,24 @@ Obviously, the circle may be viewed as a regular polygon whose number of sides, 
 | $10000$ | $3.1415926019$ | $3.1415927569$ |
 | $100000$ | $3.1415926531$ | $3.1415926546$ |
 | $1000000$ | $3.1415926536$ | $3.1415926536$ |
-: The values of $n\sin\frac{\pi}{n}$ and $n\tan\frac{\pi}{n}$. As $n$ larger and larger, the values in both the second and third columns become closer and closer to $\pi$. {#tbl:large-n-pi}
+: The values of $n\sin\frac{\pi}{n}$ and $n\tan\frac{\pi}{n}$. As $n$ increases without bound, the values in the second and third columns both approach the true value of $\pi$ with increasing accuracy. {#tbl:large-n-pi}
 
 \ 
  
-The upper and lower bounds are equal up to ten decimal digits when $n = 10^{6}$, and we might declare the problem of estimating pi solved. But in the time of Archimedes, trigonometry was not known; only geometry was. Moreover, the decimal system and calculators were also in the future. We now have to backtrack and attempt to retrace the steps Archimedes used to estimate $\pi$.
+The upper and lower bounds are equal up to ten decimal digits when $n = 10^{6}$, and we might as well declare the problem of estimating $\pi$ solved. But in the time of Archimedes, trigonometry was not known; only geometry was. Moreover, the decimal system and calculators were also in the future. We now have to backtrack and attempt to retrace the steps Archimedes used to estimate $\pi$ to better appreciate his heroic efforts.
 
 ### The thirty, sixty, ninety right triangle
 
 Archimedes applied the principle "of starting from the known" to initiate his algorithm using a _regular hexagon_, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right-angled triangles with angles of thirty and sixty degrees, as shown in [@fig:thirty-sixty].
 
-![This right-angled, obtained by bisecting an equilateral triangle, must be familiar to all school students. These lengths---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=70% .modal-target}
+![This right-angled triangle, obtained by bisecting an equilateral triangle, must be familiar to all school students. The lengths shown---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=80% .modal-target}
 
-The inscribed hexagon, within a circle of radius one unit, also has a side of one unit. Thus, the hypotenuse of the circle $OAP$ in [@fig:thirty-sixty] has unit length. Moreover, the base $OP$, resulting from a bisected side, has a length of half a unit. By applying the theorem of Pythagoras, the third side, $AP$ is 
+The inscribed hexagon, within a circle of _radius_ one unit, also has a side of one unit. Thus, the hypotenuse of the circle $OAP$ in [@fig:thirty-sixty] has a length of 2 units. Moreover, the base $OP$, resulting from a bisected side, has a length of one a unit. By applying the theorem of Pythagoras, the third side, $AP$ is 
 $$
-\sqrt{1^2 - \left(\frac{1}{2}\right)^2} = \frac{\sqrt{3}}{2}.
+\sqrt{2^2 - 1^2} = \sqrt{3}.
 $${#eq:triangle}
 
-The next thing Archimedes needed and knew how to do was to compute $\sqrt{3}$ which figures in [@eq:triangle]. Finding square roots is a tedious process, not unlike long division, and prone to human error. The patience and doggedness of Archimedes that must have gone into the process is astounding.
+The next thing Archimedes needed---and knew how to do---was to compute $\sqrt{3}$, which figures in [@eq:triangle]. Finding square roots is a tedious process, not unlike long division, and prone to human error. The patience and doggedness of Archimedes that must have gone into the process is astounding.
 
 ### Extracting square roots by hand
 
@@ -195,14 +195,14 @@ $${#eq:sqrt3}
 
 ## Trigonometry and half angles
 
-Archimedes had no trigonometric tables to aid him. But he did know the square root of three, and the geometric properties of triangles whose angles were repeatedly bisected. He used a previous result to feed values into the next result as he doubled the sides of the regular hexagon. We will look at his method a little later, but for now, we will try to simulate what he did using trigonometry. In the process we will encounter an important ides called [recursion]((https://www.geeksforgeeks.org/introduction-to-recursion-2/)) which is a bit like a snake eating its own tail.
+Archimedes had no trigonometric tables to aid him. But he did know the square root of three, and the geometric properties of triangles whose angles were repeatedly bisected. He used a previous result to feed values into the next result as he doubled the sides of the regular hexagon. We will look at his method a little later, but for now, we will try to simulate what he did using trigonometry. In the process we will encounter an important idea called [recursion]((https://www.geeksforgeeks.org/introduction-to-recursion-2/)), which is a bit like a snake eating its own tail.
 
 From [@fig:thirty-sixty], we know:
 $$
 \begin{aligned}
 \sin 30° &= \tfrac{1}{2}\\
 \cos 30° &= \tfrac{\sqrt{3}}{2}\\
-\tan 30° &= \tfrac{\sqrt{3}}{3}\\
+\tan 30° &= \tfrac{1}{\sqrt{3}} = \tfrac{\sqrt{3}}{3}\\
 \end{aligned}
 $$ {#eq:three-six-nine}
 
@@ -212,7 +212,7 @@ The whole trick to this recursion is to
 
 #. move from one estimate to the next, more accurate estimate of $\pi$; and
 
-#. use one known value of a trigonometric function to estimate the next unknown value in the chain.
+#. use one known value of a trigonometric function to estimate the next unknown value in the chain, _without_ resorting to tables of values, or calculators.
 
 The trigonometry of [half angles in terms of the full angle]( https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas) [@half-angle] helps relate the successive values of $\theta$:^[All angles are in the first quadrant.]
 $$
@@ -224,7 +224,7 @@ $$
 
 Let us step through the recursion:
 
-#. We know from [@fig:thirty-sixty] that $\sin 30° = \frac{1}{2}$ and $\cos 30° = \frac{\sqrt{3}}{2}$.
+#. We know from [@fig:thirty-sixty] and [@eq:three-six-nine] that $\sin 30° = \frac{1}{2}$ and $\cos 30° = \frac{\sqrt{3}}{2}$.
 
 #. We calculate $\sin 15°$ etc., from $\cos 30°$ using the half-angle formula:
 $$
@@ -238,8 +238,9 @@ $$
 \tan 15° &= \frac{\sqrt{2 - \sqrt{3}}}{\sqrt{2 + \sqrt{3}}}\\
 \end{aligned}
 $$
+For comparison with another method we will use later on---in [The angle bisector theorem]---the value of $\sin 15°$ we get from the equation above is 0.2588190451025208.
 
-#.  Using the value of $\cos 15°$, for $7.5°$ we get 
+#.  Using the value of $\cos 15°$, we get, for $7.5°$
 $$
 \begin{aligned}
 \sin 7.5° &= \sqrt{\frac{1 - \frac{1}{2}\sqrt{2 + \sqrt{3}}}{2}}\\
@@ -267,17 +268,17 @@ $$
 $$
 Because we guessed, we checked the value we obtained above---expressed as a decimal---with a calculator, and it checked out.
 
-We went through this somewhat painful process for the reasons outlined below because we wanted to simulate the steps Archimedes took [@damini-dhar-2020; bertrand2014]. It is a proof of concept where  we have only evaluated the sine and cosine values and not estimated the two perimeters. 
+We went through this somewhat painful process for the reasons outlined below because we wanted to simulate the steps Archimedes took [@damini-dhar-2020; @bertrand2014]. It is a proof of concept---where we have only evaluated the sine and cosine values, and not estimated the two perimeters. The following points bear noting:
 
-(a) Archimedes knew the sine of 30° and had to work out all other values by hand, without using decimals. That was why we started with a regular hexagon and retained [surds](), along with their awkward algebraic manipulation.
+(a) Archimedes knew the sine of 30° and had to work out all other values by hand, without using decimals. That was why we started with a regular hexagon, and retained [surds](https://www.thefreedictionary.com/surds), along with their awkward algebraic manipulation.
 
-(a) Archimedes only knew [rational numbers]() of the form $\frac{a}{b}$ where $a$ and $b$ are integers and $b \neq 0$. So, his approximations for $\sqrt{2}$ and $\sqrt{3}$ were expressed as improper fractions that approximated those numbers.
+(a) Archimedes only knew [rational numbers](https://www.britannica.com/science/rational-number) of the form $\frac{a}{b}$ where $a$ and $b$ are integers and $b \neq 0$. So, his approximations for $\sqrt{2}$ and $\sqrt{3}$ were expressed as improper fractions that approximated those numbers.
 
 (a) Archimedes did not have positional notation for his calculations and he had to rely on an arithmetical system that we would find forbidding.
 
-(a) We have demonstrated how Archimedes used recursion in his estimate of $\pi$.
+(a) We have demonstrated how Archimedes used recursion in his estimate of $\pi$. In recursion, we usually _stop_ at the _base case_. In our example, we have _started_ with the regular hexagon, which is the base case. And we have stopped computing once $n$ reached $96$.
 
-(a) We cheated when we used trigonometric half-angle formulae. Archimedes did not have those but he  used triangles in a semi-circle and leveraged his knowledge of similar triangles and Pythagoras's theorem because the angle in a semi-circle is a right angle. We use a slightly different approach, considered next, to get the results he did, without using trigonometry.
+(a) We cheated when we used trigonometric half-angle formulae. Archimedes did not have them, but he  used right-angled triangles in a semi-circle and leveraged his knowledge of similar triangles and Pythagoras' theorem. We use a slightly different approach, considered next, to get the results he did, without using trigonometry.
 
 ### The angle bisector theorem
 
@@ -299,16 +300,86 @@ Applying the theorem to a thirty-sixty-ninety right-angled triangle, we get [@fi
 
 ![The angle bisector theorem applied to a thirty-sixty-ninety right triangle. The ratio of $a$ to $b$ is that same as the ratio of $2$ to $\sqrt{3}$.]({attach}images/bisect-thirty.svg){#fig:bisect-thirty width=45% .modal-target}
 
+Since $OQ$ is one unit,
+$$
+a+b = 1.
+$$ {#eq:bisect1}
+Also,
+$$
+\begin{aligned}
+\frac{a}{b} &= \frac{2}{\sqrt{3}}\\
+a &= \frac{2}{\sqrt{3}}b\\
+&= \frac{2\sqrt{3}}{3}b\\
+\end{aligned}
+$$ {#eq:bisect2}
+Substituting for $a$ from [@eq:bisect2] into [@eq:bisect1] gives us
+$$
+\begin{aligned}
+\frac{2\sqrt{3}}{3}b + b &= 1\\ 
+\left[\frac{2\sqrt{3}}{3} + 1\right] b &= 1\\
+\left[\frac{2\sqrt{3} + 3}{3}\right] b &= 1\\
+b &= 2\sqrt{3} - 3\\
+\end{aligned}
+$$ {#eq:bisect3}
 
+Pythagoras' theorem, applied to right triangle $PQS$, gives us
+$$
+\begin{aligned}
+PS^2 &= SQ^2 + QP^2\\
+r^2 &= b^2 + \sqrt{3}^2\\
+&= b^2 +3 \implies r = \sqrt{b^2 + 3}\\
+\end{aligned}
+$$ {#eq:bisect4}
+Now,
+$$
+\begin{aligned}
+b^2 + 3 &= \left[{2\sqrt{3} - 3}\right]^2 + 3\\
+&= {12 - 12\sqrt{3} + 9 + 3} \\
+&= 12(2 - \sqrt{3})
+\end{aligned}
+$$ {#eq:bisect5}
+Therefore, 
+$$
+\begin{aligned}
+r &= \sqrt{b^2 + 3}\\
+&= \sqrt{12(2 - \sqrt{3})}\\
+&=2\sqrt{6 - 3\sqrt{3}}\\
+\end{aligned}
+$$ {#eq:bisect6}
 
+Putting together [@eq:bisect3; @eq:bisect5], we get
+$$
+\begin{aligned}
+\sin 15° &= \frac{b}{r}\\
+&= \frac{1}{2}\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\\[1em]
+&\approx 0.2588190451025207\\
+\end{aligned}
+$$
+And we are done! I do not intend to pursue this tedious process any more. I have pressed on thus far only because I wanted to convey to you an appreciation of the travails that Archimedes must have undergone without any of the modern mathematical conveniences we enjoy, like calculators and computers. _Gauging by the heroic effort he put in to estimate $\pi$, Archimedes must have loved mathematics very dearly_.
 
+The fact that we have obtained the same value of $\sin 15°$ by using two different approaches---[one using trigonometry][the half-angle formulae and recursion], and the other using pure geometry--- illustrates the richness that lies ahead, waiting to be explored by some intrepid student of mathematics.
 
+### Digression: Denesting Surds
 
-### Numerical results
+But wait a minute. How do we simplify expressions containing square roots within square roots? Such expressions are called [nested surds](https://undergroundmathematics.org/thinking-about-algebra/nested-surds/solution). Is there an easy way to confirm---without using calculators---that the two results we got are indeed the same number? How do we unpack surds within surds? Because calculators have finite precision, how do we know that the two exact expressions involving surds, on either side of the equality sign below, are indeed equal?
+$$
+\begin{aligned}
+\frac{1}{2}\sqrt{2 - \sqrt{3}} &= \frac{1}{2}\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\mbox{ or more simply that}\\
+\sqrt{2 - \sqrt{3}}&= \left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\\
+\end{aligned}
+$$
 
-WHERE TO PUT THIS?
+Fortunately, there are many resources on the Web, from book chapters, to dedicated web pages, to video presentations, that deal with this interesting, but seldom discussed topic---_denesting surds_  [@ds-underground; @ds-brown; @ds-jeffrey-rich; @ds-yt-method]. Choose any one, or even all, references to learn from, and then tackle the above problem.
 
-Evaluating the bounds given in [@tbl:variables] and [@eq:squeeze] by setting $r = 1$, $n = 6$, and $\theta = \frac{180}{n} = 30°$^[Rather than use radians with $\pi$ entering the proceedings, I decided to stick with degrees as units to avoid confusion. If one uses power series to probe further, of course, radians are called for.] gives us these values:
+For starters, I will outline how to denest $\sqrt{6-3\sqrt{3}}$. Let $\sqrt{6-3\sqrt{3}} = \sqrt{a} - \sqrt{b}$ where $0 \leq b \leq a$. We square both sides and obtain expressions for $a + b$ and $ab$. This will result in a quadratic equation with two solutions. We choose the larger value for $a$. The two solutions in this case are $a = \frac{9}{2}$ and $b = \frac{3}{2}$ leading to 
+$$
+\sqrt{6-3\sqrt{3}} = \frac{3 - \sqrt{3}}{\sqrt{2}} = \frac{3\sqrt{2} - \sqrt{6}}{2}.
+$$
+Note that there are no nested square roots on the right hand side (RHS). The salient point is that, since we are dealing with surds, we should get identical, closed form, expressions for both $\sqrt{2 - \sqrt{3}}$ and $\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]$ _without_ using decimals. And that takes some effort, using paper and pencil, or software like [Geogebra](https://www.geogebra.org/).
+
+## Understanding the results
+
+Evaluating the bounds given in [@tbl:variables] and [@eq:squeeze] by setting $r = 1$, $n = 6$, and $\theta = \frac{180}{n} = 30°$^[Rather than use radians with $\pi$ entering the proceedings, I decided to stick with degrees as units to avoid confusion. If one uses power series to probe further, of course, radians are called for.] gives us these values, as extracted from [@tbl:large-n-pi]:
 $$
 \begin{aligned}
 C_i &= 2n\sin\theta r = 12(\sin 30°) = 12(0.5) &= 6.0000.\\
@@ -326,13 +397,24 @@ C_c &= 2n\tan\theta r = 2(96)\tan{1.875°} \approx 192(0.0327) &\approx 6.2854.\
 \end{aligned}
 $${#eq:triple-96}
 
-Note that in the case of 96 sides, we have a _very small angle_ $\theta$ whose $\sin$ and $\tan$ are almost equal. This is what gives us tight bounds on the estimate of $\pi$. If you know the power series for $\sin\theta$ and $\tan\theta$, you will appreciate even better how the value of $\pi$ is trapped and squeezed between these two rather close limits.
+Note that in the case of 96 sides, we have a _very small angle_ $\theta$ whose $\sin$ and $\tan$ are almost equal. This is what gives us tight bounds on the estimate of $\pi$. If you know [the power series for $\sin\theta$ and $\tan\theta$](https://math.libretexts.org/Bookshelves/Differential_Equations/A_First_Course_in_Differential_Equations_for_Scientists_and_Engineers_(Herman)/08:_Appendix_Calculus_Review/8.07:_Power_Series), you will appreciate even better how the value of $\pi$ is trapped and squeezed between these two rather close limits.
 
-Remember [@eq:triple-96] because it helps us to estimate lower and upper bounds for the value of the circumference. Archimedes's application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in the series of figures, [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon].
+Remember [@eq:triple-96] because it helps us to estimate lower and upper bounds for the value of the circumference. Archimedes's application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in the series of [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon].
+
+If you study the calculus or analysis later on, and encounter the [epsilon-delta ($\epsilon-\delta$) definition of a limit](https://en.wikipedia.org/wiki/Limit_of_a_function) hark back to this example of Archimedes for a graphic an concrete example of how a value may be bounded from below and above and how it may be [squeezed](https://demonstrations.wolfram.com/SqueezeTheorem/) into the limit.
 
 [Sanity check](https://en.wiktionary.org/wiki/sanity_check): Does $2\pi = 6.2820$, from a calculator, lie within the bounds of [@eq:triple-96]? Yes, indeed, and we are [home and dry](https://dictionary.cambridge.org/dictionary/english/be-home-and-dry).
 
 Second sanity check: When $n$ is very large, we expect $n\sin\frac{180°}{n}$ to be closer and closer to the true value. Setting $n = 10^6$ and evaluating on a calculator we get $10^6\sin\frac{180°}{10^6} = 3.14159$ which is reassuring. This deep connection between the circle and the trigonometric functions also explains why they are sometimes called the _circular functions_. Indeed, the values $n\sin\frac{\pi}{n}$ and $n\sin\tan{\pi}{n}$ both converge to $\pi$ for very large $n$. The interested reader should plot these two curves.
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+PLOT of n sin x/n as n becomes very large: asymptotes to pi?
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+
+## Sanity checks
+
+## Graph of n sin pi/n as n becomes extremely large
 
 WHERE SHOULD THIS GO?
 
@@ -417,6 +499,11 @@ https://en.wikipedia.org/wiki/Approximations_of_%CF%80
 
 https://www.joyofpi.com/
 
+https://math.stackexchange.com/questions/2758418/deriving-the-power-series-for-cosine-using-basic-geometry
+
+https://www.youtube.com/watch?v=K5W0DMMukZQ
+
+
 ## Book References
 
 ## Web resources
@@ -429,7 +516,7 @@ Archimedes devised his ingenious _squeeze_ method for computing the upper and lo
 
 ## Acknowledgements
 
-The computations for this blog were performed using programs written by [Nandakumar Chandrasekhar]() in the [Julia programming Language](https://julialang.org/). The source code is available here:
+Some computations for this blog were performed using programs written by [Nandakumar Chandrasekhar]() in the [Julia programming Language](https://julialang.org/). The source code is available here:
 
 
 ## Feedback
