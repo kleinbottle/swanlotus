@@ -171,44 +171,8 @@ Obviously, the circle may be viewed as a regular polygon whose number of sides, 
 : The values of $n\sin\frac{\pi}{n}$ and $n\tan\frac{\pi}{n}$. As $n$ increases without bound, the values in the second and third columns both approach the true value of $\pi$ with increasing accuracy. {#tbl:large-n-pi}
 
 \ 
-
-The upper and lower bounds are equal up to ten decimal digits when $n = 10^{6}$, and we might as well declare the problem of estimating $\pi$ solved. But in the time of Archimedes, trigonometry was not known; only geometry was. Moreover, the decimal system and calculators were also in the future.
-
-To improved our understanding, the values of $n$ and $c(n)$ may be plotted as points of a discrete valued function. In addition, if relax conditions, and move from integer to real values, we may plot the curve of $x\sin\frac{180°}{x}$ against $x$ to get a feel for the large value behavious of the curve. This is shoqn in [@fig:plot]:
-
-![Plot of $x\sin\frac{180°}{x}$ versus $x$. The actual data points obtained by Archimedes are sown as colored circles. The plot oscillates greatly near $x=0$ and is undefined at $x=0$. Accordingly, we focus on how the polt behaves for large $x$. A horizontal line is also drawn to indicate the value of $\pi$, which is also a horizontal asymptote to the curve.]({attach}images/x-sin-pi-on-x-large.svg){#fig:plot width=70% .modal-target}
-
- We now have to backtrack and attempt to retrace the steps Archimedes used to estimate $\pi$ to better appreciate his heroic efforts.
-
-## Recapitulation
-
-Evaluating the bounds given in [@tbl:variables] and [@eq:squeeze] by setting $r = 1$, $n = 6$, and $\theta = \frac{180}{n} = 30°$^[Rather than use radians with $\pi$ entering the proceedings, I decided to stick with degrees as units to avoid confusion. If one uses power series to probe further, of course, radians are called for.] gives us these values, as extracted from [@tbl:large-n-pi]:
-$$
-\begin{aligned}
-C_i &= 2n\sin\theta r = 12(\sin 30°) = 12(0.5) &= 6.0000.\\
-C &= 2\pi r &= 6.2381.\\
-C_c &= 2n\tan\theta r = 12(\tan 30°) = 12\left(\tfrac{\sqrt{3}}{3}\right) = 4\sqrt{3} &\approx 6.9282.\\
-\end{aligned}
-$${#eq:triple-6}
-
-Archimedes doubled $n$ four times to compute values for regular polygons with $12$, $24$, $48$, and $96$ sides. For his last calculation with $n = 96$ and $\theta = \tfrac{180}{96}° \approx 1.875°$, we have:
-$$
-\begin{aligned}
-C_i &= 2n\sin\theta r = 2(96)\sin{1.875°} \approx 192(0.0327) &\approx 6.2820.\\
-C &= 2\pi r &= 6.2381.\\
-C_c &= 2n\tan\theta r = 2(96)\tan{1.875°} \approx 192(0.0327) &\approx 6.2854.\\
-\end{aligned}
-$${#eq:triple-96}
-
-Note that in the case of 96 sides, we have a _very small angle_ $\theta$ whose $\sin$ and $\tan$ are almost equal. This is what gives us tight bounds on the estimate of $\pi$. If you know [the power series for $\sin\theta$ and $\tan\theta$](https://math.libretexts.org/Bookshelves/Differential_Equations/A_First_Course_in_Differential_Equations_for_Scientists_and_Engineers_(Herman)/08:_Appendix_Calculus_Review/8.07:_Power_Series), you will appreciate even better how the value of $\pi$ is trapped and squeezed between these two rather close limits.
-
-Remember [@eq:triple-96] because it helps us to estimate lower and upper bounds for the value of the circumference. Archimedes's application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in the series of [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon].
-
-If you study the calculus or analysis later on, and encounter the [epsilon-delta ($\epsilon-\delta$) definition of a limit](https://en.wikipedia.org/wiki/Limit_of_a_function) hark back to this example of Archimedes for a graphic an concrete example of how a value may be bounded from below and above and how it may be [squeezed](https://demonstrations.wolfram.com/SqueezeTheorem/) into the limit.
-
-[Sanity check](https://en.wiktionary.org/wiki/sanity_check): Does $2\pi = 6.2820$, from a calculator, lie within the bounds of [@eq:triple-96]? Yes, indeed, and we are [home and dry](https://dictionary.cambridge.org/dictionary/english/be-home-and-dry).
-
-Second sanity check: When $n$ is very large, we expect $n\sin\frac{180°}{n}$ to be closer and closer to the true value. Setting $n = 10^6$ and evaluating on a calculator we get $10^6\sin\frac{180°}{10^6} = 3.14159$ which is reassuring. This deep connection between the circle and the trigonometric functions also explains why they are sometimes called the _circular functions_. Indeed, the values $n\sin\frac{\pi}{n}$ and $n\sin\tan{\pi}{n}$ both converge to $\pi$ for very large $n$. The interested reader should plot these two curves.
+ 
+The upper and lower bounds are equal up to ten decimal digits when $n = 10^{6}$, and we might as well declare the problem of estimating $\pi$ solved. But in the time of Archimedes, trigonometry was not known; only geometry was. Moreover, the decimal system and calculators were also in the future. We now have to backtrack and attempt to retrace the steps Archimedes used to estimate $\pi$ to better appreciate his heroic efforts.
 
 ### The thirty, sixty, ninety right triangle
 
@@ -411,9 +375,37 @@ For starters, I will outline how to denest $\sqrt{6-3\sqrt{3}}$. Let $\sqrt{6-3\
 $$
 \sqrt{6-3\sqrt{3}} = \frac{3 - \sqrt{3}}{\sqrt{2}} = \frac{3\sqrt{2} - \sqrt{6}}{2}.
 $$
-Note that there are no nested square roots on the right hand side (RHS). The salient point is that, since we are dealing with surds, we should get identical, closed form, exact expressions for both $\sqrt{2 - \sqrt{3}}$ and $\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]$ _without using decimals_. And that takes some effort, using paper and pencil, or software like [Geogebra](https://www.geogebra.org/).
+Note that there are no nested square roots on the right hand side (RHS). The salient point is that, since we are dealing with surds, we should get identical, closed form, expressions for both $\sqrt{2 - \sqrt{3}}$ and $\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]$ _without_ using decimals. And that takes some effort, using paper and pencil, or software like [Geogebra](https://www.geogebra.org/).
 
+## Understanding the results
 
+Evaluating the bounds given in [@tbl:variables] and [@eq:squeeze] by setting $r = 1$, $n = 6$, and $\theta = \frac{180}{n} = 30°$^[Rather than use radians with $\pi$ entering the proceedings, I decided to stick with degrees as units to avoid confusion. If one uses power series to probe further, of course, radians are called for.] gives us these values, as extracted from [@tbl:large-n-pi]:
+$$
+\begin{aligned}
+C_i &= 2n\sin\theta r = 12(\sin 30°) = 12(0.5) &= 6.0000.\\
+C &= 2\pi r &= 6.2381.\\
+C_c &= 2n\tan\theta r = 12(\tan 30°) = 12\left(\tfrac{\sqrt{3}}{3}\right) = 4\sqrt{3} &\approx 6.9282.\\
+\end{aligned}
+$${#eq:triple-6}
+
+Archimedes doubled $n$ four times to compute values for regular polygons with $12$, $24$, $48$, and $96$ sides. For his last calculation with $n = 96$ and $\theta = \tfrac{180}{96}° \approx 1.875°$, we have:
+$$
+\begin{aligned}
+C_i &= 2n\sin\theta r = 2(96)\sin{1.875°} \approx 192(0.0327) &\approx 6.2820.\\
+C &= 2\pi r &= 6.2381.\\
+C_c &= 2n\tan\theta r = 2(96)\tan{1.875°} \approx 192(0.0327) &\approx 6.2854.\\
+\end{aligned}
+$${#eq:triple-96}
+
+Note that in the case of 96 sides, we have a _very small angle_ $\theta$ whose $\sin$ and $\tan$ are almost equal. This is what gives us tight bounds on the estimate of $\pi$. If you know [the power series for $\sin\theta$ and $\tan\theta$](https://math.libretexts.org/Bookshelves/Differential_Equations/A_First_Course_in_Differential_Equations_for_Scientists_and_Engineers_(Herman)/08:_Appendix_Calculus_Review/8.07:_Power_Series), you will appreciate even better how the value of $\pi$ is trapped and squeezed between these two rather close limits.
+
+Remember [@eq:triple-96] because it helps us to estimate lower and upper bounds for the value of the circumference. Archimedes's application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in the series of [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon].
+
+If you study the calculus or analysis later on, and encounter the [epsilon-delta ($\epsilon-\delta$) definition of a limit](https://en.wikipedia.org/wiki/Limit_of_a_function) hark back to this example of Archimedes for a graphic an concrete example of how a value may be bounded from below and above and how it may be [squeezed](https://demonstrations.wolfram.com/SqueezeTheorem/) into the limit.
+
+[Sanity check](https://en.wiktionary.org/wiki/sanity_check): Does $2\pi = 6.2820$, from a calculator, lie within the bounds of [@eq:triple-96]? Yes, indeed, and we are [home and dry](https://dictionary.cambridge.org/dictionary/english/be-home-and-dry).
+
+Second sanity check: When $n$ is very large, we expect $n\sin\frac{180°}{n}$ to be closer and closer to the true value. Setting $n = 10^6$ and evaluating on a calculator we get $10^6\sin\frac{180°}{10^6} = 3.14159$ which is reassuring. This deep connection between the circle and the trigonometric functions also explains why they are sometimes called the _circular functions_. Indeed, the values $n\sin\frac{\pi}{n}$ and $n\sin\tan{\pi}{n}$ both converge to $\pi$ for very large $n$. The interested reader should plot these two curves.
 
 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 PLOT of n sin x/n as n becomes very large: asymptotes to pi?
