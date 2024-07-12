@@ -2,7 +2,7 @@
 title: "The Pi of Archimedes"
 author: "R (Chandra) Chandrasekhar"
 date: 2004-01-14
-modified: 2024-07-10
+modified: 2024-07-12
 category: Mathematics
 tags: Numbers, Irrational, Transcendental
 summary: "This blog began life more than two decades ago, as part of a series of lectures I delivered to very bright first-year engineering students at an Australian university.
