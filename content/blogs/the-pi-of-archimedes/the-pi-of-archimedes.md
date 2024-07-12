@@ -293,7 +293,7 @@ $$
 $$
 For comparison with another method we will use later on---in [The angle bisector theorem]---the value of $\sin 15°$ we get from the equation above is 0.2588190451025208.
 
-#.  Using the value of $\cos 15°$, we get, for $7.5°$^[Since $\tan\theta = \frac{sin\theta}{\cos\theta}$ we can save oursleves some mathematical labour by leaving out the calculation for $\tan\theta$.]
+#.  Using the value of $\cos 15°$, we get, for $7.5°$^[Since $\tan\theta = \frac{sin\theta}{\cos\theta}$ we can save ourselves some mathematical labour by leaving out the calculation for $\tan\theta$.]
 $$
 \begin{aligned}
 \sin 7.5° &= \sqrt{\frac{1 - \frac{1}{2}\sqrt{2 + \sqrt{3}}}{2}}\\
