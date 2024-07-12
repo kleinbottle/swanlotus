@@ -371,17 +371,18 @@ What is even more remarkable is that Archimedes made his discovery
 \end{enumerate}
 
 Instead he applied geometry---including the theorem of Pythagoras---and
-extracted rational values for square roots, laboriously by hand. His
-method is also an excellent geometrical illustration of the idea of a
+extracted rational values for square roots, laboriously by hand.
+
+His method is also an excellent geometrical illustration of the idea of
+a
 \href{https://www.britannica.com/science/limit-mathematics}{\emph{limit}},
 with which he was doubtless familiar. It is known that Archimedes was
 familiar with what we now know as integral calculus, and it is possible
 that he may have anticipated differential calculus as well.
 
-Archimedes devised an ingenious method for estimating the circumference
-of a circle. He used a simple yet sophisticated algorithm that allowed
-him to obtain successively more accurate values for the circumference of
-a circle, and therefore of \(\pi\).
+Archimedes devised an ingenious method for estimating \(\pi\) by
+obtaining successively more accurate values for the circumference of a
+circle.
 
 \begin{figure}
 \centering
@@ -399,7 +400,7 @@ Archimedes}\label{principles-used-by-archimedes}
 The method that Archimedes devised is instructive because it is a
 synthesis of several principles by which the greatest human minds have
 furthered scientific progress over time. The abstract principles that
-Archimedes used to estimate \(\pi\) were these:
+Archimedes used to estimate \(\pi\) include:
 
 \begin{enumerate}
 \item
@@ -408,19 +409,28 @@ Archimedes used to estimate \(\pi\) were these:
   Initialize variables;
 \item
   Devise a method of increasing the accuracy of the estimate by
-  \href{https://mathworld.wolfram.com/Recursion.html}{recursion} or
-  \href{https://www.vocabulary.com/dictionary/iteration}{iteration};
+  \emph{looping through or repeating the same process};\footnote{These
+    are called
+    \href{https://mathworld.wolfram.com/Recursion.html}{recursion} or
+    \href{https://www.vocabulary.com/dictionary/iteration}{iteration}---as
+    the case may be---in computer science.}
 \item
   Stop when the desired accuracy is reached.
 \end{enumerate}
 
-These principles constitute what is known as an
+These steps constitute what is known as an
 \href{https://www.merriam-webster.com/dictionary/algorithm}{algorithm}.
 Once such a systematic framework has been put in place, it can be
 applied in many research domains to aid rapid scientific progress. The
 algorithm is the basis of modern computing.
 
 \subsection{Of polygons and circles}\label{of-polygons-and-circles}
+
+Archimedes wanted to estimate the \emph{circumference} and \emph{area of
+a circle} by a systematic and logical method. That \(\pi\) is involved
+in both of these is somewhat incidental. Nevertheless, his approach is
+the first well documented account of how to estimate \(\pi\) with
+reasonable accuracy, and is the focus of our blog.
 
 Archimedes considered a circle, containing an
 \href{https://mathworld.wolfram.com/Inscribed.html}{inscribed} regular
@@ -446,12 +456,18 @@ mid-point of a side---is called the
 \begin{figure}
 \centering
 \includesvg[width=0.7\textwidth,height=\textheight]{images/sin-theta-tan-theta.svg}
-\caption{The relationship between the circle and its inscribed and
+\caption[The relationship between the circle and its inscribed and
 circumscribed regular polygons. The symbol \(h\) is used for the apothem
 in both cases. Note that \(OD = h = r\cos\theta\) for the inscribed
-polygon, whereas \(OC = h = r\) for the circumscribed
-polygon.}\label{fig:sin-theta-tan-theta}
+polygon, whereas \(OC = h = r\) for the circumscribed polygon.]{The
+relationship between the circle and its inscribed and circumscribed
+regular polygons. The symbol \(h\) is used for the apothem in both
+cases. Note that \(OD = h = r\cos\theta\) for the inscribed polygon,
+whereas \(OC = h = r\) for the circumscribed
+polygon.\footnotemark{}}\label{fig:sin-theta-tan-theta}
 \end{figure}
+\footnotetext{Recall that the area of a triangle is half the product of
+  its base and perpendicular height}
 
 Let us tabulate below the variables arising from
 \cref{fig:two-limits,fig:sin-theta-tan-theta}.
@@ -507,16 +523,17 @@ When \(n\) varies, so do the values of \(\theta\) and the areas and
 perimeters; they are therefore shown as functions of \(n\) in
 \cref{tbl:variables}.
 
-\subsection{Recursion and Iteration}\label{recursion-and-iteration}
+\subsection{Looping}\label{looping}
 
 Archimedes started with regular hexagons and successively \emph{doubled}
 the number of sides, until he had the circle closely sandwiched between
-two 96-gons---one circumscribed; the other inscribed. Successively
-doubling or halving is a fast-converging technique used in numerical
-estimation, called the
+two 96-sided-regular polygons---one inscribed; the other circumscribed.
+
+Successively doubling or halving is a fast-converging technique used in
+numerical estimation, called the
 \href{https://en.wikipedia.org/wiki/Bisection_method}{bisection method},
 that is applied to solving a variety of problems. That Archimedes was
-aware of it shows how far ahead of his time his thinking was.
+aware of it, shows how far ahead of his time his thinking was.
 
 When he moved from \(n=6\) to \(n = 12\) sides, how did Archimedes
 estimate the respective perimeters without the aid of trigonometry? He
@@ -526,7 +543,7 @@ here} {[}\citeproc{ref-bertrand2014}{1}{]}
 \href{https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf}{and
 here} {[}\citeproc{ref-damini-dhar-2020}{2}{]} to obtain
 \href{https://en.wikipedia.org/wiki/Recurrence_relation}{recurrence
-relations} that gave the current estimate from the previous one.
+relations} that gave the current perimeter from the previous one.
 
 For an English translation of the book \emph{Measurement of a Circle} by
 Archimedes \href{auxiliary/Archimedes-Circle.pdf}{click on this link}.
@@ -535,7 +552,7 @@ you a sense of completeness in your understanding of his method.
 
 He repeatedly calculated \emph{rational approximations} to \(\pi\) until
 he was satisfied with the accuracy. The principle of the method is
-clearly seen in
+clearly illustrated in
 \cref{fig:six-gon,fig:twelve-gon,fig:twenty-four-gon,fig:forty-eight-gon,fig:ninety-six-gon}.
 
 \begin{figure}
@@ -578,105 +595,16 @@ Archimedes was
 \(\frac{223}{71} < \pi < \frac{22}{7}\).}}\label{fig:ninety-six-gon}
 \end{figure}
 
-\subsection{Lower and upper bounds for
-π}\label{lower-and-upper-bounds-for-ux3c0}
-
-We assume that \(r = 1\) without loss of generality.
-\cref{tbl:variables} and \cref{fig:sin-theta-tan-theta} together give us
-these inequalities for regular \(n\)-gons where
-\(\theta = \frac{180}{n}\) degrees or \(\theta = \frac{\pi}{n}\)
-radians.\footnote{Recall that the area of a triangle is half the product
-  of its base and perpendicular height}
-\begin{equation}\phantomsection\label{eq:squeeze}{
-\begin{aligned}
-a(n) < A < A(n) &\implies n\sin\theta\cos\theta < \pi < n\tan\theta\\
-c(n) < C < C(n) &\implies n\sin\theta < \pi < n\tan\theta\\
-\end{aligned}
-}\end{equation}
-
-From the right hand side of \cref{eq:squeeze}, using the inequalities
-for perimeters, we have
-\begin{equation}\phantomsection\label{eq:lower-bound}{
-n\sin\tfrac{180°}{n} = n\sin\tfrac{\pi}{n}, \thinspace \mbox{for the lower bound}.
-}\end{equation} and
-\begin{equation}\phantomsection\label{eq:upper-bound}{
-n\tan\tfrac{180°}{n} = n\tan\tfrac{\pi}{n}, \thinspace \mbox{for the lower bound}.
-}\end{equation}
-
-\cref{eq:lower-bound,eq:upper-bound} represent respectively the lower
-and upper bounds on the value of \(\pi\) obtained through the method of
-Archimedes.
-
-Obviously, the circle may be viewed as a regular polygon whose number of
-sides, \(n\) has become exceedingly large, or \emph{infinite}. So, as
-\(n\) is increased, we should expect the two bounds to converge to the
-limiting value of \(\pi\).
-
-\begin{longtable}[]{@{}rrr@{}}
-\caption{\label{tbl:large-n-pi}The values of \(n\sin\frac{\pi}{n}\) and
-\(n\tan\frac{\pi}{n}\). As \(n\) increases without bound, the values in
-the second and third columns both approach the true value of \(\pi\)
-with increasing accuracy.}\tabularnewline
-\toprule\noalign{}
-\(n\) & \(n\sin\frac{\pi}{n}\) & \(n\tan\frac{\pi}{n}\) \\
-\midrule\noalign{}
-\endfirsthead
-\toprule\noalign{}
-\(n\) & \(n\sin\frac{\pi}{n}\) & \(n\tan\frac{\pi}{n}\) \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\(6\) & \(3.0000000000\) & \(3.4641016151\) \\
-\(12\) & \(3.1058285412\) & \(3.2153903092\) \\
-\(24\) & \(3.1326286133\) & \(3.1596599421\) \\
-\(48\) & \(3.1393502030\) & \(3.1460862151\) \\
-\(96\) & \(3.1410319509\) & \(3.1427145996\) \\
-\(100\) & \(3.1410759078\) & \(3.1426266043\) \\
-\(1000\) & \(3.1415874859\) & \(3.1416029891\) \\
-\(10000\) & \(3.1415926019\) & \(3.1415927569\) \\
-\(100000\) & \(3.1415926531\) & \(3.1415926546\) \\
-\(1000000\) & \(3.1415926536\) & \(3.1415926536\) \\
-\end{longtable}
-
-~
-
-The upper and lower bounds are equal up to ten decimal digits when
-\(n = 10^{6}\), and we might as well declare the problem of estimating
-\(\pi\) solved. But in the time of Archimedes, trigonometry was not
-known; only geometry was. Moreover, the decimal system and calculators
-were also in the future.
-
-To improve our visualization of what is happening, the values of \(n\)
-and \(c(n)\) may be plotted as points of a discrete valued function on
-\(x-y\) coordinate axes. In addition, if we relax conditions, and move
-from integer to real values---i.e., from \(n\) to \(x\)---we may plot
-the curve of \(x\sin\frac{180°}{x}\) against \(x\) to get a feel for the
-large value behaviour of the curve. This is shown in \cref{fig:plot}:
-
-\begin{figure}
-\centering
-\includesvg[width=0.9\textwidth,height=\textheight]{images/x-sin-pi-on-x-large.svg}
-\caption{Plot of \(x\sin\frac{180°}{x}\) versus \(x\). The actual data
-points obtained by Archimedes are shown as circles. The plot oscillates
-greatly near \(x=0\) and is actually undefined at \(x=0\). As \(x\) gets
-larger, the value of the function approaches \(\pi\). A dashed
-horizontal line is also drawn to indicate the value of \(\pi\), which is
-thus a horizontal asymptote to the curve.}\label{fig:plot}
-\end{figure}
-
-We now have to backtrack and attempt to retrace the steps Archimedes
-used to estimate \(\pi\) to better appreciate his heroic efforts.
-
-\subsection{Recapitulation}\label{recapitulation}
+\subsection{Calculus before it was
+discovered}\label{calculus-before-it-was-discovered}
 
 Evaluating the bounds given in \cref{tbl:variables} and
 \cref{eq:squeeze} by setting \(r = 1\), \(n = 6\), and
 \(\theta = \frac{180}{n} = 30°\)\footnote{Rather than use radians with
   \(\pi\) entering the proceedings, I decided to stick with degrees as
   units to avoid confusion. If one uses power series to probe further,
-  of course, radians are called for.} gives us these values, as
-extracted from \cref{tbl:large-n-pi}:
+  of course, radians are called for.} gives us these values, expressed
+to four decimal places:
 \begin{equation}\phantomsection\label{eq:triple-6}{
 \begin{aligned}
 C_i &= 2n\sin\theta r = 12(\sin 30°) = 12(0.5) &= 6.0000.\\
@@ -716,26 +644,137 @@ the series of
 If you study the calculus or analysis later on, and encounter the
 \href{https://en.wikipedia.org/wiki/Limit_of_a_function}{epsilon-delta
 (\(\epsilon-\delta\)) definition of a limit} hark back to this example
-of Archimedes for a graphic an concrete example of how a value may be
+of Archimedes for a graphic and concrete example of how a value may be
 bounded from below and above and how it may be
 \href{https://demonstrations.wolfram.com/SqueezeTheorem/}{squeezed} into
 the limit.
 
-\href{https://en.wiktionary.org/wiki/sanity_check}{Sanity check}: Does
-\(2\pi = 6.2820\), from a calculator, lie within the bounds of
-\cref{eq:triple-96}? Yes, indeed, and we are
-\href{https://dictionary.cambridge.org/dictionary/english/be-home-and-dry}{home
-and dry}.
+If we divide the last row of entries in \cref{tbl:variables} by \(2r\),
+we get the entries \(\pi\), \(n\sin\theta\), and \(n\tan\theta\). We
+will use these values henceforth as they are directly comparable and
+relatable to \(\pi\). \begin{equation}\phantomsection\label{eq:squeeze}{
+\begin{aligned}
+a(n) < A < A(n) &\implies n\sin\theta\cos\theta < \pi < n\tan\theta\\
+c(n) < C < C(n) &\implies n\sin\theta < \pi < n\tan\theta\\
+\end{aligned}
+}\end{equation}
 
-Second sanity check: When \(n\) is very large, we expect
-\(n\sin\frac{180°}{n}\) to be closer and closer to the true value.
-Setting \(n = 10^6\) and evaluating on a calculator we get
-\(10^6\sin\frac{180°}{10^6} = 3.14159\) which is reassuring. This deep
-connection between the circle and the trigonometric functions also
-explains why they are sometimes called the \emph{circular functions}.
-Indeed, the values \(n\sin\frac{\pi}{n}\) and \(n\sin\tan{\pi}{n}\) both
-converge to \(\pi\) for very large \(n\). The interested reader should
-plot these two curves.
+From the right hand side of \cref{eq:squeeze}, using the inequalities
+for perimeters, we have
+\begin{equation}\phantomsection\label{eq:lower-bound}{
+n\sin\tfrac{180°}{n} = n\sin\tfrac{\pi}{n}, \thinspace \mbox{for the lower bound}.
+}\end{equation} and
+\begin{equation}\phantomsection\label{eq:upper-bound}{
+n\tan\tfrac{180°}{n} = n\tan\tfrac{\pi}{n}, \thinspace \mbox{for the upper bound}.
+}\end{equation}
+
+\cref{eq:lower-bound,eq:upper-bound} represent respectively the lower
+and upper bounds on the value of \(\pi\) obtained through the method of
+Archimedes.
+
+Obviously, the circle may be viewed as a regular polygon whose number of
+sides, \(n\), has become exceedingly large, or \emph{infinite}. So, as
+\(n\) is increased, we should expect the two bounds to converge to the
+limiting value of \(\pi\).
+
+\begin{longtable}[]{@{}rrr@{}}
+\caption{\label{tbl:large-n-pi}The values of \(n\sin\frac{\pi}{n}\) and
+\(n\tan\frac{\pi}{n}\). As \(n\) increases without bound, the values in
+the second and third columns both approach the true value of \(\pi\)
+with increasing accuracy.}\tabularnewline
+\toprule\noalign{}
+\(n\) & \(c(n) = n\sin\frac{\pi}{n}\) & \(C(n) = n\tan\frac{\pi}{n}\) \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\(n\) & \(c(n) = n\sin\frac{\pi}{n}\) & \(C(n) = n\tan\frac{\pi}{n}\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(6\) & \(3.0000000000\) & \(3.4641016151\) \\
+\(12\) & \(3.1058285412\) & \(3.2153903092\) \\
+\(24\) & \(3.1326286133\) & \(3.1596599421\) \\
+\(48\) & \(3.1393502030\) & \(3.1460862151\) \\
+\(96\) & \(3.1410319509\) & \(3.1427145996\) \\
+\(100\) & \(3.1410759078\) & \(3.1426266043\) \\
+\(1000\) & \(3.1415874859\) & \(3.1416029891\) \\
+\(10000\) & \(3.1415926019\) & \(3.1415927569\) \\
+\(100000\) & \(3.1415926531\) & \(3.1415926546\) \\
+\(1000000\) & \(3.1415926536\) & \(3.1415926536\) \\
+\end{longtable}
+
+~ The upper and lower bounds are equal up to ten decimal digits when
+\(n = 10^{6}\), and we might as well declare the problem of estimating
+\(\pi\) solved.
+
+But in the time of Archimedes, trigonometry was not known; only geometry
+was. Moreover, the decimal system and calculators were also in the
+future. So, we are not done yet!
+
+\cref{fig:six-gon,fig:twelve-gon,fig:twenty-four-gon,fig:forty-eight-gon,fig:ninety-six-gon}
+together present a compelling case for why the estimate for \(\pi\) is
+sandwiched between two values and becomes ever closer to the true value
+of \(\pi\). It is the engine of logic on which the algorithm runs.
+
+We can view Archimedes' approach through the lens of a
+\href{https://encyclopediaofmath.org/wiki/Function}{mathematical
+function} as well. We could plot discrete values of \(n\) against
+\(n\sin\frac{180°}{n}\), and \(n\tan\frac{180°}{n}\). However, if we
+relax the conditions, and move from integers to real values, i.e., from
+discrete \(n\) to continuous \(x\); from \(n\sin\frac{180°}{n}\) to
+\(x\sin\frac{180°}{x}\), and from \(n\tan\frac{180°}{n}\) to
+\(x\tan\frac{180°}{x}\), we may plot these two curves against \(x\) to
+better visualize the functional relationship. This is shown in
+\cref{fig:plot}.
+
+\begin{figure}
+\centering
+\includesvg[width=0.9\textwidth,height=\textheight]{images/x-sin-pi-on-x-large.svg}
+\caption{Plot of \(x\sin\frac{180°}{x}\) and \(x\tan\frac{180°}{x}\)
+versus \(x\). The actual data points obtained by Archimedes are shown as
+circles. The domain is {[}\(6:100\){]}. As \(x\) becomes large, the
+values of the functions approach \(\pi\). A dashed horizontal line is
+also drawn to indicate the value of \(\pi\), which is thus a horizontal
+asymptote to the two curves.}\label{fig:plot}
+\end{figure}
+
+\subsubsection{Sanity checks}\label{sanity-checks}
+
+\href{https://en.wiktionary.org/wiki/sanity_check}{Sanity checks} help
+nip errors in the bud, and are an essential part of problem solving.
+Here we have two suh chesks:
+
+\begin{enumerate}
+\item
+  Does \(2\pi = 6.2820\), from a calculator, lie within the bounds of
+  \cref{eq:triple-96}? Yes, indeed, and we are
+  \href{https://dictionary.cambridge.org/dictionary/english/be-home-and-dry}{home
+  and dry}.
+\item
+  When \(n\) is very large, we expect \(n\sin\frac{180°}{n}\) and
+  \(n\tan\frac{180°}{n}\) to be closer and closer to the true value of
+  \(\pi\). Setting \(n = 10^6\) and evaluating on a calculator we get
+  \(10^6\sin\frac{180°}{10^6} = 3.14159\) which is reassuring. Likewise,
+  \(10^6\tan\frac{180°}{10^6} = 3.14159\). This means that to five
+  decimals places, the two bounds are equal to each other and to the
+  actual value of \(\pi = 3.14159\). All is well again.
+\end{enumerate}
+
+\subsubsection{Of triangles and circles}\label{of-triangles-and-circles}
+
+It is interesting the the method of Archimedes leverages the properties
+of the equilateral triangle, which is the regular polygon with the
+smallest number of sides. And it ends with the circle, which is the
+regular polygon with an infinite number of sides. And linking both these
+extremes is trigonometry, which we have used extensively thus far. This
+deep connection between the triangle, the circle, and the trigonometric
+functions also explains why they are sometimes called the \emph{circular
+functions}.
+
+We now have to backtrack and attempt to retrace the steps Archimedes
+used to estimate \(\pi\)---\emph{without trigonometry}---to better
+appreciate his heroic efforts.
 
 \subsubsection{The thirty, sixty, ninety right
 triangle}\label{the-thirty-sixty-ninety-right-triangle}
@@ -770,7 +809,7 @@ The next thing Archimedes needed---and knew how to do---was to compute
 \(\sqrt{3}\), which figures in \cref{eq:triangle}. Finding square roots
 is a tedious process, not unlike long division, and prone to human
 error. The patience and doggedness of Archimedes that must have gone
-into the process is astounding.
+into the effort is astounding.
 
 \subsubsection{Extracting square roots by
 hand}\label{extracting-square-roots-by-hand}
@@ -791,10 +830,9 @@ square root of three, and the geometric properties of triangles whose
 angles were repeatedly bisected. He used a previous result to feed
 values into the next result as he doubled the sides of the regular
 hexagon. We will look at his method a little later, but for now, we will
-try to simulate what he did using trigonometry. In the process we will
-encounter an important idea called
-\href{(https://www.geeksforgeeks.org/introduction-to-recursion-2/)}{recursion},
-which is a bit like a snake eating its own tail.
+try to simulate what he did using trigonometry. He repeated the same
+algorithmic step---with previous values feeding into current
+values---which is a bit like a snake eating its own tail.
 
 From \cref{fig:thirty-sixty}, we know:
 \begin{equation}\phantomsection\label{eq:three-six-nine}{
@@ -805,17 +843,17 @@ From \cref{fig:thirty-sixty}, we know:
 \end{aligned}
 }\end{equation}
 
-\subsection{The half-angle formulae and
-recursion}\label{the-half-angle-formulae-and-recursion}
+\subsection{The half-angle formulae}\label{the-half-angle-formulae}
 
-The whole trick to this recursion is to
+The whole trick is to
 
 \begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
 \item
   move from one estimate to the next, more accurate estimate of \(\pi\);
   and
 \item
-  use one known value of a trigonometric function to estimate the next
+  use a known value of a trigonometric function to estimate the next
   unknown value in the chain, \emph{without} resorting to tables of
   values, or calculators.
 \end{enumerate}
@@ -831,15 +869,15 @@ helps relate the successive values of \(\theta\):\footnote{All angles
 \end{aligned}
 \]
 
-Let us step through the recursion:
+Let us step through this:
 
 \begin{enumerate}
 \item
   We know from \cref{fig:thirty-sixty} and \cref{eq:three-six-nine} that
   \(\sin 30° = \frac{1}{2}\) and \(\cos 30° = \frac{\sqrt{3}}{2}\).
 \item
-  We calculate \(\sin 15°\) etc., from \(\cos 30°\) using the half-angle
-  formula: \[
+  We calculate the trigonometric ratios for \(15°\) from \(\cos 30°\)
+  using the half-angle formula: \[
   \begin{aligned}
   \sin 15° &= \sqrt{\frac{1 - \frac{\sqrt{3}}{2}}{2}}\\
   &= \sqrt{\frac{2 - \sqrt{3}}{4}}\\
@@ -854,7 +892,10 @@ Let us step through the recursion:
   theorem}---the value of \(\sin 15°\) we get from the equation above is
   0.2588190451025208.
 \item
-  Using the value of \(\cos 15°\), we get, for \(7.5°\) \[
+  Using the value of \(\cos 15°\), we get, for \(7.5°\)\footnote{Since
+    \(\tan\theta = \frac{sin\theta}{\cos\theta}\) we can save oursleves
+    some mathematical labour by leaving out the calculation for
+    \(\tan\theta\).} \[
   \begin{aligned}
   \sin 7.5° &= \sqrt{\frac{1 - \frac{1}{2}\sqrt{2 + \sqrt{3}}}{2}}\\
   &= \frac{1}{2}\sqrt{2 - \sqrt{2 + \sqrt{3}}}\\
@@ -863,7 +904,7 @@ Let us step through the recursion:
   \end{aligned}
   \]
 \item
-  Using the value of \(\cos 7.5°\), for \(3.75°\) we get: \[
+  Using the value of \(\cos 7.5°\), we get for \(3.75°\) \[
   \begin{aligned}
   \sin 3.75° &= \sqrt{\frac{1 - \frac{1}{2}\sqrt{2 + \sqrt{2 + \sqrt{3}}}}{2}}\\
   &= \frac{1}{2}\sqrt{2 - \sqrt{2 + \sqrt{2 + \sqrt{3}}}}\\
@@ -885,9 +926,9 @@ Let us step through the recursion:
 We went through this somewhat painful process for the reasons outlined
 below because we wanted to simulate the steps Archimedes took
 {[}\citeproc{ref-bertrand2014}{1},\citeproc{ref-damini-dhar-2020}{2}{]}.
-It is a proof of concept---where we have only evaluated the sine and
-cosine values, and not estimated the two perimeters. The following
-points bear noting:
+It is a proof of concept: we have only evaluated the sine and cosine
+values, and not estimated the two perimeters. The following points bear
+noting:
 
 \begin{enumerate}
 \def\labelenumi{(\alph{enumi})}
@@ -906,20 +947,19 @@ points bear noting:
   those numbers.
 \item
   Archimedes did not have positional notation for his calculations and
-  he had to rely on an arithmetical system that we would find
-  forbidding.
+  he had to rely on an arithmetical system that we would find forbidding
+  {[}\citeproc{ref-heath02}{4}{]}.
 \item
-  We have demonstrated how Archimedes used recursion in his estimate of
-  \(\pi\). In recursion, we usually \emph{stop} at the \emph{base case}.
-  In our example, we have \emph{started} with the regular hexagon, which
-  is the base case. And we have stopped computing once \(n\) reached
-  \(96\).
+  We have demonstrated how Archimedes used looping in his estimate of
+  \(\pi\). He started with \(n = 6\) and stopped at \(n=96\). He was
+  justified in doing so, as we have seen the upper and lower bounds
+  converge, as shown in \cref{fig:plot}.
 \item
-  We cheated when we used trigonometric half-angle formulae. Archimedes
-  did not have them, but he used right-angled triangles in a semi-circle
-  and leveraged his knowledge of similar triangles and Pythagoras'
-  theorem. We use a slightly different approach, considered next, to get
-  the results he did, without using trigonometry.
+  We cheated when we used the trigonometric half-angle formulae.
+  Archimedes did not have them, but he used right-angled triangles in a
+  semi-circle and leveraged his knowledge of similar triangles and
+  Pythagoras' theorem. We use a slightly different approach, considered
+  next, to get the results he did, without using trigonometry.
 \end{enumerate}
 
 \subsubsection{The angle bisector
@@ -960,7 +1000,7 @@ get \cref{fig:bisect-thirty} shown below.
 
 \begin{figure}
 \centering
-\includesvg[width=0.45\textwidth,height=\textheight]{images/bisect-thirty.svg}
+\includesvg[width=0.35\textwidth,height=\textheight]{images/bisect-thirty.svg}
 \caption{The angle bisector theorem applied to a thirty-sixty-ninety
 right triangle. The ratio of \(a\) to \(b\) is that same as the ratio of
 \(2\) to \(\sqrt{3}\).}\label{fig:bisect-thirty}
@@ -1023,8 +1063,7 @@ to estimate \(\pi\), Archimedes must have loved mathematics very
 dearly}.
 
 The fact that we have obtained the same value of \(\sin 15°\) by using
-two different
-approaches---\hyperref[the-half-angle-formulae-and-recursion]{one using
+two different approaches---\hyperref[the-half-angle-formulae]{one using
 trigonometry}, and the other using pure geometry--- illustrates the
 richness that lies ahead, waiting to be explored by some intrepid
 student of mathematics.
@@ -1046,10 +1085,14 @@ surds, on either side of the equality sign below, are indeed equal? \[
 \end{aligned}
 \]
 
+We want to reduce nested surds to their simplest forms so that two
+dissimilar surds may be compared and declared equal if the they both
+equal another, possibly third, simpler surd.
+
 Fortunately, there are many resources on the Web, from book chapters, to
 dedicated web pages, to video presentations, that deal with this
 interesting, but seldom discussed topic---\emph{denesting surds}
-{[}\citeproc{ref-ds-underground}{4}--\citeproc{ref-ds-yt-method}{7}{]}.
+{[}\citeproc{ref-ds-underground}{5}--\citeproc{ref-ds-yt-method}{8}{]}.
 Choose any one, or even all, references to learn from, and then tackle
 the above problem.
 
@@ -1066,54 +1109,26 @@ should get identical, closed form, exact expressions for both
 \(\sqrt{2 - \sqrt{3}}\) and
 \(\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\)
 \emph{without using decimals}. And that takes some effort, using paper
-and pencil, or software like \href{https://www.geogebra.org/}{Geogebra}.
-
-\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\& PLOT of
-n sin x/n as n becomes very large: asymptotes to pi?
-\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&\&
-
-\subsection{Sanity checks}\label{sanity-checks}
-
-\subsection{Graph of n sin pi/n as n becomes extremely
-large}\label{graph-of-n-sin-pin-as-n-becomes-extremely-large}
-
-WHERE SHOULD THIS GO?
-
-Imagine the mathematical
-\href{https://www.merriam-webster.com/word-of-the-day/fortitude-2019-11-21}{fortitude}
-of Archimedes to
-\href{https://www.collinsdictionary.com/dictionary/english/plough-on}{plough
-on}---without algebra or trigonometry or the decimal number system---to
-establish the value of \(\pi\).
-
-Before we consider numerical results, there are two aspects of the
-problem and the approach taken by Archimedes that I wish to discuss.
-
-\section{}\label{section}
+and pencil, or software like \href{https://www.geogebra.org/}{Geogebra}
+{[}\citeproc{ref-geogebra}{9}{]}.
 
 \subsection{Is π really 22/7?}\label{is-ux3c0-really-227}
 
 Is \(\pi\) really equal to \(\frac{22}{7}\), as it has been drummed into
-our heads at school? We will answer that question later in this blog.
+our heads at school?
 
 The answer is a qualified ``Yes and no''. Because \(\pi\) is irrational,
 it cannot be expressed precisely in a finite number of digits.
 Consequently, we use rational approximations, or a decimal
-representation at the desired accuracy for \(\pi\). Thanks to
-Archimedes, \(\frac{22}{7}\) is a serviceable overestimate for \(\pi\)
-that has survived for centuries.
+representation at the desired accuracy for \(\pi\).
 
-\subsection{A closer look at π as a
-number}\label{a-closer-look-at-ux3c0-as-a-number}
+Thanks to Archimedes, \(\frac{22}{7}\) is a serviceable overestimate for
+\(\pi\) that has survived for nineteen centuries.
 
-Pi is both an
-\href{https://en.wikipedia.org/wiki/Irrational_number}{irrational} and a
-\href{https://en.wikipedia.org/wiki/Transcendental_number}{transcendental}
-number. Let us see what each of these
-\href{https://www.merriam-webster.com/dictionary/appellation}{appelations}
-mean.
-
-Recurring decimals.
+But geometry alone does not confine \(\pi\). This number is a free
+citizen of all mathematics and can roam the entire domain. How
+mathematicians became aware of the ubiquity of \(\pi\) and what riches
+have accrued as a result will engage us in our second blog on \(\pi\).
 
 \subsection{To explore further}\label{to-explore-further}
 
@@ -1125,87 +1140,18 @@ read it.\footnote{This article is all the more remarkable because its
   first author is a Grade 8 student: proof that deep mathematics is not
   beyond the school student.} You will then appreciate for yourselves
 how arduous the process must have been in an age without the benefit of:
-\#. Trigonometry; he used the theorem of pythagors instead; \#. Algebra;
-he used geometry and the ratios of the lengths of well-known triangles;
-\#. Decimal numbers for division; he used fractions instead; square
-roots by hand; similar and congruent figures; bisection theorems;
-exhaustion methods
 
-In
-\cref{fig:six-gon,fig:twelve-gon,fig:twenty-four-gon,fig:forty-eight-gon,fig:ninety-six-gon}
-below, which illustrate the approach Archimedes took to estimate
-\(\pi\), we see very clearly that the perimeter of the \emph{inscribed
-polygon} \(c_n\) and the perimeter of the \emph{circumscribed polygon}
-\(C_n\) represent respectively the \emph{lower bound} and \emph{upper
-bound} of the estimated value of \(\pi\). As the number of sides, \(n\),
-of the polygon increases, the estimates become increasingly accurate.
-
-https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek\_PiIs22By7\_Final.pdf
-
-https://azimpremjiuniversity.edu.in/at-right-angles
-
-\subsubsection{How did Archimedes arrive at π =
-22/7?}\label{how-did-archimedes-arrive-at-ux3c0-227}
-
-22/7 = 3.142857 142857 142857 (recurring decimal)
-
-\subsection{Formulae involving π}\label{formulae-involving-ux3c0}
-
-\subsection{Quest for the endless digits of
-π}\label{quest-for-the-endless-digits-of-ux3c0}
-
-\subsection{Buffon's Needle}\label{buffons-needle}
-
-\subsection{π Trivia}\label{ux3c0-trivia}
-
-\subsection{Web links}\label{web-links}
-
-https://www.pbs.org/wgbh/nova/physics/approximating-pi.html
-
-https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/ John
-Tucker ``Archimedes' Approximation of Pi''
-http://demonstrations.wolfram.com/ArchimedesApproximationOfPi/ Wolfram
-Demonstrations Project Published: March 5 2009
-
-https://math.stackexchange.com/questions/4851929/archimedes-method-to-estimate-pi
-
-http://arxiv.org/pdf/2008.07995
-
-https://mathsciencehistory.com/2019/10/01/archimedes-and-his-pi-the-great-numerical-hope/
-
-https://carmamaths.org/resources/jon/pi-culture.pdf
-
-https://nonagon.org/ExLibris/archimedes-pi
-
-https://www.exploratorium.edu/pi/history-of-pi
-
-https://en.wikipedia.org/wiki/Approximations\_of\_\%CF\%80
-
-https://www.joyofpi.com/
-
-https://math.stackexchange.com/questions/2758418/deriving-the-power-series-for-cosine-using-basic-geometry
-
-https://www.youtube.com/watch?v=K5W0DMMukZQ
-
-\subsection{Book References}\label{book-references}
-
-\subsection{Web resources}\label{web-resources}
-
-\subsection{Teaser: are of circle half radius multiplied by
-circumference.
-How?}\label{teaser-are-of-circle-half-radius-multiplied-by-circumference.-how}
-
-\subsection{Appendix: Circumscribed and inscribed polygons of
-circle}\label{appendix-circumscribed-and-inscribed-polygons-of-circle}
-
-Archimedes devised his ingenious \emph{squeeze} method for computing the
-upper and lower bounds of the perimeter of a circle by computing instead
-the perimeters of the polygons that inscribe and circumscribe the
-circle. The approximations become more accurate as the number of sides,
-\(n\), of the polygon is increased.
-\href{https://www.youtube.com/watch?v=_qdnyw5Eb_Y}{This YouTube
-presentation} might help you understand the algorithm of Archimedes
-better, but remember that he did not have trigonometry to aid him.
+\begin{enumerate}
+\item
+  Trigonometry; he used geometry and the theorem of Pythagoras instead;
+\item
+  Algebra; he used geometry and the ratios of the lengths of well-known
+  triangles;
+\item
+  Decimal numbers for division; he used fractions instead;
+\item
+  Calculators for evaluating square roots.
+\end{enumerate}
 
 \subsection{Acknowledgements}\label{acknowledgements}
 
@@ -1257,8 +1203,13 @@ At Right Angles}}. Retrieved 2 July 2024 from
 Half-Angle, and Reduction Formulas}. Retrieved 6 July 2024 from
 \url{https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas}}
 
-\bibitem[\citeproctext]{ref-ds-underground}
+\bibitem[\citeproctext]{ref-heath02}
 \CSLLeftMargin{{[}4{]} }%
+\CSLRightInline{Thomas Heath. 2002. \emph{{The Works of Archimedes}}.
+Dover, New York, NY, USA.}
+
+\bibitem[\citeproctext]{ref-ds-underground}
+\CSLLeftMargin{{[}5{]} }%
 \CSLRightInline{Underground Mathematics. 2016. {Solution \textbar{}
 Nested surds \textbar{} Thinking about Algebra \textbar{} Underground
 Mathematics}. Rich resources for teaching a level mathematics. Retrieved
@@ -1266,23 +1217,29 @@ Mathematics}. Rich resources for teaching a level mathematics. Retrieved
 \url{https://undergroundmathematics.org/thinking-about-algebra/nested-surds/solution}}
 
 \bibitem[\citeproctext]{ref-ds-brown}
-\CSLLeftMargin{{[}5{]} }%
+\CSLLeftMargin{{[}6{]} }%
 \CSLRightInline{Stan Brown. 2023. {Denesting Radicals (or Unnesting
 Radicals)}. Retrieved 11 July 2024 from
 \url{https://brownmath.com/alge/nestrad.htm}}
 
 \bibitem[\citeproctext]{ref-ds-jeffrey-rich}
-\CSLLeftMargin{{[}6{]} }%
+\CSLLeftMargin{{[}7{]} }%
 \CSLRightInline{David J Jeffrey and Albert D Rich. 2003. Simplifying
 square roots of square roots by denesting. {From Computer Algebra
 Systems: A Practical Guide, M J Wester, Ed., Wiley 1999}. Retrieved 11
 July 2024 from \url{https://cybertester.com/data/denest.pdf}}
 
 \bibitem[\citeproctext]{ref-ds-yt-method}
-\CSLLeftMargin{{[}7{]} }%
-\CSLRightInline{2022. A universal method to solve nested radicals
-(nested square root). Retrieved 11 July 2024 from
+\CSLLeftMargin{{[}8{]} }%
+\CSLRightInline{MathSolvingChannel. 2022. A universal method to solve
+nested radicals (nested square root). Retrieved 11 July 2024 from
 \url{https://www.youtube.com/watch?v=K5W0DMMukZQ}}
+
+\bibitem[\citeproctext]{ref-geogebra}
+\CSLLeftMargin{{[}9{]} }%
+\CSLRightInline{Markus Hohenwarter. 2001. {GeoGebra}. {The world's
+favorite, free math tools used by over 100 million students and
+teachers}. Retrieved 13 July 2024 from \url{https://www.geogebra.org/}}
 
 \end{CSLReferences}
 
