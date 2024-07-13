@@ -62,7 +62,7 @@ $\mbox{Complex numbers}$      $\mathbb{C}$      $\{a+ib: a, b \in \mathbb{R} \mb
 ---------------------------------------------------------------------------------------
 : Sets of numbers {#tbl:sets}
 :::
-\
+
 While it is premature to talk about these sets and their peculiarities in this blog, it is worth making some points about them.
 
 #. The symbols in the second column are called [blackboard bold](https://oeis.org/wiki/Blackboard_bold) letters.

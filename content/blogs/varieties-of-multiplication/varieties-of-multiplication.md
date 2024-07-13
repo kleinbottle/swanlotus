@@ -171,7 +171,7 @@ Inverse        $a+(-a)=0=(-a)+a$         $aa^{-1}=1=a^{-1}a$ for $a \ne 0$
 ------------------------------------------------------------------------------
 : Axioms for the real numbers {#tbl:axioms}
 :::
-\
+
 For the record, formal definitions for the above terms are available on the Web from reputable sites whose links are listed below:
 
 #. [Associativity](https://mathworld.wolfram.com/Associative.html).

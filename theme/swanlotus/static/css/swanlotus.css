@@ -4841,7 +4841,7 @@ a:hover code {
 
 /* Styles for tables */
 .content table {
-  margin: 0 auto;
+  margin: 0 auto 2em;
   width: 75%;
 }
 
