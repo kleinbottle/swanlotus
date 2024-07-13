@@ -86,14 +86,7 @@ function print_table(pi_approximations)
         formatters=(ft_printf("\$%d\$", 1), ft_printf("\$%11.10f\$", 2:5)),
         alignment=[:r, :r, :r, :r, :r],
         header_decoration=MarkdownDecoration(bold=false),
-        header=(
-            [
-                "\$n\$", "\$n\\sin\\frac{180°}{n}\$",
-                "\$n\\tan\\frac{180°}{n}\$",
-                "\$n\\sin\\frac{180°}{n}\\cos\\frac{180°}{n}\$",
-                "\$n\\tan\\frac{180°}{n}\$"
-            ]
-        ),
+        header=(["n", "nsinθ", "ntanθ", "nsinθcosθ", "ntanθ"]),
         backend=Val(:markdown)
     )
 end

@@ -203,16 +203,16 @@ Obviously, the circle may be viewed as a regular polygon whose number of sides, 
 
 | $n$   | $n\sin\frac{180°}{n}$    | $n\tan\frac{180°}{n}$   | $n\sin\frac{180°}{n}\cos\frac{180°}{n}$ | $n\tan\frac{180°}{n}$   |
 |----------:|---------------:|---------------:|----------------:|---------------:|
-| $6$       | $3.0000000000$ | $3.4641016151$ | $2.5980762114$  | $3.4641016151$ |
-| $12$      | $3.1058285412$ | $3.2153903092$ | $3.0000000000$  | $3.2153903092$ |
-| $24$      | $3.1326286133$ | $3.1596599421$ | $3.1058285412$  | $3.1596599421$ |
-| $48$      | $3.1393502030$ | $3.1460862151$ | $3.1326286133$  | $3.1460862151$ |
-| $96$      | $3.1410319509$ | $3.1427145996$ | $3.1393502030$  | $3.1427145996$ |
-| $100$     | $3.1410759078$ | $3.1426266043$ | $3.1395259765$  | $3.1426266043$ |
-| $1000$    | $3.1415874859$ | $3.1416029891$ | $3.1415719828$  | $3.1416029891$ |
-| $10000$   | $3.1415926019$ | $3.1415927569$ | $3.1415924469$  | $3.1415927569$ |
-| $100000$  | $3.1415926531$ | $3.1415926546$ | $3.1415926515$  | $3.1415926546$ |
-| $1000000$ | $3.1415926536$ | $3.1415926536$ | $3.1415926536$  | $3.1415926536$ |
+| $6$       | $3.0000000000$ | $3.4641016151$ | $2.5980762114$ | $3.4641016151$ |
+| $12$      | $3.1058285412$ | $3.2153903092$ | $3.0000000000$ | $3.2153903092$ |
+| $24$      | $3.1326286133$ | $3.1596599421$ | $3.1058285412$ | $3.1596599421$ |
+| $48$      | $3.1393502030$ | $3.1460862151$ | $3.1326286133$ | $3.1460862151$ |
+| $96$      | $3.1410319509$ | $3.1427145996$ | $3.1393502030$ | $3.1427145996$ |
+| $100$     | $3.1410759078$ | $3.1426266043$ | $3.1395259765$ | $3.1426266043$ |
+| $1000$    | $3.1415874859$ | $3.1416029891$ | $3.1415719828$ | $3.1416029891$ |
+| $10000$   | $3.1415926019$ | $3.1415927569$ | $3.1415924469$ | $3.1415927569$ |
+| $100000$  | $3.1415926531$ | $3.1415926546$ | $3.1415926515$ | $3.1415926546$ |
+| $1000000$ | $3.1415926536$ | $3.1415926536$ | $3.1415926536$ | $3.1415926536$ |
  : Estimates of $\pi$ from the perimeters and areas of inscribed and circumscribed polygons of $n$ sides. {#tbl:large-n-pi}
 
 \ 
@@ -459,7 +459,7 @@ The answer is a qualified "Yes and No".
 
 Philosophically speaking, $\pi$ can only be represented, truly as it is, by a _symbol_, not by digits.
 
-Geometry might have given birth to $\pi$, but it alone does not confine $\pi$. This number is a free citizen of all mathematics and can roam the entire domain. How mathematicians became aware of the ubiquity of $\pi$, and what riches have accrued as a result, will engage us in our second blog on $\pi$, entitled ["The Wonder that is Pi"]().
+Geometry might have given birth to $\pi$, but does not confine $\pi$ exclusively. This wondrous number is a free citizen of all of mathematics, and can roam the entire domain. How mathematicians became aware of the ubiquity of $\pi$, and what riches have accrued as a result, will engage us in our second blog on $\pi$, entitled ["The Wonder that is Pi"]().
 
 ## To explore further
 
@@ -484,7 +484,7 @@ Another article on Archimedes' estimation of $\pi$ is available on [this PBS web
 
 ## Acknowledgements
 
-Some computations for this blog were performed using programs written by [Nandakumar Chandrasekhar]() in the [Julia programming Language](https://julialang.org/) who formatted the output both for display and for documentation. The source code is available here:
+Some computations for this blog were performed using a program written by [Nandakumar Chandrasekhar]() in the [Julia programming Language](https://julialang.org/). The output was formatted so that it could be easily cut and pasted into the blog document. The source code is available [here]({attach}auxiliary/pi_approximations.jl).
 
 ## Feedback
 
