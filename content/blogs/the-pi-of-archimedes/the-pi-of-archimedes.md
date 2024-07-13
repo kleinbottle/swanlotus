@@ -113,8 +113,8 @@ Let us tabulate below the variables arising from [@fig:two-limits;@fig:sin-theta
 | Perimeter | $C = 2\pi r$ | $c(n) = 2n\sin\theta r$ | $C(n) = 2n\tan\theta r$ |
 : Circle, inscribed, and circumscribed regular polygons ($n$-gons). {#tbl:variables}
 
-\ 
-
+\
+ 
 When $n$ varies, so do the values of $\theta$ and the areas and perimeters; they are therefore shown as functions of $n$ in [@tbl:variables].
 
 ## Looping
@@ -167,6 +167,7 @@ Remember [@eq:triple-96] because it helps us to estimate lower and upper bounds 
 
 If you study the calculus or analysis later on, and encounter the [epsilon-delta ($\epsilon-\delta$) definition of a limit](https://en.wikipedia.org/wiki/Limit_of_a_function) hark back to this example of Archimedes for a graphic and concrete example of how a value may be bounded from below and above and how it may be [squeezed](https://demonstrations.wolfram.com/SqueezeTheorem/) into the limit.
 
+## Conclusions from initial results
 
 If we divide the last row of entries in [@tbl:variables] by $2r$, we get the entries $\pi$, $n\sin\theta$, and $n\tan\theta$. We will use these values henceforth as they are directly comparable and relatable to $\pi$.
 $$
@@ -185,28 +186,37 @@ $$
 n\tan\tfrac{180°}{n} = n\tan\tfrac{\pi}{n}, \thinspace \mbox{for the upper bound}.
 $$ {#eq:upper-bound}
 
-[@eq:lower-bound; @eq:upper-bound] represent respectively the lower and upper bounds on the value of $\pi$ obtained through the method of Archimedes.
+[@eq:lower-bound; @eq:upper-bound] represent respectively the lower and upper bounds on the value of $\pi$ obtained through the method of Archimedes using _polygon perimeter_.
 
-Obviously, the circle may be viewed as a regular polygon whose number of sides, $n$, has become exceedingly large, or _infinite_. So, as $n$ is increased, we should expect the two bounds to converge to the limiting value of $\pi$.
+If, instead, we were to use _polygon area_, the relevant equations will be obtained by dividing the second last row of [@tbl:variables] by $r^2$. The resulting equations will be:
+$$
+n\sin\tfrac{180°}{n}\cos\tfrac{180°}{n} = n\sin\tfrac{\pi}{n}\cos\tfrac{\pi}{n}, \thinspace \mbox{for the lower bound}.
+$$ {#eq:area-lower-bound}
+and
+$$
+n\tan\tfrac{180°}{n} = n\tan\tfrac{\pi}{n}, \thinspace \mbox{for the upper bound}.
+$$ {#eq:area-upper-bound}
 
-+| **$n$**   | **$nsinθ$**    | **$ntanθ$**    | **$nsinθcosθ$** | **$ntanθ$**    |
-+|----------:|---------------:|---------------:|----------------:|---------------:|
-+| $6$       | $3.0000000000$ | $3.4641016151$ | $2.5980762114$  | $3.4641016151$ |
-+| $12$      | $3.1058285412$ | $3.2153903092$ | $3.0000000000$  | $3.2153903092$ |
-+| $24$      | $3.1326286133$ | $3.1596599421$ | $3.1058285412$  | $3.1596599421$ |
-+| $48$      | $3.1393502030$ | $3.1460862151$ | $3.1326286133$  | $3.1460862151$ |
-+| $96$      | $3.1410319509$ | $3.1427145996$ | $3.1393502030$  | $3.1427145996$ |
-+| $100$     | $3.1410759078$ | $3.1426266043$ | $3.1395259765$  | $3.1426266043$ |
-+| $1000$    | $3.1415874859$ | $3.1416029891$ | $3.1415719828$  | $3.1416029891$ |
-+| $10000$   | $3.1415926019$ | $3.1415927569$ | $3.1415924469$  | $3.1415927569$ |
-+| $100000$  | $3.1415926531$ | $3.1415926546$ | $3.1415926515$  | $3.1415926546$ |
-+| $1000000$ | $3.1415926536$ | $3.1415926536$ | $3.1415926536$  | $3.1415926536$ |
- 
-+: The values of $n\sin\frac{\pi}{n}$, $n\tan\frac{\pi}{n}$, and n\sin\frac{\pi}{n}As $n$ increases without bound, the values in the second and third columns both approach the true value of $\pi$ with increasing accuracy. {#tbl:large-n-pi}
+Note that [@eq:upper-bound] and [@eq:area-upper-bound] are equal. Therefore, the upper bound is the same, regardless of whether we consider polygon area or perimeter.
 
-: The values of $n\sin\frac{\pi}{n}$, $n\tan\frac{\pi}{n}$, . As $n$ increases without bound, the values in the second and third columns both approach the true value of $\pi$ with increasing accuracy. {#tbl:large-n-pi}
+Obviously, the circle may be viewed as a regular polygon whose number of sides, $n$, has become exceedingly large, or _infinite_. So, as $n$ is increased, we should expect the two bounds to converge to the limiting value of $\pi$. 
+
+| $n$   | $n\sin\frac{180°}{n}$    | $n\tan\frac{180°}{n}$   | $n\sin\frac{180°}{n}\cos\frac{180°}{n}$ | $n\tan\frac{180°}{n}$   |
+|----------:|---------------:|---------------:|----------------:|---------------:|
+| $6$       | $3.0000000000$ | $3.4641016151$ | $2.5980762114$  | $3.4641016151$ |
+| $12$      | $3.1058285412$ | $3.2153903092$ | $3.0000000000$  | $3.2153903092$ |
+| $24$      | $3.1326286133$ | $3.1596599421$ | $3.1058285412$  | $3.1596599421$ |
+| $48$      | $3.1393502030$ | $3.1460862151$ | $3.1326286133$  | $3.1460862151$ |
+| $96$      | $3.1410319509$ | $3.1427145996$ | $3.1393502030$  | $3.1427145996$ |
+| $100$     | $3.1410759078$ | $3.1426266043$ | $3.1395259765$  | $3.1426266043$ |
+| $1000$    | $3.1415874859$ | $3.1416029891$ | $3.1415719828$  | $3.1416029891$ |
+| $10000$   | $3.1415926019$ | $3.1415927569$ | $3.1415924469$  | $3.1415927569$ |
+| $100000$  | $3.1415926531$ | $3.1415926546$ | $3.1415926515$  | $3.1415926546$ |
+| $1000000$ | $3.1415926536$ | $3.1415926536$ | $3.1415926536$  | $3.1415926536$ |
+ : Estimates of $\pi$ from the perimeters and areas of inscribed and circumscribed polygons of $n$ sides. {#tbl:large-n-pi}
 
 \ 
+
 The upper and lower bounds are equal up to ten decimal digits when $n = 10^{6}$, and we might as well declare the problem of estimating $\pi$ solved.
 
 But in the time of Archimedes, trigonometry was not known; only geometry was. Moreover, the decimal system and calculators were also in the future. So, we are not done yet!
@@ -215,19 +225,19 @@ But in the time of Archimedes, trigonometry was not known; only geometry was. Mo
 
 We can view Archimedes' approach through the lens of a [mathematical function](https://encyclopediaofmath.org/wiki/Function) as well. We could plot discrete values of $n$ against $n\sin\frac{180°}{n}$, and $n\tan\frac{180°}{n}$. However, if we relax the conditions, and move from integers to real values, i.e., from discrete $n$ to continuous $x$; from $n\sin\frac{180°}{n}$ to $x\sin\frac{180°}{x}$, and from $n\tan\frac{180°}{n}$ to $x\tan\frac{180°}{x}$, we may plot these two curves against $x$ to better visualize the functional relationship. This is shown in [@fig:plot].
 
-![Plot of $x\sin\frac{180°}{x}$ and $x\tan\frac{180°}{x}$ versus $x$. The actual data points obtained by Archimedes are shown as circles. The domain is [$6:100$]. As $x$ becomes large, the values of the functions approach $\pi$. A dashed horizontal line is also drawn to indicate the value of $\pi$, which is thus a horizontal asymptote to the two curves.]({attach}images/x-sin-pi-on-x-large.svg){#fig:plot width=90% .modal-target}
+![Plot of $x\sin\frac{180°}{x}$ and $x\tan\frac{180°}{x}$ versus $x$ in the domain [$6:100$]. The actual data points obtained by Archimedes are shown as coloured circles. As $x$ becomes large, the values of the functions approach $\pi$---indicated by a dashed horizontal line which is also a horizontal asymptote to the two curves. The shapes and positions of the two curves themselves eloquently explain why they are called the upper and lower bounds.]({attach}images/x-sin-pi-on-x-large.svg){#fig:plot width=90% .modal-target}
 
 ### Sanity checks
 
-[Sanity checks](https://en.wiktionary.org/wiki/sanity_check) help nip errors in the bud, and are an essential part of problem solving. Here we have two suh chesks:
+[Sanity checks](https://en.wiktionary.org/wiki/sanity_check) help nip errors in the bud, and are an essential part of problem solving. We perform two of them here.
 
 #.  Does $2\pi = 6.2820$, from a calculator, lie within the bounds of [@eq:triple-96]? Yes, indeed, and we are [home and dry](https://dictionary.cambridge.org/dictionary/english/be-home-and-dry).
 
 #.  When $n$ is very large, we expect $n\sin\frac{180°}{n}$ and $n\tan\frac{180°}{n}$ to be closer and closer to the true value of $\pi$. Setting $n = 10^6$ and evaluating on a calculator we get $10^6\sin\frac{180°}{10^6} = 3.14159$ which is reassuring. Likewise, $10^6\tan\frac{180°}{10^6} = 3.14159$. This means that to five decimals places, the two bounds are equal to each other and to the actual value of $\pi = 3.14159$. All is well again.
 
-### Of triangles and circles
+### A reflection on triangles and circles
 
-It is interesting the the method of Archimedes leverages the properties of the equilateral triangle,  which is the regular polygon with the smallest number of sides. And it ends with the circle, which is  the regular polygon with an infinite number of sides. And linking both these extremes is trigonometry, which we have used extensively thus far. This deep connection between the triangle, the circle, and the trigonometric functions also explains why they are sometimes called the _circular functions_.
+It is interesting that the method of Archimedes leverages the properties of the equilateral triangle,  which is the regular polygon with the smallest number of sides. And it ends with the circle, which is  the regular polygon with an infinite number of sides. Linking both these extremes is trigonometry, which we have used extensively thus far. This deep connection between the triangle, the circle, and the trigonometric functions also explains why they are sometimes called the _circular functions_.^[See my blog [A tale of two measures: degrees and radians](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians).]
 
 We now have to backtrack and attempt to retrace the steps Archimedes used to estimate $\pi$---_without trigonometry_---to better appreciate his heroic efforts.
 
@@ -237,22 +247,23 @@ Archimedes applied the principle "of starting from the known" to initiate his al
 
 ![This right-angled triangle, obtained by bisecting an equilateral triangle, must be familiar to all school students. The lengths shown---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=80% .modal-target}
 
-The inscribed hexagon, within a circle of _radius_ one unit, also has a side of one unit. Thus, the hypotenuse of the circle $OAP$ in [@fig:thirty-sixty] has a length of 2 units. Moreover, the base $OP$, resulting from a bisected side, has a length of one a unit. By applying the theorem of Pythagoras, the third side, $AP$ is 
+The inscribed hexagon, within a circle of _radius_ one unit, also has a _side_ of one unit. Thus, the hypotenuse of the circle $OAP$ in [@fig:thirty-sixty] has a length of 2 units. Moreover, the base $OP$, resulting from a bisected side, has a length of one a unit. By applying the theorem of Pythagoras, the third side, $AP$ is 
 $$
 \sqrt{2^2 - 1^2} = \sqrt{3}.
 $${#eq:triangle}
 
-The next thing Archimedes needed---and knew how to do---was to compute $\sqrt{3}$, which figures in [@eq:triangle]. Finding square roots is a tedious process, not unlike long division, and prone to human error. The patience and doggedness of Archimedes that must have gone into the effort is astounding.
-
 ### Extracting square roots by hand
 
-Archimedes must have known how to extract square roots by hand. Perhaps, he used one of the methods described in my blog ["How Are Numbers Built?"](https://swanlotus.netlify.app/blogs/how-are-numbers-built). He should have known the value of $\sqrt{3}$ as a rational fraction.  With remarkable accuracy, he stated that:
-$$\sqrt{3} \approx \frac{265}{153} \approx 1.732.
+The next thing Archimedes needed---and knew how to do---was to compute $\sqrt{3}$, which figures in [@eq:triangle]. Finding square roots is a tedious process, not unlike long division, and prone to human error. The patience and doggedness of Archimedes that must have gone into the effort is astounding.
+
+Archimedes must have known how to extract square roots by hand. Perhaps, he used one of the methods described in my blog ["How Are Numbers Built?"](https://swanlotus.netlify.app/blogs/how-are-numbers-built). He should have known the value of $\sqrt{3}$ as a rational fraction.  With remarkable accuracy, he claimed [@heath2002] that:
+$$
+1.73\overline{205128} = \frac{1351}{780} > \sqrt{3} > \frac{265}{153} = 1.\overline{7320261437908496}    
 $${#eq:sqrt3}
 
 ## Trigonometry and half angles
 
-Archimedes had no trigonometric tables to aid him. But he did know the square root of three, and the geometric properties of triangles whose angles were repeatedly bisected. He used a previous result to feed values into the next result as he doubled the sides of the regular hexagon. We will look at his method a little later, but for now, we will try to simulate what he did using trigonometry. He repeated the same algorithmic step---with previous values feeding into current values---which is a bit like a snake eating its own tail.
+Archimedes had no trigonometric tables to aid him. But he did know the square root of three, and the geometric properties of triangles whose angles were repeatedly bisected. He used a previous result to feed values into the next result, as he successively doubled the sides of the regular hexagon. We will look at his method a little later, but for now, we will try to simulate what he did using trigonometry. He repeated the same algorithmic step---with previous values feeding into current values---which is a bit like a snake eating its own tail.
 
 From [@fig:thirty-sixty], we know:
 $$
@@ -331,7 +342,7 @@ We went through this somewhat painful process for the reasons outlined below bec
 
 (a) Archimedes only knew [rational numbers](https://www.britannica.com/science/rational-number) of the form $\frac{a}{b}$ where $a$ and $b$ are integers and $b \neq 0$. So, his approximations for $\sqrt{2}$ and $\sqrt{3}$ were expressed as improper fractions that approximated those numbers.
 
-(a) Archimedes did not have positional notation for his calculations and he had to rely on an arithmetical system that we would find forbidding [@heath02].
+(a) Archimedes did not have positional notation for his calculations and he had to rely on an arithmetical system that we would find forbidding [@heath2002].
 
 (a) We have demonstrated how Archimedes used looping in his estimate of $\pi$. He started with $n = 6$ and stopped at $n=96$. He was justified in doing so, as we have seen the upper and lower bounds converge, as shown in [@fig:plot].
 
@@ -438,17 +449,17 @@ Note that there are no nested square roots on the right hand side (RHS). The sal
 
 ## Is π really 22/7?
 
-Is $\pi$ really equal to $\frac{22}{7}$, as it has been drummed into our heads at school?
+Is $\pi$ really equal to $\frac{22}{7}$, as has been drummed into our heads at school?
 
 The answer is a qualified "Yes and No". 
 
 "Yes", because, thanks to Archimedes, $\frac{22}{7}$ is an overestimate for $\pi$ that has survived for nineteen centuries, and served us well in all this time. Whenever, more accuracy was desired, we could always press into service a slightly better rational approximation, like [$\frac{355}{113}$](https://en.wikipedia.org/wiki/Mil%C3%BC).
 
-"No", because an irrational number like $\pi$ cannot ever be expressed _exactly_ within the confines of a finite numerical representation. Consequently, we use rational approximations, or a decimal representation, at the accuracy desired for our practical purposes.
+"No", because an irrational number like $\pi$ can never be expressed _exactly_ within the confines of a finite numerical representation. Consequently, we use rational approximations, or a decimal representation, at the accuracy desired for our practical purposes.
 
 Philosophically speaking, $\pi$ can only be represented, truly as it is, by a _symbol_, not by digits.
 
-Geometry might have given birth to $\pi$, but it alone does not confine $\pi$. This number is a free citizen of all mathematics and can roam the entire domain. How mathematicians became aware of the ubiquity of $\pi$, and what riches have accrued as a result, will engage us in our second blog on $\pi$, entitled "The Wonder that is Pi".
+Geometry might have given birth to $\pi$, but it alone does not confine $\pi$. This number is a free citizen of all mathematics and can roam the entire domain. How mathematicians became aware of the ubiquity of $\pi$, and what riches have accrued as a result, will engage us in our second blog on $\pi$, entitled ["The Wonder that is Pi"]().
 
 ## To explore further
 
@@ -462,16 +473,18 @@ A well-written, accessible article on how Archimedes estimated that $\pi$ is app
 
 #. Calculators for evaluating square roots.
 
-There is an [online demonstration](https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/#more) showing how estimates of $\pi$ vary with $n$ and $a(n) and $A(n)$ [@tucker2009]. The development  in this blog uses the circumferences, $c(n)$ and $C(n)$, rather than the areas, and gives faster convergence.
+Another recommended online article is [Archimedes and Pi](https://nonagon.org/ExLibris/archimedes-pi) [bertrand2014] at a website interestingly named <https://nonagon.org/>.
 
-Another interactive online demonstration demonstration on Archimedes' estimation of $\pi$ is available on [this PBS website](ttps://www.pbs.org/wgbh/nova/physics/approximating-pi.html) [@groleau2003]. Unfortunately, the interactive demonstration, using [Macromedia Flash](https://en.wikipedia.org/wiki/Adobe_Flash) is no longer live.^[It is paradoxical that modern, newer media age and die faster than old-fashioned manuscripts written on papyrus or palm leaves, or clay tablets.]
+There is an [online demonstration](https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/#more) showing how estimates of $\pi$ vary with $n$, $a(n)$, and $A(n)$ [@tucker2009]. The development  in our blog uses the perimeters, $c(n)$ and $C(n)$, rather than the areas, and gives faster convergence.
 
-[This online article](https://mathsciencehistory.com/2019/10/01/archimedes-and-his-pi-the-great-numerical-hope/) [@ birchak2019] recounts, with facsimile reproductions from Archimedes' own writings, how he went about estimating $\pi$.
+Another article on Archimedes' estimation of $\pi$ is available on [this PBS website](ttps://www.pbs.org/wgbh/nova/physics/approximating-pi.html) [@groleau2003]. Unfortunately, the interactive demonstration, using [Macromedia Flash](https://en.wikipedia.org/wiki/Adobe_Flash) is no longer live.^[It is paradoxical that modern, newer media age and die faster than old-fashioned manuscripts written on papyrus, or palm leaves, or clay tablets.]
+
+[This online article](https://mathsciencehistory.com/2019/10/01/archimedes-and-his-pi-the-great-numerical-hope/) [@birchak2019] recounts, with facsimile reproductions from Archimedes' own writings, how he went about estimating $\pi$.
 
 
 ## Acknowledgements
 
-Some computations for this blog were performed using programs written by [Nandakumar Chandrasekhar]() in the [Julia programming Language](https://julialang.org/). The source code is available here:
+Some computations for this blog were performed using programs written by [Nandakumar Chandrasekhar]() in the [Julia programming Language](https://julialang.org/) who formatted the output both for display and for documentation. The source code is available here:
 
 ## Feedback
 
