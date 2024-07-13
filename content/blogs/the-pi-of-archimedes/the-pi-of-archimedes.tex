@@ -220,7 +220,7 @@
 
 \title{The Pi of Archimedes}
 \author{R (Chandra) Chandrasekhar}
-\date{2004-01-14 | 2024-07-12}
+\date{2004-01-14 | 2024-07-13}
 
 \begin{document}
 \maketitle
@@ -595,6 +595,9 @@ Archimedes was
 \(\frac{223}{71} < \pi < \frac{22}{7}\).}}\label{fig:ninety-six-gon}
 \end{figure}
 
+\textbf{The final estimate of Archimedes was
+\(\frac{223}{71} < \pi < \frac{22}{7}\).}
+
 \subsection{Calculus before it was
 discovered}\label{calculus-before-it-was-discovered}
 
@@ -677,17 +680,32 @@ sides, \(n\), has become exceedingly large, or \emph{infinite}. So, as
 \(n\) is increased, we should expect the two bounds to converge to the
 limiting value of \(\pi\).
 
-\begin{longtable}[]{@{}rrr@{}}
+\begin{longtable}[]{@{}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2000}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4000}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4000}}@{}}
 \caption{\label{tbl:large-n-pi}The values of \(n\sin\frac{\pi}{n}\) and
 \(n\tan\frac{\pi}{n}\). As \(n\) increases without bound, the values in
 the second and third columns both approach the true value of \(\pi\)
 with increasing accuracy.}\tabularnewline
 \toprule\noalign{}
-\(n\) & \(c(n) = n\sin\frac{\pi}{n}\) & \(C(n) = n\tan\frac{\pi}{n}\) \\
+\begin{minipage}[b]{\linewidth}\raggedleft
+\(n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(n\sin\frac{180°}{n} = \frac{c(n)}{2r)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(n\tan\frac{180°}{n} = \frac{C(n)}{2r}\)
+\end{minipage} \\
 \midrule\noalign{}
 \endfirsthead
 \toprule\noalign{}
-\(n\) & \(c(n) = n\sin\frac{\pi}{n}\) & \(C(n) = n\tan\frac{\pi}{n}\) \\
+\begin{minipage}[b]{\linewidth}\raggedleft
+\(n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(n\sin\frac{180°}{n} = \frac{c(n)}{2r)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(n\tan\frac{180°}{n} = \frac{C(n)}{2r}\)
+\end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -1117,18 +1135,30 @@ and pencil, or software like \href{https://www.geogebra.org/}{Geogebra}
 Is \(\pi\) really equal to \(\frac{22}{7}\), as it has been drummed into
 our heads at school?
 
-The answer is a qualified ``Yes and no''. Because \(\pi\) is irrational,
-it cannot be expressed precisely in a finite number of digits.
-Consequently, we use rational approximations, or a decimal
-representation at the desired accuracy for \(\pi\).
+The answer is a qualified ``Yes and No''.
 
-Thanks to Archimedes, \(\frac{22}{7}\) is a serviceable overestimate for
-\(\pi\) that has survived for nineteen centuries.
+``Yes'', because, thanks to Archimedes, \(\frac{22}{7}\) is an
+overestimate for \(\pi\) that has survived for nineteen centuries, and
+served us well in all this time. Whenever, more accuracy was desired, we
+could always press into service a slightly better rational
+approximation, like
+\href{https://en.wikipedia.org/wiki/Mil\%C3\%BC}{\(\frac{355}{113}\)}.
 
-But geometry alone does not confine \(\pi\). This number is a free
-citizen of all mathematics and can roam the entire domain. How
-mathematicians became aware of the ubiquity of \(\pi\) and what riches
-have accrued as a result will engage us in our second blog on \(\pi\).
+``No'', because an irrational number like \(\pi\) cannot ever be
+expressed \emph{exactly} within the confines of a finite numerical
+representation. Consequently, we use rational approximations, or a
+decimal representation, at the accuracy desired for our practical
+purposes.
+
+Philosophically speaking, \(\pi\) can only be represented, truly as it
+is, by a \emph{symbol}, not by digits.
+
+Geometry might have given birth to \(\pi\), but it alone does not
+confine \(\pi\). This number is a free citizen of all mathematics and
+can roam the entire domain. How mathematicians became aware of the
+ubiquity of \(\pi\), and what riches have accrued as a result, will
+engage us in our second blog on \(\pi\), entitled ``The Wonder that is
+Pi''.
 
 \subsection{To explore further}\label{to-explore-further}
 
@@ -1152,6 +1182,28 @@ how arduous the process must have been in an age without the benefit of:
 \item
   Calculators for evaluating square roots.
 \end{enumerate}
+
+There is an
+\href{https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/\#more}{online
+demonstration} showing how estimates of \(\pi\) vary with \(n\) and
+\$a(n) and \(A(n)\) {[}\citeproc{ref-tucker2009}{10}{]}. The development
+in this blog uses the circumferences, \(c(n)\) and \(C(n)\), rather than
+the areas, and gives faster convergence.
+
+Another interactive online demonstration demonstration on Archimedes'
+estimation of \(\pi\) is available on
+\href{ttps://www.pbs.org/wgbh/nova/physics/approximating-pi.html}{this
+PBS website} {[}\citeproc{ref-groleau2003}{11}{]}. Unfortunately, the
+interactive demonstration, using
+\href{https://en.wikipedia.org/wiki/Adobe_Flash}{Macromedia Flash} is no
+longer live.\footnote{It is paradoxical that modern, newer media age and
+  die faster than old-fashioned manuscripts written on papyrus or palm
+  leaves, or clay tablets.}
+
+\href{https://mathsciencehistory.com/2019/10/01/archimedes-and-his-pi-the-great-numerical-hope/}{This
+online article} {[}@ birchak2019{]} recounts, with facsimile
+reproductions from Archimedes' own writings, how he went about
+estimating \(\pi\).
 
 \subsection{Acknowledgements}\label{acknowledgements}
 
@@ -1212,8 +1264,8 @@ Dover, New York, NY, USA.}
 \CSLLeftMargin{{[}5{]} }%
 \CSLRightInline{Underground Mathematics. 2016. {Solution \textbar{}
 Nested surds \textbar{} Thinking about Algebra \textbar{} Underground
-Mathematics}. Rich resources for teaching a level mathematics. Retrieved
-11 July 2024 from
+Mathematics}. {Rich resources for teaching A level mathematics}.
+Retrieved 11 July 2024 from
 \url{https://undergroundmathematics.org/thinking-about-algebra/nested-surds/solution}}
 
 \bibitem[\citeproctext]{ref-ds-brown}
@@ -1240,6 +1292,18 @@ nested radicals (nested square root). Retrieved 11 July 2024 from
 \CSLRightInline{Markus Hohenwarter. 2001. {GeoGebra}. {The world's
 favorite, free math tools used by over 100 million students and
 teachers}. Retrieved 13 July 2024 from \url{https://www.geogebra.org/}}
+
+\bibitem[\citeproctext]{ref-tucker2009}
+\CSLLeftMargin{{[}10{]} }%
+\CSLRightInline{John Tucker. 2009. {Archimedes' Approximation of Pi}.
+Wolfram demonstrations project. Retrieved 13 July 2024 from
+\url{https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/\#more}}
+
+\bibitem[\citeproctext]{ref-groleau2003}
+\CSLLeftMargin{{[}11{]} }%
+\CSLRightInline{Rick Groleau. 2003. {Approximating Pi}. Infinite
+secrets. Retrieved 13 July 2024 from
+\url{https://www.pbs.org/wgbh/nova/physics/approximating-pi.html}}
 
 \end{CSLReferences}
 

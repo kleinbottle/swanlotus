@@ -2,7 +2,7 @@
 title: "The Pi of Archimedes"
 author: "R (Chandra) Chandrasekhar"
 date: 2004-01-14
-modified: 2024-07-12
+modified: 2024-07-13
 category: Mathematics
 tags: Numbers, Irrational, Transcendental
 summary: "This blog began life more than two decades ago, as part of a series of lectures I delivered to very bright first-year engineering students at an Australian university.
@@ -139,6 +139,8 @@ He repeatedly calculated _rational approximations_ to $\pi$ until he was satisfi
 
 ![The estimate for $\pi$ lies between $c(96) = 3.1410 < \pi < C(96) = 3.1427$. Notice in this sequence of images how the circumference of the circle approaches the perimeter of the inscribed and circumscribed heaxgons to the point of being indistinguishable from either of them. _The final estimate of Archimedes was $\frac{223}{71} < \pi < \frac{22}{7}$._]({attach}images/ninety-six-gon.svg){#fig:ninety-six-gon width=70% .modal-target}
 
+**The final estimate of Archimedes was $\frac{223}{71} < \pi < \frac{22}{7}$.**
+
 ## Calculus before it was discovered
 
 Evaluating the bounds given in [@tbl:variables] and [@eq:squeeze] by setting $r = 1$, $n = 6$, and $\theta = \frac{180}{n} = 30°$^[Rather than use radians with $\pi$ entering the proceedings, I decided to stick with degrees as units to avoid confusion. If one uses power series to probe further, of course, radians are called for.] gives us these values, expressed to four decimal places:
@@ -166,7 +168,6 @@ Remember [@eq:triple-96] because it helps us to estimate lower and upper bounds 
 If you study the calculus or analysis later on, and encounter the [epsilon-delta ($\epsilon-\delta$) definition of a limit](https://en.wikipedia.org/wiki/Limit_of_a_function) hark back to this example of Archimedes for a graphic and concrete example of how a value may be bounded from below and above and how it may be [squeezed](https://demonstrations.wolfram.com/SqueezeTheorem/) into the limit.
 
 
-
 If we divide the last row of entries in [@tbl:variables] by $2r$, we get the entries $\pi$, $n\sin\theta$, and $n\tan\theta$. We will use these values henceforth as they are directly comparable and relatable to $\pi$.
 $$
 \begin{aligned}
@@ -188,7 +189,7 @@ $$ {#eq:upper-bound}
 
 Obviously, the circle may be viewed as a regular polygon whose number of sides, $n$, has become exceedingly large, or _infinite_. So, as $n$ is increased, we should expect the two bounds to converge to the limiting value of $\pi$.
 
-| $n$ | $c(n) = n\sin\frac{\pi}{n}$ | $C(n) = n\tan\frac{\pi}{n}$ |
+| $n$ | $n\sin\frac{180°}{n} = \frac{c(n)}{2r)$ | $n\tan\frac{180°}{n} = \frac{C(n)}{2r} = \frac{A(n)}{r^2}$ | $n\sin\frac{180°}{n}\cos{180°}{n} = \frac{a(n){r^2} |
 |------:|-------------:|-------------:|
 | $6$ | $3.0000000000$ | $3.4641016151$ |
 | $12$ | $3.1058285412$ | $3.2153903092$ |
@@ -200,7 +201,7 @@ Obviously, the circle may be viewed as a regular polygon whose number of sides, 
 | $10000$ | $3.1415926019$ | $3.1415927569$ |
 | $100000$ | $3.1415926531$ | $3.1415926546$ |
 | $1000000$ | $3.1415926536$ | $3.1415926536$ |
-: The values of $n\sin\frac{\pi}{n}$ and $n\tan\frac{\pi}{n}$. As $n$ increases without bound, the values in the second and third columns both approach the true value of $\pi$ with increasing accuracy. {#tbl:large-n-pi}
+: The values of $n\sin\frac{\pi}{n}$, $n\tan\frac{\pi}{n}$, . As $n$ increases without bound, the values in the second and third columns both approach the true value of $\pi$ with increasing accuracy. {#tbl:large-n-pi}
 
 \ 
 The upper and lower bounds are equal up to ten decimal digits when $n = 10^{6}$, and we might as well declare the problem of estimating $\pi$ solved.
@@ -436,11 +437,15 @@ Note that there are no nested square roots on the right hand side (RHS). The sal
 
 Is $\pi$ really equal to $\frac{22}{7}$, as it has been drummed into our heads at school?
 
-The answer is a qualified "Yes and no". Because $\pi$ is irrational, it cannot be expressed precisely in a finite number of digits. Consequently, we use rational approximations, or a decimal representation at the desired accuracy for $\pi$. 
+The answer is a qualified "Yes and No". 
 
-Thanks to Archimedes, $\frac{22}{7}$ is a serviceable overestimate for $\pi$ that has survived for nineteen centuries.
+"Yes", because, thanks to Archimedes, $\frac{22}{7}$ is an overestimate for $\pi$ that has survived for nineteen centuries, and served us well in all this time. Whenever, more accuracy was desired, we could always press into service a slightly better rational approximation, like [$\frac{355}{113}$](https://en.wikipedia.org/wiki/Mil%C3%BC).
 
-But geometry alone does not confine $\pi$. This number is a free citizen of all mathematics and can roam the entire domain. How mathematicians became aware of the ubiquity of $\pi$ and what riches have accrued as a result will engage us in our second blog on $\pi$.
+"No", because an irrational number like $\pi$ cannot ever be expressed _exactly_ within the confines of a finite numerical representation. Consequently, we use rational approximations, or a decimal representation, at the accuracy desired for our practical purposes.
+
+Philosophically speaking, $\pi$ can only be represented, truly as it is, by a _symbol_, not by digits.
+
+Geometry might have given birth to $\pi$, but it alone does not confine $\pi$. This number is a free citizen of all mathematics and can roam the entire domain. How mathematicians became aware of the ubiquity of $\pi$, and what riches have accrued as a result, will engage us in our second blog on $\pi$, entitled "The Wonder that is Pi".
 
 ## To explore further
 
@@ -454,7 +459,12 @@ A well-written, accessible article on how Archimedes estimated that $\pi$ is app
 
 #. Calculators for evaluating square roots.
 
-<!--In [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon] below, which illustrate the approach Archimedes took to estimate $\pi$, we see very clearly that the perimeter of the _inscribed polygon_ $c(n))$ and the perimeter of the _circumscribed polygon_ $C(n)$ represent respectively the _lower bound_ and _upper bound_ of the estimated value of $\pi$. As the number of sides, $n$, of the polygon increases, these estimates converge and become increasingly accurate as shown in [@fig:plot]-->
+There is an [online demonstration](https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/#more) showing how estimates of $\pi$ vary with $n$ and $a(n) and $A(n)$ [@tucker2009]. The development  in this blog uses the circumferences, $c(n)$ and $C(n)$, rather than the areas, and gives faster convergence.
+
+Another interactive online demonstration demonstration on Archimedes' estimation of $\pi$ is available on [this PBS website](ttps://www.pbs.org/wgbh/nova/physics/approximating-pi.html) [@groleau2003]. Unfortunately, the interactive demonstration, using [Macromedia Flash](https://en.wikipedia.org/wiki/Adobe_Flash) is no longer live.^[It is paradoxical that modern, newer media age and die faster than old-fashioned manuscripts written on papyrus or palm leaves, or clay tablets.]
+
+[This online article](https://mathsciencehistory.com/2019/10/01/archimedes-and-his-pi-the-great-numerical-hope/) [@ birchak2019] recounts, with facsimile reproductions from Archimedes' own writings, how he went about estimating $\pi$.
+
 
 ## Acknowledgements
 

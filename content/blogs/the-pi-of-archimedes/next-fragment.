@@ -1,17 +1,12 @@
+
+In [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon] below, which illustrate the approach Archimedes took to estimate $\pi$, we see very clearly that the perimeter of the _inscribed polygon_ $c(n))$ and the perimeter of the _circumscribed polygon_ $C(n)$ represent respectively the _lower bound_ and _upper bound_ of the estimated value of $\pi$. As the number of sides, $n$, of the polygon increases, these estimates converge and become increasingly accurate as shown in [@fig:plot]
+
+
 ## A closer look at π as a number
 
 Pi is both an [irrational](https://en.wikipedia.org/wiki/Irrational_number) and a [transcendental](https://en.wikipedia.org/wiki/Transcendental_number) number. Let us see what each of these [appelations](https://www.merriam-webster.com/dictionary/appellation) mean.
 
 
-
-Recurring decimals.
-https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf
-
-https://azimpremjiuniversity.edu.in/at-right-angles
-
-### How did Archimedes arrive at π = 22/7?
-
-22/7 = 3.142857 142857 142857 (recurring decimal)
 
 
 
@@ -25,23 +20,10 @@ https://azimpremjiuniversity.edu.in/at-right-angles
 
 ## Web links
 
-https://www.pbs.org/wgbh/nova/physics/approximating-pi.html
-
-https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/
-John Tucker "Archimedes' Approximation of Pi"
-http://demonstrations.wolfram.com/ArchimedesApproximationOfPi/
-Wolfram Demonstrations Project
-Published: March 5 2009
-
 https://math.stackexchange.com/questions/4851929/archimedes-method-to-estimate-pi
 
-http://arxiv.org/pdf/2008.07995
-
-https://mathsciencehistory.com/2019/10/01/archimedes-and-his-pi-the-great-numerical-hope/
 
 https://carmamaths.org/resources/jon/pi-culture.pdf
-
-https://nonagon.org/ExLibris/archimedes-pi
 
 https://www.exploratorium.edu/pi/history-of-pi
 
@@ -51,6 +33,6 @@ https://www.joyofpi.com/
 
 https://math.stackexchange.com/questions/2758418/deriving-the-power-series-for-cosine-using-basic-geometry
 
-https://www.youtube.com/watch?v=K5W0DMMukZQ
+
 
 
