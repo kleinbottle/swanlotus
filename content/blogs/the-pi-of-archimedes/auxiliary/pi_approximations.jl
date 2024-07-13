@@ -81,6 +81,8 @@ function print_table(pi_approximations)
     println()
     println()
 
+    header_decoration::MarkdownDecoration = MarkdownDecoration(bold = false)
+
     pretty_table(
         pi_approximations;
         formatters=(ft_printf("\$%d\$", 1), ft_printf("\$%11.10f\$", 2:5)),
