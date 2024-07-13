@@ -77,6 +77,17 @@ function print_table(pi_approximations)
         crop=:none, # Stop pretty_table from truncating rows
         tf=tf_markdown,
     )
+
+    println()
+    println()
+
+    pretty_table(
+        pi_approximations;
+        formatters=(ft_printf("\$%d\$", 1), ft_printf("\$%11.10f\$", 2:5)),
+        alignment = [:r, :r, :r, :r, :r],
+        header=(["\$n\$", "\$nsinθ\$", "\$ntanθ\$", "\$nsinθcosθ\$", "\$ntanθ\$"]),
+        backend = Val(:markdown)
+    )
 end
 
 main()
