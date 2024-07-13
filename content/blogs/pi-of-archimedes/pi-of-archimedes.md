@@ -469,7 +469,7 @@ A well-written, accessible article on how Archimedes estimated that $\pi$ is app
 
 #. Calculators for evaluating square roots.
 
-Another recommended online article is [Archimedes and Pi](https://nonagon.org/ExLibris/archimedes-pi) [@bertrand2014] at a website interestingly named <https://nonagon.org/>.
+Another recommended online article is [Archimedes and Pi](https://nonagon.org/ExLibris/archimedes-pi) [@bertrand2014] at a website interestingly named <https://nonagon.org/>{.sf}.
 
 There is an [online demonstration](https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/#more) showing how estimates of $\pi$ vary with $n$, $a(n)$, and $A(n)$ [@tucker2009]. The development  in our blog uses the perimeters, $c(n)$ and $C(n)$, rather than the areas, and gives faster convergence.
 
