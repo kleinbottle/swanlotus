@@ -28,7 +28,7 @@ opengraphimage: Domenico-Fetti_Archimedes_1620.jpg
 
 ## Circumference, diameter, and π
 
-The straight line or [geodesic](https://mathworld.wolfram.com/Geodesic.html) is the shortest distance between any two points on a plane, sphere, or other space. The circle is the [locus](https://en.wikipedia.org/wiki/Locus_(mathematics)) traversed by a moving point that is [equidistant](https://en.wikipedia.org/wiki/Equidistant) from another fixed point on a two-dimensional plane. It is the most [symmetrical](https://mathworld.wolfram.com/Symmetry.html) figure on the plane. The [diameter](https://en.wikipedia.org/wiki/Diameter) is the name given both to any straight line passing through the centre of the circle---intersecting it at two points---as well as to its length. When we divide the [perimeter](https://en.wikipedia.org/wiki/Perimeter) of a circle, more properly called its [circumference](https://en.wikipedia.org/wiki/Circumference), $C$, by its diameter, $d$, we get the enigmatic constant  $\pi$, which has a value between $3.141$ and $3.142$: 
+The straight line or [geodesic](https://mathworld.wolfram.com/Geodesic.html) is the shortest distance between any two points on a plane, sphere, or other space. The circle is the [locus](https://en.wikipedia.org/wiki/Locus_(mathematics)) traversed by a moving point that is [equidistant](https://en.wikipedia.org/wiki/Equidistant) from another fixed point on a two-dimensional plane. It is the most [symmetrical](https://mathworld.wolfram.com/Symmetry.html) figure on the plane. The [diameter](https://en.wikipedia.org/wiki/Diameter) is the name given both to any straight line passing through the centre of the circle---intersecting it at two points---as well as to its length. When we divide the [perimeter](https://en.wikipedia.org/wiki/Perimeter) of a circle, more properly called its [circumference](https://en.wikipedia.org/wiki/Circumference), $C$, by its diameter, $d$, we get the enigmatic constant  $\pi$, which has a value between $3.141$ and $3.142$:
 $$
 \frac{C}{d} = \pi.
 $${#eq:pi-Cd}
@@ -54,19 +54,19 @@ A wonderfully revealing story lies behind this mysterious relationship, and it i
 
 ![Archimedes of Syracuse.^[Domenico Fetti's 1620 painting entitled _Archimedes Thoughtful_. Public domain.]]({attach}images/Domenico-Fetti_Archimedes_1620.jpg){#fig:archimedes width=50% .modal-target}
 
-Among the many accomplishments of Archimedes is his method for estimating $\pi$, which was the best approximation for almost 1900 years. And it was not based on using a length of string, superimposing it on a circle, and getting an estimate! \emojifont :wink:\normalfont 
+Among the many accomplishments of Archimedes is his method for estimating $\pi$, which was the best approximation for almost 1900 years. And it was not based on using a length of string, superimposing it on a circle, and getting an estimate! \emojifont :wink:\normalfont
 
 What is even more remarkable is that Archimedes made his discovery _without_ the benefit of:
 
 (a) the real numbers;
 
-(b) algebra; 
+(b) algebra;
 
 (c) trigonometry;
 
 (d) decimal notation; and
 
-(e) devices like logarithm tables, slide rules, calculators, or computers. 
+(e) devices like logarithm tables, slide rules, calculators, or computers.
 
 Instead he applied geometry---including the theorem of Pythagoras---and extracted rational values for square roots, laboriously by hand.
 
@@ -106,15 +106,13 @@ Let us tabulate below the variables arising from [@fig:two-limits;@fig:sin-theta
 |:-------|:----------|:-------------------------|:-----------------|
 | Radius | $r$ |  |  |
 | Sides |  | $n$ | $n$ |
-|Length |  | $2r\sin\theta$ | $2r\tan\theta$ | 
+|Length |  | $2r\sin\theta$ | $2r\tan\theta$ |
 | Angle |  | $\theta(n) = \frac{\pi}{n} = \frac{180°}{n}$ | $\theta(n) = \frac{\pi}{n}=\frac{180°}{n}$ |
 | Apothem |  | $h = r\cos\theta$ |  $h = r$ |
 | Area | $A = \pi r^2$ | $a(n) = n\sin\theta\cos\theta r^2$ | $A(n) = n\tan\theta r^2$ |
 | Perimeter | $C = 2\pi r$ | $c(n) = 2n\sin\theta r$ | $C(n) = 2n\tan\theta r$ |
 : Circle, inscribed, and circumscribed regular polygons ($n$-gons). {#tbl:variables}
 
-\
- 
 When $n$ varies, so do the values of $\theta$ and the areas and perimeters; they are therefore shown as functions of $n$ in [@tbl:variables].
 
 ## Looping
@@ -199,7 +197,7 @@ $$ {#eq:area-upper-bound}
 
 Note that [@eq:upper-bound] and [@eq:area-upper-bound] are equal. Therefore, the upper bound is the same, regardless of whether we consider polygon area or perimeter.
 
-Obviously, the circle may be viewed as a regular polygon whose number of sides, $n$, has become exceedingly large, or _infinite_. So, as $n$ is increased, we should expect the two bounds to converge to the limiting value of $\pi$. 
+Obviously, the circle may be viewed as a regular polygon whose number of sides, $n$, has become exceedingly large, or _infinite_. So, as $n$ is increased, we should expect the two bounds to converge to the limiting value of $\pi$.
 
 | $n$   | $n\sin\frac{180°}{n}$    | $n\tan\frac{180°}{n}$   | $n\sin\frac{180°}{n}\cos\frac{180°}{n}$ | $n\tan\frac{180°}{n}$   |
 |----------:|---------------:|---------------:|----------------:|---------------:|
@@ -214,8 +212,6 @@ Obviously, the circle may be viewed as a regular polygon whose number of sides, 
 | $100000$  | $3.1415926531$ | $3.1415926546$ | $3.1415926515$ | $3.1415926546$ |
 | $1000000$ | $3.1415926536$ | $3.1415926536$ | $3.1415926536$ | $3.1415926536$ |
  : Estimates of $\pi$ from the perimeters and areas of inscribed and circumscribed polygons of $n$ sides. {#tbl:large-n-pi}
-
-\ 
 
 The upper and lower bounds are equal up to ten decimal digits when $n = 10^{6}$, and we might as well declare the problem of estimating $\pi$ solved.
 
@@ -247,7 +243,7 @@ Archimedes applied the principle "of starting from the known" to initiate his al
 
 ![This right-angled triangle, obtained by bisecting an equilateral triangle, must be familiar to all school students. The lengths shown---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=80% .modal-target}
 
-The inscribed hexagon, within a circle of _radius_ one unit, also has a _side_ of one unit. Thus, the hypotenuse of the circle $OAP$ in [@fig:thirty-sixty] has a length of 2 units. Moreover, the base $OP$, resulting from a bisected side, has a length of one a unit. By applying the theorem of Pythagoras, the third side, $AP$ is 
+The inscribed hexagon, within a circle of _radius_ one unit, also has a _side_ of one unit. Thus, the hypotenuse of the circle $OAP$ in [@fig:thirty-sixty] has a length of 2 units. Moreover, the base $OP$, resulting from a bisected side, has a length of one a unit. By applying the theorem of Pythagoras, the third side, $AP$ is
 $$
 \sqrt{2^2 - 1^2} = \sqrt{3}.
 $${#eq:triangle}
@@ -258,7 +254,7 @@ The next thing Archimedes needed---and knew how to do---was to compute $\sqrt{3}
 
 Archimedes must have known how to extract square roots by hand. Perhaps, he used one of the methods described in my blog ["How Are Numbers Built?"](https://swanlotus.netlify.app/blogs/how-are-numbers-built). He should have known the value of $\sqrt{3}$ as a rational fraction.  With remarkable accuracy, he claimed [@heath2002] that:
 $$
-1.73\overline{205128} = \frac{1351}{780} > \sqrt{3} > \frac{265}{153} = 1.\overline{7320261437908496}    
+1.73\overline{205128} = \frac{1351}{780} > \sqrt{3} > \frac{265}{153} = 1.\overline{7320261437908496}
 $${#eq:sqrt3}
 
 ## Trigonometry and half angles
@@ -276,7 +272,7 @@ $$ {#eq:three-six-nine}
 
 ## The half-angle formulae
 
-The whole trick is to 
+The whole trick is to
 
 a. move from one estimate to the next, more accurate estimate of $\pi$; and
 
@@ -314,7 +310,7 @@ $$
 \sin 7.5° &= \sqrt{\frac{1 - \frac{1}{2}\sqrt{2 + \sqrt{3}}}{2}}\\
 &= \frac{1}{2}\sqrt{2 - \sqrt{2 + \sqrt{3}}}\\
 \cos 7.5° &= \sqrt{\frac{1 + \frac{1}{2}\sqrt{2 + \sqrt{3}}}{2}}\\
-&= \frac{1}{2}\sqrt{2 + \sqrt{2 + \sqrt{3}}}\\ 
+&= \frac{1}{2}\sqrt{2 + \sqrt{2 + \sqrt{3}}}\\
 \end{aligned}
 $$
 
@@ -383,7 +379,7 @@ $$ {#eq:bisect2}
 Substituting for $a$ from [@eq:bisect2] into [@eq:bisect1] gives us
 $$
 \begin{aligned}
-\frac{2\sqrt{3}}{3}b + b &= 1\\ 
+\frac{2\sqrt{3}}{3}b + b &= 1\\
 \left[\frac{2\sqrt{3}}{3} + 1\right] b &= 1\\
 \left[\frac{2\sqrt{3} + 3}{3}\right] b &= 1\\
 b &= 2\sqrt{3} - 3\\
@@ -406,7 +402,7 @@ b^2 + 3 &= \left[{2\sqrt{3} - 3}\right]^2 + 3\\
 &= 12(2 - \sqrt{3})
 \end{aligned}
 $$ {#eq:bisect5}
-Therefore, 
+Therefore,
 $$
 \begin{aligned}
 r &= \sqrt{b^2 + 3}\\
@@ -441,7 +437,7 @@ We want to reduce nested surds to their simplest forms so that two dissimilar su
 
 Fortunately, there are many resources on the Web, from book chapters, to dedicated web pages, to video presentations, that deal with this interesting, but seldom discussed topic---_denesting surds_  [@ds-underground; @ds-brown; @ds-jeffrey-rich; @ds-yt-method]. Choose any one, or even all, references to learn from, and then tackle the above problem.
 
-For starters, I will outline how to denest $\sqrt{6-3\sqrt{3}}$. Let $\sqrt{6-3\sqrt{3}} = \sqrt{a} - \sqrt{b}$ where $0 \leq b \leq a$. We square both sides and obtain expressions for $a + b$ and $ab$. This will result in a quadratic equation with two solutions. We choose the larger value for $a$. The two solutions in this case are $a = \frac{9}{2}$ and $b = \frac{3}{2}$ leading to 
+For starters, I will outline how to denest $\sqrt{6-3\sqrt{3}}$. Let $\sqrt{6-3\sqrt{3}} = \sqrt{a} - \sqrt{b}$ where $0 \leq b \leq a$. We square both sides and obtain expressions for $a + b$ and $ab$. This will result in a quadratic equation with two solutions. We choose the larger value for $a$. The two solutions in this case are $a = \frac{9}{2}$ and $b = \frac{3}{2}$ leading to
 $$
 \sqrt{6-3\sqrt{3}} = \frac{3 - \sqrt{3}}{\sqrt{2}} = \frac{3\sqrt{2} - \sqrt{6}}{2}.
 $$
@@ -451,7 +447,7 @@ Note that there are no nested square roots on the right hand side (RHS). The sal
 
 Is $\pi$ really equal to $\frac{22}{7}$, as has been drummed into our heads at school?
 
-The answer is a qualified "Yes and No". 
+The answer is a qualified "Yes and No".
 
 "Yes", because, thanks to Archimedes, $\frac{22}{7}$ is an overestimate for $\pi$ that has survived for nineteen centuries, and served us well in all this time. Whenever, more accuracy was desired, we could always press into service a slightly better rational approximation, like [$\frac{355}{113}$](https://en.wikipedia.org/wiki/Mil%C3%BC).
 
