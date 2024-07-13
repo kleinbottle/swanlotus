@@ -477,7 +477,6 @@ Another article on Archimedes' estimation of $\pi$ is available on [this PBS web
 
 [This online article](https://mathsciencehistory.com/2019/10/01/archimedes-and-his-pi-the-great-numerical-hope/) [@birchak2019] recounts, with facsimile reproductions from Archimedes' own writings, how he went about estimating $\pi$.
 
-
 ## Acknowledgements
 
 Some computations for this blog were performed using a program written by [Nandakumar Chandrasekhar](https://www.linkedin.com/in/nandakumar-chandrasekhar-a400b45b/) in the [Julia programming Language](https://julialang.org/). The output was formatted so that it could be easily cut and pasted into the blog document. The source code is available [here]({attach}auxiliary/pi_approximations.jl).
@@ -492,3 +491,4 @@ corrections.
 ::: {.small .sf}
 <https://swanlotus.netlify.app/blogs/pi-of-archimedes.pdf>
 :::
+

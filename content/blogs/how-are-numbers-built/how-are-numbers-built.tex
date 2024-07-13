@@ -122,7 +122,7 @@
   \setlength{\itemsep}{#2\baselineskip}}}
  {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLBlock}[1]{\hfill\break#1\hfill\break}
 \newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
@@ -225,10 +225,12 @@
 %
 \usepackage{newunicodechar}
 \newunicodechar{√}{\textsf{√}}
+\usepackage {caption}
+    \captionsetup{font={sf,stretch=1.4}}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\usepackage{bookmark}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{sf}
 \hypersetup{
@@ -711,8 +713,6 @@ Convergent & Decimal Value & Period \\
 \(\frac{114243}{80782}\) & \(1.4142135624\dots\) & \(546\) \\
 \(\frac{275807}{195025}\) & \(1.4142135623\dots\) & \(1876\) \\
 \end{longtable}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 Sol said that working out the fractions in \cref{tbl:sqrt2convergents}
 could be a form of torture, unless you are particularly fond of, or

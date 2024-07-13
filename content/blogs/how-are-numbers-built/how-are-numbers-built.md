@@ -211,10 +211,8 @@ The first fifteen convergents are tabulated in @tbl:sqrt2convergents. Note that 
 |  $\frac{47321}{33461}$ | $1.4142135620\dots$ | $4780$ |
 | $\frac{114243}{80782}$ | $1.4142135624\dots$ | $546$ |
 |$\frac{275807}{195025}$ | $1.4142135623\dots$ | $1876$ |
-
 : The first fifteen convergents for $\sqrt{2}$. The periods of the repeating portions of the decimals were obtained from the [Wolfram Alpha](https://www.wolframalpha.com) website. {#tbl:sqrt2convergents}
 
-----------------------------------------------------------
 Sol said that working out the fractions in @tbl:sqrt2convergents could be a form of torture, unless you are particularly fond of, or adept at computing them by hand. He himself did not relish such hand computations, but preferred to program to get a solution. The link to a program is given toward the end of this blog.
 
 The rational fractions above are tabulated with their decimal versions to provide an idea of how the convergents do indeed converge to the "benchmark" decimal value of $\sqrt{2}$ as available on a `Julia` [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop), which is shown below. There is agreement at best to about ten decimal places.
