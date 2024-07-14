@@ -123,7 +123,7 @@ Successively doubling or halving is a fast-converging technique used in numerica
 
 When he moved from $n=6$ to $n = 12$ sides, how did Archimedes estimate the respective perimeters without the aid of trigonometry? He used geometry and the Pythagorean theorem, [as described online here](https://nonagon.org/ExLibris/archimedes-pi) [@bertrand2014] [and here](https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf) [@damini-dhar-2020] to obtain [recurrence relations](https://en.wikipedia.org/wiki/Recurrence_relation) that gave the current perimeter from the previous one.
 
-Archimedes repeatedly calculated _rational approximations_ to $\pi$ until he was satisfied with the accuracy. The principle of the method is clearly illustrated in [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon]. 
+Archimedes repeatedly calculated _rational approximations_ to $\pi$ until he was satisfied with the accuracy. The principle of the method is clearly illustrated in [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon].
 
 ![The estimate for $\pi$ lies between $c(6) = 3.0000 < \pi < C(6) = 3.4641$.]({attach}images/six-gon.svg){#fig:six-gon width=70% .modal-target}
 
@@ -161,7 +161,7 @@ Note that in the case of 96 sides, we have a _very small angle_ $\theta$ whose $
 
 Remember [@eq:triple-96] because it helps us to estimate lower and upper bounds for the value of the circumference.
 
-_Archimedes' final estimate was $\frac{223}{71} < \pi < \frac{22}{7}$._ 
+_Archimedes' final estimate was $\frac{223}{71} < \pi < \frac{22}{7}$._
 
 Archimedes application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in the series of [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon].
 
@@ -439,7 +439,7 @@ We want to reduce nested surds to their simplest forms so that two dissimilar su
 
 Fortunately, there are many resources on the Web, from book chapters, to dedicated web pages, to video presentations, that deal with this interesting, but seldom discussed topic---_denesting surds_  [@ds-underground; @ds-brown; @ds-jeffrey-rich; @ds-yt-method]. Choose any one, or even all, references to learn from, and then tackle the above problem.
 
-For starters, I will go through how to denest $\sqrt{6-3\sqrt{3}}$. Let 
+For starters, I will go through how to denest $\sqrt{6-3\sqrt{3}}$. Let
 $$
 \sqrt{6-3\sqrt{3}} = \sqrt{a} - \sqrt{b} \mbox{ where } 0 \leq b \leq a.
 $$ {#eq:two-surds}
@@ -450,7 +450,7 @@ $$
 \left(\sqrt{6-3\sqrt{3}}\right)^2 &= \left(\sqrt{a} - \sqrt{b}\right)^2\\
 6 - 3\sqrt{3} &= a - 2\sqrt{ab} + b\\
 \end{aligned}
-$$ 
+$$
 Equating like terms, we get
 $$
 \begin{aligned}
@@ -509,7 +509,7 @@ A well-written, accessible article on the subject of this blog is available onli
 
 #. Calculators for evaluating square roots.
 
-Another recommended online article is [Archimedes and Pi](https://nonagon.org/ExLibris/archimedes-pi) [@bertrand2014] at a website interestingly named <https://nonagon.org/>{.sf}.
+Another recommended online article is [Archimedes and Pi](https://nonagon.org/ExLibris/archimedes-pi) [@bertrand2014] at a website interestingly named <https://nonagon.org/>.
 
 There is an [online Wolfram demonstration](https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/#more) showing how estimates of $\pi$ vary with the areas of the inscribed and circumscribed polygons, as $n$ changes [@tucker2009]. I have used the perimeters, $c(n)$ and $C(n)$, rather than the areas $a(n)$, and $A(n)$, in this blog.
 
@@ -530,6 +530,4 @@ corrections.
 
 \noindent A PDF version of this article is [available for download here]({attach}./pi-of-archimedes.pdf):
 
-<https://swanlotus.netlify.app/blogs/pi-of-archimedes.pdf>{.sf}
-
-
+<https://swanlotus.netlify.app/blogs/pi-of-archimedes.pdf>

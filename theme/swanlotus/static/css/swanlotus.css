@@ -4730,6 +4730,11 @@ a:hover code {
   color: hsl(0, 0%, 21%);
 }
 
+.uri {
+  font-size: 0.9125em;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
 /* Styles for blog index */
 .content h5.entry-title {
   margin-bottom: 0em;

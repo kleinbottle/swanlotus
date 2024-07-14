@@ -6,12 +6,30 @@
 #
 # Approximate π to 10 decimal places by increasing the number
 # of sides on an n-sided polygon that inscribes and circumscribes a circle
+using Pkg
+
+function check_if_installed(pkg::String)
+    try
+        eval(Meta.parse("using $pkg"))
+    catch e
+        if isa(e, ArgumentError)
+            println("The package $pkg is not installed. Please install it using:")
+            println("import Pkg; Pkg.add(\"$pkg\").")
+            exit(1)
+        else
+            rethrow(e)
+        end
+    end
+end
+
+check_if_installed("PrettyTables")
 using PrettyTables
 
 # Number of sides on the polygon inscribing and circumscribing the circle
 const NUM_SIDES = [6, 12, 24, 48, 96, 100, 1000, 10000, 100000, 1000000]
 
 function main()
+
     # Initialize a Matrix with unlimited rows and 5 columns
     pi_approximations = Array{Float64}(undef, 0, 5)
 
