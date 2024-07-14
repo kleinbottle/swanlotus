@@ -46,7 +46,7 @@ The symbol [$\pi$](https://en.wikipedia.org/wiki/Pi) is the lowercase version of
 
 [@fig:pi-circle] shows the relationships in [@eq:pi-Cd; @eq:two-pi-r] pictorially. The circumference of a circle is about 6.28 times its radius. Why this should be so is a secret of Nature, a mystery of the [spacetime](https://www.nature.com/articles/d41586-018-05095-z) [@musser2018] we inhabit.^[This article is well worth reading; it will help enlarge your idea of what space is.]
 
-A wonderfully revealing story lies behind this mysterious relationship---between the circumference of a circle and its diameter---and it is due to the [labours](https://www.collinsdictionary.com/dictionary/english/labours) of one man, in the days when calculators could not be dreamed of, and when neither the decimal system of numbers, nor trigonometry were known. That is the story we look at next.
+A wonderfully revealing story lies behind this mysterious relationship---between the circumference of a circle and its diameter---and it is due to the [labours](https://www.collinsdictionary.com/dictionary/english/labours) of one man, in the days when calculators could not be dreamed of, and when neither the decimal system of numbers, nor trigonometry were known. It is the story of Archimedes and his estimate of $\pi$.
 
 ## Archimedes of Syracuse
 
@@ -70,7 +70,7 @@ What is even more remarkable is that Archimedes made his discovery _without_ the
 
 Instead he applied geometry---including the theorem of Pythagoras---and extracted rational values for square roots, laboriously by hand.
 
-His method is also an excellent geometrical illustration of the idea of a [_limit_](https://www.britannica.com/science/limit-mathematics), with which he was doubtless familiar. It is known that Archimedes was familiar with what we now know as integral calculus, and it is possible that he may have anticipated differential calculus as well.
+His method is also an excellent geometrical illustration of the idea of a [_limit_](https://www.britannica.com/science/limit-mathematics), with which he was doubtless familiar. It is known that Archimedes was aware of what we now know as integral calculus, and it is possible that he may have anticipated differential calculus as well.
 
 Archimedes devised an ingenious method for estimating $\pi$ by obtaining successively more accurate values for the circumference of a circle.
 
@@ -84,15 +84,15 @@ The method that Archimedes devised is instructive because it is a synthesis of s
 
 #. Initialize variables;
 
-#. Devise a method of increasing the accuracy of the estimate by _looping through or repeating the same process_;^[These are called [recursion](https://mathworld.wolfram.com/Recursion.html) or [iteration](https://www.vocabulary.com/dictionary/iteration)---as the case may be---in computer science.]
+#. Devise a method of increasing the accuracy through repetition;
 
 #. Stop when the desired accuracy is reached.
 
-These steps constitute what is known as an [algorithm](https://www.merriam-webster.com/dictionary/algorithm). Once such a systematic framework has been put in place, it can be applied in many research domains to aid rapid scientific progress. The algorithm is the basis of modern computing.
+These steps constitute what is known as an [algorithm](https://www.merriam-webster.com/dictionary/algorithm). Once such a systematic framework has been put in place, it can be applied in many research domains to aid rapid scientific progress. Algorithms are the basis of modern computing.
 
 ## Of polygons and circles
 
-Archimedes wanted to estimate the _circumference_ and _area of a circle_ by a systematic and logical method. That $\pi$ is involved in both of these is somewhat incidental to his main goal. Nevertheless, his approach is the first well documented account of how to estimate $\pi$ with reasonable accuracy, and is the focus of our blog.
+The goal of Archimedes was to estimate the _circumference_ and _area of a circle_ by a systematic and logical method. That $\pi$ is involved in both of these measurements is somewhat incidental. Nevertheless, his approach is the first well documented account of how to estimate $\pi$ with reasonable accuracy, and is the focus of this blog.
 
 Archimedes considered a circle, containing an [inscribed](https://mathworld.wolfram.com/Inscribed.html) regular polygon with $n$ sides, and [circumscribed](https://mathworld.wolfram.com/Circumscribed.html) by a regular polygon with the same $n$ sides. [@fig:two-limits] illustrates this for the case $n = 6$, i.e., with a regular [hexagon](https://www.britannica.com/science/hexagon).
 
@@ -123,8 +123,6 @@ Successively doubling or halving is a fast-converging technique used in numerica
 
 When he moved from $n=6$ to $n = 12$ sides, how did Archimedes estimate the respective perimeters without the aid of trigonometry? He used geometry and the Pythagorean theorem, [as described online here](https://nonagon.org/ExLibris/archimedes-pi) [@bertrand2014] [and here](https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf) [@damini-dhar-2020] to obtain [recurrence relations](https://en.wikipedia.org/wiki/Recurrence_relation) that gave the current perimeter from the previous one.
 
-For an English translation of the book _Measurement of a Circle_ by Archimedes [click on this link]({attach}auxiliary/Archimedes-Circle.pdf). It is the original source material from the man himself, and will give you a sense of completeness in your understanding of his method.
-
 Archimedes repeatedly calculated _rational approximations_ to $\pi$ until he was satisfied with the accuracy. The principle of the method is clearly illustrated in [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon]. 
 
 ![The estimate for $\pi$ lies between $c(6) = 3.0000 < \pi < C(6) = 3.4641$.]({attach}images/six-gon.svg){#fig:six-gon width=70% .modal-target}
@@ -137,7 +135,9 @@ Archimedes repeatedly calculated _rational approximations_ to $\pi$ until he was
 
 ![The estimate for $\pi$ lies between $c(96) = 3.1410 < \pi < C(96) = 3.1427$. Notice in this sequence of images how the circumference of the circle approaches the perimeter of the inscribed and circumscribed hexagons to the point of being indistinguishable from either of them. _The final estimate of Archimedes was $\frac{223}{71} < \pi < \frac{22}{7}$._]({attach}images/ninety-six-gon.svg){#fig:ninety-six-gon width=70% .modal-target}
 
-## Calculus before it was discovered
+The original source material from the man himself, is the book, _Measurement of a Circle_ by Archimedes. For an English translation of the book [click on this link]({attach}auxiliary/Archimedes-Circle.pdf). It will give you a sense of completeness in your understanding of his method.
+
+## Calculus, before it was discovered
 
 Evaluating the bounds given in [@tbl:variables] and [@eq:squeeze] by setting $r = 1$, $n = 6$, and $\theta = \frac{180}{n} = 30°$^[Rather than use radians with $\pi$ entering the proceedings, I decided to stick with degrees as units to avoid confusion. If one uses power series to probe further, of course, radians are called for.] gives us these values, expressed to four decimal places:
 $$
@@ -161,11 +161,11 @@ Note that in the case of 96 sides, we have a _very small angle_ $\theta$ whose $
 
 Remember [@eq:triple-96] because it helps us to estimate lower and upper bounds for the value of the circumference.
 
-_The final estimate of Archimedes was $\frac{223}{71} < \pi < \frac{22}{7}$._ 
+_Archimedes' final estimate was $\frac{223}{71} < \pi < \frac{22}{7}$._ 
 
 Archimedes application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in the series of [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon].
 
-If you study the calculus or analysis later on, and encounter the [epsilon-delta ($\epsilon-\delta$) definition of a limit](https://en.wikipedia.org/wiki/Limit_of_a_function) hark back to this example of Archimedes for a graphic and concrete example of how a value may be bounded from below and above and how it may be [squeezed](https://demonstrations.wolfram.com/SqueezeTheorem/) into the limit.
+If you study the calculus or analysis later on, and encounter the [epsilon-delta ($\epsilon-\delta$) definition of a limit](https://en.wikipedia.org/wiki/Limit_of_a_function), hark back to this example of Archimedes for a graphic and concrete example of how a value may be bounded from below and above, and how it may be [squeezed](https://demonstrations.wolfram.com/SqueezeTheorem/) into the limit.
 
 ## Initial results
 
