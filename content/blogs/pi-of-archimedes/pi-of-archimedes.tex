@@ -792,7 +792,7 @@ curves. The shapes and positions of the two curves themselves eloquently
 explain why they are called the upper and lower bounds.}\label{fig:plot}
 \end{figure}
 
-\subsubsection{Sanity checks}\label{sanity-checks}
+\subsection{Sanity checks}\label{sanity-checks}
 
 \href{https://en.wiktionary.org/wiki/sanity_check}{Sanity checks} help
 nip errors in the bud, and are an essential part of problem solving. We
@@ -814,7 +814,7 @@ perform two of them here.
   actual value of \(\pi = 3.14159\). All is well again.
 \end{enumerate}
 
-\subsubsection{A reflection on triangles and
+\subsection{A reflection on triangles and
 circles}\label{a-reflection-on-triangles-and-circles}
 
 It is interesting that the method of Archimedes leverages the properties
@@ -832,7 +832,7 @@ We now have to backtrack and attempt to retrace the steps Archimedes
 used to estimate \(\pi\)---\emph{without trigonometry}---to better
 appreciate his heroic efforts.
 
-\subsubsection{The thirty-sixty-ninety right
+\subsection{The thirty-sixty-ninety right
 triangle}\label{the-thirty-sixty-ninety-right-triangle}
 
 Archimedes applied the principle ``of starting from the known'' to
@@ -863,7 +863,7 @@ unit. By applying the theorem of Pythagoras, the third side, \(AP\) is
 \sqrt{2^2 - 1^2} = \sqrt{3}.
 }\end{equation}
 
-\subsubsection{Extracting square roots by
+\subsection{Extracting square roots by
 hand}\label{extracting-square-roots-by-hand}
 
 The next thing Archimedes needed---and knew how to do---was to compute
@@ -949,13 +949,13 @@ Let us step through this:
   \end{aligned}
   \] For comparison with another method we will use later on---in
   \hyperref[the-angle-bisector-theorem]{The angle bisector
-  theorem}---the value of \(\sin 15°\) we get from the equation above is
+  theorem}---the value of \(\sin 15°\) from the equation above is
   0.2588190451025208.
 \item
-  Using the value of \(\cos 15°\), we get, for \(7.5°\)\footnote{Since
+  Using the value of \(\cos 15°\), for \(7.5°\)\footnote{Since
     \(\tan\theta = \frac{sin\theta}{\cos\theta}\) we can save ourselves
     some mathematical labour by leaving out the calculation for
-    \(\tan\theta\).} \[
+    \(\tan\theta\).} we get \[
   \begin{aligned}
   \sin 7.5° &= \sqrt{\frac{1 - \frac{1}{2}\sqrt{2 + \sqrt{3}}}{2}}\\
   &= \frac{1}{2}\sqrt{2 - \sqrt{2 + \sqrt{3}}}\\
@@ -964,7 +964,7 @@ Let us step through this:
   \end{aligned}
   \]
 \item
-  Using the value of \(\cos 7.5°\), we get for \(3.75°\) \[
+  Using the value of \(\cos 7.5°\), for \(3.75°\), we get \[
   \begin{aligned}
   \sin 3.75° &= \sqrt{\frac{1 - \frac{1}{2}\sqrt{2 + \sqrt{2 + \sqrt{3}}}}{2}}\\
   &= \frac{1}{2}\sqrt{2 - \sqrt{2 + \sqrt{2 + \sqrt{3}}}}\\
@@ -972,7 +972,7 @@ Let us step through this:
   \end{aligned}
   \]
 \item
-  We can see a pattern emerge and we \emph{guess} that the values for
+  A pattern can be seen, and a guess may be hazarded that the values for
   \(\theta = 1.875°\) corresponding to \(n=96\) \emph{should} be: \[
   \begin{aligned}
   \sin 1.875° &= \frac{1}{2}\sqrt{2 - \sqrt{2 + \sqrt{2 + \sqrt{2 + \sqrt{3}}}}}\\
@@ -1010,7 +1010,7 @@ noting:
   he had to rely on an arithmetical system that we would find forbidding
   {[}\citeproc{ref-heath2002}{4}{]}.
 \item
-  We have demonstrated how Archimedes used looping in his estimate of
+  We have demonstrated how Archimedes used repetition in his estimate of
   \(\pi\). He started with \(n = 6\) and stopped at \(n=96\). He was
   justified in doing so, as we have seen the upper and lower bounds
   converge, as shown in \cref{fig:plot}.
@@ -1022,7 +1022,7 @@ noting:
   next, to get the results he did, without using trigonometry.
 \end{enumerate}
 
-\subsubsection{The angle bisector
+\subsection{The angle bisector
 theorem}\label{the-angle-bisector-theorem}
 
 Without using the half-angle formulae of trigonometry, how can we
@@ -1062,7 +1062,7 @@ get \cref{fig:bisect-thirty} shown below.
 \centering
 \includesvg[width=0.35\textwidth,height=\textheight]{images/bisect-thirty.svg}
 \caption{The angle bisector theorem applied to a thirty-sixty-ninety
-right triangle. The ratio of \(a\) to \(b\) is that same as the ratio of
+right triangle. The ratio of \(a\) to \(b\) is the same as the ratio of
 \(2\) to \(\sqrt{3}\).}\label{fig:bisect-thirty}
 \end{figure}
 
@@ -1128,7 +1128,7 @@ trigonometry}, and the other using pure geometry--- illustrates the
 richness that lies ahead, waiting to be explored by some intrepid
 student of mathematics.
 
-\subsubsection{Digression: Denesting
+\subsection{Digression: Denesting
 Surds}\label{digression-denesting-surds}
 
 But wait a minute. How do we simplify expressions containing square
@@ -1156,16 +1156,44 @@ interesting, but seldom discussed topic---\emph{denesting surds}
 Choose any one, or even all, references to learn from, and then tackle
 the above problem.
 
-For starters, I will outline how to denest \(\sqrt{6-3\sqrt{3}}\). Let
-\(\sqrt{6-3\sqrt{3}} = \sqrt{a} - \sqrt{b}\) where \(0 \leq b \leq a\).
-We square both sides and obtain expressions for \(a + b\) and \(ab\).
-This will result in a quadratic equation with two solutions. We choose
-the larger value for \(a\). The solution in this case is:
-\(a = \frac{9}{2}\) and \(b = \frac{3}{2}\) leading to \[
+For starters, I will go through how to denest \(\sqrt{6-3\sqrt{3}}\).
+
+Let \(\sqrt{6-3\sqrt{3}} = \sqrt{a} - \sqrt{b}\) where
+\(0 \leq b \leq a\).
+
+We now square both sides: \[
+\begin{aligned}
+\left(\sqrt{6-3\sqrt{3}}\right)^2 &= \left(\sqrt{a} - \sqrt{b}\right)^2\\
+6 - 3\sqrt{3} &= a - 2\sqrt{ab} + b\\
+\end{aligned}
+\] Equating like terms, we get
+\begin{equation}\phantomsection\label{eq:sumprod}{
+\begin{aligned}
+a + b &= 6; \mbox{ and}\\
+\sqrt{27} &= \sqrt{4ab}\\
+4ab &= 27.
+\end{aligned}
+}\end{equation}
+
+Obtaining \(b\) in terms of \(a\) from \cref{eq:sumprod}, and
+substituting, we get \[
+\begin{aligned}
+4a(6-a) &= 27\\
+-4a^2 + 24a &= 27\\
+4a^2 -24a +27 &= 0\\
+(2a - 3)(2a - 9) &=0\\
+a &= \frac{3}{2} \mbox{ or } a = \frac{9}{2}\\
+\end{aligned}
+\] Because \(a \geq b\), we choose \(a = \frac{9}{2}\) and
+\(b = \frac{3}{2}\).
+
+Substituting into \cref{eq:sumprod}, we get \[
 \sqrt{6-3\sqrt{3}} = \frac{3 - \sqrt{3}}{\sqrt{2}} = \frac{3\sqrt{2} - \sqrt{6}}{2}.
-\] Note that there are no nested square roots on the right hand side
-(RHS). The salient point is that, since we are dealing with surds, we
-should get identical, closed form, exact expressions for both
+\]
+
+Note that there are no nested square roots on the right hand side (RHS).
+The salient point is that, since we are dealing with surds, we should
+get identical, closed form, exact expressions for both
 \(\sqrt{2 - \sqrt{3}}\) and
 \(\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\)
 \emph{without using decimals}. And that takes some effort, using paper
@@ -1173,8 +1201,8 @@ and pencil, or software like \href{https://www.geogebra.org/}{Geogebra}
 {[}\citeproc{ref-geogebra}{10}{]}.
 
 The moral of this section is that \(\pi\) may be approximated as a
-potpourri of expressions involving surds. Imagine mathematics as kitchen
-blender into which selected terms involving surds are put in as
+potpourri of expressions involving surds. Imagine mathematics as a
+kitchen blender into which selected terms involving surds are put in as
 ingredients and blended into a smoothie that tastes like \(\pi\)! I find
 that image mind-boggling.
 
@@ -1205,7 +1233,7 @@ Philosophically speaking, \(\pi\) can only be represented, truly as it
 is, by a \emph{symbol}, not by digits.
 
 Geometry might have given birth to \(\pi\), but it does not confine
-\(\pi\) exclusively. This wondrous number is a free citizen of all of
+\(\pi\) exclusively. This wondrous number is a free citizen of all
 mathematics, and can roam the entire domain. How mathematicians became
 aware of the ubiquity of \(\pi\), and what riches have accrued as a
 result, will engage us in our second blog on \(\pi\), entitled
