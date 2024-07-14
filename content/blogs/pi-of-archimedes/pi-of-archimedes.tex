@@ -212,9 +212,9 @@
   pdfauthor={R (Chandra) Chandrasekhar},
   pdflang={en-GB},
   colorlinks=true,
-  linkcolor={DarkOliveGreen},
+  linkcolor={DarkGreen},
   filecolor={Purple},
-  citecolor={DarkKhaki},
+  citecolor={Teal},
   urlcolor={Maroon},
   pdfcreator={LaTeX via pandoc}}
 
@@ -230,8 +230,8 @@
 
 \begin{quote}
 This blog began life more than two decades ago, as part of a series of
-lectures I delivered to very bright first-year engineering students at
-an Australian university.
+lectures I delivered to some very bright first-year engineering students
+at an Australian university.
 
 The number \(\pi\) (pronounced ``pie'') has been recognized from time
 immemorial because its physical significance can be grasped easily: it
@@ -239,10 +239,11 @@ is the ratio of the circumference of a circle to its diameter. But who
 would have thought that such an innocent ratio would exercise such
 endless fascination because of the complexities it enfolds?
 
-Not surprisingly, some high students I met recently wanted to know more
-about \(\pi\). Accordingly, I have substantially recast and refreshed my
-original presentation to better accord with the form and substance of a
-blog. The online references have also been updated to keep up with a
+Not surprisingly, some high school students I met recently wanted to
+know more about \(\pi\) and how it got its unusual value of
+\(\frac{22}{7}\). Accordingly, I have substantially recast and refreshed
+my original presentation to better accord with the form and substance of
+a blog. The online references have also been updated to keep up with a
 rapidly changing Web.
 
 My original intention was to write a single blog on \(\pi\). But because
@@ -548,9 +549,9 @@ Archimedes \href{auxiliary/Archimedes-Circle.pdf}{click on this link}.
 It is the original source material from the man himself, and will give
 you a sense of completeness in your understanding of his method.
 
-He repeatedly calculated \emph{rational approximations} to \(\pi\) until
-he was satisfied with the accuracy. The principle of the method is
-clearly illustrated in
+Archimedes repeatedly calculated \emph{rational approximations} to
+\(\pi\) until he was satisfied with the accuracy. The principle of the
+method is clearly illustrated in
 \cref{fig:six-gon,fig:twelve-gon,fig:twenty-four-gon,fig:forty-eight-gon,fig:ninety-six-gon}.
 
 \begin{figure}
@@ -587,14 +588,11 @@ clearly illustrated in
 \caption{The estimate for \(\pi\) lies between
 \(c(96) = 3.1410 < \pi < C(96) = 3.1427\). Notice in this sequence of
 images how the circumference of the circle approaches the perimeter of
-the inscribed and circumscribed heaxgons to the point of being
+the inscribed and circumscribed hexagons to the point of being
 indistinguishable from either of them. \emph{The final estimate of
 Archimedes was
 \(\frac{223}{71} < \pi < \frac{22}{7}\).}}\label{fig:ninety-six-gon}
 \end{figure}
-
-\textbf{The final estimate of Archimedes was
-\(\frac{223}{71} < \pi < \frac{22}{7}\).}
 
 \subsection{Calculus before it was
 discovered}\label{calculus-before-it-was-discovered}
@@ -635,8 +633,10 @@ even better how the value of \(\pi\) is trapped and squeezed between
 these two rather close limits.
 
 Remember \cref{eq:triple-96} because it helps us to estimate lower and
-upper bounds for the value of the circumference. Archimedes's
-application of the
+upper bounds for the value of the circumference. \textbf{The final
+estimate of Archimedes was \(\frac{223}{71} < \pi < \frac{22}{7}\).}
+
+Archimedes application of the
 \href{https://en.wikipedia.org/wiki/Squeeze_theorem}{squeeze theorem}
 nineteen centuries before the calculus was invented is illustrated in
 the series of
@@ -1138,8 +1138,8 @@ How do we unpack surds within surds? Because calculators have finite
 precision, how do we know that the two exact expressions involving
 surds, on either side of the equality sign below, are indeed equal? \[
 \begin{aligned}
-\frac{1}{2}\sqrt{2 - \sqrt{3}} &= \frac{1}{2}\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\mbox{ or more simply that}\\
-\sqrt{2 - \sqrt{3}}&= \left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\\
+\frac{1}{2}\sqrt{2 - \sqrt{3}} &\overset{?}{=} \frac{1}{2}\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\mbox{ or more simply that}\\
+\sqrt{2 - \sqrt{3}}&\overset{?}{=} \left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\\
 \end{aligned}
 \]
 
@@ -1158,7 +1158,7 @@ For starters, I will outline how to denest \(\sqrt{6-3\sqrt{3}}\). Let
 \(\sqrt{6-3\sqrt{3}} = \sqrt{a} - \sqrt{b}\) where \(0 \leq b \leq a\).
 We square both sides and obtain expressions for \(a + b\) and \(ab\).
 This will result in a quadratic equation with two solutions. We choose
-the larger value for \(a\). The two solutions in this case are
+the larger value for \(a\). The solution in this case is:
 \(a = \frac{9}{2}\) and \(b = \frac{3}{2}\) leading to \[
 \sqrt{6-3\sqrt{3}} = \frac{3 - \sqrt{3}}{\sqrt{2}} = \frac{3\sqrt{2} - \sqrt{6}}{2}.
 \] Note that there are no nested square roots on the right hand side
@@ -1170,6 +1170,10 @@ should get identical, closed form, exact expressions for both
 and pencil, or software like \href{https://www.geogebra.org/}{Geogebra}
 {[}\citeproc{ref-geogebra}{9}{]}.
 
+This completes the modern guided tour of the method Archimedes used to
+estimate \(\pi\) that I had envisaged for this blog. We now turn to the
+question of its oft-quoted value.
+
 \subsection{Is π really 22/7?}\label{is-ux3c0-really-227}
 
 Is \(\pi\) really equal to \(\frac{22}{7}\), as has been drummed into
@@ -1179,9 +1183,9 @@ The answer is a qualified ``Yes and No''.
 
 ``Yes'', because, thanks to Archimedes, \(\frac{22}{7}\) is an
 overestimate for \(\pi\) that has survived for nineteen centuries, and
-served us well in all this time. Whenever, more accuracy was desired, we
-could always press into service a slightly better rational
-approximation, like
+served us well in all this time. Whenever, more accuracy is desired, we
+can always press into service a slightly better rational approximation,
+like
 \href{https://en.wikipedia.org/wiki/Mil\%C3\%BC}{\(\frac{355}{113}\)}.
 
 ``No'', because an irrational number like \(\pi\) can never be expressed
@@ -1192,17 +1196,18 @@ representation, at the accuracy desired for our practical purposes.
 Philosophically speaking, \(\pi\) can only be represented, truly as it
 is, by a \emph{symbol}, not by digits.
 
-Geometry might have given birth to \(\pi\), but does not confine \(\pi\)
-exclusively. This wondrous number is a free citizen of all of
+Geometry might have given birth to \(\pi\), but it does not confine
+\(\pi\) exclusively. This wondrous number is a free citizen of all of
 mathematics, and can roam the entire domain. How mathematicians became
 aware of the ubiquity of \(\pi\), and what riches have accrued as a
 result, will engage us in our second blog on \(\pi\), entitled
-\href{}{``The Wonder that is Pi''}.
+\href{https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi}{``The
+Wonder that is Pi''}.
 
 \subsection{To explore further}\label{to-explore-further}
 
-A well-written, accessible article on how Archimedes estimated that
-\(\pi\) is approximately \(\frac{22}{7}\) is available online:
+A well-written, accessible article on the subject of this blog is
+available online:
 \href{https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf}{``How
 Archimedes showed that pi is approximately 22 by 7''}. I urge you to
 read it.\footnote{This article is all the more remarkable because its
@@ -1229,10 +1234,11 @@ Another recommended online article is
 
 There is an
 \href{https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/\#more}{online
-demonstration} showing how estimates of \(\pi\) vary with \(n\),
-\(a(n)\), and \(A(n)\) {[}\citeproc{ref-tucker2009}{10}{]}. The
-development in our blog uses the perimeters, \(c(n)\) and \(C(n)\),
-rather than the areas, and gives faster convergence.
+Wolfram demonstration} showing how estimates of \(\pi\) vary with the
+areas of the inscribed and circumscribed polygons, as \(n\) changes
+{[}\citeproc{ref-tucker2009}{10}{]}. I have used the perimeters,
+\(c(n)\) and \(C(n)\), rather than the areas \(a(n)\), and \(A(n)\), in
+this blog.
 
 Another article on Archimedes' estimation of \(\pi\) is available on
 \href{ttps://www.pbs.org/wgbh/nova/physics/approximating-pi.html}{this
@@ -1250,13 +1256,17 @@ estimating \(\pi\).
 
 \subsection{Acknowledgements}\label{acknowledgements}
 
-Some computations for this blog were performed using a program written
-by
+The computations for \cref{tbl:large-n-pi} were performed using a
+program written by
 \href{https://www.linkedin.com/in/nandakumar-chandrasekhar-a400b45b/}{Nandakumar
 Chandrasekhar} in the \href{https://julialang.org/}{Julia programming
 Language}. The output was formatted so that it could be easily cut and
-pasted into the blog document. The source code is available
+pasted into the blog itself. The source code is available
 \href{auxiliary/pi_approximations.jl}{here}.
+
+Thanks are also due to \href{https://www.geogebra.org/}{Geogebra} and
+\href{https://www.wolframalpha.com/}{Wolfram Alpha} for free online
+mathematical support.
 
 \subsection{Feedback}\label{feedback}
 

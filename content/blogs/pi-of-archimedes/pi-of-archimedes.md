@@ -5,22 +5,22 @@ date: 2004-01-14
 modified: 2024-07-13
 category: Mathematics
 tags: Numbers, Irrational, Transcendental
-summary: "This blog began life more than two decades ago, as part of a series of lectures I delivered to very bright first-year engineering students at an Australian university.
+summary: "This blog began life more than two decades ago, as part of a series of lectures I delivered to some very bright first-year engineering students at an Australian university.
 
 The number π (pronounced 'pie') has been recognized from time immemorial because its physical significance can be grasped easily: it is the ratio of the circumference of a circle to its diameter. But who would have thought that such an innocent ratio would exercise such endless fascination because of the complexities it enfolds?
 
-Not surprisingly, some high school students I met recently wanted to know more about π. Accordingly, I have substantially recast and refreshed my original presentation to better accord with the form and substance of a blog. The online references have also been updated to keep up with a rapidly changing Web.
+Not surprisingly, some high school students I met recently wanted to know more about π and how it got its unusual value of ²²⁄₇. Accordingly, I have substantially recast and refreshed my original presentation to better accord with the form and substance of a blog. The online references have also been updated to keep up with a rapidly changing Web.
 
 My original intention was to write a single blog on π. But because I did not want it to become yet another overly long _slog_, I have decided to divide the material into two parts."
 status: published
 opengraphimage: Domenico-Fetti_Archimedes_1620.jpg
 ---
 
->This blog began life more than two decades ago, as part of a series of lectures I delivered to very bright first-year engineering students at an Australian university.
+>This blog began life more than two decades ago, as part of a series of lectures I delivered to some very bright first-year engineering students at an Australian university.
 >
 >The number $\pi$ (pronounced "pie") has been recognized from time immemorial because its physical significance can be grasped easily: it is the ratio of the circumference of a circle to its diameter. But who would have thought that such an innocent ratio would exercise such endless fascination because of the complexities it enfolds?
 >
->Not surprisingly, some high students I met recently wanted to know more about $\pi$. Accordingly, I have substantially recast and refreshed my original presentation to better accord with the form and substance of a blog. The online references have also been updated to keep up with a rapidly changing Web.
+>Not surprisingly, some high school students I met recently wanted to know more about $\pi$ and how it got its unusual value of $\frac{22}{7}$. Accordingly, I have substantially recast and refreshed my original presentation to better accord with the form and substance of a blog. The online references have also been updated to keep up with a rapidly changing Web.
 >
 >My original intention was to write a single blog on $\pi$. But because I did not want it to become yet another overly long _slog_, I have decided to divide the material into two parts.
 >
@@ -125,7 +125,7 @@ When he moved from $n=6$ to $n = 12$ sides, how did Archimedes estimate the resp
 
 For an English translation of the book _Measurement of a Circle_ by Archimedes [click on this link]({attach}auxiliary/Archimedes-Circle.pdf). It is the original source material from the man himself, and will give you a sense of completeness in your understanding of his method.
 
-He repeatedly calculated _rational approximations_ to $\pi$ until he was satisfied with the accuracy. The principle of the method is clearly illustrated in [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon].
+Archimedes repeatedly calculated _rational approximations_ to $\pi$ until he was satisfied with the accuracy. The principle of the method is clearly illustrated in [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon]. 
 
 ![The estimate for $\pi$ lies between $c(6) = 3.0000 < \pi < C(6) = 3.4641$.]({attach}images/six-gon.svg){#fig:six-gon width=70% .modal-target}
 
@@ -135,9 +135,7 @@ He repeatedly calculated _rational approximations_ to $\pi$ until he was satisfi
 
 ![The estimate for $\pi$ lies between $c(48) = 3.1393 < \pi < C(48) = 3.1460$.]({attach}images/forty-eight-gon.svg){#fig:forty-eight-gon width=70% .modal-target}
 
-![The estimate for $\pi$ lies between $c(96) = 3.1410 < \pi < C(96) = 3.1427$. Notice in this sequence of images how the circumference of the circle approaches the perimeter of the inscribed and circumscribed heaxgons to the point of being indistinguishable from either of them. _The final estimate of Archimedes was $\frac{223}{71} < \pi < \frac{22}{7}$._]({attach}images/ninety-six-gon.svg){#fig:ninety-six-gon width=70% .modal-target}
-
-**The final estimate of Archimedes was $\frac{223}{71} < \pi < \frac{22}{7}$.**
+![The estimate for $\pi$ lies between $c(96) = 3.1410 < \pi < C(96) = 3.1427$. Notice in this sequence of images how the circumference of the circle approaches the perimeter of the inscribed and circumscribed hexagons to the point of being indistinguishable from either of them. _The final estimate of Archimedes was $\frac{223}{71} < \pi < \frac{22}{7}$._]({attach}images/ninety-six-gon.svg){#fig:ninety-six-gon width=70% .modal-target}
 
 ## Calculus before it was discovered
 
@@ -161,7 +159,9 @@ $${#eq:triple-96}
 
 Note that in the case of 96 sides, we have a _very small angle_ $\theta$ whose $\sin$ and $\tan$ are almost equal. This is what gives us tight bounds on the estimate of $\pi$. If you know [the power series for $\sin\theta$ and $\tan\theta$](https://math.libretexts.org/Bookshelves/Differential_Equations/A_First_Course_in_Differential_Equations_for_Scientists_and_Engineers_(Herman)/08:_Appendix_Calculus_Review/8.07:_Power_Series), you will appreciate even better how the value of $\pi$ is trapped and squeezed between these two rather close limits.
 
-Remember [@eq:triple-96] because it helps us to estimate lower and upper bounds for the value of the circumference. Archimedes's application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in the series of [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon].
+Remember [@eq:triple-96] because it helps us to estimate lower and upper bounds for the value of the circumference. **The final estimate of Archimedes was $\frac{223}{71} < \pi < \frac{22}{7}$.** 
+
+Archimedes application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in the series of [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon].
 
 If you study the calculus or analysis later on, and encounter the [epsilon-delta ($\epsilon-\delta$) definition of a limit](https://en.wikipedia.org/wiki/Limit_of_a_function) hark back to this example of Archimedes for a graphic and concrete example of how a value may be bounded from below and above and how it may be [squeezed](https://demonstrations.wolfram.com/SqueezeTheorem/) into the limit.
 
@@ -428,20 +428,24 @@ The fact that we have obtained the same value of $\sin 15°$ by using two differ
 But wait a minute. How do we simplify expressions containing square roots within square roots? Such expressions are called [nested surds](https://undergroundmathematics.org/thinking-about-algebra/nested-surds/solution). Is there an easy way to confirm---without using calculators---that the two results we got are indeed the same number? How do we unpack surds within surds? Because calculators have finite precision, how do we know that the two exact expressions involving surds, on either side of the equality sign below, are indeed equal?
 $$
 \begin{aligned}
-\frac{1}{2}\sqrt{2 - \sqrt{3}} &= \frac{1}{2}\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\mbox{ or more simply that}\\
-\sqrt{2 - \sqrt{3}}&= \left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\\
+\frac{1}{2}\sqrt{2 - \sqrt{3}} &\overset{?}{=} \frac{1}{2}\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\mbox{ or more simply that}\\
+\sqrt{2 - \sqrt{3}}&\overset{?}{=} \left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\\
 \end{aligned}
 $$
+
+<!--Can also use \questeq with unicode-math but MathJax borks on it.-->
 
 We want to reduce nested surds to their simplest forms so that two dissimilar surds may be compared and declared equal if the they both equal another, possibly third, simpler surd.
 
 Fortunately, there are many resources on the Web, from book chapters, to dedicated web pages, to video presentations, that deal with this interesting, but seldom discussed topic---_denesting surds_  [@ds-underground; @ds-brown; @ds-jeffrey-rich; @ds-yt-method]. Choose any one, or even all, references to learn from, and then tackle the above problem.
 
-For starters, I will outline how to denest $\sqrt{6-3\sqrt{3}}$. Let $\sqrt{6-3\sqrt{3}} = \sqrt{a} - \sqrt{b}$ where $0 \leq b \leq a$. We square both sides and obtain expressions for $a + b$ and $ab$. This will result in a quadratic equation with two solutions. We choose the larger value for $a$. The two solutions in this case are $a = \frac{9}{2}$ and $b = \frac{3}{2}$ leading to
+For starters, I will outline how to denest $\sqrt{6-3\sqrt{3}}$. Let $\sqrt{6-3\sqrt{3}} = \sqrt{a} - \sqrt{b}$ where $0 \leq b \leq a$. We square both sides and obtain expressions for $a + b$ and $ab$. This will result in a quadratic equation with two solutions. We choose the larger value for $a$. The solution in this case is: $a = \frac{9}{2}$ and $b = \frac{3}{2}$ leading to
 $$
 \sqrt{6-3\sqrt{3}} = \frac{3 - \sqrt{3}}{\sqrt{2}} = \frac{3\sqrt{2} - \sqrt{6}}{2}.
 $$
 Note that there are no nested square roots on the right hand side (RHS). The salient point is that, since we are dealing with surds, we should get identical, closed form, exact expressions for both $\sqrt{2 - \sqrt{3}}$ and $\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]$ _without using decimals_. And that takes some effort, using paper and pencil, or software like [Geogebra](https://www.geogebra.org/) [@geogebra].
+
+This completes the modern guided tour of the method Archimedes used to estimate $\pi$ that I had envisaged for this blog.  We now turn to the question of its oft-quoted value.
 
 ## Is π really 22/7?
 
@@ -449,17 +453,17 @@ Is $\pi$ really equal to $\frac{22}{7}$, as has been drummed into our heads at s
 
 The answer is a qualified "Yes and No".
 
-"Yes", because, thanks to Archimedes, $\frac{22}{7}$ is an overestimate for $\pi$ that has survived for nineteen centuries, and served us well in all this time. Whenever, more accuracy was desired, we could always press into service a slightly better rational approximation, like [$\frac{355}{113}$](https://en.wikipedia.org/wiki/Mil%C3%BC).
+"Yes", because, thanks to Archimedes, $\frac{22}{7}$ is an overestimate for $\pi$ that has survived for nineteen centuries, and served us well in all this time. Whenever, more accuracy is desired, we can  always press into service a slightly better rational approximation, like [$\frac{355}{113}$](https://en.wikipedia.org/wiki/Mil%C3%BC).
 
 "No", because an irrational number like $\pi$ can never be expressed _exactly_ within the confines of a finite numerical representation. Consequently, we use rational approximations, or a decimal representation, at the accuracy desired for our practical purposes.
 
 Philosophically speaking, $\pi$ can only be represented, truly as it is, by a _symbol_, not by digits.
 
-Geometry might have given birth to $\pi$, but does not confine $\pi$ exclusively. This wondrous number is a free citizen of all of mathematics, and can roam the entire domain. How mathematicians became aware of the ubiquity of $\pi$, and what riches have accrued as a result, will engage us in our second blog on $\pi$, entitled ["The Wonder that is Pi"]().
+Geometry might have given birth to $\pi$, but it does not confine $\pi$ exclusively. This wondrous number is a free citizen of all of mathematics, and can roam the entire domain. How mathematicians became aware of the ubiquity of $\pi$, and what riches have accrued as a result, will engage us in our second blog on $\pi$, entitled ["The Wonder that is Pi"](https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi).
 
 ## To explore further
 
-A well-written, accessible article on how Archimedes estimated that $\pi$ is approximately $\frac{22}{7}$ is available online: ["How Archimedes showed that pi is approximately 22 by 7"](https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf). I urge you to read it.^[This article is all the more remarkable because its first author is a Grade 8 student: proof that deep mathematics is not beyond the school student.] You will then appreciate for yourselves how arduous the process must have been in an age without the benefit of:
+A well-written, accessible article on the subject of this blog is available online: ["How Archimedes showed that pi is approximately 22 by 7"](https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf). I urge you to read it.^[This article is all the more remarkable because its first author is a Grade 8 student: proof that deep mathematics is not beyond the school student.] You will then appreciate for yourselves how arduous the process must have been in an age without the benefit of:
 
 #. Trigonometry; he used geometry and the theorem of Pythagoras instead;
 
@@ -471,7 +475,7 @@ A well-written, accessible article on how Archimedes estimated that $\pi$ is app
 
 Another recommended online article is [Archimedes and Pi](https://nonagon.org/ExLibris/archimedes-pi) [@bertrand2014] at a website interestingly named <https://nonagon.org/>{.sf}.
 
-There is an [online demonstration](https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/#more) showing how estimates of $\pi$ vary with $n$, $a(n)$, and $A(n)$ [@tucker2009]. The development  in our blog uses the perimeters, $c(n)$ and $C(n)$, rather than the areas, and gives faster convergence.
+There is an [online Wolfram demonstration](https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/#more) showing how estimates of $\pi$ vary with the areas of the inscribed and circumscribed polygons, as $n$ changes [@tucker2009]. I have used the perimeters, $c(n)$ and $C(n)$, rather than the areas $a(n)$, and $A(n)$, in this blog.
 
 Another article on Archimedes' estimation of $\pi$ is available on [this PBS website](ttps://www.pbs.org/wgbh/nova/physics/approximating-pi.html) [@groleau2003]. Unfortunately, the interactive demonstration, using [Macromedia Flash](https://en.wikipedia.org/wiki/Adobe_Flash) is no longer live.^[It is paradoxical that modern, newer media age and die faster than old-fashioned manuscripts written on papyrus, or palm leaves, or clay tablets.]
 
@@ -479,7 +483,9 @@ Another article on Archimedes' estimation of $\pi$ is available on [this PBS web
 
 ## Acknowledgements
 
-Some computations for this blog were performed using a program written by [Nandakumar Chandrasekhar](https://www.linkedin.com/in/nandakumar-chandrasekhar-a400b45b/) in the [Julia programming Language](https://julialang.org/). The output was formatted so that it could be easily cut and pasted into the blog document. The source code is available [here]({attach}auxiliary/pi_approximations.jl).
+The computations for [@tbl:large-n-pi] were performed using a program written by [Nandakumar Chandrasekhar](https://www.linkedin.com/in/nandakumar-chandrasekhar-a400b45b/) in the [Julia programming Language](https://julialang.org/). The output was formatted so that it could be easily cut and pasted into the blog itself. The source code is available [here]({attach}auxiliary/pi_approximations.jl).
+
+Thanks are also due to [Geogebra](https://www.geogebra.org/) and [Wolfram Alpha](https://www.wolframalpha.com/) for free online mathematical support.
 
 ## Feedback
 
