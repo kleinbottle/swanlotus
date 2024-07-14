@@ -2,7 +2,7 @@
 title: "The Pi of Archimedes"
 author: "R (Chandra) Chandrasekhar"
 date: 2004-01-14
-modified: 2024-07-13
+modified: 2024-07-14
 category: Mathematics
 tags: Numbers, Irrational, Transcendental
 summary: "This blog began life more than two decades ago, as part of a series of lectures I delivered to some very bright first-year engineering students at an Australian university.
@@ -44,9 +44,9 @@ The symbol [$\pi$](https://en.wikipedia.org/wiki/Pi) is the lowercase version of
 
 ![The ratio of the circumference to the diameter of _any_ circle is $\pi$.]({attach}images/C-over-d.svg){#fig:pi-circle width=70% .modal-target}
 
-[@fig:pi-circle] shows the relationships in [@eq:pi-Cd; @eq:two-pi-r] pictorially. The circumference of a circle is about 6.28 times its radius. Why this should be so is a secret of Nature, a mystery of the space we inhabit.
+[@fig:pi-circle] shows the relationships in [@eq:pi-Cd; @eq:two-pi-r] pictorially. The circumference of a circle is about 6.28 times its radius. Why this should be so is a secret of Nature, a mystery of the [spacetime](https://www.nature.com/articles/d41586-018-05095-z) [@musser2018] we inhabit.^[This article is well worth reading; it will help enlarge your idea of what space is.]
 
-A wonderfully revealing story lies behind this mysterious relationship, and it is due to the [labours](https://www.collinsdictionary.com/dictionary/english/labours) of one man, in the days when calculators could not be dreamed of, and when neither the decimal system of numbers, nor trigonometry were known. That is the story we look at next.
+A wonderfully revealing story lies behind this mysterious relationship---between the circumference of a circle and its diameter---and it is due to the [labours](https://www.collinsdictionary.com/dictionary/english/labours) of one man, in the days when calculators could not be dreamed of, and when neither the decimal system of numbers, nor trigonometry were known. That is the story we look at next.
 
 ## Archimedes of Syracuse
 
@@ -92,7 +92,7 @@ These steps constitute what is known as an [algorithm](https://www.merriam-webst
 
 ## Of polygons and circles
 
-Archimedes wanted to estimate the _circumference_ and _area of a circle_ by a systematic and logical method. That $\pi$ is involved in both of these is somewhat incidental. Nevertheless, his approach is the first well documented account of how to estimate $\pi$ with reasonable accuracy, and is the focus of our blog.
+Archimedes wanted to estimate the _circumference_ and _area of a circle_ by a systematic and logical method. That $\pi$ is involved in both of these is somewhat incidental to his main goal. Nevertheless, his approach is the first well documented account of how to estimate $\pi$ with reasonable accuracy, and is the focus of our blog.
 
 Archimedes considered a circle, containing an [inscribed](https://mathworld.wolfram.com/Inscribed.html) regular polygon with $n$ sides, and [circumscribed](https://mathworld.wolfram.com/Circumscribed.html) by a regular polygon with the same $n$ sides. [@fig:two-limits] illustrates this for the case $n = 6$, i.e., with a regular [hexagon](https://www.britannica.com/science/hexagon).
 
@@ -115,7 +115,7 @@ Let us tabulate below the variables arising from [@fig:two-limits;@fig:sin-theta
 
 When $n$ varies, so do the values of $\theta$ and the areas and perimeters; they are therefore shown as functions of $n$ in [@tbl:variables].
 
-## Looping
+## The power of repetition
 
 Archimedes started with regular hexagons and successively _doubled_ the number of sides, until he had the circle closely sandwiched between two 96-sided-regular polygons---one inscribed; the other circumscribed.
 
@@ -159,13 +159,15 @@ $${#eq:triple-96}
 
 Note that in the case of 96 sides, we have a _very small angle_ $\theta$ whose $\sin$ and $\tan$ are almost equal. This is what gives us tight bounds on the estimate of $\pi$. If you know [the power series for $\sin\theta$ and $\tan\theta$](https://math.libretexts.org/Bookshelves/Differential_Equations/A_First_Course_in_Differential_Equations_for_Scientists_and_Engineers_(Herman)/08:_Appendix_Calculus_Review/8.07:_Power_Series), you will appreciate even better how the value of $\pi$ is trapped and squeezed between these two rather close limits.
 
-Remember [@eq:triple-96] because it helps us to estimate lower and upper bounds for the value of the circumference. **The final estimate of Archimedes was $\frac{223}{71} < \pi < \frac{22}{7}$.** 
+Remember [@eq:triple-96] because it helps us to estimate lower and upper bounds for the value of the circumference.
+
+_The final estimate of Archimedes was $\frac{223}{71} < \pi < \frac{22}{7}$._ 
 
 Archimedes application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in the series of [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon].
 
 If you study the calculus or analysis later on, and encounter the [epsilon-delta ($\epsilon-\delta$) definition of a limit](https://en.wikipedia.org/wiki/Limit_of_a_function) hark back to this example of Archimedes for a graphic and concrete example of how a value may be bounded from below and above and how it may be [squeezed](https://demonstrations.wolfram.com/SqueezeTheorem/) into the limit.
 
-## Conclusions from initial results
+## Initial results
 
 If we divide the last row of entries in [@tbl:variables] by $2r$, we get the entries $\pi$, $n\sin\theta$, and $n\tan\theta$. We will use these values henceforth as they are directly comparable and relatable to $\pi$.
 $$
@@ -213,9 +215,7 @@ Obviously, the circle may be viewed as a regular polygon whose number of sides, 
 | $1000000$ | $3.1415926536$ | $3.1415926536$ | $3.1415926536$ | $3.1415926536$ |
  : Estimates of $\pi$ from the perimeters and areas of inscribed and circumscribed polygons of $n$ sides. {#tbl:large-n-pi}
 
-The upper and lower bounds are equal up to ten decimal digits when $n = 10^{6}$, and we might as well declare the problem of estimating $\pi$ solved.
-
-But in the time of Archimedes, trigonometry was not known; only geometry was. Moreover, the decimal system and calculators were also in the future. So, we are not done yet!
+The upper and lower bounds are equal up to ten decimal digits when $n = 10^{6}$, and we might as well declare the problem of estimating $\pi$ solved. But in the time of Archimedes, trigonometry was not known; only geometry was. Moreover, the decimal system and calculators were also in the future. So, we are not done yet!
 
 [@fig:six-gon; @fig:twelve-gon; @fig:twenty-four-gon; @fig:forty-eight-gon; @fig:ninety-six-gon] together present a compelling case for why the estimate for $\pi$ is sandwiched between two values and becomes ever closer to the true value of $\pi$. It is the engine of logic on which the algorithm runs.
 
@@ -237,7 +237,7 @@ It is interesting that the method of Archimedes leverages the properties of the 
 
 We now have to backtrack and attempt to retrace the steps Archimedes used to estimate $\pi$---_without trigonometry_---to better appreciate his heroic efforts.
 
-### The thirty, sixty, ninety right triangle
+### The thirty-sixty-ninety right triangle
 
 Archimedes applied the principle "of starting from the known" to initiate his algorithm using a _regular hexagon_, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right-angled triangles with angles of thirty and sixty degrees, as shown in [@fig:thirty-sixty].
 
@@ -257,7 +257,7 @@ $$
 1.73\overline{205128} = \frac{1351}{780} > \sqrt{3} > \frac{265}{153} = 1.\overline{7320261437908496}
 $${#eq:sqrt3}
 
-## Trigonometry and half angles
+## Trigonometry and half-angles
 
 Archimedes had no trigonometric tables to aid him. But he did know the square root of three, and the geometric properties of triangles whose angles were repeatedly bisected. He used a previous result to feed values into the next result, as he successively doubled the sides of the regular hexagon. We will look at his method a little later, but for now, we will try to simulate what he did using trigonometry. He repeated the same algorithmic step---with previous values feeding into current values---which is a bit like a snake eating its own tail.
 
@@ -444,6 +444,8 @@ $$
 \sqrt{6-3\sqrt{3}} = \frac{3 - \sqrt{3}}{\sqrt{2}} = \frac{3\sqrt{2} - \sqrt{6}}{2}.
 $$
 Note that there are no nested square roots on the right hand side (RHS). The salient point is that, since we are dealing with surds, we should get identical, closed form, exact expressions for both $\sqrt{2 - \sqrt{3}}$ and $\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]$ _without using decimals_. And that takes some effort, using paper and pencil, or software like [Geogebra](https://www.geogebra.org/) [@geogebra].
+
+The moral of this section is that $\pi$ may be approximated as a potpourri of expressions involving surds. Imagine mathematics as kitchen blender into which selected terms involving surds are put in as ingredients and blended into a smoothie that tastes like $\pi$! I find that image mind-boggling.
 
 This completes the modern guided tour of the method Archimedes used to estimate $\pi$ that I had envisaged for this blog.  We now turn to the question of its oft-quoted value.
 
