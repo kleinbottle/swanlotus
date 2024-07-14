@@ -215,9 +215,9 @@ Obviously, the circle may be viewed as a regular polygon whose number of sides, 
 | $1000000$ | $3.1415926536$ | $3.1415926536$ | $3.1415926536$ | $3.1415926536$ |
  : Estimates of $\pi$ from the perimeters and areas of inscribed and circumscribed polygons of $n$ sides. {#tbl:large-n-pi}
 
-The upper and lower bounds are equal up to ten decimal digits when $n = 10^{6}$, and we might as well declare the problem of estimating $\pi$ solved. But in the time of Archimedes, trigonometry was not known; only geometry was. Moreover, the decimal system and calculators were also in the future. So, we are not done yet!
+The upper and lower bounds are equal up to ten decimal digits when $n = 10^{6}$, and we might as well declare the problem of estimating $\pi$ solved. But in the time of Archimedes, trigonometry was not known; only geometry was. Moreover, the decimal system and calculators were far off in the future. We are not done yet!
 
-[@fig:six-gon; @fig:twelve-gon; @fig:twenty-four-gon; @fig:forty-eight-gon; @fig:ninety-six-gon] together present a compelling case for why the estimate for $\pi$ is sandwiched between two values and becomes ever closer to the true value of $\pi$. It is the engine of logic on which the algorithm runs.
+[@fig:six-gon; @fig:twelve-gon; @fig:twenty-four-gon; @fig:forty-eight-gon; @fig:ninety-six-gon] together present a compelling case for why the estimate for $\pi$ is sandwiched between two values and becomes ever closer to the true value of $\pi$. It is this engine of logic on which the algorithm runs.
 
 We can view Archimedes' approach through the lens of a [mathematical function](https://encyclopediaofmath.org/wiki/Function) as well. We could plot discrete values of $n$ against $n\sin\frac{180°}{n}$, and $n\tan\frac{180°}{n}$. However, if we relax the conditions, and move from integers to real values, i.e., from discrete $n$ to continuous $x$; from $n\sin\frac{180°}{n}$ to $x\sin\frac{180°}{x}$, and from $n\tan\frac{180°}{n}$ to $x\tan\frac{180°}{x}$, we may plot these two curves against $x$ to better visualize the functional relationship. This is shown in [@fig:plot].
 
@@ -241,7 +241,7 @@ We now have to backtrack and attempt to retrace the steps Archimedes used to est
 
 Archimedes applied the principle "of starting from the known" to initiate his algorithm using a _regular hexagon_, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right-angled triangles with angles of thirty and sixty degrees, as shown in [@fig:thirty-sixty].
 
-![This right-angled triangle, obtained by bisecting an equilateral triangle, must be familiar to all school students. The lengths shown---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=80% .modal-target}
+![This right-angled triangle, obtained by bisecting an equilateral triangle, must be familiar to all school students. The lengths shown---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$. The dotted circle is strictly not necessary in our approach, but pays homage to Archimedes, who relied on triangles within semi-circles to enforce right angles.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=80% .modal-target}
 
 The inscribed hexagon, within a circle of _radius_ one unit, also has a _side_ of one unit. Thus, the hypotenuse of the circle $OAP$ in [@fig:thirty-sixty] has a length of 2 units. Moreover, the base $OP$, resulting from a bisected side, has a length of one a unit. By applying the theorem of Pythagoras, the third side, $AP$ is
 $$
