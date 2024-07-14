@@ -12,6 +12,7 @@ window.MathJax = {
             settings: {
                 // Turn off assistive tools to avoid slow loading of MathJax
                 // revisit when we have a 4.0.0 stable release
+                // https://github.com/mathjax/MathJax/issues/3228
                 enrich: false
             }
         }
