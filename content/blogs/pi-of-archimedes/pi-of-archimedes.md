@@ -439,9 +439,10 @@ We want to reduce nested surds to their simplest forms so that two dissimilar su
 
 Fortunately, there are many resources on the Web, from book chapters, to dedicated web pages, to video presentations, that deal with this interesting, but seldom discussed topic---_denesting surds_  [@ds-underground; @ds-brown; @ds-jeffrey-rich; @ds-yt-method]. Choose any one, or even all, references to learn from, and then tackle the above problem.
 
-For starters, I will go through how to denest $\sqrt{6-3\sqrt{3}}$. 
-
-Let $\sqrt{6-3\sqrt{3}} = \sqrt{a} - \sqrt{b}$ where $0 \leq b \leq a$.
+For starters, I will go through how to denest $\sqrt{6-3\sqrt{3}}$. Let 
+$$
+\sqrt{6-3\sqrt{3}} = \sqrt{a} - \sqrt{b} \mbox{ where } 0 \leq b \leq a.
+$$ {#eq:two-surds}
 
 We now square both sides:
 $$
@@ -449,7 +450,7 @@ $$
 \left(\sqrt{6-3\sqrt{3}}\right)^2 &= \left(\sqrt{a} - \sqrt{b}\right)^2\\
 6 - 3\sqrt{3} &= a - 2\sqrt{ab} + b\\
 \end{aligned}
-$$
+$$ 
 Equating like terms, we get
 $$
 \begin{aligned}
@@ -466,14 +467,14 @@ $$
 -4a^2 + 24a &= 27\\
 4a^2 -24a +27 &= 0\\
 (2a - 3)(2a - 9) &=0\\
-a &= \frac{3}{2} \mbox{ or } a = \frac{9}{2}\\
+a &= \tfrac{3}{2} \mbox{ or } a = \tfrac{9}{2}\\
 \end{aligned}
 $$
 Because $a \geq b$, we choose $a = \frac{9}{2}$ and $b = \frac{3}{2}$.
 
-Substituting into [@eq:sumprod], we get
+Substituting into [@eq:two-surds], we get
 $$
-\sqrt{6-3\sqrt{3}} = \frac{3 - \sqrt{3}}{\sqrt{2}} = \frac{3\sqrt{2} - \sqrt{6}}{2}.
+\sqrt{6-3\sqrt{3}} = \sqrt{\frac{9}{2}} - \sqrt{\frac{3}{2}} = \frac{3 - \sqrt{3}}{\sqrt{2}} = \frac{3\sqrt{2} - \sqrt{6}}{2}.
 $$
 
 Note that there are no nested square roots on the right hand side (RHS). The salient point is that, since we are dealing with surds, we should get identical, closed form, exact expressions for both $\sqrt{2 - \sqrt{3}}$ and $\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]$ _without using decimals_. And that takes some effort, using paper and pencil, or less effort, using software like [Geogebra](https://www.geogebra.org/) [@geogebra].
@@ -518,7 +519,7 @@ Another article on Archimedes' estimation of $\pi$ is available on [this PBS web
 
 ## Acknowledgements
 
-The computations for [@tbl:large-n-pi] were performed using a program written by [Nandakumar Chandrasekhar](https://www.linkedin.com/in/nandakumar-chandrasekhar-a400b45b/) in the [Julia programming Language](https://julialang.org/). The output was formatted so that it could be easily cut and pasted into the blog itself. The source code is available [here]({attach}auxiliary/pi_approximations.jl).
+The computations for [@tbl:large-n-pi] were performed using a program written by [Nandakumar Chandrasekhar](https://www.linkedin.com/in/nandakumar-chandrasekhar-a400b45b/) in the [Julia programming Language](https://julialang.org/). The output was formatted so that it could be easily cut and pasted into the blog itself, avoiding transcription errors. The source code is available [here]({attach}auxiliary/pi_approximations.jl).
 
 Thanks are also due to [Geogebra](https://www.geogebra.org/) and [Wolfram Alpha](https://www.wolframalpha.com/) for free online mathematical support.
 
@@ -529,7 +530,6 @@ corrections.
 
 \noindent A PDF version of this article is [available for download here]({attach}./pi-of-archimedes.pdf):
 
-::: {.small .sf}
-<https://swanlotus.netlify.app/blogs/pi-of-archimedes.pdf>
-:::
+<https://swanlotus.netlify.app/blogs/pi-of-archimedes.pdf>{.sf}
+
 

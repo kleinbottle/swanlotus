@@ -1157,9 +1157,9 @@ Choose any one, or even all, references to learn from, and then tackle
 the above problem.
 
 For starters, I will go through how to denest \(\sqrt{6-3\sqrt{3}}\).
-
-Let \(\sqrt{6-3\sqrt{3}} = \sqrt{a} - \sqrt{b}\) where
-\(0 \leq b \leq a\).
+Let \begin{equation}\phantomsection\label{eq:two-surds}{
+\sqrt{6-3\sqrt{3}} = \sqrt{a} - \sqrt{b} \mbox{ where } 0 \leq b \leq a.
+}\end{equation}
 
 We now square both sides: \[
 \begin{aligned}
@@ -1182,13 +1182,13 @@ substituting, we get \[
 -4a^2 + 24a &= 27\\
 4a^2 -24a +27 &= 0\\
 (2a - 3)(2a - 9) &=0\\
-a &= \frac{3}{2} \mbox{ or } a = \frac{9}{2}\\
+a &= \tfrac{3}{2} \mbox{ or } a = \tfrac{9}{2}\\
 \end{aligned}
 \] Because \(a \geq b\), we choose \(a = \frac{9}{2}\) and
 \(b = \frac{3}{2}\).
 
-Substituting into \cref{eq:sumprod}, we get \[
-\sqrt{6-3\sqrt{3}} = \frac{3 - \sqrt{3}}{\sqrt{2}} = \frac{3\sqrt{2} - \sqrt{6}}{2}.
+Substituting into \cref{eq:two-surds}, we get \[
+\sqrt{6-3\sqrt{3}} = \sqrt{\frac{9}{2}} - \sqrt{\frac{3}{2}} = \frac{3 - \sqrt{3}}{\sqrt{2}} = \frac{3\sqrt{2} - \sqrt{6}}{2}.
 \]
 
 Note that there are no nested square roots on the right hand side (RHS).
@@ -1197,7 +1197,8 @@ get identical, closed form, exact expressions for both
 \(\sqrt{2 - \sqrt{3}}\) and
 \(\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\)
 \emph{without using decimals}. And that takes some effort, using paper
-and pencil, or software like \href{https://www.geogebra.org/}{Geogebra}
+and pencil, or less effort, using software like
+\href{https://www.geogebra.org/}{Geogebra}
 {[}\citeproc{ref-geogebra}{10}{]}.
 
 The moral of this section is that \(\pi\) may be approximated as a
@@ -1297,8 +1298,8 @@ program written by
 \href{https://www.linkedin.com/in/nandakumar-chandrasekhar-a400b45b/}{Nandakumar
 Chandrasekhar} in the \href{https://julialang.org/}{Julia programming
 Language}. The output was formatted so that it could be easily cut and
-pasted into the blog itself. The source code is available
-\href{auxiliary/pi_approximations.jl}{here}.
+pasted into the blog itself, avoiding transcription errors. The source
+code is available \href{auxiliary/pi_approximations.jl}{here}.
 
 Thanks are also due to \href{https://www.geogebra.org/}{Geogebra} and
 \href{https://www.wolframalpha.com/}{Wolfram Alpha} for free online
@@ -1312,15 +1313,7 @@ comments and corrections.
 \noindent A PDF version of this article is
 \href{./pi-of-archimedes.pdf}{available for download here}:
 
-\begin{small}
-
-\begin{sffamily}
-
-\url{https://swanlotus.netlify.app/blogs/pi-of-archimedes.pdf}
-
-\end{sffamily}
-
-\end{small}
+\href{https://swanlotus.netlify.app/blogs/pi-of-archimedes.pdf}{\textsf{https://swanlotus.netlify.app/blogs/pi-of-archimedes.pdf}}
 
 \section*{References}\label{bibliography}
 \addcontentsline{toc}{section}{References}
