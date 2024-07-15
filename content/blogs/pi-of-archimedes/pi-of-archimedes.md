@@ -92,7 +92,7 @@ These steps constitute what is known as an [algorithm](https://www.merriam-webst
 
 ## Of polygons and circles
 
-The goal of Archimedes was to estimate the _circumference_ and _area of a circle_ by a systematic and logical method. That $\pi$ is involved in both of these measurements is somewhat incidental. Nevertheless, his approach is the first well documented account of how to estimate $\pi$ with reasonable accuracy, and is the focus of this blog.
+The goal of Archimedes was to estimate the _circumference_ and _area of a circle_ by a systematic and logical method. That $\pi$ is involved in both of these measurements was somewhat incidental to Archimedes.^[The area of a circle is given by the complementary formula $A = \pi r^2$.] Nevertheless, his approach is the first well documented account of how to estimate $\pi$ with reasonable accuracy, and is the focus of this blog.
 
 Archimedes considered a circle, containing an [inscribed](https://mathworld.wolfram.com/Inscribed.html) regular polygon with $n$ sides, and [circumscribed](https://mathworld.wolfram.com/Circumscribed.html) by a regular polygon with the same $n$ sides. [@fig:two-limits] illustrates this for the case $n = 6$, i.e., with a regular [hexagon](https://www.britannica.com/science/hexagon).
 
