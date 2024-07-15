@@ -100,6 +100,8 @@ Archimedes considered a circle, containing an [inscribed](https://mathworld.wolf
 
 ![The relationship between the circle and its inscribed and circumscribed regular polygons. The symbol $h$ is used for the apothem in both cases. Note that $OD = h = r\cos\theta$ for the inscribed polygon, whereas $OC = h = r$ for the circumscribed polygon.^[Recall that the area of a triangle is half the product of its base and perpendicular height]]({attach}images/sin-theta-tan-theta.svg){#fig:sin-theta-tan-theta width=70% .modal-target}
 
+Archimedes "started with the known" perimeter and area of a regular hexagon. A hexagon of side $r$ has a perimeter of $6r$, and its area is the area of six equilateral triangles of side $r$, which is $\frac{3\sqrt{3}r^2}{2}$.^[See [later in this blog](#the-thirty-sixty-ninety-right-triangle) for how  these numbers are obtained.]
+
 Let us tabulate below the variables arising from [@fig:two-limits;@fig:sin-theta-tan-theta].
 
 | Parameter | Circle | Inscribed | Circumscribed |
@@ -239,7 +241,7 @@ We now have to backtrack and attempt to retrace the steps Archimedes used to est
 
 ## The thirty-sixty-ninety right triangle
 
-Archimedes applied the principle "of starting from the known" to initiate his algorithm using a _regular hexagon_, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right-angled triangles with angles of thirty and sixty degrees, as shown in [@fig:thirty-sixty].
+Archimedes applied the principle "of starting with the known" to initiate his algorithm using a _regular hexagon_, which is a mosaic of six juxtaposed equilateral triangles. We know from symmetry that each angle of an equilateral triangle is $60°$. When an equilateral triangle is bisected, we get two right-angled triangles with angles of thirty and sixty degrees, as shown in [@fig:thirty-sixty].
 
 ![This right-angled triangle, obtained by bisecting an equilateral triangle, must be familiar to all school students. The lengths shown---obtainable from symmetry and the theorem of Pythagoras---allowed Archimedes to start off his process for estimating $\pi$. The dotted circle is strictly not necessary in our approach, but pays homage to Archimedes, who relied on triangles within semi-circles to enforce right angles.]({attach}images/thirty-sixty.svg){#fig:thirty-sixty width=80% .modal-target}
 
@@ -252,7 +254,7 @@ $${#eq:triangle}
 
 The next thing Archimedes needed---and knew how to do---was to compute $\sqrt{3}$, which figures in [@eq:triangle]. Finding square roots is a tedious process, not unlike long division, and prone to human error. The patience and doggedness of Archimedes that must have gone into the effort is astounding.
 
-Archimedes must have known how to extract square roots by hand. Perhaps, he used one of the methods described in my blog ["How Are Numbers Built?"](https://swanlotus.netlify.app/blogs/how-are-numbers-built). He should have known the value of $\sqrt{3}$ as a rational fraction.  With remarkable accuracy, he claimed [@heath2002] that:
+Archimedes must have known how to extract square roots by hand. Perhaps, he used one of the methods described in my blog ["How Are Numbers Built?"](https://swanlotus.netlify.app/blogs/how-are-numbers-built). He should have known the value of $\sqrt{3}$ as a rational fraction.  With remarkable accuracy, he claimed [@heath2002] that:^[The rule above the digits indicates the sequence that recurs in the decimal representation. The value of $\sqrt{3}$ rounded to ten decimal places is 1.7320508076.]
 $$
 1.73\overline{205128} = \frac{1351}{780} > \sqrt{3} > \frac{265}{153} = 1.\overline{7320261437908496}
 $${#eq:sqrt3}
