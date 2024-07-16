@@ -264,7 +264,7 @@ space. The circle is the
 \href{https://en.wikipedia.org/wiki/Locus_(mathematics)}{locus}
 traversed by a moving point that is
 \href{https://en.wikipedia.org/wiki/Equidistant}{equidistant} from
-another fixed point on a two-dimensional plane. It is the most
+another, fixed point on a two-dimensional plane. It is the most
 \href{https://mathworld.wolfram.com/Symmetry.html}{symmetrical} figure
 on the plane. The
 \href{https://en.wikipedia.org/wiki/Diameter}{diameter} is the name
@@ -274,7 +274,9 @@ we divide the \href{https://en.wikipedia.org/wiki/Perimeter}{perimeter}
 of a circle, more properly called its
 \href{https://en.wikipedia.org/wiki/Circumference}{circumference},
 \(C\), by its diameter, \(d\), we get the enigmatic constant \(\pi\),
-which has a value between \(3.141\) and \(3.142\):
+which has a value between \(3.141\) and \(3.142\):\footnote{The
+  analogous expression for a unit square with a perimeter of \(4\) units
+  and a diagonal of \(\sqrt{2}\) units is \(2\sqrt{2} \approx 2.8284\).}
 \begin{equation}\phantomsection\label{eq:pi-Cd}{
 \frac{C}{d} = \pi.
 }\end{equation} The diameter \(d\) is twice the radius \(r\), and
@@ -312,7 +314,8 @@ circle is \(\pi\).}\label{fig:pi-circle}
 \cref{fig:pi-circle} shows the relationships in
 \cref{eq:pi-Cd,eq:two-pi-r} pictorially. The circumference of a circle
 is about 6.28 times its radius. Why this should be so is a secret of
-Nature, a mystery of the
+Nature, a \href{https://www.thefreedictionary.com/conundrum}{conundrum}
+of the
 \href{https://www.nature.com/articles/d41586-018-05095-z}{spacetime}
 {[}\citeproc{ref-musser2018}{1}{]} we inhabit.\footnote{This article is
   well worth reading; it will help enlarge your idea of what space is.}
@@ -545,10 +548,14 @@ aware of it, shows how far ahead of his time his thinking was.
 When he moved from \(n=6\) to \(n = 12\) sides, how did Archimedes
 estimate the respective perimeters without the aid of trigonometry? He
 used geometry and the Pythagorean theorem,
-\href{https://nonagon.org/ExLibris/archimedes-pi}{as described online
-here} {[}\citeproc{ref-bertrand2014}{2}{]}
-\href{https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf}{and
-here} {[}\citeproc{ref-damini-dhar-2020}{3}{]} to obtain
+\hyperref[the-angle-bisector-theorem]{as described later in this blog}.
+This \href{https://nonagon.org/ExLibris/archimedes-pi}{online
+presentation} {[}\citeproc{ref-bertrand2014}{2}{]} explains his method
+with fidelity.
+\href{https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf}{A
+more recent account} {[}\citeproc{ref-damini-dhar-2020}{3}{]} is more
+accessible, but relies to some extent on trigonometry. He thereby
+obtained
 \href{https://en.wikipedia.org/wiki/Recurrence_relation}{recurrence
 relations} that gave the current perimeter from the previous one.
 
@@ -815,11 +822,12 @@ perform two of them here.
 \item
   When \(n\) is very large, we expect \(n\sin\frac{180°}{n}\) and
   \(n\tan\frac{180°}{n}\) to be closer and closer to the true value of
-  \(\pi\). Setting \(n = 10^6\) and evaluating on a calculator we get
-  \(10^6\sin\frac{180°}{10^6} = 3.14159\) which is reassuring. Likewise,
-  \(10^6\tan\frac{180°}{10^6} = 3.14159\). This means that to five
-  decimals places, the two bounds are equal to each other and to the
-  actual value of \(\pi = 3.14159\). All is well again.
+  \(\pi\). This is apparent from \cref{tbl:large-n-pi}. But if we need
+  to be doubly sure, we can set \(n = 10^6\) and evaluating on a
+  calculator we get \(10^6\sin\frac{180°}{10^6} = 3.14159\) which is
+  reassuring. Likewise, \(10^6\tan\frac{180°}{10^6} = 3.14159\). This
+  means that to five decimals places, the two bounds are equal to each
+  other and to the actual value of \(\pi = 3.14159\). All is well again.
 \end{enumerate}
 
 \subsection{A reflection on triangles and

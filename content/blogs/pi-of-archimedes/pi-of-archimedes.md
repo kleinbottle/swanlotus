@@ -28,7 +28,7 @@ opengraphimage: Domenico-Fetti_Archimedes_1620.jpg
 
 ## Circumference, diameter, and π
 
-The straight line or [geodesic](https://mathworld.wolfram.com/Geodesic.html) is the shortest distance between any two points on a plane, sphere, or other space. The circle is the [locus](https://en.wikipedia.org/wiki/Locus_(mathematics)) traversed by a moving point that is [equidistant](https://en.wikipedia.org/wiki/Equidistant) from another fixed point on a two-dimensional plane. It is the most [symmetrical](https://mathworld.wolfram.com/Symmetry.html) figure on the plane. The [diameter](https://en.wikipedia.org/wiki/Diameter) is the name given both to any straight line passing through the centre of the circle---intersecting it at two points---as well as to its length. When we divide the [perimeter](https://en.wikipedia.org/wiki/Perimeter) of a circle, more properly called its [circumference](https://en.wikipedia.org/wiki/Circumference), $C$, by its diameter, $d$, we get the enigmatic constant  $\pi$, which has a value between $3.141$ and $3.142$:
+The straight line or [geodesic](https://mathworld.wolfram.com/Geodesic.html) is the shortest distance between any two points on a plane, sphere, or other space. The circle is the [locus](https://en.wikipedia.org/wiki/Locus_(mathematics)) traversed by a moving point that is [equidistant](https://en.wikipedia.org/wiki/Equidistant) from another, fixed point on a two-dimensional plane. It is the most [symmetrical](https://mathworld.wolfram.com/Symmetry.html) figure on the plane. The [diameter](https://en.wikipedia.org/wiki/Diameter) is the name given both to any straight line passing through the centre of the circle---intersecting it at two points---as well as to its length. When we divide the [perimeter](https://en.wikipedia.org/wiki/Perimeter) of a circle, more properly called its [circumference](https://en.wikipedia.org/wiki/Circumference), $C$, by its diameter, $d$, we get the enigmatic constant  $\pi$, which has a value between $3.141$ and $3.142$:^[The analogous expression for a unit square with a perimeter of $4$ units and a diagonal of $\sqrt{2}$ units is $2\sqrt{2} \approx 2.8284$.]
 $$
 \frac{C}{d} = \pi.
 $${#eq:pi-Cd}
@@ -44,7 +44,7 @@ The symbol [$\pi$](https://en.wikipedia.org/wiki/Pi) is the lowercase version of
 
 ![The ratio of the circumference to the diameter of _any_ circle is $\pi$.]({attach}images/C-over-d.svg){#fig:pi-circle width=70% .modal-target}
 
-[@fig:pi-circle] shows the relationships in [@eq:pi-Cd; @eq:two-pi-r] pictorially. The circumference of a circle is about 6.28 times its radius. Why this should be so is a secret of Nature, a mystery of the [spacetime](https://www.nature.com/articles/d41586-018-05095-z) [@musser2018] we inhabit.^[This article is well worth reading; it will help enlarge your idea of what space is.]
+[@fig:pi-circle] shows the relationships in [@eq:pi-Cd; @eq:two-pi-r] pictorially. The circumference of a circle is about 6.28 times its radius. Why this should be so is a secret of Nature, a [conundrum](https://www.thefreedictionary.com/conundrum)  of the [spacetime](https://www.nature.com/articles/d41586-018-05095-z) [@musser2018] we inhabit.^[This article is well worth reading; it will help enlarge your idea of what space is.]
 
 A wonderfully revealing story lies behind this mysterious relationship---between the circumference of a circle and its diameter---and it is due to the [labours](https://www.collinsdictionary.com/dictionary/english/labours) of one man, in the days when calculators could not be dreamed of, and when neither the decimal system of numbers, nor trigonometry were known. It is the story of Archimedes and his estimate of $\pi$.
 
@@ -123,7 +123,7 @@ Archimedes started with regular hexagons and successively _doubled_ the number o
 
 Successively doubling or halving is a fast-converging technique used in numerical estimation, called the [bisection method](https://en.wikipedia.org/wiki/Bisection_method), that is applied to solving a variety of problems. That Archimedes was aware of it, shows how far ahead of his time his thinking was.
 
-When he moved from $n=6$ to $n = 12$ sides, how did Archimedes estimate the respective perimeters without the aid of trigonometry? He used geometry and the Pythagorean theorem, [as described online here](https://nonagon.org/ExLibris/archimedes-pi) [@bertrand2014] [and here](https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf) [@damini-dhar-2020] to obtain [recurrence relations](https://en.wikipedia.org/wiki/Recurrence_relation) that gave the current perimeter from the previous one.
+When he moved from $n=6$ to $n = 12$ sides, how did Archimedes estimate the respective perimeters without the aid of trigonometry? He used geometry and the Pythagorean theorem, [as described later in this blog](#the-angle-bisector-theorem). This [online presentation](https://nonagon.org/ExLibris/archimedes-pi) [@bertrand2014] explains his method with fidelity. [A more recent account](https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf) [@damini-dhar-2020] is more accessible, but relies to some extent on trigonometry. He thereby obtained [recurrence relations](https://en.wikipedia.org/wiki/Recurrence_relation) that gave the current perimeter from the previous one.
 
 Archimedes repeatedly calculated _rational approximations_ to $\pi$ until he was satisfied with the accuracy. The principle of the method is clearly illustrated in [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon].
 
@@ -231,7 +231,7 @@ We can view Archimedes' approach through the lens of a [mathematical function](h
 
 #.  Does $2\pi = 6.2820$, from a calculator, lie within the bounds of [@eq:triple-96]? Yes, indeed, and we are [home and dry](https://dictionary.cambridge.org/dictionary/english/be-home-and-dry).
 
-#.  When $n$ is very large, we expect $n\sin\frac{180°}{n}$ and $n\tan\frac{180°}{n}$ to be closer and closer to the true value of $\pi$. Setting $n = 10^6$ and evaluating on a calculator we get $10^6\sin\frac{180°}{10^6} = 3.14159$ which is reassuring. Likewise, $10^6\tan\frac{180°}{10^6} = 3.14159$. This means that to five decimals places, the two bounds are equal to each other and to the actual value of $\pi = 3.14159$. All is well again.
+#.  When $n$ is very large, we expect $n\sin\frac{180°}{n}$ and $n\tan\frac{180°}{n}$ to be closer and closer to the true value of $\pi$. This is apparent from [@tbl:large-n-pi]. But if we need to be doubly sure, we can set $n = 10^6$ and evaluating on a calculator we get $10^6\sin\frac{180°}{10^6} = 3.14159$ which is reassuring. Likewise, $10^6\tan\frac{180°}{10^6} = 3.14159$. This means that to five decimals places, the two bounds are equal to each other and to the actual value of $\pi = 3.14159$. All is well again.
 
 ## A reflection on triangles and circles
 
