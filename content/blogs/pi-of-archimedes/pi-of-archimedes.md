@@ -479,7 +479,11 @@ $$
 \sqrt{6-3\sqrt{3}} = \sqrt{\frac{9}{2}} - \sqrt{\frac{3}{2}} = \frac{3 - \sqrt{3}}{\sqrt{2}} = \frac{3\sqrt{2} - \sqrt{6}}{2}.
 $$
 
-Note that there are no nested square roots on the right hand side (RHS). The salient point is that, since we are dealing with surds, we should get identical, closed form, exact expressions for both $\sqrt{2 - \sqrt{3}}$ and $\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]$ _without using decimals_.^[This common expression happens to be $\frac{\sqrt{6} - \sqrt{2}}{2}$.] And that takes some effort, using paper and pencil, or less effort, using software like [Geogebra](https://www.geogebra.org/) [@geogebra]. 
+Note that there are no nested square roots on the right hand side (RHS). The salient point is that, since we are dealing with surds, we should get identical, closed form, exact expressions for both $\sqrt{2 - \sqrt{3}}$ and $\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]$ _without using decimals_. And, indeed we do:
+$$
+\sqrt{2 - \sqrt{3}} = \left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right] = \frac{\sqrt{6} - \sqrt{2}}{2}.
+$$
+And that takes some effort, using paper and pencil, or less effort, using software like [Geogebra](https://www.geogebra.org/) [@geogebra] \emojifont :wink: \normalfont. 
 
 The moral of this section is that $\pi$ may be approximated as a potpourri of expressions involving surds. Imagine mathematics as a kitchen blender into which selected terms involving surds are put in as ingredients and blended into a smoothie that tastes like $\pi$! I find that image mind-boggling.
 
