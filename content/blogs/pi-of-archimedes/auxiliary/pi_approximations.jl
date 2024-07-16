@@ -86,6 +86,18 @@ function print_table(pi_approximations)
     # Print a table containing the approximations for π
     pretty_table(
         pi_approximations;
+        formatters=(ft_printf("\$%d\$", 1), ft_printf("\$%11.10f\$", 2:5)),
+        alignment=[:r, :r, :r, :r, :r],
+        header_decoration=MarkdownDecoration(bold=false),
+        header=(["n", "nsinθ", "ntanθ", "nsinθcosθ", "ntanθ"]),
+        backend=Val(:markdown)
+    )
+
+    println()
+    println()
+
+    pretty_table(
+        pi_approximations;
         formatters=(ft_printf("%d", 1), ft_printf("%11.10f", 2:5)),
         header=["n", "nsinθ", "ntanθ", "nsinθcosθ", "ntanθ"],
         highlighters=(
@@ -94,18 +106,6 @@ function print_table(pi_approximations)
         header_crayon=Crayon(bold=:true),
         crop=:none, # Stop pretty_table from truncating rows
         tf=tf_markdown,
-    )
-
-    println()
-    println()
-
-    pretty_table(
-        pi_approximations;
-        formatters=(ft_printf("\$%d\$", 1), ft_printf("\$%11.10f\$", 2:5)),
-        alignment=[:r, :r, :r, :r, :r],
-        header_decoration=MarkdownDecoration(bold=false),
-        header=(["n", "nsinθ", "ntanθ", "nsinθcosθ", "ntanθ"]),
-        backend=Val(:markdown)
     )
 end
 
