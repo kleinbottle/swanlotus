@@ -525,7 +525,7 @@ Another article on Archimedes' estimation of $\pi$ is available on [this PBS web
 
 ## Acknowledgements
 
-The computations for [@tbl:large-n-pi] were performed using a program written by [Nandakumar Chandrasekhar](https://www.linkedin.com/in/nandakumar-chandrasekhar-a400b45b/) in the [Julia programming Language](https://julialang.org/). The output was formatted so that it could be easily cut and pasted into the blog itself, avoiding transcription errors. The source code is available [here]({attach}auxiliary/pi_approximations.jl).
+The computations for [@tbl:large-n-pi] were performed using a program written by [Nandakumar Chandrasekhar](https://www.linkedin.com/in/nandakumar-chandrasekhar-a400b45b/) in the [Julia programming Language](https://julialang.org/). The output was formatted so that it could be easily cut and pasted into the blog itself, to avoid transcription errors. The source code is available [here]({attach}auxiliary/pi_approximations.jl).
 
 Thanks are also due to [Geogebra](https://www.geogebra.org/) and [Wolfram Alpha](https://www.wolframalpha.com/) for free online mathematical support.
 
