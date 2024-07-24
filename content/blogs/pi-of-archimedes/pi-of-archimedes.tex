@@ -1101,12 +1101,13 @@ a &= \frac{2}{\sqrt{3}}b\\
 \frac{2\sqrt{3}}{3}b + b &= 1\\
 \left[\frac{2\sqrt{3}}{3} + 1\right] b &= 1\\
 \left[\frac{2\sqrt{3} + 3}{3}\right] b &= 1\\
-b &= 2\sqrt{3} - 3\\
+b &= \left[\frac{3}{2\sqrt{3} + 3}\right]\\
+&= \left[\frac{3(2\sqrt{3} - 3)}{(2\sqrt{3} + 3)(2\sqrt{3} - 3)}\right]\\
+&= \left[\frac{3(2\sqrt{3} - 3)}{12 - 9}\right]\\
+&= 2\sqrt{3} - 3\\
 \end{aligned}
-}\end{equation}
-
-Pythagoras' theorem, applied to right triangle \(PQS\), gives us
-\begin{equation}\phantomsection\label{eq:bisect4}{
+}\end{equation} Pythagoras' theorem, applied to right triangle \(PQS\),
+gives us \begin{equation}\phantomsection\label{eq:bisect4}{
 \begin{aligned}
 PS^2 &= SQ^2 + QP^2\\
 r^2 &= b^2 + \sqrt{3}^2\\
@@ -1157,7 +1158,8 @@ surds}. Is there an easy way to confirm---without using
 calculators---that the two results we got are indeed the same number?
 How do we unpack surds within surds? Because calculators have finite
 precision, how do we know that the two exact expressions involving
-surds, on either side of the equality sign below, are indeed equal? \[
+surds, on either side of the equality sign below, are indeed
+\emph{exactly} equal? \[
 \begin{aligned}
 \frac{1}{2}\sqrt{2 - \sqrt{3}} &\overset{?}{=} \frac{1}{2}\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\mbox{ or more simply that}\\
 \sqrt{2 - \sqrt{3}}&\overset{?}{=} \left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\\
@@ -1227,9 +1229,9 @@ kitchen blender into which selected terms involving surds are put in as
 ingredients and blended into a smoothie that tastes like \(\pi\)! I find
 that image mind-boggling.
 
-This completes the modern guided tour of the method Archimedes used to
-estimate \(\pi\) that I had envisaged for this blog. We now turn to the
-question of its oft-quoted value.
+This completes the modern guided tour of the method Archimedes---used to
+estimate \(\pi\)---that I had envisaged for this blog. We now turn to
+the question of its oft-quoted value.
 
 \subsection{Is π really 22/7?}\label{is-ux3c0-really-227}
 
@@ -1266,11 +1268,12 @@ Wonder that is Pi''}.
 A well-written, accessible article on the subject of this blog is
 available online:
 \href{https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf}{``How
-Archimedes showed that pi is approximately 22 by 7''}. I urge you to
-read it.\footnote{This article is all the more remarkable because its
-  first author is a Grade 8 student: proof that deep mathematics is not
-  beyond the school student.} You will then appreciate for yourselves
-how arduous the process must have been in an age without the benefit of:
+Archimedes showed that pi is approximately 22 by 7''}
+{[}\citeproc{ref-damini-dhar-2020}{3}{]}. I urge you to read
+it.\footnote{This article is all the more remarkable because its first
+  author is a Grade 8 student: proof that deep mathematics is not beyond
+  the school student.} You will then appreciate for yourselves how
+arduous the process must have been in an age without the benefit of:
 
 \begin{enumerate}
 \item
@@ -1291,11 +1294,11 @@ Another recommended online article is
 
 There is an
 \href{https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/\#more}{online
-Wolfram demonstration} showing how estimates of \(\pi\) vary with the
-areas of the inscribed and circumscribed polygons, as \(n\) changes
-{[}\citeproc{ref-tucker2009}{11}{]}. I have used the perimeters,
-\(c(n)\) and \(C(n)\), rather than the areas \(a(n)\), and \(A(n)\), in
-this blog.
+Wolfram demonstration} {[}\citeproc{ref-tucker2009}{11}{]} showing how
+estimates of \(\pi\) vary with the \emph{areas} of the inscribed and
+circumscribed polygons, as \(n\) changes. I have used the
+\emph{perimeters}, \(c(n)\) and \(C(n)\), rather than the areas
+\(a(n)\), and \(A(n)\), in this blog.
 
 Another article on Archimedes' estimation of \(\pi\) is available on
 \href{ttps://www.pbs.org/wgbh/nova/physics/approximating-pi.html}{this

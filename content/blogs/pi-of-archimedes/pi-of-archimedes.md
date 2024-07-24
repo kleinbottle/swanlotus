@@ -384,10 +384,12 @@ $$
 \frac{2\sqrt{3}}{3}b + b &= 1\\
 \left[\frac{2\sqrt{3}}{3} + 1\right] b &= 1\\
 \left[\frac{2\sqrt{3} + 3}{3}\right] b &= 1\\
-b &= 2\sqrt{3} - 3\\
+b &= \left[\frac{3}{2\sqrt{3} + 3}\right]\\
+&= \left[\frac{3(2\sqrt{3} - 3)}{(2\sqrt{3} + 3)(2\sqrt{3} - 3)}\right]\\
+&= \left[\frac{3(2\sqrt{3} - 3)}{12 - 9}\right]\\
+&= 2\sqrt{3} - 3\\
 \end{aligned}
 $$ {#eq:bisect3}
-
 Pythagoras' theorem, applied to right triangle $PQS$, gives us
 $$
 \begin{aligned}
@@ -427,7 +429,7 @@ The fact that we have obtained the same value of $\sin 15°$ by using two differ
 
 ## Digression: Denesting Surds
 
-But wait a minute. How do we simplify expressions containing square roots within square roots? Such expressions are called [nested surds](https://undergroundmathematics.org/thinking-about-algebra/nested-surds/solution). Is there an easy way to confirm---without using calculators---that the two results we got are indeed the same number? How do we unpack surds within surds? Because calculators have finite precision, how do we know that the two exact expressions involving surds, on either side of the equality sign below, are indeed equal?
+But wait a minute. How do we simplify expressions containing square roots within square roots? Such expressions are called [nested surds](https://undergroundmathematics.org/thinking-about-algebra/nested-surds/solution). Is there an easy way to confirm---without using calculators---that the two results we got are indeed the same number? How do we unpack surds within surds? Because calculators have finite precision, how do we know that the two exact expressions involving surds, on either side of the equality sign below, are indeed _exactly_ equal?
 $$
 \begin{aligned}
 \frac{1}{2}\sqrt{2 - \sqrt{3}} &\overset{?}{=} \frac{1}{2}\left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right]\mbox{ or more simply that}\\
@@ -487,7 +489,7 @@ And that takes some effort, using paper and pencil, or less effort, using softwa
 
 The moral of this section is that $\pi$ may be approximated as a potpourri of expressions involving surds. Imagine mathematics as a kitchen blender into which selected terms involving surds are put in as ingredients and blended into a smoothie that tastes like $\pi$! I find that image mind-boggling.
 
-This completes the modern guided tour of the method Archimedes used to estimate $\pi$ that I had envisaged for this blog.  We now turn to the question of its oft-quoted value.
+This completes the modern guided tour of the method Archimedes---used to estimate $\pi$---that I had envisaged for this blog.  We now turn to the question of its oft-quoted value.
 
 ## Is π really 22/7?
 
@@ -505,7 +507,7 @@ Geometry might have given birth to $\pi$, but it does not confine $\pi$ exclusiv
 
 ## To explore further
 
-A well-written, accessible article on the subject of this blog is available online: ["How Archimedes showed that pi is approximately 22 by 7"](https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf). I urge you to read it.^[This article is all the more remarkable because its first author is a Grade 8 student: proof that deep mathematics is not beyond the school student.] You will then appreciate for yourselves how arduous the process must have been in an age without the benefit of:
+A well-written, accessible article on the subject of this blog is available online: ["How Archimedes showed that pi is approximately 22 by 7"](https://publications.azimpremjiuniversity.edu.in/3356/1/02-DaminiAndAbhishek_PiIs22By7_Final.pdf) [@damini-dhar-2020]. I urge you to read it.^[This article is all the more remarkable because its first author is a Grade 8 student: proof that deep mathematics is not beyond the school student.] You will then appreciate for yourselves how arduous the process must have been in an age without the benefit of:
 
 #. Trigonometry; he used geometry and the theorem of Pythagoras instead;
 
@@ -517,7 +519,7 @@ A well-written, accessible article on the subject of this blog is available onli
 
 Another recommended online article is [Archimedes and Pi](https://nonagon.org/ExLibris/archimedes-pi) [@bertrand2014] at a website interestingly named <https://nonagon.org/>.
 
-There is an [online Wolfram demonstration](https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/#more) showing how estimates of $\pi$ vary with the areas of the inscribed and circumscribed polygons, as $n$ changes [@tucker2009]. I have used the perimeters, $c(n)$ and $C(n)$, rather than the areas $a(n)$, and $A(n)$, in this blog.
+There is an [online Wolfram demonstration](https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/#more) [@tucker2009] showing how estimates of $\pi$ vary with the _areas_ of the inscribed and circumscribed polygons, as $n$ changes. I have used the _perimeters_, $c(n)$ and $C(n)$, rather than the areas $a(n)$, and $A(n)$, in this blog.
 
 Another article on Archimedes' estimation of $\pi$ is available on [this PBS website](ttps://www.pbs.org/wgbh/nova/physics/approximating-pi.html) [@groleau2003]. Unfortunately, the interactive demonstration, using [Macromedia Flash](https://en.wikipedia.org/wiki/Adobe_Flash) is no longer live.^[It is paradoxical that modern, newer media age and die faster than old-fashioned manuscripts written on papyrus, or palm leaves, or clay tablets.]
 
