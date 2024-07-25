@@ -11,11 +11,12 @@ opengraphimage: opengraph-image.png
 
 This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes). We look at π as a number rather than the ratio of two lengths, and try to unravel how and why it is ubiquitous in mathematics.
 
-
+![Pi expressed by two very different equations.]({attach}images/opengraph-image-crop.svg){#fig:opengraph width=70% .modal-target}
 
 ## Introduction
 
-Hello Bushido San.
+
+
 
 ## Acknowledgements
 

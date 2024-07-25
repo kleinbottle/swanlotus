@@ -53,7 +53,7 @@ DIRECT_TEMPLATES = ["index", "categories", "tags", "archives"]
 IGNORE_FILES = ["blank-template.bib", "blog-template.md"]
 
 PATH = "content"
-ARTICLE_PATHS = ["blogs/pi-of-archimedes", "blogs/the-wonder-that-is-pi"]
+ARTICLE_PATHS = ["blogs/pi-of-archimedes", "blogs/wonder-that-is-pi"]
 
 ARTICLE_SAVE_AS = ARTICLE_LANG_SAVE_AS = "blogs/{slug}.html"
 ARTICLE_URL = ARTICLE_LANG_URL = "blogs/{slug}.html"
