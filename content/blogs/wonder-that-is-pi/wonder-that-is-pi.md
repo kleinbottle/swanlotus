@@ -6,7 +6,6 @@ modified: 2024-07-25
 category: Mathematics
 tags: pi
 summary: This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes). We look at π as a number rather than the ratio of two lengths, and try to unravel how and why it is ubiquitous in mathematics.
-status: 
 opengraphimage: opengraph-image.png
 ---
 
