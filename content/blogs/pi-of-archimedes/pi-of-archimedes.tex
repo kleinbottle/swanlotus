@@ -220,7 +220,7 @@
 
 \title{The Pi of Archimedes}
 \author{R (Chandra) Chandrasekhar}
-\date{2004-01-14 | 2024-07-14}
+\date{2004-01-14 | 2024-07-25}
 
 \begin{document}
 \maketitle
@@ -651,10 +651,14 @@ these two rather close limits.
 Remember \cref{eq:triple-96} because it helps us to estimate lower and
 upper bounds for the value of the circumference.
 
-\emph{Archimedes' final estimate was
-\(\frac{223}{71} < \pi < \frac{22}{7}\).}
+\emph{Archimedes stated his final estimate of \(\pi\) as
+{[}\citeproc{ref-heath2002}{4}{]}:}
 
-Archimedes application of the
+\begin{equation}\phantomsection\label{eq:pi-estimate}{
+\frac{223}{71} < \pi < \frac{22}{7}.
+}\end{equation}
+
+Archimedes' application of the
 \href{https://en.wikipedia.org/wiki/Squeeze_theorem}{squeeze theorem}
 nineteen centuries before the calculus was invented is illustrated in
 the series of
@@ -904,21 +908,37 @@ a rational fraction. With remarkable accuracy, he claimed
 \subsection{Trigonometry and
 half-angles}\label{trigonometry-and-half-angles}
 
-Archimedes had no trigonometric tables to aid him. But he did know the
-square root of three, and the geometric properties of triangles whose
-angles were repeatedly bisected. He used a previous result to feed
-values into the next result, as he successively doubled the sides of the
-regular hexagon. We will look at his method a little later, but for now,
-we will try to simulate what he did using trigonometry. He repeated the
-same algorithmic step---with previous values feeding into current
-values---which is a bit like a snake eating its own tail.
+Although Archimedes had no trigonometric tables to aid him, he did know
+the square root of three, and the geometric properties of triangles
+whose angles were repeatedly bisected.
+
+For example, he calculated the length of the side of a regular
+\href{https://en.wikipedia.org/wiki/Dodecagon}{dodecagon} using the
+\emph{known} length of the side of a regular hexagon, as he successively
+doubled the sides of the regular hexagon. He repeated the same
+algorithmic step---with previous values feeding into calculations for
+current values---which is a bit like
+\href{https://www.bbc.com/culture/article/20171204-the-ancient-symbol-that-spanned-millennia}{a
+snake eating its own tail} {[}\citeproc{ref-ouroboros}{5}{]}.
+
+\begin{figure}
+\centering
+\includesvg[width=0.6\textwidth,height=\textheight]{images/ouroboros.svg}
+\caption[Ouroboros: a snake eating its own tail.]{Ouroboros: a snake
+eating its own tail.\footnotemark{}}\label{fig:ouroboros}
+\end{figure}
+\footnotetext{\url{https://openclipart.org/user-detail/xoxoxo}, CC0, via
+  Wikimedia Commons}
+
+We will look at the method of Archimedes a little later, but for now, we
+will try to simulate what he did using trigonometry.
 
 From \cref{fig:thirty-sixty}, we know:
 \begin{equation}\phantomsection\label{eq:three-six-nine}{
 \begin{aligned}
 \sin 30° &= \tfrac{1}{2}\\
 \cos 30° &= \tfrac{\sqrt{3}}{2}\\
-\tan 30° &= \tfrac{1}{\sqrt{3}} = \tfrac{\sqrt{3}}{3}\\
+\tan 30° &= \tfrac{1}{\sqrt{3}} = \tfrac{\sqrt{3}}{(\sqrt{3})(\sqrt{3})} = \tfrac{\sqrt{3}}{3}\\
 \end{aligned}
 }\end{equation}
 
@@ -939,7 +959,7 @@ The whole trick is to
 
 The trigonometry of
 \href{https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas}{half
-angles in terms of the full angle} {[}\citeproc{ref-half-angle}{5}{]}
+angles in terms of the full angle} {[}\citeproc{ref-half-angle}{6}{]}
 helps relate the successive values of \(\theta\):\footnote{All angles
   are in the first quadrant.} \[
 \begin{aligned}
@@ -1103,7 +1123,7 @@ a &= \frac{2}{\sqrt{3}}b\\
 \left[\frac{2\sqrt{3} + 3}{3}\right] b &= 1\\
 b &= \left[\frac{3}{2\sqrt{3} + 3}\right]\\
 &= \left[\frac{3(2\sqrt{3} - 3)}{(2\sqrt{3} + 3)(2\sqrt{3} - 3)}\right]\\
-&= \left[\frac{3(2\sqrt{3} - 3)}{12 - 9}\right]\\
+&= \left[\frac{3(2\sqrt{3} - 3)}{(12 - 9)}\right]\\
 &= 2\sqrt{3} - 3\\
 \end{aligned}
 }\end{equation} Pythagoras' theorem, applied to right triangle \(PQS\),
@@ -1173,7 +1193,7 @@ equal another, possibly third, simpler surd.
 Fortunately, there are many resources on the Web, from book chapters, to
 dedicated web pages, to video presentations, that deal with this
 interesting, but seldom discussed topic---\emph{denesting surds}
-{[}\citeproc{ref-ds-underground}{6}--\citeproc{ref-ds-yt-method}{9}{]}.
+{[}\citeproc{ref-ds-underground}{7}--\citeproc{ref-ds-yt-method}{10}{]}.
 Choose any one, or even all, references to learn from, and then tackle
 the above problem.
 
@@ -1221,7 +1241,7 @@ get identical, closed form, exact expressions for both
 \sqrt{2 - \sqrt{3}} = \left[\frac{2\sqrt{3} - 3}{\sqrt{6 - 3\sqrt{3}}}\right] = \frac{\sqrt{6} - \sqrt{2}}{2}.
 \] And that takes some effort, using paper and pencil, or less effort,
 using software like \href{https://www.geogebra.org/}{Geogebra}
-{[}\citeproc{ref-geogebra}{10}{]} \emojifont {😉} \normalfont.
+{[}\citeproc{ref-geogebra}{11}{]} \emojifont {😉} \normalfont.
 
 The moral of this section is that \(\pi\) may be approximated as a
 potpourri of expressions involving surds. Imagine mathematics as a
@@ -1242,9 +1262,9 @@ The answer is a qualified ``Yes and No''.
 
 ``Yes'', because, thanks to Archimedes, \(\frac{22}{7}\) is an
 overestimate for \(\pi\) that has survived for nineteen centuries, and
-served us well in all this time. Whenever, more accuracy is desired, we
-can always press into service a slightly better rational approximation,
-like
+served us well in all this time (see \cref{eq:pi-estimate}). Whenever
+more accuracy is desired, we can always press into service a slightly
+better rational approximation, like
 \href{https://en.wikipedia.org/wiki/Mil\%C3\%BC}{\(\frac{355}{113}\)}.
 
 ``No'', because an irrational number like \(\pi\) can never be expressed
@@ -1294,7 +1314,7 @@ Another recommended online article is
 
 There is an
 \href{https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/\#more}{online
-Wolfram demonstration} {[}\citeproc{ref-tucker2009}{11}{]} showing how
+Wolfram demonstration} {[}\citeproc{ref-tucker2009}{12}{]} showing how
 estimates of \(\pi\) vary with the \emph{areas} of the inscribed and
 circumscribed polygons, as \(n\) changes. I have used the
 \emph{perimeters}, \(c(n)\) and \(C(n)\), rather than the areas
@@ -1302,7 +1322,7 @@ circumscribed polygons, as \(n\) changes. I have used the
 
 Another article on Archimedes' estimation of \(\pi\) is available on
 \href{ttps://www.pbs.org/wgbh/nova/physics/approximating-pi.html}{this
-PBS website} {[}\citeproc{ref-groleau2003}{12}{]}. Unfortunately, the
+PBS website} {[}\citeproc{ref-groleau2003}{13}{]}. Unfortunately, the
 interactive demonstration, using
 \href{https://en.wikipedia.org/wiki/Adobe_Flash}{Macromedia Flash} is no
 longer live.\footnote{It is paradoxical that modern, newer media age and
@@ -1310,7 +1330,7 @@ longer live.\footnote{It is paradoxical that modern, newer media age and
   leaves, or clay tablets.}
 
 \href{https://mathsciencehistory.com/2019/10/01/archimedes-and-his-pi-the-great-numerical-hope/}{This
-online article} {[}\citeproc{ref-birchak2019}{13}{]} recounts, with
+online article} {[}\citeproc{ref-birchak2019}{14}{]} recounts, with
 facsimile reproductions from Archimedes' own writings, how he went about
 estimating \(\pi\).
 
@@ -1366,14 +1386,20 @@ At Right Angles}}. Retrieved 2 July 2024 from
 \CSLRightInline{Thomas Heath. 2002. \emph{{The Works of Archimedes}}.
 Dover, New York, NY, USA.}
 
-\bibitem[\citeproctext]{ref-half-angle}
+\bibitem[\citeproctext]{ref-ouroboros}
 \CSLLeftMargin{{[}5{]} }%
+\CSLRightInline{Joobin Bekhrad. 2017. The ancient symbol that spanned
+millennia. Retrieved 25 July 2024 from
+\url{https://www.bbc.com/culture/article/20171204-the-ancient-symbol-that-spanned-millennia}}
+
+\bibitem[\citeproctext]{ref-half-angle}
+\CSLLeftMargin{{[}6{]} }%
 \CSLRightInline{OpenStax. {Algebra and Trigonometry}. {Double-Angle,
 Half-Angle, and Reduction Formulas}. Retrieved 6 July 2024 from
 \url{https://math.libretexts.org/Bookshelves/Algebra/Algebra_and_Trigonometry_1e_(OpenStax)/09:_Trigonometric_Identities_and_Equations/9.03:_Double-Angle_Half-Angle_and_Reduction_Formulas}}
 
 \bibitem[\citeproctext]{ref-ds-underground}
-\CSLLeftMargin{{[}6{]} }%
+\CSLLeftMargin{{[}7{]} }%
 \CSLRightInline{Underground Mathematics. 2016. {Solution \textbar{}
 Nested surds \textbar{} Thinking about Algebra \textbar{} Underground
 Mathematics}. {Rich resources for teaching A level mathematics}.
@@ -1381,44 +1407,44 @@ Retrieved 11 July 2024 from
 \url{https://undergroundmathematics.org/thinking-about-algebra/nested-surds/solution}}
 
 \bibitem[\citeproctext]{ref-ds-brown}
-\CSLLeftMargin{{[}7{]} }%
+\CSLLeftMargin{{[}8{]} }%
 \CSLRightInline{Stan Brown. 2023. {Denesting Radicals (or Unnesting
 Radicals)}. Retrieved 11 July 2024 from
 \url{https://brownmath.com/alge/nestrad.htm}}
 
 \bibitem[\citeproctext]{ref-ds-jeffrey-rich}
-\CSLLeftMargin{{[}8{]} }%
+\CSLLeftMargin{{[}9{]} }%
 \CSLRightInline{David J Jeffrey and Albert D Rich. 2003. Simplifying
 square roots of square roots by denesting. {From Computer Algebra
 Systems: A Practical Guide, M J Wester, Ed., Wiley 1999}. Retrieved 11
 July 2024 from \url{https://cybertester.com/data/denest.pdf}}
 
 \bibitem[\citeproctext]{ref-ds-yt-method}
-\CSLLeftMargin{{[}9{]} }%
+\CSLLeftMargin{{[}10{]} }%
 \CSLRightInline{MathSolvingChannel. 2022. A universal method to solve
 nested radicals (nested square root). Retrieved 11 July 2024 from
 \url{https://www.youtube.com/watch?v=K5W0DMMukZQ}}
 
 \bibitem[\citeproctext]{ref-geogebra}
-\CSLLeftMargin{{[}10{]} }%
+\CSLLeftMargin{{[}11{]} }%
 \CSLRightInline{Markus Hohenwarter. 2001. {GeoGebra}. {The world's
 favorite, free math tools used by over 100 million students and
 teachers}. Retrieved 13 July 2024 from \url{https://www.geogebra.org/}}
 
 \bibitem[\citeproctext]{ref-tucker2009}
-\CSLLeftMargin{{[}11{]} }%
+\CSLLeftMargin{{[}12{]} }%
 \CSLRightInline{John Tucker. 2009. {Archimedes' Approximation of Pi}.
 Wolfram demonstrations project. Retrieved 13 July 2024 from
 \url{https://demonstrations.wolfram.com/ArchimedesApproximationOfPi/\#more}}
 
 \bibitem[\citeproctext]{ref-groleau2003}
-\CSLLeftMargin{{[}12{]} }%
+\CSLLeftMargin{{[}13{]} }%
 \CSLRightInline{Rick Groleau. 2003. {Approximating Pi}. Infinite
 secrets. Retrieved 13 July 2024 from
 \url{https://www.pbs.org/wgbh/nova/physics/approximating-pi.html}}
 
 \bibitem[\citeproctext]{ref-birchak2019}
-\CSLLeftMargin{{[}13{]} }%
+\CSLLeftMargin{{[}14{]} }%
 \CSLRightInline{Gabrielle Bir­chak. 2019. {Archimedes and his Pi: The
 Great Numerical Hope}. {Math! Science! History! with Gabrielle Birchak}.
 Retrieved from

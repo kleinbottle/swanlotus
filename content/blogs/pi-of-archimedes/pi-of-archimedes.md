@@ -2,7 +2,7 @@
 title: "The Pi of Archimedes"
 author: "R (Chandra) Chandrasekhar"
 date: 2004-01-14
-modified: 2024-07-14
+modified: 2024-07-25
 category: Mathematics
 tags: Numbers, Irrational, Transcendental
 summary: "This blog began life more than two decades ago, as part of a series of lectures I delivered to some very bright first-year engineering students at an Australian university.
@@ -163,9 +163,13 @@ Note that in the case of 96 sides, we have a _very small angle_ $\theta$ whose $
 
 Remember [@eq:triple-96] because it helps us to estimate lower and upper bounds for the value of the circumference.
 
-_Archimedes' final estimate was $\frac{223}{71} < \pi < \frac{22}{7}$._
+_Archimedes stated his final estimate of $\pi$ as [@heath2002]:_ 
 
-Archimedes application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in the series of [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon].
+$$
+\frac{223}{71} < \pi < \frac{22}{7}.
+$${#eq:pi-estimate}
+
+Archimedes' application of the [squeeze theorem](https://en.wikipedia.org/wiki/Squeeze_theorem) nineteen centuries before the calculus was invented is illustrated in the series of [@fig:six-gon;@fig:twelve-gon;@fig:twenty-four-gon;@fig:forty-eight-gon;@fig:ninety-six-gon].
 
 If you study the calculus or analysis later on, and encounter the [epsilon-delta ($\epsilon-\delta$) definition of a limit](https://en.wikipedia.org/wiki/Limit_of_a_function), hark back to this example of Archimedes for a graphic and concrete example of how a value may be bounded from below and above, and how it may be [squeezed](https://demonstrations.wolfram.com/SqueezeTheorem/) into the limit.
 
@@ -261,14 +265,20 @@ $${#eq:sqrt3}
 
 ## Trigonometry and half-angles
 
-Archimedes had no trigonometric tables to aid him. But he did know the square root of three, and the geometric properties of triangles whose angles were repeatedly bisected. He used a previous result to feed values into the next result, as he successively doubled the sides of the regular hexagon. We will look at his method a little later, but for now, we will try to simulate what he did using trigonometry. He repeated the same algorithmic step---with previous values feeding into current values---which is a bit like a snake eating its own tail.
+Although Archimedes had no trigonometric tables to aid him, he did know the square root of three, and the geometric properties of triangles whose angles were repeatedly bisected.
+
+For example, he calculated the length of the side of a regular [dodecagon](https://en.wikipedia.org/wiki/Dodecagon) using the _known_ length of the side of a regular hexagon, as he successively doubled the sides of the regular hexagon. He repeated the same algorithmic step---with previous values feeding into calculations for current values---which is a bit like [a snake eating its own tail](https://www.bbc.com/culture/article/20171204-the-ancient-symbol-that-spanned-millennia) [@ouroboros]. 
+
+![Ouroboros: a snake eating its own tail.^[<https://openclipart.org/user-detail/xoxoxo>, CC0, via Wikimedia Commons]]({attach}images/ouroboros.svg){#fig:ouroboros width=60% .modal-target}
+
+We will look at the method of Archimedes a little later, but for now, we will try to simulate what he did using trigonometry. 
 
 From [@fig:thirty-sixty], we know:
 $$
 \begin{aligned}
 \sin 30° &= \tfrac{1}{2}\\
 \cos 30° &= \tfrac{\sqrt{3}}{2}\\
-\tan 30° &= \tfrac{1}{\sqrt{3}} = \tfrac{\sqrt{3}}{3}\\
+\tan 30° &= \tfrac{1}{\sqrt{3}} = \tfrac{\sqrt{3}}{(\sqrt{3})(\sqrt{3})} = \tfrac{\sqrt{3}}{3}\\
 \end{aligned}
 $$ {#eq:three-six-nine}
 
@@ -386,7 +396,7 @@ $$
 \left[\frac{2\sqrt{3} + 3}{3}\right] b &= 1\\
 b &= \left[\frac{3}{2\sqrt{3} + 3}\right]\\
 &= \left[\frac{3(2\sqrt{3} - 3)}{(2\sqrt{3} + 3)(2\sqrt{3} - 3)}\right]\\
-&= \left[\frac{3(2\sqrt{3} - 3)}{12 - 9}\right]\\
+&= \left[\frac{3(2\sqrt{3} - 3)}{(12 - 9)}\right]\\
 &= 2\sqrt{3} - 3\\
 \end{aligned}
 $$ {#eq:bisect3}
@@ -497,7 +507,7 @@ Is $\pi$ really equal to $\frac{22}{7}$, as has been drummed into our heads at s
 
 The answer is a qualified "Yes and No".
 
-"Yes", because, thanks to Archimedes, $\frac{22}{7}$ is an overestimate for $\pi$ that has survived for nineteen centuries, and served us well in all this time. Whenever, more accuracy is desired, we can  always press into service a slightly better rational approximation, like [$\frac{355}{113}$](https://en.wikipedia.org/wiki/Mil%C3%BC).
+"Yes", because, thanks to Archimedes, $\frac{22}{7}$ is an overestimate for $\pi$ that has survived for nineteen centuries, and served us well in all this time (see [@eq:pi-estimate]). Whenever more accuracy is desired, we can  always press into service a slightly better rational approximation, like [$\frac{355}{113}$](https://en.wikipedia.org/wiki/Mil%C3%BC).
 
 "No", because an irrational number like $\pi$ can never be expressed _exactly_ within the confines of a finite numerical representation. Consequently, we use rational approximations, or a decimal representation, at the accuracy desired for our practical purposes.
 
