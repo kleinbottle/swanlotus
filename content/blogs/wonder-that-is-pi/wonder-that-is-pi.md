@@ -9,9 +9,9 @@ summary: This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus
 opengraphimage: pi-equations.png
 ---
 
-This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes). We look at π as a number rather than the ratio of two lengths, and try to unravel how and why it is ubiquitous in mathematics.
+This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes). We look at π as a number independent of its geometric tethering, and explore its ubiquity in mathematics. Shown below, in [@fig:two-equations] is the symbol for Pi surmounted by two very different equations defining it.
 
-![Pi expressed by two very different equations.]({attach}images/pi-equations.svg){#fig:opengraph width=70% .modal-target}
+![Pi expressed by two very different equations.]({attach}images/pi-equations.svg){#fig:two-equations  width=70% .modal-target}
 
 ## Introduction
 
