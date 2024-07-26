@@ -9,9 +9,9 @@ summary: This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus
 opengraphimage: pi-equations.png
 ---
 
-This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes). We look at π as a number independent of its geometric tethering, and explore its ubiquity in mathematics. Shown below, in [@fig:two-equations] is the symbol for Pi surmounted by two very different equations defining it.
+This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes). Here, we look at π as a number---without explicit reference to its geometric tethering---and explore its remarkable ubiquity in mathematics. As an appetizer, see [@fig:pi-equations] where the symbol for Pi is surmounted by two very different equations defining it. How in all the world could these two equations be true? And yet, here indeed they are.
 
-![Pi expressed by two very different equations.]({attach}images/pi-equations.svg){#fig:two-equations  width=70% .modal-target}
+![Pi expressed by two very different equations.]({attach}images/pi-equations.svg){#fig:pi-equations   width=60% .modal-target}
 
 ## Introduction
 
