@@ -36,47 +36,53 @@ $$
 \mathbb{N} = \{1, 2, 3, \dots, n, n+1, \dots\}.
 $$ It is a _countably infinite_ set whose members begin with $1$ and progress by the addition of $1$ to the  predecessor. It goes on without end.
 
-Zero is not a natural number and is assigned its own unnamed set, $\{0\}$.^[Some folks include zero in $\mathbb{N}$.]
+Zero is not a natural number and is assigned its own, unnamed set, $\{0\}$.^[Some folks include zero in $\mathbb{N}$.]
 
 The set of _integers_ $\mathbb{Z}$ includes the negative numbers, zero, and the positive numbers:
 $$
 \mathbb{Z} = \{\dots -3, -2, -1, 0, 1, 2, 3, \dots\}
 $$ Like $\mathbb{N}$, $\mathbb{Z}$ is also a countably infinite set.
 
-### Rational and Irrational Numbers
+## A first dichotomy
+
+The real numbers may be partitioned into subsets in different ways: one way is into the rational and irrational numbers.
 
 Every real number is _either_ rational or irrational. If the universe of discourse is the real number set, the rational and irrational numbers are complements of each other. In other words, the _union_ of the set of rational numbers and the set of irrational numbers _is_ the set of real numbers.
 
-The rational numbers are denoted by the set $\mathbb{Q}$ defined to be:
+## Rational Numbers
+
+The _rational numbers_ are denoted by the set $\mathbb{Q}$ defined to be:
 $$
-\mathbb{Q} = \{\frac{a}{b} \mbox{ where } a, b \in \mathbb{Z} \mbox{ and } b \neq 0\}.
+\mathbb{Q} = \{\tfrac{a}{b} \mbox{ where } a, b \in \mathbb{Z} \mbox{ and } b \neq 0\}.
 $$
 The condition imposed on $b$ arises from the stricture that division by zero is not permitted among the integers and reals.^[See ["The Two Most Important Numbers: Zero and One"](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one) for the reason why.]
 
-A number that is not rational is an irrational number.
-
 Let us amplify the consequences of these definitions. Is the number $25$ rational? Yes, indeed. But where is the denominator? It is _implicit_ and equals $1$. The fact that
 $$
-25 = \frac{25}{1}.
-$$ makes it clear that $25$ is a rational number.
+25 = \frac{25}{1}
+$$ makes it clear that $25$ is a rational number. Every integer is a rational number.
 
-And it is obvious from the definition that $\frac{2}{3}$ is a rational number. But is $-\frac{11}{16}$ a rational number? Indeed, because the definition draws upon the _integer_ $a$ and the _non-zero integer_ $b$, where an integer can be signed.
+And it is obvious from the definition that $\frac{2}{3}$ is a rational number. But is $-\frac{11}{16}$ a rational number? Yes, indeed, because the definition depends upon the _integer_ $a$ and the _non-zero integer_ $b$, where both integers, being drawn from $\mathbb{Z}$, can be signed.
 
-Irrational numbers are numbers which are _not rational_. The discovery that $\sqrt{2}$---which is the length of the diagonal of a unit square---was not rational, caused the first ripples of disquiet in the ancient mathematical world, because it upset the prevailing philosophy that whole numbers alone ruled the world.
+When a rational number is expressed as a decimal, that decimal can either terminate or recur without end.
 
-Let us also be aware that when a number is expressed in decimal form, the rationals take the form of terminating decimals or of recurring decimals. For example, 
+For example, the fraction $\frac{1}{3} = 0.\overline{3}$ has a recurring decimal representation as revealed by division. The line on top indicates the portion of the decimal which recurs---in this case, it is the single digit $3$.
+
+When we look at the fraction $\frac{1}{2} = 0.5$, we have an example of a terminating decimal. We could, however, pad zeros after the first decimal place, and claim that even a terminating decimal is recurring; witness that $\frac{1}{2} = 0.5 = 0.5000 \dots = 0.5\overline{0}$. But that is not the whole story.
+
+We can further show that:
 $$
-\frac{1}{2} = 0.5 = 0.4\overline{9}.
-$$ The expression $0.4\overline{9}$ means that the digit $9$ keeps repeating indefinitely. It might seem strange that two slightly different decimals express the same rational number $\frac{1}{2}$.
+\frac{1}{2} = 0.5 = 0.5\overline{0} = 0.4\overline{9}.
+$$ It does seem strange to claim that two different decimals can express the _same_ rational number $\frac{1}{2}$.
 
-Let us rewrite $0.4\overline{9}$ as
+To see why, let us rewrite $0.4\overline{9}$ as
 $$
 \begin{aligned}
-0.4\overline{9} = 0.4999\dots &= \frac{4}{10} + \frac{9}{100} + \frac{9}{1000} + \dots\\
-&= \frac{4}{10} + 9\left[ \frac{1}{100} + \frac{1}{1000} + \dots\right]\\
+0.4\overline{9} = 0.4999\dots &= \frac{4}{10} + \frac{9}{100} + \frac{9}{1000} + \frac{9}{10000}\dots\\
+&= \frac{4}{10} + 9\left[ \frac{1}{100} + \frac{1}{1000} + \frac{1}{10000} \dots\right]\\
 \end{aligned}
 $$ {#eq:recur}
-Consider now the expression in square brackets in [@eq:recur]. We can recognize it as a [geometric series](https://mathworld.wolfram.com/GeometricSeries.html) with first term $a = \frac{1}{100}$ and common ratio $r = \frac{1}{10} < 1$. The [sum to infinity](https://senecalearning.com/en-GB/revision-notes/a-level/maths/edexcel/pure-maths/4-2-9-sum-to-infinity-of-a-geometric-series) of this _convergent_ geometric series is given by 
+Consider now the expression in square brackets on the right hand side (RHS) of [@eq:recur]. We can recognize it as a [geometric series](https://mathworld.wolfram.com/GeometricSeries.html) with first term $a = \frac{1}{100}$ and common ratio $r = \frac{1}{10}$. Since $r < 1$, the series is _convergent_ and its [sum to infinity](https://senecalearning.com/en-GB/revision-notes/a-level/maths/edexcel/pure-maths/4-2-9-sum-to-infinity-of-a-geometric-series) [@seneca] is given by:
 $$
 \begin{aligned}
 \frac{a}{1 - r} &= \frac{\frac{1}{100}}{[1 - \frac{1}{10}]}\\
@@ -85,23 +91,38 @@ $$
 & = \tfrac{1}{90}.
 \end{aligned}
 $$ {#eq:sum}
-Substituting for the second term in [@eq:recur], we get
+Substituting for the terms in square brackets in [@eq:recur], we get
 $$
 0.4\overline{9} = \frac{4}{10} + 9\left[\frac{1}{90}\right] = \frac{4}{10} + \frac{1}{10} = \frac{5}{10} = \frac{1}{2}.
 $$
-Even if it seems counter-intuitive that $0.4\overline{9} = 0.5 = 0.5\overline{0} = \frac{1}{2}$, it is mathematically consistent and correct. For another example, the fraction $\frac{1}{3} = 0.\overline{3}$ also has a recurring decimal representation. One may therefore hazard a guess, and correctly so, that _every rational number may be expressed as a recurring decimal_.^[In this case either the digit $9$ or the digit $0$ recurs.]
+Even if it seems counter-intuitive that $0.4\overline{9} = 0.5 = 0.5\overline{0} = \frac{1}{2}$, it is mathematically consistent and correct.  One may therefore hazard a guess, and correctly so, that _every rational number may be expressed as a recurring decimal_.^[In this case either the digit $9$ or the digit $0$ recurs.]
 
 Infinite sums have this property of upending our "intuition" about what is correct. So, we have to be extra careful when dealing with the value of a limit as some variable goes to infinity. Moreover, infinity, represented by $\infty$ is _not_ a number and cannot be treated as one. It is simply a convenient shorthand symbol. This caveat should be kept in mind when we encounter infinite sums involving $\pi$, as shown for example, in [@fig:pi-equations].
 
-An irrational number like $\sqrt{2}$ does not have any recurring sequence of digits when expressed as a decimal. But the absence of recurring sequences in the decimal representation of a number should not solely be used to identify a number as irrational, because some rationals with large denominators can and do have very long recurring sequences, which may be difficult to detect by visual inspection. For example, $\frac{8119}{5741}$, which is a rational approximation to $\sqrt{2}$, has a recurring sequence of length $5740$.^[Also called the _period_ of a repeating decimal.]
+## Irrational Numbers
 
-### Algebraic and Transcendental Numbers
+Irrational numbers are numbers which are _not rational_. The discovery that $\sqrt{2}$---which is the length of the diagonal of a unit square---was not rational, caused the first ripples of disquiet in the ancient mathematical world, because it upset the prevailing philosophy that whole numbers alone ruled the world.
 
-Another dichotomy that may be applied to the real numbers is to segregate them into two classes of numbers: the algebraic numbers and the transcendental numbers. There is one complication: both algebraic and transcendental numbers may be complex. But if we restrict our universe to the real numbers, then these two sets are disjoint, i.e., they do not overlap.
+An irrational number like $\sqrt{2}$ does not have any recurring sequence of digits when expressed as a decimal. But the absence of recurring sequences in the decimal representation of a number should not solely be used to identify a number as irrational, because some rationals with large denominators can and do have very long recurring sequences, which may be difficult to detect by visual inspection. For example, $\frac{8119}{5741}$, which incidentally is a rational approximation to $\sqrt{2}$, has a recurring sequence of length $5740$.^[Also called the _period_ of a repeating decimal. See <https://www.wolframalpha.com/input?i=8119%2F5741>.]
+
+### The irrationals exceed in number the rationals
+
+The irrationals exceed in number the rational numbers [@socratic]. This fact is stated baldly here,  because going into the whys and wherefores of this claim will lead us too far astray from our focus on $\pi$.
+
+## A second dichotomy
+
+The real numbers may also be split another way into two mutually exclusive sets: the algebraic numbers and the transcendental numbers. Every real number is either an algebraic number or a transcendental; it cannot be both.
+
+It bears noting though that both the algebraic and the transcendental numbers may be complex. But in this blog, we have restricted our universe to the real numbers.
+
+## The Algebraic Numbers
 
 An algebraic number is the root of a non-zero polynomial with integer or rational coefficients. Things have gotten abstract enough thus far for eyes to be glazed. So, let us invoke some examples to revive attention.
 
+Every rational number is algebraic and therefore not transcendental.
 
+
+## The Transcendental Numbers
 
 
 

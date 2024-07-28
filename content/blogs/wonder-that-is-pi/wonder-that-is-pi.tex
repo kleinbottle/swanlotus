@@ -67,6 +67,39 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
 \else
@@ -256,7 +289,7 @@ as \[
 and progress by the addition of \(1\) to the predecessor. It goes on
 without end.
 
-Zero is not a natural number and is assigned its own unnamed set,
+Zero is not a natural number and is assigned its own, unnamed set,
 \(\{0\}\).\footnote{Some folks include zero in \(\mathbb{N}\).}
 
 The set of \emph{integers} \(\mathbb{Z}\) includes the negative numbers,
@@ -273,55 +306,63 @@ irrational numbers are complements of each other. In other words, the
 \emph{union} of the set of rational numbers and the set of irrational
 numbers \emph{is} the set of real numbers.
 
-The rational numbers are denoted by the set \(\mathbb{Q}\) defined to
-be: \[
-\mathbb{Q} = \{\frac{a}{b} \mbox{ where } a, b \in \mathbb{Z} \mbox{ and } b \neq 0\}.
+\subsubsection{Rational Numbers}\label{rational-numbers}
+
+The \emph{rational numbers} are denoted by the set \(\mathbb{Q}\)
+defined to be: \[
+\mathbb{Q} = \{\tfrac{a}{b} \mbox{ where } a, b \in \mathbb{Z} \mbox{ and } b \neq 0\}.
 \] The condition imposed on \(b\) arises from the stricture that
 division by zero is not permitted among the integers and
 reals.\footnote{See
   \href{https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one}{``The
   Two Most Important Numbers: Zero and One''} for the reason why.}
 
-A number that is not rational is an irrational number.
-
 Let us amplify the consequences of these definitions. Is the number
 \(25\) rational? Yes, indeed. But where is the denominator? It is
 \emph{implicit} and equals \(1\). The fact that \[
-25 = \frac{25}{1}.
-\] makes it clear that \(25\) is a rational number.
+25 = \frac{25}{1}
+\] makes it clear that \(25\) is a rational number. Every integer is a
+rational number.
 
 And it is obvious from the definition that \(\frac{2}{3}\) is a rational
-number. But is \(-\frac{11}{16}\) a rational number? Indeed, because the
-definition draws upon the \emph{integer} \(a\) and the \emph{non-zero
-integer} \(b\), where an integer can be signed.
+number. But is \(-\frac{11}{16}\) a rational number? Yes, indeed,
+because the definition depends upon the \emph{integer} \(a\) and the
+\emph{non-zero integer} \(b\), where both integers, being drawn from
+\(\mathbb{Z}\), can be signed.
 
-Irrational numbers are numbers which are \emph{not rational}. The
-discovery that \(\sqrt{2}\)---which is the length of the diagonal of a
-unit square---was not rational, caused the first ripples of disquiet in
-the ancient mathematical world, because it upset the prevailing
-philosophy that whole numbers alone ruled the world.
+When a rational number is expressed as a decimal, that decimal can
+either terminate or recur without end.
 
-Let us also be aware that when a number is expressed in decimal form,
-the rationals take the form of terminating decimals or of recurring
-decimals. For example, \[
-\frac{1}{2} = 0.5 = 0.4\overline{9}.
-\] The expression \(0.4\overline{9}\) means that the digit \(9\) keeps
-repeating indefinitely. It might seem strange that two slightly
-different decimals express the same rational number \(\frac{1}{2}\).
+For example, the fraction \(\frac{1}{3} = 0.\overline{3}\) has a
+recurring decimal representation as revealed by division. The line on
+top indicates the portion of the decimal which recurs---in this case, it
+is the single digit \(3\).
 
-Let us rewrite \(0.4\overline{9}\) as
+When we look at the fraction \(\frac{1}{2} = 0.5\), we have an example
+of a terminating decimal. We could, however, pad zeros after the first
+decimal place, and claim that even a terminating decimal is recurring;
+witness that \(\frac{1}{2} = 0.5 = 0.5000 \dots = 0.5\overline{0}\). But
+that is not the whole story.
+
+We can further show that: \[
+\frac{1}{2} = 0.5 = 0.5\overline{0} = 0.4\overline{9}.
+\] It does seem strange to claim that two different decimals can express
+the \emph{same} rational number \(\frac{1}{2}\).
+
+To see why, let us rewrite \(0.4\overline{9}\) as
 \begin{equation}\phantomsection\label{eq:recur}{
 \begin{aligned}
-0.4\overline{9} = 0.4999\dots &= \frac{4}{10} + \frac{9}{100} + \frac{9}{1000} + \dots\\
-&= \frac{4}{10} + 9\left[ \frac{1}{100} + \frac{1}{1000} + \dots\right]\\
+0.4\overline{9} = 0.4999\dots &= \frac{4}{10} + \frac{9}{100} + \frac{9}{1000} + \frac{9}{10000}\dots\\
+&= \frac{4}{10} + 9\left[ \frac{1}{100} + \frac{1}{1000} + \frac{1}{10000} \dots\right]\\
 \end{aligned}
-}\end{equation} Consider now the expression in square brackets in
-\cref{eq:recur}. We can recognize it as a
+}\end{equation} Consider now the expression in square brackets on the
+right hand side (RHS) of \cref{eq:recur}. We can recognize it as a
 \href{https://mathworld.wolfram.com/GeometricSeries.html}{geometric
 series} with first term \(a = \frac{1}{100}\) and common ratio
-\(r = \frac{1}{10} < 1\). The
+\(r = \frac{1}{10}\). Since \(r < 1\), the series is \emph{convergent}
+and its
 \href{https://senecalearning.com/en-GB/revision-notes/a-level/maths/edexcel/pure-maths/4-2-9-sum-to-infinity-of-a-geometric-series}{sum
-to infinity} of this \emph{convergent} geometric series is given by
+to infinity} {[}\citeproc{ref-seneca}{1}{]} is given by:
 \begin{equation}\phantomsection\label{eq:sum}{
 \begin{aligned}
 \frac{a}{1 - r} &= \frac{\frac{1}{100}}{[1 - \frac{1}{10}]}\\
@@ -329,17 +370,15 @@ to infinity} of this \emph{convergent} geometric series is given by
 &= \left[\tfrac{1}{100}\right] \left[\tfrac{10}{9}\right]\\
 & = \tfrac{1}{90}.
 \end{aligned}
-}\end{equation} Substituting for the second term in \cref{eq:recur}, we
-get \[
+}\end{equation} Substituting for the terms in square brackets in
+\cref{eq:recur}, we get \[
 0.4\overline{9} = \frac{4}{10} + 9\left[\frac{1}{90}\right] = \frac{4}{10} + \frac{1}{10} = \frac{5}{10} = \frac{1}{2}.
 \] Even if it seems counter-intuitive that
 \(0.4\overline{9} = 0.5 = 0.5\overline{0} = \frac{1}{2}\), it is
-mathematically consistent and correct. For another example, the fraction
-\(\frac{1}{3} = 0.\overline{3}\) also has a recurring decimal
-representation. One may therefore hazard a guess, and correctly so, that
-\emph{every rational number may be expressed as a recurring
-decimal}.\footnote{In this case either the digit \(9\) or the digit
-  \(0\) recurs.}
+mathematically consistent and correct. One may therefore hazard a guess,
+and correctly so, that \emph{every rational number may be expressed as a
+recurring decimal}.\footnote{In this case either the digit \(9\) or the
+  digit \(0\) recurs.}
 
 Infinite sums have this property of upending our ``intuition'' about
 what is correct. So, we have to be extra careful when dealing with the
@@ -349,15 +388,32 @@ as one. It is simply a convenient shorthand symbol. This caveat should
 be kept in mind when we encounter infinite sums involving \(\pi\), as
 shown for example, in \cref{fig:pi-equations}.
 
+\subsubsection{Irrational Numbers}\label{irrational-numbers}
+
+Irrational numbers are numbers which are \emph{not rational}. The
+discovery that \(\sqrt{2}\)---which is the length of the diagonal of a
+unit square---was not rational, caused the first ripples of disquiet in
+the ancient mathematical world, because it upset the prevailing
+philosophy that whole numbers alone ruled the world.
+
 An irrational number like \(\sqrt{2}\) does not have any recurring
 sequence of digits when expressed as a decimal. But the absence of
 recurring sequences in the decimal representation of a number should not
 solely be used to identify a number as irrational, because some
 rationals with large denominators can and do have very long recurring
 sequences, which may be difficult to detect by visual inspection. For
-example, \(\frac{8119}{5741}\), which is a rational approximation to
-\(\sqrt{2}\), has a recurring sequence of length \(5740\).\footnote{Also
-  called the \emph{period} of a repeating decimal.}
+example, \(\frac{8119}{5741}\), which incidentally is a rational
+approximation to \(\sqrt{2}\), has a recurring sequence of length
+\(5740\).\footnote{Also called the \emph{period} of a repeating decimal.
+  See \url{https://www.wolframalpha.com/input?i=8119\%2F5741}.}
+
+\subsubsection{The irrationals exceed in number the
+rationals}\label{the-irrationals-exceed-in-number-the-rationals}
+
+The irrationals exceed in number the rational numbers
+{[}\citeproc{ref-socratic}{2}{]}. This fact is stated baldly here
+because going into the whys and wherefores of this claim will lead us
+too far astray from our focus in this blog.
 
 \subsubsection{Algebraic and Transcendental
 Numbers}\label{algebraic-and-transcendental-numbers}
@@ -432,6 +488,25 @@ https://www.reddit.com/r/math/comments/725nxu/how\_would\_you\_improve\_this\_ty
 https://i.pinimg.com/736x/57/db/7f/57db7fb6dd9a4f2649b0d8ae5689ff98--math-teacher-math-class.jpg
 
 https://study.com/skill/learn/how-to-construct-a-venn-diagram-to-classify-real-numbers-explanation.html
+
+\section*{References}\label{bibliography}
+\addcontentsline{toc}{section}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{0}{0}
+\bibitem[\citeproctext]{ref-seneca}
+\CSLLeftMargin{{[}1{]} }%
+\CSLRightInline{{Sum to Infinity of a Geometric Series---Maths: Edexcel
+A Level Pure Maths}. Retrieved 28 July 2024 from
+\url{https://senecalearning.com/en-GB/revision-notes/a-level/maths/edexcel/pure-maths/4-2-9-sum-to-infinity-of-a-geometric-series}}
+
+\bibitem[\citeproctext]{ref-socratic}
+\CSLLeftMargin{{[}2{]} }%
+\CSLRightInline{George C. 2017. {Are there more rational numbers than
+irrational numbers? \textbar{} Socratic}. Retrieved 28 July 2024 from
+\url{https://socratic.org/questions/58c80a37b72cff29df40c794}}
+
+\end{CSLReferences}
 
 
 
