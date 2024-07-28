@@ -45,7 +45,7 @@ $$ Like $\mathbb{N}$, $\mathbb{Z}$ is also a countably infinite set.
 
 ## A first dichotomy
 
-The real numbers may be partitioned into subsets in different ways: one way is into the rational and irrational numbers.
+The real numbers may be partitioned into subsets in different ways: one way is into the _rational_ and _irrational_ numbers.
 
 Every real number is _either_ rational or irrational. If the universe of discourse is the real number set, the rational and irrational numbers are complements of each other. In other words, the _union_ of the set of rational numbers and the set of irrational numbers _is_ the set of real numbers.
 
@@ -107,39 +107,64 @@ An irrational number like $\sqrt{2}$ does not have any recurring sequence of dig
 
 ### The irrationals exceed in number the rationals
 
-The irrationals exceed in number the rational numbers [@socratic]. This fact is stated baldly here,  because going into the whys and wherefores of this claim will lead us too far astray from our focus on $\pi$.
+If you are curious, you might wonder which are the more numerous: the rationals or the irrationals. You might guess that the familiar rationals are more numerous than the obscure irrationals. But you would be mistaken.
+
+In fact, [the irrationals far exceed in number the rational numbers](https://socratic.org/questions/58c80a37b72cff29df40c794) [@socratic]. This fact is stated baldly here, because going into the whys and wherefores of this claim will lead us too far astray from our focus on $\pi$. It is an interesting fact, though, that you should stash away for future use.
 
 ## A second dichotomy
 
-The real numbers may also be split another way into two mutually exclusive sets: the algebraic numbers and the transcendental numbers. Every real number is either an algebraic number or a transcendental; it cannot be both.
+The real numbers may also be split another way into two mutually exclusive sets: the _algebraic numbers_ and the _transcendental numbers_. Every real number is _either_ an algebraic number or a transcendental number; it cannot be both.
 
-It bears noting though that both the algebraic and the transcendental numbers may be complex. But in this blog, we have restricted our universe to the real numbers.
+It bears noting though, that both the algebraic and the transcendental numbers may be complex, i.e, have an imaginary part. But in this blog, we have restricted our universe to the real numbers.
 
 ## The Algebraic Numbers
 
 An algebraic number is the root of a non-zero polynomial with integer or rational coefficients. Things have gotten abstract enough thus far for eyes to be glazed. So, let us invoke some examples to revive attention.
 
-Every rational number is algebraic and therefore not transcendental.
+The simplest algebraic number is an integer. Let us take $5$ as an example. If the polynomial $p(x) = x - 5$, its root is when $p(x) = 0$, i.e., when $x - 5 = 0$. This implies $x = 5$ and we have shown that $5$ is algebraic by definition.
 
+Note that we could have used any other polynomial with the same root, such as $q(x) = 2x - 10$. All we need do is find _one_ polynomial whose root equals the number and we have shown that the number is algebraic _by definition_. 
+
+Likewise, the rational number $-(\frac{2}{3})$ is the root of the polynomial $3x + 2$ and is therefore algebraic.
+
+We may assert that _every rational number is algebraic and therefore not transcendental_.
+
+But what about an irrational number like $\sqrt{2}$? Is it algebraic? The polynomial $(x^2 - 2)$ has a zeros at $\pm\sqrt{2}$, thereby demonstrating that both $\pm\sqrt{2}$ are algebraic.
+
+Can an algebraic number be a complex root of a real polynomial? Let us find the roots for the real  polynomial $x^2 - 10x +34$:
+$$
+\begin{aligned}
+x^2 - 10x + 34 &= 0\\
+(x^2 -10x + 25) + 9 &= 0\\
+(x - 5)^2 + 9 = 0\\
+(x - 5)^2 &= -9\\
+(x - 5) &= \pm3i\\
+x &= 5 \pm 3i\\
+\end{aligned}
+$$
+We have just shown that an algebraic number can be a complex root of a real polynomial. While we will not consider complex algebraic numbers in this blog, it is useful to know that they do exist.
 
 ## The Transcendental Numbers
 
+Transcendental numbers are _not algebriac_. But proving that a particular number is transcendental is no mean task. When mathematicians have already proven a particular number is transcendental, we will accept their assertion even if we do not understand the proof.  Numbers like [$\pi$](https://www.wolframalpha.com/input?i=is+pi+transcendental), [$e$](https://www.wolframalpha.com/input?i=is+e+transcendental), and [$\ln 2$](https://www.wolframalpha.com/input?i=is+ln%282%29+transcendental) are transcendental.
 
+_All transcendental numbers are perforce irrational_.
 
+Transcendental numbers can also be complex, but we will steer clear of that category here, because we don't want to get more dizzy (mathematically) than we already are right now! \emojifont :wink: \normalfont\.
 
-We will steer clear of transcendental numbers that are complex because we don't want to get dizzy right at the beginning \emojifont :wink: \normalfont\.
+## Taxonomy via Tetrachotomy
 
-Real Rational Integer Irrational Algebraic Transcendental Complex etc.
+We have established a [tetrachotomy](https://www.collinsdictionary.com/dictionary/english/tetrachotomy) among the real numbers. But the four parts are not mutually exclusive. They overlap. There are two non-overlapping dichotomies: the rationals and irrationals as one pair, and the algebraic and transcendental numbers on the other.
 
-Hark back to 
+It is noteworthy that irrational numbers like $\sqrt{2}$ and transcendental numbers like $\pi$ and $e$  are denoted with the aid os _symbols_.
 
-Venn diagram showing the number taxonomy can be challenging [Venn diagram is shown here](https://mathmonks.com/transcendental-numbers). This Venn diagram is flawed.
+This classification of the real numbers seems to be crying out for a Venn diagram to depict it visually. Before we do that, let us marshal the facts we have gathered so far:
 
-### Taxonomy
+#.  The real numbers are the union of the rational and the irrational numbers.
 
-#.  The real numbers are a union of the algebraic and transcendental numbers.
+#.  The real numbers are also the union of the non-complex algebraic and non-complex transcendental numbers.
 
-#.  The algebraic numbers can be either rational or irrational.
+#.  Algebraic numbers can be either rational or irrational.
 
 #.  All rational numbers are algebraic.
 
@@ -147,13 +172,29 @@ Venn diagram showing the number taxonomy can be challenging [Venn diagram is sho
 
 #.  All real transcendental numbers are irrational.
 
-#.  The irrational numbers contain _all_ transcendental numbers ad a subset of the algebraic numbers.
+#.  The irrational numbers contain _all_ non-complex transcendental numbers and a subset of the non-complex algebraic numbers.
+
+## Enter π
+
+We have gone through all this huffing and puffing to place $\pi$ contextually among the real numbers. Pi is a transcendental number which is automatically irrational. This means:
+
+#. $\pi$ cannot be expressed in closed form as a decimal.
+
+#. There is no periodic sequence that recurs in the decimal representation of $\pi$, regardless of how long the decimal is.
+
+#. Rational approximations for $\pi$ are used in practice.
+ 
+#. When Pi is used in equations, the placeholder symbol $\pi$ is used.
+
+One could almost say that $\pi$ is not numerically friendly. And you would not be too wrong. Nevertheless, with the aid of ideas like the sum to infinity of a series, and the limit as some variable approaches infinity, etc., mathematicians have derived starkly simple formulae relating integers to $\pi$ as well as mystifying formulae that seem to miraculously relate to $pi$; both these cases are shown in [@fig:pi-equations].
 
 ## Madhava-Gregory series
 
 What does the equality sign mean for an infinite sum? How can a sum of rationals equal and irrational number? A transcendental number? The meaning of $=$ is therefore not in the sense of $2 + 2 = 4$ or even of $x - 5 = 0$. It is something similar and yet something different, because, despite Cantor, we have not tamed the idea of infinity yet.
 
 ## Acknowledgements
+
+Wolfram Alpha for several results.
 
 ## Feedback
 
@@ -180,3 +221,16 @@ https://i.pinimg.com/736x/57/db/7f/57db7fb6dd9a4f2649b0d8ae5689ff98--math-teache
 
 
 https://study.com/skill/learn/how-to-construct-a-venn-diagram-to-classify-real-numbers-explanation.html
+
+
+Real Rational Integer Irrational Algebraic Transcendental Complex etc.
+
+Hark back to 
+
+Venn diagram showing the number taxonomy can be challenging [Venn diagram is shown here](https://mathmonks.com/transcendental-numbers). This Venn diagram is flawed.
+
+https://www.quora.com/Why-cant-we-draw-a-Venn-diagram-for-4-sets-with-circles-and-how-can-we-solve-it
+
+https://www.gauthmath.com
+
+https://tex.stackexchange.com/questions/668565/how-can-i-draw-a-shape-with-overlapping-regions-with-opacity
