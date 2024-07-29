@@ -160,25 +160,42 @@ Transcendental numbers can also be complex, but we will steer clear of that cate
 
 ## Taxonomy via Tetrachotomy
 
-We have established a [tetrachotomy](https://www.collinsdictionary.com/dictionary/english/tetrachotomy) among the real numbers. But the four parts are not mutually exclusive. They overlap. There are two non-overlapping dichotomies: the rationals and irrationals as one pair, and the algebraic and transcendental numbers on the other.
+We have established a [tetrachotomy](https://www.collinsdictionary.com/dictionary/english/tetrachotomy) among the real numbers. But the four parts are not mutually exclusive. They overlap. There are two non-overlapping dichotomies: the rationals and irrationals as one pair, and the algebraic and transcendental numbers as the other.
 
 It is noteworthy that irrational numbers like $\sqrt{2}$ and transcendental numbers like $\pi$ and $e$  are denoted with the aid of _symbols_.
 
-This classification of the real numbers seems to be crying out for a Venn diagram to depict it visually. Before we do that, let us marshal the facts we have gathered so far:
+This classification of the real numbers seems to be crying out for a Venn diagram to depict it visually. But before we do that, let us marshal the facts we have gathered so far:
 
-#.  The real numbers are the union of the rational and the irrational numbers.
+#.  The real numbers are represented by the standard set $\mathbb{R}$.
 
-#.  The real numbers are also the union of the algebraic and transcendental numbers that do not embody the imaginary unit $i$.
+#.  The rationals are represented by the standard set $\mathbb{Q}$. 
 
-#.  Algebraic numbers can be either rational or irrational.
+#.  There is no assigned symbol for the set of irrationals. Because it is the set difference between the reals and the rationals, it is often denoted as $\mathbb{R}\setminus\mathbb{Q}$. But this notation is cumbersome. So, let us define a non-standard set $\mathbb{I}$ and let it stand for the irrationals: $\mathbb{I} = \mathbb{R}\setminus\mathbb{Q}$.
 
-#.  All rational numbers are algebraic.
+#.  Let us introduce the non-standard symbol $\mathbb{A_{\mathbb{R}}}$ for the set of real algebraic numbers.
 
-#.  No rational number is transcendental.
+#.  Let us introduce the non-standard symbol $\mathbb{T_{\mathbb{R}}}$ for the set of real transcendental numbers.
 
-#.  All real transcendental numbers are irrational.
+#.  The real numbers are the union of the rational and the irrational numbers: $\mathbb{R} = \mathbb{Q} \cup \mathbb{I}$.
 
-#.  The irrational numbers contain _all_ transcendental numbers and a subset of the algebraic numbers, again excluding those that embody $i$.
+#.  The real numbers are also the union of the algebraic and transcendental numbers that do not embody the imaginary unit $i$: $\mathbb{R} = \mathbb{A_{\mathbb{R}}} \cup \mathbb{T_{\mathbb{R}}}$
+
+#.  Algebraic numbers can be either rational or irrational: $\mathbb{A_{\mathbb{R}}} \subseteq \mathbb{Q} \cup \mathbb{I}$.
+
+#.  All rational numbers are algebraic: $\mathbb{Q} \subset \mathbb{A_{\mathbb{R}}}$
+
+#.  No rational number is transcendental: $\mathbb{Q} \cap \mathbb{T_{\mathbb{R}}} = \emptyset$
+
+#.  All real transcendental numbers are irrational: $\mathbb{T_{\mathbb{R}}} \subset \mathbb{I}$.
+
+#.  The irrational numbers contain _all_ transcendental numbers and a subset of the algebraic numbers, again excluding those that embody $i$: $(\mathbb{T_{\mathbb{R}}} \subset \mathbb{I})
+\wedge (\mathbb{A}_{\mathbb{R}} \cap \mathbb{I} \neq \emptyset)$.
+
+That was quite  mouthful even with mathematical symbols. We are now ready to draw the Venn diagram for the tetrachotomy of the real numbers.
+
+And surprise! surprise! There are only _three_ regions in the Venn diagram that are populated. So, taking mathematical liberties, we may say that our tetrachotomy was not "linearly independent".
+
+![Venn diagram showing the rationals, $\mathbb{Q}$, the irrationals, $\mathbb{I}$, the real algebraics, $\mathbb{A_{\mathbb{R}}}$, and the real transcendentals $\mathbb{T_{\mathbb{R}}}$. From this diagram, we may assert that $\mathbb{R} = \mathbb{A_{\mathbb{R}}} \cup \mathbb{I}$. Note where $\pi$ resides, and also that there are only _three_ populated regions in the Venn diagram: $\mathbb{Q}$, $(\mathbb{A_{\mathbb{R}}} \cap \mathbb{I})$, and $\mathbb{T_{\mathbb{R}}}$.]({attach}images/venn.svg){#fig:venn width=90% .modal-target}
 
 ## Enter π
 
@@ -193,6 +210,7 @@ We have gone through all this huffing and puffing to place $\pi$ contextually am
 #. When Pi is used in equations, the placeholder symbol $\pi$ is used.
 
 One could almost say that $\pi$ is not numerically friendly. And you would not be too wrong. Nevertheless, with the aid of ideas like the sum to infinity of a series, and the limit as some variable approaches infinity, etc., mathematicians have derived starkly simple formulae relating integers to $\pi$ as well as mystifying formulae that seem to miraculously relate to $pi$; both these cases are shown in [@fig:pi-equations].
+
 
 ## Madhava-Gregory series
 

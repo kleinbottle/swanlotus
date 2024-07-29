@@ -529,36 +529,80 @@ We have established a
 among the real numbers. But the four parts are not mutually exclusive.
 They overlap. There are two non-overlapping dichotomies: the rationals
 and irrationals as one pair, and the algebraic and transcendental
-numbers on the other.
+numbers as the other.
 
 It is noteworthy that irrational numbers like \(\sqrt{2}\) and
 transcendental numbers like \(\pi\) and \(e\) are denoted with the aid
 of \emph{symbols}.
 
 This classification of the real numbers seems to be crying out for a
-Venn diagram to depict it visually. Before we do that, let us marshal
-the facts we have gathered so far:
+Venn diagram to depict it visually. But before we do that, let us
+marshal the facts we have gathered so far:
 
 \begin{enumerate}
 \item
+  The real numbers are represented by the standard set \(\mathbb{R}\).
+\item
+  The rationals are represented by the standard set \(\mathbb{Q}\).
+\item
+  There is no assigned symbol for the set of irrationals. Because it is
+  the set difference between the reals and the rationals, it is often
+  denoted as \(\mathbb{R}\setminus\mathbb{Q}\). But this notation is
+  cumbersome. So, let us define a non-standard set \(\mathbb{I}\) and
+  let it stand for the irrationals:
+  \(\mathbb{I} = \mathbb{R}\setminus\mathbb{Q}\).
+\item
+  Let us introduce the non-standard symbol \(\mathbb{A_{\mathbb{R}}}\)
+  for the set of real algebraic numbers.
+\item
+  Let us introduce the non-standard symbol \(\mathbb{T_{\mathbb{R}}}\)
+  for the set of real transcendental numbers.
+\item
   The real numbers are the union of the rational and the irrational
-  numbers.
+  numbers: \(\mathbb{R} = \mathbb{Q} \cup \mathbb{I}\).
 \item
   The real numbers are also the union of the algebraic and
-  transcendental numbers that do not embody the imaginary unit \(i\).
+  transcendental numbers that do not embody the imaginary unit \(i\):
+  \(\mathbb{R} = \mathbb{A_{\mathbb{R}}} \cup \mathbb{T_{\mathbb{R}}}\)
 \item
-  Algebraic numbers can be either rational or irrational.
+  Algebraic numbers can be either rational or irrational:
+  \(\mathbb{A_{\mathbb{R}}} \subseteq \mathbb{Q} \cup \mathbb{I}\).
 \item
-  All rational numbers are algebraic.
+  All rational numbers are algebraic:
+  \(\mathbb{Q} \subset \mathbb{A_{\mathbb{R}}}\)
 \item
-  No rational number is transcendental.
+  No rational number is transcendental:
+  \(\mathbb{Q} \cap \mathbb{T_{\mathbb{R}}} = \emptyset\)
 \item
-  All real transcendental numbers are irrational.
+  All real transcendental numbers are irrational:
+  \(\mathbb{T_{\mathbb{R}}} \subset \mathbb{I}\).
 \item
   The irrational numbers contain \emph{all} transcendental numbers and a
   subset of the algebraic numbers, again excluding those that embody
-  \(i\).
+  \(i\):
+  \((\mathbb{T_{\mathbb{R}}} \subset \mathbb{I}) \wedge (\mathbb{A}_{\mathbb{R}} \cap \mathbb{I} \neq \emptyset)\).
 \end{enumerate}
+
+That was quite mouthful even with mathematical symbols. We are now ready
+to draw the Venn diagram for the tetrachotomy of the real numbers.
+
+And surprise! surprise! There are only \emph{three} regions in the Venn
+diagram that are populated. So, taking mathematical liberties, we may
+say that our tetrachotomy was not ``linearly independent''.
+
+\begin{figure}
+\centering
+\includesvg[width=0.9\textwidth,height=\textheight]{images/venn.svg}
+\caption{Venn diagram showing the rationals, \(\mathbb{Q}\), the
+irrationals, \(\mathbb{I}\), the real algebraics,
+\(\mathbb{A_{\mathbb{R}}}\), and the real transcendentals
+\(\mathbb{T_{\mathbb{R}}}\). From this diagram, we may assert that
+\(\mathbb{R} = \mathbb{A_{\mathbb{R}}} \cup \mathbb{I}\). Note where
+\(\pi\) resides, and also that there are only \emph{three} populated
+regions in the Venn diagram: \(\mathbb{Q}\),
+\((\mathbb{A_{\mathbb{R}}} \cap \mathbb{I})\), and
+\(\mathbb{T_{\mathbb{R}}}\).}\label{fig:venn}
+\end{figure}
 
 \subsection{Enter π}\label{enter-ux3c0}
 
