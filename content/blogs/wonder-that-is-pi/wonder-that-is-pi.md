@@ -152,7 +152,7 @@ We have just shown that an algebraic number can be a complex root of a real poly
 
 ## The Transcendental Numbers
 
-Transcendental numbers are _not algebriac_. But proving that a particular number is transcendental is no mean task. When mathematicians have already proven a particular number is transcendental, we will accept their assertion even if we do not understand the proof.  Numbers like [$\pi$](https://www.wolframalpha.com/input?i=is+pi+transcendental), [$e$](https://www.wolframalpha.com/input?i=is+e+transcendental), and [$\ln 2$](https://www.wolframalpha.com/input?i=is+ln%282%29+transcendental) are transcendental.
+Transcendental numbers are _not algebriac_. But proving that a particular number is transcendental is no mean task. We will accept a number as transcendental if it has been proved to be so by professional mathematicians.  Numbers like [$\pi$](https://www.wolframalpha.com/input?i=is+pi+transcendental), [$e$](https://www.wolframalpha.com/input?i=is+e+transcendental), and [$\ln 2$](https://www.wolframalpha.com/input?i=is+ln%282%29+transcendental) are transcendental.
 
 _All transcendental numbers are perforce irrational_.
 
@@ -162,7 +162,7 @@ Transcendental numbers can also be complex, but we will steer clear of that cate
 
 We have established a [tetrachotomy](https://www.collinsdictionary.com/dictionary/english/tetrachotomy) among the real numbers. But the four parts are not mutually exclusive. They overlap. There are two non-overlapping dichotomies: the rationals and irrationals as one pair, and the algebraic and transcendental numbers as the other.
 
-It is noteworthy that irrational numbers like $\sqrt{2}$ and transcendental numbers like $\pi$ and $e$  are denoted with the aid of _symbols_.
+It is noteworthy that irrational numbers like $\sqrt{2}$ and transcendental numbers like $\pi$ and $e$  are denoted, not by values, but by _symbols_.
 
 This classification of the real numbers seems to be crying out for a Venn diagram to depict it visually. But before we do that, let us marshal the facts we have gathered so far:
 
@@ -180,7 +180,7 @@ This classification of the real numbers seems to be crying out for a Venn diagra
 
 #.  The real numbers are also the union of the algebraic and transcendental numbers that do not embody the imaginary unit $i$: $\mathbb{R} = \mathbb{A_{\mathbb{R}}} \cup \mathbb{T_{\mathbb{R}}}$
 
-#.  Algebraic numbers can be either rational or irrational: $\mathbb{A_{\mathbb{R}}} \subseteq \mathbb{Q} \cup \mathbb{I}$.
+#.  Algebraic numbers can be either rational or irrational: $\mathbb{A_{\mathbb{R}}} \subseteq (\mathbb{Q} \cup \mathbb{I})$.
 
 #.  All rational numbers are algebraic: $\mathbb{Q} \subset \mathbb{A_{\mathbb{R}}}$
 
