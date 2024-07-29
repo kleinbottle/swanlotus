@@ -11,36 +11,40 @@ opengraphimage: pi-equations.png
 
 This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes). Here, we look at π as a number---without explicit reference to its geometric tethering---and explore its remarkable ubiquity in mathematics. As an appetizer, see [@fig:pi-equations], where the symbol for Pi is surmounted by two very disparate equations defining it. How in all the world could these two different-looking equations be true? But they are indeed!
 
-![Pi expressed by two very different equations.]({attach}images/pi-equations.svg){#fig:pi-equations   width=60% .modal-target}
+![Pi expressed by two very different equations. Note that both are sums to infinity of expressions involving integers.]({attach}images/pi-equations.svg){#fig:pi-equations   width=60% .modal-target}
 
 ## The Number [Menagerie](https://www.thefreedictionary.com/menagerie)
 
-Numbers may be compared to animals in a zoo. Each is different, and yet they all share some things in common. The variety and diversity of zoo animals can be challenging. That is why the big cats are grouped together, the herbivores live in another part of the zoo, etc.
+Numbers may be compared to animals in a zoo. Each is different, and yet they all share some attributes  in common. The variety and diversity of zoo animals can be challenging. That is why the big cats are grouped together, the herbivores live in another part of the zoo, etc.
 
 Numbers, like animals, have evolved over many centuries into what I call the _number menagerie_. A very elementary picture of this zoo is outlined in my blog ["The Two Most Important Numbers: Zero and One"](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one) in case you need to review some definitions.
 
-To appreciate $\pi$ as a number, we need to be aware of the [taxonomy] in the zoo of numbers. It turns out that $\pi$ is a real number that is transcendental and therefore also irrational. Let us pause for a while to better understand what this means.
+To appreciate $\pi$ as a number, we need to be aware of the [taxonomy](https://www.britannica.com/science/taxonomy) in the zoo of numbers. It turns out that _$\pi$ is a real number that is transcendental and therefore also irrational_. Let us make a short detour to better understand what this means.
 
 ### Real and Complex Numbers
 
-Broadly speaking, there are two classes of numbers: real numbers, denoted by the set $\mathbb{R}$, and complex numbers, denoted by the set $\mathbb{C}$. The difference between the two is that while a real number is a single number, a complex number is a pair, composed of two real numbers, conjoined by the [imaginary unit](https://en.wikipedia.org/wiki/Imaginary_unit) $i$, where $i^2 = -1$. In set-theoretic notation, we write 
-$$\mathbb{C} = \{a + ib: a, b \in \mathbb{R}\}.
+There are two major sets of numbers: real numbers, denoted by the set $\mathbb{R}$, and complex numbers, denoted by the set $\mathbb{C}$. The difference between the two is that while a real number is a single number, a complex number is a pair, composed of two real numbers, conjoined by the [imaginary unit](https://en.wikipedia.org/wiki/Imaginary_unit) $i$, where $i^2 = -1$. In set-theoretic notation, we write 
 $$
+\mathbb{C} = \{a + bi: a, b \in \mathbb{R}\}.
+$$
+Sometimes, the complex number $a + bi$ is written as the ordered pair $(a, b)$, provided the context is clear.
 
-What then are the reals? We will leave that question aside for the moment, and look instead into what undivided or whole numbers are.
+What then are the reals? The real numbers are the union of the set of rational numbers and the irrational numbers. Alternatively, the reals are the union of the algebraic numbers and the transcendental numbers.^[Since both algebraic and transcendental numbers can be complex, we need the added condition that these do not involve the imaginary unit, $i$. For example, $(1 + \frac{\sqrt{(-7)}}{2}) = (1 + \frac{\sqrt{7}}{2}i)$, and $\pi i$ are examples of algebraic and transcendental numbers respectively that involve $i$.]
+
+We will define each of these terms below and how they relate to one another. As always, we start with the known and proceed to the unknown. 
 
 ### The Integers and Friends
 
 The set $\mathbb{N}$ of _natural or counting numbers_ is defined as 
 $$
 \mathbb{N} = \{1, 2, 3, \dots, n, n+1, \dots\}.
-$$ It is a _countably infinite_ set whose members begin with $1$ and progress by the addition of $1$ to the  predecessor. It goes on without end.
+$$ It is a [countably infinite](https://en.wikipedia.org/wiki/Countable_set) set whose members begin with $1$ and progress by the addition of $1$ to the predecessor. It is an infinite set, which means it never ends, as denoted by the [ellipsis](https://www.grammarly.com/blog/ellipsis/) or dots at the end of the definition. 
 
 Zero is not a natural number and is assigned its own, unnamed set, $\{0\}$.^[Some folks include zero in $\mathbb{N}$.]
 
 The set of _integers_ $\mathbb{Z}$ includes the negative numbers, zero, and the positive numbers:
 $$
-\mathbb{Z} = \{\dots -3, -2, -1, 0, 1, 2, 3, \dots\}
+\mathbb{Z} = \{\ldots -3, -2, -1, 0, 1, 2, 3, \dots\}
 $$ Like $\mathbb{N}$, $\mathbb{Z}$ is also a countably infinite set.
 
 ## A first dichotomy
@@ -62,7 +66,7 @@ $$
 25 = \frac{25}{1}
 $$ makes it clear that $25$ is a rational number. Every integer is a rational number.
 
-And it is obvious from the definition that $\frac{2}{3}$ is a rational number. But is $-\frac{11}{16}$ a rational number? Yes, indeed, because the definition depends upon the _integer_ $a$ and the _non-zero integer_ $b$, where both integers, being drawn from $\mathbb{Z}$, can be signed.
+And it is obvious from the definition that $\frac{2}{3}$ is a rational number. But is $-\frac{11}{16}$ a rational number? Yes, indeed, because the definition depends upon the _integer_ $a$ and the _non-zero integer_ $b$, where both integers---being drawn from $\mathbb{Z}$---can be signed.
 
 When a rational number is expressed as a decimal, that decimal can either terminate or recur without end.
 
@@ -101,9 +105,11 @@ Infinite sums have this property of upending our "intuition" about what is corre
 
 ## Irrational Numbers
 
-Irrational numbers are numbers which are _not rational_. The discovery that $\sqrt{2}$---which is the length of the diagonal of a unit square---was not rational, caused the first ripples of disquiet in the ancient mathematical world, because it upset the prevailing philosophy that whole numbers alone ruled the world.
+Irrational numbers are numbers which are _not rational_. The discovery that $\sqrt{2}$---which is the length of the diagonal of a unit square---was not rational [@HSM-SE;@clegg2004], caused the first ripples of disquiet in the ancient mathematical world, because it upset the prevailing philosophy that ratios of whole numbers alone ruled the world.
 
-An irrational number like $\sqrt{2}$ does not have any recurring sequence of digits when expressed as a decimal. But the absence of recurring sequences in the decimal representation of a number should not solely be used to identify a number as irrational, because some rationals with large denominators can and do have very long recurring sequences, which may be difficult to detect by visual inspection. For example, $\frac{8119}{5741}$, which incidentally is a rational approximation to $\sqrt{2}$, has a recurring sequence of length $5740$.^[Also called the _period_ of a repeating decimal. See <https://www.wolframalpha.com/input?i=8119%2F5741>.]
+There are many celebrated proofs that $\sqrt{2}$ is not the ratio of two integers and is therefore irrational [@bogomolny2018]. Nevertheless, it took almost two millennia for $\sqrt{2}$ to be accepted into the fold of properly defined numbers [@cepelewicz2024].
+
+An irrational number like $\sqrt{2}$ does not have any recurring sequence of digits when expressed as a decimal. But the absence of recurring sequences in the decimal representation of a number should not solely be used to identify a number as irrational, because some rationals with large denominators can and do have very long recurring sequences, which may be difficult to detect by visual inspection . For example, $\frac{8119}{5741}$---which incidentally is a rational approximation to $\sqrt{2}$---has a recurring sequence of length $5740$.^[Also called the _period_ of a repeating decimal. See <https://www.wolframalpha.com/input?i=8119%2F5741>.]
 
 ### The irrationals exceed in number the rationals
 
@@ -115,15 +121,15 @@ In fact, [the irrationals far exceed in number the rational numbers](https://soc
 
 The real numbers may also be split another way into two mutually exclusive sets: the _algebraic numbers_ and the _transcendental numbers_. Every real number is _either_ an algebraic number or a transcendental number; it cannot be both.
 
-It bears noting though, that both the algebraic and the transcendental numbers may be complex, i.e, have an imaginary part. But in this blog, we have restricted our universe to the real numbers.
+It bears noting though, that both the algebraic and the transcendental numbers may be complex, i.e, have an imaginary part. But in this blog, we have restricted our universe to the real numbers. In this blog, we will not consider algebraic or transcendental numbers that embody the imaginary unit.
 
 ## The Algebraic Numbers
 
 An algebraic number is the root of a non-zero polynomial with integer or rational coefficients. Things have gotten abstract enough thus far for eyes to be glazed. So, let us invoke some examples to revive attention.
 
-The simplest algebraic number is an integer. Let us take $5$ as an example. If the polynomial $p(x) = x - 5$, its root is when $p(x) = 0$, i.e., when $x - 5 = 0$. This implies $x = 5$ and we have shown that $5$ is algebraic by definition.
+The simplest algebraic number is an integer. Let us take $5$ as an example. If the polynomial $p(x) = x - 5$, its root is when $p(x) = 0$, i.e., when $x - 5 = 0$. This implies $x = 5$ and we have shown that $5$ is algebraic _by definition_.
 
-Note that we could have used any other polynomial with the same root, such as $q(x) = 2x - 10$. All we need do is find _one_ polynomial whose root equals the number and we have shown that the number is algebraic _by definition_. 
+Note that we could have used any other polynomial with the same root, such as $q(x) = 2x - 10$. All we need do is find _one_ polynomial whose root equals the number and we have shown that the number is algebraic. 
 
 Likewise, the rational number $-(\frac{2}{3})$ is the root of the polynomial $3x + 2$ and is therefore algebraic.
 
@@ -156,13 +162,13 @@ Transcendental numbers can also be complex, but we will steer clear of that cate
 
 We have established a [tetrachotomy](https://www.collinsdictionary.com/dictionary/english/tetrachotomy) among the real numbers. But the four parts are not mutually exclusive. They overlap. There are two non-overlapping dichotomies: the rationals and irrationals as one pair, and the algebraic and transcendental numbers on the other.
 
-It is noteworthy that irrational numbers like $\sqrt{2}$ and transcendental numbers like $\pi$ and $e$  are denoted with the aid os _symbols_.
+It is noteworthy that irrational numbers like $\sqrt{2}$ and transcendental numbers like $\pi$ and $e$  are denoted with the aid of _symbols_.
 
 This classification of the real numbers seems to be crying out for a Venn diagram to depict it visually. Before we do that, let us marshal the facts we have gathered so far:
 
 #.  The real numbers are the union of the rational and the irrational numbers.
 
-#.  The real numbers are also the union of the non-complex algebraic and non-complex transcendental numbers.
+#.  The real numbers are also the union of the algebraic and transcendental numbers that do not embody the imaginary unit $i$.
 
 #.  Algebraic numbers can be either rational or irrational.
 
@@ -172,7 +178,7 @@ This classification of the real numbers seems to be crying out for a Venn diagra
 
 #.  All real transcendental numbers are irrational.
 
-#.  The irrational numbers contain _all_ non-complex transcendental numbers and a subset of the non-complex algebraic numbers.
+#.  The irrational numbers contain _all_ transcendental numbers and a subset of the algebraic numbers, again excluding those that embody $i$.
 
 ## Enter π
 
@@ -234,3 +240,8 @@ https://www.quora.com/Why-cant-we-draw-a-Venn-diagram-for-4-sets-with-circles-an
 https://www.gauthmath.com
 
 https://tex.stackexchange.com/questions/668565/how-can-i-draw-a-shape-with-overlapping-regions-with-opacity
+
+https://www.cut-the-knot.org/proofs/sq_root.shtml
+
+
+https://news.ycombinator.com/item?id=40750230

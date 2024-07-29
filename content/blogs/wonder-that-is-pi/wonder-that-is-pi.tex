@@ -240,16 +240,17 @@ equations be true? But they are indeed!
 \begin{figure}
 \centering
 \includesvg[width=0.6\textwidth,height=\textheight]{images/pi-equations.svg}
-\caption{Pi expressed by two very different
-equations.}\label{fig:pi-equations}
+\caption{Pi expressed by two very different equations. Note that both
+are sums to infinity of expressions involving
+integers.}\label{fig:pi-equations}
 \end{figure}
 
 \subsection{\texorpdfstring{The Number
 \href{https://www.thefreedictionary.com/menagerie}{Menagerie}}{The Number Menagerie}}\label{the-number-menagerie}
 
 Numbers may be compared to animals in a zoo. Each is different, and yet
-they all share some things in common. The variety and diversity of zoo
-animals can be challenging. That is why the big cats are grouped
+they all share some attributes in common. The variety and diversity of
+zoo animals can be challenging. That is why the big cats are grouped
 together, the herbivores live in another part of the zoo, etc.
 
 Numbers, like animals, have evolved over many centuries into what I call
@@ -260,40 +261,55 @@ Two Most Important Numbers: Zero and One''} in case you need to review
 some definitions.
 
 To appreciate \(\pi\) as a number, we need to be aware of the
-{[}taxonomy{]} in the zoo of numbers. It turns out that \(\pi\) is a
-real number that is transcendental and therefore also irrational. Let us
-pause for a while to better understand what this means.
+\href{https://www.britannica.com/science/taxonomy}{taxonomy} in the zoo
+of numbers. It turns out that \emph{\(\pi\) is a real number that is
+transcendental and therefore also irrational}. Let us make a short
+detour to better understand what this means.
 
 \subsubsection{Real and Complex Numbers}\label{real-and-complex-numbers}
 
-Broadly speaking, there are two classes of numbers: real numbers,
-denoted by the set \(\mathbb{R}\), and complex numbers, denoted by the
-set \(\mathbb{C}\). The difference between the two is that while a real
-number is a single number, a complex number is a pair, composed of two
-real numbers, conjoined by the
+There are two major sets of numbers: real numbers, denoted by the set
+\(\mathbb{R}\), and complex numbers, denoted by the set \(\mathbb{C}\).
+The difference between the two is that while a real number is a single
+number, a complex number is a pair, composed of two real numbers,
+conjoined by the
 \href{https://en.wikipedia.org/wiki/Imaginary_unit}{imaginary unit}
-\(i\), where \(i^2 = -1\). In set-theoretic notation, we write
-\[\mathbb{C} = \{a + ib: a, b \in \mathbb{R}\}.
-\]
+\(i\), where \(i^2 = -1\). In set-theoretic notation, we write \[
+\mathbb{C} = \{a + bi: a, b \in \mathbb{R}\}.
+\] Sometimes, the complex number \(a + bi\) is written as the ordered
+pair \((a, b)\), provided the context is clear.
 
-What then are the reals? We will leave that question aside for the
-moment, and look instead into what undivided or whole numbers are.
+What then are the reals? The real numbers are the union of the set of
+rational numbers and the irrational numbers. Alternatively, the reals
+are the union of the algebraic numbers and the transcendental
+numbers.\footnote{Since both algebraic and transcendental numbers can be
+  complex, we need the added condition that these do not involve the
+  imaginary unit, \(i\). For example,
+  \((1 + \frac{\sqrt{(-7)}}{2}) = (1 + \frac{\sqrt{7}}{2}i)\), and
+  \(\pi i\) are examples of algebraic and transcendental numbers
+  respectively that involve \(i\).}
+
+We will define each of these terms below and how they relate to one
+another. As always, we start with the known and proceed to the unknown.
 
 \subsubsection{The Integers and Friends}\label{the-integers-and-friends}
 
 The set \(\mathbb{N}\) of \emph{natural or counting numbers} is defined
 as \[
 \mathbb{N} = \{1, 2, 3, \dots, n, n+1, \dots\}.
-\] It is a \emph{countably infinite} set whose members begin with \(1\)
-and progress by the addition of \(1\) to the predecessor. It goes on
-without end.
+\] It is a \href{https://en.wikipedia.org/wiki/Countable_set}{countably
+infinite} set whose members begin with \(1\) and progress by the
+addition of \(1\) to the predecessor. It is an infinite set, which means
+it never ends, as denoted by the
+\href{https://www.grammarly.com/blog/ellipsis/}{ellipsis} or dots at the
+end of the definition.
 
 Zero is not a natural number and is assigned its own, unnamed set,
 \(\{0\}\).\footnote{Some folks include zero in \(\mathbb{N}\).}
 
 The set of \emph{integers} \(\mathbb{Z}\) includes the negative numbers,
 zero, and the positive numbers: \[
-\mathbb{Z} = \{\dots -3, -2, -1, 0, 1, 2, 3, \dots\}
+\mathbb{Z} = \{\ldots -3, -2, -1, 0, 1, 2, 3, \dots\}
 \] Like \(\mathbb{N}\), \(\mathbb{Z}\) is also a countably infinite set.
 
 \subsection{A first dichotomy}\label{a-first-dichotomy}
@@ -328,8 +344,8 @@ rational number.
 And it is obvious from the definition that \(\frac{2}{3}\) is a rational
 number. But is \(-\frac{11}{16}\) a rational number? Yes, indeed,
 because the definition depends upon the \emph{integer} \(a\) and the
-\emph{non-zero integer} \(b\), where both integers, being drawn from
-\(\mathbb{Z}\), can be signed.
+\emph{non-zero integer} \(b\), where both integers---being drawn from
+\(\mathbb{Z}\)---can be signed.
 
 When a rational number is expressed as a decimal, that decimal can
 either terminate or recur without end.
@@ -393,18 +409,26 @@ shown for example, in \cref{fig:pi-equations}.
 
 Irrational numbers are numbers which are \emph{not rational}. The
 discovery that \(\sqrt{2}\)---which is the length of the diagonal of a
-unit square---was not rational, caused the first ripples of disquiet in
-the ancient mathematical world, because it upset the prevailing
-philosophy that whole numbers alone ruled the world.
+unit square---was not rational
+{[}\citeproc{ref-HSM-SE}{2},\citeproc{ref-clegg2004}{3}{]}, caused the
+first ripples of disquiet in the ancient mathematical world, because it
+upset the prevailing philosophy that ratios of whole numbers alone ruled
+the world.
+
+There are many celebrated proofs that \(\sqrt{2}\) is not the ratio of
+two integers and is therefore irrational
+{[}\citeproc{ref-bogomolny2018}{4}{]}. Nevertheless, it took almost two
+millennia for \(\sqrt{2}\) to be accepted into the fold of properly
+defined numbers {[}\citeproc{ref-cepelewicz2024}{5}{]}.
 
 An irrational number like \(\sqrt{2}\) does not have any recurring
 sequence of digits when expressed as a decimal. But the absence of
 recurring sequences in the decimal representation of a number should not
 solely be used to identify a number as irrational, because some
 rationals with large denominators can and do have very long recurring
-sequences, which may be difficult to detect by visual inspection. For
-example, \(\frac{8119}{5741}\), which incidentally is a rational
-approximation to \(\sqrt{2}\), has a recurring sequence of length
+sequences, which may be difficult to detect by visual inspection . For
+example, \(\frac{8119}{5741}\)---which incidentally is a rational
+approximation to \(\sqrt{2}\)---has a recurring sequence of length
 \(5740\).\footnote{Also called the \emph{period} of a repeating decimal.
   See \url{https://www.wolframalpha.com/input?i=8119\%2F5741}.}
 
@@ -419,7 +443,7 @@ be mistaken.
 In fact,
 \href{https://socratic.org/questions/58c80a37b72cff29df40c794}{the
 irrationals far exceed in number the rational numbers}
-{[}\citeproc{ref-socratic}{2}{]}. This fact is stated baldly here,
+{[}\citeproc{ref-socratic}{6}{]}. This fact is stated baldly here,
 because going into the whys and wherefores of this claim will lead us
 too far astray from our focus on \(\pi\). It is an interesting fact,
 though, that you should stash away for future use.
@@ -433,7 +457,9 @@ algebraic number or a transcendental number; it cannot be both.
 
 It bears noting though, that both the algebraic and the transcendental
 numbers may be complex, i.e, have an imaginary part. But in this blog,
-we have restricted our universe to the real numbers.
+we have restricted our universe to the real numbers. In this blog, we
+will not consider algebraic or transcendental numbers that embody the
+imaginary unit.
 
 \subsection{The Algebraic Numbers}\label{the-algebraic-numbers}
 
@@ -444,12 +470,12 @@ eyes to be glazed. So, let us invoke some examples to revive attention.
 The simplest algebraic number is an integer. Let us take \(5\) as an
 example. If the polynomial \(p(x) = x - 5\), its root is when
 \(p(x) = 0\), i.e., when \(x - 5 = 0\). This implies \(x = 5\) and we
-have shown that \(5\) is algebraic by definition.
+have shown that \(5\) is algebraic \emph{by definition}.
 
 Note that we could have used any other polynomial with the same root,
 such as \(q(x) = 2x - 10\). All we need do is find \emph{one} polynomial
 whose root equals the number and we have shown that the number is
-algebraic \emph{by definition}.
+algebraic.
 
 Likewise, the rational number \(-(\frac{2}{3})\) is the root of the
 polynomial \(3x + 2\) and is therefore algebraic.
@@ -507,7 +533,7 @@ numbers on the other.
 
 It is noteworthy that irrational numbers like \(\sqrt{2}\) and
 transcendental numbers like \(\pi\) and \(e\) are denoted with the aid
-os \emph{symbols}.
+of \emph{symbols}.
 
 This classification of the real numbers seems to be crying out for a
 Venn diagram to depict it visually. Before we do that, let us marshal
@@ -518,8 +544,8 @@ the facts we have gathered so far:
   The real numbers are the union of the rational and the irrational
   numbers.
 \item
-  The real numbers are also the union of the non-complex algebraic and
-  non-complex transcendental numbers.
+  The real numbers are also the union of the algebraic and
+  transcendental numbers that do not embody the imaginary unit \(i\).
 \item
   Algebraic numbers can be either rational or irrational.
 \item
@@ -529,8 +555,9 @@ the facts we have gathered so far:
 \item
   All real transcendental numbers are irrational.
 \item
-  The irrational numbers contain \emph{all} non-complex transcendental
-  numbers and a subset of the non-complex algebraic numbers.
+  The irrational numbers contain \emph{all} transcendental numbers and a
+  subset of the algebraic numbers, again excluding those that embody
+  \(i\).
 \end{enumerate}
 
 \subsection{Enter π}\label{enter-ux3c0}
@@ -604,6 +631,10 @@ https://www.gauthmath.com
 
 https://tex.stackexchange.com/questions/668565/how-can-i-draw-a-shape-with-overlapping-regions-with-opacity
 
+https://www.cut-the-knot.org/proofs/sq\_root.shtml
+
+https://news.ycombinator.com/item?id=40750230
+
 \section*{References}\label{bibliography}
 \addcontentsline{toc}{section}{References}
 
@@ -611,14 +642,38 @@ https://tex.stackexchange.com/questions/668565/how-can-i-draw-a-shape-with-overl
 \begin{CSLReferences}{0}{0}
 \bibitem[\citeproctext]{ref-seneca}
 \CSLLeftMargin{{[}1{]} }%
-\CSLRightInline{{Sum to Infinity of a Geometric Series---Maths: Edexcel
-A Level Pure Maths}. Retrieved 28 July 2024 from
+\CSLRightInline{---. {Sum to Infinity of a Geometric Series---Maths}.
+{Edexcel A Level Pure Maths}. Retrieved 28 July 2024 from
 \url{https://senecalearning.com/en-GB/revision-notes/a-level/maths/edexcel/pure-maths/4-2-9-sum-to-infinity-of-a-geometric-series}}
 
-\bibitem[\citeproctext]{ref-socratic}
+\bibitem[\citeproctext]{ref-HSM-SE}
 \CSLLeftMargin{{[}2{]} }%
+\CSLRightInline{Various. 2014. {Irrationality of the square root of 2}.
+{History of Science and Mathematics Stack Exchange}. Retrieved 29 July
+2024 from
+\url{https://hsm.stackexchange.com/questions/2/irrationality-of-the-square-root-of-2}}
+
+\bibitem[\citeproctext]{ref-clegg2004}
+\CSLLeftMargin{{[}3{]} }%
+\CSLRightInline{Brian Clegg. 2004. {The Dangerous Ratio}. Retrieved 29
+July 2024 from \url{https://nrich.maths.org/2671}}
+
+\bibitem[\citeproctext]{ref-bogomolny2018}
+\CSLLeftMargin{{[}4{]} }%
+\CSLRightInline{Alexander Bogomolny. 2018. {Square root of 2 is
+irrational}. Retrieved 29 July 2024 from
+\url{https://www.cut-the-knot.org/proofs/sq_root.shtml}}
+
+\bibitem[\citeproctext]{ref-cepelewicz2024}
+\CSLLeftMargin{{[}5{]} }%
+\CSLRightInline{Jordana Cepelewicz. 2024. {How the Square Root of 2
+Became a Number}. {Quanta Magazine}. Retrieved 29 July 2024 from
+\url{https://www.quantamagazine.org/how-the-square-root-of-2-became-a-number-20240621/}}
+
+\bibitem[\citeproctext]{ref-socratic}
+\CSLLeftMargin{{[}6{]} }%
 \CSLRightInline{George C. 2017. {Are there more rational numbers than
-irrational numbers? \textbar{} Socratic}. Retrieved 28 July 2024 from
+irrational numbers?}. {Socratic}. Retrieved 28 July 2024 from
 \url{https://socratic.org/questions/58c80a37b72cff29df40c794}}
 
 \end{CSLReferences}
