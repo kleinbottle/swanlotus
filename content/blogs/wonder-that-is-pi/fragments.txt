@@ -1,0 +1,1 @@
+What does the equality sign mean for an infinite sum? How can a sum of rationals equal an irrational number? A transcendental number? The meaning of $=$ is therefore not in the sense of $2 + 2 = 4$ or even of $x - 5 = 0$. It is something similar and yet something different, because, despite Cantor, we have not tamed the idea of infinity yet.
