@@ -166,6 +166,8 @@
 %
 \usepackage{newunicodechar}
 \newunicodechar{√}{\textsf{√}}
+\usepackage {caption}
+    \captionsetup{font={sf,stretch=1.4}}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -177,9 +179,9 @@
   pdfauthor={R (Chandra) Chandrasekhar},
   pdflang={en-GB},
   colorlinks=true,
-  linkcolor={DarkOliveGreen},
+  linkcolor={DarkGreen},
   filecolor={Purple},
-  citecolor={DarkKhaki},
+  citecolor={Teal},
   urlcolor={Maroon},
   pdfcreator={LaTeX via pandoc}}
 
@@ -209,8 +211,7 @@ been so ordained. Here we attempt to fathom
 \href{https://grammarist.com/phrase/a-method-in-ones-madness/}{the
 method in the madness}.
 
-\hypertarget{what-is-an-angle}{%
-\subsection{What is an angle?}\label{what-is-an-angle}}
+\subsection{What is an angle?}\label{what-is-an-angle}
 
 For most of us, the idea of an \emph{angle} first arose when we studied
 geometry in elementary or primary school. We then encountered
@@ -220,12 +221,10 @@ symmetric, with three equal sides and three equal angles, as shown in
 \cref{fig:equilateral}.
 
 \begin{figure}
-\hypertarget{fig:equilateral}{%
 \centering
 \includesvg[width=0.75\textwidth,height=\textheight]{images/equilateral.svg}
 \caption{An equilateral triangle is one in which the three sides and
 three angles are equal.}\label{fig:equilateral}
-}
 \end{figure}
 
 The point at which a line meets another line is called a \emph{vertex},
@@ -239,8 +238,7 @@ respectively. The angles have been labelled with the Greek letters
 \(a = b = c\), by definition, and by symmetry,
 \(\alpha = \beta = \gamma\).
 
-\hypertarget{degrees}{%
-\subsection{Degrees}\label{degrees}}
+\subsection{Degrees}\label{degrees}
 
 On encountering geometry, we very likely proudly trotted out our set of
 mathematical instruments, which would include a pair of compasses, a
@@ -257,9 +255,8 @@ top---the superscript---was called the \emph{degree sign}, and we could
 then jubilantly celebrate our first rite of passage into geometry and
 mathematical symbols.
 
-\hypertarget{where-did-degrees-come-from}{%
 \subsubsection{Where did degrees come
-from?}\label{where-did-degrees-come-from}}
+from?}\label{where-did-degrees-come-from}
 
 Surely, degrees did not come from a protractor, although we use one to
 measure angles. How did degrees come about? With sixty degrees each in
@@ -287,10 +284,10 @@ factors: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20, 24, 30, 36, 40, 45,
 But beyond the approximation of a solar year, and the convenience of
 ready division by its factors, the use of degrees as a unit of angular
 measure is, to me, arbitrary. Who deemed the circle to be 360°, despite
-it being very factor-friendly?
+it being very factor-friendly? A less arbitrary measure of an angle was
+required for serious mathematics.
 
-\hypertarget{from-triangles-to-circles}{%
-\subsection{From triangles to circles}\label{from-triangles-to-circles}}
+\subsection{From triangles to circles}\label{from-triangles-to-circles}
 
 What is the root concept behind the idea of an angle? Harking back to
 the etymology of the word vertex---and applying it to the equilateral
@@ -308,9 +305,8 @@ circumference of the circle. So far so good. But what about that magic
 number 360? Well, we are about to exorcise it now. \emojifont {😉}
 \normalfont
 
-\hypertarget{radians-as-an-alternative-to-degrees}{%
 \subsection{Radians as an alternative to
-degrees}\label{radians-as-an-alternative-to-degrees}}
+degrees}\label{radians-as-an-alternative-to-degrees}
 
 One traumatic transition for the student of elementary mathematics is
 when he or she is forced to abandon the warm comfort of degrees as
@@ -318,9 +314,8 @@ angular measure, and compulsorily made to embrace the cold and cruel
 radian as \emph{the} angular measure forever afterward. Why this unfair
 compulsion?
 
-\hypertarget{using-circles-to-measure-angles}{%
 \subsubsection{Using circles to measure
-angles}\label{using-circles-to-measure-angles}}
+angles}\label{using-circles-to-measure-angles}
 
 Because the idea of an angle is related to rotation, it seems natural
 that we should define angles using the circle as a basis, rather than
@@ -329,14 +324,14 @@ the triangles that we encountered at first.
 It is a fact that the \emph{length} of a circle, or its
 \emph{perimeter}, or its \emph{circumference}, \(C\), is always related
 to its radius, \(r\), through the formula:
-\begin{equation}\protect\hypertarget{eq:2pir}{}{
+\begin{equation}\phantomsection\label{eq:2pir}{
 C = 2\pi r.
-}\label{eq:2pir}\end{equation} And \(\pi\) is not \(\frac{22}{7}\) as we
-were originally taught, but really a number whose precise expression
-cannot be predicted or exhausted. The digits simply keep rolling on,
-without pattern or end. But the beauty is that \(\pi\) is nevertheless a
-unique number, a universal mathematical constant. It seems that Nature
-has played a game on us by making the simple symmetrical circle have a
+}\end{equation} And \(\pi\) is not \(\frac{22}{7}\) as we were
+originally taught, but really a number whose precise expression cannot
+be predicted or exhausted. The digits simply keep rolling on, without
+pattern or end. But the beauty is that \(\pi\) is nevertheless a unique
+number, a universal mathematical constant. It seems that Nature has
+played a game on us by making the simple symmetrical circle have a
 circumference that can only be approximated but never entirely known to
 an unlimited precision.\footnote{\(\pi\), \(e\) the base of natural
   logarithms, \(\phi\) the golden ratio, along with a large pantheon of
@@ -344,8 +339,7 @@ an unlimited precision.\footnote{\(\pi\), \(e\) the base of natural
   transcendental. Why Nature has this preference for the irrational is
   an intriguing question that needs an answer.}
 
-\hypertarget{one-radian}{%
-\subsubsection{One radian}\label{one-radian}}
+\subsubsection{One radian}\label{one-radian}
 
 So, how does one define a radian? If, on the basis of its name, you
 guessed that it very likely involves the radius of a circle, your
@@ -354,32 +348,27 @@ the centre of a circle of radius one unit by an arc that is also one
 unit long}. This is illustrated in \cref{fig:radian}.
 
 \begin{figure}
-\hypertarget{fig:radian}{%
 \centering
 \includesvg[width=0.8\textwidth,height=\textheight]{images/one-radian.svg}
 \caption{One radian is the angle subtended at the centre of a unit
 circle by an arc of length equal to one unit.}\label{fig:radian}
-}
 \end{figure}
 
 But what happens when our circle has a radius larger or smaller than one
 unit? We will take up this case, after a short detour.
 
-\hypertarget{congruence-and-similarity}{%
 \subsubsection{Congruence and
-similarity}\label{congruence-and-similarity}}
+similarity}\label{congruence-and-similarity}
 
 This is a mathematically non-rigorous digression on congruence and
 similarity, both of which are first encountered in school in the context
 of triangles, as shown in \cref{fig:similar}.
 
 \begin{figure}
-\hypertarget{fig:similar}{%
 \centering
 \includesvg[width=0.7\textwidth,height=\textheight]{images/similar.svg}
 \caption{Similarity and congruence in the context of triangles. See the
 text for the explanation.}\label{fig:similar}
-}
 \end{figure}
 
 Consider the triangle \(XYZ\), and ignore for a moment triangle \(LMN\).
@@ -427,30 +416,27 @@ similar to each other within their class?\footnote{All circles are
   similar, as are all equilateral triangles, all squares, and indeed,
   all regular \(n\)-gons, and all parabolas.}
 
-\hypertarget{radians-as-angular-measure}{%
 \subsection{Radians as angular
-measure}\label{radians-as-angular-measure}}
+measure}\label{radians-as-angular-measure}
 
 Consider \cref{fig:general} in which two circles having different radii
 are shown.
 
 \begin{figure}
-\hypertarget{fig:general}{%
 \centering
 \includesvg[width=0.65\textwidth,height=\textheight]{images/general-radian.svg}
 \caption{Generalized measure of an angle in radians. The arbitrary angle
 \(\theta\) in radians is defined as
 \(\theta = \frac{s_1}{r_1} = \frac{s_2}{r_2}\). The equality is valid
 because all circles are similar to each other.}\label{fig:general}
-}
 \end{figure}
 
 We are now ready to define the value of any angle in radians. Consider a
 circle of radius \(r\). Let an arc of arbitrary length \(s\) subtend an
 angle of \(\theta\) at the centre. The angle \(\theta\) in radians is
-\emph{defined} to be: \begin{equation}\protect\hypertarget{eq:defrad}{}{
+\emph{defined} to be: \begin{equation}\phantomsection\label{eq:defrad}{
 \theta \triangleq \frac{\text{arc length}}{\text{radius}} = \frac{s}{r}.
-}\label{eq:defrad}\end{equation}
+}\end{equation}
 
 By dividing the arc length by the radius, we have in effect
 \emph{normalized} radian measure, and removed any trace of
@@ -498,8 +484,7 @@ ratios are familiar to us from \emph{trigonometry} where the \(\sin\),
 \(\cos\), and \(\tan\) functions are expressed as the ratios of lengths
 in a right-angled triangle. We review this relationship next.
 
-\hypertarget{trigonometric-ratios}{%
-\subsection{Trigonometric ratios}\label{trigonometric-ratios}}
+\subsection{Trigonometric ratios}\label{trigonometric-ratios}
 
 Trigonometric ratios are one of the workhorses of applied mathematics.
 They arose from the study of right-angled triangles. The three standard
@@ -511,16 +496,13 @@ trigonometric ratios. Notice particularly how these expressions are the
 unitless \emph{ratios of two lengths}, just as with radians.
 
 \begin{figure}
-\hypertarget{fig:trig}{%
 \centering
 \includesvg[width=0.9\textwidth,height=\textheight]{images/trig.svg}
 \caption{Trigonometric ratios defined as quotients of lengths of sides
 in a right-angled triangle.}\label{fig:trig}
-}
 \end{figure}
 
-\hypertarget{the-circular-functions}{%
-\subsection{The Circular Functions}\label{the-circular-functions}}
+\subsection{The Circular Functions}\label{the-circular-functions}
 
 The trigonometric ratios in the context of triangles become the
 \emph{trigonometric functions} in the context of the circle. They are
@@ -545,13 +527,11 @@ helpful unit circle will serve to relate the triangle and the circle to
 the trigonometric functions, as illustrated in \cref{fig:unit} below.
 
 \begin{figure}
-\hypertarget{fig:unit}{%
 \centering
 \includesvg[width=0.85\textwidth,height=\textheight]{images/unit-circle.svg}
 \caption{A pictorial representation of the unit circle, the three
 standard trigonometric functions, and their inter-relationships. See the
 text for a full explanation.}\label{fig:unit}
-}
 \end{figure}
 
 \cref{fig:unit} shows a unit circle drawn on the two-dimensional
@@ -580,8 +560,7 @@ that \((\cos\theta, \sin\theta)\)---which represent the coordinates of
 \(y\) in the respective quadrants. One could also view the associated
 \emph{lengths} as signed values.
 
-\hypertarget{the-tangent}{%
-\subsubsection{The tangent}\label{the-tangent}}
+\subsubsection{The tangent}\label{the-tangent}
 
 The really insightful revelation from \cref{fig:unit} comes from looking
 at \(\tan\theta\). Have you ever wondered why the ratio
@@ -593,13 +572,11 @@ relative to each other in three different ways as shown in
 \cref{fig:chord-tangent}.
 
 \begin{figure}
-\hypertarget{fig:chord-tangent}{%
 \centering
 \includesvg[width=0.7\textwidth,height=\textheight]{images/chord-tangent.svg}
 \caption{The three different ways in which a circle and line may lie
 relative to each other. See the text for the
 explanation.}\label{fig:chord-tangent}
-}
 \end{figure}
 
 The line \(AB\) does not cut or \emph{intersect} the circle at all. The
@@ -641,11 +618,11 @@ to \cref{fig:unit}, we construct the triangle \(ODT\) thus:
 
 Because the triangle \(ODT\) is similar to triangle \(OCS\), we can
 assert that the ratios of corresponding sides are equal. Thus,
-\begin{equation}\protect\hypertarget{eq:tangent}{}{
+\begin{equation}\phantomsection\label{eq:tangent}{
 \tan\theta = \frac{CS}{OC} = \frac{DT}{OD} = DT
-}\label{eq:tangent}\end{equation} bearing in mind that, like \(OS\),
-\(OD\) is also a radius of unit length. We resorted to this construction
-for the following reasons:
+}\end{equation} bearing in mind that, like \(OS\), \(OD\) is also a
+radius of unit length. We resorted to this construction for the
+following reasons:
 
 \begin{enumerate}
 \tightlist
@@ -690,9 +667,8 @@ line \(SO\) must be produced in the positive \(y\) direction to once
 more intersect the tangent \(T'DT\) at \(T\). That explains why tangents
 of angles in the third quadrant are positive.
 
-\hypertarget{the-trigonometric-functions}{%
 \subsection{The trigonometric
-functions}\label{the-trigonometric-functions}}
+functions}\label{the-trigonometric-functions}
 
 By moving from triangles to the unit circle on coordinate axes, we have
 enabled \(\theta\) to take on any value between 0 and \(2\pi\) radians.
@@ -702,14 +678,12 @@ to become the \emph{trigonometric functions} which can take on
 trigonometric functions are shown in \cref{fig:threegraph}.
 
 \begin{figure}
-\hypertarget{fig:threegraph}{%
 \centering
 \includesvg[width=0.9\textwidth,height=\textheight]{images/threegraph.svg}
 \caption{Graphs of the three trigonometric functions. Notice how
 \(\sin\) and \(\cos\) are bounded in their values, but \(\tan\) is not.
 There are discontinuities for
 \(\theta=\frac{2n+1}{2}\pi\).}\label{fig:threegraph}
-}
 \end{figure}
 
 Note that when \(\theta = 2\pi\) radians, we cannot really distinguish
@@ -722,14 +696,22 @@ with a period of \(2\pi\). So, one angle may
 another unless we have accounting devices to optionally add \(2n\pi\) to
 it with the
 \href{https://dictionary.cambridge.org/dictionary/english/proviso}{proviso}
-that \(n\) is an integer. And this concept is a
+that \(n\) is an integer.
+
+When trigonometric functions like \(\sin x\) are differentiated or
+integrated, the variable \(x\), representing the angle, must be measured
+in radians. Moreover, when oscillatory phenomena, whether of water, or
+electricity, or light, are studied in the physical sciences and
+engineering, trigonometric functions usually form part of the solution.
+The importance of \(\pi\) is therefore entrenched in the importance of
+trigonometric functions and radian measure, in solving a variety of
+physical problems. And this concept is a
 \href{https://www.dictionary.com/browse/segue}{segue} to power series
 expansions of trigonometric functions, their use in calculus, and later
 on, in Fourier series.
 
-\hypertarget{power-series-for-trigonometric-functions}{%
 \subsection{Power series for trigonometric
-functions}\label{power-series-for-trigonometric-functions}}
+functions}\label{power-series-for-trigonometric-functions}
 
 This is where the plot really thickens.
 
@@ -750,9 +732,9 @@ proved\footnote{Search the web for Taylor Series or Maclaurin series,
   thinking of it as a treasure hunt and enrich yourself with that
   knowledge!} that:
 
-\begin{equation}\protect\hypertarget{eq:sineseries}{}{
+\begin{equation}\phantomsection\label{eq:sineseries}{
 \sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \frac{\theta^7}{7!} + \cdots
-}\label{eq:sineseries}\end{equation}
+}\end{equation}
 
 where the dots at the end of \cref{eq:sineseries} tell us to imagine
 that this series \emph{never ends but goes on forever} following the
@@ -767,9 +749,9 @@ very close to zero, the higher powers on the right hand side (RHS) of
 \cref{eq:sineseries} become smaller and smaller, and may be ignored
 without much loss in accuracy. In this case, we may assert that:
 
-\begin{equation}\protect\hypertarget{eq:sinesmalltheta}{}{
+\begin{equation}\phantomsection\label{eq:sinesmalltheta}{
 \sin\theta\approx\theta \:\text{for}\: \lvert\theta\rvert \to 0.
-}\label{eq:sinesmalltheta}\end{equation}
+}\end{equation}
 
 In English this expression means that for vanishingly small values of
 \(\theta\)---whether positive or negative---\(\sin\theta\) is
@@ -789,12 +771,10 @@ up to a value of \(\lvert\theta\rvert\approx 0.3\), the two curves track
 each other closely.
 
 \begin{figure}
-\hypertarget{fig:xsinx}{%
 \centering
 \includesvg[width=0.9\textwidth,height=\textheight]{images/xsinx.svg}
 \caption{Graphs of \(f(\theta)= \sin\theta\) and \(f(\theta) = \theta\)
 for \(\lvert\theta\rvert\approx 0\).}\label{fig:xsinx}
-}
 \end{figure}
 
 Let us now illustrate the reasonableness of \cref{eq:sinesmalltheta} by
@@ -813,8 +793,7 @@ the degree argument, we have to apply a factor of \(\frac{180}{\pi}\) to
 \emph{each term} on the RHS. This is a layer of bookkeeping we may
 easily avoid by using radians on both sides of the equation.
 
-\hypertarget{fourier-series}{%
-\subsection{Fourier series}\label{fourier-series}}
+\subsection{Fourier series}\label{fourier-series}
 
 Periodic waveforms repeat themselves indefinitely. The sinusoids---which
 are trigonometric functions like \(\sin\) and \(\cos\)---are one such
@@ -844,12 +823,10 @@ the single cycle of the square wave---shown below--- is repeated
 periodically forever.
 
 \begin{figure}
-\hypertarget{fig:squarefourier}{%
 \centering
 \includesvg[width=0.85\textwidth,height=\textheight]{images/squarefourier.svg}
 \caption{A square waveform \(s(t)\) and the sequential sums of its first
 four terms.}\label{fig:squarefourier}
-}
 \end{figure}
 
 The \href{https://mathworld.wolfram.com/FourierSeries.html}{Fourier
@@ -857,11 +834,10 @@ series} for such a square waveform is an infinite sum of sinusoids that
 collectively represent the waveform. This might seem like a tall order
 but it is nevertheless true. The Fourier series representation of the
 square wave \(s(t)\) is given by:
-\begin{equation}\protect\hypertarget{eq:squarefourier}{}{
+\begin{equation}\phantomsection\label{eq:squarefourier}{
 s(t) = \frac{2}{\pi}\left[\sin(t) + \frac{\sin(3t)}{3} + \frac{\sin(5t)}{5} +  \frac{\sin(7t)} {7} + \cdots\right]
-}\label{eq:squarefourier}\end{equation} where again, the dots mean that
-the pattern repeats forever. Note that this is no approximation, but an
-equality.
+}\end{equation} where again, the dots mean that the pattern repeats
+forever. Note that this is no approximation, but an equality.
 
 The successive \emph{partial sums} of the RHS of \cref{eq:squarefourier}
 are termed \(s_1(t)\), \(s_2(t)\), etc., with \(s_1(t)\) denoting the
@@ -887,16 +863,15 @@ factor.
 We will close with one more example where radians make mathematical life
 much easier.
 
-\hypertarget{eulers-formula-and-identity}{%
 \subsection{Euler's formula and
-identity}\label{eulers-formula-and-identity}}
+identity}\label{eulers-formula-and-identity}
 
 The prodigiously productive Swiss mathematician,
 \href{https://www.britannica.com/biography/Leonhard-Euler}{Leonhard
 Euler}, gave us many equations, one of which is known as \emph{Euler's
-formula}, shown below: \begin{equation}\protect\hypertarget{eq:euler}{}{
+formula}, shown below: \begin{equation}\phantomsection\label{eq:euler}{
 e^{i\theta} = \cos\theta + i\sin\theta
-}\label{eq:euler}\end{equation} The letter \(i\) is called the
+}\end{equation} The letter \(i\) is called the
 \href{https://en.wikipedia.org/wiki/Imaginary_unit}{imaginary unit} and
 its definition as \(i^{2} = -1\), takes us into the
 \href{https://en.wikipedia.org/wiki/Complex_number}{field of complex
@@ -907,12 +882,12 @@ numbers}\footnote{\href{https://en.wikipedia.org/wiki/Fundamental_theorem_of_alg
 
 When we substitute \(\theta=\pi\) into \cref{eq:euler}, and transpose
 terms, we get what is called \emph{Euler's identity}:
-\begin{equation}\protect\hypertarget{eq:euleridentity}{}{
+\begin{equation}\phantomsection\label{eq:euleridentity}{
 \begin{aligned}
 e^{i\pi} &= \cos\pi + i\sin\pi\\
 e^{i\pi} + 1 &= 0\\
 \end{aligned}
-}\label{eq:euleridentity}\end{equation}
+}\end{equation}
 
 \cref{eq:euleridentity} has been described as the most poetic
 mathematical equation because it
@@ -923,8 +898,7 @@ about without radians. With that
 \href{https://www.thefreedictionary.com/epiphany}{epiphany} on beauty,
 we shall conclude our tale of two measures.
 
-\hypertarget{acknowledgements}{%
-\subsection{Acknowledgements}\label{acknowledgements}}
+\subsection{Acknowledgements}\label{acknowledgements}
 
 All illustrations in this blog were generated using the
 \href{https://github.com/pgf-tikz/pgf}{TikZ-PGF} and
@@ -937,8 +911,7 @@ modified the \href{https://tex.stackexchange.com/a/429505/1636}{example
 of caverac} at the \href{https://tex.stackexchange.com/}{TeX
 StackExchange} forum.
 
-\hypertarget{feedback}{%
-\subsection{Feedback}\label{feedback}}
+\subsection{Feedback}\label{feedback}
 
 Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.

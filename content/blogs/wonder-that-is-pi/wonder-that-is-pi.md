@@ -99,7 +99,7 @@ Substituting for the terms in square brackets in [@eq:recur], we get
 $$
 0.4\overline{9} = \frac{4}{10} + 9\left[\frac{1}{90}\right] = \frac{4}{10} + \frac{1}{10} = \frac{5}{10} = \frac{1}{2}.
 $$
-Even if it seems counter-intuitive that $0.4\overline{9} = 0.5 = 0.5\overline{0} = \frac{1}{2}$, it is mathematically consistent and correct.  One may therefore hazard a guess, and correctly so, that _every rational number may be expressed as a recurring decimal_.^[In this case either the digit $9$ or the digit $0$ recurs.]
+Even if it seems counter-intuitive that $0.4\overline{9} = 0.5 = 0.5\overline{0} = \frac{1}{2}$, it is mathematically consistent and correct. One may therefore hazard a guess, and correctly so, that _every rational number may be expressed as a recurring decimal_.^[In this case either the digit $9$ or the digit $0$ recurs.]
 
 Infinite sums have this property of upending our "intuition" about what is correct. So, we have to be extra careful when dealing with the value of a limit as some variable goes to infinity. Moreover, infinity, represented by $\infty$ is _not_ a number and cannot be treated as one. It is simply a convenient shorthand symbol. This caveat should be kept in mind when we encounter infinite sums involving $\pi$, as shown for example, in [@fig:pi-equations].
 
@@ -152,7 +152,7 @@ We have just shown that an algebraic number can be a complex root of a real poly
 
 ## The Transcendental Numbers
 
-Numbers which are _not algebraic_ are assigned the rather exalted title of transcendental numbers. But proving that a particular number is transcendental is no mean task. We will accept a number as transcendental if it has been proved to be so by professional mathematicians.  Numbers like [$\pi$](https://www.wolframalpha.com/input?i=is+pi+transcendental), [$e$](https://www.wolframalpha.com/input?i=is+e+transcendental), and [$\ln 2$](https://www.wolframalpha.com/input?i=is+ln%282%29+transcendental) are transcendental.
+Numbers which are _not algebraic_ are assigned the rather exalted title of transcendental numbers. But proving that a particular number is transcendental is no mean task. We will accept a number as transcendental if it has been proved to be so by professional mathematicians. Numbers like [$\pi$](https://www.wolframalpha.com/input?i=is+pi+transcendental), [$e$](https://www.wolframalpha.com/input?i=is+e+transcendental), and [$\ln 2$](https://www.wolframalpha.com/input?i=is+ln%282%29+transcendental) are transcendental.
 
 _All transcendental numbers are perforce irrational_.
 
@@ -166,46 +166,46 @@ It is noteworthy that irrational numbers like $\sqrt{2}$ and transcendental numb
 
 This classification of the real numbers seems to be crying out for a Venn diagram to depict it visually. But before we do that, let us marshal the facts we have gathered so far:
 
-#.  The real numbers are represented by the standard set $\mathbb{R}$.
+#. The real numbers are represented by the standard set $\mathbb{R}$.
 
-#.  The rationals are represented by the standard set $\mathbb{Q}$. 
+#. The rationals are represented by the standard set $\mathbb{Q}$. 
 
-#.  There is no assigned symbol for the set of irrationals. Because it is the set difference between the reals and the rationals, it is often denoted as $\mathbb{R}\setminus\mathbb{Q}$. But this notation is cumbersome. So, let us define a non-standard set $\mathbb{I}$ and let it stand for the irrationals: $\mathbb{I} = \mathbb{R}\setminus\mathbb{Q}$.
+#. There is no assigned symbol for the set of irrationals. Because it is the set difference between the reals and the rationals, it is often denoted as $\mathbb{R}\setminus\mathbb{Q}$. But this notation is cumbersome. So, let us define a non-standard set $\mathbb{I}$ and let it stand for the irrationals: $\mathbb{I} = \mathbb{R}\setminus\mathbb{Q}$.
 
-#.  Let us introduce the non-standard symbol $\mathbb{A_{\mathbb{R}}}$ for the set of real algebraic numbers.
+#. Let us introduce the non-standard symbol $\mathbb{A_{\mathbb{R}}}$ for the set of real algebraic numbers.
 
-#.  Let us introduce the non-standard symbol $\mathbb{T_{\mathbb{R}}}$ for the set of real transcendental numbers.
+#. Let us introduce the non-standard symbol $\mathbb{T_{\mathbb{R}}}$ for the set of real transcendental numbers.
 
-#.  The real numbers are the union of the rational and the irrational numbers: $\mathbb{R} = \mathbb{Q} \cup \mathbb{I}$.
+#. The real numbers are the union of the rational and the irrational numbers: $\mathbb{R} = \mathbb{Q} \cup \mathbb{I}$.
 
-#.  The real numbers are also the union of the algebraic and transcendental numbers that do not embody the imaginary unit $i$: $\mathbb{R} = \mathbb{A_{\mathbb{R}}} \cup \mathbb{T_{\mathbb{R}}}$
+#. The real numbers are also the union of the algebraic and transcendental numbers that do not embody the imaginary unit $i$: $\mathbb{R} = \mathbb{A_{\mathbb{R}}} \cup \mathbb{T_{\mathbb{R}}}$
 
-#.  Algebraic numbers can be either rational or irrational: $\mathbb{A_{\mathbb{R}}} \subseteq (\mathbb{Q} \cup \mathbb{I})$.
+#. Algebraic numbers can be either rational or irrational: $\mathbb{A_{\mathbb{R}}} \subseteq (\mathbb{Q} \cup \mathbb{I})$.
 
-#.  All rational numbers are algebraic: $\mathbb{Q} \subset \mathbb{A_{\mathbb{R}}}$
+#. All rational numbers are algebraic: $\mathbb{Q} \subset \mathbb{A_{\mathbb{R}}}$
 
-#.  No rational number is transcendental: $\mathbb{Q} \cap \mathbb{T_{\mathbb{R}}} = \emptyset$
+#. No rational number is transcendental: $\mathbb{Q} \cap \mathbb{T_{\mathbb{R}}} = \emptyset$
 
-#.  All real transcendental numbers are irrational: $\mathbb{T_{\mathbb{R}}} \subset \mathbb{I}$.
+#. All real transcendental numbers are irrational: $\mathbb{T_{\mathbb{R}}} \subset \mathbb{I}$.
 
-#.  The irrational numbers contain _all_ transcendental numbers and a subset of the algebraic numbers, again excluding those that embody $i$: $(\mathbb{T_{\mathbb{R}}} \subset \mathbb{I})
+#. The irrational numbers contain _all_ transcendental numbers and a subset of the algebraic numbers, again excluding those that embody $i$: $(\mathbb{T_{\mathbb{R}}} \subset \mathbb{I})
 \wedge (\mathbb{A}_{\mathbb{R}} \cap \mathbb{I} \neq \emptyset)$.
 
 That was quite  mouthful even with mathematical symbols. We are now ready to draw the Venn diagram for the tetrachotomy of the real numbers.
 
 And surprise! surprise! There are only _three_ regions in the Venn diagram that are populated. So, taking mathematical liberties, we may say that our tetrachotomy was not "linearly independent".
 
-![Venn diagram showing the rationals, $\mathbb{Q}$, the irrationals, $\mathbb{I}$, the real algebraics, $\mathbb{A_{\mathbb{R}}}$, and the real transcendentals $\mathbb{T_{\mathbb{R}}}$. From this diagram, we may assert that $\mathbb{R} = \mathbb{A_{\mathbb{R}}} \cup \mathbb{I}$. Note where $\pi$ resides, and also that there are only _three_ populated regions in the Venn diagram: $\mathbb{Q}$, $(\mathbb{A_{\mathbb{R}}} \cap \mathbb{I})$, and $\mathbb{T_{\mathbb{R}}}$.]({attach}images/venn.svg){#fig:venn width=90% .modal-target}
+![Venn diagram showing the rationals, $\mathbb{Q}$, the irrationals, $\mathbb{I}$, the real algebraics, $\mathbb{A_{\mathbb{R}}}$, and the real transcendentals $\mathbb{T_{\mathbb{R}}}$. From this diagram, we may assert that $\mathbb{R} = \mathbb{A_{\mathbb{R}}} \cup \mathbb{I}$. Note where $\pi$ resides, and also that there are only _three_ populated regions in the Venn diagram: $\mathbb{Q}$, $(\mathbb{A_{\mathbb{R}}} \cap \mathbb{I})$, and $\mathbb{T_{\mathbb{R}}}$.]({attach}images/venn-tetra.svg){#fig:venn-tetra width=90% .modal-target}
 
 ## Enter π
 
 We have gone through all this huffing and puffing to place $\pi$ contextually among the real numbers. Let us list its characteristics:
 
-#.  It is not a rational number, which means that it cannot be expressed as the ratio of two whole numbers, the denominator being non-zero.
+#. It is not a rational number, which means that it cannot be expressed as the ratio of two whole numbers, the denominator being non-zero.
 
-#.  Its decimal representation is neither finite nor does it contain a recurring segment, regardless of how long the decimal is.
+#. Its decimal representation is neither finite nor does it contain a recurring segment, regardless of how long the decimal is.
 
-#.  It is also not the root to any non-zero polynomial equation whose coefficients are integers or rational numbers.
+#. It is also not the root to any non-zero polynomial equation whose coefficients are integers or rational numbers.
 
 #. When Pi is used in equations, the placeholder symbol $\pi$ is used. 
 
@@ -215,9 +215,30 @@ One could almost say that $\pi$ is not numerically friendly. And you would not b
 
 The unpredictability of successive decimal places of $\pi$ has enchanted mathematicians and still continues to engross them. Pi has been calculated to an unprecedented number of decimal places, and such a quest is certainly driven, not by practical necessity, but possibly by the need for aesthetic fulfilment.
 
+The search for increasingly more accurate values for $\pi$ has resulted in many approaches to solve the problem. Geometric^[See the ["Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes).] and analytical approaches to estimate $\pi$ have both borne fruit. Interestingly, $\pi$ may also be estimated by repeatedly performing a random---or probabilistic---experiment, whose precise outcome cannot be predicted, but whose average behaviour may be estimated. Such an experiment is called a [Monte Carlo simulation](https://www.ibm.com/topics/monte-carlo-simulation). Thus the quest for $\pi$ brings together the mathematical sub-fields of geometry, analysis, and probabilistic simulation.
+
 This quest for the unattainable---but supremely beautiful---has engaged human minds to seek $\pi$ in countless infinite sums, such are shown in [@fig:pi-equations]. These equations are sometimes starkly simple and at other times thoroughly mystifying, and embody the paradox that is $\pi$ more succinctly than all the words in the world.
 
-## Madhava-Gregory series
+## The Madhava-Gregory series
+
+It must be obvious by now that trigonometry and the number $\pi$ are
+inextricably entwined.  The quest for $\pi$ continued to fascinate
+mathematicians in the centuries after Archimedes.  This time though,
+rather than geometric iteration, sums of successive terms were used to
+approximate $\pi$.
+
+For our purposes, a \emph{sequence} is an \emph{ordered} procession of
+numbers, and a \emph{series} is a sum of successive terms that obey
+some specific rule.  If the summation stops at some particular term, we
+have a \emph{partial sum}; if the summation goes on indefinitely, we
+have an \emph{infinite series.}  If this infinite sum approaches ever
+closer to a finite value, the series is said to \emph{converge.}  To
+see what all this means in practice, let us look at the Gregory-Leibniz
+series.
+
+James Gregory was the first Professor of Mathematics at the University
+of Edinburgh and in 1671, he published the series now known by his
+name.  Rather than draw Gregory's formula out of a hat, we will sketch its derivation, and show its origins in integral calculus.  Gregory found that: %
 
 What does the equality sign mean for an infinite sum? How can a sum of rationals equal and irrational number? A transcendental number? The meaning of $=$ is therefore not in the sense of $2 + 2 = 4$ or even of $x - 5 = 0$. It is something similar and yet something different, because, despite Cantor, we have not tamed the idea of infinity yet.
 

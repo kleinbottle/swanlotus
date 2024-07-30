@@ -33,7 +33,8 @@ Why not 100° in a full circle, or half circle, or even a quarter circle, also k
 
 My favourite explanation for 360° degrees equalling a full circle is that the ancients estimated a solar year at around 360 days, and assigned one degree for each day of the year. Even if inexact, the number 360 had some [sexagesimal](https://en.wikipedia.org/wiki/Sexagesimal)^[It appears that all measures of time, from seconds, minutes, and hours, to months and days in a year, are based on 60 or its factors or multiples.] charm as it could be divided by the first three primes 2, 3, 5, and by their products. Indeed, 360 = 2^3^ × 3^2^ × 5. Accordingly, 360  has a large family of factors: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20, 24, 30, 36, 40, 45, 60, 72, 90, 120, 180, and 360.
 
-But beyond the approximation of a solar year, and the convenience of ready division by its factors, the use of degrees as a unit of angular measure is, to me, arbitrary. Who deemed the circle to be 360°, despite it being very factor-friendly?
+But beyond the approximation of a solar year, and the convenience of ready division by its factors, the use of degrees as a unit of angular measure is, to me, arbitrary. Who deemed the circle to be 360°, despite it being very factor-friendly? A less arbitrary measure of an angle was required for serious
+mathematics.
 
 ## From triangles to circles
 
@@ -175,7 +176,10 @@ By moving from triangles to the unit circle on coordinate axes, we have enabled 
 
 ![Graphs of the three trigonometric functions. Notice how $\sin$ and $\cos$ are bounded in their values, but $\tan$ is not. There are discontinuities  for $\theta=\frac{2n+1}{2}\pi$.]({attach}images/threegraph.svg){#fig:threegraph width=90% .modal-target}
 
-Note that when  $\theta = 2\pi$ radians, we cannot really distinguish it from $\theta=0$ radians. The trigonometric functions therefore repeat themselves every time the point $S$ in @fig:unit completes a full circle: they are [_periodic_](https://mathworld.wolfram.com/PeriodicFunction.html) with a period of $2\pi$. So, one angle may [masquerade](https://www.thefreedictionary.com/masquerade) as another unless we have accounting devices to optionally add $2n\pi$ to it with the [proviso](https://dictionary.cambridge.org/dictionary/english/proviso) that $n$ is an integer. And this concept is a [segue](https://www.dictionary.com/browse/segue) to power series expansions of trigonometric functions, their use in calculus, and later on, in Fourier series.
+Note that when  $\theta = 2\pi$ radians, we cannot really distinguish it from $\theta=0$ radians. The trigonometric functions therefore repeat themselves every time the point $S$ in @fig:unit completes a full circle: they are [_periodic_](https://mathworld.wolfram.com/PeriodicFunction.html) with a period of $2\pi$. So, one angle may [masquerade](https://www.thefreedictionary.com/masquerade) as another unless we have accounting devices to optionally add $2n\pi$ to it with the [proviso](https://dictionary.cambridge.org/dictionary/english/proviso) that $n$ is an integer.
+
+When trigonometric functions like $\sin x$ are differentiated or integrated, the variable $x$, representing the angle, must be measured in radians. Moreover, when oscillatory phenomena, whether of water, or electricity, or light, are studied in the physical sciences and engineering, trigonometric functions usually form part of the solution. The importance of $\pi$ is therefore entrenched in the importance of trigonometric functions and radian measure, in solving a variety of physical problems. 
+And this concept is a [segue](https://www.dictionary.com/browse/segue) to power series expansions of trigonometric functions, their use in calculus, and later on, in Fourier series.
 
 ## Power series for trigonometric functions
 
