@@ -152,7 +152,7 @@ We have just shown that an algebraic number can be a complex root of a real poly
 
 ## The Transcendental Numbers
 
-Transcendental numbers are _not algebriac_. But proving that a particular number is transcendental is no mean task. We will accept a number as transcendental if it has been proved to be so by professional mathematicians.  Numbers like [$\pi$](https://www.wolframalpha.com/input?i=is+pi+transcendental), [$e$](https://www.wolframalpha.com/input?i=is+e+transcendental), and [$\ln 2$](https://www.wolframalpha.com/input?i=is+ln%282%29+transcendental) are transcendental.
+Numbers which are _not algebraic_ are assigned the rather exalted title of transcendental numbers. But proving that a particular number is transcendental is no mean task. We will accept a number as transcendental if it has been proved to be so by professional mathematicians.  Numbers like [$\pi$](https://www.wolframalpha.com/input?i=is+pi+transcendental), [$e$](https://www.wolframalpha.com/input?i=is+e+transcendental), and [$\ln 2$](https://www.wolframalpha.com/input?i=is+ln%282%29+transcendental) are transcendental.
 
 _All transcendental numbers are perforce irrational_.
 
@@ -199,18 +199,23 @@ And surprise! surprise! There are only _three_ regions in the Venn diagram that 
 
 ## Enter π
 
-We have gone through all this huffing and puffing to place $\pi$ contextually among the real numbers. Pi is a transcendental number which is automatically irrational. This means:
+We have gone through all this huffing and puffing to place $\pi$ contextually among the real numbers. Let us list its characteristics:
 
-#. $\pi$ cannot be expressed in closed form as a decimal.
+#.  It is not a rational number, which means that it cannot be expressed as the ratio of two whole numbers, the denominator being non-zero.
 
-#. There is no periodic sequence that recurs in the decimal representation of $\pi$, regardless of how long the decimal is.
+#.  Its decimal representation is neither finite nor does it contain a recurring segment, regardless of how long the decimal is.
 
-#. Rational approximations for $\pi$ are used in practice.
- 
-#. When Pi is used in equations, the placeholder symbol $\pi$ is used.
+#.  It is also not the root to any non-zero polynomial equation whose coefficients are integers or rational numbers.
 
-One could almost say that $\pi$ is not numerically friendly. And you would not be too wrong. Nevertheless, with the aid of ideas like the sum to infinity of a series, and the limit as some variable approaches infinity, etc., mathematicians have derived starkly simple formulae relating integers to $\pi$ as well as mystifying formulae that seem to miraculously relate to $pi$; both these cases are shown in [@fig:pi-equations].
+#. When Pi is used in equations, the placeholder symbol $\pi$ is used. 
 
+These properties have earned for $\pi$ the rather exalted title of transcendental number, which it shares with other pivotal numbers like $e$. Pi is not only important, it is also tantalizing. Pi is like a beautiful butterfly that cannot be caught in the net of finitude. It is like a rainbow that is beautiful to behold from afar, but can never be reached. 
+
+One could almost say that $\pi$ is not numerically friendly. And you would not be too wrong. Rational approximations for $\pi$, like $\frac{22}{7}$, are used in practice. And the matter would have rested there were it not for the human quest for beauty.
+
+The unpredictability of successive decimal places of $\pi$ has enchanted mathematicians and still continues to engross them. Pi has been calculated to an unprecedented number of decimal places, and such a quest is certainly driven, not by practical necessity, but possibly by the need for aesthetic fulfilment.
+
+This quest for the unattainable---but supremely beautiful---has engaged human minds to seek $\pi$ in countless infinite sums, such are shown in [@fig:pi-equations]. These equations are sometimes starkly simple and at other times thoroughly mystifying, and embody the paradox that is $\pi$ more succinctly than all the words in the world.
 
 ## Madhava-Gregory series
 
