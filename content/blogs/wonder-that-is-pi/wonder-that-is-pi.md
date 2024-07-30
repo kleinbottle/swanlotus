@@ -221,26 +221,13 @@ This quest for the unattainable---but supremely beautiful---has engaged human mi
 
 ## The Madhava-Gregory series
 
-It must be obvious by now that trigonometry and the number $\pi$ are
-inextricably entwined.  The quest for $\pi$ continued to fascinate
-mathematicians in the centuries after Archimedes.  This time though,
-rather than geometric iteration, sums of successive terms were used to
-approximate $\pi$.
+It must be obvious by now that trigonometry and the number $\pi$ are inextricably entwined.^[If this sounds unfamiliar, I invite you to read my blogs ["A tale of two measures: degrees and radians"](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians) and ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes).] The quest for $\pi$ continued to fascinate mathematicians in the centuries after Archimedes.  This time though, rather than geometric iteration, sums of successive terms were used to approximate $\pi$.
 
-For our purposes, a \emph{sequence} is an \emph{ordered} procession of
-numbers, and a \emph{series} is a sum of successive terms that obey
-some specific rule.  If the summation stops at some particular term, we
-have a \emph{partial sum}; if the summation goes on indefinitely, we
-have an \emph{infinite series.}  If this infinite sum approaches ever
-closer to a finite value, the series is said to \emph{converge.}  To
-see what all this means in practice, let us look at the Gregory-Leibniz
-series.
+For our purposes, a _equence_ is an _ordered_ procession of numbers, and a _series_ is a sum of successive terms that obey some specific rule.  If the summation stops at some particular term, we have a _partial sum_; if the summation goes on indefinitely, we have an _infinite series_.  If this infinite sum approaches ever closer to a finite value, the series is said to _converge_. To see what all this means in practice, let us look at the Gregory-Leibniz series.
 
-James Gregory was the first Professor of Mathematics at the University
-of Edinburgh and in 1671, he published the series now known by his
-name.  Rather than draw Gregory's formula out of a hat, we will sketch its derivation, and show its origins in integral calculus.  Gregory found that: %
+James Gregory was the first Professor of Mathematics at the University of Edinburgh and in 1671, he published the series now known by his name.  Rather than draw Gregory's formula out of a hat, we will sketch its derivation, and show its origins in integral calculus.  Gregory found that: 
 
-What does the equality sign mean for an infinite sum? How can a sum of rationals equal and irrational number? A transcendental number? The meaning of $=$ is therefore not in the sense of $2 + 2 = 4$ or even of $x - 5 = 0$. It is something similar and yet something different, because, despite Cantor, we have not tamed the idea of infinity yet.
+What does the equality sign mean for an infinite sum? How can a sum of rationals equal an irrational number? A transcendental number? The meaning of $=$ is therefore not in the sense of $2 + 2 = 4$ or even of $x - 5 = 0$. It is something similar and yet something different, because, despite Cantor, we have not tamed the idea of infinity yet.
 
 ## Acknowledgements
 
