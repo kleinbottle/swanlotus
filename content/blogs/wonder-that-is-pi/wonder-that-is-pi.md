@@ -152,7 +152,7 @@ We have just shown that an algebraic number can be a complex root of a real poly
 
 ## The Transcendental Numbers
 
-Numbers which are _not algebraic_ are assigned the rather exalted title of transcendental numbers. Numbers like [$\pi$](https://www.wolframalpha.com/input?i=is+pi+transcendental), [$e$](https://www.wolframalpha.com/input?i=is+e+transcendental), and [$\ln 2$](https://www.wolframalpha.com/input?i=is+ln%282%29+transcendental) are transcendental. But proving that a particular number is transcendental is no mean task. We will accept $\pi$ as transcendental if it has been [proved to be so by professional mathematicians](https://fermatslibrary.com/s/the-transcendence-of-pi) [@niven1939]. 
+Numbers which are _not algebraic_ are assigned the rather exalted title of transcendental numbers. Numbers like [$\pi$](https://www.wolframalpha.com/input?i=is+pi+transcendental), [$e$](https://www.wolframalpha.com/input?i=is+e+transcendental), and [$\ln 2$](https://www.wolframalpha.com/input?i=is+ln%282%29+transcendental) are transcendental. But proving that a particular number is transcendental is no mean task. We will accept $\pi$ as transcendental if it has been [proved to be so by professional mathematicians](https://fermatslibrary.com/s/the-transcendence-of-pi) [@niven1939;  @chow2024; @morris-jones-pearson-2022]. 
 
 _All transcendental numbers are perforce irrational_.
 
@@ -219,13 +219,26 @@ The search for increasingly more accurate values for $\pi$ has resulted in many 
 
 This quest for the unattainable---but supremely beautiful---has engaged human minds to seek $\pi$ in countless infinite sums, such are shown in [@fig:pi-equations]. These equations are sometimes starkly simple and at other times thoroughly mystifying, and embody the paradox that is $\pi$ more succinctly than all the words in the world.
 
-## The Madhava-Gregory series
+## The Madhava-Gregory-Leibnitz series
 
-It must be obvious by now that trigonometry and the number $\pi$ are inextricably entwined.^[If this sounds unfamiliar, I invite you to read my blogs ["A tale of two measures: degrees and radians"](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians) and ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes).] The quest for $\pi$ continued to fascinate mathematicians in the centuries after Archimedes. This time though, rather than geometric iteration, _sums of successive terms_ were used to approximate $\pi$.
+It must be obvious by now that trigonometry, circles, and the number $\pi$ are inextricably entwined.^[If this sounds unfamiliar, I invite you to read my blogs ["A tale of two measures: degrees and radians"](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians) and ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes).] The quest for more  accurate values of $\pi$ continued to fascinate mathematicians in the centuries after Archimedes. This time though, rather than geometric iteration, _sums of successive terms_ were used to approximate $\pi$.
 
 For our purposes, a _sequence_ is an _ordered_ procession of numbers, and a _series_ is a sum of successive terms that obey some specific rule.  If the summation stops at some particular term, we have a _partial sum_; if the summation goes on indefinitely, we have an _infinite series_.  If this infinite sum approaches ever closer to a finite value, the series is said to _converge_. To see what all this means in practice, let us look at the Madhava-Gregory-Leibniz series.
 
-This series was originally called the Gregory series or the Gregory-Libnitz series, but recent scholarship has given [priority](https://en.wikipedia.org/wiki/Scientific_priority) to Madhava of Sangamagrama for this and other infinite trigonometric series [@roy1990; @roy2011]^[It is interesting that Madhava used the ratio of the circle arc to the  radius when denoting angles, thus establishing the naturalness of radians as angular measure. See also ["A tale of two measures: degrees and radians"}((https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians).]
+### Why triple-barrelled names
+
+The triple-barrelled names for the series we will look at arose because the discoveries of medieval Indian mathematicians remained unknown to the larger world and were only recently uncovered and promulgated [@roy1990; @roy2011; @madhava-wiki].
+
+This series was originally called the Gregory series or the Gregory-Libnitz series, but recent scholarship has given [priority](https://en.wikipedia.org/wiki/Scientific_priority) to Madhava of Sangamagrama for this and other infinite trigonometric series [@roy1990; @roy2011; @madhava-wiki].^[It is interesting that Madhava used the ratio of the circle arc to the  radius when denoting angles, thus establishing the naturalness of radians as angular measure. See also ["A tale of two measures: degrees and radians"]((https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians).]
+
+[James Gregory](https://en.wikipedia.org/wiki/James_Gregory_\(mathematician\)) was the first Professor of Mathematics at the University of Edinburgh and in 1671, he published the series that was called the _Gregory series_ or the [arctangent series](https://en.wikipedia.org/wiki/Arctangent_series).
+
+[Gottfried Wilhelm Leibniz](https://www.google.com/search?q=Leibnitz) evaluated the arctangent series at $\frac{\pi}{4}$ to get an estimate of $\pi$; the result was known as the Gregory-Leibnitz series or the Leibnitz Formula.
+
+Recent scholarship has accorded [priority](https://en.wikipedia.org/wiki/Scientific_priority) to [Madhava of Sangamagrama](https://en.wikipedia.org/wiki/Madhava_of_Sangamagrama) who anticipated both these developments by more than 250 years [@roy1990; @roy2011; @madhava-wiki]. He also developed other trigonometric series and used arc length over radius to denote an angle, thereby using radian measure.
+
+
+This series was originally called the Gregory series or the Gregory-Libnitz series, but recent scholarship has given [priority](https://en.wikipedia.org/wiki/Scientific_priority) to Madhava of Sangamagrama for this and other infinite trigonometric series [@roy1990; @roy2011; @madhava-wiki].^[It is interesting that Madhava used the ratio of the circle arc to the  radius when denoting angles, thus establishing the naturalness of radians as angular measure. See also ["A tale of two measures: degrees and radians"]((https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians).]
 
 James Gregory was the first Professor of Mathematics at the University of Edinburgh and in 1671, he published the series now known by his name.  Rather than draw Gregory's formula out of a hat, we will sketch its derivation, and show its origins in integral calculus.  Gregory found that: 
 
