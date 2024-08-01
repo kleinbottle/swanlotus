@@ -225,24 +225,118 @@ It must be obvious by now that trigonometry, circles, and the number $\pi$ are i
 
 For our purposes, a _sequence_ is an _ordered_ procession of numbers, and a _series_ is a sum of successive terms that obey some specific rule.  If the summation stops at some particular term, we have a _partial sum_; if the summation goes on indefinitely, we have an _infinite series_.  If this infinite sum approaches ever closer to a finite value, the series is said to _converge_. To see what all this means in practice, let us look at the Madhava-Gregory-Leibniz series.
 
-### Why triple-barrelled names
+### Why a triple-barrelled name?
 
-The triple-barrelled names for the series we will look at arose because the discoveries of medieval Indian mathematicians remained unknown to the larger world and were only recently uncovered and promulgated [@roy1990; @roy2011; @madhava-wiki].
+The series we are about to look at was originally called the _Gregory series_. Leibnitz evaluated the Gregory series for a specific value and came up with a formula for $\pi$, and that series was called the _Leibnitz series_.
 
-This series was originally called the Gregory series or the Gregory-Libnitz series, but recent scholarship has given [priority](https://en.wikipedia.org/wiki/Scientific_priority) to Madhava of Sangamagrama for this and other infinite trigonometric series [@roy1990; @roy2011; @madhava-wiki].^[It is interesting that Madhava used the ratio of the circle arc to the  radius when denoting angles, thus establishing the naturalness of radians as angular measure. See also ["A tale of two measures: degrees and radians"]((https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians).]
+The accomplishments of medieval Indian mathematicians---whose discoveries antedated those of Gregory and Leibnitz---remained unknown to the larger world. But recent scholarship has accorded [priority](https://en.wikipedia.org/wiki/Scientific_priority) to the leading Indian mathematician-astronomer of that period, Madhava, who anticipated both the Gregory series and the Leibnitz series by more than 250 years [@roy1990; @joseph2009; @roy2011; @joseph2011; @madhava-wiki]. This explains the triple-barrelled name for the series. Thumbnail sketches are given in the links below for all three mathematicians.
 
-[James Gregory](https://en.wikipedia.org/wiki/James_Gregory_\(mathematician\)) was the first Professor of Mathematics at the University of Edinburgh and in 1671, he published the series that was called the _Gregory series_ or the [arctangent series](https://en.wikipedia.org/wiki/Arctangent_series).
+[James Gregory](https://en.wikipedia.org/wiki/James_Gregory_\(mathematician\)) was the first Professor of Mathematics at the University of Edinburgh and in 1671, he published the series that was called the the [arctangent series](https://en.wikipedia.org/wiki/Arctangent_series), or the Gregory series.
 
-[Gottfried Wilhelm Leibniz](https://www.google.com/search?q=Leibnitz) evaluated the arctangent series at $\frac{\pi}{4}$ to get an estimate of $\pi$; the result was known as the Gregory-Leibnitz series or the Leibnitz Formula.
+[Gottfried Wilhelm Leibniz](https://www.google.com/search?q=Leibnitz) evaluated the arctangent series at $\frac{\pi}{4}$ to get an estimate of $\frac{\pi}{4}$; the result was known as the Gregory-Leibnitz series or the Leibnitz Formula.
 
-Recent scholarship has accorded [priority](https://en.wikipedia.org/wiki/Scientific_priority) to [Madhava of Sangamagrama](https://en.wikipedia.org/wiki/Madhava_of_Sangamagrama) who anticipated both these developments by more than 250 years [@roy1990; @roy2011; @madhava-wiki]. He also developed other trigonometric series and used arc length over radius to denote an angle, thereby using radian measure.
+[Madhava of Sangamagrama](https://en.wikipedia.org/wiki/Madhava_of_Sangamagrama) was a mathematician-astronomer who pursued research in trigonometric power series. In this, he showed remarkable prescience in defining angular measure as the ratio of arc length $s$ to radius, $r$, thus establishing the _naturalness_ of radian measure for serious work in trigonometry.^[See also ["A tale of two measures: degrees and radians"](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians). Some papers attribute the results of Madhava to Nilakantha---a student in the lineage of Madhava---but more recent papers cite Madhava correctly as the fountainhead of this research.]
+
+!!!CHECK CHECK CHECK!!!^^^^^
+
+### Derivation
+
+Rather than draw the Madhava-Gregory-Leibnitz series out of a hat, we will sketch its derivation, according to Gregory, and show its origins in integral calculus.
+
+We assert that 
+$$
+\int_{0}^{x}\frac{1}{1+ t^2}dt = \arctan{x}
+$$ {#eq:invtan}
+
+This integral should be familiar to most high school students. If it is not, try substituting $t = \tan \theta$:
+$$
+\begin{array}{rcl}
+t & = & \tan \theta \quad \mbox{ which gives} \\
+\displaystyle \frac{dt}{d\theta} & = & \displaystyle \frac{d}{d\theta}\left[ \tan \theta \right] \\
+& = & \sec^2 \theta \\
+& = & 1 + \tan^2 \theta \\
+& = & 1 + t^2\\
+\mbox{Therefore}\quad\frac{1}{1 + t^2}dt & = & d\theta
+\end{array}
+$$
+
+The integral of [@eq:invtan] now becomes
+$$
+\begin{array}{rcl}
+\displaystyle \int_{0}^{x}\frac{1}{1+ t^2}dt %
+& = & \displaystyle \int_{\arctan0}^{\arctan x} d\theta\\[1em]
+& = & \big[ \theta\big]^{\arctan x}_{\arctan0} \\[1em]
+& = & \arctan x
+\end{array}
+$$ {#eq:right}
+
+This takes care of the right hand side of [@eq:invtan].  If we performed long division on the left hand side of the same equation, we get:
+$$
+\begin{array}{rcl}
+\displaystyle \int_{0}^{x}\frac{1}{1+ t^2}dt %
+& = & \displaystyle \int_{0}^{x}%
+\left[ 1 - t^2 + t^4 - t^6 +\dots \right] dt \\[1em]
+& = & \displaystyle \left[ t - \frac{t^3}{3} + \frac{t^5}{5} - \frac{t^7}{7}+ \dots \right]_{0}^{x}\\[1em]
+& = & \displaystyle x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7}+ \dots
+\end{array}
+$$ {#eq:left}
+
+Using [@eq:right; @eq:left], we get the Madhava-Gregory series
+$$
+\arctan x = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dots
+$$ {#eq:madgreg}
+Notice that it is only a small step from here to substitute $x = 1$ to
+get the equation
+$$
+\begin{array}{ccccc}
+\arctan 1 & = & \frac{\pi}{4} & = & 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dots \\[0.5em]
+&  & \pi & = & 4(1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dots)
+\end{array}
+$$ {#eq:madgregleib}
+which is the Madhava-Gergory-Leibnitz series, that is also shown at the top of [@fig:pi-equations]. Strangely, Gregory did not publish the special case of [@eq:madgregleib], and it was Leibnitz who discovered both [@eq:madgreg; @eq:madgregleib] in 1674, and published them in 1682. For details of Madhava's terminology and approach, do consult the literature [@roy1990; @roy2011; @joseph2009; @joseph2011]. It is noteworthy that [@eq:madgregleib] was the first infinite series ever found for $\pi$.  However, it converges rather slowly, and one needs many terms before a reasonable approximation emerges.
+
+Over the last 370 years, by far the most effort has been expended in discovering series that _converge rapidly_ to $\pi$, so that even a partial sum of only a few terms will provide an accurate estimate of $\pi$. We now consider a selection of formulae from famous mathematicians who have bequeathed other series for calculating $\pi$.
+
+## Newton and the Binomial Theorem
+
+[Isaac Newton](https://plato.stanford.edu/entries/newton/) used the binomial theorem to derive:
+$$
+\begin{array}{lcl}
+\arcsin x & = & x + \frac{1}{2}\frac{x^3}{3} + 
+\frac{1\cdot 3}{2\cdot 4}\frac{x^5}{5} + \dots \\[0.5em]
+%\mbox{for which, substituting $x = \frac{1}{2}$ gives} & & \\
+\pi & = & 6\left( \frac{1}{2} + \frac{1}{2}\frac{1}{3 \cdot 2^3} + 
+\frac{1 \cdot 3}{2 \cdot 4}\frac{1}{5 \cdot 2^5} + \dots\right)
+\end{array}
+$$ {#eq:binomial}
+
+Also include geometrical one
+
+## Machin's Formula
 
 
-This series was originally called the Gregory series or the Gregory-Libnitz series, but recent scholarship has given [priority](https://en.wikipedia.org/wiki/Scientific_priority) to Madhava of Sangamagrama for this and other infinite trigonometric series [@roy1990; @roy2011; @madhava-wiki].^[It is interesting that Madhava used the ratio of the circle arc to the  radius when denoting angles, thus establishing the naturalness of radians as angular measure. See also ["A tale of two measures: degrees and radians"]((https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians).]
-
-James Gregory was the first Professor of Mathematics at the University of Edinburgh and in 1671, he published the series now known by his name.  Rather than draw Gregory's formula out of a hat, we will sketch its derivation, and show its origins in integral calculus.  Gregory found that: 
 
 
+
+John Machin gave the formula: %
+%
+\begin{equation}
+\frac{\pi}{4} = 4 \arctan \left[ \frac{1}{5} \right] %
+- \arctan \left[ \frac{1}{239} \right]
+\end{equation}
+%
+where $\arctan x$ may be approximated by equation~(\ref{eqn:gregory}).
+
+
+
+https://proofwiki.org/wiki/Sum_of_Arctangents
+https://en.wikipedia.org/wiki/John_Machin
+https://www.quora.com/Are-continued-fractions-a-dead-end-topic-in-mathematics
+https://mathworld.wolfram.com/PiApproximations.html
+https://www.quora.com/What-are-some-of-the-series-that-converge-to-pi-the-quickest
+https://math.stackexchange.com/questions/14113/series-that-converge-to-pi-quickly
+
+Ramanjuan shown at the the bottom of Fig1.
 
 ## Acknowledgements
 
