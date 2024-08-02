@@ -6,7 +6,7 @@ modified: 2024-08-02
 category: Philosophy
 tags: caste, Hinduism, Bhagavad Gita, 
 summary: 
-status: draft
+status: 
 opengraphimage: galileo-thermomoeter.webp
 ---
 
@@ -59,6 +59,7 @@ Whatever austerities you practise, O son of Kunti, do that as an offering unto M
 Galileo's Thermometer: same device different temperatures mean different bulbs at the top. The top bulb at any moment determines caste at any moment.
 https://en.wikipedia.org/wiki/Galileo_thermometer
 
+<!--https://www.plowhearth.com/galileo-thermometer-with-cherry-finish-wood-frame/p/in6808-->
 
 ## Acknowledgements
 
