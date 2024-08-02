@@ -125,7 +125,7 @@
 %
 \usepackage{graphicx}
 \usepackage{subcaption}
-\usepackage[inkscapeversion=1]{svg}
+\usepackage[inkscapeversion=auto]{svg}
 \usepackage[defaultlines=4,all]{nowidow}
 \usepackage{etoolbox}
 \usepackage{fontsize}
@@ -141,6 +141,7 @@
 \usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
 \let\longdivision\relax
 \usepackage{longdivision}
+\newcommand{\dd}{\ensuremath{mathrm d}}
 % noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
@@ -711,7 +712,7 @@ Edinburgh and in 1671, he published the series that was called the the
 series}, or the Gregory series.
 
 \href{https://www.google.com/search?q=Leibnitz}{Gottfried Wilhelm
-Leibniz} evaluated the arctangent series at \(\frac{\pi}{4}\) to get an
+Leibnitz} evaluated the arctangent series at \(\frac{\pi}{4}\) to get an
 estimate of \(\frac{\pi}{4}\); the result was known as the
 Gregory-Leibnitz series or the Leibnitz Formula.
 
@@ -736,26 +737,26 @@ will sketch its derivation, according to Gregory, and show its origins
 in integral calculus.
 
 We assert that \begin{equation}\phantomsection\label{eq:invtan}{
-\int_{0}^{x}\frac{1}{1+ t^2}dt = \arctan{x}
+\int_{0}^{x}\frac{1}{1+ t^2}{\mathrm{d}} t = \arctan{x}
 }\end{equation}
 
 This integral should be familiar to most high school students. If it is
 not, try substituting \(t = \tan \theta\): \[
 \begin{array}{rcl}
 t & = & \tan \theta \quad \mbox{ which gives} \\
-\displaystyle \frac{dt}{d\theta} & = & \displaystyle \frac{d}{d\theta}\left[ \tan \theta \right] \\
+\displaystyle \frac{\mathrm{d}t}{\mathrm{d}\theta} & = & \displaystyle \frac{\mathrm{d}}{\mathrm{d}\theta}\left[ \tan \theta \right] \\
 & = & \sec^2 \theta \\
 & = & 1 + \tan^2 \theta \\
 & = & 1 + t^2\\
-\mbox{Therefore}\quad\frac{1}{1 + t^2}dt & = & d\theta
+\mbox{Therefore}\quad\frac{1}{1 + t^2}\mathrm{d} t & = & \mathrm{d}\theta\\
 \end{array}
 \]
 
 The integral of \cref{eq:invtan} now becomes
 \begin{equation}\phantomsection\label{eq:right}{
 \begin{array}{rcl}
-\displaystyle \int_{0}^{x}\frac{1}{1+ t^2}dt %
-& = & \displaystyle \int_{\arctan0}^{\arctan x} d\theta\\[1em]
+\displaystyle \int_{0}^{x}\frac{1}{1+ t^2}\mathrm{d}t %
+& = & \displaystyle \int_{\arctan0}^{\arctan x} \mathrm{d}\theta\\[1em]
 & = & \big[ \theta\big]^{\arctan x}_{\arctan0} \\[1em]
 & = & \arctan x
 \end{array}
@@ -765,9 +766,9 @@ This takes care of the right hand side of \cref{eq:invtan}. If we
 performed long division on the left hand side of the same equation, we
 get: \begin{equation}\phantomsection\label{eq:left}{
 \begin{array}{rcl}
-\displaystyle \int_{0}^{x}\frac{1}{1+ t^2}dt %
+\displaystyle \int_{0}^{x}\frac{1}{1+ t^2}\mathrm{d}t %
 & = & \displaystyle \int_{0}^{x}%
-\left[ 1 - t^2 + t^4 - t^6 +\dots \right] dt \\[1em]
+\left[ 1 - t^2 + t^4 - t^6 +\dots \right] \mathrm{d}t \\[1em]
 & = & \displaystyle \left[ t - \frac{t^3}{3} + \frac{t^5}{5} - \frac{t^7}{7}+ \dots \right]_{0}^{x}\\[1em]
 & = & \displaystyle x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7}+ \dots
 \end{array}
@@ -777,8 +778,8 @@ Using \cref{eq:right,eq:left}, we get the Madhava-Gregory series
 \begin{equation}\phantomsection\label{eq:madgreg}{
 \arctan x = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dots
 }\end{equation} Notice that it is only a small step from here to
-substitute \(x = 1\) to get the equation
-\begin{equation}\phantomsection\label{eq:madgregleib}{
+substitute \(x = 1\)---because \(\tan\frac{\pi}{4} = 1\)---to get the
+equation \begin{equation}\phantomsection\label{eq:madgregleib}{
 \begin{array}{ccccc}
 \arctan 1 & = & \frac{\pi}{4} & = & 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dots \\[0.5em]
 &  & \pi & = & 4(1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dots)
@@ -794,16 +795,59 @@ noteworthy that \cref{eq:madgregleib} was the first infinite series ever
 found for \(\pi\). However, it converges rather slowly, and one needs
 many terms before a reasonable approximation emerges.
 
-Over the last 350 years, by far the most effort has been expended in
+Over the last 370 years, by far the most effort has been expended in
 discovering series that \emph{converge rapidly} to \(\pi\), so that even
 a partial sum of only a few terms will provide an accurate estimate of
 \(\pi\). We now consider a selection of formulae from famous
 mathematicians who have bequeathed other series for calculating \(\pi\).
 
-\subsection{Newton and the Binomial
-Theorem}\label{newton-and-the-binomial-theorem}
+\subsection{Newton, the Binomial Theorem, and
+Pi}\label{newton-the-binomial-theorem-and-pi}
 
-Newton used the binomial theorem to derive:
+\href{https://plato.stanford.edu/entries/newton/}{Isaac Newton} has
+contributed singularly to mathematics, physics, and astronomy, even as
+Archimedes has. So, it is not surprising that he too participated in the
+quest for \(\pi\). He sought an efficient algorithm that would yield the
+most accuracy with the least number of terms. In this, he succeeded.
+
+Newton discovered the
+\href{https://en.wikipedia.org/wiki/Binomial_theorem}{binomial theorem}
+for integer powers, but which he pressed into service to deal with
+negative and non-integral powers, as well. He was also aware that
+\(\pi\) lurked openly in the trigonometric functions, or more precisely,
+in the \emph{inverse} trigonometric functions. We have already seen how
+the Madhava-Gregory-Leibnitz series is based on the inverse tangent or
+arctangent function. Newton used the inverse sine function.
+
+The derivative of the sine function is another trigonometric function,
+the cosine function. But the derivative of the \emph{inverse} sine
+function is not trigonometric, but algebraic. This means that working on
+the inverse trigonometric functions opens a window into the use of
+algebraic manipulations such as are afforded by the binomial theorem.
+
+Newton exploited this feature to get better estimates of \(\pi\) with
+less effort. The two equations we should keep in mind are that
+\(\sin\frac{\pi}{2} = 1\) and \(\sin\frac{\pi}{6} = \frac{1}{2}\). This
+in turn means that \(\arcsin{1} = \frac{\pi}{2}\) and
+\(\arcsin\frac{1}{2} = \frac{\pi}{6}\). The derivative of the inverse
+sine function is given by {[}\citeproc{ref-libre-inv-trig-deriv}{15}{]}:
+\begin{equation}\phantomsection\label{eq:arcsine-deriv}{
+\frac{\mathrm{d}}{\mathrm{d}x}\arcsin x = \frac{1}{\sqrt{1 - x^2}}.
+}\end{equation} or eqivalently
+\begin{equation}\phantomsection\label{eq:arcsine-int}{
+\int{\frac{1}{\sqrt{1 - x^2}}} = \arcsin x + C
+}\end{equation} where \(C\) is the constant of integration. Now, the
+integrand on the LHS (left hand side) of \cref{eq:arcsine-int} may be
+written, using the binomial theorem, as \[
+\left( 1 - x^2 \right)^{-\frac{1}{2}} = \dots
+\]
+
+Newton leveraged the ``nice'' values \(\sin\frac{\pi}{2} = 1\) and
+\(\sin\frac{\pi}{6} = \frac{1}{2}\) in his algorithms. Again this is
+``starting from the known to venture into the unknown''. Let
+\(\sin y = x \implies y = \arcsin x\). We have:
+
+used the binomial theorem to derive:
 \begin{equation}\phantomsection\label{eq:binomial}{
 \begin{array}{lcl}
 \arcsin x & = & x + \frac{1}{2}\frac{x^3}{3} + 
@@ -813,6 +857,10 @@ Newton used the binomial theorem to derive:
 \frac{1 \cdot 3}{2 \cdot 4}\frac{1}{5 \cdot 2^5} + \dots\right)
 \end{array}
 }\end{equation}
+
+Also include geometrical one
+
+https://www.youtube.com/watch?v=gMlf1ELvRzc
 
 \subsection{Machin's Formula}\label{machins-formula}
 
@@ -964,6 +1012,13 @@ University Press.}
 \CSLRightInline{Wikipedia contributors. 2024. {Madhava of Sangamagrama}.
 {Wikipedia, The Free Encyclopedia}. Retrieved 31 July 2024 from
 \url{https://en.wikipedia.org/wiki/Madhava_of_Sangamagrama}}
+
+\bibitem[\citeproctext]{ref-libre-inv-trig-deriv}
+\CSLLeftMargin{{[}15{]} }%
+\CSLRightInline{Gilbert Strang and Edwin ``Jed'' Herman and et al.
+{Derivatives of Inverse Trig Functions}. Mathematics LibreTexts.
+Retrieved 1 August 2024 from
+\url{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_210_Calculus_I_(Professor_Dean)/Chapter_3:_Derivatives/3._10:_Derivatives_of_Inverse_Trig_Functions}}
 
 \end{CSLReferences}
 

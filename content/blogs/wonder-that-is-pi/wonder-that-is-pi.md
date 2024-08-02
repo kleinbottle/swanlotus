@@ -233,7 +233,7 @@ The accomplishments of medieval Indian mathematicians---whose discoveries anteda
 
 [James Gregory](https://en.wikipedia.org/wiki/James_Gregory_\(mathematician\)) was the first Professor of Mathematics at the University of Edinburgh and in 1671, he published the series that was called the the [arctangent series](https://en.wikipedia.org/wiki/Arctangent_series), or the Gregory series.
 
-[Gottfried Wilhelm Leibniz](https://www.google.com/search?q=Leibnitz) evaluated the arctangent series at $\frac{\pi}{4}$ to get an estimate of $\frac{\pi}{4}$; the result was known as the Gregory-Leibnitz series or the Leibnitz Formula.
+[Gottfried Wilhelm Leibnitz](https://www.google.com/search?q=Leibnitz) evaluated the arctangent series at $\frac{\pi}{4}$ to get an estimate of $\frac{\pi}{4}$; the result was known as the Gregory-Leibnitz series or the Leibnitz Formula.
 
 [Madhava of Sangamagrama](https://en.wikipedia.org/wiki/Madhava_of_Sangamagrama) was a mathematician-astronomer who pursued research in trigonometric power series. In this, he showed remarkable prescience in defining angular measure as the ratio of arc length $s$ to radius, $r$, thus establishing the _naturalness_ of radian measure for serious work in trigonometry.^[See also ["A tale of two measures: degrees and radians"](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians). Some papers attribute the results of Madhava to Nilakantha---a student in the lineage of Madhava---but more recent papers cite Madhava correctly as the fountainhead of this research.]
 
@@ -245,26 +245,26 @@ Rather than draw the Madhava-Gregory-Leibnitz series out of a hat, we will sketc
 
 We assert that 
 $$
-\int_{0}^{x}\frac{1}{1+ t^2}dt = \arctan{x}
+\int_{0}^{x}\frac{1}{1+ t^2}{\mathrm{d}} t = \arctan{x}
 $$ {#eq:invtan}
 
 This integral should be familiar to most high school students. If it is not, try substituting $t = \tan \theta$:
 $$
 \begin{array}{rcl}
 t & = & \tan \theta \quad \mbox{ which gives} \\
-\displaystyle \frac{dt}{d\theta} & = & \displaystyle \frac{d}{d\theta}\left[ \tan \theta \right] \\
+\displaystyle \frac{\mathrm{d}t}{\mathrm{d}\theta} & = & \displaystyle \frac{\mathrm{d}}{\mathrm{d}\theta}\left[ \tan \theta \right] \\
 & = & \sec^2 \theta \\
 & = & 1 + \tan^2 \theta \\
 & = & 1 + t^2\\
-\mbox{Therefore}\quad\frac{1}{1 + t^2}dt & = & d\theta
+\mbox{Therefore}\quad\frac{1}{1 + t^2}\mathrm{d} t & = & \mathrm{d}\theta\\
 \end{array}
 $$
 
 The integral of [@eq:invtan] now becomes
 $$
 \begin{array}{rcl}
-\displaystyle \int_{0}^{x}\frac{1}{1+ t^2}dt %
-& = & \displaystyle \int_{\arctan0}^{\arctan x} d\theta\\[1em]
+\displaystyle \int_{0}^{x}\frac{1}{1+ t^2}\mathrm{d}t %
+& = & \displaystyle \int_{\arctan0}^{\arctan x} \mathrm{d}\theta\\[1em]
 & = & \big[ \theta\big]^{\arctan x}_{\arctan0} \\[1em]
 & = & \arctan x
 \end{array}
@@ -273,9 +273,9 @@ $$ {#eq:right}
 This takes care of the right hand side of [@eq:invtan].  If we performed long division on the left hand side of the same equation, we get:
 $$
 \begin{array}{rcl}
-\displaystyle \int_{0}^{x}\frac{1}{1+ t^2}dt %
+\displaystyle \int_{0}^{x}\frac{1}{1+ t^2}\mathrm{d}t %
 & = & \displaystyle \int_{0}^{x}%
-\left[ 1 - t^2 + t^4 - t^6 +\dots \right] dt \\[1em]
+\left[ 1 - t^2 + t^4 - t^6 +\dots \right] \mathrm{d}t \\[1em]
 & = & \displaystyle \left[ t - \frac{t^3}{3} + \frac{t^5}{5} - \frac{t^7}{7}+ \dots \right]_{0}^{x}\\[1em]
 & = & \displaystyle x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7}+ \dots
 \end{array}
@@ -285,21 +285,64 @@ Using [@eq:right; @eq:left], we get the Madhava-Gregory series
 $$
 \arctan x = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dots
 $$ {#eq:madgreg}
-Notice that it is only a small step from here to substitute $x = 1$ to
-get the equation
+Notice that it is only a small step from here to substitute $x = 1$---because $\tan\frac{\pi}{4} = 1$---to get the equation
 $$
 \begin{array}{ccccc}
 \arctan 1 & = & \frac{\pi}{4} & = & 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dots \\[0.5em]
 &  & \pi & = & 4(1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dots)
 \end{array}
 $$ {#eq:madgregleib}
-which is the Madhava-Gergory-Leibnitz series, that is also shown at the top of [@fig:pi-equations]. Strangely, Gregory did not publish the special case of [@eq:madgregleib], and it was Leibnitz who discovered both [@eq:madgreg; @eq:madgregleib] in 1674, and published them in 1682. For details of Madhava's terminology and approach, do consult the literature [@roy1990; @roy2011; @joseph2009; @joseph2011]. It is noteworthy that [@eq:madgregleib] was the first infinite series ever found for $\pi$.  However, it converges rather slowly, and one needs many terms before a reasonable approximation emerges.
+which is the Madhava-Gergory-Leibnitz (MGL)  series, that is also shown at the top of [@fig:pi-equations]. Strangely, Gregory did not publish the special case of [@eq:madgregleib], and it was Leibnitz who discovered both [@eq:madgreg; @eq:madgregleib] in 1674, and published them in 1682. For details of Madhava's terminology and approach, do consult the literature [@roy1990; @roy2011; @joseph2009; @joseph2011]. It is noteworthy that [@eq:madgregleib] was the first infinite series ever found for $\pi$.  However, it converges rather slowly, and one needs many terms before a reasonable approximation emerges.
 
-Over the last 370 years, by far the most effort has been expended in discovering series that _converge rapidly_ to $\pi$, so that even a partial sum of only a few terms will provide an accurate estimate of $\pi$. We now consider a selection of formulae from famous mathematicians who have bequeathed other series for calculating $\pi$.
+Over the last 370 years, by far the most effort has been expended in discovering series that _converge rapidly_ to $\pi$, so that even a partial sum of only a few terms will provide an accurate estimate of $\pi$. We now consider a selection of famous formulae from mathematicians who have bequeathed other series for calculating $\pi$.
 
-## Newton and the Binomial Theorem
+## Machin's Formula
 
-[Isaac Newton](https://plato.stanford.edu/entries/newton/) used the binomial theorem to derive:
+[John Machin]() followed in the footsteps of the MGL series but he used the arctangents of two values to arrive at a more rapidly convergent series. T better understand his method, let us recall that if $tan A = \frac{a_1}{b_1}$ and $\tan B = \frac{a_2}{b_2}$, then
+$$
+\begin{aligned}
+\tan(A + B) &= \frac{\tan A \tan B}{1 - \tan A\tan B}\\
+&= \frac{xy}{1-xy}\\
+\arctan \tan(A+B) = (A + B) = \arctan x + \arctan y &= arctan{\frac{xy}{1-xy}}
+\end{aligned}
+$$
+
+
+
+John Machin gave the formula: %
+%
+\begin{equation}
+\frac{\pi}{4} = 4 \arctan \left[ \frac{1}{5} \right] %
+- \arctan \left[ \frac{1}{239} \right]
+\end{equation}
+%
+where $\arctan x$ may be approximated by equation~(\ref{eqn:gregory}).
+
+
+## Newton, the Binomial Theorem, and Pi
+
+[Isaac Newton](https://plato.stanford.edu/entries/newton/) has contributed singularly to mathematics, physics, and astronomy, even as Archimedes has. So, it is not surprising that he too participated in the quest for $\pi$. He sought an efficient algorithm that would yield the most accuracy with the least number of terms. In this, he succeeded.
+
+Newton discovered the [binomial theorem](https://en.wikipedia.org/wiki/Binomial_theorem) for integer powers, but which he pressed into service to deal with negative and non-integral powers, as well. He was also aware that $\pi$ lurked openly in the trigonometric functions, or more precisely, in the _inverse_ trigonometric functions. We have already seen how the Madhava-Gregory-Leibnitz series is based on the inverse tangent or arctangent function. Newton used the inverse sine function.
+
+The derivative of the sine function is another trigonometric function, the cosine function. But the derivative of the _inverse_ sine function is not trigonometric, but algebraic. This means that working on the inverse trigonometric functions opens a window into the use of algebraic manipulations such as are afforded by the binomial theorem.
+
+Newton exploited this feature to get better estimates of $\pi$ with less effort. The two equations we should keep in mind are that $\sin\frac{\pi}{2} = 1$ and $\sin\frac{\pi}{6} = \frac{1}{2}$. This in turn means that $\arcsin{1} = \frac{\pi}{2}$ and $\arcsin\frac{1}{2} = \frac{\pi}{6}$. The derivative of the inverse sine function is given by [@libre-inv-trig-deriv]:
+$$
+\frac{\mathrm{d}}{\mathrm{d}x}\arcsin x = \frac{1}{\sqrt{1 - x^2}}.
+$$ {#eq:arcsine-deriv} or eqivalently
+$$
+\int{\frac{1}{\sqrt{1 - x^2}}} = \arcsin x + C
+$$ {#eq:arcsine-int} where $C$ is the constant of integration.
+Now, the integrand on the LHS (left hand side) of [@eq:arcsine-int] may be written, using the binomial theorem, as
+$$
+\left( 1 - x^2 \right)^{-\frac{1}{2}} = \dots
+$$
+
+Newton leveraged the "nice" values $\sin\frac{\pi}{2} = 1$ and $\sin\frac{\pi}{6} = \frac{1}{2}$  in his algorithms. Again this is "starting from the known to venture into the unknown". Let $\sin y = x \implies y = \arcsin x$. We have:
+
+
+used the binomial theorem to derive:
 $$
 \begin{array}{lcl}
 \arcsin x & = & x + \frac{1}{2}\frac{x^3}{3} + 
@@ -310,7 +353,15 @@ $$
 \end{array}
 $$ {#eq:binomial}
 
+
+(1+x)n = 1 + nx + n(n-1)x2/2! + n(n-1)(n-2)x3/3! + ...
+
+Binomial series insteado ftheorem; x < 1
+
 Also include geometrical one
+
+
+
 
 ## Machin's Formula
 
@@ -329,12 +380,7 @@ where $\arctan x$ may be approximated by equation~(\ref{eqn:gregory}).
 
 
 
-https://proofwiki.org/wiki/Sum_of_Arctangents
-https://en.wikipedia.org/wiki/John_Machin
-https://www.quora.com/Are-continued-fractions-a-dead-end-topic-in-mathematics
-https://mathworld.wolfram.com/PiApproximations.html
-https://www.quora.com/What-are-some-of-the-series-that-converge-to-pi-the-quickest
-https://math.stackexchange.com/questions/14113/series-that-converge-to-pi-quickly
+
 
 Ramanjuan shown at the the bottom of Fig1.
 
@@ -368,6 +414,8 @@ https://i.pinimg.com/736x/57/db/7f/57db7fb6dd9a4f2649b0d8ae5689ff98--math-teache
 
 https://study.com/skill/learn/how-to-construct-a-venn-diagram-to-classify-real-numbers-explanation.html
 
+https://blogs.sas.com/content/iml/2023/03/08/newton-pi.html
+
 
 Real Rational Integer Irrational Algebraic Transcendental Complex etc.
 
@@ -385,3 +433,15 @@ https://www.cut-the-knot.org/proofs/sq_root.shtml
 
 
 https://news.ycombinator.com/item?id=40750230
+
+https://www.tutorchase.com/notes/ib/maths-aa-hl/1-5-3-negative-and-fractional-indices
+
+
+https://proofwiki.org/wiki/Newton's_Formula_for_Pi
+
+https://www.youtube.com/watch?v=w_M6u-AFlEo
+
+file:///mnt/storage/Books/Teacher-Notes-and-Solutions.pdf
+
+
+file:///mnt/storage/Books/Newtons-Approximation-to-Pi.pdf

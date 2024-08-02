@@ -17,7 +17,7 @@ opengraphimage:
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here]({attach}./blognamei.pdf):
+\noindent A PDF version of this article is [available for download here]({attach}./blogname.pdf):
 
 ::: {.small .sf}
 <https://swanlotus.netlify.app/blogs/blogname.pdf>
