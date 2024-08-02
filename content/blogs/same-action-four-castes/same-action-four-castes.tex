@@ -1,0 +1,307 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode,linktoc=all}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  a4paper,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=25mm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{british}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+% $HOME/.pandoc/defaults/latex-header-includes.tex
+% Common header includes for both lualatex and xelatex engines.
+%
+% Preliminaries
+%
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+% \PassOptionsToPackage{main=british}{babel}
+\PassOptionsToPackage{english}{selnolig}
+\AtBeginEnvironment{quote}{\small}
+\AtBeginEnvironment{quotation}{\small}
+\AtBeginEnvironment{longtable}{\centering}
+%
+% Packages that are useful to include
+%
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[inkscapeversion=auto]{svg}
+\usepackage[defaultlines=4,all]{nowidow}
+\usepackage{etoolbox}
+\usepackage{fontsize}
+\usepackage{newunicodechar}
+\usepackage{pdflscape}
+\usepackage{fnpct}
+\usepackage{parskip}
+  \setlength{\parindent}{0pt}
+\usepackage[style=american]{csquotes}
+% \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
+%
+\usepackage{hyperref} % cleveref must come AFTER hyperref
+\usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
+\let\longdivision\relax
+\usepackage{longdivision}
+\newcommand{\dd}{\ensuremath{mathrm d}}
+% noto-plus.tex
+% Font-setting header file for use with Pandoc Markdown
+% to generate PDF via LuaLaTeX.
+% The main font is Noto Serif.
+% Other main fonts are also available in appropriately named file.
+\usepackage{fontspec}
+\usepackage{setspace}
+\setstretch{1.3}
+%
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=Node} % at the start always
+%
+% For English
+% See also https://tex.stackexchange.com/questions/574047/lualatex-amsthm-polyglossia-charissil-error
+% We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
+%
+\babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
+\babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
+\babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
+%
+% Sanskrit, Tamil, and Greek fonts
+%
+\babelprovide[import, onchar=ids fonts]{sanskrit}
+\babelprovide[import, onchar=ids fonts]{tamil}
+\babelprovide[import, onchar=ids fonts]{greek}
+%
+\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSerifDevanagari}
+\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSansDevanagari}
+\babelfont[tamil]{rm}[Renderer=HarfBuzz,Script=Tamil]{NotoSerifTamil}
+\babelfont[tamil]{sf}[Renderer=HarfBuzz,Script=Tamil]{NotoSansTamil}
+\babelfont[greek]{rm}[Script=Greek]{GentiumBookPlus}
+%
+% Math font
+%
+\usepackage{unicode-math} % seems not to hurt % fallabck
+\setmathfont[bold-style=TeX]{STIX Two Math}
+\usepackage{amsmath}
+\usepackage{esdiff} % for derivative symbols
+% \renewcommand{\mathbf}{\symbf}
+%
+%
+% Other fonts
+%
+\newfontfamily{\emojifont}{Symbola}
+%
+
+\usepackage{titling}
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0.2pt}
+    \renewcommand{\footrulewidth}{0.2pt}
+    \fancyhead[LO,RE]{\scshape\thetitle}
+    \fancyfoot[CO,CE]{\footnotesize Copyright © 2006\textendash\the\year, R (Chandra) Chandrasekhar}
+    \fancyfoot[RE,RO]{\thepage}
+%
+\usepackage{newunicodechar}
+\newunicodechar{√}{\textsf{√}}
+\usepackage {caption}
+    \captionsetup{font={sf,stretch=1.4}}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{sf}
+\hypersetup{
+  pdftitle={Same Action: Four Castes},
+  pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
+  colorlinks=true,
+  linkcolor={DarkGreen},
+  filecolor={Purple},
+  citecolor={Teal},
+  urlcolor={Maroon},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Same Action: Four Castes}
+\author{R (Chandra) Chandrasekhar}
+\date{2008-10-24 | 2024-08-02}
+
+\begin{document}
+\maketitle
+
+\thispagestyle{empty}
+
+
+This is Deepavali week. We are also having dinner guests tonight. So, I
+spent much of the day sprucing up the house from front porch to back
+toilet while my wife looked after the more essential culinary side. As I
+was doing the cleaning chores, I asked myself why I was doing them. As
+different answers flashed in my mind, I realized that they were all
+applicable, but each flavour of answer held within itself a secret: it
+determined the caste of the action. Since we are talking about caste a
+la Hinduism, I will first explain caste before telling you my tale of
+today.
+
+The ancient wise people of India discerned that there were four great
+goals of life. They called these purushaarthas. These four great goals
+are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  fulfilment of desire or kama;
+\item
+  acquisition of wealth or artha;
+\item
+  establishment of righteousness or dharma; and
+\item
+  quest of spiritual liberation or moksha.
+\end{enumerate}
+
+Humankind was also partitioned or classified according to which of these
+four major goals predominated in their individual lives. The linkage was
+so:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  kama \textless=\textgreater{} shudra
+\item
+  artha \textless=\textgreater{} vaishya
+\item
+  dharma \textless=\textgreater{} kshatriya
+\item
+  moksha \textless=\textgreater{} brahmana
+\end{enumerate}
+
+This is the origin of the four castes. It was the mental attitude rather
+than the physical body that determined caste. It was not the
+birth-pedigree but the operating system of the mind that determined
+caste. Moreover, because the mind constantly fluctuates with time, and
+because human aspiration and motivation oscillate with time and deed,
+the caste of a person changes accordingly. It is not fixed for all time
+but varies with mood, moment, and movement.
+
+Now, back to my cleaning chores. I asked the question, ``Why am I
+cleaning house?'' My mind reflected back many answers from which I have
+distilled these four archetypes:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Because I want to impress the guests that we keep a very clean house.
+\item
+  A clean house and a clean bathroom will encourage guests to leave
+  everything as clean as they saw it: so the house will remain clean
+  after the event.
+\item
+  Cleanliness promotes health and well-being. My guests should not
+  suffer allergic reactions from dust and dirt.
+\item
+  My guests are representatives of the Almighty. Therefore I must show
+  my devotion and reverence to the Almighty by cleaning the house.
+\end{enumerate}
+
+These four attitudes of mind correspond respectively to the shudra,
+vaishya, kshatriya, and brahmana states respectively. The action has not
+changed; it remains the same. But the mental attitude or underlying
+motivation is different in each case. It starts out by being wholly
+self-centred and changes shade by shade into an action that is totally
+selfless.
+
+The interesting thing is that caste is not dependent on action but on
+the attitude to action. To ligate caste to activity and make each trade
+or profession into a caste is to grossly distort caste and its purpose
+and meaning. There is no leather-working caste and no medical-doctor
+caste any more than there is a thinking caste or a breathing caste.
+There is only attitude to action and that attitude determines the
+``instantaneous'' caste of the person performing that action.
+
+It is in an attempt to make brahmanas of us all always, who will find
+ultimate freedom, that Bhagavan Krishna has graciously said in the
+Bhagavad Gita {[}9:27{]}:
+
+yat karoshi yadashnaasi yaj juhoshi dadaasi yat yat tapasyasi kaunteya
+tat kurushva mad-arpanam
+
+Whatever you do, whatever you eat, whatever you offer in sacrifice,
+whatever you donate Whatever austerities you practise, O son of Kunti,
+do that as an offering unto Me.
+
+Galileo's Thermometer: same device different temperatures mean different
+bulbs at the top. The top bulb at any moment determines caste at any
+moment. https://en.wikipedia.org/wiki/Galileo\_thermometer
+
+\subsection{Acknowledgements}\label{acknowledgements}
+
+\subsection{Feedback}\label{feedback}
+
+Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
+comments and corrections.
+
+\noindent A PDF version of this article is
+\href{./same-action-four-castes.pdf}{available for download here}:
+
+\begin{small}
+
+\begin{sffamily}
+
+\url{https://swanlotus.netlify.app/blogs/same-action-four-castes.pdf}
+
+\end{sffamily}
+
+\end{small}
+
+
+
+\end{document}
