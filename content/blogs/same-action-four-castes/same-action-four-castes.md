@@ -40,7 +40,11 @@ Humankind was also partitioned or classified according to which of these four ma
 
 ## The Spiritual Meaning of Caste
 
-This is the spiritual origin of the four castes. _It is the mental attitude rather than the physical body that determines caste. It is not the birth-pedigree, but the operating system of the mind, that determines caste_. Moreover, because the mind constantly fluctuates with time, and because human aspiration and motivation oscillate with time and deed, the caste of a person changes accordingly. It is not fixed for all time but varies with mood, moment, and movement.
+This is the spiritual origin of the four castes.
+
+It is the mental attitude rather than the physical body that determines caste. It is not the birth-pedigree, but the operating system of the mind, that determines caste. Caste is not rigid and restricting but is instead fluid and freeing, based on one's own choice.
+
+Moreover, because the mind constantly fluctuates with time, and because human aspiration and motivation oscillate with time and deed, the caste of a person changes accordingly. It is not fixed for all time but varies with mood, moment, and movement.
 
 ## Why clean house?
 
@@ -62,9 +66,9 @@ _Caste is not dependent on action but on the attitude to action_. To ligate cast
 
 It is in an attempt to make brāhmanas of us all always, who will find ultimate freedom, that Bhagavān Kṛṣṇa has graciously said in the Bhagavad Gīta [9:27]:
 
-yat karoṣi yadaśnaasi yaj juhoṣi dadāsi yat\  
-yat tapasyasi kaunteya tat kuruṣva mad-arpaṇam\  
-
+yat karoṣi yadaśnāsi yaj juhoṣi dadāsi yat\
+yat tapasyasi kaunteya tat kuruṣva mad-arpaṇam\
+  
 Whatever you do, whatever you eat, whatever you offer in sacrifice, whatever you donate
 Whatever austerities you practise, O son of Kunti, do that as an offering unto Me.
 
@@ -72,9 +76,11 @@ Whatever austerities you practise, O son of Kunti, do that as an offering unto M
 
 ### Galileo's Thermometer
 
-![Galileo's Thermometer. The coloured balls are weighted differently with tags that indicate temperature. They rise and fall as the ambient temperature changes. The uppermost bulb indicates the current temperature. This device, with changing uppermost bulbs, is the ideal metaphor for my idea of instantaneous caste, as spelled out in this blog.^[Image courtesy of "Plow and Hearth": <https://www.plowhearth.com/galileo-thermometer-with-cherry-finish-wood-frame/p/in6808>.]]({attach}images/galileo-thermometer.jpg){#fig:galileo width=70% .modal-target}
+![Galileo's Thermometer. The coloured balls are weighted differently with tags that indicate temperature. They rise and fall as the ambient temperature changes. The uppermost bulb indicates the current temperature. This device, with changing bulb positions, is the ideal metaphor for my idea of instantaneous caste, as spelled out in this blog.^[Image courtesy of "Plow and Hearth": <https://www.plowhearth.com/galileo-thermometer-with-cherry-finish-wood-frame/p/in6808>.]]({attach}images/galileo-thermometer.jpg){#fig:galileo width=70% .modal-target}
 
-[Galileo's Thermometer](https://en.wikipedia.org/wiki/Galileo_thermometer) is an ideal metaphor for my idea of caste. The device is the same, but different temperatures result in different bulbs rising to  the top. The rising and falling of different bulbs represents the changing caste of a person performing the same action, even as his or her attitude to that action changes.
+[Galileo's Thermometer](https://en.wikipedia.org/wiki/Galileo_thermometer) is an ideal metaphor for my idea of caste. The device is the same, but different temperatures result in different bulbs rising to  the top or falling to the bottom. The rising and falling of different bulbs represents the changing caste of a person performing the same action, even as his or her attitude to that action changes.
+
+If you are intrigued by the Galileo Thermometer per se, you can see a [short video here](https://youtube.com/shorts/kkQ1TFr4apg?si=V7W3fbIZLpQ2p4ud) [@galileo-YT-short] and a [long video here](https://www.youtube.com/watch?v=XeSlFxOHW6A) [@galileo-YT-long].
 
 ### Other viewpoints
 
