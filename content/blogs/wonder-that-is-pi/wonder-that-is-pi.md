@@ -292,7 +292,7 @@ $$
 $$ {#eq:mglseries}
 which is the  MGL series, that is also shown at the top of [@fig:pi-equations]. Strangely, Gregory did not publish the special case of [@eq:mglseries], and it was Leibniz who discovered both [@eq:mgseries; @eq:mglseries] in 1674, and published them in 1682. For details of Madhava's terminology and approach, do consult the literature [@roy1990; @roy2011; @joseph2009; @joseph2011]. It is noteworthy that [@eq:mglseries] was the first infinite series ever found for $\pi$. However, it converges very slowly. "Calculating π to 10 correct decimal places using direct summation of the series requires precisely five billion terms..." [@leibniz-pi].
 
-![The blog from here on is _under construction_ and not ready to be read yet. Kindly excuse me.^[Photo by Fernando Arcos: https://www.pexels.com/photo/under-construction-signage-on-laptop-keyboard-211122/.]]({attach}images/under-construction.jpg){#fig:under-construction width=60% .modal-target}
+![The blog from here on is _under construction_ and not fit to be read yet. Kindly excuse me.^[Photo by Fernando Arcos: https://www.pexels.com/photo/under-construction-signage-on-laptop-keyboard-211122/.]]({attach}images/under-construction.jpg){#fig:under-construction width=60% .modal-target}
 
 ## Detour: What does arctan mean?
 
