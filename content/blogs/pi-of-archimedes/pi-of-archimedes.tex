@@ -125,7 +125,7 @@
 %
 \usepackage{graphicx}
 \usepackage{subcaption}
-\usepackage[inkscapeversion=1]{svg}
+\usepackage[inkscapeversion=auto]{svg}
 \usepackage[defaultlines=4,all]{nowidow}
 \usepackage{etoolbox}
 \usepackage{fontsize}
@@ -141,6 +141,7 @@
 \usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
 \let\longdivision\relax
 \usepackage{longdivision}
+\newcommand{\dd}{\ensuremath{mathrm d}}
 % noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
@@ -1334,6 +1335,13 @@ online article} {[}\citeproc{ref-birchak2019}{14}{]} recounts, with
 facsimile reproductions from Archimedes' own writings, how he went about
 estimating \(\pi\).
 
+The fourteenth of March each year is celebrated as
+\href{https://en.wikipedia.org/wiki/Pi_Day}{Pi Day}, and in 2024,
+\href{https://www.nytimes.com/article/pi-day-math-geometry-infinity.html}{this
+popular article} by the eminent mathematician, Steven Strogatz, appeared
+in the New York Times {[}\citeproc{ref-strogatz-pi-day-2024}{15}{]}. It
+is a rewarding read.
+
 \subsection{Acknowledgements}\label{acknowledgements}
 
 The computations for \cref{tbl:large-n-pi} were performed using a
@@ -1449,6 +1457,12 @@ secrets. Retrieved 13 July 2024 from
 Great Numerical Hope}. {Math! Science! History! with Gabrielle Birchak}.
 Retrieved from
 \url{https://mathsciencehistory.com/2019/10/01/archimedes-and-his-pi-the-great-numerical-hope/}}
+
+\bibitem[\citeproctext]{ref-strogatz-pi-day-2024}
+\CSLLeftMargin{{[}15{]} }%
+\CSLRightInline{Steven Strogatz. 2024. {Pi Day}. {How One Irrational
+Number Made Us Modern}. Retrieved 5 August 2024 from
+\url{https://www.nytimes.com/article/pi-day-math-geometry-infinity.html}}
 
 \end{CSLReferences}
 

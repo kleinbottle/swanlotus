@@ -219,7 +219,7 @@ The search for increasingly more accurate values for $\pi$ has resulted in many 
 
 This quest for the unattainable---but supremely beautiful---has engaged human minds to seek $\pi$ in countless infinite sums, such are shown in [@fig:pi-equations]. These equations are sometimes starkly simple and at other times thoroughly mystifying, and embody the paradox that is $\pi$ more succinctly than all the words in the world.
 
-## The Madhava-Gregory-Leibnitz series
+## The Madhava-Gregory-Leibniz (MGL) series
 
 It must be obvious by now that trigonometry, circles, and the number $\pi$ are inextricably entwined.^[If this sounds unfamiliar, I invite you to read my blogs ["A tale of two measures: degrees and radians"](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians) and ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes).] The quest for more  accurate values of $\pi$ continued to fascinate mathematicians in the centuries after Archimedes. This time though, rather than geometric iteration, _sums of successive terms_ were used to approximate $\pi$.
 
@@ -227,21 +227,19 @@ For our purposes, a _sequence_ is an _ordered_ procession of numbers, and a _ser
 
 ### Why a triple-barrelled name?
 
-The series we are about to look at was originally called the _Gregory series_. Leibnitz evaluated the Gregory series for a specific value and came up with a formula for $\pi$, and that series was called the _Leibnitz series_.
+The series we are about to look at was originally called the _Gregory series_. Leibniz evaluated the Gregory series for a specific value and came up with a formula for $\pi$, and that series was called the _Leibniz series_.
 
-The accomplishments of medieval Indian mathematicians---whose discoveries antedated those of Gregory and Leibnitz---remained unknown to the larger world. But recent scholarship has accorded [priority](https://en.wikipedia.org/wiki/Scientific_priority) to the leading Indian mathematician-astronomer of that period, Madhava, who anticipated both the Gregory series and the Leibnitz series by more than 250 years [@roy1990; @joseph2009; @roy2011; @joseph2011; @madhava-wiki]. This explains the triple-barrelled name for the series. Thumbnail sketches are given in the links below for all three mathematicians.
+The accomplishments of medieval Indian mathematicians---whose discoveries antedated those of Gregory and Leibniz---remained unknown to the larger world. But recent scholarship has accorded [priority](https://en.wikipedia.org/wiki/Scientific_priority) to the leading Indian mathematician-astronomer of that period, Madhava, who anticipated both the Gregory series and the Leibniz series by more than 250 years [@roy1990; @joseph2009; @roy2011; @joseph2011; @madhava-wiki]. This explains the triple-barrelled name for the series. Thumbnail sketches are given in the links below for all three mathematicians.
 
 [James Gregory](https://en.wikipedia.org/wiki/James_Gregory_\(mathematician\)) was the first Professor of Mathematics at the University of Edinburgh and in 1671, he published the series that was called the the [arctangent series](https://en.wikipedia.org/wiki/Arctangent_series), or the Gregory series.
 
-[Gottfried Wilhelm Leibnitz](https://www.google.com/search?q=Leibnitz) evaluated the arctangent series at $\frac{\pi}{4}$ to get an estimate of $\frac{\pi}{4}$; the result was known as the Gregory-Leibnitz series or the Leibnitz Formula.
+[Gottfried Wilhelm Leibniz](https://www.google.com/search?q=Leibniz) evaluated the arctangent series at $\frac{\pi}{4}$ to get an estimate of $\frac{\pi}{4}$; the result was known as the Gregory-Leibniz series or the Leibniz Formula.
 
 [Madhava of Sangamagrama](https://en.wikipedia.org/wiki/Madhava_of_Sangamagrama) was a mathematician-astronomer who pursued research in trigonometric power series. In this, he showed remarkable prescience in defining angular measure as the ratio of arc length $s$ to radius, $r$, thus establishing the _naturalness_ of radian measure for serious work in trigonometry.^[See also ["A tale of two measures: degrees and radians"](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians). Some papers attribute the results of Madhava to Nilakantha---a student in the lineage of Madhava---but more recent papers cite Madhava correctly as the fountainhead of this research.]
 
-!!!CHECK CHECK CHECK!!!^^^^^
-
 ### Derivation
 
-Rather than draw the Madhava-Gregory-Leibnitz series out of a hat, we will sketch its derivation, according to Gregory, and show its origins in integral calculus.
+Rather than draw the Madhava-Gregory-Leibniz (here abbreviated as the MGL) series out of a hat, we will sketch its derivation, according to Gregory, and show its origins in integral calculus.
 
 We assert that 
 $$
@@ -284,105 +282,155 @@ $$ {#eq:left}
 Using [@eq:right; @eq:left], we get the Madhava-Gregory series
 $$
 \arctan x = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dots
-$$ {#eq:madgreg}
+$$ {#eq:mgseries}
 Notice that it is only a small step from here to substitute $x = 1$---because $\tan\frac{\pi}{4} = 1$---to get the equation
 $$
 \begin{array}{ccccc}
 \arctan 1 & = & \frac{\pi}{4} & = & 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dots \\[0.5em]
 &  & \pi & = & 4(1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dots)
 \end{array}
-$$ {#eq:madgregleib}
-which is the Madhava-Gergory-Leibnitz (MGL)  series, that is also shown at the top of [@fig:pi-equations]. Strangely, Gregory did not publish the special case of [@eq:madgregleib], and it was Leibnitz who discovered both [@eq:madgreg; @eq:madgregleib] in 1674, and published them in 1682. For details of Madhava's terminology and approach, do consult the literature [@roy1990; @roy2011; @joseph2009; @joseph2011]. It is noteworthy that [@eq:madgregleib] was the first infinite series ever found for $\pi$.  However, it converges rather slowly, and one needs many terms before a reasonable approximation emerges.
+$$ {#eq:mglseries}
+which is the  MGL series, that is also shown at the top of [@fig:pi-equations]. Strangely, Gregory did not publish the special case of [@eq:mglseries], and it was Leibniz who discovered both [@eq:mgseries; @eq:mglseries] in 1674, and published them in 1682. For details of Madhava's terminology and approach, do consult the literature [@roy1990; @roy2011; @joseph2009; @joseph2011]. It is noteworthy that [@eq:mglseries] was the first infinite series ever found for $\pi$. However, it converges very slowly. "Calculating π to 10 correct decimal places using direct summation of the series requires precisely five billion terms..." [@leibniz-pi].
 
-Over the last 370 years, by far the most effort has been expended in discovering series that _converge rapidly_ to $\pi$, so that even a partial sum of only a few terms will provide an accurate estimate of $\pi$. We now consider a selection of famous formulae from mathematicians who have bequeathed other series for calculating $\pi$.
+![The blog from here on is _under construction_ and not ready to be read yet. Kindly excuse me.^[Photo by Fernando Arcos: https://www.pexels.com/photo/under-construction-signage-on-laptop-keyboard-211122/.]]({attach}images/under-construction.jpg){#fig:under-construction width=60% .modal-target}
 
-## Machin's Formula
+## Detour: What does arctan mean?
 
-[John Machin]() followed in the footsteps of the MGL series but he used the arctangents of two values to arrive at a more rapidly convergent series. T better understand his method, let us recall that if $tan A = \frac{a_1}{b_1}$ and $\tan B = \frac{a_2}{b_2}$, then
+We know from high school that the isosceles right-angled triangle and the 30/60/90 right triangle give rise to these identities, where angles are expressed in radians:
 $$
 \begin{aligned}
-\tan(A + B) &= \frac{\tan A \tan B}{1 - \tan A\tan B}\\
-&= \frac{xy}{1-xy}\\
-\arctan \tan(A+B) = (A + B) = \arctan x + \arctan y &= arctan{\frac{xy}{1-xy}}
+\tan\frac{\pi}{3} &= \sqrt{3} &\implies &\arctan\sqrt{3} &= \frac{\pi}{3}\\
+\tan\frac{\pi}{4} &= 1 &\implies &\arctan 1 &= \frac{\pi}{4}\\
+\tan\frac{\pi}{6} &= \frac{\sqrt{3}}{3} &\implies &\arctan\frac{\sqrt{3}}{3} &= \frac{\pi}{6}\\
 \end{aligned}
-$$
+$$ {#eq:arctan}
+Note in [@eq:arctan] that we have an irrational tangent $\frac{\pi}{4}$ giving rise to the rational values $1$. The other commonly known tangents have both angles and values as irrational. This is why the angle $\frac{\pi}{4}$ is so special in algorithms involving arctangents.
+
+It is my suspicion that the the prefix _arc_ is applied to the tangent to denote the arc or angle corresponding to a tangent. Recall that the angle in radians is proportional to arc length: $\theta = \frac{s}{r}$ where $\theta$ is the angle, $s$ the length of arc subtending the angle, and $r$ the radius.^[See ["A tale of two measures: degrees and radians"](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians).]
+
+In formulae for computing $\pi$ efficiently and accurately, mathematicians have been on the lookout for _linear combinations of rational arctangents that sum to a multiple of $\frac{\pi}{4}$_. Once this guiding principle has been grasped, we will be better equipped to assess different formulae that have been developed for evaluating $\pi$ better, especially those based on $\arctan$.
+
+### Rational points on the unit circles
+
+
+### Rational fractions of π
+
+
+### How to choose the intersection set?
 
 
 
-John Machin gave the formula: %
-%
-\begin{equation}
-\frac{\pi}{4} = 4 \arctan \left[ \frac{1}{5} \right] %
-- \arctan \left[ \frac{1}{239} \right]
-\end{equation}
-%
-where $\arctan x$ may be approximated by equation~(\ref{eqn:gregory}).
+## Sums of angles
+
+The $\arctan$ function in [@eq:madgregleib] holds the key to a more solid understanding of what is happening in infinite series involving $\pi$. The expression $\arctan 1$ refers to the _angle_ whose tangent is $1$, with the implicit understanding that the angle lies in the interval $[-\frac{\pi}{2}, \frac{\pi}{2}]$.
+
+The next great breakthrough occurred when the single angle $\arctan 1$ could be split into sums or differences of other angles. You might think that adding more terms to the computation would increase computation time and lower accuracy. But if the sum is _judicously contrived_ with numbers that are either large and whose terms decay rather fast, or whose powers are easily computed, then accurate and speedy computation by hand become feasible. And the whole subject of _Machin-like_ formulae--the Holy Grail---of the [Pi-Chasers]() is simply the quest for parsimony in calculation coupled with accuracy in result.
+
+And it all amounts to splitting an angle, $\frac{\pi}{4}$ to be precise, into smaller fragments to our advantage.
+
+## The Quest for faster convergence
+
+Over the last 370 years, by far the most effort has been expended in discovering series that _converge rapidly_ to $\pi$, so that even a partial sum of only a few terms will provide an accurate estimate of $\pi$. We now consider a selection of famous formulae from mathematicians who have bequeathed series for calculating $\pi$ efficiently.
 
 
-## Newton, the Binomial Theorem, and Pi
 
-[Isaac Newton](https://plato.stanford.edu/entries/newton/) has contributed singularly to mathematics, physics, and astronomy, even as Archimedes has. So, it is not surprising that he too participated in the quest for $\pi$. He sought an efficient algorithm that would yield the most accuracy with the least number of terms. In this, he succeeded.
+## 
 
-Newton discovered the [binomial theorem](https://en.wikipedia.org/wiki/Binomial_theorem) for integer powers, but which he pressed into service to deal with negative and non-integral powers, as well. He was also aware that $\pi$ lurked openly in the trigonometric functions, or more precisely, in the _inverse_ trigonometric functions. We have already seen how the Madhava-Gregory-Leibnitz series is based on the inverse tangent or arctangent function. Newton used the inverse sine function.
-
-The derivative of the sine function is another trigonometric function, the cosine function. But the derivative of the _inverse_ sine function is not trigonometric, but algebraic. This means that working on the inverse trigonometric functions opens a window into the use of algebraic manipulations such as are afforded by the binomial theorem.
-
-Newton exploited this feature to get better estimates of $\pi$ with less effort. The two equations we should keep in mind are that $\sin\frac{\pi}{2} = 1$ and $\sin\frac{\pi}{6} = \frac{1}{2}$. This in turn means that $\arcsin{1} = \frac{\pi}{2}$ and $\arcsin\frac{1}{2} = \frac{\pi}{6}$. The derivative of the inverse sine function is given by [@libre-inv-trig-deriv]:
-$$
-\frac{\mathrm{d}}{\mathrm{d}x}\arcsin x = \frac{1}{\sqrt{1 - x^2}}.
-$$ {#eq:arcsine-deriv} or eqivalently
-$$
-\int{\frac{1}{\sqrt{1 - x^2}}} = \arcsin x + C
-$$ {#eq:arcsine-int} where $C$ is the constant of integration.
-Now, the integrand on the LHS (left hand side) of [@eq:arcsine-int] may be written, using the binomial theorem, as
-$$
-\left( 1 - x^2 \right)^{-\frac{1}{2}} = \dots
-$$
-
-Newton leveraged the "nice" values $\sin\frac{\pi}{2} = 1$ and $\sin\frac{\pi}{6} = \frac{1}{2}$  in his algorithms. Again this is "starting from the known to venture into the unknown". Let $\sin y = x \implies y = \arcsin x$. We have:
-
-
-used the binomial theorem to derive:
-$$
-\begin{array}{lcl}
-\arcsin x & = & x + \frac{1}{2}\frac{x^3}{3} + 
-\frac{1\cdot 3}{2\cdot 4}\frac{x^5}{5} + \dots \\[0.5em]
-%\mbox{for which, substituting $x = \frac{1}{2}$ gives} & & \\
-\pi & = & 6\left( \frac{1}{2} + \frac{1}{2}\frac{1}{3 \cdot 2^3} + 
-\frac{1 \cdot 3}{2 \cdot 4}\frac{1}{5 \cdot 2^5} + \dots\right)
-\end{array}
-$$ {#eq:binomial}
-
-
-(1+x)n = 1 + nx + n(n-1)x2/2! + n(n-1)(n-2)x3/3! + ...
-
-Binomial series insteado ftheorem; x < 1
-
-Also include geometrical one
 
 
 
 
 ## Machin's Formula
 
+The [Machin formula](https://en.wikipedia.org/wiki/Machin-like_formula2) [@schwartz-2012] is usually written as 
+$$
+\arctan{1} = \frac{\pi}{4} = 4\arctan\left[ \frac{1}{5} \right] - \arctan\left[ \frac{1}{239} \right]
+$$ {#eq:machin-formula}
+Contemporary mathematicians have dropped this notation in favour of using the $\arccot$ function, to avoid fractions, and a bracket notation for conciseness [@lehmer-1938]:
+$$
+\begin{aligned}
+\arccot{1} &= \frac{\pi}{4} = 4\arccot{5} - \arccot{239}\\[0.75em]
+[1] &= 4[5] - [239].
+\end{aligned}
+$$ {#eq:machin-formula-cot}
+
+-------------- CLEAN UP FROM HERE ---------------
+
+The three $\arctan$ arguments in [@eq:machin-formula] are all rational. If we substitute the arguments in the RHS of [@eq:machin-formula] into the variable in [@eq:madgregleib], we get:
+$$
+\begin{aligned}
+\pi &= 16\left[\frac{1}{1\cdot5^1} - \frac{1}{3\cdot5^3} + \frac{1}{5\cdot5^5} - \frac{1}{7\cdot5^7} + \dots \right]\\
+&+ 4\left[\frac{1}{1\cdot239^1} - \frac{1}{3\cdot239^3} + \frac{1}{5\cdot239^5} - \frac{1}{7\cdot239^7} + \dots \right]
+\end{aligned}
+$$ {#eq:machin-pi-series}
+We have deliberately used a notation that brings out the pattern: a term raised to the power one is explicitly shown as so.
+
+Observe that $\left[{\frac{1}{p}}\right]^n = \frac{1}{p^n}$. Having a unit numerator and large integers as denominators assists in computation because fewer terms have to be evaluated for a good estimate.
+
+#. Substituting
+
+Rational arguments for acrtan
+
+Sum and difference formula, where we seek rational numbers with large denominators
+
+Experimental for 10 by 10 square grid
+
+"Prime factorization of Gaussian integers" as the basis for further derivations.
+
+Examples
+
+[John Machin](https://en.wikipedia.org/wiki/John_Machin) followed in the footsteps of the Madhava-Gregory-Leibniz series, but he used the difference in the arctangents of _two_ values to arrive at a more rapidly convergent series for $\pi$. To better understand his method, let us recall that if $\tan A = \frac{a_1}{b_1}$ and $\tan B = \frac{a_2}{b_2}$, then [@libre-inv-trig-deriv]:
+$$
+\begin{aligned}
+\tan(A + B) &= \frac{\tan A + \tan B}{1 - \tan A\tan B}\\
+&= \frac{\frac{a_{1}}{b_{1}} + \frac{a_{2}}{b_{2}}}{1 - \frac{a_{1}a_{2}}{b_{1}b_{2}}}\\
+&= \frac{a_{1}b_{2} + a_{2}b_{1}}{b_{1}b_{2} - a_{1}a_{2}}\\
+\end{aligned}
+$$
+Notice that
+$$
+\begin{aligned}
+\arctan\tan(A+B) &= (A + B) \mbox { which implies}\\
+\arctan\frac{a_1}{b_1}  + \arctan\frac{a_2}{b_2} &= \arctan\left[\frac{a_{1}b_{2} + a_{2}b_{1}}{b_{1}b_{2} - a_{1}a_{2}}\right]\\
+\end{aligned}
+$$ {#eq:machin-arc}
+
+Suppose we set $a_{1} = a_{2} = 1$, then, [@eq:machin-arc] we get these sum and difference formulae:
+$$
+\begin{aligned}
+\arctan\frac{1}{b_1}  + \arctan\frac{1}{b_2} &= \arctan\left[\frac{b_{1} + b_{2}}
+{b_{1}b_{2} - 1}\right]\\
+\arctan\frac{1}{b_1}  - \arctan\frac{1}{b_2} &= \arctan\left[\frac{b_{1} - b_{2}}
+{b_{1}b_{2} + 1}\right]
+\end{aligned}
+$$ {#eq:sum-diff-arct}
+To get $\pi$ correct to ten decimal places, we need to evaluate only X partial sums when using the Machin formula.
+
+
+[@eq:machin-arc] is at the root of the Machin Formula [@machin-like-wiki]:
+
+
+But what made Machin use these particular numbers in [@eq:machin-formula]? The answer to this vital question will take us a little far afield into the factorization of [Gaussian Integers](https://en.wikipedia.org/wiki/Gaussian_integer) and related ideas. Those interested in the details should consult [this dedicated paper](https://www2.oberlin.edu/faculty/jcalcut/gausspi.pdf) [@calcut2009] or refer to these discussions [@mse-machin-one; @mse-machin-two].
+
+The Machin formula's claim to fame is that it converges faster than the abysmally slow Madhava-Gregory-Leibniz series. Indeed it inspired formulae that were the basis for approximating $\pi$ more accurately for a century or two.
+
+## Newton's approach to estimating π
+
+When he needed to estimate $\pi$ accurately, Newton extended his own pathbreaking binomial theorem to develop the binomial power series. For a fascinating account of how this happened, Read [this online article[(https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/) [@strogatz-newton-2022].
 
 
 
 
-John Machin gave the formula: %
-%
-\begin{equation}
-\frac{\pi}{4} = 4 \arctan \left[ \frac{1}{5} \right] %
-- \arctan \left[ \frac{1}{239} \right]
-\end{equation}
-%
-where $\arctan x$ may be approximated by equation~(\ref{eqn:gregory}).
+## Gauss's contribution
+
+Arithmetic-Geometric Mean AGM
 
 
 
 
+## Ramanujan and the Chudnovskys
 
-Ramanjuan shown at the the bottom of Fig1.
+
 
 ## Acknowledgements
 
@@ -399,49 +447,4 @@ corrections.
 <https://swanlotus.netlify.app/blogs/wonder-that-is-pi.pdf>
 :::-->
 
-https://math.stackexchange.com/questions/4675933/is-the-equal-symbol-in-an-infinite-series-misleading-notation
 
-https://mathmonks.com/transcendental-numbers
-
-https://gfredericks.com/blog/
-
-https://www.quora.com/How-do-you-draw-a-Venn-diagram-showing-the-relationship-of-the-set-of-real-rational-irrational-integers-and-non-integer-numbers
-
-https://www.reddit.com/r/math/comments/725nxu/how_would_you_improve_this_types_of_numbers_venn/
-
-https://i.pinimg.com/736x/57/db/7f/57db7fb6dd9a4f2649b0d8ae5689ff98--math-teacher-math-class.jpg
-
-
-https://study.com/skill/learn/how-to-construct-a-venn-diagram-to-classify-real-numbers-explanation.html
-
-https://blogs.sas.com/content/iml/2023/03/08/newton-pi.html
-
-
-Real Rational Integer Irrational Algebraic Transcendental Complex etc.
-
-Hark back to 
-
-Venn diagram showing the number taxonomy can be challenging [Venn diagram is shown here](https://mathmonks.com/transcendental-numbers). This Venn diagram is flawed.
-
-https://www.quora.com/Why-cant-we-draw-a-Venn-diagram-for-4-sets-with-circles-and-how-can-we-solve-it
-
-https://www.gauthmath.com
-
-https://tex.stackexchange.com/questions/668565/how-can-i-draw-a-shape-with-overlapping-regions-with-opacity
-
-https://www.cut-the-knot.org/proofs/sq_root.shtml
-
-
-https://news.ycombinator.com/item?id=40750230
-
-https://www.tutorchase.com/notes/ib/maths-aa-hl/1-5-3-negative-and-fractional-indices
-
-
-https://proofwiki.org/wiki/Newton's_Formula_for_Pi
-
-https://www.youtube.com/watch?v=w_M6u-AFlEo
-
-file:///mnt/storage/Books/Teacher-Notes-and-Solutions.pdf
-
-
-file:///mnt/storage/Books/Newtons-Approximation-to-Pi.pdf

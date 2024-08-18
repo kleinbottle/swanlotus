@@ -1,1 +1,59 @@
 What does the equality sign mean for an infinite sum? How can a sum of rationals equal an irrational number? A transcendental number? The meaning of $=$ is therefore not in the sense of $2 + 2 = 4$ or even of $x - 5 = 0$. It is something similar and yet something different, because, despite Cantor, we have not tamed the idea of infinity yet.
+
+
+
+
+
+
+
+
+
+Ramanjuan shown at the the bottom of Fig1.
+## Newton, the Binomial Theorem, and Pi
+
+[Isaac Newton](https://plato.stanford.edu/entries/newton/) contributed singularly to mathematics, physics, and astronomy, even as Archimedes did. So, it is not surprising that he too participated in the quest for $\pi$. He sought an efficient algorithm that would yield the most accuracy with the least number of terms. In this, he succeeded.
+
+Existing accounts vary as to how exactly he derived better approximations to $\pi$. Some accounts claim that he used the binomial theorem to simplify inverse sine series.
+
+REALLY NEED TO CLEAN THIS UP.
+
+
+
+Newton discovered the [binomial theorem](https://en.wikipedia.org/wiki/Binomial_theorem) for integer powers, but which he pressed into service to deal with negative and non-integral powers, as well. He was also aware that $\pi$ lurked openly in the trigonometric functions, or more precisely, in the _inverse_ trigonometric functions. We have already seen how the Madhava-Gregory-Leibnitz series is based on the inverse tangent or arctangent function. Newton used the inverse sine function.
+
+The derivative of the sine function is another trigonometric function, the cosine function. But the derivative of the _inverse_ sine function is not trigonometric, but algebraic. This means that working on the inverse trigonometric functions opens a window into the use of algebraic manipulations such as are afforded by the binomial theorem.
+
+Newton exploited this feature to get better estimates of $\pi$ with less effort. The two equations we should keep in mind are that $\sin\frac{\pi}{2} = 1$ and $\sin\frac{\pi}{6} = \frac{1}{2}$. This in turn means that $\arcsin{1} = \frac{\pi}{2}$ and $\arcsin\frac{1}{2} = \frac{\pi}{6}$. The derivative of the inverse sine function is given by [@libre-inv-trig-deriv]:
+$$
+\frac{\mathrm{d}}{\mathrm{d}x}\arcsin x = \frac{1}{\sqrt{1 - x^2}}.
+$$ {#eq:arcsine-deriv} or eqivalently
+$$
+\int{\frac{1}{\sqrt{1 - x^2}}} = \arcsin x + C
+$$ {#eq:arcsine-int} where $C$ is the constant of integration.
+Now, the integrand on the LHS (left hand side) of [@eq:arcsine-int] may be written, using the binomial theorem, as
+$$
+\left( 1 - x^2 \right)^{-\frac{1}{2}} = \dots
+$$
+
+Newton leveraged the "nice" values $\sin\frac{\pi}{2} = 1$ and $\sin\frac{\pi}{6} = \frac{1}{2}$  in his algorithms. Again this is "starting from the known to venture into the unknown". Let $\sin y = x \implies y = \arcsin x$. We have:
+
+
+used the binomial theorem to derive:
+$$
+\begin{array}{lcl}
+\arcsin x & = & x + \frac{1}{2}\frac{x^3}{3} + 
+\frac{1\cdot 3}{2\cdot 4}\frac{x^5}{5} + \dots \\[0.5em]
+%\mbox{for which, substituting $x = \frac{1}{2}$ gives} & & \\
+\pi & = & 6\left( \frac{1}{2} + \frac{1}{2}\frac{1}{3 \cdot 2^3} + 
+\frac{1 \cdot 3}{2 \cdot 4}\frac{1}{5 \cdot 2^5} + \dots\right)
+\end{array}
+$$ {#eq:binomial}
+
+
+(1+x)n = 1 + nx + n(n-1)x2/2! + n(n-1)(n-2)x3/3! + ...
+
+Binomial series instead of theorem; x < 1
+
+Also include geometrical one
+
+http://www.pi314.net/eng/gauss.php

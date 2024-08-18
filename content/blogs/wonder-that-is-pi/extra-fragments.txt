@@ -1,3 +1,95 @@
+https://www.youtube.com/watch?v=EK32jo7i5LQ
+Why do prime numbers make these spirals? | Dirichlet’s theorem and pi approximations
+3Blue1Brown (curated list)
+
+Mathologer
+
+
+Verritasium
+
+https://math.stackexchange.com/questions/3438621/prove-that-4-tan-1-left-frac15-right-tan-1-left-frac1239-ri
+
+https://math.stackexchange.com/questions/44595/machins-formula-and-cousins
+
+https://math.stackexchange.com/questions/1612361/generalized-2-terms-machins-formula-an-efficient-way-to-compute-pi
+
+https://stackoverflow.com/questions/2269810/whats-a-nice-method-to-factor-gaussian-integers
+
+https://stackoverflow.com/questions/71641277/visualizing-gaussian-primes-and-gaussian-prime-factors-in-python
+
+https://www.nayuki.io/page/factorize-gaussian-integer-javascript Worth it!
+
+https://math.stackexchange.com/questions/2097901/are-the-rationals-on-a-unit-circle-dense
+
+https://www.youtube.com/watch?v=rVWLsgYh--k
+Pythagorean Triples and Rational Points on Unit Circle
+
+https://www.youtube.com/watch?v=dtiLxLrzjOQ
+Can we calculate 100 digits of π by hand? The William Shanks method.
+
+https://sites.google.com/a/lclark.edu/nelsen/
+Professor Roger Nelsen's papers: collected
+
+https://math.stackexchange.com/questions/4769643/are-there-infinitely-many-pythagorean-triples-with-two-primes
+
+https://www.slideserve.com/knox-mcfarland/three-ways-to-compute-pi
+For slide show by Fred Rickey
+
+http://www.worldpifederation.org/Fed/euler.pdf
+Grandmaster Mark Aarøe Nissen
+
+https://slideplayer.com/slide/2528179/
+Rickey on Machin?
+
+https://ijpam.eu/contents/2013-82-3/9/9.pdf
+Yutaka Nishiyama: Machin's Formula and Pi
+
+https://www.researchgate.net/publication/24291595_The_Quest_for_Pi#fullTextFileContent
+The Quest for Pi: Borwein and Borwein
+
+https://www.math.brown.edu/reschwar/M10/machin.pdf
+Schwartz(?) Machin’s Method of Computing the Digits of π
+
+https://math.stackexchange.com/questions/4752982/is-it-possible-to-explain-geometrically-why-arctan-1-2-arctan-1-3-45
+Is it possible to explain geometrically why arctan(1/2)+arctan(1/3)=45
+degrees?
+
+https://math.stackexchange.com/questions/197393/why-does-tan-11-tan-12-tan-13-pi/254427#254427
+Why does tan−1(1)+tan−1(2)+tan−1(3)=π?
+
+https://trigonography.com/?p=176
+Three Squares Puzzle
+
+https://math.stackexchange.com/questions/1325313/geometric-justification-of-the-trigonometric-identity-arctan-x-arctan-frac
+Geometric justification of the trigonometric identity arctanx+arctan1−x1+x=π4
+
+https://math.stackexchange.com/questions/1083057/infinite-series-for-the-arctangent-from-the-tangent-of-half-angle-formula
+Infinite series for the arctangent from the tangent of half-angle formula - Mathematics Stack Exchange
+
+https://math.stackexchange.com/questions/2331599/find-the-parametrization-for-an-arc-tangent-to-the-unit-circle
+Find the parametrization for an arc tangent to the unit circle
+
+
+
+https://www.youtube.com/watch?v=m5evLoL0xwg
+The Three Square Geometry Problem - Numberphile
+
+https://pballew.blogspot.com/2016/06/on-this-day-in-math-june-9.html
+Quotes from V F R V Frederick Rickey
+
+https://www.youtube.com/watch?v=M_fTdDx8IlY
+Computing PI: Machin-like formula
+
+https://www.youtube.com/watch?v=gMlf1ELvRzc
+The Discovery that Transformed Pi: Veritasium
+
+https://demonstrations.wolfram.com/MachinsComputationOfPi/
+Machin's Computation of Pi
+
+https://www.youtube.com/watch?v=U6RLeNBgCj8
+Calculating pi to ten decimal places with Machin's formula @MathFacts
+
+
 https://socratic.org/questions/how-do-you-find-the-maclaurin-series-for-arcsin-x-x
 
 https://math.stackexchange.com/questions/326334/a-question-about-the-arctangent-addition-formula
@@ -7,6 +99,16 @@ https://math.stackexchange.com/questions/197874/maclaurin-expansion-of-arcsin-x
 https://en.wikipedia.org/wiki/Category:Pi
 
 https://www.youtube.com/watch?v=gMlf1ELvRzc
+
+https://www.youtube.com/watch?v=4edCTcA0mTg
+
+https://mathworld.wolfram.com/Machin-LikeFormulas.html
+
+https://cs.uwaterloo.ca/journals/JIS/VOL25/Abrarov/abrarov5.pdf
+
+https://www.jjj.de/arctan/arctanpage.html
+
+http://www.machination.eclipse.co.uk/
 
 https://advancesincontinuousanddiscretemodels.springeropen.com/articles/10.1186/1687-1847-2013-100
 
@@ -46,4 +148,58 @@ https://mathworld.wolfram.com/PiApproximations.html
 https://www.quora.com/What-are-some-of-the-series-that-converge-to-pi-the-quickest
 https://math.stackexchange.com/questions/14113/series-that-converge-to-pi-quickly
 
+https://www.youtube.com/watch?v=i5uXPgltZS0
 
+https://math.stackexchange.com/questions/4675933/is-the-equal-symbol-in-an-infinite-series-misleading-notation
+
+https://mathmonks.com/transcendental-numbers
+
+https://gfredericks.com/blog/
+
+https://www.quora.com/How-do-you-draw-a-Venn-diagram-showing-the-relationship-of-the-set-of-real-rational-irrational-integers-and-non-integer-numbers
+
+https://www.reddit.com/r/math/comments/725nxu/how_would_you_improve_this_types_of_numbers_venn/
+
+https://i.pinimg.com/736x/57/db/7f/57db7fb6dd9a4f2649b0d8ae5689ff98--math-teacher-math-class.jpg
+
+
+https://study.com/skill/learn/how-to-construct-a-venn-diagram-to-classify-real-numbers-explanation.html
+
+https://blogs.sas.com/content/iml/2023/03/08/newton-pi.html
+
+https://www.youtube.com/watch?v=M_fTdDx8IlY
+
+https://math.stackexchange.com/questions/1612361/generalized-2-terms-machins-formula-an-efficient-way-to-compute-pi
+
+https://www.yumpu.com/en/document/read/4254114/machins-formula-for-computing-pi-department-of-mathematical-
+
+https://www.academia.edu/5891657/Machin_on_computing_%CF%80
+
+Real Rational Integer Irrational Algebraic Transcendental Complex etc.
+
+Hark back to 
+
+Venn diagram showing the number taxonomy can be challenging [Venn diagram is shown here](https://mathmonks.com/transcendental-numbers). This Venn diagram is flawed.
+
+https://www.quora.com/Why-cant-we-draw-a-Venn-diagram-for-4-sets-with-circles-and-how-can-we-solve-it
+
+https://www.gauthmath.com
+
+https://tex.stackexchange.com/questions/668565/how-can-i-draw-a-shape-with-overlapping-regions-with-opacity
+
+https://www.cut-the-knot.org/proofs/sq_root.shtml
+
+
+https://news.ycombinator.com/item?id=40750230
+
+https://www.tutorchase.com/notes/ib/maths-aa-hl/1-5-3-negative-and-fractional-indices
+
+
+https://proofwiki.org/wiki/Newton's_Formula_for_Pi
+
+https://www.youtube.com/watch?v=w_M6u-AFlEo
+
+file:///mnt/storage/Books/Teacher-Notes-and-Solutions.pdf
+
+
+file:///mnt/storage/Books/Newtons-Approximation-to-Pi.pdf

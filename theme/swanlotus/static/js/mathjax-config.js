@@ -4,6 +4,21 @@ window.MathJax = {
         scale: 0.91 // Hand-tweaked for Noto Serif and STIX2
         // matchFontHeight: true // A smidgen too large?
     },
+    tex: {
+        macros: {
+            sech: '\\DeclareMathOperator{\\sech}{sech}\\sech',
+            csch: '\\DeclareMathOperator{\csch}{csch}\\csch',
+            arcsec: '\\DeclareMathOperator{\\arcsec}{arcsec}\\arcsec',
+            arccot: '\\DeclareMathOperator{\\arccot}{arccot}\\arccot',
+            arccsc: '\\DeclareMathOperator{\\arccsc}{arccsc}\\arccsc',
+            arccosh: '\\DeclareMathOperator{\\arccosh}{arccosh}\\arccosh',
+            arcsinh: '\\DeclareMathOperator{\\arcsinh}{arcsinh}\\arcsinh',
+            arctanh: '\\DeclareMathOperator{\\arctanh}{arctanh}\\arctanh',
+            arcsech: '\\DeclareMathOperator{\\arcsech}{arcsech}\\arcsech',
+            arccsch: '\\DeclareMathOperator{\\arccsch}{arccsch}\\arccosh',
+            arccoth: '\\DeclareMathOperator{\\arccoth}{arccoth}\\arccoth' 
+        }
+    },
     output: {
         font: "mathjax-stix2" // Needs MathJax 4.0.0 or higher
     }
@@ -20,3 +35,4 @@ window.MathJax = {
         document.head.appendChild(script);
     }
 )();
+

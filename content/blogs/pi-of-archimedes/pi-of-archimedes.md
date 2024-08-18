@@ -535,6 +535,8 @@ Another article on Archimedes' estimation of $\pi$ is available on [this PBS web
 
 [This online article](https://mathsciencehistory.com/2019/10/01/archimedes-and-his-pi-the-great-numerical-hope/) [@birchak2019] recounts, with facsimile reproductions from Archimedes' own writings, how he went about estimating $\pi$.
 
+The fourteenth of March each year is celebrated as [Pi Day](https://en.wikipedia.org/wiki/Pi_Day), and in 2024, [this popular article](https://www.nytimes.com/article/pi-day-math-geometry-infinity.html) by the eminent mathematician, Steven Strogatz, appeared in the New York Times [@strogatz-pi-day-2024]. It is a rewarding read.
+
 ## Acknowledgements
 
 The computations for [@tbl:large-n-pi] were performed using a program written by [Nandakumar Chandrasekhar](https://www.linkedin.com/in/nandakumar-chandrasekhar-a400b45b/) in the [Julia programming Language](https://julialang.org/). The output was formatted so that it could be easily cut and pasted into the blog itself, to avoid transcription errors. The source code is available [here]({attach}auxiliary/pi_approximations.jl).
