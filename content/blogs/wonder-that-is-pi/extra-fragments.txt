@@ -1,6 +1,142 @@
+https://www.reddit.com/r/3Blue1Brown/comments/1f3lcgn/you_should_never_start_a_conversation_with_pi/?post_fullname=t3_1f3lcgn&post_index=3&_branch_referrer=H4sIAAAAAAAAA22Q4UrFMAyFn2b%2B2%2BbWznuvcBFBfI2QrdldsWtLmzp9ezOn%2FhJaSL7DyUm7MMf82LaJjLHcYIyNs%2F6tVfGp6rWKVwLMd1KGZG%2FWo4OS3HXZXZV6rvpXOdu2NT%2F%2BKawCklw1ukLdmMLmpRO%2BkucsZTcrN912%2BBkK5CUUZ8DTOyXIjIkBYQpe2oxsg4fN8gLR7lFK0oZeG6II%2B5aVeuFUqOofppASucNgjfBBjxov3VAPWqtaz%2BO5Hme81AOeFHY4n873J%2FHFkBnm4pzHlfZxCv72O0TrDX2IogQkmqWiFa0DY2%2BU%2BYAw4RrRiulfNYeSJvrVBBZe9zey%2FIjQ7xi27OgLR8DVIo0BAAA%3D
+
+https://www.youtube.com/watch?v=t1ZnptSEPI8
+
+https://www.google.com/search?q=Why+are+there+only+four+two-term+Machin-like+formulae
+
+https://www.researchgate.net/publication/381355497_A_Rational_Approximation_of_the_Two-Term_Machin-Like_Formula_for_pi
+
+https://www.cs.umb.edu/~offner/files/pi.pdf
+
+https://en.wikipedia.org/wiki/Gregory_number
+
+https://en.wikipedia.org/wiki/St%C3%B8rmer_number
+
+https://en.wikipedia.org/wiki/John_(Jack)_Todd
+
+https://www.academia.edu/5891657/Machin_on_computing_%CF%80
+
+https://www.wolframalpha.com/input?i=x%5E2+-+2*z%5E4+%3D+-1
+wolfram solution to x^2 -2z^4 = -1
+
+https://archive.lib.msu.edu/crcmath/math/math/i/i207.htm
+
+https://mathoverflow.net/questions/357197/conways-lesser-known-results
+
+https://mathoverflow.net/questions/149790/arctan-of-a-square-root-as-a-rational-multiple-of-pi
+
+https://www.davidhbailey.com/dhbpapers/pi-history.pdf
+
+https://www.researchgate.net/publication/1740580_History_of_the_formulas_and_algorithms_for
+
 https://www.youtube.com/watch?v=EK32jo7i5LQ
 Why do prime numbers make these spirals? | Dirichlet’s theorem and pi approximations
 3Blue1Brown (curated list)
+
+https://members.loria.fr/PZimmermann/talks/gauss.pdf
+What if Gauss had had a computer?
+
+https://fse.studenttheses.ub.rug.nl/9256/1/Henk_Jaap_Stelwagen_WB_2010.pdf
+Approximations of π
+
+https://investigacion.unirioja.es/documentos/64e2a5294a4f093d56e71c10/f/65685ed6aaaaaa46358cb405.pdf
+Three essays on Machin's type formulas
+
+https://stackoverflow.com/questions/2269810/whats-a-nice-method-to-factor-gaussian-integers
+https://stackoverflow.com/a/2271645/1055147
+What's a nice method to factor gaussian integers?
+
+https://www.alpertron.com.ar/GAUSSIAN.HTM
+Gaussian integer factorization calculator (All done for you).
+
+https://www.cheenta.com/gaussian-prime-spiral-and-its-beautiful-patterns/
+Gaussian Prime Spiral and Its beautiful Patterns
+
+https://people.math.harvard.edu/~knill/primes/papers/gaussian.pdf
+Some experiments in number theory
+
+https://digitalcommons.ursinus.edu/cgi/viewcontent.cgi?article=1003&context=triumphs_number
+Janet Heine Barnett
+Gaussian Integers and Dedekind's Creation of an Ideal: A Number
+Theory ProjectTheory Project
+
+https://mathoverflow.net/questions/140147/difficulty-of-factoring-a-gaussian-integer-compared-to-factoring-its-norm
+Difficulty of factoring a Gaussian integer (compared to factoring its norm)
+
+https://arxiv.org/pdf/0807.0872
+History of the formulas and algorithms for π
+Jes´us Guillera Goyanes
+
+https://awwalker.com/wp-content/uploads/2018/03/homslides_15_approximating_pi.pdf
+Approximating Pi
+Brown University
+
+https://math.stackexchange.com/questions/4890023/a-formula-for-pi
+A formula for π
+
+https://math.stackexchange.com/questions/1189820/calculating-pi-manually
+Calculating pi manually
+
+https://math.stackexchange.com/questions/523625/showing-arctan-frac23-frac12-arctan-frac125/523657#523657
+showing arctan(23)=12arctan(125)
+
+https://www.craig-wood.com/nick/articles/pi-machin/
+Pi - Machin
+Nick Craig-Wood
+
+https://www.gresham.ac.uk/sites/default/files/2017-10-25_BSHM_RobinWilson_PiAndE.pdf
+Pi and e, and the Most Beautiful Theorem in
+Mathematics
+Professor Robin Wilson
+
+http://www.machination.eclipse.co.uk/reducing.html
+Irreducible
+
+http://www.machination.eclipse.co.uk/
+Computing Pi: Lists Of Machin-Type (Inverse Cotangent) Identities For Pi/4
+
+https://academickids.com/encyclopedia/index.php/Pi
+Pi
+Fact-packed resource page on Pi
+
+https://math.stackexchange.com/questions/2227020/how-to-generate-similar-identities-to-5i4-21i239i
+How to generate similar identities to (5+i)4=2(1+i)(239+i)
+https://math.stackexchange.com/a/2227130/19098
+PROBABLY THE BEST ANSWER
+
+https://imomath.com/index.cgi?page=ntPellsEquationIntroduction
+Pell’s Equation: Introduction
+
+https://www.jjj.de/hakmem/pi.html
+MOST INTERESTING SO FAR
+
+https://mae.ufl.edu/~uhk/PI-ARCTAN%20FORMULA.pdf
+???
+
+https://www.reddit.com/r/3Blue1Brown/comments/173iwpo/a_fascinating_realization_about_the_relationship/
+Follow Up
+
+http://www.ams.org/publicoutreach/feature-column/fc-2015-11
+Make into pDF
+
+http://www.ams.org/publicoutreach/feature-column/fc-2016-11
+Make into PDF
+
+http://www.ams.org/publicoutreach/feature-column/fc-2016-11
+Quite Important
+
+http://list.seqfan.eu/pipermail/seqfan/2003-June/thread.html#2597
+Whole email thread is important
+
+https://math.stackexchange.com/questions/79861/is-arctan2-a-rational-multiple-of-pi
+Could be very important
+
+https://www.jjj.de/hakmem/pi.html#item137
+Pi formulas: gives three of the four Stromer formulae
+
+https://archive.lib.msu.edu/crcmath/math/math/m/m004.htm
+Look into. Stormer 4 how to prove?
+
 
 Mathologer
 
