@@ -125,7 +125,7 @@
 %
 \usepackage{graphicx}
 \usepackage{subcaption}
-\usepackage[inkscapeversion=1]{svg}
+\usepackage[inkscapeversion=auto]{svg}
 \usepackage[defaultlines=4,all]{nowidow}
 \usepackage{etoolbox}
 \usepackage{fontsize}
@@ -141,6 +141,22 @@
 \usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
 \let\longdivision\relax
 \usepackage{longdivision}
+\newcommand{\dd}{\ensuremath{mathrm d}}
+%
+% Assume that amsmath is already loaded via \usepackage{amsmath}
+% in the standard LaTeX template foe Pandoc
+% 
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arccoth}{arccoth} 
 % noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
@@ -199,6 +215,8 @@
 %
 \usepackage{newunicodechar}
 \newunicodechar{√}{\textsf{√}}
+\usepackage {caption}
+    \captionsetup{font={sf,stretch=1.4}}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -210,9 +228,9 @@
   pdfauthor={R (Chandra) Chandrasekhar},
   pdflang={en-GB},
   colorlinks=true,
-  linkcolor={DarkOliveGreen},
+  linkcolor={DarkGreen},
   filecolor={Purple},
-  citecolor={DarkKhaki},
+  citecolor={Teal},
   urlcolor={Maroon},
   pdfcreator={LaTeX via pandoc}}
 
@@ -347,7 +365,6 @@ Definition
 
 \end{small}
 
-\hfill\break
 While it is premature to talk about these sets and their peculiarities
 in this blog, it is worth making some points about them.
 
@@ -953,7 +970,7 @@ the common ratio \(\lvert r \rvert < 1\).
 \includesvg[width=0.8\textwidth,height=\textheight]{images/xn.svg}
 \caption{Graphs of \(y = x^n\) for \(x \in [0, 1]\) and
 \(n \in \{0, 1, 2, 4, 8, 16, 32, 64, 128, 512\}\). Note that all curves
-pass through \((1, 1)\).}\label{fig:x-to-n}
+pass through \((0, 0)\) and \((1, 1)\).}\label{fig:x-to-n}
 \end{figure}
 
 \subsection{Rotation on the complex

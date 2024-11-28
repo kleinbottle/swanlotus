@@ -58,7 +58,7 @@ Some experiments in number theory
 https://digitalcommons.ursinus.edu/cgi/viewcontent.cgi?article=1003&context=triumphs_number
 Janet Heine Barnett
 Gaussian Integers and Dedekind's Creation of an Ideal: A Number
-Theory ProjectTheory Project
+Theory Project
 
 https://mathoverflow.net/questions/140147/difficulty-of-factoring-a-gaussian-integer-compared-to-factoring-its-norm
 Difficulty of factoring a Gaussian integer (compared to factoring its norm)

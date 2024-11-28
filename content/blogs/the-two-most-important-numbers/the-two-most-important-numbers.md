@@ -388,7 +388,7 @@ The pivot at $a = 1$ is rock steady because $1^n = 1$ for all $n \in \mathbb{N}$
 
 @fig:x-to-n shows graphs of $x^n$ for $x \in [0, 1]$ and $n \in\{0, 1, 2, 4, 8, 16, 32, 64, 128, 512\}$. As $n$ increases and $x$ approaches $1$, the graphs exhibit an almost perpendicular change in direction like a laterally inverted $L$. I find this behavior fascinating, and it explains why geometric series converge when the common ratio $\lvert r \rvert < 1$.
 
-![Graphs of $y = x^n$ for $x \in [0, 1]$ and $n \in \{0, 1, 2, 4, 8, 16, 32, 64, 128, 512\}$. Note that all curves pass through $(1, 1)$.]({attach}images/xn.svg){#fig:x-to-n width=80% .modal-target}
+![Graphs of $y = x^n$ for $x \in [0, 1]$ and $n \in \{0, 1, 2, 4, 8, 16, 32, 64, 128, 512\}$. Note that all curves pass through $(0, 0)$ and $(1, 1)$.]({attach}images/xn.svg){#fig:x-to-n width=80% .modal-target}
 
 <!--https://www.desmos.com/calculator/iybrvquibc-->
 
