@@ -60,13 +60,15 @@ Then follow the steps below to set up your development environment:
     pipenv install --dev
     ```
 
-    You may be asked to install version 3.8.10 of Python by pyenv, answer with `y` at the prompt to install it.
+    You may be asked to install version 3.13.0 of Python by pyenv, answer with `y` at the prompt to install it.
 
-    **Note: Python version 3.8.10 is the latest available on Netlify as of November 2023 so we are setting our development environment to the same version.**
+    If we update the version of Python we would have to update the versions in the following files:
 
-    When Netlify updates their version of Python we would have to update the version in the `.python-version` file and the `python_version` setting in `Pipfile` so that our settings match Netlify.
+    * `.python-version`
+    * `Pipfile`
+    * `netlify.toml`
 
-    Then we would need to destory the existing virtual environment and recreate it:
+    Then we would then need to destroy the existing virtual environment and recreate it:
 
     ```bash
     pipenv --rm
@@ -248,9 +250,11 @@ Typically, it takes 24 hours for an Open Graph image to appear in WhatsApp. In T
 
 ## Netlify Deployment
 
-[Netlify](https://www.netlify.com/) currently uses the [Ubuntu 20.04 LTS Focal Fossa](https://releases.ubuntu.com/20.04/) image to build this site. More information about the available packages and their versions are available [here](https://github.com/netlify/build-image/blob/focal/included_software.md).
+[Netlify](https://www.netlify.com/) currently uses the [Ubuntu 20.04 LTS Focal Fossa](https://releases.ubuntu.com/20.04/) image to build this site.
 
-We always want to use the latest version of Pandoc and pandoc-crossref to avail of new features. Since the default Ubuntu image does not always have the most recent versions or may not contain the package at all, the Netlify community suggested to make use of [HomeBrew](https://brew.sh/).
+Since the default version of Python is ancient on the above image we use a `netlify.toml` file to instruct Netlify to use a more up-to-date version by setting the PYTHON_VERSION environment variable.
+
+We always want to use the latest version of Pandoc and pandoc-crossref to avail of new features. Since the above image does not always have the most recent versions or may not contain the package at all, the Netlify community suggested to make use of [HomeBrew](https://brew.sh/).
 
 By specifying the packages in a `Brewfile.netlify` we instruct the builder to download the latest version of these packages from Homebrew and install them on the image.
 

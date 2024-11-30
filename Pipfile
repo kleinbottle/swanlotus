@@ -9,6 +9,7 @@ blinker = "*"
 commonmark = "*"
 docutils = "*"
 feedgenerator = "*"
+markdown = "*"
 markdown-word-count = "*"
 pelican = "*"
 pelican-pandoc-reader = "*"
@@ -22,7 +23,6 @@ MarkupSafe = "*"
 Pygments = "*"
 Unidecode = "*"
 typing-extensions = "*"
-"backports.zoneinfo" = "*"
 texttable = "*"
 
 [dev-packages]
@@ -32,4 +32,4 @@ pylint = "*"
 flake8 = "*"
 
 [requires]
-python_version = "3.8.10"
+python_version = "3.13.0"
