@@ -221,9 +221,9 @@ This quest for the unattainable---but supremely beautiful---has engaged human mi
 
 ## Ludolph van Ceulen and François Viète
 
-Before we set sail to explore other methods for estimating $\pi$, let us indulge in one last glance at [The Pi of Archimedes](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes) and how the work of two mathematicians---who lived in the latter half of the 1500s---formed a bridge from the polygon method of Archimedes to newer infinite series methods for estimating $\pi$.
+Before we set sail to explore $\pi$ further, let us indulge in one last glance at [The Pi of Archimedes](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes) and how the work of two mathematicians---who lived in the latter half of the 1500s---formed a bridge from the polygon method of Archimedes to newer infinite series methods for estimating this transcendental number.
 
-[Ludolph van Ceulen](https://en.wikipedia.org/wiki/Ludolph_van_Ceulen) [@van-ceulen] is one of the unsung heroes in the quest for ever more digits to estimate $\pi$. He faithfully and heroically followed in the exact footsteps of Archimedes and spent almost _twenty-five years_ of his life to evaluate $\pi$ to 35 places^[The final polygon he used had almost 500 million sides!] [@van-ceulen;@van-ceulen-memorial]. It is fitting that his restored tombstone in [Leiden](https://en.wikipedia.org/wiki/Leiden) is inscribed with the upper and lower bounds of $\pi$ [@van-ceulen-memorial,@tombstone] that he so painstakingly computed:
+[Ludolph van Ceulen](https://en.wikipedia.org/wiki/Ludolph_van_Ceulen) [@van-ceulen] is one of the unsung heroes in the perennial quest to calculate ever more digits of $\pi$. He faithfully and heroically followed in the footsteps of Archimedes and spent almost _twenty-five years_ of his life to evaluate $\pi$ to 35 decimal places^[The final polygon he used had almost 500 million sides!] [@van-ceulen;@van-ceulen-memorial]. It is fitting that his restored tombstone in [Leiden](https://en.wikipedia.org/wiki/Leiden) is inscribed with the upper and lower bounds of $\pi$ [@van-ceulen-memorial,@tombstone] that he so painstakingly computed:
 
 <div style="text-align: center; margin-bottom: 1em;">
 ```
@@ -232,7 +232,7 @@ Before we set sail to explore other methods for estimating $\pi$, let us indulge
 ```
 </div>
 
-![An image of the restored tombstone in Leiden celebrating Ludolph van Cuelen's signal achievement in calculating $\pi$ to 35 places. Image is taken from <https://www.history-of-mathematics.org/artifacts/pi-tombstone> [@tombstone].]({attach}images/van-ceulen-restored-tombstone.jpg){#fig:memorial width=50% .modal-target}
+![An image of the restored tombstone in Leiden celebrating Ludolph van Cuelen's extraordinary  achievement in calculating $\pi$ to 35 decimal places. Image is taken from <https://www.history-of-mathematics.org/artifacts/pi-tombstone> [@tombstone].]({attach}images/van-ceulen-restored-tombstone.jpg){#fig:memorial width=50% .modal-target}
 
 [François Viète](https://en.wikipedia.org/wiki/Fran%C3%A7ois_Vi%C3%A8te) not only emulated the polygonal approach of Archimedes to estimate $\pi$, but also introduced algebraic notation [@viete;@maor1998] to allow for greater abstraction. Even more significantly, he introduced---for the first time---an explicit, infinite product formula for for the _exact_ value of $\pi$, now known as [Viète's formula](https://en.wikipedia.org/wiki/Vi%C3%A8te%27s_formula) [@viete-formula;@maor1998], consisting of a product of nested radicals:
 $$
@@ -241,7 +241,7 @@ $$
 \frac2\pi &= \prod_{n=1}^{\infty} \cos \frac{\pi}{2^{n+1}}.
 \end{aligned}
 $${#eq:viete}
-Maor has observed that
+[Eli Maor](https://en.wikipedia.org/wiki/Eli_Maor) has observed that:
 
 >"Viète's formula marks a milestone in the history of mathematics: it was the first time an infinite process was explicitly written as a succession of algebraic operations. … By adding the three dots at the end of his product, Viète, in one bold stroke, declared the infinite a bona fide part of mathematics. This marked the beginning of mathematical analysis in the modern sense of the word." [@maor1998].
 
