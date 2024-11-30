@@ -219,6 +219,47 @@ The search for increasingly more accurate values for $\pi$ has resulted in many 
 
 This quest for the unattainable---but supremely beautiful---has engaged human minds to seek $\pi$ in countless infinite sums, such are shown in [@fig:pi-equations]. These equations are sometimes starkly simple and at other times thoroughly mystifying, and embody the paradox that is $\pi$ more succinctly than all the words in the world.
 
+## Ludolph van Ceulen and François Viète
+
+Before we set sail to explore other methods for estimating $\pi$, let us take one last look at [The Pi of Archimedes](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes) and how the work of two mathematicians who lived in the latter half of the 1500s formed a bridge from the polygon method of Archimedes to newer infinite series methods for estimating $\pi$.
+
+[Ludolph van Ceulen](https://en.wikipedia.org/wiki/Ludolph_van_Ceulen) [@van-ceulen] is one of the unsung heroes in the quest for ever more digits to estimate $\pi$. He faithfully and heroically followed in the exact footsteps of Archimedes and spent almost _twenty-five years_ of his life to evaluate $\pi$ to 35 places^[The final polygon he used had almost 500 million sides!] [@van-ceulen;@van-ceulen-memorial]. It is fitting that his restored tombstone in [Leiden](https://en.wikipedia.org/wiki/Leiden) is inscribed with the upper and lower bounds of $\pi$ [@van-ceulen-memorial,@tombstone] that he so painstakingly computed:
+
+<div style="text-align: center; margin-bottom: 1em;">
+```
+π > 3.14159265358979323846264338327950288
+π < 3.14159265358979323846264338327950289
+```
+</div>
+
+![An image of the restored tombstone in Leiden celebrating Ludolph van Cuelen's signal achievement in calculating $\pi$ to 35 places. Image is taken from <https://www.history-of-mathematics.org/artifacts/pi-tombstone> [@tombstone].]({attach}images/van-ceulen-restored-tombstone.jpg){#fig:memorial width=50% .modal-target}
+
+[François Viète](https://en.wikipedia.org/wiki/Fran%C3%A7ois_Vi%C3%A8te) not only emulated the polygonal approach of Archimedes to estimate $\pi$, but also introduced algebraic notation into the mathematics of Europe [@viete,maor1998] to allow for greater abstraction. Most of all, he boldly introduced a formula for $\pi$, now known as Viète's formula:
+$$
+\begin{aligned}
+\frac2\pi &= \frac{\sqrt 2}2 \cdot \frac{\sqrt{2+\sqrt 2}}2 \cdot \frac{\sqrt{2+\sqrt{2+\sqrt 2}}}2 \cdots\\
+\frac2\pi &= \prod_{n=1}^{\infty} \cos \frac{\pi}{2^{n+1}}.
+\end{aligned}
+$${#eq:viete}
+This equation is important because it is the first equation for a limit that was known in the European mathematical tradition [@viete-formula].
+
+
+
+Viète's approach was broadly similar in that he followed the same polygonal approach of Archimedes.
+
+In the process, Viète, deduced the following formula relating the infinite product of nested radicals to $pi$:
+$$
+\begin{aligned}
+\frac2\pi = \frac{\sqrt 2}2 \cdot \frac{\sqrt{2+\sqrt 2}}2 \cdot \frac{\sqrt{2+\sqrt{2+\sqrt 2}}}2 \cdots\\
+\frac2\pi = \prod_{n=1}^{\infty} \cos \frac{\pi}{2^{n+1}}.
+\end{aligned}
+$${#eq:viete}
+This equation is important because it is the first equation for a limit that was known in the European mathematical tradition [@viete-formula].
+
+
+
+
+
 ## The Madhava-Gregory-Leibniz (MGL) series
 
 It must be obvious by now that trigonometry, circles, and the number $\pi$ are inextricably entwined.^[If this sounds unfamiliar, I invite you to read my blogs ["A tale of two measures: degrees and radians"](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians) and ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes).] The quest for more  accurate values of $\pi$ continued to fascinate mathematicians in the centuries after Archimedes. This time though, rather than geometric iteration, _sums of successive terms_ were used to approximate $\pi$.

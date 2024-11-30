@@ -678,6 +678,72 @@ in \cref{fig:pi-equations}. These equations are sometimes starkly simple
 and at other times thoroughly mystifying, and embody the paradox that is
 \(\pi\) more succinctly than all the words in the world.
 
+\subsection{Ludolph van Ceulen and François
+Viète}\label{ludolph-van-ceulen-and-franuxe7ois-viuxe8te}
+
+Before we set sail to explore other methods for estimating \(\pi\), let
+us take one last look at
+\href{https://swanlotus.netlify.app/blogs/the-pi-of-archimedes}{The Pi
+of Archimedes} and how the work of two mathematicians who lived in the
+latter half of the 1500s formed a bridge from the polygon method of
+Archimedes to newer infinite series methods for estimating \(\pi\).
+
+\href{https://en.wikipedia.org/wiki/Ludolph_van_Ceulen}{Ludolph van
+Ceulen} {[}\citeproc{ref-van-ceulen}{10}{]} is one of the unsung heroes
+in the quest for ever more digits to estimate \(\pi\). He faithfully and
+heroically followed in the exact footsteps of Archimedes and spent
+almost \emph{twenty-five years} of his life to evaluate \(\pi\) to 35
+places\footnote{The final polygon he used had almost 500 million sides!}
+{[}\citeproc{ref-van-ceulen}{10},\citeproc{ref-van-ceulen-memorial}{11}{]}.
+It is fitting that his restored tombstone in
+\href{https://en.wikipedia.org/wiki/Leiden}{Leiden} is inscribed with
+the upper and lower bounds of \(\pi\) {[}\citeproc{ref-tombstone}{12}{]}
+that he so painstakingly computed:
+
+\begin{verbatim}
+π > 3.14159265358979323846264338327950288
+π < 3.14159265358979323846264338327950289
+\end{verbatim}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth,height=\textheight]{images/van-ceulen-restored-tombstone.jpg}
+\caption{An image of the restored tombstone in Leiden celebrating
+Ludolph van Cuelen's signal achievement in calculating \(\pi\) to 35
+places. Image is taken from
+\url{https://www.history-of-mathematics.org/artifacts/pi-tombstone}
+{[}\citeproc{ref-tombstone}{12}{]}.}\label{fig:memorial}
+\end{figure}
+
+\href{https://en.wikipedia.org/wiki/Fran\%C3\%A7ois_Vi\%C3\%A8te}{François
+Viète} not only emulated the polygonal approach of Archimedes to
+estimate \(\pi\), but also introduced algebraic notation into the
+mathematics of Europe {[}\citeproc{ref-viete}{13:maor1998}{]} to allow
+for greater abstraction. Most of all, he boldly introduced a formula for
+\(\pi\), now known as Viète's formula:
+\begin{equation}\phantomsection\label{eq:viete}{
+\begin{aligned}
+\frac2\pi &= \frac{\sqrt 2}2 \cdot \frac{\sqrt{2+\sqrt 2}}2 \cdot \frac{\sqrt{2+\sqrt{2+\sqrt 2}}}2 \cdots\\
+\frac2\pi &= \prod_{n=1}^{\infty} \cos \frac{\pi}{2^{n+1}}.
+\end{aligned}
+}\end{equation} This equation is important because it is the first
+equation for a limit that was known in the European mathematical
+tradition {[}\citeproc{ref-viete-formula}{14}{]}.
+
+Viète's approach was broadly similar in that he followed the same
+polygonal approach of Archimedes.
+
+In the process, Viète, deduced the following formula relating the
+infinite product of nested radicals to \(pi\):
+\begin{equation}\phantomsection\label{eq:viete}{
+\begin{aligned}
+\frac2\pi = \frac{\sqrt 2}2 \cdot \frac{\sqrt{2+\sqrt 2}}2 \cdot \frac{\sqrt{2+\sqrt{2+\sqrt 2}}}2 \cdots\\
+\frac2\pi = \prod_{n=1}^{\infty} \cos \frac{\pi}{2^{n+1}}.
+\end{aligned}
+}\end{equation} This equation is important because it is the first
+equation for a limit that was known in the European mathematical
+tradition {[}\citeproc{ref-viete-formula}{14}{]}.
+
 \subsection{The Madhava-Gregory-Leibniz (MGL)
 series}\label{the-madhava-gregory-leibniz-mgl-series}
 
@@ -716,7 +782,7 @@ the larger world. But recent scholarship has accorded
 the leading Indian mathematician-astronomer of that period, Madhava, who
 anticipated both the Gregory series and the Leibniz series by more than
 250 years
-{[}\citeproc{ref-roy1990}{10}--\citeproc{ref-madhava-wiki}{14}{]}. This
+{[}\citeproc{ref-roy1990}{15}--\citeproc{ref-madhava-wiki}{19}{]}. This
 explains the triple-barrelled name for the series. Thumbnail sketches
 are given in the links below for all three mathematicians.
 
@@ -803,12 +869,12 @@ special case of \cref{eq:mglseries}, and it was Leibniz who discovered
 both \cref{eq:mgseries,eq:mglseries} in 1674, and published them in
 1682. For details of Madhava's terminology and approach, do consult the
 literature
-{[}\citeproc{ref-roy1990}{10}--\citeproc{ref-joseph2011}{13}{]}. It is
+{[}\citeproc{ref-roy1990}{15}--\citeproc{ref-joseph2011}{18}{]}. It is
 noteworthy that \cref{eq:mglseries} was the first infinite series ever
 found for \(\pi\). However, it converges very slowly. ``Calculating π to
 10 correct decimal places using direct summation of the series requires
 precisely five billion terms\ldots{}''
-{[}\citeproc{ref-leibniz-pi}{15}{]}.
+{[}\citeproc{ref-leibniz-pi}{20}{]}.
 
 \begin{figure}
 \centering
@@ -899,12 +965,12 @@ efficiently.
 \subsection{Machin's Formula}\label{machins-formula}
 
 The \href{https://en.wikipedia.org/wiki/Machin-like_formula2}{Machin
-formula} {[}\citeproc{ref-schwartz-2012}{16}{]} is usually written as
+formula} {[}\citeproc{ref-schwartz-2012}{21}{]} is usually written as
 \begin{equation}\phantomsection\label{eq:machin-formula}{
 \arctan{1} = \frac{\pi}{4} = 4\arctan\left[ \frac{1}{5} \right] - \arctan\left[ \frac{1}{239} \right]
 }\end{equation} Contemporary mathematicians have dropped this notation
 in favour of using the \(\arccot\) function, to avoid fractions, and a
-bracket notation for conciseness {[}\citeproc{ref-lehmer-1938}{17}{]}:
+bracket notation for conciseness {[}\citeproc{ref-lehmer-1938}{22}{]}:
 \begin{equation}\phantomsection\label{eq:machin-formula-cot}{
 \begin{aligned}
 \arccot{1} &= \frac{\pi}{4} = 4\arccot{5} - \arccot{239}\\[0.75em]
@@ -953,7 +1019,7 @@ difference in the arctangents of \emph{two} values to arrive at a more
 rapidly convergent series for \(\pi\). To better understand his method,
 let us recall that if \(\tan A = \frac{a_1}{b_1}\) and
 \(\tan B = \frac{a_2}{b_2}\), then
-{[}\citeproc{ref-libre-inv-trig-deriv}{18}{]}: \[
+{[}\citeproc{ref-libre-inv-trig-deriv}{23}{]}: \[
 \begin{aligned}
 \tan(A + B) &= \frac{\tan A + \tan B}{1 - \tan A\tan B}\\
 &= \frac{\frac{a_{1}}{b_{1}} + \frac{a_{2}}{b_{2}}}{1 - \frac{a_{1}a_{2}}{b_{1}b_{2}}}\\
@@ -979,7 +1045,7 @@ these sum and difference formulae:
 evaluate only X partial sums when using the Machin formula.
 
 \cref{eq:machin-arc} is at the root of the Machin Formula
-{[}\citeproc{ref-machin-like-wiki}{19}{]}:
+{[}\citeproc{ref-machin-like-wiki}{24}{]}:
 
 But what made Machin use these particular numbers in
 \cref{eq:machin-formula}? The answer to this vital question will take us
@@ -987,9 +1053,9 @@ a little far afield into the factorization of
 \href{https://en.wikipedia.org/wiki/Gaussian_integer}{Gaussian Integers}
 and related ideas. Those interested in the details should consult
 \href{https://www2.oberlin.edu/faculty/jcalcut/gausspi.pdf}{this
-dedicated paper} {[}\citeproc{ref-calcut2009}{20}{]} or refer to these
+dedicated paper} {[}\citeproc{ref-calcut2009}{25}{]} or refer to these
 discussions
-{[}\citeproc{ref-mse-machin-one}{21},\citeproc{ref-mse-machin-two}{22}{]}.
+{[}\citeproc{ref-mse-machin-one}{26},\citeproc{ref-mse-machin-two}{27}{]}.
 
 The Machin formula's claim to fame is that it converges faster than the
 abysmally slow Madhava-Gregory-Leibniz series. Indeed it inspired
@@ -1003,7 +1069,7 @@ When he needed to estimate \(\pi\) accurately, Newton extended his own
 pathbreaking binomial theorem to develop the binomial power series. For
 a fascinating account of how this happened, Read {[}this online
 article{[}(https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/)
-{[}\citeproc{ref-strogatz-newton-2022}{23}{]}.
+{[}\citeproc{ref-strogatz-newton-2022}{28}{]}.
 
 \subsection{Gauss's contribution}\label{gausss-contribution}
 
@@ -1081,21 +1147,52 @@ Irrational}. Retrieved 31 July 2024 from
 Circle, Doubling the Cube, Trisecting an Angle, and Solving Quintic
 Equations}} (2nd ed.). Springer.}
 
-\bibitem[\citeproctext]{ref-roy1990}
+\bibitem[\citeproctext]{ref-van-ceulen}
 \CSLLeftMargin{{[}10{]} }%
+\CSLRightInline{Wikipedia contributors. 2024. {Ludolph van Ceulen}.
+Retrieved 28 November 2024 from
+\url{https://en.wikipedia.org/wiki/Ludolph_van_Ceulen}}
+
+\bibitem[\citeproctext]{ref-van-ceulen-memorial}
+\CSLLeftMargin{{[}11{]} }%
+\CSLRightInline{{Ludolph van Ceulen Memorial: Leiden, Netherlands}.
+{Atlas Obscura}. Retrieved from
+\url{https://www.atlasobscura.com/places/ludolph-van-ceulen-memorial-leiden}}
+
+\bibitem[\citeproctext]{ref-tombstone}
+\CSLLeftMargin{{[}12{]} }%
+\CSLRightInline{Eric Weisstein. 2024. {π Tombstone of Ludolph van
+Ceulen}. {Approximations on the memorial of a π calculator}. Retrieved
+29 November 2024 from
+\url{https://www.history-of-mathematics.org/artifacts/pi-tombstone}}
+
+\bibitem[\citeproctext]{ref-viete}
+\CSLLeftMargin{{[}13{]} }%
+\CSLRightInline{Wikipedia contributors. 2024. {François Viète}.
+Retrieved 28 November 2024 from
+\url{https://en.wikipedia.org/wiki/Fran\%C3\%A7ois_Vi\%C3\%A8te}}
+
+\bibitem[\citeproctext]{ref-viete-formula}
+\CSLLeftMargin{{[}14{]} }%
+\CSLRightInline{Wikipedia contributors. 2024. {Viète's formula}.
+Retrieved 28 November 2024 from
+\url{https://en.wikipedia.org/wiki/Vi\%C3\%A8te\%27s_formula}}
+
+\bibitem[\citeproctext]{ref-roy1990}
+\CSLLeftMargin{{[}15{]} }%
 \CSLRightInline{Ranjan Roy. 1990. {The Discovery of the Series Formula
 for π by Leibniz, Gregory and Nilakantha}. \emph{{Mathematics Magazine}}
 63, 5 (1990), 291--306.
 DOI:https://doi.org/\href{https://doi.org/10.1080/0025570X.1990.11977541}{10.1080/0025570X.1990.11977541}}
 
 \bibitem[\citeproctext]{ref-joseph2009}
-\CSLLeftMargin{{[}11{]} }%
+\CSLLeftMargin{{[}16{]} }%
 \CSLRightInline{George Gheverghese Joseph. 2009. \emph{{A Passage to
 Infinity}. {Medieval Indian Mathematics from Kerala and Its Impact}}.
 {SAGE Publications India Pvt Ltd}.}
 
 \bibitem[\citeproctext]{ref-roy2011}
-\CSLLeftMargin{{[}12{]} }%
+\CSLLeftMargin{{[}17{]} }%
 \CSLRightInline{Ranjan Roy. 2011. {Power Series in Fifteenth-Century
 Kerala}. In \emph{{Sources in the Development of Mathematics}: {Series
 and Products from the Fifteenth to the Twenty-first Century}}.
@@ -1103,69 +1200,69 @@ and Products from the Fifteenth to the Twenty-first Century}}.
 DOI:https://doi.org/\href{https://doi.org/10.1017/CBO9780511844195}{10.1017/CBO9780511844195}}
 
 \bibitem[\citeproctext]{ref-joseph2011}
-\CSLLeftMargin{{[}13{]} }%
+\CSLLeftMargin{{[}18{]} }%
 \CSLRightInline{George Gheverghese Joseph. 2011. \emph{{The Crest of the
 Peacock}. {Non-European Roots of Mathematics}} (3rd ed.). Princeton
 University Press.}
 
 \bibitem[\citeproctext]{ref-madhava-wiki}
-\CSLLeftMargin{{[}14{]} }%
+\CSLLeftMargin{{[}19{]} }%
 \CSLRightInline{Wikipedia contributors. 2024. {Madhava of Sangamagrama}.
 {Wikipedia, The Free Encyclopedia}. Retrieved 31 July 2024 from
 \url{https://en.wikipedia.org/wiki/Madhava_of_Sangamagrama}}
 
 \bibitem[\citeproctext]{ref-leibniz-pi}
-\CSLLeftMargin{{[}15{]} }%
+\CSLLeftMargin{{[}20{]} }%
 \CSLRightInline{Wikipedia contributors. 2024. {Leibniz formula for π}.
 {Wikipedia, The Free Encyclopedia}. Retrieved 5 August 2024 from
 \url{https://en.wikipedia.org/wiki/Leibniz_formula_for_\%CF\%80}}
 
 \bibitem[\citeproctext]{ref-schwartz-2012}
-\CSLLeftMargin{{[}16{]} }%
+\CSLLeftMargin{{[}21{]} }%
 \CSLRightInline{Richard Evan Schwartz. 2012. {Machin's Method of
 Computing the Digits of π}. Retrieved 7 August 2024 from
 \url{https://www.math.brown.edu/reschwar/M10/machin.pdf}}
 
 \bibitem[\citeproctext]{ref-lehmer-1938}
-\CSLLeftMargin{{[}17{]} }%
+\CSLLeftMargin{{[}22{]} }%
 \CSLRightInline{D H Lehmer. 1938. {On Arccotangent Relations for π}.
 \emph{American Mathematical Monthly} 45, (1938), 657--664.
 DOI:https://doi.org/\href{https://doi.org/10.2307/2302434}{10.2307/2302434}}
 
 \bibitem[\citeproctext]{ref-libre-inv-trig-deriv}
-\CSLLeftMargin{{[}18{]} }%
+\CSLLeftMargin{{[}23{]} }%
 \CSLRightInline{Gilbert Strang and Edwin ``Jed'' Herman and et al.
 {Derivatives of Inverse Trig Functions}. Mathematics LibreTexts.
 Retrieved 1 August 2024 from
 \url{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_210_Calculus_I_(Professor_Dean)/Chapter_3:_Derivatives/3._10:_Derivatives_of_Inverse_Trig_Functions}}
 
 \bibitem[\citeproctext]{ref-machin-like-wiki}
-\CSLLeftMargin{{[}19{]} }%
+\CSLLeftMargin{{[}24{]} }%
 \CSLRightInline{Wikipedia contributors. 2024. {Machin-like formula}.
 {Wikipedia, The Free Encyclopedia}. Retrieved 3 August 2024 from
 \url{https://en.wikipedia.org/wiki/Machin-like_formula}}
 
 \bibitem[\citeproctext]{ref-calcut2009}
-\CSLLeftMargin{{[}20{]} }%
+\CSLLeftMargin{{[}25{]} }%
 \CSLRightInline{Jack S Calcut. 2009. {Gaussian Integers and Arctangent
 Identities for π}. \emph{{The American Mathematical Monthly}} 116,
 (2009), 515--530. Retrieved 3 August 2024 from
 \url{https://www2.oberlin.edu/faculty/jcalcut/gausspi.pdf}}
 
 \bibitem[\citeproctext]{ref-mse-machin-one}
-\CSLLeftMargin{{[}21{]} }%
+\CSLLeftMargin{{[}26{]} }%
 \CSLRightInline{Various. 2011. {Machin's formula and cousins}.
 Mathematics stack exchange. Retrieved from
 \url{https://math.stackexchange.com/questions/44595/machins-formula-and-cousins}}
 
 \bibitem[\citeproctext]{ref-mse-machin-two}
-\CSLLeftMargin{{[}22{]} }%
+\CSLLeftMargin{{[}27{]} }%
 \CSLRightInline{Various. 2017. {How are the Machin Pi formulas found?}.
 {Mathematics Stack Exchange}. Retrieved 3 August 2024 from
 \url{https://math.stackexchange.com/questions/2209111/how-are-the-machin-pi-formulas-found}}
 
 \bibitem[\citeproctext]{ref-strogatz-newton-2022}
-\CSLLeftMargin{{[}23{]} }%
+\CSLLeftMargin{{[}28{]} }%
 \CSLRightInline{Steven Strogatz. 2022. {How Isaac Newton Discovered the
 Binomial Power Series}. {Quanta Magazine}. Retrieved 5 August 2024 from
 \url{https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/}}
