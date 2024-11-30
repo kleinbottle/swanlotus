@@ -885,80 +885,6 @@ found for \(\pi\). However, it converges very slowly. ``Calculating π to
 precisely five billion terms\ldots{}''
 {[}\citeproc{ref-leibniz-pi}{21}{]}.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.6\textwidth,height=\textheight]{images/under-construction.jpg}
-\caption[The blog from here on is \emph{under construction} and not fit
-to be read yet. Kindly excuse me.]{The blog from here on is \emph{under
-construction} and not fit to be read yet. Kindly excuse
-me.\footnotemark{}}\label{fig:under-construction}
-\end{figure}
-\footnotetext{Photo by Fernando Arcos:
-  https://www.pexels.com/photo/under-construction-signage-on-laptop-keyboard-211122/.}
-
-\subsection{Detour: What does arctan
-mean?}\label{detour-what-does-arctan-mean}
-
-We know from high school that the isosceles right-angled triangle and
-the 30/60/90 right triangle give rise to these identities, where angles
-are expressed in radians:
-\begin{equation}\phantomsection\label{eq:arctan}{
-\begin{aligned}
-\tan\frac{\pi}{3} &= \sqrt{3} &\implies &\arctan\sqrt{3} &= \frac{\pi}{3}\\
-\tan\frac{\pi}{4} &= 1 &\implies &\arctan 1 &= \frac{\pi}{4}\\
-\tan\frac{\pi}{6} &= \frac{\sqrt{3}}{3} &\implies &\arctan\frac{\sqrt{3}}{3} &= \frac{\pi}{6}\\
-\end{aligned}
-}\end{equation} Note in \cref{eq:arctan} that we have an irrational
-tangent \(\frac{\pi}{4}\) giving rise to the rational values \(1\). The
-other commonly known tangents have both angles and values as irrational.
-This is why the angle \(\frac{\pi}{4}\) is so special in algorithms
-involving arctangents.
-
-It is my suspicion that the the prefix \emph{arc} is applied to the
-tangent to denote the arc or angle corresponding to a tangent. Recall
-that the angle in radians is proportional to arc length:
-\(\theta = \frac{s}{r}\) where \(\theta\) is the angle, \(s\) the length
-of arc subtending the angle, and \(r\) the radius.\footnote{See
-  \href{https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians}{``A
-  tale of two measures: degrees and radians''}.}
-
-In formulae for computing \(\pi\) efficiently and accurately,
-mathematicians have been on the lookout for \emph{linear combinations of
-rational arctangents that sum to a multiple of \(\frac{\pi}{4}\)}. Once
-this guiding principle has been grasped, we will be better equipped to
-assess different formulae that have been developed for evaluating
-\(\pi\) better, especially those based on \(\arctan\).
-
-\subsubsection{Rational points on the unit
-circles}\label{rational-points-on-the-unit-circles}
-
-\subsubsection{Rational fractions of
-π}\label{rational-fractions-of-ux3c0}
-
-\subsubsection{How to choose the intersection
-set?}\label{how-to-choose-the-intersection-set}
-
-\subsection{Sums of angles}\label{sums-of-angles}
-
-The \(\arctan\) function in \cref{eq:madgregleib} holds the key to a
-more solid understanding of what is happening in infinite series
-involving \(\pi\). The expression \(\arctan 1\) refers to the
-\emph{angle} whose tangent is \(1\), with the implicit understanding
-that the angle lies in the interval \([-\frac{\pi}{2}, \frac{\pi}{2}]\).
-
-The next great breakthrough occurred when the single angle \(\arctan 1\)
-could be split into sums or differences of other angles. You might think
-that adding more terms to the computation would increase computation
-time and lower accuracy. But if the sum is \emph{judicously contrived}
-with numbers that are either large and whose terms decay rather fast, or
-whose powers are easily computed, then accurate and speedy computation
-by hand become feasible. And the whole subject of \emph{Machin-like}
-formulae--the Holy Grail---of the \href{}{Pi-Chasers} is simply the
-quest for parsimony in calculation coupled with accuracy in result.
-
-And it all amounts to splitting an angle, \(\frac{\pi}{4}\) to be
-precise, into smaller fragments to our advantage.
-
 \subsection{The Quest for faster
 convergence}\label{the-quest-for-faster-convergence}
 
@@ -968,8 +894,6 @@ a partial sum of only a few terms will provide an accurate estimate of
 \(\pi\). We now consider a selection of famous formulae from
 mathematicians who have bequeathed series for calculating \(\pi\)
 efficiently.
-
-\subsection{}\label{section}
 
 \subsection{Machin's Formula}\label{machins-formula}
 
@@ -986,41 +910,6 @@ bracket notation for conciseness {[}\citeproc{ref-lehmer-1938}{23}{]}:
 [1] &= 4[5] - [239].
 \end{aligned}
 }\end{equation}
-
--------------- CLEAN UP FROM HERE ---------------
-
-The three \(\arctan\) arguments in \cref{eq:machin-formula} are all
-rational. If we substitute the arguments in the RHS of
-\cref{eq:machin-formula} into the variable in \cref{eq:madgregleib}, we
-get: \begin{equation}\phantomsection\label{eq:machin-pi-series}{
-\begin{aligned}
-\pi &= 16\left[\frac{1}{1\cdot5^1} - \frac{1}{3\cdot5^3} + \frac{1}{5\cdot5^5} - \frac{1}{7\cdot5^7} + \dots \right]\\
-&+ 4\left[\frac{1}{1\cdot239^1} - \frac{1}{3\cdot239^3} + \frac{1}{5\cdot239^5} - \frac{1}{7\cdot239^7} + \dots \right]
-\end{aligned}
-}\end{equation} We have deliberately used a notation that brings out the
-pattern: a term raised to the power one is explicitly shown as so.
-
-Observe that \(\left[{\frac{1}{p}}\right]^n = \frac{1}{p^n}\). Having a
-unit numerator and large integers as denominators assists in computation
-because fewer terms have to be evaluated for a good estimate.
-
-\begin{enumerate}
-\tightlist
-\item
-  Substituting
-\end{enumerate}
-
-Rational arguments for acrtan
-
-Sum and difference formula, where we seek rational numbers with large
-denominators
-
-Experimental for 10 by 10 square grid
-
-``Prime factorization of Gaussian integers'' as the basis for further
-derivations.
-
-Examples
 
 \href{https://en.wikipedia.org/wiki/John_Machin}{John Machin} followed
 in the footsteps of the Madhava-Gregory-Leibniz series, but he used the

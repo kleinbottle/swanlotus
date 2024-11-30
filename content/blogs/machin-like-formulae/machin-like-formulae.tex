@@ -1,0 +1,450 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode,linktoc=all}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  a4paper,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=25mm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{british}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+% $HOME/.pandoc/defaults/latex-header-includes.tex
+% Common header includes for both lualatex and xelatex engines.
+%
+% Preliminaries
+%
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+% \PassOptionsToPackage{main=british}{babel}
+\PassOptionsToPackage{english}{selnolig}
+\AtBeginEnvironment{quote}{\small}
+\AtBeginEnvironment{quotation}{\small}
+\AtBeginEnvironment{longtable}{\centering}
+%
+% Packages that are useful to include
+%
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[inkscapeversion=auto]{svg}
+\usepackage[defaultlines=4,all]{nowidow}
+\usepackage{etoolbox}
+\usepackage{fontsize}
+\usepackage{newunicodechar}
+\usepackage{pdflscape}
+\usepackage{fnpct}
+\usepackage{parskip}
+  \setlength{\parindent}{0pt}
+\usepackage[style=american]{csquotes}
+% \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
+%
+\usepackage{hyperref} % cleveref must come AFTER hyperref
+\usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
+\let\longdivision\relax
+\usepackage{longdivision}
+\newcommand{\dd}{\ensuremath{mathrm d}}
+%
+% Assume that amsmath is already loaded via \usepackage{amsmath}
+% in the standard LaTeX template foe Pandoc
+% 
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arccoth}{arccoth} 
+% noto-plus.tex
+% Font-setting header file for use with Pandoc Markdown
+% to generate PDF via LuaLaTeX.
+% The main font is Noto Serif.
+% Other main fonts are also available in appropriately named file.
+\usepackage{fontspec}
+\usepackage{setspace}
+\setstretch{1.3}
+%
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=Node} % at the start always
+%
+% For English
+% See also https://tex.stackexchange.com/questions/574047/lualatex-amsthm-polyglossia-charissil-error
+% We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
+%
+\babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
+\babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
+\babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
+%
+% Sanskrit, Tamil, and Greek fonts
+%
+\babelprovide[import, onchar=ids fonts]{sanskrit}
+\babelprovide[import, onchar=ids fonts]{tamil}
+\babelprovide[import, onchar=ids fonts]{greek}
+%
+\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSerifDevanagari}
+\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSansDevanagari}
+\babelfont[tamil]{rm}[Renderer=HarfBuzz,Script=Tamil]{NotoSerifTamil}
+\babelfont[tamil]{sf}[Renderer=HarfBuzz,Script=Tamil]{NotoSansTamil}
+\babelfont[greek]{rm}[Script=Greek]{GentiumBookPlus}
+%
+% Math font
+%
+\usepackage{unicode-math} % seems not to hurt % fallabck
+\setmathfont[bold-style=TeX]{STIX Two Math}
+\usepackage{amsmath}
+\usepackage{esdiff} % for derivative symbols
+% \renewcommand{\mathbf}{\symbf}
+%
+%
+% Other fonts
+%
+\newfontfamily{\emojifont}{Symbola}
+%
+
+\usepackage{titling}
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0.2pt}
+    \renewcommand{\footrulewidth}{0.2pt}
+    \fancyhead[LO,RE]{\scshape\thetitle}
+    \fancyfoot[CO,CE]{\footnotesize Copyright © 2006\textendash\the\year, R (Chandra) Chandrasekhar}
+    \fancyfoot[RE,RO]{\thepage}
+%
+\usepackage{newunicodechar}
+\newunicodechar{√}{\textsf{√}}
+\usepackage {caption}
+    \captionsetup{font={sf,stretch=1.4}}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{sf}
+\hypersetup{
+  pdftitle={Machin-like formulae},
+  pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
+  colorlinks=true,
+  linkcolor={DarkGreen},
+  filecolor={Purple},
+  citecolor={Teal},
+  urlcolor={Maroon},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Machin-like formulae}
+\author{R (Chandra) Chandrasekhar}
+\date{2024-11-30 | 2024-07-25}
+
+\begin{document}
+\maketitle
+
+\thispagestyle{empty}
+
+
+\subsection{Detour: What does arctan
+mean?}\label{detour-what-does-arctan-mean}
+
+We know from high school that the isosceles right-angled triangle and
+the 30/60/90 right triangle give rise to these identities, where angles
+are expressed in radians:
+\begin{equation}\phantomsection\label{eq:arctan}{
+\begin{aligned}
+\tan\frac{\pi}{3} &= \sqrt{3} &\implies &\arctan\sqrt{3} &= \frac{\pi}{3}\\
+\tan\frac{\pi}{4} &= 1 &\implies &\arctan 1 &= \frac{\pi}{4}\\
+\tan\frac{\pi}{6} &= \frac{\sqrt{3}}{3} &\implies &\arctan\frac{\sqrt{3}}{3} &= \frac{\pi}{6}\\
+\end{aligned}
+}\end{equation} Note in \cref{eq:arctan} that we have an irrational
+angle \(\frac{\pi}{4}\) giving rise to the rational tangent \(1\). The
+other commonly known tangents have both angles and values as irrational.
+This is why the angle \(\frac{\pi}{4}\) is so special in algorithms
+involving arctangents.
+
+It is my suspicion that the the prefix \emph{arc} is applied to the
+tangent to denote the arc or angle corresponding to a tangent. Recall
+that the angle in radians is proportional to arc length:
+\(\theta = \frac{s}{r}\) where \(\theta\) is the angle, \(s\) the length
+of arc subtending the angle, and \(r\) the radius.\footnote{See
+  \href{https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians}{``A
+  tale of two measures: degrees and radians''}.}
+
+In formulae for computing \(\pi\) efficiently and accurately,
+mathematicians have been on the lookout for \emph{linear combinations of
+rational arctangents that sum to a multiple of \(\frac{\pi}{4}\)}. Once
+this guiding principle has been grasped, we will be better equipped to
+assess different formulae that have been developed for evaluating
+\(\pi\) better, especially those based on \(\arctan\).
+
+\subsubsection{Rational points on the unit
+circles}\label{rational-points-on-the-unit-circles}
+
+\subsubsection{Rational fractions of
+π}\label{rational-fractions-of-ux3c0}
+
+\subsubsection{How to choose the intersection
+set?}\label{how-to-choose-the-intersection-set}
+
+\subsection{Sums of angles}\label{sums-of-angles}
+
+The \(\arctan\) function in \cref{eq:madgregleib} holds the key to a
+more solid understanding of what is happening in infinite series
+involving \(\pi\). The expression \(\arctan 1\) refers to the
+\emph{angle} whose tangent is \(1\), with the implicit understanding
+that the angle lies in the interval \([-\frac{\pi}{2}, \frac{\pi}{2}]\).
+
+The next great breakthrough occurred when the single angle \(\arctan 1\)
+could be split into sums or differences of other angles. You might think
+that adding more terms to the computation would increase computation
+time and lower accuracy. But if the sum is \emph{judicously contrived}
+with numbers that are either large and whose terms decay rather fast, or
+whose powers are easily computed, then accurate and speedy computation
+by hand become feasible. And the whole subject of \emph{Machin-like}
+formulae--the Holy Grail---of the \href{}{Pi-Chasers} is simply the
+quest for parsimony in calculation coupled with accuracy in result.
+
+And it all amounts to splitting an angle, \(\frac{\pi}{4}\) to be
+precise, into smaller fragments to our advantage.
+
+The three \(\arctan\) arguments in \cref{eq:machin-formula} are all
+rational. If we substitute the arguments in the RHS of
+\cref{eq:machin-formula} into the variable in \cref{eq:madgregleib}, we
+get: \begin{equation}\phantomsection\label{eq:machin-pi-series}{
+\begin{aligned}
+\pi &= 16\left[\frac{1}{1\cdot5^1} - \frac{1}{3\cdot5^3} + \frac{1}{5\cdot5^5} - \frac{1}{7\cdot5^7} + \dots \right]\\
+&+ 4\left[\frac{1}{1\cdot239^1} - \frac{1}{3\cdot239^3} + \frac{1}{5\cdot239^5} - \frac{1}{7\cdot239^7} + \dots \right]
+\end{aligned}
+}\end{equation} We have deliberately used a notation that brings out the
+pattern: a term raised to the power one is explicitly shown as so.
+
+Observe that \(\left[{\frac{1}{p}}\right]^n = \frac{1}{p^n}\). Having a
+unit numerator and large integers as denominators assists in computation
+because fewer terms have to be evaluated for a good estimate.
+
+\begin{enumerate}
+\tightlist
+\item
+  Substituting
+\end{enumerate}
+
+Rational arguments for acrtan
+
+Sum and difference formula, where we seek rational numbers with large
+denominators
+
+Experimental for 10 by 10 square grid
+
+``Prime factorization of Gaussian integers'' as the basis for further
+derivations.
+
+Examples
+
+\href{https://en.wikipedia.org/wiki/John_Machin}{John Machin} followed
+in the footsteps of the Madhava-Gregory-Leibniz series, but he used the
+difference in the arctangents of \emph{two} values to arrive at a more
+rapidly convergent series for \(\pi\). To better understand his method,
+let us recall that if \(\tan A = \frac{a_1}{b_1}\) and
+\(\tan B = \frac{a_2}{b_2}\), then
+{[}\citeproc{ref-libre-inv-trig-deriv}{1}{]}: \[
+\begin{aligned}
+\tan(A + B) &= \frac{\tan A + \tan B}{1 - \tan A\tan B}\\
+&= \frac{\frac{a_{1}}{b_{1}} + \frac{a_{2}}{b_{2}}}{1 - \frac{a_{1}a_{2}}{b_{1}b_{2}}}\\
+&= \frac{a_{1}b_{2} + a_{2}b_{1}}{b_{1}b_{2} - a_{1}a_{2}}\\
+\end{aligned}
+\] Notice that \begin{equation}\phantomsection\label{eq:machin-arc}{
+\begin{aligned}
+\arctan\tan(A+B) &= (A + B) \mbox { which implies}\\
+\arctan\frac{a_1}{b_1}  + \arctan\frac{a_2}{b_2} &= \arctan\left[\frac{a_{1}b_{2} + a_{2}b_{1}}{b_{1}b_{2} - a_{1}a_{2}}\right]\\
+\end{aligned}
+}\end{equation}
+
+Suppose we set \(a_{1} = a_{2} = 1\), then, \cref{eq:machin-arc} we get
+these sum and difference formulae:
+\begin{equation}\phantomsection\label{eq:sum-diff-arct}{
+\begin{aligned}
+\arctan\frac{1}{b_1}  + \arctan\frac{1}{b_2} &= \arctan\left[\frac{b_{1} + b_{2}}
+{b_{1}b_{2} - 1}\right]\\
+\arctan\frac{1}{b_1}  - \arctan\frac{1}{b_2} &= \arctan\left[\frac{b_{1} - b_{2}}
+{b_{1}b_{2} + 1}\right]
+\end{aligned}
+}\end{equation} To get \(\pi\) correct to ten decimal places, we need to
+evaluate only X partial sums when using the Machin formula.
+
+\cref{eq:machin-arc} is at the root of the Machin Formula
+{[}\citeproc{ref-machin-like-wiki}{2}{]}:
+
+But what made Machin use these particular numbers in
+\cref{eq:machin-formula}? The answer to this vital question will take us
+a little far afield into the factorization of
+\href{https://en.wikipedia.org/wiki/Gaussian_integer}{Gaussian Integers}
+and related ideas. Those interested in the details should consult
+\href{https://www2.oberlin.edu/faculty/jcalcut/gausspi.pdf}{this
+dedicated paper} {[}\citeproc{ref-calcut2009}{3}{]} or refer to these
+discussions
+{[}\citeproc{ref-mse-machin-one}{4},\citeproc{ref-mse-machin-two}{5}{]}.
+
+The Machin formula's claim to fame is that it converges faster than the
+abysmally slow Madhava-Gregory-Leibniz series. Indeed it inspired
+formulae that were the basis for approximating \(\pi\) more accurately
+for a century or two.
+
+\subsection{Newton's approach to estimating
+π}\label{newtons-approach-to-estimating-ux3c0}
+
+When he needed to estimate \(\pi\) accurately, Newton extended his own
+pathbreaking binomial theorem to develop the binomial power series. For
+a fascinating account of how this happened, Read {[}this online
+article{[}(https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/)
+{[}\citeproc{ref-strogatz-newton-2022}{6}{]}.
+
+\subsection{Gauss's contribution}\label{gausss-contribution}
+
+Arithmetic-Geometric Mean AGM
+
+\subsection{Ramanujan and the
+Chudnovskys}\label{ramanujan-and-the-chudnovskys}
+
+\subsection{Acknowledgements}\label{acknowledgements}
+
+Wolfram Alpha for several results.
+
+\subsection{Feedback}\label{feedback}
+
+Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
+comments and corrections.
+
+\section*{References}\label{bibliography}
+\addcontentsline{toc}{section}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{0}{0}
+\bibitem[\citeproctext]{ref-libre-inv-trig-deriv}
+\CSLLeftMargin{{[}1{]} }%
+\CSLRightInline{Gilbert Strang and Edwin ``Jed'' Herman and et al.
+{Derivatives of Inverse Trig Functions}. Mathematics LibreTexts.
+Retrieved 1 August 2024 from
+\url{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_210_Calculus_I_(Professor_Dean)/Chapter_3:_Derivatives/3._10:_Derivatives_of_Inverse_Trig_Functions}}
+
+\bibitem[\citeproctext]{ref-machin-like-wiki}
+\CSLLeftMargin{{[}2{]} }%
+\CSLRightInline{Wikipedia contributors. 2024. {Machin-like formula}.
+{Wikipedia, The Free Encyclopedia}. Retrieved 3 August 2024 from
+\url{https://en.wikipedia.org/wiki/Machin-like_formula}}
+
+\bibitem[\citeproctext]{ref-calcut2009}
+\CSLLeftMargin{{[}3{]} }%
+\CSLRightInline{Jack S Calcut. 2009. {Gaussian Integers and Arctangent
+Identities for π}. \emph{{The American Mathematical Monthly}} 116,
+(2009), 515--530. Retrieved 3 August 2024 from
+\url{https://www2.oberlin.edu/faculty/jcalcut/gausspi.pdf}}
+
+\bibitem[\citeproctext]{ref-mse-machin-one}
+\CSLLeftMargin{{[}4{]} }%
+\CSLRightInline{Various. 2011. {Machin's formula and cousins}.
+Mathematics stack exchange. Retrieved from
+\url{https://math.stackexchange.com/questions/44595/machins-formula-and-cousins}}
+
+\bibitem[\citeproctext]{ref-mse-machin-two}
+\CSLLeftMargin{{[}5{]} }%
+\CSLRightInline{Various. 2017. {How are the Machin Pi formulas found?}.
+{Mathematics Stack Exchange}. Retrieved 3 August 2024 from
+\url{https://math.stackexchange.com/questions/2209111/how-are-the-machin-pi-formulas-found}}
+
+\bibitem[\citeproctext]{ref-strogatz-newton-2022}
+\CSLLeftMargin{{[}6{]} }%
+\CSLRightInline{Steven Strogatz. 2022. {How Isaac Newton Discovered the
+Binomial Power Series}. {Quanta Magazine}. Retrieved 5 August 2024 from
+\url{https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/}}
+
+\end{CSLReferences}
+
+
+
+\end{document}
