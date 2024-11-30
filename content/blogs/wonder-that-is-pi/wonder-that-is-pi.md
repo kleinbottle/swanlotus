@@ -221,7 +221,7 @@ This quest for the unattainable---but supremely beautiful---has engaged human mi
 
 ## Ludolph van Ceulen and François Viète
 
-Before we set sail to explore other methods for estimating $\pi$, let us take one last look at [The Pi of Archimedes](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes) and how the work of two mathematicians who lived in the latter half of the 1500s formed a bridge from the polygon method of Archimedes to newer infinite series methods for estimating $\pi$.
+Before we set sail to explore other methods for estimating $\pi$, let us indulge in one last glance at [The Pi of Archimedes](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes) and how the work of two mathematicians---who lived in the latter half of the 1500s---formed a bridge from the polygon method of Archimedes to newer infinite series methods for estimating $\pi$.
 
 [Ludolph van Ceulen](https://en.wikipedia.org/wiki/Ludolph_van_Ceulen) [@van-ceulen] is one of the unsung heroes in the quest for ever more digits to estimate $\pi$. He faithfully and heroically followed in the exact footsteps of Archimedes and spent almost _twenty-five years_ of his life to evaluate $\pi$ to 35 places^[The final polygon he used had almost 500 million sides!] [@van-ceulen;@van-ceulen-memorial]. It is fitting that his restored tombstone in [Leiden](https://en.wikipedia.org/wiki/Leiden) is inscribed with the upper and lower bounds of $\pi$ [@van-ceulen-memorial,@tombstone] that he so painstakingly computed:
 
@@ -234,31 +234,18 @@ Before we set sail to explore other methods for estimating $\pi$, let us take on
 
 ![An image of the restored tombstone in Leiden celebrating Ludolph van Cuelen's signal achievement in calculating $\pi$ to 35 places. Image is taken from <https://www.history-of-mathematics.org/artifacts/pi-tombstone> [@tombstone].]({attach}images/van-ceulen-restored-tombstone.jpg){#fig:memorial width=50% .modal-target}
 
-[François Viète](https://en.wikipedia.org/wiki/Fran%C3%A7ois_Vi%C3%A8te) not only emulated the polygonal approach of Archimedes to estimate $\pi$, but also introduced algebraic notation into the mathematics of Europe [@viete,maor1998] to allow for greater abstraction. Most of all, he boldly introduced a formula for $\pi$, now known as Viète's formula:
+[François Viète](https://en.wikipedia.org/wiki/Fran%C3%A7ois_Vi%C3%A8te) not only emulated the polygonal approach of Archimedes to estimate $\pi$, but also introduced algebraic notation [@viete;@maor1998] to allow for greater abstraction. Even more significantly, he introduced---for the first time---an explicit, infinite product formula for for the _exact_ value of $\pi$, now known as [Viète's formula](https://en.wikipedia.org/wiki/Vi%C3%A8te%27s_formula) [@viete-formula;@maor1998], consisting of a product of nested radicals:
 $$
 \begin{aligned}
 \frac2\pi &= \frac{\sqrt 2}2 \cdot \frac{\sqrt{2+\sqrt 2}}2 \cdot \frac{\sqrt{2+\sqrt{2+\sqrt 2}}}2 \cdots\\
 \frac2\pi &= \prod_{n=1}^{\infty} \cos \frac{\pi}{2^{n+1}}.
 \end{aligned}
 $${#eq:viete}
-This equation is important because it is the first equation for a limit that was known in the European mathematical tradition [@viete-formula].
+Maor has observed that
 
+>"Viète's formula marks a milestone in the history of mathematics: it was the first time an infinite process was explicitly written as a succession of algebraic operations. … By adding the three dots at the end of his product, Viète, in one bold stroke, declared the infinite a bona fide part of mathematics. This marked the beginning of mathematical analysis in the modern sense of the word." [@maor1998].
 
-
-Viète's approach was broadly similar in that he followed the same polygonal approach of Archimedes.
-
-In the process, Viète, deduced the following formula relating the infinite product of nested radicals to $pi$:
-$$
-\begin{aligned}
-\frac2\pi = \frac{\sqrt 2}2 \cdot \frac{\sqrt{2+\sqrt 2}}2 \cdot \frac{\sqrt{2+\sqrt{2+\sqrt 2}}}2 \cdots\\
-\frac2\pi = \prod_{n=1}^{\infty} \cos \frac{\pi}{2^{n+1}}.
-\end{aligned}
-$${#eq:viete}
-This equation is important because it is the first equation for a limit that was known in the European mathematical tradition [@viete-formula].
-
-
-
-
+While van Cuelen's work displayed superhuman effort and dedication, it also demonstrated that the method of Archimedes did not converge rapidly to $\pi$. Viète's formula bridges the divide between the ancient and the modern by embodying $\pi$ and infinity for the first time in an explicit and exact equation, allowing more and more efficient estimates of $\pi$ to be uncovered in due course.
 
 ## The Madhava-Gregory-Leibniz (MGL) series
 
