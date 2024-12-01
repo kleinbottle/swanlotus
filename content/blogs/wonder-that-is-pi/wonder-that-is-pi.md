@@ -372,12 +372,28 @@ But what made Machin use these particular numbers in [@eq:machin-formula]? The a
 
 The Machin formula's claim to fame is that it converges faster than the abysmally slow Madhava-Gregory-Leibniz series. Indeed it inspired formulae that were the basis for approximating $\pi$ more accurately for a century or two.
 
-## Newton's approach to estimating π
+## Newton's estimate of π via the Binomial Theorem
 
 When he needed to estimate $\pi$ accurately, Newton extended his own pathbreaking binomial theorem to develop the binomial power series. For a fascinating account of how this happened, Read [this online article[(https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/) [@strogatz-newton-2022].
 
+## Euler's solution to the Basel Problem
 
+[Leonhard Euler](https://en.wikipedia.org/wiki/Leonhard_Euler) is a [polymath](https://www.thefreedictionary.com/polymath) among mathematicians [@euler-dunham-1999]. One of his less celebrated contributions is his solution to the [Basel Problem](https://en.wikipedia.org/wiki/Basel_problem) [@basel-problem] eighty-four years after it was posed when Euler was a mere twenty-eight years old.
 
+The Basel Problem asked for the exact sum of the infinite series of the squares of the reciprocals of the natural numbers. It is perhaps much better expressed and understood in mathematical notation. What is the value of the sum:
+$$
+\sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \cdots.
+$$
+
+Euler's answer was:
+$$
+\sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \cdots = \frac{\pi^2}{6}.
+$$ {#eq:basel}
+His reasoning was challenged at first, but finally accepted in 1741.
+
+What I find fascinating about @eq:basel is that the left-hand side (LHS) is entirely the sum of rational numbers while the sum on the right-hand side (RHS) is irrational. And yet we have _exact  equality_ of both sides, not to mention the _unexpected_ closed form of the sum being $\tfrac{\pi^2}{6}$.
+
+This is the mind-twisting paradox of infinity. I like to think that _infinity is where the rationals meet the irrationals_. And this equation is not unique in displaying this characteristic. Countless other identities exhibit this same paradoxical property of an infinite sum of rationals _exactly_ equalling an irrational number.
 
 ## Gauss's contribution
 
