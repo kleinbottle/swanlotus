@@ -374,9 +374,11 @@ The Machin formula's claim to fame is that it converges faster than the abysmall
 
 ## Newton's estimate of π via the Binomial Theorem
 
-The mathematician [Steven Strogatz](https://en.wikipedia.org/wiki/Steven_Strogatz) has written [a charming essay in Quanta Magazine](https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/) that recounts how a young Newton gingerly attempted to extend his own pathbreaking [binomial theorem](https://en.wikipedia.org/wiki/Binomial_theorem) to non-integral powers, to derive the [binomial series](https://en.wikipedia.org/wiki/Binomial_series). And having done that, how he applied the results to estimate $\pi$ more efficiently. Once again, this episode exemplifies how mathematics is at heart an exploratory science that does admit of experimentation, and in which logical correctness grants the ultimate seal of approval and acceptance.
+The mathematician [Steven Strogatz](https://en.wikipedia.org/wiki/Steven_Strogatz) has written [a charming essay in Quanta Magazine](https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/) that recounts how a young Newton made an inspired and imaginative leap of faith, and [gingerly](https://www.merriam-webster.com/dictionary/gingerly) attempted to extend his own pathbreaking [binomial theorem](https://en.wikipedia.org/wiki/Binomial_theorem) to non-integral powers, to derive the [binomial series](https://en.wikipedia.org/wiki/Binomial_series). When the results justified his extrapolation, he decided to apply it to estimate $\pi$ more efficiently.
 
-When he needed to estimate $\pi$ accurately, Newton extended his own pathbreaking binomial theorem to develop the binomial power series. By making an inspired and imaginative leap of faith, Newton tip-toed around the binomial theorem by extending it to non-integer values of the index $n$ and seeing what would result. When the results justified his extrapolation, he decided to apply it to estimate $\pi$. For a fascinating account of how this happened, Read [this online article[(https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/) [@strogatz-newton-2022]. YYY GIVE A QUOTE HERE YYY.
+Once again, this episode exemplifies how mathematics is at heart an exploratory science, that does admit of experimentation, and in which logical correctness grants the ultimate seal of approval and acceptance.
+
+When he needed to estimate $\pi$ accurately, Newton extended his own pathbreaking binomial theorem to develop the binomial power series. By making an inspired and imaginative leap of faith, Newton tip-toed around the binomial theorem by extending it to non-integer values of the index $n$ and seeing what would result.  For a fascinating account of how this happened, Read [this online article[(https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/) [@strogatz-newton-2022]. YYY GIVE A QUOTE HERE YYY.
 
 
 
@@ -403,7 +405,7 @@ What I find fascinating about @eq:basel is that the left-hand side (LHS) is enti
 
 This is the mind-twisting paradox of infinity. I like to think that _infinity is where the rationals meet the irrationals_. And this equation is not unique in displaying this characteristic. Countless other identities exhibit this same paradoxical property of an infinite sum of rationals _exactly_ equalling an irrational number.
 
-Thus Euler not only gave us a new way of computing $\pi$, he also showed how elegantly the rationals could dovetail into the irrationals in entirely surprising ways, whenever infinity is involved. 
+Thus Euler not only gave us another way of computing $\pi$, but he also showed how elegantly the rationals could dovetail into the irrationals in entirely surprising ways, whenever infinity is involved. 
 
 ## Gauss's contribution
 

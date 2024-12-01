@@ -12,7 +12,7 @@ status: draft
 
 
 
-![The blog from here on is _under construction_ and not fit to be read yet. Kindly excuse me.^[Photo by Fernando Arcos: https://www.pexels.com/photo/under-construction-signage-on-laptop-keyboard-211122/.]]({attach}images/under-construction.jpg){#fig:under-construction width=60% .modal-target}
+<!--![The blog from here on is _under construction_ and not fit to be read yet. Kindly excuse me.^[Photo by Fernando Arcos: https://www.pexels.com/photo/under-construction-signage-on-laptop-keyboard-211122/.]]({attach}images/under-construction.jpg){#fig:under-construction width=60% .modal-target}-->
 
 ## Detour: What does arctan mean?
 
