@@ -378,11 +378,11 @@ When he needed to estimate $\pi$ accurately, Newton extended his own pathbreakin
 
 ## Euler's solution to the Basel Problem
 
-[Leonhard Euler](https://en.wikipedia.org/wiki/Leonhard_Euler) is a [polymath](https://www.thefreedictionary.com/polymath) among mathematicians [@euler-dunham-1999]. One of his less celebrated contributions is his solution to the [Basel Problem](https://en.wikipedia.org/wiki/Basel_problem) [@basel-problem] eighty-four years after it was posed when Euler was a mere twenty-eight years old.
+[Leonhard Euler](https://en.wikipedia.org/wiki/Leonhard_Euler) is an illustrious [polymath](https://www.thefreedictionary.com/polymath) among mathematician-polymaths [@euler-dunham-1999]. One of his less celebrated contributions is his solution to the [Basel Problem](https://en.wikipedia.org/wiki/Basel_problem) [@basel-problem]---eighty-four years after it was posed---when Euler was a mere twenty-eight years old.
 
 The Basel Problem asked for the exact sum of the infinite series of the squares of the reciprocals of the natural numbers. It is perhaps much better expressed and understood in mathematical notation. What is the value of the sum:
 $$
-\sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \cdots.
+\sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \cdots = \mbox{ ?}
 $$
 
 Euler's answer was:
@@ -391,9 +391,12 @@ $$
 $$ {#eq:basel}
 His proof was challenged at first, but finally accepted in 1741.
 
-What I find fascinating about @eq:basel is that the left-hand side (LHS) is entirely the sum of rational numbers while the sum on the right-hand side (RHS) is irrational. And yet we have _exact  equality_ of both sides, not to mention the _unexpected_ closed form of the sum being $\tfrac{\pi^2}{6}$.
+What I find fascinating about @eq:basel is that the left-hand side (LHS) is entirely the sum of rational numbers while the sum on the right-hand side (RHS) is irrational. And yet we have _exact  equality_ of both sides, not to mention the _unexpected_ closed form of the sum being $\tfrac{\pi^2}{6}$. How come?
 
 This is the mind-twisting paradox of infinity. I like to think that _infinity is where the rationals meet the irrationals_. And this equation is not unique in displaying this characteristic. Countless other identities exhibit this same paradoxical property of an infinite sum of rationals _exactly_ equalling an irrational number.
+
+Thus Euler not only gave us a new way of computing $\pi$, he also showed how elegantly the rati
+onals could dovetail into the irrationals in entirely surprising ways, whenever infinity is involved.
 
 ## Gauss's contribution
 
