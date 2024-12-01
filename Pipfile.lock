@@ -206,12 +206,12 @@
         },
         "pelican-pandoc-reader": {
             "hashes": [
-                "sha256:6ed3fc4c6dd288e620e236945fdc01ab69b22f4ad2bae4e16ec02328ad1814b8",
-                "sha256:a6cf9b469972ae2d109a13de74b4cdf9e9022904dc0b8f91a200e56537061e1d"
+                "sha256:625764ca2bd088df92024e483d34b85567d101653620726b29e9354ee5979b49",
+                "sha256:80c42053e20f1c429ea0e9bd9b6c68a9abdc326ebbe2fe924bb5c730c7ea6a93"
             ],
             "index": "pypi",
-            "markers": "python_full_version >= '3.8.1' and python_version < '4.0'",
-            "version": "==2.1.0"
+            "markers": "python_full_version >= '3.9.0' and python_version < '4.0'",
+            "version": "==3.0.0"
         },
         "pygments": {
             "hashes": [
