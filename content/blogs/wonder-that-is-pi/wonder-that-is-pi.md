@@ -389,7 +389,7 @@ Euler's answer was:
 $$
 \sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \cdots = \frac{\pi^2}{6}.
 $$ {#eq:basel}
-His reasoning was challenged at first, but finally accepted in 1741.
+His proof was challenged at first, but finally accepted in 1741.
 
 What I find fascinating about @eq:basel is that the left-hand side (LHS) is entirely the sum of rational numbers while the sum on the right-hand side (RHS) is irrational. And yet we have _exact  equality_ of both sides, not to mention the _unexpected_ closed form of the sum being $\tfrac{\pi^2}{6}$.
 
