@@ -326,18 +326,6 @@ Over the last 370 years, by far the most effort has been expended in discovering
 
 ## Machin's Formula
 
-The [Machin formula](https://en.wikipedia.org/wiki/Machin-like_formula2) [@schwartz-2012] is usually written as 
-$$
-\arctan{1} = \frac{\pi}{4} = 4\arctan\left[ \frac{1}{5} \right] - \arctan\left[ \frac{1}{239} \right]
-$$ {#eq:machin-formula}
-Contemporary mathematicians have dropped this notation in favour of using the $\arccot$ function, to avoid fractions, and a bracket notation for conciseness [@lehmer-1938]:
-$$
-\begin{aligned}
-\arccot{1} &= \frac{\pi}{4} = 4\arccot{5} - \arccot{239}\\[0.75em]
-[1] &= 4[5] - [239].
-\end{aligned}
-$$ {#eq:machin-formula-cot}
-
 [John Machin](https://en.wikipedia.org/wiki/John_Machin) followed in the footsteps of the Madhava-Gregory-Leibniz series, but he used the difference in the arctangents of _two_ values to arrive at a more rapidly convergent series for $\pi$. To better understand his method, let us recall that if $\tan A = \frac{a_1}{b_1}$ and $\tan B = \frac{a_2}{b_2}$, then [@libre-inv-trig-deriv]:
 $$
 \begin{aligned}
@@ -363,22 +351,63 @@ $$
 {b_{1}b_{2} + 1}\right]
 \end{aligned}
 $$ {#eq:sum-diff-arct}
-To get $\pi$ correct to ten decimal places, we need to evaluate only X partial sums when using the Machin formula.
 
-[@eq:machin-arc] is at the root of the Machin Formula [@machin-like-wiki]:
+Machin knew all _four_ $\arctan$ formulae shown below:
+$$
+\begin{aligned}
+\frac{\pi}{4} &= \arctan\frac{1}{2} + \arctan\frac{1}{3}\\
+\frac{\pi}{4} &= 2\arctan\frac{1}{2} - \arctan\frac{1}{7}\\
+\frac{\pi}{4} &= 2\arctan\frac{1}{2} - \arctan\frac{1}{7}\\
+\frac{\pi}{4} &= 4\arctan\frac{1}{5} - \arctan\frac {1}{239}
+\end{aligned}
+$${#eq:machin}
+Note that the rational arguments of the $\arctan$ functions on the RHS of these e quations all have a numerator of $1$. Henceforth, whenever we talk of the _two-term Machin-like formulae_ we implictly mean these rational fractions with a numerator of one.
 
+Specifically, [@eq:machin-formula] is referred to as the Machin-formula:
+$$
+\frac{\pi}{4} = 4\arctan\frac{1}{5} - \arctan\frac {1}{239}
+$${#eq:machin-formula}
+Because $\frac{1}{5} = \frac{2}{10}$, the first term on the RHS, and its powers, are well suited for decimal calculation by hand. And because $\frac {1}{239}$ has a large denominator, it converges rapidly. Accordingly, Machin was able to compute $\pi$ to one hundred decimal places [@beckmann-1971] using the first 21 terms.
 
-But what made Machin use these particular numbers in [@eq:machin-formula]? The answer to this vital question will take us a little far afield into the factorization of [Gaussian Integers](https://en.wikipedia.org/wiki/Gaussian_integer) and related ideas. Those interested in the details should consult [this dedicated paper](https://www2.oberlin.edu/faculty/jcalcut/gausspi.pdf) [@calcut2009] or refer to these discussions [@mse-machin-one; @mse-machin-two].
+But what made Machin choose these particular numbers in [@eq:machin-formula]? I have sought the answer(s) to this vital question from many quarters [@mse-question-2024] without much success. 
 
-The Machin formula's claim to fame is that it converges faster than the abysmally slow Madhava-Gregory-Leibniz series. Indeed it inspired formulae that were the basis for approximating $\pi$ more accurately for a century or two.
+### My questions
+
+Was the historical process of discovery serendipitous, or was it directed by knowledge that led straight to it? Even if historically serendipitous, is there a systematic and simple route that can today deliver the four two-term Machin-like formulae, much like a can of Coke is delivered from a Coke machine when the requisite coins are inserted?
+
+How many ways are there of looking at this one problem? Pythagorean Triples? Gaussian Integers? Nested Square Roots? Trial and Error in a restricted domain?
+
+What was the _unifying thread_ that enabled Størmer to claim in his 1899 paper [@stormer-1899] that there were _four and only four_ Machin-like formulae with two terms?
+
+### Some books and papers
+
+The following books were consulted: _Elements of Number Theory_ [@stillwell-number-2003] and Conway and Guy's _The Number Book_ [@conway-guy-1996]. As also the following papers by Calcut [@calcut-2009; @calcut-2010], Todd [@todd-1949] and Wetherfield [@wetherfield-1996]. In the Todd paper, where _four_ two-term formulae were expected to drop out of Table 1, like a _Deus ex machina_, only _three_ were tabulated. Why?
+
+### Historical Treasure Hunt
+
+The most exhaustive treasure hunt through the Machin fomula history is the paper by Rickey [@rickey-2014] in which he carefully unearths how the somewhat unusual term $\arctan\tfrac{1}{239}$ makes its appearance. To quote him:
+
+> Now we have a full explanation of the numbers in Machin’s formula. The 5 was a product of insight, guesswork, and experimentation. Using it, the 239 falls right out. This is Machin’s proof. It has real explanatory value. It is good mathematics [@rickey-2014].
+
+The exposition by Nishiyama on the use of Pythagorean triples to justify Machin's formula [@nishiyama-2013] states tantalizingly:
+
+> Machin’s formula was explained above, but regarding its derivation, just how
+the formula was discovered seems to be unknown. Perhaps Machin’s formula
+was discovered by accident. Or perhaps it was obtained by building on a mathematical concept.
+
+Finally, the paper by Nimbran [@nimbran-2010] was consulted, but it did not deliver the _stroke of insight_ or the systematic method by which such a formula could have been derived for a two-term Machin-like formula.
+
+If and when I find satisfying answers to my questions, I will write about them in a separate, dedicated  blog. Meanwhile, if any reader of this blog can throw light on the answers to my questions, I kindly request him or her to [email me](mailto:feedback.swanlotus@gmail.com).
 
 ## Newton's estimate of π via the Binomial Theorem
 
-The mathematician [Steven Strogatz](https://en.wikipedia.org/wiki/Steven_Strogatz) has written [a charming essay in Quanta Magazine](https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/) that recounts how a young Newton made an inspired and imaginative leap of faith, and [gingerly](https://www.merriam-webster.com/dictionary/gingerly) attempted to extend his own pathbreaking [binomial theorem](https://en.wikipedia.org/wiki/Binomial_theorem) to non-integral powers, to derive the [binomial series](https://en.wikipedia.org/wiki/Binomial_series). When the results justified his extrapolation, he decided to apply it to estimate $\pi$ more efficiently.
+We now look at how Newton, Euler, Gauss, and Ramanujan each approached the problem of estimating $\pi$. Like all self-driven geniuses, each of them hewed his own independent path, and the fact that the same destination was reached each time is testimony to the unimaginable mathematical riches that lie buried, waiting to be explored by [prepared minds](https://www.pasteurbrewing.com/louis-pasteur-chance-favors-the-prepared-mind/) in the future.
+
+The mathematician [Steven Strogatz](https://en.wikipedia.org/wiki/Steven_Strogatz) has written [a charming essay in Quanta Magazine](https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/) [@strogatz-newton-2022]. It recounts how a young Newton made an inspired and imaginative leap of faith, and [gingerly](https://www.merriam-webster.com/dictionary/gingerly) attempted to extend his own pathbreaking [binomial theorem](https://en.wikipedia.org/wiki/Binomial_theorem) to non-integral powers, to derive the [binomial series](https://en.wikipedia.org/wiki/Binomial_series). When the results justified his extrapolation, he decided to apply it to estimate $\pi$ more efficiently.
 
 Once again, this episode exemplifies how mathematics is at heart an exploratory science, that does admit of experimentation, and in which logical correctness grants the ultimate seal of approval and acceptance.
 
-When he needed to estimate $\pi$ accurately, Newton extended his own pathbreaking binomial theorem to develop the binomial power series. By making an inspired and imaginative leap of faith, Newton tip-toed around the binomial theorem by extending it to non-integer values of the index $n$ and seeing what would result.  For a fascinating account of how this happened, Read [this online article[(https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/) [@strogatz-newton-2022]. YYY GIVE A QUOTE HERE YYY.
+
 
 
 
@@ -399,7 +428,7 @@ Euler's answer was:
 $$
 \sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \cdots = \frac{\pi^2}{6}.
 $$ {#eq:basel}
-His proof was challenged at first, but finally accepted in 1741.
+His proof was challenged when first presented, but accepted later, in 1741.
 
 What I find fascinating about @eq:basel is that the left-hand side (LHS) is entirely the sum of rational numbers while the sum on the right-hand side (RHS) is irrational. And yet we have _exact  equality_ of both sides, not to mention the _unexpected_ closed form of the sum being $\tfrac{\pi^2}{6}$. How come?
 
@@ -407,18 +436,28 @@ This is the mind-twisting paradox of infinity. I like to think that _infinity is
 
 Thus Euler not only gave us another way of computing $\pi$, but he also showed how elegantly the rationals could dovetail into the irrationals in entirely surprising ways, whenever infinity is involved. 
 
-## Gauss's contribution
+## Gauss and the AGM
 
 Arithmetic-Geometric Mean AGM
 
 
 
 
-## Ramanujan and the Chudnovskys
+## Ramanujan
 
-## Enrichment Resources
+## The Chudnovskys
+
+## Resources for Enrichment
+
+### The Basel Problem
 
 How [Augustin-Louis Cauchy](https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy) solved the Basel Problem is clearly laid out and explained in [this mesmerizing Rise to the Equation YouTube video](https://www.youtube.com/watch?v=2jgtAo3Ztf) [@cauchy-basel]. The explanation in this video should be clear to a high school student who has encountered trigonometry but not calculus.
+
+Those of you who are puzzled by the appearance of $\pi^2$ in the solution to the Basel problem should also view this [3Blue1Brown YouTube vdeo](https://www.youtube.com/watch?v=d-o3eB9sfls).
+
+[Veritasium](https://www.youtube.com/@veritasium) and [3Blue1Brown](https://www.youtube.com/c/3blue1brown) put out quality educational videos on Mathematics and are an authoritative source of enrichment. Do benefit from them.
+
+
 
 ## Conclusion
 

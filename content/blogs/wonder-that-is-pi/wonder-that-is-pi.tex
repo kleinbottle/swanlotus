@@ -897,27 +897,13 @@ efficiently.
 
 \subsection{Machin's Formula}\label{machins-formula}
 
-The \href{https://en.wikipedia.org/wiki/Machin-like_formula2}{Machin
-formula} {[}\citeproc{ref-schwartz-2012}{22}{]} is usually written as
-\begin{equation}\phantomsection\label{eq:machin-formula}{
-\arctan{1} = \frac{\pi}{4} = 4\arctan\left[ \frac{1}{5} \right] - \arctan\left[ \frac{1}{239} \right]
-}\end{equation} Contemporary mathematicians have dropped this notation
-in favour of using the \(\arccot\) function, to avoid fractions, and a
-bracket notation for conciseness {[}\citeproc{ref-lehmer-1938}{23}{]}:
-\begin{equation}\phantomsection\label{eq:machin-formula-cot}{
-\begin{aligned}
-\arccot{1} &= \frac{\pi}{4} = 4\arccot{5} - \arccot{239}\\[0.75em]
-[1] &= 4[5] - [239].
-\end{aligned}
-}\end{equation}
-
 \href{https://en.wikipedia.org/wiki/John_Machin}{John Machin} followed
 in the footsteps of the Madhava-Gregory-Leibniz series, but he used the
 difference in the arctangents of \emph{two} values to arrive at a more
 rapidly convergent series for \(\pi\). To better understand his method,
 let us recall that if \(\tan A = \frac{a_1}{b_1}\) and
 \(\tan B = \frac{a_2}{b_2}\), then
-{[}\citeproc{ref-libre-inv-trig-deriv}{24}{]}: \[
+{[}\citeproc{ref-libre-inv-trig-deriv}{22}{]}: \[
 \begin{aligned}
 \tan(A + B) &= \frac{\tan A + \tan B}{1 - \tan A\tan B}\\
 &= \frac{\frac{a_{1}}{b_{1}} + \frac{a_{2}}{b_{2}}}{1 - \frac{a_{1}a_{2}}{b_{1}b_{2}}}\\
@@ -939,36 +925,119 @@ these sum and difference formulae:
 \arctan\frac{1}{b_1}  - \arctan\frac{1}{b_2} &= \arctan\left[\frac{b_{1} - b_{2}}
 {b_{1}b_{2} + 1}\right]
 \end{aligned}
-}\end{equation} To get \(\pi\) correct to ten decimal places, we need to
-evaluate only X partial sums when using the Machin formula.
+}\end{equation}
 
-\cref{eq:machin-arc} is at the root of the Machin Formula
-{[}\citeproc{ref-machin-like-wiki}{25}{]}:
+Machin knew all \emph{four} \(\arctan\) formulae shown below:
+\begin{equation}\phantomsection\label{eq:machin}{
+\begin{aligned}
+\frac{\pi}{4} &= \arctan\frac{1}{2} + \arctan\frac{1}{3}\\
+\frac{\pi}{4} &= 2\arctan\frac{1}{2} - \arctan\frac{1}{7}\\
+\frac{\pi}{4} &= 2\arctan\frac{1}{2} - \arctan\frac{1}{7}\\
+\frac{\pi}{4} &= 4\arctan\frac{1}{5} - \arctan\frac {1}{239}
+\end{aligned}
+}\end{equation} Note that the rational arguments of the \(\arctan\)
+functions on the RHS of these e quations all have a numerator of \(1\).
+Henceforth, whenever we talk of the \emph{two-term Machin-like formulae}
+we implictly mean these rational fractions with a numerator of one.
 
-But what made Machin use these particular numbers in
-\cref{eq:machin-formula}? The answer to this vital question will take us
-a little far afield into the factorization of
-\href{https://en.wikipedia.org/wiki/Gaussian_integer}{Gaussian Integers}
-and related ideas. Those interested in the details should consult
-\href{https://www2.oberlin.edu/faculty/jcalcut/gausspi.pdf}{this
-dedicated paper} {[}\citeproc{ref-calcut2009}{26}{]} or refer to these
-discussions
-{[}\citeproc{ref-mse-machin-one}{27},\citeproc{ref-mse-machin-two}{28}{]}.
+Specifically, \cref{eq:machin-formula} is referred to as the
+Machin-formula:
+\begin{equation}\phantomsection\label{eq:machin-formula}{
+\frac{\pi}{4} = 4\arctan\frac{1}{5} - \arctan\frac {1}{239}
+}\end{equation} Because \(\frac{1}{5} = \frac{2}{10}\), the first term
+on the RHS, and its powers, are well suited for decimal calculation by
+hand. And because \(\frac {1}{239}\) has a large denominator, it
+converges rapidly. Accordingly, Machin was able to compute \(\pi\) to
+one hundred decimal places {[}\citeproc{ref-beckmann-1971}{23}{]} using
+the first 21 terms.
 
-The Machin formula's claim to fame is that it converges faster than the
-abysmally slow Madhava-Gregory-Leibniz series. Indeed it inspired
-formulae that were the basis for approximating \(\pi\) more accurately
-for a century or two.
+But what made Machin choose these particular numbers in
+\cref{eq:machin-formula}? I have sought the answer(s) to this vital
+question from many quarters {[}\citeproc{ref-mse-question-2024}{24}{]}
+without much success.
+
+\subsubsection{My questions}\label{my-questions}
+
+Was the historical process of discovery serendipitous, or was it
+directed by knowledge that led straight to it? Even if historically
+serendipitous, is there a systematic and simple route that can today
+deliver the four two-term Machin-like formulae, much like a can of Coke
+is delivered from a Coke machine when the requisite coins are inserted?
+
+How many ways are there of looking at this one problem? Pythagorean
+Triples? Gaussian Integers? Nested Square Roots? Trial and Error in a
+restricted domain?
+
+What was the \emph{unifying thread} that enabled Størmer to claim in his
+1899 paper {[}\citeproc{ref-stormer-1899}{25}{]} that there were
+\emph{four and only four} Machin-like formulae with two terms?
+
+\subsubsection{Some books and papers}\label{some-books-and-papers}
+
+The following books were consulted: \emph{Elements of Number Theory}
+{[}\citeproc{ref-stillwell-number-2003}{26}{]} and Conway and Guy's
+\emph{The Number Book} {[}\citeproc{ref-conway-guy-1996}{27}{]}. As also
+the following papers by Calcut
+{[}\citeproc{ref-calcut-2009}{28},\citeproc{ref-calcut-2010}{29}{]},
+Todd {[}\citeproc{ref-todd-1949}{30}{]} and Wetherfield
+{[}\citeproc{ref-wetherfield-1996}{31}{]}. In the Todd paper, where
+\emph{four} two-term formulae were expected to drop out of Table 1, like
+a \emph{Deus ex machina}, only \emph{three} were tabulated. Why?
+
+\subsubsection{Historical Treasure Hunt}\label{historical-treasure-hunt}
+
+The most exhaustive treasure hunt through the Machin fomula history is
+the paper by Rickey {[}\citeproc{ref-rickey-2014}{32}{]} in which he
+carefully unearths how the somewhat unusual term
+\(\arctan\tfrac{1}{239}\) makes its appearance. To quote him:
+
+\begin{quote}
+Now we have a full explanation of the numbers in Machin's formula. The 5
+was a product of insight, guesswork, and experimentation. Using it, the
+239 falls right out. This is Machin's proof. It has real explanatory
+value. It is good mathematics {[}\citeproc{ref-rickey-2014}{32}{]}.
+\end{quote}
+
+The exposition by Nishiyama on the use of Pythagorean triples to justify
+Machin's formula {[}\citeproc{ref-nishiyama-2013}{33}{]} states
+tantalizingly:
+
+\begin{quote}
+Machin's formula was explained above, but regarding its derivation, just
+how the formula was discovered seems to be unknown. Perhaps Machin's
+formula was discovered by accident. Or perhaps it was obtained by
+building on a mathematical concept.
+\end{quote}
+
+Finally, the paper by Nimbran {[}\citeproc{ref-nimbran-2010}{34}{]} was
+consulted, but it did not deliver the \emph{stroke of insight} or the
+systematic method by which such a formula could have been derived for a
+two-term Machin-like formula.
+
+If and when I find satisfying answers to my questions, I will write
+about them in a separate, dedicated blog. Meanwhile, if any reader of
+this blog can throw light on the answers to my questions, I kindly
+request him or her to \href{mailto:feedback.swanlotus@gmail.com}{email
+me}.
 
 \subsection{Newton's estimate of π via the Binomial
 Theorem}\label{newtons-estimate-of-ux3c0-via-the-binomial-theorem}
+
+We now look at how Newton, Euler, Gauss, and Ramanujan each approached
+the problem of estimating \(\pi\). Like all self-driven geniuses, each
+of them hewed his own independent path, and the fact that the same
+destination was reached each time is testimony to the unimaginable
+mathematical riches that lie buried, waiting to be explored by
+\href{https://www.pasteurbrewing.com/louis-pasteur-chance-favors-the-prepared-mind/}{prepared
+minds} in the future.
 
 The mathematician
 \href{https://en.wikipedia.org/wiki/Steven_Strogatz}{Steven Strogatz}
 has written
 \href{https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/}{a
-charming essay in Quanta Magazine} that recounts how a young Newton made
-an inspired and imaginative leap of faith, and
+charming essay in Quanta Magazine}
+{[}\citeproc{ref-strogatz-newton-2022}{35}{]}. It recounts how a young
+Newton made an inspired and imaginative leap of faith, and
 \href{https://www.merriam-webster.com/dictionary/gingerly}{gingerly}
 attempted to extend his own pathbreaking
 \href{https://en.wikipedia.org/wiki/Binomial_theorem}{binomial theorem}
@@ -981,26 +1050,16 @@ Once again, this episode exemplifies how mathematics is at heart an
 exploratory science, that does admit of experimentation, and in which
 logical correctness grants the ultimate seal of approval and acceptance.
 
-When he needed to estimate \(\pi\) accurately, Newton extended his own
-pathbreaking binomial theorem to develop the binomial power series. By
-making an inspired and imaginative leap of faith, Newton tip-toed around
-the binomial theorem by extending it to non-integer values of the index
-\(n\) and seeing what would result. For a fascinating account of how
-this happened, Read {[}this online
-article{[}(https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/)
-{[}\citeproc{ref-strogatz-newton-2022}{29}{]}. YYY GIVE A QUOTE HERE
-YYY.
-
 \subsection{Euler's solution to the Basel
 Problem}\label{eulers-solution-to-the-basel-problem}
 
 \href{https://en.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler} is
 an illustrious
 \href{https://www.thefreedictionary.com/polymath}{polymath} among
-mathematician-polymaths {[}\citeproc{ref-euler-dunham-1999}{30}{]}. One
+mathematician-polymaths {[}\citeproc{ref-euler-dunham-1999}{36}{]}. One
 of his less celebrated contributions is his solution to the
 \href{https://en.wikipedia.org/wiki/Basel_problem}{Basel Problem}
-{[}\citeproc{ref-basel-problem}{31}{]} in 1734---eighty-four years after
+{[}\citeproc{ref-basel-problem}{37}{]} in 1734---eighty-four years after
 it was posed---when Euler was a mere twenty-eight years old.
 
 The Basel Problem asked for the exact sum of the infinite series of the
@@ -1012,8 +1071,8 @@ value of the sum: \[
 
 Euler's answer was: \begin{equation}\phantomsection\label{eq:basel}{
 \sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \cdots = \frac{\pi^2}{6}.
-}\end{equation} His proof was challenged at first, but finally accepted
-in 1741.
+}\end{equation} His proof was challenged when first presented, but
+accepted later, in 1741.
 
 What I find fascinating about \cref{eq:basel} is that the left-hand side
 (LHS) is entirely the sum of rational numbers while the sum on the
@@ -1031,22 +1090,35 @@ Thus Euler not only gave us another way of computing \(\pi\), but he
 also showed how elegantly the rationals could dovetail into the
 irrationals in entirely surprising ways, whenever infinity is involved.
 
-\subsection{Gauss's contribution}\label{gausss-contribution}
+\subsection{Gauss and the AGM}\label{gauss-and-the-agm}
 
 Arithmetic-Geometric Mean AGM
 
-\subsection{Ramanujan and the
-Chudnovskys}\label{ramanujan-and-the-chudnovskys}
+\subsection{Ramanujan}\label{ramanujan}
 
-\subsection{Enrichment Resources}\label{enrichment-resources}
+\subsection{The Chudnovskys}\label{the-chudnovskys}
+
+\subsection{Resources for Enrichment}\label{resources-for-enrichment}
+
+\subsubsection{The Basel Problem}\label{the-basel-problem}
 
 How
 \href{https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin-Louis
 Cauchy} solved the Basel Problem is clearly laid out and explained in
 \href{https://www.youtube.com/watch?v=2jgtAo3Ztf}{this mesmerizing Rise
-to the Equation YouTube video} {[}\citeproc{ref-cauchy-basel}{32}{]}.
+to the Equation YouTube video} {[}\citeproc{ref-cauchy-basel}{38}{]}.
 The explanation in this video should be clear to a high school student
 who has encountered trigonometry but not calculus.
+
+Those of you who are puzzled by the appearance of \(\pi^2\) in the
+solution to the Basel problem should also view this
+\href{https://www.youtube.com/watch?v=d-o3eB9sfls}{3Blue1Brown YouTube
+vdeo}.
+
+\href{https://www.youtube.com/@veritasium}{Veritasium} and
+\href{https://www.youtube.com/c/3blue1brown}{3Blue1Brown} put out
+quality educational videos on Mathematics and are an authoritative
+source of enrichment. Do benefit from them.
 
 \subsection{Conclusion}\label{conclusion}
 
@@ -1201,68 +1273,109 @@ University Press.}
 {Wikipedia, The Free Encyclopedia}. Retrieved 5 August 2024 from
 \url{https://en.wikipedia.org/wiki/Leibniz_formula_for_\%CF\%80}}
 
-\bibitem[\citeproctext]{ref-schwartz-2012}
-\CSLLeftMargin{{[}22{]} }%
-\CSLRightInline{Richard Evan Schwartz. 2012. {Machin's Method of
-Computing the Digits of π}. Retrieved 7 August 2024 from
-\url{https://www.math.brown.edu/reschwar/M10/machin.pdf}}
-
-\bibitem[\citeproctext]{ref-lehmer-1938}
-\CSLLeftMargin{{[}23{]} }%
-\CSLRightInline{D H Lehmer. 1938. {On Arccotangent Relations for π}.
-\emph{American Mathematical Monthly} 45, (1938), 657--664.
-DOI:https://doi.org/\href{https://doi.org/10.2307/2302434}{10.2307/2302434}}
-
 \bibitem[\citeproctext]{ref-libre-inv-trig-deriv}
-\CSLLeftMargin{{[}24{]} }%
+\CSLLeftMargin{{[}22{]} }%
 \CSLRightInline{Gilbert Strang and Edwin ``Jed'' Herman and et al.
 {Derivatives of Inverse Trig Functions}. Mathematics LibreTexts.
 Retrieved 1 August 2024 from
 \url{https://math.libretexts.org/Courses/Monroe_Community_College/MTH_210_Calculus_I_(Professor_Dean)/Chapter_3:_Derivatives/3._10:_Derivatives_of_Inverse_Trig_Functions}}
 
-\bibitem[\citeproctext]{ref-machin-like-wiki}
-\CSLLeftMargin{{[}25{]} }%
-\CSLRightInline{Wikipedia contributors. 2024. {Machin-like formula}.
-{Wikipedia, The Free Encyclopedia}. Retrieved 3 August 2024 from
-\url{https://en.wikipedia.org/wiki/Machin-like_formula}}
+\bibitem[\citeproctext]{ref-beckmann-1971}
+\CSLLeftMargin{{[}23{]} }%
+\CSLRightInline{Petr Beckmann. 1971. \emph{{A History of π (Pi)}}. St.
+Martin's Press.}
 
-\bibitem[\citeproctext]{ref-calcut2009}
+\bibitem[\citeproctext]{ref-mse-question-2024}
+\CSLLeftMargin{{[}24{]} }%
+\CSLRightInline{chandra. 2024. {Two questions on two-term Machin-like
+formulae}. Retrieved 3 December 2024 from
+\url{https://math.stackexchange.com/questions/4992739/two-questions-on-two-term-machin-like-formulae}}
+
+\bibitem[\citeproctext]{ref-stormer-1899}
+\CSLLeftMargin{{[}25{]} }%
+\CSLRightInline{C. Størmer. 1899. Solution complète en nombres entiers
+de l{'}équation
+\(m\arctan \frac{1}{x}+n\arctan \frac{1}{y}=k\frac{\pi }{4}\).
+\emph{Bulletin de la Société Mathématique de France} 27, (1899),
+160--170.
+DOI:https://doi.org/\href{https://doi.org/10.24033/bsmf.603}{10.24033/bsmf.603}}
+
+\bibitem[\citeproctext]{ref-stillwell-number-2003}
 \CSLLeftMargin{{[}26{]} }%
+\CSLRightInline{John Stillwell. 2003. \emph{{Elements of Number
+Theory}}. Springer.}
+
+\bibitem[\citeproctext]{ref-conway-guy-1996}
+\CSLLeftMargin{{[}27{]} }%
+\CSLRightInline{John Horton Conway and Richard K Guy. 1996. \emph{{The
+Book of Numbers}}. Copernicus.}
+
+\bibitem[\citeproctext]{ref-calcut-2009}
+\CSLLeftMargin{{[}28{]} }%
 \CSLRightInline{Jack S Calcut. 2009. {Gaussian Integers and Arctangent
 Identities for π}. \emph{{The American Mathematical Monthly}} 116,
 (2009), 515--530. Retrieved 3 August 2024 from
-\url{https://www2.oberlin.edu/faculty/jcalcut/gausspi.pdf}}
+\url{https://isis2.cc.oberlin.edu/faculty/jcalcut/gausspi.pdf}}
 
-\bibitem[\citeproctext]{ref-mse-machin-one}
-\CSLLeftMargin{{[}27{]} }%
-\CSLRightInline{Various. 2011. {Machin's formula and cousins}.
-Mathematics stack exchange. Retrieved from
-\url{https://math.stackexchange.com/questions/44595/machins-formula-and-cousins}}
+\bibitem[\citeproctext]{ref-calcut-2010}
+\CSLLeftMargin{{[}29{]} }%
+\CSLRightInline{Jack S Calcut. 2010. {Grade School Triangles}.
+\emph{{The American Mathematical Monthly}} 117, (2010), 673--685.
+Retrieved 3 August 2024 from
+\url{https://isis2.cc.oberlin.edu/faculty/jcalcut/gst.pdf}}
 
-\bibitem[\citeproctext]{ref-mse-machin-two}
-\CSLLeftMargin{{[}28{]} }%
-\CSLRightInline{Various. 2017. {How are the Machin Pi formulas found?}.
-{Mathematics Stack Exchange}. Retrieved 3 August 2024 from
-\url{https://math.stackexchange.com/questions/2209111/how-are-the-machin-pi-formulas-found}}
+\bibitem[\citeproctext]{ref-todd-1949}
+\CSLLeftMargin{{[}30{]} }%
+\CSLRightInline{John Todd. 1949. {A Problem on arc Tangent Relations}.
+\emph{{The American Mathematical Monthly}} 56, 8 (1949), 517--528.
+DOI:https://doi.org/\href{https://doi.org/10.1080/00029890.1949.11999434}{10.1080/00029890.1949.11999434}}
+
+\bibitem[\citeproctext]{ref-wetherfield-1996}
+\CSLLeftMargin{{[}31{]} }%
+\CSLRightInline{Michael Wetherfield. 1996. {The Enhancement of Machin's
+Formula by Todd's Process}. \emph{{The Mathematical Gazette}} 80, 488
+(1996), 333--344. Retrieved 15 August 2024 from
+\url{http://www.jstor.org/stable/3619567}}
+
+\bibitem[\citeproctext]{ref-rickey-2014}
+\CSLLeftMargin{{[}32{]} }%
+\CSLRightInline{V Frederick Rickey. 2014. {Machin's Formula for
+Computing Pi}. Retrieved 6 August 2024 from
+\url{https://www.academia.edu/5891657/Machin_on_computing_\%CF\%80}}
+
+\bibitem[\citeproctext]{ref-nishiyama-2013}
+\CSLLeftMargin{{[}33{]} }%
+\CSLRightInline{Yutaka Nishiyama. 2013. {Machin's Formula And Pi}.
+\emph{{International Journal of Pure and Applied Mathematics}} 82, 3
+(2013), 421--430. Retrieved from
+\url{http://ijpam.eu/contents/2013-82-3/9/9.pdf}}
+
+\bibitem[\citeproctext]{ref-nimbran-2010}
+\CSLLeftMargin{{[}34{]} }%
+\CSLRightInline{Amrik Singh Nimbran. 2010. {On The Derivation Of
+Machin--like Arctangent Identities For Computing Pi (Π)}. \emph{{The
+Mathematics Student}} 79, 1--4 (2010), 171--186. Retrieved 6 August 2024
+from
+\url{https://www.researchgate.net/publication/228085981_ON_THE_DERIVATION_OF_MACHIN-LIKE_ARCTANGENT_IDENTITIES_FOR_COMPUTING_PI_p}}
 
 \bibitem[\citeproctext]{ref-strogatz-newton-2022}
-\CSLLeftMargin{{[}29{]} }%
+\CSLLeftMargin{{[}35{]} }%
 \CSLRightInline{Steven Strogatz. 2022. {How Isaac Newton Discovered the
 Binomial Power Series}. {Quanta Magazine}. Retrieved 5 August 2024 from
 \url{https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/}}
 
 \bibitem[\citeproctext]{ref-euler-dunham-1999}
-\CSLLeftMargin{{[}30{]} }%
+\CSLLeftMargin{{[}36{]} }%
 \CSLRightInline{William Dunham. 1999. \emph{{Euler: The Master of Us
 All}}. Mathematical Association of America.}
 
 \bibitem[\citeproctext]{ref-basel-problem}
-\CSLLeftMargin{{[}31{]} }%
+\CSLLeftMargin{{[}37{]} }%
 \CSLRightInline{Wikipedia contributors. 2024. {Basel problem}. Retrieved
 1 December 2024 from \url{https://en.wikipedia.org/wiki/Basel_problem}}
 
 \bibitem[\citeproctext]{ref-cauchy-basel}
-\CSLLeftMargin{{[}32{]} }%
+\CSLLeftMargin{{[}38{]} }%
 \CSLRightInline{Rise to the Equation. 2021. {Cauchy's Proof of the Basel
 Problem \textbar{} Pi Squared Over Six}. {3blue1brown SoME1 Entry}.
 Retrieved 1 December 2024 from

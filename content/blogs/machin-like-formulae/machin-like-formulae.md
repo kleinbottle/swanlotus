@@ -10,7 +10,13 @@ opengraphimage:
 status: draft
 ---
 
-
+Contemporary mathematicians have dropped this notation in favour of using the $\arccot$ function, to avoid fractions, and a bracket notation for conciseness [@lehmer-1938]:
+$$
+\begin{aligned}
+\arccot{1} &= \frac{\pi}{4} = 4\arccot{5} - \arccot{239}\\[0.75em]
+[1] &= 4[5] - [239].
+\end{aligned}
+$$ {#eq:machin-formula-cot}
 
 <!--![The blog from here on is _under construction_ and not fit to be read yet. Kindly excuse me.^[Photo by Fernando Arcos: https://www.pexels.com/photo/under-construction-signage-on-laptop-keyboard-211122/.]]({attach}images/under-construction.jpg){#fig:under-construction width=60% .modal-target}-->
 
