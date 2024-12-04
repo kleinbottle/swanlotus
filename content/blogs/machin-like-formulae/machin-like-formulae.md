@@ -36,6 +36,24 @@ It is my suspicion that the the prefix _arc_ is applied to the tangent to denote
 
 In formulae for computing $\pi$ efficiently and accurately, mathematicians have been on the lookout for _linear combinations of rational arctangents that sum to a multiple of $\frac{\pi}{4}$_. Once this guiding principle has been grasped, we will be better equipped to assess different formulae that have been developed for evaluating $\pi$ better, especially those based on $\arctan$.
 
+### Some books and papers
+
+The following books were consulted: _Elements of Number Theory_ [@stillwell-number-2003] and Conway and Guy's _The Number Book_ [@conway-guy-1996]. As also the following papers by Calcut [@calcut-2009; @calcut-2010], Todd [@todd-1949] and Wetherfield [@wetherfield-1996]. In the Todd paper, where _four_ two-term formulae were expected to drop out of Table 1, like a _Deus ex machina_, only _three_ were tabulated. Why?
+
+### Historical Treasure Hunt
+
+The most exhaustive treasure hunt through the Machin fomula history is the paper by Rickey [@rickey-2014] in which he carefully unearths how the somewhat unusual term $\arctan\tfrac{1}{239}$ makes its appearance. To quote him:
+
+> Now we have a full explanation of the numbers in Machin’s formula. The 5 was a product of insight, guesswork, and experimentation. Using it, the 239 falls right out. This is Machin’s proof. It has real explanatory value. It is good mathematics [@rickey-2014].
+
+The exposition by Nishiyama on the use of Pythagorean triples to justify Machin's formula [@nishiyama-2013] states tantalizingly:
+
+> Machin’s formula was explained above, but regarding its derivation, just how
+the formula was discovered seems to be unknown. Perhaps Machin’s formula
+was discovered by accident. Or perhaps it was obtained by building on a mathematical concept.
+
+Finally, the paper by Nimbran [@nimbran-2010] was consulted, but it did not deliver the _stroke of insight_ or the systematic method by which such a formula could have been derived for a two-term Machin-like formula.
+
 ### Rational points on the unit circles
 
 

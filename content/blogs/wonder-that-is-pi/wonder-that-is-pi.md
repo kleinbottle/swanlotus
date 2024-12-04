@@ -369,33 +369,15 @@ $$
 $${#eq:machin-formula}
 Because $\frac{1}{5} = \frac{2}{10}$, the first term on the RHS, and its powers, are well suited for decimal calculation by hand. And because $\frac {1}{239}$ has a large denominator, it converges rapidly. Accordingly, Machin was able to compute $\pi$ to one hundred decimal places [@beckmann-1971] using the first 21 terms.
 
-But what made Machin choose these particular numbers in [@eq:machin-formula]? I have sought the answer(s) to this vital question from many quarters [@mse-question-2024] without much success. 
-
 ### My questions
+
+But what made Machin choose these particular numbers in [@eq:machin-formula]? I have sought the answer(s) to this vital question from many quarters [@mse-question-2024] without much success. 
 
 Was the historical process of discovery serendipitous, or was it directed by knowledge that led straight to it? Even if historically serendipitous, is there a systematic and simple route that can today deliver the four two-term Machin-like formulae, much like a can of Coke is delivered from a Coke machine when the requisite coins are inserted?
 
 How many ways are there of looking at this one problem? Pythagorean Triples? Gaussian Integers? Nested Square Roots? Trial and Error in a restricted domain?
 
 What was the _unifying thread_ that enabled Størmer to claim in his 1899 paper [@stormer-1899] that there were _four and only four_ Machin-like formulae with two terms?
-
-### Some books and papers
-
-The following books were consulted: _Elements of Number Theory_ [@stillwell-number-2003] and Conway and Guy's _The Number Book_ [@conway-guy-1996]. As also the following papers by Calcut [@calcut-2009; @calcut-2010], Todd [@todd-1949] and Wetherfield [@wetherfield-1996]. In the Todd paper, where _four_ two-term formulae were expected to drop out of Table 1, like a _Deus ex machina_, only _three_ were tabulated. Why?
-
-### Historical Treasure Hunt
-
-The most exhaustive treasure hunt through the Machin fomula history is the paper by Rickey [@rickey-2014] in which he carefully unearths how the somewhat unusual term $\arctan\tfrac{1}{239}$ makes its appearance. To quote him:
-
-> Now we have a full explanation of the numbers in Machin’s formula. The 5 was a product of insight, guesswork, and experimentation. Using it, the 239 falls right out. This is Machin’s proof. It has real explanatory value. It is good mathematics [@rickey-2014].
-
-The exposition by Nishiyama on the use of Pythagorean triples to justify Machin's formula [@nishiyama-2013] states tantalizingly:
-
-> Machin’s formula was explained above, but regarding its derivation, just how
-the formula was discovered seems to be unknown. Perhaps Machin’s formula
-was discovered by accident. Or perhaps it was obtained by building on a mathematical concept.
-
-Finally, the paper by Nimbran [@nimbran-2010] was consulted, but it did not deliver the _stroke of insight_ or the systematic method by which such a formula could have been derived for a two-term Machin-like formula.
 
 If and when I find satisfying answers to my questions, I will write about them in a separate, dedicated  blog. Meanwhile, if any reader of this blog can throw light on the answers to my questions, I kindly request him or her to [email me](mailto:feedback.swanlotus@gmail.com).
 
