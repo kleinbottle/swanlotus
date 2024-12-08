@@ -978,8 +978,7 @@ this blog can throw light on the answers to my questions, I kindly
 request him or her to \href{mailto:feedback.swanlotus@gmail.com}{email
 me}.
 
-\subsection{Newton's estimate of π via the Binomial
-Theorem}\label{newtons-estimate-of-ux3c0-via-the-binomial-theorem}
+\subsection{Different routes to π}\label{different-routes-to-ux3c0}
 
 We now look at how Newton, Euler, Gauss, and Ramanujan each approached
 the problem of estimating \(\pi\). Like all self-driven geniuses, each
@@ -989,11 +988,61 @@ mathematical riches that lie buried, waiting to be explored by
 \href{https://www.pasteurbrewing.com/louis-pasteur-chance-favors-the-prepared-mind/}{prepared
 minds} in the future.
 
+\subsection{Newton, π, and the Binomial
+Theorem}\label{newton-ux3c0-and-the-binomial-theorem}
+
+We know that the area of a unit circle is \(\pi\) square units. If we
+could use calculus to compute the area of a unit circle, we would have a
+very handy way to compute \(\pi\). Take a look at \cref{fig:quadrant}
+and \cref{eq:pi-on-4}, both of which suggest how this could be done:
+
+\begin{figure}
+\centering
+\includesvg[width=0.8\textwidth,height=\textheight]{images/quadrant-to-x.svg}
+\caption{The orange colored area on this unit circle is given by
+\(\displaystyle\int_0^p\sqrt{1-x^2}\;\mathrm{d}x\).}\label{fig:quadrant}
+\end{figure}
+
+\begin{equation}\phantomsection\label{eq:pi-on-4}{
+\frac{\pi}{4} = \displaystyle\int_0^1\sqrt{1-x^2}\;\mathrm{d}x
+}\end{equation}
+
+\subsubsection{So near and yet so far}\label{so-near-and-yet-so-far}
+
+But how do we integrate \(\sqrt{1-x^2}\)? If we went the trigonometric
+substitution route, we would end up literally going in circles, rather
+than computing a numerical value of \(\pi\). Is there any way we may
+expand the expression under the square root?
+
+The term \({(1 - x^2)}\) is
+\href{https://www.google.com/search?q=binomial}{binomial}.
+\href{https://en.wikipedia.org/wiki/Isaac_Newton}{Isaac Newton} is
+credited with discovering the
+\href{https://www.mathsisfun.com/algebra/binomial-theorem.html}{binomial
+theorem} in Europe, but that theorem is valid for expressions where the
+binomial is raised to a positive integer power, e.g., \[
+(1 + x^2)^3 = x^6 + 3x^4 + 3x^4 +1.
+\] Note that we have a polynomial with a finite number of terms on the
+RHS. This application of the binomial theorem falls squarely in the
+domain of \href{https://www.britannica.com/science/algebra}{algebra}.
+The coefficients of the expansion are also known easily and beforehand
+as entries in
+\href{https://www.britannica.com/science/Pascals-triangle}{Pascal's
+triangle}.
+
+But \(\sqrt{1 - x^2} = (1 - x^2)^{\frac{1}{2}}\) while also being a
+binomial term is raised to a fractional rather than integral power. Does
+its expansion have a finite number of terms? And how do we know what the
+coefficients of the various terms are?
+
+\subsubsection{Extending the binomial
+theorem}\label{extending-the-binomial-theorem}
+
 The mathematician
 \href{https://en.wikipedia.org/wiki/Steven_Strogatz}{Steven Strogatz}
 has written
 \href{https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/}{a
-charming essay in Quanta Magazine}
+charming essay on this subject in Quanta Magazine}
 {[}\citeproc{ref-strogatz-newton-2022}{26}{]}. It recounts how a young
 Newton made an inspired and imaginative leap of faith, and
 \href{https://www.merriam-webster.com/dictionary/gingerly}{gingerly}
@@ -1001,12 +1050,81 @@ attempted to extend his own pathbreaking
 \href{https://en.wikipedia.org/wiki/Binomial_theorem}{binomial theorem}
 to non-integral powers, to derive the
 \href{https://en.wikipedia.org/wiki/Binomial_series}{binomial series}.
-When the results justified his extrapolation, he decided to apply it to
-estimate \(\pi\) more efficiently.
+After first attempting to estimate the area under the curve, he went on
+to define the curve itself using his newly devised binomial series. In
+the process, he had moved from algebra (finite polynomials) to analysis
+(infinite series). When the results justified his extrapolation, he
+could estimate estimate \(\pi\) using the newfound relationships.
 
-Once again, this episode exemplifies how mathematics is at heart an
+Once again, this episode exemplifies how mathematics is, at heart, an
 exploratory science, that does admit of experimentation, and in which
 logical correctness grants the ultimate seal of approval and acceptance.
+Mathematics is constantly revised and enlarged through this process of
+constant re-greening.
+
+\subsubsection{Using the binomial
+series}\label{using-the-binomial-series}
+
+The binomial series for \((1 - x^2)^{\frac{1}{2}}\) is:
+\begin{equation}\phantomsection\label{eq:approx}{
+\begin{aligned}
+(1 - x^2)^{\frac{1}{2}} &= \sum^{\infty}_{n=0}\binom{\frac{1}{2}}{n}\;(-x^2)^n\\
+&= 1 - \frac{1}{2}x^2 - \frac{1}{8}x^4 - \frac{1}{16}x^6 - \frac{5}{128}x^8 - \frac{7}{256}x^{10} - \cdots
+\end{aligned}
+}\end{equation} The series is supposed to converge for
+\(\lvert{x}\rvert < 1\). It is therefore sensible to integrate to an
+upper limit less than \(1\), as indicated in \cref{fig:sixty-degrees}.
+
+Using the equations shown in \cref{fig:sixty-degrees}, and plugging in
+the values from \cref{eq:approx}, we get: \[
+\begin{aligned}
+\pi &= 12\left(\int_{0}^{0.5}\sqrt{1 - x^2}\; \mathrm{d}x - \frac{\sqrt{3}}{8} \right)\\
+&\approx 12 \left(\left[x - \frac{1}{6}x^3 - \frac{1}{40}x^5 - \frac{1}{112}x^7 - \frac{5}{1152}x^9 - \frac{7}{2816}x^{11} \right]_{0}^{0.5} - \frac{\sqrt{3}}{8}\right)\\
+&\approx 3.1415954446070984 \text{ which is correct to 5 decimal places of }\pi\\
+\end{aligned}
+\]
+
+\begin{figure}
+\centering
+\includesvg[width=0.8\textwidth,height=\textheight]{images/circle-area-sixty-degrees.svg}
+\caption{By adding the areas of the orange sector and the green
+triangle, the total area under the curve from \(x = 0\) to \(x = 0.5\)
+may be computed. The value of \(\pi\) can then be
+solved.}\label{fig:sixty-degrees}
+\end{figure}
+
+\subsubsection{An amusing aside with
+ChatGPT}\label{an-amusing-aside-with-chatgpt}
+
+I wanted an independent machine check of my binomial series expansion of
+\((1 -x^2)^{\frac{1}{2}}\) and decided to try out
+\href{https://chatgpt.com/}{ChatGPT}. When I asked it to evaluate the
+first ten terms of the binomial series of \((1-x^2)^{\frac{1}{2}}\), it
+gave me a result, all of whose terms did not have the same sign. After
+re-checking my computation, I sent it a sardonic message saying that it
+had erred. Imagine my amazement, when---most human-like---it apologized
+for its error, and gave me the correct result. The screenshots below
+show this rather hilarious exchange and underscore the fact that AI is
+almost human in its responses but its computational side could be beefed
+up a bit. It also raises the loaded question of whether the ChatGPT
+error the first time round was deliberate.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth,height=\textheight]{images/wrong-results.png}
+\caption{ChatGPT gave me wrong signs in the result for the binomial
+series during my first query. As a consequence, I shamed it, and added a
+little sarcasm to my response.}\label{fig:wrong-results}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth,height=\textheight]{images/corrected-results.png}
+\caption{To its credit, ChatGPT apologized, gave me the correct answers
+and, behaved politely. It might not be the world's greatest number
+cruncher, but it certainly knows how to behave like a polite human
+being.}\label{fig:corrected-results}
+\end{figure}
 
 \subsection{Euler's solution to the Basel
 Problem}\label{eulers-solution-to-the-basel-problem}
@@ -1048,9 +1166,76 @@ Thus Euler not only gave us another way of computing \(\pi\), but he
 also showed how elegantly the rationals could dovetail into the
 irrationals in entirely surprising ways, whenever infinity is involved.
 
-\subsection{Gauss and the AGM}\label{gauss-and-the-agm}
+\subsection{Gauss, the AGM, and π}\label{gauss-the-agm-and-ux3c0}
 
-Arithmetic-Geometric Mean AGM
+I was not aware what the
+\href{https://mathworld.wolfram.com/Arithmetic-GeometricMean.html}{Arithmetic-Geometric
+Mean} (AGM) was until I stumbled upon how
+\href{https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss}{Carl Friedrich
+Gauss} {[}\citeproc{ref-gauss-wiki}{29}{]} related it to \(\pi\). And he
+found the connection when he was only 14 years old. So, we are looking
+at the work of a mathematical prodigy, and should not be dismayed if
+comprehension eludes us.
+
+I do not understand most of what Gauss did, and I would suggest that
+you, dear reader, should not get disheartened if you do not fully grasp
+it either. There will be a lot of hand-waving in what follows. There are
+three ideas that we need to skim over ever so lightly:
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  The \href{https://mathworld.wolfram.com/Lemniscate.html}{Lemniscate of
+  Bernoulli};
+\item
+  The
+  \href{https://en.wikipedia.org/wiki/Arithmetic\%E2\%80\%93geometric_mean}{Airthmetic-Geometric
+  mean (AGN) of two positive real numbers}; and
+\item
+  \href{https://en.wikipedia.org/wiki/Elliptic_integral}{Elliptic
+  integrals}.
+\end{enumerate}
+
+By tying together these three ideas, Gauss was not only able to arrive
+at a potent method of computing \(\pi\) to high accuracy, but he also
+opened up new vistas for further mathematical investigation. Our
+treatment here is sketchy by design. The interested reader is referred
+to source material for a fuller treatment.
+
+\begin{figure}
+\centering
+\includesvg[width=0.8\textwidth,height=\textheight]{images/bernoulli.svg}
+\caption{The Lemniscate of Bernoulli. This curve looks like the symbol
+for infinity. The ratio of its circumference to its diameter is denoted
+by \(\varpi\), which is a variant of the Greek letter \(\pi\). This
+number, \(\varpi\), is related to \(\pi\) via the Arithmetic Geometric
+Mean and elliptic integrals.}\label{fig:lemniscate}
+\end{figure}
+
+r=asqrt(cos(2theta)).\\
+(7)
+
+Note that this equation is defined only for angles
+-pi/4\textless theta\textless pi/4 and
+3pi/4\textless theta\textless5pi/4. Lemniscate
+https://tex.stackexchange.com/questions/624828/polar-lemniscate-bernoulli-in-latex
+https://tex.stackexchange.com/questions/299218/cassini-oval-curve-in-tikz
+
+The path Gauss
+
+https://paramanands.blogspot.com/2009/08/pi-and-the-agm-gauss-brent-salamin-formula.html
+
+https://paramanands.blogspot.com/2009/08/arithmetic-geometric-mean-of-gauss.html
+
+https://paramanands.blogspot.com/2009/08/pi-and-the-agm-introduction-to-elliptic-integrals.html
+
+https://maths-people.anu.edu.au/\textasciitilde brent/pd/JBCC-Brent.pdf
+
+https://www.nas.ewi.tudelft.nl/people/Piet/papers/TUD20230605\_arithmetic\_geometric\_mean.pdf
+
+https://mattbaker.blog/2024/03/14/pi-and-the-agm/
+
+https://ia800704.us.archive.org/view\_archive.php?archive=/24/items/wikipedia-scholarly-sources-corpus/10.2307\%252F2287541.zip\&file=10.2307\%252F2323302.pdf\#:\textasciitilde:text=The\%20arithmetic-geometric\%20mean\%20was\%20first\%20discovered\%20by\%20Lagrange,integral\%20representation\%2C\%20were\%20made\%20about\%207-9\%20years\%20later.
 
 \subsection{Ramanujan}\label{ramanujan}
 
@@ -1064,7 +1249,7 @@ How
 \href{https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin-Louis
 Cauchy} solved the Basel Problem is clearly laid out and explained in
 \href{https://www.youtube.com/watch?v=2jgtAo3Ztf}{this mesmerizing Rise
-to the Equation YouTube video} {[}\citeproc{ref-cauchy-basel}{29}{]}.
+to the Equation YouTube video} {[}\citeproc{ref-cauchy-basel}{30}{]}.
 The explanation in this video should be clear to a high school student
 who has encountered trigonometry but not calculus.
 
@@ -1077,6 +1262,12 @@ vdeo}.
 \href{https://www.youtube.com/c/3blue1brown}{3Blue1Brown} put out
 quality educational videos on Mathematics and are an authoritative
 source of enrichment. Do benefit from them.
+
+\subsection{Gauss}\label{gauss}
+
+An \href{https://www.youtube.com/watch?v=LmmyAOkajVM}{excellent
+biography of Carl Gauss} is available on YouTube
+{[}\citeproc{ref-gauss-bio}{31}{]}. I highly recommend watching it.
 
 \subsection{Conclusion}\label{conclusion}
 
@@ -1274,12 +1465,24 @@ All}}. Mathematical Association of America.}
 \CSLRightInline{Wikipedia contributors. 2024. {Basel problem}. Retrieved
 1 December 2024 from \url{https://en.wikipedia.org/wiki/Basel_problem}}
 
-\bibitem[\citeproctext]{ref-cauchy-basel}
+\bibitem[\citeproctext]{ref-gauss-wiki}
 \CSLLeftMargin{{[}29{]} }%
+\CSLRightInline{Wikipedia contributors. 2024. {Carl Friedrich Gauss}.
+Retrieved 7 December 2024 from
+\url{https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss}}
+
+\bibitem[\citeproctext]{ref-cauchy-basel}
+\CSLLeftMargin{{[}30{]} }%
 \CSLRightInline{Rise to the Equation. 2021. {Cauchy's Proof of the Basel
 Problem \textbar{} Pi Squared Over Six}. {3blue1brown SoME1 Entry}.
 Retrieved 1 December 2024 from
 \url{https://www.youtube.com/watch?v=2jgtAo3ZtfI}}
+
+\bibitem[\citeproctext]{ref-gauss-bio}
+\CSLLeftMargin{{[}31{]} }%
+\CSLRightInline{Newsthink. 2024. {The Greatest Mathematician Who Ever
+Lived}. Retrieved 6 December 2024 from
+\url{https://www.youtube.com/watch?v=LmmyAOkajVM}}
 
 \end{CSLReferences}
 

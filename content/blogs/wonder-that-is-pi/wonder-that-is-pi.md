@@ -11,7 +11,7 @@ opengraphimage: pi-equations.png
 
 This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes). Here, we look at π as a number---without explicit reference to its geometric tethering---and explore its remarkable ubiquity in mathematics. As an appetizer, see [@fig:pi-equations], where the symbol for Pi is surmounted by two very disparate equations defining it. How in all the world could these two different-looking equations be true? But they are indeed!
 
-![Pi expressed by two very different equations. Note that both are sums to infinity of expressions involving integers.]({attach}images/pi-equations.svg){#fig:pi-equations   width=60% .modal-target}
+![Pi expressed by two very different equations. Note that both are sums to infinity of expressions involving integers.]({attach}images/pi-equations.svg){#fig:pi-equations width=60% .modal-target}
 
 ## The Number [Menagerie](https://www.thefreedictionary.com/menagerie)
 
@@ -381,20 +381,67 @@ What was the _unifying thread_ that enabled Størmer to claim in his 1899 paper 
 
 If and when I find satisfying answers to my questions, I will write about them in a separate, dedicated  blog. Meanwhile, if any reader of this blog can throw light on the answers to my questions, I kindly request him or her to [email me](mailto:feedback.swanlotus@gmail.com).
 
-## Newton's estimate of π via the Binomial Theorem
+## Different routes to π
 
 We now look at how Newton, Euler, Gauss, and Ramanujan each approached the problem of estimating $\pi$. Like all self-driven geniuses, each of them hewed his own independent path, and the fact that the same destination was reached each time is testimony to the unimaginable mathematical riches that lie buried, waiting to be explored by [prepared minds](https://www.pasteurbrewing.com/louis-pasteur-chance-favors-the-prepared-mind/) in the future.
 
-The mathematician [Steven Strogatz](https://en.wikipedia.org/wiki/Steven_Strogatz) has written [a charming essay in Quanta Magazine](https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/) [@strogatz-newton-2022]. It recounts how a young Newton made an inspired and imaginative leap of faith, and [gingerly](https://www.merriam-webster.com/dictionary/gingerly) attempted to extend his own pathbreaking [binomial theorem](https://en.wikipedia.org/wiki/Binomial_theorem) to non-integral powers, to derive the [binomial series](https://en.wikipedia.org/wiki/Binomial_series). When the results justified his extrapolation, he decided to apply it to estimate $\pi$ more efficiently.
+## Newton, π, and the Binomial Theorem
 
-Once again, this episode exemplifies how mathematics is at heart an exploratory science, that does admit of experimentation, and in which logical correctness grants the ultimate seal of approval and acceptance.
+We know that the area of a unit circle is $\pi$ square units. If we could use calculus to compute the area of a unit circle, we would have a very handy way to compute $\pi$. Take a look at [@fig:quadrant]  and [@eq:pi-on-4], both of which suggest how this could be done:
 
+![The orange colored area on this unit circle is given by $\displaystyle\int_0^p\sqrt{1-x^2}\;\mathrm{d}x$.]({attach}images/quadrant-to-x.svg){#fig:quadrant width=80% .modal-target}
 
+$$
+\frac{\pi}{4} = \displaystyle\int_0^1\sqrt{1-x^2}\;\mathrm{d}x
+$${#eq:pi-on-4}
 
+### So near and yet so far
 
+But how do we integrate $\sqrt{1-x^2}$? If we went the trigonometric substitution route, we would end up literally going in circles, rather than computing a numerical value of $\pi$. Is there any way we may expand the expression under the square root?
 
+The term ${(1 - x^2)}$ is [binomial](https://www.google.com/search?q=binomial). [Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton) is credited with discovering the [binomial theorem](https://www.mathsisfun.com/algebra/binomial-theorem.html) in Europe, but that theorem is valid for expressions where the binomial is raised to a positive integer power, e.g.,
+$$
+(1 + x^2)^3 = x^6 + 3x^4 + 3x^4 +1.
+$$
+Note that we have a polynomial with a finite number of terms on the RHS. This application of the binomial theorem falls squarely in the domain of [algebra](https://www.britannica.com/science/algebra). The coefficients of the expansion are also known easily and beforehand as entries in [Pascal's triangle](https://www.britannica.com/science/Pascals-triangle).
 
+But $\sqrt{1 - x^2} = (1 - x^2)^{\frac{1}{2}}$ while also being a binomial term is raised to a fractional rather than integral power. Does its expansion have a finite number of terms? And how do we know what the coefficients of the various terms are?
 
+### Extending the binomial theorem
+
+The mathematician [Steven Strogatz](https://en.wikipedia.org/wiki/Steven_Strogatz) has written [a charming essay on this subject in Quanta Magazine](https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/) [@strogatz-newton-2022]. It recounts how a young Newton made an inspired and imaginative leap of faith, and [gingerly](https://www.merriam-webster.com/dictionary/gingerly) attempted to extend his own pathbreaking [binomial theorem](https://en.wikipedia.org/wiki/Binomial_theorem) to non-integral powers, to derive the [binomial series](https://en.wikipedia.org/wiki/Binomial_series). After first attempting to estimate the area under the curve, he went on to define the curve itself using his newly devised binomial series. In the process, he had moved from algebra (finite polynomials) to analysis (infinite series). When the results justified his extrapolation, he could estimate estimate $\pi$ using the newfound relationships.
+
+Once again, this episode exemplifies how mathematics is, at heart, an exploratory science, that does admit of experimentation, and in which logical correctness grants the ultimate seal of approval and acceptance. Mathematics is constantly revised and enlarged through this process of constant re-greening.
+
+### Using the binomial series
+
+The binomial series for $(1 - x^2)^{\frac{1}{2}}$ is:
+$$
+\begin{aligned}
+(1 - x^2)^{\frac{1}{2}} &= \sum^{\infty}_{n=0}\binom{\frac{1}{2}}{n}\;(-x^2)^n\\
+&= 1 - \frac{1}{2}x^2 - \frac{1}{8}x^4 - \frac{1}{16}x^6 - \frac{5}{128}x^8 - \frac{7}{256}x^{10} - \cdots
+\end{aligned}
+$${#eq:approx}
+The series is supposed to converge for $\lvert{x}\rvert < 1$. It is therefore sensible to integrate to an upper limit less than $1$, as indicated in [@fig:sixty-degrees].
+
+Using the equations shown in [@fig:sixty-degrees], and plugging in the values from [@eq:approx], we get:
+$$
+\begin{aligned}
+\pi &= 12\left(\int_{0}^{0.5}\sqrt{1 - x^2}\; \mathrm{d}x - \frac{\sqrt{3}}{8} \right)\\
+&\approx 12 \left(\left[x - \frac{1}{6}x^3 - \frac{1}{40}x^5 - \frac{1}{112}x^7 - \frac{5}{1152}x^9 - \frac{7}{2816}x^{11} \right]_{0}^{0.5} - \frac{\sqrt{3}}{8}\right)\\
+&\approx 3.1415954446070984 \text{ which is correct to 5 decimal places of }\pi\\
+\end{aligned}
+$$
+
+![By adding the areas of the orange sector and the green triangle, the total area under the curve from $x = 0$ to $x = 0.5$ may be computed. The value of $\pi$ can then be solved.]({attach}images/circle-area-sixty-degrees.svg){#fig:sixty-degrees width=80% .modal-target}
+
+### An amusing aside with ChatGPT
+
+I wanted an independent machine check of my binomial series expansion of $(1 -x^2)^{\frac{1}{2}}$ and decided to try out [ChatGPT](https://chatgpt.com/). When I asked it to evaluate the first ten terms of the binomial series of $(1-x^2)^{\frac{1}{2}}$, it gave me a result, all of whose terms did not have the same sign. After re-checking my computation, I sent it a sardonic message saying that it had erred. Imagine my amazement, when---most human-like---it apologized for its error, and gave me the correct result. The screenshots below show this rather hilarious exchange and underscore the fact that AI is almost human in its responses but its computational side could be beefed up a bit. It also raises the loaded question of whether the ChatGPT error the first time round was deliberate.
+
+![ChatGPT gave me wrong signs in the result for the binomial series during my first query. As a consequence, I shamed it, and added a little sarcasm to my response.]({attach}images/wrong-results.png){#fig:wrong-results width=90% .modal-target}
+
+![To its credit, ChatGPT apologized, gave me the correct answers and, behaved politely. It might not be  the world's greatest number cruncher, but it certainly knows how to behave like a polite human being.]({attach}images/corrected-results.png){#fig:corrected-results width=90% .modal-target}
 
 
 ## Euler's solution to the Basel Problem
@@ -416,11 +463,54 @@ What I find fascinating about @eq:basel is that the left-hand side (LHS) is enti
 
 This is the mind-twisting paradox of infinity. I like to think that _infinity is where the rationals meet the irrationals_. And this equation is not unique in displaying this characteristic. Countless other identities exhibit this same paradoxical property of an infinite sum of rationals _exactly_ equalling an irrational number.
 
-Thus Euler not only gave us another way of computing $\pi$, but he also showed how elegantly the rationals could dovetail into the irrationals in entirely surprising ways, whenever infinity is involved. 
+Thus Euler not only gave us another way of computing $\pi$, but he also showed how elegantly the rationals could dovetail into the irrationals in entirely surprising ways, whenever infinity is involved.
 
-## Gauss and the AGM
 
-Arithmetic-Geometric Mean AGM
+## Gauss, the AGM, and π
+
+I was not aware what the [Arithmetic-Geometric Mean](https://mathworld.wolfram.com/Arithmetic-GeometricMean.html) (AGM) was until I stumbled upon how [Carl Friedrich Gauss](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss) [@gauss-wiki] related it to $\pi$. And he found the connection when he was only 14 years old. So, we are looking at the work of a mathematical prodigy, and should not be dismayed if comprehension eludes us.
+
+I do not understand most of what Gauss did, and I would suggest that you, dear reader, should not get disheartened if you do not fully grasp it either. There will be a lot of hand-waving in what follows. There are three ideas that we need to skim over ever so lightly:
+
+(a) The [Lemniscate of Bernoulli](https://mathworld.wolfram.com/Lemniscate.html);
+
+(b) The [Airthmetic-Geometric mean (AGN) of two positive real numbers](https://en.wikipedia.org/wiki/Arithmetic%E2%80%93geometric_mean); and 
+
+(c) [Elliptic integrals](https://en.wikipedia.org/wiki/Elliptic_integral).
+
+By tying together these three ideas, Gauss was not only able to arrive at a potent method of computing $\pi$ to high accuracy, but he also opened up new vistas for further mathematical investigation. Our treatment here is sketchy by design. The interested reader is referred to source material for a fuller treatment.
+
+![The Lemniscate of Bernoulli. This curve looks like the symbol for infinity. The ratio of its circumference to its diameter is denoted by $\varpi$, which is a variant of the Greek letter $\pi$. This number, $\varpi$, is related to $\pi$ via the Arithmetic Geometric Mean and elliptic integrals.]({attach}images/bernoulli.svg){#fig:lemniscate width=80% .modal-target}
+
+ r=asqrt(cos(2theta)). 	
+(7)
+
+Note that this equation is defined only for angles -pi/4<theta<pi/4 and 3pi/4<theta<5pi/4. 
+Lemniscate
+https://tex.stackexchange.com/questions/624828/polar-lemniscate-bernoulli-in-latex
+https://tex.stackexchange.com/questions/299218/cassini-oval-curve-in-tikz
+
+
+
+
+The path Gauss 
+
+https://paramanands.blogspot.com/2009/08/pi-and-the-agm-gauss-brent-salamin-formula.html
+
+https://paramanands.blogspot.com/2009/08/arithmetic-geometric-mean-of-gauss.html
+
+https://paramanands.blogspot.com/2009/08/pi-and-the-agm-introduction-to-elliptic-integrals.html
+
+https://maths-people.anu.edu.au/~brent/pd/JBCC-Brent.pdf
+
+
+https://www.nas.ewi.tudelft.nl/people/Piet/papers/TUD20230605_arithmetic_geometric_mean.pdf
+
+
+https://mattbaker.blog/2024/03/14/pi-and-the-agm/
+
+https://ia800704.us.archive.org/view_archive.php?archive=/24/items/wikipedia-scholarly-sources-corpus/10.2307%252F2287541.zip&file=10.2307%252F2323302.pdf#:~:text=The%20arithmetic-geometric%20mean%20was%20first%20discovered%20by%20Lagrange,integral%20representation%2C%20were%20made%20about%207-9%20years%20later.
+
 
 
 
@@ -439,7 +529,9 @@ Those of you who are puzzled by the appearance of $\pi^2$ in the solution to the
 
 [Veritasium](https://www.youtube.com/@veritasium) and [3Blue1Brown](https://www.youtube.com/c/3blue1brown) put out quality educational videos on Mathematics and are an authoritative source of enrichment. Do benefit from them.
 
+## Gauss
 
+An [excellent biography of Carl Gauss](https://www.youtube.com/watch?v=LmmyAOkajVM) is available on YouTube [@gauss-bio]. I highly recommend watching it.
 
 ## Conclusion
 

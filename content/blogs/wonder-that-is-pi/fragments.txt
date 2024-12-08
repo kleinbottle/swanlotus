@@ -2,7 +2,21 @@ What does the equality sign mean for an infinite sum? How can a sum of rationals
 
 
 
+<!--1−12x2−18x4−116x6−5128x8+...
 
+1 - x^2/2 - x^4/8 - x^6/16 - (5 x^8)/128 + O[x]^9
+
+|x| < 1. Can it work for one?
+
+https://www.nagwa.com/en/explainers/106182151513/
+
+https://www.wolframalpha.com/input?i=12%28int_0%5E0.5%28sqrt%281-x%5E2%29%29+dx+-sqrt%283%29%2F8%29
+
+The transition from algebra to analysis: convergence
+
+Quarter circle is not valid: cannot converge
+
+Using the known to get at the unknown-->
 
 
 
