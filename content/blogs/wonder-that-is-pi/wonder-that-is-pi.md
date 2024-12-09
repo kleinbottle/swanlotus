@@ -468,19 +468,32 @@ Thus Euler not only gave us another way of computing $\pi$, but he also showed h
 
 ## Gauss, the AGM, and π
 
-I was not aware what the [Arithmetic-Geometric Mean](https://mathworld.wolfram.com/Arithmetic-GeometricMean.html) (AGM) was until I stumbled upon how [Carl Friedrich Gauss](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss) [@gauss-wiki] related it to $\pi$. And he found the connection when he was only 14 years old. So, we are looking at the work of a mathematical prodigy, and should not be dismayed if comprehension eludes us.
+I was not aware what the [Arithmetic-Geometric Mean](https://mathworld.wolfram.com/Arithmetic-GeometricMean.html) (AGM) was until I stumbled upon how [Carl Friedrich Gauss](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss) [@gauss-wiki] related it to $\pi$. And he found the connection when he was only 14 years old. So, we are looking at the work of a mathematical prodigy, portions of which are seriously non-trivial.
 
-I do not understand most of what Gauss did, and I would suggest that you, dear reader, should not get disheartened if you do not fully grasp it either. There will be a lot of hand-waving in what follows. There are three ideas that we need to skim over ever so lightly:
+Accordingly, there will be a lot of hand-waving in what follows, as we attempt a thumbnail outline of Gauss's method. There are three basic ideasy:
 
 (a) The [Lemniscate of Bernoulli](https://mathworld.wolfram.com/Lemniscate.html);
 
-(b) The [Airthmetic-Geometric mean (AGN) of two positive real numbers](https://en.wikipedia.org/wiki/Arithmetic%E2%80%93geometric_mean); and 
+(b) The [Airthmetic-Geometric mean (AGM) of two positive real numbers](https://en.wikipedia.org/wiki/Arithmetic%E2%80%93geometric_mean); and 
 
 (c) [Elliptic integrals](https://en.wikipedia.org/wiki/Elliptic_integral).
 
-By tying together these three ideas, Gauss was not only able to arrive at a potent method of computing $\pi$ to high accuracy, but he also opened up new vistas for further mathematical investigation. Our treatment here is sketchy by design. The interested reader is referred to source material for a fuller treatment.
+By tying together these three ideas, Gauss was not only able to arrive at a potent method of rapidly computing $\pi$ to high accuracy, but he also opened up new vistas for further mathematical investigation. Our treatment here is sketchy by design. The interested reader is referred to source material for a fuller treatment.
+
+### The Lemniscate of Bernoulli
+
+The Lemniscate of Bernoulli looks like a ribbon tied into a bow, or like the mathematical symbol for infinity. It is is a polar curve defined as the locus of points such that the product of distances from two fixed points $(-a, 0)$ and $(a, 0)$ \ldots is constant and equals $a^2$ [@lemniscate-mathworld]. Its equation is:
+$$
+\begin{aligned}
+
+\end{aligned}
+$$
 
 ![The Lemniscate of Bernoulli. This curve looks like the symbol for infinity. The ratio of its circumference to its diameter is denoted by $\varpi$, which is a variant of the Greek letter $\pi$. This number, $\varpi$, is related to $\pi$ via the Arithmetic Geometric Mean and elliptic integrals.]({attach}images/bernoulli.svg){#fig:lemniscate width=80% .modal-target}
+
+
+
+
 
  r=asqrt(cos(2theta)). 	
 (7)
