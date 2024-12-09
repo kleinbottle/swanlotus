@@ -470,41 +470,65 @@ Thus Euler not only gave us another way of computing $\pi$, but he also showed h
 
 I was not aware what the [Arithmetic-Geometric Mean](https://mathworld.wolfram.com/Arithmetic-GeometricMean.html) (AGM) was until I stumbled upon how [Carl Friedrich Gauss](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss) [@gauss-wiki] related it to $\pi$. And he found the connection when he was only 14 years old. So, we are looking at the work of a mathematical prodigy, portions of which are seriously non-trivial.
 
-Accordingly, there will be a lot of hand-waving in what follows, as we attempt a thumbnail outline of Gauss's method. There are three basic ideasy:
+Accordingly, there will be a lot of hand-waving in what follows, as we attempt a thumbnail outline of Gauss's method. There are three basic ideas:
 
-(a) The [Lemniscate of Bernoulli](https://mathworld.wolfram.com/Lemniscate.html);
+(a) [Lemniscate of Bernoulli](https://mathworld.wolfram.com/Lemniscate.html);
 
-(b) The [Airthmetic-Geometric mean (AGM) of two positive real numbers](https://en.wikipedia.org/wiki/Arithmetic%E2%80%93geometric_mean); and 
+(b) [Elliptic integrals](https://en.wikipedia.org/wiki/Elliptic_integral); and
 
-(c) [Elliptic integrals](https://en.wikipedia.org/wiki/Elliptic_integral).
+(c) [Airthmetic-Geometric mean (AGM) of two positive real numbers](https://en.wikipedia.org/wiki/Arithmetic%E2%80%93geometric_mean); and 
 
-By tying together these three ideas, Gauss was not only able to arrive at a potent method of rapidly computing $\pi$ to high accuracy, but he also opened up new vistas for further mathematical investigation. Our treatment here is sketchy by design. The interested reader is referred to source material for a fuller treatment.
-
-### The Lemniscate of Bernoulli
+By tying together these three ideas, Gauss was not only able to arrive at a potent method of rapidly computing $\pi$ to high accuracy, but he also opened up new vistas for further mathematical investigation. Our treatment here is sketchy by design. The interested reader is referred to source material for a fuller treatment [@pi-source;@cox-1984;@langton-2001].
 
 The Lemniscate of Bernoulli looks like a ribbon tied into a bow, or like the mathematical symbol for infinity. It is is a polar curve defined as the locus of points such that the product of distances from two fixed points $(-a, 0)$ and $(a, 0)$ \ldots is constant and equals $a^2$ [@lemniscate-mathworld]. Its equation is:
 $$
 \begin{aligned}
-
+(x^2 + y^2)^2 &= 2a^2(x^2 - y^2)\; \text{or in polar form}\\
+r &= a\sqrt{\cos2\theta} \; \text{where}\; \textstyle{-\frac{\pi}{4} < \theta < \frac{\pi}{4}\; \text{and}\; \frac{3\pi}{4} < \theta < \frac{5\pi}{4}}.
 \end{aligned}
 $$
 
-![The Lemniscate of Bernoulli. This curve looks like the symbol for infinity. The ratio of its circumference to its diameter is denoted by $\varpi$, which is a variant of the Greek letter $\pi$. This number, $\varpi$, is related to $\pi$ via the Arithmetic Geometric Mean and elliptic integrals.]({attach}images/bernoulli.svg){#fig:lemniscate width=80% .modal-target}
+![The Lemniscate of Bernoulli for $a = 1$. This curve looks like the symbol for infinity. The ratio of its circumference to its diameter is denoted by $\varpi$, which is a variant of the Greek letter $\pi$. This number, $\varpi$, is related to $\pi$ via the Arithmetic Geometric Mean and elliptic integrals.]({attach}images/bernoulli.svg){#fig:lemniscate width=80% .modal-target}
 
+The ratio of the perimeter of the lemniscate to its diameter is a number akin to $\pi$ for a circle. This number is designated $\varpi$. Now the perimeter of the lemniscate with $a = 1$ is:
+$$
+\int_0^{1} \frac{1}{\sqrt{1 - x^4}}\;\mathrm{d}x
+$${#eq:lemni-peri}
+The integral in [@eq:lemni-peri] is an elliptic integral of the first kind [@cox-1984]. Apart from using the name to identify the type of integral, we will not pursue elliptic integrals any further.
 
+Gauss was looking at the circle and lemniscate as related curves, for after all, the perimeter of the circle with unit radius may also be expressed as another integral:
+$$
+\int_0^{1}\frac{1}{\sqrt{1 - x^2}}\;\mathrm{d}x
+$${#eq:circ-peri}
+The family resemblance in these two equations---[@eq:lemni-peri] and [@eq:circ-peri]---is striking.
 
+He then looked at the ratios of perimeters to diameters, and expected to see $\pi$ and its fellow for the lemniscate. Sure enough, he saw:
+$$
+\begin{aligned}
+\frac{\varpi}{\pi} &= \frac{\int_0^{1} \frac{1}{\sqrt{1 - x^4}}\;\mathrm{d}x}{\int_0^{1}\frac{1}{\sqrt{1 - x^2}}\;\mathrm{d}x}\\
+&= XXXXXX
+\end{aligned}
+$${eq:ratio}
+The value of the RHS could be computed from first principles, and thus the ratio was known numerically.
 
+Gauss was also experimenting with something known as the aritmetic-geometric mean of two positive numbers. For example, if we take two numbers $a_0 = 2$ and $b_0 = 3$, their arithmetic mean is:
+$$
+a_1 = \frac{a_0 + b_0}{2} = \frac{5}{2} = 2.5.
+$$
+Their geometric mean is:
+$$
+b_1 = \sqrt{a_0 \cdot b_0} = \sqrt{6} = 2.449.
+$$
+If the process were continued indefinitely---with $a_1$ replacing $a_0$ and $b_1$ replacing $b_0$---until there were no changes in the results of consecutive operations, say to the tenth decimal place or so, we would claim that the Arithmetic-Geometric Mean (AGN) denoted by the letter $M$ had converged and its value is $M(2, 3) = 2.474680436236304$. It is surprising but true that the AGM converges in a small number of steps to its final value or limit. It is therefore a valuable tool for estimating mathematical constants to high accuracy in a few steps.
 
- r=asqrt(cos(2theta)). 	
-(7)
+Now, Gauss was experimenting with the AGM of the numbers $1$ and $\sqrt{2}$ and $M(1, \sqrt{2}) = XXXX$.
+Imagine Gauss's surprise when he discovered that $\frac{\varpi}{\pi}$ and $M(1, \sqrt{2})$ agreed to eleven decimal places! He was just 14 years old, and he noted in his diary:
 
-Note that this equation is defined only for angles -pi/4<theta<pi/4 and 3pi/4<theta<5pi/4. 
-Lemniscate
-https://tex.stackexchange.com/questions/624828/polar-lemniscate-bernoulli-in-latex
-https://tex.stackexchange.com/questions/299218/cassini-oval-curve-in-tikz
+>We have established that the arithmetic-geometric mean between $1$ and $sqrt{2}$ is $\frac{\pi}{\varpi}$ to the eleventh decimal place; the demonstration of this fact will surely open an entirely new field of analysis. [@cox-1984]
 
+Unexpected links between different mathematical sub-fields are discovered by mathematicians who experiment and keenly observe their results. One is reminded ere of James Clerk Maxwell boldly sserting that light is an electromagnetic wave simply on the basis of the measured speed of light and radio waves. Such leaps of the imagination guided by intuition and logic are responsible for major discoveries in science and mathematics.
 
-
+https://mathcurve.com/courbes2d.gb/lemniscate/lemniscate.shtml
 
 The path Gauss 
 

@@ -1174,52 +1174,120 @@ Mean} (AGM) was until I stumbled upon how
 \href{https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss}{Carl Friedrich
 Gauss} {[}\citeproc{ref-gauss-wiki}{29}{]} related it to \(\pi\). And he
 found the connection when he was only 14 years old. So, we are looking
-at the work of a mathematical prodigy, and should not be dismayed if
-comprehension eludes us.
+at the work of a mathematical prodigy, portions of which are seriously
+non-trivial.
 
-I do not understand most of what Gauss did, and I would suggest that
-you, dear reader, should not get disheartened if you do not fully grasp
-it either. There will be a lot of hand-waving in what follows. There are
-three ideas that we need to skim over ever so lightly:
+Accordingly, there will be a lot of hand-waving in what follows, as we
+attempt a thumbnail outline of Gauss's method. There are three basic
+ideas:
 
 \begin{enumerate}
 \def\labelenumi{(\alph{enumi})}
 \item
-  The \href{https://mathworld.wolfram.com/Lemniscate.html}{Lemniscate of
+  \href{https://mathworld.wolfram.com/Lemniscate.html}{Lemniscate of
   Bernoulli};
 \item
-  The
-  \href{https://en.wikipedia.org/wiki/Arithmetic\%E2\%80\%93geometric_mean}{Airthmetic-Geometric
-  mean (AGN) of two positive real numbers}; and
-\item
   \href{https://en.wikipedia.org/wiki/Elliptic_integral}{Elliptic
-  integrals}.
+  integrals}; and
+\item
+  \href{https://en.wikipedia.org/wiki/Arithmetic\%E2\%80\%93geometric_mean}{Airthmetic-Geometric
+  mean (AGM) of two positive real numbers}; and
 \end{enumerate}
 
 By tying together these three ideas, Gauss was not only able to arrive
-at a potent method of computing \(\pi\) to high accuracy, but he also
-opened up new vistas for further mathematical investigation. Our
+at a potent method of rapidly computing \(\pi\) to high accuracy, but he
+also opened up new vistas for further mathematical investigation. Our
 treatment here is sketchy by design. The interested reader is referred
-to source material for a fuller treatment.
+to source material for a fuller treatment
+{[}\citeproc{ref-pi-source}{30}--\citeproc{ref-langton-2001}{32}{]}.
+
+The Lemniscate of Bernoulli looks like a ribbon tied into a bow, or like
+the mathematical symbol for infinity. It is is a polar curve defined as
+the locus of points such that the product of distances from two fixed
+points \((-a, 0)\) and \((a, 0)\) \ldots is constant and equals \(a^2\)
+{[}\citeproc{ref-lemniscate-mathworld}{33}{]}. Its equation is: \[
+\begin{aligned}
+(x^2 + y^2)^2 &= 2a^2(x^2 - y^2)\; \text{or in polar form}\\
+r &= a\sqrt{\cos2\theta} \; \text{where}\; \textstyle{-\frac{\pi}{4} < \theta < \frac{\pi}{4}\; \text{and}\; \frac{3\pi}{4} < \theta < \frac{5\pi}{4}}.
+\end{aligned}
+\]
 
 \begin{figure}
 \centering
 \includesvg[width=0.8\textwidth,height=\textheight]{images/bernoulli.svg}
-\caption{The Lemniscate of Bernoulli. This curve looks like the symbol
-for infinity. The ratio of its circumference to its diameter is denoted
-by \(\varpi\), which is a variant of the Greek letter \(\pi\). This
-number, \(\varpi\), is related to \(\pi\) via the Arithmetic Geometric
-Mean and elliptic integrals.}\label{fig:lemniscate}
+\caption{The Lemniscate of Bernoulli for \(a = 1\). This curve looks
+like the symbol for infinity. The ratio of its circumference to its
+diameter is denoted by \(\varpi\), which is a variant of the Greek
+letter \(\pi\). This number, \(\varpi\), is related to \(\pi\) via the
+Arithmetic Geometric Mean and elliptic integrals.}\label{fig:lemniscate}
 \end{figure}
 
-r=asqrt(cos(2theta)).\\
-(7)
+The ratio of the perimeter of the lemniscate to its diameter is a number
+akin to \(\pi\) for a circle. This number is designated \(\varpi\). Now
+the perimeter of the lemniscate with \(a = 1\) is:
+\begin{equation}\phantomsection\label{eq:lemni-peri}{
+\int_0^{1} \frac{1}{\sqrt{1 - x^4}}\;\mathrm{d}x
+}\end{equation} The integral in \cref{eq:lemni-peri} is an elliptic
+integral of the first kind {[}\citeproc{ref-cox-1984}{31}{]}. Apart from
+using the name to identify the type of integral, we will not pursue
+elliptic integrals any further.
 
-Note that this equation is defined only for angles
--pi/4\textless theta\textless pi/4 and
-3pi/4\textless theta\textless5pi/4. Lemniscate
-https://tex.stackexchange.com/questions/624828/polar-lemniscate-bernoulli-in-latex
-https://tex.stackexchange.com/questions/299218/cassini-oval-curve-in-tikz
+Gauss was looking at the circle and lemniscate as related curves, for
+after all, the perimeter of the circle with unit radius may also be
+expressed as another integral:
+\begin{equation}\phantomsection\label{eq:circ-peri}{
+\int_0^{1}\frac{1}{\sqrt{1 - x^2}}\;\mathrm{d}x
+}\end{equation} The family resemblance in these two
+equations---\cref{eq:lemni-peri} and \cref{eq:circ-peri}---is striking.
+
+He then looked at the ratios of perimeters to diameters, and expected to
+see \(\pi\) and its fellow for the lemniscate. Sure enough, he saw: \[
+\begin{aligned}
+\frac{\varpi}{\pi} &= \frac{\int_0^{1} \frac{1}{\sqrt{1 - x^4}}\;\mathrm{d}x}{\int_0^{1}\frac{1}{\sqrt{1 - x^2}}\;\mathrm{d}x}\\
+&= XXXXXX
+\end{aligned}
+\]\{eq:ratio\} The value of the RHS could be computed from first
+principles, and thus the ratio was known numerically.
+
+Gauss was also experimenting with something known as the
+aritmetic-geometric mean of two positive numbers. For example, if we
+take two numbers \(a_0 = 2\) and \(b_0 = 3\), their arithmetic mean is:
+\[
+a_1 = \frac{a_0 + b_0}{2} = \frac{5}{2} = 2.5.
+\] Their geometric mean is: \[
+b_1 = \sqrt{a_0 \cdot b_0} = \sqrt{6} = 2.449.
+\] If the process were continued indefinitely---with \(a_1\) replacing
+\(a_0\) and \(b_1\) replacing \(b_0\)---until there were no changes in
+the results of consecutive operations, say to the tenth decimal place or
+so, we would claim that the Arithmetic-Geometric Mean (AGN) denoted by
+the letter \(M\) had converged and its value is
+\(M(2, 3) = 2.474680436236304\). It is surprising but true that the AGM
+converges in a small number of steps to its final value or limit. It is
+therefore a valuable tool for estimating mathematical constants to high
+accuracy in a few steps.
+
+Now, Gauss was experimenting with the AGM of the numbers \(1\) and
+\(\sqrt{2}\) and \(M(1, \sqrt{2}) = XXXX\). Imagine Gauss's surprise
+when he discovered that \(\frac{\varpi}{\pi}\) and \(M(1, \sqrt{2})\)
+agreed to eleven decimal places! He was just 14 years old, and he noted
+in his diary:
+
+\begin{quote}
+We have established that the arithmetic-geometric mean between \(1\) and
+\(sqrt{2}\) is \(\frac{\pi}{\varpi}\) to the eleventh decimal place; the
+demonstration of this fact will surely open an entirely new field of
+analysis. {[}\citeproc{ref-cox-1984}{31}{]}
+\end{quote}
+
+Unexpected links between different mathematical sub-fields are
+discovered by mathematicians who experiment and keenly observe their
+results. One is reminded ere of James Clerk Maxwell boldly sserting that
+light is an electromagnetic wave simply on the basis of the measured
+speed of light and radio waves. Such leaps of the imagination guided by
+intuition and logic are responsible for major discoveries in science and
+mathematics.
+
+https://mathcurve.com/courbes2d.gb/lemniscate/lemniscate.shtml
 
 The path Gauss
 
@@ -1249,7 +1317,7 @@ How
 \href{https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin-Louis
 Cauchy} solved the Basel Problem is clearly laid out and explained in
 \href{https://www.youtube.com/watch?v=2jgtAo3Ztf}{this mesmerizing Rise
-to the Equation YouTube video} {[}\citeproc{ref-cauchy-basel}{30}{]}.
+to the Equation YouTube video} {[}\citeproc{ref-cauchy-basel}{34}{]}.
 The explanation in this video should be clear to a high school student
 who has encountered trigonometry but not calculus.
 
@@ -1267,7 +1335,7 @@ source of enrichment. Do benefit from them.
 
 An \href{https://www.youtube.com/watch?v=LmmyAOkajVM}{excellent
 biography of Carl Gauss} is available on YouTube
-{[}\citeproc{ref-gauss-bio}{31}{]}. I highly recommend watching it.
+{[}\citeproc{ref-gauss-bio}{35}{]}. I highly recommend watching it.
 
 \subsection{Conclusion}\label{conclusion}
 
@@ -1471,15 +1539,40 @@ All}}. Mathematical Association of America.}
 Retrieved 7 December 2024 from
 \url{https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss}}
 
-\bibitem[\citeproctext]{ref-cauchy-basel}
+\bibitem[\citeproctext]{ref-pi-source}
 \CSLLeftMargin{{[}30{]} }%
+\CSLRightInline{Lennart Berggren and Jonathan Borwein and Peter Borwein.
+2004. \emph{{Pi: A Source Book}} (3rd ed.). Springer Science+Business
+Media.}
+
+\bibitem[\citeproctext]{ref-cox-1984}
+\CSLLeftMargin{{[}31{]} }%
+\CSLRightInline{David Cox. 1984. {The Arithmetic-Geometric Mean of
+Gauss}. \emph{L'Enseignement Mathématique} 30, (1984), 275--330.
+Retrieved 9 December 2024 from
+\url{https://www.researchgate.net/publication/248675540_The_Arithmetic-Geometric_Mean_of_Gauss}}
+
+\bibitem[\citeproctext]{ref-langton-2001}
+\CSLLeftMargin{{[}32{]} }%
+\CSLRightInline{Stacy G Langton. 2001. {Gauss, recurrence relations, and
+the agM}. Retrieved 9 December 2024 from
+\url{https://web.archive.org/web/20151001140320/http://home.sandiego.edu/~langton/gaussagm.pdf}}
+
+\bibitem[\citeproctext]{ref-lemniscate-mathworld}
+\CSLLeftMargin{{[}33{]} }%
+\CSLRightInline{Eric W Weisstein. 2024. {Lemniscate}. {From
+MathWorld---A Wolfram Web Resource}. Retrieved 9 December 2024 from
+\url{https://mathworld.wolfram.com/Lemniscate.html}}
+
+\bibitem[\citeproctext]{ref-cauchy-basel}
+\CSLLeftMargin{{[}34{]} }%
 \CSLRightInline{Rise to the Equation. 2021. {Cauchy's Proof of the Basel
 Problem \textbar{} Pi Squared Over Six}. {3blue1brown SoME1 Entry}.
 Retrieved 1 December 2024 from
 \url{https://www.youtube.com/watch?v=2jgtAo3ZtfI}}
 
 \bibitem[\citeproctext]{ref-gauss-bio}
-\CSLLeftMargin{{[}31{]} }%
+\CSLLeftMargin{{[}35{]} }%
 \CSLRightInline{Newsthink. 2024. {The Greatest Mathematician Who Ever
 Lived}. Retrieved 6 December 2024 from
 \url{https://www.youtube.com/watch?v=LmmyAOkajVM}}
