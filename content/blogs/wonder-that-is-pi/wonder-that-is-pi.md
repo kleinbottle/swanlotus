@@ -468,6 +468,8 @@ Thus Euler not only gave us another way of computing $\pi$, but he also showed h
 
 ## Gauss, the AGM, and π
 
+Gauss was a precocious mathematician [@gauss-bio] who published his groundbreaking wok only when it met his standards for terse beauty. Accordingly, many of his contributions became public only many decades after his demise. The material in this section belongs to that category.
+
 I was not aware what the [Arithmetic-Geometric Mean](https://mathworld.wolfram.com/Arithmetic-GeometricMean.html) (AGM) was until I stumbled upon how [Carl Friedrich Gauss](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss) [@gauss-wiki] related it to $\pi$. And he found the connection when he was only 14 years old. So, we are looking at the work of a mathematical prodigy, portions of which are seriously non-trivial.
 
 Accordingly, there will be a lot of hand-waving in what follows, as we attempt a thumbnail outline of Gauss's method. There are three basic ideas:
@@ -478,7 +480,9 @@ Accordingly, there will be a lot of hand-waving in what follows, as we attempt a
 
 (c) [Airthmetic-Geometric mean (AGM) of two positive real numbers](https://en.wikipedia.org/wiki/Arithmetic%E2%80%93geometric_mean); and 
 
-By tying together these three ideas, Gauss was not only able to arrive at a potent method of rapidly computing $\pi$ to high accuracy, but he also opened up new vistas for further mathematical investigation. Our treatment here is sketchy by design. The interested reader is referred to source material for a fuller treatment [@pi-source;@cox-1984;@langton-2001].
+By tying together these three ideas, Gauss was not only able to arrive at a potent method of rapidly computing $\pi$ to high accuracy, but he also opened up new vistas for further mathematical investigation. Our treatment here is sketchy by design and the interested reader is referred to source material for a more complete exposition [@pi-source;@cox-1984;@langton-2001].
+
+### The Lemniscate of Bernoulli
 
 The Lemniscate of Bernoulli looks like a ribbon tied into a bow, or like the mathematical symbol for infinity. It is is a polar curve defined as the locus of points such that the product of distances from two fixed points $(-a, 0)$ and $(a, 0)$ \ldots is constant and equals $a^2$ [@lemniscate-mathworld]. Its equation is:
 $$
@@ -490,45 +494,98 @@ $$
 
 ![The Lemniscate of Bernoulli for $a = 1$. This curve looks like the symbol for infinity. The ratio of its circumference to its diameter is denoted by $\varpi$, which is a variant of the Greek letter $\pi$. This number, $\varpi$, is related to $\pi$ via the Arithmetic Geometric Mean and elliptic integrals.]({attach}images/bernoulli.svg){#fig:lemniscate width=80% .modal-target}
 
-The ratio of the perimeter of the lemniscate to its diameter is a number akin to $\pi$ for a circle. This number is designated $\varpi$. Now the perimeter of the lemniscate with $a = 1$ is:
-$$
-\int_0^{1} \frac{1}{\sqrt{1 - x^4}}\;\mathrm{d}x
-$${#eq:lemni-peri}
-The integral in [@eq:lemni-peri] is an elliptic integral of the first kind [@cox-1984]. Apart from using the name to identify the type of integral, we will not pursue elliptic integrals any further.
+### The perimeter is an elliptic integral
 
-Gauss was looking at the circle and lemniscate as related curves, for after all, the perimeter of the circle with unit radius may also be expressed as another integral:
+It is [known](https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/857933bc947b1ed184c79a5710fc86bc_MIT18_01SCF10_Ses15c.pdf) that 
 $$
-\int_0^{1}\frac{1}{\sqrt{1 - x^2}}\;\mathrm{d}x
-$${#eq:circ-peri}
-The family resemblance in these two equations---[@eq:lemni-peri] and [@eq:circ-peri]---is striking.
-
-He then looked at the ratios of perimeters to diameters, and expected to see $\pi$ and its fellow for the lemniscate. Sure enough, he saw:
+\frac{\mathrm{d}}{\mathrm{d}x} \mathrm{​arcsin}(x) = \frac{1}{\sqrt{1 - x^2}}
+$$
+Thus, the integral is
 $$
 \begin{aligned}
-\frac{\varpi}{\pi} &= \frac{\int_0^{1} \frac{1}{\sqrt{1 - x^4}}\;\mathrm{d}x}{\int_0^{1}\frac{1}{\sqrt{1 - x^2}}\;\mathrm{d}x}\\
-&= XXXXXX
+\int_0^1 \frac{1}{\sqrt{1 - x^2}}\;\mathrm{d}x &= \bigl[\mathrm{arcsin}(x)\bigr]_0^1\\
+&= \mathrm{arcsin}(1) - \mathrm{arcsin}(0)\\
+&= \frac{\pi}{2}.
 \end{aligned}
-$${eq:ratio}
-The value of the RHS could be computed from first principles, and thus the ratio was known numerically.
+$$
+This implies that:
+$$
+\begin{aligned}
+\pi &= 2\int_0^1 \frac{1}{\sqrt{1 - x^2}}\;\mathrm{d}x.
+\end{aligned}
+$${#eq:pi-circle}
+The RHS of equation [@eq:pi-circle] can be interpreted as the ratio of the perimeter of a unit circle to its diameter.
 
-Gauss was also experimenting with something known as the aritmetic-geometric mean of two positive numbers. For example, if we take two numbers $a_0 = 2$ and $b_0 = 3$, their arithmetic mean is:
+For the Lemniscate of Bernoulli, the ratio of the perimeter to the diameter (akin to $\pi$ for a circle) is:
 $$
-a_1 = \frac{a_0 + b_0}{2} = \frac{5}{2} = 2.5.
+\begin{aligned}
+\varpi = 2\int_0^1 \frac{1}{\sqrt{1 - x^4}}\;\mathrm{d}x.
+\end{aligned}
+$${#eq:varpi-lemniscate}
+The symbol $\varpi$ is the [lemniscate constant $\varpi$](https://en.wikipedia.org/wiki/Lemniscate_constant) and is really a variant of the lowercase Greek $\pi$.
+
+Note that the integral on the RHS of [@eq:varpi-lemniscate] is called an [_elliptic integral of the first kind_](https://mathworld.wolfram.com/EllipticIntegraloftheFirstKind.html).
+
+The family resemblance in these two equations---[@eq:pi-circle] and [@eq:varpi-lemniscate]---is striking, and Gauss looked at their ratio:
 $$
-Their geometric mean is:
+\displaystyle\frac{\varpi}{\pi} = \frac{2\displaystyle\int_0^1 \frac{1}{\sqrt{1 - x^4}}\;\mathrm{d}x}{2\displaystyle\int_0^1 \frac{1}{\sqrt{1 - x^2}}\;\mathrm{d}x}.
 $$
-b_1 = \sqrt{a_0 \cdot b_0} = \sqrt{6} = 2.449.
+
+The value of the RHS could be computed from first principles, and thus the ratio was known numerically. We take a look at the third piece of the puzzle before resuming our mathematical tale.
+
+### The Arithmetic-Geometric Mean
+
+The _arithmetic mean_ of two numbers $a_0$ and $g_0$ is $\frac{a_0 + g_0}{2}$ while the _geometric mean_ of these same numbers is $\sqrt{a_0 g_0}$. The arithmetic-geometric mean (AGM) of a pair of numbers is a [_pas de deux_](https://www.thefreedictionary.com/pas+de+deux) of the two numbers obeying the recurrence relation:
 $$
-If the process were continued indefinitely---with $a_1$ replacing $a_0$ and $b_1$ replacing $b_0$---until there were no changes in the results of consecutive operations, say to the tenth decimal place or so, we would claim that the Arithmetic-Geometric Mean (AGN) denoted by the letter $M$ had converged and its value is $M(2, 3) = 2.474680436236304$. It is surprising but true that the AGM converges in a small number of steps to its final value or limit. It is therefore a valuable tool for estimating mathematical constants to high accuracy in a few steps.
+a_{n+1} = \frac{a_n + g_n}{2}\\
+g_{n+1} = \sqrt{a_n g_n}
+$$
+As $n$ increases, the values $a_n$ and $g_n$ converge to a common value within a few iterations. This common value is the _arithmetic-geometric mean_, denoted as $M(a_0, g_0)$.
+
+For reasons best known to him, Gauss decided to compute the AGM of the numbers, $a_0 = \sqrt{2}$ and $g_0 = 1$. Let us follow in the footsteps of Gauss:
+$$
+\begin{aligned}
+a_1 = \frac{a_0 + g_0}{2} = \frac{\sqrt{2} + 1}{2} = 1.207106\\
+g_1 = \sqrt{\sqrt{2} \times 1} = 1.189207
+\end{aligned}
+$$
+
+A simple script in [Julia](https://julialang.org/) is available [here]({attach}auxiliary/agm-float.jl) and may be used to compute the AGM of any pair of positive real numbers. The AGM for $a_0 = \sqrt{2}$ and $g_0 = 1$ converges rapidly as shown below.
+
+```
+n a_n                         g_n
+0 1.4142135623730951454746219 1.0000000000000000000000000
+1 1.2071067811865474617150085 1.1892071150027210268973477
+2 1.1981569480946343553284805 1.1981235214931200694365998
+3 1.1981402347938772123825402 1.1981402346773073475105775
+4 1.1981402347355922799465588 1.1981402347355922799465588
+```
+When the above values are compared with those tabulated in Example 2 of the paper by Cox [@cox-1984], there are discrepancies after 16 decimal places. To check whether better agreement can be achieved by using greater numerical precision in the computation, a second script, [`agm-big-float.jl`]({attach}auxiliary/agm-big-float.jl) was also executed. These results now agree to 19 decimal papers with those in the paper.^[Spare a thought for Gauss and his painstaking hand calculation to compute values to 11 decimal places.]
+
+```
+n a_n                         g_n
+0 1.4142135623730950488016887 1.0000000000000000000000000
+1 1.2071067811865475244008444 1.1892071150027210667175000
+2 1.1981569480946342955591722 1.1981235214931201226065856
+3 1.1981402347938772090828789 1.1981402346773072057983838
+4 1.1981402347355922074406313 1.1981402347355922074392137
+5 1.1981402347355922074399225 1.1981402347355922074399225
+```
+
+Two points about the AGM are worth noting. First, it has been proven that both $a_n$ and $g_n$ converge to the _same_ value. Second, the convergence is rapid and happens within a few iterations [@pi-and-the-agm]. The AGM is therefore a valuable tool for estimating mathematical constants to high accuracy in a few steps, if such relationships exist and can be proved.
 
 Now, Gauss was experimenting with the AGM of the numbers $1$ and $\sqrt{2}$ and $M(1, \sqrt{2}) = XXXX$.
 Imagine Gauss's surprise when he discovered that $\frac{\varpi}{\pi}$ and $M(1, \sqrt{2})$ agreed to eleven decimal places! He was just 14 years old, and he noted in his diary:
 
->We have established that the arithmetic-geometric mean between $1$ and $sqrt{2}$ is $\frac{\pi}{\varpi}$ to the eleventh decimal place; the demonstration of this fact will surely open an entirely new field of analysis. [@cox-1984]
+>We have established that the arithmetic-geometric mean between $1$ and $\sqrt{2}$ is $\frac{\pi}{\varpi}$ to the eleventh decimal place; the demonstration of this fact will surely open an entirely new field of analysis. [@cox-1984]
 
-Unexpected links between different mathematical sub-fields are discovered by mathematicians who experiment and keenly observe their results. One is reminded ere of James Clerk Maxwell boldly sserting that light is an electromagnetic wave simply on the basis of the measured speed of light and radio waves. Such leaps of the imagination guided by intuition and logic are responsible for major discoveries in science and mathematics.
+Simply discovering an uncanny agreement between two ways of stating the same thing does not make for good mathematics. Gauss went on to _prove_ that the AGM and elliptic integrals were indeed related and equal [@singh-2009]. That _proof_ is what makes him a great mathematician, and his discovery, great mathematics. And in the process, he enriched mathematics itself.
 
-https://mathcurve.com/courbes2d.gb/lemniscate/lemniscate.shtml
+One wonders why Gauss used computed the AGM of $1$ and $\sqrt{2}$. Does chance really favour the prepared mind and guide one to choose randomly but with uncanny prescience, something that heralds a discovery? Like Alexander Fleming and penicillin?
+
+Unexpected links between different mathematical sub-fields are discovered by mathematicians who experiment and keenly observe their results. One is reminded here of James Clerk Maxwell boldly asserting that light is an electromagnetic wave simply on the basis of the measured speed of light and radio waves. Such leaps of the imagination guided by intuition and logic are responsible for major discoveries in science and mathematics.
+
+
 
 The path Gauss 
 
@@ -575,6 +632,8 @@ An [excellent biography of Carl Gauss](https://www.youtube.com/watch?v=LmmyAOkaj
 This story of how $\pi$ was extracted from the ore of geometry and refined into an enigmatic number which cannot be trapped within finite digits embodies the thrill of the chase. Mathematics is not merely a logical edifice built from the granite of unassailable logic, but is also the fruit of a pliant but disciplined imagination fuelled by inspiration to continually expand the boundaries of its domain.
 
 ## Acknowledgements
+
+I am grateful to my son, Mr Nandakumar Chandrasekhar, for writing the Julia script [`agm-float.jl`]({attach}auxliary/agm-float.jl) to compute the AGM.
 
 Wolfram Alpha for several results.
 
