@@ -1276,10 +1276,13 @@ ratio: \[
 \]
 
 The value of the RHS could be computed from first principles, and thus
-the ratio was known numerically. It is: \[
+the ratio was known numerically. It is:
+\begin{equation}\phantomsection\label{eq:pi-varpi-ratio}{
 \frac{\pi}{\varpi} \approx \frac{3.141592653589793}{2.622057554292119} \approx 1.198140234735592.
-\] We take a look at the third piece of the puzzle, the AGM, before
-resuming our mathematical tale.
+}\end{equation}
+
+We will now take a look at the third piece of the puzzle, the AGM,
+before resuming our mathematical tale.
 
 \subsubsection{The Arithmetic-Geometric
 Mean}\label{the-arithmetic-geometric-mean}
@@ -1294,9 +1297,11 @@ a_{n+1} = \frac{a_n + g_n}{2}\\
 g_{n+1} = \sqrt{a_n g_n}
 \] As \(n\) increases, the values \(a_n\) and \(g_n\) converge to a
 common value within a few iterations. This common value is the
-\emph{arithmetic-geometric mean}, denoted as \(M(a_0, g_0)\).
+\emph{arithmetic-geometric mean}, denoted as \(M(a_0, g_0)\). It has
+been proved that both \(a_n\) and \(g_n\) converge to the \emph{same}
+value denoted by \(M(a_0, g_0)\). {[}XXX{]}
 
-For reasons best known to him, Gauss decided to compute the AGM of the
+For reasons best known to him, Gauss chose to compute the AGM of the
 numbers, \(a_0 = \sqrt{2}\) and \(g_0 = 1\). Let us follow in the
 footsteps of Gauss: \[
 \begin{aligned}
@@ -1322,8 +1327,8 @@ n a_n                         g_n
 When the above values are compared with those tabulated in Example 2 of
 the paper by Cox {[}\citeproc{ref-cox-1984}{32}{]}, there are
 discrepancies after 16 decimal places. To check whether better agreement
-can be achieved by using greater numerical precision in the computation,
-a second script,
+could be achieved by using greater numerical precision in the
+computation, a second script,
 \href{auxiliary/agm-big-float.jl}{\texttt{agm-big-float.jl}} was also
 executed. These results now agree to 19 decimal papers with those in the
 paper.\footnote{Spare a thought for Gauss and his painstaking hand
@@ -1339,18 +1344,30 @@ n a_n                         g_n
 5 1.1981402347355922074399225 1.1981402347355922074399225
 \end{verbatim}
 
-Two points about the AGM are worth noting. First, it has been proven
-that both \(a_n\) and \(g_n\) converge to the \emph{same} value. Second,
-the convergence is rapid and happens within a few iterations
-{[}\citeproc{ref-pi-and-the-agm}{35}{]}. The AGM is therefore a valuable
-tool for estimating mathematical constants to high accuracy in a few
-steps, if such relationships exist and can be proved.
+So, we may assert:
+\begin{equation}\phantomsection\label{eq:agm-root2-one}{
+M(\sqrt{2}, 1) = 1.1981402347355922074399225.
+}\end{equation}
 
-Now, Gauss was experimenting with the AGM of the numbers \(1\) and
-\(\sqrt{2}\) and \(M(1, \sqrt{2}) = XXXX\). Imagine Gauss's surprise
-when he discovered that \(\frac{\varpi}{\pi}\) and \(M(1, \sqrt{2})\)
-agreed to eleven decimal places! He was just 14 years old, and he noted
-in his diary:
+Comparing \cref{eq:pi-varpi-ratio} and \cref{eq:agm-root2-one} it is
+clear that their numerical results agree up to the sixteenth decimal
+place. The fact that two computations from two very different
+directions---mathematically speaking---have led to the same result, is
+unexpected to say the least. Gauss was astounded. But unlike most
+people, he went on to \emph{prove} that the two expressions on the left
+hand side of these equations are indeed equal not just numerically, but
+indeed mathematically, i.e.,
+\begin{equation}\phantomsection\label{eq:ratio-agm}{
+\frac{\pi}{\varpi} = M(\sqrt{2}, 1)
+}\end{equation} The astute reader would have no riced that the AGM
+converges rapidly {[}\citeproc{ref-pi-and-the-agm}{35}{]}. It is
+therefore a valuable tool for estimating mathematical constants to high
+accuracy in a few steps, if such relationships do exist and can be
+proved. And this was the great insight that resulted from Gauss's
+investigation {[}\citeproc{ref-pi-and-the-agm}{35}{]}.
+
+Gauss wrote in his diary in 1799, after he verified \cref{eq:ratio-agm},
+this entry (translated from the Latin into English):
 
 \begin{quote}
 We have established that the arithmetic-geometric mean between \(1\) and
@@ -1360,44 +1377,44 @@ analysis. {[}\citeproc{ref-cox-1984}{32}{]}
 \end{quote}
 
 Simply discovering an uncanny agreement between two ways of stating the
-same thing does not make for good mathematics. Gauss went on to
-\emph{prove} that the AGM and elliptic integrals were indeed related and
-equal {[}\citeproc{ref-singh-2009}{36}{]}. That \emph{proof} is what
-makes him a great mathematician, and his discovery, great mathematics.
-And in the process, he enriched mathematics itself.
+same thing does not necessarily make for good mathematics. But Gauss
+went on to \emph{prove} that an AGM and an elliptic integral were indeed
+related and equal {[}\citeproc{ref-singh-2009}{36}{]}. That \emph{proof}
+is what makes him a great mathematician, and his discovery, great
+mathematics. And in the process, he enriched mathematics itself.
 
-One wonders why Gauss used computed the AGM of \(1\) and \(\sqrt{2}\).
-Does chance really favour the prepared mind and guide one to choose
-randomly but with uncanny prescience, something that heralds a
-discovery? Like Alexander Fleming and penicillin?
+\subsubsection{Why but O! why?}\label{why-but-o-why}
+
+One wonders why Gauss chose \(\sqrt{2}\) and \(1\) as his arguments for
+the AGM. It was that choice that led to the serendipitous equality to
+the ratio \(\frac{\pi}{\varpi}\). Does chance only favour the prepared
+mind {[}\citeproc{ref-chance}{37}{]}, and guide it to choose randomly,
+but with uncanny prescience, something that heralds a discovery? Like
+Alexander Fleming and penicillin {[}\citeproc{ref-penicillin}{38}{]}?
 
 Unexpected links between different mathematical sub-fields are
 discovered by mathematicians who experiment and keenly observe their
-results. One is reminded here of James Clerk Maxwell boldly asserting
-that light is an electromagnetic wave simply on the basis of the
-measured speed of light and radio waves. Such leaps of the imagination
-guided by intuition and logic are responsible for major discoveries in
-science and mathematics.
-
-The path Gauss
-
-https://paramanands.blogspot.com/2009/08/pi-and-the-agm-gauss-brent-salamin-formula.html
-
-https://paramanands.blogspot.com/2009/08/arithmetic-geometric-mean-of-gauss.html
-
-https://paramanands.blogspot.com/2009/08/pi-and-the-agm-introduction-to-elliptic-integrals.html
-
-https://maths-people.anu.edu.au/\textasciitilde brent/pd/JBCC-Brent.pdf
-
-https://www.nas.ewi.tudelft.nl/people/Piet/papers/TUD20230605\_arithmetic\_geometric\_mean.pdf
-
-https://mattbaker.blog/2024/03/14/pi-and-the-agm/
-
-https://ia800704.us.archive.org/view\_archive.php?archive=/24/items/wikipedia-scholarly-sources-corpus/10.2307\%252F2287541.zip\&file=10.2307\%252F2323302.pdf\#:\textasciitilde:text=The\%20arithmetic-geometric\%20mean\%20was\%20first\%20discovered\%20by\%20Lagrange,integral\%20representation\%2C\%20were\%20made\%20about\%207-9\%20years\%20later.
+results. One is reminded here also of James Clerk Maxwell boldly
+asserting that he could ``scarcely avoid the inference that light
+consists in the transverse undulations of the same medium which is the
+cause of electric and magnetic phenomena,'' upon realizing that the
+speed of electromagnetic waves and those of light were close
+{[}\citeproc{ref-maxwell}{39}{]}. Such leaps of the imagination guided
+by intuition, logic, and discipline are responsible for major
+discoveries in science and mathematics.
 
 \subsection{Ramanujan}\label{ramanujan}
 
+If ever there were to be a mathematician par excellence, whose insights
+and discoveries are wrapped in inscrutable leaps of the imagination, it
+is \href{}{Srinivasa Ramanujan}. He is reputed to have said that an
+``equation has no meaning for me unless it embodies a thought of God.''
+And he was indeed in communion with God as hios personal deity, the
+Goddess Namagiri.
+
 \subsection{The Chudnovskys}\label{the-chudnovskys}
+
+\subsection{Buffon's Needle}\label{buffons-needle}
 
 \subsection{Resources for Enrichment}\label{resources-for-enrichment}
 
@@ -1407,7 +1424,7 @@ How
 \href{https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin-Louis
 Cauchy} solved the Basel Problem is clearly laid out and explained in
 \href{https://www.youtube.com/watch?v=2jgtAo3Ztf}{this mesmerizing Rise
-to the Equation YouTube video} {[}\citeproc{ref-cauchy-basel}{37}{]}.
+to the Equation YouTube video} {[}\citeproc{ref-cauchy-basel}{40}{]}.
 The explanation in this video should be clear to a high school student
 who has encountered trigonometry but not calculus.
 
@@ -1676,8 +1693,28 @@ Complexity}}. John Wiley \& Sons.}
 Gauss}. Retrieved 10 December 2024 from
 \url{https://paramanands.blogspot.com/2009/08/arithmetic-geometric-mean-of-gauss.html?m=0}}
 
-\bibitem[\citeproctext]{ref-cauchy-basel}
+\bibitem[\citeproctext]{ref-chance}
 \CSLLeftMargin{{[}37{]} }%
+\CSLRightInline{Louis Pasteur. 2024. {In the fields of observation
+chance favours only the prepared mind}. {Lecture, University of Lille
+1854-12-07}. Retrieved 12 December 2024 from
+\url{https://en.wikiquote.org/wiki/Louis_Pasteur\#}}
+
+\bibitem[\citeproctext]{ref-penicillin}
+\CSLLeftMargin{{[}38{]} }%
+\CSLRightInline{---. 2022. {Discovery and Development of Penicillin}.
+{American Chemical Society International Historic Chemical Landmarks}.
+Retrieved 12 December 2024 from
+\url{https://www.acs.org/education/whatischemistry/landmarks/flemingpenicillin.html}}
+
+\bibitem[\citeproctext]{ref-maxwell}
+\CSLLeftMargin{{[}39{]} }%
+\CSLRightInline{Cyril Domb. 2024. {Later life of James Clerk Maxwell}.
+Retrieved 12 December 2024 from
+\url{https://www.britannica.com/biography/James-Clerk-Maxwell/Later-life}}
+
+\bibitem[\citeproctext]{ref-cauchy-basel}
+\CSLLeftMargin{{[}40{]} }%
 \CSLRightInline{Rise to the Equation. 2021. {Cauchy's Proof of the Basel
 Problem \textbar{} Pi Squared Over Six}. {3blue1brown SoME1 Entry}.
 Retrieved 1 December 2024 from

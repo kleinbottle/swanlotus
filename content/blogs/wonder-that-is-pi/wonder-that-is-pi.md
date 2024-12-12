@@ -534,8 +534,9 @@ $$
 The value of the RHS could be computed from first principles, and thus the ratio was known numerically. It is:
 $$
 \frac{\pi}{\varpi} \approx \frac{3.141592653589793}{2.622057554292119} \approx 1.198140234735592.
-$$
- We take a look at the third piece of the puzzle, the AGM, before resuming our mathematical tale.
+$${#eq:pi-varpi-ratio}
+
+We will now take a look at the third piece of the puzzle, the AGM, before resuming our mathematical tale.
 
 ### The Arithmetic-Geometric Mean
 
@@ -544,9 +545,9 @@ $$
 a_{n+1} = \frac{a_n + g_n}{2}\\
 g_{n+1} = \sqrt{a_n g_n}
 $$
-As $n$ increases, the values $a_n$ and $g_n$ converge to a common value within a few iterations. This common value is the _arithmetic-geometric mean_, denoted as $M(a_0, g_0)$.
+As $n$ increases, the values $a_n$ and $g_n$ converge to a common value within a few iterations. This common value is the _arithmetic-geometric mean_, denoted as $M(a_0, g_0)$. It has been proved that both $a_n$ and $g_n$ converge to the _same_ value denoted by $M(a_0, g_0)$. [XXX]
 
-For reasons best known to him, Gauss decided to compute the AGM of the numbers, $a_0 = \sqrt{2}$ and $g_0 = 1$. Let us follow in the footsteps of Gauss:
+For reasons best known to him, Gauss chose to compute the AGM of the numbers, $a_0 = \sqrt{2}$ and $g_0 = 1$. Let us follow in the footsteps of Gauss:
 $$
 \begin{aligned}
 a_1 = \frac{a_0 + g_0}{2} = \frac{\sqrt{2} + 1}{2} = 1.207106\\
@@ -564,7 +565,7 @@ n a_n                         g_n
 3 1.1981402347938772123825402 1.1981402346773073475105775
 4 1.1981402347355922799465588 1.1981402347355922799465588
 ```
-When the above values are compared with those tabulated in Example 2 of the paper by Cox [@cox-1984], there are discrepancies after 16 decimal places. To check whether better agreement can be achieved by using greater numerical precision in the computation, a second script, [`agm-big-float.jl`]({attach}auxiliary/agm-big-float.jl) was also executed. These results now agree to 19 decimal papers with those in the paper.^[Spare a thought for Gauss and his painstaking hand calculation to compute values to 11 decimal places.]
+When the above values are compared with those tabulated in Example 2 of the paper by Cox [@cox-1984], there are discrepancies after 16 decimal places. To check whether better agreement could be achieved by using greater numerical precision in the computation, a second script, [`agm-big-float.jl`]({attach}auxiliary/agm-big-float.jl) was also executed. These results now agree to 19 decimal papers with those in the paper.^[Spare a thought for Gauss and his painstaking hand calculation to compute values to 11 decimal places.]
 
 ```
 n a_n                         g_n
@@ -575,47 +576,36 @@ n a_n                         g_n
 4 1.1981402347355922074406313 1.1981402347355922074392137
 5 1.1981402347355922074399225 1.1981402347355922074399225
 ```
+So, we may assert:
+$$
+M(\sqrt{2}, 1) = 1.1981402347355922074399225.
+$${#eq:agm-root2-one}
 
-Two points about the AGM are worth noting. First, it has been proven that both $a_n$ and $g_n$ converge to the _same_ value. Second, the convergence is rapid and happens within a few iterations [@pi-and-the-agm]. The AGM is therefore a valuable tool for estimating mathematical constants to high accuracy in a few steps, if such relationships exist and can be proved.
+Comparing [@eq:pi-varpi-ratio] and [@eq:agm-root2-one] it is clear that their numerical results agree up to the sixteenth decimal place. The fact that two computations from two very different directions---mathematically speaking---have led to the same result, is unexpected to say the least. Gauss was astounded. But unlike most people, he went on to _prove_ that the two expressions on the left hand side of these equations are indeed equal not just numerically, but indeed mathematically, i.e.,
+$$
+\frac{\pi}{\varpi} = M(\sqrt{2}, 1)
+$${#eq:ratio-agm}
+The astute reader would have no riced that the AGM converges rapidly [@pi-and-the-agm]. It is therefore a valuable tool for estimating mathematical constants to high accuracy in a few steps, if such relationships do exist and can be proved. And this was the great insight that resulted from Gauss's investigation [@pi-and-the-agm].
 
-Now, Gauss was experimenting with the AGM of the numbers $1$ and $\sqrt{2}$ and $M(1, \sqrt{2}) = XXXX$.
-Imagine Gauss's surprise when he discovered that $\frac{\varpi}{\pi}$ and $M(1, \sqrt{2})$ agreed to eleven decimal places! He was just 14 years old, and he noted in his diary:
+Gauss wrote in his diary in 1799, after he verified [@eq:ratio-agm], this entry (translated from the Latin into English):
 
 >We have established that the arithmetic-geometric mean between $1$ and $\sqrt{2}$ is $\frac{\pi}{\varpi}$ to the eleventh decimal place; the demonstration of this fact will surely open an entirely new field of analysis. [@cox-1984]
 
-Simply discovering an uncanny agreement between two ways of stating the same thing does not make for good mathematics. Gauss went on to _prove_ that the AGM and elliptic integrals were indeed related and equal [@singh-2009]. That _proof_ is what makes him a great mathematician, and his discovery, great mathematics. And in the process, he enriched mathematics itself.
+Simply discovering an uncanny agreement between two ways of stating the same thing does not necessarily make for good mathematics. But Gauss went on to _prove_ that an AGM and an elliptic integral were indeed related and equal [@singh-2009]. That _proof_ is what makes him a great mathematician, and his discovery, great mathematics. And in the process, he enriched mathematics itself.
 
-One wonders why Gauss used computed the AGM of $1$ and $\sqrt{2}$. Does chance really favour the prepared mind and guide one to choose randomly but with uncanny prescience, something that heralds a discovery? Like Alexander Fleming and penicillin?
+### Why but O! why?
 
-Unexpected links between different mathematical sub-fields are discovered by mathematicians who experiment and keenly observe their results. One is reminded here of James Clerk Maxwell boldly asserting that light is an electromagnetic wave simply on the basis of the measured speed of light and radio waves. Such leaps of the imagination guided by intuition and logic are responsible for major discoveries in science and mathematics.
+One wonders why Gauss chose $\sqrt{2}$ and $1$ as his arguments for the AGM. It was that choice that led to the serendipitous equality to the ratio $\frac{\pi}{\varpi}$. Does chance only favour the prepared mind [@chance], and guide it to choose randomly, but with uncanny prescience, something that heralds a discovery? Like Alexander Fleming and penicillin [@penicillin]?
 
-
-
-The path Gauss 
-
-https://paramanands.blogspot.com/2009/08/pi-and-the-agm-gauss-brent-salamin-formula.html
-
-https://paramanands.blogspot.com/2009/08/arithmetic-geometric-mean-of-gauss.html
-
-https://paramanands.blogspot.com/2009/08/pi-and-the-agm-introduction-to-elliptic-integrals.html
-
-https://maths-people.anu.edu.au/~brent/pd/JBCC-Brent.pdf
-
-
-https://www.nas.ewi.tudelft.nl/people/Piet/papers/TUD20230605_arithmetic_geometric_mean.pdf
-
-
-https://mattbaker.blog/2024/03/14/pi-and-the-agm/
-
-https://ia800704.us.archive.org/view_archive.php?archive=/24/items/wikipedia-scholarly-sources-corpus/10.2307%252F2287541.zip&file=10.2307%252F2323302.pdf#:~:text=The%20arithmetic-geometric%20mean%20was%20first%20discovered%20by%20Lagrange,integral%20representation%2C%20were%20made%20about%207-9%20years%20later.
-
-
-
-
+Unexpected links between different mathematical sub-fields are discovered by mathematicians who experiment and keenly observe their results. One is reminded here also of James Clerk Maxwell boldly asserting that he could “scarcely avoid the inference that light consists in the transverse undulations of the same medium which is the cause of electric and magnetic phenomena,” upon realizing that the speed of electromagnetic waves and those of light were close [@maxwell]. Such leaps of the imagination guided by intuition, logic, and discipline are responsible for major discoveries in science and mathematics.
 
 ## Ramanujan
 
+If ever there were to be a mathematician par excellence, whose insights and discoveries are wrapped in inscrutable leaps of the imagination, it is [Srinivasa Ramanujan](). He is reputed to have said that an "equation has no meaning for me unless it embodies a thought of God." And he was indeed in communion with God as hios personal deity, the Goddess Namagiri.
+
 ## The Chudnovskys
+
+## Buffon's Needle
 
 ## Resources for Enrichment
 

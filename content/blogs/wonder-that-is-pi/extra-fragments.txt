@@ -339,3 +339,20 @@ file:///mnt/storage/Books/Teacher-Notes-and-Solutions.pdf
 
 
 file:///mnt/storage/Books/Newtons-Approximation-to-Pi.pdf
+
+https://paramanands.blogspot.com/2009/08/pi-and-the-agm-gauss-brent-salamin-formula.html
+
+https://paramanands.blogspot.com/2009/08/arithmetic-geometric-mean-of-gauss.html
+
+https://paramanands.blogspot.com/2009/08/pi-and-the-agm-introduction-to-elliptic-integrals.html
+
+https://maths-people.anu.edu.au/~brent/pd/JBCC-Brent.pdf
+
+
+https://www.nas.ewi.tudelft.nl/people/Piet/papers/TUD20230605_arithmetic_geometric_mean.pdf
+
+
+https://mattbaker.blog/2024/03/14/pi-and-the-agm/
+
+https://ia800704.us.archive.org/view_archive.php?archive=/24/items/wikipedia-scholarly-sources-corpus/10.2307%252F2287541.zip&file=10.2307%252F2323302.pdf#:~:text=The%20arithmetic-geometric%20mean%20was%20first%20discovered%20by%20Lagrange,integral%20representation%2C%20were%20made%20about%207-9%20years%20later.
+
