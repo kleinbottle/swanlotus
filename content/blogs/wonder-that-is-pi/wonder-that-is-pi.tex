@@ -1247,7 +1247,7 @@ that \[
 \] This implies that:
 \begin{equation}\phantomsection\label{eq:pi-circle}{
 \begin{aligned}
-\pi &= 2\int_0^1 \frac{1}{\sqrt{1 - x^2}}\;\mathrm{d}x.
+\pi &= 2\int_0^1 \frac{1}{\sqrt{1 - x^2}}\;\mathrm{d}x \approx 3.141592653589793.
 \end{aligned}
 }\end{equation} The RHS of equation \cref{eq:pi-circle} can be
 interpreted as the ratio of the perimeter of a unit circle to its
@@ -1257,7 +1257,7 @@ For the Lemniscate of Bernoulli, the ratio of the perimeter to the
 diameter (akin to \(\pi\) for a circle) is:
 \begin{equation}\phantomsection\label{eq:varpi-lemniscate}{
 \begin{aligned}
-\varpi = 2\int_0^1 \frac{1}{\sqrt{1 - x^4}}\;\mathrm{d}x.
+\varpi = 2\int_0^1 \frac{1}{\sqrt{1 - x^4}}\;\mathrm{d}x \approx 2.622057554292119.
 \end{aligned}
 }\end{equation} The symbol \(\varpi\) is the
 \href{https://en.wikipedia.org/wiki/Lemniscate_constant}{lemniscate
@@ -1272,12 +1272,14 @@ integral of the first kind}}.
 The family resemblance in these two equations---\cref{eq:pi-circle} and
 \cref{eq:varpi-lemniscate}---is striking, and Gauss looked at their
 ratio: \[
-\displaystyle\frac{\varpi}{\pi} = \frac{2\displaystyle\int_0^1 \frac{1}{\sqrt{1 - x^4}}\;\mathrm{d}x}{2\displaystyle\int_0^1 \frac{1}{\sqrt{1 - x^2}}\;\mathrm{d}x}.
+\displaystyle\frac{\pi}{\varpi} = \frac{2\displaystyle\int_0^1 \frac{1}{\sqrt{1 - x^2}}\;\mathrm{d}x}{2\displaystyle\int_0^1 \frac{1}{\sqrt{1 - x^4}}\;\mathrm{d}x}.
 \]
 
 The value of the RHS could be computed from first principles, and thus
-the ratio was known numerically. We take a look at the third piece of
-the puzzle before resuming our mathematical tale.
+the ratio was known numerically. It is: \[
+\frac{\pi}{\varpi} \approx \frac{3.141592653589793}{2.622057554292119} \approx 1.198140234735592.
+\] We take a look at the third piece of the puzzle, the AGM, before
+resuming our mathematical tale.
 
 \subsubsection{The Arithmetic-Geometric
 Mean}\label{the-arithmetic-geometric-mean}

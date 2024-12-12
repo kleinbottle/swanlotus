@@ -511,7 +511,7 @@ $$
 This implies that:
 $$
 \begin{aligned}
-\pi &= 2\int_0^1 \frac{1}{\sqrt{1 - x^2}}\;\mathrm{d}x.
+\pi &= 2\int_0^1 \frac{1}{\sqrt{1 - x^2}}\;\mathrm{d}x \approx 3.141592653589793.
 \end{aligned}
 $${#eq:pi-circle}
 The RHS of equation [@eq:pi-circle] can be interpreted as the ratio of the perimeter of a unit circle to its diameter.
@@ -519,7 +519,7 @@ The RHS of equation [@eq:pi-circle] can be interpreted as the ratio of the perim
 For the Lemniscate of Bernoulli, the ratio of the perimeter to the diameter (akin to $\pi$ for a circle) is:
 $$
 \begin{aligned}
-\varpi = 2\int_0^1 \frac{1}{\sqrt{1 - x^4}}\;\mathrm{d}x.
+\varpi = 2\int_0^1 \frac{1}{\sqrt{1 - x^4}}\;\mathrm{d}x \approx 2.622057554292119.
 \end{aligned}
 $${#eq:varpi-lemniscate}
 The symbol $\varpi$ is the [lemniscate constant $\varpi$](https://en.wikipedia.org/wiki/Lemniscate_constant) and is really a variant of the lowercase Greek $\pi$.
@@ -528,10 +528,14 @@ Note that the integral on the RHS of [@eq:varpi-lemniscate] is called an [_ellip
 
 The family resemblance in these two equations---[@eq:pi-circle] and [@eq:varpi-lemniscate]---is striking, and Gauss looked at their ratio:
 $$
-\displaystyle\frac{\varpi}{\pi} = \frac{2\displaystyle\int_0^1 \frac{1}{\sqrt{1 - x^4}}\;\mathrm{d}x}{2\displaystyle\int_0^1 \frac{1}{\sqrt{1 - x^2}}\;\mathrm{d}x}.
+\displaystyle\frac{\pi}{\varpi} = \frac{2\displaystyle\int_0^1 \frac{1}{\sqrt{1 - x^2}}\;\mathrm{d}x}{2\displaystyle\int_0^1 \frac{1}{\sqrt{1 - x^4}}\;\mathrm{d}x}.
 $$
 
-The value of the RHS could be computed from first principles, and thus the ratio was known numerically. We take a look at the third piece of the puzzle before resuming our mathematical tale.
+The value of the RHS could be computed from first principles, and thus the ratio was known numerically. It is:
+$$
+\frac{\pi}{\varpi} \approx \frac{3.141592653589793}{2.622057554292119} \approx 1.198140234735592.
+$$
+ We take a look at the third piece of the puzzle, the AGM, before resuming our mathematical tale.
 
 ### The Arithmetic-Geometric Mean
 
