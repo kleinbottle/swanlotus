@@ -1299,7 +1299,8 @@ g_{n+1} = \sqrt{a_n g_n}
 common value within a few iterations. This common value is the
 \emph{arithmetic-geometric mean}, denoted as \(M(a_0, g_0)\). It has
 been proved that both \(a_n\) and \(g_n\) converge to the \emph{same}
-value denoted by \(M(a_0, g_0)\). {[}XXX{]}
+value denoted by \(M(a_0, g_0)\).
+{[}\citeproc{ref-cox-1984}{32},\citeproc{ref-pi-and-the-agm}{35}{]}
 
 For reasons best known to him, Gauss chose to compute the AGM of the
 numbers, \(a_0 = \sqrt{2}\) and \(g_0 = 1\). Let us follow in the
@@ -1397,24 +1398,86 @@ discovered by mathematicians who experiment and keenly observe their
 results. One is reminded here also of James Clerk Maxwell boldly
 asserting that he could ``scarcely avoid the inference that light
 consists in the transverse undulations of the same medium which is the
-cause of electric and magnetic phenomena,'' upon realizing that the
-speed of electromagnetic waves and those of light were close
-{[}\citeproc{ref-maxwell}{39}{]}. Such leaps of the imagination guided
-by intuition, logic, and discipline are responsible for major
-discoveries in science and mathematics.
+cause of electric and magnetic phenomena,''
+{[}\citeproc{ref-maxwell}{39}{]} upon realizing that the speed of
+electromagnetic waves and those of light were close. Such leaps of the
+imagination guided by intuition, logic, and discipline are responsible
+for major discoveries in science and mathematics.
+
+I would like to conclude this section on Gauss's contributions to
+\(\pi\) by stating a \emph{three-term} Machin-like formula that he
+bequeathed to mathematics:
+\begin{equation}\phantomsection\label{eq:gauss-machin}{
+\frac{\pi}{4} = \arctan \left[\frac{1}{2}\right] + \arctan \left[\frac{1}{5}\right] + \arctan \left[\frac{1}{8}\right]
+}\end{equation} How in Heaven's name did he stumble upon it? Or was he
+directed by an inner logic that he has hidden from his published
+persona?\footnote{If any reader can throw light on how the two-term and
+  three-term Machin-like formulae were derived, please
+  \href{mailto:feedback.swanlotus@gmail.com}{email me} your insights.
+  Many thanks.}
 
 \subsection{Ramanujan}\label{ramanujan}
 
 If ever there were to be a mathematician par excellence, whose insights
 and discoveries are wrapped in inscrutable leaps of the imagination, it
-is \href{}{Srinivasa Ramanujan}. He is reputed to have said that an
-``equation has no meaning for me unless it embodies a thought of God.''
-And he was indeed in communion with God as hios personal deity, the
-Goddess Namagiri.
+is \href{https://en.wikipedia.org/wiki/Srinivasa_Ramanujan}{Srinivasa
+Ramanujan}. He is reputed to have said ``An equation for me has no
+meaning unless it expresses a thought of God''
+{[}\citeproc{ref-kanigel-1992}{40}{]}. And indeed, he alluded to
+communion with God---as his personal deity, the Goddess Namagiri---who
+``would write the equations on his tongue\ldots{} {[}and{]} \ldots{}
+bestow mathematical insights in his dreams''
+{[}\citeproc{ref-kanigel-1992}{40}{]}.
+
+Among the countless formulae for \(\pi\) may be mentioned one, due to
+Ramanujan, which is so \emph{unusual} that one wonders how it was ever
+derived in the first place:
+\begin{equation}\phantomsection\label{eq:ramanujan-pi}{
+\frac{1}{\pi} = \frac{\sqrt 8}{9801}\sum_{n = 0}^{\infty}%
+\frac{(4n)!\left[ 1103 + 26390n \right]}{(n!)^4 396^{4n}}
+}\end{equation} Was it another gift from the Goddess Namagiri?
 
 \subsection{The Chudnovskys}\label{the-chudnovskys}
 
 \subsection{Buffon's Needle}\label{buffons-needle}
+
+In the
+\href{https://swanlotus.netlify.app/blogs/the-pi-of-archimedes}{previous}
+and this blog, we have seen the relationship between \(\pi\) and
+geometry, and between \(\pi\) and trigonometry. Such a relationship is
+not unexpected, for we may mataphorically say that \(\pi\) has its
+``home'' in the circle, and is ``neighbours with'' trigonometric
+functions, which are also called \emph{circular functions}. Even its
+link with infinite series may be justified as an extension of these
+relationships. But how indeed does \(\pi\) enter the domain of
+probability?
+
+\href{https://en.wikipedia.org/wiki/Georges-Louis_Leclerc,_Comte_de_Buffon}{Georges-Louis
+Leclerc, Comte de Buffon} was a French naturalist of the eighteenth
+century. Although his academic contributions were largely in the domain
+of the life sciences, he is today probably most well-remembered for
+proposing and solving the problem that goes by his name:
+\href{https://en.wikipedia.org/wiki/Buffon\%27s_needle_problem}{Buffon's
+needle problem}. It is a probabilistic method for determining the value
+of \(\pi\), and antedates modern \emph{Monte Carlo} simulations on
+computers.
+
+Buffon's Needle problem may be posed thus. Consider a needle of length
+\(\ell\) that is thrown at random on a floor that has parallel lines
+spaced \(d > \ell\) apart. What is the probability that the needle will
+touch or cross one of the lines? We may assume that the needle's
+position and its orientation, when it lands, are both independent, and
+random.
+
+This problem may be solved elegantly using knowledge of trigonometry and
+the integral calculus. First we draw a diagram of how the needle may
+fall with respect to a \emph{single} line, as shown in
+Figure\textasciitilde{}\ref{fig:buffon}. It is important to realize that
+the analysis with respect to a single line suffices. This sort of
+\emph{problem
+abstraction} or \emph{modelling} is an important skill you should
+acquire as engineers, because it helps focus on the essentials, and in
+the process usually simplifies the solution of the problem.
 
 \subsection{Resources for Enrichment}\label{resources-for-enrichment}
 
@@ -1424,7 +1487,7 @@ How
 \href{https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin-Louis
 Cauchy} solved the Basel Problem is clearly laid out and explained in
 \href{https://www.youtube.com/watch?v=2jgtAo3Ztf}{this mesmerizing Rise
-to the Equation YouTube video} {[}\citeproc{ref-cauchy-basel}{40}{]}.
+to the Equation YouTube video} {[}\citeproc{ref-cauchy-basel}{41}{]}.
 The explanation in this video should be clear to a high school student
 who has encountered trigonometry but not calculus.
 
@@ -1438,11 +1501,21 @@ vdeo}.
 quality educational videos on Mathematics and are an authoritative
 source of enrichment. Do benefit from them.
 
-\subsection{Gauss}\label{gauss}
+\subsubsection{Gauss}\label{gauss}
 
 An \href{https://www.youtube.com/watch?v=LmmyAOkajVM}{excellent
 biography of Carl Gauss} is available on YouTube
 {[}\citeproc{ref-gauss-bio}{29}{]}. I highly recommend watching it.
+
+\subsubsection{Ramanujan}\label{ramanujan-1}
+
+One thread runs through this blog: mathematics is one interrelated
+structure in which the most unlikely connections between its disparate
+parts are a natural consequence of its inherent integrity. A delightful
+article on this idea, using Ramanujan's work as its thematic
+centrepiece, is
+\href{https://www.quantamagazine.org/srinivasa-ramanujan-was-a-genius-math-is-still-catching-up-20241021/}{available
+online} {[}\citeproc{ref-ramanujan-quanta}{42}{]}.
 
 \subsection{Conclusion}\label{conclusion}
 
@@ -1713,12 +1786,24 @@ Retrieved 12 December 2024 from
 Retrieved 12 December 2024 from
 \url{https://www.britannica.com/biography/James-Clerk-Maxwell/Later-life}}
 
-\bibitem[\citeproctext]{ref-cauchy-basel}
+\bibitem[\citeproctext]{ref-kanigel-1992}
 \CSLLeftMargin{{[}40{]} }%
+\CSLRightInline{Robert Kanigel. 1992. \emph{{The Man Who New Infinity}:
+{A Life Of The Genius Ramanujan}}. {Washington Square Press}.}
+
+\bibitem[\citeproctext]{ref-cauchy-basel}
+\CSLLeftMargin{{[}41{]} }%
 \CSLRightInline{Rise to the Equation. 2021. {Cauchy's Proof of the Basel
 Problem \textbar{} Pi Squared Over Six}. {3blue1brown SoME1 Entry}.
 Retrieved 1 December 2024 from
 \url{https://www.youtube.com/watch?v=2jgtAo3ZtfI}}
+
+\bibitem[\citeproctext]{ref-ramanujan-quanta}
+\CSLLeftMargin{{[}42{]} }%
+\CSLRightInline{Jordana Cepelwicz. 2024. {Math Is Still Catching Up to
+the Mysterious Genius of Srinivasa Ramanujan}. {Quanta Magazine}.
+Retrieved 12 December 2024 from
+\url{https://www.quantamagazine.org/srinivasa-ramanujan-was-a-genius-math-is-still-catching-up-20241021/}}
 
 \end{CSLReferences}
 

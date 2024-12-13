@@ -465,7 +465,6 @@ This is the mind-twisting paradox of infinity. I like to think that _infinity is
 
 Thus Euler not only gave us another way of computing $\pi$, but he also showed how elegantly the rationals could dovetail into the irrationals in entirely surprising ways, whenever infinity is involved.
 
-
 ## Gauss, the AGM, and π
 
 Gauss was a precocious mathematician [@gauss-bio] who published his groundbreaking wok only when it met his standards for terse beauty. Accordingly, many of his contributions became public only many decades after his demise. The material in this section belongs to that category.
@@ -545,7 +544,7 @@ $$
 a_{n+1} = \frac{a_n + g_n}{2}\\
 g_{n+1} = \sqrt{a_n g_n}
 $$
-As $n$ increases, the values $a_n$ and $g_n$ converge to a common value within a few iterations. This common value is the _arithmetic-geometric mean_, denoted as $M(a_0, g_0)$. It has been proved that both $a_n$ and $g_n$ converge to the _same_ value denoted by $M(a_0, g_0)$. [XXX]
+As $n$ increases, the values $a_n$ and $g_n$ converge to a common value within a few iterations. This common value is the _arithmetic-geometric mean_, denoted as $M(a_0, g_0)$. It has been proved that both $a_n$ and $g_n$ converge to the _same_ value denoted by $M(a_0, g_0)$. [@cox-1984;@pi-and-the-agm]
 
 For reasons best known to him, Gauss chose to compute the AGM of the numbers, $a_0 = \sqrt{2}$ and $g_0 = 1$. Let us follow in the footsteps of Gauss:
 $$
@@ -597,15 +596,42 @@ Simply discovering an uncanny agreement between two ways of stating the same thi
 
 One wonders why Gauss chose $\sqrt{2}$ and $1$ as his arguments for the AGM. It was that choice that led to the serendipitous equality to the ratio $\frac{\pi}{\varpi}$. Does chance only favour the prepared mind [@chance], and guide it to choose randomly, but with uncanny prescience, something that heralds a discovery? Like Alexander Fleming and penicillin [@penicillin]?
 
-Unexpected links between different mathematical sub-fields are discovered by mathematicians who experiment and keenly observe their results. One is reminded here also of James Clerk Maxwell boldly asserting that he could “scarcely avoid the inference that light consists in the transverse undulations of the same medium which is the cause of electric and magnetic phenomena,” upon realizing that the speed of electromagnetic waves and those of light were close [@maxwell]. Such leaps of the imagination guided by intuition, logic, and discipline are responsible for major discoveries in science and mathematics.
+Unexpected links between different mathematical sub-fields are discovered by mathematicians who experiment and keenly observe their results. One is reminded here also of James Clerk Maxwell boldly asserting that he could “scarcely avoid the inference that light consists in the transverse undulations of the same medium which is the cause of electric and magnetic phenomena,” [@maxwell] upon realizing that the speed of electromagnetic waves and those of light were close. Such leaps of the imagination guided by intuition, logic, and discipline are responsible for major discoveries in science and mathematics.
+
+I would like to conclude this section on Gauss's contributions to $\pi$ by stating a _three-term_ Machin-like formula that he bequeathed to mathematics:
+$$
+\frac{\pi}{4} = \arctan \left[\frac{1}{2}\right] + \arctan \left[\frac{1}{5}\right] + \arctan \left[\frac{1}{8}\right]
+$${#eq:gauss-machin}
+How in Heaven's name did he stumble upon it? Or was he directed by an inner logic that he has hidden from his published persona?^[If any reader can throw light on how the two-term and three-term Machin-like formulae were derived, please [email me](mailto:feedback.swanlotus@gmail.com) your insights. Many thanks.]
 
 ## Ramanujan
 
-If ever there were to be a mathematician par excellence, whose insights and discoveries are wrapped in inscrutable leaps of the imagination, it is [Srinivasa Ramanujan](). He is reputed to have said that an "equation has no meaning for me unless it embodies a thought of God." And he was indeed in communion with God as hios personal deity, the Goddess Namagiri.
+If ever there were to be a mathematician par excellence, whose insights and discoveries are wrapped in inscrutable leaps of the imagination, it is [Srinivasa Ramanujan](https://en.wikipedia.org/wiki/Srinivasa_Ramanujan). He is reputed to have said "An equation for me has no meaning unless it expresses a thought of God" [@kanigel-1992]. And  indeed, he alluded to communion with God---as his personal deity, the Goddess Namagiri---who "would write the equations on his tongue... [and] ... bestow mathematical insights in his dreams" [@kanigel-1992].
+
+Among the countless formulae for $\pi$ may be mentioned one, due to Ramanujan, which is so _unusual_  that one wonders how it was ever derived in the first place:
+$$
+\frac{1}{\pi} = \frac{\sqrt 8}{9801}\sum_{n = 0}^{\infty}%
+\frac{(4n)!\left[ 1103 + 26390n \right]}{(n!)^4 396^{4n}}
+$${#eq:ramanujan-pi}
+Was it another gift from the Goddess Namagiri?
 
 ## The Chudnovskys
 
 ## Buffon's Needle
+
+In [The Pi of Archimedes](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes) and this blog, we have seen the relationship between $\pi$ and geometry and trigonometry.  Such a relationship is not unexpected, for we may metaphorically say that $\pi$ has its "home" in the circle, and is "neighbours with" trigonometric functions, which are also called _circular functions_. Even its link with infinite series may be justified as an extension of these relationships. But how indeed does $\pi$ enter the domain of probability?
+
+[Georges-Louis Leclerc, Comte de Buffon](https://en.wikipedia.org/wiki/Georges-Louis_Leclerc,_Comte_de_Buffon) was a French naturalist of the eighteenth century. Although his academic contributions were largely in the domain of the life sciences, he is today probably most well-remembered for proposing and solving a problem that goes by his name: [Buffon's needle problem](https://en.wikipedia.org/wiki/Buffon%27s_needle_problem).  It is a  probabilistic method for determining the value of $\pi$, and antedates modern [Monte Carlo simulations](https://www.ibm.com/topics/monte-carlo-simulation) on computers.
+
+### Problem statement
+
+The Buffon's Needle problem may be posed thus. Consider a needle of length $\ell$ that is thrown at random on a floor that has parallel lines spaced $d > \ell$ apart. What is the probability that the needle will touch or cross one of the lines? We may assume that the needle's position and its orientation, when it lands, are both independent and random.
+
+This problem may be solved elegantly using knowledge of trigonometry and the integral calculus. First we draw a diagram of how the needle may fall with respect to a _single_ line, as shown in [@fig:needle].
+
+It is important to realize that the analysis with respect to a single line suffices.  This is an instance if _problem abstraction_ or _modelling_ which is an important skill to acquire. It restricts focus to the essentials, and in the process usually simplifies the solution of the problem. For a visual analogy, think of a surgical operation, where the patient is draped in green everywhere, except the site of the operation, and where the bright light is shone on that one area, so that the surgical team may concentrate on it exclusively.
+
+![Diagrammatic depiction of the Buffon's needle problem.]({attach}images/needle.svg){#fig:needle width=70% .modal-target}
 
 ## Resources for Enrichment
 
@@ -617,9 +643,13 @@ Those of you who are puzzled by the appearance of $\pi^2$ in the solution to the
 
 [Veritasium](https://www.youtube.com/@veritasium) and [3Blue1Brown](https://www.youtube.com/c/3blue1brown) put out quality educational videos on Mathematics and are an authoritative source of enrichment. Do benefit from them.
 
-## Gauss
+### Gauss
 
 An [excellent biography of Carl Gauss](https://www.youtube.com/watch?v=LmmyAOkajVM) is available on YouTube [@gauss-bio]. I highly recommend watching it.
+
+### Ramanujan
+
+One thread runs through this blog: mathematics is one interrelated structure in which the most unlikely connections between its disparate parts are a natural consequence of its inherent integrity. A delightful article on this idea, using Ramanujan's work as its thematic centrepiece, is [available online](https://www.quantamagazine.org/srinivasa-ramanujan-was-a-genius-math-is-still-catching-up-20241021/) [@ramanujan-quanta].
 
 ## Conclusion
 
