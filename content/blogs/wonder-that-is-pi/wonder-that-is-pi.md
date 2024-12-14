@@ -606,7 +606,7 @@ How in Heaven's name did he stumble upon it? Or was he directed by an inner logi
 
 ## Ramanujan
 
-If ever there were to be a mathematician par excellence, whose insights and discoveries are wrapped in inscrutable leaps of the imagination, it is [Srinivasa Ramanujan](https://en.wikipedia.org/wiki/Srinivasa_Ramanujan). He is reputed to have said "An equation for me has no meaning unless it expresses a thought of God" [@kanigel-1992]. And  indeed, he alluded to communion with God---as his personal deity, the Goddess Namagiri---who "would write the equations on his tongue... [and] ... bestow mathematical insights in his dreams" [@kanigel-1992].
+If ever there were a mathematician [par excellence](https://www.thefreedictionary.com/par+excellence), whose insights and discoveries are wrapped in inscrutable leaps of the imagination, it is [Srinivasa Ramanujan](https://en.wikipedia.org/wiki/Srinivasa_Ramanujan). He is reputed to have said "An equation for me has no meaning unless it expresses a thought of God" [@kanigel-1992]. And  indeed, he alluded to communion with God---as his personal deity, the Goddess Namagiri---who "would write the equations on his tongue... [and] ... bestow mathematical insights in his dreams" [@kanigel-1992].
 
 Among the countless formulae for $\pi$ may be mentioned one, due to Ramanujan, which is so _unusual_  that one wonders how it was ever derived in the first place:
 $$
@@ -625,13 +625,13 @@ In [The Pi of Archimedes](https://swanlotus.netlify.app/blogs/the-pi-of-archimed
 
 ### Problem statement
 
-The Buffon's Needle problem may be posed thus. Consider a needle of length $\ell$ that is thrown at random on a floor that has parallel lines spaced $d > \ell$ apart. What is the probability that the needle will touch or cross one of the lines? We may assume that the needle's position and its orientation, when it lands, are both independent and random.
+The Buffon's Needle problem may be posed thus. Consider a needle of length $\lambda$ that is thrown at random on a floor that has parallel lines spaced $d > \ell$ apart. What is the probability that the needle will touch or cross one of the lines? We may assume that the needle's position and its orientation, when it lands, are both independent and random.
 
-This problem may be solved elegantly using knowledge of trigonometry and the integral calculus. First we draw a diagram of how the needle may fall with respect to a _single_ line, as shown in [@fig:needle].
+This problem may be solved elegantly using knowledge of trigonometry and the integral calculus. First we draw a diagram of how the needle may fall with respect to a _single_ line, as shown in [@fig:buffon].
+
+![Diagrammatic depiction of the Buffon's needle problem. Parallel lines distance $d$ apart are drawn; the purple line is the one closest to the thrown needle. Now, $d > \lambda$ where $\lambda$ is the length of the needle. The midpoint of the needle is $M$. The experiment is described and explained in the text.]({attach}images/buffon.svg){#fig:buffon width=90% .modal-target}
 
 It is important to realize that the analysis with respect to a single line suffices.  This is an instance if _problem abstraction_ or _modelling_ which is an important skill to acquire. It restricts focus to the essentials, and in the process usually simplifies the solution of the problem. For a visual analogy, think of a surgical operation, where the patient is draped in green everywhere, except the site of the operation, and where the bright light is shone on that one area, so that the surgical team may concentrate on it exclusively.
-
-![Diagrammatic depiction of the Buffon's needle problem.]({attach}images/needle.svg){#fig:needle width=70% .modal-target}
 
 ## Resources for Enrichment
 

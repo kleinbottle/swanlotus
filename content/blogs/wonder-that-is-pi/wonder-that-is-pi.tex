@@ -1418,9 +1418,11 @@ persona?\footnote{If any reader can throw light on how the two-term and
 
 \subsection{Ramanujan}\label{ramanujan}
 
-If ever there were to be a mathematician par excellence, whose insights
-and discoveries are wrapped in inscrutable leaps of the imagination, it
-is \href{https://en.wikipedia.org/wiki/Srinivasa_Ramanujan}{Srinivasa
+If ever there were a mathematician
+\href{https://www.thefreedictionary.com/par+excellence}{par excellence},
+whose insights and discoveries are wrapped in inscrutable leaps of the
+imagination, it is
+\href{https://en.wikipedia.org/wiki/Srinivasa_Ramanujan}{Srinivasa
 Ramanujan}. He is reputed to have said ``An equation for me has no
 meaning unless it expresses a thought of God''
 {[}\citeproc{ref-kanigel-1992}{40}{]}. And indeed, he alluded to
@@ -1441,43 +1443,58 @@ derived in the first place:
 
 \subsection{Buffon's Needle}\label{buffons-needle}
 
-In the
-\href{https://swanlotus.netlify.app/blogs/the-pi-of-archimedes}{previous}
-and this blog, we have seen the relationship between \(\pi\) and
-geometry, and between \(\pi\) and trigonometry. Such a relationship is
-not unexpected, for we may mataphorically say that \(\pi\) has its
-``home'' in the circle, and is ``neighbours with'' trigonometric
-functions, which are also called \emph{circular functions}. Even its
-link with infinite series may be justified as an extension of these
-relationships. But how indeed does \(\pi\) enter the domain of
-probability?
+In \href{https://swanlotus.netlify.app/blogs/the-pi-of-archimedes}{The
+Pi of Archimedes} and this blog, we have seen the relationship between
+\(\pi\) and geometry and trigonometry. Such a relationship is not
+unexpected, for we may metaphorically say that \(\pi\) has its ``home''
+in the circle, and is ``neighbours with'' trigonometric functions, which
+are also called \emph{circular functions}. Even its link with infinite
+series may be justified as an extension of these relationships. But how
+indeed does \(\pi\) enter the domain of probability?
 
 \href{https://en.wikipedia.org/wiki/Georges-Louis_Leclerc,_Comte_de_Buffon}{Georges-Louis
 Leclerc, Comte de Buffon} was a French naturalist of the eighteenth
 century. Although his academic contributions were largely in the domain
 of the life sciences, he is today probably most well-remembered for
-proposing and solving the problem that goes by his name:
+proposing and solving a problem that goes by his name:
 \href{https://en.wikipedia.org/wiki/Buffon\%27s_needle_problem}{Buffon's
 needle problem}. It is a probabilistic method for determining the value
-of \(\pi\), and antedates modern \emph{Monte Carlo} simulations on
-computers.
+of \(\pi\), and antedates modern
+\href{https://www.ibm.com/topics/monte-carlo-simulation}{Monte Carlo
+simulations} on computers.
 
-Buffon's Needle problem may be posed thus. Consider a needle of length
-\(\ell\) that is thrown at random on a floor that has parallel lines
-spaced \(d > \ell\) apart. What is the probability that the needle will
-touch or cross one of the lines? We may assume that the needle's
-position and its orientation, when it lands, are both independent, and
+\subsubsection{Problem statement}\label{problem-statement}
+
+The Buffon's Needle problem may be posed thus. Consider a needle of
+length \(\lambda\) that is thrown at random on a floor that has parallel
+lines spaced \(d > \ell\) apart. What is the probability that the needle
+will touch or cross one of the lines? We may assume that the needle's
+position and its orientation, when it lands, are both independent and
 random.
 
 This problem may be solved elegantly using knowledge of trigonometry and
 the integral calculus. First we draw a diagram of how the needle may
 fall with respect to a \emph{single} line, as shown in
-Figure\textasciitilde{}\ref{fig:buffon}. It is important to realize that
-the analysis with respect to a single line suffices. This sort of
-\emph{problem
-abstraction} or \emph{modelling} is an important skill you should
-acquire as engineers, because it helps focus on the essentials, and in
-the process usually simplifies the solution of the problem.
+\cref{fig:buffon}.
+
+\begin{figure}
+\centering
+\includesvg[width=0.9\textwidth,height=\textheight]{images/buffon.svg}
+\caption{Diagrammatic depiction of the Buffon's needle problem. Parallel
+lines distance \(d\) apart are drawn; the purple line is the one closest
+to the thrown needle. Now, \(d > \lambda\) where \(\lambda\) is the
+length of the needle. The midpoint of the needle is \(M\). The
+experiment is described and explained in the text.}\label{fig:buffon}
+\end{figure}
+
+It is important to realize that the analysis with respect to a single
+line suffices. This is an instance if \emph{problem abstraction} or
+\emph{modelling} which is an important skill to acquire. It restricts
+focus to the essentials, and in the process usually simplifies the
+solution of the problem. For a visual analogy, think of a surgical
+operation, where the patient is draped in green everywhere, except the
+site of the operation, and where the bright light is shone on that one
+area, so that the surgical team may concentrate on it exclusively.
 
 \subsection{Resources for Enrichment}\label{resources-for-enrichment}
 
