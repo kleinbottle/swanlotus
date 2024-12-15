@@ -539,7 +539,7 @@ We will now take a look at the third piece of the puzzle, the AGM, before resumi
 
 ### The Arithmetic-Geometric Mean
 
-The _arithmetic mean_ of two numbers $a_0$ and $g_0$ is $\frac{a_0 + g_0}{2}$ while the _geometric mean_ of these same numbers is $\sqrt{a_0 g_0}$. The arithmetic-geometric mean (AGM) of a pair of numbers is a [_pas de deux_](https://www.thefreedictionary.com/pas+de+deux) of the two numbers obeying the recurrence relation:
+The _arithmetic mean_ of two numbers $a_0$ and $g_0$ is half their sum, $\frac{a_0 + g_0}{2}$, while the _geometric mean_ of these same numbers is the square root of their product, $(a_0g_0)^{\frac{1}{2}} = \sqrt{a_0 g_0}$. The arithmetic-geometric mean (AGM) of a pair of numbers is a [_pas de deux_](https://www.thefreedictionary.com/pas+de+deux) of the two numbers obeying the recurrence relation:
 $$
 a_{n+1} = \frac{a_n + g_n}{2}\\
 g_{n+1} = \sqrt{a_n g_n}
@@ -584,7 +584,7 @@ Comparing [@eq:pi-varpi-ratio] and [@eq:agm-root2-one] it is clear that their nu
 $$
 \frac{\pi}{\varpi} = M(\sqrt{2}, 1)
 $${#eq:ratio-agm}
-The astute reader would have no riced that the AGM converges rapidly [@pi-and-the-agm]. It is therefore a valuable tool for estimating mathematical constants to high accuracy in a few steps, if such relationships do exist and can be proved. And this was the great insight that resulted from Gauss's investigation [@pi-and-the-agm].
+The astute reader would have noticed that the AGM converges rapidly [@pi-and-the-agm]. It is therefore a valuable tool for estimating mathematical constants to high accuracy in a few steps, if such relationships do exist and can be proved. And this was the great insight that resulted from Gauss's investigation [@pi-and-the-agm].
 
 Gauss wrote in his diary in 1799, after he verified [@eq:ratio-agm], this entry (translated from the Latin into English):
 
@@ -596,7 +596,7 @@ Simply discovering an uncanny agreement between two ways of stating the same thi
 
 One wonders why Gauss chose $\sqrt{2}$ and $1$ as his arguments for the AGM. It was that choice that led to the serendipitous equality to the ratio $\frac{\pi}{\varpi}$. Does chance only favour the prepared mind [@chance], and guide it to choose randomly, but with uncanny prescience, something that heralds a discovery? Like Alexander Fleming and penicillin [@penicillin]?
 
-Unexpected links between different mathematical sub-fields are discovered by mathematicians who experiment and keenly observe their results. One is reminded here also of James Clerk Maxwell boldly asserting that he could “scarcely avoid the inference that light consists in the transverse undulations of the same medium which is the cause of electric and magnetic phenomena,” [@maxwell] upon realizing that the speed of electromagnetic waves and those of light were close. Such leaps of the imagination guided by intuition, logic, and discipline are responsible for major discoveries in science and mathematics.
+Unexpected links between different mathematical sub-fields are discovered by mathematicians who experiment and keenly observe their results. One is reminded here also of James Clerk Maxwell boldly asserting that he could "scarcely avoid the inference that light consists in the transverse undulations of the same medium which is the cause of electric and magnetic phenomena," [@maxwell] upon realizing that the speed of electromagnetic waves and those of light were close. Such leaps of the imagination guided by intuition, logic, and discipline are responsible for major discoveries in science and mathematics.
 
 I would like to conclude this section on Gauss's contributions to $\pi$ by stating a _three-term_ Machin-like formula that he bequeathed to mathematics:
 $$
@@ -625,13 +625,89 @@ In [The Pi of Archimedes](https://swanlotus.netlify.app/blogs/the-pi-of-archimed
 
 ### Problem statement
 
-The Buffon's Needle problem may be posed thus. Consider a needle of length $\lambda$ that is thrown at random on a floor that has parallel lines spaced $d > \ell$ apart. What is the probability that the needle will touch or cross one of the lines? We may assume that the needle's position and its orientation, when it lands, are both independent and random.
+The Buffon's Needle problem may be posed thus. Consider a needle of length $\lambda$^[Pronounced  [_lambda_](https://dictionary.cambridge.org/pronunciation/english/lambda), $\lambda$ is the lowercase form of the eleventh letter of the Greek alphabet. It is used here instead of $l$ to avoid confusion with $1$, $l$, and $I$.] that is thrown at random on a floor that has parallel lines spaced $d > \lambda$ apart. What is the probability that the needle will touch or cross one of the lines? We may assume that the needle's position and its orientation, when it lands, are both independent and random.
 
-This problem may be solved elegantly using knowledge of trigonometry and the integral calculus. First we draw a diagram of how the needle may fall with respect to a _single_ line, as shown in [@fig:buffon].
+This problem may be solved elegantly using trigonometry and the integral calculus. First we draw a diagram of how the needle may fall with respect to a pair of lines, as shown in [@fig:buffon].
 
-![Diagrammatic depiction of the Buffon's needle problem. Parallel lines distance $d$ apart are drawn; the purple line is the one closest to the thrown needle. Now, $d > \lambda$ where $\lambda$ is the length of the needle. The midpoint of the needle is $M$. The experiment is described and explained in the text.]({attach}images/buffon.svg){#fig:buffon width=90% .modal-target}
+![Diagrammatic depiction of the Buffon's needle problem. Parallel lines distance $d$ apart are drawn; the purple lines are the ones closest to the thrown needle. Now, $d > \lambda$ where $\lambda$ is the length of the needle. The midpoint of the needle is $M$. See the text for the full explanation.]({attach}images/buffon.svg){#fig:buffon width=90% .modal-target}
 
-It is important to realize that the analysis with respect to a single line suffices.  This is an instance if _problem abstraction_ or _modelling_ which is an important skill to acquire. It restricts focus to the essentials, and in the process usually simplifies the solution of the problem. For a visual analogy, think of a surgical operation, where the patient is draped in green everywhere, except the site of the operation, and where the bright light is shone on that one area, so that the surgical team may concentrate on it exclusively.
+Because the spacing between the parallel lines $d$ is greater than the length of the needle $\lambda$, we know that the needle can _at most_ intersect _one_ line of a pair.  We have shown that pair of lines  here. The perpendicular distance from the _centre_ of the needle to the nearest parallel line is denoted by $x$. By relating $x$ to the angle $\varphi$ and needle length $\lambda$, we derive the condition for intersection or non-intersection as a simple inequality.
+
+With reference to [@fig:buffon], let $x$ be the perpendicular distance from the centre of the needle to the nearest parallel line. If the needle makes an angle $\varphi$ measured in the conventional sense with respect to the nearest line, the distance of the tip of the needle from the centre, in the direction perpendicular to the parallel lines, is $\frac{1}{2}\lambda\sin\varphi$. Clearly, if $x > \frac{1}{2}\lambda\sin\varphi$, the needle cannot touch the nearest line. Therefore the condition for the needle to touch the nearest line is:
+$$
+x \leq \frac{1}{2}\lambda\sin\varphi
+$${#eq:buffon}
+
+Because of symmetry, we may restrict our consideration to angles $0 \leq \varphi \leq \pi$ and for $0 \leq x \leq \frac{d}{2}$.  We may now define the space of all events as the _rectangle_ on the $\varphi$-$x$ plane bounded by the lines $x=0$, $\varphi = \pi$, $x = \frac{d}{2}$ and $\varphi = 0$, as shown in [@fig:plot].
+
+The set corresponding to the needle touching or crossing a line is the set of all points for which [@eqn:buffon] is satisfied.
+
+![Graphical depiction of the event space for the Buffon Needle experiment.  The area under the curve satisfies the inequality $x \leq \frac{1}{2}\lambda \sin\varphi$.  Let this area be called A. We show in equation~(\ref{eqn:al}) that $A = \lambda$.  The universal set is the rectangle bounded by the $\varphi$ and $x$ axes and the lines $x =\frac{d}{2}$ and $\varphi = \pi$ as shown.  Its area is simply $\frac{\pi d}{2}$.  The probability that the needle will touch or cross one of the parallel lines is therefore $\frac{A}{\frac{\pi d}{2}}$.  (The values of $d$ and $\lambda$ have been arbitrarily set to 3 and 2 respectively in this diagram, with no loss of generality.)]({attach}images/plot.svg){#fig:plot width=80% .modal-target}
+
+
+### Abstraction
+
+As explained above, it is important to realize that the analysis of the needle position with respect to a single line-pair suffices. This is an instance of _problem abstraction_ or _modelling_, which is an important skill to acquire. It restricts focus to the essentials, and in the process usually simplifies the solution of the problem.
+
+For a visual analogy, think of a surgical operation, where the patient is draped in green everywhere, except the site of the operation, and where the bright light is shone on that one area, so that the surgical team may concentrate on it exclusively.
+
+### Step-by-step analysis
+
+We have chosen the centre of the needle as the reference point or [datum](https://www.thefreedictionary.com/datum). It conveniently accounts for symmetry, as the needle could touch a line on either side of the centre.
+
+The needle may land in any direction with respect to a purple line. The angle it makes with the direction of the purple line may vary all the way from $0$ through $\frac{\pi}{2}$ to $\pi$.
+So, whether or not the needle touches a line, the range of values that $\varphi$ can take on is:
+$$
+0 \geq \varphi \leq \pi
+$$
+
+Next, we consider the values $x$ can assume, regardless of whether or not the needle touches a line. Because of symmetry, when the centre of the needle lies exactly between two parallel lines, $x = \frac{d}{2}$, which is the largest value $x$ can take.
+
+But what happens if the needle touches a line? In that case, the largest value $x$ can assume is $\frac{\lambda}{2}$, which corresponds to when the needle is perpendicular to a line and its tip touches it.
+
+In summary, we have these three inequalities:
+$$
+0 \leq \varphi \leq \pi
+$${#eq:varphi-all}
+
+$$
+0 \leq x \leq \frac{d}{2}
+$${#eq:x-all}
+
+$$
+0 \leq x \leq \frac{\lambda}{2}\sin\varphi
+$${#eq:x-touches}
+where the first two inequalities apply to all cases and [@eq:x-touches] applies when the needle touches a purple line.
+
+Consider a two-dimensional coordinate system where one axis pertains to the angle $\varphi$ and the other to $x$. We also have the tacit assumption that $d > \lambda$. We may now define the space of all events as the rectangle on the $\varphi$-$x$ plane bounded by the lines $x=0$, $\varphi = \pi$, $x = \frac{d}{2}$ and $\varphi = 0$, as shown in XXX.
+
+The set corresponding to the needle touching or crossing a line is the set of all points for which [@eq:x-touches]is satisfied.
+
+--- START HERE ---
+
+%
+% ----------- Start of Buffon's Needle Probability Space -----------
+%
+\begin{figure}
+\begin{center}
+\begin{tabular}{c}
+\resizebox{0.5\textwidth}{!}%
+{\includegraphics{buffonspace}}
+\end{tabular}
+\end{center}
+\caption[Event space for Buffon's needle experiment]{\small Graphical depiction
+of the event space for the Buffon
+Needle experiment.  The area under the curve satisfies the inequality
+$x \lambda \frac{1}{2}\lambda \sin\varphi$.  Let this area be called A. We show
+in equation~(\ref{eqn:al}) that $A = \lambda$.  The universal set is the
+rectangle bounded by the $\varphi$ and $x$ axes and the lines $x
+=\frac{d}{2}$ and $\varphi = \pi$ as shown.  Its area is simply $\frac{\pi
+d}{2}$.  The probability that the needle will touch or cross one of the
+parallel lines is therefore $\frac{A}{\frac{\pi d}{2}}$.  (The values
+of $d$ and $\lambda$ have been arbitrarily set to 3 and 2 respectively in
+this diagram, with no loss of generality.)}
+\label{fig:buffonspace}
+\end{figure}
 
 ## Resources for Enrichment
 
