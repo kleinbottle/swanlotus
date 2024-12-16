@@ -126,7 +126,7 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage[inkscapeversion=auto]{svg}
-\usepackage[defaultlines=4,all]{nowidow}
+\usepackage{nowidow}
 \usepackage{etoolbox}
 \usepackage{fontsize}
 \usepackage{newunicodechar}
@@ -1432,6 +1432,13 @@ communion with God---as his personal deity, the Goddess Namagiri---who
 bestow mathematical insights in his dreams''
 {[}\citeproc{ref-kanigel-1992}{40}{]}.
 
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{images/Srinivasa_Ramanujan_Cleanup.jpg}
+\caption{One of the few surviving photographs of the genius Srinivasa
+Ramanujan.}\label{fig:ramanujan}
+\end{figure}
+
 Among the countless formulae for \(\pi\) may be mentioned one, due to
 Ramanujan, which is so \emph{unusual} that one wonders how it was ever
 derived in the first place:
@@ -1440,18 +1447,22 @@ derived in the first place:
 \frac{(4n)!\left[ 1103 + 26390n \right]}{(n!)^4 396^{4n}}
 }\end{equation} Was it another gift from the Goddess Namagiri?
 
-\subsection{The Chudnovskys}\label{the-chudnovskys}
-
 \subsection{Buffon's Needle}\label{buffons-needle}
 
 In \href{https://swanlotus.netlify.app/blogs/the-pi-of-archimedes}{The
-Pi of Archimedes} and this blog, we have seen the relationship between
-\(\pi\) and geometry and trigonometry. Such a relationship is not
-unexpected, for we may metaphorically say that \(\pi\) has its ``home''
-in the circle, and is ``neighbours with'' trigonometric functions, which
-are also called \emph{circular functions}. Even its link with infinite
-series may be justified as an extension of these relationships. But how
-indeed does \(\pi\) enter the domain of probability?
+Pi of Archimedes} and
+\href{https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi}{this
+blog}, we have seen the relationship between \(\pi\) and geometry and
+trigonometry. Such a relationship is not unexpected, for we may
+metaphorically say that \(\pi\) has its ``home'' in the circle, and is
+``neighbours with'' trigonometric functions, which are also called
+\emph{circular functions}. Even its link with infinite series may be
+justified as an extension of these relationships.
+
+Interestingly though, \(\pi\) may also be estimated by repeatedly
+performing a random, or probabilistic, experiment, whose precise outcome
+cannot be predicted, but whose average behaviour may be estimated. But
+how indeed does \(\pi\) enter the domain of probability?
 
 \href{https://en.wikipedia.org/wiki/Georges-Louis_Leclerc,_Comte_de_Buffon}{Georges-Louis
 Leclerc, Comte de Buffon} was a French naturalist of the eighteenth
@@ -1459,10 +1470,20 @@ century. Although his academic contributions were largely in the domain
 of the life sciences, he is today probably most well-remembered for
 proposing and solving a problem that goes by his name:
 \href{https://en.wikipedia.org/wiki/Buffon\%27s_needle_problem}{Buffon's
-needle problem}. It is a probabilistic method for determining the value
-of \(\pi\), and antedates modern
+needle problem}.
+
+There are several variants of Buffon's needle experiment. The version we
+consider is to estimate how often a randomly thrown needle will
+intersect one of a series of parallel lines. In our variant, the needle
+is shorter than the perpendicular distance between the parallel lines.
+Interestingly, this experiment is a probabilistic method for determining
+the value of \(\pi\), and antedates modern
 \href{https://www.ibm.com/topics/monte-carlo-simulation}{Monte Carlo
 simulations} on computers.
+
+This experiment is one in which the precise outcome of any \emph{single}
+throw cannot be predicted; but its \emph{average} behaviour may be
+estimated with increasing confidence, as the number of throws increases.
 
 \subsubsection{Problem statement}\label{problem-statement}
 
@@ -1472,14 +1493,24 @@ length \(\lambda\)\footnote{Pronounced
   \(\lambda\) is the lowercase form of the eleventh letter of the Greek
   alphabet. It is used here instead of \(l\) to avoid confusion with
   \(1\), \(l\), and \(I\).} that is thrown at random on a floor that has
-parallel lines spaced \(d > \lambda\) apart. What is the probability
-that the needle will touch or cross one of the lines? We may assume that
-the needle's position and its orientation, when it lands, are both
-independent and random.
+parallel lines spaced \(d > \lambda\) apart.
+
+What is the probability that the needle will touch or cross one of the
+lines?
+
+We may assume that the needle's position and its orientation, when it
+lands, are both independent and random.
+
+\subsubsection{Problem solution}\label{problem-solution}
 
 This problem may be solved elegantly using trigonometry and the integral
 calculus. First we draw a diagram of how the needle may fall with
 respect to a pair of lines, as shown in \cref{fig:buffon}.
+
+We have chosen the centre of the needle as the reference point or
+\href{https://www.thefreedictionary.com/datum}{datum}. It conveniently
+accounts for symmetry, as the needle could touch a line on either side
+of the centre.
 
 \begin{figure}
 \centering
@@ -1505,12 +1536,87 @@ distance from the centre of the needle to the nearest parallel line. If
 the needle makes an angle \(\varphi\) measured in the conventional sense
 with respect to the nearest line, the distance of the tip of the needle
 from the centre, in the direction perpendicular to the parallel lines,
-is \(\frac{1}{2}\lambda\sin\phi\). Clearly, if
-\(x > \frac{1}{2}\lambda\sin\phi\), the needle cannot touch the nearest
-line. Therefore the condition for the needle to touch the nearest line
-is: \begin{equation}\phantomsection\label{eq:buffon}{
-x \leq \frac{1}{2}\lambda\sin\phi
+is \(\frac{1}{2}\lambda\sin\varphi\). Clearly, if
+\(x > \frac{1}{2}\lambda\sin\varphi\), the needle cannot touch the
+nearest line. Therefore the condition for the needle to touch the
+nearest line is: \begin{equation}\phantomsection\label{eq:buffon}{
+x \leq \frac{1}{2}\lambda\sin\varphi
 }\end{equation}
+
+Because of symmetry, we may restrict our consideration to angles
+\(0 \leq \varphi \leq \pi\) and for \(0 \leq x \leq \frac{d}{2}\). We
+may now define the \emph{space of all events} or the \emph{event space}
+as the \emph{rectangle} on the \(\varphi\)-\(x\) plane bounded by the
+lines \(x=0\), \(\varphi = \pi\), \(x = \frac{d}{2}\) and
+\(\varphi = 0\), as shown in \cref{fig:plot}.
+
+The set corresponding to the needle touching or crossing a line is the
+set of all points for which \cref{eq:buffon} is satisfied. It is shown
+coloured in \cref{fig:plot}.
+
+\begin{figure}
+\centering
+\includesvg[width=0.8\textwidth,height=\textheight]{images/plot.svg}
+\caption{Graphical depiction of the event space for the Buffon Needle
+experiment. See the text below for an explanation.}\label{fig:plot}
+\end{figure}
+
+In \cref{fig:plot}, we have set \(3 = d > \lambda = 2\) without loss of
+generality in order to get a curve that can be plotted.
+
+The orange area under the curve satisfies the inequality
+\(x \leq \frac{1}{2}\lambda\sin\varphi\). Its area is proportional to
+the totality of events where the needle touches a purple line. Let this
+area be called A. Then:
+\begin{equation}\phantomsection\label{eq:successes}{
+\begin{aligned}
+A &= \frac{\lambda}{2}\int_0^{\pi}\sin\varphi\;\mathrm{d}\varphi\\
+&= \frac{\lambda}{2}\displaystyle\bigl[-\cos\varphi\bigr]_0^{\pi}\\
+&= \frac{\lambda}{2}[-\cos(\pi) - (-\cos(0)]\\
+&= \frac{\lambda}{2}\displaystyle\bigl[-(-1) -(-1)\bigr]\\
+&= 2\frac{\lambda}{2}\\
+&= \lambda
+\end{aligned}
+}\end{equation}
+
+The greenish rectangle in \cref{fig:plot} represents the universal set
+of all events, or the event space. It is bounded by the \(\varphi\) and
+\(x\) axes and the lines \(x =\frac{d}{2}\) and \(\varphi = \pi\) as
+shown. Its area is proportional to every throw of the needle in any
+experiment, and equals \(U = \frac{\pi d}{2}\).
+
+The probability that the needle touches or crosses a parallel line is
+therefore equal to:
+\begin{equation}\phantomsection\label{eq:fraction-successes}{
+\begin{aligned}
+P(\lambda, d) &= \displaystyle\frac{A}{U} = \displaystyle \left[ \frac{A}{\frac{\pi d}{2}} \right] \\[0.5em]
+&= \displaystyle \left[ \frac{\lambda}{\frac{\pi d}{2}}\right ]\\[2em]
+&= \displaystyle \frac{2\lambda}{\pi d}
+\end{aligned}
+}\end{equation}
+
+If a probabilistic experiment is repeated independently a great many
+times, the relative frequency of the event whose probability we are
+trying to measure, approaches the true probability. Using this
+principle, it is possible to simulate Buffon's needle experiment on
+computer, calculate the relative frequency, associate it with the
+theoretical probability, and thereby evaluate \(\pi\).
+
+Incidentally, the derivation of the probability \(P(\lambda, d)\)
+\emph{does} involve geometry and trigonometry, and the appearance of
+\(\pi\) is not so inexplicable after all! \emojifont {😉} \normalfont
+
+\subsubsection{Computer simulation}\label{computer-simulation}
+
+A Julia script that implements the mathematics derived above is
+available as \href{\%7Battacheauxiliary/boffon.jl}{\texttt{buffon.jl}}.
+Note that because it is a simulation involving
+\href{https://docs.julialang.org/en/v1/stdlib/Random/}{random numbers in
+Julia}, any two consecutive results will not necessarily be the same.
+The estimated value of \(\pi\) can and does vary, quite significantly as
+successive trials are run. So, I am not documenting any results, but
+instead ask you to execute the script by invoking
+\texttt{julia\ buffon.jl} and inspecting the results.
 
 \subsubsection{Abstraction}\label{abstraction}
 
@@ -1525,55 +1631,47 @@ is draped in green everywhere, except the site of the operation, and
 where the bright light is shone on that one area, so that the surgical
 team may concentrate on it exclusively.
 
-\subsubsection{Step-by-step analysis}\label{step-by-step-analysis}
+\subsection{The Brothers Chudnovsky}\label{the-brothers-chudnovsky}
 
-We have chosen the centre of the needle as the reference point or
-\href{https://www.thefreedictionary.com/datum}{datum}. It conveniently
-accounts for symmetry, as the needle could touch a line on either side
-of the centre.
+\href{https://en.wikipedia.org/wiki/Chudnovsky_brothers}{The Brothers
+Chudnovsky} {[}\citeproc{ref-preston-1993}{42}{]} embody in the popular
+imagination the archetypal digit hunters
+{[}\citeproc{ref-beautiful-geometry-2014}{43}{]} who are immersed in the
+quest for ever more digits of \(\pi\). Mark that we do not \(\pi\) to a
+hundred decimal places for any earthly or unearthly \footnote{Think
+  outer space, astronomy, etc.} purpose. XXX references.
 
-The needle may land in any direction with respect to a purple line. The
-angle it makes with the direction of the purple line may vary all the
-way from \(0\) through \(\frac{\pi}{2}\) to \(\pi\). So, whether or not
-the needle touches a line, the range of values that \(\varphi\) can take
-on is: \[
-0 \geq \varphi \leq \pi
-\]
+Hunting for ever more digits of \(\pi\) using ever more efficient
+algorithms that yield ever more decimal places has become a sport rather
+than a necessity. And at the vanguard are the Chudnovskys. They have
+used algorithms adapted from Ramanujan, as well as their own to
+relentlessly track down the umpteenth digit of \(\pi\). What mesmeric
+pull does \(\pi\) have on human imagination and endeavour to inspire
+such single-minded and unremitting pursuit? What is the magic within
+\(\pi\) that fuels such devotion and dedication? Is it beauty? Is it
+mystery? Or is it divinity?
 
-Next, we consider the values \(x\) can assume, regardless of whether or
-not the needle touches a line. Because of symmetry, when the centre of
-the needle lies exactly between two parallel lines, \(x = \frac{d}{2}\),
-which is the largest value \(x\) can take.
+\subsection{Pi in Retrospect}\label{pi-in-retrospect}
 
-But what happens if the needle touches a line? In that case, the largest
-value \(x\) can assume is \(\frac{\lambda}{2}\), which corresponds to
-when the needle is perpendicular to a line and its tip touches it.
+We use pictures and words to communicate. In mathematics,
+\emph{geometry} corresponds to pictures, and \emph{algebra} to words.
+The interplay between geometry and algebra has been responsible for many
+mathematical advances. For example, the development of
+\href{https://www.britannica.com/science/Cartesian-coordinates}{co-ordinate
+geometry} laid the foundations for calculus and analysis.
 
-In summary, we have these three inequalities:
-\begin{equation}\phantomsection\label{eq:varphi-all}{
-0 \leq \varphi \leq \pi
-}\end{equation}
-
-\begin{equation}\phantomsection\label{eq:x-all}{
-0 \leq x \leq \frac{d}{2}
-}\end{equation}
-
-\begin{equation}\phantomsection\label{eq:x-touches}{
-0 \leq x \leq \frac{\lambda}{2}\sin\varphi
-}\end{equation} where the first two inequalities apply to all cases and
-\cref{eq:x-touches} applies when the needle touches a purple line.
-
-Consider a two-dimensional coordinate system where one axis pertains to
-the angle \(\varphi\) and the other to \(x\). We also have the tacit
-assumption that \(d > \lambda\). We may now define the space of all
-events as the rectangle on the \(\varphi\)-\(x\) plane bounded by the
-lines \(x=0\), \(\varphi = \pi\), \(x = \frac{d}{2}\) and \(\phi = 0\),
-as shown in XXX.
-
-The set corresponding to the needle touching or crossing a line is the
-set of all points for which \cref{eq:x-touches}is satisfied.
+Pi sits at the junction between pictures and words. It is geometrically
+defined but its expression is algebraic. It is that ubiquitous magic
+number that shows up where we expect it and also where we might not
+anticipate its presence. It appears in almost all areas of mathematics,
+including geometry, algebra, calculus, infinite series, and probability,
+to name a few. Two of the most important ideas in analysis are those of
+a \emph{limit} and of \emph{convergence}, both of which we have
+encountered glancingly in these two blogs on \(\pi\).
 
 \subsection{Resources for Enrichment}\label{resources-for-enrichment}
+
+XXX References.
 
 \subsubsection{The Basel Problem}\label{the-basel-problem}
 
@@ -1581,7 +1679,7 @@ How
 \href{https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin-Louis
 Cauchy} solved the Basel Problem is clearly laid out and explained in
 \href{https://www.youtube.com/watch?v=2jgtAo3Ztf}{this mesmerizing Rise
-to the Equation YouTube video} {[}\citeproc{ref-cauchy-basel}{41}{]}.
+to the Equation YouTube video} {[}\citeproc{ref-cauchy-basel}{44}{]}.
 The explanation in this video should be clear to a high school student
 who has encountered trigonometry but not calculus.
 
@@ -1609,16 +1707,17 @@ parts are a natural consequence of its inherent integrity. A delightful
 article on this idea, using Ramanujan's work as its thematic
 centrepiece, is
 \href{https://www.quantamagazine.org/srinivasa-ramanujan-was-a-genius-math-is-still-catching-up-20241021/}{available
-online} {[}\citeproc{ref-ramanujan-quanta}{42}{]}.
+online} {[}\citeproc{ref-ramanujan-quanta}{45}{]}.
 
 \subsection{Conclusion}\label{conclusion}
 
-This story of how \(\pi\) was extracted from the ore of geometry and
-refined into an enigmatic number which cannot be trapped within finite
-digits embodies the thrill of the chase. Mathematics is not merely a
-logical edifice built from the granite of unassailable logic, but is
-also the fruit of a pliant but disciplined imagination fuelled by
-inspiration to continually expand the boundaries of its domain.
+This is the story of how \(\pi\) was extracted from the ore of geometry
+and refined into an enigmatic number which cannot be trapped within
+finite digits, but which forever embodies the thrill of the chase for
+the digit hunters. Mathematics is not merely a logical edifice built
+from the granite of unassailable logic, but is also the fruit of a
+pliant but disciplined imagination fuelled by inspiration to continually
+expand the boundaries of its domain.
 
 \subsection{Acknowledgements}\label{acknowledgements}
 
@@ -1885,15 +1984,32 @@ Retrieved 12 December 2024 from
 \CSLRightInline{Robert Kanigel. 1992. \emph{{The Man Who New Infinity}:
 {A Life Of The Genius Ramanujan}}. {Washington Square Press}.}
 
-\bibitem[\citeproctext]{ref-cauchy-basel}
+\bibitem[\citeproctext]{ref-chudnovsky-wiki}
 \CSLLeftMargin{{[}41{]} }%
+\CSLRightInline{Wikipedia contributors. 2024. {Chudnovsky brothers}.
+Retrieved 16 December 2024 from
+\url{https://en.wikipedia.org/wiki/Chudnovsky_brothers}}
+
+\bibitem[\citeproctext]{ref-preston-1993}
+\CSLLeftMargin{{[}42{]} }%
+\CSLRightInline{Richard Preston. 1993. {The Mountains of Pi}. {The New
+Yorker}. Retrieved 16 December 2024 from
+\url{https://www.newyorker.com/magazine/1992/03/02/the-mountains-of-pi}}
+
+\bibitem[\citeproctext]{ref-beautiful-geometry-2014}
+\CSLLeftMargin{{[}43{]} }%
+\CSLRightInline{Eli Maor and Eugen Jost. 2014. \emph{Beautiful
+geometry}. Princeton University Press.}
+
+\bibitem[\citeproctext]{ref-cauchy-basel}
+\CSLLeftMargin{{[}44{]} }%
 \CSLRightInline{Rise to the Equation. 2021. {Cauchy's Proof of the Basel
 Problem \textbar{} Pi Squared Over Six}. {3blue1brown SoME1 Entry}.
 Retrieved 1 December 2024 from
 \url{https://www.youtube.com/watch?v=2jgtAo3ZtfI}}
 
 \bibitem[\citeproctext]{ref-ramanujan-quanta}
-\CSLLeftMargin{{[}42{]} }%
+\CSLLeftMargin{{[}45{]} }%
 \CSLRightInline{Jordana Cepelwicz. 2024. {Math Is Still Catching Up to
 the Mysterious Genius of Srinivasa Ramanujan}. {Quanta Magazine}.
 Retrieved 12 December 2024 from

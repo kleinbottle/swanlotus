@@ -251,7 +251,7 @@ While van Cuelen's work displayed superhuman effort and dedication, it also demo
 
 It must be obvious by now that trigonometry, circles, and the number $\pi$ are inextricably entwined.^[If this sounds unfamiliar, I invite you to read my blogs ["A tale of two measures: degrees and radians"](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians) and ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes).] The quest for more  accurate values of $\pi$ continued to fascinate mathematicians in the centuries after Archimedes. This time though, rather than geometric iteration, _sums of successive terms_ were used to approximate $\pi$.
 
-For our purposes, a _sequence_ is an _ordered_ procession of numbers, and a _series_ is a sum of successive terms that obey some specific rule.  If the summation stops at some particular term, we have a _partial sum_; if the summation goes on indefinitely, we have an _infinite series_.  If this infinite sum approaches ever closer to a finite value, the series is said to _converge_. To see what all this means in practice, let us look at the Madhava-Gregory-Leibniz series.
+For our purposes, a _sequence_ is an _ordered_ procession of numbers, and a _series_ is a sum of successive terms that obey some specific rule. If the summation stops at some particular term, we have a _partial sum_; if the summation goes on indefinitely, we have an _infinite series_. If this infinite sum approaches ever closer to a finite value, the series is said to _converge_. To see what all this means in practice, let us look at the Madhava-Gregory-Leibniz series.
 
 ### Why a triple-barrelled name?
 
@@ -296,7 +296,7 @@ $$
 \end{array}
 $$ {#eq:right}
 
-This takes care of the right hand side of [@eq:invtan].  If we performed long division on the left hand side of the same equation, we get:
+This takes care of the right hand side of [@eq:invtan]. If we performed long division on the left hand side of the same equation, we get:
 $$
 \begin{array}{rcl}
 \displaystyle \int_{0}^{x}\frac{1}{1+ t^2}\mathrm{d}t %
@@ -608,6 +608,8 @@ How in Heaven's name did he stumble upon it? Or was he directed by an inner logi
 
 If ever there were a mathematician [par excellence](https://www.thefreedictionary.com/par+excellence), whose insights and discoveries are wrapped in inscrutable leaps of the imagination, it is [Srinivasa Ramanujan](https://en.wikipedia.org/wiki/Srinivasa_Ramanujan). He is reputed to have said "An equation for me has no meaning unless it expresses a thought of God" [@kanigel-1992]. And  indeed, he alluded to communion with God---as his personal deity, the Goddess Namagiri---who "would write the equations on his tongue... [and] ... bestow mathematical insights in his dreams" [@kanigel-1992].
 
+![One of the few surviving photographs of the genius Srinivasa Ramanujan.]({attach}images/Srinivasa_Ramanujan_Cleanup.jpg){#fig:ramanujan width=70% .modal-target}
+
 Among the countless formulae for $\pi$ may be mentioned one, due to Ramanujan, which is so _unusual_  that one wonders how it was ever derived in the first place:
 $$
 \frac{1}{\pi} = \frac{\sqrt 8}{9801}\sum_{n = 0}^{\infty}%
@@ -615,35 +617,79 @@ $$
 $${#eq:ramanujan-pi}
 Was it another gift from the Goddess Namagiri?
 
-## The Chudnovskys
-
 ## Buffon's Needle
 
-In [The Pi of Archimedes](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes) and this blog, we have seen the relationship between $\pi$ and geometry and trigonometry.  Such a relationship is not unexpected, for we may metaphorically say that $\pi$ has its "home" in the circle, and is "neighbours with" trigonometric functions, which are also called _circular functions_. Even its link with infinite series may be justified as an extension of these relationships. But how indeed does $\pi$ enter the domain of probability?
+In [The Pi of Archimedes](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes) and [this blog](https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi), we have seen the relationship between $\pi$ and geometry and trigonometry. Such a relationship is not unexpected, for we may metaphorically say that $\pi$ has its "home" in the circle, and is "neighbours with" trigonometric functions, which are also called _circular functions_. Even its link with infinite series may be justified as an extension of these relationships. 
 
-[Georges-Louis Leclerc, Comte de Buffon](https://en.wikipedia.org/wiki/Georges-Louis_Leclerc,_Comte_de_Buffon) was a French naturalist of the eighteenth century. Although his academic contributions were largely in the domain of the life sciences, he is today probably most well-remembered for proposing and solving a problem that goes by his name: [Buffon's needle problem](https://en.wikipedia.org/wiki/Buffon%27s_needle_problem).  It is a  probabilistic method for determining the value of $\pi$, and antedates modern [Monte Carlo simulations](https://www.ibm.com/topics/monte-carlo-simulation) on computers.
+Interestingly though, $\pi$ may also be estimated by repeatedly performing a random, or probabilistic, experiment, whose precise outcome cannot be predicted, but whose average behaviour may be estimated. But how indeed does $\pi$ enter the domain of probability?
+
+[Georges-Louis Leclerc, Comte de Buffon](https://en.wikipedia.org/wiki/Georges-Louis_Leclerc,_Comte_de_Buffon) was a French naturalist of the eighteenth century. Although his academic contributions were largely in the domain of the life sciences, he is today probably most well-remembered for proposing and solving a problem that goes by his name: [Buffon's needle problem](https://en.wikipedia.org/wiki/Buffon%27s_needle_problem).
+
+There are several variants of Buffon's needle experiment. The version we consider is to estimate how often a randomly thrown needle will intersect one of a series of parallel lines. In our variant, the needle is shorter than the perpendicular distance between the parallel lines. Interestingly, this experiment is a probabilistic method for determining the value of $\pi$, and antedates modern [Monte Carlo simulations](https://www.ibm.com/topics/monte-carlo-simulation) on computers.
+
+This experiment is one in which the precise outcome of any _single_ throw cannot be predicted; but its _average_ behaviour may be estimated with increasing confidence, as the number of throws increases.
 
 ### Problem statement
 
-The Buffon's Needle problem may be posed thus. Consider a needle of length $\lambda$^[Pronounced  [_lambda_](https://dictionary.cambridge.org/pronunciation/english/lambda), $\lambda$ is the lowercase form of the eleventh letter of the Greek alphabet. It is used here instead of $l$ to avoid confusion with $1$, $l$, and $I$.] that is thrown at random on a floor that has parallel lines spaced $d > \lambda$ apart. What is the probability that the needle will touch or cross one of the lines? We may assume that the needle's position and its orientation, when it lands, are both independent and random.
+The Buffon's Needle problem may be posed thus. Consider a needle of length $\lambda$^[Pronounced  [_lambda_](https://dictionary.cambridge.org/pronunciation/english/lambda), $\lambda$ is the lowercase form of the eleventh letter of the Greek alphabet. It is used here instead of $l$ to avoid confusion with $1$, $l$, and $I$.] that is thrown at random on a floor that has parallel lines spaced $d > \lambda$ apart.
+
+What is the probability that the needle will touch or cross one of the lines? 
+
+We may assume that the needle's position and its orientation, when it lands, are both independent and random.
+
+### Problem solution
 
 This problem may be solved elegantly using trigonometry and the integral calculus. First we draw a diagram of how the needle may fall with respect to a pair of lines, as shown in [@fig:buffon].
 
+We have chosen the centre of the needle as the reference point or [datum](https://www.thefreedictionary.com/datum). It conveniently accounts for symmetry, as the needle could touch a line on either side of the centre.
+
 ![Diagrammatic depiction of the Buffon's needle problem. Parallel lines distance $d$ apart are drawn; the purple lines are the ones closest to the thrown needle. Now, $d > \lambda$ where $\lambda$ is the length of the needle. The midpoint of the needle is $M$. See the text for the full explanation.]({attach}images/buffon.svg){#fig:buffon width=90% .modal-target}
 
-Because the spacing between the parallel lines $d$ is greater than the length of the needle $\lambda$, we know that the needle can _at most_ intersect _one_ line of a pair.  We have shown that pair of lines  here. The perpendicular distance from the _centre_ of the needle to the nearest parallel line is denoted by $x$. By relating $x$ to the angle $\varphi$ and needle length $\lambda$, we derive the condition for intersection or non-intersection as a simple inequality.
+Because the spacing between the parallel lines $d$ is greater than the length of the needle $\lambda$, we know that the needle can _at most_ intersect _one_ line of a pair. We have shown that pair of lines  here. The perpendicular distance from the _centre_ of the needle to the nearest parallel line is denoted by $x$. By relating $x$ to the angle $\varphi$ and needle length $\lambda$, we derive the condition for intersection or non-intersection as a simple inequality.
 
 With reference to [@fig:buffon], let $x$ be the perpendicular distance from the centre of the needle to the nearest parallel line. If the needle makes an angle $\varphi$ measured in the conventional sense with respect to the nearest line, the distance of the tip of the needle from the centre, in the direction perpendicular to the parallel lines, is $\frac{1}{2}\lambda\sin\varphi$. Clearly, if $x > \frac{1}{2}\lambda\sin\varphi$, the needle cannot touch the nearest line. Therefore the condition for the needle to touch the nearest line is:
 $$
 x \leq \frac{1}{2}\lambda\sin\varphi
 $${#eq:buffon}
 
-Because of symmetry, we may restrict our consideration to angles $0 \leq \varphi \leq \pi$ and for $0 \leq x \leq \frac{d}{2}$.  We may now define the space of all events as the _rectangle_ on the $\varphi$-$x$ plane bounded by the lines $x=0$, $\varphi = \pi$, $x = \frac{d}{2}$ and $\varphi = 0$, as shown in [@fig:plot].
+Because of symmetry, we may restrict our consideration to angles $0 \leq \varphi \leq \pi$ and for $0 \leq x \leq \frac{d}{2}$. We may now define the _space of all events_ or the _event space_  as the _rectangle_ on the $\varphi$-$x$ plane bounded by the lines $x=0$, $\varphi = \pi$, $x = \frac{d}{2}$ and $\varphi = 0$, as shown in [@fig:plot].
 
-The set corresponding to the needle touching or crossing a line is the set of all points for which [@eqn:buffon] is satisfied.
+The set corresponding to the needle touching or crossing a line is the set of all points for which [@eq:buffon] is satisfied. It is shown coloured in [@fig:plot].
 
-![Graphical depiction of the event space for the Buffon Needle experiment.  The area under the curve satisfies the inequality $x \leq \frac{1}{2}\lambda \sin\varphi$.  Let this area be called A. We show in equation~(\ref{eqn:al}) that $A = \lambda$.  The universal set is the rectangle bounded by the $\varphi$ and $x$ axes and the lines $x =\frac{d}{2}$ and $\varphi = \pi$ as shown.  Its area is simply $\frac{\pi d}{2}$.  The probability that the needle will touch or cross one of the parallel lines is therefore $\frac{A}{\frac{\pi d}{2}}$.  (The values of $d$ and $\lambda$ have been arbitrarily set to 3 and 2 respectively in this diagram, with no loss of generality.)]({attach}images/plot.svg){#fig:plot width=80% .modal-target}
+![Graphical depiction of the event space for the Buffon Needle experiment. See the text below for an explanation.]({attach}images/plot.svg){#fig:plot width=80% .modal-target}
 
+In [@fig:plot], we have set $3 = d > \lambda = 2$ without loss of generality in order to get a curve that can be plotted.
+
+The orange area under the curve satisfies the inequality $x \leq \frac{1}{2}\lambda\sin\varphi$. Its area is proportional to the totality of events where the needle touches a purple line. Let this area be called A. Then:
+$$
+\begin{aligned}
+A &= \frac{\lambda}{2}\int_0^{\pi}\sin\varphi\;\mathrm{d}\varphi\\
+&= \frac{\lambda}{2}\displaystyle\bigl[-\cos\varphi\bigr]_0^{\pi}\\
+&= \frac{\lambda}{2}[-\cos(\pi) - (-\cos(0)]\\
+&= \frac{\lambda}{2}\displaystyle\bigl[-(-1) -(-1)\bigr]\\
+&= 2\frac{\lambda}{2}\\
+&= \lambda
+\end{aligned}
+$$ {#eq:successes}
+
+The greenish rectangle in [@fig:plot] represents the universal set of all events, or the event space. It is bounded by the $\varphi$ and $x$ axes and the lines $x =\frac{d}{2}$ and $\varphi = \pi$ as shown. Its area is proportional to every throw of the needle in any experiment, and equals $U = \frac{\pi d}{2}$.
+
+The probability that the needle touches or crosses a parallel line is therefore equal to:
+$$
+\begin{aligned}
+P(\lambda, d) &= \displaystyle\frac{A}{U} = \displaystyle \left[ \frac{A}{\frac{\pi d}{2}} \right] \\[0.5em]
+&= \displaystyle \left[ \frac{\lambda}{\frac{\pi d}{2}}\right ]\\[2em]
+&= \displaystyle \frac{2\lambda}{\pi d}
+\end{aligned}
+$$ {#eq:fraction-successes}
+
+If a probabilistic experiment is repeated independently a great many times, the relative frequency of the event whose probability we are trying to measure, approaches the true probability. Using this principle, it is possible to simulate Buffon's needle experiment on computer, calculate the relative frequency, associate it with the theoretical probability, and thereby evaluate $\pi$.
+
+Incidentally, the derivation of the probability $P(\lambda, d)$ _does_ involve geometry and trigonometry, and the appearance of $\pi$ is not so inexplicable after all! \emojifont :wink: \normalfont
+
+### Computer simulation
+
+A Julia script that implements the mathematics derived above is available as [`buffon.jl`]({attacheauxiliary/boffon.jl). Note that because it is a simulation involving [random numbers in Julia](https://docs.julialang.org/en/v1/stdlib/Random/), any two consecutive results will not necessarily be the same. The estimated value of $\pi$ can and does vary, quite significantly as successive trials are run. So, I am not documenting any results, but instead ask you to execute the script by invoking `julia buffon.jl` and inspecting the results.
 
 ### Abstraction
 
@@ -651,65 +697,21 @@ As explained above, it is important to realize that the analysis of the needle p
 
 For a visual analogy, think of a surgical operation, where the patient is draped in green everywhere, except the site of the operation, and where the bright light is shone on that one area, so that the surgical team may concentrate on it exclusively.
 
-### Step-by-step analysis
+## The Brothers Chudnovsky
 
-We have chosen the centre of the needle as the reference point or [datum](https://www.thefreedictionary.com/datum). It conveniently accounts for symmetry, as the needle could touch a line on either side of the centre.
+[The Brothers Chudnovsky](https://en.wikipedia.org/wiki/Chudnovsky_brothers) [@chudnovsky-wiki,@preston-1993] embody in the popular imagination the archetypal digit hunters [@beautiful-geometry-2014] who are immersed in the quest for ever more digits of $\pi$. Mark that we do not $\pi$ to a hundred decimal places for any earthly or unearthly ^[Think outer space, astronomy, etc.] purpose. XXX references.
 
-The needle may land in any direction with respect to a purple line. The angle it makes with the direction of the purple line may vary all the way from $0$ through $\frac{\pi}{2}$ to $\pi$.
-So, whether or not the needle touches a line, the range of values that $\varphi$ can take on is:
-$$
-0 \geq \varphi \leq \pi
-$$
+Hunting for ever more digits of $\pi$ using ever more efficient algorithms that yield ever more decimal places has become a sport rather than a necessity. And at the vanguard are the Chudnovskys. They have used algorithms adapted from Ramanujan, as well as their own to relentlessly track down the umpteenth digit of $\pi$. What mesmeric pull does $\pi$ have on human imagination and endeavour to inspire such single-minded and unremitting pursuit? What is the magic within $\pi$ that fuels such devotion and dedication? Is it beauty? Is it mystery? Or is it divinity?
 
-Next, we consider the values $x$ can assume, regardless of whether or not the needle touches a line. Because of symmetry, when the centre of the needle lies exactly between two parallel lines, $x = \frac{d}{2}$, which is the largest value $x$ can take.
+## Pi in Retrospect
 
-But what happens if the needle touches a line? In that case, the largest value $x$ can assume is $\frac{\lambda}{2}$, which corresponds to when the needle is perpendicular to a line and its tip touches it.
+We use pictures and words to communicate. In mathematics, _geometry_ corresponds to pictures, and _algebra_ to words. The interplay between geometry and algebra has been responsible for many mathematical advances. For example, the development of [co-ordinate geometry](https://www.britannica.com/science/Cartesian-coordinates) laid the foundations for calculus and analysis.
 
-In summary, we have these three inequalities:
-$$
-0 \leq \varphi \leq \pi
-$${#eq:varphi-all}
-
-$$
-0 \leq x \leq \frac{d}{2}
-$${#eq:x-all}
-
-$$
-0 \leq x \leq \frac{\lambda}{2}\sin\varphi
-$${#eq:x-touches}
-where the first two inequalities apply to all cases and [@eq:x-touches] applies when the needle touches a purple line.
-
-Consider a two-dimensional coordinate system where one axis pertains to the angle $\varphi$ and the other to $x$. We also have the tacit assumption that $d > \lambda$. We may now define the space of all events as the rectangle on the $\varphi$-$x$ plane bounded by the lines $x=0$, $\varphi = \pi$, $x = \frac{d}{2}$ and $\varphi = 0$, as shown in XXX.
-
-The set corresponding to the needle touching or crossing a line is the set of all points for which [@eq:x-touches]is satisfied.
-
---- START HERE ---
-
-%
-% ----------- Start of Buffon's Needle Probability Space -----------
-%
-\begin{figure}
-\begin{center}
-\begin{tabular}{c}
-\resizebox{0.5\textwidth}{!}%
-{\includegraphics{buffonspace}}
-\end{tabular}
-\end{center}
-\caption[Event space for Buffon's needle experiment]{\small Graphical depiction
-of the event space for the Buffon
-Needle experiment.  The area under the curve satisfies the inequality
-$x \lambda \frac{1}{2}\lambda \sin\varphi$.  Let this area be called A. We show
-in equation~(\ref{eqn:al}) that $A = \lambda$.  The universal set is the
-rectangle bounded by the $\varphi$ and $x$ axes and the lines $x
-=\frac{d}{2}$ and $\varphi = \pi$ as shown.  Its area is simply $\frac{\pi
-d}{2}$.  The probability that the needle will touch or cross one of the
-parallel lines is therefore $\frac{A}{\frac{\pi d}{2}}$.  (The values
-of $d$ and $\lambda$ have been arbitrarily set to 3 and 2 respectively in
-this diagram, with no loss of generality.)}
-\label{fig:buffonspace}
-\end{figure}
+Pi sits at the junction between pictures and words. It is geometrically defined but its expression is algebraic. It is that ubiquitous magic number that shows up where we expect it and also where we might not anticipate its presence. It appears in almost all areas of mathematics, including geometry, algebra, calculus, infinite series, and probability, to name a few. Two of the most important ideas in analysis are those of a _limit_ and of _convergence_, both of which we have encountered glancingly in these two blogs on $\pi$.
 
 ## Resources for Enrichment
+
+XXX References.
 
 ### The Basel Problem
 
@@ -727,9 +729,11 @@ An [excellent biography of Carl Gauss](https://www.youtube.com/watch?v=LmmyAOkaj
 
 One thread runs through this blog: mathematics is one interrelated structure in which the most unlikely connections between its disparate parts are a natural consequence of its inherent integrity. A delightful article on this idea, using Ramanujan's work as its thematic centrepiece, is [available online](https://www.quantamagazine.org/srinivasa-ramanujan-was-a-genius-math-is-still-catching-up-20241021/) [@ramanujan-quanta].
 
+
+
 ## Conclusion
 
-This story of how $\pi$ was extracted from the ore of geometry and refined into an enigmatic number which cannot be trapped within finite digits embodies the thrill of the chase. Mathematics is not merely a logical edifice built from the granite of unassailable logic, but is also the fruit of a pliant but disciplined imagination fuelled by inspiration to continually expand the boundaries of its domain.
+This is the story of how $\pi$ was extracted from the ore of geometry and refined into an enigmatic number which cannot be trapped within finite digits, but which forever embodies the thrill of the chase for the digit hunters. Mathematics is not merely a logical edifice built from the granite of unassailable logic, but is also the fruit of a pliant but disciplined imagination fuelled by inspiration to continually expand the boundaries of its domain.
 
 ## Acknowledgements
 
