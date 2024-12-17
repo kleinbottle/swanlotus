@@ -689,7 +689,7 @@ Incidentally, the derivation of the probability $P(\lambda, d)$ _does_ involve g
 
 ### Computer simulation
 
-A Julia script that implements the mathematics derived above is available as [`buffon.jl`]({attacheauxiliary/boffon.jl). Note that because it is a simulation involving [random numbers in Julia](https://docs.julialang.org/en/v1/stdlib/Random/), any two consecutive results will not necessarily be the same. The estimated value of $\pi$ can and does vary, quite significantly as successive trials are run. So, I am not documenting any results, but instead ask you to execute the script by invoking `julia buffon.jl` and inspecting the results.
+A Julia script that implements the mathematics derived above is available as [`buffon.jl`]({attacheauxiliary/boffon.jl). Note that because it is a simulation involving [random numbers in Julia](https://docs.julialang.org/en/v1/stdlib/Random/), any two consecutive results will not necessarily be the same. The estimated value of $\pi$ can and does vary, quite significantly as successive trials are run. So, I am not documenting any results, but instead ask you to install Julia, execute the script by invoking `julia buffon.jl`, and inspect the results.
 
 ### Abstraction
 
@@ -703,15 +703,64 @@ For a visual analogy, think of a surgical operation, where the patient is draped
 
 Hunting for ever more digits of $\pi$ using ever more efficient algorithms that yield ever more decimal places has become a sport rather than a necessity. And at the vanguard are the Chudnovskys. They have used algorithms adapted from Ramanujan, as well as their own to relentlessly track down the umpteenth digit of $\pi$. What mesmeric pull does $\pi$ have on human imagination and endeavour to inspire such single-minded and unremitting pursuit? What is the magic within $\pi$ that fuels such devotion and dedication? Is it beauty? Is it mystery? Or is it divinity?
 
-## Pi in Retrospect
+## Pi, picture, and words
 
 We use pictures and words to communicate. In mathematics, _geometry_ corresponds to pictures, and _algebra_ to words. The interplay between geometry and algebra has been responsible for many mathematical advances. For example, the development of [co-ordinate geometry](https://www.britannica.com/science/Cartesian-coordinates) laid the foundations for calculus and analysis.
 
 Pi sits at the junction between pictures and words. It is geometrically defined but its expression is algebraic. It is that ubiquitous magic number that shows up where we expect it and also where we might not anticipate its presence. It appears in almost all areas of mathematics, including geometry, algebra, calculus, infinite series, and probability, to name a few. Two of the most important ideas in analysis are those of a _limit_ and of _convergence_, both of which we have encountered glancingly in these two blogs on $\pi$.
 
-## Resources for Enrichment
+---START HERE ---
 
-XXX References.
+## Sources for Enrichment
+
+### Book References
+
+The material in this chapter has been compiled mainly from four books. The first is the encyclopaedic source book on $\pi$ by Berggren et al.~\cite{piSource}. It contains a wealth of historical information and has facsimiles of many original publications or their translations.  Interestingly, the next two references are written by engineers.  Beckmann's book~\cite{beck71}, although somewhat dated and opinionated, gives detailed historical accounts of efforts at computing $\pi$.  The book by Banks~\cite{banks99} is a delightful, instructive and entertaining romp through some areas of applied mathematics.  It is easy to read and devotes three chapters to famous numbers and number sequences. Another interesting and accessible popular exposition, exclusively on $\pi$, is the book by Posamentier and Lehmann~\cite{posleh04}. Lastly, the popular book by Blatner~\cite{blat97} is historically informative and instructive.
+
+### Web Resources
+
+If you are unsure about a mathematical term, or definition, I would recommend, as first port of call, \href{http://mathworld.wolfram.com/}{Eric Weisstein's World of Mathematics}~\cite{mathworld}.  It is a searchable, authoritative and encyclopaedic web site.  Although Weisstein is himself an astronomer, his enduring love of Mathematics has resulted in this treasure trove of mathematical information on the web, from which all can benefit.
+
+The lives of mathematicians have been chronicled at several places on the Web.  One of the most comprehensive and scholarly---fully searchable, and with many related links---is the~\href{http://www-history.mcs.st-andrews.ac.uk/history/index.html}{MacTutor History of Mathematics archive}~\cite{mactutorHistory}. 
+
+### To Probe Further
+
+If you have in any way been intrigued by what is in this chapter, and you have the time and interest to pursue these ideas further, you may wish to look at some of the books or web sites discussed in this section.
+
+The development in Sections~\ref{sec:archi}, \ref{sec:gregleib} and \ref{sec:buffon} follows that of Beckmann~\cite{beck71}.  The numbers quoted in Section~\ref{sec:precision} are from Banks~\cite{banks99}.
+
+A faithful account of how Archimedes used the geometry of his day to arrive at his estimates of $\pi$ is given in the translation of his original works by Heath~\cite{heath02}.  \href{http://itech.fgcu.edu/faculty/clindsey/mhf4404/archimedes/archimedes.html} {Chuck Lindsey's web site} gives a web-based account of the same.
+
+The web site by \href{http://www.math.utah.edu/~alfeld/Archimedes/Archimedes.html}{Peter Alfeld} is particularly interesting because it has a Java applet that illustrates the method of Archimedes and allows the user to progressively change the number of sides in the polygons and view the corresponding upper and lower limits on $\pi$.
+
+The life of Archimedes makes fascinating reading.  He comes across as the
+archetypical absent-minded scientist, totally engrossed in his work, oblivious
+of everything else.  You can find out more about him from one of these web
+sites~\cite{mactutorHistory,golbaArchi}.
+
+You may wish to find out more about the formulae for computing $\pi$ at
+\href{http://mathworld.wolfram.com/PiFormulas.html}{Eric Weisstein's Pi
+Formulas}.  One particularly interesting formula is that of Wallis: it is
+composed of an infinite product of rational numbers to yield the irrational
+number $\pi$.  The book by Blatner~\cite{blat97} gives a brief account of
+the astounding achievement of the brothers Chudnovsky in developing efficient
+algorithms for calculating $\pi$. 
+
+There are two web sites with simulations of the Buffon's Needle experiment.
+\href{http://www.mste.uiuc.edu/reese/buf fon/buffon.html}{George Reese's site}
+has a discussion and simulation of the experiment. 
+\href{http://www.angelfire.com/wa/hurben/buff.html}{Michael Hurben's site} not
+only has a simulation, but also tracks and displays how close the estimate of
+$\pi$ approaches the true value as the experiment is repeated.
+
+If you wish to explore more about $\pi$, the Fibonacci sequence, and
+other numbers, you may want to visit
+\href{http://www.mcs.surrey.ac.uk/Personal/R.Knott/Fibonacci/fibpi.html}{Ron
+Knott's information-packed site}.
+
+Although $\pi$ is known to more digits than we care to count, such is its allure
+that the quest for computing $\pi$ is not over yet and programming enthusiasts
+still have active projects for this purpose~\cite{piComp}.
 
 ### The Basel Problem
 
@@ -730,10 +779,11 @@ An [excellent biography of Carl Gauss](https://www.youtube.com/watch?v=LmmyAOkaj
 One thread runs through this blog: mathematics is one interrelated structure in which the most unlikely connections between its disparate parts are a natural consequence of its inherent integrity. A delightful article on this idea, using Ramanujan's work as its thematic centrepiece, is [available online](https://www.quantamagazine.org/srinivasa-ramanujan-was-a-genius-math-is-still-catching-up-20241021/) [@ramanujan-quanta].
 
 
-
 ## Conclusion
 
 This is the story of how $\pi$ was extracted from the ore of geometry and refined into an enigmatic number which cannot be trapped within finite digits, but which forever embodies the thrill of the chase for the digit hunters. Mathematics is not merely a logical edifice built from the granite of unassailable logic, but is also the fruit of a pliant but disciplined imagination fuelled by inspiration to continually expand the boundaries of its domain.
+
+
 
 ## Acknowledgements
 
