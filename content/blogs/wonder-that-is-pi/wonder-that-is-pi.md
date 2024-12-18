@@ -631,7 +631,7 @@ This experiment is one in which the precise outcome of any _single_ throw cannot
 
 ### Problem statement
 
-The Buffon's Needle problem may be posed thus. Consider a needle of length $\lambda$^[Pronounced  [_lambda_](https://dictionary.cambridge.org/pronunciation/english/lambda), $\lambda$ is the lowercase form of the eleventh letter of the Greek alphabet. It is used here instead of $l$ to avoid confusion with $1$, $l$, and $I$.] that is thrown at random on a floor that has parallel lines spaced $d > \lambda$ apart.
+The Buffon's Needle problem may be posed thus. Consider a needle of length $\lambda$^[Pronounced  [_lambda_](https://dictionary.cambridge.org/pronunciation/english/lambda), $\lambda$ is the lowercase form of the eleventh letter of the Greek alphabet. It is used here instead of $l$ to avoid confusion with $1$, $l$, and $I$.] that is thrown at random on a floor that has parallel lines spaced $d > \lambda$ apart [@beckmann-1971].
 
 What is the probability that the needle will touch or cross one of the lines? 
 
@@ -699,9 +699,19 @@ For a visual analogy, think of a surgical operation, where the patient is draped
 
 ## The Brothers Chudnovsky
 
-[The Brothers Chudnovsky](https://en.wikipedia.org/wiki/Chudnovsky_brothers) [@chudnovsky-wiki,@preston-1993] embody in the popular imagination the archetypal digit hunters [@beautiful-geometry-2014] who are immersed in the quest for ever more digits of $\pi$. Mark that we do not $\pi$ to a hundred decimal places for any earthly or unearthly ^[Think outer space, astronomy, etc.] purpose. XXX references.
+[The Brothers Chudnovsky](https://en.wikipedia.org/wiki/Chudnovsky_brothers) [@chudnovsky-wiki,@preston-1993] embody in the popular imagination the archetypal digit hunters [@beautiful-geometry-2014] who are immersed in the quest for ever more digits of $\pi$ [@blatner-1997]. Mark that we do not $\pi$ to a hundred decimal places for any earthly or unearthly ^[Think outer space, astronomy, etc.] purpose. XXX references.
 
-Hunting for ever more digits of $\pi$ using ever more efficient algorithms that yield ever more decimal places has become a sport rather than a necessity. And at the vanguard are the Chudnovskys. They have used algorithms adapted from Ramanujan, as well as their own to relentlessly track down the umpteenth digit of $\pi$. What mesmeric pull does $\pi$ have on human imagination and endeavour to inspire such single-minded and unremitting pursuit? What is the magic within $\pi$ that fuels such devotion and dedication? Is it beauty? Is it mystery? Or is it divinity?
+## The Quest for Ever Greater Precision
+
+In 1560, $\pi$ was known only to 6 decimal places. By 1706, it had been computed to 100 decimal places. This jumped to 707 by 1874. In 1947, $\pi$ was known to 808 decimal places. The advent of computers meant that by 1957, the number of decimal places had grown to 10,000. By 1967, this number had climbed up to 500,000. In 1997, researchers in Japan computed $\pi$ to a mind-boggling 51.5 _billion_ decimal places [@banks-1999].
+
+One may wonder what drives this quest for ever greater precision. As we have already observed, it is not driven by practical need. Hunting for ever more digits of $\pi$ using ever more efficient algorithms that yield ever more decimal places has become a sport rather than a necessity.
+
+Because $\pi$ is ultimately unknowable as a decimal number, it has a mystery to it. Each successive attempt to improve the precision to which it is known, is a quest to tame the untameable.
+
+But apart from aesthetic motives, the decimal expansion of $\pi$ may reveal new knowledge about number sequences, randomness, and how to generate random numbers.
+
+What mesmeric pull does $\pi$ have on human imagination and endeavour to inspire such single-minded and unremitting pursuit? What is the magic within $\pi$ that fuels such devotion and dedication? Is it beauty? Is it mystery? Or is it divinity?
 
 ## Pi, picture, and words
 
@@ -709,60 +719,27 @@ We use pictures and words to communicate. In mathematics, _geometry_ corresponds
 
 Pi sits at the junction between pictures and words. It is geometrically defined but its expression is algebraic. It is that ubiquitous magic number that shows up where we expect it and also where we might not anticipate its presence. It appears in almost all areas of mathematics, including geometry, algebra, calculus, infinite series, and probability, to name a few. Two of the most important ideas in analysis are those of a _limit_ and of _convergence_, both of which we have encountered glancingly in these two blogs on $\pi$.
 
----START HERE ---
-
 ## Sources for Enrichment
+
+If you have in any way been intrigued by the material in these two blogs on Pi^[[The Pi of Archimedes](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes) and [The Wonder That Is Pi](https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi).] and you have the time and interest to find out more, consult some of these books, websites, videos, etc. They will enhance your knowledge of Pi and enrich you intellectually.
 
 ### Book References
 
-The material in this chapter has been compiled mainly from four books. The first is the encyclopaedic source book on $\pi$ by Berggren et al.~\cite{piSource}. It contains a wealth of historical information and has facsimiles of many original publications or their translations.  Interestingly, the next two references are written by engineers.  Beckmann's book~\cite{beck71}, although somewhat dated and opinionated, gives detailed historical accounts of efforts at computing $\pi$.  The book by Banks~\cite{banks99} is a delightful, instructive and entertaining romp through some areas of applied mathematics.  It is easy to read and devotes three chapters to famous numbers and number sequences. Another interesting and accessible popular exposition, exclusively on $\pi$, is the book by Posamentier and Lehmann~\cite{posleh04}. Lastly, the popular book by Blatner~\cite{blat97} is historically informative and instructive.
+has been compiled mainly from four books. The first is the encyclopaedic source book on $\pi$ by Berggren et al. [@pi-source]. It contains a wealth of historical information and has facsimiles of many original publications or their translations. Interestingly, the next two references are written by engineers, not mathematicians. Beckmann's book [@beckmann-1971], although somewhat dated and opinionated, gives detailed historical accounts of efforts at computing $\pi$. The book by Banks[@banks-1999] is a delightful, instructive and entertaining romp through some areas of applied mathematics. It is easy to read and devotes three chapters to famous numbers and number sequences. Another interesting and accessible popular exposition, exclusively on $\pi$, is the book by Posamentier and Lehmann [@pos-leh-2004]. Lastly, the popular book by Blatner [@blatner-1997] is historically informative and instructive.
 
 ### Web Resources
 
-If you are unsure about a mathematical term, or definition, I would recommend, as first port of call, \href{http://mathworld.wolfram.com/}{Eric Weisstein's World of Mathematics}~\cite{mathworld}.  It is a searchable, authoritative and encyclopaedic web site.  Although Weisstein is himself an astronomer, his enduring love of Mathematics has resulted in this treasure trove of mathematical information on the web, from which all can benefit.
+If you are unsure about a mathematical term, or definition, I would recommend, as first port of call, \href{http://mathworld.wolfram.com/}{Wolfram MathWorld}, created, developed and nurtured by Eric Weisstein [@mathworld]. It is a searchable, authoritative and encyclopaedic web site. Although Weisstein is himself an astronomer, his enduring love of Mathematics has resulted in this treasure trove of mathematical information on the web, from which all can benefit.
 
-The lives of mathematicians have been chronicled at several places on the Web.  One of the most comprehensive and scholarly---fully searchable, and with many related links---is the~\href{http://www-history.mcs.st-andrews.ac.uk/history/index.html}{MacTutor History of Mathematics archive}~\cite{mactutorHistory}. 
+The lives of mathematicians have been chronicled at several places on the Web. One of the most comprehensive and scholarly---fully searchable, and with many related links---is the [MacTutor History of Mathematics website](https://mathshistory.st-andrews.ac.uk/) [@mactutor].
 
-### To Probe Further
+If you wish to explore more about $\pi$, the Fibonacci sequence, and other numbers, you may want to visit [Ron Knott's information-packed site](https://r-knott.surrey.ac.uk/fibonacci/fibpi.html}{Ron Knott's information-packed site).
 
-If you have in any way been intrigued by what is in this chapter, and you have the time and interest to pursue these ideas further, you may wish to look at some of the books or web sites discussed in this section.
+#### Buffon's needle
+ 
+There are two web sites with simulations of the Buffon's Needle experiment. [George Reese's site](https://www.mste.uiuc.edu/reese/buffon/buffon.html) has a discussion and simulation of the experiment. [Michael Hurben's site](https://www.angelfire.com/wa/hurben/buff.html} not only has a simulation, but also tracks and displays how close the estimate of $\pi$ approaches the true value as the experiment is repeated.
 
-The development in Sections~\ref{sec:archi}, \ref{sec:gregleib} and \ref{sec:buffon} follows that of Beckmann~\cite{beck71}.  The numbers quoted in Section~\ref{sec:precision} are from Banks~\cite{banks99}.
-
-A faithful account of how Archimedes used the geometry of his day to arrive at his estimates of $\pi$ is given in the translation of his original works by Heath~\cite{heath02}.  \href{http://itech.fgcu.edu/faculty/clindsey/mhf4404/archimedes/archimedes.html} {Chuck Lindsey's web site} gives a web-based account of the same.
-
-The web site by \href{http://www.math.utah.edu/~alfeld/Archimedes/Archimedes.html}{Peter Alfeld} is particularly interesting because it has a Java applet that illustrates the method of Archimedes and allows the user to progressively change the number of sides in the polygons and view the corresponding upper and lower limits on $\pi$.
-
-The life of Archimedes makes fascinating reading.  He comes across as the
-archetypical absent-minded scientist, totally engrossed in his work, oblivious
-of everything else.  You can find out more about him from one of these web
-sites~\cite{mactutorHistory,golbaArchi}.
-
-You may wish to find out more about the formulae for computing $\pi$ at
-\href{http://mathworld.wolfram.com/PiFormulas.html}{Eric Weisstein's Pi
-Formulas}.  One particularly interesting formula is that of Wallis: it is
-composed of an infinite product of rational numbers to yield the irrational
-number $\pi$.  The book by Blatner~\cite{blat97} gives a brief account of
-the astounding achievement of the brothers Chudnovsky in developing efficient
-algorithms for calculating $\pi$. 
-
-There are two web sites with simulations of the Buffon's Needle experiment.
-\href{http://www.mste.uiuc.edu/reese/buf fon/buffon.html}{George Reese's site}
-has a discussion and simulation of the experiment. 
-\href{http://www.angelfire.com/wa/hurben/buff.html}{Michael Hurben's site} not
-only has a simulation, but also tracks and displays how close the estimate of
-$\pi$ approaches the true value as the experiment is repeated.
-
-If you wish to explore more about $\pi$, the Fibonacci sequence, and
-other numbers, you may want to visit
-\href{http://www.mcs.surrey.ac.uk/Personal/R.Knott/Fibonacci/fibpi.html}{Ron
-Knott's information-packed site}.
-
-Although $\pi$ is known to more digits than we care to count, such is its allure
-that the quest for computing $\pi$ is not over yet and programming enthusiasts
-still have active projects for this purpose~\cite{piComp}.
-
-### The Basel Problem
+#### The Basel Problem
 
 How [Augustin-Louis Cauchy](https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy) solved the Basel Problem is clearly laid out and explained in [this mesmerizing Rise to the Equation YouTube video](https://www.youtube.com/watch?v=2jgtAo3Ztf) [@cauchy-basel]. The explanation in this video should be clear to a high school student who has encountered trigonometry but not calculus.
 
@@ -770,20 +747,17 @@ Those of you who are puzzled by the appearance of $\pi^2$ in the solution to the
 
 [Veritasium](https://www.youtube.com/@veritasium) and [3Blue1Brown](https://www.youtube.com/c/3blue1brown) put out quality educational videos on Mathematics and are an authoritative source of enrichment. Do benefit from them.
 
-### Gauss
+#### Gauss
 
 An [excellent biography of Carl Gauss](https://www.youtube.com/watch?v=LmmyAOkajVM) is available on YouTube [@gauss-bio]. I highly recommend watching it.
 
-### Ramanujan
+#### Ramanujan
 
 One thread runs through this blog: mathematics is one interrelated structure in which the most unlikely connections between its disparate parts are a natural consequence of its inherent integrity. A delightful article on this idea, using Ramanujan's work as its thematic centrepiece, is [available online](https://www.quantamagazine.org/srinivasa-ramanujan-was-a-genius-math-is-still-catching-up-20241021/) [@ramanujan-quanta].
-
 
 ## Conclusion
 
 This is the story of how $\pi$ was extracted from the ore of geometry and refined into an enigmatic number which cannot be trapped within finite digits, but which forever embodies the thrill of the chase for the digit hunters. Mathematics is not merely a logical edifice built from the granite of unassailable logic, but is also the fruit of a pliant but disciplined imagination fuelled by inspiration to continually expand the boundaries of its domain.
-
-
 
 ## Acknowledgements
 
@@ -802,4 +776,10 @@ corrections.
 <https://swanlotus.netlify.app/blogs/wonder-that-is-pi.pdf>
 :::-->
 
+One particularly interesting formula is that of Wallis: it is
+composed of an infinite product of rational numbers to yield the irrational
+number $\pi$.
 
+You may wish to find out more about the formulae for computing $\pi$ at
+\href{http://mathworld.wolfram.com/PiFormulas.html}{Eric Weisstein's Pi
+Formulas}.
