@@ -248,16 +248,18 @@ This is a sequel to the blog
 \href{https://swanlotus.netlify.app/blogs/the-pi-of-archimedes}{``The Pi
 of Archimedes''}. Here, we look at π as a number---without explicit
 reference to its geometric tethering---and explore its remarkable
-ubiquity in mathematics. As an appetizer, see \cref{fig:pi-equations},
-where the symbol for Pi is surmounted by two very disparate equations
-defining it. How in all the world could these two different-looking
-equations be true? But they are indeed!
+ubiquity in mathematics.
+
+As an appetizer, see \cref{fig:pi-equations}, where the symbol for Pi is
+surmounted by two very disparate equations defining it. How in all the
+world could these two different-looking equations be true? But they are
+indeed!
 
 \begin{figure}
 \centering
 \includesvg[width=0.6\textwidth,height=\textheight]{images/pi-equations.svg}
-\caption{Pi expressed by two very different equations. Note that both
-are sums to infinity of expressions involving
+\caption{Pi (π) expressed by two very different equations. Note that
+both are sums to infinity of expressions involving
 integers.}\label{fig:pi-equations}
 \end{figure}
 
@@ -296,8 +298,8 @@ conjoined by the
 pair \((a, b)\), provided the context is clear.
 
 What then are the reals? The real numbers are the union of the set of
-rational numbers and the irrational numbers. Alternatively, the reals
-are the union of the algebraic numbers and the transcendental
+rational numbers and the set of irrational numbers. Alternatively, the
+reals are the union of the algebraic numbers and the transcendental
 numbers.\footnote{Since both algebraic and transcendental numbers can be
   complex, we need the added condition that these do not involve the
   imaginary unit, \(i\). For example,
@@ -317,8 +319,8 @@ as \[
 infinite} set whose members begin with \(1\) and progress by the
 addition of \(1\) to the predecessor. It is an infinite set, which means
 it never ends, as denoted by the
-\href{https://www.grammarly.com/blog/ellipsis/}{ellipsis} or dots at the
-end of the definition.
+\href{https://www.grammarly.com/blog/ellipsis/}{ellipsis} or three dots
+at the end of the definition.
 
 Zero is not a natural number and is assigned its own, unnamed set,
 \(\{0\}\).\footnote{Some folks include zero in \(\mathbb{N}\).}
@@ -442,27 +444,28 @@ sequence of digits when expressed as a decimal. But the absence of
 recurring sequences in the decimal representation of a number should not
 solely be used to identify a number as irrational, because some
 rationals with large denominators can and do have very long recurring
-sequences, which may be difficult to detect by visual inspection . For
+sequences, which may be difficult to detect by visual inspection. For
 example, \(\frac{8119}{5741}\)---which incidentally is a rational
 approximation to \(\sqrt{2}\)---has a recurring sequence of length
-\(5740\).\footnote{Also called the \emph{period} of a repeating decimal.
-  See \url{https://www.wolframalpha.com/input?i=8119\%2F5741}.}
+\(5740\)!\footnote{Also called the \emph{period} of a repeating decimal.
+  Note that this number is one less than the denominator. See
+  \url{https://www.wolframalpha.com/input?i=8119\%2F5741}.}
 
-\subsubsection{The irrationals exceed in number the
-rationals}\label{the-irrationals-exceed-in-number-the-rationals}
+\subsubsection{The irrationals far outnumber the
+rationals}\label{the-irrationals-far-outnumber-the-rationals}
 
 If you are curious, you might wonder which are the more numerous: the
-rationals or the irrationals. You might guess that the familiar
+rationals or the irrationals? You might guess that the familiar
 rationals are more numerous than the obscure irrationals. But you would
 be mistaken.
 
 In fact,
 \href{https://socratic.org/questions/58c80a37b72cff29df40c794}{the
 irrationals far exceed in number the rational numbers}
-{[}\citeproc{ref-socratic}{6}{]}. This fact is stated baldly here,
-because going into the whys and wherefores of this claim will lead us
-too far astray from our focus on \(\pi\). It is an interesting fact,
-though, that you should stash away for future use.
+{[}\citeproc{ref-socratic}{6}{]}. This fact is statBut in this blog, ed
+baldly here, because going into the whys and wherefores of this claim
+will lead us too far astray from our focus on \(\pi\). It is an
+interesting fact, though, that you should stash away for future use.
 
 \subsection{A second dichotomy}\label{a-second-dichotomy}
 
@@ -472,16 +475,17 @@ exclusive sets: the \emph{algebraic numbers} and the
 algebraic number or a transcendental number; it cannot be both.
 
 It bears noting though, that both the algebraic and the transcendental
-numbers may be complex, i.e, have an imaginary part. But in this blog,
-we have restricted our universe to the real numbers. In this blog, we
-will not consider algebraic or transcendental numbers that embody the
-imaginary unit.
+numbers may be complex, i.e, have an imaginary part. In this blog, we
+focus exclusively on real numbers, excluding algebraic and
+transcendental numbers that involve the imaginary unit.
 
 \subsection{The Algebraic Numbers}\label{the-algebraic-numbers}
 
 An algebraic number is the root of a non-zero polynomial with integer or
 rational coefficients. Things have gotten abstract enough thus far for
 eyes to be glazed. So, let us invoke some examples to revive attention.
+
+OUT IN A FIGURE HERE.
 
 The simplest algebraic number is an integer. Let us take \(5\) as an
 example. If the polynomial \(p(x) = x - 5\), its root is when
@@ -500,7 +504,7 @@ We may assert that \emph{every rational number is algebraic and
 therefore not transcendental}.
 
 But what about an irrational number like \(\sqrt{2}\)? Is it algebraic?
-The polynomial \((x^2 - 2)\) has a zeros at \(\pm\sqrt{2}\), thereby
+The polynomial \((x^2 - 2)\) has zeros at \(\pm\sqrt{2}\), thereby
 demonstrating that both \(\pm\sqrt{2}\) are algebraic.
 
 Can an algebraic number be a complex root of a real polynomial? Let us
@@ -576,8 +580,9 @@ marshal the facts we have gathered so far:
   Let us introduce the non-standard symbol \(\mathbb{T_{\mathbb{R}}}\)
   for the set of real transcendental numbers.
 \item
-  The real numbers are the union of the rational and the irrational
-  numbers: \(\mathbb{R} = \mathbb{Q} \cup \mathbb{I}\).
+  The real numbers are the union of the set of rational numbers and the
+  set of irrational numbers:
+  \(\mathbb{R} = \mathbb{Q} \cup \mathbb{I}\).
 \item
   The real numbers are also the union of the algebraic and
   transcendental numbers that do not embody the imaginary unit \(i\):
@@ -601,8 +606,8 @@ marshal the facts we have gathered so far:
   \wedge (\mathbb{A}_{\mathbb{R}} \cap \mathbb{I} \neq \emptyset)\).
 \end{enumerate}
 
-That was quite mouthful even with mathematical symbols. We are now ready
-to draw the Venn diagram for the tetrachotomy of the real numbers.
+That was quite a mouthful even with mathematical symbols. We are now
+ready to draw the Venn diagram for the tetrachotomy of the real numbers.
 
 And surprise! surprise! There are only \emph{three} regions in the Venn
 diagram that are populated. So, taking mathematical liberties, we may
@@ -722,8 +727,8 @@ Viète} not only emulated the polygonal approach of Archimedes to
 estimate \(\pi\), but also introduced algebraic notation
 {[}\citeproc{ref-viete}{13},\citeproc{ref-maor1998}{14}{]} to allow for
 greater abstraction. Even more significantly, he introduced---for the
-first time---an explicit, infinite product formula for for the
-\emph{exact} value of \(\pi\), now known as
+first time---an explicit, infinite product formula for the \emph{exact}
+value of \(\pi\), now known as
 \href{https://en.wikipedia.org/wiki/Vi\%C3\%A8te\%27s_formula}{Viète's
 formula}
 {[}\citeproc{ref-maor1998}{14},\citeproc{ref-viete-formula}{15}{]},
@@ -753,8 +758,8 @@ the modern by embodying \(\pi\) and infinity for the first time in an
 explicit and exact equation, allowing more and more efficient estimates
 of \(\pi\) to be uncovered in due course.
 
-\subsection{The Madhava-Gregory-Leibniz (MGL)
-series}\label{the-madhava-gregory-leibniz-mgl-series}
+\subsection{The Madhava-Gregory-Leibniz
+series}\label{the-madhava-gregory-leibniz-series}
 
 It must be obvious by now that trigonometry, circles, and the number
 \(\pi\) are inextricably entwined.\footnote{If this sounds unfamiliar, I
@@ -797,7 +802,7 @@ are given in the links below for all three mathematicians.
 
 \href{https://en.wikipedia.org/wiki/James_Gregory_(mathematician)}{James
 Gregory} was the first Professor of Mathematics at the University of
-Edinburgh and in 1671, he published the series that was called the the
+Edinburgh and in 1671, he published the series that was called the
 \href{https://en.wikipedia.org/wiki/Arctangent_series}{arctangent
 series}, or the Gregory series.
 
@@ -1054,7 +1059,7 @@ After first attempting to estimate the area under the curve, he went on
 to define the curve itself using his newly devised binomial series. In
 the process, he had moved from algebra (finite polynomials) to analysis
 (infinite series). When the results justified his extrapolation, he
-could estimate estimate \(\pi\) using the newfound relationships.
+could estimate \(\pi\) using the newfound relationships.
 
 Once again, this episode exemplifies how mathematics is, at heart, an
 exploratory science, that does admit of experimentation, and in which
@@ -1211,9 +1216,9 @@ referred to source material for a more complete exposition
 Bernoulli}\label{the-lemniscate-of-bernoulli}
 
 The Lemniscate of Bernoulli looks like a ribbon tied into a bow, or like
-the mathematical symbol for infinity. It is is a polar curve defined as
-the locus of points such that the product of distances from two fixed
-points \((-a, 0)\) and \((a, 0)\) \ldots is constant and equals \(a^2\)
+the mathematical symbol for infinity. It is a polar curve defined as the
+locus of points such that the product of distances from two fixed points
+\((-a, 0)\) and \((a, 0)\) \ldots is constant and equals \(a^2\)
 {[}\citeproc{ref-lemniscate-mathworld}{34}{]}. Its equation is: \[
 \begin{aligned}
 (x^2 + y^2)^2 &= 2a^2(x^2 - y^2)\; \text{or in polar form}\\

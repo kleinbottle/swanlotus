@@ -9,9 +9,11 @@ summary: This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus
 opengraphimage: pi-equations.png
 ---
 
-This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes). Here, we look at π as a number---without explicit reference to its geometric tethering---and explore its remarkable ubiquity in mathematics. As an appetizer, see [@fig:pi-equations], where the symbol for Pi is surmounted by two very disparate equations defining it. How in all the world could these two different-looking equations be true? But they are indeed!
+This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes). Here, we look at π as a number---without explicit reference to its geometric tethering---and explore its remarkable ubiquity in mathematics.
 
-![Pi expressed by two very different equations. Note that both are sums to infinity of expressions involving integers.]({attach}images/pi-equations.svg){#fig:pi-equations width=60% .modal-target}
+As an appetizer, see [@fig:pi-equations], where the symbol for Pi is surmounted by two very disparate equations defining it. How in all the world could these two different-looking equations be true? But they are indeed!
+
+![Pi (π) expressed by two very different equations. Note that both are sums to infinity of expressions involving integers.]({attach}images/pi-equations.svg){#fig:pi-equations width=60% .modal-target}
 
 ## The Number [Menagerie](https://www.thefreedictionary.com/menagerie)
 
@@ -29,7 +31,7 @@ $$
 $$
 Sometimes, the complex number $a + bi$ is written as the ordered pair $(a, b)$, provided the context is clear.
 
-What then are the reals? The real numbers are the union of the set of rational numbers and the irrational numbers. Alternatively, the reals are the union of the algebraic numbers and the transcendental numbers.^[Since both algebraic and transcendental numbers can be complex, we need the added condition that these do not involve the imaginary unit, $i$. For example, $(1 + \frac{\sqrt{(-7)}}{2}) = (1 + \frac{\sqrt{7}}{2}i)$, and $\pi i$ are examples of algebraic and transcendental numbers respectively that involve $i$.]
+What then are the reals? The real numbers are the union of the set of rational numbers and the set of  irrational numbers. Alternatively, the reals are the union of the algebraic numbers and the transcendental numbers.^[Since both algebraic and transcendental numbers can be complex, we need the added condition that these do not involve the imaginary unit, $i$. For example, $(1 + \frac{\sqrt{(-7)}}{2}) = (1 + \frac{\sqrt{7}}{2}i)$, and $\pi i$ are examples of algebraic and transcendental numbers respectively that involve $i$.]
 
 We will define each of these terms below and how they relate to one another. As always, we start with the known and proceed to the unknown. 
 
@@ -38,7 +40,7 @@ We will define each of these terms below and how they relate to one another. As 
 The set $\mathbb{N}$ of _natural or counting numbers_ is defined as 
 $$
 \mathbb{N} = \{1, 2, 3, \dots, n, n+1, \dots\}.
-$$ It is a [countably infinite](https://en.wikipedia.org/wiki/Countable_set) set whose members begin with $1$ and progress by the addition of $1$ to the predecessor. It is an infinite set, which means it never ends, as denoted by the [ellipsis](https://www.grammarly.com/blog/ellipsis/) or dots at the end of the definition. 
+$$ It is a [countably infinite](https://en.wikipedia.org/wiki/Countable_set) set whose members begin with $1$ and progress by the addition of $1$ to the predecessor. It is an infinite set, which means it never ends, as denoted by the [ellipsis](https://www.grammarly.com/blog/ellipsis/) or three dots at the end of the definition. 
 
 Zero is not a natural number and is assigned its own, unnamed set, $\{0\}$.^[Some folks include zero in $\mathbb{N}$.]
 
@@ -109,23 +111,25 @@ Irrational numbers are numbers which are _not rational_. The discovery that $\sq
 
 There are many celebrated proofs that $\sqrt{2}$ is not the ratio of two integers and is therefore irrational [@bogomolny2018]. Nevertheless, it took almost two millennia for $\sqrt{2}$ to be accepted into the fold of properly defined numbers [@cepelewicz2024].
 
-An irrational number like $\sqrt{2}$ does not have any recurring sequence of digits when expressed as a decimal. But the absence of recurring sequences in the decimal representation of a number should not solely be used to identify a number as irrational, because some rationals with large denominators can and do have very long recurring sequences, which may be difficult to detect by visual inspection . For example, $\frac{8119}{5741}$---which incidentally is a rational approximation to $\sqrt{2}$---has a recurring sequence of length $5740$.^[Also called the _period_ of a repeating decimal. See <https://www.wolframalpha.com/input?i=8119%2F5741>.]
+An irrational number like $\sqrt{2}$ does not have any recurring sequence of digits when expressed as a decimal. But the absence of recurring sequences in the decimal representation of a number should not solely be used to identify a number as irrational, because some rationals with large denominators can and do have very long recurring sequences, which may be difficult to detect by visual inspection. For example, $\frac{8119}{5741}$---which incidentally is a rational approximation to $\sqrt{2}$---has a recurring sequence of length $5740$!^[Also called the _period_ of a repeating decimal. Note that this number is one less than the denominator. See <https://www.wolframalpha.com/input?i=8119%2F5741>.]
 
-### The irrationals exceed in number the rationals
+### The irrationals far outnumber the rationals
 
-If you are curious, you might wonder which are the more numerous: the rationals or the irrationals. You might guess that the familiar rationals are more numerous than the obscure irrationals. But you would be mistaken.
+If you are curious, you might wonder which are the more numerous: the rationals or the irrationals? You might guess that the familiar rationals are more numerous than the obscure irrationals. But you would be mistaken.
 
-In fact, [the irrationals far exceed in number the rational numbers](https://socratic.org/questions/58c80a37b72cff29df40c794) [@socratic]. This fact is stated baldly here, because going into the whys and wherefores of this claim will lead us too far astray from our focus on $\pi$. It is an interesting fact, though, that you should stash away for future use.
+In fact, [the irrationals far exceed in number the rational numbers](https://socratic.org/questions/58c80a37b72cff29df40c794) [@socratic]. This fact is statBut in this blog, ed baldly here, because going into the whys and wherefores of this claim will lead us too far astray from our focus on $\pi$. It is an interesting fact, though, that you should stash away for future use.
 
 ## A second dichotomy
 
 The real numbers may also be split another way into two mutually exclusive sets: the _algebraic numbers_ and the _transcendental numbers_. Every real number is _either_ an algebraic number or a transcendental number; it cannot be both.
 
-It bears noting though, that both the algebraic and the transcendental numbers may be complex, i.e, have an imaginary part. But in this blog, we have restricted our universe to the real numbers. In this blog, we will not consider algebraic or transcendental numbers that embody the imaginary unit.
+It bears noting though, that both the algebraic and the transcendental numbers may be complex, i.e, have an imaginary part. In this blog, we focus exclusively on real numbers, excluding algebraic and transcendental numbers that involve the imaginary unit.
 
 ## The Algebraic Numbers
 
 An algebraic number is the root of a non-zero polynomial with integer or rational coefficients. Things have gotten abstract enough thus far for eyes to be glazed. So, let us invoke some examples to revive attention.
+
+<!--![](){}--> OUT IN A FIGURE HERE.
 
 The simplest algebraic number is an integer. Let us take $5$ as an example. If the polynomial $p(x) = x - 5$, its root is when $p(x) = 0$, i.e., when $x - 5 = 0$. This implies $x = 5$ and we have shown that $5$ is algebraic _by definition_.
 
@@ -135,7 +139,7 @@ Likewise, the rational number $-(\frac{2}{3})$ is the root of the polynomial $3x
 
 We may assert that _every rational number is algebraic and therefore not transcendental_.
 
-But what about an irrational number like $\sqrt{2}$? Is it algebraic? The polynomial $(x^2 - 2)$ has a zeros at $\pm\sqrt{2}$, thereby demonstrating that both $\pm\sqrt{2}$ are algebraic.
+But what about an irrational number like $\sqrt{2}$? Is it algebraic? The polynomial $(x^2 - 2)$ has  zeros at $\pm\sqrt{2}$, thereby demonstrating that both $\pm\sqrt{2}$ are algebraic.
 
 Can an algebraic number be a complex root of a real polynomial? Let us find the roots for the real  polynomial $x^2 - 10x +34$:
 $$
@@ -176,7 +180,7 @@ This classification of the real numbers seems to be crying out for a Venn diagra
 
 #. Let us introduce the non-standard symbol $\mathbb{T_{\mathbb{R}}}$ for the set of real transcendental numbers.
 
-#. The real numbers are the union of the rational and the irrational numbers: $\mathbb{R} = \mathbb{Q} \cup \mathbb{I}$.
+#. The real numbers are the union of the set of rational numbers and the set of irrational numbers: $\mathbb{R} = \mathbb{Q} \cup \mathbb{I}$.
 
 #. The real numbers are also the union of the algebraic and transcendental numbers that do not embody the imaginary unit $i$: $\mathbb{R} = \mathbb{A_{\mathbb{R}}} \cup \mathbb{T_{\mathbb{R}}}$
 
@@ -191,7 +195,7 @@ This classification of the real numbers seems to be crying out for a Venn diagra
 #. The irrational numbers contain _all_ transcendental numbers and a subset of the algebraic numbers, again excluding those that embody $i$: $(\mathbb{T_{\mathbb{R}}} \subset \mathbb{I})
 \wedge (\mathbb{A}_{\mathbb{R}} \cap \mathbb{I} \neq \emptyset)$.
 
-That was quite  mouthful even with mathematical symbols. We are now ready to draw the Venn diagram for the tetrachotomy of the real numbers.
+That was quite a mouthful even with mathematical symbols. We are now ready to draw the Venn diagram for the tetrachotomy of the real numbers.
 
 And surprise! surprise! There are only _three_ regions in the Venn diagram that are populated. So, taking mathematical liberties, we may say that our tetrachotomy was not "linearly independent".
 
@@ -234,7 +238,7 @@ Before we set sail to explore $\pi$ further, let us indulge in one last glance a
 
 ![An image of the restored tombstone in Leiden celebrating Ludolph van Cuelen's extraordinary  achievement in calculating $\pi$ to 35 decimal places. Image is taken from <https://www.history-of-mathematics.org/artifacts/pi-tombstone> [@tombstone].]({attach}images/van-ceulen-restored-tombstone.jpg){#fig:memorial width=50% .modal-target}
 
-[François Viète](https://en.wikipedia.org/wiki/Fran%C3%A7ois_Vi%C3%A8te) not only emulated the polygonal approach of Archimedes to estimate $\pi$, but also introduced algebraic notation [@viete;@maor1998] to allow for greater abstraction. Even more significantly, he introduced---for the first time---an explicit, infinite product formula for for the _exact_ value of $\pi$, now known as [Viète's formula](https://en.wikipedia.org/wiki/Vi%C3%A8te%27s_formula) [@viete-formula;@maor1998], consisting of a product of nested radicals:
+[François Viète](https://en.wikipedia.org/wiki/Fran%C3%A7ois_Vi%C3%A8te) not only emulated the polygonal approach of Archimedes to estimate $\pi$, but also introduced algebraic notation [@viete;@maor1998] to allow for greater abstraction. Even more significantly, he introduced---for the first time---an explicit, infinite product formula for the _exact_ value of $\pi$, now known as [Viète's formula](https://en.wikipedia.org/wiki/Vi%C3%A8te%27s_formula) [@viete-formula;@maor1998], consisting of a product of nested radicals:
 $$
 \begin{aligned}
 \frac2\pi &= \frac{\sqrt 2}2 \cdot \frac{\sqrt{2+\sqrt 2}}2 \cdot \frac{\sqrt{2+\sqrt{2+\sqrt 2}}}2 \cdots\\
@@ -247,7 +251,7 @@ $${#eq:viete}
 
 While van Cuelen's work displayed superhuman effort and dedication, it also demonstrated that the method of Archimedes did not converge rapidly to $\pi$. Viète's formula bridges the divide between the ancient and the modern by embodying $\pi$ and infinity for the first time in an explicit and exact equation, allowing more and more efficient estimates of $\pi$ to be uncovered in due course.
 
-## The Madhava-Gregory-Leibniz (MGL) series
+## The Madhava-Gregory-Leibniz series
 
 It must be obvious by now that trigonometry, circles, and the number $\pi$ are inextricably entwined.^[If this sounds unfamiliar, I invite you to read my blogs ["A tale of two measures: degrees and radians"](https://swanlotus.netlify.app/blogs/a-tale-of-two-measures-degrees-and-radians) and ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes).] The quest for more  accurate values of $\pi$ continued to fascinate mathematicians in the centuries after Archimedes. This time though, rather than geometric iteration, _sums of successive terms_ were used to approximate $\pi$.
 
@@ -259,7 +263,7 @@ The series we are about to look at was originally called the _Gregory series_. L
 
 The accomplishments of medieval Indian mathematicians---whose discoveries antedated those of Gregory and Leibniz---remained unknown to the larger world. But recent scholarship has accorded [priority](https://en.wikipedia.org/wiki/Scientific_priority) to the leading Indian mathematician-astronomer of that period, Madhava, who anticipated both the Gregory series and the Leibniz series by more than 250 years [@roy1990; @joseph2009; @roy2011; @joseph2011; @madhava-wiki]. This explains the triple-barrelled name for the series. Thumbnail sketches are given in the links below for all three mathematicians.
 
-[James Gregory](https://en.wikipedia.org/wiki/James_Gregory_\(mathematician\)) was the first Professor of Mathematics at the University of Edinburgh and in 1671, he published the series that was called the the [arctangent series](https://en.wikipedia.org/wiki/Arctangent_series), or the Gregory series.
+[James Gregory](https://en.wikipedia.org/wiki/James_Gregory_\(mathematician\)) was the first Professor of Mathematics at the University of Edinburgh and in 1671, he published the series that was called the [arctangent series](https://en.wikipedia.org/wiki/Arctangent_series), or the Gregory series.
 
 [Gottfried Wilhelm Leibniz](https://www.google.com/search?q=Leibniz) evaluated the arctangent series at $\frac{\pi}{4}$ to get an estimate of $\frac{\pi}{4}$; the result was known as the Gregory-Leibniz series or the Leibniz Formula.
 
@@ -409,7 +413,7 @@ But $\sqrt{1 - x^2} = (1 - x^2)^{\frac{1}{2}}$ while also being a binomial term 
 
 ### Extending the binomial theorem
 
-The mathematician [Steven Strogatz](https://en.wikipedia.org/wiki/Steven_Strogatz) has written [a charming essay on this subject in Quanta Magazine](https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/) [@strogatz-newton-2022]. It recounts how a young Newton made an inspired and imaginative leap of faith, and [gingerly](https://www.merriam-webster.com/dictionary/gingerly) attempted to extend his own pathbreaking [binomial theorem](https://en.wikipedia.org/wiki/Binomial_theorem) to non-integral powers, to derive the [binomial series](https://en.wikipedia.org/wiki/Binomial_series). After first attempting to estimate the area under the curve, he went on to define the curve itself using his newly devised binomial series. In the process, he had moved from algebra (finite polynomials) to analysis (infinite series). When the results justified his extrapolation, he could estimate estimate $\pi$ using the newfound relationships.
+The mathematician [Steven Strogatz](https://en.wikipedia.org/wiki/Steven_Strogatz) has written [a charming essay on this subject in Quanta Magazine](https://www.quantamagazine.org/how-isaac-newton-discovered-the-binomial-power-series-20220831/) [@strogatz-newton-2022]. It recounts how a young Newton made an inspired and imaginative leap of faith, and [gingerly](https://www.merriam-webster.com/dictionary/gingerly) attempted to extend his own pathbreaking [binomial theorem](https://en.wikipedia.org/wiki/Binomial_theorem) to non-integral powers, to derive the [binomial series](https://en.wikipedia.org/wiki/Binomial_series). After first attempting to estimate the area under the curve, he went on to define the curve itself using his newly devised binomial series. In the process, he had moved from algebra (finite polynomials) to analysis (infinite series). When the results justified his extrapolation, he could estimate $\pi$ using the newfound relationships.
 
 Once again, this episode exemplifies how mathematics is, at heart, an exploratory science, that does admit of experimentation, and in which logical correctness grants the ultimate seal of approval and acceptance. Mathematics is constantly revised and enlarged through this process of constant re-greening.
 
@@ -483,7 +487,7 @@ By tying together these three ideas, Gauss was not only able to arrive at a pote
 
 ### The Lemniscate of Bernoulli
 
-The Lemniscate of Bernoulli looks like a ribbon tied into a bow, or like the mathematical symbol for infinity. It is is a polar curve defined as the locus of points such that the product of distances from two fixed points $(-a, 0)$ and $(a, 0)$ \ldots is constant and equals $a^2$ [@lemniscate-mathworld]. Its equation is:
+The Lemniscate of Bernoulli looks like a ribbon tied into a bow, or like the mathematical symbol for infinity. It is a polar curve defined as the locus of points such that the product of distances from two fixed points $(-a, 0)$ and $(a, 0)$ \ldots is constant and equals $a^2$ [@lemniscate-mathworld]. Its equation is:
 $$
 \begin{aligned}
 (x^2 + y^2)^2 &= 2a^2(x^2 - y^2)\; \text{or in polar form}\\
