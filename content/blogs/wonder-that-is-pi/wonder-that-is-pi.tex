@@ -236,7 +236,7 @@
 
 \title{The Wonder That Is Pi}
 \author{R (Chandra) Chandrasekhar}
-\date{2004-01-14 | 2024-07-25}
+\date{2004-01-14 | 2024-12-18}
 
 \begin{document}
 \maketitle
@@ -428,10 +428,10 @@ shown for example, in \cref{fig:pi-equations}.
 Irrational numbers are numbers which are \emph{not rational}. The
 discovery that \(\sqrt{2}\)---which is the length of the diagonal of a
 unit square---was not rational
-{[}\citeproc{ref-HSM-SE}{2},\citeproc{ref-clegg2004}{3}{]}, caused the
-first ripples of disquiet in the ancient mathematical world, because it
-upset the prevailing philosophy that ratios of whole numbers alone ruled
-the world.
+{[}{[}\citeproc{ref-HSM-SE}{2}{]};{[}\citeproc{ref-clegg2004}{3}{]};havil-irrationals-2012{]},
+caused the first ripples of disquiet in the ancient mathematical world,
+because it upset the prevailing philosophy that ratios of whole numbers
+alone ruled the world.
 
 There are many celebrated proofs that \(\sqrt{2}\) is not the ratio of
 two integers and is therefore irrational
@@ -482,15 +482,14 @@ transcendental numbers that involve the imaginary unit.
 \subsection{The Algebraic Numbers}\label{the-algebraic-numbers}
 
 An algebraic number is the root of a non-zero polynomial with integer or
-rational coefficients. Things have gotten abstract enough thus far for
+rational coefficients. It is the value of the variable when the
+polynomial equals zero. Things have gotten abstract enough thus far for
 eyes to be glazed. So, let us invoke some examples to revive attention.
 
-OUT IN A FIGURE HERE.
-
 The simplest algebraic number is an integer. Let us take \(5\) as an
-example. If the polynomial \(p(x) = x - 5\), its root is when
-\(p(x) = 0\), i.e., when \(x - 5 = 0\). This implies \(x = 5\) and we
-have shown that \(5\) is algebraic \emph{by definition}.
+example. If the polynomial is \(p(x) = x - 5\), its root is the value of
+\(x\) when \(p(x) = 0\), i.e., when \(x - 5 = 0\), or \(x = 5\). So,
+\(5\) is algebraic \emph{by definition}.
 
 Note that we could have used any other polynomial with the same root,
 such as \(q(x) = 2x - 10\). All we need do is find \emph{one} polynomial
@@ -629,6 +628,17 @@ regions in the Venn diagram: \(\mathbb{Q}\),
 
 \subsection{Enter π}\label{enter-ux3c0}
 
+Pi is not only important, it is also tantalizing. It is like a beautiful
+butterfly that cannot be caught in the net of finitude. It is like a
+rainbow that is beautiful to behold from afar, but can never be touched.
+
+It is not a rational number, which means that it cannot be expressed as
+the ratio of two whole numbers, the denominator being non-zero. Its
+decimal representation is neither finite nor does it contain a recurring
+segment. It is also not the root to any polynomial equation whose
+coefficients are integers or rational numbers. Pi thus qualifies as a
+transcendental, irrational number.
+
 We have gone through all this huffing and puffing to place \(\pi\)
 contextually among the real numbers. Let us list its characteristics:
 
@@ -646,15 +656,8 @@ contextually among the real numbers. Let us list its characteristics:
   When Pi is used in equations, the placeholder symbol \(\pi\) is used.
 \end{enumerate}
 
-These properties have earned for \(\pi\) the rather exalted title of
-transcendental number, which it shares with other pivotal numbers like
-\(e\). Pi is not only important, it is also tantalizing. Pi is like a
-beautiful butterfly that cannot be caught in the net of finitude. It is
-like a rainbow that is beautiful to behold from afar, but can never be
-reached.
-
-One could almost say that \(\pi\) is not numerically friendly. And you
-would not be too wrong. Rational approximations for \(\pi\), like
+One could claim that \(\pi\) is not numerically friendly. And you would
+not be too wrong. Rational approximations for \(\pi\), like
 \(\frac{22}{7}\), are used in practice. And the matter would have rested
 there were it not for the human quest for beauty.
 
@@ -663,6 +666,10 @@ enchanted mathematicians and still continues to engross them. Pi has
 been calculated to an unprecedented number of decimal places, and such a
 quest is certainly driven, not by practical necessity, but possibly by
 the need for aesthetic fulfilment.
+
+There is also a tacit belief among some that the digits of \(\pi\) might
+conceal within themselves the secret of what it truly means to be
+random.
 
 The search for increasingly more accurate values for \(\pi\) has
 resulted in many approaches to solve the problem. Geometric\footnote{See
@@ -941,7 +948,7 @@ Machin knew all \emph{four} \(\arctan\) formulae shown below:
 \frac{\pi}{4} &= 4\arctan\frac{1}{5} - \arctan\frac {1}{239}
 \end{aligned}
 }\end{equation} Note that the rational arguments of the \(\arctan\)
-functions on the RHS of these e quations all have a numerator of \(1\).
+functions on the RHS of these equations all have a numerator of one.
 Henceforth, whenever we talk of the \emph{two-term Machin-like formulae}
 we implictly mean these rational fractions with a numerator of one.
 
@@ -967,15 +974,18 @@ Was the historical process of discovery serendipitous, or was it
 directed by knowledge that led straight to it? Even if historically
 serendipitous, is there a systematic and simple route that can today
 deliver the four two-term Machin-like formulae, much like a can of Coke
-is delivered from a Coke machine when the requisite coins are inserted?
+is delivered from a vending machine when the requisite coins are
+inserted?
 
 How many ways are there of looking at this one problem? Pythagorean
 Triples? Gaussian Integers? Nested Square Roots? Trial and Error in a
 restricted domain?
 
-What was the \emph{unifying thread} that enabled Størmer to claim in his
-1899 paper {[}\citeproc{ref-stormer-1899}{25}{]} that there were
-\emph{four and only four} Machin-like formulae with two terms?
+What was the \emph{unifying thread} that enabled
+\href{http://www.numdam.org/articles/10.24033/bsmf.603/}{Størmer to
+claim in his 1899 paper} {[}\citeproc{ref-stormer-1899}{25}{]} that
+there were \emph{four and only four} Machin-like formulae with two
+terms?
 
 If and when I find satisfying answers to my questions, I will write
 about them in a separate, dedicated blog. Meanwhile, if any reader of
@@ -1024,8 +1034,10 @@ The term \({(1 - x^2)}\) is
 \href{https://en.wikipedia.org/wiki/Isaac_Newton}{Isaac Newton} is
 credited with discovering the
 \href{https://www.mathsisfun.com/algebra/binomial-theorem.html}{binomial
-theorem} in Europe, but that theorem is valid for expressions where the
-binomial is raised to a positive integer power, e.g., \[
+theorem} in Europe,\footnote{Other mathematical traditions were aware of
+  the binomial theorem prior to Newton's discovery.} but that theorem
+was originally shown to be valid only for expressions where the binomial
+is raised to a positive integer power, e.g., \[
 (1 + x^2)^3 = x^6 + 3x^4 + 3x^4 +1.
 \] Note that we have a polynomial with a finite number of terms on the
 RHS. This application of the binomial theorem falls squarely in the
@@ -1173,20 +1185,20 @@ irrationals in entirely surprising ways, whenever infinity is involved.
 
 \subsection{Gauss, the AGM, and π}\label{gauss-the-agm-and-ux3c0}
 
-Gauss was a precocious mathematician {[}\citeproc{ref-gauss-bio}{29}{]}
-who published his groundbreaking wok only when it met his standards for
-terse beauty. Accordingly, many of his contributions became public only
-many decades after his demise. The material in this section belongs to
-that category.
+\href{https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss}{Carl Friedrich
+Gauss} {[}\citeproc{ref-gauss-wiki}{29}{]} was a precocious
+mathematician {[}\citeproc{ref-gauss-bio}{30}{]} who published his
+groundbreaking work only when it met his high standards for terse
+beauty. Accordingly, many of his contributions became public only many
+decades after his demise. The material in this section belongs to that
+category.
 
 I was not aware what the
 \href{https://mathworld.wolfram.com/Arithmetic-GeometricMean.html}{Arithmetic-Geometric
-Mean} (AGM) was until I stumbled upon how
-\href{https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss}{Carl Friedrich
-Gauss} {[}\citeproc{ref-gauss-wiki}{30}{]} related it to \(\pi\). And he
-found the connection when he was only 14 years old. So, we are looking
-at the work of a mathematical prodigy, portions of which are seriously
-non-trivial.
+Mean} (AGM) was until I stumbled upon how Gauss related it to \(\pi\).
+And he found the connection when he was only 14 years old. So, we are
+looking at the work of a mathematical prodigy, portions of which are
+seriously non-trivial.
 
 Accordingly, there will be a lot of hand-waving in what follows, as we
 attempt a thumbnail outline of Gauss's method. There are three basic
@@ -1644,9 +1656,9 @@ Chudnovsky} {[}\citeproc{ref-preston-1993}{42}{]} embody in the popular
 imagination the archetypal digit hunters
 {[}\citeproc{ref-beautiful-geometry-2014}{43}{]} who are immersed in the
 quest for ever more digits of \(\pi\)
-{[}\citeproc{ref-blatner-1997}{44}{]}. Mark that we do not \(\pi\) to a
-hundred decimal places for any earthly or unearthly \footnote{Think
-  outer space, astronomy, etc.} purpose.
+{[}{[}\citeproc{ref-blatner-1997}{44}{]};pi-next-gen-2016{]}. Mark that
+we do not need \(\pi\) to a hundred decimal places for any earthly or
+unearthly\footnote{Think outer space, astronomy, etc.} purpose.
 
 \subsection{The Quest for Ever Greater
 Precision}\label{the-quest-for-ever-greater-precision}
@@ -1678,7 +1690,112 @@ to inspire such single-minded and unremitting pursuit? What is the magic
 within \(\pi\) that fuels such devotion and dedication? Is it beauty? Is
 it mystery? Or is it divinity?
 
-\subsection{Pi, picture, and words}\label{pi-picture-and-words}
+\subsection{Sources for Enrichment}\label{sources-for-enrichment}
+
+If you are intrigued by the material in these two blogs on Pi\footnote{\href{https://swanlotus.netlify.app/blogs/the-pi-of-archimedes}{The
+  Pi of Archimedes} and
+  \href{https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi}{The
+  Wonder That Is Pi}.} have the time and interest to find out more, do
+engage with some of these books, websites, and videos. They will enhance
+your knowledge of \(\pi\) and enrich you intellectually.
+
+\subsubsection{Book Recommendations}\label{book-recommendations}
+
+I recommend six books. The first is an encyclopaedic source book on
+\(\pi\) by Berggren et al. {[}\citeproc{ref-pi-source}{31}{]}. It
+contains a wealth of historical information and has facsimiles of many
+original publications or their translations. The second book follows on
+from the first. It chronicles the recent history of \(\pi\) and its
+computation {[}\citeproc{ref-pi-next-gen-2016}{46}{]}.
+
+Interestingly, the next two volumes are written by engineers, not
+mathematicians. Beckmann's book {[}\citeproc{ref-beckmann-1971}{23}{]},
+although somewhat dated and opinionated, is a labour of love. It gives
+detailed historical accounts of efforts at computing \(\pi\). The book
+by Banks{[}\citeproc{ref-banks-1999}{45}{]} is a delightful, instructive
+and entertaining romp through some areas of applied mathematics. It is
+easy to read and devotes three chapters to famous numbers and number
+sequences.
+
+Another interesting and accessible popular exposition, exclusively on
+\(\pi\), is the book by Posamentier and Lehmann
+{[}\citeproc{ref-pos-leh-2004}{47}{]}. Lastly, the popular book by
+Blatner {[}\citeproc{ref-blatner-1997}{44}{]} is historically
+informative and instructive.
+
+\subsubsection{Web Resources}\label{web-resources}
+
+If you are unsure about a mathematical term, or definition, I would
+recommend, as first port of call,
+\href{https://mathworld.wolfram.com/}{Wolfram MathWorld}, created,
+developed, and nurtured by Eric Weisstein
+{[}\citeproc{ref-mathworld}{48}{]}. It is a searchable, authoritative
+and encyclopaedic web site. Although Weisstein is himself an astronomer,
+his enduring love of Mathematics has resulted in this treasure trove of
+mathematical information on the web, from which all can benefit.
+
+The lives of mathematicians have been chronicled at several places on
+the Web. One of the most comprehensive and scholarly---fully searchable,
+and with many related links---is the
+\href{https://mathshistory.st-andrews.ac.uk/}{MacTutor History of
+Mathematics website} {[}\citeproc{ref-mactutor}{49}{]}.
+
+You may find out more about the formulae for computing \(\pi\) at
+\href{https://mathworld.wolfram.com/PiFormulas.html}{Pi Formulas}. One
+particularly interesting formula is that of
+\href{https://mathworld.wolfram.com/WallisFormula.html}{Wallis}: it is
+composed of an infinite product of rational numbers to yield the
+irrational number \(\pi\).
+
+If you wish to explore more about \(\pi\), the Fibonacci sequence, and
+other numbers, you may want to visit
+\href{https://r-knott.surrey.ac.uk/fibonacci/fibpi.html\%7D\%7BRon\%20Knott's\%20information-packed\%20site}{Ron
+Knott's information-packed site}.
+
+One thread runs through this blog: mathematics is one interrelated
+structure in which the most unlikely connections between its disparate
+parts are a natural consequence of its inherent integrity. A delightful
+article on this idea, using Ramanujan's work as its thematic
+centrepiece, is
+\href{https://www.quantamagazine.org/srinivasa-ramanujan-was-a-genius-math-is-still-catching-up-20241021/}{available
+online} {[}\citeproc{ref-ramanujan-quanta}{50}{]}.
+
+\subsubsection{Media on the Web}\label{media-on-the-web}
+
+How
+\href{https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin-Louis
+Cauchy} solved the Basel Problem is clearly laid out and explained in
+\href{https://www.youtube.com/watch?v=2jgtAo3Ztf}{this mesmerizing
+\emph{Rise to the Equation} YouTube video}
+{[}\citeproc{ref-cauchy-basel}{51}{]}. The explanation in this video
+should be clear to a high school student who has encountered
+trigonometry but not calculus.
+
+Those of you who are puzzled by the appearance of \(\pi^2\) in the
+solution to the Basel problem should also view this
+\href{https://www.youtube.com/watch?v=d-o3eB9sfls}{\emph{3Blue1Brown}
+YouTube vdeo} {[}\citeproc{ref-pi-squared-basel}{52}{]}.
+
+\href{https://www.youtube.com/@veritasium}{Veritasium} and
+\href{https://www.youtube.com/c/3blue1brown}{3Blue1Brown} put out
+quality educational videos on Mathematics on
+\href{https://www.youtube.com/}{YouTube} and are an authoritative source
+of enrichment. Do benefit from them.
+
+An \href{https://www.youtube.com/watch?v=LmmyAOkajVM}{excellent
+biography of Carl Gauss} is available on YouTube
+{[}\citeproc{ref-gauss-bio}{30}{]}. I highly recommend watching it.
+
+There are two web sites with simulations of the Buffon's Needle
+experiment.
+\href{https://www.mste.uiuc.edu/reese/buffon/buffon.html}{George Reese's
+site} has a discussion and simulation of the experiment. {[}Michael
+Hurben's site{]}(https://www.angelfire.com/wa/hurben/buff.html\} not
+only has a simulation, but also tracks and displays how close the
+estimate of \(\pi\) approaches the true value as the experiment is
+repeated.
+
+\subsection{Conclusion}\label{conclusion}
 
 We use pictures and words to communicate. In mathematics,
 \emph{geometry} corresponds to pictures, and \emph{algebra} to words.
@@ -1693,123 +1810,18 @@ number that shows up where we expect it and also where we might not
 anticipate its presence. It appears in almost all areas of mathematics,
 including geometry, algebra, calculus, infinite series, and probability,
 to name a few. Two of the most important ideas in analysis are those of
-a \emph{limit} and of \emph{convergence}, both of which we have
-encountered glancingly in these two blogs on \(\pi\).
+a \emph{limit} and of \emph{convergence}, both of which we have chanced
+upon here.
 
-\subsection{Sources for Enrichment}\label{sources-for-enrichment}
+These blogs on \(\pi\) have chronicled the story of how \(\pi\) was
+extracted from the ore of geometry and refined into an enigmatic number
+which cannot be trapped within finite digits, but which forever embodies
+the thrill of the chase for the digit hunters.
 
-If you have in any way been intrigued by the material in these two blogs
-on Pi\footnote{\href{https://swanlotus.netlify.app/blogs/the-pi-of-archimedes}{The
-  Pi of Archimedes} and
-  \href{https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi}{The
-  Wonder That Is Pi}.} and you have the time and interest to find out
-more, consult some of these books, websites, videos, etc. They will
-enhance your knowledge of Pi and enrich you intellectually.
-
-\subsubsection{Book References}\label{book-references}
-
-has been compiled mainly from four books. The first is the encyclopaedic
-source book on \(\pi\) by Berggren et al.
-{[}\citeproc{ref-pi-source}{31}{]}. It contains a wealth of historical
-information and has facsimiles of many original publications or their
-translations. Interestingly, the next two references are written by
-engineers, not mathematicians. Beckmann's book
-{[}\citeproc{ref-beckmann-1971}{23}{]}, although somewhat dated and
-opinionated, gives detailed historical accounts of efforts at computing
-\(\pi\). The book by Banks{[}\citeproc{ref-banks-1999}{45}{]} is a
-delightful, instructive and entertaining romp through some areas of
-applied mathematics. It is easy to read and devotes three chapters to
-famous numbers and number sequences. Another interesting and accessible
-popular exposition, exclusively on \(\pi\), is the book by Posamentier
-and Lehmann {[}\citeproc{ref-pos-leh-2004}{46}{]}. Lastly, the popular
-book by Blatner {[}\citeproc{ref-blatner-1997}{44}{]} is historically
-informative and instructive.
-
-\subsubsection{Web Resources}\label{web-resources}
-
-If you are unsure about a mathematical term, or definition, I would
-recommend, as first port of call,
-\href{http://mathworld.wolfram.com/}{Wolfram MathWorld}, created,
-developed and nurtured by Eric Weisstein
-{[}\citeproc{ref-mathworld}{47}{]}. It is a searchable, authoritative
-and encyclopaedic web site. Although Weisstein is himself an astronomer,
-his enduring love of Mathematics has resulted in this treasure trove of
-mathematical information on the web, from which all can benefit.
-
-The lives of mathematicians have been chronicled at several places on
-the Web. One of the most comprehensive and scholarly---fully searchable,
-and with many related links---is the
-\href{https://mathshistory.st-andrews.ac.uk/}{MacTutor History of
-Mathematics website} {[}\citeproc{ref-mactutor}{48}{]}.
-
-You may find out more about the formulae for computing \(\pi\) at
-\href{https://mathworld.wolfram.com/PiFormulas.html}{Pi Formulas}. One
-particularly interesting formula is that of
-\href{https://mathworld.wolfram.com/WallisFormula.html}{Wallis}: it is
-composed of an infinite product of rational numbers to yield the
-irrational number \(\pi\).
-
-If you wish to explore more about \(\pi\), the Fibonacci sequence, and
-other numbers, you may want to visit
-\href{https://r-knott.surrey.ac.uk/fibonacci/fibpi.html\%7D\%7BRon\%20Knott's\%20information-packed\%20site}{Ron
-Knott's information-packed site}.
-
-\paragraph{Buffon's needle}\label{buffons-needle-1}
-
-There are two web sites with simulations of the Buffon's Needle
-experiment.
-\href{https://www.mste.uiuc.edu/reese/buffon/buffon.html}{George Reese's
-site} has a discussion and simulation of the experiment. {[}Michael
-Hurben's site{]}(https://www.angelfire.com/wa/hurben/buff.html\} not
-only has a simulation, but also tracks and displays how close the
-estimate of \(\pi\) approaches the true value as the experiment is
-repeated.
-
-\paragraph{The Basel Problem}\label{the-basel-problem}
-
-How
-\href{https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy}{Augustin-Louis
-Cauchy} solved the Basel Problem is clearly laid out and explained in
-\href{https://www.youtube.com/watch?v=2jgtAo3Ztf}{this mesmerizing Rise
-to the Equation YouTube video} {[}\citeproc{ref-cauchy-basel}{49}{]}.
-The explanation in this video should be clear to a high school student
-who has encountered trigonometry but not calculus.
-
-Those of you who are puzzled by the appearance of \(\pi^2\) in the
-solution to the Basel problem should also view this
-\href{https://www.youtube.com/watch?v=d-o3eB9sfls}{3Blue1Brown YouTube
-vdeo}.
-
-\href{https://www.youtube.com/@veritasium}{Veritasium} and
-\href{https://www.youtube.com/c/3blue1brown}{3Blue1Brown} put out
-quality educational videos on Mathematics and are an authoritative
-source of enrichment. Do benefit from them.
-
-\paragraph{Gauss}\label{gauss}
-
-An \href{https://www.youtube.com/watch?v=LmmyAOkajVM}{excellent
-biography of Carl Gauss} is available on YouTube
-{[}\citeproc{ref-gauss-bio}{29}{]}. I highly recommend watching it.
-
-\paragraph{Ramanujan}\label{ramanujan-1}
-
-One thread runs through this blog: mathematics is one interrelated
-structure in which the most unlikely connections between its disparate
-parts are a natural consequence of its inherent integrity. A delightful
-article on this idea, using Ramanujan's work as its thematic
-centrepiece, is
-\href{https://www.quantamagazine.org/srinivasa-ramanujan-was-a-genius-math-is-still-catching-up-20241021/}{available
-online} {[}\citeproc{ref-ramanujan-quanta}{50}{]}.
-
-\subsection{Conclusion}\label{conclusion}
-
-This is the story of how \(\pi\) was extracted from the ore of geometry
-and refined into an enigmatic number which cannot be trapped within
-finite digits, but which forever embodies the thrill of the chase for
-the digit hunters. Mathematics is not merely a logical edifice built
-from the granite of unassailable logic, but is also the fruit of a
-pliant but disciplined imagination fuelled by inspiration to continually
-expand the boundaries of its domain.
+Mathematics is not merely a logical edifice built from the granite of
+unassailable logic. It is also the fruit of a pliant but disciplined
+imagination, fuelled by inspiration, that keeps expanding its boundaries
+all the time.
 
 \subsection{Acknowledgements}\label{acknowledgements}
 
@@ -1817,9 +1829,9 @@ I am grateful to my son, Mr Nandakumar Chandrasekhar, for writing the
 Julia script \href{auxliary/agm-float.jl}{\texttt{agm-float.jl}} to
 compute the AGM.
 
-Free online support from \href{https://www.wolframalpha.com/}{Wolfram
-Alpha} and \href{https://chatgpt.com/}{ChatGPT} are gratefully
-acknowledged.
+Free online computational support from
+\href{https://www.wolframalpha.com/}{Wolfram Alpha} and
+\href{https://chatgpt.com/}{ChatGPT} are also gratefully acknowledged.
 
 \subsection{Feedback}\label{feedback}
 
@@ -2017,17 +2029,17 @@ All}}. Mathematical Association of America.}
 \CSLRightInline{Wikipedia contributors. 2024. {Basel problem}. Retrieved
 1 December 2024 from \url{https://en.wikipedia.org/wiki/Basel_problem}}
 
-\bibitem[\citeproctext]{ref-gauss-bio}
-\CSLLeftMargin{{[}29{]} }%
-\CSLRightInline{Newsthink. 2024. {The Greatest Mathematician Who Ever
-Lived}. Retrieved 6 December 2024 from
-\url{https://www.youtube.com/watch?v=LmmyAOkajVM}}
-
 \bibitem[\citeproctext]{ref-gauss-wiki}
-\CSLLeftMargin{{[}30{]} }%
+\CSLLeftMargin{{[}29{]} }%
 \CSLRightInline{Wikipedia contributors. 2024. {Carl Friedrich Gauss}.
 Retrieved 7 December 2024 from
 \url{https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss}}
+
+\bibitem[\citeproctext]{ref-gauss-bio}
+\CSLLeftMargin{{[}30{]} }%
+\CSLRightInline{Newsthink. 2024. {The Greatest Mathematician Who Ever
+Lived}. Retrieved 6 December 2024 from
+\url{https://www.youtube.com/watch?v=LmmyAOkajVM}}
 
 \bibitem[\citeproctext]{ref-pi-source}
 \CSLLeftMargin{{[}31{]} }%
@@ -2119,30 +2131,29 @@ Books, London, UK.}
 turtles and further adventures in applied mathematics}}. Princeton
 University Press, Princeton, NJ, USA.}
 
-\bibitem[\citeproctext]{ref-pos-leh-2004}
+\bibitem[\citeproctext]{ref-pi-next-gen-2016}
 \CSLLeftMargin{{[}46{]} }%
+\CSLRightInline{David H Bailey and Jonathan M Borwein. 2016. \emph{Pi:
+The next generation: A sourcebook on the recent history of pi and its
+computation}. Springer.}
+
+\bibitem[\citeproctext]{ref-pos-leh-2004}
+\CSLLeftMargin{{[}47{]} }%
 \CSLRightInline{Alfred S Posamentier and Ingmar Lehmann. 2004.
 \emph{{Pi: A Biography of the World's Most Mysterious Number}}.
 Prometheus Books, Amherst, NY, USA.}
 
 \bibitem[\citeproctext]{ref-mathworld}
-\CSLLeftMargin{{[}47{]} }%
+\CSLLeftMargin{{[}48{]} }%
 \CSLRightInline{Eric Weisstein. 2024. {Wolfram MathWorld}. {The Web's
 Most Extensive Mathematics Resource}. Retrieved 17 December 2024 from
 \url{https://mathworld.wolfram.com/}}
 
 \bibitem[\citeproctext]{ref-mactutor}
-\CSLLeftMargin{{[}48{]} }%
+\CSLLeftMargin{{[}49{]} }%
 \CSLRightInline{Edmund Robertson and John O'Connor. 2024. {MacTutor
 History of Mathematics}. MacTutor index. Retrieved 12 December 2024 from
 \url{https://mathshistory.st-andrews.ac.uk/}}
-
-\bibitem[\citeproctext]{ref-cauchy-basel}
-\CSLLeftMargin{{[}49{]} }%
-\CSLRightInline{Rise to the Equation. 2021. {Cauchy's Proof of the Basel
-Problem \textbar{} Pi Squared Over Six}. {3blue1brown SoME1 Entry}.
-Retrieved 1 December 2024 from
-\url{https://www.youtube.com/watch?v=2jgtAo3ZtfI}}
 
 \bibitem[\citeproctext]{ref-ramanujan-quanta}
 \CSLLeftMargin{{[}50{]} }%
@@ -2150,6 +2161,19 @@ Retrieved 1 December 2024 from
 the Mysterious Genius of Srinivasa Ramanujan}. {Quanta Magazine}.
 Retrieved 12 December 2024 from
 \url{https://www.quantamagazine.org/srinivasa-ramanujan-was-a-genius-math-is-still-catching-up-20241021/}}
+
+\bibitem[\citeproctext]{ref-cauchy-basel}
+\CSLLeftMargin{{[}51{]} }%
+\CSLRightInline{Rise to the Equation. 2021. {Cauchy's Proof of the Basel
+Problem \textbar{} Pi Squared Over Six}. {3blue1brown SoME1 Entry}.
+Retrieved 1 December 2024 from
+\url{https://www.youtube.com/watch?v=2jgtAo3ZtfI}}
+
+\bibitem[\citeproctext]{ref-pi-squared-basel}
+\CSLLeftMargin{{[}52{]} }%
+\CSLRightInline{3Blue1Brown. 2018. {Why is pi here? And why is it
+squared?}. {A geometric answer to the Basel problem}. Retrieved 2
+December 2024 from \url{https://www.youtube.com/watch?v=d-o3eB9sfls}}
 
 \end{CSLReferences}
 

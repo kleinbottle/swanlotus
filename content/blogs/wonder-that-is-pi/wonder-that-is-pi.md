@@ -2,10 +2,10 @@
 title: "The Wonder That Is Pi"
 author: "R (Chandra) Chandrasekhar"
 date: 2004-01-14
-modified: 2024-07-25
+modified: 2024-12-18
 category: Mathematics
 tags: pi
-summary: This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes). We look at π as a number rather than the ratio of two lengths, and try to unravel how and why it is ubiquitous in mathematics.
+summary: This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes). We look at π as a number rather than the ratio of two lengths, and try to unravel how and why it is ubiquitous in mathematics. I am sorry that too has become a _slog_ rather than a blog!
 opengraphimage: pi-equations.png
 ---
 
@@ -107,7 +107,7 @@ Infinite sums have this property of upending our "intuition" about what is corre
 
 ## Irrational Numbers
 
-Irrational numbers are numbers which are _not rational_. The discovery that $\sqrt{2}$---which is the length of the diagonal of a unit square---was not rational [@HSM-SE;@clegg2004], caused the first ripples of disquiet in the ancient mathematical world, because it upset the prevailing philosophy that ratios of whole numbers alone ruled the world.
+Irrational numbers are numbers which are _not rational_. The discovery that $\sqrt{2}$---which is the length of the diagonal of a unit square---was not rational [@HSM-SE;@clegg2004;havil-irrationals-2012], caused the first ripples of disquiet in the ancient mathematical world, because it upset the prevailing philosophy that ratios of whole numbers alone ruled the world.
 
 There are many celebrated proofs that $\sqrt{2}$ is not the ratio of two integers and is therefore irrational [@bogomolny2018]. Nevertheless, it took almost two millennia for $\sqrt{2}$ to be accepted into the fold of properly defined numbers [@cepelewicz2024].
 
@@ -127,11 +127,10 @@ It bears noting though, that both the algebraic and the transcendental numbers m
 
 ## The Algebraic Numbers
 
-An algebraic number is the root of a non-zero polynomial with integer or rational coefficients. Things have gotten abstract enough thus far for eyes to be glazed. So, let us invoke some examples to revive attention.
+An algebraic number is the root of a non-zero polynomial with integer or rational coefficients. It is the value of the variable when the polynomial equals zero. Things have gotten abstract enough thus far for eyes to be glazed. So, let us invoke some examples to revive attention.
 
-<!--![](){}--> OUT IN A FIGURE HERE.
-
-The simplest algebraic number is an integer. Let us take $5$ as an example. If the polynomial $p(x) = x - 5$, its root is when $p(x) = 0$, i.e., when $x - 5 = 0$. This implies $x = 5$ and we have shown that $5$ is algebraic _by definition_.
+The simplest algebraic number is an integer. Let us take $5$ as an example. If the polynomial is 
+$p(x) = x - 5$, its root is the value of $x$ when $p(x) = 0$, i.e., when $x - 5 = 0$, or $x = 5$. So, $5$ is algebraic _by definition_.
 
 Note that we could have used any other polynomial with the same root, such as $q(x) = 2x - 10$. All we need do is find _one_ polynomial whose root equals the number and we have shown that the number is algebraic. 
 
@@ -203,6 +202,10 @@ And surprise! surprise! There are only _three_ regions in the Venn diagram that 
 
 ## Enter π
 
+Pi is not only important, it is also tantalizing. It is like a beautiful butterfly that cannot be caught in the net of finitude. It is like a rainbow that is beautiful to behold from afar, but can never be touched.
+
+It is not a rational number, which means that it cannot be expressed as the ratio of two whole numbers, the denominator being non-zero. Its decimal representation is neither finite nor does it contain a recurring segment. It is also not the root to any polynomial equation whose coefficients are integers or rational numbers. Pi thus qualifies as a transcendental, irrational number.
+
 We have gone through all this huffing and puffing to place $\pi$ contextually among the real numbers. Let us list its characteristics:
 
 #. It is not a rational number, which means that it cannot be expressed as the ratio of two whole numbers, the denominator being non-zero.
@@ -213,11 +216,11 @@ We have gone through all this huffing and puffing to place $\pi$ contextually am
 
 #. When Pi is used in equations, the placeholder symbol $\pi$ is used. 
 
-These properties have earned for $\pi$ the rather exalted title of transcendental number, which it shares with other pivotal numbers like $e$. Pi is not only important, it is also tantalizing. Pi is like a beautiful butterfly that cannot be caught in the net of finitude. It is like a rainbow that is beautiful to behold from afar, but can never be reached. 
-
-One could almost say that $\pi$ is not numerically friendly. And you would not be too wrong. Rational approximations for $\pi$, like $\frac{22}{7}$, are used in practice. And the matter would have rested there were it not for the human quest for beauty.
+One could claim that $\pi$ is not numerically friendly. And you would not be too wrong. Rational approximations for $\pi$, like $\frac{22}{7}$, are used in practice. And the matter would have rested there were it not for the human quest for beauty.
 
 The unpredictability of successive decimal places of $\pi$ has enchanted mathematicians and still continues to engross them. Pi has been calculated to an unprecedented number of decimal places, and such a quest is certainly driven, not by practical necessity, but possibly by the need for aesthetic fulfilment.
+
+There is also a tacit belief among some that the digits of $\pi$ might conceal within themselves the secret of what it truly means to be random.
 
 The search for increasingly more accurate values for $\pi$ has resulted in many approaches to solve the problem. Geometric^[See the ["Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes).] and analytical approaches to estimate $\pi$ have both borne fruit. Interestingly, $\pi$ may also be estimated by repeatedly performing a random---or probabilistic---experiment, whose precise outcome cannot be predicted, but whose average behaviour may be estimated. Such an experiment is called a [Monte Carlo simulation](https://www.ibm.com/topics/monte-carlo-simulation). Thus the quest for $\pi$ brings together the mathematical sub-fields of geometry, analysis, and probabilistic simulation.
 
@@ -365,7 +368,7 @@ $$
 \frac{\pi}{4} &= 4\arctan\frac{1}{5} - \arctan\frac {1}{239}
 \end{aligned}
 $${#eq:machin}
-Note that the rational arguments of the $\arctan$ functions on the RHS of these e quations all have a numerator of $1$. Henceforth, whenever we talk of the _two-term Machin-like formulae_ we implictly mean these rational fractions with a numerator of one.
+Note that the rational arguments of the $\arctan$ functions on the RHS of these equations all have a numerator of one. Henceforth, whenever we talk of the _two-term Machin-like formulae_ we implictly mean these rational fractions with a numerator of one.
 
 Specifically, [@eq:machin-formula] is referred to as the Machin-formula:
 $$
@@ -377,11 +380,11 @@ Because $\frac{1}{5} = \frac{2}{10}$, the first term on the RHS, and its powers,
 
 But what made Machin choose these particular numbers in [@eq:machin-formula]? I have sought the answer(s) to this vital question from many quarters [@mse-question-2024] without much success. 
 
-Was the historical process of discovery serendipitous, or was it directed by knowledge that led straight to it? Even if historically serendipitous, is there a systematic and simple route that can today deliver the four two-term Machin-like formulae, much like a can of Coke is delivered from a Coke machine when the requisite coins are inserted?
+Was the historical process of discovery serendipitous, or was it directed by knowledge that led straight to it? Even if historically serendipitous, is there a systematic and simple route that can today deliver the four two-term Machin-like formulae, much like a can of Coke is delivered from a vending machine when the requisite coins are inserted?
 
 How many ways are there of looking at this one problem? Pythagorean Triples? Gaussian Integers? Nested Square Roots? Trial and Error in a restricted domain?
 
-What was the _unifying thread_ that enabled Størmer to claim in his 1899 paper [@stormer-1899] that there were _four and only four_ Machin-like formulae with two terms?
+What was the _unifying thread_ that enabled [Størmer to claim in his 1899 paper](http://www.numdam.org/articles/10.24033/bsmf.603/) [@stormer-1899] that there were _four and only four_ Machin-like formulae with two terms?
 
 If and when I find satisfying answers to my questions, I will write about them in a separate, dedicated  blog. Meanwhile, if any reader of this blog can throw light on the answers to my questions, I kindly request him or her to [email me](mailto:feedback.swanlotus@gmail.com).
 
@@ -403,7 +406,7 @@ $${#eq:pi-on-4}
 
 But how do we integrate $\sqrt{1-x^2}$? If we went the trigonometric substitution route, we would end up literally going in circles, rather than computing a numerical value of $\pi$. Is there any way we may expand the expression under the square root?
 
-The term ${(1 - x^2)}$ is [binomial](https://www.google.com/search?q=binomial). [Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton) is credited with discovering the [binomial theorem](https://www.mathsisfun.com/algebra/binomial-theorem.html) in Europe, but that theorem is valid for expressions where the binomial is raised to a positive integer power, e.g.,
+The term ${(1 - x^2)}$ is [binomial](https://www.google.com/search?q=binomial). [Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton) is credited with discovering the [binomial theorem](https://www.mathsisfun.com/algebra/binomial-theorem.html) in Europe,^[Other mathematical traditions were aware of the binomial theorem prior to Newton's discovery.] but that theorem was originally shown to be valid only for expressions where the binomial is raised to a positive integer power, e.g.,
 $$
 (1 + x^2)^3 = x^6 + 3x^4 + 3x^4 +1.
 $$
@@ -471,9 +474,9 @@ Thus Euler not only gave us another way of computing $\pi$, but he also showed h
 
 ## Gauss, the AGM, and π
 
-Gauss was a precocious mathematician [@gauss-bio] who published his groundbreaking wok only when it met his standards for terse beauty. Accordingly, many of his contributions became public only many decades after his demise. The material in this section belongs to that category.
+[Carl Friedrich Gauss](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss) [@gauss-wiki] was a precocious mathematician [@gauss-bio] who published his groundbreaking work only when it met his high standards for terse beauty. Accordingly, many of his contributions became public only many decades after his demise. The material in this section belongs to that category.
 
-I was not aware what the [Arithmetic-Geometric Mean](https://mathworld.wolfram.com/Arithmetic-GeometricMean.html) (AGM) was until I stumbled upon how [Carl Friedrich Gauss](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss) [@gauss-wiki] related it to $\pi$. And he found the connection when he was only 14 years old. So, we are looking at the work of a mathematical prodigy, portions of which are seriously non-trivial.
+I was not aware what the [Arithmetic-Geometric Mean](https://mathworld.wolfram.com/Arithmetic-GeometricMean.html) (AGM) was until I stumbled upon how Gauss related it to $\pi$. And he found the connection when he was only 14 years old. So, we are looking at the work of a mathematical prodigy, portions of which are seriously non-trivial.
 
 Accordingly, there will be a lot of hand-waving in what follows, as we attempt a thumbnail outline of Gauss's method. There are three basic ideas:
 
@@ -703,7 +706,7 @@ For a visual analogy, think of a surgical operation, where the patient is draped
 
 ## The Brothers Chudnovsky
 
-[The Brothers Chudnovsky](https://en.wikipedia.org/wiki/Chudnovsky_brothers) [@chudnovsky-wiki,@preston-1993] embody in the popular imagination the archetypal digit hunters [@beautiful-geometry-2014] who are immersed in the quest for ever more digits of $\pi$ [@blatner-1997]. Mark that we do not $\pi$ to a hundred decimal places for any earthly or unearthly ^[Think outer space, astronomy, etc.] purpose.
+[The Brothers Chudnovsky](https://en.wikipedia.org/wiki/Chudnovsky_brothers) [@chudnovsky-wiki,@preston-1993] embody in the popular imagination the archetypal digit hunters [@beautiful-geometry-2014] who are immersed in the quest for ever more digits of $\pi$ [@blatner-1997;pi-next-gen-2016]. Mark that we do not need $\pi$ to a hundred decimal places for any earthly or unearthly^[Think outer space, astronomy, etc.] purpose.
 
 ## The Quest for Ever Greater Precision
 
@@ -717,60 +720,57 @@ But apart from aesthetic motives, the decimal expansion of $\pi$ may reveal new 
 
 What mesmeric pull does $\pi$ have on human imagination and endeavour to inspire such single-minded and unremitting pursuit? What is the magic within $\pi$ that fuels such devotion and dedication? Is it beauty? Is it mystery? Or is it divinity?
 
-## Pi, picture, and words
-
-We use pictures and words to communicate. In mathematics, _geometry_ corresponds to pictures, and _algebra_ to words. The interplay between geometry and algebra has been responsible for many mathematical advances. For example, the development of [co-ordinate geometry](https://www.britannica.com/science/Cartesian-coordinates) laid the foundations for calculus and analysis.
-
-Pi sits at the junction between pictures and words. It is geometrically defined but its expression is algebraic. It is that ubiquitous magic number that shows up where we expect it and also where we might not anticipate its presence. It appears in almost all areas of mathematics, including geometry, algebra, calculus, infinite series, and probability, to name a few. Two of the most important ideas in analysis are those of a _limit_ and of _convergence_, both of which we have encountered glancingly in these two blogs on $\pi$.
-
 ## Sources for Enrichment
 
-If you have in any way been intrigued by the material in these two blogs on Pi^[[The Pi of Archimedes](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes) and [The Wonder That Is Pi](https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi).] and you have the time and interest to find out more, consult some of these books, websites, videos, etc. They will enhance your knowledge of Pi and enrich you intellectually.
+If you are intrigued by the material in these two blogs on Pi^[[The Pi of Archimedes](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes) and [The Wonder That Is Pi](https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi).] have the time and interest to find out more, do  engage with some of these books, websites, and videos. They will enhance your knowledge of $\pi$ and enrich you intellectually.
 
-### Book References
+### Book Recommendations
 
-has been compiled mainly from four books. The first is the encyclopaedic source book on $\pi$ by Berggren et al. [@pi-source]. It contains a wealth of historical information and has facsimiles of many original publications or their translations. Interestingly, the next two references are written by engineers, not mathematicians. Beckmann's book [@beckmann-1971], although somewhat dated and opinionated, gives detailed historical accounts of efforts at computing $\pi$. The book by Banks[@banks-1999] is a delightful, instructive and entertaining romp through some areas of applied mathematics. It is easy to read and devotes three chapters to famous numbers and number sequences. Another interesting and accessible popular exposition, exclusively on $\pi$, is the book by Posamentier and Lehmann [@pos-leh-2004]. Lastly, the popular book by Blatner [@blatner-1997] is historically informative and instructive.
+I recommend six books. The first is an encyclopaedic source book on $\pi$ by Berggren et al. [@pi-source]. It contains a wealth of historical information and has facsimiles of many original publications or their translations. The second book follows on from the first. It chronicles the recent history of $\pi$ and its computation [@pi-next-gen-2016]. 
+
+Interestingly, the next two volumes are written by engineers, not mathematicians. Beckmann's book [@beckmann-1971], although somewhat dated and opinionated, is a labour of love. It gives detailed historical accounts of efforts at computing $\pi$. The book by Banks[@banks-1999] is a delightful, instructive and entertaining romp through some areas of applied mathematics. It is easy to read and devotes three chapters to famous numbers and number sequences.
+
+Another interesting and accessible popular exposition, exclusively on $\pi$, is the book by Posamentier and Lehmann [@pos-leh-2004]. Lastly, the popular book by Blatner [@blatner-1997] is historically informative and instructive.
 
 ### Web Resources
 
-If you are unsure about a mathematical term, or definition, I would recommend, as first port of call, \href{http://mathworld.wolfram.com/}{Wolfram MathWorld}, created, developed and nurtured by Eric Weisstein [@mathworld]. It is a searchable, authoritative and encyclopaedic web site. Although Weisstein is himself an astronomer, his enduring love of Mathematics has resulted in this treasure trove of mathematical information on the web, from which all can benefit.
+If you are unsure about a mathematical term, or definition, I would recommend, as first port of call, [Wolfram MathWorld](https://mathworld.wolfram.com/), created, developed, and nurtured by Eric Weisstein [@mathworld]. It is a searchable, authoritative and encyclopaedic web site. Although Weisstein is himself an astronomer, his enduring love of Mathematics has resulted in this treasure trove of mathematical information on the web, from which all can benefit.
 
 The lives of mathematicians have been chronicled at several places on the Web. One of the most comprehensive and scholarly---fully searchable, and with many related links---is the [MacTutor History of Mathematics website](https://mathshistory.st-andrews.ac.uk/) [@mactutor].
-
 
 You may find out more about the formulae for computing $\pi$ at [Pi Formulas](https://mathworld.wolfram.com/PiFormulas.html). One particularly interesting formula is that of [Wallis](https://mathworld.wolfram.com/WallisFormula.html): it is composed of an infinite product of rational numbers to yield the irrational number $\pi$.
 
 If you wish to explore more about $\pi$, the Fibonacci sequence, and other numbers, you may want to visit [Ron Knott's information-packed site](https://r-knott.surrey.ac.uk/fibonacci/fibpi.html}{Ron Knott's information-packed site).
 
-#### Buffon's needle
- 
-There are two web sites with simulations of the Buffon's Needle experiment. [George Reese's site](https://www.mste.uiuc.edu/reese/buffon/buffon.html) has a discussion and simulation of the experiment. [Michael Hurben's site](https://www.angelfire.com/wa/hurben/buff.html} not only has a simulation, but also tracks and displays how close the estimate of $\pi$ approaches the true value as the experiment is repeated.
+One thread runs through this blog: mathematics is one interrelated structure in which the most unlikely connections between its disparate parts are a natural consequence of its inherent integrity. A delightful article on this idea, using Ramanujan's work as its thematic centrepiece, is [available online](https://www.quantamagazine.org/srinivasa-ramanujan-was-a-genius-math-is-still-catching-up-20241021/) [@ramanujan-quanta].
 
-#### The Basel Problem
+### Media on the Web
 
-How [Augustin-Louis Cauchy](https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy) solved the Basel Problem is clearly laid out and explained in [this mesmerizing Rise to the Equation YouTube video](https://www.youtube.com/watch?v=2jgtAo3Ztf) [@cauchy-basel]. The explanation in this video should be clear to a high school student who has encountered trigonometry but not calculus.
+How [Augustin-Louis Cauchy](https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy) solved the Basel Problem is clearly laid out and explained in [this mesmerizing _Rise to the Equation_ YouTube video](https://www.youtube.com/watch?v=2jgtAo3Ztf) [@cauchy-basel]. The explanation in this video should be clear to a high school student who has encountered trigonometry but not calculus.
 
-Those of you who are puzzled by the appearance of $\pi^2$ in the solution to the Basel problem should also view this [3Blue1Brown YouTube vdeo](https://www.youtube.com/watch?v=d-o3eB9sfls).
+Those of you who are puzzled by the appearance of $\pi^2$ in the solution to the Basel problem should also view this [_3Blue1Brown_ YouTube vdeo](https://www.youtube.com/watch?v=d-o3eB9sfls) [@pi-squared-basel].
 
-[Veritasium](https://www.youtube.com/@veritasium) and [3Blue1Brown](https://www.youtube.com/c/3blue1brown) put out quality educational videos on Mathematics and are an authoritative source of enrichment. Do benefit from them.
-
-#### Gauss
+[Veritasium](https://www.youtube.com/@veritasium) and [3Blue1Brown](https://www.youtube.com/c/3blue1brown) put out quality educational videos on Mathematics on [YouTube](https://www.youtube.com/) and are an authoritative source of enrichment. Do benefit from them.
 
 An [excellent biography of Carl Gauss](https://www.youtube.com/watch?v=LmmyAOkajVM) is available on YouTube [@gauss-bio]. I highly recommend watching it.
 
-#### Ramanujan
-
-One thread runs through this blog: mathematics is one interrelated structure in which the most unlikely connections between its disparate parts are a natural consequence of its inherent integrity. A delightful article on this idea, using Ramanujan's work as its thematic centrepiece, is [available online](https://www.quantamagazine.org/srinivasa-ramanujan-was-a-genius-math-is-still-catching-up-20241021/) [@ramanujan-quanta].
+There are two web sites with simulations of the Buffon's Needle experiment. [George Reese's site](https://www.mste.uiuc.edu/reese/buffon/buffon.html) has a discussion and simulation of the experiment. [Michael Hurben's site](https://www.angelfire.com/wa/hurben/buff.html} not only has a simulation, but also tracks and displays how close the estimate of $\pi$ approaches the true value as the experiment is repeated.
 
 ## Conclusion
 
-This is the story of how $\pi$ was extracted from the ore of geometry and refined into an enigmatic number which cannot be trapped within finite digits, but which forever embodies the thrill of the chase for the digit hunters. Mathematics is not merely a logical edifice built from the granite of unassailable logic, but is also the fruit of a pliant but disciplined imagination fuelled by inspiration to continually expand the boundaries of its domain.
+We use pictures and words to communicate. In mathematics, _geometry_ corresponds to pictures, and _algebra_ to words. The interplay between geometry and algebra has been responsible for many mathematical advances. For example, the development of [co-ordinate geometry](https://www.britannica.com/science/Cartesian-coordinates) laid the foundations for calculus and analysis.
+
+Pi sits at the junction between pictures and words. It is geometrically defined but its expression is algebraic. It is that ubiquitous magic number that shows up where we expect it and also where we might not anticipate its presence. It appears in almost all areas of mathematics, including geometry, algebra, calculus, infinite series, and probability, to name a few. Two of the most important ideas in analysis are those of a _limit_ and of _convergence_, both of which we have chanced upon here.
+
+These blogs on $\pi$ have chronicled the story of how $\pi$ was extracted from the ore of geometry and refined into an enigmatic number which cannot be trapped within finite digits, but which forever embodies the thrill of the chase for the digit hunters.
+
+Mathematics is not merely a logical edifice built from the granite of unassailable logic. It is also the fruit of a pliant but disciplined imagination, fuelled by inspiration, that keeps expanding its boundaries all the time.
 
 ## Acknowledgements
 
 I am grateful to my son, Mr Nandakumar Chandrasekhar, for writing the Julia script [`agm-float.jl`]({attach}auxliary/agm-float.jl) to compute the AGM.
 
-Free online support from [Wolfram Alpha](https://www.wolframalpha.com/) and [ChatGPT](https://chatgpt.com/) are gratefully acknowledged.
+Free online computational support from [Wolfram Alpha](https://www.wolframalpha.com/) and [ChatGPT](https://chatgpt.com/) are also gratefully acknowledged.
 
 ## Feedback
 
