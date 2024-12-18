@@ -699,7 +699,7 @@ For a visual analogy, think of a surgical operation, where the patient is draped
 
 ## The Brothers Chudnovsky
 
-[The Brothers Chudnovsky](https://en.wikipedia.org/wiki/Chudnovsky_brothers) [@chudnovsky-wiki,@preston-1993] embody in the popular imagination the archetypal digit hunters [@beautiful-geometry-2014] who are immersed in the quest for ever more digits of $\pi$ [@blatner-1997]. Mark that we do not $\pi$ to a hundred decimal places for any earthly or unearthly ^[Think outer space, astronomy, etc.] purpose. XXX references.
+[The Brothers Chudnovsky](https://en.wikipedia.org/wiki/Chudnovsky_brothers) [@chudnovsky-wiki,@preston-1993] embody in the popular imagination the archetypal digit hunters [@beautiful-geometry-2014] who are immersed in the quest for ever more digits of $\pi$ [@blatner-1997]. Mark that we do not $\pi$ to a hundred decimal places for any earthly or unearthly ^[Think outer space, astronomy, etc.] purpose.
 
 ## The Quest for Ever Greater Precision
 
@@ -733,6 +733,9 @@ If you are unsure about a mathematical term, or definition, I would recommend, a
 
 The lives of mathematicians have been chronicled at several places on the Web. One of the most comprehensive and scholarly---fully searchable, and with many related links---is the [MacTutor History of Mathematics website](https://mathshistory.st-andrews.ac.uk/) [@mactutor].
 
+
+You may find out more about the formulae for computing $\pi$ at [Pi Formulas](https://mathworld.wolfram.com/PiFormulas.html). One particularly interesting formula is that of [Wallis](https://mathworld.wolfram.com/WallisFormula.html): it is composed of an infinite product of rational numbers to yield the irrational number $\pi$.
+
 If you wish to explore more about $\pi$, the Fibonacci sequence, and other numbers, you may want to visit [Ron Knott's information-packed site](https://r-knott.surrey.ac.uk/fibonacci/fibpi.html}{Ron Knott's information-packed site).
 
 #### Buffon's needle
@@ -763,23 +766,15 @@ This is the story of how $\pi$ was extracted from the ore of geometry and refine
 
 I am grateful to my son, Mr Nandakumar Chandrasekhar, for writing the Julia script [`agm-float.jl`]({attach}auxliary/agm-float.jl) to compute the AGM.
 
-Wolfram Alpha for several results.
+Free online support from [Wolfram Alpha](https://www.wolframalpha.com/) and [ChatGPT](https://chatgpt.com/) are gratefully acknowledged.
 
 ## Feedback
 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-<!--\noindent A PDF version of this article is [available for download here]({attach}./wonder-that-is-pi.pdf):
+\noindent A PDF version of this article is [available for download here]({attach}./wonder-that-is-pi.pdf):
 
 ::: {.small .sf}
 <https://swanlotus.netlify.app/blogs/wonder-that-is-pi.pdf>
-:::-->
-
-One particularly interesting formula is that of Wallis: it is
-composed of an infinite product of rational numbers to yield the irrational
-number $\pi$.
-
-You may wish to find out more about the formulae for computing $\pi$ at
-\href{http://mathworld.wolfram.com/PiFormulas.html}{Eric Weisstein's Pi
-Formulas}.
+:::
