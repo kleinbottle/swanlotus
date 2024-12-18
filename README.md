@@ -1,5 +1,7 @@
 # SwanLotus Website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0cb76646-1c45-4f03-8b23-a2af4f06c82e/deploy-status)](https://app.netlify.com/sites/swanlotus/deploys)
+
 This repository contains the source code and content for the [SwanLotus](https://swanlotus.netlify.app) website.
 
 The website uses the [Pelican](https://blog.getpelican.com/) static site generator.
