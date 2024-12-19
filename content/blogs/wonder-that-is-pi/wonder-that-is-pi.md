@@ -103,21 +103,23 @@ $$
 $$
 Even if it seems counter-intuitive that $0.4\overline{9} = 0.5 = 0.5\overline{0} = \frac{1}{2}$, it is mathematically consistent and correct. One may therefore hazard a guess, and correctly so, that _every rational number may be expressed as a recurring decimal_.^[In this case either the digit $9$ or the digit $0$ recurs.]
 
-Infinite sums have this property of upending our "intuition" about what is correct. So, we have to be extra careful when dealing with the value of a limit as some variable goes to infinity. Moreover, infinity, represented by $\infty$ is _not_ a number and cannot be treated as one. It is simply a convenient shorthand symbol. This caveat should be kept in mind when we encounter infinite sums involving $\pi$, as shown for example, in [@fig:pi-equations].
+Infinite sums have this property of upending our "intuition" about what is correct. So, we have to be extra careful when dealing with the value of a limit as some variable goes to infinity.
+
+Moreover, infinity, represented by $\infty$ is _not_ a number and cannot be treated as one. It is simply a convenient shorthand symbol. This caveat should be kept in mind when we encounter infinite sums involving $\pi$, as shown for example, in [@fig:pi-equations].
 
 ## Irrational Numbers
 
-Irrational numbers are numbers which are _not rational_. The discovery that $\sqrt{2}$---which is the length of the diagonal of a unit square---was not rational [@HSM-SE;@clegg2004;havil-irrationals-2012], caused the first ripples of disquiet in the ancient mathematical world, because it upset the prevailing philosophy that ratios of whole numbers alone ruled the world.
+Irrational numbers are numbers which are _not rational_. The discovery that $\sqrt{2}$---which is the length of the diagonal of a unit square---was not rational [@HSM-SE;@clegg2004;@havil-irrationals-2012], caused the first ripples of disquiet in the ancient mathematical world, because it upset the prevailing philosophy that ratios of whole numbers alone ruled the world.
 
 There are many celebrated proofs that $\sqrt{2}$ is not the ratio of two integers and is therefore irrational [@bogomolny2018]. Nevertheless, it took almost two millennia for $\sqrt{2}$ to be accepted into the fold of properly defined numbers [@cepelewicz2024].
 
-An irrational number like $\sqrt{2}$ does not have any recurring sequence of digits when expressed as a decimal. But the absence of recurring sequences in the decimal representation of a number should not solely be used to identify a number as irrational, because some rationals with large denominators can and do have very long recurring sequences, which may be difficult to detect by visual inspection. For example, $\frac{8119}{5741}$---which incidentally is a rational approximation to $\sqrt{2}$---has a recurring sequence of length $5740$!^[Also called the _period_ of a repeating decimal. Note that this number is one less than the denominator. See <https://www.wolframalpha.com/input?i=8119%2F5741>.]
+An irrational number like $\sqrt{2}$ does not have any recurring sequence of digits when expressed as a decimal. But the absence of recurring sequences in the decimal representation of a number should not solely be used to identify a number as irrational, because some rationals with large denominators can and do have very long recurring sequences, which may be difficult to detect by visual inspection. For example, $\frac{8119}{5741}$---which incidentally is a rational approximation to $\sqrt{2}$---has a recurring sequence of length $5740$!^[Also called the _period_ of a repeating decimal. Note that this number is one less than the denominator, which is the largest permissible length for a recurring sequence. See <https://www.wolframalpha.com/input?i=8119%2F5741>.]
 
 ### The irrationals far outnumber the rationals
 
 If you are curious, you might wonder which are the more numerous: the rationals or the irrationals? You might guess that the familiar rationals are more numerous than the obscure irrationals. But you would be mistaken.
 
-In fact, [the irrationals far exceed in number the rational numbers](https://socratic.org/questions/58c80a37b72cff29df40c794) [@socratic]. This fact is statBut in this blog, ed baldly here, because going into the whys and wherefores of this claim will lead us too far astray from our focus on $\pi$. It is an interesting fact, though, that you should stash away for future use.
+In fact, [the irrationals far exceed in number the rational numbers](https://socratic.org/questions/58c80a37b72cff29df40c794) [@socratic]. This fact is stated baldly here, because going into the whys and wherefores of this claim will lead us too far astray from our focus on $\pi$. It is an interesting fact, though, that you should stash away for future investigation.
 
 ## A second dichotomy
 
@@ -145,7 +147,7 @@ $$
 \begin{aligned}
 x^2 - 10x + 34 &= 0\\
 (x^2 -10x + 25) + 9 &= 0\\
-(x - 5)^2 + 9 = 0\\
+(x - 5)^2 + 9 &= 0\\
 (x - 5)^2 &= -9\\
 (x - 5) &= \pm3i\\
 x &= 5 \pm 3i\\
@@ -216,7 +218,7 @@ We have gone through all this huffing and puffing to place $\pi$ contextually am
 
 #. When Pi is used in equations, the placeholder symbol $\pi$ is used. 
 
-One could claim that $\pi$ is not numerically friendly. And you would not be too wrong. Rational approximations for $\pi$, like $\frac{22}{7}$, are used in practice. And the matter would have rested there were it not for the human quest for beauty.
+One could claim that $\pi$ is not numerically friendly. And you would not be too wrong. Rational approximations for $\pi$, like $\frac{22}{7}$, are used in practice. And the matter would have rested there were it not for the human quest for accuracy and beauty.
 
 The unpredictability of successive decimal places of $\pi$ has enchanted mathematicians and still continues to engross them. Pi has been calculated to an unprecedented number of decimal places, and such a quest is certainly driven, not by practical necessity, but possibly by the need for aesthetic fulfilment.
 
@@ -224,7 +226,7 @@ There is also a tacit belief among some that the digits of $\pi$ might conceal w
 
 The search for increasingly more accurate values for $\pi$ has resulted in many approaches to solve the problem. Geometric^[See the ["Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes).] and analytical approaches to estimate $\pi$ have both borne fruit. Interestingly, $\pi$ may also be estimated by repeatedly performing a random---or probabilistic---experiment, whose precise outcome cannot be predicted, but whose average behaviour may be estimated. Such an experiment is called a [Monte Carlo simulation](https://www.ibm.com/topics/monte-carlo-simulation). Thus the quest for $\pi$ brings together the mathematical sub-fields of geometry, analysis, and probabilistic simulation.
 
-This quest for the unattainable---but supremely beautiful---has engaged human minds to seek $\pi$ in countless infinite sums, such are shown in [@fig:pi-equations]. These equations are sometimes starkly simple and at other times thoroughly mystifying, and embody the paradox that is $\pi$ more succinctly than all the words in the world.
+This quest for the unattainable---but supremely beautiful---has engaged human minds to seek $\pi$ in countless infinite sums, such are shown in [@fig:pi-equations]. These equations are sometimes starkly simple and at other times thoroughly mystifying. They embody the paradox that is $\pi$ more succinctly than all the words and numbers in the world.
 
 ## Ludolph van Ceulen and François Viète
 
@@ -412,7 +414,7 @@ $$
 $$
 Note that we have a polynomial with a finite number of terms on the RHS. This application of the binomial theorem falls squarely in the domain of [algebra](https://www.britannica.com/science/algebra). The coefficients of the expansion are also known easily and beforehand as entries in [Pascal's triangle](https://www.britannica.com/science/Pascals-triangle).
 
-But $\sqrt{1 - x^2} = (1 - x^2)^{\frac{1}{2}}$ while also being a binomial term is raised to a fractional rather than integral power. Does its expansion have a finite number of terms? And how do we know what the coefficients of the various terms are?
+But $\sqrt{1 - x^2} = (1 - x^2)^{\frac{1}{2}}$, while also being a binomial expression, is raised to a fractional rather than integral power. Does its expansion have a finite number of terms? And how do we know what the coefficients of the various terms are?
 
 ### Extending the binomial theorem
 
@@ -440,7 +442,7 @@ $$
 \end{aligned}
 $$
 
-![By adding the areas of the orange sector and the green triangle, the total area under the curve from $x = 0$ to $x = 0.5$ may be computed. The value of $\pi$ can then be solved.]({attach}images/circle-area-sixty-degrees.svg){#fig:sixty-degrees width=80% .modal-target}
+![By adding the areas of the orange sector and the green triangle, the total area under the curve from $x = 0$ to $x = 0.5$ may be computed. Note that the sector of area $A_1$ subtends and angle of $\frac{\pi}{6}$ at the centre. The area of the triangle $A_2$ is half base times height. The value of $\pi$ can then be solved.]({attach}images/circle-area-sixty-degrees.svg){#fig:sixty-degrees width=80% .modal-target}
 
 ### An amusing aside with ChatGPT
 
@@ -634,7 +636,7 @@ Interestingly though, $\pi$ may also be estimated by repeatedly performing a ran
 
 [Georges-Louis Leclerc, Comte de Buffon](https://en.wikipedia.org/wiki/Georges-Louis_Leclerc,_Comte_de_Buffon) was a French naturalist of the eighteenth century. Although his academic contributions were largely in the domain of the life sciences, he is today probably most well-remembered for proposing and solving a problem that goes by his name: [Buffon's needle problem](https://en.wikipedia.org/wiki/Buffon%27s_needle_problem).
 
-There are several variants of Buffon's needle experiment. The version we consider is to estimate how often a randomly thrown needle will intersect one of a series of parallel lines. In our variant, the needle is shorter than the perpendicular distance between the parallel lines. Interestingly, this experiment is a probabilistic method for determining the value of $\pi$, and antedates modern [Monte Carlo simulations](https://www.ibm.com/topics/monte-carlo-simulation) on computers.
+There are several variants of Buffon's needle experiment. The version we consider is to estimate how often a randomly thrown needle will intersect one of a series of parallel lines. In our variant, the needle is shorter than the perpendicular distance between the parallel lines. Interestingly, this experiment is a probabilistic method for determining the value of $\pi$, and antedates modern Monte Carlo simulations on computers.
 
 This experiment is one in which the precise outcome of any _single_ throw cannot be predicted; but its _average_ behaviour may be estimated with increasing confidence, as the number of throws increases.
 
