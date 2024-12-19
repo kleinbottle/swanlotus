@@ -772,7 +772,7 @@ The history of $\pi$ illustrates that mathematics is not merely a logical edific
 
 ## Acknowledgements
 
-I am grateful to my son, Mr Nandakumar Chandrasekhar, for writing the Julia script [`agm-float.jl`]({attach}auxliary/agm-float.jl) to compute the AGM.
+I am grateful to my son, Mr Nandakumar Chandrasekhar, for writing the Julia script [`agm-float.jl`]({attach}auxiliary/agm-float.jl) to compute the AGM.
 
 Free online computational support from [Wolfram Alpha](https://www.wolframalpha.com/) and [ChatGPT](https://chatgpt.com/) are also gratefully acknowledged.
 
