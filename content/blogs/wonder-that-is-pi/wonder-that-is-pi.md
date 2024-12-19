@@ -5,7 +5,7 @@ date: 2004-01-14
 modified: 2024-12-18
 category: Mathematics
 tags: pi
-summary: This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes). We look at π as a number rather than the ratio of two lengths, and try to unravel how and why it is ubiquitous in mathematics. I am sorry that too has become a _slog_ rather than a blog!
+summary: This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes). We look at π as a number rather than the ratio of two lengths, and try to unravel how and why it is ubiquitous in mathematics. I am sorry that this too has become a _slog_ rather than a blog!
 opengraphimage: pi-equations.png
 ---
 
@@ -333,7 +333,7 @@ Over the last 370 years, by far the most effort has been expended in discovering
 
 ## Machin's Formula
 
-[John Machin](https://en.wikipedia.org/wiki/John_Machin) followed in the footsteps of the Madhava-Gregory-Leibniz series, but he used the difference in the arctangents of _two_ values to arrive at a more rapidly convergent series for $\pi$. To better understand his method, let us recall that if $\tan A = \frac{a_1}{b_1}$ and $\tan B = \frac{a_2}{b_2}$, then [@libre-inv-trig-deriv]:
+[John Machin](https://en.wikipedia.org/wiki/John_Machin) followed in the footsteps of the Madhava-Gregory-Leibniz series, but he used the sum or difference of the arctangents of _two_ values to arrive at a more rapidly convergent series for $\pi$. To better understand his method, let us recall that if $\tan A = \frac{a_1}{b_1}$ and $\tan B = \frac{a_2}{b_2}$, then [@libre-inv-trig-deriv]:
 $$
 \begin{aligned}
 \tan(A + B) &= \frac{\tan A + \tan B}{1 - \tan A\tan B}\\
@@ -444,7 +444,9 @@ $$
 
 ### An amusing aside with ChatGPT
 
-I wanted an independent machine check of my binomial series expansion of $(1 -x^2)^{\frac{1}{2}}$ and decided to try out [ChatGPT](https://chatgpt.com/). When I asked it to evaluate the first ten terms of the binomial series of $(1-x^2)^{\frac{1}{2}}$, it gave me a result, all of whose terms did not have the same sign. After re-checking my computation, I sent it a sardonic message saying that it had erred. Imagine my amazement, when---most human-like---it apologized for its error, and gave me the correct result. The screenshots below show this rather hilarious exchange and underscore the fact that AI is almost human in its responses but its computational side could be beefed up a bit. It also raises the loaded question of whether the ChatGPT error the first time round was deliberate.
+I wanted an independent machine check of my binomial series expansion of $(1 -x^2)^{\frac{1}{2}}$ and decided to try out [ChatGPT](https://chatgpt.com/). When I asked it to evaluate the first ten terms of the binomial series of $(1-x^2)^{\frac{1}{2}}$, it gave me a result, all of whose terms did not have the same sign.
+
+After re-checking my computation, I sent it a sardonic message saying that it had erred. Imagine my amazement, when---most human-like---it apologized for its error, and gave me the correct result. The screenshots below show this rather hilarious exchange and underscore the fact that AI is almost human in its responses but its computational side could be beefed up a bit. It also raises the loaded question of whether the ChatGPT error the first time round was deliberate.
 
 ![ChatGPT gave me wrong signs in the result for the binomial series during my first query. As a consequence, I shamed it, and added a little sarcasm to my response.]({attach}images/wrong-results.png){#fig:wrong-results width=90% .modal-target}
 
@@ -476,7 +478,7 @@ Thus Euler not only gave us another way of computing $\pi$, but he also showed h
 
 [Carl Friedrich Gauss](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss) [@gauss-wiki] was a precocious mathematician [@gauss-bio] who published his groundbreaking work only when it met his high standards for terse beauty. Accordingly, many of his contributions became public only many decades after his demise. The material in this section belongs to that category.
 
-I was not aware what the [Arithmetic-Geometric Mean](https://mathworld.wolfram.com/Arithmetic-GeometricMean.html) (AGM) was until I stumbled upon how Gauss related it to $\pi$. And he found the connection when he was only 14 years old. So, we are looking at the work of a mathematical prodigy, portions of which are seriously non-trivial.
+I was not aware what the [Arithmetic-Geometric Mean](https://mathworld.wolfram.com/Arithmetic-GeometricMean.html) (AGM) was until I stumbled upon how Gauss related it to $\pi$. And he found the connection when he was only 22 years old. So, we are looking at the work of a mathematical prodigy, portions of which are seriously non-trivial.^[This vital contribution was probably considered not very important by Gauss, as he left it unpublished while alive.]
 
 Accordingly, there will be a lot of hand-waving in what follows, as we attempt a thumbnail outline of Gauss's method. There are three basic ideas:
 
@@ -553,7 +555,7 @@ g_{n+1} = \sqrt{a_n g_n}
 $$
 As $n$ increases, the values $a_n$ and $g_n$ converge to a common value within a few iterations. This common value is the _arithmetic-geometric mean_, denoted as $M(a_0, g_0)$. It has been proved that both $a_n$ and $g_n$ converge to the _same_ value denoted by $M(a_0, g_0)$. [@cox-1984;@pi-and-the-agm]
 
-For reasons best known to him, Gauss chose to compute the AGM of the numbers, $a_0 = \sqrt{2}$ and $g_0 = 1$. Let us follow in the footsteps of Gauss:
+For reasons best known to him, Gauss chose to compute the AGM of the numbers, $a_0 = \sqrt{2}$ and $g_0 = 1$. Let us follow in his footsteps:
 $$
 \begin{aligned}
 a_1 = \frac{a_0 + g_0}{2} = \frac{\sqrt{2} + 1}{2} = 1.207106\\
@@ -571,7 +573,7 @@ n a_n                         g_n
 3 1.1981402347938772123825402 1.1981402346773073475105775
 4 1.1981402347355922799465588 1.1981402347355922799465588
 ```
-When the above values are compared with those tabulated in Example 2 of the paper by Cox [@cox-1984], there are discrepancies after 16 decimal places. To check whether better agreement could be achieved by using greater numerical precision in the computation, a second script, [`agm-big-float.jl`]({attach}auxiliary/agm-big-float.jl) was also executed. These results now agree to 19 decimal papers with those in the paper.^[Spare a thought for Gauss and his painstaking hand calculation to compute values to 11 decimal places.]
+When the above values are compared with those tabulated in Example 2 of the paper by Cox [@cox-1984], there are discrepancies after 16 decimal places. To check whether better agreement could be achieved by using greater numerical precision in the computation, a second script, [`agm-big-float.jl`]({attach}auxiliary/agm-big-float.jl) was also executed. These results now agree to 19 decimal places with those in the paper.^[Spare a thought for Gauss and his painstaking hand calculation to compute values to 11 decimal places.]
 
 ```
 n a_n                         g_n
@@ -652,14 +654,14 @@ We have chosen the centre of the needle as the reference point or [datum](https:
 
 ![Diagrammatic depiction of the Buffon's needle problem. Parallel lines distance $d$ apart are drawn; the purple lines are the ones closest to the thrown needle. Now, $d > \lambda$ where $\lambda$ is the length of the needle. The midpoint of the needle is $M$. See the text for the full explanation.]({attach}images/buffon.svg){#fig:buffon width=90% .modal-target}
 
-Because the spacing between the parallel lines $d$ is greater than the length of the needle $\lambda$, we know that the needle can _at most_ intersect _one_ line of a pair. We have shown that pair of lines  here. The perpendicular distance from the _centre_ of the needle to the nearest parallel line is denoted by $x$. By relating $x$ to the angle $\varphi$ and needle length $\lambda$, we derive the condition for intersection or non-intersection as a simple inequality.
+In [@fig:buffon], because the spacing between the parallel lines $d$ is greater than the length of the needle $\lambda$, we know that the needle can _at most_ intersect _one_ line of a pair. We have shown that pair of lines here. The perpendicular distance from the _centre_ of the needle to the nearest parallel line is denoted by $x$. By relating $x$ to the angle $\varphi$ and needle length $\lambda$, we derive the condition for intersection or non-intersection as a simple inequality.
 
 With reference to [@fig:buffon], let $x$ be the perpendicular distance from the centre of the needle to the nearest parallel line. If the needle makes an angle $\varphi$ measured in the conventional sense with respect to the nearest line, the distance of the tip of the needle from the centre, in the direction perpendicular to the parallel lines, is $\frac{1}{2}\lambda\sin\varphi$. Clearly, if $x > \frac{1}{2}\lambda\sin\varphi$, the needle cannot touch the nearest line. Therefore the condition for the needle to touch the nearest line is:
 $$
 x \leq \frac{1}{2}\lambda\sin\varphi
 $${#eq:buffon}
 
-Because of symmetry, we may restrict our consideration to angles $0 \leq \varphi \leq \pi$ and for $0 \leq x \leq \frac{d}{2}$. We may now define the _space of all events_ or the _event space_  as the _rectangle_ on the $\varphi$-$x$ plane bounded by the lines $x=0$, $\varphi = \pi$, $x = \frac{d}{2}$ and $\varphi = 0$, as shown in [@fig:plot].
+Because of symmetry, we may restrict our consideration to angles $0 \leq \varphi \leq \pi$ and for $0 \leq x \leq \frac{d}{2}$. As noted before, we may now define the _event space_  as the _rectangle_ on the $\varphi$-$x$ plane bounded by the lines $x=0$, $\varphi = \pi$, $x = \frac{d}{2}$ and $\varphi = 0$, as shown in [@fig:plot]. The event space represents _all_ possibilities.
 
 The set corresponding to the needle touching or crossing a line is the set of all points for which [@eq:buffon] is satisfied. It is shown coloured in [@fig:plot].
 
@@ -679,9 +681,9 @@ A &= \frac{\lambda}{2}\int_0^{\pi}\sin\varphi\;\mathrm{d}\varphi\\
 \end{aligned}
 $$ {#eq:successes}
 
-The greenish rectangle in [@fig:plot] represents the universal set of all events, or the event space. It is bounded by the $\varphi$ and $x$ axes and the lines $x =\frac{d}{2}$ and $\varphi = \pi$ as shown. Its area is proportional to every throw of the needle in any experiment, and equals $U = \frac{\pi d}{2}$.
+The greenish rectangle in [@fig:plot] represents the universal set of all events, or the event space. It is bounded by the $\varphi$ and $x$ axes and the lines $x =\frac{d}{2}$ and $\varphi = \pi$ as shown. Its area is proportional to _every_ throw of the needle in any experiment, and equals $U = \frac{\pi d}{2}$.
 
-The probability that the needle touches or crosses a parallel line is therefore equal to:
+The _probability_ that the needle touches or crosses a parallel line is therefore equal to:
 $$
 \begin{aligned}
 P(\lambda, d) &= \displaystyle\frac{A}{U} = \displaystyle \left[ \frac{A}{\frac{\pi d}{2}} \right] \\[0.5em]
@@ -706,9 +708,9 @@ For a visual analogy, think of a surgical operation, where the patient is draped
 
 ## The Brothers Chudnovsky
 
-[The Brothers Chudnovsky](https://en.wikipedia.org/wiki/Chudnovsky_brothers) [@chudnovsky-wiki,@preston-1993] embody in the popular imagination the archetypal digit hunters [@beautiful-geometry-2014] who are immersed in the quest for ever more digits of $\pi$ [@blatner-1997;pi-next-gen-2016]. Mark that we do not need $\pi$ to a hundred decimal places for any earthly or unearthly^[Think outer space, astronomy, etc.] purpose.
+[The Brothers Chudnovsky](https://en.wikipedia.org/wiki/Chudnovsky_brothers) [@chudnovsky-wiki;@preston-1993;@pi-next-gen-2016] embody in the popular imagination the archetypal digit hunters [@beautiful-geometry-2014] who are immersed in the quest for ever more digits of $\pi$ [@blatner-1997;pi-next-gen-2016]. Mark that we do not need $\pi$ to two billion places for any earthly or unearthly^[Think outer space, astronomy, etc.] purpose!
 
-## The Quest for Ever Greater Precision
+### The Quest for Ever Greater Precision
 
 In 1560, $\pi$ was known only to 6 decimal places. By 1706, it had been computed to 100 decimal places. This jumped to 707 by 1874. In 1947, $\pi$ was known to 808 decimal places. The advent of computers meant that by 1957, the number of decimal places had grown to 10,000. By 1967, this number had climbed up to 500,000. In 1997, researchers in Japan computed $\pi$ to a mind-boggling 51.5 _billion_ decimal places [@banks-1999].
 
@@ -718,7 +720,7 @@ Because $\pi$ is ultimately unknowable as a decimal number, it has a mystery to 
 
 But apart from aesthetic motives, the decimal expansion of $\pi$ may reveal new knowledge about number sequences, randomness, and how to generate random numbers.
 
-What mesmeric pull does $\pi$ have on human imagination and endeavour to inspire such single-minded and unremitting pursuit? What is the magic within $\pi$ that fuels such devotion and dedication? Is it beauty? Is it mystery? Or is it divinity?
+What mesmeric pull does $\pi$ have on human imagination and endeavour to inspire such single-minded and [unflagging](https://www.vocabulary.com/dictionary/unflagging) pursuit? What is the magic within $\pi$ that fuels such devotion and dedication? Is it beauty? Is it mystery? Or is it divinity?
 
 ## Sources for Enrichment
 
@@ -754,17 +756,19 @@ Those of you who are puzzled by the appearance of $\pi^2$ in the solution to the
 
 An [excellent biography of Carl Gauss](https://www.youtube.com/watch?v=LmmyAOkajVM) is available on YouTube [@gauss-bio]. I highly recommend watching it.
 
-There are two web sites with simulations of the Buffon's Needle experiment. [George Reese's site](https://www.mste.uiuc.edu/reese/buffon/buffon.html) has a discussion and simulation of the experiment. [Michael Hurben's site](https://www.angelfire.com/wa/hurben/buff.html} not only has a simulation, but also tracks and displays how close the estimate of $\pi$ approaches the true value as the experiment is repeated.
+A [screen adaptation](https://www.imdb.com/title/tt0787524/) of Robert Kanigel's biography of Ramanujan, _The Man Who Knew Infinity_ [@kanigel-1992], is also available. Watch it if you can.
+
+There are two web sites with simulations of the Buffon's Needle experiment. [George Reese's site](https://www.mste.uiuc.edu/reese/buffon/buffon.html) has a discussion and simulation of the experiment. [Michael Hurben's site](https://www.angelfire.com/wa/hurben/buff.html) not only has a simulation, but also tracks and displays how close the estimate of $\pi$ approaches the true value as the experiment is repeated.
 
 ## Conclusion
 
 We use pictures and words to communicate. In mathematics, _geometry_ corresponds to pictures, and _algebra_ to words. The interplay between geometry and algebra has been responsible for many mathematical advances. For example, the development of [co-ordinate geometry](https://www.britannica.com/science/Cartesian-coordinates) laid the foundations for calculus and analysis.
 
-Pi sits at the junction between pictures and words. It is geometrically defined but its expression is algebraic. It is that ubiquitous magic number that shows up where we expect it and also where we might not anticipate its presence. It appears in almost all areas of mathematics, including geometry, algebra, calculus, infinite series, and probability, to name a few. Two of the most important ideas in analysis are those of a _limit_ and of _convergence_, both of which we have chanced upon here.
+Pi sits at the junction between pictures and words. It is geometrically defined, but its expression is algebraic. It is that ubiquitous magic number that shows up in the most expected and unexpected places. It appears in almost all areas of mathematics, including geometry, algebra, calculus, infinite series, and probability, to name a few. In our foray into $\pi$, we have chanced upon two of the most important ideas in analysis: those of a _limit_ and of _convergence_.
 
-These blogs on $\pi$ have chronicled the story of how $\pi$ was extracted from the ore of geometry and refined into an enigmatic number which cannot be trapped within finite digits, but which forever embodies the thrill of the chase for the digit hunters.
+These blogs have chronicled the story of how $\pi$ was extracted from the ore of geometry and refined into an enigmatic number which cannot be trapped within the confines of finite digits. It is a magnificent creature that forever eludes the [implacable](https://www.thefreedictionary.com/implacable) arrows of the digit hunters on their [relentless](https://www.collinsdictionary.com/dictionary/english/relentless) quest for ever more digits of $\pi$.
 
-Mathematics is not merely a logical edifice built from the granite of unassailable logic. It is also the fruit of a pliant but disciplined imagination, fuelled by inspiration, that keeps expanding its boundaries all the time.
+The history of $\pi$ illustrates that mathematics is not merely a logical edifice built from the granite of unassailable logic. It is also the fruit of a pliant but disciplined imagination, fuelled by inspiration, that ever keeps expanding its boundaries.
 
 ## Acknowledgements
 

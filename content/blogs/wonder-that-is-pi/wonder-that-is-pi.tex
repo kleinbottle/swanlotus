@@ -911,9 +911,9 @@ efficiently.
 
 \href{https://en.wikipedia.org/wiki/John_Machin}{John Machin} followed
 in the footsteps of the Madhava-Gregory-Leibniz series, but he used the
-difference in the arctangents of \emph{two} values to arrive at a more
-rapidly convergent series for \(\pi\). To better understand his method,
-let us recall that if \(\tan A = \frac{a_1}{b_1}\) and
+sum or difference of the arctangents of \emph{two} values to arrive at a
+more rapidly convergent series for \(\pi\). To better understand his
+method, let us recall that if \(\tan A = \frac{a_1}{b_1}\) and
 \(\tan B = \frac{a_2}{b_2}\), then
 {[}\citeproc{ref-libre-inv-trig-deriv}{22}{]}: \[
 \begin{aligned}
@@ -1117,14 +1117,15 @@ I wanted an independent machine check of my binomial series expansion of
 \((1 -x^2)^{\frac{1}{2}}\) and decided to try out
 \href{https://chatgpt.com/}{ChatGPT}. When I asked it to evaluate the
 first ten terms of the binomial series of \((1-x^2)^{\frac{1}{2}}\), it
-gave me a result, all of whose terms did not have the same sign. After
-re-checking my computation, I sent it a sardonic message saying that it
-had erred. Imagine my amazement, when---most human-like---it apologized
-for its error, and gave me the correct result. The screenshots below
-show this rather hilarious exchange and underscore the fact that AI is
-almost human in its responses but its computational side could be beefed
-up a bit. It also raises the loaded question of whether the ChatGPT
-error the first time round was deliberate.
+gave me a result, all of whose terms did not have the same sign.
+
+After re-checking my computation, I sent it a sardonic message saying
+that it had erred. Imagine my amazement, when---most human-like---it
+apologized for its error, and gave me the correct result. The
+screenshots below show this rather hilarious exchange and underscore the
+fact that AI is almost human in its responses but its computational side
+could be beefed up a bit. It also raises the loaded question of whether
+the ChatGPT error the first time round was deliberate.
 
 \begin{figure}
 \centering
@@ -1196,9 +1197,11 @@ category.
 I was not aware what the
 \href{https://mathworld.wolfram.com/Arithmetic-GeometricMean.html}{Arithmetic-Geometric
 Mean} (AGM) was until I stumbled upon how Gauss related it to \(\pi\).
-And he found the connection when he was only 14 years old. So, we are
+And he found the connection when he was only 22 years old. So, we are
 looking at the work of a mathematical prodigy, portions of which are
-seriously non-trivial.
+seriously non-trivial.\footnote{This vital contribution was probably
+  considered not very important by Gauss, as he left it unpublished
+  while alive.}
 
 Accordingly, there will be a lot of hand-waving in what follows, as we
 attempt a thumbnail outline of Gauss's method. There are three basic
@@ -1321,8 +1324,8 @@ value denoted by \(M(a_0, g_0)\).
 {[}\citeproc{ref-cox-1984}{32},\citeproc{ref-pi-and-the-agm}{35}{]}
 
 For reasons best known to him, Gauss chose to compute the AGM of the
-numbers, \(a_0 = \sqrt{2}\) and \(g_0 = 1\). Let us follow in the
-footsteps of Gauss: \[
+numbers, \(a_0 = \sqrt{2}\) and \(g_0 = 1\). Let us follow in his
+footsteps: \[
 \begin{aligned}
 a_1 = \frac{a_0 + g_0}{2} = \frac{\sqrt{2} + 1}{2} = 1.207106\\
 g_1 = \sqrt{\sqrt{2} \times 1} = 1.189207
@@ -1349,7 +1352,7 @@ discrepancies after 16 decimal places. To check whether better agreement
 could be achieved by using greater numerical precision in the
 computation, a second script,
 \href{auxiliary/agm-big-float.jl}{\texttt{agm-big-float.jl}} was also
-executed. These results now agree to 19 decimal papers with those in the
+executed. These results now agree to 19 decimal places with those in the
 paper.\footnote{Spare a thought for Gauss and his painstaking hand
   calculation to compute values to 11 decimal places.}
 
@@ -1540,14 +1543,14 @@ the length of the needle. The midpoint of the needle is \(M\). See the
 text for the full explanation.}\label{fig:buffon}
 \end{figure}
 
-Because the spacing between the parallel lines \(d\) is greater than the
-length of the needle \(\lambda\), we know that the needle can \emph{at
-most} intersect \emph{one} line of a pair. We have shown that pair of
-lines here. The perpendicular distance from the \emph{centre} of the
-needle to the nearest parallel line is denoted by \(x\). By relating
-\(x\) to the angle \(\varphi\) and needle length \(\lambda\), we derive
-the condition for intersection or non-intersection as a simple
-inequality.
+In \cref{fig:buffon}, because the spacing between the parallel lines
+\(d\) is greater than the length of the needle \(\lambda\), we know that
+the needle can \emph{at most} intersect \emph{one} line of a pair. We
+have shown that pair of lines here. The perpendicular distance from the
+\emph{centre} of the needle to the nearest parallel line is denoted by
+\(x\). By relating \(x\) to the angle \(\varphi\) and needle length
+\(\lambda\), we derive the condition for intersection or
+non-intersection as a simple inequality.
 
 With reference to \cref{fig:buffon}, let \(x\) be the perpendicular
 distance from the centre of the needle to the nearest parallel line. If
@@ -1562,11 +1565,12 @@ x \leq \frac{1}{2}\lambda\sin\varphi
 }\end{equation}
 
 Because of symmetry, we may restrict our consideration to angles
-\(0 \leq \varphi \leq \pi\) and for \(0 \leq x \leq \frac{d}{2}\). We
-may now define the \emph{space of all events} or the \emph{event space}
-as the \emph{rectangle} on the \(\varphi\)-\(x\) plane bounded by the
-lines \(x=0\), \(\varphi = \pi\), \(x = \frac{d}{2}\) and
-\(\varphi = 0\), as shown in \cref{fig:plot}.
+\(0 \leq \varphi \leq \pi\) and for \(0 \leq x \leq \frac{d}{2}\). As
+noted before, we may now define the \emph{event space} as the
+\emph{rectangle} on the \(\varphi\)-\(x\) plane bounded by the lines
+\(x=0\), \(\varphi = \pi\), \(x = \frac{d}{2}\) and \(\varphi = 0\), as
+shown in \cref{fig:plot}. The event space represents \emph{all}
+possibilities.
 
 The set corresponding to the needle touching or crossing a line is the
 set of all points for which \cref{eq:buffon} is satisfied. It is shown
@@ -1600,11 +1604,11 @@ A &= \frac{\lambda}{2}\int_0^{\pi}\sin\varphi\;\mathrm{d}\varphi\\
 The greenish rectangle in \cref{fig:plot} represents the universal set
 of all events, or the event space. It is bounded by the \(\varphi\) and
 \(x\) axes and the lines \(x =\frac{d}{2}\) and \(\varphi = \pi\) as
-shown. Its area is proportional to every throw of the needle in any
-experiment, and equals \(U = \frac{\pi d}{2}\).
+shown. Its area is proportional to \emph{every} throw of the needle in
+any experiment, and equals \(U = \frac{\pi d}{2}\).
 
-The probability that the needle touches or crosses a parallel line is
-therefore equal to:
+The \emph{probability} that the needle touches or crosses a parallel
+line is therefore equal to:
 \begin{equation}\phantomsection\label{eq:fraction-successes}{
 \begin{aligned}
 P(\lambda, d) &= \displaystyle\frac{A}{U} = \displaystyle \left[ \frac{A}{\frac{\pi d}{2}} \right] \\[0.5em]
@@ -1652,15 +1656,16 @@ team may concentrate on it exclusively.
 \subsection{The Brothers Chudnovsky}\label{the-brothers-chudnovsky}
 
 \href{https://en.wikipedia.org/wiki/Chudnovsky_brothers}{The Brothers
-Chudnovsky} {[}\citeproc{ref-preston-1993}{42}{]} embody in the popular
-imagination the archetypal digit hunters
-{[}\citeproc{ref-beautiful-geometry-2014}{43}{]} who are immersed in the
+Chudnovsky}
+{[}\citeproc{ref-chudnovsky-wiki}{41}--\citeproc{ref-pi-next-gen-2016}{43}{]}
+embody in the popular imagination the archetypal digit hunters
+{[}\citeproc{ref-beautiful-geometry-2014}{44}{]} who are immersed in the
 quest for ever more digits of \(\pi\)
-{[}{[}\citeproc{ref-blatner-1997}{44}{]};pi-next-gen-2016{]}. Mark that
-we do not need \(\pi\) to a hundred decimal places for any earthly or
-unearthly\footnote{Think outer space, astronomy, etc.} purpose.
+{[}{[}\citeproc{ref-blatner-1997}{45}{]};pi-next-gen-2016{]}. Mark that
+we do not need \(\pi\) to two billion places for any earthly or
+unearthly\footnote{Think outer space, astronomy, etc.} purpose!
 
-\subsection{The Quest for Ever Greater
+\subsubsection{The Quest for Ever Greater
 Precision}\label{the-quest-for-ever-greater-precision}
 
 In 1560, \(\pi\) was known only to 6 decimal places. By 1706, it had
@@ -1669,7 +1674,7 @@ been computed to 100 decimal places. This jumped to 707 by 1874. In
 meant that by 1957, the number of decimal places had grown to 10,000. By
 1967, this number had climbed up to 500,000. In 1997, researchers in
 Japan computed \(\pi\) to a mind-boggling 51.5 \emph{billion} decimal
-places {[}\citeproc{ref-banks-1999}{45}{]}.
+places {[}\citeproc{ref-banks-1999}{46}{]}.
 
 One may wonder what drives this quest for ever greater precision. As we
 have already observed, it is not driven by practical need. Hunting for
@@ -1686,9 +1691,10 @@ reveal new knowledge about number sequences, randomness, and how to
 generate random numbers.
 
 What mesmeric pull does \(\pi\) have on human imagination and endeavour
-to inspire such single-minded and unremitting pursuit? What is the magic
-within \(\pi\) that fuels such devotion and dedication? Is it beauty? Is
-it mystery? Or is it divinity?
+to inspire such single-minded and
+\href{https://www.vocabulary.com/dictionary/unflagging}{unflagging}
+pursuit? What is the magic within \(\pi\) that fuels such devotion and
+dedication? Is it beauty? Is it mystery? Or is it divinity?
 
 \subsection{Sources for Enrichment}\label{sources-for-enrichment}
 
@@ -1706,13 +1712,13 @@ I recommend six books. The first is an encyclopaedic source book on
 contains a wealth of historical information and has facsimiles of many
 original publications or their translations. The second book follows on
 from the first. It chronicles the recent history of \(\pi\) and its
-computation {[}\citeproc{ref-pi-next-gen-2016}{46}{]}.
+computation {[}\citeproc{ref-pi-next-gen-2016}{43}{]}.
 
 Interestingly, the next two volumes are written by engineers, not
 mathematicians. Beckmann's book {[}\citeproc{ref-beckmann-1971}{23}{]},
 although somewhat dated and opinionated, is a labour of love. It gives
 detailed historical accounts of efforts at computing \(\pi\). The book
-by Banks{[}\citeproc{ref-banks-1999}{45}{]} is a delightful, instructive
+by Banks{[}\citeproc{ref-banks-1999}{46}{]} is a delightful, instructive
 and entertaining romp through some areas of applied mathematics. It is
 easy to read and devotes three chapters to famous numbers and number
 sequences.
@@ -1720,7 +1726,7 @@ sequences.
 Another interesting and accessible popular exposition, exclusively on
 \(\pi\), is the book by Posamentier and Lehmann
 {[}\citeproc{ref-pos-leh-2004}{47}{]}. Lastly, the popular book by
-Blatner {[}\citeproc{ref-blatner-1997}{44}{]} is historically
+Blatner {[}\citeproc{ref-blatner-1997}{45}{]} is historically
 informative and instructive.
 
 \subsubsection{Web Resources}\label{web-resources}
@@ -1786,13 +1792,18 @@ An \href{https://www.youtube.com/watch?v=LmmyAOkajVM}{excellent
 biography of Carl Gauss} is available on YouTube
 {[}\citeproc{ref-gauss-bio}{30}{]}. I highly recommend watching it.
 
+A \href{https://www.imdb.com/title/tt0787524/}{screen adaptation} of
+Robert Kanigel's biography of Ramanujan, \emph{The Man Who Knew
+Infinity} {[}\citeproc{ref-kanigel-1992}{40}{]}, is also available.
+Watch it if you can.
+
 There are two web sites with simulations of the Buffon's Needle
 experiment.
 \href{https://www.mste.uiuc.edu/reese/buffon/buffon.html}{George Reese's
-site} has a discussion and simulation of the experiment. {[}Michael
-Hurben's site{]}(https://www.angelfire.com/wa/hurben/buff.html\} not
-only has a simulation, but also tracks and displays how close the
-estimate of \(\pi\) approaches the true value as the experiment is
+site} has a discussion and simulation of the experiment.
+\href{https://www.angelfire.com/wa/hurben/buff.html}{Michael Hurben's
+site} not only has a simulation, but also tracks and displays how close
+the estimate of \(\pi\) approaches the true value as the experiment is
 repeated.
 
 \subsection{Conclusion}\label{conclusion}
@@ -1805,23 +1816,26 @@ mathematical advances. For example, the development of
 geometry} laid the foundations for calculus and analysis.
 
 Pi sits at the junction between pictures and words. It is geometrically
-defined but its expression is algebraic. It is that ubiquitous magic
-number that shows up where we expect it and also where we might not
-anticipate its presence. It appears in almost all areas of mathematics,
-including geometry, algebra, calculus, infinite series, and probability,
-to name a few. Two of the most important ideas in analysis are those of
-a \emph{limit} and of \emph{convergence}, both of which we have chanced
-upon here.
+defined, but its expression is algebraic. It is that ubiquitous magic
+number that shows up in the most expected and unexpected places. It
+appears in almost all areas of mathematics, including geometry, algebra,
+calculus, infinite series, and probability, to name a few. In our foray
+into \(\pi\), we have chanced upon two of the most important ideas in
+analysis: those of a \emph{limit} and of \emph{convergence}.
 
-These blogs on \(\pi\) have chronicled the story of how \(\pi\) was
-extracted from the ore of geometry and refined into an enigmatic number
-which cannot be trapped within finite digits, but which forever embodies
-the thrill of the chase for the digit hunters.
+These blogs have chronicled the story of how \(\pi\) was extracted from
+the ore of geometry and refined into an enigmatic number which cannot be
+trapped within the confines of finite digits. It is a magnificent
+creature that forever eludes the
+\href{https://www.thefreedictionary.com/implacable}{implacable} arrows
+of the digit hunters on their
+\href{https://www.collinsdictionary.com/dictionary/english/relentless}{relentless}
+quest for ever more digits of \(\pi\).
 
-Mathematics is not merely a logical edifice built from the granite of
-unassailable logic. It is also the fruit of a pliant but disciplined
-imagination, fuelled by inspiration, that keeps expanding its boundaries
-all the time.
+The history of \(\pi\) illustrates that mathematics is not merely a
+logical edifice built from the granite of unassailable logic. It is also
+the fruit of a pliant but disciplined imagination, fuelled by
+inspiration, that ever keeps expanding its boundaries.
 
 \subsection{Acknowledgements}\label{acknowledgements}
 
@@ -2115,27 +2129,27 @@ Retrieved 16 December 2024 from
 Yorker}. Retrieved 16 December 2024 from
 \url{https://www.newyorker.com/magazine/1992/03/02/the-mountains-of-pi}}
 
-\bibitem[\citeproctext]{ref-beautiful-geometry-2014}
+\bibitem[\citeproctext]{ref-pi-next-gen-2016}
 \CSLLeftMargin{{[}43{]} }%
+\CSLRightInline{David H Bailey and Jonathan M Borwein. 2016. \emph{Pi:
+The next generation: A sourcebook on the recent history of pi and its
+computation}. Springer.}
+
+\bibitem[\citeproctext]{ref-beautiful-geometry-2014}
+\CSLLeftMargin{{[}44{]} }%
 \CSLRightInline{Eli Maor and Eugen Jost. 2014. \emph{Beautiful
 geometry}. Princeton University Press.}
 
 \bibitem[\citeproctext]{ref-blatner-1997}
-\CSLLeftMargin{{[}44{]} }%
+\CSLLeftMargin{{[}45{]} }%
 \CSLRightInline{David Blatner. 1997. \emph{{The Joy of Pi}}. Penguin
 Books, London, UK.}
 
 \bibitem[\citeproctext]{ref-banks-1999}
-\CSLLeftMargin{{[}45{]} }%
+\CSLLeftMargin{{[}46{]} }%
 \CSLRightInline{Robert B Banks. 1999. \emph{{Slicing pizzas, racing
 turtles and further adventures in applied mathematics}}. Princeton
 University Press, Princeton, NJ, USA.}
-
-\bibitem[\citeproctext]{ref-pi-next-gen-2016}
-\CSLLeftMargin{{[}46{]} }%
-\CSLRightInline{David H Bailey and Jonathan M Borwein. 2016. \emph{Pi:
-The next generation: A sourcebook on the recent history of pi and its
-computation}. Springer.}
 
 \bibitem[\citeproctext]{ref-pos-leh-2004}
 \CSLLeftMargin{{[}47{]} }%
