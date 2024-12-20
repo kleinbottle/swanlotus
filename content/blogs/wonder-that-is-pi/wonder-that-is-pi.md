@@ -488,7 +488,7 @@ Accordingly, there will be a lot of hand-waving in what follows, as we attempt a
 
 (b) [Elliptic integrals](https://en.wikipedia.org/wiki/Elliptic_integral); and
 
-(c) [Arithmetic-Geometric mean (AGM) of two positive real numbers](https://en.wikipedia.org/wiki/Arithmetic%E2%80%93geometric_mean); and 
+(c) [Arithmetic-Geometric mean (AGM) of two positive real numbers](https://en.wikipedia.org/wiki/Arithmetic%E2%80%93geometric_mean).
 
 By tying together these three ideas, Gauss was not only able to arrive at a potent method of rapidly computing $\pi$ to high accuracy, but he also opened up new vistas for further mathematical investigation. Our treatment here is sketchy by design and the interested reader is referred to source material for a more complete exposition [@pi-source;@cox-1984;@langton-2001].
 
