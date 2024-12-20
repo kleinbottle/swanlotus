@@ -591,7 +591,7 @@ $$
 M(\sqrt{2}, 1) = 1.1981402347355922074399225.
 $${#eq:agm-root2-one}
 
-Comparing [@eq:pi-varpi-ratio] and [@eq:agm-root2-one] it is clear that their numerical results agree up to the sixteenth decimal place. The fact that two computations from two very different directions---mathematically speaking---have led to the same result, is unexpected to say the least. Gauss was astounded. But unlike most people, he went on to _prove_ that the two expressions on the left hand side of these equations are indeed equal not just numerically, but indeed mathematically, i.e.,
+Comparing [@eq:pi-varpi-ratio] and [@eq:agm-root2-one] it is clear that their numerical results agree up to the sixteenth decimal place. The fact that two computations from two very different directions---mathematically speaking---have led to the same result, is unexpected to say the least. Gauss was astounded. But unlike most people, he went on to _prove_ that the two expressions on the left hand side of these equations are indeed equal, not just numerically, but mathematically too:
 $$
 \frac{\pi}{\varpi} = M(\sqrt{2}, 1)
 $${#eq:ratio-agm}
@@ -617,7 +617,7 @@ How in Heaven's name did he stumble upon it? Or was he directed by an inner logi
 
 ## Ramanujan
 
-If ever there were a mathematician [par excellence](https://www.thefreedictionary.com/par+excellence), whose insights and discoveries are wrapped in inscrutable leaps of the imagination, it is [Srinivasa Ramanujan](https://en.wikipedia.org/wiki/Srinivasa_Ramanujan). He is reputed to have said "An equation for me has no meaning unless it expresses a thought of God" [@kanigel-1992]. And  indeed, he alluded to communion with God---as his personal deity, the Goddess Namagiri---who "would write the equations on his tongue... [and] ... bestow mathematical insights in his dreams" [@kanigel-1992].
+If ever there were a mathematician [par excellence](https://www.thefreedictionary.com/par+excellence), whose insights and discoveries are wrapped in inscrutable leaps of the imagination, it is [Srinivasa Ramanujan](https://en.wikipedia.org/wiki/Srinivasa_Ramanujan). He is reputed to have said "An equation for me has no meaning unless it expresses a thought of God" [@kanigel-1992]. He attributed his unproven  mathematical results to divine intercession. He said that the Goddess Namagiri, his personal deity, "would write the equations on his tongue... [and] ... bestow mathematical insights in his dreams" [@kanigel-1992].
 
 ![One of the few surviving photographs of the genius Srinivasa Ramanujan.]({attach}images/Srinivasa_Ramanujan_Cleanup.jpg){#fig:ramanujan width=70% .modal-target}
 
@@ -663,7 +663,7 @@ $$
 x \leq \frac{1}{2}\lambda\sin\varphi
 $${#eq:buffon}
 
-Because of symmetry, we may restrict our consideration to angles $0 \leq \varphi \leq \pi$ and for $0 \leq x \leq \frac{d}{2}$. As noted before, we may now define the _event space_  as the _rectangle_ on the $\varphi$-$x$ plane bounded by the lines $x=0$, $\varphi = \pi$, $x = \frac{d}{2}$ and $\varphi = 0$, as shown in [@fig:plot]. The event space represents _all_ possibilities.
+Because of symmetry, we may restrict our consideration to angles $0 \leq \varphi \leq \pi$ and for $0 \leq x \leq \frac{d}{2}$. We may now define the _event space_  as the _rectangle_ on the $\varphi-x$ plane bounded by the lines $x=0$, $\varphi = \pi$, $x = \frac{d}{2}$ and $\varphi = 0$, as shown in [@fig:plot]. The event space represents _all_ possibilities.
 
 The set corresponding to the needle touching or crossing a line is the set of all points for which [@eq:buffon] is satisfied. It is shown coloured in [@fig:plot].
 
@@ -683,7 +683,7 @@ A &= \frac{\lambda}{2}\int_0^{\pi}\sin\varphi\;\mathrm{d}\varphi\\
 \end{aligned}
 $$ {#eq:successes}
 
-The greenish rectangle in [@fig:plot] represents the universal set of all events, or the event space. It is bounded by the $\varphi$ and $x$ axes and the lines $x =\frac{d}{2}$ and $\varphi = \pi$ as shown. Its area is proportional to _every_ throw of the needle in any experiment, and equals $U = \frac{\pi d}{2}$.
+The greenish rectangle in [@fig:plot] represents the universal set of all events, or the event space, as noted before. It is bounded by the $\varphi$ and $x$ axes and the lines $x =\frac{d}{2}$ and $\varphi = \pi$ as shown. Its area is proportional to _every_ throw of the needle in any experiment, and equals $U = \frac{\pi d}{2}$.
 
 The _probability_ that the needle touches or crosses a parallel line is therefore equal to:
 $$
@@ -706,11 +706,11 @@ A Julia script that implements the mathematics derived above is available as [`b
 
 As explained above, it is important to realize that the analysis of the needle position with respect to a single line-pair suffices. This is an instance of _problem abstraction_ or _modelling_, which is an important skill to acquire. It restricts focus to the essentials, and in the process usually simplifies the solution of the problem.
 
-For a visual analogy, think of a surgical operation, where the patient is draped in green everywhere, except the site of the operation, and where the bright light is shone on that one area, so that the surgical team may concentrate on it exclusively.
+For a visual analogy, think of a surgical operation, where the patient is draped in green everywhere, except the site of the operation, and where the bright light is shone exclusively on that one area, so that the surgical team may concentrate on it without distraction.
 
 ## The Brothers Chudnovsky
 
-[The Brothers Chudnovsky](https://en.wikipedia.org/wiki/Chudnovsky_brothers) [@chudnovsky-wiki;@preston-1993;@pi-next-gen-2016] embody in the popular imagination the archetypal digit hunters [@beautiful-geometry-2014] who are immersed in the quest for ever more digits of $\pi$ [@blatner-1997;pi-next-gen-2016]. Mark that we do not need $\pi$ to two billion places for any earthly or unearthly^[Think outer space, astronomy, etc.] purpose!
+[The Brothers Chudnovsky](https://en.wikipedia.org/wiki/Chudnovsky_brothers) [@chudnovsky-wiki;@preston-1993;@pi-next-gen-2016] embody in the popular imagination the archetypal digit hunters who are immersed in the quest for ever more digits of $\pi$ [@beautiful-geometry-2014;@blatner-1997;@pi-next-gen-2016]. Mark that we do not need $\pi$ to two billion places for any earthly or unearthly^[Think outer space, astronomy, etc.] purpose!
 
 ### The Quest for Ever Greater Precision
 
@@ -726,7 +726,7 @@ What mesmeric pull does $\pi$ have on human imagination and endeavour to inspire
 
 ## Sources for Enrichment
 
-If you are intrigued by the material in these two blogs on Pi^[[The Pi of Archimedes](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes) and [The Wonder That Is Pi](https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi).] have the time and interest to find out more, do  engage with some of these books, websites, and videos. They will enhance your knowledge of $\pi$ and enrich you intellectually.
+If you are intrigued by the material in these two blogs on Pi^[[The Pi of Archimedes](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes) and [The Wonder That Is Pi](https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi).] and have the time and interest to find out more, do  engage with some of these books, websites, and videos. They will enhance your knowledge of $\pi$ and enrich you intellectually.
 
 ### Book Recommendations
 
@@ -738,7 +738,7 @@ Another interesting and accessible popular exposition, exclusively on $\pi$, is 
 
 ### Web Resources
 
-If you are unsure about a mathematical term, or definition, I would recommend, as first port of call, [Wolfram MathWorld](https://mathworld.wolfram.com/), created, developed, and nurtured by Eric Weisstein [@mathworld]. It is a searchable, authoritative and encyclopaedic web site. Although Weisstein is himself an astronomer, his enduring love of Mathematics has resulted in this treasure trove of mathematical information on the web, from which all can benefit.
+If you are unsure about a mathematical term, or definition, I would recommend, as first port of call, [Wolfram MathWorld](https://mathworld.wolfram.com/), "created, developed, and nurtured" by Eric Weisstein [@mathworld]. It is a searchable, authoritative and encyclopaedic web site. Although Weisstein is himself an astronomer, his enduring love of Mathematics has resulted in this treasure trove of mathematical information on the web, from which all can benefit.
 
 The lives of mathematicians have been chronicled at several places on the Web. One of the most comprehensive and scholarly---fully searchable, and with many related links---is the [MacTutor History of Mathematics website](https://mathshistory.st-andrews.ac.uk/) [@mactutor].
 
