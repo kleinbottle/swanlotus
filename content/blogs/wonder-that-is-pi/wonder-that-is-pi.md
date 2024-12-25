@@ -2,7 +2,7 @@
 title: "The Wonder That Is Pi"
 author: "R (Chandra) Chandrasekhar"
 date: 2004-01-14
-modified: 2024-12-20
+modified: 2024-12-25
 category: Mathematics
 tags: pi
 summary: This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes). We look at π as a number rather than the ratio of two lengths, and try to unravel how and why it is ubiquitous in mathematics. 
@@ -268,7 +268,7 @@ The series we are about to look at was originally called the _Gregory series_. L
 
 The accomplishments of medieval Indian mathematicians---whose discoveries antedated those of Gregory and Leibniz---remained unknown to the larger world. But recent scholarship has accorded [priority](https://en.wikipedia.org/wiki/Scientific_priority) to the leading Indian mathematician-astronomer of that period, Madhava, who anticipated both the Gregory series and the Leibniz series by more than 250 years [@roy1990; @joseph2009; @roy2011; @joseph2011; @madhava-wiki]. This explains the triple-barrelled name for the series. Thumbnail sketches are given in the links below for all three mathematicians.
 
-[James Gregory](https://en.wikipedia.org/wiki/James_Gregory_\(mathematician\)) was the first Professor of Mathematics at the University of Edinburgh and in 1671, he published the series that was called the [arctangent series](https://en.wikipedia.org/wiki/Arctangent_series), or the Gregory series.
+[James Gregory](https://en.wikipedia.org/wiki/James_Gregory_\(mathematician\)) was the first Professor of Mathematics at the University of Edinburgh and in 1671, he published the series that was called the [arctangent series](https://en.wikipedia.org/wiki/Arctangent_series),^[The $\tan$ and $\mathrm{arctan}$ functions resemble, but are not quite, inverses: $\tan(\mathrm{arctan}\;x) = x \;\forall x$ but $\mathrm{arctan}(\tan\;x) = x\; \iff x \in (−\frac{\pi}{2}, \frac{\pi}{2})$.] or the Gregory series.
 
 [Gottfried Wilhelm Leibniz](https://www.google.com/search?q=Leibniz) evaluated the arctangent series at $\frac{\pi}{4}$ to get an estimate of $\frac{\pi}{4}$; the result was known as the Gregory-Leibniz series or the Leibniz Formula.
 
