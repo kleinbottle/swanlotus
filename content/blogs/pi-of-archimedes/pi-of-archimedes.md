@@ -5,7 +5,7 @@ date: 2004-01-14
 modified: 2024-07-25
 category: Mathematics
 tags: Numbers, Irrational, Transcendental
-summary: "This blog began life more than two decades ago, as part of a series of lectures I delivered to some very bright first-year engineering students at an Australian university.
+summary: "This blog---and its companion, [The Wonder That Is Pi](https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi)---began life in 2004, as part of a series of lectures I delivered to some very bright first-year engineering students at an Australian university.
 
 The number π (pronounced 'pie') has been recognized from time immemorial because its physical significance can be grasped easily: it is the ratio of the circumference of a circle to its diameter. But who would have thought that such an innocent ratio would exercise such endless fascination because of the complexities it enfolds?
 
@@ -16,7 +16,7 @@ status: published
 opengraphimage: Domenico-Fetti_Archimedes_1620.jpg
 ---
 
->This blog began life more than two decades ago, as part of a series of lectures I delivered to some very bright first-year engineering students at an Australian university.
+>This blog---and its companion, [The Wonder That Is Pi](https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi)---began life in 2004, as part of a series of lectures I delivered to some very bright first-year engineering students at an Australian university.
 >
 >The number $\pi$ (pronounced "pie") has been recognized from time immemorial because its physical significance can be grasped easily: it is the ratio of the circumference of a circle to its diameter. But who would have thought that such an innocent ratio would exercise such endless fascination because of the complexities it enfolds?
 >

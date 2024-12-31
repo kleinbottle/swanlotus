@@ -126,7 +126,7 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage[inkscapeversion=auto]{svg}
-\usepackage[defaultlines=4,all]{nowidow}
+\usepackage{nowidow}
 \usepackage{etoolbox}
 \usepackage{fontsize}
 \usepackage{newunicodechar}
@@ -142,6 +142,21 @@
 \let\longdivision\relax
 \usepackage{longdivision}
 \newcommand{\dd}{\ensuremath{mathrm d}}
+%
+% Assume that amsmath is already loaded via \usepackage{amsmath}
+% in the standard LaTeX template foe Pandoc
+% 
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arccoth}{arccoth} 
 % noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
@@ -230,9 +245,11 @@
 
 
 \begin{quote}
-This blog began life more than two decades ago, as part of a series of
-lectures I delivered to some very bright first-year engineering students
-at an Australian university.
+This blog---and its companion,
+\href{https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi}{The
+Wonder That Is Pi}---began life in 2004, as part of a series of lectures
+I delivered to some very bright first-year engineering students at an
+Australian university.
 
 The number \(\pi\) (pronounced ``pie'') has been recognized from time
 immemorial because its physical significance can be grasped easily: it

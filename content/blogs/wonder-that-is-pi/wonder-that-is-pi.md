@@ -2,7 +2,7 @@
 title: "The Wonder That Is Pi"
 author: "R (Chandra) Chandrasekhar"
 date: 2004-01-14
-modified: 2024-12-25
+modified: 2024-12-31
 category: Mathematics
 tags: pi
 summary: This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes). We look at π as a number rather than the ratio of two lengths, and try to unravel how and why it is ubiquitous in mathematics. 
