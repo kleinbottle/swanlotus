@@ -92,8 +92,8 @@
 %
 \usepackage{graphicx}
 \usepackage{subcaption}
-\usepackage[inkscapeversion=1]{svg}
-\usepackage[defaultlines=4,all]{nowidow}
+\usepackage[inkscapeversion=auto]{svg}
+\usepackage{nowidow}
 \usepackage{etoolbox}
 \usepackage{fontsize}
 \usepackage{newunicodechar}
@@ -108,6 +108,22 @@
 \usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
 \let\longdivision\relax
 \usepackage{longdivision}
+\newcommand{\dd}{\ensuremath{mathrm d}}
+%
+% Assume that amsmath is already loaded via \usepackage{amsmath}
+% in the standard LaTeX template foe Pandoc
+% 
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arccoth}{arccoth} 
 % noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
@@ -260,7 +276,7 @@ from?}\label{where-did-degrees-come-from}
 
 Surely, degrees did not come from a protractor, although we use one to
 measure angles. How did degrees come about? With sixty degrees each in
-an equilateral triangle, ninety in a right angle , 180° in a straight
+an equilateral triangle, ninety in a right angle, 180° in a straight
 line, and 360° in a full circle, how did degrees come to rule the roost
 of angular measure in elementary school?
 
@@ -328,7 +344,11 @@ to its radius, \(r\), through the formula:
 C = 2\pi r.
 }\end{equation} And \(\pi\) is not \(\frac{22}{7}\) as we were
 originally taught, but really a number whose precise expression cannot
-be predicted or exhausted. The digits simply keep rolling on, without
+be predicted or exhausted.\footnote{See my blogs
+  \href{https://swanlotus.netlify.app/blogs/the-pi-of-archimedes}{The Pi
+  of Archimedes} and
+  \href{https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi}{The
+  Wonder That Is Pi}.} The digits simply keep rolling on, without
 pattern or end. But the beauty is that \(\pi\) is nevertheless a unique
 number, a universal mathematical constant. It seems that Nature has
 played a game on us by making the simple symmetrical circle have a
@@ -398,18 +418,18 @@ Intuitively, if two objects are similar, one may \emph{zoom in} or
 obtain a version that may be superimposed on the other object to
 demonstrate that they are identical or congruent. In this case, we may
 \emph{enlarge} triangle \(LMN\) until it attains the same size as
-triangle \(ABC\). It will then be congruent to \(ABC\).
+triangle \(ABC\). It will then be congruent to \(ABC\). The ratios of
+the respective lengths of corresponding sides of similar triangles are
+the same.
 
-The ratios of the respective lengths of corresponding sides of similar
-triangles are the same. In like fashion, the ratio of any arc length to
-the radius of a circle is the same for all arcs subtending the
-\emph{same} angle at the centre. For example, the ratio of the
-circumference to the radius for two circles of radii \(r_1\) and \(r_2\)
-will be \(\frac{2\pi r_1}{r_1} =\frac{2\pi r_2}{r_2} = 2\pi\), which is
-a constant.\footnote{This also demonstrates that a full circle
-  corresponds to an angle of 360° or \(2\pi\) radians.} This is a
-consequence of the fact that \emph{all circles are similar to each
-other}.
+In like fashion, the ratio of any arc length to the radius of a circle
+is the same for all arcs subtending the \emph{same} angle at the centre.
+For example, the ratio of the circumference to the radius for two
+circles of radii \(r_1\) and \(r_2\) will be
+\(\frac{2\pi r_1}{r_1} =\frac{2\pi r_2}{r_2} = 2\pi\), which is a
+constant.\footnote{This also demonstrates that a full circle corresponds
+  to an angle of 360° or \(2\pi\) radians.} This is a consequence of the
+fact that \emph{all circles are similar to each other}.
 
 What other classes of geometrical objects can you think of that are
 similar to each other within their class?\footnote{All circles are
@@ -722,10 +742,11 @@ statement.\footnote{Note that while it is mandatory to affix the degree
   sign as a superscript, radians being pure numbers do not require any
   special identification.}
 
-But it is possible to express trigonometric functions in terms of power
-series in which an argument in degrees would be inadmissible. It is only
-after we cross this threshold in mathematics that radians truly come
-into their own, after which there is ``no going back to the old ways''.
+But it is possible to express trigonometric functions in terms of
+\href{https://en.wikipedia.org/wiki/Power_series}{power series} in which
+an argument in degrees would be inadmissible. It is only after we cross
+this threshold in mathematics that radians truly come into their own,
+after which there is ``no going back to the old ways''.
 
 I will now do a bit of hand-waving and say that it has been
 proved\footnote{Search the web for Taylor Series or Maclaurin series,
@@ -736,18 +757,23 @@ proved\footnote{Search the web for Taylor Series or Maclaurin series,
 \sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \frac{\theta^7}{7!} + \cdots
 }\end{equation}
 
-where the dots at the end of \cref{eq:sineseries} tell us to imagine
-that this series \emph{never ends but goes on forever} following the
-pattern shown. \cref{eq:sineseries} demonstrates a paradox: a
-trigonometric function is not a polynomial; yet a trigonometric function
-may be expressed as an infinite polynomial. Infinity has this beguiling
+where the exclamation mark represents the
+\href{https://www.britannica.com/science/factorial}{factorial function}
+and the dots at the end of \cref{eq:sineseries} tell us to imagine that
+this series \emph{never ends but goes on forever} following the pattern
+shown. \cref{eq:sineseries} demonstrates a paradox: a trigonometric
+function is not a polynomial; yet a trigonometric function may be
+expressed as an infinite polynomial. Infinity has this beguiling
 attribute of ``enabling the impossible.''
 
 Recall that if a number is less than one, raising it to a power greater
-than one makes it smaller than it originally was. So, when \(\theta\) is
-very close to zero, the higher powers on the right hand side (RHS) of
-\cref{eq:sineseries} become smaller and smaller, and may be ignored
-without much loss in accuracy. In this case, we may assert that:
+than one makes it smaller than it originally was.\footnote{See my blog
+  \href{https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one}{The
+  Two Most Important Numbers: Zero and One}, and especially Figure 2
+  there.} So, when \(\theta\) is very close to zero, the higher powers
+on the right hand side (RHS) of \cref{eq:sineseries} become smaller and
+smaller, and may be ignored without much loss in accuracy. In this case,
+we may assert that:
 
 \begin{equation}\phantomsection\label{eq:sinesmalltheta}{
 \sin\theta\approx\theta \:\text{for}\: \lvert\theta\rvert \to 0.
@@ -765,10 +791,11 @@ expressed in a similar unitless measure, and the radian
 the bill}.
 
 The validity of \cref{eq:sinesmalltheta} may also be seen from
-\cref{fig:xsinx} where the closeness of the curve \(f(\theta) = \theta\)
-and \(f(\theta) = \sin\theta\) near the origin is evident. Indeed, right
-up to a value of \(\lvert\theta\rvert\approx 0.3\), the two curves track
-each other closely.
+\cref{fig:xsinx} where the closeness of the curves
+\(f(\theta) = \theta\) and \(f(\theta) = \sin\theta\) near the origin is
+evident. Indeed, right up to a value of
+\(\lvert\theta\rvert\approx 0.3\), the two curves track each other
+closely.
 
 \begin{figure}
 \centering
@@ -841,7 +868,7 @@ forever. Note that this is no approximation, but an equality.
 
 The successive \emph{partial sums} of the RHS of \cref{eq:squarefourier}
 are termed \(s_1(t)\), \(s_2(t)\), etc., with \(s_1(t)\) denoting the
-first term, \(s_2(t)\), the sum of the first and second term etc. It is
+first term, \(s_2(t)\), the sum of the first and second term, etc. It is
 evident from \cref{fig:squarefourier} that the more terms we add, the
 better the match between the original signal and its approximation,
 denoted generically by \(s_*(t)\) in the graph.\footnote{This

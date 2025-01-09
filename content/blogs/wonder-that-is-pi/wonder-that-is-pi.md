@@ -754,7 +754,7 @@ How [Augustin-Louis Cauchy](https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy)
 
 Those of you who are puzzled by the appearance of $\pi^2$ in the solution to the Basel problem should also view this [_3Blue1Brown_ YouTube vdeo](https://www.youtube.com/watch?v=d-o3eB9sfls) [@pi-squared-basel].
 
-[Veritasium](https://www.youtube.com/@veritasium) and [3Blue1Brown](https://www.youtube.com/c/3blue1brown) put out quality educational videos on Mathematics on [YouTube](https://www.youtube.com/) and are an authoritative source of enrichment. Do benefit from them.
+[Veritasium](https://www.youtube.com/@veritasium), [Mathologer](https://www.youtube.com/@Mathologer), and [3Blue1Brown](https://www.youtube.com/c/3blue1brown) put out quality educational videos on Mathematics on [YouTube](https://www.youtube.com/) and are an authoritative source of enrichment. Do benefit from them.
 
 An [excellent biography of Carl Gauss](https://www.youtube.com/watch?v=LmmyAOkajVM) is available on YouTube [@gauss-bio]. I highly recommend watching it.
 

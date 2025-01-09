@@ -27,7 +27,7 @@ After we had learned to construct an equilateral triangle, using only compasses 
 
 ### Where did degrees come from?
 
-Surely, degrees did not come from a protractor, although we use one to measure angles. How did degrees come about? With sixty degrees each in an equilateral triangle, ninety in a right angle , 180° in a straight line, and 360° in a full circle, how did degrees come to rule the roost of angular measure in elementary school?
+Surely, degrees did not come from a protractor, although we use one to measure angles. How did degrees come about? With sixty degrees each in an equilateral triangle, ninety in a right angle, 180° in a straight line, and 360° in a full circle, how did degrees come to rule the roost of angular measure in elementary school?
 
 Why not 100° in a full circle, or half circle, or even a quarter circle, also known as a right angle? Who imposed this measure upon us and what is its basis?
 
@@ -54,7 +54,7 @@ It is a fact that the _length_ of a circle, or its _perimeter_, or its _circumfe
 $$
 C = 2\pi r.
 $${#eq:2pir}
-And $\pi$ is not $\frac{22}{7}$ as we were originally taught, but really a number whose precise expression cannot be predicted or exhausted. The digits simply keep rolling on, without pattern or end. But the beauty is that $\pi$ is nevertheless a unique number, a universal mathematical constant. It seems that Nature has played a game on us by making the simple symmetrical circle have a circumference that can only be approximated but never entirely known to an unlimited precision.^[$\pi$, $e$ the base of natural logarithms, $\phi$ the golden ratio, along with a large pantheon of mathematical constants are irrational, and some are even possibly transcendental. Why Nature has this preference for the irrational is an intriguing question that needs an answer.]
+And $\pi$ is not $\frac{22}{7}$ as we were originally taught, but really a number whose precise expression cannot be predicted or exhausted.^[See my blogs [The Pi of Archimedes](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes) and [The Wonder That Is Pi](https://swanlotus.netlify.app/blogs/the-wonder-that-is-pi).] The digits simply keep rolling on, without pattern or end. But the beauty is that $\pi$ is nevertheless a unique number, a universal mathematical constant. It seems that Nature has played a game on us by making the simple symmetrical circle have a circumference that can only be approximated but never entirely known to an unlimited precision.^[$\pi$, $e$ the base of natural logarithms, $\phi$ the golden ratio, along with a large pantheon of mathematical constants are irrational, and some are even possibly transcendental. Why Nature has this preference for the irrational is an intriguing question that needs an answer.]
 
 ### One radian
 
@@ -78,9 +78,9 @@ Any two-dimensional geometrical shape is congruent to another if the two shapes 
 
 _Similarity_ is less restrictive than congruence and applies to geometric objects that have the same shape but not necessarily the same size. In @fig:similar, triangle $ABC$ is similar to triangles $XYZ$ and $LMN$.
 
-Intuitively, if two objects are similar, one may _zoom in_ or _zoom out_ on one object of the pair---without distortion---to obtain a version that may be superimposed on the other object to demonstrate that they are identical or congruent. In this case, we may _enlarge_ triangle $LMN$ until it attains the same size as triangle $ABC$. It will then be congruent to $ABC$.
+Intuitively, if two objects are similar, one may _zoom in_ or _zoom out_ on one object of the pair---without distortion---to obtain a version that may be superimposed on the other object to demonstrate that they are identical or congruent. In this case, we may _enlarge_ triangle $LMN$ until it attains the same size as triangle $ABC$. It will then be congruent to $ABC$. The ratios of the respective lengths of corresponding sides of similar triangles are the same.
 
-The ratios of the respective lengths of corresponding sides of similar triangles are the same. In like fashion, the ratio of any arc length to the radius of a circle is the same for all arcs subtending the _same_ angle at the centre. For example, the ratio of the circumference to the radius for two circles of radii $r_1$ and $r_2$ will be $\frac{2\pi r_1}{r_1} =\frac{2\pi r_2}{r_2} = 2\pi$, which is a constant.^[This also demonstrates that a full circle corresponds to an angle of 360° or $2\pi$ radians.] This is a consequence of the fact that _all circles are similar to each other_.
+In like fashion, the ratio of any arc length to the radius of a circle is the same for all arcs subtending the _same_ angle at the centre. For example, the ratio of the circumference to the radius for two circles of radii $r_1$ and $r_2$ will be $\frac{2\pi r_1}{r_1} =\frac{2\pi r_2}{r_2} = 2\pi$, which is a constant.^[This also demonstrates that a full circle corresponds to an angle of 360° or $2\pi$ radians.] This is a consequence of the fact that _all circles are similar to each other_.
 
 What other classes of geometrical objects can you think of that are similar to each other within their class?^[All circles are similar, as are  all equilateral triangles, all squares, and indeed, all regular $n$-gons, and all parabolas.]
 
@@ -187,7 +187,7 @@ This is where the plot really thickens.
 
 Both the statements $\sin(30°)=0.5$ and $\sin(\frac{\pi}{6})=0.5$ are factually correct and perfectly acceptable. We will not be committing any mathematical heresies through either statement.^[Note that while it is mandatory to affix the degree sign as a superscript, radians being pure numbers do not require any special identification.]
 
-But it is possible to express trigonometric functions in terms of power series in which an argument in degrees would be inadmissible. It is only after we cross this threshold in mathematics that radians truly come into their own, after which there is "no going back to the old ways".
+But it is possible to express trigonometric functions in terms of [power series](https://en.wikipedia.org/wiki/Power_series) in which an argument in degrees would be inadmissible. It is only after we cross this threshold in mathematics that radians truly come into their own, after which there is "no going back to the old ways".
 
 I will now do a bit of hand-waving and say that it has been proved^[Search the web for Taylor Series or Maclaurin series, thinking of it as a treasure hunt and enrich yourself with that knowledge!] that:
 
@@ -195,9 +195,9 @@ $$
 \sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \frac{\theta^7}{7!} + \cdots
 $${#eq:sineseries}
 
-where the dots at the end of @eq:sineseries tell us to imagine that this series _never ends but goes on forever_ following the pattern shown. @eq:sineseries demonstrates a paradox: a trigonometric function is not a polynomial; yet a trigonometric function may be expressed as an infinite polynomial. Infinity has this beguiling attribute of "enabling the impossible."
+where the exclamation mark represents the [factorial function](https://www.britannica.com/science/factorial) and the dots at the end of @eq:sineseries tell us to imagine that this series _never ends but goes on forever_ following the pattern shown. @eq:sineseries demonstrates a paradox: a trigonometric function is not a polynomial; yet a trigonometric function may be expressed as an infinite polynomial. Infinity has this beguiling attribute of "enabling the impossible."
 
-Recall that if a number is less than one, raising it to a power greater than one makes it smaller than it originally was. So, when $\theta$ is very close to zero, the higher powers on the right hand side (RHS) of @eq:sineseries become smaller and smaller, and may be ignored without much loss in accuracy. In this case, we may assert that:
+Recall that if a number is less than one, raising it to a power greater than one makes it smaller than it originally was.^[See my blog [The Two Most Important Numbers: Zero and One](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one), and especially Figure 2 there.] So, when $\theta$ is very close to zero, the higher powers on the right hand side (RHS) of @eq:sineseries become smaller and smaller, and may be ignored without much loss in accuracy. In this case, we may assert that:
 
 $$
 \sin\theta\approx\theta \:\text{for}\: \lvert\theta\rvert \to 0.
@@ -207,7 +207,7 @@ In English this expression means that for vanishingly small values of $\theta$--
 
 From @fig:trig we know that the number on the left hand side (LHS) of @eq:sinesmalltheta is a unitless ratio of two lengths and thus a "pure" number. This requires the right hand side to be also expressed in a similar unitless measure, and the radian [fits the bill](https://www.collinsdictionary.com/dictionary/english/fit-the-bill).
 
-The validity of @eq:sinesmalltheta may also be seen from @fig:xsinx where the closeness of the curve $f(\theta) = \theta$ and $f(\theta) = \sin\theta$ near the origin is evident. Indeed, right up to a value of $\lvert\theta\rvert\approx 0.3$, the two curves track each other closely.
+The validity of @eq:sinesmalltheta may also be seen from @fig:xsinx where the closeness of the curves  $f(\theta) = \theta$ and $f(\theta) = \sin\theta$ near the origin is evident. Indeed, right up to a value of $\lvert\theta\rvert\approx 0.3$, the two curves track each other closely.
 
 ![Graphs of $f(\theta)= \sin\theta$ and $f(\theta) = \theta$ for $\lvert\theta\rvert\approx 0$.]({attach}images/xsinx.svg){#fig:xsinx width=90% .modal-target}
 
@@ -231,7 +231,7 @@ s(t) = \frac{2}{\pi}\left[\sin(t) + \frac{\sin(3t)}{3} + \frac{\sin(5t)}{5} +  \
 $${#eq:squarefourier}
 where again, the dots mean that the pattern repeats forever. Note that this is no approximation, but an equality.
 
-The successive _partial sums_ of the RHS of @eq:squarefourier are termed $s_1(t)$, $s_2(t)$, etc., with $s_1(t)$ denoting the first term, $s_2(t)$, the sum of the first and second term etc. It is evident from @fig:squarefourier that the more terms we add, the better the match between the original signal and its approximation, denoted generically by $s_*(t)$ in the graph.^[This property---where the larger the number of terms in the partial sum, the better the approximation to the original function---is one reason why Fourier series are widely applied.]
+The successive _partial sums_ of the RHS of @eq:squarefourier are termed $s_1(t)$, $s_2(t)$, etc., with $s_1(t)$ denoting the first term, $s_2(t)$, the sum of the first and second term, etc. It is evident from @fig:squarefourier that the more terms we add, the better the match between the original signal and its approximation, denoted generically by $s_*(t)$ in the graph.^[This property---where the larger the number of terms in the partial sum, the better the approximation to the original function---is one reason why Fourier series are widely applied.]
 
 On the surface, @eq:squarefourier seems a remarkable claim. How could a square wave with right angle corners be the result of sums of sine waves which have no corners? The answer lies in the fact that the series goes on forever and "infinity confers the equality".
 
