@@ -14,7 +14,8 @@ Mathematics enjoys the freedom of art and the precision of science.\
 [M Ram Murty and V Kumar Murty]{.smallcaps}\
 [The Mathematical Legacy of Srinivasa Ramanujan]{.italic}
 :::
-\ 
+
+## Prelude
 
 This is a sequel to the blog ["The Pi of Archimedes"](https://swanlotus.netlify.app/blogs/the-pi-of-archimedes). Here, we look at π as a number---without explicit reference to its geometric tethering---and explore its remarkable ubiquity in mathematics.
 

@@ -17,7 +17,6 @@ Life is but a dream.\
 [Nursery Rhyme](https://en.wikipedia.org/wiki/Row,_Row,_Row_Your_Boat){.smallcaps}
 :::
 
-
 ## From dreams to real life
 
 The nursery rhyme tells us that life is but a dream. Imagine, however, if someone told you that your dreams could become your life. Would you be disposed to believe that statement?

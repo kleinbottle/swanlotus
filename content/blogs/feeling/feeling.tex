@@ -7,16 +7,19 @@
   a4paper,
 ]{article}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -35,19 +38,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={The Secret Trapdoor to Success},
-  pdfauthor={R (Chandra) Chandrasekhar},
-  pdflang={en-GB},
-  colorlinks=true,
-  linkcolor={DarkOliveGreen},
-  filecolor={Purple},
-  citecolor={DarkKhaki},
-  urlcolor={Maroon},
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=25mm]{geometry}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
@@ -76,28 +66,38 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -115,6 +115,7 @@
 %
 % \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
 % \PassOptionsToPackage{main=british}{babel}
+\PassOptionsToPackage{english}{selnolig}
 \AtBeginEnvironment{quote}{\small}
 \AtBeginEnvironment{quotation}{\small}
 \AtBeginEnvironment{longtable}{\centering}
@@ -123,9 +124,8 @@
 %
 \usepackage{graphicx}
 \usepackage{subcaption}
-\usepackage[inkscapeversion=1]{svg}
-\usepackage[defaultlines=4,all]{nowidow}
-\usepackage[capitalize,noabbrev]{cleveref}
+\usepackage[inkscapeversion=auto]{svg}
+\usepackage{nowidow}
 \usepackage{etoolbox}
 \usepackage{fontsize}
 \usepackage{newunicodechar}
@@ -136,6 +136,26 @@
 \usepackage[style=american]{csquotes}
 % \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
 %
+\usepackage{hyperref} % cleveref must come AFTER hyperref
+\usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
+\let\longdivision\relax
+\usepackage{longdivision}
+\newcommand{\dd}{\ensuremath{mathrm d}}
+%
+% Assume that amsmath is already loaded via \usepackage{amsmath}
+% in the standard LaTeX template foe Pandoc
+% 
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arccoth}{arccoth} 
 % noto-plus.tex
 % Font-setting header file for use with Pandoc Markdown
 % to generate PDF via LuaLaTeX.
@@ -152,9 +172,7 @@
 % We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
 %
 \babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
-%
 \babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
-%
 \babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
 %
 % Sanskrit, Tamil, and Greek fonts
@@ -173,6 +191,9 @@
 %
 \usepackage{unicode-math} % seems not to hurt % fallabck
 \setmathfont[bold-style=TeX]{STIX Two Math}
+\usepackage{amsmath}
+\usepackage{esdiff} % for derivative symbols
+% \renewcommand{\mathbf}{\symbf}
 %
 %
 % Other fonts
@@ -190,30 +211,27 @@
     \fancyhead[LO,RE]{\scshape\thetitle}
     \fancyfoot[CO,CE]{\footnotesize Copyright © 2006\textendash\the\year, R (Chandra) Chandrasekhar}
     \fancyfoot[RE,RO]{\thepage}
-\newfontfamily{\regulariconfont}{Font Awesome 6 Free Regular}[Color=Grey]
-\newfontfamily{\solidiconfont}{Font Awesome 6 Free Solid}[Color=Grey]
-\newfontfamily{\brandsiconfont}{Font Awesome 6 Brands}[Color=Grey]
 %
-% Direct input of Unicode code points
-%
-\newcommand{\faEnvelope}{\regulariconfont\ ^^^^f0e0\normalfont}
-\newcommand{\faMobile}{\solidiconfont\ ^^^^f3cd\normalfont}
-\newcommand{\faLinkedin}{\brandsiconfont\ ^^^^f0e1\normalfont}
-\newcommand{\faGithub}{\brandsiconfont\ ^^^^f09b\normalfont}
-\newcommand{\faAtom}{\solidiconfont\ ^^^^f5d2\normalfont}
-\newcommand{\faPaperPlaneRegular}{\regulariconfont\ ^^^^f1d8\normalfont}
-\newcommand{\faPaperPlaneSolid}{\solidiconfont\ ^^^^f1d8\normalfont}
-
-%
-% The block below is commented out because of Tofu glyphs in HTML
-%
-% \newcommand{\faEnvelope}{\regulariconfont\ \normalfont}
-% \newcommand{\faMobile}{\solidiconfont\ \normalfont}
-% \newcommand{\faLinkedin}{\brandsiconfont\ \normalfont}
-% \newcommand{\faGithub}{\brandsiconfont\ \normalfont}
+\usepackage{newunicodechar}
+\newunicodechar{√}{\textsf{√}}
+\usepackage {caption}
+    \captionsetup{font={sf,stretch=1.4}}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{sf}
+\hypersetup{
+  pdftitle={The Secret Trapdoor to Success},
+  pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
+  colorlinks=true,
+  linkcolor={DarkGreen},
+  filecolor={Purple},
+  citecolor={Teal},
+  urlcolor={Maroon},
+  pdfcreator={LaTeX via pandoc}}
 
 \title{The Secret Trapdoor to Success}
 \author{R (Chandra) Chandrasekhar}
@@ -240,8 +258,7 @@ Rhyme}}
 
 \end{flushright}
 
-\hypertarget{from-dreams-to-real-life}{%
-\subsection{From dreams to real life}\label{from-dreams-to-real-life}}
+\subsection{From dreams to real life}\label{from-dreams-to-real-life}
 
 The nursery rhyme tells us that life is but a dream. Imagine, however,
 if someone told you that your dreams could become your life. Would you
@@ -253,8 +270,7 @@ If you are so inclined, read this blog carefully, because it could be
 the single most important \emph{secret of success}---academic or
 otherwise---that you might encounter in your entire life.
 
-\hypertarget{an-instructive-episode}{%
-\subsection{An instructive episode}\label{an-instructive-episode}}
+\subsection{An instructive episode}\label{an-instructive-episode}
 
 \href{https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam}{Dr A P J Abdul
 Kalam}, the eleventh President of India, in his autobiography,
@@ -315,8 +331,7 @@ revealed now but it is predetermined. Forget this failure, as it was
 essential to lead you to your destined path. Search, instead, for the
 true purpose of your existence. Become one with yourself, my son!
 Surrender yourself to the wish of God,'' Swamiji said
-{[}\protect\hyperlink{ref-kalam-wof-1999}{1},
-\protect\hyperlink{ref-kalam-wof-online}{2}{]}.
+{[}\citeproc{ref-kalam-wof-1999}{1},\citeproc{ref-kalam-wof-online}{2}{]}.
 \end{quote}
 
 \begin{figure}
@@ -325,8 +340,7 @@ Surrender yourself to the wish of God,'' Swamiji said
 \caption{\emph{Wings of Fire}.}
 \end{figure}
 
-\hypertarget{a-quote-to-ponder-on}{%
-\subsection{A quote to ponder on}\label{a-quote-to-ponder-on}}
+\subsection{A quote to ponder on}\label{a-quote-to-ponder-on}
 
 Part of the above quote encapsulates a little known truth about a law of
 human consciousness, and bears repeated reading so that its full import
@@ -347,14 +361,13 @@ While we have no scientific studies---according to the prevailing
 \href{https://dictionary.cambridge.org/dictionary/english/double-blind}{double-blind}
 orthodoxy---to uphold the veracity of the above statement, there has
 been a steady procession of books of the ``manifesting'' genre
-{[}\protect\hyperlink{ref-murphy2006}{3}--\protect\hyperlink{ref-ferraro2021}{8}{]}
-which deal with actualizing your desires or dreams. It is astounding
-that Swami Sivananda used the word ``manifested'' decades before the
-advent of books like these.
+{[}\citeproc{ref-murphy2006}{3}--\citeproc{ref-ferraro2021}{8}{]} which
+deal with actualizing your desires or dreams. It is astounding that
+Swami Sivananda used the word ``manifested'' decades before the advent
+of books like these.
 
-\hypertarget{fulfilment-of-the-desire-to-fly}{%
 \subsection{Fulfilment of the desire to
-fly}\label{fulfilment-of-the-desire-to-fly}}
+fly}\label{fulfilment-of-the-desire-to-fly}
 
 After Dr Abdul Kalam became President of India, he \emph{did get} an
 opportunity both to learn flying, and to pilot a fighter jet. He
@@ -364,9 +377,8 @@ video}. It is heartwarming to hear him explain how his desire to be a
 pilot was ultimately fulfilled. \emph{This is anecdotal evidence that
 this law of consciousness really works.}
 
-\hypertarget{neville-goddards-feeling-is-the-secret}{%
 \subsection{\texorpdfstring{Neville Goddard's \emph{Feeling Is the
-Secret}}{Neville Goddard's Feeling Is the Secret}}\label{neville-goddards-feeling-is-the-secret}}
+Secret}}{Neville Goddard's Feeling Is the Secret}}\label{neville-goddards-feeling-is-the-secret}
 
 In 1944, a book was published bearing the title \emph{Feeling Is the
 Secret}, by \href{feeling\%20is\%20the\%20secret}{Neville Goddard}. I
@@ -403,16 +415,14 @@ As you feel, so you become.
 
 Happy manifesting!
 
-\hypertarget{acknowledgements}{%
-\subsection{Acknowledgements}\label{acknowledgements}}
+\subsection{Acknowledgements}\label{acknowledgements}
 
 I am grateful to Mr Phani Praveen for bringing to my attention the
 \href{https://www.youtube.com/shorts/kWnxd3af4rM}{short YouTube video}
 wherein Dr Abdul Kalam explains how his desire to be a pilot was
 ultimately fulfilled.
 
-\hypertarget{feedback}{%
-\subsection{Feedback}\label{feedback}}
+\subsection{Feedback}\label{feedback}
 
 Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
@@ -430,55 +440,51 @@ comments and corrections.
 
 \end{small}
 
-\hypertarget{bibliography}{%
-\section*{References}\label{bibliography}}
+\section*{References}\label{bibliography}
 \addcontentsline{toc}{section}{References}
 
-\hypertarget{refs}{}
+\phantomsection\label{refs}
 \begin{CSLReferences}{0}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-kalam-wof-1999}{}}%
-\CSLLeftMargin{1. }%
-\CSLRightInline{APJ Abdul Kalam and Arun Tiwari. \emph{{Wings of Fire:
-An Autobiography}}. Universities Press, 1999. }
+\bibitem[\citeproctext]{ref-kalam-wof-1999}
+\CSLLeftMargin{{[}1{]} }%
+\CSLRightInline{APJ Abdul Kalam and Arun Tiwari. 1999. \emph{{Wings of
+Fire: An Autobiography}}. Universities Press.}
 
-\leavevmode\vadjust pre{\hypertarget{ref-kalam-wof-online}{}}%
-\CSLLeftMargin{2. }%
-\CSLRightInline{APJ Abdul Kalam and Arun Tiwari. {Wings of Fire: An
-Autobiography}. Online. 2016. {[}Accessed~29~January~2023{]}. Available
-from: \url{https://ati.dae.gov.in/ati12052021_8.pdf}}
+\bibitem[\citeproctext]{ref-kalam-wof-online}
+\CSLLeftMargin{{[}2{]} }%
+\CSLRightInline{APJ Abdul Kalam and Arun Tiwari. 2016. {Wings of Fire:
+An Autobiography}. Retrieved 29 January 2023 from
+\url{https://ati.dae.gov.in/ati12052021_8.pdf}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-murphy2006}{}}%
-\CSLLeftMargin{3. }%
-\CSLRightInline{Joseph Murphy. \emph{The power of your subconscious
-mind}. Pocket Books, 1997. }%
-\CSLRightInline{Originally published by Prentice Hall Direct in 1963.
-Revised by Dr Ian McMahan.}
+\bibitem[\citeproctext]{ref-murphy2006}
+\CSLLeftMargin{{[}3{]} }%
+\CSLRightInline{Joseph Murphy. 1997. \emph{The power of your
+subconscious mind}. Pocket Books.}
 
-\leavevmode\vadjust pre{\hypertarget{ref-hill1928}{}}%
-\CSLLeftMargin{4. }%
-\CSLRightInline{Napoleon Hill. \emph{The law of success: In sixteen
-lessons}. Meriden, CT, USA~: The Ralston University Press, 1928. }
+\bibitem[\citeproctext]{ref-hill1928}
+\CSLLeftMargin{{[}4{]} }%
+\CSLRightInline{Napoleon Hill. 1928. \emph{The law of success: In
+sixteen lessons}. The Ralston University Press, Meriden, CT, USA.}
 
-\leavevmode\vadjust pre{\hypertarget{ref-byrne2006}{}}%
-\CSLLeftMargin{5. }%
-\CSLRightInline{Rhonda Byrne. \emph{The secret}. Atria Books, Beyond
-Words Publishing, 2006. }
+\bibitem[\citeproctext]{ref-byrne2006}
+\CSLLeftMargin{{[}5{]} }%
+\CSLRightInline{Rhonda Byrne. 2006. \emph{The secret}. Atria Books,
+Beyond Words Publishing.}
 
-\leavevmode\vadjust pre{\hypertarget{ref-goddard2013}{}}%
-\CSLLeftMargin{6. }%
-\CSLRightInline{Neville Goddard. \emph{Feeling is the secret}. Merchant
-Books, 2013. }%
-\CSLRightInline{First published in 1944}
+\bibitem[\citeproctext]{ref-goddard2013}
+\CSLLeftMargin{{[}6{]} }%
+\CSLRightInline{Neville Goddard. 2013. \emph{Feeling is the secret}.
+Merchant Books.}
 
-\leavevmode\vadjust pre{\hypertarget{ref-hicks2022}{}}%
-\CSLLeftMargin{7. }%
-\CSLRightInline{Esther Hicks and Jerry Hicks. \emph{Ask and it is given:
-Learning to manifest your desires}. Hay House India, 2022. }
+\bibitem[\citeproctext]{ref-hicks2022}
+\CSLLeftMargin{{[}7{]} }%
+\CSLRightInline{Esther Hicks and Jerry Hicks. 2022. \emph{Ask and it is
+given: Learning to manifest your desires}. Hay House India.}
 
-\leavevmode\vadjust pre{\hypertarget{ref-ferraro2021}{}}%
-\CSLLeftMargin{8. }%
-\CSLRightInline{Kris Ferraro. \emph{Manifesting}. St. Martin's
-Essentials, 2021. }
+\bibitem[\citeproctext]{ref-ferraro2021}
+\CSLLeftMargin{{[}8{]} }%
+\CSLRightInline{Kris Ferraro. 2021. \emph{Manifesting}. St. Martin's
+Essentials.}
 
 \end{CSLReferences}
 
