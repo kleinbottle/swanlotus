@@ -48,7 +48,7 @@ I am making this book freely available as a no-charge, [soft copy download]({sta
 This book is protected by copyright as shown below. Please honour it. The book and its PDF file may not be redistributed or altered. To refer others to it, please send them the link to this page. Any commercial use is strictly prohibited.
 
 ```text
-Copyright © 2007–2022 R (Chandra) Chandrasekhar.
+Copyright © 2007–2025 R (Chandra) Chandrasekhar.
 
 All rights reserved.
 ```
