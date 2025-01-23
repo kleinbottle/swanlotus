@@ -9,23 +9,15 @@ summary: "[Serendipity](https://www.merriam-webster.com/dictionary/serendipity),
 opengraphimage: quantum-entanglement.jpg
 ---
 
-## Two perfectly timed events
+## Two or more perfectly timed events
 
-[Serendipity](https://www.merriam-webster.com/dictionary/serendipity), [fortuitousness](https://dictionary.cambridge.org/dictionary/english/fortuitousness), [happenstance](https://www.collinsdictionary.com/dictionary/english/happenstance), good fortune, happy coincidence, [synchronicity](https://www.vocabulary.com/dictionary/synchronicity). These variously worded expressions describe two or more desirable events that happened together, but were not arranged beforehand. They seemed to happen on their own, by accident. Yet they were so appropriate and well-timed as to appear to be pre-arranged. We term this happy confluence a coincidence: co: meaning together; incidence: happening, i.e., a conjunction of two apparently unrelated happenings that was not planned, but perfect when they happened.
+[Serendipity](https://www.merriam-webster.com/dictionary/serendipity), [fortuitousness](https://dictionary.cambridge.org/dictionary/english/fortuitousness), [happenstance](https://www.collinsdictionary.com/dictionary/english/happenstance), good fortune, happy coincidence, [synchronicity](https://www.vocabulary.com/dictionary/synchronicity). These diverse expressions describe the simultaneous occurrence of two or more desirable events that were not arranged beforehand. They seemed to happen on their own, by accident. Yet they were so appropriate and well-timed as to appear to be pre-arranged. We term this happy confluence a coincidence: co: meaning together; incidence: happening, i.e., a conjunction of two or more apparently unrelated events that was not planned, but perfect when they happened together.
 
-Are there coincidences?  We have all had experiences of thinking about someone
-we have not seen for a long time, when suddenly the doorbell rings and there is
-that person standing at the door. Or perhaps he or she sent you a letter. Or
-better still sent you an email or spoke to you by VoIP on your PC. How do
-these unarranged incidents take place?  Are they really the outcome of
-vanishingly small joint probabilities?  Or are they an uncanny result of some
-deeper force at work in our lives and in the larger universe?
+## Is there a science behind coincidences?
 
-This was the sort of philosophical conundrum that grated on Einstein's
-deeper-than-scientific sensibilities when he pondered the probabilistic
-and utilitarian interpretation given to the Quantum Theory by Niels Bohr and his
-disciples. Einstein famously said that he did not believe that God played dice
-with the world. To which the other retorted, "Stop telling God what to do".
+Are there coincidences? Haven't we all had experiences of thinking about someone we have not seen for a long time, when suddenly the doorbell rings and there is that person standing at the door? Or perhaps he or she sent you a letter? Or better still sent you an email or spoke to you by VoIP or Instant Messaging on your PC? How do these unplanned incidents take place? Are they really the outcome of vanishingly small [joint probabilities](https://www.aiplusinfo.com/blog/joint-probability-definition-formula-examples/)? Or are they an uncanny result of some deeper force at work in our lives and in the larger universe?
+
+This was the sort of philosophical conundrum that grated on Einstein's deeper-than-scientific sensibilities when he pondered the [probabilistic and utilitarian interpretation given to the Quantum Theory](https://plato.stanford.edu/entries/qm-copenhagen/) by Niels Bohr and his disciples. Einstein famously said that he did not believe that God played dice with the world. To which the other retorted, "Stop telling God what to do".
 
 So it was that Einstein postulated an exceedingly interesting experiment called
 the EPR (Einstein Podolsky Rosen) experiment. In that thought experiment, two
@@ -39,7 +31,7 @@ more, this will happen *instantaneously*. Not at the speed of light, but at
 once. However, according to Einstein, nothing can travel faster than light. So,
 he said that the Quantum Theory must be wrong.
 
-But you know what?  The outcome Einstein predicted actually happens. Over the
+But you know what? The outcome Einstein predicted actually happens. Over the
 last twenty years or so, teams or experimental physicists have proved that this
 sort of effect does indeed happen: it is a form of "quantum spookiness". The
 technical label for this is "entanglement". It is a consequence of the Quantum
@@ -55,16 +47,23 @@ to know more, read Amir Aczel's eminently accessible book "Entanglement"
 <http://tinyurl.com/oqgd4>
 
 But ponder the deeper philosophical implications of this experiment. What does
-it mean on a larger scale or deeper level?  It raises the possibility that there
+it mean on a larger scale or deeper level? It raises the possibility that there
 may be a "something" that interconnects twinned particles. Can that something
-also connect each and every one of us?  Who knows? Reality seems stranger than
+also connect each and every one of us? Who knows? Reality seems stranger than
 the imagination.
 
-So what does this imply for coincidences?  It may very well mean that there are
+So what does this imply for coincidences? It may very well mean that there are
 no coincidences. The law of karma and its inevitability may one day be a
 consequence of one of the strangest results thrown up by science. That
 interconnecting something may hold the key to some of the great mysteries of
 life.
+
+
+
+Bell's theorem
+Nobel Prize for Physics 2022: citation and YT
+David Bohm what he predicted but not the way he predicted
+
 
 
 
