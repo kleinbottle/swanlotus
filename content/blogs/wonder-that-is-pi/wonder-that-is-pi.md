@@ -793,6 +793,6 @@ corrections.
 
 \noindent A PDF version of this article is [available for download here]({attach}./wonder-that-is-pi.pdf):
 
-::: {.small .sf}
+::: {.sf}
 <https://swanlotus.netlify.app/blogs/wonder-that-is-pi.pdf>
 :::

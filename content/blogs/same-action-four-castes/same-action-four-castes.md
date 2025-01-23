@@ -4,7 +4,7 @@ author: "R (Chandra) Chandrasekhar"
 date: 2008-10-24
 modified: 2024-08-02
 category: Philosophy
-tags: caste, Hinduism, Bhagavad Gita, 
+tags: Butterflies from My Mind, caste, Hinduism, Bhagavad Gita, 
 summary: "This blog was originally penned on 24 October 2008. It is one among many dozen blogs that have not been released publicly on the Web. I will be gradually refreshing and releasing all those unpublished blogs on this website. They are generally short and tightly focused pieces of writing, readable in a few minutes. Where possible, I have retained the original contextual immediacy and topical relevance. I have used the [IAST](https://en.wikipedia.org/wiki/International_Alphabet_of_Sanskrit_Transliteration) transliteration scheme for the Sanskrit terms; consult the link for the correct pronunciation. The upshot of this blog is that caste is spiritual in nature, and that all individuals may exhibit all four castes at different times---according to attitude to action---regardless of birth or occupation."
 status: 
 opengraphimage: galileo-thermometer.jpg

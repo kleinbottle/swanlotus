@@ -1,0 +1,290 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode,linktoc=all}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  a4paper,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=25mm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{british}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+% $HOME/.pandoc/defaults/latex-header-includes.tex
+% Common header includes for both lualatex and xelatex engines.
+%
+% Preliminaries
+%
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+% \PassOptionsToPackage{main=british}{babel}
+\PassOptionsToPackage{english}{selnolig}
+\AtBeginEnvironment{quote}{\small}
+\AtBeginEnvironment{quotation}{\small}
+\AtBeginEnvironment{longtable}{\centering}
+%
+% Packages that are useful to include
+%
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[inkscapeversion=auto]{svg}
+\usepackage{nowidow}
+\usepackage{etoolbox}
+\usepackage{fontsize}
+\usepackage{newunicodechar}
+\usepackage{pdflscape}
+\usepackage{fnpct}
+\usepackage{parskip}
+  \setlength{\parindent}{0pt}
+\usepackage[style=american]{csquotes}
+% \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
+%
+\usepackage{hyperref} % cleveref must come AFTER hyperref
+\usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
+\let\longdivision\relax
+\usepackage{longdivision}
+\newcommand{\dd}{\ensuremath{mathrm d}}
+%
+% Assume that amsmath is already loaded via \usepackage{amsmath}
+% in the standard LaTeX template foe Pandoc
+% 
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arccoth}{arccoth} 
+% noto-plus.tex
+% Font-setting header file for use with Pandoc Markdown
+% to generate PDF via LuaLaTeX.
+% The main font is Noto Serif.
+% Other main fonts are also available in appropriately named file.
+\usepackage{fontspec}
+\usepackage{setspace}
+\setstretch{1.3}
+%
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=Node} % at the start always
+%
+% For English
+% See also https://tex.stackexchange.com/questions/574047/lualatex-amsthm-polyglossia-charissil-error
+% We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
+%
+\babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
+\babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
+\babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
+%
+% Sanskrit, Tamil, and Greek fonts
+%
+\babelprovide[import, onchar=ids fonts]{sanskrit}
+\babelprovide[import, onchar=ids fonts]{tamil}
+\babelprovide[import, onchar=ids fonts]{greek}
+%
+\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSerifDevanagari}
+\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSansDevanagari}
+\babelfont[tamil]{rm}[Renderer=HarfBuzz,Script=Tamil]{NotoSerifTamil}
+\babelfont[tamil]{sf}[Renderer=HarfBuzz,Script=Tamil]{NotoSansTamil}
+\babelfont[greek]{rm}[Script=Greek]{GentiumBookPlus}
+%
+% Math font
+%
+\usepackage{unicode-math} % seems not to hurt % fallabck
+\setmathfont[bold-style=TeX]{STIX Two Math}
+\usepackage{amsmath}
+\usepackage{esdiff} % for derivative symbols
+% \renewcommand{\mathbf}{\symbf}
+%
+%
+% Other fonts
+%
+\newfontfamily{\emojifont}{Symbola}
+%
+
+\usepackage{titling}
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0.2pt}
+    \renewcommand{\footrulewidth}{0.2pt}
+    \fancyhead[LO,RE]{\scshape\thetitle}
+    \fancyfoot[CO,CE]{\footnotesize Copyright © 2006\textendash\the\year, R (Chandra) Chandrasekhar}
+    \fancyfoot[RE,RO]{\thepage}
+%
+\usepackage{newunicodechar}
+\newunicodechar{√}{\textsf{√}}
+\usepackage {caption}
+    \captionsetup{font={sf,stretch=1.4}}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{sf}
+\hypersetup{
+  pdftitle={Are There Coincidences?},
+  pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
+  colorlinks=true,
+  linkcolor={DarkGreen},
+  filecolor={Purple},
+  citecolor={Teal},
+  urlcolor={Maroon},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Are There Coincidences?}
+\author{R (Chandra) Chandrasekhar}
+\date{2006-08-22 | 2025-01-23}
+
+\begin{document}
+\maketitle
+
+\thispagestyle{empty}
+
+
+Serendipity, fortuitousness, happenstance, good fortune, happy
+coincidence, synchronicity. These are all variously worded expressions
+describing something that happened that was not pre-arranged but that
+seemed to happen by accident. Yet it was appropriate and so well timed
+that it appeared to be pre-arranged. We term it a coincidence: co:
+meaning together; incidence: happening, i.e., a junction of two
+apparently unrelated happenings that was unprepared but perfect when it
+happened.
+
+Are there coincidences? We have all had experiences of thinking about
+someone we have not seen for a long time, when suddenly the doorbell
+rings and there is that person standing at the door. Or perhaps he or
+she sent you a letter. Or better still sent you an email or spoke to you
+by VoIP on your PC. How do these unarranged incidents take place? Are
+they really the outcome of vanishingly small joint probabilities? Or are
+they an uncanny result of some deeper force at work in our lives and in
+the larger universe?
+
+This was the sort of philosophical conundrum that grated on Einstein's
+deeper-than-scientific sensibilities when he pondered the probabilistic
+and utilitarian interpretation given to the Quantum Theory by Niels Bohr
+and his disciples. Einstein famously said that he did not believe that
+God played dice with the world. To which the other retorted, ``Stop
+telling God what to do''.
+
+So it was that Einstein postulated an exceedingly interesting experiment
+called the EPR (Einstein Podolsky Rosen) experiment. In that thought
+experiment, two photons that have been born together from the
+annihilation (mutual dematerialization) of a positron (positively
+charged electron) and an electron go their merry ways. Because they are
+twins, though, their destinies should be linked (or correlated)
+according to the Quantum Theory. This means that if you take the
+electron that has gone in one direction and tweak its ear so to speak,
+the other electron will yell ``Ouch'', again in a manner of speaking.
+What is more, this will happen \emph{instantaneously}. Not at the speed
+of light, but at once. However, according to Einstein, nothing can
+travel faster than light. So, he said that the Quantum Theory must be
+wrong.
+
+But you know what? The outcome Einstein predicted actually happens. Over
+the last twenty years or so, teams or experimental physicists have
+proved that this sort of effect does indeed happen: it is a form of
+``quantum spookiness''. The technical label for this is
+``entanglement''. It is a consequence of the Quantum Theory. A physicist
+called Bell proved this mathematically about twenty five years after the
+EPR experiment was first suggested. The results of his paper was stated
+simply as ``Reality is non-local''. What exactly does this mean?
+
+Well it only apples to elementary particles that have been twinned. But
+this quantum spookiness means that such particles are interconnected
+regardless of how far, how long, and where they go. As usual,
+laboratories are now outdoing each other in trying to apply this effect
+to encode messages, etc. If you want to know more, read Amir Aczel's
+eminently accessible book ``Entanglement''
+\url{http://tinyurl.com/oqgd4}
+
+But ponder the deeper philosophical implications of this experiment.
+What does it mean on a larger scale or deeper level? It raises the
+possibility that there may be a ``something'' that interconnects twinned
+particles. Can that something also connect each and every one of us? Who
+knows? Reality seems stranger than the imagination.
+
+So what does this imply for coincidences? It may very well mean that
+there are no coincidences. The law of karma and its inevitability may
+one day be a consequence of one of the strangest results thrown up by
+science. That interconnecting something may hold the key to some of the
+great mysteries of life.
+
+\subsection{Acknowledgements}\label{acknowledgements}
+
+\subsection{Feedback}\label{feedback}
+
+Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
+comments and corrections.
+
+\noindent A PDF version of this article is
+\href{./are-there-coincidences.pdf}{available for download here}:
+
+\begin{sffamily}
+
+\url{https://swanlotus.netlify.app/blogs/are-there-coincidences.pdf}
+
+\end{sffamily}
+
+\section{Are There Coincidences?}\label{are-there-coincidences}
+
+RCS 22 Aug 06
+
+
+
+\end{document}
