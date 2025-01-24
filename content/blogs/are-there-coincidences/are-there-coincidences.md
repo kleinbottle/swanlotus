@@ -6,7 +6,7 @@ modified: 2025-01-23
 category: Philosophical
 tags: "Butterflies from My Mind"
 summary: "[Serendipity](https://www.merriam-webster.com/dictionary/serendipity), [fortuitousness](https://dictionary.cambridge.org/dictionary/english/fortuitousness), [happenstance](https://www.collinsdictionary.com/dictionary/english/happenstance), good fortune, happy coincidence, [synchronicity](https://www.vocabulary.com/dictionary/synchronicity). These variously worded expressions describe two or more desirable events that happened together, but were not pre-arranged. They seemed to happen on their own, by accident. Yet they so appropriate and well-timed as to appear to be pre-arranged. We term this happy confluence a coincidence: co: meaning together; incidence: happening, i.e., a conjunction of two apparently unrelated happenings that was not planned, but perfect when they happened."
-opengraphimage: quantum-entanglement-showing-two-light-tracks_WshUBbv.png
+opengraphimage: quantum-entanglement.png
 ---
 
 ## Two or more perfectly timed events
