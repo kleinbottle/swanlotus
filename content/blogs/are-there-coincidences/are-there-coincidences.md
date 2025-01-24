@@ -6,14 +6,22 @@ modified: 2025-01-23
 category: Philosophical
 tags: "Butterflies from My Mind"
 summary: "[Serendipity](https://www.merriam-webster.com/dictionary/serendipity), [fortuitousness](https://dictionary.cambridge.org/dictionary/english/fortuitousness), [happenstance](https://www.collinsdictionary.com/dictionary/english/happenstance), good fortune, happy coincidence, [synchronicity](https://www.vocabulary.com/dictionary/synchronicity). These variously worded expressions describe two or more desirable events that happened together, but were not pre-arranged. They seemed to happen on their own, by accident. Yet they so appropriate and well-timed as to appear to be pre-arranged. We term this happy confluence a coincidence: co: meaning together; incidence: happening, i.e., a conjunction of two apparently unrelated happenings that was not planned, but perfect when they happened."
-opengraphimage: quantum-entanglement.jpg
+opengraphimage: quantum-entanglement-showing-two-light-tracks_WshUBbv.png
 ---
 
 ## Two or more perfectly timed events
 
 [Serendipity](https://www.merriam-webster.com/dictionary/serendipity), [fortuitousness](https://dictionary.cambridge.org/dictionary/english/fortuitousness), [happenstance](https://www.collinsdictionary.com/dictionary/english/happenstance), good fortune, happy coincidence, [synchronicity](https://www.vocabulary.com/dictionary/synchronicity). These diverse expressions describe the simultaneous occurrence of two or more desirable events that were not arranged beforehand. They seemed to happen on their own, by accident. Yet they were so appropriate and well-timed as to appear to be pre-arranged. We term this happy confluence a coincidence: co: meaning together; incidence: happening, i.e., a conjunction of two or more apparently unrelated events that was not planned, but perfect when they happened together.
 
-## Is there a science behind coincidences?
+## Where philosophy meets science
+
+Superstitions
+Randomness and correlation
+Bohm
+EPR
+Bell's theorem
+Implicate Order 
+Quantum entanglement
 
 Are there coincidences? Haven't we all had experiences of thinking about someone we have not seen for a long time, when suddenly the doorbell rings and there is that person standing at the door? Or perhaps he or she sent you a letter? Or better still sent you an email or spoke to you by VoIP or Instant Messaging on your PC? How do these unplanned incidents take place? Are they really the outcome of vanishingly small [joint probabilities](https://www.aiplusinfo.com/blog/joint-probability-definition-formula-examples/)? Or are they an uncanny result of some deeper force at work in our lives and in the larger universe?
 
