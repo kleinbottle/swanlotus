@@ -1,5 +1,5 @@
 ---
-title: "Some Mathematical Fundamentals"
+title: "Expressions, Equations, and Formulae"
 author: "R (Chandra) Chandrasekhar"
 date: 2024-02-14
 modified: 2024-02-14
