@@ -19,7 +19,11 @@ Imagine my surprise when he accosted me again after two months and asked if I ha
 
 "You would be astounded to know how many so-called [STEM](https://en.wikipedia.org/wiki/Science,_technology,_engineering,_and_mathematics) _graduates_ and _postgraduates_---who have passed through the degree mill---are ignorant of these _definitions_, let alone their _purpose_," replied Sol. "As an added bonus, write your blog so that it is also perfectly clear to elementary school students, going on to middle school. It will serve as a valuable review for them."
 
-Incredulously, I took up his challenge, complete with its stipulations. This blog was born after much cogitation, and is really my first attempt at presenting and exemplifying fundamental definitions, usually taught in elementary school^[I usually find it easier to explain concepts to students in middle school and beyond. rather than to elementary school students.]. Any reader who still finds it conceptually muddy or murky is cordially invited to [write to me](mailto:feedback.swanlotus@gmail.com).
+"Differential equations are in an entirely different class of mathematical sophistication from the other three topics. They should be excluded from the elementary treatment you are proposing," I said to Sol.
+
+Never one to be pig-headed, Sol agreed.
+
+Somewhat diffidently, I took up his challenge, complete with its stipulations. This blog was born after much cogitation, and is really my first attempt at presenting and exemplifying fundamental definitions, usually taught in elementary school^[I usually find it easier to explain concepts to students in middle school and beyond. rather than to elementary school students.]. Any reader who still finds it conceptually muddy or murky is cordially invited to [write to me](mailto:feedback.swanlotus@gmail.com).
 
 I have borrowed liberally from material contained in my book-manuscript [_Secrets of Academic Success_](https://swanlotus.netlify.app/sas-manuscript/SAS-partial.pdf), henceforth referred to as _SAS_. Perhaps the earnest student will be inspired to look for clarification there as well. \emojifont :wink:  \normalfont
 
@@ -32,9 +36,8 @@ My decades of muddling in matters scholastic have convinced me that there are _f
 All knowledge begins with _naming_. You cannot analyze or understand what you cannot name. In specialized subject areas, names are called _definitions_. In this blog, we have the following _four_ mathematical names to define, understand, analyze, and apply:
 
 #. expression;
-#. equation;
-#. formula; and
-#. differential equation.
+#. equation; and
+#. formula.
 
 After naming, we move to _knowing_. At this stage, we systematically study the subject that has been defined to the extent that we are familiar with it _ourselves_, without recourse to a teacher, a textbook, or other reference material.
 
@@ -176,53 +179,7 @@ A two-pan balance is an excellent visual metaphor for equality. Even though the 
 
 ### Volume of a cylinder
 
-## Differential equations
 
-Classification
-
-ODE/homogeneous and links to polynomials
-https://math.stackexchange.com/questions/3614864/why-are-most-natural-phenomena-described-using-differential-equations
-
-https://math.stackexchange.com/questions/3782499/is-there-a-reason-it-is-so-rare-we-can-solve-differential-equations
-
-Idea of a function must be clarified.
-
-Where time and or space vary
-
-DEs model physical phenomena where time and space vary along with possibly other variables.
-
-Linear differential equations with constant coefficients
-
-### Examples of LDEs in real life
-
-Spring under displacement
-
-Wave motion
-
-Simple pendulum
-
-Electric circuits
-
-
-### Physics
-
-https://www.quora.com/What-are-some-real-world-phenomena-that-can-be-described-by-using-differential-equations
-
-https://www.physicsforums.com/insights/differential-equation-systems-and-nature/
-
-https://math.stackexchange.com/questions/3614864/why-are-most-natural-phenomena-described-using-differential-equations
-
-Schrödinger equation etc.
-
-### Nonlinear DEs
-
-Weather forecasting Chaos etc.
-
-Population growth and Logistic equation
-
-Predator-prey models
-
-Catenary
 
 ## Acknowledgements
 
