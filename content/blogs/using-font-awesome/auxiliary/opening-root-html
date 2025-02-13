@@ -1,5 +1,0 @@
-<div class="center">
-<p><span class="larger">Joe Bloggs</span><br />
-<span class="smaller"><i class="fa-regular fa-envelope"></i> <a href="mailto:joebloggs@mydomain.com" class="email">joebloggs@mydomain.com</a> | <i class="fa-solid fa-mobile-screen-button"></i> +1-555-3456-7890 | <i class="fa-brands fa-linkedin-in"></i> <a href="">LinkedIn</a> | <i class="fa-brands fa-github"></i> <a href="">Github</a></span></p>
-</div>
-<p><br> <!--Increase vertical spacing.--></p>
