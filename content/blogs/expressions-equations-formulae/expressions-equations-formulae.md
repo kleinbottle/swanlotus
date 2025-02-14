@@ -1,8 +1,8 @@
 ---
 title: "Expressions, Equations, and Formulae"
 author: "R (Chandra) Chandrasekhar"
-date: 2024-02-14
-modified: 2024-02-14
+date: 2025-02-14
+modified: 2025-02-14
 category: Mathematics
 tags: Simkin Tales, SAS, algebra
 summary: 'My dear friend, Solus "Sol" Simkin, casually asked me one summer day if I would write a blog demystifying the meanings and uses of four mathematical terms: expression, equation, formula, and differential equation. I thought that this was spoken in jest, and let his request lie in a dusty corner of my mind, as a memento to his humour.'
@@ -23,7 +23,7 @@ Imagine my surprise when he accosted me again after two months and asked if I ha
 
 Never one to be pig-headed, Sol agreed.
 
-Somewhat diffidently, I took up his challenge, complete with its stipulations. This blog was born after much cogitation, and is really my first attempt at presenting and exemplifying fundamental definitions, usually taught in elementary school^[I usually find it easier to explain concepts to students in middle school and beyond. rather than to elementary school students.]. Any reader who still finds it conceptually muddy or murky is cordially invited to [write to me](mailto:feedback.swanlotus@gmail.com).
+Somewhat diffidently, I took up his challenge, complete with its stipulations. This blog was born after much cogitation, and is really my first attempt at presenting and exemplifying fundamental definitions, usually taught in elementary school.^[I usually find it easier to explain concepts to students in middle school and beyond, rather than to elementary school students.] Any reader who still finds it conceptually muddy or murky is cordially invited to [write to me](mailto:feedback.swanlotus@gmail.com).
 
 I have borrowed liberally from material contained in my book-manuscript [_Secrets of Academic Success_](https://swanlotus.netlify.app/sas-manuscript/SAS-partial.pdf), henceforth referred to as _SAS_. Perhaps the earnest student will be inspired to look for clarification there as well. \emojifont :wink:  \normalfont
 
@@ -85,17 +85,17 @@ We will consider _equations_ a little later, but for now, bear in mind, that to 
 
 After we mature a little more mathematically, we start dealing with numbers whose values are not known. We use _letters_ to denote these unknown quantities, much like we use _pronouns_ instead of _proper nouns_ for the names of people we do not know. Let us take a look at a potentially confusing expression:
 $$
-\frac{\frac{a}{b}}{c}
+\frac{(\frac{a}{b})}{c}
 $${#eq:abc}
-What does it mean? Can it be simplified? If so, what is its simplified form? Does it convey any meaning?
+What does it mean? Can it be simplified? If so, what is its simplified form? Does it convey any meaning? What is the purpose of the parentheses on top?
 
 Mathematics is a language in which ambiguity is prohibited by strictly enforced conventions. We already saw that with the $\surd$ sign.
 
-Does [@eq:abc]^[It is not an equation but an expression; my software did not allow that degree of customization. Please excuse this inaccuracy.] mean more than one thing? Not if we know our conventions. The expression consists of a value on top divided by a value at the bottom. But the value at the top is itself a fraction:
+Does [@eq:abc]^[It is not an equation but an expression; my software did not allow that degree of customization. Please excuse this inaccuracy.] mean more than one thing? Not if we know our conventions. The expression consists of a value on top---supposed  divided by a value at the bottom. But the value at the top is itself a fraction, that must be evaluated first because its numerator and denominator are bracketed or enclosed in parentheses:
 $$
 \frac{a}{b}
 $$ {#eq:a-over-b}
-This is now divided by the value $c$. [We know](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one#the-multiplicative-inverse-in-mathbbz-mathbbq-and-mathbbr) that _dividing_ by $c$ amounts to _multiplying_ by $\frac{1}{c}$. The expression may therefore be simplified so^[Refer to the chapter "Arithmetic Revisited" in the _SAS_ book [@sas] if you are still unclear about what follows.]:
+This is now divided by the value $c$. [We know](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one#the-multiplicative-inverse-in-mathbbz-mathbbq-and-mathbbr) that _dividing_ by $c$ amounts to _multiplying_ by $\frac{1}{c}$. The expression may therefore be simplified so:^[Refer to the chapter "Arithmetic Revisited" in the _SAS_ book [@sas] if you are still unclear about what follows.]
 $$
 \begin{aligned}
 \frac{\frac{a}{b}}{c} &= \frac{a}{b} \times \frac{1}{c}\\
@@ -136,22 +136,29 @@ $$
 
 ### Operations and relations
 
-Before venturing further, we need to distinguish between _operations_ and _relations_^[I have avoided a set theoretic framework and notation to keep this blog within the grasp of young students.]. 
+Before venturing further, we need to distinguish between _operations_ and _relations_.^[I have avoided a set theoretic framework and notation to keep this blog within the grasp of young students.]
 
-Addition, multiplication, exponentiation, etc., are familiar [binary operations](https://en.wikipedia.org/wiki/Binary_operation), which take two inputs or _operands_ and produce a single output or result, as in 
+Addition, multiplication, exponentiation, etc., are familiar [binary operations](https://en.wikipedia.org/wiki/Binary_operation), which take two inputs or _operands_, from the same set, and produce a single output or result, again from the same set, as in 
 $$
 2 + 4 = 6.
 $$
 
-Equality is an [equivalence relation](https://en.wikipedia.org/wiki/Equivalence_relation) that is [reflexive](https://en.wikipedia.org/wiki/Reflexive_relatio), [symmetric](https://en.wikipedia.org/wiki/Symmetric_relation), and [transitive](https://en.wikipedia.org/wiki/Transitive_relation). 
+A [binary relation](https://en.wikipedia.org/wiki/Binary_relation), on the other hand, associates elements in one set to elements in another set via a relation $R$. Formally, if $x \in X$ and $y \in Y$ and $R$ is a relation between the two, we denote the relation by the _ordered pair_ $(x, y)$, written so:
+$$
+xRy = (x, y)
+$$ whenever the relation $R$ holds.
+
+Equality is a binary relation in which $R$ is replaced by the better known $=$ symbol. It is an [equivalence relation](https://en.wikipedia.org/wiki/Equivalence_relation) with three properties:  [reflexive](https://en.wikipedia.org/wiki/Reflexive_relatio), [symmetric](https://en.wikipedia.org/wiki/Symmetric_relation), and [transitive](https://en.wikipedia.org/wiki/Transitive_relation). 
 
 #.  Reflexivity means that every number is equal to itself: $2 + 4 = 2 + 4$ and $6 = 6$.
-#.  Symmetry means that if $2 + 4 = 6$, then $6 = 2 + 4$. Note that this is _not_ [commutativity](https://en.wikipedia.org/wiki/Commutative_property) which applies to operands, not to relations.
+#.  Symmetry means that if $2 + 4 = 6$, then $6 = 2 + 4$. Note that this is _not_ [commutativity](https://en.wikipedia.org/wiki/Commutative_property), which applies to operands, not to relations.
 #.  Transitivity means that if $2 + 4 = 6$ and if $6 = 3 + 3$, then $2 + 4 = 3 + 3$.
 
-You might think that these definitions and explanations are absurd and were probably invented by [crazies](https://www.wordhippo.com/what-is/the-plural-of/crazy.html) because they state the obvious---and you would not be far wrong. But the power of these ideas lies in their ability to be generalized beyond the immediate context in which they arose: something you would appreciate as you plumb the deeper depths and higher heights of mathematics.
+What is the need for stating these blindingly obvious properties? Were they singled out by a bunch of people who were [out to lunch](https://www.dictionary.com/browse/out-to-lunch)? You may be totally excused if you thought so.
 
-In sum, a binary operation works on two inputs to produce a third output. A relation, like equality, on the other hand, establishes a relationship---sameness in this case---between two mathematical entities.
+But the power of these properties lies in their ability to be generalized beyond the immediate context in which they arose: something you would appreciate as you plumb the deeper depths and higher heights of mathematics, with the passage of time.
+
+In sum, a binary operation works on two inputs to produce a third output. A binary relation, like equality, on the other hand, establishes a relationship---sameness in this case---between two mathematical elements.
 
 ### A visual metaphor for equality
 
@@ -159,27 +166,129 @@ A two-pan balance is an excellent visual metaphor for equality. Even though the 
 
 ![A two-pan balance in equilibrium, indicating that the mass on the left hand side equals that on the right hand side, even though the contents differ.]({attach}images/two-pan-balance-in-equilibrium.jpg){#fig:two-pan-balance width=90% .modal-target}
 
-### Simple equations
+### An example simple equation
 
-### Quadratic equations
+Equations demonstrate their power when used to determine unknowns. A _simple_ equation has a single unknown and some statements that can be used to _solve for_ the unknown. For example, 
 
-### Polynomials
+>There are twice as many girls as boys in my class of thirty students. How many are boys?
 
-### Binomial theorem
+Those of you who can think in numbers might have mentally solved the problem by juggling numbers in your head: 10 boys and 20 girls.
 
-### Trigonometric identities
+What if you cannot do that? The power of mathematics lies in its discovery of _systematic methods_ to solve all manner of problems, regardless of the abilities of the person solving the question.
 
-## Formulae
+The primary skill in dealing with such _word questions_ is the ability to translate the written words into mathematical expressions and equations.
+
+The first step is to define the variables or unknowns. What is it that we are asked to determine? The number of boys. Let $b$ be the number of boys.
+
+There are twice as many girls as boys. If $g$ is the number of girls, $g = 2b$ as they are double the number of boys.
+
+The total number of students is $30$.
+
+Here is the logical thread we follow:
+$$
+\begin{aligned}
+g + b &= 30; \text{ but $g = 2b$, and substituting, we get}\\
+2b + b &= 30; \text{ adding}\\
+3b &= 30; \text{ dividing by $3$ on both sides to get $b$}\\
+b &= 10; \text{ and we are done.} 
+\end{aligned}
+$$
+
+### The "nomials"
+
+Let us detour a little to review expressions again. Expressions that satisfy certain conditions appear again and again, enough to warrant being given special names. We consider here, [monomial](https://en.wikipedia.org/wiki/Monomial), [binomial](https://en.wikipedia.org/wiki/Binomial_(polynomial)), [trinomial](https://en.wikipedia.org/wiki/Trinomial), and [polynomial](https://en.wikipedia.org/wiki/Polynomial).
+
+A monomial is defined as a constant, a variable, or a product of variables, each raised to a non-negative integer exponent. It is an expression consisting of just _a single term_.
+
+A binomial is the sum of two monomials. A trinomial is the sum of three monomials. And, finally, a polynomial the sum of three or more monomials. Note that by [sum_ we also include subtraction](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one).
+
+A single number by itself like $42$ or $-17$ is a  (constant) monomial. When the number appears as part of a variable, like $42x^2$, the $42$ is called the _coefficient_ of the variable $x^2$. Note that [a standalone constant may also be viewed as the coefficient of a variable raised to the zeroth power](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one), e.g, $42 = 42x^{0}$.
+
+|    Name    | Prefix | Meaning | Examples |
+|:-----------|:------------|:---------------------|:--------------------|
+| Monomial | mono | one term | $12, a, cx^2, \frac{b}{3}, -97, xyz$ |
+| Binomial | bi | two terms | $a - b, 3r^4 - pq, \frac{1}{5}x + uvw$ |
+| Trinomial | tri | three terms | $x^2 - 2x + 1, u + v + w$ |
+| Polynomial | poly | many terms | $25x^3 + 4y^2 + z^4 + 37$ |
+
+: Monimials, binomials, trinomials, and polynomials {#tbl:nomials}
+
+What sort of terms do _not_ qualify to be one of the "nomials"? What about $c^{\frac{1}{5}}$? A fractional power like $\frac{1}{5}$ is not a non-negative integer. So, it does not qualify. Consider also $x^{-5}$. No again, as $-5$ is a negative integer.
+
+### Quadratics
+
+Thus far we have encountered _linear_ equations, in which the highest power of the variable is $1$, and the other terms are constants. But just as numbers can be multiplied, so too can expressions containing variables. Consider 
+$$
+\begin{aligned}
+(x - 5)^{2} &= (x - 5)(x - 5); \text{ multiplying the two terms}\\
+&= x^2 +x(-5) + (-5)x + (-5)(-5)\\
+&= x^2 - 10x + 25
+\end{aligned}
+$$ {#eq:quad-expand}
+The expression on the left is a binomial multiplied by another binomial and the product is a trinomial. But this product is also called a [quadratic polynomial](https://en.wikipedia.org/wiki/Quadratic), because it is a square. Indeed any expression in one variable in which the highest power of the variable is $2$ qualifies as a quadratic.^[You don't need this here, but just for completeness, if there are more than one variable and all terms are of degree $2$, e.g., $x^2 + xy + y^2$, the expression is called a [quadratic form](https://en.wikipedia.org/wiki/Quadratic_form).] Be aware that the same expression could be called by different names depending upon the context in which it is viewed.
+
+When a quadratic polynomial is equated to zero, we have a [quadratic equation](https://en.wikipedia.org/wiki/Quadratic_equation). Let us convert the quadratic in [@eq:quad-expand] into the quadratic equation 
+$$
+\begin{aligned}
+x^2 -10x + 25 &= 0\\
+(x - 5)^2 &= 0\\
+(x - 5)(x - 5) &= 0\\
+x &= 5.
+\end{aligned}
+$$ {#eqn:repeated-root}
+This is a case of a quadratic that is a perfect square and the root $x = 5$ is _repeated_; see [@fig:quadratic-graphs].
+
+But what happens when the root is not repeated? Let us look at $x^2 - 25 = 0$:
+$$
+\begin{aligned}
+x^2 - 25 &= 0; \text{ difference of two squares}\\
+(x + 5)(x - 5) &= 0\\
+x &= -5 \text{ or} +5.\\ 
+\end{aligned}
+$$ {#eq:plus-minus-five}
+In this case we have two _distinct_ roots: $x = \pm5$; see [@fig:quadratic-graphs].
+
+![Graphs of the two quadratic functions discussed in the text. The solutions to the repective quadratic equations are the values of $x$ at which the curves intersect the $x$-axis.]({attach}images/quadratic.svg){#fig:quadratic-graphs width=80% .modal-target}
 
 ### Completing the square and the quadratic formula
 
-### Circumference of a circle
+Around Year 9 or 10 of the middle school, you would have been exposed to the [quadratic formula](https://en.wikipedia.org/wiki/Quadratic_formula) for computing the roots of a quadratic equation without recourse to factorization or graphing as we have done above.
 
-### Area of a triangle
+GIVE BOTH ALGEBRAIC AND GEOMETRIC EXPLANATIONS.
+http://mathonline.wikidot.com/geometric-proof-of-the-quadratic-formula
+https://www.youtube.com/results?search_query=geometric%20explanation%20of%20the%20quadratic%20formula
+https://www.youtube.com/watch?v=T0HyWIFbsHQ
 
-### Volume of a cylinder
+https://www.youtube.com/watch?v=7Q4h1YTYgnE use this with a citation as well.
 
+### Identities
 
+A mathematical [identity](https://en.wikipedia.org/wiki/Identity_(mathematics)) is an equation or equality which is true regardless of the values assumed by the variables in it. The two sides of an identity are usually quite different in appearance, and it is this difference that confers on them their importance and usefulness.
+
+Simply by expanding and multiplying out, we know that
+$$
+(a+b)^2 = a^2 +2ab + b^2. 
+$$
+To stress that this is no ordinary equation but an identity, this may also be written as
+$$
+(a+b)^2 \equiv a^2 +2ab + b^2.
+$$
+The three-line symbol is called a [triple bar](https://en.wikipedia.org/wiki/Triple_bar), although the the more youthful among us might recognize it as the [hamburger button](https://en.wikipedia.org/wiki/Hamburger_button).
+
+Identities arise in different contexts and the Pythagorean theorem, applied to the unit circle, gives rise to the well known identity
+$$
+\cos^2\theta + \sin^2\theta \equiv 1.
+$$
+
+## Formulae
+
+Formulae arise in different contexts and appear different. Water when expressed chemically is H~$2$~O. But the [formulae](https://en.wikipedia.org/wiki/Formula) we refer to here are succinct mathematical statements whose truth has been established, and whose use saves time and effort. In this sense, all [theorems](https://en.wikipedia.org/wiki/Formula) are formulae. They save us having to re-invent the wheel each time we are faced with an already-solved task.
+
+Early encounters with mathematical formulae arise with simple expressions for the area of a triangle ($\frac{1}{2}bh$), the circumference of a circle ($2\pi r$), or the volume of a sphere ($\frac{4}{3}\pi r^3$).
+
+The importance of formulae as conveniences is summarized by this quotation from the famous computer scientist [Edsger Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra):
+
+>"A picture may be worth a thousand words, a formula is worth a thousand pictures."
 
 ## Acknowledgements
 
@@ -188,8 +297,8 @@ A two-pan balance is an excellent visual metaphor for equality. Even though the 
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here]({attach}./math-fundamentals.pdf):
+\noindent A PDF version of this article is [available for download here]({attach}./expressions-equations-formulae.pdf):
 
 ::: {.small .sf}
-<https://swanlotus.netlify.app/blogs/math-fundamentals.pdf>
+<https://swanlotus.netlify.app/blogs/expressions-equations-formulae.pdf>
 :::

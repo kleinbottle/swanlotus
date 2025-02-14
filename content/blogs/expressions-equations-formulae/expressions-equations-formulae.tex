@@ -62,6 +62,7 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+\usepackage{svg}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -235,7 +236,7 @@
 
 \title{Expressions, Equations, and Formulae}
 \author{R (Chandra) Chandrasekhar}
-\date{2024-02-14 | 2024-02-14}
+\date{2025-02-14 | 2025-02-14}
 
 \begin{document}
 \maketitle
@@ -277,9 +278,9 @@ Never one to be pig-headed, Sol agreed.
 Somewhat diffidently, I took up his challenge, complete with its
 stipulations. This blog was born after much cogitation, and is really my
 first attempt at presenting and exemplifying fundamental definitions,
-usually taught in elementary school\footnote{I usually find it easier to
-  explain concepts to students in middle school and beyond. rather than
-  to elementary school students.}. Any reader who still finds it
+usually taught in elementary school.\footnote{I usually find it easier
+  to explain concepts to students in middle school and beyond, rather
+  than to elementary school students.} Any reader who still finds it
 conceptually muddy or murky is cordially invited to
 \href{mailto:feedback.swanlotus@gmail.com}{write to me}.
 
@@ -413,9 +414,10 @@ these unknown quantities, much like we use \emph{pronouns} instead of
 \emph{proper nouns} for the names of people we do not know. Let us take
 a look at a potentially confusing expression:
 \begin{equation}\phantomsection\label{eq:abc}{
-\frac{\frac{a}{b}}{c}
+\frac{(\frac{a}{b})}{c}
 }\end{equation} What does it mean? Can it be simplified? If so, what is
-its simplified form? Does it convey any meaning?
+its simplified form? Does it convey any meaning? What is the purpose of
+the parentheses on top?
 
 Mathematics is a language in which ambiguity is prohibited by strictly
 enforced conventions. We already saw that with the \(\surd\) sign.
@@ -423,17 +425,19 @@ enforced conventions. We already saw that with the \(\surd\) sign.
 Does \cref{eq:abc}\footnote{It is not an equation but an expression; my
   software did not allow that degree of customization. Please excuse
   this inaccuracy.} mean more than one thing? Not if we know our
-conventions. The expression consists of a value on top divided by a
-value at the bottom. But the value at the top is itself a fraction:
+conventions. The expression consists of a value on top---supposed
+divided by a value at the bottom. But the value at the top is itself a
+fraction, that must be evaluated first because its numerator and
+denominator are bracketed or enclosed in parentheses:
 \begin{equation}\phantomsection\label{eq:a-over-b}{
 \frac{a}{b}
 }\end{equation} This is now divided by the value \(c\).
 \href{https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one\#the-multiplicative-inverse-in-mathbbz-mathbbq-and-mathbbr}{We
 know} that \emph{dividing} by \(c\) amounts to \emph{multiplying} by
 \(\frac{1}{c}\). The expression may therefore be simplified
-so\footnote{Refer to the chapter ``Arithmetic Revisited'' in the
+so:\footnote{Refer to the chapter ``Arithmetic Revisited'' in the
   \emph{SAS} book {[}\citeproc{ref-sas}{1}{]} if you are still unclear
-  about what follows.}:
+  about what follows.}
 \begin{equation}\phantomsection\label{eq:simplified}{
 \begin{aligned}
 \frac{\frac{a}{b}}{c} &= \frac{a}{b} \times \frac{1}{c}\\
@@ -504,20 +508,30 @@ encountered this symbol in the very simple equation \[
 \subsubsection{Operations and relations}\label{operations-and-relations}
 
 Before venturing further, we need to distinguish between
-\emph{operations} and \emph{relations}\footnote{I have avoided a set
+\emph{operations} and \emph{relations}.\footnote{I have avoided a set
   theoretic framework and notation to keep this blog within the grasp of
-  young students.}.
+  young students.}
 
 Addition, multiplication, exponentiation, etc., are familiar
 \href{https://en.wikipedia.org/wiki/Binary_operation}{binary
-operations}, which take two inputs or \emph{operands} and produce a
-single output or result, as in \[
+operations}, which take two inputs or \emph{operands}, from the same
+set, and produce a single output or result, again from the same set, as
+in \[
 2 + 4 = 6.
 \]
 
-Equality is an
+A \href{https://en.wikipedia.org/wiki/Binary_relation}{binary relation},
+on the other hand, associates elements in one set to elements in another
+set via a relation \(R\). Formally, if \(x \in X\) and \(y \in Y\) and
+\(R\) is a relation between the two, we denote the relation by the
+\emph{ordered pair} \((x, y)\), written so: \[
+xRy = (x, y)
+\] whenever the relation \(R\) holds.
+
+Equality is a binary relation in which \(R\) is replaced by the better
+known \(=\) symbol. It is an
 \href{https://en.wikipedia.org/wiki/Equivalence_relation}{equivalence
-relation} that is
+relation} with three properties:
 \href{https://en.wikipedia.org/wiki/Reflexive_relatio}{reflexive},
 \href{https://en.wikipedia.org/wiki/Symmetric_relation}{symmetric}, and
 \href{https://en.wikipedia.org/wiki/Transitive_relation}{transitive}.
@@ -530,25 +544,27 @@ relation} that is
 \item
   Symmetry means that if \(2 + 4 = 6\), then \(6 = 2 + 4\). Note that
   this is \emph{not}
-  \href{https://en.wikipedia.org/wiki/Commutative_property}{commutativity}
+  \href{https://en.wikipedia.org/wiki/Commutative_property}{commutativity},
   which applies to operands, not to relations.
 \item
   Transitivity means that if \(2 + 4 = 6\) and if \(6 = 3 + 3\), then
   \(2 + 4 = 3 + 3\).
 \end{enumerate}
 
-You might think that these definitions and explanations are absurd and
-were probably invented by
-\href{https://www.wordhippo.com/what-is/the-plural-of/crazy.html}{crazies}
-because they state the obvious---and you would not be far wrong. But the
-power of these ideas lies in their ability to be generalized beyond the
-immediate context in which they arose: something you would appreciate as
-you plumb the deeper depths and higher heights of mathematics.
+What is the need for stating these blindingly obvious properties? Were
+they singled out by a bunch of people who were
+\href{https://www.dictionary.com/browse/out-to-lunch}{out to lunch}? You
+may be totally excused if you thought so.
+
+But the power of these properties lies in their ability to be
+generalized beyond the immediate context in which they arose: something
+you would appreciate as you plumb the deeper depths and higher heights
+of mathematics, with the passage of time.
 
 In sum, a binary operation works on two inputs to produce a third
-output. A relation, like equality, on the other hand, establishes a
-relationship---sameness in this case---between two mathematical
-entities.
+output. A binary relation, like equality, on the other hand, establishes
+a relationship---sameness in this case---between two mathematical
+elements.
 
 \subsubsection{A visual metaphor for
 equality}\label{a-visual-metaphor-for-equality}
@@ -567,27 +583,242 @@ the left hand side equals that on the right hand side, even though the
 contents differ.}\label{fig:two-pan-balance}
 \end{figure}
 
-\subsubsection{Simple equations}\label{simple-equations}
+\subsubsection{An example simple
+equation}\label{an-example-simple-equation}
 
-\subsubsection{Quadratic equations}\label{quadratic-equations}
+Equations demonstrate their power when used to determine unknowns. A
+\emph{simple} equation has a single unknown and some statements that can
+be used to \emph{solve for} the unknown. For example,
 
-\subsubsection{Polynomials}\label{polynomials}
+\begin{quote}
+There are twice as many girls as boys in my class of thirty students.
+How many are boys?
+\end{quote}
 
-\subsubsection{Binomial theorem}\label{binomial-theorem}
+Those of you who can think in numbers might have mentally solved the
+problem by juggling numbers in your head: 10 boys and 20 girls.
 
-\subsubsection{Trigonometric identities}\label{trigonometric-identities}
+What if you cannot do that? The power of mathematics lies in its
+discovery of \emph{systematic methods} to solve all manner of problems,
+regardless of the abilities of the person solving the question.
 
-\subsection{Formulae}\label{formulae}
+The primary skill in dealing with such \emph{word questions} is the
+ability to translate the written words into mathematical expressions and
+equations.
+
+The first step is to define the variables or unknowns. What is it that
+we are asked to determine? The number of boys. Let \(b\) be the number
+of boys.
+
+There are twice as many girls as boys. If \(g\) is the number of girls,
+\(g = 2b\) as they are double the number of boys.
+
+The total number of students is \(30\).
+
+Here is the logical thread we follow: \[
+\begin{aligned}
+g + b &= 30; \text{ but $g = 2b$, and substituting, we get}\\
+2b + b &= 30; \text{ adding}\\
+3b &= 30; \text{ dividing by $3$ on both sides to get $b$}\\
+b &= 10; \text{ and we are done.} 
+\end{aligned}
+\]
+
+\subsubsection{The ``nomials''}\label{the-nomials}
+
+Let us detour a little to review expressions again. Expressions that
+satisfy certain conditions appear again and again, enough to warrant
+being given special names. We consider here,
+\href{https://en.wikipedia.org/wiki/Monomial}{monomial},
+\href{https://en.wikipedia.org/wiki/Binomial_(polynomial)}{binomial},
+\href{https://en.wikipedia.org/wiki/Trinomial}{trinomial}, and
+\href{https://en.wikipedia.org/wiki/Polynomial}{polynomial}.
+
+A monomial is defined as a constant, a variable, or a product of
+variables, each raised to a non-negative integer exponent. It is an
+expression consisting of just \emph{a single term}.
+
+A binomial is the sum of two monomials. A trinomial is the sum of three
+monomials. And, finally, a polynomial the sum of three or more
+monomials. Note that by
+\href{https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one}{sum\_
+we also include subtraction}.
+
+A single number by itself like \(42\) or \(-17\) is a (constant)
+monomial. When the number appears as part of a variable, like \(42x^2\),
+the \(42\) is called the \emph{coefficient} of the variable \(x^2\).
+Note that
+\href{https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one}{a
+standalone constant may also be viewed as the coefficient of a variable
+raised to the zeroth power}, e.g, \(42 = 42x^{0}\).
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1765}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1912}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3235}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3088}}@{}}
+\caption{\label{tbl:nomials}Monimials, binomials, trinomials, and
+polynomials}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Name
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Prefix
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Examples
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Name
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Prefix
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Examples
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Monomial & mono & one term & \(12, a, cx^2, \frac{b}{3}, -97, xyz\) \\
+Binomial & bi & two terms & \(a - b, 3r^4 - pq, \frac{1}{5}x + uvw\) \\
+Trinomial & tri & three terms & \(x^2 - 2x + 1, u + v + w\) \\
+Polynomial & poly & many terms & \(25x^3 + 4y^2 + z^4 + 37\) \\
+\end{longtable}
+
+What sort of terms do \emph{not} qualify to be one of the ``nomials''?
+What about \(c^{\frac{1}{5}}\)? A fractional power like \(\frac{1}{5}\)
+is not a non-negative integer. So, it does not qualify. Consider also
+\(x^{-5}\). No again, as \(-5\) is a negative integer.
+
+\subsubsection{Quadratics}\label{quadratics}
+
+Thus far we have encountered \emph{linear} equations, in which the
+highest power of the variable is \(1\), and the other terms are
+constants. But just as numbers can be multiplied, so too can expressions
+containing variables. Consider
+\begin{equation}\phantomsection\label{eq:quad-expand}{
+\begin{aligned}
+(x - 5)^{2} &= (x - 5)(x - 5); \text{ multiplying the two terms}\\
+&= x^2 +x(-5) + (-5)x + (-5)(-5)\\
+&= x^2 - 10x + 25
+\end{aligned}
+}\end{equation} The expression on the left is a binomial multiplied by
+another binomial and the product is a trinomial. But this product is
+also called a \href{https://en.wikipedia.org/wiki/Quadratic}{quadratic
+polynomial}, because it is a square. Indeed any expression in one
+variable in which the highest power of the variable is \(2\) qualifies
+as a quadratic.\footnote{You don't need this here, but just for
+  completeness, if there are more than one variable and all terms are of
+  degree \(2\), e.g., \(x^2 + xy + y^2\), the expression is called a
+  \href{https://en.wikipedia.org/wiki/Quadratic_form}{quadratic form}.}
+Be aware that the same expression could be called by different names
+depending upon the context in which it is viewed.
+
+When a quadratic polynomial is equated to zero, we have a
+\href{https://en.wikipedia.org/wiki/Quadratic_equation}{quadratic
+equation}. Let us convert the quadratic in \cref{eq:quad-expand} into
+the quadratic equation \[
+\begin{aligned}
+x^2 -10x + 25 &= 0\\
+(x - 5)^2 &= 0\\
+(x - 5)(x - 5) &= 0\\
+x &= 5.
+\end{aligned}
+\] \{\#eqn:repeated-root\} This is a case of a quadratic that is a
+perfect square and the root \(x = 5\) is \emph{repeated}; see
+\cref{fig:quadratic-graphs}.
+
+But what happens when the root is not repeated? Let us look at
+\(x^2 - 25 = 0\):
+\begin{equation}\phantomsection\label{eq:plus-minus-five}{
+\begin{aligned}
+x^2 - 25 &= 0; \text{ difference of two squares}\\
+(x + 5)(x - 5) &= 0\\
+x &= -5 \text{ or} +5.\\ 
+\end{aligned}
+}\end{equation} In this case we have two \emph{distinct} roots:
+\(x = \pm5\); see \cref{fig:quadratic-graphs}.
+
+\begin{figure}
+\centering
+\includesvg[width=0.8\linewidth,height=\textheight,keepaspectratio]{images/quadratic.svg}
+\caption{Graphs of the two quadratic functions discussed in the text.
+The solutions to the repective quadratic equations are the values of
+\(x\) at which the curves intersect the
+\(x\)-axis.}\label{fig:quadratic-graphs}
+\end{figure}
 
 \subsubsection{Completing the square and the quadratic
 formula}\label{completing-the-square-and-the-quadratic-formula}
 
-\subsubsection{Circumference of a
-circle}\label{circumference-of-a-circle}
+Around Year 9 or 10 of the middle school, you would have been exposed to
+the \href{https://en.wikipedia.org/wiki/Quadratic_formula}{quadratic
+formula} for computing the roots of a quadratic equation without
+recourse to factorization or graphing as we have done above.
 
-\subsubsection{Area of a triangle}\label{area-of-a-triangle}
+GIVE BOTH ALGEBRAIC AND GEOMETRIC EXPLANATIONS.
+http://mathonline.wikidot.com/geometric-proof-of-the-quadratic-formula
+https://www.youtube.com/results?search\_query=geometric\%20explanation\%20of\%20the\%20quadratic\%20formula
+https://www.youtube.com/watch?v=T0HyWIFbsHQ
 
-\subsubsection{Volume of a cylinder}\label{volume-of-a-cylinder}
+https://www.youtube.com/watch?v=7Q4h1YTYgnE use this with a citation as
+well.
+
+\subsubsection{Identities}\label{identities}
+
+A mathematical
+\href{https://en.wikipedia.org/wiki/Identity_(mathematics)}{identity} is
+an equation or equality which is true regardless of the values assumed
+by the variables in it. The two sides of an identity are usually quite
+different in appearance, and it is this difference that confers on them
+their importance and usefulness.
+
+Simply by expanding and multiplying out, we know that \[
+(a+b)^2 = a^2 +2ab + b^2. 
+\] To stress that this is no ordinary equation but an identity, this may
+also be written as \[
+(a+b)^2 \equiv a^2 +2ab + b^2.
+\] The three-line symbol is called a
+\href{https://en.wikipedia.org/wiki/Triple_bar}{triple bar}, although
+the the more youthful among us might recognize it as the
+\href{https://en.wikipedia.org/wiki/Hamburger_button}{hamburger button}.
+
+Identities arise in different contexts and the Pythagorean theorem,
+applied to the unit circle, gives rise to the well known identity \[
+\cos^2\theta + \sin^2\theta \equiv 1.
+\]
+
+\subsection{Formulae}\label{formulae}
+
+Formulae arise in different contexts and appear different. Water when
+expressed chemically is H\textsubscript{\(2\)}O. But the
+\href{https://en.wikipedia.org/wiki/Formula}{formulae} we refer to here
+are succinct mathematical statements whose truth has been established,
+and whose use saves time and effort. In this sense, all
+\href{https://en.wikipedia.org/wiki/Formula}{theorems} are formulae.
+They save us having to re-invent the wheel each time we are faced with
+an already-solved task.
+
+Early encounters with mathematical formulae arise with simple
+expressions for the area of a triangle (\(\frac{1}{2}bh\)), the
+circumference of a circle (\(2\pi r\)), or the volume of a sphere
+(\(\frac{4}{3}\pi r^3\)).
+
+The importance of formulae as conveniences is summarized by this
+quotation from the famous computer scientist
+\href{https://en.wikipedia.org/wiki/Edsger_W._Dijkstra}{Edsger
+Dijkstra}:
+
+\begin{quote}
+``A picture may be worth a thousand words, a formula is worth a thousand
+pictures.''
+\end{quote}
 
 \subsection{Acknowledgements}\label{acknowledgements}
 
@@ -597,13 +828,14 @@ Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
 comments and corrections.
 
 \noindent A PDF version of this article is
-\href{./math-fundamentals.pdf}{available for download here}:
+\href{./expressions-equations-formulae.pdf}{available for download
+here}:
 
 \begin{small}
 
 \begin{sffamily}
 
-\url{https://swanlotus.netlify.app/blogs/math-fundamentals.pdf}
+\url{https://swanlotus.netlify.app/blogs/expressions-equations-formulae.pdf}
 
 \end{sffamily}
 
