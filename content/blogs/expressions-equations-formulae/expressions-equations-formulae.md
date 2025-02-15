@@ -33,7 +33,7 @@ My decades of muddling in matters scholastic have convinced me that there are _f
 
 ![Learning any subject involves four stages as shown above [@sas].]({attach}images/four-stages-of-learning.png){#fig:four-stages width=90% .modal-target}
 
-All knowledge begins with _naming_. You cannot analyze or understand what you cannot name. In specialized subject areas, names are called _definitions_. In this blog, we have the following _four_ mathematical names to define, understand, analyze, and apply:
+All knowledge begins with _naming_. You cannot analyze or understand what you cannot name. In specialized subject areas, names are called _definitions_. In this blog, we have the following _three_ mathematical names to define, understand, analyze, and apply:
 
 #. expression;
 #. equation; and
