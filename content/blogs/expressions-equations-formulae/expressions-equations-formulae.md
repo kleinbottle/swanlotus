@@ -303,6 +303,9 @@ a.  [Completing the Square (visual proof)](https://www.youtube.com/watch?v=T0HyW
 
 a.  [But where does the quadratic formula come from?](https://www.youtube.com/watch?v=7Q4h1YTYgnE) [@foggy-maths-2023].
 
+a.  [Beautiful Visual Explanation of Completing the Square](https://www.youtube.com/watch?v=McDdEw_Fb5E) [@woo-2016]
+
+I am confident that one of these explanations will resonate with you, and that you will get a [eureka moment](https://nesslabs.com/eureka-moments) once the method clicks. It is only then that you have made some of this knowledge your own.
 
 ### Identities
 
