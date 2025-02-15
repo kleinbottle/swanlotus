@@ -289,12 +289,12 @@ $$
 \left(x + \frac{b}{2a}\right)^2 - \left(\frac{b^2}{4a^2}\right) + \frac{c}{a} &= 0; \text{ leading to}\\
 \left(x + \frac{b}{2a}\right)^2 &= \left(\frac{b^2}{4a^2}\right) - \frac{c}{a}\\
 &= \frac{b^2}{4a^2} - \frac{4ac}{4a^2}\\
-&= \frac{b^2 - 4ac}{4a^2};\ \text{ take square roots on both sides with $\pm$ sign}\\
+&= \frac{b^2 - 4ac}{4a^2};\ \text{ take square roots on both sides}\\
 \left(x + \frac{b}{2a}\right) &= \pm\sqrt{\frac{b^2 - 4ac}{4a^2}};\ \text{ transpose $\frac{b}{2a}$ from left to right}\\
 x &= -\frac{b}{2a} \pm \frac{\sqrt{b^2 - 4ac}}{2a}\\
 &=\frac{-{b} \pm \sqrt{b^2 - 4ac}}{2a}
 \end{aligned}
-$$ {#eq:quad-formula}
+$${#eq:quad-formula}
 Some of you might have found it hard to keep up with the symbolic jugglery to arrive at [@eq:quad-formula] and I sympathize with you.
 
 But there is a geometric side to most mathematical problems. So, if pictures appeal more to you, I suggest watching a YouTube video or two---with animation---to better understand the dance of the symbols above. I recommend either or both of these videos to help you understand the geometric basis for the quadratic formula, arrived at by completing the square:
