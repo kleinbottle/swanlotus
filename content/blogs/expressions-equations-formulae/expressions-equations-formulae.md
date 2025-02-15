@@ -11,7 +11,7 @@ opengraphimage: four-stages-of-learning.png
 
 ## An unforeseen challenge
 
-My dear friend, Solus "Sol" Simkin, casually asked me one summer day if I would write a blog demystifying the meanings and uses of four mathematical terms: expression, equation, formula, and differential equation. I thought he spoke in jest, and let his request lie in a dusty corner of my mind, as a memento to his humour.
+My dear friend, Solus "Sol" Simkin, casually asked me one summer day if I would write a blog demystifying the meanings and uses of four mathematical terms: expression, equation, formula, and differential equation. I thought he spoke in jest, and let his request lie in a dusty corner of my mind, as a memento of his humour.
 
 Imagine my surprise when he accosted me again after two months and asked if I had put pen to paper to explain the four mathematical terms.
 
@@ -43,11 +43,11 @@ After naming, we move to _knowing_. At this stage, we systematically study the s
 
 The third stage, _doing_, involves _application_ of the newfound concept that has already been defined and studied. If you were learning to fly an aircraft, you could not claim to be a pilot, based on mere theoretical knowledge. You must practise flying---first under supervision, and later solo---so that you accumulate enough experience  to claim competence in that art.
 
-Once the doing stage has been mastered, it becomes effortless: this is the _being_ stage of knowledge. You are now a master at what you started out to learn. You can start teaching others.
+Once the doing stage has been mastered, it becomes effortless: this is the _being_ stage of knowledge. You are now a master at what you started out to learn, and can start teaching others.
 
-Every subject of study---whether academic like mathematics, or practical like surgery---involves these four steps and their mastery. By steadily moving from one stage to another, and finally by graduating to the being stage, you achieve mastery of your subject.
+Every subject of study---whether academic like mathematics, or practical like surgery---involves these four steps and their mastery. By steadily moving from one stage to another---finally graduating to the being stage---you achieve mastery of your subject.
 
-This blog is mainly concerned with the naming stage, but our discussion will not be complete without a modicum of knowing and doing as well. Let us set to.
+This blog is mainly concerned with the naming stage, but our discussion will not be complete without a modicum of knowing and doing as well. Let us begin.
 
 ## Expressions
 
@@ -91,7 +91,7 @@ What does it mean? Can it be simplified? If so, what is its simplified form? Doe
 
 Mathematics is a language in which ambiguity is prohibited by strictly enforced conventions. We already saw that with the $\surd$ sign.
 
-Does [@eq:abc]^[It is not an equation but an expression; my software did not allow that degree of customization. Please excuse this inaccuracy.] mean more than one thing? Not if we know our conventions. The expression consists of a value on top---supposed  divided by a value at the bottom. But the value at the top is itself a fraction, that must be evaluated first because its numerator and denominator are bracketed or enclosed in parentheses:
+Does [@eq:abc]^[It is not an equation but an expression; my software did not allow that degree of customization. Please excuse this inaccuracy.] mean more than one thing? Not if we know our conventions. The expression consists of a value on top, divided by a value at the bottom. But the value at the top is itself a fraction, that must be evaluated first because its numerator and denominator are bracketed or enclosed in parentheses:^[See [BIDMAS](#bidmas) later.]
 $$
 \frac{a}{b}
 $$ {#eq:a-over-b}
@@ -125,11 +125,11 @@ Choose whichever mnemonic appeals more to you.
 
 My preferred visual image for a mathematical expression is a tied-up bundle of clothes:
 
-![Bundle of clothes as a vsiual metaphor for a mathematical expression.]({attach}images/bundle-of-clothes-in-disarray.jpg){#fig:clothes-bundle width=80% .modal-target}
+![Bundle of clothes as a visual metaphor for a mathematical expression.]({attach}images/bundle-of-clothes-in-disarray.jpg){#fig:clothes-bundle width=80% .modal-target}
 
 ## Equations
 
-We now look at _equations_. All equations embody the $=$ symbol, which is called an _equals sign_. It is a mathematical shorthand to denote that what is on the LHS of this symbol is equal to what is on the RHS, however different they may appear to be. We have previously encountered this symbol in the very simple equation
+Let us now look at _equations_. All equations embody the $=$ symbol, which is called an _equals sign_. It is a mathematical shorthand to denote that what is on the LHS of this symbol is equal to what is on the RHS, however different they may appear to be. We have previously encountered this symbol in the very simple equation
 $$
 2 + 4 = 6.
 $$
@@ -162,7 +162,7 @@ In sum, a binary operation works on two inputs to produce a third output. A bina
 
 ### A visual metaphor for equality
 
-A two-pan balance is an excellent visual metaphor for equality. Even though the material in each pan might be different, when the pans balance, we have equality. This means each pan contains the same weight or mass. It is the principle behind how we buy foodstuffs. And it is identical to the principle of equality as a mathematical relation.
+A two-pan balance is an excellent visual metaphor for equality. Even though the material in each pan might be different, when the pans balance, we have equality. This means each pan contains the same weight or mass. It is the principle behind how we pay for foodstuffs by weight. And it is identical to the concept  of equality as a mathematical relation.
 
 ![A two-pan balance in equilibrium, indicating that the mass on the left hand side equals that on the right hand side, even though the contents differ.]({attach}images/two-pan-balance-in-equilibrium.jpg){#fig:two-pan-balance width=90% .modal-target}
 
@@ -213,11 +213,11 @@ A single number by itself like $42$ or $-17$ is a  (constant) monomial. When the
 
 : Monomials, binomials, trinomials, and polynomials {#tbl:nomials}
 
-What sort of terms do _not_ qualify to be one of the "nomials"? What about $c^{\frac{1}{5}}$? A fractional power like $\frac{1}{5}$ is not a non-negative integer. So, it does not qualify. Consider also $x^{-5}$. No again, as $-5$ is a negative integer.
+What sort of terms do _not_ qualify to be one of the "nomials"? What about $c^{\frac{1}{5}}$? A fractional power like $\frac{1}{5}$ is not an integer, let alone a non-negative integer. So, it does not qualify. Consider also $x^{-5}$. No again, as $-5$ is a negative integer.
 
 ### Quadratics
 
-Thus far we have encountered _linear_ equations, in which the highest power of the variable is $1$, and the other terms are constants. But just as numbers can be multiplied, so too can expressions containing variables. Consider 
+Thus far we have encountered _linear_ equations, in which the highest power of the variable is $1$, and the other terms are constants. But just as numbers can be multiplied, so too can expressions containing variables. Consider: 
 $$
 \begin{aligned}
 (x - 5)^{2} &= (x - 5)(x - 5); \text{ multiplying the two terms}\\
@@ -248,11 +248,11 @@ x &= -5 \text{ or} +5.\\
 $$ {#eq:plus-minus-five}
 In this case we have two _distinct_ roots: $x = \pm5$. See [@fig:quadratic-graphs] where the lower curve intersects the $x$-axis at two distinct points.
 
-![Graphs of the two quadratic functions discussed in the text. The solutions to the repective quadratic equations are the values of $x$ at which the curves intersect the $x$-axis.]({attach}images/quadratic.svg){#fig:quadratic-graphs width=80% .modal-target}
+![Graphs of the two quadratic functions discussed in the text. The solutions to the respective quadratic equations are the values of $x$ at which the curves intersect the $x$-axis.]({attach}images/quadratic.svg){#fig:quadratic-graphs width=80% .modal-target}
 
 ### Completing the square and the quadratic formula
 
-Around Year 9 or 10 of the middle school, you would have been exposed to the [quadratic formula](https://en.wikipedia.org/wiki/Quadratic_formula) for computing the roots of a quadratic equation, without recourse to factorization or graphing, as we have done above.
+Around the ninth or tenth year of middle school, you would have been exposed to the [quadratic formula](https://en.wikipedia.org/wiki/Quadratic_formula) for computing the roots of a quadratic equation, without recourse to factorization or graphing, as we have done above.
 
 Let us derive the quadratic formula by a method known as ["completing the square"](https://en.wikipedia.org/wiki/Completing_the_square). The generic quadratic equation is 
 $$
@@ -264,8 +264,11 @@ By applying the same operations to both sides, we manipulate [@eq:orig-quad] to 
 $$
 \frac{a}{a}x^2 + \frac{b}{a}x + \frac{c}{a} = x^2 + \frac{b}{a}x + \frac{c}{a} = 0.
 $$ {#eq:no-a}
+Let [@eq:no-a] be called the _normalized_ quadratic equation.
 
-#. Note that the term containing $x$ in a squared binomial term has a factor of $2$. So, we divide the term containing $x$ by $2$ and then multiply it by $2$ thus:
+#. Let us digress a little. Consider a linear binomial term in $x$, like $(x + k)$, and square it. Then, $(x + k)^2 = x^2 + 2kx + k^2$ for all $x$ and $k$.^[This is an [identity](#identities).] The middle term, containing $x$, _always_ has a factor of $2$ in it.
+
+#. To insert an explicit factor of $2$ in the term for $x$, in the normalized quadratic equation, we divide the term containing $x$ by $2$ and then multiply it by $2$, preserving the rest of the coefficient, thus:
 $$
 \left(\frac{b}{a}\right)x = 2\left(\frac{b}{2a}\right)x.
 $$
@@ -297,7 +300,7 @@ x &= -\frac{b}{2a} \pm \frac{\sqrt{b^2 - 4ac}}{2a}\\
 $${#eq:quad-formula}
 Some of you might have found it hard to keep up with the symbolic jugglery to arrive at [@eq:quad-formula] and I sympathize with you.
 
-But there is a geometric side to most mathematical problems. So, if pictures appeal more to you, I suggest watching a YouTube video or three to better understand the dance of the symbols above. I recommend these three videos to help you understand the motivation and geometric basis for the quadratic formula, arrived at by completing the square:
+But there is a geometric side to most mathematical problems. So, if pictures appeal more to you, I suggest watching a YouTube video or three to better understand the dance of the symbols above. I recommend these three videos to help clarify the motivation and geometric basis for the quadratic formula, arrived at by completing the square:
 
 a.  [Completing the Square (visual proof)](https://www.youtube.com/watch?v=T0HyWIFbsHQ) [@mvp-2022]; and
 
@@ -307,7 +310,7 @@ a.  [Beautiful Visual Explanation of Completing the Square](https://www.youtube.
 
 I am confident that at least one of these explanations will resonate with you, and that you will get a [eureka moment](https://nesslabs.com/eureka-moments) once the method clicks. It is only then that you have made some of this knowledge your own through self-effort.
 
-As always, there is more to the quadratic formula than has been discussed here. If the value of the expression under the square root, $(b^2 - 4ac)$, called the [discriminant](https://www.britannica.com/science/discriminant), helps determine the _nature_ of the roots of the quadratic equation, without actually solving the equation:
+As always, there is more to the quadratic formula than has been discussed here. The value of the expression under the square root, $(b^2 - 4ac)$, called the [discriminant](https://www.britannica.com/science/discriminant), helps determine the _nature_ of the roots of the quadratic equation, without actually having to solve the equation:
 
 a. If the discriminant is positive, the roots will be real and distinct;
 
@@ -332,7 +335,7 @@ $$
 $$
 The three-line symbol is called a [triple bar](https://en.wikipedia.org/wiki/Triple_bar), although the the more youthful among us might recognize it as the [hamburger button](https://en.wikipedia.org/wiki/Hamburger_button).
 
-Identities arise in different contexts and the Pythagorean theorem, applied to the unit circle, gives rise to the well known identity
+Identities arise in different contexts and the Pythagorean theorem, applied to the unit circle, gives rise to the well known trigonometric identity
 $$
 \cos^2\theta + \sin^2\theta \equiv 1.
 $$

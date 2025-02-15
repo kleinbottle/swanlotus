@@ -250,7 +250,7 @@ My dear friend, Solus ``Sol'' Simkin, casually asked me one summer day
 if I would write a blog demystifying the meanings and uses of four
 mathematical terms: expression, equation, formula, and differential
 equation. I thought he spoke in jest, and let his request lie in a dusty
-corner of my mind, as a memento to his humour.
+corner of my mind, as a memento of his humour.
 
 Imagine my surprise when he accosted me again after two months and asked
 if I had put pen to paper to explain the four mathematical terms.
@@ -336,16 +336,16 @@ to claim competence in that art.
 
 Once the doing stage has been mastered, it becomes effortless: this is
 the \emph{being} stage of knowledge. You are now a master at what you
-started out to learn. You can start teaching others.
+started out to learn, and can start teaching others.
 
 Every subject of study---whether academic like mathematics, or practical
 like surgery---involves these four steps and their mastery. By steadily
-moving from one stage to another, and finally by graduating to the being
-stage, you achieve mastery of your subject.
+moving from one stage to another---finally graduating to the being
+stage---you achieve mastery of your subject.
 
 This blog is mainly concerned with the naming stage, but our discussion
 will not be complete without a modicum of knowing and doing as well. Let
-us set to.
+us begin.
 
 \subsection{Expressions}\label{expressions}
 
@@ -425,10 +425,11 @@ enforced conventions. We already saw that with the \(\surd\) sign.
 Does \cref{eq:abc}\footnote{It is not an equation but an expression; my
   software did not allow that degree of customization. Please excuse
   this inaccuracy.} mean more than one thing? Not if we know our
-conventions. The expression consists of a value on top---supposed
-divided by a value at the bottom. But the value at the top is itself a
-fraction, that must be evaluated first because its numerator and
-denominator are bracketed or enclosed in parentheses:
+conventions. The expression consists of a value on top, divided by a
+value at the bottom. But the value at the top is itself a fraction, that
+must be evaluated first because its numerator and denominator are
+bracketed or enclosed in parentheses:\footnote{See
+  \hyperref[bidmas]{BIDMAS} later.}
 \begin{equation}\phantomsection\label{eq:a-over-b}{
 \frac{a}{b}
 }\end{equation} This is now divided by the value \(c\).
@@ -491,17 +492,17 @@ bundle of clothes:
 \begin{figure}
 \centering
 \includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{images/bundle-of-clothes-in-disarray.jpg}
-\caption{Bundle of clothes as a vsiual metaphor for a mathematical
+\caption{Bundle of clothes as a visual metaphor for a mathematical
 expression.}\label{fig:clothes-bundle}
 \end{figure}
 
 \subsection{Equations}\label{equations}
 
-We now look at \emph{equations}. All equations embody the \(=\) symbol,
-which is called an \emph{equals sign}. It is a mathematical shorthand to
-denote that what is on the LHS of this symbol is equal to what is on the
-RHS, however different they may appear to be. We have previously
-encountered this symbol in the very simple equation \[
+Let us now look at \emph{equations}. All equations embody the \(=\)
+symbol, which is called an \emph{equals sign}. It is a mathematical
+shorthand to denote that what is on the LHS of this symbol is equal to
+what is on the RHS, however different they may appear to be. We have
+previously encountered this symbol in the very simple equation \[
 2 + 4 = 6.
 \]
 
@@ -572,8 +573,9 @@ equality}\label{a-visual-metaphor-for-equality}
 A two-pan balance is an excellent visual metaphor for equality. Even
 though the material in each pan might be different, when the pans
 balance, we have equality. This means each pan contains the same weight
-or mass. It is the principle behind how we buy foodstuffs. And it is
-identical to the principle of equality as a mathematical relation.
+or mass. It is the principle behind how we pay for foodstuffs by weight.
+And it is identical to the concept of equality as a mathematical
+relation.
 
 \begin{figure}
 \centering
@@ -694,15 +696,16 @@ Polynomial & poly & many terms & \(25x^3 + 4y^2 + z^4 + 37\) \\
 
 What sort of terms do \emph{not} qualify to be one of the ``nomials''?
 What about \(c^{\frac{1}{5}}\)? A fractional power like \(\frac{1}{5}\)
-is not a non-negative integer. So, it does not qualify. Consider also
-\(x^{-5}\). No again, as \(-5\) is a negative integer.
+is not an integer, let alone a non-negative integer. So, it does not
+qualify. Consider also \(x^{-5}\). No again, as \(-5\) is a negative
+integer.
 
 \subsubsection{Quadratics}\label{quadratics}
 
 Thus far we have encountered \emph{linear} equations, in which the
 highest power of the variable is \(1\), and the other terms are
 constants. But just as numbers can be multiplied, so too can expressions
-containing variables. Consider
+containing variables. Consider:
 \begin{equation}\phantomsection\label{eq:quad-expand}{
 \begin{aligned}
 (x - 5)^{2} &= (x - 5)(x - 5); \text{ multiplying the two terms}\\
@@ -753,7 +756,7 @@ intersects the \(x\)-axis at two distinct points.
 \centering
 \includesvg[width=0.8\linewidth,height=\textheight,keepaspectratio]{images/quadratic.svg}
 \caption{Graphs of the two quadratic functions discussed in the text.
-The solutions to the repective quadratic equations are the values of
+The solutions to the respective quadratic equations are the values of
 \(x\) at which the curves intersect the
 \(x\)-axis.}\label{fig:quadratic-graphs}
 \end{figure}
@@ -761,8 +764,9 @@ The solutions to the repective quadratic equations are the values of
 \subsubsection{Completing the square and the quadratic
 formula}\label{completing-the-square-and-the-quadratic-formula}
 
-Around Year 9 or 10 of the middle school, you would have been exposed to
-the \href{https://en.wikipedia.org/wiki/Quadratic_formula}{quadratic
+Around the ninth or tenth year of middle school, you would have been
+exposed to the
+\href{https://en.wikipedia.org/wiki/Quadratic_formula}{quadratic
 formula} for computing the roots of a quadratic equation, without
 recourse to factorization or graphing, as we have done above.
 
@@ -782,11 +786,19 @@ the algorithm:
   \(x^2\) one. Because zero divided by any non-zero number is still
   zero, we have \begin{equation}\phantomsection\label{eq:no-a}{
   \frac{a}{a}x^2 + \frac{b}{a}x + \frac{c}{a} = x^2 + \frac{b}{a}x + \frac{c}{a} = 0.
-  }\end{equation}
+  }\end{equation} Let \cref{eq:no-a} be called the \emph{normalized}
+  quadratic equation.
 \item
-  Note that the term containing \(x\) in a squared binomial term has a
-  factor of \(2\). So, we divide the term containing \(x\) by \(2\) and
-  then multiply it by \(2\) thus: \[
+  Let us digress a little. Consider a linear binomial term in \(x\),
+  like \((x + k)\), and square it. Then, \((x + k)^2 = x^2 + 2kx + k^2\)
+  for all \(x\) and \(k\).\footnote{This is an
+    \hyperref[identities]{identity}.} The middle term, containing \(x\),
+  \emph{always} has a factor of \(2\) in it.
+\item
+  To insert an explicit factor of \(2\) in the term for \(x\), in the
+  normalized quadratic equation, we divide the term containing \(x\) by
+  \(2\) and then multiply it by \(2\), preserving the rest of the
+  coefficient, thus: \[
   \left(\frac{b}{a}\right)x = 2\left(\frac{b}{2a}\right)x.
   \]
 \item
@@ -826,8 +838,8 @@ the algorithm:
 But there is a geometric side to most mathematical problems. So, if
 pictures appeal more to you, I suggest watching a YouTube video or three
 to better understand the dance of the symbols above. I recommend these
-three videos to help you understand the motivation and geometric basis
-for the quadratic formula, arrived at by completing the square:
+three videos to help clarify the motivation and geometric basis for the
+quadratic formula, arrived at by completing the square:
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -850,11 +862,11 @@ method clicks. It is only then that you have made some of this knowledge
 your own through self-effort.
 
 As always, there is more to the quadratic formula than has been
-discussed here. If the value of the expression under the square root,
+discussed here. The value of the expression under the square root,
 \((b^2 - 4ac)\), called the
 \href{https://www.britannica.com/science/discriminant}{discriminant},
 helps determine the \emph{nature} of the roots of the quadratic
-equation, without actually solving the equation:
+equation, without actually having to solve the equation:
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -890,7 +902,8 @@ the the more youthful among us might recognize it as the
 \href{https://en.wikipedia.org/wiki/Hamburger_button}{hamburger button}.
 
 Identities arise in different contexts and the Pythagorean theorem,
-applied to the unit circle, gives rise to the well known identity \[
+applied to the unit circle, gives rise to the well known trigonometric
+identity \[
 \cos^2\theta + \sin^2\theta \equiv 1.
 \]
 
