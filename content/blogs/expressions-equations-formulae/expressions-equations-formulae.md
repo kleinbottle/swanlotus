@@ -252,14 +252,57 @@ In this case we have two _distinct_ roots: $x = \pm5$; see [@fig:quadratic-graph
 
 ### Completing the square and the quadratic formula
 
-Around Year 9 or 10 of the middle school, you would have been exposed to the [quadratic formula](https://en.wikipedia.org/wiki/Quadratic_formula) for computing the roots of a quadratic equation without recourse to factorization or graphing as we have done above.
+Around Year 9 or 10 of the middle school, you would have been exposed to the [quadratic formula](https://en.wikipedia.org/wiki/Quadratic_formula) for computing the roots of a quadratic equation, without recourse to factorization or graphing, as we have done above.
 
-GIVE BOTH ALGEBRAIC AND GEOMETRIC EXPLANATIONS.
-http://mathonline.wikidot.com/geometric-proof-of-the-quadratic-formula
-https://www.youtube.com/results?search_query=geometric%20explanation%20of%20the%20quadratic%20formula
-https://www.youtube.com/watch?v=T0HyWIFbsHQ
+Let us derive the quadratic formula by a method known as ["completing the square"](https://en.wikipedia.org/wiki/Completing_the_square). The generic quadratic equation is 
+$$
+ax^2 + bx + c = 0.
+$$ {#eq:orig-quad}
+By applying the same operations to both sides, we manipulate [@eq:orig-quad] to resemble, term by term, a perfect square, and then extract the root without fuss. Here are the steps in the algorithm:
 
-https://www.youtube.com/watch?v=7Q4h1YTYgnE use this with a citation as well.
+#. Divide through [@eq:orig-quad] by $a$ to make the coefficient of $x^2$ one. Because zero divided by any non-zero number is still zero, we have
+$$
+\frac{a}{a}x^2 + \frac{b}{a}x + \frac{c}{a} = x^2 + \frac{b}{a}x + \frac{c}{a} = 0.
+$$ {#eq:no-a}
+
+#. Note that the term containing $x$ in a squared binomial term has a factor of $2$. So, we divide the term containing $x$ by $2$ and then multiply it by $2$ thus:
+$$
+\left(\frac{b}{a}\right)x = 2\left(\frac{b}{2a}\right)x.
+$$
+
+#. The equation now becomes
+$$
+x^2 + 2\left(\frac{b}{2a}\right)x + \frac{c}{a} = 0.
+$${#eq:normalized-one}
+
+#. Observe that 
+$$
+\begin{aligned}
+\left(x + \frac{b}{2a}\right)^2 &= x^2 + 2\left(\frac{b}{2a}\right)x + \left(\frac{b}{2a}\right)^2\\
+&= x^2 + 2\left(\frac{b}{2a}\right)x + \left(\frac{b^2}{4a^2}\right).
+\end{aligned}
+$${#eq:extra-term}
+
+#. Note that the constant term $\left(\dfrac{b^2}{4a^2}\right)$ has now been injected extraneously into [@eq:extra-term], by virtue of our simulating a square. It must be removed by subtraction to restore the orignal equation, so that our equation becomes:
+$$
+\begin{aligned}
+\left(x + \frac{b}{2a}\right)^2 - \left(\frac{b^2}{4a^2}\right) + \frac{c}{a} &= 0; \text{ leading to}\\
+\left(x + \frac{b}{2a}\right)^2 &= \left(\frac{b^2}{4a^2}\right) - \frac{c}{a}\\
+&= \frac{b^2}{4a^2} - \frac{4ac}{4a^2}\\
+&= \frac{b^2 - 4ac}{4a^2};\ \text{ take square roots on both sides with $\pm$ sign}\\
+\left(x + \frac{b}{2a}\right) &= \pm\sqrt{\frac{b^2 - 4ac}{4a^2}};\ \text{ transpose $\frac{b}{2a}$ from left to right}\\
+x &= -\frac{b}{2a} \pm \frac{\sqrt{b^2 - 4ac}}{2a}\\
+&=\frac{-{b} \pm \sqrt{b^2 - 4ac}}{2a}
+\end{aligned}
+$$ {#eq:quad-formula}
+Some of you might have found it hard to keep up with the symbolic jugglery to arrive at [@eq:quad-formula] and I sympathize with you.
+
+But there is a geometric side to most mathematical problems. So, if pictures appeal more to you, I suggest watching a YouTube video or two---with animation---to better understand the dance of the symbols above. I recommend either or both of these videos to help you understand the geometric basis for the quadratic formula, arrived at by completing the square:
+
+a.  [Completing the Square (visual proof)](https://www.youtube.com/watch?v=T0HyWIFbsHQ) [@mvp-2022]; and
+
+a.  [But where does the quadratic formula come from?](https://www.youtube.com/watch?v=7Q4h1YTYgnE) [@foggy-maths-2023].
+
 
 ### Identities
 
@@ -291,6 +334,8 @@ The importance of formulae as conveniences is summarized by this quotation from 
 >"A picture may be worth a thousand words, a formula is worth a thousand pictures."
 
 ## Acknowledgements
+
+I acknowledge the valuable contributions from several readers of my blog who wish to remain anonymous. Their insights, coming from the viewpoints of students, helped to clarify what was still unclear.
 
 ## Feedback
 

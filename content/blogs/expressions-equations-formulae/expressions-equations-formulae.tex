@@ -759,16 +759,81 @@ formula}\label{completing-the-square-and-the-quadratic-formula}
 
 Around Year 9 or 10 of the middle school, you would have been exposed to
 the \href{https://en.wikipedia.org/wiki/Quadratic_formula}{quadratic
-formula} for computing the roots of a quadratic equation without
-recourse to factorization or graphing as we have done above.
+formula} for computing the roots of a quadratic equation, without
+recourse to factorization or graphing, as we have done above.
 
-GIVE BOTH ALGEBRAIC AND GEOMETRIC EXPLANATIONS.
-http://mathonline.wikidot.com/geometric-proof-of-the-quadratic-formula
-https://www.youtube.com/results?search\_query=geometric\%20explanation\%20of\%20the\%20quadratic\%20formula
-https://www.youtube.com/watch?v=T0HyWIFbsHQ
+Let us derive the quadratic formula by a method known as
+\href{https://en.wikipedia.org/wiki/Completing_the_square}{``completing
+the square''}. The generic quadratic equation is
+\begin{equation}\phantomsection\label{eq:orig-quad}{
+ax^2 + bx + c = 0.
+}\end{equation} By applying the same operations to both sides, we
+manipulate \cref{eq:orig-quad} to resemble, term by term, a perfect
+square, and then extract the root without fuss. Here are the steps in
+the algorithm:
 
-https://www.youtube.com/watch?v=7Q4h1YTYgnE use this with a citation as
-well.
+\begin{enumerate}
+\item
+  Divide through \cref{eq:orig-quad} by \(a\) to make the coefficient of
+  \(x^2\) one. Because zero divided by any non-zero number is still
+  zero, we have \begin{equation}\phantomsection\label{eq:no-a}{
+  \frac{a}{a}x^2 + \frac{b}{a}x + \frac{c}{a} = x^2 + \frac{b}{a}x + \frac{c}{a} = 0.
+  }\end{equation}
+\item
+  Note that the term containing \(x\) in a squared binomial term has a
+  factor of \(2\). So, we divide the term containing \(x\) by \(2\) and
+  then multiply it by \(2\) thus: \[
+  \left(\frac{b}{a}\right)x = 2\left(\frac{b}{2a}\right)x.
+  \]
+\item
+  The equation now becomes
+  \begin{equation}\phantomsection\label{eq:normalized-one}{
+  x^2 + 2\left(\frac{b}{2a}\right)x + \frac{c}{a} = 0.
+  }\end{equation}
+\item
+  Observe that \begin{equation}\phantomsection\label{eq:extra-term}{
+  \begin{aligned}
+  \left(x + \frac{b}{2a}\right)^2 &= x^2 + 2\left(\frac{b}{2a}\right)x + \left(\frac{b}{2a}\right)^2\\
+  &= x^2 + 2\left(\frac{b}{2a}\right)x + \left(\frac{b^2}{4a^2}\right).
+  \end{aligned}
+  }\end{equation}
+\item
+  Note that the constant term \(\left(\dfrac{b^2}{4a^2}\right)\) has now
+  been injected extraneously into \cref{eq:extra-term}, by virtue of our
+  simulating a square. It must be removed by subtraction to restore the
+  orignal equation, so that our equation becomes:
+  \begin{equation}\phantomsection\label{eq:quad-formula}{
+  \begin{aligned}
+  \left(x + \frac{b}{2a}\right)^2 - \left(\frac{b^2}{4a^2}\right) + \frac{c}{a} &= 0; \text{ leading to}\\
+  \left(x + \frac{b}{2a}\right)^2 &= \left(\frac{b^2}{4a^2}\right) - \frac{c}{a}\\
+  &= \frac{b^2}{4a^2} - \frac{4ac}{4a^2}\\
+  &= \frac{b^2 - 4ac}{4a^2};\ \text{ take square roots on both sides with $\pm$ sign}\\
+  \left(x + \frac{b}{2a}\right) &= \pm\sqrt{\frac{b^2 - 4ac}{4a^2}};\ \text{ transpose $\frac{b}{2a}$ from left to right}\\
+  x &= -\frac{b}{2a} \pm \frac{\sqrt{b^2 - 4ac}}{2a}\\
+  &=\frac{-{b} \pm \sqrt{b^2 - 4ac}}{2a}
+  \end{aligned}
+  }\end{equation} Some of you might have found it hard to keep up with
+  the symbolic jugglery to arrive at \cref{eq:quad-formula} and I
+  sympathize with you.
+\end{enumerate}
+
+But there is a geometric side to most mathematical problems. So, if
+pictures appeal more to you, I suggest watching a YouTube video or
+two---with animation---to better understand the dance of the symbols
+above. I recommend either or both of these videos to help you understand
+the geometric basis for the quadratic formula, arrived at by completing
+the square:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \href{https://www.youtube.com/watch?v=T0HyWIFbsHQ}{Completing the
+  Square (visual proof)} {[}\citeproc{ref-mvp-2022}{2}{]}; and
+\item
+  \href{https://www.youtube.com/watch?v=7Q4h1YTYgnE}{But where does the
+  quadratic formula come from?}
+  {[}\citeproc{ref-foggy-maths-2023}{3}{]}.
+\end{enumerate}
 
 \subsubsection{Identities}\label{identities}
 
@@ -822,6 +887,10 @@ pictures.''
 
 \subsection{Acknowledgements}\label{acknowledgements}
 
+I acknowledge the valuable contributions from several readers of my blog
+who wish to remain anonymous. Their insights, coming from the viewpoints
+of students, helped to clarify what was still unclear.
+
 \subsection{Feedback}\label{feedback}
 
 Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
@@ -852,6 +921,18 @@ here}:
 Success}: {Timeless Principles for Lifelong Learning}. Retrieved 11
 February 2025 from
 \url{https://swanlotus.netlify.app/sas-manuscript/SAS-partial.pdf}}
+
+\bibitem[\citeproctext]{ref-mvp-2022}
+\CSLLeftMargin{{[}2{]} }%
+\CSLRightInline{Mathematical Visual Proofs. 2022. {Completing the Square
+(visual proof)}. Retrieved 15 February 2025 from
+\url{https://www.youtube.com/watch?v=T0HyWIFbsHQ}}
+
+\bibitem[\citeproctext]{ref-foggy-maths-2023}
+\CSLLeftMargin{{[}3{]} }%
+\CSLRightInline{FoggyMaths. 2023. {But where does the quadratic formula
+come from?} Retrieved 15 February 2025 from
+\url{https://www.youtube.com/watch?v=7Q4h1YTYgnE}}
 
 \end{CSLReferences}
 
