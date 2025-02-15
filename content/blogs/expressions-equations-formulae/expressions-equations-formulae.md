@@ -4,7 +4,7 @@ author: "R (Chandra) Chandrasekhar"
 date: 2025-02-10
 modified: 2025-02-15
 category: Mathematics
-tags: Simkin Tales, SAS, algebra
+tags: Simkin Tales, SAS, algebra, expressions, equations, identities, 
 summary: 'My dear friend, Solus "Sol" Simkin, casually asked me one summer day if I would write a blog demystifying the meanings and uses of four mathematical terms: expression, equation, formula, and differential equation. I thought that this was spoken in jest, and let his request lie in a dusty corner of my mind, as a memento to his humour.'
 opengraphimage: four-stages-of-learning.png
 ---
