@@ -414,7 +414,7 @@ these unknown quantities, much like we use \emph{pronouns} instead of
 \emph{proper nouns} for the names of people we do not know. Let us take
 a look at a potentially confusing expression:
 \begin{equation}\phantomsection\label{eq:abc}{
-\frac{(\frac{a}{b})}{c}
+\dfrac{\left(\dfrac{a}{b}\right)}{c}
 }\end{equation} What does it mean? Can it be simplified? If so, what is
 its simplified form? Does it convey any meaning? What is the purpose of
 the parentheses on top?
@@ -431,35 +431,37 @@ must be evaluated first because its numerator and denominator are
 bracketed or enclosed in parentheses:\footnote{See
   \hyperref[bidmas]{BIDMAS} later.}
 \begin{equation}\phantomsection\label{eq:a-over-b}{
-\frac{a}{b}
+\left(\dfrac{a}{b}\right)
 }\end{equation} This is now divided by the value \(c\).
 \href{https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one\#the-multiplicative-inverse-in-mathbbz-mathbbq-and-mathbbr}{We
 know} that \emph{dividing} by \(c\) amounts to \emph{multiplying} by
-\(\frac{1}{c}\). The expression may therefore be simplified
+\(\dfrac{1}{c}\). The expression may therefore be simplified
 so:\footnote{Refer to the chapter ``Arithmetic Revisited'' in the
   \emph{SAS} book {[}\citeproc{ref-sas}{1}{]} if you are still unclear
   about what follows.}
 \begin{equation}\phantomsection\label{eq:simplified}{
 \begin{aligned}
-\frac{\frac{a}{b}}{c} &= \frac{a}{b} \times \frac{1}{c}\\
-&= \frac{a \times 1}{b \times c}\\
-&= \frac{a}{bc}
+\dfrac{\left(\dfrac{a}{b}\right)}{c} &= \left(\dfrac{a}{b} \times \dfrac{1}{c}\right)\\
+&= \left(\dfrac{a \times 1}{b \times c}\right)\\
+&= \left(\dfrac{a}{bc}\right)
 \end{aligned}
 }\end{equation} Note that the horizontal line separating the numerator
 and the denominator is called the \emph{vinculum} and it is long enough
-to cover \emph{both} \(b\) and \(c\) in the denominator.
+to cover \emph{both} \(b\) and \(c\) in the denominator. I have inserted
+parentheses on the RHS of \cref{eq:simplified} to clarify the grouping
+of terms, but strictly, they are not necessary.
 
 If we did not have access to mathematical typesetting, this fraction
 would be written unambiguously as \(a/(bc)\) where the two terms in the
 denominator must be grouped together by parentheses. If instead, this
 was written as \(a/bc\) the expression could also be correctly read as
 \((a/b) \times c = (ac)/b\) which is different from \(a/(bc)\). This is
-reason enough to justify the use of brackets in mathematical
-expressions, which we take a look at next.
+reason enough to justify the use of parentheses or brackets in
+mathematical expressions, which we take a look at next.
 
 \subsubsection{BIDMAS}\label{bidmas}
 
-When a mathematical expression is evaluated, we work from right to left,
+When a mathematical expression is evaluated, we work from left to right,
 respecting
 \href{https://en.wikipedia.org/wiki/Order_of_operations}{operator
 precedence}. This is a convention that lays down a hierarchy or protocol
@@ -750,7 +752,7 @@ x &= -5 \text{ or} +5.\\
 \end{aligned}
 }\end{equation} In this case we have two \emph{distinct} roots:
 \(x = \pm5\). See \cref{fig:quadratic-graphs} where the lower curve
-intersects the \(x\)-axis at two distinct points.
+intersects the \(x\)-axis at these two distinct points.
 
 \begin{figure}
 \centering
@@ -831,8 +833,8 @@ the algorithm:
   &=\frac{-{b} \pm \sqrt{b^2 - 4ac}}{2a}
   \end{aligned}
   }\end{equation} Some of you might have found it hard to keep up with
-  the symbolic jugglery to arrive at \cref{eq:quad-formula} and I
-  sympathize with you.
+  the symbolic jugglery to arrive at the final form of
+  \cref{eq:quad-formula}, and I sympathize with you.
 \end{enumerate}
 
 But there is a geometric side to most mathematical problems. So, if
@@ -899,7 +901,7 @@ also be written as \[
 \] The three-line symbol is called a
 \href{https://en.wikipedia.org/wiki/Triple_bar}{triple bar}, although
 the the more youthful among us might recognize it as the
-\href{https://en.wikipedia.org/wiki/Hamburger_button}{hamburger button}.
+\href{https://en.wikipedia.org/wiki/Hamburger_button}{hamburger symbol}.
 
 Identities arise in different contexts and the Pythagorean theorem,
 applied to the unit circle, gives rise to the well known trigonometric
@@ -912,8 +914,8 @@ identity \[
 Formulae arise in different contexts. Water when expressed chemically is
 H\textsubscript{\(2\)}O. The word
 \href{https://www.vocabulary.com/dictionary/formulation}{formulation}
-refers to a collection of ingredients prepared in a specific recipe to
-serve a specific purpose. An ancient
+refers to a collection of ingredients prepared according to a specific
+recipe to serve a specific purpose. An ancient
 \href{https://pmc.ncbi.nlm.nih.gov/articles/PMC6571565/\#:~:text=Chyawanprash\%20is\%20formulated\%20by\%20processing,richest\%20source\%20of\%20vitamin\%20C}{vitality
 enhancing tonic}, for example, consists of dozens of ingredients
 combined in a specified way.

@@ -85,7 +85,7 @@ We will consider _equations_ a little later, but for now, bear in mind, that to 
 
 After we mature a little more mathematically, we start dealing with numbers whose values are not known. We use _letters_ to denote these unknown quantities, much like we use _pronouns_ instead of _proper nouns_ for the names of people we do not know. Let us take a look at a potentially confusing expression:
 $$
-\frac{(\frac{a}{b})}{c}
+\dfrac{\left(\dfrac{a}{b}\right)}{c}
 $${#eq:abc}
 What does it mean? Can it be simplified? If so, what is its simplified form? Does it convey any meaning? What is the purpose of the parentheses on top?
 
@@ -93,23 +93,23 @@ Mathematics is a language in which ambiguity is prohibited by strictly enforced 
 
 Does [@eq:abc]^[It is not an equation but an expression; my software did not allow that degree of customization. Please excuse this inaccuracy.] mean more than one thing? Not if we know our conventions. The expression consists of a value on top, divided by a value at the bottom. But the value at the top is itself a fraction, that must be evaluated first because its numerator and denominator are bracketed or enclosed in parentheses:^[See [BIDMAS](#bidmas) later.]
 $$
-\frac{a}{b}
+\left(\dfrac{a}{b}\right)
 $$ {#eq:a-over-b}
-This is now divided by the value $c$. [We know](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one#the-multiplicative-inverse-in-mathbbz-mathbbq-and-mathbbr) that _dividing_ by $c$ amounts to _multiplying_ by $\frac{1}{c}$. The expression may therefore be simplified so:^[Refer to the chapter "Arithmetic Revisited" in the _SAS_ book [@sas] if you are still unclear about what follows.]
+This is now divided by the value $c$. [We know](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one#the-multiplicative-inverse-in-mathbbz-mathbbq-and-mathbbr) that _dividing_ by $c$ amounts to _multiplying_ by $\dfrac{1}{c}$. The expression may therefore be simplified so:^[Refer to the chapter "Arithmetic Revisited" in the _SAS_ book [@sas] if you are still unclear about what follows.]
 $$
 \begin{aligned}
-\frac{\frac{a}{b}}{c} &= \frac{a}{b} \times \frac{1}{c}\\
-&= \frac{a \times 1}{b \times c}\\
-&= \frac{a}{bc}
+\dfrac{\left(\dfrac{a}{b}\right)}{c} &= \left(\dfrac{a}{b} \times \dfrac{1}{c}\right)\\
+&= \left(\dfrac{a \times 1}{b \times c}\right)\\
+&= \left(\dfrac{a}{bc}\right)
 \end{aligned}
 $$ {#eq:simplified}
-Note that the horizontal line separating the numerator and the denominator is called the _vinculum_ and it is long enough to cover _both_ $b$ and $c$ in the denominator.
+Note that the horizontal line separating the numerator and the denominator is called the _vinculum_ and it is long enough to cover _both_ $b$ and $c$ in the denominator. I have inserted parentheses on the RHS of  [@eq:simplified] to clarify the grouping of terms, but strictly, they are not necessary.
 
-If we did not have access to mathematical typesetting, this fraction would be written unambiguously as $a/(bc)$ where the two terms in the denominator must be grouped together by parentheses. If instead, this was written as $a/bc$ the expression could also be correctly read as $(a/b) \times c = (ac)/b$ which is different from $a/(bc)$. This is reason enough to justify the use of brackets in mathematical expressions, which we take a look at next.
+If we did not have access to mathematical typesetting, this fraction would be written unambiguously as $a/(bc)$ where the two terms in the denominator must be grouped together by parentheses. If instead, this was written as $a/bc$ the expression could also be correctly read as $(a/b) \times c = (ac)/b$ which is different from $a/(bc)$. This is reason enough to justify the use of parentheses or brackets in mathematical expressions, which we take a look at next.
 
 ### BIDMAS
 
-When a mathematical expression is evaluated, we work from right to left, respecting [operator precedence](https://en.wikipedia.org/wiki/Order_of_operations). This is a convention that lays down a hierarchy or protocol about which operation is performed before which. It is often reduced to the [mnemonic](https://www.dictionary.com/browse/mnemonic) [BIDMAS](https://en.wikipedia.org/wiki/Order_of_operations#Mnemonics).
+When a mathematical expression is evaluated, we work from left to right, respecting [operator precedence](https://en.wikipedia.org/wiki/Order_of_operations). This is a convention that lays down a hierarchy or protocol about which operation is performed before which. It is often reduced to the [mnemonic](https://www.dictionary.com/browse/mnemonic) [BIDMAS](https://en.wikipedia.org/wiki/Order_of_operations#Mnemonics).
 
 The initial _B_ stands for brackets, or parentheses. Bracketed expressions are evaluated first. Then we evaluate _I_ or indices: powers and square roots. The _DMAS_ stands for division, multiplication, addition, and subtraction in that order.
 
@@ -246,7 +246,7 @@ x^2 - 25 &= 0; \text{ difference of two squares}\\
 x &= -5 \text{ or} +5.\\ 
 \end{aligned}
 $$ {#eq:plus-minus-five}
-In this case we have two _distinct_ roots: $x = \pm5$. See [@fig:quadratic-graphs] where the lower curve intersects the $x$-axis at two distinct points.
+In this case we have two _distinct_ roots: $x = \pm5$. See [@fig:quadratic-graphs] where the lower curve intersects the $x$-axis at these two distinct points.
 
 ![Graphs of the two quadratic functions discussed in the text. The solutions to the respective quadratic equations are the values of $x$ at which the curves intersect the $x$-axis.]({attach}images/quadratic.svg){#fig:quadratic-graphs width=80% .modal-target}
 
@@ -298,7 +298,7 @@ x &= -\frac{b}{2a} \pm \frac{\sqrt{b^2 - 4ac}}{2a}\\
 &=\frac{-{b} \pm \sqrt{b^2 - 4ac}}{2a}
 \end{aligned}
 $${#eq:quad-formula}
-Some of you might have found it hard to keep up with the symbolic jugglery to arrive at [@eq:quad-formula] and I sympathize with you.
+Some of you might have found it hard to keep up with the symbolic jugglery to arrive at the final form of [@eq:quad-formula], and I sympathize with you.
 
 But there is a geometric side to most mathematical problems. So, if pictures appeal more to you, I suggest watching a YouTube video or three to better understand the dance of the symbols above. I recommend these three videos to help clarify the motivation and geometric basis for the quadratic formula, arrived at by completing the square:
 
@@ -333,7 +333,7 @@ To stress that this is no ordinary equation but an identity, it may also be writ
 $$
 (a+b)^2 \equiv a^2 +2ab + b^2.
 $$
-The three-line symbol is called a [triple bar](https://en.wikipedia.org/wiki/Triple_bar), although the the more youthful among us might recognize it as the [hamburger button](https://en.wikipedia.org/wiki/Hamburger_button).
+The three-line symbol is called a [triple bar](https://en.wikipedia.org/wiki/Triple_bar), although the the more youthful among us might recognize it as the [hamburger symbol](https://en.wikipedia.org/wiki/Hamburger_button).
 
 Identities arise in different contexts and the Pythagorean theorem, applied to the unit circle, gives rise to the well known trigonometric identity
 $$
@@ -342,7 +342,7 @@ $$
 
 ## Formulae
 
-Formulae arise in different contexts. Water when expressed chemically is H~$2$~O. The word [formulation](https://www.vocabulary.com/dictionary/formulation) refers to a collection of ingredients prepared in a specific recipe to serve a specific purpose. An ancient [vitality enhancing tonic](https://pmc.ncbi.nlm.nih.gov/articles/PMC6571565/#:~:text=Chyawanprash%20is%20formulated%20by%20processing,richest%20source%20of%20vitamin%20C), for example, consists of dozens of ingredients combined in a specified way.
+Formulae arise in different contexts. Water when expressed chemically is H~$2$~O. The word [formulation](https://www.vocabulary.com/dictionary/formulation) refers to a collection of ingredients prepared according to a specific recipe to serve a specific purpose. An ancient [vitality enhancing tonic](https://pmc.ncbi.nlm.nih.gov/articles/PMC6571565/#:~:text=Chyawanprash%20is%20formulated%20by%20processing,richest%20source%20of%20vitamin%20C), for example, consists of dozens of ingredients combined in a specified way.
 
 But the [formulae](https://en.wikipedia.org/wiki/Formula) we refer to here are succinct mathematical statements whose truth has been established, and whose use saves time and effort. In this sense, all [theorems](https://en.wikipedia.org/wiki/Formula) are formulae. They save us having to re-invent the wheel each time we are faced with an already-solved task.
 
