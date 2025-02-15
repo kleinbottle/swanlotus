@@ -236,7 +236,7 @@
 
 \title{Expressions, Equations, and Formulae}
 \author{R (Chandra) Chandrasekhar}
-\date{2025-02-14 | 2025-02-14}
+\date{2025-02-10 | 2025-02-15}
 
 \begin{document}
 \maketitle
@@ -640,9 +640,9 @@ expression consisting of just \emph{a single term}.
 
 A binomial is the sum of two monomials. A trinomial is the sum of three
 monomials. And, finally, a polynomial the sum of three or more
-monomials. Note that by
-\href{https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one}{sum\_
-we also include subtraction}.
+monomials. Note that
+\href{https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one}{by
+sum, we also include subtraction}.
 
 A single number by itself like \(42\) or \(-17\) is a (constant)
 monomial. When the number appears as part of a variable, like \(42x^2\),
@@ -650,14 +650,15 @@ the \(42\) is called the \emph{coefficient} of the variable \(x^2\).
 Note that
 \href{https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one}{a
 standalone constant may also be viewed as the coefficient of a variable
-raised to the zeroth power}, e.g, \(42 = 42x^{0}\).
+raised to the zeroth power}, e.g, \(42 = 42x^{0}\). In this blog, we
+deal only with real coefficients.
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1765}}
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1912}}
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3235}}
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3088}}@{}}
-\caption{\label{tbl:nomials}Monimials, binomials, trinomials, and
+\caption{\label{tbl:nomials}Monomials, binomials, trinomials, and
 polynomials}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
@@ -723,16 +724,18 @@ depending upon the context in which it is viewed.
 When a quadratic polynomial is equated to zero, we have a
 \href{https://en.wikipedia.org/wiki/Quadratic_equation}{quadratic
 equation}. Let us convert the quadratic in \cref{eq:quad-expand} into
-the quadratic equation \[
+the quadratic equation
+\begin{equation}\phantomsection\label{eq:repeated-root}{
 \begin{aligned}
 x^2 -10x + 25 &= 0\\
 (x - 5)^2 &= 0\\
 (x - 5)(x - 5) &= 0\\
 x &= 5.
 \end{aligned}
-\] \{\#eqn:repeated-root\} This is a case of a quadratic that is a
-perfect square and the root \(x = 5\) is \emph{repeated}; see
-\cref{fig:quadratic-graphs}.
+}\end{equation} This is a case of a quadratic that is a perfect square
+and the root \(x = 5\) is \emph{repeated}. See
+\cref{fig:quadratic-graphs} where the upper curve is \emph{tangent} to
+the \(x\)-axis.
 
 But what happens when the root is not repeated? Let us look at
 \(x^2 - 25 = 0\):
@@ -743,7 +746,8 @@ x^2 - 25 &= 0; \text{ difference of two squares}\\
 x &= -5 \text{ or} +5.\\ 
 \end{aligned}
 }\end{equation} In this case we have two \emph{distinct} roots:
-\(x = \pm5\); see \cref{fig:quadratic-graphs}.
+\(x = \pm5\). See \cref{fig:quadratic-graphs} where the lower curve
+intersects the \(x\)-axis at two distinct points.
 
 \begin{figure}
 \centering
@@ -798,17 +802,19 @@ the algorithm:
   \end{aligned}
   }\end{equation}
 \item
-  Note that the constant term \(\left(\dfrac{b^2}{4a^2}\right)\) has now
-  been injected extraneously into \cref{eq:extra-term}, by virtue of our
-  simulating a square. It must be removed by subtraction to restore the
-  orignal equation, so that our equation becomes:
+  Note that when \cref{eq:extra-term} is compared to
+  \cref{eq:normalized-one}, the constant term
+  \(\left(\dfrac{b^2}{4a^2}\right)\) has now been inserted extraneously
+  by virtue of our simulating a square. It must be removed by
+  subtraction to restore the original \cref{eq:normalized-one}, so that
+  our equation becomes:
   \begin{equation}\phantomsection\label{eq:quad-formula}{
   \begin{aligned}
   \left(x + \frac{b}{2a}\right)^2 - \left(\frac{b^2}{4a^2}\right) + \frac{c}{a} &= 0; \text{ leading to}\\
   \left(x + \frac{b}{2a}\right)^2 &= \left(\frac{b^2}{4a^2}\right) - \frac{c}{a}\\
   &= \frac{b^2}{4a^2} - \frac{4ac}{4a^2}\\
-  &= \frac{b^2 - 4ac}{4a^2};\ \text{ take square roots on both sides}\\
-  \left(x + \frac{b}{2a}\right) &= \pm\sqrt{\frac{b^2 - 4ac}{4a^2}};\ \text{ transpose $\frac{b}{2a}$ from left to right}\\
+  &= \frac{b^2 - 4ac}{4a^2}; \text{ take square roots on both sides}\\
+  \left(x + \frac{b}{2a}\right) &= \pm\sqrt{\frac{b^2 - 4ac}{4a^2}}; \text{ transpose $\frac{b}{2a}$ from left to right}\\
   x &= -\frac{b}{2a} \pm \frac{\sqrt{b^2 - 4ac}}{2a}\\
   &=\frac{-{b} \pm \sqrt{b^2 - 4ac}}{2a}
   \end{aligned}
@@ -818,11 +824,10 @@ the algorithm:
 \end{enumerate}
 
 But there is a geometric side to most mathematical problems. So, if
-pictures appeal more to you, I suggest watching a YouTube video or
-two---with animation---to better understand the dance of the symbols
-above. I recommend either or both of these videos to help you understand
-the geometric basis for the quadratic formula, arrived at by completing
-the square:
+pictures appeal more to you, I suggest watching a YouTube video or three
+to better understand the dance of the symbols above. I recommend these
+three videos to help you understand the motivation and geometric basis
+for the quadratic formula, arrived at by completing the square:
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -838,11 +843,32 @@ the square:
   Explanation of Completing the Square} {[}\citeproc{ref-woo-2016}{4}{]}
 \end{enumerate}
 
-I am confident that one of these explanations will resonate with you,
-and that you will get a
+I am confident that at least one of these explanations will resonate
+with you, and that you will get a
 \href{https://nesslabs.com/eureka-moments}{eureka moment} once the
 method clicks. It is only then that you have made some of this knowledge
-your own.
+your own through self-effort.
+
+As always, there is more to the quadratic formula than has been
+discussed here. If the value of the expression under the square root,
+\((b^2 - 4ac)\), called the
+\href{https://www.britannica.com/science/discriminant}{discriminant},
+helps determine the \emph{nature} of the roots of the quadratic
+equation, without actually solving the equation:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  If the discriminant is positive, the roots will be real and distinct;
+\item
+  If the discriminant is zero, there will be a real, repeated root;
+\item
+  If the discriminant is negative, the roots will be a
+  \href{https://www.mathcentre.ac.uk/resources/sigma\%20complex\%20number\%20leaflets/sigma-complex6-2009-1.pdf}{complex
+  conjugate} pair.
+\end{enumerate}
+
+There are other interesting properties as well, but I will stop here.
 
 \subsubsection{Identities}\label{identities}
 
@@ -855,7 +881,7 @@ their importance and usefulness.
 
 Simply by expanding and multiplying out, we know that \[
 (a+b)^2 = a^2 +2ab + b^2. 
-\] To stress that this is no ordinary equation but an identity, this may
+\] To stress that this is no ordinary equation but an identity, it may
 also be written as \[
 (a+b)^2 \equiv a^2 +2ab + b^2.
 \] The three-line symbol is called a
@@ -870,19 +896,26 @@ applied to the unit circle, gives rise to the well known identity \[
 
 \subsection{Formulae}\label{formulae}
 
-Formulae arise in different contexts and appear different. Water when
-expressed chemically is H\textsubscript{\(2\)}O. But the
-\href{https://en.wikipedia.org/wiki/Formula}{formulae} we refer to here
-are succinct mathematical statements whose truth has been established,
-and whose use saves time and effort. In this sense, all
+Formulae arise in different contexts. Water when expressed chemically is
+H\textsubscript{\(2\)}O. The word
+\href{https://www.vocabulary.com/dictionary/formulation}{formulation}
+refers to a collection of ingredients prepared in a specific recipe to
+serve a specific purpose. An ancient
+\href{https://pmc.ncbi.nlm.nih.gov/articles/PMC6571565/\#:~:text=Chyawanprash\%20is\%20formulated\%20by\%20processing,richest\%20source\%20of\%20vitamin\%20C}{vitality
+enhancing tonic}, for example, consists of dozens of ingredients
+combined in a specified way.
+
+But the \href{https://en.wikipedia.org/wiki/Formula}{formulae} we refer
+to here are succinct mathematical statements whose truth has been
+established, and whose use saves time and effort. In this sense, all
 \href{https://en.wikipedia.org/wiki/Formula}{theorems} are formulae.
 They save us having to re-invent the wheel each time we are faced with
 an already-solved task.
 
-Early encounters with mathematical formulae arise with simple
-expressions for the area of a triangle (\(\frac{1}{2}bh\)), the
-circumference of a circle (\(2\pi r\)), or the volume of a sphere
-(\(\frac{4}{3}\pi r^3\)).
+Early encounters with mathematical formulae arise with simple equations
+for the area of a triangle (A = \(\frac{1}{2}bh\)), the circumference of
+a circle (\(C = 2\pi r\)), or the volume of a sphere
+(\(V = \frac{4}{3}\pi r^3\)).
 
 The importance of formulae as conveniences is summarized by this
 quotation from the famous computer scientist
@@ -897,8 +930,8 @@ pictures.''
 \subsection{Acknowledgements}\label{acknowledgements}
 
 I acknowledge the valuable contributions from several readers of my blog
-who wish to remain anonymous. Their insights, coming from the viewpoints
-of students, helped to clarify what was still unclear.
+who shall remain anonymous. Their insights, carrying the fresh
+viewpoints of students, helped to clarify much that was still unclear.
 
 \subsection{Feedback}\label{feedback}
 
@@ -946,7 +979,7 @@ come from?} Retrieved 15 February 2025 from
 \bibitem[\citeproctext]{ref-woo-2016}
 \CSLLeftMargin{{[}4{]} }%
 \CSLRightInline{Eddie Woo. 2016.{ Beautiful Visual Explanation of
-Completing the Square Eddie Woo}. Retrieved 15 February 2025 from
+Completing the Square}. Retrieved 15 February 2025 from
 \url{https://www.youtube.com/watch?v=McDdEw_Fb5E}}
 
 \end{CSLReferences}

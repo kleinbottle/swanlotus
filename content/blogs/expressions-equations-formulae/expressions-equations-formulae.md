@@ -1,8 +1,8 @@
 ---
 title: "Expressions, Equations, and Formulae"
 author: "R (Chandra) Chandrasekhar"
-date: 2025-02-14
-modified: 2025-02-14
+date: 2025-02-10
+modified: 2025-02-15
 category: Mathematics
 tags: Simkin Tales, SAS, algebra
 summary: 'My dear friend, Solus "Sol" Simkin, casually asked me one summer day if I would write a blog demystifying the meanings and uses of four mathematical terms: expression, equation, formula, and differential equation. I thought that this was spoken in jest, and let his request lie in a dusty corner of my mind, as a memento to his humour.'
@@ -200,9 +200,9 @@ Let us detour a little to review expressions again. Expressions that satisfy cer
 
 A monomial is defined as a constant, a variable, or a product of variables, each raised to a non-negative integer exponent. It is an expression consisting of just _a single term_.
 
-A binomial is the sum of two monomials. A trinomial is the sum of three monomials. And, finally, a polynomial the sum of three or more monomials. Note that by [sum_ we also include subtraction](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one).
+A binomial is the sum of two monomials. A trinomial is the sum of three monomials. And, finally, a polynomial the sum of three or more monomials. Note that [by sum, we also include subtraction](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one).
 
-A single number by itself like $42$ or $-17$ is a  (constant) monomial. When the number appears as part of a variable, like $42x^2$, the $42$ is called the _coefficient_ of the variable $x^2$. Note that [a standalone constant may also be viewed as the coefficient of a variable raised to the zeroth power](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one), e.g, $42 = 42x^{0}$.
+A single number by itself like $42$ or $-17$ is a  (constant) monomial. When the number appears as part of a variable, like $42x^2$, the $42$ is called the _coefficient_ of the variable $x^2$. Note that [a standalone constant may also be viewed as the coefficient of a variable raised to the zeroth power](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one), e.g, $42 = 42x^{0}$. In this blog, we deal only with real coefficients.
 
 |    Name    | Prefix | Meaning | Examples |
 |:-----------|:------------|:---------------------|:--------------------|
@@ -211,7 +211,7 @@ A single number by itself like $42$ or $-17$ is a  (constant) monomial. When the
 | Trinomial | tri | three terms | $x^2 - 2x + 1, u + v + w$ |
 | Polynomial | poly | many terms | $25x^3 + 4y^2 + z^4 + 37$ |
 
-: Monimials, binomials, trinomials, and polynomials {#tbl:nomials}
+: Monomials, binomials, trinomials, and polynomials {#tbl:nomials}
 
 What sort of terms do _not_ qualify to be one of the "nomials"? What about $c^{\frac{1}{5}}$? A fractional power like $\frac{1}{5}$ is not a non-negative integer. So, it does not qualify. Consider also $x^{-5}$. No again, as $-5$ is a negative integer.
 
@@ -235,8 +235,8 @@ x^2 -10x + 25 &= 0\\
 (x - 5)(x - 5) &= 0\\
 x &= 5.
 \end{aligned}
-$$ {#eqn:repeated-root}
-This is a case of a quadratic that is a perfect square and the root $x = 5$ is _repeated_; see [@fig:quadratic-graphs].
+$$ {#eq:repeated-root}
+This is a case of a quadratic that is a perfect square and the root $x = 5$ is _repeated_. See [@fig:quadratic-graphs] where the upper curve is _tangent_ to the $x$-axis.
 
 But what happens when the root is not repeated? Let us look at $x^2 - 25 = 0$:
 $$
@@ -246,7 +246,7 @@ x^2 - 25 &= 0; \text{ difference of two squares}\\
 x &= -5 \text{ or} +5.\\ 
 \end{aligned}
 $$ {#eq:plus-minus-five}
-In this case we have two _distinct_ roots: $x = \pm5$; see [@fig:quadratic-graphs].
+In this case we have two _distinct_ roots: $x = \pm5$. See [@fig:quadratic-graphs] where the lower curve intersects the $x$-axis at two distinct points.
 
 ![Graphs of the two quadratic functions discussed in the text. The solutions to the repective quadratic equations are the values of $x$ at which the curves intersect the $x$-axis.]({attach}images/quadratic.svg){#fig:quadratic-graphs width=80% .modal-target}
 
@@ -283,21 +283,21 @@ $$
 \end{aligned}
 $${#eq:extra-term}
 
-#. Note that the constant term $\left(\dfrac{b^2}{4a^2}\right)$ has now been injected extraneously into [@eq:extra-term], by virtue of our simulating a square. It must be removed by subtraction to restore the orignal equation, so that our equation becomes:
+#. Note that when [@eq:extra-term] is compared to [@eq:normalized-one], the constant term $\left(\dfrac{b^2}{4a^2}\right)$ has now been inserted extraneously by virtue of our simulating a square. It must be removed by subtraction to restore the original [@eq:normalized-one], so that our equation becomes:
 $$
 \begin{aligned}
 \left(x + \frac{b}{2a}\right)^2 - \left(\frac{b^2}{4a^2}\right) + \frac{c}{a} &= 0; \text{ leading to}\\
 \left(x + \frac{b}{2a}\right)^2 &= \left(\frac{b^2}{4a^2}\right) - \frac{c}{a}\\
 &= \frac{b^2}{4a^2} - \frac{4ac}{4a^2}\\
-&= \frac{b^2 - 4ac}{4a^2};\ \text{ take square roots on both sides}\\
-\left(x + \frac{b}{2a}\right) &= \pm\sqrt{\frac{b^2 - 4ac}{4a^2}};\ \text{ transpose $\frac{b}{2a}$ from left to right}\\
+&= \frac{b^2 - 4ac}{4a^2}; \text{ take square roots on both sides}\\
+\left(x + \frac{b}{2a}\right) &= \pm\sqrt{\frac{b^2 - 4ac}{4a^2}}; \text{ transpose $\frac{b}{2a}$ from left to right}\\
 x &= -\frac{b}{2a} \pm \frac{\sqrt{b^2 - 4ac}}{2a}\\
 &=\frac{-{b} \pm \sqrt{b^2 - 4ac}}{2a}
 \end{aligned}
 $${#eq:quad-formula}
 Some of you might have found it hard to keep up with the symbolic jugglery to arrive at [@eq:quad-formula] and I sympathize with you.
 
-But there is a geometric side to most mathematical problems. So, if pictures appeal more to you, I suggest watching a YouTube video or two---with animation---to better understand the dance of the symbols above. I recommend either or both of these videos to help you understand the geometric basis for the quadratic formula, arrived at by completing the square:
+But there is a geometric side to most mathematical problems. So, if pictures appeal more to you, I suggest watching a YouTube video or three to better understand the dance of the symbols above. I recommend these three videos to help you understand the motivation and geometric basis for the quadratic formula, arrived at by completing the square:
 
 a.  [Completing the Square (visual proof)](https://www.youtube.com/watch?v=T0HyWIFbsHQ) [@mvp-2022]; and
 
@@ -305,7 +305,18 @@ a.  [But where does the quadratic formula come from?](https://www.youtube.com/wa
 
 a.  [Beautiful Visual Explanation of Completing the Square](https://www.youtube.com/watch?v=McDdEw_Fb5E) [@woo-2016]
 
-I am confident that one of these explanations will resonate with you, and that you will get a [eureka moment](https://nesslabs.com/eureka-moments) once the method clicks. It is only then that you have made some of this knowledge your own.
+I am confident that at least one of these explanations will resonate with you, and that you will get a [eureka moment](https://nesslabs.com/eureka-moments) once the method clicks. It is only then that you have made some of this knowledge your own through self-effort.
+
+As always, there is more to the quadratic formula than has been discussed here. If the value of the expression under the square root, $(b^2 - 4ac)$, called the [discriminant](https://www.britannica.com/science/discriminant), helps determine the _nature_ of the roots of the quadratic equation, without actually solving the equation:
+
+a. If the discriminant is positive, the roots will be real and distinct;
+
+a. If the discriminant is zero, there will be a real, repeated root;
+
+a. If the discriminant is negative, the roots will be a [complex conjugate](https://www.mathcentre.ac.uk/resources/sigma%20complex%20number%20leaflets/sigma-complex6-2009-1.pdf) pair.
+
+There are other interesting properties as well, but I will stop here.
+
 
 ### Identities
 
@@ -315,7 +326,7 @@ Simply by expanding and multiplying out, we know that
 $$
 (a+b)^2 = a^2 +2ab + b^2. 
 $$
-To stress that this is no ordinary equation but an identity, this may also be written as
+To stress that this is no ordinary equation but an identity, it may also be written as
 $$
 (a+b)^2 \equiv a^2 +2ab + b^2.
 $$
@@ -328,9 +339,11 @@ $$
 
 ## Formulae
 
-Formulae arise in different contexts and appear different. Water when expressed chemically is H~$2$~O. But the [formulae](https://en.wikipedia.org/wiki/Formula) we refer to here are succinct mathematical statements whose truth has been established, and whose use saves time and effort. In this sense, all [theorems](https://en.wikipedia.org/wiki/Formula) are formulae. They save us having to re-invent the wheel each time we are faced with an already-solved task.
+Formulae arise in different contexts. Water when expressed chemically is H~$2$~O. The word [formulation](https://www.vocabulary.com/dictionary/formulation) refers to a collection of ingredients prepared in a specific recipe to serve a specific purpose. An ancient [vitality enhancing tonic](https://pmc.ncbi.nlm.nih.gov/articles/PMC6571565/#:~:text=Chyawanprash%20is%20formulated%20by%20processing,richest%20source%20of%20vitamin%20C), for example, consists of dozens of ingredients combined in a specified way.
 
-Early encounters with mathematical formulae arise with simple expressions for the area of a triangle ($\frac{1}{2}bh$), the circumference of a circle ($2\pi r$), or the volume of a sphere ($\frac{4}{3}\pi r^3$).
+But the [formulae](https://en.wikipedia.org/wiki/Formula) we refer to here are succinct mathematical statements whose truth has been established, and whose use saves time and effort. In this sense, all [theorems](https://en.wikipedia.org/wiki/Formula) are formulae. They save us having to re-invent the wheel each time we are faced with an already-solved task.
+
+Early encounters with mathematical formulae arise with simple equations for the area of a triangle (A = $\frac{1}{2}bh$), the circumference of a circle ($C = 2\pi r$), or the volume of a sphere ($V = \frac{4}{3}\pi r^3$).
 
 The importance of formulae as conveniences is summarized by this quotation from the famous computer scientist [Edsger Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra):
 
@@ -338,7 +351,7 @@ The importance of formulae as conveniences is summarized by this quotation from 
 
 ## Acknowledgements
 
-I acknowledge the valuable contributions from several readers of my blog who wish to remain anonymous. Their insights, coming from the viewpoints of students, helped to clarify what was still unclear.
+I acknowledge the valuable contributions from several readers of my blog who shall remain anonymous. Their insights, carrying the fresh viewpoints of students, helped to clarify much that was still unclear.
 
 ## Feedback
 
