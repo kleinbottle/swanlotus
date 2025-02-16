@@ -25,7 +25,7 @@ Never one to be pig-headed, Sol agreed.
 
 Somewhat diffidently, I took up his challenge, complete with its stipulations. This blog was born after much cogitation, and is really my first attempt at presenting and exemplifying fundamental definitions, usually taught in elementary school.^[I usually find it easier to explain concepts to students in middle school and beyond, rather than to elementary school students.] Any reader who still finds it conceptually muddy or murky is cordially invited to [write to me](mailto:feedback.swanlotus@gmail.com).
 
-I have borrowed liberally from material contained in my book-manuscript [_Secrets of Academic Success_](https://swanlotus.netlify.app/sas-manuscript/SAS-partial.pdf), henceforth referred to as _SAS_. Perhaps the earnest student will be inspired to look for clarification there as well. \emojifont :wink:  \normalfont
+I have borrowed liberally from material contained in my book-manuscript, [_Secrets of Academic Success_](https://swanlotus.netlify.app/sas-manuscript/SAS-partial.pdf), henceforth referred to as _SAS_. Perhaps the earnest student will be inspired to look for clarification there as well. \emojifont :wink:  \normalfont
 
 ## Starting at the beginning
 
@@ -200,7 +200,7 @@ Let us detour a little to review expressions again. Expressions that satisfy cer
 
 A monomial is defined as a constant, a variable, or a product of variables, each raised to a non-negative integer exponent. It is an expression consisting of just _a single term_.
 
-A binomial is the sum of two monomials. A trinomial is the sum of three monomials. And, finally, a polynomial the sum of three or more monomials. Note that [by sum, we also include subtraction](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one).
+A binomial is the sum of two monomials. A trinomial is the sum of three monomials. And, finally, a polynomial is the sum of three or more monomials. Note that [by sum, we also include subtraction](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one).
 
 A single number by itself like $42$ or $-17$ is a  (constant) monomial. When the number appears as part of a variable, like $42x^2$, the $42$ is called the _coefficient_ of the variable $x^2$. Note that [a standalone constant may also be viewed as the coefficient of a variable raised to the zeroth power](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one), e.g, $42 = 42x^{0}$. In this blog, we deal only with real coefficients.
 
@@ -266,7 +266,7 @@ $$
 $$ {#eq:no-a}
 Let [@eq:no-a] be called the _normalized_ quadratic equation.
 
-#. Let us digress a little. Consider a linear binomial term in $x$, like $(x + k)$, and square it. Then, $(x + k)^2 = x^2 + 2kx + k^2$ for all $x$ and $k$.^[This is an [identity](#identities).] The middle term, containing $x$, _always_ has a factor of $2$ in it.
+#. Let us digress a little. Consider a linear binomial term in $x$, like $(x + k)$, with $k$ being a real constant, and square it. Then, $(x + k)^2 = x^2 + 2kx + k^2$ for all $x$ and $k$.^[This is an [identity](#identities).] The middle term, containing $x$, _always_ has a factor of $2$ in it.
 
 #. To insert an explicit factor of $2$ in the term for $x$, in the normalized quadratic equation, we divide the term containing $x$ by $2$ and then multiply it by $2$, preserving the rest of the coefficient, thus:
 $$
@@ -302,11 +302,11 @@ Some of you might have found it hard to keep up with the symbolic jugglery to ar
 
 But there is a geometric side to most mathematical problems. So, if pictures appeal more to you, I suggest watching a YouTube video or three to better understand the dance of the symbols above. I recommend these three videos to help clarify the motivation and geometric basis for the quadratic formula, arrived at by completing the square:
 
-a.  [Completing the Square (visual proof)](https://www.youtube.com/watch?v=T0HyWIFbsHQ) [@mvp-2022]; and
+a.  [Completing the Square (visual proof)](https://www.youtube.com/watch?v=T0HyWIFbsHQ) [@mvp-2022];
 
-a.  [But where does the quadratic formula come from?](https://www.youtube.com/watch?v=7Q4h1YTYgnE) [@foggy-maths-2023].
+a.  [But where does the quadratic formula come from?](https://www.youtube.com/watch?v=7Q4h1YTYgnE) [@foggy-maths-2023]; and
 
-a.  [Beautiful Visual Explanation of Completing the Square](https://www.youtube.com/watch?v=McDdEw_Fb5E) [@woo-2016]
+a.  [Beautiful Visual Explanation of Completing the Square](https://www.youtube.com/watch?v=McDdEw_Fb5E) [@woo-2016].
 
 I am confident that at least one of these explanations will resonate with you, and that you will get a [eureka moment](https://nesslabs.com/eureka-moments) once the method clicks. It is only then that you have made some of this knowledge your own through self-effort.
 
@@ -351,6 +351,8 @@ Early encounters with mathematical formulae arise with simple equations for the 
 The importance of formulae as conveniences is summarized by this quotation from the famous computer scientist [Edsger Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra):
 
 >"A picture may be worth a thousand words, a formula is worth a thousand pictures."
+
+And with that memorable quote, I conclude this blog, lest it stretch to infinity!
 
 ## Acknowledgements
 
