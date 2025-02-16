@@ -348,7 +348,7 @@ But the [formulae](https://en.wikipedia.org/wiki/Formula) we refer to here are s
 
 Early encounters with mathematical formulae arise with simple equations for the area of a triangle (A = $\frac{1}{2}bh$), the circumference of a circle ($C = 2\pi r$), or the volume of a sphere ($V = \frac{4}{3}\pi r^3$).
 
-The importance of formulae as conveniences is summarized by this quotation from the famous computer scientist [Edsger Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra) [@dijkstra-hand;@dijkstra-html]:
+The importance of formulae as conveniences is summarized by this quotation from the famous computer scientist [Edsger Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra) [@dijkstra-hand;@dijkstra-html]^[I highly recommend readers of this blog to read Professor Dijkstra's exemplary essay. It exhibits the elegance characteristic of a rounded scholar of yesteryear, who is knowledgeable not only in mathematics and logic, but also in Latin, history, and philosophy.] :
 
 >"A picture may be worth a thousand words, a formula is worth a thousand pictures."
 
