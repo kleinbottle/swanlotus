@@ -1,0 +1,426 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode,linktoc=all}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  a4paper,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=25mm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{british}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+% $HOME/.pandoc/defaults/latex-header-includes.tex
+% Common header includes for both lualatex and xelatex engines.
+%
+% Preliminaries
+%
+% \PassOptionsToPackage{rgb,dvipsnames,svgnames}{xcolor}
+% \PassOptionsToPackage{main=british}{babel}
+\PassOptionsToPackage{english}{selnolig}
+\AtBeginEnvironment{quote}{\small}
+\AtBeginEnvironment{quotation}{\small}
+\AtBeginEnvironment{longtable}{\centering}
+%
+% Packages that are useful to include
+%
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[inkscapeversion=auto]{svg}
+\usepackage{nowidow}
+\usepackage{etoolbox}
+\usepackage{fontsize}
+\usepackage{newunicodechar}
+\usepackage{pdflscape}
+\usepackage{fnpct}
+\usepackage{parskip}
+  \setlength{\parindent}{0pt}
+\usepackage[style=american]{csquotes}
+% \usepackage{setspace} Use the <fontname-plus.tex> files for setspace
+%
+\usepackage{hyperref} % cleveref must come AFTER hyperref
+\usepackage[capitalize,noabbrev]{cleveref} % Must come after hyperref
+\let\longdivision\relax
+\usepackage{longdivision}
+\newcommand{\dd}{\ensuremath{mathrm d}}
+%
+% Assume that amsmath is already loaded via \usepackage{amsmath}
+% in the standard LaTeX template foe Pandoc
+% 
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arccoth}{arccoth} 
+% noto-plus.tex
+% Font-setting header file for use with Pandoc Markdown
+% to generate PDF via LuaLaTeX.
+% The main font is Noto Serif.
+% Other main fonts are also available in appropriately named file.
+\usepackage{fontspec}
+\usepackage{setspace}
+\setstretch{1.3}
+%
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase,Renderer=Node} % at the start always
+%
+% For English
+% See also https://tex.stackexchange.com/questions/574047/lualatex-amsthm-polyglossia-charissil-error
+% We use Node as Renderer for the Latin Font and Greek Font and HarfBuzz as renderer ofr Indic fonts.
+%
+\babelfont{rm}[Script=Latin,Scale=1]{NotoSerif}% Config is at $HOME/texmf/tex/latex/NotoSerif.fontspec
+\babelfont{sf}[Script=Latin]{SourceSansPro}% Config is at $HOME/texmf/tex/latex/SourceSansPro.fontspec
+\babelfont{tt}[Script=Latin]{FiraMono}% Config is at $HOME/texmf/tex/latex/FiraMono.fontspec
+%
+% Sanskrit, Tamil, and Greek fonts
+%
+\babelprovide[import, onchar=ids fonts]{sanskrit}
+\babelprovide[import, onchar=ids fonts]{tamil}
+\babelprovide[import, onchar=ids fonts]{greek}
+%
+\babelfont[sanskrit]{rm}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSerifDevanagari}
+\babelfont[sanskrit]{sf}[Scale=1.1,Renderer=HarfBuzz,Script=Devanagari]{NotoSansDevanagari}
+\babelfont[tamil]{rm}[Renderer=HarfBuzz,Script=Tamil]{NotoSerifTamil}
+\babelfont[tamil]{sf}[Renderer=HarfBuzz,Script=Tamil]{NotoSansTamil}
+\babelfont[greek]{rm}[Script=Greek]{GentiumBookPlus}
+%
+% Math font
+%
+\usepackage{unicode-math} % seems not to hurt % fallabck
+\setmathfont[bold-style=TeX]{STIX Two Math}
+\usepackage{amsmath}
+\usepackage{esdiff} % for derivative symbols
+% \renewcommand{\mathbf}{\symbf}
+%
+%
+% Other fonts
+%
+\newfontfamily{\emojifont}{Symbola}
+%
+
+\usepackage{titling}
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0.2pt}
+    \renewcommand{\footrulewidth}{0.2pt}
+    \fancyhead[LO,RE]{\scshape\thetitle}
+    \fancyfoot[CO,CE]{\footnotesize Copyright © 2006\textendash\the\year, R (Chandra) Chandrasekhar}
+    \fancyfoot[RE,RO]{\thepage}
+%
+\usepackage{newunicodechar}
+\newunicodechar{√}{\textsf{√}}
+\usepackage {caption}
+    \captionsetup{font={sf,stretch=1.4}}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{sf}
+\hypersetup{
+  pdftitle={Differential Equations},
+  pdfauthor={R (Chandra) Chandrasekhar},
+  pdflang={en-GB},
+  colorlinks=true,
+  linkcolor={DarkGreen},
+  filecolor={Purple},
+  citecolor={Teal},
+  urlcolor={Maroon},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Differential Equations}
+\author{R (Chandra) Chandrasekhar}
+\date{2025-02-17 | 2025-02-17}
+
+\begin{document}
+\maketitle
+
+\thispagestyle{empty}
+
+
+\begin{small}
+
+\begin{quote}
+Isaac Newton was the first to glimpse this secret of the universe. He
+found that the orbits of the planets, the rhythm of the tides, and the
+trajectories of cannonballs could all be described, explained, and
+predicted by a small set of differential equations. Today we call them
+Newton's laws of motion and gravity. Ever since Newton, we have found
+that the same pattern holds whenever we uncover a new part of the
+universe. From the old elements of earth, air, fire, and water to the
+latest in electrons, quarks, black holes, and superstrings, every
+inanimate thing in the universe bends to the rule of differential
+equations. I bet this is what Feynman meant when he said that calculus
+is the language God talks. If anything deserves to be called the secret
+of the universe, calculus is it.
+\end{quote}
+
+\end{small}
+
+\begin{flushright}
+
+\begin{footnotesize}
+
+\textsc{Steven Strogatz}\\
+\emph{Infinite Powers}, {[}\citeproc{ref-strogatz-2019}{1}{]}
+
+\end{footnotesize}
+
+\end{flushright}
+
+\subsection{A Promise kept}\label{a-promise-kept}
+
+You might recall from my blog
+\href{https://swanlotus.netlify.app/blogs/expressions-equations-and-formulae}{Expressions,
+Equations, and Formulae} that my friend Solus ``Sol'' Simkin had asked
+me to write on differential equations as well, when he first requested a
+blog. This blog is my promise kept to him.
+
+\subsection{A Gentle Entry}\label{a-gentle-entry}
+
+When you make a cup of tea, you must allow time for the tea to infuse.
+Likewise, with a cup of coffee, you need percolation time. With new
+knowledge, it is no different. You need time to allow the new knowledge
+to steep into your mind and find its place alongside old knowledge. It
+is only then that you become comfortable with what is new. Be gentle on
+yourself if things do not pop out of the page at once. You are making
+friends with mathematical ideas that took centuries to evolve and
+mature.
+
+To many students, mathematics is daunting, calculus even more so, and
+differential equations are downright terrifying. Nevertheless, there are
+authors who tame the subject rather than taunt the student. They
+approach the subject leisurely, allowing the reader to enjoy the view,
+and explaining interesting sights along the way. There are others who
+use pictures in preference to words. I have chosen two books---one from
+each category---as recommended books to read, along with this blog, or
+even before it. Here are my two selections.
+
+\subsubsection{Steven Strogatz}\label{steven-strogatz}
+
+The applied mathematician
+\href{https://en.wikipedia.org/wiki/Steven_Strogatz}{Steven Strogatz} is
+one of my favourite authors active in the popular mathematics genre
+today. He kows how to interest, educate, and sometimes, even entertain.
+Learning becomes easy and enjoyable as a consequence. He has written a
+masterful popularization of calculus, its history, techniques,
+significance, and applications, entitled
+\href{https://www.stevenstrogatz.com/books/infinite-powers}{\emph{Infinite
+Powers: How calculus reveals the secrets of the universe}}
+{[}\citeproc{ref-strogatz-2019}{1}{]} . Make the effort to read this
+book---even if it is a little at a time---and complete it. You will
+become a better scholar as a result, and calculus will become your
+friend.
+
+\subsubsection{Blanchard, Devaney, and
+Hall}\label{blanchard-devaney-and-hall}
+
+The second recommendation, a textbook by three authors, is the result of
+a radical departure in the teaching of differential equations---from
+being a hodgepodge of mundane and special techniques, memorized and
+regurgitated, to a fascinating picture of how nature unfolds in time.
+The pedagogy of the book leverages the ubiquity of computing technology
+to enable a syncretic view and more profound appreciation of
+differential equations as the time-evolution of natural systems. Their
+book is called, unsurprisingly,
+\href{http://math.bu.edu/odes/4ed-TOC.html}{\emph{Differential
+Equations}} and is in its fourth edition
+{[}\citeproc{ref-blanchard-devaney-hall-2012}{2}{]}. It is not a book
+that you need to work through, but one you should consult for its
+approach and ideas. The earnest student will also doubtless, tackle a
+few problems! \emojifont {😉} \normalfont.
+
+\subsection{Newton's Second Law}\label{newtons-second-law}
+
+Perhaps the very first encounter with differential equations occurs, for
+most people, with the statement of
+\href{https://www.britannica.com/science/Newtons-laws-of-motion/Newtons-second-law-F-ma}{Newton's
+Second Law of Motion}. It is usually stated as \emph{the net force on a
+body is proportional to the rate of change of the body's momentum}.
+
+Wait a minute! Is this not physics? Yes, it is. But is it also
+mathematics? Yes indeed. Let us not quibble over how we divide knowledge
+into compartments. Let us instead consider knowledge as a porthole with
+which to view Nature. Nature behaves as Nature does. But humankind has
+imposed disciplinary barriers into the framework of human knowledge. Let
+us not respect those barriers or be deterred by them.
+
+\section{Differential equations}\label{differential-equations}
+
+Classification
+
+ODE/homogeneous and links to polynomials
+https://math.stackexchange.com/questions/3614864/why-are-most-natural-phenomena-described-using-differential-equations
+
+https://math.stackexchange.com/questions/3782499/is-there-a-reason-it-is-so-rare-we-can-solve-differential-equations
+
+Idea of a function must be clarified.
+
+Where time and or space vary
+
+DEs model physical phenomena where time and space vary along with
+possibly other variables.
+
+Linear differential equations with constant coefficients
+
+\subsubsection{Examples of LDEs in real
+life}\label{examples-of-ldes-in-real-life}
+
+Spring under displacement
+
+Wave motion
+
+Simple pendulum
+
+Electric circuits
+
+\subsubsection{Physics}\label{physics}
+
+https://www.quora.com/What-are-some-real-world-phenomena-that-can-be-described-by-using-differential-equations
+
+https://www.physicsforums.com/insights/differential-equation-systems-and-nature/
+
+https://math.stackexchange.com/questions/3614864/why-are-most-natural-phenomena-described-using-differential-equations
+
+Schrödinger equation etc.
+
+\subsubsection{Nonlinear DEs}\label{nonlinear-des}
+
+Weather forecasting Chaos etc.
+
+Population growth and Logistic equation
+
+Predator-prey models
+
+Catenary
+
+\subsection{Acknowledgements}\label{acknowledgements}
+
+\subsection{Feedback}\label{feedback}
+
+Please \href{mailto:feedback.swanlotus@gmail.com}{email me} your
+comments and corrections.
+
+\noindent A PDF version of this article is
+\href{./differetial-equations.pdf}{available for download here}:
+
+\begin{sffamily}
+
+\url{https://swanlotus.netlify.app/blogs/differential-equations.pdf}
+
+\end{sffamily}
+
+\section*{References}\label{bibliography}
+\addcontentsline{toc}{section}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{0}{0}
+\bibitem[\citeproctext]{ref-strogatz-2019}
+\CSLLeftMargin{{[}1{]} }%
+\CSLRightInline{Steven H Strogatz. 2019. \emph{{Infinite Powers}: {How
+calculus reveals the secrets of the universe}}. Houghton Mifflin
+Harcourt.}
+
+\bibitem[\citeproctext]{ref-blanchard-devaney-hall-2012}
+\CSLLeftMargin{{[}2{]} }%
+\CSLRightInline{Paul Blanchard and Robert L Devaney and Glen R Hall.
+2012. \emph{{Differential Equations}} (4th ed.). Brooks Cole/Cengage
+Learning.}
+
+\end{CSLReferences}
+
+
+
+\end{document}
