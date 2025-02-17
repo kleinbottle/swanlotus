@@ -26,11 +26,11 @@ You might recall from my blog [Expressions, Equations, and Formulae](https://swa
 
 When you make a cup of tea, you must allow time for the tea to infuse. Likewise, with a cup of coffee, you need percolation time. With new knowledge, it is no different. You need time to allow the new knowledge to steep into your mind and find its place alongside old knowledge. It is only then that you become comfortable with what is new. Be gentle on yourself if things do not pop out of the page at once. You are making friends with mathematical ideas that took centuries to evolve and mature.
 
-To many students, mathematics is daunting, calculus even more so, and differential equations are downright terrifying. Nevertheless, there are authors who tame the subject rather than taunt the student. They approach the subject leisurely, allowing the reader to enjoy the view, and explaining interesting sights along the way. There are others who use pictures in preference to words. I have chosen two books---one from each category---as recommended books to read, along with this blog, or even before it. Here are my two selections.
+To many students, mathematics is daunting, calculus even more so, and differential equations are downright terrifying. Nevertheless, there are authors who tame the subject rather than taunt the student. They approach the subject leisurely, allowing the reader to enjoy the view, and explaining interesting sights along the way. There are others who use pictures in preference to words. I have chosen two books---one from each category---as books to read, along with this blog, or even before it. Here are my two selections.
 
 ### Steven Strogatz
 
-The applied mathematician [Steven Strogatz](https://en.wikipedia.org/wiki/Steven_Strogatz) is one of my favourite authors active in the popular mathematics genre today. He kows how to interest, educate, and sometimes, even entertain. Learning becomes easy and enjoyable as a consequence. He has written a masterful popularization of calculus, its history, techniques, significance, and applications, entitled [_Infinite Powers: How calculus reveals the secrets of the universe_](https://www.stevenstrogatz.com/books/infinite-powers) [@strogatz-2019] . Make the effort to read this book---even if it is a little at a time---and complete it. You will become a better scholar as a result, and calculus will become your friend.
+The applied mathematician [Steven Strogatz](https://en.wikipedia.org/wiki/Steven_Strogatz) is one of my favourite authors active in the popular mathematics genre today. He knows how to interest, educate, and sometimes, even entertain. Learning becomes easy and enjoyable as a consequence. He has written a masterful popularization of calculus, its history, techniques, significance, and applications, entitled [_Infinite Powers: How calculus reveals the secrets of the universe_](https://www.stevenstrogatz.com/books/infinite-powers) [@strogatz-2019] . Make the effort to read this book---even if it is a little at a time---and complete it. You will become a better scholar as a result, and calculus will become your friend.
 
 ### Blanchard, Devaney, and Hall
 
@@ -38,9 +38,27 @@ The second recommendation, a textbook by three authors, is the result of a radic
 
 ## Newton's Second Law
 
-Perhaps the very first encounter with differential equations occurs, for most people, with the statement of [Newton's Second Law of Motion](https://www.britannica.com/science/Newtons-laws-of-motion/Newtons-second-law-F-ma). It is usually stated as _the net force on a body is proportional to the rate of change of the body's momentum_.
+Perhaps the very first encounter with differential equations occurs for most people with the statement of [Newton's Second Law of Motion](https://www.britannica.com/science/Newtons-laws-of-motion/Newtons-second-law-F-ma). It is usually stated as _the net force on a body is proportional to the rate of change of the body's momentum_.
 
-Wait a minute! Is this not physics? Yes, it is. But is it also mathematics? Yes indeed. Let us not quibble over how we divide knowledge into compartments. Let us instead consider knowledge as a porthole with which to view Nature. Nature behaves as Nature does. But humankind has imposed disciplinary barriers into the framework of human knowledge. Let us not respect those barriers or be deterred by them.
+Wait a minute! Is this not physics? Yes, it is. But is it also mathematics? Yes indeed. Let us not quibble over how we divide knowledge into compartments. Let us instead consider knowledge as a porthole with which to view Nature. Nature behaves as Nature does. But humankind has imposed disciplinary barriers into the framework of human knowledge. Let us not be deterred by those barriers.
+
+There are many terms here that must be _named_, i.e., defined and explained. Let us go through them in sequence:
+
+Mass
+Time
+Space
+Scalar
+Vector
+Speed
+Velocity
+Acceleration: magnitude/direction
+Force
+Momentum: mv product of mass and velocity and therefore a vector
+F = d/dt(mv)
+What happens if m changes with velocity: Relativity. Cannot apply this equation
+Energy: scalar 1/2mv2
+F = ma = d/dt(mv) = md/dt(v) = ma
+F = mdv/dt = ma
 
 
 
