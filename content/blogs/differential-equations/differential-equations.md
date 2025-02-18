@@ -42,15 +42,32 @@ Perhaps the very first encounter with differential equations occurs for most peo
 
 Wait a minute! Is this not physics? Yes, it is. But is it also mathematics? Yes indeed. Let us not quibble over how we divide knowledge into compartments. Let us instead consider knowledge as a porthole with which to view Nature. Nature behaves as Nature does. But humankind has imposed disciplinary barriers into the framework of human knowledge. Let us not be deterred by those barriers.
 
-There are many terms here that must be _named_, i.e., defined and explained. Let us go through them in sequence:
+There are many terms here that must be _named_, i.e., defined and explained. Let us go through them in sequence, using SI units, and mostly avoiding implications arising from the Theory of Relativity:
 
-Mass
-Time
-Space
-Scalar
-Vector
-Speed
-Velocity
+#.  Space: This is the three dimensional space in which we live and through which matter moves. The length between two points in space is their _distance_. The set of points in a one-dimensional line is usually denoted by $\mathbb{R}$. For two-dimensions, the set is the [Cartesian product](https://en.wikipedia.org/wiki/Cartesian_product) $\mathbb{R} \times \mathbb{R} = \mathbb{R}^2$, and the points are denoted $(x, y)$ where each $x \in \mathbb{R}$ and each $y \in \mathbb{R}$. Likewise for three dimensional space where $(x, y, z) \in \mathbb{R}^3$.^[If these symbols and notation are new to you please read my blog [The Two Most Important Numbers: Zero and One](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one).]
+
+#.  Time: This is the time we experience---24 hours or 86,400 seconds in a day---usually denoted by the letter $t$.
+
+#.  Scalar: A quantity that only has magnitude. Examples include time, temperature, distance, mass, etc.
+
+#.  Vector: A quantity that has both magnitude and direction. While _distance_ is a scalar that defines the length between two points, _displacement_ is a vector and encodes both the length between two points _and_ their direction. Vectors are usually denoted in boldface, like $\mathbf{a}$, or when written, with a squiggle atop or underneath the symbol.
+
+#.  Distance: The difference in length between two points in space, without concern for their orientation.
+
+#.  Speed: When a body moves a distance $d$ in time $t$, its average speed is $\frac{d}{s}$ metres per second;
+
+#.  Displacement: Displacement is the vector analogue of distance, and is often denoted by $\mathbf{s}$. The displacement from $A$ to $B$ is the negative of the displacement from $B$ to $A$. 
+
+#.  Velocity: When a body moves, _velocity_ captures both its speed and the direction in which the change occurs. Velocity is the vector analogue to speed, and is usually denoted by $\mathbf{v}$. A body whose speed is constant but whose direction is changing constantly, like a ball revolving on a string, experiences a _changing_ velocity.
+
+#. Mass: Mass represents the resistance matter presents to motion. Roughly, on Earth, it is proportional to weight. So, the heavier an object, the greater its mass. Relativity talks about _inertial mass_ and _gravitational mass_ but we will skip that here. Mass multiplied by velocity equals momentum. Mass is a scalar; velocity is a vector; their product is a vector.
+
+#. Momentum: Momentum, sometimes denoted by $\mathbf{p}$, is a vector and is the product of mass and velocity, $\mathbf{p} = m\mathbf{v}$.
+
+
+
+
+
 Acceleration: magnitude/direction
 Force
 Momentum: mv product of mass and velocity and therefore a vector
