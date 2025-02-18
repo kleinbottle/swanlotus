@@ -48,7 +48,7 @@ There are many terms here that must be _named_, i.e., defined and explained. Let
 
 #.  Time: This is the time we experience---24 hours or 86,400 seconds in a day---usually denoted by the letter $t$.
 
-#.  Scalar: A quantity that only has magnitude. Examples include time, temperature, distance, mass, etc.
+#.  Scalar: A quantity that only has magnitude. Examples include time, temperature, distance, mass, energy, etc.
 
 #.  Vector: A quantity that has both magnitude and direction. While _distance_ is a scalar that defines the length between two points, _displacement_ is a vector and encodes both the length between two points _and_ their direction. Vectors are usually denoted in boldface, like $\mathbf{a}$, or when written, with a squiggle atop or underneath the symbol.
 
@@ -58,74 +58,36 @@ There are many terms here that must be _named_, i.e., defined and explained. Let
 
 #.  Displacement: Displacement is the vector analogue of distance, and is often denoted by $\mathbf{s}$. The displacement from $A$ to $B$ is the negative of the displacement from $B$ to $A$. 
 
-#.  Velocity: When a body moves, _velocity_ captures both its speed and the direction in which the change occurs. Velocity is the vector analogue to speed, and is usually denoted by $\mathbf{v}$. A body whose speed is constant but whose direction is changing constantly, like a ball revolving on a string, experiences a _changing_ velocity.
+#.  Velocity: When a body moves, _velocity_ captures both its speed and the direction in which the change occurs. Velocity is the vector analogue to speed, and is usually denoted by $\mathbf{v}$. A body whose speed is constant but whose direction is changing constantly, like a ball revolving on a string, experiences a _changing_ velocity, and is hence undergoing _acceleration_.
 
-#. Mass: Mass represents the resistance matter presents to motion. Roughly, on Earth, it is proportional to weight. So, the heavier an object, the greater its mass. Relativity talks about _inertial mass_ and _gravitational mass_ but we will skip that here. Mass multiplied by velocity equals momentum. Mass is a scalar; velocity is a vector; their product is a vector.
+#. Mass: Mass represents the resistance matter presents to motion. Roughly, on Earth, it is proportional to weight, which is a vector. Mass is generally denoted by $m$. So, the heavier an object, the greater its mass. Relativity talks about _inertial mass_ and _gravitational mass_ but we will skip that here. Mass multiplied by velocity equals momentum. 
 
-#. Momentum: Momentum, sometimes denoted by $\mathbf{p}$, is a vector and is the product of mass and velocity, $\mathbf{p} = m\mathbf{v}$.
+#. Momentum: Momentum, often denoted by $\mathbf{p}$, is a vector and is the product of mass and velocity, $\mathbf{p} = m\mathbf{v}$.
 
+#. Acceleration: Acceleration, $\mathbf{a}$ is defined as the time rate of change of the velocity vector. Using the symbology of calculus,
+$$
+\mathbf{a} \triangleq \frac{\mathrm{d}\mathbf{v}}{\mathrm{d}t}.
+$$
+The symbol $\triangleq$ is often used to denote a definition.
 
-
-
-
-Acceleration: magnitude/direction
-Force
-Momentum: mv product of mass and velocity and therefore a vector
-F = d/dt(mv)
-What happens if m changes with velocity: Relativity. Cannot apply this equation
-Energy: scalar 1/2mv2
-F = ma = d/dt(mv) = md/dt(v) = ma
-F = mdv/dt = ma
-
-
-
-# Differential equations
-
-Classification
-
-ODE/homogeneous and links to polynomials
-https://math.stackexchange.com/questions/3614864/why-are-most-natural-phenomena-described-using-differential-equations
-
-https://math.stackexchange.com/questions/3782499/is-there-a-reason-it-is-so-rare-we-can-solve-differential-equations
-
-Idea of a function must be clarified.
-
-Where time and or space vary
-
-DEs model physical phenomena where time and space vary along with possibly other variables.
-
-Linear differential equations with constant coefficients
-
-### Examples of LDEs in real life
-
-Spring under displacement
-
-Wave motion
-
-Simple pendulum
-
-Electric circuits
+#. Force: Newton's Second Law states that force is proportional to the rate of change of momentum it induces. Stated mathematically, bearing in mind that force is a vector,
+$$
+\mathbf{F} \propto \frac{\mathrm{d}\mathbf{p}}{\mathrm{d}t} \triangleq k\frac{\mathrm{d}\mathbf{p}}{\mathrm{d}t}.
+$$
+The symbol $\propto$ stands for _proportional to_. To convert it to a equality, mut introduce a constant $k$. By judiciously choosing units, it is possible to make the value of $k$ equal to one. We then have the famous vector equation
+$$
+\begin{aligned}
+\mathbf{F} &= \frac{\mathrm{d}\mathbf{p}}{\mathrm{d}t}\\
+&= \frac{\mathrm{d}\left(m\mathbf{v}\right)}{\mathrm{d}t}; \text{ extracting the $m$ out as a constant}\\
+&= m\frac{\mathrm{d}\mathbf{v}}{\mathrm{d}t}; \text{ acceleration is the drivative of velocity}\\
+&= m\mathbf{a}.
+\end{aligned}
+$${#eq:second-law}
+And there you have it: Newton's second law stated mathematically in vector form as a differential equation in the last line of [@eq:second-law].
 
 
-### Physics
 
-https://www.quora.com/What-are-some-real-world-phenomena-that-can-be-described-by-using-differential-equations
 
-https://www.physicsforums.com/insights/differential-equation-systems-and-nature/
-
-https://math.stackexchange.com/questions/3614864/why-are-most-natural-phenomena-described-using-differential-equations
-
-Schrödinger equation etc.
-
-### Nonlinear DEs
-
-Weather forecasting Chaos etc.
-
-Population growth and Logistic equation
-
-Predator-prey models
-
-Catenary
 
 
 

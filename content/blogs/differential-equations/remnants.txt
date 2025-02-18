@@ -1,0 +1,58 @@
+Acceleration: magnitude/direction
+Force
+Momentum: mv product of mass and velocity and therefore a vector
+F = d/dt(mv)
+What happens if m changes with velocity: Relativity. Cannot apply this equation
+Energy: scalar 1/2mv2
+F = ma = d/dt(mv) = md/dt(v) = ma
+F = mdv/dt = ma
+
+
+
+# Differential equations
+
+Classification
+
+ODE/homogeneous and links to polynomials
+https://math.stackexchange.com/questions/3614864/why-are-most-natural-phenomena-described-using-differential-equations
+
+https://math.stackexchange.com/questions/3782499/is-there-a-reason-it-is-so-rare-we-can-solve-differential-equations
+
+Idea of a function must be clarified.
+
+Where time and or space vary
+
+DEs model physical phenomena where time and space vary along with possibly other variables.
+
+Linear differential equations with constant coefficients
+
+### Examples of LDEs in real life
+
+Spring under displacement
+
+Wave motion
+
+Simple pendulum
+
+Electric circuits
+
+
+### Physics
+
+https://www.quora.com/What-are-some-real-world-phenomena-that-can-be-described-by-using-differential-equations
+
+https://www.physicsforums.com/insights/differential-equation-systems-and-nature/
+
+https://math.stackexchange.com/questions/3614864/why-are-most-natural-phenomena-described-using-differential-equations
+
+Schrödinger equation etc.
+
+### Nonlinear DEs
+
+Weather forecasting Chaos etc.
+
+Population growth and Logistic equation
+
+Predator-prey models
+
+Catenary
