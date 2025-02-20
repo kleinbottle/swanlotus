@@ -49,6 +49,20 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage{svg}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -306,14 +320,14 @@ friend.
 \subsubsection{Blanchard, Devaney, and
 Hall}\label{blanchard-devaney-and-hall}
 
-The second recommendation, a textbook by three authors, is the result of
-a radical departure in the teaching of differential equations---from
-being a hodgepodge of mundane and special techniques, memorized and
-regurgitated, to a fascinating picture of how nature unfolds in time.
-The pedagogy of the book leverages the ubiquity of computing technology
-to enable a syncretic view and more profound appreciation of
-differential equations as the time-evolution of natural systems. Their
-book is called, unsurprisingly,
+The second recommendation---a textbook by three authors, henceforth
+called BDH---is the result of a radical departure in the teaching of
+differential equations---from being a hodgepodge of mundane and special
+techniques, memorized and regurgitated, to a fascinating picture of how
+nature unfolds in time. The pedagogy of the book leverages the ubiquity
+of computing technology to enable a syncretic view and more profound
+appreciation of differential equations as the time-evolution of natural
+systems. Their book is called, unsurprisingly,
 \href{http://math.bu.edu/odes/4ed-TOC.html}{\emph{Differential
 Equations}} and is in its fourth edition
 {[}\citeproc{ref-blanchard-devaney-hall-2012}{2}{]}. It is not a book
@@ -389,8 +403,13 @@ mostly avoiding implications arising from the Theory of Relativity:
   \textbf{Mass}: Mass represents the resistance matter presents to
   motion. Roughly, on Earth, it is proportional to weight, which is a
   vector. Mass is generally denoted by \(m\). So, the heavier an object,
-  the greater its mass.\footnote{\href{https://en.wikipedia.org/wiki/Equivalence_principle.}{The
-    \emph{inertial mass} and \emph{gravitational mass} are the same}}
+  the greater its
+  mass.\footnote{The \emph{inertial mass}, \(m_i\), is an object's
+    resistance to acceleration when a force is applied on it, as in
+    \(F = m_{i}a\). The \emph{gravitational mass}, \(m_g\), is the
+    strength of an object's interaction with a gravitational field, as
+    in \(G\frac{m_g}{M}{R^2}\). Both these entities are the same, i.e.,
+    \(m_{i} = m_{g}\).}(https://en.wikipedia.org/wiki/Equivalence\_principle.){]}
   Mass multiplied by velocity equals momentum.
 \item
   \textbf{Momentum}: Momentum, often denoted by \(\mathbf{p}\), is a
@@ -422,10 +441,163 @@ mostly avoiding implications arising from the Theory of Relativity:
   mathematically in vector form as a differential equation in the second
   last line of \cref{eq:second-law}. Force is measured in newtons, mass
   in kilograms, and acceleration in metres per second per second,
-  written \emph{m s\textsuperscript{-2}}.
+  written \emph{m s\textsuperscript{-2}} or
+  \emph{m/s\textsuperscript{2}}.
 \end{enumerate}
 
+\subsection{The Skydiver problem}\label{the-skydiver-problem}
+
+The BDH book in its fourth edition extensively treats what I call the
+\emph{skydiver problem}. I have borrowed freely from the book both in
+terms of problem statement and approaches to its solution.
+
+Differential equations arise naturally whenever mathematics is
+\emph{applied} to problems that arise in nature. Therefore, one needs to
+become aware of the technical nomenclature of fields like physics,
+chemistry, biology, etc., and their units where applicable.
+
+\subsubsection{Prelude}\label{prelude}
+
+The classical example of how objects fall from a height to the earth is
+the (apocryphal?) experiment of
+\href{https://en.wikipedia.org/wiki/Galileo's_Leaning_Tower_of_Pisa_experiment}{Galileo
+throwing rocks from atop the leaning tower of Pisa}. If the sizes of the
+two rocks are similar, and air resistance is negligible, they will
+strike the ground together.
+
+In \href{https://en.wikipedia.org/wiki/Mechanics}{Mechanics} we
+generally abstract out the object of interest, and show all forces
+acting on it, via a
+\href{https://www.physicsclassroom.com/class/newtlaws/Lesson-2/Drawing-Free-Body-Diagrams}{free-body
+diagram}, to the exclusion of other objects.
+
+\subsubsection{Gravity and the acceleration it
+induces}\label{gravity-and-the-acceleration-it-induces}
+
+We already know that the earth exerts a gravitational force on all
+earthbound objects. Newton proposed and concluded that, for an object on
+the surface of the Earth, the attraction of the earth on a body of mass
+\(m\) is \begin{equation}\phantomsection\label{eq:universal-gravity}{
+F = G\frac{mM}{R^2}
+}\end{equation} where \(G\) is the universal gravitational constant,
+\(m\) is the mass of the object of interest, \(M\) is the mass of the
+earth, and \(R\) is the radius of the earth, assuming a perfect sphere.
+The acceleration, \(g\), experienced by the mass \(m\) in free-fall is,
+from \cref{eq:second-law,eq:universal-gravity}, the force of
+gravitational attraction divided by the mass of the object of interest.
+We may now write
+\begin{equation}\phantomsection\label{eq:gravity-acceleration}{
+\begin{aligned}
+\frac{F}{m} &= G\frac{M}{R^2}; \text{ noting that the LHS is $g$}\\
+g &= G\frac{M}{R^2}.
+\end{aligned}
+}\end{equation} Let us substitute the values og \(G\), \(M\), and \(R\)
+in \href{https://en.wikipedia.org/wiki/International_System_of_Units}{SI
+units} to get a value for \(g\) the acceleration due to gravity felt by
+all objects on earth. \begin{equation}\phantomsection\label{eq:g-value}{
+\begin{aligned}
+G &= 6.6743 × 10^{-11}\; \mathrm{m^{3} kg^{−1} s^{−2}}\\
+M &= 5.9722 × 10^{24}\; \mathrm{kg}\\
+R &= 6.3781 × 10^{6}\; \mathrm{m} \text{  giving}\\
+g &= G\frac{M}{R^2} = 9.7985 \approx 9.8\; \mathrm{m\,s^{-2}}.
+\end{aligned}
+}\end{equation} The value of \(g\) we have calculated is in
+\href{https://dictionary.cambridge.org/dictionary/english/be-in-the-right-ballpark}{the
+right ball park}.
+
+The force exerted by gravity on an object of mass \(m\) is its \(W\)
+\href{https://www.thefreedictionary.com/weight}{weight} which is \(mg\),
+i.e., \[
+W = mg\; \mathrm{N}.
+\]
+
+\subsubsection{Air resistance}\label{air-resistance}
+
+Air resistance is usually ignored in elementary problems, but in the
+case of the parachuting skydiver, it is air resistance and the drag it
+produces that protects the skydiver from a serious accident. The problem
+asks us to assume that the drag, or retarding force, from air resistance
+is proportional to the square of the velocity, and may be set to
+\(kv^2\), where \(k\) is some constant.
+
+Note that force is a vector, as is velocity, and we need to use vector
+equations. To keep things simple, we will instead keep careful tabs on
+the \emph{signs} of the various quantities. The weight is directed
+earthwards. The drag is directed away from the earth. If we assume that
+earthwards is positive, we have \(v\) positive, \(W = mg\) positive, and
+\(R = kv^2\) negative.
+
+https://en.wikipedia.org/wiki/Drag\_equation
+https://math.libretexts.org/Bookshelves/Scientific\_Computing\_Simulations\_and\_Modeling/Physical\_Modeling\_in\_MATLAB\_(Downey)/11:\_Second-order\_systems/11.04:\_Air\_Resistance
+
+\begin{figure}
+\centering
+\includesvg[width=0.8\linewidth,height=\textheight,keepaspectratio]{images/skydiver-elephant.svg}
+\caption[Almost free-body diagram for a skydiving elephant a la
+\href{https://en.wikipedia.org/wiki/Dumbo}{Dumbo}.]{Almost free-body
+diagram\footnotemark{} for a skydiving elephant a la
+\href{https://en.wikipedia.org/wiki/Dumbo}{Dumbo}.}\label{fig:skydiver}
+\end{figure}
+\footnotetext{To retain reader interest, I have included some extraneous
+  details to enliven the picture!}
+
+Parachuting and skydiving exist as high-risk, but allowed sports, only
+because the air resistance on the parachute canopy prevents the skydiver
+from plummeting to the Earth like a rock, with fatal or near fatal
+consequences.
+
+The
+
+The reason skydiving exists as an exhilarating sport is because when the
+parachute opens, it presents a large surface area to the air and engages
+it. The result is air-resistance or drag that is an \emph{upward} force
+that counteracts the \emph{downward} pull of gravity.
+
+A simple diagram showing the forces on a skydiver is shown in XXXX
+
+Benmiloud Mohammed
+
+What makes skydiving a challenging and exhilarating sport is the
+possibility of falling through air and landing without
+
+The velocity v of a freefalling skydiver is well modeled by the
+differential equation dv m = mg − kv 2 , dt where m is the mass of the
+skydiver, g is the gravitational constant, and k is the drag coefficient
+determined by the position of the diver during the dive. (Note that the
+constants m, g, and k are positive.) (a) Perform a qualitative analysis
+of this model. (b) Calculate the terminal velocity of the skydiver.
+Express your answer in terms of m, g, and k.
+
+In Exercise 12 of Section 1.1, we saw that the velocity v of a
+freefalling skydiver is well modeled by the differential equation dv m =
+mg − kv2 , dt where m is the mass of the skydiver, g is the
+gravitational constant, and k is the drag coefficient determined by the
+position of the driver during the dive. (a) Find the general solution of
+this differential equation. (b) Confirm your answer to Exercise 12 of
+Section 1.1 by calculating the limit of v(t) as t → ∞.
+
+As we saw in Exercise 12 of Section 1.1, the velocity v of a freefalling
+skydiver is well modeled by the differential equation dv m = mg − kv2 ,
+dt where m is the mass of the skydiver, g = 9.8 m/s2 is the
+gravitational constant, and k is the drag coefficient determined by the
+position of the diver during the dive. Consider a diver of mass m = 54
+kg (120 lb) with a drag coefficient of 0.18 kg/m. Use Euler's method to
+determine how long it will take the diver to reach 95\% of her terminal
+velocity after she jumps from the plane. {[}Hint: Use the formula for
+terminal velocity that was derived in Exercise 12 of Section 1.1.{]}
+
 \subsection{Acknowledgements}\label{acknowledgements}
+
+I have freely adapted the figure
+\href{https://latexdraw.com/tikz-free-body-diagram-skydiver-with-parachute/}{TikZ
+Free Body Diagram Skydiver with Parachute} by Mohammed Benmiloud from
+his website to depict \cref{fig:skydiver}. I express my gratitude for
+his work and recommend his site for those who wish to learn more about
+\href{https://en.wikipedia.org/wiki/PGF/TikZ}{TikZ}.
+
+I also express my thanks to all the creators of
+\href{https://github.com/samcarter/tikzlings}{TikZlings} packages for
+their delightful depictions of animals and beings.
 
 \subsection{Feedback}\label{feedback}
 

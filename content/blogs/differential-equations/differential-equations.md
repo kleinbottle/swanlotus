@@ -60,7 +60,7 @@ There are many terms here that must be _named_, i.e., defined and explained. Let
 
 #.  **Velocity**: When a body moves, _velocity_ captures both its speed and the direction in which the change occurs. Velocity is the vector analogue to speed, and is usually denoted by $\mathbf{v}$. A body whose speed is constant but whose direction is changing constantly, like a ball revolving on a string, experiences a _changing_ velocity, and is hence undergoing _acceleration_.
 
-#. **Mass**: Mass represents the resistance matter presents to motion. Roughly, on Earth, it is proportional to weight, which is a vector. Mass is generally denoted by $m$. So, the heavier an object, the greater its mass.^[[The _inertial mass_ and _gravitational mass_ are the same](https://en.wikipedia.org/wiki/Equivalence_principle.)] Mass multiplied by velocity equals momentum. 
+#. **Mass**: Mass represents the resistance matter presents to motion. Roughly, on Earth, it is proportional to weight, which is a vector. Mass is generally denoted by $m$. So, the heavier an object, the greater its mass.^[The _inertial mass_, $m_i$, is an object's resistance to acceleration when a force is applied on it, as in $F = m_{i}a$. The _gravitational mass_, $m_g$, is the strength of an object's interaction with a gravitational field, as in $G\frac{m_g}{M}{R^2}$. Both these entities are the same, i.e., $m_{i} = m_{g}$.](https://en.wikipedia.org/wiki/Equivalence_principle.)] Mass multiplied by velocity equals momentum. 
 
 #. **Momentum**: Momentum, often denoted by $\mathbf{p}$, is a vector and is the product of mass and velocity, $\mathbf{p} = m\mathbf{v}$.
 
@@ -85,20 +85,75 @@ $$
 $${#eq:second-law}
 And there you have it: Newton's second law stated mathematically in vector form as a differential equation in the second last line of [@eq:second-law]. Force is measured in newtons, mass in kilograms, and acceleration in metres per second per second, written _m s^-2^_ or _m/s^2^_.
 
-## Falling skydiver problems
+## The Skydiver problem
 
-The BDH book in its fourth edition extensively treats what I call the _falling skydiver problem_. I have borrowed freely from the book both in terms of problem statement and approaches to its solution.
+The BDH book in its fourth edition extensively treats what I call the _skydiver problem_. I have borrowed freely from the book both in terms of problem statement and approaches to its solution.
 
-The classical example of how objects fall from a height to the earth is from [Galileo throwing rocks from atop the leaning tower of Pisa](https://en.wikipedia.org/wiki/Galileo's_Leaning_Tower_of_Pisa_experiment). If the sizes of the two rocks are similar, and air resistance is negligible, they will strike the ground together.
+Differential equations arise naturally whenever mathematics is _applied_ to problems that arise in nature. Therefore, one needs to become aware of the technical nomenclature of fields like physics, chemistry, biology, etc., and their units where applicable.
 
-When a skydiver free-falls from an aircraft---if his or her parachute does not open---might not exactly "fall like a rock", but very likely will get hurt.
+### Prelude
+
+The classical example of how objects fall from a height to the earth is the (apocryphal?) experiment of [Galileo throwing rocks from atop the leaning tower of Pisa](https://en.wikipedia.org/wiki/Galileo's_Leaning_Tower_of_Pisa_experiment). If the sizes of the two rocks are similar, and air resistance is negligible, they will strike the ground together.
+
+In [Mechanics](https://en.wikipedia.org/wiki/Mechanics) we generally abstract out the object of interest, and show all forces acting on it, via a [free-body diagram](https://www.physicsclassroom.com/class/newtlaws/Lesson-2/Drawing-Free-Body-Diagrams), to the exclusion of other objects.
+
+### Gravity and the acceleration it induces
+
+We already know that the earth exerts a gravitational force on all earthbound objects. Newton proposed and concluded that, for an object on the surface of the Earth, the attraction of the earth on a body of mass $m$ is
+$$
+F = G\frac{mM}{R^2}
+$$ {#eq:universal-gravity}
+where $G$ is the universal gravitational constant, $m$ is the mass of the object of interest, $M$ is the mass of the earth, and $R$ is the radius of the earth, assuming a perfect sphere. The acceleration, $g$,  experienced by the mass $m$ in free-fall is, from [@eq:second-law;@eq:universal-gravity], the force of gravitational attraction divided by the mass of the object of interest. We may now write
+$$
+\begin{aligned}
+\frac{F}{m} &= G\frac{M}{R^2}; \text{ noting that the LHS is $g$}\\
+g &= G\frac{M}{R^2}.
+\end{aligned}
+$${#eq:gravity-acceleration}
+Let us substitute the values og $G$, $M$, and $R$ in [SI units](https://en.wikipedia.org/wiki/International_System_of_Units) to get a value for $g$ the acceleration due to gravity felt by all objects 
+on earth.
+$$
+\begin{aligned}
+G &= 6.6743 × 10^{-11}\; \mathrm{m^{3} kg^{−1} s^{−2}}\\
+M &= 5.9722 × 10^{24}\; \mathrm{kg}\\
+R &= 6.3781 × 10^{6}\; \mathrm{m} \text{  giving}\\
+g &= G\frac{M}{R^2} = 9.7985 \approx 9.8\; \mathrm{m\,s^{-2}}.
+\end{aligned}
+$${#eq:g-value}
+The value of $g$ we have calculated is in [the right ball park](https://dictionary.cambridge.org/dictionary/english/be-in-the-right-ballpark).
+
+The force exerted by gravity on an object of mass $m$ is its $W$ [weight](https://www.thefreedictionary.com/weight) which is $mg$, i.e.,
+$$
+W = mg\; \mathrm{N}.
+$$
+
+### Air resistance
+
+Air resistance is usually ignored in elementary problems, but in the case of the parachuting skydiver, it is air resistance and the drag it produces that protects the skydiver from a serious accident. The problem asks us to assume that the drag, or retarding force, from air resistance is proportional to the square of the velocity, and may be set to $kv^2$, where $k$ is some constant.
+
+Note that force is a vector, as is velocity, and we need to use vector equations. To keep things simple, we will instead keep careful tabs on the _signs_ of the various quantities. The weight is directed earthwards. The drag is directed away from the earth. If we assume that earthwards is positive, we have $v$ positive, $W = mg$ positive, and $R = kv^2$ negative. 
+
+
+
+
+https://en.wikipedia.org/wiki/Drag_equation
+https://math.libretexts.org/Bookshelves/Scientific_Computing_Simulations_and_Modeling/Physical_Modeling_in_MATLAB_(Downey)/11:_Second-order_systems/11.04:_Air_Resistance
+
+![Almost free-body diagram^[To retain reader interest, I have included some extraneous details to enliven the picture!] for a skydiving elephant a la [Dumbo](https://en.wikipedia.org/wiki/Dumbo).]({attach}images/skydiver-elephant.svg){#fig:skydiver width=80% .modal-target}
+
+
+
+
+Parachuting and skydiving exist as high-risk, but allowed sports, only because the air resistance on the parachute canopy prevents the skydiver from plummeting to the Earth like a rock, with fatal or near fatal consequences.
+
+The 
 
 The reason skydiving exists as an exhilarating sport is because when the parachute opens, it presents a large surface area to the air and engages it. The result is air-resistance or drag that is an _upward_ force that counteracts the _downward_ pull of gravity.
 
 A simple diagram showing the forces on a skydiver is shown in XXXX
 
 
-
+Benmiloud Mohammed
 
 What makes skydiving a challenging and exhilarating sport is the possibility of falling through air and landing without 
 
@@ -143,6 +198,11 @@ velocity that was derived in Exercise 12 of Section 1.1.]
 
 
 ## Acknowledgements
+
+I have freely adapted the figure [TikZ Free Body Diagram Skydiver with Parachute](https://latexdraw.com/tikz-free-body-diagram-skydiver-with-parachute/) by Mohammed Benmiloud from his website to depict  [@fig:skydiver]. I express my gratitude for his work and recommend his site for those who wish to learn more about [TikZ](https://en.wikipedia.org/wiki/PGF/TikZ).
+
+I also express my thanks to all the creators of [TikZlings](https://github.com/samcarter/tikzlings) packages for their delightful depictions of animals and beings.
+
 
 ## Feedback
 
