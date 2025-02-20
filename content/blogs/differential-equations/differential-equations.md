@@ -24,7 +24,7 @@ You might recall from my blog [Expressions, Equations, and Formulae](https://swa
 
 ## A Gentle Entry
 
-When you make a cup of tea, you must allow time for the tea to infuse. Likewise, with a cup of coffee, you need percolation time. With new knowledge, it is no different. You need time to allow the new knowledge to steep into your mind and find its place alongside old knowledge. It is only then that you become comfortable with what is new. Be gentle on yourself if things do not pop out of the page at once. You are making friends with mathematical ideas that took centuries to evolve and mature.
+When you make a cup of tea, you must allow it to infuse. Likewise, with a cup of coffee, you need to let it percolate. With new knowledge, it is no different. You need time to allow the new knowledge to steep into your mind and find its place alongside old knowledge. It is only then that you become comfortable with what is new. Be gentle on yourself if things do not pop out of the page at once. You are making friends with mathematical ideas that took centuries to evolve and mature.
 
 To many students, mathematics is daunting, calculus even more so, and differential equations are downright terrifying. Nevertheless, there are authors who tame the subject rather than taunt the student. They approach the subject leisurely, allowing the reader to enjoy the view, and explaining interesting sights along the way. There are others who use pictures in preference to words. I have chosen two books---one from each category---as books to read, along with this blog, or even before it. Here are my two selections.
 
@@ -34,7 +34,7 @@ The applied mathematician [Steven Strogatz](https://en.wikipedia.org/wiki/Steven
 
 ### Blanchard, Devaney, and Hall
 
-The second recommendation, a textbook by three authors, is the result of a radical departure in the teaching of differential equations---from being a hodgepodge of mundane and special techniques, memorized and regurgitated, to a fascinating picture of how nature unfolds in time. The pedagogy of the book leverages the ubiquity of computing technology to enable a syncretic view and more profound appreciation of differential equations as the time-evolution of natural systems. Their book is called, unsurprisingly, [_Differential Equations_](http://math.bu.edu/odes/4ed-TOC.html) and is in its fourth edition [@blanchard-devaney-hall-2012]. It is not a book that you need to work through, but one you should consult for its approach and ideas. The earnest student will also doubtless, tackle a few problems! \emojifont :wink: \normalfont.
+The second recommendation---a textbook by three authors, henceforth called BDH---is the result of a radical departure in the teaching of differential equations---from being a hodgepodge of mundane and special techniques, memorized and regurgitated, to a fascinating picture of how nature unfolds in time. The pedagogy of the book leverages the ubiquity of computing technology to enable a syncretic view and more profound appreciation of differential equations as the time-evolution of natural systems. Their book is called, unsurprisingly, [_Differential Equations_](http://math.bu.edu/odes/4ed-TOC.html) and is in its fourth edition [@blanchard-devaney-hall-2012]. It is not a book that you need to work through, but one you should consult for its approach and ideas. The earnest student will also doubtless, tackle a few problems! \emojifont :wink: \normalfont.
 
 ## Newton's Second Law
 
@@ -44,50 +44,101 @@ Wait a minute! Is this not physics? Yes, it is. But is it also mathematics? Yes 
 
 There are many terms here that must be _named_, i.e., defined and explained. Let us go through them in sequence, using SI units, and mostly avoiding implications arising from the Theory of Relativity:
 
-#.  Space: This is the three dimensional space in which we live and through which matter moves. The length between two points in space is their _distance_. The set of points in a one-dimensional line is usually denoted by $\mathbb{R}$. For two-dimensions, the set is the [Cartesian product](https://en.wikipedia.org/wiki/Cartesian_product) $\mathbb{R} \times \mathbb{R} = \mathbb{R}^2$, and the points are denoted $(x, y)$ where each $x \in \mathbb{R}$ and each $y \in \mathbb{R}$. Likewise for three dimensional space where $(x, y, z) \in \mathbb{R}^3$.^[If these symbols and notation are new to you please read my blog [The Two Most Important Numbers: Zero and One](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one).]
+#.  **Space**: This is the three dimensional space in which we live and through which matter moves. The length between two points in space is their _distance_. The set of points in a one-dimensional line is usually denoted by $\mathbb{R}$. For two-dimensions, the set is the [Cartesian product](https://en.wikipedia.org/wiki/Cartesian_product) $\mathbb{R} \times \mathbb{R} = \mathbb{R}^2$, and the points are denoted $(x, y)$ where each $x \in \mathbb{R}$ and each $y \in \mathbb{R}$. Likewise for three dimensional space where $(x, y, z) \in \mathbb{R}^3$.^[If these symbols and notation are new to you please read my blog [The Two Most Important Numbers: Zero and One](https://swanlotus.netlify.app/blogs/the-two-most-important-numbers-zero-and-one).]
 
-#.  Time: This is the time we experience---24 hours or 86,400 seconds in a day---usually denoted by the letter $t$.
+#. **Time**: This is the time we experience---24 hours or 86,400 seconds in a day---usually denoted by the letter $t$.
 
-#.  Scalar: A quantity that only has magnitude. Examples include time, temperature, distance, mass, energy, etc.
+#.  **Scalar**: A quantity that only has magnitude. Examples include time, temperature, distance, mass, energy, etc.
 
-#.  Vector: A quantity that has both magnitude and direction. While _distance_ is a scalar that defines the length between two points, _displacement_ is a vector and encodes both the length between two points _and_ their direction. Vectors are usually denoted in boldface, like $\mathbf{a}$, or when written, with a squiggle atop or underneath the symbol.
+#.  **Vector**: A quantity that has both magnitude and direction. While _distance_ is a scalar that defines the length between two points, _displacement_ is a vector and encodes both the length between two points _and_ their direction. Vectors are usually denoted in boldface, like $\mathbf{a}$, or when written, with a squiggle atop or underneath the symbol.
 
-#.  Distance: The difference in length between two points in space, without concern for their orientation.
+#.  **Distance**: The difference in length between two points in space, without concern for their orientation.
 
-#.  Speed: When a body moves a distance $d$ in time $t$, its average speed is $\frac{d}{s}$ metres per second;
+#.  **Displacement**: Displacement is the vector analogue of distance, and is often denoted by $\mathbf{s}$. The displacement from $A$ to $B$ is the negative of the displacement from $B$ to $A$. 
 
-#.  Displacement: Displacement is the vector analogue of distance, and is often denoted by $\mathbf{s}$. The displacement from $A$ to $B$ is the negative of the displacement from $B$ to $A$. 
+#.  **Speed**: When a body moves a distance $d$ metres in time $t$ seconds, its average speed is $\frac{d}{t}$ metres per second.
 
-#.  Velocity: When a body moves, _velocity_ captures both its speed and the direction in which the change occurs. Velocity is the vector analogue to speed, and is usually denoted by $\mathbf{v}$. A body whose speed is constant but whose direction is changing constantly, like a ball revolving on a string, experiences a _changing_ velocity, and is hence undergoing _acceleration_.
+#.  **Velocity**: When a body moves, _velocity_ captures both its speed and the direction in which the change occurs. Velocity is the vector analogue to speed, and is usually denoted by $\mathbf{v}$. A body whose speed is constant but whose direction is changing constantly, like a ball revolving on a string, experiences a _changing_ velocity, and is hence undergoing _acceleration_.
 
-#. Mass: Mass represents the resistance matter presents to motion. Roughly, on Earth, it is proportional to weight, which is a vector. Mass is generally denoted by $m$. So, the heavier an object, the greater its mass. Relativity talks about _inertial mass_ and _gravitational mass_ but we will skip that here. Mass multiplied by velocity equals momentum. 
+#. **Mass**: Mass represents the resistance matter presents to motion. Roughly, on Earth, it is proportional to weight, which is a vector. Mass is generally denoted by $m$. So, the heavier an object, the greater its mass.^[[The _inertial mass_ and _gravitational mass_ are the same](https://en.wikipedia.org/wiki/Equivalence_principle.)] Mass multiplied by velocity equals momentum. 
 
-#. Momentum: Momentum, often denoted by $\mathbf{p}$, is a vector and is the product of mass and velocity, $\mathbf{p} = m\mathbf{v}$.
+#. **Momentum**: Momentum, often denoted by $\mathbf{p}$, is a vector and is the product of mass and velocity, $\mathbf{p} = m\mathbf{v}$.
 
-#. Acceleration: Acceleration, $\mathbf{a}$ is defined as the time rate of change of the velocity vector. Using the symbology of calculus,
+#. **Acceleration**: Acceleration, $\mathbf{a}$ is defined as the time rate of change of the velocity vector. Using the symbology of calculus,
 $$
 \mathbf{a} \triangleq \frac{\mathrm{d}\mathbf{v}}{\mathrm{d}t}.
 $$
 The symbol $\triangleq$ is often used to denote a definition.
 
-#. Force: Newton's Second Law states that force is proportional to the rate of change of momentum it induces. Stated mathematically, bearing in mind that force is a vector,
+#. **Force**: Newton's Second Law states that force is proportional to the rate of change of momentum it induces. Stated mathematically, bearing in mind that force is a vector,
 $$
 \mathbf{F} \propto \frac{\mathrm{d}\mathbf{p}}{\mathrm{d}t} \triangleq k\frac{\mathrm{d}\mathbf{p}}{\mathrm{d}t}.
 $$
-The symbol $\propto$ stands for _proportional to_. To convert it to a equality, mut introduce a constant $k$. By judiciously choosing units, it is possible to make the value of $k$ equal to one. We then have the famous vector equation
+The symbol $\propto$ stands for _is proportional to_. To convert it to an equality, we must introduce a constant $k$. By judiciously choosing units, it is possible to make the value of $k$ equal to one. We then have the famous vector equation
 $$
 \begin{aligned}
 \mathbf{F} &= \frac{\mathrm{d}\mathbf{p}}{\mathrm{d}t}\\
 &= \frac{\mathrm{d}\left(m\mathbf{v}\right)}{\mathrm{d}t}; \text{ extracting the $m$ out as a constant}\\
-&= m\frac{\mathrm{d}\mathbf{v}}{\mathrm{d}t}; \text{ acceleration is the drivative of velocity}\\
+&= m\frac{\mathrm{d}\mathbf{v}}{\mathrm{d}t}; \text{ acceleration is the derivative of velocity}\\
 &= m\mathbf{a}.
 \end{aligned}
 $${#eq:second-law}
-And there you have it: Newton's second law stated mathematically in vector form as a differential equation in the last line of [@eq:second-law].
+And there you have it: Newton's second law stated mathematically in vector form as a differential equation in the second last line of [@eq:second-law]. Force is measured in newtons, mass in kilograms, and acceleration in metres per second per second, written _m s^-2^_ or _m/s^2^_.
+
+## Falling skydiver problems
+
+The BDH book in its fourth edition extensively treats what I call the _falling skydiver problem_. I have borrowed freely from the book both in terms of problem statement and approaches to its solution.
+
+The classical example of how objects fall from a height to the earth is from [Galileo throwing rocks from atop the leaning tower of Pisa](https://en.wikipedia.org/wiki/Galileo's_Leaning_Tower_of_Pisa_experiment). If the sizes of the two rocks are similar, and air resistance is negligible, they will strike the ground together.
+
+When a skydiver free-falls from an aircraft---if his or her parachute does not open---might not exactly "fall like a rock", but very likely will get hurt.
+
+The reason skydiving exists as an exhilarating sport is because when the parachute opens, it presents a large surface area to the air and engages it. The result is air-resistance or drag that is an _upward_ force that counteracts the _downward_ pull of gravity.
+
+A simple diagram showing the forces on a skydiver is shown in XXXX
 
 
 
 
+What makes skydiving a challenging and exhilarating sport is the possibility of falling through air and landing without 
+
+The velocity v of a freefalling skydiver is well modeled by the differential equation
+dv
+m
+ = mg − kv 2 ,
+dt
+where m is the mass of the skydiver, g is the gravitational constant, and k is the drag
+coefficient determined by the position of the diver during the dive. (Note that the
+constants m, g, and k are positive.)
+(a) Perform a qualitative analysis of this model.
+(b) Calculate the terminal velocity of the skydiver. Express your answer in terms
+of m, g, and k.
+
+
+In Exercise 12 of Section 1.1, we saw that the velocity v of a freefalling skydiver is
+well modeled by the differential equation
+dv
+m
+ = mg − kv2 ,
+dt
+where m is the mass of the skydiver, g is the gravitational constant, and k is the drag
+coefficient determined by the position of the driver during the dive.
+(a) Find the general solution of this differential equation.
+(b) Confirm your answer to Exercise 12 of Section 1.1 by calculating the limit of
+v(t) as t → ∞.
+
+As we saw in Exercise 12 of Section 1.1, the velocity v of a freefalling skydiver is
+well modeled by the differential equation
+dv
+m
+ = mg − kv2 ,
+dt
+where m is the mass of the skydiver, g = 9.8 m/s2 is the gravitational constant,
+and k is the drag coefficient determined by the position of the diver during the dive.
+Consider a diver of mass m = 54 kg (120 lb) with a drag coefficient of 0.18 kg/m.
+Use Euler’s method to determine how long it will take the diver to reach 95% of her
+terminal velocity after she jumps from the plane. [Hint: Use the formula for terminal
+velocity that was derived in Exercise 12 of Section 1.1.]
 
 
 

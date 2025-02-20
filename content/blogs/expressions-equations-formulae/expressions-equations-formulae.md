@@ -194,7 +194,7 @@ b &= 10; \text{ and we are done.}
 \end{aligned}
 $$
 
-### The "nomials"
+### The family of polynomials
 
 Let us detour a little to review expressions again. Expressions that satisfy certain conditions appear again and again, enough to warrant being given special names. We consider here, [monomial](https://en.wikipedia.org/wiki/Monomial), [binomial](https://en.wikipedia.org/wiki/Binomial_(polynomial)), [trinomial](https://en.wikipedia.org/wiki/Trinomial), and [polynomial](https://en.wikipedia.org/wiki/Polynomial).
 
