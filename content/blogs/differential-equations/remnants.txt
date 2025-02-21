@@ -8,6 +8,21 @@ F = ma = d/dt(mv) = md/dt(v) = ma
 F = mdv/dt = ma
 
 
+Skydiver Two
+
+
+
+
+Skydiver Three
+
+
+
+
+
+
+
+ttps://en.wikipedia.org/wiki/Drag_equation
+https://math.libretexts.org/Bookshelves/Scientific_Computing_Simulations_and_Modeling/Physical_Modeling_in_MATLAB_(Downey)/11:_Second-order_systems/11.04:_Air_Resistance
 
 # Differential equations
 

@@ -297,22 +297,23 @@ differential equations are downright terrifying. Nevertheless, there are
 authors who tame the subject rather than taunt the student. They
 approach the subject leisurely, allowing the reader to enjoy the view,
 and explaining interesting sights along the way. There are others who
-use pictures in preference to words. I have chosen two books---one from
-each category---as books to read, along with this blog, or even before
-it. Here are my two selections.
+use pictures in preference to words. I have selected two books---one
+from each category---as recommended readings, along with this blog or
+even beforehand. Here are my choices.
 
 \subsubsection{Steven Strogatz}\label{steven-strogatz}
 
 The applied mathematician
 \href{https://en.wikipedia.org/wiki/Steven_Strogatz}{Steven Strogatz} is
-one of my favourite authors active in the popular mathematics genre
-today. He knows how to interest, educate, and sometimes, even entertain.
-Learning becomes easy and enjoyable as a consequence. He has written a
-masterful popularization of calculus, its history, techniques,
-significance, and applications, entitled
+one of my favourite authors currently active in the popular mathematics
+genre. He knows how to interest, educate, and sometimes, even entertain.
+As a consequence.learning becomes easy and enjoyable.
+
+He has masterfully popularized calculus in his book
 \href{https://www.stevenstrogatz.com/books/infinite-powers}{\emph{Infinite
-Powers: How calculus reveals the secrets of the universe}}
-{[}\citeproc{ref-strogatz-2019}{1}{]} . Make the effort to read this
+Powers: How Calculus Reveals the Secrets of the Universe}}
+{[}\citeproc{ref-strogatz-2019}{1}{]}, exploring its history,
+techniques, significance, and applications. Make the effort to read this
 book---even if it is a little at a time---and complete it. You will
 become a better scholar as a result, and calculus will become your
 friend.
@@ -320,14 +321,17 @@ friend.
 \subsubsection{Blanchard, Devaney, and
 Hall}\label{blanchard-devaney-and-hall}
 
-The second recommendation---a textbook by three authors, henceforth
-called BDH---is the result of a radical departure in the teaching of
-differential equations---from being a hodgepodge of mundane and special
-techniques, memorized and regurgitated, to a fascinating picture of how
-nature unfolds in time. The pedagogy of the book leverages the ubiquity
-of computing technology to enable a syncretic view and more profound
-appreciation of differential equations as the time-evolution of natural
-systems. Their book is called, unsurprisingly,
+My second recommendation is a textbook---by three authors, referred to
+here as BDH (Blanchard, Devaney, and Hall)---representing a radical
+departure in the teaching of differential equations. It moves away from
+the traditional approach of being a hodgepodge of mundane and special
+techniques, that are memorized and regurgitated, to presenting a
+captivating exploration of how nature evolves over time.
+
+The pedagogy of the book leverages the ubiquity of computing technology
+to enable a syncretic view and more profound appreciation of
+differential equations as the time-evolution of natural systems. Their
+book is called, unsurprisingly,
 \href{http://math.bu.edu/odes/4ed-TOC.html}{\emph{Differential
 Equations}} and is in its fourth edition
 {[}\citeproc{ref-blanchard-devaney-hall-2012}{2}{]}. It is not a book
@@ -340,8 +344,12 @@ few problems! \emojifont {😉} \normalfont.
 Perhaps the very first encounter with differential equations occurs for
 most people with the statement of
 \href{https://www.britannica.com/science/Newtons-laws-of-motion/Newtons-second-law-F-ma}{Newton's
-Second Law of Motion}. It is usually stated as \emph{the net force on a
-body is proportional to the rate of change of the body's momentum}.
+Second Law of Motion}. It is usually stated as
+
+\begin{quote}
+The net force on a body is proportional to the rate of change of the
+body's momentum.
+\end{quote}
 
 Wait a minute! Is this not physics? Yes, it is. But is it also
 mathematics? Yes indeed. Let us not quibble over how we divide knowledge
@@ -351,8 +359,10 @@ imposed disciplinary barriers into the framework of human knowledge. Let
 us not be deterred by those barriers.
 
 There are many terms here that must be \emph{named}, i.e., defined and
-explained. Let us go through them in sequence, using SI units, and
-mostly avoiding implications arising from the Theory of Relativity:
+explained. Let us address them sequentially, using
+\href{https://en.wikipedia.org/wiki/International_System_of_Units}{SI
+units} and largely steering clear of implications from the Theory of
+Relativity:
 
 \begin{enumerate}
 \item
@@ -403,14 +413,14 @@ mostly avoiding implications arising from the Theory of Relativity:
   \textbf{Mass}: Mass represents the resistance matter presents to
   motion. Roughly, on Earth, it is proportional to weight, which is a
   vector. Mass is generally denoted by \(m\). So, the heavier an object,
-  the greater its
-  mass.\footnote{The \emph{inertial mass}, \(m_i\), is an object's
-    resistance to acceleration when a force is applied on it, as in
-    \(F = m_{i}a\). The \emph{gravitational mass}, \(m_g\), is the
-    strength of an object's interaction with a gravitational field, as
-    in \(G\frac{m_g}{M}{R^2}\). Both these entities are the same, i.e.,
-    \(m_{i} = m_{g}\).}(https://en.wikipedia.org/wiki/Equivalence\_principle.){]}
-  Mass multiplied by velocity equals momentum.
+  the greater its mass.\footnote{The \emph{inertial mass}, \(m_i\), is
+    an object's resistance to acceleration when a force is applied on
+    it, as in \(F = m_{i}a\). The \emph{gravitational mass}, \(m_g\), is
+    the strength of an object's interaction with a gravitational field,
+    as in \(G\frac{m_gM}{R^2}\). Both these entities are the same, i.e.,
+    \(m_{i} = m_{g}\), and this is called the
+    \href{https://en.wikipedia.org/wiki/Equivalence_principle.}{Principle
+    of Equivalence}.} Mass multiplied by velocity equals momentum.
 \item
   \textbf{Momentum}: Momentum, often denoted by \(\mathbf{p}\), is a
   vector and is the product of mass and velocity,
@@ -441,11 +451,10 @@ mostly avoiding implications arising from the Theory of Relativity:
   mathematically in vector form as a differential equation in the second
   last line of \cref{eq:second-law}. Force is measured in newtons, mass
   in kilograms, and acceleration in metres per second per second,
-  written \emph{m s\textsuperscript{-2}} or
-  \emph{m/s\textsuperscript{2}}.
+  written \(\mathrm{m \; s^{-2}}\) or \(\mathrm{m/s^{2}}\).
 \end{enumerate}
 
-\subsection{The Skydiver problem}\label{the-skydiver-problem}
+\subsection{The Falling Skydiver: One}\label{the-falling-skydiver-one}
 
 The BDH book in its fourth edition extensively treats what I call the
 \emph{skydiver problem}. I have borrowed freely from the book both in
@@ -461,9 +470,9 @@ chemistry, biology, etc., and their units where applicable.
 The classical example of how objects fall from a height to the earth is
 the (apocryphal?) experiment of
 \href{https://en.wikipedia.org/wiki/Galileo's_Leaning_Tower_of_Pisa_experiment}{Galileo
-throwing rocks from atop the leaning tower of Pisa}. If the sizes of the
-two rocks are similar, and air resistance is negligible, they will
-strike the ground together.
+throwing rocks from atop the leaning tower of Pisa}. If the two rocks
+have different weights but are otherwise similar, meaning air resistance
+may be neglected, they will strike the ground together.
 
 In \href{https://en.wikipedia.org/wiki/Mechanics}{Mechanics} we
 generally abstract out the object of interest, and show all forces
@@ -491,10 +500,10 @@ We may now write
 \frac{F}{m} &= G\frac{M}{R^2}; \text{ noting that the LHS is $g$}\\
 g &= G\frac{M}{R^2}.
 \end{aligned}
-}\end{equation} Let us substitute the values og \(G\), \(M\), and \(R\)
-in \href{https://en.wikipedia.org/wiki/International_System_of_Units}{SI
-units} to get a value for \(g\) the acceleration due to gravity felt by
-all objects on earth. \begin{equation}\phantomsection\label{eq:g-value}{
+}\end{equation} Let us substitute the values of \(G\), \(M\), and \(R\)
+in SI units to get a value for \(g\) the acceleration due to gravity
+felt by all objects on earth.
+\begin{equation}\phantomsection\label{eq:g-value}{
 \begin{aligned}
 G &= 6.6743 × 10^{-11}\; \mathrm{m^{3} kg^{−1} s^{−2}}\\
 M &= 5.9722 × 10^{24}\; \mathrm{kg}\\
@@ -503,32 +512,53 @@ g &= G\frac{M}{R^2} = 9.7985 \approx 9.8\; \mathrm{m\,s^{-2}}.
 \end{aligned}
 }\end{equation} The value of \(g\) we have calculated is in
 \href{https://dictionary.cambridge.org/dictionary/english/be-in-the-right-ballpark}{the
-right ball park}.
-
-The force exerted by gravity on an object of mass \(m\) is its \(W\)
-\href{https://www.thefreedictionary.com/weight}{weight} which is \(mg\),
-i.e., \[
-W = mg\; \mathrm{N}.
-\]
+right ball park}. The force exerted by gravity on an object of mass
+\(m\) is its \href{https://www.thefreedictionary.com/weight}{weight},
+\(W = mg\; \mathrm{N}\), where the \(\mathrm{N}\) stands for newtons,
+the SI unit of force.
 
 \subsubsection{Air resistance}\label{air-resistance}
 
-Air resistance is usually ignored in elementary problems, but in the
-case of the parachuting skydiver, it is air resistance and the drag it
-produces that protects the skydiver from a serious accident. The problem
-asks us to assume that the drag, or retarding force, from air resistance
-is proportional to the square of the velocity, and may be set to
+Air resistance is usually ignored in problems meant for elementary
+school students. However, in the case of the parachuting skydiver, it is
+air resistance and the drag it produces that protects the skydiver from
+a serious accident or worse.
+
+What are the
+\href{https://en.wikipedia.org/wiki/Drag_(physics)}{equations governing
+air resistance}? The answers are not simple. At low velocities, air
+resistance is proportional to the velocity of the object. At higher
+velocities, the drag is proportional to the square of the velocity. The
+book authors ask us assume that the retarding force from air resistance
+is proportional to the square of the velocity. Thus we may set it to
 \(kv^2\), where \(k\) is some constant.
 
-Note that force is a vector, as is velocity, and we need to use vector
-equations. To keep things simple, we will instead keep careful tabs on
-the \emph{signs} of the various quantities. The weight is directed
-earthwards. The drag is directed away from the earth. If we assume that
-earthwards is positive, we have \(v\) positive, \(W = mg\) positive, and
-\(R = kv^2\) negative.
+\subsubsection{The Question}\label{the-question}
 
-https://en.wikipedia.org/wiki/Drag\_equation
-https://math.libretexts.org/Bookshelves/Scientific\_Computing\_Simulations\_and\_Modeling/Physical\_Modeling\_in\_MATLAB\_(Downey)/11:\_Second-order\_systems/11.04:\_Air\_Resistance
+Question 12 under section 1.1 of BHD reads thus:
+
+\begin{quote}
+The velocity \(v\) of a freefalling skydiver is well modeled by the
+differential equation \[
+m\frac{\mathrm{d}v}{\mathrm{d}t} = mg - kv^2
+\] where \(m\) is the mass of the skydiver, \(g\) is the gravitational
+constant, and \(k\) is the drag coefficient determined by the position
+of the diver during the dive. (Note that the constants \(m\), \(g\), and
+\(k\) are positive.)
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  Perform a qualitative analysis of this model.
+\item
+  Calculate the terminal velocity of the skydiver. Express your answer
+  in terms of \(m\), \(g\), and \(k\).
+\end{enumerate}
+\end{quote}
+
+We will answer this question here.
+
+First, where relevant, a diagram always helps.
 
 \begin{figure}
 \centering
@@ -541,50 +571,91 @@ diagram\footnotemark{} for a skydiving elephant a la
 \footnotetext{To retain reader interest, I have included some extraneous
   details to enliven the picture!}
 
-Parachuting and skydiving exist as high-risk, but allowed sports, only
-because the air resistance on the parachute canopy prevents the skydiver
-from plummeting to the Earth like a rock, with fatal or near fatal
-consequences.
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  The qualitative analysis goes thus. The skydiver starts with zero
+  velocity in the vertical direction. Therefore, the initial drag is
+  also zero. Initially, the skydiver accelerates like any downward
+  falling object. Because \(g\) is constant, this velocity increases
+  \emph{linearly} with time. But the drag kicks in as the skydiver falls
+  and his/her velocity becomes non-zero. The drag increases
+  \emph{quadratically} with time. So, at some point, the drag will equal
+  the gravitational pull of the earth. At that point in time the two
+  forces---weight and drag---will be equal and Newton's first Law will
+  apply. The skydiver will fall to the earth at \emph{constant speed}.
+  This we will call the \emph{terminal velocity}.
+\item
+  The downward force of gravity is constant at \(mg\). The upward force
+  of air resistance is quadratic with velocity. Therefore, a plot of
+  these two forces with time will look like the graphs shown in
+  \cref{fig:terminal-velocity}. Where the two curves intersect, the net
+  or residual force on the skydiver will be zero. Newton's First Law
+  will kick in, and the skydiver will fall to earth at a final, constant
+  velocity called the \emph{terminal velocity}.
+\end{enumerate}
 
-The
+\begin{figure}
+\centering
+\includesvg[width=0.8\linewidth,height=\textheight,keepaspectratio]{images/terminal-velocity.svg}
+\caption{A plot of the two forces: the downward directed weight
+\(W = mg\) due to gravity, and the upward directed air resistance
+\(R = kv^2\). The velocity, \(v_t\), at which the two are equal is when
+the net force is zero. The body will then descend at this speed until it
+hits the ground.}\label{fig:terminal-velocity}
+\end{figure}
 
-The reason skydiving exists as an exhilarating sport is because when the
-parachute opens, it presents a large surface area to the air and engages
-it. The result is air-resistance or drag that is an \emph{upward} force
-that counteracts the \emph{downward} pull of gravity.
+At the terminal velocity, \(v_t\), we have
+\begin{equation}\phantomsection\label{eq:value-vt}{
+\begin{aligned}
+mg &= kv_t^2\; \text{ transposing}\\
+kv_{t}^2 &= mg\\
+v_t^{2} &= \frac{mg}{k}\\
+v_t &= \sqrt{\frac{mg}{k}}
+\end{aligned}
+}\end{equation}
 
-A simple diagram showing the forces on a skydiver is shown in XXXX
+\subsection{The Falling Skydiver: Two}\label{the-falling-skydiver-two}
 
-Benmiloud Mohammed
+Question 43 in section 1.2 is
 
-What makes skydiving a challenging and exhilarating sport is the
-possibility of falling through air and landing without
+\begin{quote}
+In Exercise 12 of Section 1.1, we saw that the velocity \(v\) of a
+freefalling skydiver is well modeled by the differential equation \[
+m\frac{\mathrm{d}v}{\mathrm{d}t} = mg - kv^2
+\] where \(m\) is the mass of the skydiver, \(g\) is the gravitational
+constant, and \(k\) is the drag coefficient determined by the position
+of the driver during the dive.
 
-The velocity v of a freefalling skydiver is well modeled by the
-differential equation dv m = mg − kv 2 , dt where m is the mass of the
-skydiver, g is the gravitational constant, and k is the drag coefficient
-determined by the position of the diver during the dive. (Note that the
-constants m, g, and k are positive.) (a) Perform a qualitative analysis
-of this model. (b) Calculate the terminal velocity of the skydiver.
-Express your answer in terms of m, g, and k.
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  Find the general solution of this differential equation.
+\item
+  Confirm your answer to Exercise 12 of Section 1.1 by calculating the
+  limit of \[
+  v(t) \text{ as } t\to\infty.
+  \]
+\end{enumerate}
+\end{quote}
 
-In Exercise 12 of Section 1.1, we saw that the velocity v of a
-freefalling skydiver is well modeled by the differential equation dv m =
-mg − kv2 , dt where m is the mass of the skydiver, g is the
-gravitational constant, and k is the drag coefficient determined by the
-position of the driver during the dive. (a) Find the general solution of
-this differential equation. (b) Confirm your answer to Exercise 12 of
-Section 1.1 by calculating the limit of v(t) as t → ∞.
+The prerequisite reading material for this section is entitled
+\href{https://en.wikipedia.org/wiki/Separation_of_variables}{separation
+of variables}. This technique means that if we have two variables, say,
+\(u\) and \(v\), we re-arrange terms by transposing them so that all
+terms involving \(u\) are on one side, and all terms involving \(v\) are
+on the other side. We then apply all available resources to compute what
+is being asked.
 
-As we saw in Exercise 12 of Section 1.1, the velocity v of a freefalling
-skydiver is well modeled by the differential equation dv m = mg − kv2 ,
-dt where m is the mass of the skydiver, g = 9.8 m/s2 is the
-gravitational constant, and k is the drag coefficient determined by the
-position of the diver during the dive. Consider a diver of mass m = 54
-kg (120 lb) with a drag coefficient of 0.18 kg/m. Use Euler's method to
-determine how long it will take the diver to reach 95\% of her terminal
-velocity after she jumps from the plane. {[}Hint: Use the formula for
-terminal velocity that was derived in Exercise 12 of Section 1.1.{]}
+The notation used for calculus, while allowing for easy manipulation of
+symbols, is still a little difficult to justify from a philosophical
+viewpoint. Each interpretation has its drawbacks. So, just learn the
+process, and apply it, if digging deeper troubles your heart or head.
+
+\subsubsection{Separation of variables}\label{separation-of-variables}
+
+\subsection{The Falling Skydiver:
+Three}\label{the-falling-skydiver-three}
 
 \subsection{Acknowledgements}\label{acknowledgements}
 
