@@ -17,6 +17,7 @@ opengraphimage:
 _Infinite Powers_, [@strogatz-2019]
 :::
 
+
 ## A Promise kept
 
 You might recall from my blog [Expressions, Equations, and Formulae](https://swanlotus.netlify.app/blogs/expressions-equations-and-formulae) that my friend Solus "Sol" Simkin had asked me to write on differential equations as well, when he first requested a blog. This blog is my promise kept to him.
@@ -133,6 +134,15 @@ Air resistance is usually ignored in problems meant for elementary school studen
 
 What are the [equations governing air resistance](https://en.wikipedia.org/wiki/Drag_(physics))? The answers are not simple. At low velocities, air resistance is proportional to the velocity of the object. At higher velocities, the drag is proportional to the square of the velocity. The book authors ask us assume that the retarding force from air resistance is proportional to the square of the velocity. Thus we may set it to $kv^2$, where $k$ is some constant.
 
+
+https://eng.libretexts.org/Bookshelves/Introductory_Engineering/EGR_1010:_Introduction_to_Engineering_for_Engineers_and_Scientists/10:_Parachute_Person
+https://instruct.math.lsa.umich.edu/lecturedemos/ma216/docs/2_3/
+https://divittorio.engineering.wfu.edu/home/teaching/egr-312/final-problem-solving-lab-example
+http://calculuscourse.maa.org/sample/Chapter5/Section5-1/Chapter5-1-6M.html
+
+
+
+
 ### The Question
 
 Question 12 under section 1.1 of BHD reads thus:
@@ -154,7 +164,7 @@ We will answer this question here.
 
 First, where relevant, a diagram always helps.
 
-![Almost free-body diagram^[To retain reader interest, I have included some extraneous details to enliven the picture!] for a skydiving elephant a la [Dumbo](https://en.wikipedia.org/wiki/Dumbo).]({attach}images/skydiver-elephant.svg){#fig:skydiver width=80% .modal-target}
+![Almost free-body diagram^[To retain reader interest, I have included some extraneous details to enliven the picture!] for a skydiving elephant à la [Dumbo](https://en.wikipedia.org/wiki/Dumbo).]({attach}images/skydiver-elephant.svg){#fig:skydiver width=80% .modal-target}
 
 (a) The qualitative analysis goes thus. The skydiver starts with zero velocity in the vertical direction. Therefore, the initial drag is also zero. Initially, the skydiver accelerates like any downward falling object. Because $g$ is constant, this velocity increases _linearly_ with time. But the drag kicks in as the skydiver falls and his/her velocity becomes non-zero. The drag increases _quadratically_ with time. So, at some point, the drag will equal the gravitational pull of the earth. At that point in time the two forces---weight and drag---will be equal and Newton's first Law will apply. The skydiver will fall to the earth at _constant speed_. This we will call the _terminal velocity_.
 
@@ -191,9 +201,9 @@ $$
 v(t) \text{ as } t\to\infty.
 $$
 
-The prerequisite reading material for this section is entitled [separation of variables](https://en.wikipedia.org/wiki/Separation_of_variables). This technique means that if we have two variables, say, $u$ and $v$, we re-arrange terms by transposing them so that all terms involving $u$ are on one side, and all terms involving $v$ are on the other side. We then apply all available resources to compute what is being asked.
+The prerequisite reading material for this section is entitled [separation of variables](https://en.wikipedia.org/wiki/Separation_of_variables). I urge you to read the BDH book on this topic as well. This technique means that if we have two variables, say, $u$ and $v$, we re-arrange terms by transposing them so that all terms involving $u$ are on one side, and all terms involving $v$ are on the other side. We then apply all available resources to compute what is being asked.
 
-The notation used for calculus, while allowing for easy manipulation of symbols, is still a little difficult to justify from a philosophical viewpoint. Each interpretation has its drawbacks. So, just learn the process, and apply it, if digging deeper troubles your heart or head.
+The notation used for calculus, while allowing for easy manipulation of symbols, is still a little difficult to justify from a philosophical viewpoint. BHD calls it "informal" algebra. Each interpretation has its drawbacks. So, just learn the process, and apply it, if digging deeper troubles your heart or head.
 
 ### Separation of variables
 
