@@ -238,7 +238,7 @@ x &= 5.
 $$ {#eq:repeated-root}
 This is a case of a quadratic that is a perfect square and the root $x = 5$ is _repeated_.
 
-We may graph the [quadratic function](https://en.wikipedia.org/wiki/Quadratic_function), $y = x^2 -10x + 25$, on $x$-$y$ coordinate axes as shown in [@fig:quadratic-graphs]. The solution(s) to the quadratic equation $x^2 -10x + 25 = 0$ then occur when $y = 0$. But the upper curve intersects the $x$-axis at only one point, i.e., it is _tangent_ to the $x$-axis. So, the root $x = 5$ is _repeated_.
+We may graph the [quadratic function](https://en.wikipedia.org/wiki/Quadratic_function), $y = x^2 -10x + 25$, on $x$-$y$ coordinate axes as shown in [@fig:quadratic-graphs]. The solution(s) to the quadratic equation $x^2 -10x + 25 = 0$ then occur when $y = 0$, which is the $x$-axis. But the upper curve intersects the $x$-axis at only one point, i.e., it is [_tangent_](https://en.wikipedia.org/wiki/Tangent) to the $x$-axis. So, the root $x = 5$ is _repeated_.
 
 But what happens when the root is not repeated? Let us look at $x^2 - 25 = 0$, which is a [difference of two squares](https://en.wikipedia.org/wiki/Difference_of_two_squares):
 $$
@@ -249,7 +249,11 @@ x^2 -5^2 &= 0;\\
 x &= -5 \text{ or} +5.\\ 
 \end{aligned}
 $$ {#eq:plus-minus-five}
-In this case we have two _distinct_ roots: $x = \pm5$. Again, see [@fig:quadratic-graphs] where the lower curve intersects the $x$-axis, or $y=0$ line, at these two distinct points.
+In this case we have two _distinct_ roots: $x = 5$ and $x = -5$, which is written as
+$$
+x = \pm5.
+$$
+Again, see [@fig:quadratic-graphs], where the lower curve intersects the $x$-axis, or $y=0$ line, at these two distinct points.
 
 ![Graphs of the two quadratic equations discussed in the text. The solutions to the respective quadratic equations are the values of $x$ at which the curves intersect the $x$-axis.]({attach}images/quadratic.svg){#fig:quadratic-graphs width=80% .modal-target}
 
