@@ -728,8 +728,8 @@ depending upon the context in which it is viewed.
 
 When a quadratic polynomial is equated to zero, we have a
 \href{https://en.wikipedia.org/wiki/Quadratic_equation}{quadratic
-equation}. Let us convert the quadratic in \cref{eq:quad-expand} into
-the quadratic equation
+equation}. Let us convert the quadratic polynomial in
+\cref{eq:quad-expand} into the quadratic equation
 \begin{equation}\phantomsection\label{eq:repeated-root}{
 \begin{aligned}
 x^2 -10x + 25 &= 0\\
@@ -744,13 +744,22 @@ We may graph the
 \href{https://en.wikipedia.org/wiki/Quadratic_function}{quadratic
 function}, \(y = x^2 -10x + 25\), on \(x\)-\(y\) coordinate axes as
 shown in \cref{fig:quadratic-graphs}. The solution(s) to the quadratic
-equation \(x^2 -10x + 25 = 0\) then occur when \(y = 0\), which is the
-\(x\)-axis. But the upper curve intersects the \(x\)-axis at only one
+equation \(x^2 -10x + 25 = 0\) then occur for \(y = 0\), which is the
+\(x\)-axis. But the middle curve intersects the \(x\)-axis at only one
 point, i.e., it is
 \href{https://en.wikipedia.org/wiki/Tangent}{\emph{tangent}} to the
 \(x\)-axis. So, the root \(x = 5\) is \emph{repeated}.
 
-But what happens when the root is not repeated? Let us look at
+\begin{figure}
+\centering
+\includesvg[width=0.8\linewidth,height=\textheight,keepaspectratio]{images/quadratic.svg}
+\caption{Graphs of the functions corresponding to the three quadratic
+equations discussed in the text. The solutions to the respective
+quadratic equations are the values of \(x\) at which the curves
+intersect the \(x\)-axis.}\label{fig:quadratic-graphs}
+\end{figure}
+
+What happens when the root is not repeated? Let us look at
 \(x^2 - 25 = 0\), which is a
 \href{https://en.wikipedia.org/wiki/Difference_of_two_squares}{difference
 of two squares}:
@@ -764,18 +773,19 @@ x &= -5 \text{ or} +5.\\
 }\end{equation} In this case we have two \emph{distinct} roots:
 \(x = 5\) and \(x = -5\), which is written as \[
 x = \pm5.
-\] Again, see \cref{fig:quadratic-graphs}, where the lower curve
-intersects the \(x\)-axis, or \(y=0\) line, at these two distinct
-points.
+\] Again, see \cref{fig:quadratic-graphs}, where the lowest curve,
+representing \(x^2 - 25\), intersects the \(x\)-axis, or \(y=0\) line,
+at these two distinct points.
 
-\begin{figure}
-\centering
-\includesvg[width=0.8\linewidth,height=\textheight,keepaspectratio]{images/quadratic.svg}
-\caption{Graphs of the functions corresponding to the two quadratic
-equations discussed in the text. The solutions to the respective
-quadratic equations are the values of \(x\) at which the curves
-intersect the \(x\)-axis.}\label{fig:quadratic-graphs}
-\end{figure}
+Finally, what happens when we try to solve the equation
+\(x^2 + 30 = 0\)? Well, we could rewrite the equation as \(x^2 = -30\).
+But no real number squared can ever be negative. So, there are no
+\emph{real} solutions to this equation. In \cref{fig:quadratic-graphs}
+the uppermost curve represents this case: notice that this curve
+\emph{cannot ever} intersect the \(x\)-axis.\footnote{The equation
+  \(x^2 + 30 = 0\) does have a solution in the set \(\mathbb{C}\) of
+  \href{https://en.wikipedia.org/wiki/Complex_number}{complex numbers}
+  but that need not detain us here.}
 
 \subsubsection{Completing the square and the quadratic
 formula}\label{completing-the-square-and-the-quadratic-formula}

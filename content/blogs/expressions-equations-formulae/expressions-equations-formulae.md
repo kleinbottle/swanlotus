@@ -227,7 +227,7 @@ $$
 $$ {#eq:quad-expand}
 The expression on the left is a binomial multiplied by another binomial and the product is a trinomial. But this product is also called a [quadratic polynomial](https://en.wikipedia.org/wiki/Quadratic), because it is a square. Indeed any expression in one variable in which the highest power of the variable is $2$ qualifies as a quadratic.^[You don't need this here, but just for completeness, if there are more than one variable and all terms are of degree $2$, e.g., $x^2 + xy + y^2$, the expression is called a [quadratic form](https://en.wikipedia.org/wiki/Quadratic_form).] Be aware that the same expression could be called by different names depending upon the context in which it is viewed.
 
-When a quadratic polynomial is equated to zero, we have a [quadratic equation](https://en.wikipedia.org/wiki/Quadratic_equation). Let us convert the quadratic in [@eq:quad-expand] into the quadratic equation 
+When a quadratic polynomial is equated to zero, we have a [quadratic equation](https://en.wikipedia.org/wiki/Quadratic_equation). Let us convert the quadratic polynomial in [@eq:quad-expand] into the quadratic equation 
 $$
 \begin{aligned}
 x^2 -10x + 25 &= 0\\
@@ -238,9 +238,11 @@ x &= 5.
 $$ {#eq:repeated-root}
 This is a case of a quadratic that is a perfect square and the root $x = 5$ is _repeated_.
 
-We may graph the [quadratic function](https://en.wikipedia.org/wiki/Quadratic_function), $y = x^2 -10x + 25$, on $x$-$y$ coordinate axes as shown in [@fig:quadratic-graphs]. The solution(s) to the quadratic equation $x^2 -10x + 25 = 0$ then occur when $y = 0$, which is the $x$-axis. But the upper curve intersects the $x$-axis at only one point, i.e., it is [_tangent_](https://en.wikipedia.org/wiki/Tangent) to the $x$-axis. So, the root $x = 5$ is _repeated_.
+We may graph the [quadratic function](https://en.wikipedia.org/wiki/Quadratic_function), $y = x^2 -10x + 25$, on $x$-$y$ coordinate axes as shown in [@fig:quadratic-graphs]. The solution(s) to the quadratic equation $x^2 -10x + 25 = 0$ then occur for $y = 0$, which is the $x$-axis. But the middle curve intersects the $x$-axis at only one point, i.e., it is [_tangent_](https://en.wikipedia.org/wiki/Tangent) to the $x$-axis. So, the root $x = 5$ is _repeated_.
 
-But what happens when the root is not repeated? Let us look at $x^2 - 25 = 0$, which is a [difference of two squares](https://en.wikipedia.org/wiki/Difference_of_two_squares):
+![Graphs of the functions corresponding to the three quadratic equations discussed in the text. The solutions to the respective quadratic equations are the values of $x$ at which the curves intersect the $x$-axis.]({attach}images/quadratic.svg){#fig:quadratic-graphs width=80% .modal-target}
+
+What happens when the root is not repeated? Let us look at $x^2 - 25 = 0$, which is a [difference of two squares](https://en.wikipedia.org/wiki/Difference_of_two_squares):
 $$
 \begin{aligned}
 x^2 - 25 &= 0;\\
@@ -253,9 +255,9 @@ In this case we have two _distinct_ roots: $x = 5$ and $x = -5$, which is writte
 $$
 x = \pm5.
 $$
-Again, see [@fig:quadratic-graphs], where the lower curve intersects the $x$-axis, or $y=0$ line, at these two distinct points.
+Again, see [@fig:quadratic-graphs], where the lowest curve, representing $x^2 - 25$, intersects the $x$-axis, or $y=0$ line, at these two distinct points.
 
-![Graphs of the functions corresponding to the two quadratic equations discussed in the text. The solutions to the respective quadratic equations are the values of $x$ at which the curves intersect the $x$-axis.]({attach}images/quadratic.svg){#fig:quadratic-graphs width=80% .modal-target}
+Finally, what happens when we try to solve the equation $x^2 + 30 = 0$? Well, we could rewrite the equation as $x^2 = -30$. But no real number squared can ever be negative. So, there are no _real_  solutions to this equation. In [@fig:quadratic-graphs] the uppermost curve represents this case: notice that this curve _cannot ever_ intersect the $x$-axis.^[The equation $x^2 + 30 = 0$ does have a solution in the set $\mathbb{C}$ of [complex numbers](https://en.wikipedia.org/wiki/Complex_number) but that need not detain us here.]
 
 ### Completing the square and the quadratic formula
 
