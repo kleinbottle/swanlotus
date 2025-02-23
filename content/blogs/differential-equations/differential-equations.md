@@ -225,7 +225,7 @@ I also express my thanks to all the creators of [TikZlings](https://github.com/s
 Please [email me](mailto:feedback.swanlotus@gmail.com) your comments and
 corrections.
 
-\noindent A PDF version of this article is [available for download here]({attach}./differetial-equations.pdf):
+\noindent A PDF version of this article is [available for download here]({attach}./differential-equations.pdf):
 
 ::: {.sf}
 <https://swanlotus.netlify.app/blogs/differential-equations.pdf>
