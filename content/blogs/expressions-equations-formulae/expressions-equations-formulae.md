@@ -255,7 +255,7 @@ x = \pm5.
 $$
 Again, see [@fig:quadratic-graphs], where the lower curve intersects the $x$-axis, or $y=0$ line, at these two distinct points.
 
-![Graphs of the two quadratic equations discussed in the text. The solutions to the respective quadratic equations are the values of $x$ at which the curves intersect the $x$-axis.]({attach}images/quadratic.svg){#fig:quadratic-graphs width=80% .modal-target}
+![Graphs of the functions corresponding to the two quadratic equations discussed in the text. The solutions to the respective quadratic equations are the values of $x$ at which the curves intersect the $x$-axis.]({attach}images/quadratic.svg){#fig:quadratic-graphs width=80% .modal-target}
 
 ### Completing the square and the quadratic formula
 
